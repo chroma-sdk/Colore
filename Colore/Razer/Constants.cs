@@ -31,7 +31,19 @@ using System;
 
 namespace Colore.Razer
 {
-    class Constants
+    /// <summary>
+    /// The definitions of generic constant values used in the project
+    /// </summary>
+    public static class Constants
     {
+        /// <summary>
+        /// The Windows Message constant
+        /// </summary>
+        private const UInt32 WmApp = 0x8000;
+        
+        /// <summary>
+        /// The Windows Chroma Event constant
+        /// </summary>
+        const UInt32 WmChromaEvent = WmApp + 0x2000;
     }
 }
