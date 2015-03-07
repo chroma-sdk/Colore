@@ -42,7 +42,7 @@ namespace Colore.Razer
 
     public struct Size : IComparable, IFormattable, IConvertible, IComparable<size_t>, IEquatable<size_t>
     {
-        private size_t _value;
+        private readonly size_t _value;
 
         public Size(size_t value)
         {
