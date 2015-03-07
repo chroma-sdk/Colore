@@ -30,7 +30,177 @@
 
 namespace Colore.Razer
 {
-    public struct Result
+    using System;
+
+    using LONG = System.Int32;
+
+    // RZRESULT is a typedef of LONG on C-side. LONG is always 32-bit in WinC.
+    // TODO: Finish implementing overloads.
+    public struct Result : IComparable, IFormattable, IConvertible, IComparable<LONG>, IEquatable<LONG>
     {
+        private readonly LONG _value;
+
+        public Result(LONG value)
+        {
+            _value = value;
+        }
+
+        public static implicit operator LONG(Result result)
+        {
+            return result._value;
+        }
+
+        public static implicit operator Result(LONG l)
+        {
+            return new Result(l);
+        }
+
+        public static bool operator ==(Result left, object right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(Result left, object right)
+        {
+            return !left.Equals(right);
+        }
+
+        public int CompareTo(object obj)
+        {
+            return ((IComparable)_value).CompareTo(obj);
+        }
+
+        public int CompareTo(Result other)
+        {
+            return CompareTo(other._value);
+        }
+
+        public int CompareTo(LONG other)
+        {
+            return _value.CompareTo(other);
+        }
+
+        public bool Equals(Result other)
+        {
+            return Equals(other._value);
+        }
+
+        public bool Equals(LONG other)
+        {
+            return _value.Equals(other);
+        }
+
+        public TypeCode GetTypeCode()
+        {
+            return ((IConvertible)_value).GetTypeCode();
+        }
+
+        public bool ToBoolean(IFormatProvider provider)
+        {
+            return ((IConvertible)_value).ToBoolean(provider);
+        }
+
+        public byte ToByte(IFormatProvider provider)
+        {
+            return ((IConvertible)_value).ToByte(provider);
+        }
+
+        public char ToChar(IFormatProvider provider)
+        {
+            return ((IConvertible)_value).ToChar(provider);
+        }
+
+        public DateTime ToDateTime(IFormatProvider provider)
+        {
+            return ((IConvertible)_value).ToDateTime(provider);
+        }
+
+        public decimal ToDecimal(IFormatProvider provider)
+        {
+            return ((IConvertible)_value).ToDecimal(provider);
+        }
+
+        public double ToDouble(IFormatProvider provider)
+        {
+            return ((IConvertible)_value).ToDouble(provider);
+        }
+
+        public short ToInt16(IFormatProvider provider)
+        {
+            return ((IConvertible)_value).ToInt16(provider);
+        }
+
+        public int ToInt32(IFormatProvider provider)
+        {
+            return ((IConvertible)_value).ToInt32(provider);
+        }
+
+        public long ToInt64(IFormatProvider provider)
+        {
+            return ((IConvertible)_value).ToInt64(provider);
+        }
+
+        public sbyte ToSByte(IFormatProvider provider)
+        {
+            return ((IConvertible)_value).ToSByte(provider);
+        }
+
+        public float ToSingle(IFormatProvider provider)
+        {
+            return ((IConvertible)_value).ToSingle(provider);
+        }
+
+        public string ToString(string format, IFormatProvider formatProvider)
+        {
+            return ((IFormattable)_value).ToString(format, formatProvider);
+        }
+
+        public string ToString(IFormatProvider provider)
+        {
+            return ((IConvertible)_value).ToString(provider);
+        }
+
+        public object ToType(Type conversionType, IFormatProvider provider)
+        {
+            return ((IConvertible)_value).ToType(conversionType, provider);
+        }
+
+        public ushort ToUInt16(IFormatProvider provider)
+        {
+            return ((IConvertible)_value).ToUInt16(provider);
+        }
+
+        public uint ToUInt32(IFormatProvider provider)
+        {
+            return ((IConvertible)_value).ToUInt32(provider);
+        }
+
+        public ulong ToUInt64(IFormatProvider provider)
+        {
+            return ((IConvertible)_value).ToUInt64(provider);
+        }
+
+        #region Razer codes
+
+        public static Result Invalid = -1;
+
+        public static Result Success = 0;
+
+        public static Result AccessDenied = 5;
+
+        public static Result NotSupported = 50;
+
+        public static Result InvalidParameter = 87;
+
+        public static Result SingleInstanceApp = 1152;
+
+        public static Result RequestAborted = 1235;
+
+        public static Result ResourceDisabled = 4309;
+
+        // TODO: Here be dragons?
+        public static Result Failed = unchecked((LONG)2147500037);
+
+        #endregion Razer codes
     }
 }
