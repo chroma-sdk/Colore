@@ -32,6 +32,8 @@ using System.Runtime.InteropServices;
 
 namespace Colore.Native
 {
+    using Colore.Razer;
+
     public static class ChromaAPI
     {
         #region Functions
@@ -57,7 +59,7 @@ namespace Colore.Native
             /// <param name="effectId"></param>
             /// <returns></returns>
             [DllImport(DllName, CallingConvention = CallingConvention.Cdecl, SetLastError = true)]
-            internal static extern RzResult CreateCustomEffect(int size, CUSTOM_EFFECT_TYPE effectType, Guid effectId);
+            internal static extern Result CreateCustomEffect(int size, CUSTOM_EFFECT_TYPE effectType, Guid effectId);
 
             /// <summary>
             ///
@@ -65,7 +67,7 @@ namespace Colore.Native
             /// <param name="effectId"></param>
             /// <returns></returns>
             [DllImport(DllName, CallingConvention = CallingConvention.Cdecl, SetLastError = true)]
-            internal static extern RzResult SetEffect(Guid effectId);
+            internal static extern Result SetEffect(Guid effectId);
 
             /// <summary>
             ///
@@ -73,7 +75,7 @@ namespace Colore.Native
             /// <param name="effectId"></param>
             /// <returns></returns>
             [DllImport(DllName, CallingConvention = CallingConvention.Cdecl, SetLastError = true)]
-            internal static extern RzResult DeleteEffect(Guid effectId);
+            internal static extern Result DeleteEffect(Guid effectId);
 
             /// <summary>
             ///

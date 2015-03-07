@@ -28,9 +28,9 @@
 //  </copyright>
 //  ---------------------------------------------------------------------------------------
 
-namespace Colore.Native
+namespace Colore.Razer
 {
-    public struct RzResult
+    public struct Result
     {
     }
 }

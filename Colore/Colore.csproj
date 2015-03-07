@@ -77,9 +77,9 @@
   <ItemGroup>
     <Compile Include="Core\Colore.cs" />
     <Compile Include="Native\ChromaAPI.cs" />
-    <Compile Include="Native\RzResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Razer\NativeMethods.cs" />
+    <Compile Include="Razer\Result.cs" />
     <Compile Include="Razer\Size.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
