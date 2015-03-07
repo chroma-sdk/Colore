@@ -1,5 +1,5 @@
 ﻿//  ---------------------------------------------------------------------------------------
-//  <copyright file="RzResult.cs" company="">
+//  <copyright file="Result.cs" company="">
 //      Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //      Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -38,6 +38,24 @@ namespace Colore.Razer
     // TODO: Finish implementing overloads.
     public struct Result : IComparable, IFormattable, IConvertible, IComparable<LONG>, IEquatable<LONG>
     {
+        #region Razer codes
+
+        public static Result AccessDenied = 5;
+
+        // TODO: Here be dragons?
+        public static Result Failed = unchecked((LONG)2147500037);
+
+        public static Result Invalid = -1;
+
+        public static Result InvalidParameter = 87;
+        public static Result NotSupported = 50;
+        public static Result RequestAborted = 1235;
+        public static Result ResourceDisabled = 4309;
+        public static Result SingleInstanceApp = 1152;
+        public static Result Success = 0;
+
+        #endregion Razer codes
+
         private readonly LONG _value;
 
         public Result(LONG value)
@@ -55,14 +73,14 @@ namespace Colore.Razer
             return new Result(l);
         }
 
-        public static bool operator ==(Result left, object right)
-        {
-            return left.Equals(right);
-        }
-
         public static bool operator !=(Result left, object right)
         {
             return !left.Equals(right);
+        }
+
+        public static bool operator ==(Result left, object right)
+        {
+            return left.Equals(right);
         }
 
         public int CompareTo(object obj)
@@ -179,28 +197,5 @@ namespace Colore.Razer
         {
             return ((IConvertible)_value).ToUInt64(provider);
         }
-
-        #region Razer codes
-
-        public static Result Invalid = -1;
-
-        public static Result Success = 0;
-
-        public static Result AccessDenied = 5;
-
-        public static Result NotSupported = 50;
-
-        public static Result InvalidParameter = 87;
-
-        public static Result SingleInstanceApp = 1152;
-
-        public static Result RequestAborted = 1235;
-
-        public static Result ResourceDisabled = 4309;
-
-        // TODO: Here be dragons?
-        public static Result Failed = unchecked((LONG)2147500037);
-
-        #endregion Razer codes
     }
 }
