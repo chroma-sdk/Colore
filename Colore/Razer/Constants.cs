@@ -38,12 +38,17 @@ namespace Colore.Razer
     public static class Constants
     {
         /// <summary>
-        /// The Windows Message constant
+        /// Used to define private messages, usually of the form WM_APP+x, where x is an integer value.
         /// </summary>
+        /// <remarks>
+        /// The <strong>WM_APP</strong> constant is used to distinguish between message values
+        /// that are reserved for use by the system and values that can be used by an
+        /// application to send messages within a private window class.
+        /// </remarks>
         private const UInt32 WmApp = 0x8000;
         
         /// <summary>
-        /// The Windows Chroma Event constant
+        /// Used by Razer code to send Chroma event messages.
         /// </summary>
         const UInt32 WmChromaEvent = WmApp + 0x2000;
     }
