@@ -36,252 +36,252 @@ namespace Colore.Razer.Keyboard
     public enum Key
     {
         /// <summary>
-        /// Esc.
+        /// Esc key.
         /// </summary>
         Escape = 0x0001,
 
         /// <summary>
-        /// F1.
+        /// F1 key.
         /// </summary>
         F1 = 0x0003,
 
         /// <summary>
-        /// F2.
+        /// F2 key.
         /// </summary>
         F2 = 0x0004,
 
         /// <summary>
-        /// F3.
+        /// F3 key.
         /// </summary>
         F3 = 0x0005,
 
         /// <summary>
-        /// F4.
+        /// F4 key.
         /// </summary>
         F4 = 0x0006,
 
         /// <summary>
-        /// F5.
+        /// F5 key.
         /// </summary>
         F5 = 0x0007,
 
         /// <summary>
-        /// F6.
+        /// F6 key.
         /// </summary>
         F6 = 0x0008,
 
         /// <summary>
-        /// F7.
+        /// F7 key.
         /// </summary>
         F7 = 0x0009,
 
         /// <summary>
-        /// F8.
+        /// F8 key.
         /// </summary>
         F8 = 0x000A,
 
         /// <summary>
-        /// F9.
+        /// F9 key.
         /// </summary>
         F9 = 0x000B,
 
         /// <summary>
-        /// F10.
+        /// F10 key.
         /// </summary>
         F10 = 0x000C,
 
         /// <summary>
-        /// F11.
+        /// F11 key.
         /// </summary>
         F11 = 0x000D,
 
         /// <summary>
-        /// F12.
+        /// F12 key.
         /// </summary>
         F12 = 0x000E,
 
         /// <summary>
-        /// 1.
+        /// 1 key.
         /// </summary>
         One = 0x0102,
 
         /// <summary>
-        /// 2.
+        /// 2 key.
         /// </summary>
         Two = 0x0103,
 
         /// <summary>
-        /// 3.
+        /// 3 key.
         /// </summary>
         Three = 0x0104,
 
         /// <summary>
-        /// 4.
+        /// 4 key.
         /// </summary>
         Four = 0x0105,
 
         /// <summary>
-        /// 5.
+        /// 5 key.
         /// </summary>
         Five = 0x0106,
 
         /// <summary>
-        /// 6.
+        /// 6 key.
         /// </summary>
         Six = 0x0107,
 
         /// <summary>
-        /// 7.
+        /// 7 key.
         /// </summary>
         Seven = 0x0108,
 
         /// <summary>
-        /// 8.
+        /// 8 key.
         /// </summary>
         Eight = 0x0109,
 
         /// <summary>
-        /// 9.
+        /// 9 key.
         /// </summary>
         Nine = 0x010A,
 
         /// <summary>
-        /// 0.
+        /// 0 key.
         /// </summary>
         Zero = 0x010B,
 
         /// <summary>
-        /// A.
+        /// A key.
         /// </summary>
         A = 0x0302,
 
         /// <summary>
-        /// B.
+        /// B key.
         /// </summary>
         B = 0x0407,
 
         /// <summary>
-        /// C.
+        /// C key.
         /// </summary>
         C = 0x0405,
 
         /// <summary>
-        /// D.
+        /// D key.
         /// </summary>
         D = 0x0304,
 
         /// <summary>
-        /// E.
+        /// E key.
         /// </summary>
         E = 0x0204,
 
         /// <summary>
-        /// F.
+        /// F key.
         /// </summary>
         F = 0x0305,
 
         /// <summary>
-        /// G.
+        /// G key.
         /// </summary>
         G = 0x0306,
 
         /// <summary>
-        /// H.
+        /// H key.
         /// </summary>
         H = 0x0307,
 
         /// <summary>
-        /// I.
+        /// I key.
         /// </summary>
         I = 0x0209,
 
         /// <summary>
-        /// J.
+        /// J key.
         /// </summary>
         J = 0x0308,
 
         /// <summary>
-        /// K.
+        /// K key.
         /// </summary>
         K = 0x0309,
 
         /// <summary>
-        /// L.
+        /// L key.
         /// </summary>
         L = 0x030A,
 
         /// <summary>
-        /// M.
+        /// M key.
         /// </summary>
         M = 0x0409,
 
         /// <summary>
-        /// N.
+        /// N key.
         /// </summary>
         N = 0x0408,
 
         /// <summary>
-        /// O.
+        /// O key.
         /// </summary>
         O = 0x020A,
 
         /// <summary>
-        /// P.
+        /// P key.
         /// </summary>
         P = 0x020B,
 
         /// <summary>
-        /// Q.
+        /// Q key.
         /// </summary>
         Q = 0x0202,
 
         /// <summary>
-        /// R.
+        /// R key.
         /// </summary>
         R = 0x0205,
 
         /// <summary>
-        /// S.
+        /// S key.
         /// </summary>
         S = 0x0303,
 
         /// <summary>
-        /// T.
+        /// T key.
         /// </summary>
         T = 0x0206,
 
         /// <summary>
-        /// U.
+        /// U key.
         /// </summary>
         U = 0x0208,
 
         /// <summary>
-        /// V.
+        /// V key.
         /// </summary>
         V = 0x0406,
 
         /// <summary>
-        /// W.
+        /// W key.
         /// </summary>
         W = 0x0203,
 
         /// <summary>
-        /// X.
+        /// X key.
         /// </summary>
         X = 0x0404,
 
         /// <summary>
-        /// Y.
+        /// Y key.
         /// </summary>
         Y = 0x0207,
 
         /// <summary>
-        /// Z.
+        /// Z key.
         /// </summary>
         Z = 0x0403,
 
         /// <summary>
-        /// Numlock.
+        /// Numlock key.
         /// </summary>
         NumLock = 0x0112,
 
@@ -336,32 +336,32 @@ namespace Colore.Razer.Keyboard
         Num9 = 0x0214,
 
         /// <summary>
-        /// Divide.
+        /// Divide key.
         /// </summary>
         NumDivide = 0x0113,
 
         /// <summary>
-        /// Multiply.
+        /// Multiply key.
         /// </summary>
         NumMultiply = 0x0114,
 
         /// <summary>
-        /// Subtract.
+        /// Subtract key.
         /// </summary>
         NumSubtract = 0x0115,
 
         /// <summary>
-        /// Add.
+        /// Add key.
         /// </summary>
         NumAdd = 0x0215,
 
         /// <summary>
-        /// Enter.
+        /// Enter key.
         /// </summary>
         NumEnter = 0x0415,
 
         /// <summary>
-        /// Decimal.
+        /// Decimal key.
         /// </summary>
         NumDecimal = 0x0514,
 
@@ -376,17 +376,17 @@ namespace Colore.Razer.Keyboard
         Scroll = 0x0010,
 
         /// <summary>
-        /// Pause.
+        /// Pause key.
         /// </summary>
         Pause = 0x0011,
 
         /// <summary>
-        /// Insert.
+        /// Insert key.
         /// </summary>
         Insert = 0x010F,
 
         /// <summary>
-        /// Home.
+        /// Home key.
         /// </summary>
         Home = 0x0110,
 
@@ -396,42 +396,42 @@ namespace Colore.Razer.Keyboard
         PageUp = 0x0111,
 
         /// <summary>
-        /// Delete.
+        /// Delete key.
         /// </summary>
         Delete = 0x020f,
 
         /// <summary>
-        /// End.
+        /// End key.
         /// </summary>
         End = 0x0210,
 
         /// <summary>
-        /// Page Down.
+        /// Page Down key.
         /// </summary>
         PageDown = 0x0211,
 
         /// <summary>
-        /// Up.
+        /// Up key.
         /// </summary>
         Up = 0x0410,
 
         /// <summary>
-        /// Left.
+        /// Left key.
         /// </summary>
         Left = 0x050F,
 
         /// <summary>
-        /// Down.
+        /// Down key.
         /// </summary>
         Down = 0x0510,
 
         /// <summary>
-        /// Right.
+        /// Right key.
         /// </summary>
         Right = 0x0511,
 
         /// <summary>
-        /// Tab.
+        /// Tab key.
         /// </summary>
         Tab = 0x0201,
 
@@ -441,37 +441,37 @@ namespace Colore.Razer.Keyboard
         CapsLock = 0x0301,
 
         /// <summary>
-        /// Backspace.
+        /// Backspace key.
         /// </summary>
         Backspace = 0x010E,
 
         /// <summary>
-        /// Enter.
+        /// Enter key.
         /// </summary>
         Enter = 0x030E,
 
         /// <summary>
-        /// Left Control.
+        /// Left control key.
         /// </summary>
         LeftControl = 0x0501,
 
         /// <summary>
-        /// Left Window.
+        /// Left windows key.
         /// </summary>
         LeftWindows = 0x0502,
 
         /// <summary>
-        /// Left Alt.
+        /// Left alt key.
         /// </summary>
         LeftAlt = 0x0503,
 
         /// <summary>
-        /// Spacebar.
+        /// Spacebar key.
         /// </summary>
         Space = 0x0507,
 
         /// <summary>
-        /// Right Alt.
+        /// Right alt key.
         /// </summary>
         RightAlt = 0x050B,
 
@@ -481,22 +481,22 @@ namespace Colore.Razer.Keyboard
         Function = 0x050C,
 
         /// <summary>
-        /// Right Menu.
+        /// Right menu key.
         /// </summary>
         RightMenu = 0x050D,
 
         /// <summary>
-        /// Right Control.
+        /// Right control key.
         /// </summary>
         RightControl = 0x050E,
 
         /// <summary>
-        /// Left Shift.
+        /// Left shift key.
         /// </summary>
         LeftShift = 0x0401,
 
         /// <summary>
-        /// Right Shift.
+        /// Right shift key.
         /// </summary>
         RightShift = 0x040E,
 
@@ -526,121 +526,133 @@ namespace Colore.Razer.Keyboard
         Macro5 = 0x0500,
 
         /// <summary>
-        /// ~ tilde. 半角/全角.
+        /// Tilde (~) key. 半角/全角.
         /// </summary>
         Oem1 = 0x0101,
 
         /// <summary>
-        /// - minus.
+        /// Minus (-) key.
         /// </summary>
         Oem2 = 0x010C,
 
         /// <summary>
-        /// = equal.
+        /// Equal sign (=) key.
         /// </summary>
         Oem3 = 0x010D,
 
         /// <summary>
-        /// [ left sqaure bracket.
+        /// Left sqaure bracket ([) key.
         /// </summary>
         Oem4 = 0x020C,
 
         /// <summary>
-        /// ] right square bracket.
+        /// Right square bracket (]) key.
         /// </summary>
         Oem5 = 0x020D,
 
         /// <summary>
-        /// \ forward slash.
+        /// Forwards slash (/) key.
         /// </summary>
         Oem6 = 0x020E,
 
         /// <summary>
-        /// ; semi-colon.
+        /// Semi-colon (;) key.
         /// </summary>
         Oem7 = 0x030B,
 
         /// <summary>
-        /// ' apostrophe.
+        /// Apostrophe (') key.
         /// </summary>
         Oem8 = 0x030C,
 
         /// <summary>
-        /// ,comma.
+        /// Comma (,) key.
         /// </summary>
         Oem9 = 0x040A,
 
         /// <summary>
-        /// . period.
+        /// Period/full stop (.) key.
         /// </summary>
         Oem10 = 0x040B,
 
         /// <summary>
-        /// / backslash.
+        /// Backslash (\) key.
         /// </summary>
         Oem11 = 0x040C,
 
         /// <summary>
-        /// #.
+        /// Pound sign (#) key.
         /// </summary>
         Eur1 = 0x030D,
 
         /// <summary>
-        /// \.
+        /// Backslash (\) key.
         /// </summary>
         Eur2 = 0x0402,
 
         /// <summary>
-        /// ¥.
+        /// Yen (¥) key.
         /// </summary>
         Jpn1 = 0x0015,
 
         /// <summary>
-        /// /.
+        /// Forward slash (/) key.
         /// </summary>
         Jpn2 = 0x040D,
 
         /// <summary>
-        /// 無変換.
+        /// 無変換 key.
         /// </summary>
         Jpn3 = 0x0504,
 
         /// <summary>
-        /// 変換.
+        /// 変換 key.
         /// </summary>
         Jpn4 = 0x0509,
 
         /// <summary>
-        /// ひらがな/カタカナ.
+        /// ひらがな/カタカナ key.
         /// </summary>
         Jpn5 = 0x050A,
 
         /// <summary>
-        /// |.
+        /// Pipe character (|) key.
         /// </summary>
         Kor1 = 0x0015,
 
+        /// <summary>
+        /// Unknown Korean key.
+        /// </summary>
         Kor2 = 0x030D,
 
+        /// <summary>
+        /// Unknown Korean key.
+        /// </summary>
         Kor3 = 0x0402,
 
+        /// <summary>
+        /// Unknown Korean key.
+        /// </summary>
         Kor4 = 0x040D,
 
         /// <summary>
-        /// 한자.
+        /// 한자 key.
         /// </summary>
         Kor5 = 0x0504,
 
         /// <summary>
-        /// 한/영.
+        /// 한/영 key.
         /// </summary>
         Kor6 = 0x0509,
 
+        /// <summary>
+        /// Unknown Korean key.
+        /// </summary>
         Kor7 = 0x050A,
 
         /// <summary>
-        /// Invalid keys.
+        /// Invalid key.
         /// </summary>
-        Invalid = 0xFFFF 
+        Invalid = 0xFFFF
     };
 }
