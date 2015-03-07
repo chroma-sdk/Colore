@@ -49,6 +49,16 @@ namespace Colore.Razer
             _value = value;
         }
 
+        public static implicit operator size_t(Size size)
+        {
+            return size._value;
+        }
+
+        public static implicit operator Size(size_t sizet)
+        {
+            return new Size(sizet);
+        }
+
         public int CompareTo(object obj)
         {
             return ((IComparable)_value).CompareTo(obj);
