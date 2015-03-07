@@ -27,6 +27,7 @@
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
 // ---------------------------------------------------------------------------------------
+
 using System;
 
 namespace Colore.Razer
