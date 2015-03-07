@@ -38,6 +38,11 @@ namespace Colore.Razer
     public static class Constants
     {
         /// <summary>
+        /// Used by Razer code to send Chroma event messages.
+        /// </summary>
+        public const UInt32 WmChromaEvent = WmApp + 0x2000;
+        
+        /// <summary>
         /// Used to define private messages, usually of the form WM_APP+x, where x is an integer value.
         /// </summary>
         /// <remarks>
@@ -46,10 +51,5 @@ namespace Colore.Razer
         /// application to send messages within a private window class.
         /// </remarks>
         private const UInt32 WmApp = 0x8000;
-        
-        /// <summary>
-        /// Used by Razer code to send Chroma event messages.
-        /// </summary>
-        const UInt32 WmChromaEvent = WmApp + 0x2000;
     }
 }
