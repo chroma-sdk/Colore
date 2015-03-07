@@ -1,29 +1,29 @@
 ﻿//  ---------------------------------------------------------------------------------------
 //  <copyright file="ChromaAPI.cs" company="">
 //      Copyright © 2015 by Adam Hellberg and Brandon Scott.
-// 
+//
 //      Permission is hereby granted, free of charge, to any person obtaining a copy of
 //      this software and associated documentation files (the "Software"), to deal in
 //      the Software without restriction, including without limitation the rights to
 //      use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
 //      of the Software, and to permit persons to whom the Software is furnished to do
 //      so, subject to the following conditions:
-// 
+//
 //      The above copyright notice and this permission notice shall be included in all
 //      copies or substantial portions of the Software.
-// 
+//
 //      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 //      IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 //      FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 //      AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
 //      WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //      CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-// 
+//
 //      Disclaimer: Colore is in no way affiliated
 //      with Razer and/or any of its employees and/or licensors.
 //      Adam Hellberg and Brandon Scott do not take responsibility for any harm caused, direct
 //      or indirect, to any Razer peripherals via the use of Colore.
-// 
+//
 //      "Razer" is a trademark of Razer USA Ltd.
 //  </copyright>
 //  ---------------------------------------------------------------------------------------
@@ -34,18 +34,8 @@ namespace Colore.Native
 {
     public static class ChromaAPI
     {
-
-        #region Structs
-
-      
-
-        #endregion Structs
-
-
-        #region Constants
-        #endregion Constants
-
         #region Functions
+
         internal static class NativeMethods
         {
             /// <summary>
@@ -59,9 +49,8 @@ namespace Colore.Native
             [DllImport("kernel32.dll", EntryPoint = "GetProcAddress")]
             private static extern IntPtr GetProcAddress(int hModule, [MarshalAs(UnmanagedType.LPStr)] string lpProcName);
 
-
             /// <summary>
-            /// 
+            ///
             /// </summary>
             /// <param name="size"></param>
             /// <param name="effectType"></param>
@@ -71,7 +60,7 @@ namespace Colore.Native
             internal static extern RzResult CreateCustomEffect(int size, CUSTOM_EFFECT_TYPE effectType, Guid effectId);
 
             /// <summary>
-            /// 
+            ///
             /// </summary>
             /// <param name="effectId"></param>
             /// <returns></returns>
@@ -79,7 +68,7 @@ namespace Colore.Native
             internal static extern RzResult SetEffect(Guid effectId);
 
             /// <summary>
-            /// 
+            ///
             /// </summary>
             /// <param name="effectId"></param>
             /// <returns></returns>
@@ -87,22 +76,22 @@ namespace Colore.Native
             internal static extern RzResult DeleteEffect(Guid effectId);
 
             /// <summary>
-            /// 
+            ///
             /// </summary>
             [DllImport(DllName, CallingConvention = CallingConvention.Cdecl, SetLastError = true)]
             internal static extern void Init();
 
             /// <summary>
-            /// 
+            ///
             /// </summary>
             [DllImport(DllName, CallingConvention = CallingConvention.Cdecl, SetLastError = true)]
             internal static extern void UnInit();
-
         }
+
         #endregion Functions
 
         #region Enumerations
-       
+
         /// <summary>
         /// Definition of all keys available on the keyboard.
         /// </summary>
@@ -238,13 +227,13 @@ namespace Colore.Native
         internal const int MAX_ROW = 6;
 
         //! Maximum number of columns in a keyboard.
-        const int MAX_COLUMN = 22;
+        private const int MAX_COLUMN = 22;
 
         //! Maximum number of keys.
-        const int MAX_KEYS = MAX_ROW * MAX_COLUMN;
+        private const int MAX_KEYS = MAX_ROW * MAX_COLUMN;
 
         //! Maximum number of custom effects.
-        const int MAX_CUSTOM_EFFECTS = MAX_KEYS;
+        private const int MAX_CUSTOM_EFFECTS = MAX_KEYS;
 
         //! Keyboard grid layout.
         //const int RZKEY_GRID_LAYOUT[MAX_ROW][MAX_COLUMN] = {};
@@ -276,14 +265,14 @@ namespace Colore.Native
         //! Breathing effect type
         public struct BREATHING_EFFECT_TYPE
         {
-            int Color1;    //!< First color.
-            int Color2;    //!< Second color.
+            private int Color1;    //!< First color.
+            private int Color2;    //!< Second color.
         }
 
         //! Reactive effect type
         public struct REACTIVE_EFFECT_TYPE
         {
-            int Color;         //!< Color of the effect
+            private int Color;         //!< Color of the effect
 
             //! Duration of the effect.
             private enum Duration
@@ -296,23 +285,23 @@ namespace Colore.Native
             }
         }
 
-
-        struct STATIC_EFFECT_TYPE
+        private struct STATIC_EFFECT_TYPE
         {
-            int Color;
+            private int Color;
         }
 
         //! Custom effect using RZKEY type
         public struct CUSTOM_EFFECT_TYPE
         {
-            ChromaAPI.RZKEY Key;
-            int Color;
+            private ChromaAPI.RZKEY Key;
+            private int Color;
         }
 
         public struct CUSTOM_GRID_EFFECT_TYPE
         {
-            int Key[MAX_ROW][MAX_COLUMN];
+            private int Key[MAX_ROW][MAX_COLUMN];
         }
+
         #endregion Enumerations
     }
 }
