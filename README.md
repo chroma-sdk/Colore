@@ -58,7 +58,7 @@ Current projects utilizing this or modified versions of this library:
 
 (If you want your project listed, just contact [Sharparam][sharp] or [Brandon][bs])
 
-[newpull]: ../../pull/new/master
+[newpull]: ../../pull/new/develop
 [sharp]: https://github.com/Sharparam
 [contrib]: ../../wiki/Contributing
 [bs]: https://github.com/brandonscott
