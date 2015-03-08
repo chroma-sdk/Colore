@@ -30,7 +30,7 @@
 
 namespace Colore.Razer.Mouse.Effects
 {
-    public struct StaticEffect
+    public struct Static
     {
         public uint Color;
     }

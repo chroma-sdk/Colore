@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="StaticEffect.cs" company="">
+// <copyright file="Static.cs" company="">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -41,6 +41,6 @@ namespace Colore.Razer.Keyboard.Effects
         /// <summary>
         /// Color of the effect.
         /// </summary>
-        private readonly uint Color;
+        private uint Color;
     }
 }

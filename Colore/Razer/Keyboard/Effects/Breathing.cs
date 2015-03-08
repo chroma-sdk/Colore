@@ -41,11 +41,11 @@ namespace Colore.Razer.Keyboard.Effects
         /// <summary>
         /// First color.
         /// </summary>
-        public readonly uint Color1;
+        public uint FirstColor;
 
         /// <summary>
         /// Second color.
         /// </summary>
-        public readonly uint Color2;
+        public uint SecondColor;
     }
 }

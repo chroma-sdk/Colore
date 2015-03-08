@@ -41,6 +41,6 @@ namespace Colore.Razer.Mouse.Effects
         /// <summary>
         /// The color of the effect.
         /// </summary>
-        public readonly uint Color;
+        public uint Color;
     }
 }

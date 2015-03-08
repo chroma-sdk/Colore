@@ -42,12 +42,12 @@ namespace Colore.Razer.Mouse.Effects
         /// <summary>
         /// The LED which this effect should affect.
         /// </summary>
-        public readonly uint Led;
+        public uint Led;
 
         // Defined as COLORREF in C header.
         /// <summary>
         /// The color of the effect.
         /// </summary>
-        public readonly uint Color;
+        public uint Color;
     }
 }

@@ -41,11 +41,11 @@ namespace Colore.Razer.Keyboard.Effects
         /// <summary>
         /// The color to use for the effect.
         /// </summary>
-        public readonly uint Color;
+        public uint Color;
 
         /// <summary>
         /// The key to apply the effect to.
         /// </summary>
-        public readonly Key Key;
+        public Key Key;
     }
 }

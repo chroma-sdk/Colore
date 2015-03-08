@@ -94,7 +94,7 @@
     <Compile Include="Razer\Mouse\Effects\Custom.cs" />
     <Compile Include="Razer\Mouse\Effects\Effect.cs" />
     <Compile Include="Razer\Mouse\Led.cs" />
-    <Compile Include="Razer\Mouse\Effects\StaticEffect.cs" />
+    <Compile Include="Razer\Mouse\Effects\Static.cs" />
     <Compile Include="Razer\NativeCallException.cs" />
     <Compile Include="Razer\NativeMethods.cs" />
     <Compile Include="Razer\Product.cs" />
