@@ -30,10 +30,12 @@
 
 namespace Colore.Razer
 {
-    // RZID is typedef'd as DWORD in the C headers
     using System;
     using System.Runtime.InteropServices;
 
+    using Colore.Core;
+
+    // RZID is typedef'd as DWORD in the C headers
     // DWORD is 32-bit unsigned integer on Windows
     using RZID = System.UInt32;
 
