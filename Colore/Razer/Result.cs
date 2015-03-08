@@ -31,44 +31,73 @@
 namespace Colore.Razer
 {
     using System;
-
-    using LONG = System.Int32;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Reflection;
 
     // RZRESULT is a typedef of LONG on C-side. LONG is always 32-bit in WinC.
     // TODO: Finish implementing overloads.
-    public struct Result : IComparable, IFormattable, IConvertible, IComparable<LONG>, IEquatable<LONG>
+    public struct Result : IComparable, IFormattable, IConvertible, IComparable<int>, IEquatable<int>
     {
-        #region Razer codes
-
+        [Description("Access denied.")]
         public static Result AccessDenied = 5;
 
         // TODO: Here be dragons?
-        public static Result Failed = unchecked((LONG)2147500037);
+        [Description("General failure.")]
+        public static Result Failed = unchecked((int)2147500037);
 
+        [Description("Invalid.")]
         public static Result Invalid = -1;
 
+        [Description("Invalid parameter.")]
         public static Result InvalidParameter = 87;
+
+        [Description("Not supported.")]
         public static Result NotSupported = 50;
+
+        [Description("Request aborted.")]
         public static Result RequestAborted = 1235;
+
+        [Description("Resource not available or disabled.")]
         public static Result ResourceDisabled = 4309;
+
+        [Description("Cannot start more than one instance of the specified program.")]
         public static Result SingleInstanceApp = 1152;
+
+        [Description("Success.")]
         public static Result Success = 0;
 
-        #endregion Razer codes
+        private static readonly Dictionary<Result, Metadata> FieldMetadata = BuildMetadata();
 
-        private readonly LONG _value;
+        private readonly int _value;
 
-        public Result(LONG value)
+        public Result(int value)
         {
             _value = value;
         }
 
-        public static implicit operator LONG(Result result)
+        public string Description
+        {
+            get
+            {
+                return FieldMetadata.ContainsKey(this) ? FieldMetadata[this].Description : "Unknown.";
+            }
+        }
+
+        public string Name
+        {
+            get
+            {
+                return FieldMetadata.ContainsKey(this) ? FieldMetadata[this].Name : "Unknown";
+            }
+        }
+
+        public static implicit operator int(Result result)
         {
             return result._value;
         }
 
-        public static implicit operator Result(LONG l)
+        public static implicit operator Result(int l)
         {
             return new Result(l);
         }
@@ -93,9 +122,23 @@ namespace Colore.Razer
             return CompareTo(other._value);
         }
 
-        public int CompareTo(LONG other)
+        public int CompareTo(int other)
         {
             return _value.CompareTo(other);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj))
+                return false;
+
+            if (obj is Result)
+                return Equals((Result)obj);
+
+            if (obj is int)
+                return Equals((int)obj);
+
+            return false;
         }
 
         public bool Equals(Result other)
@@ -103,9 +146,14 @@ namespace Colore.Razer
             return Equals(other._value);
         }
 
-        public bool Equals(LONG other)
+        public bool Equals(int other)
         {
             return _value.Equals(other);
+        }
+
+        public override int GetHashCode()
+        {
+            return _value;
         }
 
         public TypeCode GetTypeCode()
@@ -168,14 +216,19 @@ namespace Colore.Razer
             return ((IConvertible)_value).ToSingle(provider);
         }
 
-        public string ToString(string format, IFormatProvider formatProvider)
+        public override string ToString()
         {
-            return ((IFormattable)_value).ToString(format, formatProvider);
+            return string.Format("{0}: {1} ({2})", Name, Description, _value);
+        }
+
+        public string ToString(string format, IFormatProvider provider)
+        {
+            return string.Format(provider, "{0}: {1} ({2})", Name, Description, ((IFormattable)_value).ToString(format, provider));
         }
 
         public string ToString(IFormatProvider provider)
         {
-            return ((IConvertible)_value).ToString(provider);
+            return string.Format(provider, "{0}: {1} ({2})", Name, Description, _value);
         }
 
         public object ToType(Type conversionType, IFormatProvider provider)
@@ -196,6 +249,52 @@ namespace Colore.Razer
         public ulong ToUInt64(IFormatProvider provider)
         {
             return ((IConvertible)_value).ToUInt64(provider);
+        }
+
+        private static Dictionary<Result, Metadata> BuildMetadata()
+        {
+            var cache = new Dictionary<Result, Metadata>();
+
+            var fieldsInfo = typeof(Result).GetFields(BindingFlags.Public | BindingFlags.Static);
+            foreach (var fieldInfo in fieldsInfo.Where(fi => fi.FieldType == typeof(Result)))
+            {
+                var value = fieldInfo.GetValue(null);
+                var attr = fieldInfo.GetCustomAttribute<DescriptionAttribute>(false);
+
+                if (attr != null && value is Result)
+                    cache[(Result)value] = new Metadata(fieldInfo.Name, attr.Description);
+            }
+
+            return cache;
+        }
+
+        private struct Metadata
+        {
+            private readonly string _description;
+            private readonly string _name;
+
+            public Metadata(string name, string description)
+            {
+                _name = name;
+                _description = description;
+            }
+
+            public string Description { get { return _description; } }
+
+            public string Name { get { return _name; } }
+        }
+
+        [AttributeUsage(AttributeTargets.Field)]
+        private class DescriptionAttribute : Attribute
+        {
+            private readonly string _description;
+
+            public DescriptionAttribute(string description)
+            {
+                _description = description;
+            }
+
+            public string Description { get { return _description; } }
         }
     }
 }
