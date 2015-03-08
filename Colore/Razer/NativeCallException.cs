@@ -36,7 +36,7 @@ namespace Colore.Razer
     using System.Security.Permissions;
 
     /// <summary>
-    /// Thrown when a native function returns an erroroneus result value.
+    /// Thrown when a native function returns an erroneous result value.
     /// </summary>
     public class NativeCallException : ColoreException
     {
