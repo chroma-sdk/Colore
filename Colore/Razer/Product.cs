@@ -35,10 +35,13 @@ namespace Colore.Razer
     /// </summary>
     public enum Product
     {
+        /// <summary>
+        /// No product.
+        /// </summary>
         None = 0,
 
         /// <summary>
-        /// 
+        /// The Razer Blackwidow Chroma.
         /// </summary>
         /// <remarks>
         /// Device Id = <c>2EA1BB63-CA28-428D-9F06-196B88330BBB</c>.
