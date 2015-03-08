@@ -11,7 +11,7 @@
         public void ShouldSetMessage()
         {
             const string Expected = "Test message.";
-            Assert.AreEqual(Expected, new ColoreException("Test message."));
+            Assert.AreEqual(Expected, new ColoreException("Test message.").Message);
         }
 
         [Test]
