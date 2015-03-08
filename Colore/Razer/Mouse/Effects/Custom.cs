@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="CustomEffect.cs" company="">
+// <copyright file="Custom.cs" company="">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 // 
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -27,17 +27,27 @@
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
 // ---------------------------------------------------------------------------------------
-namespace Colore.Razer.Mouse
+
+namespace Colore.Razer.Mouse.Effects
 {
     using System.Runtime.InteropServices;
 
+    /// <summary>
+    /// Describes the custom effect type for a specific LED.
+    /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public struct CustomEffect
+    public struct Custom
     {
         // Defined as DWORD in C header.
-        public uint Led;
+        /// <summary>
+        /// The LED which this effect should affect.
+        /// </summary>
+        public readonly uint Led;
 
         // Defined as COLORREF in C header.
-        public uint Color;
+        /// <summary>
+        /// The color of the effect.
+        /// </summary>
+        public readonly uint Color;
     }
 }

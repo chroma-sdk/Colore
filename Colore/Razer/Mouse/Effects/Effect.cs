@@ -28,7 +28,7 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Razer.Mouse
+namespace Colore.Razer.Mouse.Effects
 {
     public enum Effect
     {

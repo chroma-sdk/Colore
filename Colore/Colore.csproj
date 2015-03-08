@@ -75,18 +75,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ColoreException.cs" />
     <Compile Include="Core\Colore.cs" />
-    <Compile Include="Native\ChromaAPI.cs" />
     <Compile Include="Razer\Constants.cs" />
     <Compile Include="Razer\Keyboard\Constants.cs" />
-    <Compile Include="Razer\Keyboard\Effect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Razer\Keyboard\Effects\Breathing.cs" />
+    <Compile Include="Razer\Keyboard\Effects\Custom.cs" />
+    <Compile Include="Razer\Keyboard\Effects\CustomGrid.cs" />
+    <Compile Include="Razer\Keyboard\Effects\Direction.cs" />
+    <Compile Include="Razer\Keyboard\Effects\Duration.cs" />
+    <Compile Include="Razer\Keyboard\Effects\Effect.cs" />
+    <Compile Include="Razer\Keyboard\Effects\Reactive.cs" />
+    <Compile Include="Razer\Keyboard\Effects\Static.cs" />
+    <Compile Include="Razer\Keyboard\Effects\Wave.cs" />
     <Compile Include="Razer\Keyboard\Key.cs" />
-    <Compile Include="Razer\Mouse\BreathingEffect.cs" />
-    <Compile Include="Razer\Mouse\CustomEffect.cs" />
-    <Compile Include="Razer\Mouse\Effect.cs" />
+    <Compile Include="Razer\Mouse\Effects\Breathing.cs" />
+    <Compile Include="Razer\Mouse\Effects\Custom.cs" />
+    <Compile Include="Razer\Mouse\Effects\Effect.cs" />
     <Compile Include="Razer\Mouse\Led.cs" />
-    <Compile Include="Razer\Mouse\StaticEffect.cs" />
+    <Compile Include="Razer\Mouse\Effects\StaticEffect.cs" />
+    <Compile Include="Razer\NativeCallException.cs" />
     <Compile Include="Razer\NativeMethods.cs" />
     <Compile Include="Razer\Product.cs" />
     <Compile Include="Razer\Result.cs" />

@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="">
+// <copyright file="Wave.cs" company="">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,46 +28,19 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Razer.Keyboard
+namespace Colore.Razer.Keyboard.Effects
 {
+    using System.Runtime.InteropServices;
+
     /// <summary>
-    /// Supported built-in keyboard effects.
+    /// The wave effect for the keyboard.
     /// </summary>
-    public enum Effect
+    [StructLayout(LayoutKind.Sequential)]
+    public struct Wave
     {
         /// <summary>
-        /// No effect.
+        /// Direction of wave effect.
         /// </summary>
-        None = 0,
-
-        /// <summary>
-        /// Wave effect.
-        /// </summary>
-        Wave,
-
-        /// <summary>
-        /// Spectrum cycling effect.
-        /// </summary>
-        SpectrumCycling,
-
-        /// <summary>
-        /// Breathing effect.
-        /// </summary>
-        Breathing,
-
-        /// <summary>
-        /// Reactive effect.
-        /// </summary>
-        Reactive,
-
-        /// <summary>
-        /// Static effect.
-        /// </summary>
-        Static,
-
-        /// <summary>
-        /// Invalid effect.
-        /// </summary>
-        Invalid
-    };
+        public Direction Direction;
+    }
 }

@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="StaticEffect.cs" company="">
+// <copyright file="CustomGrid.cs" company="">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,10 +28,23 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Razer.Mouse
+namespace Colore.Razer.Keyboard.Effects
 {
-    public struct StaticEffect
+    using System.Runtime.InteropServices;
+
+    /// <summary>
+    /// Describes a custom grid effect for every key.
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public struct CustomGrid
     {
-        public uint Color;
+        /// <summary>
+        /// Color definitions for each key on the keyboard.
+        /// </summary>
+        /// <remarks>
+        /// The array is 2-dimensional, with the first dimension
+        /// specifying the row for the key, and the second the column.
+        /// </remarks>
+        private readonly uint[][] Key;
     }
 }

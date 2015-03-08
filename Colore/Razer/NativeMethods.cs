@@ -33,9 +33,6 @@ namespace Colore.Razer
     using System;
     using System.Runtime.InteropServices;
 
-    using Colore.Native.ChromaAPI;
-    using Colore.Razer.Keyboard;
-
     // RZID is typedef'd as DWORD in the C headers
     // DWORD is 32-bit unsigned integer on Windows
     using RZID = System.UInt32;
@@ -60,28 +57,28 @@ namespace Colore.Razer
 
         [DllImport(DllName, CallingConvention = FunctionConvention, EntryPoint = "CreateKeyboardEffect",
             SetLastError = true)]
-        internal static extern Result CreateKeyboardEffect(Effect effect, IntPtr param, ref Guid effectid);
+        internal static extern Result CreateKeyboardEffect(Keyboard.Effects.Effect effect, IntPtr param, ref Guid effectid);
 
         [DllImport(DllName, CallingConvention = FunctionConvention, EntryPoint = "CreateKeyboardCustomEffects",
             SetLastError = true)]
         internal static extern Result CreateKeyboardCustomEffects(
             Size size,
-            [MarshalAs(UnmanagedType.ByValArray)] CUSTOM_EFFECT_TYPE[] effectType,
+            [MarshalAs(UnmanagedType.LPArray)] Keyboard.Effects.Custom[] effectType,
             ref Guid effectId);
 
         [DllImport(DllName, CallingConvention = FunctionConvention, EntryPoint = "CreateKeyboardCustomGridEffects",
             SetLastError = true)]
         internal static extern Result CreateKeyboardCustomGridEffects(
-            CUSTOM_GRID_EFFECT_TYPE effects,
+            Keyboard.Effects.CustomGrid effects,
             ref Guid effectId);
 
         [DllImport(DllName, CallingConvention = FunctionConvention, EntryPoint = "CreateMouseEffect",
             SetLastError = true)]
-        internal static extern Result CreateMouseEffect(RZID zone, Mouse.Effect effect, IntPtr param, ref Guid effectId);
+        internal static extern Result CreateMouseEffect(RZID zone, Mouse.Effects.Effect effect, IntPtr param, ref Guid effectId);
 
         [DllImport(DllName, CallingConvention = FunctionConvention, EntryPoint = "CreateMouseCustomEffects",
             SetLastError = true)]
-        internal static extern Result CreateMouseCustomEffects(Mouse.CustomEffect effect, ref Guid effectId);
+        internal static extern Result CreateMouseCustomEffects(Mouse.Effects.Custom effect, ref Guid effectId);
 
         [DllImport(DllName, CallingConvention = FunctionConvention, EntryPoint = "DeleteEffect", SetLastError = true)]
         internal static extern Result DeleteEffect(Guid effectId);
