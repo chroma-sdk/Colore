@@ -30,7 +30,7 @@
 
 namespace Colore.Razer.Mouse
 {
-    public enum Led
+    public enum Led : uint
     {
         None = 0,
 
