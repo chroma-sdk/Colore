@@ -1,4 +1,4 @@
 Colore
 ======
 
-Simplistic C# framework for Razer Chroma's SDK
+A powerful and elegant C# library for Razer Chroma's SDK
