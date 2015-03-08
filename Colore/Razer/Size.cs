@@ -41,10 +41,6 @@ namespace Colore.Razer
 
     using size_t = System.UInt32;
 
-#else
-
-#error Unsupported build configuration.
-
 #endif
 
     [StructLayout(LayoutKind.Explicit, Size = sizeof(size_t))]
