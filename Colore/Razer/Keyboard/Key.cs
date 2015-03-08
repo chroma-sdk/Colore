@@ -541,7 +541,7 @@ namespace Colore.Razer.Keyboard
         Oem3 = 0x010D,
 
         /// <summary>
-        /// Left sqaure bracket ([) key.
+        /// Left square bracket ([) key.
         /// </summary>
         Oem4 = 0x020C,
 
