@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dictionary xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="CustomDictionary.xsd">
+    <Words>
+        <Recognized>
+            <Word>Numlock</Word>
+            <Word>Numpad</Word>
+            <Word>半角/全角</Word>
+        </Recognized>
+    </Words>
+    <Acronyms>
+        <CasingExceptions>
+            <Acronym>Fn</Acronym>
+        </CasingExceptions>
+    </Acronyms>
+</Dictionary>
