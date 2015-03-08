@@ -1,5 +1,7 @@
 ﻿namespace Colore.Tests.Razer
 {
+    using System.Security.Policy;
+
     using Colore.Razer;
 
     using NUnit.Framework;
@@ -21,7 +23,7 @@
         }
 
         [Test]
-        public void ResultShouldEqualInt()
+        public void ShouldEqualIdenticalInt()
         {
             var result = new Result(1);
             const int I = 1;
@@ -46,14 +48,14 @@
         }
 
         [Test]
-        public void ResultShouldNotEqualNull()
+        public void ShouldNotEqualNull()
         {
             Assert.AreNotEqual(Result.Success, null);
             Assert.False(Result.Success.Equals(null));
         }
 
         [Test]
-        public void ResultShouldNotEqualUnsupportedType()
+        public void ShouldNotEqualUnsupportedType()
         {
             Assert.AreNotEqual(Result.Success, new object());
             Assert.False(Result.Success.Equals(new object()));
@@ -86,7 +88,7 @@
         }
 
         [Test]
-        public void ResultShouldImplicitCastToInt()
+        public void ShouldImplicitCastToInt()
         {
             var result = new Result(2);
             int i = result;
@@ -138,9 +140,33 @@
         }
 
         [Test]
+        public void CompareToEqualIntShouldReturnZero()
+        {
+            Assert.AreEqual(new Result(0).CompareTo(0), 0);
+        }
+
+        [Test]
+        public void IntCompareToEqualResultShouldReturnZero()
+        {
+            Assert.AreEqual(0.CompareTo(new Result(0)), 0);
+        }
+
+        [Test]
         public void CompareToLowerShouldReturnPositive()
         {
             Assert.Greater(new Result(1), new Result(0));
+        }
+
+        [Test]
+        public void CompareToLowerIntShouldReturnPositive()
+        {
+            Assert.Greater(new Result(1), 0);
+        }
+
+        [Test]
+        public void IntCompareToLowerResultShouldReturnPositive()
+        {
+            Assert.Greater(1, new Result(0));
         }
 
         [Test]
@@ -150,11 +176,24 @@
         }
 
         [Test]
+        public void CompareToHigherIntShouldReturnNegative()
+        {
+            Assert.Less(new Result(0), 1);
+        }
+
+        [Test]
+        public void IntCompareToHigherResultShouldReturnNegative()
+        {
+            Assert.Less(0, new Result(1));
+        }
+
+        [Test]
         public void GreaterOrEqualShouldReturnTrueWhenEqual()
         {
             // ReSharper disable once EqualExpressionComparison
             Assert.True(new Result(0) >= new Result(0), "Result >= Result comparison failed.");
             Assert.True(new Result(0) >= 0, "Result >= int comparison failed.");
+            Assert.True(0 >= new Result(0), "int >= Result comparison failed.");
         }
 
         [Test]
@@ -163,6 +202,7 @@
             // ReSharper disable once EqualExpressionComparison
             Assert.True(new Result(0) <= new Result(0), "Result <= Result comparison failed.");
             Assert.True(new Result(0) <= 0, "Result <= int comparison failed.");
+            Assert.True(0 <= new Result(0), "int <= Result comparison failed.");
         }
 
         [Test]
@@ -171,6 +211,7 @@
             // ReSharper disable once EqualExpressionComparison
             Assert.True(new Result(1) >= new Result(0), "Result >= Result comparison failed.");
             Assert.True(new Result(1) >= 0, "Result >= int comparison failed.");
+            Assert.True(1 >= new Result(0), "int >= Result comparison failed.");
         }
 
         [Test]
@@ -179,6 +220,7 @@
             // ReSharper disable once EqualExpressionComparison
             Assert.True(new Result(0) <= new Result(1), "Result <= Result comparison failed.");
             Assert.True(new Result(0) <= 1, "Result <= int comparison failed.");
+            Assert.True(0 <= new Result(1), "int <= Result comparison failed.");
         }
 
         [Test]
@@ -187,6 +229,7 @@
             // ReSharper disable once EqualExpressionComparison
             Assert.False(new Result(0) >= new Result(1), "Result >= Result comparison failed.");
             Assert.False(new Result(0) >= 1, "Result >= int comparison failed.");
+            Assert.False(0 >= new Result(1), "int >= Result comparison failed.");
         }
 
         [Test]
@@ -195,6 +238,7 @@
             // ReSharper disable once EqualExpressionComparison
             Assert.False(new Result(1) <= new Result(0), "Result <= Result comparison failed.");
             Assert.False(new Result(1) <= 0, "Result <= int comparison failed.");
+            Assert.False(1 <= new Result(0), "int <= Result comparison failed.");
         }
 
         [Test]
@@ -202,6 +246,7 @@
         {
             Assert.True(new Result(1) > new Result(0), "Result > Result comparison failed.");
             Assert.True(new Result(1) > 0, "Result > int comparison failed.");
+            Assert.True(1 > new Result(0), "int > Result comparison failed.");
         }
 
         [Test]
@@ -209,6 +254,7 @@
         {
             Assert.False(new Result(0) > new Result(1), "Result > Result comparison failed.");
             Assert.False(new Result(0) > 1, "Result > int comparison failed.");
+            Assert.False(0 > new Result(1), "int > Result comparison failed.");
         }
 
         [Test]
@@ -217,6 +263,7 @@
             // ReSharper disable once EqualExpressionComparison
             Assert.False(new Result(0) > new Result(0), "Result > Result comparison failed.");
             Assert.False(new Result(0) > 0, "Result > int comparison failed.");
+            Assert.False(0 > new Result(0), "int > Result comparison failed.");
         }
 
         [Test]
@@ -224,6 +271,7 @@
         {
             Assert.True(new Result(0) < new Result(1), "Result < Result comparison failed.");
             Assert.True(new Result(0) < 1, "Result < int comparison failed.");
+            Assert.True(0 < new Result(1), "int < Result comparison failed.");
         }
 
         [Test]
@@ -231,6 +279,7 @@
         {
             Assert.False(new Result(1) < new Result(0), "Result < Result comparison failed.");
             Assert.False(new Result(1) < 0, "Result < int comparison failed.");
+            Assert.False(1 < new Result(0), "int < Result comparison failed.");
         }
 
         [Test]
@@ -239,6 +288,7 @@
             // ReSharper disable once EqualExpressionComparison
             Assert.False(new Result(0) < new Result(0), "Result < Result comparison failed.");
             Assert.False(new Result(0) < 0, "Result < int comparison failed.");
+            Assert.False(0 < new Result(0), "int < Result comparison failed.");
         }
 
         [Test]
