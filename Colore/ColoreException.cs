@@ -33,13 +33,27 @@ namespace Colore
     using System;
     using System.Runtime.Serialization;
 
+    /// <summary>
+    /// Generic Colore library exception.
+    /// </summary>
     public class ColoreException : Exception
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ColoreException" /> class.
+        /// </summary>
+        /// <param name="message">Exception message.</param>
+        /// <param name="innerException">Inner exception object.</param>
         public ColoreException(string message = null, Exception innerException = null)
             : base(message, innerException)
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ColoreException" /> class
+        /// from serialization data.
+        /// </summary>
+        /// <param name="info">Serialization info object.</param>
+        /// <param name="context">Streaming context.</param>
         protected ColoreException(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
