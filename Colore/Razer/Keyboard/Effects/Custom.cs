@@ -39,13 +39,13 @@ namespace Colore.Razer.Keyboard.Effects
     public struct Custom
     {
         /// <summary>
-        /// The color to use for the effect.
-        /// </summary>
-        public uint Color;
-
-        /// <summary>
         /// The key to apply the effect to.
         /// </summary>
         public Key Key;
+
+        /// <summary>
+        /// The color to use for the effect.
+        /// </summary>
+        public uint Color;
     }
 }
