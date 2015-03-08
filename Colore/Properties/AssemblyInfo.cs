@@ -34,13 +34,29 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Colore")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyDescription("A C#/.NET library for interacting with Razer's Chroma SDK.")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Colore")]
-[assembly: AssemblyCopyright("Copyright ©  2015")]
+[assembly: AssemblyCopyright("Copyright © 2015 by Adam Hellberg and Brandon Scott.")]
 [assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
+
+#if DEBUG
+#if WIN64
+[assembly: AssemblyConfiguration("Debug (x64)")]
+#elif WIN32
+[assembly: AssemblyConfiguration("Debug (x86)")]
+#else
+[assembly: AssemblyConfiguration("Debug")]
+#endif
+#else
+#if WIN64
+[assembly: AssemblyConfiguration("Release (x64)")]
+#elif WIN32
+[assembly: AssemblyConfiguration("Release (x86)")]
+#else
+[assembly: AssemblyConfiguration("Release")]
+#endif
+#endif
 
 // Setting ComVisible to false makes the types in this assembly not visible
 // to COM components.  If you need to access a type in this assembly from
