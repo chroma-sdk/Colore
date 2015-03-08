@@ -31,7 +31,7 @@
 namespace Colore.Razer.Keyboard
 {
     /// <summary>
-    /// The definitions of generic constant values used in the project
+    /// Holds various keyboard constants used in Razer's API.
     /// </summary>
     public static class Constants
     {
