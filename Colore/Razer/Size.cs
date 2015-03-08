@@ -154,12 +154,12 @@ namespace Colore.Razer
             return ((IConvertible)_value).ToType(conversionType, provider);
         }
 
-        public int CompareTo(ulong other)
+        public int CompareTo(size_t other)
         {
             return _value.CompareTo(other);
         }
 
-        public bool Equals(ulong other)
+        public bool Equals(size_t other)
         {
             return _value.Equals(other);
         }
