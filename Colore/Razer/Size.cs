@@ -30,6 +30,7 @@
 
 namespace Colore.Razer
 {
+    using System.Runtime.InteropServices;
     using System;
 
 #if WIN64
@@ -46,8 +47,10 @@ namespace Colore.Razer
 
 #endif
 
+    [StructLayout(LayoutKind.Explicit, Size = sizeof(size_t))]
     public struct Size : IComparable<Size>, IEquatable<Size>, IComparable<size_t>, IEquatable<size_t>
     {
+        [FieldOffset(0)]
         private readonly size_t _value;
 
         public Size(size_t value)
