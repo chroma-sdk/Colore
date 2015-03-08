@@ -28,7 +28,7 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Razer
+namespace Colore.Core
 {
     using System;
     using System.Runtime.InteropServices;

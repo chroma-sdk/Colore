@@ -1,5 +1,6 @@
 ﻿namespace Colore.Tests.Razer
 {
+    using Colore.Core;
     using Colore.Razer;
 
     using NUnit.Framework;
