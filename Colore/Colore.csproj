@@ -78,6 +78,7 @@
     <Compile Include="ColoreException.cs" />
     <Compile Include="Core\Color.cs" />
     <Compile Include="Core\Colore.cs" />
+    <Compile Include="Core\NativeWrapper.cs" />
     <Compile Include="Core\Size.cs" />
     <Compile Include="Razer\Constants.cs" />
     <Compile Include="Razer\Keyboard\Constants.cs" />
