@@ -43,7 +43,7 @@ namespace Colore
         /// </summary>
         /// <param name="message">Exception message.</param>
         /// <param name="innerException">Inner exception object.</param>
-        public ColoreException(string message = null, Exception innerException = null)
+        internal ColoreException(string message = null, Exception innerException = null)
             : base(message, innerException)
         {
         }
