@@ -5,6 +5,17 @@
             <Word>Numlock</Word>
             <Word>Numpad</Word>
             <Word>半角/全角</Word>
+            <Word>Razer</Word>
+            <Word>Razer's</Word>
+            <Word>BlackWidow</Word>
+            <Word>半角</Word>
+            <Word>全角</Word>
+            <Word>無変換</Word>
+            <Word>変換</Word>
+            <Word>ひらがな</Word>
+            <Word>カタカナ</Word>
+            <Word>한자</Word>
+            <Word>Fn</Word>
         </Recognized>
     </Words>
     <Acronyms>
