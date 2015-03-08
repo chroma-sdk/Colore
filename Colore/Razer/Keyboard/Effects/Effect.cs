@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Colore.cs" company="Corale">
+// <copyright file="Effect.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,9 +28,46 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Core
+namespace Colore.Razer.Keyboard.Effects
 {
-    internal class Colore
+    /// <summary>
+    /// Supported built-in keyboard effects.
+    /// </summary>
+    public enum Effect
     {
+        /// <summary>
+        /// No effect.
+        /// </summary>
+        None = 0,
+
+        /// <summary>
+        /// Wave effect.
+        /// </summary>
+        Wave,
+
+        /// <summary>
+        /// Spectrum cycling effect.
+        /// </summary>
+        SpectrumCycling,
+
+        /// <summary>
+        /// Breathing effect.
+        /// </summary>
+        Breathing,
+
+        /// <summary>
+        /// Reactive effect.
+        /// </summary>
+        Reactive,
+
+        /// <summary>
+        /// Static effect.
+        /// </summary>
+        Static,
+
+        /// <summary>
+        /// Invalid effect.
+        /// </summary>
+        Invalid
     }
 }

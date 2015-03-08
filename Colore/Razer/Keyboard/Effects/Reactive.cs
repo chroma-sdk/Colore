@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Colore.cs" company="Corale">
+// <copyright file="Reactive.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,9 +28,24 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Core
+namespace Colore.Razer.Keyboard.Effects
 {
-    internal class Colore
+    using System.Runtime.InteropServices;
+
+    /// <summary>
+    /// Describes the reactive effect type.
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public struct Reactive
     {
+        /// <summary>
+        /// Color of the effect.
+        /// </summary>
+        public uint Color;
+
+        /// <summary>
+        /// The duration of the effect.
+        /// </summary>
+        public Duration Duration;
     }
 }

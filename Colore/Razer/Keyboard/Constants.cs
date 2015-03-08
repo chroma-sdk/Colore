@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Colore.cs" company="Corale">
+// <copyright file="Constants.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,9 +28,33 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Core
+namespace Colore.Razer.Keyboard
 {
-    internal class Colore
+    using Colore.Core;
+
+    /// <summary>
+    /// Holds various keyboard constants used in Razer's API.
+    /// </summary>
+    public static class Constants
     {
+        /// <summary>
+        /// The maximum number of rows on the keyboard
+        /// </summary>
+        public static readonly Size MaxRows = 6;
+
+        /// <summary>
+        /// The maximum number of columns on the keyboard
+        /// </summary>
+        public static readonly Size MaxColumns = 22;
+
+        /// <summary>
+        /// The maximum number of keys on the keyboard
+        /// </summary>
+        public static readonly Size MaxKeys = MaxRows * MaxColumns;
+
+        /// <summary>
+        /// The maximum number of custom effects based on the maximum keys
+        /// </summary>
+        public static readonly Size MaxCustomEffects = MaxKeys;
     }
 }

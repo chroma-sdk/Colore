@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Colore.cs" company="Corale">
+// <copyright file="Duration.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,9 +28,36 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Core
+namespace Colore.Razer.Keyboard.Effects
 {
-    internal class Colore
+    /// <summary>
+    /// Supported duration lengths.
+    /// </summary>
+    public enum Duration
     {
+        /// <summary>
+        /// No duration.
+        /// </summary>
+        None = 0,
+
+        /// <summary>
+        /// Short duration.
+        /// </summary>
+        Short,
+
+        /// <summary>
+        /// Medium duration.
+        /// </summary>
+        Medium,
+
+        /// <summary>
+        /// Long duration.
+        /// </summary>
+        Long,
+
+        /// <summary>
+        /// Invalid duration.
+        /// </summary>
+        Invalid
     }
 }

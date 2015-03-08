@@ -1,6 +1,6 @@
-﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Colore.cs" company="Corale">
-//     Copyright © 2015 by Adam Hellberg and Brandon Scott.
+// ---------------------------------------------------------------------------------------
+// <copyright file="Breathing.cs" company="Corale">
+//     Copyright � 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -28,9 +28,24 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Core
+namespace Colore.Razer.Keyboard.Effects
 {
-    internal class Colore
+    using System.Runtime.InteropServices;
+
+    /// <summary>
+    /// Describes the breathing effect.
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public struct Breathing
     {
+        /// <summary>
+        /// First color.
+        /// </summary>
+        public uint FirstColor;
+
+        /// <summary>
+        /// Second color.
+        /// </summary>
+        public uint SecondColor;
     }
 }

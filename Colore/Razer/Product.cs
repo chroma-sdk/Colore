@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Colore.cs" company="Corale">
+// <copyright file="Product.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,9 +28,29 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Core
+namespace Colore.Razer
 {
-    internal class Colore
+    /// <summary>
+    /// Chroma-supported products.
+    /// </summary>
+    public enum Product
     {
+        /// <summary>
+        /// No product.
+        /// </summary>
+        None = 0,
+
+        /// <summary>
+        /// The Razer BlackWidow Chroma.
+        /// </summary>
+        /// <remarks>
+        /// Device Id = <c>2EA1BB63-CA28-428D-9F06-196B88330BBB</c>.
+        /// </remarks>
+        BlackWidowChroma,
+
+        /// <summary>
+        /// Invalid product.
+        /// </summary>
+        Invalid
     }
 }

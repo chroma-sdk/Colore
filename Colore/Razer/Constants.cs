@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Colore.cs" company="Corale">
+// <copyright file="Constants.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,9 +28,28 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Core
+namespace Colore.Razer
 {
-    internal class Colore
+    using System;
+
+    /// <summary>
+    /// The definitions of generic constant values used in the project
+    /// </summary>
+    public static class Constants
     {
+        /// <summary>
+        /// Used by Razer code to send Chroma event messages.
+        /// </summary>
+        public const uint WmChromaEvent = WmApp + 0x2000;
+
+        /// <summary>
+        /// Used to define private messages, usually of the form WM_APP+x, where x is an integer value.
+        /// </summary>
+        /// <remarks>
+        /// The <strong>WM_APP</strong> constant is used to distinguish between message values
+        /// that are reserved for use by the system and values that can be used by an
+        /// application to send messages within a private window class.
+        /// </remarks>
+        private const uint WmApp = 0x8000;
     }
 }
