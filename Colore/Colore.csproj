@@ -78,6 +78,7 @@
     <Compile Include="Core\Colore.cs" />
     <Compile Include="Native\ChromaAPI.cs" />
     <Compile Include="Razer\Constants.cs" />
+    <Compile Include="Razer\Keyboard\Constants.cs" />
     <Compile Include="Razer\Keyboard\Effect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Razer\Keyboard\Key.cs" />
