@@ -37,7 +37,7 @@ namespace Colore.Razer
 
     // RZRESULT is a typedef of LONG on C-side. LONG is always 32-bit in WinC.
     // TODO: Finish implementing overloads.
-    public struct Result : IComparable, IFormattable, IConvertible, IComparable<int>, IEquatable<int>
+    public struct Result : IComparable<int>, IComparable<Result>, IEquatable<int>, IEquatable<Result>
     {
         [Description("Access denied.")]
         public static Result AccessDenied = 5;
@@ -102,6 +102,21 @@ namespace Colore.Razer
             return new Result(l);
         }
 
+        public static implicit operator bool(Result result)
+        {
+            return result == Success;
+        }
+
+        public static bool operator true(Result result)
+        {
+            return result;
+        }
+
+        public static bool operator false(Result result)
+        {
+            return !result;
+        }
+
         public static bool operator !=(Result left, object right)
         {
             return !left.Equals(right);
@@ -112,9 +127,44 @@ namespace Colore.Razer
             return left.Equals(right);
         }
 
-        public int CompareTo(object obj)
+        public static bool operator >(Result left, Result right)
         {
-            return ((IComparable)_value).CompareTo(obj);
+            return left.CompareTo(right) > 0;
+        }
+
+        public static bool operator >=(Result left, Result right)
+        {
+            return left.CompareTo(right) >= 0;
+        }
+
+        public static bool operator <(Result left, Result right)
+        {
+            return left.CompareTo(right) < 0;
+        }
+
+        public static bool operator <=(Result left, Result right)
+        {
+            return left.CompareTo(right) <= 0;
+        }
+
+        public static bool operator >(Result left, int right)
+        {
+            return left.CompareTo(right) > 0;
+        }
+
+        public static bool operator >=(Result left, int right)
+        {
+            return left.CompareTo(right) >= 0;
+        }
+
+        public static bool operator <(Result left, int right)
+        {
+            return left.CompareTo(right) < 0;
+        }
+
+        public static bool operator <=(Result left, int right)
+        {
+            return left.CompareTo(right) <= 0;
         }
 
         public int CompareTo(Result other)
@@ -156,99 +206,9 @@ namespace Colore.Razer
             return _value;
         }
 
-        public TypeCode GetTypeCode()
-        {
-            return ((IConvertible)_value).GetTypeCode();
-        }
-
-        public bool ToBoolean(IFormatProvider provider)
-        {
-            return ((IConvertible)_value).ToBoolean(provider);
-        }
-
-        public byte ToByte(IFormatProvider provider)
-        {
-            return ((IConvertible)_value).ToByte(provider);
-        }
-
-        public char ToChar(IFormatProvider provider)
-        {
-            return ((IConvertible)_value).ToChar(provider);
-        }
-
-        public DateTime ToDateTime(IFormatProvider provider)
-        {
-            return ((IConvertible)_value).ToDateTime(provider);
-        }
-
-        public decimal ToDecimal(IFormatProvider provider)
-        {
-            return ((IConvertible)_value).ToDecimal(provider);
-        }
-
-        public double ToDouble(IFormatProvider provider)
-        {
-            return ((IConvertible)_value).ToDouble(provider);
-        }
-
-        public short ToInt16(IFormatProvider provider)
-        {
-            return ((IConvertible)_value).ToInt16(provider);
-        }
-
-        public int ToInt32(IFormatProvider provider)
-        {
-            return ((IConvertible)_value).ToInt32(provider);
-        }
-
-        public long ToInt64(IFormatProvider provider)
-        {
-            return ((IConvertible)_value).ToInt64(provider);
-        }
-
-        public sbyte ToSByte(IFormatProvider provider)
-        {
-            return ((IConvertible)_value).ToSByte(provider);
-        }
-
-        public float ToSingle(IFormatProvider provider)
-        {
-            return ((IConvertible)_value).ToSingle(provider);
-        }
-
         public override string ToString()
         {
             return string.Format("{0}: {1} ({2})", Name, Description, _value);
-        }
-
-        public string ToString(string format, IFormatProvider provider)
-        {
-            return string.Format(provider, "{0}: {1} ({2})", Name, Description, ((IFormattable)_value).ToString(format, provider));
-        }
-
-        public string ToString(IFormatProvider provider)
-        {
-            return string.Format(provider, "{0}: {1} ({2})", Name, Description, _value);
-        }
-
-        public object ToType(Type conversionType, IFormatProvider provider)
-        {
-            return ((IConvertible)_value).ToType(conversionType, provider);
-        }
-
-        public ushort ToUInt16(IFormatProvider provider)
-        {
-            return ((IConvertible)_value).ToUInt16(provider);
-        }
-
-        public uint ToUInt32(IFormatProvider provider)
-        {
-            return ((IConvertible)_value).ToUInt32(provider);
-        }
-
-        public ulong ToUInt64(IFormatProvider provider)
-        {
-            return ((IConvertible)_value).ToUInt64(provider);
         }
 
         private static Dictionary<Result, Metadata> BuildMetadata()
