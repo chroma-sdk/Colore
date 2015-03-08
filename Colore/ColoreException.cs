@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Colore.cs" company="Corale">
+// <copyright file="ColoreException.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,9 +28,21 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Core
+namespace Colore
 {
-    internal class Colore
+    using System;
+    using System.Runtime.Serialization;
+
+    public class ColoreException : Exception
     {
+        public ColoreException(string message = null, Exception innerException = null)
+            : base(message, innerException)
+        {
+        }
+
+        protected ColoreException(SerializationInfo info, StreamingContext context)
+            : base(info, context)
+        {
+        }
     }
 }

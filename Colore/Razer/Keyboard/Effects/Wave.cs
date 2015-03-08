@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Colore.cs" company="Corale">
+// <copyright file="Wave.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,9 +28,19 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Core
+namespace Colore.Razer.Keyboard.Effects
 {
-    internal class Colore
+    using System.Runtime.InteropServices;
+
+    /// <summary>
+    /// The wave effect for the keyboard.
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public struct Wave
     {
+        /// <summary>
+        /// Direction of wave effect.
+        /// </summary>
+        public Direction Direction;
     }
 }

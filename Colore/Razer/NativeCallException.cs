@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Colore.cs" company="Corale">
+// <copyright file="NativeCallException.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,9 +28,50 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Core
+namespace Colore.Razer
 {
-    internal class Colore
+    using System.ComponentModel;
+    using System.Globalization;
+    using System.Runtime.Serialization;
+
+    public class NativeCallException : ColoreException
     {
+        private readonly string _function;
+
+        private readonly Result _result;
+
+        public NativeCallException(string function, Result result)
+            : base(
+                string.Format(
+                    CultureInfo.InvariantCulture,
+                    "Call to native Chroma API function {0} failed with error: {1}",
+                    function,
+                    result),
+                new Win32Exception(result))
+        {
+            _function = function;
+            _result = result;
+        }
+
+        protected NativeCallException(SerializationInfo info, StreamingContext context)
+            : base(info, context)
+        {
+        }
+
+        public string Function
+        {
+            get
+            {
+                return _function;
+            }
+        }
+
+        public Result Result
+        {
+            get
+            {
+                return _result;
+            }
+        }
     }
 }

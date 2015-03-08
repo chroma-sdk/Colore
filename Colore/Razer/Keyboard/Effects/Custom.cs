@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Colore.cs" company="Corale">
+// <copyright file="Custom.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,9 +28,24 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Core
+namespace Colore.Razer.Keyboard.Effects
 {
-    internal class Colore
+    using System.Runtime.InteropServices;
+
+    /// <summary>
+    /// Describes a custom effect for a specific key.
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public struct Custom
     {
+        /// <summary>
+        /// The key to apply the effect to.
+        /// </summary>
+        public Key Key;
+
+        /// <summary>
+        /// The color to use for the effect.
+        /// </summary>
+        public uint Color;
     }
 }

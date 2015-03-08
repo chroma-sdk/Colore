@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Colore.cs" company="Corale">
+// <copyright file="Direction.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,9 +28,31 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Core
+namespace Colore.Razer.Keyboard.Effects
 {
-    internal class Colore
+    /// <summary>
+    /// Direction of the wave effect.
+    /// </summary>
+    public enum Direction
     {
+        /// <summary>
+        /// No direction.
+        /// </summary>
+        None = 0,
+
+        /// <summary>
+        /// Left to right.
+        /// </summary>
+        LeftToRight,
+
+        /// <summary>
+        /// Right to left.
+        /// </summary>
+        RightToLeft,
+
+        /// <summary>
+        /// Invalid direction.
+        /// </summary>
+        Invalid
     }
 }

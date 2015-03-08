@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Colore.cs" company="Corale">
+// <copyright file="Breathing.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,9 +28,19 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Core
+namespace Colore.Razer.Mouse.Effects
 {
-    internal class Colore
+    using System.Runtime.InteropServices;
+
+    /// <summary>
+    /// Describes the breathing effect type.
+    /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
+    public struct Breathing
     {
+        /// <summary>
+        /// The color of the effect.
+        /// </summary>
+        public uint Color;
     }
 }
