@@ -28,8 +28,6 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-using System;
-
 namespace Colore.Razer.Keyboard
 {
     /// <summary>
@@ -57,9 +55,9 @@ namespace Colore.Razer.Keyboard
         /// </summary>
         public static readonly Size MaxCustomEffects = MaxKeys;
 
-        /// <summary>
-        /// A grid representation of the keyboard
-        /// </summary>
+        // <summary>
+        // A grid representation of the keyboard
+        // </summary>
         //Todo: Speak with Razer to implement
         //public static readonly Int32 RZKEY_GRID_LAYOUT[MAX_ROW][MAX_COLUMN] = {};
     }
