@@ -38,17 +38,17 @@ namespace Colore.Razer.Keyboard
         /// <summary>
         /// The maximum number of rows on the keyboard
         /// </summary>
-        public static readonly Size MaxRow = 6;
+        public static readonly Size MaxRows = 6;
 
         /// <summary>
         /// The maximum number of columns on the keyboard
         /// </summary>
-        public static readonly Size MaxColumn = 22;
+        public static readonly Size MaxColumns = 22;
 
         /// <summary>
         /// The maximum number of keys on the keyboard
         /// </summary>
-        public static readonly Size MaxKeys = MaxRow * MaxColumn;
+        public static readonly Size MaxKeys = MaxRows * MaxColumns;
 
          /// <summary>
         /// The maximum number of custom effects based on the maximum keys
