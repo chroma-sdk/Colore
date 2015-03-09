@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>Colore</title>
+    <authors>$author$</authors>
+    <owners>Adam Hellberg, Brandon Scott</owners>
+    <licenseUrl>https://github.com/CoraleStudios/Colore/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/Corale/Colore</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <copyright>Copyright (c) 2015 by Adam Hellberg and Brandon Scott.</copyright>
+    <tags>Razer Chroma Corale</tags>
+  </metadata>
+</package>
