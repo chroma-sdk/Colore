@@ -28,11 +28,10 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Razer
+namespace Colore.Core
 {
     using System;
     using System.Runtime.InteropServices;
-
 #if WIN64
 
     using size_t = System.UInt64;
@@ -40,10 +39,6 @@ namespace Colore.Razer
 #elif WIN32
 
     using size_t = System.UInt32;
-
-#else
-
-#error Unsupported build configuration.
 
 #endif
 

@@ -30,6 +30,8 @@
 
 namespace Colore.Razer.Keyboard
 {
+    using Colore.Core;
+
     /// <summary>
     /// Holds various keyboard constants used in Razer's API.
     /// </summary>

@@ -76,7 +76,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ColoreException.cs" />
+    <Compile Include="Core\Color.cs" />
     <Compile Include="Core\Colore.cs" />
+    <Compile Include="Core\NativeWrapper.cs" />
+    <Compile Include="Core\Size.cs" />
     <Compile Include="Razer\Constants.cs" />
     <Compile Include="Razer\Keyboard\Constants.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -99,7 +102,6 @@
     <Compile Include="Razer\NativeMethods.cs" />
     <Compile Include="Razer\Product.cs" />
     <Compile Include="Razer\Result.cs" />
-    <Compile Include="Razer\Size.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

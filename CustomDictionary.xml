@@ -2,6 +2,7 @@
 <Dictionary xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="CustomDictionary.xsd">
     <Words>
         <Recognized>
+            <Word>Colore</Word>
             <Word>Numlock</Word>
             <Word>Numpad</Word>
             <Word>半角/全角</Word>

@@ -50,40 +50,40 @@
         [Test]
         public void ShouldNotEqualNull()
         {
-            Assert.AreNotEqual(Result.Success, null);
-            Assert.False(Result.Success.Equals(null));
+            Assert.AreNotEqual(Result.RzSuccess, null);
+            Assert.False(Result.RzSuccess.Equals(null));
         }
 
         [Test]
         public void ShouldNotEqualUnsupportedType()
         {
-            Assert.AreNotEqual(Result.Success, new object());
-            Assert.False(Result.Success.Equals(new object()));
+            Assert.AreNotEqual(Result.RzSuccess, new object());
+            Assert.False(Result.RzSuccess.Equals(new object()));
         }
 
         [Test]
         public void SuccessShouldEqualTrue()
         {
-            Assert.True(Result.Success);
+            Assert.True(Result.RzSuccess);
         }
 
         [Test]
         public void FailureShouldEqualFalse()
         {
-            Assert.False(Result.Failed);
+            Assert.False(Result.RzFailed);
         }
 
         [Test]
         public void SuccessShouldImplicitCastToTrueBool()
         {
-            bool test = Result.Success;
+            bool test = Result.RzSuccess;
             Assert.True(test);
         }
 
         [Test]
         public void FailureShouldImplicitCastToFalseBool()
         {
-            bool test = Result.Failed;
+            bool test = Result.RzFailed;
             Assert.False(test);
         }
 
@@ -106,13 +106,13 @@
         [Test]
         public void DefinedResultShouldHaveName()
         {
-            Assert.AreEqual(Result.Success.Name, "Success");
+            Assert.AreEqual(Result.RzSuccess.Name, "RzSuccess");
         }
 
         [Test]
         public void DefinedResultShouldHaveDescription()
         {
-            Assert.AreEqual(Result.Success.Description, "Success.");
+            Assert.AreEqual(Result.RzSuccess.Description, "Success.");
         }
 
         [Test]
@@ -130,7 +130,7 @@
         [Test]
         public void ResultShouldToStringCorrectly()
         {
-            Assert.AreEqual(Result.Success.ToString(), "Success: Success. (0)");
+            Assert.AreEqual(Result.RzSuccess.ToString(), "RzSuccess: Success. (0)");
         }
 
         [Test]
@@ -295,7 +295,7 @@
         public void FalseShouldShortCircuitLogicalAnd()
         {
             // ReSharper disable once RedundantLogicalConditionalExpressionOperand
-            if (Result.Failed && true)
+            if (Result.RzFailed && true)
                 Assert.Fail("If-check failed");
         }
 
@@ -303,7 +303,7 @@
         public void TrueShouldShortCircuitLogicalOr()
         {
             // ReSharper disable once RedundantLogicalConditionalExpressionOperand
-            if (Result.Success || false)
+            if (Result.RzSuccess || false)
                 Assert.Pass();
             Assert.Fail("If-check failed.");
         }

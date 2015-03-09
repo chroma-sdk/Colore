@@ -40,32 +40,32 @@ namespace Colore.Razer
     public struct Result : IComparable<int>, IComparable<Result>, IEquatable<int>, IEquatable<Result>
     {
         [Description("Access denied.")]
-        public static readonly Result AccessDenied = 5;
+        public static readonly Result RzAccessDenied = 5;
 
         // TODO: Here be dragons?
         [Description("General failure.")]
-        public static readonly Result Failed = unchecked((int)2147500037);
+        public static readonly Result RzFailed = unchecked((int)2147500037);
 
         [Description("Invalid.")]
-        public static readonly Result Invalid = -1;
+        public static readonly Result RzInvalid = -1;
 
         [Description("Invalid parameter.")]
-        public static readonly Result InvalidParameter = 87;
+        public static readonly Result RzInvalidParameter = 87;
 
         [Description("Not supported.")]
-        public static readonly Result NotSupported = 50;
+        public static readonly Result RzNotSupported = 50;
 
         [Description("Request aborted.")]
-        public static readonly Result RequestAborted = 1235;
+        public static readonly Result RzRequestAborted = 1235;
 
         [Description("Resource not available or disabled.")]
-        public static readonly Result ResourceDisabled = 4309;
+        public static readonly Result RzResourceDisabled = 4309;
 
         [Description("Cannot start more than one instance of the specified program.")]
-        public static readonly Result SingleInstanceApp = 1152;
+        public static readonly Result RzSingleInstanceApp = 1152;
 
         [Description("Success.")]
-        public static readonly Result Success = 0;
+        public static readonly Result RzSuccess = 0;
 
         private static readonly IDictionary<Result, Metadata> FieldMetadata;
 
@@ -89,11 +89,27 @@ namespace Colore.Razer
             }
         }
 
+        public bool Failed
+        {
+            get
+            {
+                return this != RzSuccess;
+            }
+        }
+
         public string Name
         {
             get
             {
                 return FieldMetadata.ContainsKey(this) ? FieldMetadata[this].Name : "Unknown";
+            }
+        }
+
+        public bool Success
+        {
+            get
+            {
+                return this == RzSuccess;
             }
         }
 
@@ -139,7 +155,7 @@ namespace Colore.Razer
 
         public static implicit operator bool(Result result)
         {
-            return result == Success;
+            return result == RzSuccess;
         }
 
         public static bool operator !=(Result left, object right)

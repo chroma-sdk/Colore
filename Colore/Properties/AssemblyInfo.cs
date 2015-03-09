@@ -29,6 +29,7 @@
 // ---------------------------------------------------------------------------------------
 
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 /* General Information about an assembly is controlled through the following
@@ -42,6 +43,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyProduct("Colore")]
 [assembly: AssemblyCopyright("Copyright © 2015 by Adam Hellberg and Brandon Scott.")]
 [assembly: AssemblyTrademark("")]
+
+[assembly: InternalsVisibleTo("Colore.Tests")]
 
 #if DEBUG
 #if WIN64
