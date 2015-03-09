@@ -1,8 +1,10 @@
-version: 1.0.0.{build}
+version: 1.0.{build}
+
+install:
+  - nuget restore
 
 configuration:
 - Debug
-- Release
 
 platform:
 - x86
@@ -10,6 +12,10 @@ platform:
 
 matrix:
   fast_finish: true
+
+environment:
+  COVERALLS_REPO_TOKEN:
+    secure: MFfyfqucK824o3YhdTCIzsccWHO+oHKnqR9veWZLwC1+1lMaXoZTtyvJHi2NwXUp
 
 assembly_info:
   patch: true
@@ -24,6 +30,10 @@ nuget:
 build:
   project: Colore.sln
   verbosity: normal
+
+after_test:
+  - packages\OpenCover.4.5.3723\OpenCover.Console.exe -register:user -filter:"+[Colore*]* -[*Tests]*" -target:"packages\NUnit.Runners.2.6.4\tools\nunit-console.exe" -targetargs:"/noshadow /domain:single Colore.Tests\bin\%PLATFORM%\%CONFIGURATION%\Colore.Tests.dll" -output:coverage.xml
+  - packages\coveralls.io.1.2.2\tools\coveralls.net.exe --opencover coverage.xml
 
 artifacts:
 - path: Colore\bin\$(platform)\$(configuration)\Colore.dll
