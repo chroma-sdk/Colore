@@ -188,8 +188,8 @@ Other things to keep in mind is to include details about what your feature or ch
 When submitting your pull request, make sure you are targeting the [`develop`][develop] branch of the main repo. If you target the wrong branch we will close your pull request. Don't feel bad though, just re-create it with the correct target branch! (We have to close it as GitHub does not support changing the target branch on an existing pull request.)
 
 [AUTHORS]: AUTHORS
-[create an issue]: https://github.com/Corale/Colore/issues/new
-[main repo]: https://github.com/Corale/Colore
+[create an issue]: https://github.com/CoraleStudios/Colore/issues/new
+[main repo]: https://github.com/CoraleStudios/Colore
 [StyleCop]: http://stylecop.codeplex.com/
 [nativewrapper]: Colore/Core/NativeWrapper.cs
-[develop]: https://github.com/Corale/Colore/tree/develop
+[develop]: https://github.com/CoraleStudios/Colore/tree/develop
