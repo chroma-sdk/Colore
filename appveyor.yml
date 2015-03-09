@@ -1,51 +1,192 @@
-version: 1.0.{build}
+-
+  branches:
+    only:
+      - master
 
-install:
-  - nuget restore
+  version: 1.0.{build}
+  
+  skip_tags: true
 
-configuration:
-- Debug
+  install:
+    - nuget restore
 
-platform:
-- x86
-- x64
+  configuration: Release
 
-matrix:
-  fast_finish: true
+  platform:
+  - x86
+  - x64
 
-environment:
-  COVERALLS_REPO_TOKEN:
-    secure: MFfyfqucK824o3YhdTCIzsccWHO+oHKnqR9veWZLwC1+1lMaXoZTtyvJHi2NwXUp
+  matrix:
+    fast_finish: true
 
-assembly_info:
-  patch: true
-  file: Colore\Properties\AssemblyInfo.cs
-  assembly_version: '{version}'
-  assembly_file_version: '{version}'
-  assembly_informational_version: '{version}'
+  environment:
+    COVERALLS_REPO_TOKEN:
+      secure: /52HsSigAGXgmKFcFuNjgC3PPMIUkarMod0zxTDesVS5VNpKCyeqdBY3Ssy3R3Mg
 
-nuget:
-  disable_publish_on_pr: true
+  assembly_info:
+    patch: true
+    file: Colore\Properties\AssemblyInfo.cs
+    assembly_version: '{version}'
+    assembly_file_version: '{version}'
+    assembly_informational_version: '{version}-release'
 
-build:
-  project: Colore.sln
-  verbosity: normal
+  nuget:
+    disable_publish_on_pr: true
 
-after_test:
-  - packages\OpenCover.4.5.3723\OpenCover.Console.exe -register:user -filter:"+[Colore*]* -[*Tests]*" -target:"packages\NUnit.Runners.2.6.4\tools\nunit-console.exe" -targetargs:"/noshadow /domain:single Colore.Tests\bin\%PLATFORM%\%CONFIGURATION%\Colore.Tests.dll" -output:coverage.xml
-  - packages\coveralls.io.1.2.2\tools\coveralls.net.exe --opencover coverage.xml
+  build:
+    project: Colore.sln
+    verbosity: normal
 
-artifacts:
-- path: Colore\bin\$(platform)\$(configuration)\Colore.dll
-  name: dll_only
+  after_test:
+    - packages\OpenCover.4.5.3723\OpenCover.Console.exe -register:user -filter:"+[Colore*]* -[*Tests]*" -target:"packages\NUnit.Runners.2.6.4\tools\nunit-console.exe" -targetargs:"/noshadow /domain:single Colore.Tests\bin\%PLATFORM%\%CONFIGURATION%\Colore.Tests.dll" -output:coverage.xml
+    - packages\coveralls.io.1.2.2\tools\coveralls.net.exe --opencover coverage.xml
 
-deploy:
-- provider: GitHub
-  release: v$(appveyor_build_version)
-  description: Automatic release created by AppVeyor.
-  auth_token:
-    secure: ydn12l0oWmrQy0gZiWsLypa0kzYDBjVqAzlrrZ1+s97QRsCYkK3aA4KigRtC4CVm
-  artifact: dll_artifact
-  prerelease: true
-  on:
-    APPVEYOR_REPO_TAG: False
+  artifacts:
+  - path: Colore\bin\x86\$(configuration)\Colore.dll
+    name: colore_x86_dll
+  - path: Colore\bin\x64\$(configuration)\Colore.dll
+    name: colore_x64_dll
+  - path: Colore\bin\x86\$(configuration)\Colore.*
+    name: colore_x86
+  - path: Colore\bin\x64\$(configuration)\Colore.*
+    name: colore_x64
+
+  before_deploy:
+    - nuget pack Colore\Colore.csproj -Prop Configuration=%CONFIGURATION% -Prop Platform=x64 -Version "%APPVEYOR_BUILD_VERSION%"
+    - appveyor PushArtifact Colore\Colore*.nupkg
+
+  deploy:
+  - provider: Environment
+    name: Production
+    on:
+      branch: master
+      appveyor_repo_tag: true
+
+  - provider: NuGet
+    api_key:
+      secure: 0kgF06I+L8BAOvMagk7Muw+mkYQnZXAh+HO0S4Rnbr4BSuKWVCD5lBd5N4mpyABJ
+    on:
+      branch: master
+      appveyor_repo_tag: true
+  
+  - provider: GitHub
+    release: v$(appveyor_build_version)
+    description: Automatic release created by AppVeyor.
+    auth_token:
+      secure: ydn12l0oWmrQy0gZiWsLypa0kzYDBjVqAzlrrZ1+s97QRsCYkK3aA4KigRtC4CVm
+    artifact: colore_x86, colore_x64, colore_x86_dll, colore_x64_dll, /.*\.nupkg/
+    draft: true
+    prerelease: false
+    on:
+      branch: master
+      appveyor_repo_tag: true
+
+  notifications:
+  - provider: Slack
+    channel: colore
+    auth_token:
+      secure: q1G3kdpLxdD6RzSNVDZoEktdr3pcUY5KFXqxaV3mzGWWgOAyREl0ZHBNQUSWTLCy
+    on_build_success: true
+    on_build_failure: true
+    on_build_status_changed: true
+
+-
+  branches:
+    only:
+      - develop
+
+  version: 1.0.{build}
+  
+  skip_tags: true
+
+  install:
+    - nuget restore
+
+  configuration: Debug
+
+  platform:
+  - x86
+  - x64
+
+  matrix:
+    fast_finish: true
+
+  environment:
+    COVERALLS_REPO_TOKEN:
+      secure: /52HsSigAGXgmKFcFuNjgC3PPMIUkarMod0zxTDesVS5VNpKCyeqdBY3Ssy3R3Mg
+
+  assembly_info:
+    patch: true
+    file: Colore\Properties\AssemblyInfo.cs
+    assembly_version: '{version}'
+    assembly_file_version: '{version}'
+    assembly_informational_version: '{version}-release'
+
+  nuget:
+    disable_publish_on_pr: true
+
+  build:
+    project: Colore.sln
+    verbosity: normal
+
+  after_test:
+    - packages\OpenCover.4.5.3723\OpenCover.Console.exe -register:user -filter:"+[Colore*]* -[*Tests]*" -target:"packages\NUnit.Runners.2.6.4\tools\nunit-console.exe" -targetargs:"/noshadow /domain:single Colore.Tests\bin\%PLATFORM%\%CONFIGURATION%\Colore.Tests.dll" -output:coverage.xml
+    - packages\coveralls.io.1.2.2\tools\coveralls.net.exe --opencover coverage.xml
+
+  artifacts:
+  - path: Colore\bin\x86\$(configuration)\Colore.*
+    name: colore_x86
+  - path: Colore\bin\x64\$(configuration)\Colore.*
+    name: colore_x64
+
+  deploy:
+  - provider: Environment
+    name: Development
+    on:
+      branch: develop
+
+  notifications:
+  - provider: Slack
+    channel: colore
+    auth_token:
+      secure: q1G3kdpLxdD6RzSNVDZoEktdr3pcUY5KFXqxaV3mzGWWgOAyREl0ZHBNQUSWTLCy
+    on_build_success: false
+    on_build_failure: true
+    on_build_status_changed: true
+
+-
+  version: 1.0.{build}
+  
+  skip_tags: true
+
+  install
+    - nuget restore
+
+  configuration: Debug
+
+  platform: x64
+
+  matrix:
+    fast_finish: true
+
+  environment:
+    COVERALLS_REPO_TOKEN:
+      secure: /52HsSigAGXgmKFcFuNjgC3PPMIUkarMod0zxTDesVS5VNpKCyeqdBY3Ssy3R3Mg
+
+  assembly_info:
+    patch: true
+    file: Colore\Properties\AssemblyInfo.cs
+    assembly_version: '{version}'
+    assembly_file_version: '{version}'
+    assembly_informational_version: '{version}-debug-{branch}'
+
+  nuget:
+    disable_publish_on_pr: true
+
+  build:
+    project: Colore.sln
+    verbosity: normal
+
+  after_test:
+    - packages\OpenCover.4.5.3723\OpenCover.Console.exe -register:user -filter:"+[Colore*]* -[*Tests]*" -target:"packages\NUnit.Runners.2.6.4\tools\nunit-console.exe" -targetargs:"/noshadow /domain:single Colore.Tests\bin\%PLATFORM%\%CONFIGURATION%\Colore.Tests.dll" -output:coverage.xml
+    - packages\coveralls.io.1.2.2\tools\coveralls.net.exe --opencover coverage.xml
