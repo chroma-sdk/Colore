@@ -8,11 +8,11 @@ Contributing
 
 Contributors are very welcome! If you got code fixes, please [submit a pull request][newpull] here on GitHub.
 
-If you want to join the development team, please contact [Sharparam][sharp] on GitHub.
+If you want to join the development team, please contact [Sharparam][sharp] or [Brandon][bs] on GitHub.
 
 All authors and contributors are listed in the **AUTHORS** file.
 
-Please read the wiki page about [contributing][contrib] before submitting pull requests.
+Please read the [CONTRIBUTING.md](CONTRIBUTING.md) file before making a pull request.
 
 License
 -------
@@ -37,17 +37,23 @@ Building
 --------
 
 It's important to note that this project doesn't build on the "AnyCPU" platform (which is the default
-for C# projects). It builds against x86 to stay compliant with Razer's code which targets the x86
-platform. When building with MSBuild, you'd run something like:
+for C# projects). It builds against x86 or x64 to stay compliant with Razer's code which targets the x86 or x64
+platforms. When building with MSBuild, you'd run something like:
 
 ```
 msbuild Colore.sln /p:Configuration=Release;Platform=x86
 ```
 
-Make sure that your projects using Colore are also compiled against x86.
+(Replace `x86` with `x64` if compiling for Win64.)
 
-Colore does have a configuration mode that compiles it in AnyCPU, but it's untested, to run
-that config, simply replace `Platform=x86` in the above command with `Platform=AnyCPU`.
+Make sure that your projects using Colore are also compiled against a matching platform.
+
+Razer's SDK installer **will only install the library relevant for your platform**.
+
+This means that your apps will need to be compiled twice, once for x86 platforms, and once for x64.
+They must both be provided when you distribute your application, depending on what platform the user has.
+
+*We are looking into ways to make this requirement optional or not needed at all, and instead manage loading dynamically in some fancy way.*
 
 Projects
 --------
