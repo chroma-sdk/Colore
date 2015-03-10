@@ -67,7 +67,7 @@
       secure: 0kgF06I+L8BAOvMagk7Muw+mkYQnZXAh+HO0S4Rnbr4BSuKWVCD5lBd5N4mpyABJ
     on:
       branch: master
-      appveyor_repo_tag: true
+      appveyor_repo_tag: false
   
   - provider: GitHub
     release: v$(appveyor_build_version)
@@ -79,7 +79,7 @@
     prerelease: false
     on:
       branch: master
-      appveyor_repo_tag: true
+      appveyor_repo_tag: false
 
   notifications:
   - provider: Slack
