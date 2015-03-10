@@ -148,7 +148,7 @@
   
   skip_tags: true
 
-  install
+  install:
     - nuget restore
 
   configuration: Debug
