@@ -51,23 +51,12 @@
   - path: Colore\bin\x64\$(configuration)\Colore.*
     name: colore_x64
 
-  before_deploy:
-    - nuget pack Colore\Colore.csproj -Prop Configuration=%CONFIGURATION% -Prop Platform=x64 -Version "%APPVEYOR_BUILD_VERSION%"
-    - appveyor PushArtifact Colore\Colore*.nupkg
-
   deploy:
   - provider: Environment
     name: Production
     on:
       branch: master
       appveyor_repo_tag: true
-
-  - provider: NuGet
-    api_key:
-      secure: 0kgF06I+L8BAOvMagk7Muw+mkYQnZXAh+HO0S4Rnbr4BSuKWVCD5lBd5N4mpyABJ
-    on:
-      branch: master
-      appveyor_repo_tag: false
   
   - provider: GitHub
     release: v$(appveyor_build_version)
@@ -95,7 +84,7 @@
     only:
       - develop
 
-  version: 1.0.{build}
+  version: 0.0.{build}
   
   skip_tags: true
 
@@ -120,7 +109,7 @@
     file: Colore\Properties\AssemblyInfo.cs
     assembly_version: '{version}'
     assembly_file_version: '{version}'
-    assembly_informational_version: '{version}-release'
+    assembly_informational_version: '{version}-{branch}'
 
   nuget:
     disable_publish_on_pr: true
@@ -155,7 +144,7 @@
     on_build_status_changed: true
 
 -
-  version: 1.0.{build}
+  version: 0.0.{build}
   
   skip_tags: true
 
@@ -178,7 +167,7 @@
     file: Colore\Properties\AssemblyInfo.cs
     assembly_version: '{version}'
     assembly_file_version: '{version}'
-    assembly_informational_version: '{version}-debug-{branch}'
+    assembly_informational_version: '{version}-{branch}'
 
   nuget:
     disable_publish_on_pr: true
