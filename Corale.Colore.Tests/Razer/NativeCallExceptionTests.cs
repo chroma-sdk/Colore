@@ -1,4 +1,4 @@
-﻿namespace Colore.Tests.Razer
+﻿namespace Corale.Colore.Tests.Razer
 {
     using System.ComponentModel;
 
