@@ -44,7 +44,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCopyright("Copyright © 2015 by Adam Hellberg and Brandon Scott.")]
 [assembly: AssemblyTrademark("")]
 
-[assembly: InternalsVisibleTo("Colore.Tests")]
+[assembly: InternalsVisibleTo("Corale.Colore.Tests")]
 
 #if DEBUG
 #if WIN64
