@@ -32,11 +32,16 @@ namespace Corale.Colore.Core
 {
     using System;
     using System.Runtime.InteropServices;
+
 #if WIN64
 
     using size_t = System.UInt64;
 
 #elif WIN32
+
+    using size_t = System.UInt32;
+
+#else
 
     using size_t = System.UInt32;
 
