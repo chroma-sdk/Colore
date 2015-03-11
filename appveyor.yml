@@ -4,7 +4,7 @@
       - master
 
   version: 1.0.{build}
-  
+
   skip_tags: true
 
   install:
@@ -22,10 +22,11 @@
   environment:
     COVERALLS_REPO_TOKEN:
       secure: /52HsSigAGXgmKFcFuNjgC3PPMIUkarMod0zxTDesVS5VNpKCyeqdBY3Ssy3R3Mg
+    TESTS_DLL: Corale.Colore.Tests\bin\$(platform)\$(configuration)\Corale.Colore.Tests.dll
 
   assembly_info:
     patch: true
-    file: Colore\Properties\AssemblyInfo.cs
+    file: Corale.Colore\Properties\AssemblyInfo.cs
     assembly_version: '{version}'
     assembly_file_version: '{version}'
     assembly_informational_version: '{version}-release'
@@ -34,21 +35,21 @@
     disable_publish_on_pr: true
 
   build:
-    project: Colore.sln
+    project: Corale.Colore.sln
     verbosity: normal
 
   after_test:
-    - packages\OpenCover.4.5.3723\OpenCover.Console.exe -register:user -filter:"+[Colore*]* -[*Tests]*" -target:"packages\NUnit.Runners.2.6.4\tools\nunit-console.exe" -targetargs:"/noshadow /domain:single Colore.Tests\bin\%PLATFORM%\%CONFIGURATION%\Colore.Tests.dll" -output:coverage.xml
+    - packages\OpenCover.4.5.3723\OpenCover.Console.exe -register:user -filter:"+[Corale.Colore*]* -[*Tests]*" -target:"packages\NUnit.Runners.2.6.4\tools\nunit-console.exe" -targetargs:"/noshadow /domain:single %TESTS_DLL%" -output:coverage.xml
     - packages\coveralls.io.1.2.2\tools\coveralls.net.exe --opencover coverage.xml
 
   artifacts:
-  - path: Colore\bin\x86\$(configuration)\Colore.dll
+  - path: Corale.Colore\bin\x86\$(configuration)\Corale.Colore.dll
     name: colore_x86_dll
-  - path: Colore\bin\x64\$(configuration)\Colore.dll
+  - path: Corale.Colore\bin\x64\$(configuration)\Corale.Colore.dll
     name: colore_x64_dll
-  - path: Colore\bin\x86\$(configuration)\Colore.*
+  - path: Corale.Colore\bin\x86\$(configuration)\Corale.Colore.*
     name: colore_x86
-  - path: Colore\bin\x64\$(configuration)\Colore.*
+  - path: Corale.Colore\bin\x64\$(configuration)\Corale.Colore.*
     name: colore_x64
 
   deploy:
@@ -57,7 +58,7 @@
     on:
       branch: master
       appveyor_repo_tag: true
-  
+
   - provider: GitHub
     release: v$(appveyor_build_version)
     description: Automatic release created by AppVeyor.
@@ -85,7 +86,7 @@
       - develop
 
   version: 0.0.{build}
-  
+
   skip_tags: true
 
   install:
@@ -103,10 +104,11 @@
   environment:
     COVERALLS_REPO_TOKEN:
       secure: /52HsSigAGXgmKFcFuNjgC3PPMIUkarMod0zxTDesVS5VNpKCyeqdBY3Ssy3R3Mg
+    TESTS_DLL: Corale.Colore.Tests\bin\$(platform)\$(configuration)\Corale.Colore.Tests.dll
 
   assembly_info:
     patch: true
-    file: Colore\Properties\AssemblyInfo.cs
+    file: Corale.Colore\Properties\AssemblyInfo.cs
     assembly_version: '{version}'
     assembly_file_version: '{version}'
     assembly_informational_version: '{version}-{branch}'
@@ -115,24 +117,18 @@
     disable_publish_on_pr: true
 
   build:
-    project: Colore.sln
+    project: Corale.Colore.sln
     verbosity: normal
 
   after_test:
-    - packages\OpenCover.4.5.3723\OpenCover.Console.exe -register:user -filter:"+[Colore*]* -[*Tests]*" -target:"packages\NUnit.Runners.2.6.4\tools\nunit-console.exe" -targetargs:"/noshadow /domain:single Colore.Tests\bin\%PLATFORM%\%CONFIGURATION%\Colore.Tests.dll" -output:coverage.xml
+    - packages\OpenCover.4.5.3723\OpenCover.Console.exe -register:user -filter:"+[Corale.Colore*]* -[*Tests]*" -target:"packages\NUnit.Runners.2.6.4\tools\nunit-console.exe" -targetargs:"/noshadow /domain:single %TESTS_DLL%" -output:coverage.xml
     - packages\coveralls.io.1.2.2\tools\coveralls.net.exe --opencover coverage.xml
 
   artifacts:
-  - path: Colore\bin\x86\$(configuration)\Colore.*
+  - path: Corale.Colore\bin\x86\$(configuration)\Corale.Colore.*
     name: colore_x86
-  - path: Colore\bin\x64\$(configuration)\Colore.*
+  - path: Corale.Colore\bin\x64\$(configuration)\Corale.Colore.*
     name: colore_x64
-
-  deploy:
-  - provider: Environment
-    name: Development
-    on:
-      branch: develop
 
   notifications:
   - provider: Slack
@@ -145,7 +141,7 @@
 
 -
   version: 0.0.{build}
-  
+
   skip_tags: true
 
   install:
@@ -161,10 +157,11 @@
   environment:
     COVERALLS_REPO_TOKEN:
       secure: /52HsSigAGXgmKFcFuNjgC3PPMIUkarMod0zxTDesVS5VNpKCyeqdBY3Ssy3R3Mg
+    TESTS_DLL: Corale.Colore.Tests\bin\$(platform)\$(configuration)\Corale.Colore.Tests.dll
 
   assembly_info:
     patch: true
-    file: Colore\Properties\AssemblyInfo.cs
+    file: Corale.Colore\Properties\AssemblyInfo.cs
     assembly_version: '{version}'
     assembly_file_version: '{version}'
     assembly_informational_version: '{version}-{branch}'
@@ -173,9 +170,9 @@
     disable_publish_on_pr: true
 
   build:
-    project: Colore.sln
+    project: Corale.Colore.sln
     verbosity: normal
 
   after_test:
-    - packages\OpenCover.4.5.3723\OpenCover.Console.exe -register:user -filter:"+[Colore*]* -[*Tests]*" -target:"packages\NUnit.Runners.2.6.4\tools\nunit-console.exe" -targetargs:"/noshadow /domain:single Colore.Tests\bin\%PLATFORM%\%CONFIGURATION%\Colore.Tests.dll" -output:coverage.xml
+    - packages\OpenCover.4.5.3723\OpenCover.Console.exe -register:user -filter:"+[Corale.Colore*]* -[*Tests]*" -target:"packages\NUnit.Runners.2.6.4\tools\nunit-console.exe" -targetargs:"/noshadow /domain:single %TESTS_DLL%" -output:coverage.xml
     - packages\coveralls.io.1.2.2\tools\coveralls.net.exe --opencover coverage.xml
