@@ -40,14 +40,14 @@
 
   after_test:
     - ps: >-
-      If($Env:PLATFORM -eq "x86")
-      {
-        $Env:NUNIT_CONSOLE_EXECUTABLE = "nunit-console-x86.exe"
-      }
-      Else
-      {
-        $Env:NUNIT_CONSOLE_EXECUTABLE = "nunit-console.exe"
-      }
+        If($Env:PLATFORM -eq "x86")
+        {
+          $Env:NUNIT_CONSOLE_EXECUTABLE = "nunit-console-x86.exe"
+        }
+        Else
+        {
+          $Env:NUNIT_CONSOLE_EXECUTABLE = "nunit-console.exe"
+        }
     - packages\OpenCover.4.5.3723\OpenCover.Console.exe -register:user -filter:"+[Corale.Colore*]* -[*Tests]*" -target:"packages\NUnit.Runners.2.6.4\tools\%NUNIT_CONSOLE_EXECUTABLE%" -targetargs:"/noshadow /domain:single %TESTS_DLL%" -output:coverage.xml
     - packages\coveralls.io.1.2.2\tools\coveralls.net.exe --opencover coverage.xml
 
@@ -131,14 +131,14 @@
 
   after_test:
     - ps: >-
-      If($Env:PLATFORM -eq "x86")
-      {
-        $Env:NUNIT_CONSOLE_EXECUTABLE = "nunit-console-x86.exe"
-      }
-      Else
-      {
-        $Env:NUNIT_CONSOLE_EXECUTABLE = "nunit-console.exe"
-      }
+        If($Env:PLATFORM -eq "x86")
+        {
+          $Env:NUNIT_CONSOLE_EXECUTABLE = "nunit-console-x86.exe"
+        }
+        Else
+        {
+          $Env:NUNIT_CONSOLE_EXECUTABLE = "nunit-console.exe"
+        }
     - packages\OpenCover.4.5.3723\OpenCover.Console.exe -register:user -filter:"+[Corale.Colore*]* -[*Tests]*" -target:"packages\NUnit.Runners.2.6.4\tools\%NUNIT_CONSOLE_EXECUTABLE%" -targetargs:"/noshadow /domain:single %TESTS_DLL%" -output:coverage.xml
     - packages\coveralls.io.1.2.2\tools\coveralls.net.exe --opencover coverage.xml
 
@@ -193,13 +193,13 @@
 
   after_test:
     - ps: >-
-      If($Env:PLATFORM -eq "x86")
-      {
-        $Env:NUNIT_CONSOLE_EXECUTABLE = "nunit-console-x86.exe"
-      }
-      Else
-      {
-        $Env:NUNIT_CONSOLE_EXECUTABLE = "nunit-console.exe"
-      }
+        If($Env:PLATFORM -eq "x86")
+        {
+          $Env:NUNIT_CONSOLE_EXECUTABLE = "nunit-console-x86.exe"
+        }
+        Else
+        {
+          $Env:NUNIT_CONSOLE_EXECUTABLE = "nunit-console.exe"
+        }
     - packages\OpenCover.4.5.3723\OpenCover.Console.exe -register:user -filter:"+[Corale.Colore*]* -[*Tests]*" -target:"packages\NUnit.Runners.2.6.4\tools\%NUNIT_CONSOLE_EXECUTABLE%" -targetargs:"/noshadow /domain:single %TESTS_DLL%" -output:coverage.xml
     - packages\coveralls.io.1.2.2\tools\coveralls.net.exe --opencover coverage.xml
