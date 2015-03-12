@@ -49,6 +49,11 @@ namespace Corale.Colore.Razer
     /// </summary>
     internal static class NativeMethods
     {
+        /// <summary>
+        /// Calling convention for API functions.
+        /// </summary>
+        private const CallingConvention FunctionConvention = CallingConvention.Cdecl;
+
 #if WIN64 || WIN32
         /// <summary>
         /// DLL to import SDK functions from.
@@ -200,12 +205,14 @@ namespace Corale.Colore.Razer
         /// Initialize Chroma SDK.
         /// </summary>
         /// <returns><see cref="Result" /> value indicating success.</returns>
+        [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         internal delegate Result InitDelegate();
 
         /// <summary>
         /// Uninitialize Chroma SDK.
         /// </summary>
         /// <returns><see cref="Result" /> value indicating success.</returns>
+        [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         internal delegate Result UnInitDelegate();
 
         /// <summary>
@@ -249,6 +256,7 @@ namespace Corale.Colore.Razer
         /// </item>
         /// </list>
         /// </remarks>
+        [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         internal delegate Result CreateKeyboardEffectDelegate(
             Keyboard.Effects.Effect effect,
             IntPtr param,
@@ -262,6 +270,7 @@ namespace Corale.Colore.Razer
         /// <param name="effectId">Set to valid effect ID if successful. Pass <c>null</c> (<see cref="Guid.Empty" />) if not required.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
         /// <remarks>To turn off all LEDs, call with <c>0</c>, <c>null</c>, and a <c>ref</c> to a variable with <see cref="Guid.Empty" />.</remarks>
+        [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         internal delegate Result CreateKeyboardCustomEffectsDelegate(
             UIntPtr size,
             [MarshalAs(UnmanagedType.LPArray)] Keyboard.Effects.Custom[] effectType,
@@ -274,6 +283,7 @@ namespace Corale.Colore.Razer
         /// <param name="effectId">Valid effect ID if successful. Pass <c>null</c> (<see cref="Guid.Empty" /> if not required.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
         /// <remarks>To turn all LEDs off, call with empty <see cref="Keyboard.Effects.CustomGrid" /> and a <c>ref</c> to <see cref="Guid.Empty" />.</remarks>
+        [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         internal delegate Result CreateKeyboardCustomGridEffectsDelegate(
             Keyboard.Effects.CustomGrid effects,
             ref Guid effectId);
@@ -316,6 +326,7 @@ namespace Corale.Colore.Razer
         /// </item>
         /// </list>
         /// </remarks>
+        [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         internal delegate Result CreateMouseEffectDelegate(
             RZID zone,
             Mouse.Effects.Effect effect,
@@ -328,6 +339,7 @@ namespace Corale.Colore.Razer
         /// <param name="effect">The custom mouse effect which includes LED and color.</param>
         /// <param name="effectId">Valid effect ID if successful. Pass <see cref="IntPtr.Zero" /> if not required.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
+        [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         internal delegate Result CreateMouseCustomEffectsDelegate(Mouse.Effects.Custom effect, ref Guid effectId);
 
         /// <summary>
@@ -335,6 +347,7 @@ namespace Corale.Colore.Razer
         /// </summary>
         /// <param name="effectId">ID of the effect that needs to be deleted.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
+        [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         internal delegate Result DeleteEffectDelegate(Guid effectId);
 
         /// <summary>
@@ -342,6 +355,7 @@ namespace Corale.Colore.Razer
         /// </summary>
         /// <param name="effectId">ID of the effect that needs to be set.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
+        [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         internal delegate Result SetEffectDelegate(Guid effectId);
 
         /// <summary>
@@ -391,12 +405,14 @@ namespace Corale.Colore.Razer
         /// </item>
         /// </list>
         /// </remarks>
+        [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         internal delegate Result RegisterEventNotificationDelegate(IntPtr hwnd);
 
         /// <summary>
         /// Unregister for event notification.
         /// </summary>
         /// <returns><see cref="Result" /> value indicating success.</returns>
+        [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         internal delegate Result UnregisterEventNotificationDelegate();
 
         internal enum Architecture
@@ -424,11 +440,6 @@ namespace Corale.Colore.Razer
             return (T)(object)Marshal.GetDelegateForFunctionPointer(functionPtr, typeof(T));
         }
 #else
-        /// <summary>
-        /// Calling convention for API functions.
-        /// </summary>
-        private const CallingConvention FunctionConvention = CallingConvention.Cdecl;
-
         /// <summary>
         /// Initialize Chroma SDK.
         /// </summary>
