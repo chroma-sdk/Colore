@@ -1,3 +1,12 @@
+notifications:
+- provider: Slack
+  channel: colore
+  auth_token:
+    secure: q1G3kdpLxdD6RzSNVDZoEktdr3pcUY5KFXqxaV3mzGWWgOAyREl0ZHBNQUSWTLCy
+  on_build_success: true
+  on_build_failure: true
+  on_build_status_changed: true
+
 -
   branches:
     only:
@@ -105,15 +114,6 @@
       branch: master
       appveyor_repo_tag: false
 
-  notifications:
-  - provider: Slack
-    channel: colore
-    auth_token:
-      secure: q1G3kdpLxdD6RzSNVDZoEktdr3pcUY5KFXqxaV3mzGWWgOAyREl0ZHBNQUSWTLCy
-    on_build_success: true
-    on_build_failure: true
-    on_build_status_changed: true
-
 -
   branches:
     only:
@@ -211,15 +211,6 @@
     name: colore_x64
   - path: colore_anycpu.zip
     name: colore_anycpu
-
-  notifications:
-  - provider: Slack
-    channel: colore
-    auth_token:
-      secure: q1G3kdpLxdD6RzSNVDZoEktdr3pcUY5KFXqxaV3mzGWWgOAyREl0ZHBNQUSWTLCy
-    on_build_success: false
-    on_build_failure: true
-    on_build_status_changed: true
 
 -
   version: 0.0.{build}
