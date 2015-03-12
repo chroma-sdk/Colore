@@ -38,6 +38,29 @@
     project: Corale.Colore.sln
     verbosity: normal
 
+  after_build:
+    - ps: >-
+        $Env:BIN_STUB = "$Env:CONFIGURATION"
+        If ($Env:PLATFORM -eq "Any CPU")
+        {
+          $Env:COLORE_ARTIFACT_ZIP = "colore_anycpu.zip"
+        }
+        Else
+        {
+          $Env:BIN_STUB = "$Env:PLATFORM\$Env:BIN_STUB"
+          If ($Env:PLATFORM -eq "x86")
+          {
+            $Env:COLORE_ARTIFACT_ZIP = "colore_x86.zip"
+          }
+          Else
+          {
+            $Env:COLORE_ARTIFACT_ZIP = "colore_x64.zip"
+          }
+        }
+    - 7z a %COLORE_ARTIFACT_ZIP% %APPVEYOR_BUILD_FOLDER%\Corale.Colore\bin\%BIN_STUB%\*.dll
+    - 7z a %COLORE_ARTIFACT_ZIP% %APPVEYOR_BUILD_FOLDER%\Corale.Colore\bin\%BIN_STUB%\*.xml
+    - 7z a %COLORE_ARTIFACT_ZIP% %APPVEYOR_BUILD_FOLDER%\Corale.Colore\bin\%BIN_STUB%\*.pdb
+
   after_test:
     - ps: >-
         If($Env:PLATFORM -eq "Any CPU")
@@ -60,18 +83,14 @@
     - packages\coveralls.io.1.2.2\tools\coveralls.net.exe --opencover coverage.xml
 
   artifacts:
-  - path: Corale.Colore\bin\x86\$(configuration)\Corale.Colore.dll
-    name: colore_x86_dll
-  - path: Corale.Colore\bin\x64\$(configuration)\Corale.Colore.dll
-    name: colore_x64_dll
-  - path: Corale.Colore\bin\$(configuration)\Corale.Colore.dll
-    name: colore_anycpu_dll
-  - path: Corale.Colore\bin\x86\$(configuration)\Corale.Colore.*
+  - path: colore_x86.zip
     name: colore_x86
-  - path: Corale.Colore\bin\x64\$(configuration)\Corale.Colore.*
+  - path: colore_x64.zip
     name: colore_x64
-  - path: Corale.Colore\bin\$(configuration)\Corale.Colore.*
+  - path: colore_anycpu.zip
     name: colore_anycpu
+  - path: '**\*.nupkg'
+    name: nuget_packages
 
   deploy:
   - provider: GitHub
@@ -79,7 +98,7 @@
     description: Automatic release created by AppVeyor.
     auth_token:
       secure: ydn12l0oWmrQy0gZiWsLypa0kzYDBjVqAzlrrZ1+s97QRsCYkK3aA4KigRtC4CVm
-    artifact: colore_x86, colore_x64, colore_anycpu, colore_x86_dll, colore_x64_dll, colore_anycpu_dll, /.*\.nupkg/
+    artifact: colore_x86, colore_x64, colore_anycpu, nuget_packages
     draft: true
     prerelease: false
     on:
@@ -135,6 +154,29 @@
     project: Corale.Colore.sln
     verbosity: normal
 
+  after_build:
+    - ps: >-
+        $Env:BIN_STUB = "$Env:CONFIGURATION"
+        If ($Env:PLATFORM -eq "Any CPU")
+        {
+          $Env:COLORE_ARTIFACT_ZIP = "colore_anycpu.zip"
+        }
+        Else
+        {
+          $Env:BIN_STUB = "$Env:PLATFORM\$Env:BIN_STUB"
+          If ($Env:PLATFORM -eq "x86")
+          {
+            $Env:COLORE_ARTIFACT_ZIP = "colore_x86.zip"
+          }
+          Else
+          {
+            $Env:COLORE_ARTIFACT_ZIP = "colore_x64.zip"
+          }
+        }
+    - 7z a %COLORE_ARTIFACT_ZIP% %APPVEYOR_BUILD_FOLDER%\Corale.Colore\bin\%BIN_STUB%\*.dll
+    - 7z a %COLORE_ARTIFACT_ZIP% %APPVEYOR_BUILD_FOLDER%\Corale.Colore\bin\%BIN_STUB%\*.xml
+    - 7z a %COLORE_ARTIFACT_ZIP% %APPVEYOR_BUILD_FOLDER%\Corale.Colore\bin\%BIN_STUB%\*.pdb
+
   after_test:
     - ps: >-
         If($Env:PLATFORM -eq "Any CPU")
@@ -157,11 +199,17 @@
     - packages\coveralls.io.1.2.2\tools\coveralls.net.exe --opencover coverage.xml
 
   artifacts:
-  - path: Corale.Colore\bin\x86\$(configuration)\Corale.Colore.*
+  - path: Corale.Colore\bin\x86\$(configuration)\Corale.Colore.dll
+    name: colore_x86_dll
+  - path: Corale.Colore\bin\x64\$(configuration)\Corale.Colore.dll
+    name: colore_x64_dll
+  - path: Corale.Colore\bin\$(configuration)\Corale.Colore.dll
+    name: colore_anycpu_dll
+  - path: colore_x86.zip
     name: colore_x86
-  - path: Corale.Colore\bin\x64\$(configuration)\Corale.Colore.*
+  - path: colore_x64.zip
     name: colore_x64
-  - path: Corale.Colore\bin\$(configuration)\Corale.Colore.*
+  - path: colore_anycpu.zip
     name: colore_anycpu
 
   notifications:
