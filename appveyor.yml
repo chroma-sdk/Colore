@@ -15,7 +15,7 @@
   platform:
   - x86
   - x64
-  - AnyCPU
+  - Any CPU
 
   matrix:
     fast_finish: true
@@ -40,7 +40,7 @@
 
   after_test:
     - ps: >-
-        If($Env:PLATFORM -eq "AnyCPU")
+        If($Env:PLATFORM -eq "Any CPU")
         {
           $Env:TESTS_DLL = "Corale.Colore.Tests\bin\$Env:CONFIGURATION\Corale.Colore.Tests.dll"
         }
@@ -112,7 +112,7 @@
   platform:
   - x86
   - x64
-  - AnyCPU
+  - Any CPU
 
   matrix:
     fast_finish: true
@@ -137,7 +137,7 @@
 
   after_test:
     - ps: >-
-        If($Env:PLATFORM -eq "AnyCPU")
+        If($Env:PLATFORM -eq "Any CPU")
         {
           $Env:TESTS_DLL = "Corale.Colore.Tests\bin\$Env:CONFIGURATION\Corale.Colore.Tests.dll"
         }
