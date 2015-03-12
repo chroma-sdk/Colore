@@ -28,10 +28,6 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-using Corale.Colore.Razer;
-using Corale.Colore.Razer.Keyboard.Effects;
-using Corale.Colore.Razer.Mouse;
-
 namespace Corale.Colore.Core
 {
     using System;
@@ -39,9 +35,9 @@ namespace Corale.Colore.Core
     using System.Linq;
     using System.Runtime.InteropServices;
 
-    using global::Corale.Colore.Razer;
-    using global::Corale.Colore.Razer.Keyboard.Effects;
-    using global::Corale.Colore.Razer.Mouse;
+    using Corale.Colore.Razer;
+    using Corale.Colore.Razer.Keyboard.Effects;
+    using Corale.Colore.Razer.Mouse;
 
     /// <summary>
     /// Helper class to more easily make calls to native Chroma SDK functions.
@@ -58,7 +54,12 @@ namespace Corale.Colore.Core
         {
             Size size = (uint)effects.Length;
             var guid = Guid.Empty;
+#if ANYCPU
+            var sizePtr = new UIntPtr(size);
+            var result = NativeMethods.CreateKeyboardCustomEffects(sizePtr, effects, ref guid);
+#else
             var result = NativeMethods.CreateKeyboardCustomEffects(size, effects, ref guid);
+#endif
             if (!result)
                 throw new NativeCallException("CreateKeyboardCustomEffects", result);
             return guid;

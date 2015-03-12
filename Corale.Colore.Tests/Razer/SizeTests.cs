@@ -1,10 +1,8 @@
 ﻿namespace Corale.Colore.Tests.Razer
 {
-    using Colore.Core;
-    using Colore.Razer;
+    using Corale.Colore.Core;
 
     using NUnit.Framework;
-
 #if WIN64
 
     using size_t = System.UInt64;
@@ -15,7 +13,7 @@
 
 #else
 
-#error Unsupported build configuration.
+    using size_t = System.UInt32;
 
 #endif
 
