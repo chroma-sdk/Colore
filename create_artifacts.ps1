@@ -28,6 +28,8 @@ Else
     }
 }
 
-7z a $zip $Env:APPVEYOR_BUILD_FOLDER\Corale.Colore\bin\$binStub\*.dll
-7z a $zip $Env:APPVEYOR_BUILD_FOLDER\Corale.Colore\bin\$binStub\*.xml
-7z a $zip $Env:APPVEYOR_BUILD_FOLDER\Corale.Colore\bin\$binStub\*.pdb
+Write-Host "Zipping artifacts for $Platform - $Configuration"
+
+7z.exe a $zip .\Corale.Colore\bin\$binStub\*.dll
+7z.exe a $zip .\Corale.Colore\bin\$binStub\*.xml
+7z.exe a $zip .\Corale.Colore\bin\$binStub\*.pdb
