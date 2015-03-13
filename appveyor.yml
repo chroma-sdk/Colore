@@ -48,48 +48,10 @@ notifications:
     verbosity: normal
 
   after_build:
-    - ps: >-
-        $Env:BIN_STUB = "$Env:CONFIGURATION"
-        If ($Env:PLATFORM -eq "Any CPU")
-        {
-          $Env:COLORE_ARTIFACT_ZIP = "colore_anycpu.zip"
-        }
-        Else
-        {
-          $Env:BIN_STUB = "$Env:PLATFORM\$Env:BIN_STUB"
-          If ($Env:PLATFORM -eq "x86")
-          {
-            $Env:COLORE_ARTIFACT_ZIP = "colore_x86.zip"
-          }
-          Else
-          {
-            $Env:COLORE_ARTIFACT_ZIP = "colore_x64.zip"
-          }
-        }
-    - 7z a %COLORE_ARTIFACT_ZIP% %APPVEYOR_BUILD_FOLDER%\Corale.Colore\bin\%BIN_STUB%\*.dll
-    - 7z a %COLORE_ARTIFACT_ZIP% %APPVEYOR_BUILD_FOLDER%\Corale.Colore\bin\%BIN_STUB%\*.xml
-    - 7z a %COLORE_ARTIFACT_ZIP% %APPVEYOR_BUILD_FOLDER%\Corale.Colore\bin\%BIN_STUB%\*.pdb
+    - .\create_artifacts.ps1 -Platform "%PLATFORM%" -Configuration "%CONFIGURATION%"
 
   after_test:
-    - ps: >-
-        If($Env:PLATFORM -eq "Any CPU")
-        {
-          $Env:TESTS_DLL = "Corale.Colore.Tests\bin\$Env:CONFIGURATION\Corale.Colore.Tests.dll"
-        }
-        Else
-        {
-          $Env:TESTS_DLL = "Corale.Colore.Tests\bin\$Env:PLATFORM\$Env:CONFIGURATION\Corale.Colore.Tests.dll"
-        }
-        If($Env:PLATFORM -eq "x86")
-        {
-          $Env:NUNIT_CONSOLE_EXECUTABLE = "nunit-console-x86.exe"
-        }
-        Else
-        {
-          $Env:NUNIT_CONSOLE_EXECUTABLE = "nunit-console.exe"
-        }
-    - packages\OpenCover.4.5.3723\OpenCover.Console.exe -register:user -filter:"+[Corale.Colore*]* -[*Tests]* -[*]Corale.Colore.Native* -[*]Corale.Colore.Razer.NativeMethods*" -target:"packages\NUnit.Runners.2.6.4\tools\%NUNIT_CONSOLE_EXECUTABLE%" -targetargs:"/noshadow /domain:single %TESTS_DLL%" -output:coverage.xml
-    - packages\coveralls.io.1.2.2\tools\coveralls.net.exe --opencover coverage.xml
+    - .\report_coverage.ps1 -Platform "%PLATFORM%" -Configuration "%CONFIGURATION"
 
   artifacts:
   - path: colore_x86.zip
@@ -155,48 +117,10 @@ notifications:
     verbosity: normal
 
   after_build:
-    - ps: >-
-        $Env:BIN_STUB = "$Env:CONFIGURATION"
-        If ($Env:PLATFORM -eq "Any CPU")
-        {
-          $Env:COLORE_ARTIFACT_ZIP = "colore_anycpu.zip"
-        }
-        Else
-        {
-          $Env:BIN_STUB = "$Env:PLATFORM\$Env:BIN_STUB"
-          If ($Env:PLATFORM -eq "x86")
-          {
-            $Env:COLORE_ARTIFACT_ZIP = "colore_x86.zip"
-          }
-          Else
-          {
-            $Env:COLORE_ARTIFACT_ZIP = "colore_x64.zip"
-          }
-        }
-    - 7z a %COLORE_ARTIFACT_ZIP% %APPVEYOR_BUILD_FOLDER%\Corale.Colore\bin\%BIN_STUB%\*.dll
-    - 7z a %COLORE_ARTIFACT_ZIP% %APPVEYOR_BUILD_FOLDER%\Corale.Colore\bin\%BIN_STUB%\*.xml
-    - 7z a %COLORE_ARTIFACT_ZIP% %APPVEYOR_BUILD_FOLDER%\Corale.Colore\bin\%BIN_STUB%\*.pdb
+    - .\create_artifacts.ps1 -Platform "%PLATFORM%" -Configuration "%CONFIGURATION%"
 
   after_test:
-    - ps: >-
-        If($Env:PLATFORM -eq "Any CPU")
-        {
-          $Env:TESTS_DLL = "Corale.Colore.Tests\bin\$Env:CONFIGURATION\Corale.Colore.Tests.dll"
-        }
-        Else
-        {
-          $Env:TESTS_DLL = "Corale.Colore.Tests\bin\$Env:PLATFORM\$Env:CONFIGURATION\Corale.Colore.Tests.dll"
-        }
-        If($Env:PLATFORM -eq "x86")
-        {
-          $Env:NUNIT_CONSOLE_EXECUTABLE = "nunit-console-x86.exe"
-        }
-        Else
-        {
-          $Env:NUNIT_CONSOLE_EXECUTABLE = "nunit-console.exe"
-        }
-    - packages\OpenCover.4.5.3723\OpenCover.Console.exe -register:user -filter:"+[Corale.Colore*]* -[*Tests]* -[*]Corale.Colore.Native* -[*]Corale.Colore.Razer.NativeMethods*" -target:"packages\NUnit.Runners.2.6.4\tools\%NUNIT_CONSOLE_EXECUTABLE%" -targetargs:"/noshadow /domain:single %TESTS_DLL%" -output:coverage.xml
-    - packages\coveralls.io.1.2.2\tools\coveralls.net.exe --opencover coverage.xml
+    - .\report_coverage.ps1 -Platform "%PLATFORM%" -Configuration "%CONFIGURATION"
 
   artifacts:
   - path: Corale.Colore\bin\x86\$(configuration)\Corale.Colore.dll
@@ -222,7 +146,7 @@ notifications:
 
   configuration: Debug
 
-  platform: x64
+  platform: Any CPU
 
   matrix:
     fast_finish: true
@@ -247,5 +171,4 @@ notifications:
     verbosity: normal
 
   after_test:
-    - packages\OpenCover.4.5.3723\OpenCover.Console.exe -register:user -filter:"+[Corale.Colore*]* -[*Tests]* -[*]Corale.Colore.Native* -[*]Corale.Colore.Razer.NativeMethods*" -target:"packages\NUnit.Runners.2.6.4\tools\%NUNIT_CONSOLE_EXECUTABLE%" -targetargs:"/noshadow /domain:single %TESTS_DLL%" -output:coverage.xml
-    - packages\coveralls.io.1.2.2\tools\coveralls.net.exe --opencover coverage.xml
+    - .\report_coverage.ps1 -Platform "%PLATFORM%" -Configuration "%CONFIGURATION"
