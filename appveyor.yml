@@ -38,40 +38,21 @@
     project: Corale.Colore.sln
     verbosity: normal
 
+  after_build:
+    - ps: .\create_artifacts.ps1 -Platform "$Env:PLATFORM" -Configuration "$Env:CONFIGURATION"
+
   after_test:
-    - ps: >-
-        If($Env:PLATFORM -eq "Any CPU")
-        {
-          $Env:TESTS_DLL = "Corale.Colore.Tests\bin\$Env:CONFIGURATION\Corale.Colore.Tests.dll"
-        }
-        Else
-        {
-          $Env:TESTS_DLL = "Corale.Colore.Tests\bin\$Env:PLATFORM\$Env:CONFIGURATION\Corale.Colore.Tests.dll"
-        }
-        If($Env:PLATFORM -eq "x86")
-        {
-          $Env:NUNIT_CONSOLE_EXECUTABLE = "nunit-console-x86.exe"
-        }
-        Else
-        {
-          $Env:NUNIT_CONSOLE_EXECUTABLE = "nunit-console.exe"
-        }
-    - packages\OpenCover.4.5.3723\OpenCover.Console.exe -register:user -filter:"+[Corale.Colore*]* -[*Tests]*" -target:"packages\NUnit.Runners.2.6.4\tools\%NUNIT_CONSOLE_EXECUTABLE%" -targetargs:"/noshadow /domain:single %TESTS_DLL%" -output:coverage.xml
-    - packages\coveralls.io.1.2.2\tools\coveralls.net.exe --opencover coverage.xml
+    - ps: .\report_coverage.ps1 -Platform "$Env:PLATFORM" -Configuration "$Env:CONFIGURATION"
 
   artifacts:
-  - path: Corale.Colore\bin\x86\$(configuration)\Corale.Colore.dll
-    name: colore_x86_dll
-  - path: Corale.Colore\bin\x64\$(configuration)\Corale.Colore.dll
-    name: colore_x64_dll
-  - path: Corale.Colore\bin\$(configuration)\Corale.Colore.dll
-    name: colore_anycpu_dll
-  - path: Corale.Colore\bin\x86\$(configuration)\Corale.Colore.*
+  - path: colore_x86.zip
     name: colore_x86
-  - path: Corale.Colore\bin\x64\$(configuration)\Corale.Colore.*
+  - path: colore_x64.zip
     name: colore_x64
-  - path: Corale.Colore\bin\$(configuration)\Corale.Colore.*
+  - path: colore_anycpu.zip
     name: colore_anycpu
+  - path: '**\*.nupkg'
+    name: nuget_packages
 
   deploy:
   - provider: GitHub
@@ -79,21 +60,12 @@
     description: Automatic release created by AppVeyor.
     auth_token:
       secure: ydn12l0oWmrQy0gZiWsLypa0kzYDBjVqAzlrrZ1+s97QRsCYkK3aA4KigRtC4CVm
-    artifact: colore_x86, colore_x64, colore_anycpu, colore_x86_dll, colore_x64_dll, colore_anycpu_dll, /.*\.nupkg/
+    artifact: colore_x86, colore_x64, colore_anycpu, nuget_packages
     draft: true
     prerelease: false
     on:
       branch: master
       appveyor_repo_tag: false
-
-  notifications:
-  - provider: Slack
-    channel: colore
-    auth_token:
-      secure: q1G3kdpLxdD6RzSNVDZoEktdr3pcUY5KFXqxaV3mzGWWgOAyREl0ZHBNQUSWTLCy
-    on_build_success: true
-    on_build_failure: true
-    on_build_status_changed: true
 
 -
   branches:
@@ -135,43 +107,25 @@
     project: Corale.Colore.sln
     verbosity: normal
 
+  after_build:
+    - ps: .\create_artifacts.ps1 -Platform "$Env:PLATFORM" -Configuration "$Env:CONFIGURATION"
+
   after_test:
-    - ps: >-
-        If($Env:PLATFORM -eq "Any CPU")
-        {
-          $Env:TESTS_DLL = "Corale.Colore.Tests\bin\$Env:CONFIGURATION\Corale.Colore.Tests.dll"
-        }
-        Else
-        {
-          $Env:TESTS_DLL = "Corale.Colore.Tests\bin\$Env:PLATFORM\$Env:CONFIGURATION\Corale.Colore.Tests.dll"
-        }
-        If($Env:PLATFORM -eq "x86")
-        {
-          $Env:NUNIT_CONSOLE_EXECUTABLE = "nunit-console-x86.exe"
-        }
-        Else
-        {
-          $Env:NUNIT_CONSOLE_EXECUTABLE = "nunit-console.exe"
-        }
-    - packages\OpenCover.4.5.3723\OpenCover.Console.exe -register:user -filter:"+[Corale.Colore*]* -[*Tests]*" -target:"packages\NUnit.Runners.2.6.4\tools\%NUNIT_CONSOLE_EXECUTABLE%" -targetargs:"/noshadow /domain:single %TESTS_DLL%" -output:coverage.xml
-    - packages\coveralls.io.1.2.2\tools\coveralls.net.exe --opencover coverage.xml
+    - ps: .\report_coverage.ps1 -Platform "$Env:PLATFORM" -Configuration "$Env:CONFIGURATION"
 
   artifacts:
-  - path: Corale.Colore\bin\x86\$(configuration)\Corale.Colore.*
+  - path: Corale.Colore\bin\x86\$(configuration)\Corale.Colore.dll
+    name: colore_x86_dll
+  - path: Corale.Colore\bin\x64\$(configuration)\Corale.Colore.dll
+    name: colore_x64_dll
+  - path: Corale.Colore\bin\$(configuration)\Corale.Colore.dll
+    name: colore_anycpu_dll
+  - path: colore_x86.zip
     name: colore_x86
-  - path: Corale.Colore\bin\x64\$(configuration)\Corale.Colore.*
+  - path: colore_x64.zip
     name: colore_x64
-  - path: Corale.Colore\bin\$(configuration)\Corale.Colore.*
+  - path: colore_anycpu.zip
     name: colore_anycpu
-
-  notifications:
-  - provider: Slack
-    channel: colore
-    auth_token:
-      secure: q1G3kdpLxdD6RzSNVDZoEktdr3pcUY5KFXqxaV3mzGWWgOAyREl0ZHBNQUSWTLCy
-    on_build_success: false
-    on_build_failure: true
-    on_build_status_changed: true
 
 -
   version: 0.0.{build}
@@ -183,7 +137,7 @@
 
   configuration: Debug
 
-  platform: x64
+  platform: Any CPU
 
   matrix:
     fast_finish: true
@@ -208,5 +162,4 @@
     verbosity: normal
 
   after_test:
-    - packages\OpenCover.4.5.3723\OpenCover.Console.exe -register:user -filter:"+[Corale.Colore*]* -[*Tests]*" -target:"packages\NUnit.Runners.2.6.4\tools\%NUNIT_CONSOLE_EXECUTABLE%" -targetargs:"/noshadow /domain:single %TESTS_DLL%" -output:coverage.xml
-    - packages\coveralls.io.1.2.2\tools\coveralls.net.exe --opencover coverage.xml
+    - ps: .\report_coverage.ps1 -Platform "$Env:PLATFORM" -Configuration "$Env:CONFIGURATION"

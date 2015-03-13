@@ -1,10 +1,27 @@
 Colore
 ======
 
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](http://opensource.org/licenses/MIT)
+[![GitHub release version](https://img.shields.io/github/release/CoraleStudios/Colore.svg)](https://github.com/CoraleStudios/Colore/releases)
+[![NuGet version](https://img.shields.io/nuget/v/Colore.svg)](https://www.nuget.org/packages/Colore)
+[![NuGet downloads](https://img.shields.io/nuget/dt/Colore.svg)](https://www.nuget.org/packages/Colore)
+
+**Develop:**
+[![Build status](https://ci.appveyor.com/api/projects/status/86g99rkyhc57sa74?svg=true)](https://ci.appveyor.com/project/Corale/colore)
+[![Coverage Status](https://coveralls.io/repos/CoraleStudios/Colore/badge.svg?branch=develop)](https://coveralls.io/r/CoraleStudios/Colore?branch=develop)
+
+**Master:**
+[![Master build status](https://ci.appveyor.com/api/projects/status/86g99rkyhc57sa74/branch/master?svg=true)](https://ci.appveyor.com/project/Corale/colore/branch/master)
+[![Master coverage Status](https://coveralls.io/repos/CoraleStudios/Colore/badge.svg?branch=develop)](https://coveralls.io/r/CoraleStudios/Colore?branch=master)
+
 A powerful and elegant C# library for Razer Chroma's SDK
 
 Contributing
 ------------
+
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/CoraleStudios/Colore?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
+*For discussing, you can join the Gitter chat using the badge above. If you want to join the Slack chat, contact [Brandon Scott][bs] ([brandon@brandonscott.co.uk](mailto:brandon@brandonscott.co.uk)) or [Adam Hellberg][sharp] ([sharparam@sharparam.com](mailto:sharparam@sharparam.com)).*
 
 Contributors are very welcome! If you got code fixes, please [submit a pull request][newpull] here on GitHub.
 
