@@ -1,4 +1,4 @@
-[CmdledBinding()]
+[CmdletBinding()]
 Param(
     [Parameter(Mandatory=$True)]
     [string]$Platform,
