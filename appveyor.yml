@@ -39,10 +39,10 @@
     verbosity: normal
 
   after_build:
-    - .\create_artifacts.ps1 -Platform "%PLATFORM%" -Configuration "%CONFIGURATION%"
+    - ps: .\create_artifacts.ps1 -Platform "%PLATFORM%" -Configuration "%CONFIGURATION%"
 
   after_test:
-    - .\report_coverage.ps1 -Platform "%PLATFORM%" -Configuration "%CONFIGURATION"
+    - ps: .\report_coverage.ps1 -Platform "%PLATFORM%" -Configuration "%CONFIGURATION"
 
   artifacts:
   - path: colore_x86.zip
@@ -108,10 +108,10 @@
     verbosity: normal
 
   after_build:
-    - .\create_artifacts.ps1 -Platform "%PLATFORM%" -Configuration "%CONFIGURATION%"
+    - ps: .\create_artifacts.ps1 -Platform "%PLATFORM%" -Configuration "%CONFIGURATION%"
 
   after_test:
-    - .\report_coverage.ps1 -Platform "%PLATFORM%" -Configuration "%CONFIGURATION"
+    - ps: .\report_coverage.ps1 -Platform "%PLATFORM%" -Configuration "%CONFIGURATION"
 
   artifacts:
   - path: Corale.Colore\bin\x86\$(configuration)\Corale.Colore.dll
@@ -162,4 +162,4 @@
     verbosity: normal
 
   after_test:
-    - .\report_coverage.ps1 -Platform "%PLATFORM%" -Configuration "%CONFIGURATION"
+    - ps: .\report_coverage.ps1 -Platform "%PLATFORM%" -Configuration "%CONFIGURATION"
