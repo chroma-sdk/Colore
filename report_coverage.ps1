@@ -15,6 +15,11 @@ If ($Platform -ne "Any CPU")
 $dll = "Corale.Colore.Tests\bin\$Configuration\Corale.Colore.Tests.dll"
 $nunit = "packages\NUnit.Runners.2.6.4\tools\nunit-console.exe"
 $filter = "+[Corale.Colore*]* -[*Tests]* -[*]Corale.Colore.Native* -[*]*NativeMethods -[*]*NativeWrapper"
+$targetArgs = "/noshadow /domain:single $dll"
 
-.\packages\OpenCover.4.5.3723\OpenCover.Console.exe -register:user -filter:`"$filter`" -target:`"$nunit`" -targetargs:`"/noshadow /domain:single $dll`" -output:coverage.xml
+$Env:NUNIT_EXEC = $nunit
+$Env:OPENCOVER_FILTER = $filter
+$Env:TARGET_ARGS = $targetArgs
+
+.\packages\OpenCover.4.5.3723\OpenCover.Console.exe --% -register:user -filter:"%OPENCOVER_FILTER%" -target:"%NUNIT_EXEC%" -targetargs:"%TARGET_ARGS%" -output:coverage.xml
 .\packages\coveralls.io.1.2.2\tools\coveralls.net.exe --opencover coverage.xml
