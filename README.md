@@ -1,7 +1,7 @@
 Colore
 ======
 
-[![GitHub release version](https://img.shields.io/github/release/qubyte/rubidium.svg)](https://github.com/CoraleStudios/Colore/releases)
+[![GitHub release version](https://img.shields.io/github/release/CoraleStudios/Colore.svg)](https://github.com/CoraleStudios/Colore/releases)
 [![NuGet version](https://img.shields.io/nuget/v/Colore.svg)](https://www.nuget.org/packages/Colore)
 [![NuGet downloads](https://img.shields.io/nuget/dt/Colore.svg)](https://www.nuget.org/packages/Colore)
 
