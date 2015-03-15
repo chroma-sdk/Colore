@@ -31,14 +31,18 @@
 namespace Corale.Colore.Razer
 {
     using System;
-
-#if ANYCPU
-    using System.Reflection;
-#endif
-
+    using System.Diagnostics.CodeAnalysis;
     using System.Runtime.InteropServices;
 
+#if ANYCPU
+
+    using System.Reflection;
+
+#else
+
     using Corale.Colore.Core;
+
+#endif
 
     // RZID is typedef'd as DWORD in the C headers
     // DWORD is 32-bit unsigned integer on Windows
@@ -63,14 +67,18 @@ namespace Corale.Colore.Razer
         /// for 64-bit platforms, and <c>RzChromaSDK.dll</c> when
         /// built for 32-bit platforms.
         /// </remarks>
-#endif
 #if WIN64
         private const string DllName = "RzChromaSDK64.dll";
 #elif WIN32
         private const string DllName = "RzChromaSDK.dll";
 #endif
+#endif
 
 #if ANYCPU
+
+        /// <summary>
+        /// Architecture of the current system.
+        /// </summary>
         internal static readonly Architecture SystemArchitecture;
 
         /// <summary>
@@ -415,9 +423,19 @@ namespace Corale.Colore.Razer
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         internal delegate Result UnregisterEventNotificationDelegate();
 
+        /// <summary>
+        /// System architecture types.
+        /// </summary>
         internal enum Architecture
         {
+            /// <summary>
+            /// 32-bit system.
+            /// </summary>
             X86,
+
+            /// <summary>
+            /// 64-bit system.
+            /// </summary>
             X64
         }
 
@@ -439,7 +457,9 @@ namespace Corale.Colore.Razer
 
             return (T)(object)Marshal.GetDelegateForFunctionPointer(functionPtr, typeof(T));
         }
+
 #else
+
         /// <summary>
         /// Initialize Chroma SDK.
         /// </summary>
@@ -660,6 +680,7 @@ namespace Corale.Colore.Razer
         [DllImport(DllName, CallingConvention = FunctionConvention, EntryPoint = "UnregisterEventNotification",
             SetLastError = true)]
         internal static extern Result UnregisterEventNotification();
+
 #endif
     }
 }
