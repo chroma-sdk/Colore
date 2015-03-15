@@ -31,6 +31,7 @@
 namespace Corale.Colore.Core
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
 
     /// <summary>
     /// Interface for basic Chroma functionality.
@@ -56,6 +57,8 @@ namespace Corale.Colore.Core
         /// <param name="wParam">The <c>wParam</c> property of the Message struct.</param>
         /// <param name="lParam">The <c>lParam</c> property of the Message struct.</param>
         /// <remarks>Non-Chroma messages will be ignored.</remarks>
+        [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1305:FieldNamesMustNotUseHungarianNotation",
+            Justification = "Parameter names match those in the Message struct.")]
         void HandleMessage(int msgId, IntPtr wParam, IntPtr lParam);
 
         /// <summary>
