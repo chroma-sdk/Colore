@@ -61,6 +61,10 @@ namespace Corale.Colore.Core
     [StructLayout(LayoutKind.Explicit, Size = sizeof(size_t))]
     public struct Size : IComparable<Size>, IEquatable<Size>, IComparable<size_t>, IEquatable<size_t>
     {
+        /// <summary>
+        /// The internal value stored by the struct. Its type depends on compile or runtime architecture.
+        /// </summary>
+        /// <seealso cref="Size" />
         [FieldOffset(0)]
         private readonly size_t _value;
 
