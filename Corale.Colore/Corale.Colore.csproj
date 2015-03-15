@@ -90,6 +90,8 @@
     <Compile Include="Core\IMouse.cs" />
     <Compile Include="Core\NativeWrapper.cs" />
     <Compile Include="Core\Size.cs" />
+    <Compile Include="Events\ApplicationStateEventArgs.cs" />
+    <Compile Include="Events\SdkSupportEventArgs.cs" />
     <Compile Include="Native\Kernel32\NativeMethods.cs" />
     <Compile Include="Razer\Constants.cs" />
     <Compile Include="Razer\Keyboard\Constants.cs" />
@@ -116,7 +118,9 @@
     <Compile Include="Razer\Product.cs" />
     <Compile Include="Razer\Result.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="Events\DeviceAccessEventArgs.cs" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

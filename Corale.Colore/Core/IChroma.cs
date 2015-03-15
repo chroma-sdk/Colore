@@ -33,11 +33,43 @@ namespace Corale.Colore.Core
     using System;
     using System.Diagnostics.CodeAnalysis;
 
+    using Corale.Colore.Events;
+
     /// <summary>
     /// Interface for basic Chroma functionality.
     /// </summary>
     public interface IChroma
     {
+        /// <summary>
+        /// Raised when information about application state is received from messages.
+        /// </summary>
+        /// <remarks>
+        /// Requires that application has registered for receiving messages with
+        /// <see cref="Register" /> and that Windows messages are being forwarded to
+        /// Colore using <see cref="HandleMessage" />.
+        /// </remarks>
+        event EventHandler<ApplicationStateEventArgs> ApplicationState;
+
+        /// <summary>
+        /// Raised when information about device access is received from messages.
+        /// </summary>
+        /// <remarks>
+        /// Requires that application has registered for receiving messages with
+        /// <see cref="Register" /> and that Windows messages are being forwarded to
+        /// Colore using <see cref="HandleMessage" />.
+        /// </remarks>
+        event EventHandler<DeviceAccessEventArgs> DeviceAccess;
+
+        /// <summary>
+        /// Raised when information about SDK support is received from messages.
+        /// </summary>
+        /// <remarks>
+        /// Requires that application has registered for receiving messages with
+        /// <see cref="Register" /> and that Windows messages are being forwarded to
+        /// Colore using <see cref="HandleMessage" />.
+        /// </remarks>
+        event EventHandler<SdkSupportEventArgs> SdkSupport;
+
         /// <summary>
         /// Gets an instance of the <see cref="IKeyboard" /> interface
         /// for interacting with a Razer Chroma keyboard.
