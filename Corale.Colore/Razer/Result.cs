@@ -1,29 +1,29 @@
 ﻿// ---------------------------------------------------------------------------------------
 // <copyright file="Result.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
-// 
+//
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
 //     the Software without restriction, including without limitation the rights to
 //     use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
 //     of the Software, and to permit persons to whom the Software is furnished to do
 //     so, subject to the following conditions:
-// 
+//
 //     The above copyright notice and this permission notice shall be included in all
 //     copies or substantial portions of the Software.
-// 
+//
 //     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 //     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 //     FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 //     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
 //     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-// 
+//
 //     Disclaimer: Corale and/or Colore is in no way affiliated with Razer and/or any
 //     of its employees and/or licensors. Corale, Adam Hellberg, and/or Brandon Scott
 //     do not take responsibility for any harm caused, direct or indirect, to any
 //     Razer peripherals via the use of Colore.
-// 
+//
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
 // ---------------------------------------------------------------------------------------
@@ -35,40 +35,79 @@ namespace Corale.Colore.Razer
     using System.Linq;
     using System.Reflection;
 
-    // RZRESULT is a typedef of LONG on C-side. LONG is always 32-bit in WinC.
-    // TODO: Finish implementing overloads.
-    public struct Result : IComparable<int>, IComparable<Result>, IEquatable<int>, IEquatable<Result>
+    /// <summary>
+    /// Struct for containing the result of running a native Chroma SDK function.
+    /// </summary>
+    /// <remarks>
+    /// <c>RZRESULT</c> is a <c>typedef</c> of <c>LONG</c> on C-side. <c>LONG</c> is always 32-bit in WinAPI.
+    /// This means we don't need to have architecture-dependent base type,
+    /// like with the <see cref="Corale.Colore.Core.Size" /> struct.
+    /// </remarks>
+    public struct Result : IEquatable<int>, IEquatable<Result>
     {
+        /// <summary>
+        /// Access denied.
+        /// </summary>
         [Description("Access denied.")]
         public static readonly Result RzAccessDenied = 5;
 
         // TODO: Here be dragons?
+        /// <summary>
+        /// Generic fail error.
+        /// </summary>
         [Description("General failure.")]
         public static readonly Result RzFailed = unchecked((int)2147500037);
 
+        /// <summary>
+        /// Invalid error.
+        /// </summary>
         [Description("Invalid.")]
         public static readonly Result RzInvalid = -1;
 
+        /// <summary>
+        /// Invalid parameter passed to function.
+        /// </summary>
         [Description("Invalid parameter.")]
         public static readonly Result RzInvalidParameter = 87;
 
+        /// <summary>
+        /// The requested operation is not supported.
+        /// </summary>
         [Description("Not supported.")]
         public static readonly Result RzNotSupported = 50;
 
+        /// <summary>
+        /// The request was aborted.
+        /// </summary>
         [Description("Request aborted.")]
         public static readonly Result RzRequestAborted = 1235;
 
+        /// <summary>
+        /// Resource not available or disabled.
+        /// </summary>
         [Description("Resource not available or disabled.")]
         public static readonly Result RzResourceDisabled = 4309;
 
+        /// <summary>
+        /// Cannot start more than one instance of the specified program.
+        /// </summary>
         [Description("Cannot start more than one instance of the specified program.")]
         public static readonly Result RzSingleInstanceApp = 1152;
 
+        /// <summary>
+        /// Returned when a function is successful.
+        /// </summary>
         [Description("Success.")]
         public static readonly Result RzSuccess = 0;
 
+        /// <summary>
+        /// Dictionary used to cache the metadata of the pre-defined error values.
+        /// </summary>
         private static readonly IDictionary<Result, Metadata> FieldMetadata;
 
+        /// <summary>
+        /// Internal result value.
+        /// </summary>
         private readonly int _value;
 
         static Result()
@@ -76,11 +115,18 @@ namespace Corale.Colore.Razer
             FieldMetadata = GetMetadata();
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Result" /> struct.
+        /// </summary>
+        /// <param name="value">Value to store.</param>
         public Result(int value)
         {
             _value = value;
         }
 
+        /// <summary>
+        /// Gets the help description for the current error value.
+        /// </summary>
         public string Description
         {
             get
@@ -89,6 +135,9 @@ namespace Corale.Colore.Razer
             }
         }
 
+        /// <summary>
+        /// Gets a value indicating whether the result means failure.
+        /// </summary>
         public bool Failed
         {
             get
@@ -97,6 +146,9 @@ namespace Corale.Colore.Razer
             }
         }
 
+        /// <summary>
+        /// Gets the name of the error as defined in source code.
+        /// </summary>
         public string Name
         {
             get
@@ -105,6 +157,9 @@ namespace Corale.Colore.Razer
             }
         }
 
+        /// <summary>
+        /// Gets a value indicating whether the result was a success.
+        /// </summary>
         public bool Success
         {
             get
@@ -113,89 +168,84 @@ namespace Corale.Colore.Razer
             }
         }
 
+        /// <summary>
+        /// Indicates whether an instance of the <see cref="Result" /> struct is
+        /// equal to another object.
+        /// </summary>
+        /// <param name="left">Left operand, an instance of the <see cref="Result" /> struct.</param>
+        /// <param name="right">Right operand, an object to compare with.</param>
+        /// <returns><c>true</c> if the two objects are equal, otherwise <c>false</c>.</returns>
         public static bool operator ==(Result left, object right)
         {
             return left.Equals(right);
         }
 
+        /// <summary>
+        /// Converts a <see cref="Result" /> object to <c>false</c>.
+        /// </summary>
+        /// <param name="result"><see cref="Result" /> object to convert.</param>
+        /// <returns>
+        /// <c>false</c> if the <see cref="Result" /> object represents a boolean <c>false</c> value,
+        /// otherwise <c>true</c>.
+        /// </returns>
         public static bool operator false(Result result)
         {
             return !result;
         }
 
-        public static bool operator >(Result left, Result right)
-        {
-            return left.CompareTo(right) > 0;
-        }
-
-        public static bool operator >(Result left, int right)
-        {
-            return left.CompareTo(right) > 0;
-        }
-
-        public static bool operator >=(Result left, Result right)
-        {
-            return left.CompareTo(right) >= 0;
-        }
-
-        public static bool operator >=(Result left, int right)
-        {
-            return left.CompareTo(right) >= 0;
-        }
-
+        /// <summary>
+        /// Converts a <see cref="Result" /> struct to its integer equivalent.
+        /// </summary>
+        /// <param name="result">An instance of the <see cref="Result" /> to convert.</param>
+        /// <returns>The integer equivalent of the <paramref name="result" />.</returns>
         public static implicit operator int(Result result)
         {
             return result._value;
         }
 
-        public static implicit operator Result(int l)
+        /// <summary>
+        /// Converts an integer value to its equivalent <see cref="Result" /> object.
+        /// </summary>
+        /// <param name="value">The value to convert.</param>
+        /// <returns>The <see cref="Result" /> equivalent of the <paramref name="value" />.</returns>
+        public static implicit operator Result(int value)
         {
-            return new Result(l);
+            return new Result(value);
         }
 
+        /// <summary>
+        /// Converts an instace of the <see cref="Result" /> struct to its boolean equivalent.
+        /// </summary>
+        /// <param name="result">The <see cref="Result" /> to convert.</param>
+        /// <returns>
+        /// <c>true</c> if the <paramref name="result" /> represents a <c>true</c> value (success),
+        /// otherwise <c>false</c> (failure).
+        /// </returns>
         public static implicit operator bool(Result result)
         {
             return result == RzSuccess;
         }
 
+        /// <summary>
+        /// Indicates whether an instance of the <see cref="Result" /> struct and
+        /// another object are not equal.
+        /// </summary>
+        /// <param name="left">Left operand, an instance of the <see cref="Result" /> struct.</param>
+        /// <param name="right">Right operand, an object to compare to.</param>
+        /// <returns><c>true</c> if the two objects are not equal, otherwise <c>false</c>.</returns>
         public static bool operator !=(Result left, object right)
         {
             return !left.Equals(right);
         }
 
-        public static bool operator <(Result left, Result right)
-        {
-            return left.CompareTo(right) < 0;
-        }
-
-        public static bool operator <(Result left, int right)
-        {
-            return left.CompareTo(right) < 0;
-        }
-
-        public static bool operator <=(Result left, Result right)
-        {
-            return left.CompareTo(right) <= 0;
-        }
-
-        public static bool operator <=(Result left, int right)
-        {
-            return left.CompareTo(right) <= 0;
-        }
-
+        /// <summary>
+        /// Converts a <see cref="Result" /> object to a boolean <c>true</c> value.
+        /// </summary>
+        /// <param name="result">Object to convert.</param>
+        /// <returns><c>true</c> if the object represents a boolean <c>true</c> value, <c>false</c> otherwise.</returns>
         public static bool operator true(Result result)
         {
             return result;
-        }
-
-        public int CompareTo(int other)
-        {
-            return _value.CompareTo(other);
-        }
-
-        public int CompareTo(Result other)
-        {
-            return CompareTo(other._value);
         }
 
         public bool Equals(int other)
@@ -203,11 +253,27 @@ namespace Corale.Colore.Razer
             return _value.Equals(other);
         }
 
+        /// <summary>
+        /// Indicates whether the current object is equal to another object of the same type.
+        /// </summary>
+        /// <param name="other">An object to compare with this object.</param>
+        /// <returns>
+        /// <c>true</c> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <c>false</c>.
+        /// </returns>
         public bool Equals(Result other)
         {
             return Equals(other._value);
         }
 
+        /// <summary>
+        /// Indicates whether this instance and a specified object are equal.
+        /// </summary>
+        /// <param name="obj">Another object to compare to. </param>
+        /// <returns>
+        /// <c>true</c> if <paramref name="obj"/> and this instance are the same type
+        /// and represent the same value; otherwise, <c>false</c>.
+        /// </returns>
+        /// <filterpriority>2</filterpriority>
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
@@ -222,16 +288,35 @@ namespace Corale.Colore.Razer
             return false;
         }
 
+        /// <summary>
+        /// Returns the hash code for this instance.
+        /// </summary>
+        /// <returns>
+        /// A 32-bit signed integer that is the hash code for this instance.
+        /// </returns>
+        /// <filterpriority>2</filterpriority>
         public override int GetHashCode()
         {
             return _value;
         }
 
+        /// <summary>
+        /// Returns a string representation of the result.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="T:System.String"/> containing a string representation
+        /// of the result complete with name, description, and numeric value.
+        /// </returns>
+        /// <filterpriority>2</filterpriority>
         public override string ToString()
         {
             return string.Format("{0}: {1} ({2})", Name, Description, _value);
         }
 
+        /// <summary>
+        /// Retrieves field metadata and returns it as a dictionary.
+        /// </summary>
+        /// <returns>Field metadata.</returns>
         private static Dictionary<Result, Metadata> GetMetadata()
         {
             var cache = new Dictionary<Result, Metadata>();
@@ -249,19 +334,36 @@ namespace Corale.Colore.Razer
             return cache;
         }
 
+        /// <summary>
+        /// Contains metadata for a specific result in the <see cref="Result" /> struct.
+        /// </summary>
         private struct Metadata
         {
+            /// <summary>
+            /// Description of the result.
+            /// </summary>
             private readonly string _description;
 
+            /// <summary>
+            /// Name of the result (name of the field).
+            /// </summary>
             private readonly string _name;
 
-            public Metadata(string name, string description)
+            /// <summary>
+            /// Initializes a new instance of the <see cref="Metadata" /> struct.
+            /// </summary>
+            /// <param name="name">Result name.</param>
+            /// <param name="description">Result description.</param>
+            internal Metadata(string name, string description)
             {
                 _name = name;
                 _description = description;
             }
 
-            public string Description
+            /// <summary>
+            /// Human-readable description for the result.
+            /// </summary>
+            internal string Description
             {
                 get
                 {
@@ -269,7 +371,10 @@ namespace Corale.Colore.Razer
                 }
             }
 
-            public string Name
+            /// <summary>
+            /// The name of the result.
+            /// </summary>
+            internal string Name
             {
                 get
                 {
@@ -279,16 +384,26 @@ namespace Corale.Colore.Razer
         }
 
         [AttributeUsage(AttributeTargets.Field)]
-        private class DescriptionAttribute : Attribute
+        private sealed class DescriptionAttribute : Attribute
         {
+            /// <summary>
+            /// The description of the associated field.
+            /// </summary>
             private readonly string _description;
 
-            public DescriptionAttribute(string description)
+            /// <summary>
+            /// Initializes a new instance of the <see cref="DescriptionAttribute" /> class.
+            /// </summary>
+            /// <param name="description">Description to set.</param>
+            internal DescriptionAttribute(string description)
             {
                 _description = description;
             }
 
-            public string Description
+            /// <summary>
+            /// Human-readable description of the result.
+            /// </summary>
+            internal string Description
             {
                 get
                 {
