@@ -107,7 +107,9 @@
     <Compile Include="Razer\Mouse\Led.cs" />
     <Compile Include="Razer\Mouse\Effects\Static.cs" />
     <Compile Include="Razer\NativeCallException.cs" />
-    <Compile Include="Razer\NativeMethods.cs" />
+    <Compile Include="Razer\NativeMethods.cs">
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
     <Compile Include="Razer\Product.cs" />
     <Compile Include="Razer\Result.cs" />
   </ItemGroup>
