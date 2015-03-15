@@ -30,14 +30,29 @@
 
 namespace Corale.Colore.Razer.Mouse
 {
+    /// <summary>
+    /// LEDs that can be the target of color changes.
+    /// </summary>
     public enum Led : uint
     {
+        /// <summary>
+        /// No LED.
+        /// </summary>
         None = 0,
 
+        /// <summary>
+        /// The LED illuminating the scroll wheel.
+        /// </summary>
         ScrollWheel = 0x0001,
 
+        /// <summary>
+        /// The LED illuminating the logo present on the mouse.
+        /// </summary>
         Logo = 0x0002,
 
+        /// <summary>
+        /// Invalid LED.
+        /// </summary>
         Invalid = 0xFFFF
     }
 }
