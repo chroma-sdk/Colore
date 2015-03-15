@@ -51,7 +51,6 @@ namespace Corale.Colore.Razer
         [Description("Access denied.")]
         public static readonly Result RzAccessDenied = 5;
 
-        // TODO: Here be dragons?
         /// <summary>
         /// Generic fail error.
         /// </summary>
@@ -110,6 +109,9 @@ namespace Corale.Colore.Razer
         /// </summary>
         private readonly int _value;
 
+        /// <summary>
+        /// Initializes static members of the <see cref="Result" /> struct.
+        /// </summary>
         static Result()
         {
             FieldMetadata = GetMetadata();
@@ -214,7 +216,7 @@ namespace Corale.Colore.Razer
         }
 
         /// <summary>
-        /// Converts an instace of the <see cref="Result" /> struct to its boolean equivalent.
+        /// Converts an instance of the <see cref="Result" /> struct to its boolean equivalent.
         /// </summary>
         /// <param name="result">The <see cref="Result" /> to convert.</param>
         /// <returns>
@@ -248,6 +250,12 @@ namespace Corale.Colore.Razer
             return result;
         }
 
+        /// <summary>
+        /// Indicates whether the internal value of the current <see cref="Result" /> struct
+        /// is equal to another value.
+        /// </summary>
+        /// <param name="other">A value to compare with this object's internal value.</param>
+        /// <returns><c>true</c> if the internal value is equal to the <paramref name="other" /> parameter, otherwise <c>false</c>.</returns>
         public bool Equals(int other)
         {
             return _value.Equals(other);
@@ -361,7 +369,7 @@ namespace Corale.Colore.Razer
             }
 
             /// <summary>
-            /// Human-readable description for the result.
+            /// Gets a human-readable description for the result.
             /// </summary>
             internal string Description
             {
@@ -372,7 +380,7 @@ namespace Corale.Colore.Razer
             }
 
             /// <summary>
-            /// The name of the result.
+            /// Gets the name of the result.
             /// </summary>
             internal string Name
             {
@@ -383,6 +391,9 @@ namespace Corale.Colore.Razer
             }
         }
 
+        /// <summary>
+        /// Description attribute used for fields in the <see cref="Result" /> struct.
+        /// </summary>
         [AttributeUsage(AttributeTargets.Field)]
         private sealed class DescriptionAttribute : Attribute
         {
@@ -401,7 +412,7 @@ namespace Corale.Colore.Razer
             }
 
             /// <summary>
-            /// Human-readable description of the result.
+            /// Gets a human-readable description of the result.
             /// </summary>
             internal string Description
             {
