@@ -84,7 +84,10 @@
   <ItemGroup>
     <Compile Include="ColoreException.cs" />
     <Compile Include="Core\Color.cs" />
-    <Compile Include="Core\Colore.cs" />
+    <Compile Include="Core\IChroma.cs" />
+    <Compile Include="Core\IDevice.cs" />
+    <Compile Include="Core\IKeyboard.cs" />
+    <Compile Include="Core\IMouse.cs" />
     <Compile Include="Core\NativeWrapper.cs" />
     <Compile Include="Core\Size.cs" />
     <Compile Include="Native\Kernel32\NativeMethods.cs" />
