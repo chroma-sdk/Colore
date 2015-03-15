@@ -96,12 +96,13 @@ namespace Corale.Colore.Core
         /// <summary>
         /// Registers to start receiving Chroma events.
         /// </summary>
+        /// <param name="handle">Handle to the application Window that is running the message loop.</param>
         /// <remarks>
         /// Chroma events are sent using the Windows message API, as such, there has to be something handling
         /// Windows messages to receive them. Messages need to be passed to the message handler in Colore to
         /// be processed, as this cannot be automated.
         /// </remarks>
-        void Register();
+        void Register(IntPtr handle);
 
         /// <summary>
         /// Unregisters from receiving Chroma events.
