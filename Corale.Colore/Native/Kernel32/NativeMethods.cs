@@ -38,6 +38,9 @@ namespace Corale.Colore.Native.Kernel32
     /// </summary>
     internal static class NativeMethods
     {
+        /// <summary>
+        /// Name of the DLL from which functions are imported.
+        /// </summary>
         private const string DllName = "kernel32.dll";
 
         [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = "GetProcAddress", ExactSpelling = true,
