@@ -84,7 +84,7 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Sets the Updates the device to use the effect pointed to by the specified GUID.
+        /// Updates the device to use the effect pointed to by the specified GUID.
         /// </summary>
         /// <param name="guid">Guid to set.</param>
         public void Set(Guid guid)
