@@ -28,12 +28,12 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-using System;
-using Corale.Colore.Razer.Keyboard.Effects;
-
 namespace Corale.Colore.Core
 {
-    using Corale.Colore.Razer.Keyboard;
+    using System;
+
+    using Razer.Keyboard;
+    using Razer.Keyboard.Effects;
 
     /// <summary>
     /// Class for interacting with a Chroma keyboard.

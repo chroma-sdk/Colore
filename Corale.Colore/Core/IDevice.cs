@@ -28,10 +28,10 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-using System;
-
 namespace Corale.Colore.Core
 {
+    using System;
+
     /// <summary>
     /// Interface for functionality common with all devices.
     /// </summary>
