@@ -30,18 +30,39 @@
 
 namespace Corale.Colore.Razer.Mouse.Effects
 {
+    /// <summary>
+    /// Supported built-in mouse effects.
+    /// </summary>
     public enum Effect
     {
+        /// <summary>
+        /// No effect.
+        /// </summary>
         None = 0,
 
+        /// <summary>
+        /// The spectrum cycling effect.
+        /// </summary>
         SpectrumCycling,
 
+        /// <summary>
+        /// The breathing effect.
+        /// </summary>
         Breathing,
 
+        /// <summary>
+        /// Static color effect.
+        /// </summary>
         Static,
 
+        /// <summary>
+        /// Custom effect.
+        /// </summary>
         Custom,
 
+        /// <summary>
+        /// Invalid effect.
+        /// </summary>
         Invalid
     }
 }

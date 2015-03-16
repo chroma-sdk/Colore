@@ -30,8 +30,14 @@
 
 namespace Corale.Colore.Razer.Mouse.Effects
 {
+    /// <summary>
+    /// Describes the static effect type.
+    /// </summary>
     public struct Static
     {
+        /// <summary>
+        /// The color to apply.
+        /// </summary>
         public uint Color;
     }
 }

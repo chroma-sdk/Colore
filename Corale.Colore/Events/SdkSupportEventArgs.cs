@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="NativeMethods.cs" company="Corale">
+// <copyright file="SdkSupportEventArgs.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,26 +28,38 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Native.Kernel32
+namespace Corale.Colore.Events
 {
     using System;
-    using System.Runtime.InteropServices;
 
     /// <summary>
-    /// Native methods from <c>kernel32</c> module.
+    /// Event arguments for the Chroma SDK support event.
     /// </summary>
-    internal static class NativeMethods
+    public class SdkSupportEventArgs : EventArgs
     {
         /// <summary>
-        /// Name of the DLL from which functions are imported.
+        /// Whether or not SDK support is enabled.
         /// </summary>
-        private const string DllName = "kernel32.dll";
+        private readonly bool _enabled;
 
-        [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = "GetProcAddress", ExactSpelling = true,
-            SetLastError = true)]
-        internal static extern IntPtr GetProcAddress(IntPtr module, string procName);
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SdkSupportEventArgs" /> class.
+        /// </summary>
+        /// <param name="enabled">Value indicating whether SDK support is enabled.</param>
+        internal SdkSupportEventArgs(bool enabled)
+        {
+            _enabled = enabled;
+        }
 
-        [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = "LoadLibrary", SetLastError = true)]
-        internal static extern IntPtr LoadLibrary([MarshalAs(UnmanagedType.LPStr)] string filename);
+        /// <summary>
+        /// Gets a value indicating whether SDK support is enabled.
+        /// </summary>
+        public bool Enabled
+        {
+            get
+            {
+                return _enabled;
+            }
+        }
     }
 }

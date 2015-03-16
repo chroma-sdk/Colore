@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Colore.cs" company="Corale">
+// <copyright file="IKeyboard.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -30,7 +30,18 @@
 
 namespace Corale.Colore.Core
 {
-    internal class Colore
+    using Corale.Colore.Razer.Keyboard;
+
+    /// <summary>
+    /// Interface for keyboard functionality.
+    /// </summary>
+    public interface IKeyboard : IDevice
     {
+        /// <summary>
+        /// Sets the color of a specific key on the keyboard.
+        /// </summary>
+        /// <param name="key">Key to modify.</param>
+        /// <param name="color">Color to set.</param>
+        void Set(Key key, Color color);
     }
 }

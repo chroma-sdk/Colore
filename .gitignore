@@ -184,3 +184,7 @@ FakesAssemblies/
 
 # Ignore artifact packages
 colore_*.zip
+
+# Ignore generated coverage reports
+coverage.xml
+

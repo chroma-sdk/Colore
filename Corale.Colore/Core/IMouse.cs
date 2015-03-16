@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="NativeMethods.cs" company="Corale">
+// <copyright file="IMouse.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,26 +28,20 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Native.Kernel32
+namespace Corale.Colore.Core
 {
-    using System;
-    using System.Runtime.InteropServices;
+    using Corale.Colore.Razer.Mouse;
 
     /// <summary>
-    /// Native methods from <c>kernel32</c> module.
+    /// Interface for mouse functionality.
     /// </summary>
-    internal static class NativeMethods
+    public interface IMouse : IDevice
     {
         /// <summary>
-        /// Name of the DLL from which functions are imported.
+        /// Sets the color of a specific LED on the mouse.
         /// </summary>
-        private const string DllName = "kernel32.dll";
-
-        [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = "GetProcAddress", ExactSpelling = true,
-            SetLastError = true)]
-        internal static extern IntPtr GetProcAddress(IntPtr module, string procName);
-
-        [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = "LoadLibrary", SetLastError = true)]
-        internal static extern IntPtr LoadLibrary([MarshalAs(UnmanagedType.LPStr)] string filename);
+        /// <param name="led">Which LED to modify.</param>
+        /// <param name="color">Color to set.</param>
+        void Set(Led led, Color color);
     }
 }
