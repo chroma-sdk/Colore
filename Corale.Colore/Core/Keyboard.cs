@@ -28,6 +28,8 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
+using Corale.Colore.Razer.Keyboard.Effects;
+
 namespace Corale.Colore.Core
 {
     using Corale.Colore.Razer.Keyboard;
@@ -77,7 +79,7 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         public void SetAll(Color color)
         {
-            throw new System.NotImplementedException();
+            NativeWrapper.CreateKeyboardEffect(new Static {Color = color});
         }
     }
 }
