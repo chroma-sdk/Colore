@@ -30,6 +30,8 @@
 
 namespace Corale.Colore.Core
 {
+    using System;
+
     /// <summary>
     /// Interface for functionality common with all devices.
     /// </summary>
@@ -39,6 +41,12 @@ namespace Corale.Colore.Core
         /// Sets the color of all components on this device.
         /// </summary>
         /// <param name="color">Color to set.</param>
-        void SetAll(Color color);
+        void Set(Color color);
+
+        /// <summary>
+        /// Updates the device to use the effect pointed to by the specified GUID.
+        /// </summary>
+        /// <param name="guid">Guid to set.</param>
+        void Set(Guid guid);
     }
 }

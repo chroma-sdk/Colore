@@ -30,7 +30,10 @@
 
 namespace Corale.Colore.Core
 {
-    using Corale.Colore.Razer.Keyboard;
+    using System;
+
+    using Razer.Keyboard;
+    using Razer.Keyboard.Effects;
 
     /// <summary>
     /// Class for interacting with a Chroma keyboard.
@@ -75,9 +78,45 @@ namespace Corale.Colore.Core
         /// Sets the color of all keys on the keyboard.
         /// </summary>
         /// <param name="color">Color to set.</param>
-        public void SetAll(Color color)
+        public void Set(Color color)
         {
-            throw new System.NotImplementedException();
+            Set(NativeWrapper.CreateKeyboardEffect(new Static {Color = color}));
+        }
+
+        /// <summary>
+        /// Updates the device to use the effect pointed to by the specified GUID.
+        /// </summary>
+        /// <param name="guid">Guid to set.</param>
+        public void Set(Guid guid)
+        {
+            NativeWrapper.SetEffect(guid);
+        }
+
+        /// <summary>
+        /// Sets a wave effect on the keyboard.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        public void Set(Wave effect)
+        {
+            Set(NativeWrapper.CreateKeyboardEffect(effect));   
+        }
+
+        /// <summary>
+        /// Sets a breathing effect on the keyboard.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        public void Set(Breathing effect)
+        {
+            Set(NativeWrapper.CreateKeyboardEffect(effect));
+        }
+
+        /// <summary>
+        /// Sets a reactive effect on the keyboard.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        public void Set(Reactive effect)
+        {
+            Set(NativeWrapper.CreateKeyboardEffect(effect));
         }
     }
 }
