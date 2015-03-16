@@ -28,6 +28,8 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
+using System;
+
 namespace Corale.Colore.Core
 {
     using Corale.Colore.Razer.Mouse;
@@ -75,9 +77,18 @@ namespace Corale.Colore.Core
         /// Sets the color of all LEDs on the mouse.
         /// </summary>
         /// <param name="color">Color to set.</param>
-        public void SetAll(Color color)
+        public void Set(Color color)
         {
             throw new System.NotImplementedException();
+        }
+
+        /// <summary>
+        /// Updates the device to use the effect pointed to by the specified GUID.
+        /// </summary>
+        /// <param name="guid">Guid to set.</param>
+        public void Set(Guid guid)
+        {
+            throw new NotImplementedException();
         }
     }
 }
