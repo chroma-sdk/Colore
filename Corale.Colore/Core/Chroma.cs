@@ -34,6 +34,7 @@ namespace Corale.Colore.Core
     using System.Diagnostics.CodeAnalysis;
 
     using Corale.Colore.Events;
+    using Corale.Colore.Razer;
 
     /// <summary>
     /// Main class for interacting with the Chroma SDK.
@@ -46,11 +47,22 @@ namespace Corale.Colore.Core
         private static IChroma _instance;
 
         /// <summary>
+        /// Keeps track of whether we have registered to receive Chroma events.
+        /// </summary>
+        private bool _registered;
+
+        /// <summary>
+        /// Keeps track of the window handle that is registered to receive events.
+        /// </summary>
+        private IntPtr _registeredHandle;
+
+        /// <summary>
         /// Prevents a default instance of the <see cref="Chroma" /> class from being created.
         /// </summary>
         private Chroma()
         {
             NativeWrapper.Init();
+            _registeredHandle = IntPtr.Zero;
         }
 
         /// <summary>
@@ -61,6 +73,7 @@ namespace Corale.Colore.Core
         /// </remarks>
         ~Chroma()
         {
+            Unregister();
             NativeWrapper.UnInit();
         }
 
@@ -143,15 +156,53 @@ namespace Corale.Colore.Core
         /// <summary>
         /// Handles a Windows message and fires the appropriate events.
         /// </summary>
+        /// <param name="handle">The <c>HWnd</c> property of the Message struct.</param>
         /// <param name="msgId">The <c>Msg</c> property of the Message struct.</param>
         /// <param name="wParam">The <c>wParam</c> property of the Message struct.</param>
         /// <param name="lParam">The <c>lParam</c> property of the Message struct.</param>
+        /// <returns><c>true</c> if the message was handled by Chroma, <c>false</c> otherwise (message was ignored).</returns>
         /// <remarks>Non-Chroma messages will be ignored.</remarks>
         [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1305:FieldNamesMustNotUseHungarianNotation",
             Justification = "Parameter names match those in the Message struct.")]
-        public void HandleMessage(int msgId, IntPtr wParam, IntPtr lParam)
+        public bool HandleMessage(IntPtr handle, int msgId, IntPtr wParam, IntPtr lParam)
         {
-            throw new NotImplementedException();
+            if (!_registered)
+                throw new InvalidOperationException("Register must be called before event handling can be performed.");
+
+            if (handle != _registeredHandle)
+            {
+                throw new ArgumentException(
+                    "The specified window handle does not match the currently registered one.",
+                    "handle");
+            }
+
+            if (msgId != Constants.WmChromaEvent)
+                return false;
+
+            var handled = false;
+
+            var type = wParam.ToInt32();
+            var state = lParam.ToInt32();
+
+            switch (type)
+            {
+                case 1: // Chroma SDK support
+                    OnSdkSupport(state != 0);
+                    handled = true;
+                    break;
+
+                case 2: // Access to device
+                    OnDeviceAccess(state != 0);
+                    handled = true;
+                    break;
+
+                case 3: // Application state
+                    OnApplicationState(state != 0);
+                    handled = true;
+                    break;
+            }
+
+            return handled;
         }
 
         /// <summary>
@@ -165,7 +216,12 @@ namespace Corale.Colore.Core
         /// </remarks>
         public void Register(IntPtr handle)
         {
-            throw new NotImplementedException();
+            if (_registered)
+                NativeWrapper.UnregisterEventNotification();
+
+            NativeWrapper.RegisterEventNotification(handle);
+            _registered = true;
+            _registeredHandle = handle;
         }
 
         /// <summary>
@@ -173,7 +229,12 @@ namespace Corale.Colore.Core
         /// </summary>
         public void Unregister()
         {
-            throw new NotImplementedException();
+            if (!_registered)
+                return;
+
+            NativeWrapper.UnregisterEventNotification();
+            _registered = false;
+            _registeredHandle = IntPtr.Zero;
         }
 
         /// <summary>
@@ -187,6 +248,39 @@ namespace Corale.Colore.Core
         {
             if (!Initialized)
                 _instance = new Chroma();
+        }
+
+        /// <summary>
+        /// Invokes the application state event handlers with the specified parameter.
+        /// </summary>
+        /// <param name="enabled">Whether or not the application was put in an enabled state.</param>
+        private void OnApplicationState(bool enabled)
+        {
+            var handler = ApplicationState;
+            if (handler != null)
+                handler(this, new ApplicationStateEventArgs(enabled));
+        }
+
+        /// <summary>
+        /// Invokes the device access event handlers with the specified parameter.
+        /// </summary>
+        /// <param name="granted">Whether or not access to the device was granted.</param>
+        private void OnDeviceAccess(bool granted)
+        {
+            var handler = DeviceAccess;
+            if (handler != null)
+                handler(this, new DeviceAccessEventArgs(granted));
+        }
+
+        /// <summary>
+        /// Invokes the SDK support event handlers with the specified parameter.
+        /// </summary>
+        /// <param name="enabled">Whether or not the SDK is supported.</param>
+        private void OnSdkSupport(bool enabled)
+        {
+            var handler = SdkSupport;
+            if (handler != null)
+                handler(this, new SdkSupportEventArgs(enabled));
         }
     }
 }

@@ -85,13 +85,15 @@ namespace Corale.Colore.Core
         /// <summary>
         /// Handles a Windows message and fires the appropriate events.
         /// </summary>
+        /// <param name="handle">The <c>HWnd</c> property of the Message struct.</param>
         /// <param name="msgId">The <c>Msg</c> property of the Message struct.</param>
         /// <param name="wParam">The <c>wParam</c> property of the Message struct.</param>
         /// <param name="lParam">The <c>lParam</c> property of the Message struct.</param>
+        /// <returns><c>true</c> if the message was handled by Chroma, <c>false</c> otherwise (message was ignored).</returns>
         /// <remarks>Non-Chroma messages will be ignored.</remarks>
         [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1305:FieldNamesMustNotUseHungarianNotation",
             Justification = "Parameter names match those in the Message struct.")]
-        void HandleMessage(int msgId, IntPtr wParam, IntPtr lParam);
+        bool HandleMessage(IntPtr handle, int msgId, IntPtr wParam, IntPtr lParam);
 
         /// <summary>
         /// Registers to start receiving Chroma events.
