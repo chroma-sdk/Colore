@@ -30,8 +30,6 @@
 
 namespace Corale.Colore.Razer
 {
-    using System;
-
     /// <summary>
     /// The definitions of generic constant values used in the project
     /// </summary>
