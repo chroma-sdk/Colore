@@ -144,6 +144,8 @@ namespace Corale.Colore.Razer
         /// <summary>
         /// Initializes static members of the <see cref="NativeMethods" /> class.
         /// </summary>
+        [SuppressMessage("Microsoft.Design", "CA1065:DoNotRaiseExceptionsInUnexpectedLocations",
+            Justification = "Can't get rid of this exception as we depend on architecture and library to work.")]
         static NativeMethods()
         {
             // Get the current processor architecture the CLR is running as

@@ -32,6 +32,7 @@ namespace Corale.Colore.Razer
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Reflection;
 
@@ -112,6 +113,8 @@ namespace Corale.Colore.Razer
         /// <summary>
         /// Initializes static members of the <see cref="Result" /> struct.
         /// </summary>
+        [SuppressMessage("Microsoft.Usage", "CA2207:InitializeValueTypeStaticFieldsInline",
+            Justification = "This is temporary(TM) until ReSharper fixes their bug with sorting members.")]
         static Result()
         {
             FieldMetadata = GetMetadata();

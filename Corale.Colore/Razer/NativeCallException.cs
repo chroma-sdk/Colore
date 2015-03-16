@@ -30,6 +30,7 @@
 
 namespace Corale.Colore.Razer
 {
+    using System;
     using System.ComponentModel;
     using System.Globalization;
     using System.Runtime.Serialization;
@@ -38,6 +39,7 @@ namespace Corale.Colore.Razer
     /// <summary>
     /// Thrown when a native function returns an erroneous result value.
     /// </summary>
+    [Serializable]
     public class NativeCallException : ColoreException
     {
         /// <summary>
@@ -58,6 +60,18 @@ namespace Corale.Colore.Razer
         /// <summary>
         /// Initializes a new instance of the <see cref="NativeCallException" /> class.
         /// </summary>
+        /// <param name="info">Serialization info object.</param>
+        /// <param name="context">Streaming context.</param>
+        protected NativeCallException(SerializationInfo info, StreamingContext context)
+            : base(info, context)
+        {
+            _function = info.GetString("Function");
+            _result = info.GetInt32("Result");
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NativeCallException" /> class.
+        /// </summary>
         /// <param name="function">The name of the function that was called.</param>
         /// <param name="result">The result returned from the called function.</param>
         internal NativeCallException(string function, Result result)
@@ -67,18 +81,6 @@ namespace Corale.Colore.Razer
         {
             _function = function;
             _result = result;
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="NativeCallException" /> class.
-        /// </summary>
-        /// <param name="info">Serialization info object.</param>
-        /// <param name="context">Streaming context.</param>
-        protected NativeCallException(SerializationInfo info, StreamingContext context)
-            : base(info, context)
-        {
-            _function = info.GetString("Function");
-            _result = info.GetInt32("Result");
         }
 
         /// <summary>
