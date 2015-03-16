@@ -28,6 +28,7 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
+using System;
 using Corale.Colore.Razer.Keyboard.Effects;
 
 namespace Corale.Colore.Core
@@ -77,9 +78,18 @@ namespace Corale.Colore.Core
         /// Sets the color of all keys on the keyboard.
         /// </summary>
         /// <param name="color">Color to set.</param>
-        public void SetAll(Color color)
+        public void Set(Color color)
         {
-            NativeWrapper.CreateKeyboardEffect(new Static {Color = color});
+            Set(NativeWrapper.CreateKeyboardEffect(new Static {Color = color}));
+        }
+
+        /// <summary>
+        /// Sets the Updates the device to use the effect pointed to by the specified GUID.
+        /// </summary>
+        /// <param name="guid">Guid to set.</param>
+        public void Set(Guid guid)
+        {
+            NativeWrapper.SetEffect(guid);
         }
     }
 }
