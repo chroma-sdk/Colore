@@ -44,10 +44,11 @@ namespace Corale.Colore.Native.Kernel32
         private const string DllName = "kernel32.dll";
 
         [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = "GetProcAddress", ExactSpelling = true,
-            SetLastError = true)]
-        internal static extern IntPtr GetProcAddress(IntPtr module, string procName);
+            SetLastError = true, ThrowOnUnmappableChar = true, BestFitMapping = false)]
+        internal static extern IntPtr GetProcAddress(IntPtr module, [MarshalAs(UnmanagedType.LPStr)] string procName);
 
-        [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = "LoadLibrary", SetLastError = true)]
+        [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = "LoadLibrary", SetLastError = true,
+            ThrowOnUnmappableChar = true, BestFitMapping = false)]
         internal static extern IntPtr LoadLibrary([MarshalAs(UnmanagedType.LPStr)] string filename);
     }
 }
