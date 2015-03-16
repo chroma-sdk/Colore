@@ -83,11 +83,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ColoreException.cs" />
+    <Compile Include="Core\Chroma.cs" />
     <Compile Include="Core\Color.cs" />
     <Compile Include="Core\IChroma.cs" />
     <Compile Include="Core\IDevice.cs" />
     <Compile Include="Core\IKeyboard.cs" />
     <Compile Include="Core\IMouse.cs" />
+    <Compile Include="Core\Keyboard.cs" />
+    <Compile Include="Core\Mouse.cs" />
     <Compile Include="Core\NativeWrapper.cs" />
     <Compile Include="Core\Size.cs" />
     <Compile Include="Events\ApplicationStateEventArgs.cs" />

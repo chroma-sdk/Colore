@@ -177,5 +177,29 @@ namespace Corale.Colore.Tests.Razer
                 Assert.Pass();
             Assert.Fail("If-check failed.");
         }
+
+        [Test]
+        public void SuccessPropertyShouldBeTrueOnSuccess()
+        {
+            Assert.True(Result.RzSuccess.Success);
+        }
+
+        [Test]
+        public void SuccessPropertyShouldBeFalseOnFailure()
+        {
+            Assert.False(Result.RzFailed.Success);
+        }
+
+        [Test]
+        public void FailedPropertyShouldBeTrueOnFailure()
+        {
+            Assert.True(Result.RzFailed.Failed);
+        }
+
+        [Test]
+        public void FailedPropertyShouldBeFalseOnSuccess()
+        {
+            Assert.False(Result.RzSuccess.Failed);
+        }
     }
 }

@@ -209,4 +209,5 @@
     "Razer" is a trademark of Razer USA Ltd.&#xD;
 &lt;/copyright&gt;&#xD;
 ---------------------------------------------------------------------------------------&#xD;
-</s:String></wpf:ResourceDictionary>
+</s:String>
+	<s:String x:Key="/Default/FilterSettingsManager/CoverageFilterXml/@EntryValue">&lt;data&gt;&lt;IncludeFilters /&gt;&lt;ExcludeFilters&gt;&lt;Filter ModuleMask="Corale.Colore" ModuleVersionMask="*" ClassMask="Corale.Colore.Razer.NativeMethods" FunctionMask="*" IsEnabled="True" /&gt;&lt;Filter ModuleMask="Corale.Colore" ModuleVersionMask="*" ClassMask="Corale.Colore.Core.NativeWrapper" FunctionMask="*" IsEnabled="True" /&gt;&lt;/ExcludeFilters&gt;&lt;/data&gt;</s:String></wpf:ResourceDictionary>
