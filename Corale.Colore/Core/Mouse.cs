@@ -28,10 +28,10 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-using System;
-
 namespace Corale.Colore.Core
 {
+    using System;
+    
     using Corale.Colore.Razer.Mouse;
 
     /// <summary>
