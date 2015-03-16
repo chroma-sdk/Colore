@@ -91,5 +91,32 @@ namespace Corale.Colore.Core
         {
             NativeWrapper.SetEffect(guid);
         }
+
+        /// <summary>
+        /// Sets a wave effect on the keyboard.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        public void Set(Wave effect)
+        {
+            Set(NativeWrapper.CreateKeyboardEffect(effect));   
+        }
+
+        /// <summary>
+        /// Sets a breathing effect on the keyboard.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        public void Set(Breathing effect)
+        {
+            Set(NativeWrapper.CreateKeyboardEffect(effect));
+        }
+
+        /// <summary>
+        /// Sets a reactive effect on the keyboard.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        public void Set(Reactive effect)
+        {
+            Set(NativeWrapper.CreateKeyboardEffect(effect));
+        }
     }
 }
