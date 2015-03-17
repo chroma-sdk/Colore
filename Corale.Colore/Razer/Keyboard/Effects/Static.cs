@@ -46,5 +46,14 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// </summary>
         [PublicAPI]
         public Color Color;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Static" /> struct.
+        /// </summary>
+        /// <param name="color">Color to apply.</param>
+        public Static(Color color)
+        {
+            Color = color;
+        }
     }
 }

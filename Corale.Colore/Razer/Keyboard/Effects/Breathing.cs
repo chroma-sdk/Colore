@@ -52,5 +52,16 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// </summary>
         [PublicAPI]
         public Color Second;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Breathing" /> struct.
+        /// </summary>
+        /// <param name="first">First color.</param>
+        /// <param name="second">Second color.</param>
+        public Breathing(Color first, Color second)
+        {
+            First = first;
+            Second = second;
+        }
     }
 }

@@ -52,5 +52,16 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// </summary>
         [PublicAPI]
         public Duration Duration;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Reactive" /> struct.
+        /// </summary>
+        /// <param name="color">Color to apply when key is hit.</param>
+        /// <param name="duration">Duration to illuminate the key.</param>
+        public Reactive(Color color, Duration duration)
+        {
+            Color = color;
+            Duration = duration;
+        }
     }
 }

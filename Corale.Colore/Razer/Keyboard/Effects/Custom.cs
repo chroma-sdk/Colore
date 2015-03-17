@@ -52,5 +52,16 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// </summary>
         [PublicAPI]
         public Key Key;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Custom" /> struct.
+        /// </summary>
+        /// <param name="key">Key to apply color to.</param>
+        /// <param name="color">The color to apply.</param>
+        public Custom(Key key, Color color)
+        {
+            Color = color;
+            Key = key;
+        }
     }
 }

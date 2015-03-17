@@ -30,6 +30,7 @@
 
 namespace Corale.Colore.Razer.Keyboard.Effects
 {
+    using System;
     using System.Runtime.InteropServices;
 
     using Corale.Colore.Annotations;
@@ -50,5 +51,40 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// </remarks>
         [PublicAPI]
         public readonly Color[][] Colors;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomGrid" /> struct.
+        /// </summary>
+        /// <param name="colors">The colors to use.</param>
+        /// <exception cref="ArgumentException">Thrown if the colors array supplied is of an incorrect size.</exception>
+        public CustomGrid(Color[][] colors)
+        {
+            var rows = colors.GetLength(0);
+
+            if (rows > Constants.MaxRows)
+            {
+                throw new ArgumentException(
+                    "Colors array has too many rows, max count is " + Constants.MaxRows + ", received " + rows,
+                    "colors");
+            }
+
+            Colors = new Color[rows][];
+
+            for (var row = 0; row < rows; row++)
+            {
+                var inRow = colors[row];
+
+                if (inRow.Length > Constants.MaxRows)
+                {
+                    throw new ArgumentException(
+                        "Row " + row + " of the colors array has too many columns, max count is " + Constants.MaxRows
+                        + ", received " + inRow.Length,
+                        "colors");
+                }
+
+                Colors[row] = new Color[inRow.Length];
+                inRow.CopyTo(Colors[row], 0);
+            }
+        }
     }
 }

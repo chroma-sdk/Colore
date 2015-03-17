@@ -45,5 +45,14 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// </summary>
         [PublicAPI]
         public Direction Direction;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Wave" /> struct.
+        /// </summary>
+        /// <param name="direction">Direction of the wave.</param>
+        public Wave(Direction direction)
+        {
+            Direction = direction;
+        }
     }
 }
