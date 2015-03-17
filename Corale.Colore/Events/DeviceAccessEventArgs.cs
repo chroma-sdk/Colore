@@ -37,7 +37,7 @@ namespace Corale.Colore.Events
     /// <summary>
     /// Event arguments for the device access event.
     /// </summary>
-    public class DeviceAccessEventArgs : EventArgs
+    public sealed class DeviceAccessEventArgs : EventArgs
     {
         /// <summary>
         /// Whether or not device access has been granted.

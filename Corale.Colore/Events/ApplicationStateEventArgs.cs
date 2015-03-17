@@ -37,7 +37,7 @@ namespace Corale.Colore.Events
     /// <summary>
     /// Event arguments for the application state event.
     /// </summary>
-    public class ApplicationStateEventArgs : EventArgs
+    public sealed class ApplicationStateEventArgs : EventArgs
     {
         /// <summary>
         /// Whether or not application is enabled.
