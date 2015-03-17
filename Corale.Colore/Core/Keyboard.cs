@@ -136,7 +136,7 @@ namespace Corale.Colore.Core
         /// <param name="row">Row to query, between 1 and <see cref="Constants.MaxRows" />.</param>
         /// <param name="column">Column to query, between 1 and <see cref="Constants.MaxColumns" />.</param>
         /// <returns>The color currently set on the specified position.</returns>
-        public Color this[int row, int column]
+        public Color this[Size row, Size column]
         {
             get
             {
@@ -249,7 +249,7 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         /// <param name="clear">Whether or not to clear the existing colors before setting this one.</param>
         /// <exception cref="ArgumentException">Thrown if the row or column parameters are outside the valid ranges.</exception>
-        public void Set(int row, int column, Color color, bool clear = false)
+        public void Set(Size row, Size column, Color color, bool clear = false)
         {
             if (row > Constants.MaxRows)
                 throw new ArgumentException("Row was outside the valid range (1-" + Constants.MaxRows + ").", "row");
