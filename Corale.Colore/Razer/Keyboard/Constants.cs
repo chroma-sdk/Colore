@@ -30,7 +30,8 @@
 
 namespace Corale.Colore.Razer.Keyboard
 {
-    using Colore.Core;
+    using Corale.Colore.Annotations;
+    using Corale.Colore.Core;
 
     /// <summary>
     /// Holds various keyboard constants used in Razer's API.
@@ -40,21 +41,25 @@ namespace Corale.Colore.Razer.Keyboard
         /// <summary>
         /// The maximum number of rows on the keyboard
         /// </summary>
+        [PublicAPI]
         public static readonly Size MaxRows = 6;
 
         /// <summary>
         /// The maximum number of columns on the keyboard
         /// </summary>
+        [PublicAPI]
         public static readonly Size MaxColumns = 22;
 
         /// <summary>
         /// The maximum number of keys on the keyboard
         /// </summary>
+        [PublicAPI]
         public static readonly Size MaxKeys = MaxRows * MaxColumns;
 
         /// <summary>
         /// The maximum number of custom effects based on the maximum keys
         /// </summary>
+        [PublicAPI]
         public static readonly Size MaxCustomEffects = MaxKeys;
     }
 }

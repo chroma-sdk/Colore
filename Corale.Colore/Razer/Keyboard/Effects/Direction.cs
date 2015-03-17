@@ -30,6 +30,8 @@
 
 namespace Corale.Colore.Razer.Keyboard.Effects
 {
+    using Corale.Colore.Annotations;
+
     /// <summary>
     /// Direction of the wave effect.
     /// </summary>
@@ -38,21 +40,25 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// <summary>
         /// No direction.
         /// </summary>
+        [PublicAPI]
         None = 0,
 
         /// <summary>
         /// Left to right.
         /// </summary>
+        [PublicAPI]
         LeftToRight,
 
         /// <summary>
         /// Right to left.
         /// </summary>
+        [PublicAPI]
         RightToLeft,
 
         /// <summary>
         /// Invalid direction.
         /// </summary>
+        [PublicAPI]
         Invalid
     }
 }

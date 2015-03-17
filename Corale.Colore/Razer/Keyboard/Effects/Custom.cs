@@ -32,6 +32,8 @@ namespace Corale.Colore.Razer.Keyboard.Effects
 {
     using System.Runtime.InteropServices;
 
+    using Corale.Colore.Annotations;
+
     /// <summary>
     /// Describes a custom effect for a specific key.
     /// </summary>
@@ -39,13 +41,15 @@ namespace Corale.Colore.Razer.Keyboard.Effects
     public struct Custom
     {
         /// <summary>
-        /// The key to apply the effect to.
-        /// </summary>
-        public Key Key;
-
-        /// <summary>
         /// The color to use for the effect.
         /// </summary>
+        [PublicAPI]
         public uint Color;
+
+        /// <summary>
+        /// The key to apply the effect to.
+        /// </summary>
+        [PublicAPI]
+        public Key Key;
     }
 }

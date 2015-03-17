@@ -30,14 +30,18 @@
 
 namespace Corale.Colore.Razer
 {
+    using Corale.Colore.Annotations;
+
     /// <summary>
     /// Chroma-supported products.
     /// </summary>
+    [PublicAPI]
     public enum Product
     {
         /// <summary>
         /// No product.
         /// </summary>
+        [PublicAPI]
         None = 0,
 
         /// <summary>
@@ -46,11 +50,13 @@ namespace Corale.Colore.Razer
         /// <remarks>
         /// Device Id = <c>2EA1BB63-CA28-428D-9F06-196B88330BBB</c>.
         /// </remarks>
+        [PublicAPI]
         BlackWidowChroma,
 
         /// <summary>
         /// Invalid product.
         /// </summary>
+        [PublicAPI]
         Invalid
     }
 }

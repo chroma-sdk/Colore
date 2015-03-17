@@ -40,6 +40,16 @@ namespace Corale.Colore
     public class ColoreException : Exception
     {
         /// <summary>
+        /// Initializes a new instance of the <see cref="ColoreException" /> class.
+        /// </summary>
+        /// <param name="message">Exception message.</param>
+        /// <param name="innerException">Inner exception object.</param>
+        internal ColoreException(string message = null, Exception innerException = null)
+            : base(message, innerException)
+        {
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ColoreException" /> class
         /// from serialization data.
         /// </summary>
@@ -47,16 +57,6 @@ namespace Corale.Colore
         /// <param name="context">Streaming context.</param>
         protected ColoreException(SerializationInfo info, StreamingContext context)
             : base(info, context)
-        {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ColoreException" /> class.
-        /// </summary>
-        /// <param name="message">Exception message.</param>
-        /// <param name="innerException">Inner exception object.</param>
-        internal ColoreException(string message = null, Exception innerException = null)
-            : base(message, innerException)
         {
         }
     }

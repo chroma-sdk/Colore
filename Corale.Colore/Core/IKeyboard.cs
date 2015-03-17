@@ -30,6 +30,7 @@
 
 namespace Corale.Colore.Core
 {
+    using Corale.Colore.Annotations;
     using Corale.Colore.Razer.Keyboard;
     using Corale.Colore.Razer.Keyboard.Effects;
 
@@ -43,24 +44,28 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="key">Key to modify.</param>
         /// <param name="color">Color to set.</param>
+        [PublicAPI]
         void Set(Key key, Color color);
 
         /// <summary>
         /// Sets a wave effect on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
+        [PublicAPI]
         void Set(Wave effect);
 
         /// <summary>
         /// Sets a breathing effect on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
+        [PublicAPI]
         void Set(Breathing effect);
 
         /// <summary>
         /// Sets a reactive effect on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
+        [PublicAPI]
         void Set(Reactive effect);
     }
 }

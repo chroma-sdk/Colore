@@ -31,12 +31,14 @@
 namespace Corale.Colore.Core
 {
     using System;
-    
+
+    using Corale.Colore.Annotations;
     using Corale.Colore.Razer.Mouse;
 
     /// <summary>
     /// Class for interacting with a Chroma mouse.
     /// </summary>
+    [PublicAPI]
     public class Mouse : IMouse
     {
         /// <summary>
@@ -54,6 +56,7 @@ namespace Corale.Colore.Core
         /// <summary>
         /// Gets the application-wide instance of the <see cref="IMouse" /> interface.
         /// </summary>
+        [PublicAPI]
         public static IMouse Instance
         {
             get
@@ -70,7 +73,7 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         public void Set(Led led, Color color)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -79,13 +82,13 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         public void Set(Color color)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         /// <summary>
         /// Updates the device to use the effect pointed to by the specified GUID.
         /// </summary>
-        /// <param name="guid">Guid to set.</param>
+        /// <param name="guid">GUID to set.</param>
         public void Set(Guid guid)
         {
             throw new NotImplementedException();

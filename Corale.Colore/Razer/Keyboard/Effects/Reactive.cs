@@ -32,6 +32,8 @@ namespace Corale.Colore.Razer.Keyboard.Effects
 {
     using System.Runtime.InteropServices;
 
+    using Corale.Colore.Annotations;
+
     /// <summary>
     /// Describes the reactive effect type.
     /// </summary>
@@ -41,11 +43,13 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// <summary>
         /// Color of the effect.
         /// </summary>
+        [PublicAPI]
         public uint Color;
 
         /// <summary>
         /// The duration of the effect.
         /// </summary>
+        [PublicAPI]
         public Duration Duration;
     }
 }

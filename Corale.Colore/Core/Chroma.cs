@@ -33,6 +33,7 @@ namespace Corale.Colore.Core
     using System;
     using System.Diagnostics.CodeAnalysis;
 
+    using Corale.Colore.Annotations;
     using Corale.Colore.Events;
     using Corale.Colore.Razer;
 
@@ -110,6 +111,7 @@ namespace Corale.Colore.Core
         /// <summary>
         /// Gets the application-wide instance of the <see cref="IChroma" /> interface.
         /// </summary>
+        [PublicAPI]
         public static IChroma Instance
         {
             get

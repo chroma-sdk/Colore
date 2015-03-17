@@ -33,6 +33,7 @@ namespace Corale.Colore.Core
     using System;
     using System.Diagnostics.CodeAnalysis;
 
+    using Corale.Colore.Annotations;
     using Corale.Colore.Events;
 
     /// <summary>
@@ -48,6 +49,7 @@ namespace Corale.Colore.Core
         /// <see cref="Register" /> and that Windows messages are being forwarded to
         /// Colore using <see cref="HandleMessage" />.
         /// </remarks>
+        [PublicAPI]
         event EventHandler<ApplicationStateEventArgs> ApplicationState;
 
         /// <summary>
@@ -58,6 +60,7 @@ namespace Corale.Colore.Core
         /// <see cref="Register" /> and that Windows messages are being forwarded to
         /// Colore using <see cref="HandleMessage" />.
         /// </remarks>
+        [PublicAPI]
         event EventHandler<DeviceAccessEventArgs> DeviceAccess;
 
         /// <summary>
@@ -68,18 +71,21 @@ namespace Corale.Colore.Core
         /// <see cref="Register" /> and that Windows messages are being forwarded to
         /// Colore using <see cref="HandleMessage" />.
         /// </remarks>
+        [PublicAPI]
         event EventHandler<SdkSupportEventArgs> SdkSupport;
 
         /// <summary>
         /// Gets an instance of the <see cref="IKeyboard" /> interface
         /// for interacting with a Razer Chroma keyboard.
         /// </summary>
+        [PublicAPI]
         IKeyboard Keyboard { get; }
 
         /// <summary>
         /// Gets an instance of the <see cref="IMouse" /> interface
         /// for interacting with a Razer Chroma mouse.
         /// </summary>
+        [PublicAPI]
         IMouse Mouse { get; }
 
         /// <summary>
@@ -91,6 +97,7 @@ namespace Corale.Colore.Core
         /// <param name="lParam">The <c>lParam</c> property of the Message struct.</param>
         /// <returns><c>true</c> if the message was handled by Chroma, <c>false</c> otherwise (message was ignored).</returns>
         /// <remarks>Non-Chroma messages will be ignored.</remarks>
+        [PublicAPI]
         [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1305:FieldNamesMustNotUseHungarianNotation",
             Justification = "Parameter names match those in the Message struct.")]
         bool HandleMessage(IntPtr handle, int msgId, IntPtr wParam, IntPtr lParam);
@@ -104,11 +111,13 @@ namespace Corale.Colore.Core
         /// Windows messages to receive them. Messages need to be passed to the message handler in Colore to
         /// be processed, as this cannot be automated.
         /// </remarks>
+        [PublicAPI]
         void Register(IntPtr handle);
 
         /// <summary>
         /// Unregisters from receiving Chroma events.
         /// </summary>
+        [PublicAPI]
         void Unregister();
     }
 }

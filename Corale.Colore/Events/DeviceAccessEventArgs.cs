@@ -32,6 +32,8 @@ namespace Corale.Colore.Events
 {
     using System;
 
+    using Corale.Colore.Annotations;
+
     /// <summary>
     /// Event arguments for the device access event.
     /// </summary>
@@ -54,6 +56,7 @@ namespace Corale.Colore.Events
         /// <summary>
         /// Gets a value indicating whether device access has been granted.
         /// </summary>
+        [PublicAPI]
         public bool Granted
         {
             get

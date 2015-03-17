@@ -30,44 +30,54 @@
 
 namespace Corale.Colore.Razer.Keyboard.Effects
 {
+    using Corale.Colore.Annotations;
+
     /// <summary>
     /// Supported built-in keyboard effects.
     /// </summary>
+    [PublicAPI]
     public enum Effect
     {
         /// <summary>
         /// No effect.
         /// </summary>
+        [PublicAPI]
         None = 0,
 
         /// <summary>
         /// Wave effect.
         /// </summary>
+        [PublicAPI]
         Wave,
 
         /// <summary>
         /// Spectrum cycling effect.
         /// </summary>
+        [PublicAPI]
         SpectrumCycling,
 
         /// <summary>
         /// Breathing effect.
         /// </summary>
+        [PublicAPI]
         Breathing,
 
         /// <summary>
         /// Reactive effect.
         /// </summary>
+        [PublicAPI]
         Reactive,
 
         /// <summary>
         /// Static effect.
         /// </summary>
+        [PublicAPI]
         Static,
 
         /// <summary>
         /// Invalid effect.
         /// </summary>
+        [PublicAPI]
         Invalid
     }
 }

@@ -32,6 +32,8 @@ namespace Corale.Colore.Razer.Mouse.Effects
 {
     using System.Runtime.InteropServices;
 
+    using Corale.Colore.Annotations;
+
     /// <summary>
     /// Describes the custom effect type for a specific LED.
     /// </summary>
@@ -42,12 +44,14 @@ namespace Corale.Colore.Razer.Mouse.Effects
         /// The LED which this effect should affect.
         /// </summary>
         /// <remarks>Defined as a DWORD in the C header.</remarks>
+        [PublicAPI]
         public Led Led;
 
         /// <summary>
         /// The color of the effect.
         /// </summary>
         /// <remarks>Defined as a COLORREF in the C header.</remarks>
+        [PublicAPI]
         public uint Color;
     }
 }

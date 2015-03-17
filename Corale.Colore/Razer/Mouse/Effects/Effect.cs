@@ -30,6 +30,8 @@
 
 namespace Corale.Colore.Razer.Mouse.Effects
 {
+    using Corale.Colore.Annotations;
+
     /// <summary>
     /// Supported built-in mouse effects.
     /// </summary>
@@ -38,31 +40,37 @@ namespace Corale.Colore.Razer.Mouse.Effects
         /// <summary>
         /// No effect.
         /// </summary>
+        [PublicAPI]
         None = 0,
 
         /// <summary>
         /// The spectrum cycling effect.
         /// </summary>
+        [PublicAPI]
         SpectrumCycling,
 
         /// <summary>
         /// The breathing effect.
         /// </summary>
+        [PublicAPI]
         Breathing,
 
         /// <summary>
         /// Static color effect.
         /// </summary>
+        [PublicAPI]
         Static,
 
         /// <summary>
         /// Custom effect.
         /// </summary>
+        [PublicAPI]
         Custom,
 
         /// <summary>
         /// Invalid effect.
         /// </summary>
+        [PublicAPI]
         Invalid
     }
 }
