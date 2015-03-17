@@ -89,6 +89,16 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
+        /// Converts a <see cref="Size" /> struct to an <see cref="int" />.
+        /// </summary>
+        /// <param name="size">An instance of <see cref="Size" /> to convert.</param>
+        /// <returns>The resulting <see cref="int" /> value.</returns>
+        public static explicit operator int(Size size)
+        {
+            return (int)size._value;
+        }
+
+        /// <summary>
         /// Indicates whether a <see cref="Size" /> struct is greater than another
         /// <see cref="Size" /> struct.
         /// </summary>
