@@ -59,7 +59,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// <exception cref="ArgumentException">Thrown if the colors array supplied is of an incorrect size.</exception>
         public CustomGrid(Color[][] colors)
         {
-            var rows = colors.GetLength(0);
+            var rows = (Size)colors.GetLength(0);
 
             if (rows > Constants.MaxRows)
             {
@@ -70,11 +70,11 @@ namespace Corale.Colore.Razer.Keyboard.Effects
 
             Colors = new Color[rows][];
 
-            for (var row = 0; row < rows; row++)
+            for (Size row = 0; row < rows; row++)
             {
                 var inRow = colors[row];
 
-                if (inRow.Length > Constants.MaxRows)
+                if (inRow.Length > (int)Constants.MaxRows)
                 {
                     throw new ArgumentException(
                         "Row " + row + " of the colors array has too many columns, max count is " + Constants.MaxRows

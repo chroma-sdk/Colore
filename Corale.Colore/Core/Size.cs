@@ -99,6 +99,17 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
+        /// Converts an <see cref="int" /> value to an instance of <see cref="Size" />
+        /// representing that value.
+        /// </summary>
+        /// <param name="value">The value to convert.</param>
+        /// <returns>A new instance of a <see cref="Size" /> struct with a size corresponding to the value.</returns>
+        public static explicit operator Size(int value)
+        {
+            return new Size((size_t)value);
+        }
+
+        /// <summary>
         /// Indicates whether a <see cref="Size" /> struct is greater than another
         /// <see cref="Size" /> struct.
         /// </summary>

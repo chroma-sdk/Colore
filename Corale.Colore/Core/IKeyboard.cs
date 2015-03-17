@@ -55,7 +55,7 @@ namespace Corale.Colore.Core
         /// <param name="column">Column to query, between 1 and <see cref="Constants.MaxColumns" />.</param>
         /// <returns>The color currently set on the specified position.</returns>
         [PublicAPI]
-        Color this[int row, int column] { get; set; }
+        Color this[Size row, Size column] { get; set; }
 
         /// <summary>
         /// Returns whether a certain key has had a custom color set.
@@ -125,7 +125,7 @@ namespace Corale.Colore.Core
         /// <param name="column">Column to set, between 1 and <see cref="Constants.MaxColumns" />.</param>
         /// <param name="color">Color to set.</param>
         /// <param name="clear">Whether or not to clear the existing colors before setting this one.</param>
-        void Set(int row, int column, Color color, bool clear = false);
+        void Set(Size row, Size column, Color color, bool clear = false);
 
         /// <summary>
         /// Sets the color of a specific key on the keyboard.
