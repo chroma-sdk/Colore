@@ -40,7 +40,7 @@ namespace Corale.Colore.Core
     /// Class for interacting with a Chroma keyboard.
     /// </summary>
     [PublicAPI]
-    public class Keyboard : IKeyboard
+    public sealed class Keyboard : IKeyboard
     {
         /// <summary>
         /// Holds the application-wide instance of the <see cref="Keyboard" /> class.

@@ -39,7 +39,7 @@ namespace Corale.Colore.Core
     /// Class for interacting with a Chroma mouse.
     /// </summary>
     [PublicAPI]
-    public class Mouse : IMouse
+    public sealed class Mouse : IMouse
     {
         /// <summary>
         /// Holds the application-wide instance of the <see cref="IMouse" /> interface.
