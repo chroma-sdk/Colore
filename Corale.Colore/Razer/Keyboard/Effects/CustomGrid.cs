@@ -86,5 +86,19 @@ namespace Corale.Colore.Razer.Keyboard.Effects
                 inRow.CopyTo(Colors[row], 0);
             }
         }
+
+        /// <summary>
+        /// Clears the colors from the grid, setting them to <see cref="Color.Black" />.
+        /// </summary>
+        public void Clear()
+        {
+            var rows = Colors.GetLength(0);
+            for (var row = 0; row < rows; row++)
+            {
+                var rowArr = Colors[row];
+                for (var col = 0; col < rowArr.Length; col++)
+                    rowArr[col] = Color.Black;
+            }
+        }
     }
 }
