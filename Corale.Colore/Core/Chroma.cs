@@ -128,7 +128,7 @@ namespace Corale.Colore.Core
         {
             get
             {
-                throw new NotImplementedException();
+                return Core.Keyboard.Instance;
             }
         }
 
@@ -140,7 +140,7 @@ namespace Corale.Colore.Core
         {
             get
             {
-                throw new NotImplementedException();
+                return Core.Mouse.Instance;
             }
         }
 
