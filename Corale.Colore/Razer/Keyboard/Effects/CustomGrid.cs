@@ -33,6 +33,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
     using System.Runtime.InteropServices;
 
     using Corale.Colore.Annotations;
+    using Corale.Colore.Core;
 
     /// <summary>
     /// Describes a custom grid effect for every key.
@@ -48,6 +49,6 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// specifying the row for the key, and the second the column.
         /// </remarks>
         [PublicAPI]
-        public readonly uint[][] Key;
+        public readonly Color[][] Colors;
     }
 }

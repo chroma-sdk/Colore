@@ -33,6 +33,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
     using System.Runtime.InteropServices;
 
     using Corale.Colore.Annotations;
+    using Corale.Colore.Core;
 
     /// <summary>
     /// Describes the static effect type.
@@ -44,6 +45,6 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// Color of the effect.
         /// </summary>
         [PublicAPI]
-        public uint Color;
+        public Color Color;
     }
 }

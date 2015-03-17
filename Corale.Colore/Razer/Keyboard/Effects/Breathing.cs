@@ -33,6 +33,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
     using System.Runtime.InteropServices;
 
     using Corale.Colore.Annotations;
+    using Corale.Colore.Core;
 
     /// <summary>
     /// Describes the breathing effect.
@@ -44,12 +45,12 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// First color.
         /// </summary>
         [PublicAPI]
-        public readonly uint FirstColor;
+        public Color First;
 
         /// <summary>
         /// Second color.
         /// </summary>
         [PublicAPI]
-        public readonly uint SecondColor;
+        public Color Second;
     }
 }
