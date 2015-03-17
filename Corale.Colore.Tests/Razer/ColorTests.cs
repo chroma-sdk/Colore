@@ -95,6 +95,12 @@ namespace Corale.Colore.Tests.Razer
         }
 
         [Test]
+        public void ShouldDefaultToBlackColor()
+        {
+            Assert.AreEqual(new Color(), Color.Black);
+        }
+
+        [Test]
         public void ShouldEqualIdenticalColor()
         {
             var a = new Color(0);
