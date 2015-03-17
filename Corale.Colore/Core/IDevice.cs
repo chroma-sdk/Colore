@@ -40,6 +40,11 @@ namespace Corale.Colore.Core
     public interface IDevice
     {
         /// <summary>
+        /// Clears the current effect on the device.
+        /// </summary>
+        void Clear();
+
+        /// <summary>
         /// Sets the color of all components on this device.
         /// </summary>
         /// <param name="color">Color to set.</param>

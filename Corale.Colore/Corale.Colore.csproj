@@ -85,6 +85,7 @@
     <Compile Include="ColoreException.cs" />
     <Compile Include="Core\Chroma.cs" />
     <Compile Include="Core\Color.cs" />
+    <Compile Include="Core\Device.cs" />
     <Compile Include="Core\IChroma.cs" />
     <Compile Include="Core\IDevice.cs" />
     <Compile Include="Core\IKeyboard.cs" />

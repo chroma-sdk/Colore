@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Mouse.cs" company="Corale">
+// <copyright file="Device.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -33,57 +33,42 @@ namespace Corale.Colore.Core
     using System;
 
     using Corale.Colore.Annotations;
-    using Corale.Colore.Razer.Mouse;
-    using Corale.Colore.Razer.Mouse.Effects;
 
     /// <summary>
-    /// Class for interacting with a Chroma mouse.
+    /// Base class for devices, containing code common between all devices.
     /// </summary>
-    [PublicAPI]
-    public sealed class Mouse : Device, IMouse
+    public abstract class Device : IDevice
     {
         /// <summary>
-        /// Holds the application-wide instance of the <see cref="IMouse" /> interface.
-        /// </summary>
-        private static IMouse _instance;
-
-        /// <summary>
-        /// Prevents a default instance of the <see cref="Mouse" /> class from being created.
-        /// </summary>
-        private Mouse()
-        {
-        }
-
-        /// <summary>
-        /// Gets the application-wide instance of the <see cref="IMouse" /> interface.
+        /// Gets or sets the ID of the currently active effect.
         /// </summary>
         [PublicAPI]
-        public static IMouse Instance
+        public Guid CurrentEffectId { get; protected set; }
+
+        /// <summary>
+        /// Clears the current effect on the device.
+        /// </summary>
+        public void Clear()
         {
-            get
-            {
-                Chroma.Initialize();
-                return _instance ?? (_instance = new Mouse());
-            }
+            if (CurrentEffectId != Guid.Empty)
+                NativeWrapper.DeleteEffect(CurrentEffectId);
         }
 
         /// <summary>
-        /// Sets the color of a specific LED on the mouse.
+        /// Sets the color of all components on this device.
         /// </summary>
-        /// <param name="led">Which LED to modify.</param>
         /// <param name="color">Color to set.</param>
-        public void Set(Led led, Color color)
-        {
-            throw new NotImplementedException();
-        }
+        public abstract void Set(Color color);
 
         /// <summary>
-        /// Sets the color of all LEDs on the mouse.
+        /// Updates the device to use the effect pointed to by the specified GUID.
         /// </summary>
-        /// <param name="color">Color to set.</param>
-        public override void Set(Color color)
+        /// <param name="guid">GUID to set.</param>
+        public void Set(Guid guid)
         {
-            Set(NativeWrapper.CreateMouseEffect(Led.Logo, new Static { Color = color }));
+            Clear();
+            NativeWrapper.SetEffect(guid);
+            CurrentEffectId = guid;
         }
     }
 }
