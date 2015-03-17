@@ -40,7 +40,7 @@ namespace Corale.Colore.Razer
     /// Thrown when a native function returns an erroneous result value.
     /// </summary>
     [Serializable]
-    public class NativeCallException : ColoreException
+    public sealed class NativeCallException : ColoreException
     {
         /// <summary>
         /// Template used to construct exception message from.
