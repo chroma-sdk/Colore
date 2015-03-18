@@ -32,10 +32,12 @@ namespace Corale.Colore.Events
 {
     using System;
 
+    using Corale.Colore.Annotations;
+
     /// <summary>
     /// Event arguments for the application state event.
     /// </summary>
-    public class ApplicationStateEventArgs : EventArgs
+    public sealed class ApplicationStateEventArgs : EventArgs
     {
         /// <summary>
         /// Whether or not application is enabled.
@@ -54,6 +56,7 @@ namespace Corale.Colore.Events
         /// <summary>
         /// Gets a value indicating whether or not the application has been enabled.
         /// </summary>
+        [PublicAPI]
         public bool Enabled
         {
             get

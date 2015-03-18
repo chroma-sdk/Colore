@@ -36,6 +36,8 @@ namespace Corale.Colore.Razer
     using System.Linq;
     using System.Reflection;
 
+    using Corale.Colore.Annotations;
+
     /// <summary>
     /// Struct for containing the result of running a native Chroma SDK function.
     /// </summary>
@@ -50,54 +52,63 @@ namespace Corale.Colore.Razer
         /// Access denied.
         /// </summary>
         [Description("Access denied.")]
+        [PublicAPI]
         public static readonly Result RzAccessDenied = 5;
 
         /// <summary>
         /// Generic fail error.
         /// </summary>
         [Description("General failure.")]
+        [PublicAPI]
         public static readonly Result RzFailed = unchecked((int)2147500037);
 
         /// <summary>
         /// Invalid error.
         /// </summary>
         [Description("Invalid.")]
+        [PublicAPI]
         public static readonly Result RzInvalid = -1;
 
         /// <summary>
         /// Invalid parameter passed to function.
         /// </summary>
         [Description("Invalid parameter.")]
+        [PublicAPI]
         public static readonly Result RzInvalidParameter = 87;
 
         /// <summary>
         /// The requested operation is not supported.
         /// </summary>
         [Description("Not supported.")]
+        [PublicAPI]
         public static readonly Result RzNotSupported = 50;
 
         /// <summary>
         /// The request was aborted.
         /// </summary>
         [Description("Request aborted.")]
+        [PublicAPI]
         public static readonly Result RzRequestAborted = 1235;
 
         /// <summary>
         /// Resource not available or disabled.
         /// </summary>
         [Description("Resource not available or disabled.")]
+        [PublicAPI]
         public static readonly Result RzResourceDisabled = 4309;
 
         /// <summary>
         /// Cannot start more than one instance of the specified program.
         /// </summary>
         [Description("Cannot start more than one instance of the specified program.")]
+        [PublicAPI]
         public static readonly Result RzSingleInstanceApp = 1152;
 
         /// <summary>
         /// Returned when a function is successful.
         /// </summary>
         [Description("Success.")]
+        [PublicAPI]
         public static readonly Result RzSuccess = 0;
 
         /// <summary>

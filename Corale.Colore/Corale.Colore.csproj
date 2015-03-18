@@ -85,6 +85,7 @@
     <Compile Include="ColoreException.cs" />
     <Compile Include="Core\Chroma.cs" />
     <Compile Include="Core\Color.cs" />
+    <Compile Include="Core\Device.cs" />
     <Compile Include="Core\IChroma.cs" />
     <Compile Include="Core\IDevice.cs" />
     <Compile Include="Core\IKeyboard.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="Events\ApplicationStateEventArgs.cs" />
     <Compile Include="Events\SdkSupportEventArgs.cs" />
     <Compile Include="Native\Kernel32\NativeMethods.cs" />
+    <Compile Include="Annotations.cs" />
     <Compile Include="Razer\Constants.cs" />
     <Compile Include="Razer\Keyboard\Constants.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

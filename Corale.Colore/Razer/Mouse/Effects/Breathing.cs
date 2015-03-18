@@ -32,6 +32,9 @@ namespace Corale.Colore.Razer.Mouse.Effects
 {
     using System.Runtime.InteropServices;
 
+    using Corale.Colore.Annotations;
+    using Corale.Colore.Core;
+
     /// <summary>
     /// Describes the breathing effect type.
     /// </summary>
@@ -41,6 +44,7 @@ namespace Corale.Colore.Razer.Mouse.Effects
         /// <summary>
         /// The color of the effect.
         /// </summary>
-        public uint Color;
+        [PublicAPI]
+        public Color Color;
     }
 }

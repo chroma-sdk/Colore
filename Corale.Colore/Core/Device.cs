@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+// <copyright file="Device.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,49 +28,47 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Razer.Mouse.Effects
+namespace Corale.Colore.Core
 {
+    using System;
+
     using Corale.Colore.Annotations;
 
     /// <summary>
-    /// Supported built-in mouse effects.
+    /// Base class for devices, containing code common between all devices.
     /// </summary>
-    public enum Effect
+    public abstract class Device : IDevice
     {
         /// <summary>
-        /// No effect.
+        /// Gets or sets the ID of the currently active effect.
         /// </summary>
         [PublicAPI]
-        None = 0,
+        public Guid CurrentEffectId { get; protected set; }
 
         /// <summary>
-        /// The spectrum cycling effect.
+        /// Clears the current effect on the device.
         /// </summary>
-        [PublicAPI]
-        SpectrumCycling,
+        public void Clear()
+        {
+            if (CurrentEffectId != Guid.Empty)
+                NativeWrapper.DeleteEffect(CurrentEffectId);
+        }
 
         /// <summary>
-        /// The breathing effect.
+        /// Sets the color of all components on this device.
         /// </summary>
-        [PublicAPI]
-        Breathing,
+        /// <param name="color">Color to set.</param>
+        public abstract void Set(Color color);
 
         /// <summary>
-        /// Static color effect.
+        /// Updates the device to use the effect pointed to by the specified GUID.
         /// </summary>
-        [PublicAPI]
-        Static,
-
-        /// <summary>
-        /// Custom effect.
-        /// </summary>
-        [PublicAPI]
-        Custom,
-
-        /// <summary>
-        /// Invalid effect.
-        /// </summary>
-        [PublicAPI]
-        Invalid
+        /// <param name="guid">GUID to set.</param>
+        public void Set(Guid guid)
+        {
+            Clear();
+            NativeWrapper.SetEffect(guid);
+            CurrentEffectId = guid;
+        }
     }
 }

@@ -30,6 +30,8 @@
 
 namespace Corale.Colore.Razer.Mouse
 {
+    using Corale.Colore.Annotations;
+
     /// <summary>
     /// LEDs that can be the target of color changes.
     /// </summary>
@@ -38,21 +40,25 @@ namespace Corale.Colore.Razer.Mouse
         /// <summary>
         /// No LED.
         /// </summary>
+        [PublicAPI]
         None = 0,
 
         /// <summary>
         /// The LED illuminating the scroll wheel.
         /// </summary>
+        [PublicAPI]
         ScrollWheel = 0x0001,
 
         /// <summary>
         /// The LED illuminating the logo present on the mouse.
         /// </summary>
+        [PublicAPI]
         Logo = 0x0002,
 
         /// <summary>
         /// Invalid LED.
         /// </summary>
+        [PublicAPI]
         Invalid = 0xFFFF
     }
 }

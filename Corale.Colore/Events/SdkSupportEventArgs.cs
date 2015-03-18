@@ -32,10 +32,12 @@ namespace Corale.Colore.Events
 {
     using System;
 
+    using Corale.Colore.Annotations;
+
     /// <summary>
     /// Event arguments for the Chroma SDK support event.
     /// </summary>
-    public class SdkSupportEventArgs : EventArgs
+    public sealed class SdkSupportEventArgs : EventArgs
     {
         /// <summary>
         /// Whether or not SDK support is enabled.
@@ -54,6 +56,7 @@ namespace Corale.Colore.Events
         /// <summary>
         /// Gets a value indicating whether SDK support is enabled.
         /// </summary>
+        [PublicAPI]
         public bool Enabled
         {
             get

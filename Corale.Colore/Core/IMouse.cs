@@ -30,6 +30,7 @@
 
 namespace Corale.Colore.Core
 {
+    using Corale.Colore.Annotations;
     using Corale.Colore.Razer.Mouse;
 
     /// <summary>
@@ -42,6 +43,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="led">Which LED to modify.</param>
         /// <param name="color">Color to set.</param>
+        [PublicAPI]
         void Set(Led led, Color color);
     }
 }

@@ -14,7 +14,7 @@ If ($Platform -ne "Any CPU")
 
 $dll = "Corale.Colore.Tests\bin\$Configuration\Corale.Colore.Tests.dll"
 $nunit = "packages\NUnit.Runners.2.6.4\tools\nunit-console.exe"
-$filter = "+[Corale.Colore*]* -[*Tests]* -[*]Corale.Colore.Native* -[*]*NativeMethods -[*]*NativeWrapper"
+$filter = "+[Corale.Colore*]* -[*Tests]* -[*]*Constants -[*]Corale.Colore.Native* -[*]*NativeMethods -[*]*NativeWrapper -[*]Corale.Colore.Annotations*"
 $targetArgs = "/noshadow /domain:single $dll"
 
 $Env:NUNIT_EXEC = $nunit

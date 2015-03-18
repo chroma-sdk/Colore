@@ -30,6 +30,8 @@
 
 namespace Corale.Colore.Razer.Keyboard.Effects
 {
+    using Corale.Colore.Annotations;
+
     /// <summary>
     /// Supported duration lengths.
     /// </summary>
@@ -38,26 +40,31 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// <summary>
         /// No duration.
         /// </summary>
+        [PublicAPI]
         None = 0,
 
         /// <summary>
         /// Short duration.
         /// </summary>
+        [PublicAPI]
         Short,
 
         /// <summary>
         /// Medium duration.
         /// </summary>
+        [PublicAPI]
         Medium,
 
         /// <summary>
         /// Long duration.
         /// </summary>
+        [PublicAPI]
         Long,
 
         /// <summary>
         /// Invalid duration.
         /// </summary>
+        [PublicAPI]
         Invalid
     }
 }

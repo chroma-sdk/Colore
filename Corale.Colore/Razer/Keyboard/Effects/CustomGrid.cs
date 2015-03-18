@@ -30,7 +30,11 @@
 
 namespace Corale.Colore.Razer.Keyboard.Effects
 {
+    using System;
     using System.Runtime.InteropServices;
+
+    using Corale.Colore.Annotations;
+    using Corale.Colore.Core;
 
     /// <summary>
     /// Describes a custom grid effect for every key.
@@ -45,6 +49,56 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// The array is 2-dimensional, with the first dimension
         /// specifying the row for the key, and the second the column.
         /// </remarks>
-        public readonly uint[][] Key;
+        [PublicAPI]
+        public readonly Color[][] Colors;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomGrid" /> struct.
+        /// </summary>
+        /// <param name="colors">The colors to use.</param>
+        /// <exception cref="ArgumentException">Thrown if the colors array supplied is of an incorrect size.</exception>
+        public CustomGrid(Color[][] colors)
+        {
+            var rows = (Size)colors.GetLength(0);
+
+            if (rows > Constants.MaxRows)
+            {
+                throw new ArgumentException(
+                    "Colors array has too many rows, max count is " + Constants.MaxRows + ", received " + rows,
+                    "colors");
+            }
+
+            Colors = new Color[rows][];
+
+            for (Size row = 0; row < rows; row++)
+            {
+                var inRow = colors[row];
+
+                if (inRow.Length > (int)Constants.MaxRows)
+                {
+                    throw new ArgumentException(
+                        "Row " + row + " of the colors array has too many columns, max count is " + Constants.MaxRows
+                        + ", received " + inRow.Length,
+                        "colors");
+                }
+
+                Colors[row] = new Color[inRow.Length];
+                inRow.CopyTo(Colors[row], 0);
+            }
+        }
+
+        /// <summary>
+        /// Clears the colors from the grid, setting them to <see cref="Color.Black" />.
+        /// </summary>
+        public void Clear()
+        {
+            var rows = Colors.GetLength(0);
+            for (var row = 0; row < rows; row++)
+            {
+                var rowArr = Colors[row];
+                for (var col = 0; col < rowArr.Length; col++)
+                    rowArr[col] = Color.Black;
+            }
+        }
     }
 }

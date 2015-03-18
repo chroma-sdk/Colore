@@ -30,6 +30,9 @@
 
 namespace Corale.Colore.Razer.Mouse.Effects
 {
+    using Corale.Colore.Annotations;
+    using Corale.Colore.Core;
+
     /// <summary>
     /// Describes the static effect type.
     /// </summary>
@@ -38,6 +41,7 @@ namespace Corale.Colore.Razer.Mouse.Effects
         /// <summary>
         /// The color to apply.
         /// </summary>
-        public uint Color;
+        [PublicAPI]
+        public Color Color;
     }
 }

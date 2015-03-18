@@ -32,6 +32,8 @@ namespace Corale.Colore.Razer.Keyboard.Effects
 {
     using System.Runtime.InteropServices;
 
+    using Corale.Colore.Annotations;
+
     /// <summary>
     /// The wave effect for the keyboard.
     /// </summary>
@@ -41,6 +43,16 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// <summary>
         /// Direction of wave effect.
         /// </summary>
+        [PublicAPI]
         public Direction Direction;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Wave" /> struct.
+        /// </summary>
+        /// <param name="direction">Direction of the wave.</param>
+        public Wave(Direction direction)
+        {
+            Direction = direction;
+        }
     }
 }

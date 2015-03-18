@@ -32,6 +32,9 @@ namespace Corale.Colore.Razer.Keyboard.Effects
 {
     using System.Runtime.InteropServices;
 
+    using Corale.Colore.Annotations;
+    using Corale.Colore.Core;
+
     /// <summary>
     /// Describes the reactive effect type.
     /// </summary>
@@ -41,11 +44,24 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// <summary>
         /// Color of the effect.
         /// </summary>
-        public uint Color;
+        [PublicAPI]
+        public Color Color;
 
         /// <summary>
         /// The duration of the effect.
         /// </summary>
+        [PublicAPI]
         public Duration Duration;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Reactive" /> struct.
+        /// </summary>
+        /// <param name="color">Color to apply when key is hit.</param>
+        /// <param name="duration">Duration to illuminate the key.</param>
+        public Reactive(Color color, Duration duration)
+        {
+            Color = color;
+            Duration = duration;
+        }
     }
 }
