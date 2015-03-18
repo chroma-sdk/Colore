@@ -30,6 +30,8 @@
 
 namespace Corale.Colore.Core
 {
+    using System.Collections.Generic;
+
     using Corale.Colore.Annotations;
     using Corale.Colore.Razer.Keyboard;
     using Corale.Colore.Razer.Keyboard.Effects;
@@ -117,6 +119,13 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="effect">Effect options.</param>
         void Set(Effect effect);
+
+        /// <summary>
+        /// Sets the colors of specific keys, using values from <see cref="Key" /> to
+        /// specify the keys.
+        /// </summary>
+        /// <param name="effects">A collection of custom effect structs.</param>
+        void Set(IEnumerable<Custom> effects);
 
         /// <summary>
         /// Sets the color on a specific row and column on the keyboard grid.

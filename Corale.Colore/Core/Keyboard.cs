@@ -244,6 +244,16 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
+        /// Sets the colors of specific keys, using values from <see cref="Key" /> to
+        /// specify the keys.
+        /// </summary>
+        /// <param name="effects">A collection of custom effect structs.</param>
+        public void Set(IEnumerable<Custom> effects)
+        {
+            Set(NativeWrapper.CreateKeyboardCustomEffects(effects));
+        }
+
+        /// <summary>
         /// Sets the color on a specific row and column on the keyboard grid.
         /// </summary>
         /// <param name="row">Row to set, between 1 and <see cref="Constants.MaxRows" />.</param>

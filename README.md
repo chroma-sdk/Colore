@@ -53,24 +53,35 @@ The Razer Chroma SDK is provided by Razer and [can be obtained from their websit
 Building
 --------
 
-It's important to note that this project doesn't build on the "AnyCPU" platform (which is the default
-for C# projects). It builds against x86 or x64 to stay compliant with Razer's code which targets the x86 or x64
-platforms. When building with MSBuild, you'd run something like:
+It's important to note that the platform under which this project is built plays a huge role on the usability of the library.
+
+When compiling with the x86 or x64 platform set in build configuration, Colore will **only work on the respective system platform**
+(32-bit if compiled using x86, and 64-bit if compiled using x64).
+
+The native methods are imported using `DllImport` when Colore is compiled in x86 or x64, which is why the setting matters for deployment,
+as this cannot be changed at runtime.
+
+However, if compiling with the "Any CPU" configuration, Colore will dynamically load functions relevant for the current executing platform,
+making it run on both 32- and 64-bit systems without any work having to be done by the dev.
+
+For non-performance critical applications, the "Any CPU" mode should be fine (this is also what the NuGet package is compiled against).
+
+For applications that require peak performance, we recommend shipping separate 32- and 64-bit builds of your application, using the relevant build configurations in Colore.
+
+The below example compiles Colore in Release mode for the x86 (32-bit) platform.
 
 ```
 msbuild Colore.sln /p:Configuration=Release;Platform=x86
 ```
 
-(Replace `x86` with `x64` if compiling for Win64.)
+(Replace `x86` with `x64` if compiling for Win64, or `"Any CPU"` if compiling cross-platform)
 
 Make sure that your projects using Colore are also compiled against a matching platform.
 
 Razer's SDK installer **will only install the library relevant for your platform**.
 
-This means that your apps will need to be compiled twice, once for x86 platforms, and once for x64.
+This means that your apps will need to be compiled twice, once for x86 platforms, and once for x64, unless you are using "Any CPU".
 They must both be provided when you distribute your application, depending on what platform the user has.
-
-*We are looking into ways to make this requirement optional or not needed at all, and instead manage loading dynamically in some fancy way.*
 
 Projects
 --------
