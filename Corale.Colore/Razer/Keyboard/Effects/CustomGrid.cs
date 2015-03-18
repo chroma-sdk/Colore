@@ -74,10 +74,10 @@ namespace Corale.Colore.Razer.Keyboard.Effects
             {
                 var inRow = colors[row];
 
-                if (inRow.Length > (int)Constants.MaxRows)
+                if (inRow.Length > (int)Constants.MaxColumns)
                 {
                     throw new ArgumentException(
-                        "Row " + row + " of the colors array has too many columns, max count is " + Constants.MaxRows
+                        "Row " + row + " of the colors array has too many columns, max count is " + Constants.MaxColumns
                         + ", received " + inRow.Length,
                         "colors");
                 }

@@ -93,9 +93,11 @@ namespace Corale.Colore.Core
                 _custom[i] = new Custom { Color = Color.Black, Key = key };
             }
 
-            _grid = new CustomGrid(new Color[Constants.MaxRows][]);
-            for (var row = 0; row < _grid.Colors.GetLength(0); row++)
-                _grid.Colors[row] = new Color[Constants.MaxColumns];
+            var gridArray = new Color[Constants.MaxRows][];
+            for (Size i = 0; i < Constants.MaxRows; i++)
+                gridArray[i] = new Color[Constants.MaxColumns];
+
+            _grid = new CustomGrid(gridArray);
         }
 
         /// <summary>
@@ -315,5 +317,15 @@ namespace Corale.Colore.Core
         {
             Set(NativeWrapper.CreateKeyboardEffect(effect));
         }
+
+        /// <summary>
+        /// Sets a collection of Custom effects
+        /// </summary>
+        /// <param name="effects">Custom effects.</param>
+        public void Set(IEnumerable<Custom> effects)
+        {
+            Set(NativeWrapper.CreateKeyboardCustomEffects(effects));
+        }
+
     }
 }
