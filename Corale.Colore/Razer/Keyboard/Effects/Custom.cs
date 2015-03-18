@@ -38,20 +38,22 @@ namespace Corale.Colore.Razer.Keyboard.Effects
     /// <summary>
     /// Describes a custom effect for a specific key.
     /// </summary>
-    [StructLayout(LayoutKind.Sequential)]
+    [StructLayout(LayoutKind.Explicit, Size = 8)]
     public struct Custom
     {
         /// <summary>
-        /// The color to use for the effect.
-        /// </summary>
-        [PublicAPI]
-        public Color Color;
-
-        /// <summary>
         /// The key to apply the effect to.
         /// </summary>
+        [FieldOffset(0)]
         [PublicAPI]
         public Key Key;
+
+        /// <summary>
+        /// The color to use for the effect.
+        /// </summary>
+        [FieldOffset(4)]
+        [PublicAPI]
+        public Color Color;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Custom" /> struct.
