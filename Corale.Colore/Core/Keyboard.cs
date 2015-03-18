@@ -94,7 +94,7 @@ namespace Corale.Colore.Core
             }
 
             var gridArray = new Color[Constants.MaxRows][];
-            for (var i = 0; i < Constants.MaxRows; i++)
+            for (Size i = 0; i < Constants.MaxRows; i++)
                 gridArray[i] = new Color[Constants.MaxColumns];
 
             _grid = new CustomGrid(gridArray);
