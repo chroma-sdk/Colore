@@ -34,6 +34,8 @@ namespace Corale.Colore.Razer
     using System.Diagnostics.CodeAnalysis;
     using System.Runtime.InteropServices;
 
+    using Corale.Colore.Razer.Keyboard;
+
 #if ANYCPU
 
     using System.Reflection;
@@ -268,9 +270,9 @@ namespace Corale.Colore.Razer
         /// </remarks>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         internal delegate Result CreateKeyboardEffectDelegate(
-            Keyboard.Effects.Effect effect,
-            IntPtr param,
-            ref Guid effectId);
+            [In] Keyboard.Effects.Effect effect,
+            [In] IntPtr param,
+            [In, Out] ref Guid effectId);
 
         /// <summary>
         /// Create keyboard custom effects.
@@ -282,9 +284,9 @@ namespace Corale.Colore.Razer
         /// <remarks>To turn off all LEDs, call with <c>0</c>, <c>null</c>, and a <c>ref</c> to a variable with <see cref="Guid.Empty" />.</remarks>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         internal delegate Result CreateKeyboardCustomEffectsDelegate(
-            UIntPtr size,
-            [MarshalAs(UnmanagedType.LPArray)] Keyboard.Effects.Custom[] effectType,
-            ref Guid effectId);
+            [In] UIntPtr size,
+            [In] Keyboard.Effects.Custom[] effectType,
+            [In, Out] ref Guid effectId);
 
         /// <summary>
         /// Create keyboard custom grid effects.
@@ -295,8 +297,8 @@ namespace Corale.Colore.Razer
         /// <remarks>To turn all LEDs off, call with empty <see cref="Keyboard.Effects.CustomGrid" /> and a <c>ref</c> to <see cref="Guid.Empty" />.</remarks>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         internal delegate Result CreateKeyboardCustomGridEffectsDelegate(
-            Keyboard.Effects.CustomGrid effects,
-            ref Guid effectId);
+            [In] Keyboard.Effects.CustomGrid effects,
+            [In, Out] ref Guid effectId);
 
         /// <summary>
         /// Create mouse effect.
@@ -338,10 +340,10 @@ namespace Corale.Colore.Razer
         /// </remarks>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         internal delegate Result CreateMouseEffectDelegate(
-            RZID zone,
-            Mouse.Effects.Effect effect,
-            IntPtr param,
-            ref Guid effectId);
+            [In] RZID zone,
+            [In] Mouse.Effects.Effect effect,
+            [In] IntPtr param,
+            [In, Out] ref Guid effectId);
 
         /// <summary>
         /// Create mouse custom effect.
@@ -350,7 +352,7 @@ namespace Corale.Colore.Razer
         /// <param name="effectId">Valid effect ID if successful. Pass <see cref="IntPtr.Zero" /> if not required.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
-        internal delegate Result CreateMouseCustomEffectsDelegate(Mouse.Effects.Custom effect, ref Guid effectId);
+        internal delegate Result CreateMouseCustomEffectsDelegate([In] Mouse.Effects.Custom effect, [In, Out] ref Guid effectId);
 
         /// <summary>
         /// Delete effect.
@@ -358,7 +360,7 @@ namespace Corale.Colore.Razer
         /// <param name="effectId">ID of the effect that needs to be deleted.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
-        internal delegate Result DeleteEffectDelegate(Guid effectId);
+        internal delegate Result DeleteEffectDelegate([In] Guid effectId);
 
         /// <summary>
         /// Set effect.
@@ -366,7 +368,7 @@ namespace Corale.Colore.Razer
         /// <param name="effectId">ID of the effect that needs to be set.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
-        internal delegate Result SetEffectDelegate(Guid effectId);
+        internal delegate Result SetEffectDelegate([In] Guid effectId);
 
         /// <summary>
         /// Register for event notification.
@@ -416,7 +418,7 @@ namespace Corale.Colore.Razer
         /// </list>
         /// </remarks>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
-        internal delegate Result RegisterEventNotificationDelegate(IntPtr hwnd);
+        internal delegate Result RegisterEventNotificationDelegate([In] IntPtr hwnd);
 
         /// <summary>
         /// Unregister for event notification.
@@ -520,24 +522,24 @@ namespace Corale.Colore.Razer
         [DllImport(DllName, CallingConvention = FunctionConvention, EntryPoint = "CreateKeyboardEffect",
             SetLastError = true)]
         internal static extern Result CreateKeyboardEffect(
-            Keyboard.Effects.Effect effect,
-            IntPtr param,
-            ref Guid effectid);
+            [In] Keyboard.Effects.Effect effect,
+            [In] IntPtr param,
+            [In, Out] ref Guid effectid);
 
         /// <summary>
         /// Create keyboard custom effects.
         /// </summary>
         /// <param name="size">Number of effects.</param>
-        /// <param name="effectType">An array of effects with maximum size of <see cref="Keyboard.Constants.MaxCustomEffects" />.</param>
+        /// <param name="effectType">An array of effects with maximum size of <see cref="Razer.Keyboard.Constants.MaxCustomEffects" />.</param>
         /// <param name="effectId">Set to valid effect ID if successful. Pass <c>null</c> (<see cref="Guid.Empty" />) if not required.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
         /// <remarks>To turn off all LEDs, call with <c>0</c>, <c>null</c>, and a <c>ref</c> to a variable with <see cref="Guid.Empty" />.</remarks>
         [DllImport(DllName, CallingConvention = FunctionConvention, EntryPoint = "CreateKeyboardCustomEffects",
             SetLastError = true)]
         internal static extern Result CreateKeyboardCustomEffects(
-            Size size,
-            [MarshalAs(UnmanagedType.LPArray)] Keyboard.Effects.Custom[] effectType,
-            ref Guid effectId);
+            [In] Size size,
+            [In] Keyboard.Effects.Custom[] effectType,
+            [In, Out] ref Guid effectId);
 
         /// <summary>
         /// Create keyboard custom grid effects.
@@ -549,8 +551,8 @@ namespace Corale.Colore.Razer
         [DllImport(DllName, CallingConvention = FunctionConvention, EntryPoint = "CreateKeyboardCustomGridEffects",
             SetLastError = true)]
         internal static extern Result CreateKeyboardCustomGridEffects(
-            Keyboard.Effects.CustomGrid effects,
-            ref Guid effectId);
+            [In] Keyboard.Effects.CustomGrid effects,
+            [In, Out] ref Guid effectId);
 
         /// <summary>
         /// Create mouse effect.
@@ -593,10 +595,10 @@ namespace Corale.Colore.Razer
         [DllImport(DllName, CallingConvention = FunctionConvention, EntryPoint = "CreateMouseEffect",
             SetLastError = true)]
         internal static extern Result CreateMouseEffect(
-            RZID zone,
-            Mouse.Effects.Effect effect,
-            IntPtr param,
-            ref Guid effectId);
+            [In] RZID zone,
+            [In] Mouse.Effects.Effect effect,
+            [In] IntPtr param,
+            [In, Out] ref Guid effectId);
 
         /// <summary>
         /// Create mouse custom effect.
@@ -606,7 +608,7 @@ namespace Corale.Colore.Razer
         /// <returns><see cref="Result" /> value indicating success.</returns>
         [DllImport(DllName, CallingConvention = FunctionConvention, EntryPoint = "CreateMouseCustomEffects",
             SetLastError = true)]
-        internal static extern Result CreateMouseCustomEffects(Mouse.Effects.Custom effect, ref Guid effectId);
+        internal static extern Result CreateMouseCustomEffects([In] Mouse.Effects.Custom effect, [In, Out] ref Guid effectId);
 
         /// <summary>
         /// Delete effect.
@@ -614,7 +616,7 @@ namespace Corale.Colore.Razer
         /// <param name="effectId">ID of the effect that needs to be deleted.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
         [DllImport(DllName, CallingConvention = FunctionConvention, EntryPoint = "DeleteEffect", SetLastError = true)]
-        internal static extern Result DeleteEffect(Guid effectId);
+        internal static extern Result DeleteEffect([In] Guid effectId);
 
         /// <summary>
         /// Set effect.
@@ -622,7 +624,7 @@ namespace Corale.Colore.Razer
         /// <param name="effectId">ID of the effect that needs to be set.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
         [DllImport(DllName, CallingConvention = FunctionConvention, EntryPoint = "SetEffect", SetLastError = true)]
-        internal static extern Result SetEffect(Guid effectId);
+        internal static extern Result SetEffect([In] Guid effectId);
 
         /// <summary>
         /// Register for event notification.
@@ -673,7 +675,7 @@ namespace Corale.Colore.Razer
         /// </remarks>
         [DllImport(DllName, CallingConvention = FunctionConvention, EntryPoint = "RegisterEventNotification",
             SetLastError = true)]
-        internal static extern Result RegisterEventNotification(IntPtr hwnd);
+        internal static extern Result RegisterEventNotification([In] IntPtr hwnd);
 
         /// <summary>
         /// Unregister for event notification.
