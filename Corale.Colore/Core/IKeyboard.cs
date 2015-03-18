@@ -28,6 +28,8 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
+using System.Collections.Generic;
+
 namespace Corale.Colore.Core
 {
     using Corale.Colore.Annotations;
@@ -156,5 +158,11 @@ namespace Corale.Colore.Core
         /// <param name="effect">Effect options.</param>
         [PublicAPI]
         void Set(Wave effect);
+
+        /// <summary>
+        /// Sets a collection of Custom effects
+        /// </summary>
+        /// <param name="effects">Custom effects.</param>
+        void Set(IEnumerable<Custom> effects);
     }
 }

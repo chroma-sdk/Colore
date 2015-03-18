@@ -317,5 +317,15 @@ namespace Corale.Colore.Core
         {
             Set(NativeWrapper.CreateKeyboardEffect(effect));
         }
+
+        /// <summary>
+        /// Sets a collection of Custom effects
+        /// </summary>
+        /// <param name="effects">Custom effects.</param>
+        public void Set(IEnumerable<Custom> effects)
+        {
+            Set(NativeWrapper.CreateKeyboardCustomEffects(effects));
+        }
+
     }
 }
