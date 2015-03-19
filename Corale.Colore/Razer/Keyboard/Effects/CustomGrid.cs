@@ -35,6 +35,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
 
     using Corale.Colore.Annotations;
     using Corale.Colore.Core;
+    using Corale.Colore.Native;
 
     /// <summary>
     /// Describes a custom grid effect for every key.
@@ -49,6 +50,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// The array is 2-dimensional, with the first dimension
         /// specifying the row for the key, and the second the column.
         /// </remarks>
+        [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(JaggedArrayMarshaler))]
         [PublicAPI]
         public readonly Color[][] Colors;
 
