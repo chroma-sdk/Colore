@@ -55,15 +55,15 @@ namespace Corale.Colore.Core
         private readonly Custom[] _custom;
 
         /// <summary>
-        /// Grid struct used for the helper methods.
-        /// </summary>
-        private readonly CustomGrid _grid;
-
-        /// <summary>
         /// Maps <see cref="Key" /> enumeration values to their respective index in the
         /// <see cref="_custom" /> array.
         /// </summary>
         private readonly Dictionary<Key, int> _keyIndexMapping;
+
+        /// <summary>
+        /// Grid struct used for the helper methods.
+        /// </summary>
+        private CustomGrid _grid;
 
         /// <summary>
         /// Prevents a default instance of the <see cref="Keyboard" /> class from being created.
@@ -94,7 +94,7 @@ namespace Corale.Colore.Core
             }
 
             var gridArray = new Color[Constants.MaxRows][];
-            for (Size i = 0; i < Constants.MaxRows; i++)
+            for (var i = 0; i < Constants.MaxRows; i++)
                 gridArray[i] = new Color[Constants.MaxColumns];
 
             _grid = new CustomGrid(gridArray);
@@ -142,7 +142,7 @@ namespace Corale.Colore.Core
         {
             get
             {
-                return _grid.Colors[row - 1][column - 1];
+                return _grid[(int)row - 1, (int)column - 1];
             }
 
             set
@@ -256,30 +256,20 @@ namespace Corale.Colore.Core
         /// <summary>
         /// Sets the color on a specific row and column on the keyboard grid.
         /// </summary>
-        /// <param name="row">Row to set, between 1 and <see cref="Constants.MaxRows" />.</param>
-        /// <param name="column">Column to set, between 1 and <see cref="Constants.MaxColumns" />.</param>
+        /// <param name="row">Row to set, between 0 and <see cref="Constants.MaxRows" /> (exclusive upper-bound).</param>
+        /// <param name="column">Column to set, between 0 and <see cref="Constants.MaxColumns" /> (exclusive upper-bound).</param>
         /// <param name="color">Color to set.</param>
         /// <param name="clear">Whether or not to clear the existing colors before setting this one.</param>
         /// <exception cref="ArgumentException">Thrown if the row or column parameters are outside the valid ranges.</exception>
         public void Set(Size row, Size column, Color color, bool clear = false)
         {
-            if (row > Constants.MaxRows)
-                throw new ArgumentException("Row was outside the valid range (1-" + Constants.MaxRows + ").", "row");
-
-            if (column > Constants.MaxColumns)
-            {
-                throw new ArgumentException(
-                    "Column was outside the range of valid values (1-" + Constants.MaxColumns + ").",
-                    "column");
-            }
-
             if (clear)
             {
                 // ReSharper disable once ImpureMethodCallOnReadonlyValueField
                 _grid.Clear();
             }
 
-            _grid.Colors[row][column] = color;
+            _grid[(int)row, (int)column] = color;
             Set(_grid);
         }
 

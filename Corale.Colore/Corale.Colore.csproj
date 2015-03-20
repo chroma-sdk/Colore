@@ -96,7 +96,6 @@
     <Compile Include="Core\Size.cs" />
     <Compile Include="Events\ApplicationStateEventArgs.cs" />
     <Compile Include="Events\SdkSupportEventArgs.cs" />
-    <Compile Include="Native\JaggedArrayMarshaler.cs" />
     <Compile Include="Native\Kernel32\NativeMethods.cs" />
     <Compile Include="Annotations.cs" />
     <Compile Include="Razer\Constants.cs" />
