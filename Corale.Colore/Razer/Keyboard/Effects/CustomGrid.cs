@@ -31,6 +31,7 @@
 namespace Corale.Colore.Razer.Keyboard.Effects
 {
     using System;
+    using System.Collections.Generic;
     using System.Runtime.InteropServices;
 
     using Corale.Colore.Annotations;
@@ -49,8 +50,9 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// The array is 2-dimensional, with the first dimension
         /// specifying the row for the key, and the second the column.
         /// </remarks>
-        [PublicAPI]
-        public readonly Color[][] Colors;
+        //[MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NestedColorArrayMarshaler))]
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = (int)Constants.MaxRows)]
+        private readonly Row[] Rows;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomGrid" /> struct.
@@ -61,29 +63,60 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         {
             var rows = (Size)colors.GetLength(0);
 
-            if (rows > Constants.MaxRows)
+            if (rows != Constants.MaxRows)
             {
                 throw new ArgumentException(
-                    "Colors array has too many rows, max count is " + Constants.MaxRows + ", received " + rows,
+                    "Colors array has incorrect number of rows, should be " + Constants.MaxRows + ", received " + rows,
                     "colors");
             }
 
-            Colors = new Color[rows][];
+            Rows = new Row[Constants.MaxRows];
 
-            for (Size row = 0; row < rows; row++)
+            for (Size row = 0; row < (int)Constants.MaxRows; row++)
             {
                 var inRow = colors[row];
+                Rows[row] = new Row(inRow);
+            }
+        }
 
-                if (inRow.Length > (int)Constants.MaxRows)
+        /// <summary>
+        /// Gets or sets cells in the custom grid.
+        /// </summary>
+        /// <param name="row">Row to access, zero indexed.</param>
+        /// <param name="column">Column to access, zero indexed.</param>
+        [PublicAPI]
+        public Color this[int row, int column]
+        {
+            get
+            {
+                if (row >= Constants.MaxRows)
+                    throw new ArgumentOutOfRangeException("row", row, "Attempted to access a row that does not exist.");
+
+                if (column >= Constants.MaxColumns)
                 {
-                    throw new ArgumentException(
-                        "Row " + row + " of the colors array has too many columns, max count is " + Constants.MaxRows
-                        + ", received " + inRow.Length,
-                        "colors");
+                    throw new ArgumentOutOfRangeException(
+                        "column",
+                        column,
+                        "Attempted to access a column that does not exist.");
                 }
 
-                Colors[row] = new Color[inRow.Length];
-                inRow.CopyTo(Colors[row], 0);
+                return Rows[row].Columns[column];
+            }
+
+            set
+            {
+                if (row >= Constants.MaxRows)
+                    throw new ArgumentOutOfRangeException("row", row, "Attempted to access a row that does not exist.");
+
+                if (column >= Constants.MaxColumns)
+                {
+                    throw new ArgumentOutOfRangeException(
+                        "column",
+                        column,
+                        "Attempted to access a column that does not exist.");
+                }
+
+                Rows[row].Columns[column] = value;
             }
         }
 
@@ -92,12 +125,53 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// </summary>
         public void Clear()
         {
-            var rows = Colors.GetLength(0);
-            for (var row = 0; row < rows; row++)
+            for (var row = 0; row < (int)Constants.MaxRows; row++)
             {
-                var rowArr = Colors[row];
-                for (var col = 0; col < rowArr.Length; col++)
-                    rowArr[col] = Color.Black;
+                var rowArr = Rows[row];
+                for (var col = 0; col < (int)Constants.MaxColumns; col++)
+                    rowArr.Columns[col] = Color.Black;
+            }
+        }
+
+        /// <summary>
+        /// Container struct holding color definitions for a single row in the custom grid.
+        /// </summary>
+        [StructLayout(LayoutKind.Sequential)]
+        private struct Row
+        {
+            /// <summary>
+            /// Color definitions for the columns of this row.
+            /// </summary>
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = (int)Constants.MaxColumns)]
+            internal readonly uint[] Columns;
+
+            /// <summary>
+            /// Initializes a new instance of the <see cref="Row" /> struct.
+            /// </summary>
+            /// <param name="colors">Colors for this row.</param>
+            internal Row(IReadOnlyList<Color> colors)
+            {
+                if (colors.Count != (int)Constants.MaxColumns)
+                {
+                    throw new ArgumentException(
+                        "Incorrect color count, expected " + Constants.MaxColumns + " but received " + colors.Count,
+                        "colors");
+                }
+
+                Columns = new uint[Constants.MaxColumns];
+
+                for (var i = 0; i < (int)Constants.MaxColumns; i++)
+                    Columns[i] = colors[i];
+            }
+
+            /// <summary>
+            /// Converts an instance of the <see cref="Row" /> struct to an array of unsigned integers.
+            /// </summary>
+            /// <param name="row">The <see cref="Row" /> object to convert.</param>
+            /// <returns>An array of unsigned integeres representing the colors of the row.</returns>
+            public static implicit operator uint[](Row row)
+            {
+                return row.Columns;
             }
         }
     }
