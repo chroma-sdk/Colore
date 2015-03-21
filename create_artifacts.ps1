@@ -41,5 +41,5 @@ if ($Configuration -eq "Release" -And $Platform -eq "Any CPU")
     nuget.exe --% pack Corale.Colore\Corale.Colore.csproj -Prop Configuration=Release -Prop Platform=AnyCPU -Version "%APPVEYOR_BUILD_VERSION%"
     $name = "Corale.Colore.$Env:APPVEYOR_BUILD_VERSION"
     $file = "$name.nupkg"
-    Push-AppveyorArtifact $file -FileName $name -DeploymentName "nuget_package" }
+    Push-AppveyorArtifact $file -FileName $name -DeploymentName "nuget_package"
 }
