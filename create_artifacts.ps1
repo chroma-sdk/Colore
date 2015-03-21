@@ -33,3 +33,13 @@ Write-Host "Zipping artifacts for $Platform - $Configuration"
 7z.exe a $zip .\Corale.Colore\bin\$binStub\*.dll
 7z.exe a $zip .\Corale.Colore\bin\$binStub\*.xml
 7z.exe a $zip .\Corale.Colore\bin\$binStub\*.pdb
+
+# Create NuGet package if Release and Any CPU
+if ($Configuration -eq "Release" -And $Platform -eq "Any CPU")
+{
+    Write-Host "Creating NuGet package"
+    nuget.exe --% pack Corale.Colore\Corale.Colore.csproj -Prop Configuration=Release -Prop Platform=AnyCPU -Version "%APPVEYOR_BUILD_VERSION%"
+    $name = "Corale.Colore.$Env:APPVEYOR_BUILD_VERSION"
+    $file = "$name.nupkg"
+    Push-AppveyorArtifact $file -FileName $name -DeploymentName "nuget_package" }
+}

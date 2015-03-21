@@ -51,8 +51,6 @@
     name: colore_x64
   - path: colore_anycpu.zip
     name: colore_anycpu
-  - path: '**\*.nupkg'
-    name: nuget_packages
 
   deploy:
   - provider: GitHub
@@ -60,12 +58,22 @@
     description: Automatic release created by AppVeyor.
     auth_token:
       secure: ydn12l0oWmrQy0gZiWsLypa0kzYDBjVqAzlrrZ1+s97QRsCYkK3aA4KigRtC4CVm
-    artifact: colore_x86, colore_x64, colore_anycpu, nuget_packages
+    artifact: colore_x86, colore_x64, colore_anycpu, nuget_package
     draft: true
     prerelease: false
     on:
       branch: master
       appveyor_repo_tag: false
+      configuration: Release
+  - provider: NuGet
+    api_key:
+      secure: 0kgF06I+L8BAOvMagk7Muw+mkYQnZXAh+HO0S4Rnbr4BSuKWVCD5lBd5N4mpyABJ
+    artifact: nuget_package
+    on:
+      branch: master
+      appveyor_repo_tag: false
+      platform: Any CPU
+      configuration: Release
 
 -
   branches:
