@@ -32,6 +32,7 @@ namespace Corale.Colore.Core
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
 
     using Corale.Colore.Annotations;
     using Corale.Colore.Razer.Keyboard;
@@ -73,7 +74,7 @@ namespace Corale.Colore.Core
             CurrentEffectId = Guid.Empty;
 
             // Initialize the color array
-            var names = Enum.GetNames(typeof(Key));
+            var names = Enum.GetNames(typeof(Key)).Where(n => n != "Invalid").ToArray();
             _custom = new Custom[names.Length];
             _keyIndexMapping = new Dictionary<Key, int>(names.Length);
 
