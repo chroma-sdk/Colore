@@ -7,7 +7,11 @@ using System.Threading.Tasks;
 
 namespace Corale.Colore.Drawing
 {
-    public class ChromaGraphics
+
+    /// <summary>
+    ///     Builds color grids using 
+    /// </summary>
+    public partial class ChromaGraphics
     {
         /// <summary>
         ///     Clear the keyboard to a color.
