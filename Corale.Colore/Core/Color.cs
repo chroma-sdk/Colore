@@ -37,7 +37,7 @@ namespace Corale.Colore.Core
     /// Represents an RGB color.
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Size = sizeof(uint))]
-    public struct Color : IEquatable<Color>, IEquatable<uint>
+    public struct Color : IEquatable<Color>, IEquatable<uint>, IEquatable<System.Drawing.Color>
     {
         /// <summary>
         /// Black color.
@@ -119,8 +119,8 @@ namespace Corale.Colore.Core
         /// <param name="green">The green component.</param>
         /// <param name="blue">The blue component.</param>
         public Color(byte red, byte green, byte blue)
+            : this(red + ((uint)green << 8) + ((uint)blue << 16))
         {
-            _value = red + ((uint)green << 8) + ((uint)blue << 16);
         }
 
         /// <summary>
@@ -151,6 +151,16 @@ namespace Corale.Colore.Core
         /// </remarks>
         public Color(double red, double green, double blue)
             : this((byte)(red * 255), (byte)(green * 255), (byte)(blue * 255))
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Color" /> struct using
+        /// a <see cref="System.Drawing.Color" /> struct as the source.
+        /// </summary>
+        /// <param name="source">An instance of the <see cref="System.Drawing.Color" /> struct.</param>
+        public Color(System.Drawing.Color source)
+            : this(source.R, source.G, source.B)
         {
         }
 
@@ -200,17 +210,6 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Checks <paramref name="left" /> and <paramref name="right" /> for equality.
-        /// </summary>
-        /// <param name="left">Left operand, an instance of the <see cref="Color" /> struct.</param>
-        /// <param name="right">Right operand, an <see cref="object" />.</param>
-        /// <returns><c>true</c> if the two instances are equal, <c>false</c> otherwise.</returns>
-        public static bool operator ==(Color left, object right)
-        {
-            return left.Equals(right);
-        }
-
-        /// <summary>
         /// Converts a <see cref="Color" /> struct to a <see cref="uint" />.
         /// </summary>
         /// <param name="color">The <see cref="Color" /> to convert.</param>
@@ -229,6 +228,50 @@ namespace Corale.Colore.Core
         public static implicit operator Color(uint value)
         {
             return new Color(value);
+        }
+
+        /// <summary>
+        /// Converts a <see cref="Color" /> struct to a <see cref="System.Drawing.Color" /> struct.
+        /// </summary>
+        /// <param name="color">The <see cref="Color" /> to convert.</param>
+        /// <returns>
+        /// An instance of <see cref="System.Drawing.Color" /> representing the
+        /// value of the <paramref name="color" /> argument.
+        /// </returns>
+        /// <remarks>
+        /// This is an explicit cast since casting a <see cref="System.Drawing.Color" /> struct to <see cref="Color" />
+        /// is explicit.
+        /// </remarks>
+        public static explicit operator System.Drawing.Color(Color color)
+        {
+            return System.Drawing.Color.FromArgb(color.R, color.G, color.B);
+        }
+
+        /// <summary>
+        /// Converts a <see cref="System.Drawing.Color" /> struct to a <see cref="Color" /> struct.
+        /// </summary>
+        /// <param name="color">The <see cref="System.Drawing.Color" /> to convert.</param>
+        /// <returns>
+        /// An instance of <see cref="Color" /> representing the value of the <paramref name="color" /> argument.
+        /// </returns>
+        /// <remarks>
+        /// This is an explicit cast since the alpha component of the <see cref="System.Drawing.Color" />
+        /// struct is discarded.
+        /// </remarks>
+        public static explicit operator Color(System.Drawing.Color color)
+        {
+            return new Color(color.R, color.G, color.B);
+        }
+
+        /// <summary>
+        /// Checks <paramref name="left" /> and <paramref name="right" /> for equality.
+        /// </summary>
+        /// <param name="left">Left operand, an instance of the <see cref="Color" /> struct.</param>
+        /// <param name="right">Right operand, an <see cref="object" />.</param>
+        /// <returns><c>true</c> if the two instances are equal, <c>false</c> otherwise.</returns>
+        public static bool operator ==(Color left, object right)
+        {
+            return left.Equals(right);
         }
 
         /// <summary>
@@ -259,6 +302,9 @@ namespace Corale.Colore.Core
             if (other is uint)
                 return Equals((uint)other);
 
+            if (other is System.Drawing.Color)
+                return Equals((System.Drawing.Color)other);
+
             return false;
         }
 
@@ -282,6 +328,19 @@ namespace Corale.Colore.Core
         public bool Equals(uint other)
         {
             return _value.Equals(other);
+        }
+
+        /// <summary>
+        /// Indicates whether the current object is equal to an instance of a
+        /// <see cref="System.Drawing.Color" /> struct.
+        /// </summary>
+        /// <returns>
+        /// <c>true</c> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <c>false</c>.
+        /// </returns>
+        /// <param name="other">An instance of <see cref="System.Drawing.Color" /> to compare with this object.</param>
+        public bool Equals(System.Drawing.Color other)
+        {
+            return R == other.R && G == other.G && B == other.B;
         }
 
         /// <summary>

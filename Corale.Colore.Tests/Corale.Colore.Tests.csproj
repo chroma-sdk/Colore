@@ -72,6 +72,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -81,7 +82,7 @@
   <ItemGroup>
     <Compile Include="ColoreExceptionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Razer\ColorTests.cs" />
+    <Compile Include="Core\ColorTests.cs" />
     <Compile Include="Razer\NativeCallExceptionTests.cs" />
     <Compile Include="Razer\ResultTests.cs" />
     <Compile Include="Razer\SizeTests.cs" />
