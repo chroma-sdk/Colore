@@ -165,6 +165,19 @@ namespace Corale.Colore.Razer.Keyboard.Effects
             }
 
             /// <summary>
+            /// Initializes a new instance of the <see cref="Row" /> struct
+            /// setting each column to a specific color.
+            /// </summary>
+            /// <param name="color">The <see cref="Color" /> to set each column to.</param>
+            internal Row(Color color)
+            {
+                Columns = new uint[Constants.MaxColumns];
+
+                for (var col = 0; col < (int)Constants.MaxColumns; col++)
+                    Columns[col] = color;
+            }
+
+            /// <summary>
             /// Converts an instance of the <see cref="Row" /> struct to an array of unsigned integers.
             /// </summary>
             /// <param name="row">The <see cref="Row" /> object to convert.</param>
