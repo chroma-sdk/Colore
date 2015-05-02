@@ -134,6 +134,16 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         }
 
         /// <summary>
+        /// Creates a new empty <see cref="CustomGrid" /> struct.
+        /// </summary>
+        /// <returns>An instance of <see cref="CustomGrid" />
+        /// filled with the color black.</returns>
+        public static CustomGrid Create()
+        {
+            return new CustomGrid(Color.Black);
+        }
+
+        /// <summary>
         /// Clears the colors from the grid, setting them to <see cref="Color.Black" />.
         /// </summary>
         public void Clear()
