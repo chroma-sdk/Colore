@@ -61,7 +61,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// <exception cref="ArgumentException">Thrown if the colors array supplied is of an incorrect size.</exception>
         public CustomGrid(Color[][] colors)
         {
-            var rows = (Size)colors.GetLength(0);
+            var rows = colors.GetLength(0);
 
             if (rows != Constants.MaxRows)
             {
