@@ -28,7 +28,7 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Tests.Razer
+namespace Corale.Colore.Tests.Core
 {
     using Corale.Colore.Core;
 
@@ -203,6 +203,49 @@ namespace Corale.Colore.Tests.Razer
             Assert.AreNotEqual(A, b);
             Assert.False(A == b);
             Assert.True(A != b);
+        }
+
+        [Test]
+        public void ShouldConstructFromSystemColor()
+        {
+            var source = System.Drawing.Color.FromArgb(5, 10, 15);
+            var coloreColor = new Color(source);
+
+            Assert.AreEqual(source.R, coloreColor.R);
+            Assert.AreEqual(source.G, coloreColor.G);
+            Assert.AreEqual(source.B, coloreColor.B);
+        }
+
+        [Test]
+        public void ShouldConvertToSystemColor()
+        {
+            var coloreColor = new Color(1, 2, 4);
+            var systemColor = (System.Drawing.Color)coloreColor;
+
+            Assert.AreEqual(coloreColor.R, systemColor.R);
+            Assert.AreEqual(coloreColor.G, systemColor.G);
+            Assert.AreEqual(coloreColor.B, systemColor.B);
+        }
+
+        [Test]
+        public void ShouldConvertFromSystemColor()
+        {
+            var systemColor = System.Drawing.Color.FromArgb(5, 10, 15);
+            var coloreColor = (Color)systemColor;
+
+            Assert.AreEqual(systemColor.R, coloreColor.R);
+            Assert.AreEqual(systemColor.G, coloreColor.G);
+            Assert.AreEqual(systemColor.B, coloreColor.B);
+        }
+
+        [Test]
+        public void ShouldEqualSystemColorUsingOverload()
+        {
+            var coloreColor = new Color(1, 2, 3);
+            var systemColor = System.Drawing.Color.FromArgb(1, 2, 3);
+
+            Assert.True(coloreColor.Equals(systemColor));
+            Assert.AreEqual(coloreColor, systemColor);
         }
     }
 }
