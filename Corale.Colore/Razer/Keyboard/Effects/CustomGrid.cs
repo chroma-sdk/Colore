@@ -178,6 +178,40 @@ namespace Corale.Colore.Razer.Keyboard.Effects
             }
 
             /// <summary>
+            /// Gets or sets a column's <see cref="Color" />.
+            /// </summary>
+            /// <param name="column">The column index to access (zero-index).</param>
+            /// <returns>The <see cref="Color" /> at the specified column index.</returns>
+            internal Color this[int column]
+            {
+                get
+                {
+                    if (column < 0 || column >= Constants.MaxColumns)
+                    {
+                        throw new ArgumentOutOfRangeException(
+                            "column",
+                            column,
+                            "Attempted to access a column that does not exist.");
+                    }
+
+                    return Columns[column];
+                }
+
+                set
+                {
+                    if (column < 0 || column >= Constants.MaxColumns)
+                    {
+                        throw new ArgumentOutOfRangeException(
+                            "column",
+                            column,
+                            "Attempted to access a column that does not exist.");
+                    }
+
+                    Columns[column] = value;
+                }
+            }
+
+            /// <summary>
             /// Converts an instance of the <see cref="Row" /> struct to an array of unsigned integers.
             /// </summary>
             /// <param name="row">The <see cref="Row" /> object to convert.</param>
