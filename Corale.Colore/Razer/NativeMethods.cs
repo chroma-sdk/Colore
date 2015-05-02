@@ -482,9 +482,9 @@ namespace Corale.Colore.Razer
         /// Create keyboard effect.
         /// </summary>
         /// <param name="effect">
-        /// Standard effect type. These include <see cref="Keyboard.Effects.Effect.Wave" />,
-        /// <see cref="Keyboard.Effects.Effect.SpectrumCycling" />, <see cref="Keyboard.Effects.Effect.Breathing" />,
-        /// <see cref="Keyboard.Effects.Effect.Reactive" />, and <see cref="Keyboard.Effects.Effect.Static" />.
+        /// Standard effect type. These include <see cref="Razer.Keyboard.Effects.Effect.Wave" />,
+        /// <see cref="Razer.Keyboard.Effects.Effect.SpectrumCycling" />, <see cref="Razer.Keyboard.Effects.Effect.Breathing" />,
+        /// <see cref="Razer.Keyboard.Effects.Effect.Reactive" />, and <see cref="Razer.Keyboard.Effects.Effect.Static" />.
         /// </param>
         /// <param name="param">Pointer to a parameter type specified by <paramref name="effect" />.</param>
         /// <param name="effectid">Valid effect ID if successful. Use <see cref="Guid.Empty" /> if not required.</param>
@@ -498,24 +498,24 @@ namespace Corale.Colore.Razer
         /// <term>Effect struct</term>
         /// </listheader>
         /// <item>
-        /// <term><see cref="Keyboard.Effects.Effect.Wave" /></term>
-        /// <term><see cref="Keyboard.Effects.Wave" /></term>
+        /// <term><see cref="Razer.Keyboard.Effects.Effect.Wave" /></term>
+        /// <term><see cref="Razer.Keyboard.Effects.Wave" /></term>
         /// </item>
         /// <item>
-        /// <term><see cref="Keyboard.Effects.Effect.SpectrumCycling" /></term>
+        /// <term><see cref="Razer.Keyboard.Effects.Effect.SpectrumCycling" /></term>
         /// <term><i>None</i> (<see cref="IntPtr.Zero" />)</term>
         /// </item>
         /// <item>
-        /// <term><see cref="Keyboard.Effects.Effect.Breathing" /></term>
-        /// <term><see cref="Keyboard.Effects.Breathing" /></term>
+        /// <term><see cref="Razer.Keyboard.Effects.Effect.Breathing" /></term>
+        /// <term><see cref="Razer.Keyboard.Effects.Breathing" /></term>
         /// </item>
         /// <item>
-        /// <term><see cref="Keyboard.Effects.Effect.Reactive" /></term>
-        /// <term><see cref="Keyboard.Effects.Reactive" /></term>
+        /// <term><see cref="Razer.Keyboard.Effects.Effect.Reactive" /></term>
+        /// <term><see cref="Razer.Keyboard.Effects.Reactive" /></term>
         /// </item>
         /// <item>
-        /// <term><see cref="Keyboard.Effects.Effect.Static" /></term>
-        /// <term><see cref="Keyboard.Effects.Static" /></term>
+        /// <term><see cref="Razer.Keyboard.Effects.Effect.Static" /></term>
+        /// <term><see cref="Razer.Keyboard.Effects.Static" /></term>
         /// </item>
         /// </list>
         /// </remarks>
@@ -547,7 +547,7 @@ namespace Corale.Colore.Razer
         /// <param name="effects">Grid layout of the keyboard. Size is 6 rows by 22 columns.</param>
         /// <param name="effectId">Valid effect ID if successful. Pass <c>null</c> (<see cref="Guid.Empty" /> if not required.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
-        /// <remarks>To turn all LEDs off, call with empty <see cref="Keyboard.Effects.CustomGrid" /> and a <c>ref</c> to <see cref="Guid.Empty" />.</remarks>
+        /// <remarks>To turn all LEDs off, call with empty <see cref="Razer.Keyboard.Effects.CustomGrid" /> and a <c>ref</c> to <see cref="Guid.Empty" />.</remarks>
         [DllImport(DllName, CallingConvention = FunctionConvention, EntryPoint = "CreateKeyboardCustomGridEffects",
             SetLastError = true)]
         internal static extern Result CreateKeyboardCustomGridEffects(
@@ -559,8 +559,8 @@ namespace Corale.Colore.Razer
         /// </summary>
         /// <param name="zone">The zone, or in this case LED, in which the effect is going to be applied.</param>
         /// <param name="effect">
-        /// Standard effect type. These include <see cref="Mouse.Effects.Effect.SpectrumCycling" />,
-        /// <see cref="Mouse.Effects.Effect.Breathing" />, and <see cref="Mouse.Effects.Effect.Static" />.
+        /// Standard effect type. These include <see cref="Razer.Mouse.Effects.Effect.SpectrumCycling" />,
+        /// <see cref="Razer.Mouse.Effects.Effect.Breathing" />, and <see cref="Razer.Mouse.Effects.Effect.Static" />.
         /// Depends on which LED.
         /// </param>
         /// <param name="param">Pointer to a parameter type specified by <paramref name="effect" />.</param>
@@ -575,20 +575,20 @@ namespace Corale.Colore.Razer
         /// <term>Effect struct</term>
         /// </listheader>
         /// <item>
-        /// <term><see cref="Mouse.Effects.Effect.SpectrumCycling" /></term>
+        /// <term><see cref="Razer.Mouse.Effects.Effect.SpectrumCycling" /></term>
         /// <term><i>None</i> (<see cref="IntPtr.Zero" />)</term>
         /// </item>
         /// <item>
-        /// <term><see cref="Mouse.Effects.Effect.Breathing" /></term>
-        /// <term><see cref="Mouse.Effects.Breathing" /></term>
+        /// <term><see cref="Razer.Mouse.Effects.Effect.Breathing" /></term>
+        /// <term><see cref="Razer.Mouse.Effects.Breathing" /></term>
         /// </item>
         /// <item>
-        /// <term><see cref="Mouse.Effects.Effect.Static" /></term>
-        /// <term><see cref="Mouse.Effects.Static" /></term>
+        /// <term><see cref="Razer.Mouse.Effects.Effect.Static" /></term>
+        /// <term><see cref="Razer.Mouse.Effects.Static" /></term>
         /// </item>
         /// <item>
-        /// <term><see cref="Mouse.Effects.Effect.Custom" /></term>
-        /// <term><see cref="Mouse.Effects.Custom" /></term>
+        /// <term><see cref="Razer.Mouse.Effects.Effect.Custom" /></term>
+        /// <term><see cref="Razer.Mouse.Effects.Custom" /></term>
         /// </item>
         /// </list>
         /// </remarks>
