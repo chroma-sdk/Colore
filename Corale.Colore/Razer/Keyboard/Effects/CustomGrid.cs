@@ -41,7 +41,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
     /// Describes a custom grid effect for every key.
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public struct CustomGrid
+    public struct CustomGrid : IEquatable<CustomGrid>, IEquatable<Color[][]>
     {
         /// <summary>
         /// Color definitions for each key on the keyboard.
@@ -134,6 +134,30 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         }
 
         /// <summary>
+        /// Compares an instance of <see cref="CustomGrid" /> with
+        /// another object for equality.
+        /// </summary>
+        /// <param name="left">The left operand, an instance of <see cref="CustomGrid" />.</param>
+        /// <param name="right">The right operand, any type of object.</param>
+        /// <returns><c>true</c> if the two objects are equal, otherwise <c>false</c>.</returns>
+        public static bool operator ==(CustomGrid left, object right)
+        {
+            return left.Equals(right);
+        }
+
+        /// <summary>
+        /// Compares an instance of <see cref="CustomGrid" /> with
+        /// another object for inequality.
+        /// </summary>
+        /// <param name="left">The left operand, an instance of <see cref="CustomGrid" />.</param>
+        /// <param name="right">The right operand, any type of object.</param>
+        /// <returns><c>true</c> if the two objects are not equal, otherwise <c>false</c>.</returns>
+        public static bool operator !=(CustomGrid left, object right)
+        {
+            return !left.Equals(right);
+        }
+
+        /// <summary>
         /// Creates a new empty <see cref="CustomGrid" /> struct.
         /// </summary>
         /// <returns>An instance of <see cref="CustomGrid" />
@@ -141,6 +165,18 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         public static CustomGrid Create()
         {
             return new CustomGrid(Color.Black);
+        }
+
+        /// <summary>
+        /// Returns the hash code for this instance.
+        /// </summary>
+        /// <returns>
+        /// A 32-bit signed integer that is the hash code for this instance.
+        /// </returns>
+        /// <filterpriority>2</filterpriority>
+        public override int GetHashCode()
+        {
+            return Rows == null ? 0 : Rows.GetHashCode();
         }
 
         /// <summary>
@@ -154,6 +190,80 @@ namespace Corale.Colore.Razer.Keyboard.Effects
                 for (var col = 0; col < (int)Constants.MaxColumns; col++)
                     rowArr[col] = Color.Black;
             }
+        }
+
+        /// <summary>
+        /// Indicates whether this instance and a specified object are equal.
+        /// </summary>
+        /// <returns>
+        /// <c>true</c> if <paramref name="obj"/> and this instance are of compatible types
+        /// and represent the same value; otherwise, <c>false</c>.
+        /// </returns>
+        /// <param name="obj">Another object to compare to. </param>
+        /// <filterpriority>2</filterpriority>
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(obj, null))
+                return false;
+
+            if (obj is CustomGrid)
+                return Equals((CustomGrid)obj);
+
+            var arr = obj as Color[][];
+            return arr != null && Equals(arr);
+        }
+
+        /// <summary>
+        /// Indicates whether the current object is equal to another object of the same type.
+        /// </summary>
+        /// <returns>
+        /// <c>true</c> if the current object is equal to the <paramref name="other"/> parameter;
+        /// otherwise, <c>false</c>.
+        /// </returns>
+        /// <param name="other">A <see cref="CustomGrid" /> to compare with this object.</param>
+        public bool Equals(CustomGrid other)
+        {
+            for (var row = 0; row < Constants.MaxRows; row++)
+            {
+                for (var col = 0; col < Constants.MaxColumns; col++)
+                {
+                    if (this[row, col] != other[row, col])
+                        return false;
+                }
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Indicates whether the current object is equal to an instance of
+        /// a 2-dimensional array of <see cref="Color" />.
+        /// </summary>
+        /// <returns>
+        /// <c>true</c> if the <paramref name="other" /> object has the same
+        /// number of rows and columns, and contain matching colors; otherwise, <c>false</c>.
+        /// </returns>
+        /// <param name="other">
+        /// A 2-dimensional array of <see cref="Color" /> to compare with this object.
+        /// </param>
+        public bool Equals(Color[][] other)
+        {
+            if (other == null || other.GetLength(0) != Constants.MaxRows)
+                return false;
+
+            for (var row = 0; row < Constants.MaxRows; row++)
+            {
+                if (other[row].Length != Constants.MaxColumns)
+                    return false;
+
+                for (var col = 0; col < Constants.MaxColumns; col++)
+                {
+                    if (this[row, col] != other[row][col])
+                        return false;
+                }
+            }
+
+            return true;
         }
 
         /// <summary>
@@ -242,6 +352,18 @@ namespace Corale.Colore.Razer.Keyboard.Effects
             public static implicit operator uint[](Row row)
             {
                 return row.Columns;
+            }
+
+            /// <summary>
+            /// Returns the hash code for this instance.
+            /// </summary>
+            /// <returns>
+            /// A 32-bit signed integer that is the hash code for this instance.
+            /// </returns>
+            /// <filterpriority>2</filterpriority>
+            public override int GetHashCode()
+            {
+                return Columns == null ? 0 : Columns.GetHashCode();
             }
         }
     }
