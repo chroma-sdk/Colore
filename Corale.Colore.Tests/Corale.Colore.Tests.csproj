@@ -85,6 +85,11 @@
     <Compile Include="ColoreExceptionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Razer\ColorTests.cs" />
+    <Compile Include="Razer\Keyboard\Effects\BreathingTests.cs" />
+    <Compile Include="Razer\Keyboard\Effects\CustomTests.cs" />
+    <Compile Include="Razer\Keyboard\Effects\ReactiveTests.cs" />
+    <Compile Include="Razer\Keyboard\Effects\StaticTests.cs" />
+    <Compile Include="Razer\Keyboard\Effects\WaveTests.cs" />
     <Compile Include="Razer\NativeCallExceptionTests.cs" />
     <Compile Include="Razer\ResultTests.cs" />
     <Compile Include="Razer\SizeTests.cs" />
