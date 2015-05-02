@@ -100,7 +100,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
                         "Attempted to access a column that does not exist.");
                 }
 
-                return Rows[row].Columns[column];
+                return Rows[row][column];
             }
 
             set
@@ -116,7 +116,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
                         "Attempted to access a column that does not exist.");
                 }
 
-                Rows[row].Columns[column] = value;
+                Rows[row][column] = value;
             }
         }
 
@@ -129,7 +129,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
             {
                 var rowArr = Rows[row];
                 for (var col = 0; col < (int)Constants.MaxColumns; col++)
-                    rowArr.Columns[col] = Color.Black;
+                    rowArr[col] = Color.Black;
             }
         }
 
