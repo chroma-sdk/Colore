@@ -67,6 +67,9 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.2.1502.0911\lib\net40\Moq.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
     </Reference>
@@ -81,8 +84,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ColoreExceptionTests.cs" />
+    <Compile Include="Events\ApplicationStateEventArgsTests.cs" />
+    <Compile Include="Events\DeviceAccessEventArgsTests.cs" />
+    <Compile Include="Events\SdkSupportEventArgsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Core\ColorTests.cs" />
+    <Compile Include="Razer\Keyboard\Effects\BreathingTests.cs" />
+    <Compile Include="Razer\Keyboard\Effects\CustomGridTests.cs" />
+    <Compile Include="Razer\Keyboard\Effects\CustomTests.cs" />
+    <Compile Include="Razer\Keyboard\Effects\ReactiveTests.cs" />
+    <Compile Include="Razer\Keyboard\Effects\StaticTests.cs" />
+    <Compile Include="Razer\Keyboard\Effects\WaveTests.cs" />
     <Compile Include="Razer\NativeCallExceptionTests.cs" />
     <Compile Include="Razer\ResultTests.cs" />
     <Compile Include="Razer\SizeTests.cs" />

@@ -41,7 +41,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
     /// Describes a custom grid effect for every key.
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public struct CustomGrid
+    public struct CustomGrid : IEquatable<CustomGrid>, IEquatable<Color[][]>
     {
         /// <summary>
         /// Color definitions for each key on the keyboard.
@@ -50,9 +50,8 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// The array is 2-dimensional, with the first dimension
         /// specifying the row for the key, and the second the column.
         /// </remarks>
-        //[MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NestedColorArrayMarshaler))]
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = (int)Constants.MaxRows)]
-        private readonly Row[] Rows;
+        private readonly Row[] _rows;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomGrid" /> struct.
@@ -61,7 +60,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// <exception cref="ArgumentException">Thrown if the colors array supplied is of an incorrect size.</exception>
         public CustomGrid(Color[][] colors)
         {
-            var rows = (Size)colors.GetLength(0);
+            var rows = colors.GetLength(0);
 
             if (rows != Constants.MaxRows)
             {
@@ -70,13 +69,26 @@ namespace Corale.Colore.Razer.Keyboard.Effects
                     "colors");
             }
 
-            Rows = new Row[Constants.MaxRows];
+            _rows = new Row[Constants.MaxRows];
 
             for (Size row = 0; row < (int)Constants.MaxRows; row++)
             {
                 var inRow = colors[row];
-                Rows[row] = new Row(inRow);
+                _rows[row] = new Row(inRow);
             }
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomGrid" /> struct
+        /// with every position set to a specific color.
+        /// </summary>
+        /// <param name="color">The <see cref="Color" /> to set each position to.</param>
+        public CustomGrid(Color color)
+        {
+            _rows = new Row[Constants.MaxRows];
+
+            for (var row = 0; row < Constants.MaxRows; row++)
+                _rows[row] = new Row(color);
         }
 
         /// <summary>
@@ -84,15 +96,16 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// </summary>
         /// <param name="row">Row to access, zero indexed.</param>
         /// <param name="column">Column to access, zero indexed.</param>
+        /// <returns>The <see cref="Color" /> at the specified position.</returns>
         [PublicAPI]
         public Color this[int row, int column]
         {
             get
             {
-                if (row >= Constants.MaxRows)
+                if (row < 0 || row >= Constants.MaxRows)
                     throw new ArgumentOutOfRangeException("row", row, "Attempted to access a row that does not exist.");
 
-                if (column >= Constants.MaxColumns)
+                if (column < 0 || column >= Constants.MaxColumns)
                 {
                     throw new ArgumentOutOfRangeException(
                         "column",
@@ -100,15 +113,15 @@ namespace Corale.Colore.Razer.Keyboard.Effects
                         "Attempted to access a column that does not exist.");
                 }
 
-                return Rows[row].Columns[column];
+                return _rows[row][column];
             }
 
             set
             {
-                if (row >= Constants.MaxRows)
+                if (row < 0 || row >= Constants.MaxRows)
                     throw new ArgumentOutOfRangeException("row", row, "Attempted to access a row that does not exist.");
 
-                if (column >= Constants.MaxColumns)
+                if (column < 0 || column >= Constants.MaxColumns)
                 {
                     throw new ArgumentOutOfRangeException(
                         "column",
@@ -116,8 +129,54 @@ namespace Corale.Colore.Razer.Keyboard.Effects
                         "Attempted to access a column that does not exist.");
                 }
 
-                Rows[row].Columns[column] = value;
+                _rows[row][column] = value;
             }
+        }
+
+        /// <summary>
+        /// Compares an instance of <see cref="CustomGrid" /> with
+        /// another object for equality.
+        /// </summary>
+        /// <param name="left">The left operand, an instance of <see cref="CustomGrid" />.</param>
+        /// <param name="right">The right operand, any type of object.</param>
+        /// <returns><c>true</c> if the two objects are equal, otherwise <c>false</c>.</returns>
+        public static bool operator ==(CustomGrid left, object right)
+        {
+            return left.Equals(right);
+        }
+
+        /// <summary>
+        /// Compares an instance of <see cref="CustomGrid" /> with
+        /// another object for inequality.
+        /// </summary>
+        /// <param name="left">The left operand, an instance of <see cref="CustomGrid" />.</param>
+        /// <param name="right">The right operand, any type of object.</param>
+        /// <returns><c>true</c> if the two objects are not equal, otherwise <c>false</c>.</returns>
+        public static bool operator !=(CustomGrid left, object right)
+        {
+            return !left.Equals(right);
+        }
+
+        /// <summary>
+        /// Creates a new empty <see cref="CustomGrid" /> struct.
+        /// </summary>
+        /// <returns>An instance of <see cref="CustomGrid" />
+        /// filled with the color black.</returns>
+        public static CustomGrid Create()
+        {
+            return new CustomGrid(Color.Black);
+        }
+
+        /// <summary>
+        /// Returns the hash code for this instance.
+        /// </summary>
+        /// <returns>
+        /// A 32-bit signed integer that is the hash code for this instance.
+        /// </returns>
+        /// <filterpriority>2</filterpriority>
+        public override int GetHashCode()
+        {
+            return _rows == null ? 0 : _rows.GetHashCode();
         }
 
         /// <summary>
@@ -127,10 +186,84 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         {
             for (var row = 0; row < (int)Constants.MaxRows; row++)
             {
-                var rowArr = Rows[row];
+                var rowArr = _rows[row];
                 for (var col = 0; col < (int)Constants.MaxColumns; col++)
-                    rowArr.Columns[col] = Color.Black;
+                    rowArr[col] = Color.Black;
             }
+        }
+
+        /// <summary>
+        /// Indicates whether this instance and a specified object are equal.
+        /// </summary>
+        /// <returns>
+        /// <c>true</c> if <paramref name="obj"/> and this instance are of compatible types
+        /// and represent the same value; otherwise, <c>false</c>.
+        /// </returns>
+        /// <param name="obj">Another object to compare to. </param>
+        /// <filterpriority>2</filterpriority>
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(obj, null))
+                return false;
+
+            if (obj is CustomGrid)
+                return Equals((CustomGrid)obj);
+
+            var arr = obj as Color[][];
+            return arr != null && Equals(arr);
+        }
+
+        /// <summary>
+        /// Indicates whether the current object is equal to another object of the same type.
+        /// </summary>
+        /// <returns>
+        /// <c>true</c> if the current object is equal to the <paramref name="other"/> parameter;
+        /// otherwise, <c>false</c>.
+        /// </returns>
+        /// <param name="other">A <see cref="CustomGrid" /> to compare with this object.</param>
+        public bool Equals(CustomGrid other)
+        {
+            for (var row = 0; row < Constants.MaxRows; row++)
+            {
+                for (var col = 0; col < Constants.MaxColumns; col++)
+                {
+                    if (this[row, col] != other[row, col])
+                        return false;
+                }
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Indicates whether the current object is equal to an instance of
+        /// a 2-dimensional array of <see cref="Color" />.
+        /// </summary>
+        /// <returns>
+        /// <c>true</c> if the <paramref name="other" /> object has the same
+        /// number of rows and columns, and contain matching colors; otherwise, <c>false</c>.
+        /// </returns>
+        /// <param name="other">
+        /// A 2-dimensional array of <see cref="Color" /> to compare with this object.
+        /// </param>
+        public bool Equals(Color[][] other)
+        {
+            if (other == null || other.GetLength(0) != Constants.MaxRows)
+                return false;
+
+            for (var row = 0; row < Constants.MaxRows; row++)
+            {
+                if (other[row].Length != Constants.MaxColumns)
+                    return false;
+
+                for (var col = 0; col < Constants.MaxColumns; col++)
+                {
+                    if (this[row, col] != other[row][col])
+                        return false;
+                }
+            }
+
+            return true;
         }
 
         /// <summary>
@@ -160,8 +293,55 @@ namespace Corale.Colore.Razer.Keyboard.Effects
 
                 Columns = new uint[Constants.MaxColumns];
 
-                for (var i = 0; i < (int)Constants.MaxColumns; i++)
-                    Columns[i] = colors[i];
+                for (var col = 0; col < (int)Constants.MaxColumns; col++)
+                    Columns[col] = colors[col];
+            }
+
+            /// <summary>
+            /// Initializes a new instance of the <see cref="Row" /> struct
+            /// setting each column to a specific color.
+            /// </summary>
+            /// <param name="color">The <see cref="Color" /> to set each column to.</param>
+            internal Row(Color color)
+            {
+                Columns = new uint[Constants.MaxColumns];
+
+                for (var col = 0; col < (int)Constants.MaxColumns; col++)
+                    Columns[col] = color;
+            }
+
+            /// <summary>
+            /// Gets or sets a column's <see cref="Color" />.
+            /// </summary>
+            /// <param name="column">The column index to access (zero-index).</param>
+            /// <returns>The <see cref="Color" /> at the specified column index.</returns>
+            internal Color this[int column]
+            {
+                get
+                {
+                    if (column < 0 || column >= Constants.MaxColumns)
+                    {
+                        throw new ArgumentOutOfRangeException(
+                            "column",
+                            column,
+                            "Attempted to access a column that does not exist.");
+                    }
+
+                    return Columns[column];
+                }
+
+                set
+                {
+                    if (column < 0 || column >= Constants.MaxColumns)
+                    {
+                        throw new ArgumentOutOfRangeException(
+                            "column",
+                            column,
+                            "Attempted to access a column that does not exist.");
+                    }
+
+                    Columns[column] = value;
+                }
             }
 
             /// <summary>
@@ -172,6 +352,18 @@ namespace Corale.Colore.Razer.Keyboard.Effects
             public static implicit operator uint[](Row row)
             {
                 return row.Columns;
+            }
+
+            /// <summary>
+            /// Returns the hash code for this instance.
+            /// </summary>
+            /// <returns>
+            /// A 32-bit signed integer that is the hash code for this instance.
+            /// </returns>
+            /// <filterpriority>2</filterpriority>
+            public override int GetHashCode()
+            {
+                return Columns == null ? 0 : Columns.GetHashCode();
             }
         }
     }
