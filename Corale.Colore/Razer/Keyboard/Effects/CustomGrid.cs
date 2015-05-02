@@ -80,6 +80,19 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="CustomGrid" /> struct
+        /// with every position set to a specific color.
+        /// </summary>
+        /// <param name="color">The <see cref="Color" /> to set each position to.</param>
+        public CustomGrid(Color color)
+        {
+            Rows = new Row[Constants.MaxRows];
+
+            for (var row = 0; row < Constants.MaxRows; row++)
+                Rows[row] = new Row(color);
+        }
+
+        /// <summary>
         /// Gets or sets cells in the custom grid.
         /// </summary>
         /// <param name="row">Row to access, zero indexed.</param>
