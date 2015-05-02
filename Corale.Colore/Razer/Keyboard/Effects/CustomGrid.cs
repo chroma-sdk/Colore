@@ -160,8 +160,8 @@ namespace Corale.Colore.Razer.Keyboard.Effects
 
                 Columns = new uint[Constants.MaxColumns];
 
-                for (var i = 0; i < (int)Constants.MaxColumns; i++)
-                    Columns[i] = colors[i];
+                for (var col = 0; col < (int)Constants.MaxColumns; col++)
+                    Columns[col] = colors[col];
             }
 
             /// <summary>
