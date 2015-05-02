@@ -102,10 +102,10 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         {
             get
             {
-                if (row >= Constants.MaxRows)
+                if (row < 0 || row >= Constants.MaxRows)
                     throw new ArgumentOutOfRangeException("row", row, "Attempted to access a row that does not exist.");
 
-                if (column >= Constants.MaxColumns)
+                if (column < 0 || column >= Constants.MaxColumns)
                 {
                     throw new ArgumentOutOfRangeException(
                         "column",
@@ -118,10 +118,10 @@ namespace Corale.Colore.Razer.Keyboard.Effects
 
             set
             {
-                if (row >= Constants.MaxRows)
+                if (row < 0 || row >= Constants.MaxRows)
                     throw new ArgumentOutOfRangeException("row", row, "Attempted to access a row that does not exist.");
 
-                if (column >= Constants.MaxColumns)
+                if (column < 0 || column >= Constants.MaxColumns)
                 {
                     throw new ArgumentOutOfRangeException(
                         "column",
