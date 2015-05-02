@@ -50,9 +50,8 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// The array is 2-dimensional, with the first dimension
         /// specifying the row for the key, and the second the column.
         /// </remarks>
-        //[MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(NestedColorArrayMarshaler))]
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = (int)Constants.MaxRows)]
-        private readonly Row[] Rows;
+        private readonly Row[] _rows;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomGrid" /> struct.
@@ -70,12 +69,12 @@ namespace Corale.Colore.Razer.Keyboard.Effects
                     "colors");
             }
 
-            Rows = new Row[Constants.MaxRows];
+            _rows = new Row[Constants.MaxRows];
 
             for (Size row = 0; row < (int)Constants.MaxRows; row++)
             {
                 var inRow = colors[row];
-                Rows[row] = new Row(inRow);
+                _rows[row] = new Row(inRow);
             }
         }
 
@@ -86,10 +85,10 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// <param name="color">The <see cref="Color" /> to set each position to.</param>
         public CustomGrid(Color color)
         {
-            Rows = new Row[Constants.MaxRows];
+            _rows = new Row[Constants.MaxRows];
 
             for (var row = 0; row < Constants.MaxRows; row++)
-                Rows[row] = new Row(color);
+                _rows[row] = new Row(color);
         }
 
         /// <summary>
@@ -97,6 +96,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// </summary>
         /// <param name="row">Row to access, zero indexed.</param>
         /// <param name="column">Column to access, zero indexed.</param>
+        /// <returns>The <see cref="Color" /> at the specified position.</returns>
         [PublicAPI]
         public Color this[int row, int column]
         {
@@ -113,7 +113,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
                         "Attempted to access a column that does not exist.");
                 }
 
-                return Rows[row][column];
+                return _rows[row][column];
             }
 
             set
@@ -129,7 +129,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
                         "Attempted to access a column that does not exist.");
                 }
 
-                Rows[row][column] = value;
+                _rows[row][column] = value;
             }
         }
 
@@ -176,7 +176,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// <filterpriority>2</filterpriority>
         public override int GetHashCode()
         {
-            return Rows == null ? 0 : Rows.GetHashCode();
+            return _rows == null ? 0 : _rows.GetHashCode();
         }
 
         /// <summary>
@@ -186,7 +186,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         {
             for (var row = 0; row < (int)Constants.MaxRows; row++)
             {
-                var rowArr = Rows[row];
+                var rowArr = _rows[row];
                 for (var col = 0; col < (int)Constants.MaxColumns; col++)
                     rowArr[col] = Color.Black;
             }
