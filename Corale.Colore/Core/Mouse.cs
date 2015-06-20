@@ -30,8 +30,6 @@
 
 namespace Corale.Colore.Core
 {
-    using System;
-
     using Corale.Colore.Annotations;
     using Corale.Colore.Razer.Mouse;
     using Corale.Colore.Razer.Mouse.Effects;
@@ -74,7 +72,27 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         public void Set(Led led, Color color)
         {
-            throw new NotImplementedException();
+            Set(NativeWrapper.CreateMouseEffect(led, new Static { Color = color }));
+        }
+
+        /// <summary>
+        /// Sets a breathing effect on the mouse.
+        /// </summary>
+        /// <param name="led">The <see cref="Led" /> to apply the effect on.</param>
+        /// <param name="effect">An instance of the <see cref="Breathing" /> effect.</param>
+        public void Set(Led led, Breathing effect)
+        {
+            Set(NativeWrapper.CreateMouseEffect(led, effect));
+        }
+
+        /// <summary>
+        /// Sets a static color on the mouse.
+        /// </summary>
+        /// <param name="led">The <see cref="Led" /> to apply the effect on.</param>
+        /// <param name="effect">An instance of the <see cref="Static" /> effect.</param>
+        public void Set(Led led, Static effect)
+        {
+            Set(NativeWrapper.CreateMouseEffect(led, effect));
         }
 
         /// <summary>
@@ -83,7 +101,10 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         public override void Set(Color color)
         {
-            Set(NativeWrapper.CreateMouseEffect(Led.Logo, new Static { Color = color }));
+            var effect = new Static(color);
+            Set(NativeWrapper.CreateMouseEffect(Led.Logo, effect));
+            Set(NativeWrapper.CreateMouseEffect(Led.ScrollWheel, effect));
+            Set(NativeWrapper.CreateMouseEffect(Led.Backlight, effect));
         }
     }
 }
