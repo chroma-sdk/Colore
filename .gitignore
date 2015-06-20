@@ -188,3 +188,6 @@ colore_*.zip
 # Ignore generated coverage reports
 coverage.xml
 
+# Ignore generated documentation
+docs
+
