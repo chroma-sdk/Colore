@@ -56,6 +56,12 @@ namespace Corale.Colore.Razer.Mouse
         Logo = 0x0002,
 
         /// <summary>
+        /// The mouse backlight.
+        /// </summary>
+        [PublicAPI]
+        Backlight = 0x0003,
+
+        /// <summary>
         /// Invalid LED.
         /// </summary>
         [PublicAPI]
