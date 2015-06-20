@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Custom.cs" company="Corale">
+// <copyright file="IGenericDevice.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,31 +28,33 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Razer.Mouse.Effects
+namespace Corale.Colore.Core
 {
-    using System.Runtime.InteropServices;
+    using System;
 
-    using Corale.Colore.Annotations;
-    using Corale.Colore.Core;
+    using Corale.Colore.Razer;
 
     /// <summary>
-    /// Describes the custom effect type for a specific LED.
+    /// Interface for generic devices.
     /// </summary>
-    [StructLayout(LayoutKind.Sequential)]
-    public struct Custom
+    public interface IGenericDevice : IDevice
     {
         /// <summary>
-        /// The color of the effect.
+        /// Gets the <see cref="Guid" /> of this device.
         /// </summary>
-        /// <remarks>Defined as a COLORREF in the C header.</remarks>
-        [PublicAPI]
-        public Color Color;
+        Guid DeviceId { get; }
 
         /// <summary>
-        /// The LED which this effect should affect.
+        /// Sets a parameter-less effect on this device.
         /// </summary>
-        /// <remarks>Defined as a DWORD in the C header.</remarks>
-        [PublicAPI]
-        public Led Led;
+        /// <param name="effect">Effect to set.</param>
+        void Set(Effect effect);
+
+        /// <summary>
+        /// Sets an effect on this device, taking a parameter.
+        /// </summary>
+        /// <param name="effect">Effect to set.</param>
+        /// <param name="param">Effect-specific parameter to use.</param>
+        void Set(Effect effect, IntPtr param);
     }
 }

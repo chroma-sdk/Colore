@@ -156,6 +156,20 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
+        /// Gets an instance of <see cref="IGenericDevice" /> for
+        /// the device with the specified ID.
+        /// </summary>
+        /// <param name="deviceId">
+        /// The <see cref="Guid" /> of the device to get,
+        /// valid IDs can be found in <see cref="Devices" />.
+        /// </param>
+        /// <returns>An instance of <see cref="IGenericDevice" />.</returns>
+        public IGenericDevice GetDevice(Guid deviceId)
+        {
+            return GenericDevice.Get(deviceId);
+        }
+
+        /// <summary>
         /// Handles a Windows message and fires the appropriate events.
         /// </summary>
         /// <param name="handle">The <c>HWnd</c> property of the Message struct.</param>

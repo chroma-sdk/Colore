@@ -87,8 +87,10 @@
     <Compile Include="Core\Chroma.cs" />
     <Compile Include="Core\Color.cs" />
     <Compile Include="Core\Device.cs" />
+    <Compile Include="Core\GenericDevice.cs" />
     <Compile Include="Core\IChroma.cs" />
     <Compile Include="Core\IDevice.cs" />
+    <Compile Include="Core\IGenericDevice.cs" />
     <Compile Include="Core\IKeyboard.cs" />
     <Compile Include="Core\IMouse.cs" />
     <Compile Include="Core\Keyboard.cs" />
@@ -118,7 +120,6 @@
     <Compile Include="Razer\Keyboard\Effects\Wave.cs" />
     <Compile Include="Razer\Keyboard\Key.cs" />
     <Compile Include="Razer\Mouse\Effects\Breathing.cs" />
-    <Compile Include="Razer\Mouse\Effects\Custom.cs" />
     <Compile Include="Razer\Mouse\Effects\Effect.cs" />
     <Compile Include="Razer\Mouse\Led.cs" />
     <Compile Include="Razer\Mouse\Effects\Static.cs" />
@@ -133,6 +134,7 @@
   <ItemGroup>
     <Compile Include="Events\DeviceAccessEventArgs.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

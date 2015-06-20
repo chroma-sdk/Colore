@@ -1,29 +1,29 @@
 ﻿// ---------------------------------------------------------------------------------------
 // <copyright file="NativeWrapper.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
-// 
+//
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
 //     the Software without restriction, including without limitation the rights to
 //     use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
 //     of the Software, and to permit persons to whom the Software is furnished to do
 //     so, subject to the following conditions:
-// 
+//
 //     The above copyright notice and this permission notice shall be included in all
 //     copies or substantial portions of the Software.
-// 
+//
 //     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 //     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 //     FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 //     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
 //     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-// 
+//
 //     Disclaimer: Corale and/or Colore is in no way affiliated with Razer and/or any
 //     of its employees and/or licensors. Corale, Adam Hellberg, and/or Brandon Scott
 //     do not take responsibility for any harm caused, direct or indirect, to any
 //     Razer peripherals via the use of Colore.
-// 
+//
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
 // ---------------------------------------------------------------------------------------
@@ -91,13 +91,30 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
+        /// Creates an effect for a device.
+        /// </summary>
+        /// <param name="device">The device to create the effect on.</param>
+        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="param">Effect-specific parameter.</param>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
+        /// <seealso cref="Razer.NativeMethods.CreateEffect" />
+        internal static Guid CreateEffect(Guid device, Razer.Effect effect, IntPtr param)
+        {
+            var guid = Guid.Empty;
+            var result = NativeMethods.CreateEffect(device, effect, param, ref guid);
+            if (!result)
+                throw new NativeCallException("CreateEffect", result);
+            return guid;
+        }
+
+        /// <summary>
         /// Create keyboard effect.
         /// </summary>
         /// <param name="effect">The type of effect to create.</param>
         /// <param name="param">Context-sensitive effect parameter.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
         /// <seealso cref="Razer.NativeMethods.CreateKeyboardEffect" />
-        internal static Guid CreateKeyboardEffect(Effect effect, IntPtr param)
+        internal static Guid CreateKeyboardEffect(Razer.Keyboard.Effects.Effect effect, IntPtr param)
         {
             var guid = Guid.Empty;
             var result = NativeMethods.CreateKeyboardEffect(effect, param, ref guid);
@@ -112,7 +129,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">The type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
         /// <remarks>This is currently only valid for <see cref="Razer.Keyboard.Effects.Effect.SpectrumCycling" />.</remarks>
-        internal static Guid CreateKeyboardEffect(Effect effect)
+        internal static Guid CreateKeyboardEffect(Razer.Keyboard.Effects.Effect effect)
         {
             return CreateKeyboardEffect(effect, IntPtr.Zero);
         }
@@ -124,7 +141,7 @@ namespace Corale.Colore.Core
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
         internal static Guid CreateKeyboardEffect(Breathing effect)
         {
-            return CreateKeyboardEffect(Effect.Breathing, effect);
+            return CreateKeyboardEffect(Razer.Keyboard.Effects.Effect.Breathing, effect);
         }
 
         /// <summary>
@@ -134,7 +151,7 @@ namespace Corale.Colore.Core
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
         internal static Guid CreateKeyboardEffect(Reactive effect)
         {
-            return CreateKeyboardEffect(Effect.Reactive, effect);
+            return CreateKeyboardEffect(Razer.Keyboard.Effects.Effect.Reactive, effect);
         }
 
         /// <summary>
@@ -144,7 +161,7 @@ namespace Corale.Colore.Core
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
         internal static Guid CreateKeyboardEffect(Static effect)
         {
-            return CreateKeyboardEffect(Effect.Static, effect);
+            return CreateKeyboardEffect(Razer.Keyboard.Effects.Effect.Static, effect);
         }
 
         /// <summary>
@@ -154,22 +171,7 @@ namespace Corale.Colore.Core
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
         internal static Guid CreateKeyboardEffect(Wave effect)
         {
-            return CreateKeyboardEffect(Effect.Wave, effect);
-        }
-
-        /// <summary>
-        /// Creates a custom effect for the mouse.
-        /// </summary>
-        /// <param name="effect">Custom effect options.</param>
-        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        /// <seealso cref="Razer.NativeMethods.CreateMouseCustomEffects" />
-        internal static Guid CreateMouseCustomEffects(Razer.Mouse.Effects.Custom effect)
-        {
-            var guid = Guid.Empty;
-            var result = NativeMethods.CreateMouseCustomEffects(effect, ref guid);
-            if (!result)
-                throw new NativeCallException("CreateMouseCustomEffects", result);
-            return guid;
+            return CreateKeyboardEffect(Razer.Keyboard.Effects.Effect.Wave, effect);
         }
 
         /// <summary>
@@ -221,16 +223,6 @@ namespace Corale.Colore.Core
         internal static Guid CreateMouseEffect(Led led, Razer.Mouse.Effects.Static effect)
         {
             return CreateMouseEffect(led, Razer.Mouse.Effects.Effect.Static, effect);
-        }
-
-        /// <summary>
-        /// Creates a custom mouse effect.
-        /// </summary>
-        /// <param name="effect">Effect options.</param>
-        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        internal static Guid CreateMouseEffect(Razer.Mouse.Effects.Custom effect)
-        {
-            return CreateMouseEffect(effect.Led, Razer.Mouse.Effects.Effect.Custom, effect);
         }
 
         /// <summary>
@@ -303,7 +295,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">The type of effect to create.</param>
         /// <param name="struct">The effect structure parameter.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        private static Guid CreateKeyboardEffect<T>(Effect effect, T @struct) where T : struct
+        private static Guid CreateKeyboardEffect<T>(Razer.Keyboard.Effects.Effect effect, T @struct) where T : struct
         {
             var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(@struct));
             Marshal.StructureToPtr(@struct, ptr, false);
