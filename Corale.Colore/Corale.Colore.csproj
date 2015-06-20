@@ -128,6 +128,7 @@
     </Compile>
     <Compile Include="Razer\Product.cs" />
     <Compile Include="Razer\Result.cs" />
+    <Compile Include="Razer\UnsupportedDeviceException.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Events\DeviceAccessEventArgs.cs" />
