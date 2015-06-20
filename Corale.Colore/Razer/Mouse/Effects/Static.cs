@@ -43,5 +43,14 @@ namespace Corale.Colore.Razer.Mouse.Effects
         /// </summary>
         [PublicAPI]
         public Color Color;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Static" /> struct.
+        /// </summary>
+        /// <param name="color">The <see cref="Color" /> to set.</param>
+        public Static(Color color)
+        {
+            Color = color;
+        }
     }
 }
