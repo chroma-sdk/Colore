@@ -21,7 +21,7 @@ Write-Host "Branch: $branch"
 
 if ($branch -eq 'master')
 {
-    $friendlyVersion = '1.0.0'
+    $friendlyVersion = '0.0.1'
     $buildNumber = "${friendlyVersion}.${buildCounter}"
 }
 elseif ($branch -eq 'develop')
