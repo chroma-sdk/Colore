@@ -145,6 +145,18 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
+        /// Gets an instance of the <see cref="IHeadset" /> interface
+        /// for interacting with a Razer Chroma headset.
+        /// </summary>
+        public IHeadset Headset
+        {
+            get
+            {
+                return Core.Headset.Instance;
+            }
+        }
+
+        /// <summary>
         /// Gets a value indicating whether the Chroma main class has been initialized or not.
         /// </summary>
         internal static bool Initialized

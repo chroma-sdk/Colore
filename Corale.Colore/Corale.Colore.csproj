@@ -88,9 +88,11 @@
     <Compile Include="Core\Color.cs" />
     <Compile Include="Core\Device.cs" />
     <Compile Include="Core\GenericDevice.cs" />
+    <Compile Include="Core\Headset.cs" />
     <Compile Include="Core\IChroma.cs" />
     <Compile Include="Core\IDevice.cs" />
     <Compile Include="Core\IGenericDevice.cs" />
+    <Compile Include="Core\IHeadset.cs" />
     <Compile Include="Core\IKeyboard.cs" />
     <Compile Include="Core\IMouse.cs" />
     <Compile Include="Core\Keyboard.cs" />

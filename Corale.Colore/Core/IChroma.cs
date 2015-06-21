@@ -90,6 +90,13 @@ namespace Corale.Colore.Core
         IMouse Mouse { get; }
 
         /// <summary>
+        /// Gets an instance of the <see cref="IHeadset" /> interface
+        /// for interacting with a Razer Chroma headset.
+        /// </summary>
+        [PublicAPI]
+        IHeadset Headset { get; }
+
+        /// <summary>
         /// Gets an instance of <see cref="IGenericDevice" /> for
         /// the device with the specified ID.
         /// </summary>

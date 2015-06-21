@@ -226,6 +226,51 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
+        /// Creates a standard headset effect with the specified parameters.
+        /// </summary>
+        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="param">Effect-specific parameter.</param>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
+        internal static Guid CreateHeadsetEffect(Razer.Headset.Effects.Effect effect, IntPtr param)
+        {
+            var guid = Guid.Empty;
+            var result = NativeMethods.CreateHeadsetEffect(effect, param, ref guid);
+            if (!result)
+                throw new NativeCallException("CreateHeadsetEffect", result);
+            return guid;
+        }
+
+        /// <summary>
+        /// Creates a standard effect for the headset that takes no parameter.
+        /// </summary>
+        /// <param name="effect">The type of effect to create.</param>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
+        internal static Guid CreateHeadsetEffect(Razer.Headset.Effects.Effect effect)
+        {
+            return CreateHeadsetEffect(effect, IntPtr.Zero);
+        }
+
+        /// <summary>
+        /// Creates a static color effect for the headset.
+        /// </summary>
+        /// <param name="effect">The effect struct.</param>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
+        internal static Guid CreateHeadsetEffect(Razer.Headset.Effects.Static effect)
+        {
+            return CreateHeadsetEffect(Razer.Headset.Effects.Effect.Static, effect);
+        }
+
+        /// <summary>
+        /// Creates a breathing effect for the headset.
+        /// </summary>
+        /// <param name="effect">The effect struct.</param>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
+        internal static Guid CreateHeadsetEffect(Razer.Headset.Effects.Breathing effect)
+        {
+            return CreateHeadsetEffect(Razer.Headset.Effects.Effect.Breathing, effect);
+        }
+
+        /// <summary>
         /// Deletes an effect with the specified <see cref="Guid" />.
         /// </summary>
         /// <param name="guid">Effect ID to delete.</param>
@@ -324,6 +369,28 @@ namespace Corale.Colore.Core
             try
             {
                 return CreateMouseEffect(led, effect, ptr);
+            }
+            finally
+            {
+                Marshal.FreeHGlobal(ptr);
+            }
+        }
+
+        /// <summary>
+        /// Helper method for creating headset effects with parameter struct.
+        /// </summary>
+        /// <typeparam name="T">The effect struct type.</typeparam>
+        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="struct">Effect options struct.</param>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
+        private static Guid CreateHeadsetEffect<T>(Razer.Headset.Effects.Effect effect, T @struct) where T : struct
+        {
+            var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(@struct));
+            Marshal.StructureToPtr(@struct, ptr, false);
+
+            try
+            {
+                return CreateHeadsetEffect(effect, ptr);
             }
             finally
             {
