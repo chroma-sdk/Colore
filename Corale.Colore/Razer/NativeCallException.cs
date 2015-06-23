@@ -76,7 +76,7 @@ namespace Corale.Colore.Razer
         /// </summary>
         /// <param name="info">Serialization info object.</param>
         /// <param name="context">Streaming context.</param>
-        protected NativeCallException(SerializationInfo info, StreamingContext context)
+        private NativeCallException(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
             _function = info.GetString("Function");

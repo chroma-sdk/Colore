@@ -41,7 +41,8 @@ namespace Corale.Colore.Razer
     /// Thrown when an invalid <see cref="Guid" /> is passed to the
     /// constructor of <see cref="GenericDevice" />.
     /// </summary>
-    public class UnsupportedDeviceException : ColoreException
+    [Serializable]
+    public sealed class UnsupportedDeviceException : ColoreException
     {
         private const string MessageTemplate = "Attempted to initialize an unsupported device with ID: {0}";
 
@@ -64,7 +65,7 @@ namespace Corale.Colore.Razer
         /// </summary>
         /// <param name="info">Serialization info object.</param>
         /// <param name="context">Streaming context.</param>
-        protected UnsupportedDeviceException(SerializationInfo info, StreamingContext context)
+        private UnsupportedDeviceException(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
             _deviceId = (Guid)info.GetValue("DeviceId", typeof(Guid));
