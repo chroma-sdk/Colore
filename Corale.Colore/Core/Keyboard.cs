@@ -38,12 +38,19 @@ namespace Corale.Colore.Core
     using Corale.Colore.Razer.Keyboard;
     using Corale.Colore.Razer.Keyboard.Effects;
 
+    using log4net;
+
     /// <summary>
     /// Class for interacting with a Chroma keyboard.
     /// </summary>
     [PublicAPI]
     public sealed class Keyboard : Device, IKeyboard
     {
+        /// <summary>
+        /// Logger instance for this class.
+        /// </summary>
+        private static readonly ILog Log = LogManager.GetLogger(typeof(Keyboard));
+
         /// <summary>
         /// Holds the application-wide instance of the <see cref="Keyboard" /> class.
         /// </summary>
@@ -71,13 +78,24 @@ namespace Corale.Colore.Core
         /// </summary>
         private Keyboard()
         {
+            Log.Info("Keyboard initializing...");
+
             Chroma.Initialize();
 
             CurrentEffectId = Guid.Empty;
 
             // Initialize the color array
+            Log.Debug("Initializing the color array");
+
+            // "Invalid" is not an actual key, we want to create a color mapping for
+            // every valid key on the keyboard.
             var names = Enum.GetNames(typeof(Key)).Where(n => n != "Invalid").ToArray();
+
+            // The current color for each key will be stored in the _custom array
+            Log.DebugFormat("Sizing array to fit {0} keys", names.Length);
             _custom = new Custom[names.Length];
+
+            // This dictionary will map each key to its position in the array
             _keyIndexMapping = new Dictionary<Key, int>(names.Length);
 
             for (var i = 0; i < names.Length; i++)
@@ -96,10 +114,13 @@ namespace Corale.Colore.Core
                 _custom[i] = new Custom { Color = Color.Black, Key = key };
             }
 
+            // We keep a local copy of a grid to speed up grid operations
+            Log.Debug("Creating grid array");
             var gridArray = new Color[Constants.MaxRows][];
             for (var i = 0; i < Constants.MaxRows; i++)
                 gridArray[i] = new Color[Constants.MaxColumns];
 
+            Log.Debug("Initializing private copy of CustomGrid");
             _grid = new CustomGrid(gridArray);
         }
 
