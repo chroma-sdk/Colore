@@ -71,6 +71,8 @@ namespace Corale.Colore.Core
         /// </summary>
         private Keyboard()
         {
+            Chroma.Initialize();
+
             CurrentEffectId = Guid.Empty;
 
             // Initialize the color array
@@ -109,7 +111,6 @@ namespace Corale.Colore.Core
         {
             get
             {
-                Chroma.Initialize();
                 return _instance ?? (_instance = new Keyboard());
             }
         }

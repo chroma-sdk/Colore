@@ -44,6 +44,7 @@ namespace Corale.Colore.Core
         /// </summary>
         private Headset()
         {
+            Chroma.Initialize();
         }
 
         /// <summary>
@@ -53,7 +54,6 @@ namespace Corale.Colore.Core
         {
             get
             {
-                Chroma.Initialize();
                 return _instance ?? (_instance = new Headset());
             }
         }

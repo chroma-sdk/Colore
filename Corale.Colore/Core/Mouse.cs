@@ -58,6 +58,7 @@ namespace Corale.Colore.Core
         private Mouse()
         {
             Log.Info("Mouse is initializing");
+            Chroma.Initialize();
         }
 
         /// <summary>
@@ -68,7 +69,6 @@ namespace Corale.Colore.Core
         {
             get
             {
-                Chroma.Initialize();
                 return _instance ?? (_instance = new Mouse());
             }
         }
