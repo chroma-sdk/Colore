@@ -32,6 +32,8 @@ namespace Corale.Colore.Razer
 {
     using System;
 
+    using Corale.Colore.Annotations;
+
     /// <summary>
     /// Contains device IDs for devices that have Chroma support.
     /// </summary>
@@ -40,6 +42,7 @@ namespace Corale.Colore.Razer
         /// <summary>
         /// Blackwidow Chroma edition.
         /// </summary>
+        [PublicAPI]
         public static readonly Guid BlackwidowChroma = new Guid(
             0x2ea1bb63,
             0xca28,
@@ -56,6 +59,7 @@ namespace Corale.Colore.Razer
         /// <summary>
         /// Deathadder Chroma edition.
         /// </summary>
+        [PublicAPI]
         public static readonly Guid DeathadderChroma = new Guid(
             0xaec50d91,
             0xb1f1,
@@ -72,6 +76,7 @@ namespace Corale.Colore.Razer
         /// <summary>
         /// Naga Epic Chroma edition.
         /// </summary>
+        [PublicAPI]
         public static readonly Guid NagaEpicChroma = new Guid(
             0x29a02acb,
             0xb882,
@@ -88,6 +93,7 @@ namespace Corale.Colore.Razer
         /// <summary>
         /// Kraken 7.1 Chroma edition.
         /// </summary>
+        [PublicAPI]
         public static readonly Guid Kraken71Chroma = new Guid(
             0xcd1e09a5,
             0xd5e6,
@@ -104,6 +110,7 @@ namespace Corale.Colore.Razer
         /// <summary>
         /// Firefly Chroma edition.
         /// </summary>
+        [PublicAPI]
         public static readonly Guid FireflyChroma = new Guid(
             0x80f95a94,
             0x73d2,
@@ -120,6 +127,7 @@ namespace Corale.Colore.Razer
         /// <summary>
         /// ID matching every Chroma device.
         /// </summary>
+        [PublicAPI]
         public static readonly Guid AllChromaDevices = new Guid(
             0x5bf2a39c,
             0x621b,
@@ -138,6 +146,7 @@ namespace Corale.Colore.Razer
         /// </summary>
         /// <param name="id">the <see cref="Guid" /> to check.</param>
         /// <returns><c>true</c> if it's a valid device identifier, otherwise <c>false</c>.</returns>
+        [PublicAPI]
         public static bool IsValidId(Guid id)
         {
             return id == BlackwidowChroma || id == DeathadderChroma || id == NagaEpicChroma || id == Kraken71Chroma
