@@ -44,8 +44,14 @@ namespace Corale.Colore.Razer
     [Serializable]
     public sealed class UnsupportedDeviceException : ColoreException
     {
+        /// <summary>
+        /// Template for exception message.
+        /// </summary>
         private const string MessageTemplate = "Attempted to initialize an unsupported device with ID: {0}";
 
+        /// <summary>
+        /// The ID of the device that was requested.
+        /// </summary>
         private readonly Guid _deviceId;
 
         /// <summary>
@@ -72,7 +78,7 @@ namespace Corale.Colore.Razer
         }
 
         /// <summary>
-        /// The <see cref="Guid" /> of the device.
+        /// Gets the <see cref="Guid" /> of the device.
         /// </summary>
         public Guid DeviceId
         {

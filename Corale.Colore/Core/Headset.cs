@@ -34,6 +34,9 @@ namespace Corale.Colore.Core
 
     using log4net;
 
+    /// <summary>
+    /// Class for interacting with Chroma Headsets.
+    /// </summary>
     public sealed class Headset : Device, IHeadset
     {
         /// <summary>

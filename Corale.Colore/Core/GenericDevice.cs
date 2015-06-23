@@ -60,7 +60,7 @@ namespace Corale.Colore.Core
         private readonly Guid _deviceId;
 
         /// <summary>
-        /// Prevents a default instance of <see cref="GenericDevice" /> from being created.
+        /// Initializes a new instance of the <see cref="GenericDevice" /> class.
         /// </summary>
         /// <param name="deviceId">The <see cref="Guid" /> of the device.</param>
         private GenericDevice(Guid deviceId)
