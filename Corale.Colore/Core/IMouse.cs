@@ -32,6 +32,7 @@ namespace Corale.Colore.Core
 {
     using Corale.Colore.Annotations;
     using Corale.Colore.Razer.Mouse;
+    using Corale.Colore.Razer.Mouse.Effects;
 
     /// <summary>
     /// Interface for mouse functionality.
@@ -45,5 +46,21 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         [PublicAPI]
         void Set(Led led, Color color);
+
+        /// <summary>
+        /// Sets a breathing effect on the mouse.
+        /// </summary>
+        /// <param name="led">The <see cref="Led" /> to apply the effect on.</param>
+        /// <param name="effect">An instance of the <see cref="Breathing" /> effect.</param>
+        [PublicAPI]
+        void Set(Led led, Breathing effect);
+
+        /// <summary>
+        /// Sets a static color on the mouse.
+        /// </summary>
+        /// <param name="led">The <see cref="Led" /> to apply the effect on.</param>
+        /// <param name="effect">An instance of the <see cref="Static" /> effect.</param>
+        [PublicAPI]
+        void Set(Led led, Static effect);
     }
 }

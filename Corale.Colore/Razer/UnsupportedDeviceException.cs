@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="NativeCallException.cs" company="Corale">
+// <copyright file="UnsupportedDeviceException.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -31,78 +31,60 @@
 namespace Corale.Colore.Razer
 {
     using System;
-    using System.ComponentModel;
     using System.Globalization;
     using System.Runtime.Serialization;
     using System.Security.Permissions;
 
+    using Corale.Colore.Core;
+
     /// <summary>
-    /// Thrown when a native function returns an erroneous result value.
+    /// Thrown when an invalid <see cref="Guid" /> is passed to the
+    /// constructor of <see cref="GenericDevice" />.
     /// </summary>
     [Serializable]
-    public sealed class NativeCallException : ColoreException
+    public sealed class UnsupportedDeviceException : ColoreException
     {
         /// <summary>
-        /// Template used to construct exception message from.
+        /// Template for exception message.
         /// </summary>
-        private const string MessageTemplate = "Call to native Chroma SDK function {0} failed with error: {1}";
+        private const string MessageTemplate = "Attempted to initialize an unsupported device with ID: {0}";
 
         /// <summary>
-        /// The function that was called.
+        /// The ID of the device that was requested.
         /// </summary>
-        private readonly string _function;
+        private readonly Guid _deviceId;
 
         /// <summary>
-        /// The result returned from the function.
+        /// Initializes a new instance of the <see cref="UnsupportedDeviceException" /> class.
         /// </summary>
-        private readonly Result _result;
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="NativeCallException" /> class.
-        /// </summary>
-        /// <param name="function">The name of the function that was called.</param>
-        /// <param name="result">The result returned from the called function.</param>
-        internal NativeCallException(string function, Result result)
-            : base(
-                string.Format(CultureInfo.InvariantCulture, MessageTemplate, function, result),
-                new Win32Exception(result))
+        /// <param name="deviceId">The <see cref="Guid" /> of the device.</param>
+        /// <param name="innerException">Inner exception object.</param>
+        internal UnsupportedDeviceException(Guid deviceId, Exception innerException = null)
+            : base(string.Format(CultureInfo.InvariantCulture, MessageTemplate, deviceId), innerException)
         {
-            _function = function;
-            _result = result;
+            _deviceId = deviceId;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="NativeCallException" /> class.
+        /// Initializes a new instance of the <see cref="UnsupportedDeviceException" /> class
+        /// from serialization data.
         /// </summary>
         /// <param name="info">Serialization info object.</param>
         /// <param name="context">Streaming context.</param>
-        private NativeCallException(SerializationInfo info, StreamingContext context)
+        private UnsupportedDeviceException(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
-            _function = info.GetString("Function");
-            _result = info.GetInt32("Result");
+            _deviceId = (Guid)info.GetValue("DeviceId", typeof(Guid));
         }
 
         /// <summary>
-        /// Gets the name of the native function that was called.
+        /// Gets the <see cref="Guid" /> of the device.
         /// </summary>
-        public string Function
+        public Guid DeviceId
         {
             get
             {
-                return _function;
-            }
-        }
-
-        /// <summary>
-        /// Gets the <see cref="Result" /> object indicating
-        /// the result returned from the native function.
-        /// </summary>
-        public Result Result
-        {
-            get
-            {
-                return _result;
+                return _deviceId;
             }
         }
 
@@ -116,8 +98,7 @@ namespace Corale.Colore.Razer
         {
             base.GetObjectData(info, context);
 
-            info.AddValue("Function", _function);
-            info.AddValue("Result", (int)Result);
+            info.AddValue("DeviceId", DeviceId);
         }
     }
 }

@@ -35,6 +35,7 @@ namespace Corale.Colore.Core
 
     using Corale.Colore.Annotations;
     using Corale.Colore.Events;
+    using Corale.Colore.Razer;
 
     /// <summary>
     /// Interface for basic Chroma functionality.
@@ -87,6 +88,25 @@ namespace Corale.Colore.Core
         /// </summary>
         [PublicAPI]
         IMouse Mouse { get; }
+
+        /// <summary>
+        /// Gets an instance of the <see cref="IHeadset" /> interface
+        /// for interacting with a Razer Chroma headset.
+        /// </summary>
+        [PublicAPI]
+        IHeadset Headset { get; }
+
+        /// <summary>
+        /// Gets an instance of <see cref="IGenericDevice" /> for
+        /// the device with the specified ID.
+        /// </summary>
+        /// <param name="deviceId">
+        /// The <see cref="Guid" /> of the device to get,
+        /// valid IDs can be found in <see cref="Devices" />.
+        /// </param>
+        /// <returns>An instance of <see cref="IGenericDevice" />.</returns>
+        [PublicAPI]
+        IGenericDevice GetDevice(Guid deviceId);
 
         /// <summary>
         /// Handles a Windows message and fires the appropriate events.

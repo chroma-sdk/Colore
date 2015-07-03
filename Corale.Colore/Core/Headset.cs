@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Mouse.cs" company="Corale">
+// <copyright file="Headset.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -30,89 +30,87 @@
 
 namespace Corale.Colore.Core
 {
-    using Corale.Colore.Annotations;
-    using Corale.Colore.Razer.Mouse;
-    using Corale.Colore.Razer.Mouse.Effects;
+    using Corale.Colore.Razer.Headset.Effects;
 
     using log4net;
 
     /// <summary>
-    /// Class for interacting with a Chroma mouse.
+    /// Class for interacting with Chroma Headsets.
     /// </summary>
-    [PublicAPI]
-    public sealed class Mouse : Device, IMouse
+    public sealed class Headset : Device, IHeadset
     {
         /// <summary>
-        /// Logger instance for this class.
+        /// Loggers instance for this class.
         /// </summary>
-        private static readonly ILog Log = LogManager.GetLogger(typeof(Mouse));
+        private static readonly ILog Log = LogManager.GetLogger(typeof(Headset));
 
         /// <summary>
-        /// Holds the application-wide instance of the <see cref="IMouse" /> interface.
+        /// Holds the application-wide instance of the <see cref="IHeadset" /> interface.
         /// </summary>
-        private static IMouse _instance;
+        private static IHeadset _instance;
 
         /// <summary>
-        /// Prevents a default instance of the <see cref="Mouse" /> class from being created.
+        /// Prevents a default instance of the <see cref="Headset" /> class from being created.
         /// </summary>
-        private Mouse()
+        private Headset()
         {
-            Log.Info("Mouse is initializing");
+            Log.Info("Headset is initializing");
             Chroma.Initialize();
         }
 
         /// <summary>
-        /// Gets the application-wide instance of the <see cref="IMouse" /> interface.
+        /// Gets the application-wide instance of the <see cref="IHeadset" /> interface.
         /// </summary>
-        [PublicAPI]
-        public static IMouse Instance
+        public static IHeadset Instance
         {
             get
             {
-                return _instance ?? (_instance = new Mouse());
+                return _instance ?? (_instance = new Headset());
             }
         }
 
         /// <summary>
-        /// Sets the color of a specific LED on the mouse.
-        /// </summary>
-        /// <param name="led">Which LED to modify.</param>
-        /// <param name="color">Color to set.</param>
-        public void Set(Led led, Color color)
-        {
-            Set(NativeWrapper.CreateMouseEffect(led, new Static { Color = color }));
-        }
-
-        /// <summary>
-        /// Sets a breathing effect on the mouse.
-        /// </summary>
-        /// <param name="led">The <see cref="Led" /> to apply the effect on.</param>
-        /// <param name="effect">An instance of the <see cref="Breathing" /> effect.</param>
-        public void Set(Led led, Breathing effect)
-        {
-            Set(NativeWrapper.CreateMouseEffect(led, effect));
-        }
-
-        /// <summary>
-        /// Sets a static color on the mouse.
-        /// </summary>
-        /// <param name="led">The <see cref="Led" /> to apply the effect on.</param>
-        /// <param name="effect">An instance of the <see cref="Static" /> effect.</param>
-        public void Set(Led led, Static effect)
-        {
-            Set(NativeWrapper.CreateMouseEffect(led, effect));
-        }
-
-        /// <summary>
-        /// Sets the color of all LEDs on the mouse.
+        /// Sets the color of all components on this device.
         /// </summary>
         /// <param name="color">Color to set.</param>
         public override void Set(Color color)
         {
-            var effect = new Static(color);
-            Set(NativeWrapper.CreateMouseEffect(Led.Logo, effect));
-            Set(NativeWrapper.CreateMouseEffect(Led.ScrollWheel, effect));
-            Set(NativeWrapper.CreateMouseEffect(Led.Backlight, effect));
+            Set(new Static(color));
+        }
+
+        /// <summary>
+        /// Sets an effect on the headset that doesn't
+        /// take any parameters, currently only valid
+        /// for the <see cref="Effect.SpectrumCycling" /> effect.
+        /// </summary>
+        /// <param name="effect">The type of effect to set.</param>
+        public void Set(Effect effect)
+        {
+            Set(NativeWrapper.CreateHeadsetEffect(effect));
+        }
+
+        /// <summary>
+        /// Sets a new static effect on the headset.
+        /// </summary>
+        /// <param name="effect">
+        /// An instance of the <see cref="Static" /> struct
+        /// describing the effect.
+        /// </param>
+        public void Set(Static effect)
+        {
+            Set(NativeWrapper.CreateHeadsetEffect(effect));
+        }
+
+        /// <summary>
+        /// Sets a new breathing effect on the headset.
+        /// </summary>
+        /// <param name="effect">
+        /// An instance of the <see cref="Breathing" /> struct
+        /// describing the effect.
+        /// </param>
+        public void Set(Breathing effect)
+        {
+            Set(NativeWrapper.CreateHeadsetEffect(effect));
         }
     }
 }
