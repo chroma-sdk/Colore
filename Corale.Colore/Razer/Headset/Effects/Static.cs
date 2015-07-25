@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Led.cs" company="Corale">
+// <copyright file="Static.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,43 +28,32 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Razer.Mouse
+namespace Corale.Colore.Razer.Headset.Effects
 {
+    using System.Runtime.InteropServices;
+
     using Corale.Colore.Annotations;
+    using Corale.Colore.Core;
 
     /// <summary>
-    /// LEDs that can be the target of color changes.
+    /// Static color effect.
     /// </summary>
-    public enum Led : uint
+    [StructLayout(LayoutKind.Sequential)]
+    public struct Static
     {
         /// <summary>
-        /// No LED.
+        /// The <see cref="Color" /> of the effect.
         /// </summary>
         [PublicAPI]
-        None = 0,
+        public Color Color;
 
         /// <summary>
-        /// The LED illuminating the scroll wheel.
+        /// Initializes a new instance of the <see cref="Static" /> struct.
         /// </summary>
-        [PublicAPI]
-        ScrollWheel = 0x0001,
-
-        /// <summary>
-        /// The LED illuminating the logo present on the mouse.
-        /// </summary>
-        [PublicAPI]
-        Logo = 0x0002,
-
-        /// <summary>
-        /// The mouse backlight.
-        /// </summary>
-        [PublicAPI]
-        Backlight = 0x0003,
-
-        /// <summary>
-        /// Invalid LED.
-        /// </summary>
-        [PublicAPI]
-        Invalid = 0xFFFF
+        /// <param name="color">The <see cref="Color" /> to set.</param>
+        public Static(Color color)
+        {
+            Color = color;
+        }
     }
 }

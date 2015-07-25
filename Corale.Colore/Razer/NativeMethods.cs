@@ -94,6 +94,11 @@ namespace Corale.Colore.Razer
         internal static readonly UnInitDelegate UnInit;
 
         /// <summary>
+        /// Stores a reference to the loaded <see cref="CreateEffectDelegate" />.
+        /// </summary>
+        internal static readonly CreateEffectDelegate CreateEffect;
+
+        /// <summary>
         /// Stores a reference to the loaded <see cref="CreateKeyboardEffectDelegate" />.
         /// </summary>
         internal static readonly CreateKeyboardEffectDelegate CreateKeyboardEffect;
@@ -114,9 +119,9 @@ namespace Corale.Colore.Razer
         internal static readonly CreateMouseEffectDelegate CreateMouseEffect;
 
         /// <summary>
-        /// Stores a reference to the loaded <see cref="CreateMouseCustomEffectsDelegate" />.
+        /// Stores a reference to the loaded <see cref="CreateHeadsetEffectDelegate" />.
         /// </summary>
-        internal static readonly CreateMouseCustomEffectsDelegate CreateMouseCustomEffects;
+        internal static readonly CreateHeadsetEffectDelegate CreateHeadsetEffect;
 
         /// <summary>
         /// Stores a reference to the loaded <see cref="DeleteEffectDelegate" />.
@@ -181,6 +186,8 @@ namespace Corale.Colore.Razer
 
             UnInit = GetDelegateFromLibrary<UnInitDelegate>(ChromaSdkPointer, "UnInit");
 
+            CreateEffect = GetDelegateFromLibrary<CreateEffectDelegate>(ChromaSdkPointer, "CreateEffect");
+
             CreateKeyboardEffect = GetDelegateFromLibrary<CreateKeyboardEffectDelegate>(
                 ChromaSdkPointer,
                 "CreateKeyboardEffect");
@@ -196,9 +203,9 @@ namespace Corale.Colore.Razer
 
             CreateMouseEffect = GetDelegateFromLibrary<CreateMouseEffectDelegate>(ChromaSdkPointer, "CreateMouseEffect");
 
-            CreateMouseCustomEffects = GetDelegateFromLibrary<CreateMouseCustomEffectsDelegate>(
+            CreateHeadsetEffect = GetDelegateFromLibrary<CreateHeadsetEffectDelegate>(
                 ChromaSdkPointer,
-                "CreateMouseCustomEffects");
+                "CreateHeadsetEffect");
 
             DeleteEffect = GetDelegateFromLibrary<DeleteEffectDelegate>(ChromaSdkPointer, "DeleteEffect");
 
@@ -226,6 +233,20 @@ namespace Corale.Colore.Razer
         /// <returns><see cref="Result" /> value indicating success.</returns>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         internal delegate Result UnInitDelegate();
+
+        /// <summary>
+        /// Creates an effect for a device.
+        /// </summary>
+        /// <param name="deviceId">The <see cref="Guid" /> of the device, refer to <see cref="Devices" /> for supported IDs.</param>
+        /// <param name="effect">The effect to create.</param>
+        /// <param name="param">Effect-specific parameter.</param>
+        /// <param name="effectId">Valid effect ID if successful. Use <see cref="Guid.Empty" /> if not required.</param>
+        /// <returns><see cref="Result" /> value indicating success.</returns>
+        internal delegate Result CreateEffectDelegate(
+            [In] Guid deviceId,
+            [In] Razer.Effect effect,
+            [In] IntPtr param,
+            [In, Out] ref Guid effectId);
 
         /// <summary>
         /// Create keyboard effect.
@@ -332,10 +353,6 @@ namespace Corale.Colore.Razer
         /// <term><see cref="Mouse.Effects.Effect.Static" /></term>
         /// <term><see cref="Mouse.Effects.Static" /></term>
         /// </item>
-        /// <item>
-        /// <term><see cref="Mouse.Effects.Effect.Custom" /></term>
-        /// <term><see cref="Mouse.Effects.Custom" /></term>
-        /// </item>
         /// </list>
         /// </remarks>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
@@ -346,13 +363,17 @@ namespace Corale.Colore.Razer
             [In, Out] ref Guid effectId);
 
         /// <summary>
-        /// Create mouse custom effect.
+        /// Create headset effect.
         /// </summary>
-        /// <param name="effect">The custom mouse effect which includes LED and color.</param>
-        /// <param name="effectId">Valid effect ID if successful. Pass <see cref="IntPtr.Zero" /> if not required.</param>
+        /// <param name="effect">Standard effect type.</param>
+        /// <param name="param">Pointer to a parameter type specified by <paramref name="effect" />.</param>
+        /// <param name="effectId">Set to valid effect ID if successful. Pass <see cref="IntPtr.Zero" /> if not required.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
-        internal delegate Result CreateMouseCustomEffectsDelegate([In] Mouse.Effects.Custom effect, [In, Out] ref Guid effectId);
+        internal delegate Result CreateHeadsetEffectDelegate(
+            [In] Headset.Effects.Effect effect,
+            [In] IntPtr param,
+            [In] [Out] ref Guid effectId);
 
         /// <summary>
         /// Delete effect.
@@ -479,6 +500,21 @@ namespace Corale.Colore.Razer
         internal static extern Result UnInit();
 
         /// <summary>
+        /// Creates an effect for a device.
+        /// </summary>
+        /// <param name="deviceId">The <see cref="Guid" /> of the device, refer to <see cref="Devices" /> for supported IDs.</param>
+        /// <param name="effect">The effect to create.</param>
+        /// <param name="param">Effect-specific parameter.</param>
+        /// <param name="effectId">Valid effect ID if successful. Use <see cref="Guid.Empty" /> if not required.</param>
+        /// <returns><see cref="Result" /> value indicating success.</returns>
+        [DllImport(DllName, CallingConvention = FunctionConvention, EntryPoint = "CreateEffect", SetLastError = true)]
+        internal static extern Result CreateEffect(
+            [In] Guid deviceId,
+            [In] Effect effect,
+            [In] IntPtr param,
+            [In] [Out] ref Guid effectId);
+
+        /// <summary>
         /// Create keyboard effect.
         /// </summary>
         /// <param name="effect">
@@ -586,10 +622,6 @@ namespace Corale.Colore.Razer
         /// <term><see cref="Razer.Mouse.Effects.Effect.Static" /></term>
         /// <term><see cref="Razer.Mouse.Effects.Static" /></term>
         /// </item>
-        /// <item>
-        /// <term><see cref="Razer.Mouse.Effects.Effect.Custom" /></term>
-        /// <term><see cref="Razer.Mouse.Effects.Custom" /></term>
-        /// </item>
         /// </list>
         /// </remarks>
         [DllImport(DllName, CallingConvention = FunctionConvention, EntryPoint = "CreateMouseEffect",
@@ -601,14 +633,17 @@ namespace Corale.Colore.Razer
             [In, Out] ref Guid effectId);
 
         /// <summary>
-        /// Create mouse custom effect.
+        /// Create headset effect.
         /// </summary>
-        /// <param name="effect">The custom mouse effect which includes LED and color.</param>
-        /// <param name="effectId">Valid effect ID if successful. Pass <see cref="IntPtr.Zero" /> if not required.</param>
+        /// <param name="effect">Standard effect type.</param>
+        /// <param name="param">Pointer to a parameter type specified by <paramref name="effect" />.</param>
+        /// <param name="effectId">Set to valid effect ID if successful. Pass <see cref="IntPtr.Zero" /> if not required.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
-        [DllImport(DllName, CallingConvention = FunctionConvention, EntryPoint = "CreateMouseCustomEffects",
-            SetLastError = true)]
-        internal static extern Result CreateMouseCustomEffects([In] Mouse.Effects.Custom effect, [In, Out] ref Guid effectId);
+        [DllImport(DllName, CallingConvention = FunctionConvention, EntryPoint = "CreateHeadsetEffect")]
+        internal static extern Result CreateHeadsetEffect(
+            [In] Headset.Effects.Effect effect,
+            [In] IntPtr param,
+            [In] [Out] ref Guid effectId);
 
         /// <summary>
         /// Delete effect.

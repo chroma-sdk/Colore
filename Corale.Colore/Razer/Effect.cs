@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Custom.cs" company="Corale">
+// <copyright file="Effect.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,31 +28,68 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Razer.Mouse.Effects
+namespace Corale.Colore.Razer
 {
-    using System.Runtime.InteropServices;
-
     using Corale.Colore.Annotations;
-    using Corale.Colore.Core;
 
     /// <summary>
-    /// Describes the custom effect type for a specific LED.
+    /// Generic device effects.
     /// </summary>
-    [StructLayout(LayoutKind.Sequential)]
-    public struct Custom
+    /// <remarks>Not all devices are compatible with every effect type.</remarks>
+    public enum Effect
     {
         /// <summary>
-        /// The color of the effect.
+        /// No effect.
         /// </summary>
-        /// <remarks>Defined as a COLORREF in the C header.</remarks>
         [PublicAPI]
-        public Color Color;
+        None = 0,
 
         /// <summary>
-        /// The LED which this effect should affect.
+        /// The wave effect.
         /// </summary>
-        /// <remarks>Defined as a DWORD in the C header.</remarks>
         [PublicAPI]
-        public Led Led;
+        Wave,
+
+        /// <summary>
+        /// Spectrum cycling effect.
+        /// </summary>
+        [PublicAPI]
+        SpectrumCycling,
+
+        /// <summary>
+        /// Slowly fades between two colors.
+        /// </summary>
+        [PublicAPI]
+        Breathing,
+
+        /// <summary>
+        /// A blinking effect.
+        /// </summary>
+        [PublicAPI]
+        Blinking,
+
+        /// <summary>
+        /// Reacts to input.
+        /// </summary>
+        [PublicAPI]
+        Reactive,
+
+        /// <summary>
+        /// Static color.
+        /// </summary>
+        [PublicAPI]
+        Static,
+
+        /// <summary>
+        /// A custom effect.
+        /// </summary>
+        [PublicAPI]
+        Custom,
+
+        /// <summary>
+        /// Invalid effect.
+        /// </summary>
+        [PublicAPI]
+        Invalid
     }
 }

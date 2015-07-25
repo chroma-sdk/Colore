@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Led.cs" company="Corale">
+// <copyright file="Breathing.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,43 +28,29 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Razer.Mouse
+namespace Corale.Colore.Razer.Headset.Effects
 {
     using Corale.Colore.Annotations;
+    using Corale.Colore.Core;
 
     /// <summary>
-    /// LEDs that can be the target of color changes.
+    /// A breathing effect for a headset.
     /// </summary>
-    public enum Led : uint
+    public struct Breathing
     {
         /// <summary>
-        /// No LED.
+        /// The color of the effect.
         /// </summary>
         [PublicAPI]
-        None = 0,
+        public Color Color;
 
         /// <summary>
-        /// The LED illuminating the scroll wheel.
+        /// Initializes a new instance of the <see cref="Breathing" /> struct.
         /// </summary>
-        [PublicAPI]
-        ScrollWheel = 0x0001,
-
-        /// <summary>
-        /// The LED illuminating the logo present on the mouse.
-        /// </summary>
-        [PublicAPI]
-        Logo = 0x0002,
-
-        /// <summary>
-        /// The mouse backlight.
-        /// </summary>
-        [PublicAPI]
-        Backlight = 0x0003,
-
-        /// <summary>
-        /// Invalid LED.
-        /// </summary>
-        [PublicAPI]
-        Invalid = 0xFFFF
+        /// <param name="color">The color to set.</param>
+        public Breathing(Color color)
+        {
+            Color = color;
+        }
     }
 }

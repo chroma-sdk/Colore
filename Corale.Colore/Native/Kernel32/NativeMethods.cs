@@ -28,6 +28,8 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
+#if ANYCPU
+
 namespace Corale.Colore.Native.Kernel32
 {
     using System;
@@ -52,3 +54,5 @@ namespace Corale.Colore.Native.Kernel32
         internal static extern IntPtr LoadLibrary([MarshalAs(UnmanagedType.LPStr)] string filename);
     }
 }
+
+#endif

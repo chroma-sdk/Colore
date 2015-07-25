@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Led.cs" company="Corale">
+// <copyright file="IHeadset.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,43 +28,39 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Razer.Mouse
+namespace Corale.Colore.Core
 {
-    using Corale.Colore.Annotations;
+    using Corale.Colore.Razer.Headset.Effects;
 
     /// <summary>
-    /// LEDs that can be the target of color changes.
+    /// Interface for headset functionality.
     /// </summary>
-    public enum Led : uint
+    public interface IHeadset : IDevice
     {
         /// <summary>
-        /// No LED.
+        /// Sets an effect on the headset that doesn't
+        /// take any parameters, currently only valid
+        /// for the <see cref="Effect.SpectrumCycling" /> effect.
         /// </summary>
-        [PublicAPI]
-        None = 0,
+        /// <param name="effect">The type of effect to set.</param>
+        void Set(Effect effect);
 
         /// <summary>
-        /// The LED illuminating the scroll wheel.
+        /// Sets a new static effect on the headset.
         /// </summary>
-        [PublicAPI]
-        ScrollWheel = 0x0001,
+        /// <param name="effect">
+        /// An instance of the <see cref="Static" /> struct
+        /// describing the effect.
+        /// </param>
+        void Set(Static effect);
 
         /// <summary>
-        /// The LED illuminating the logo present on the mouse.
+        /// Sets a new breathing effect on the headset.
         /// </summary>
-        [PublicAPI]
-        Logo = 0x0002,
-
-        /// <summary>
-        /// The mouse backlight.
-        /// </summary>
-        [PublicAPI]
-        Backlight = 0x0003,
-
-        /// <summary>
-        /// Invalid LED.
-        /// </summary>
-        [PublicAPI]
-        Invalid = 0xFFFF
+        /// <param name="effect">
+        /// An instance of the <see cref="Breathing" /> struct
+        /// describing the effect.
+        /// </param>
+        void Set(Breathing effect);
     }
 }

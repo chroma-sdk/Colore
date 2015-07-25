@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Product.cs" company="Corale">
+// <copyright file="IGenericDevice.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,35 +28,33 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Razer
+namespace Corale.Colore.Core
 {
-    using Corale.Colore.Annotations;
+    using System;
+
+    using Corale.Colore.Razer;
 
     /// <summary>
-    /// Chroma-supported products.
+    /// Interface for generic devices.
     /// </summary>
-    [PublicAPI]
-    public enum Product
+    public interface IGenericDevice : IDevice
     {
         /// <summary>
-        /// No product.
+        /// Gets the <see cref="Guid" /> of this device.
         /// </summary>
-        [PublicAPI]
-        None = 0,
+        Guid DeviceId { get; }
 
         /// <summary>
-        /// The Razer BlackWidow Chroma.
+        /// Sets a parameter-less effect on this device.
         /// </summary>
-        /// <remarks>
-        /// Device Id = <c>2EA1BB63-CA28-428D-9F06-196B88330BBB</c>.
-        /// </remarks>
-        [PublicAPI]
-        BlackWidowChroma,
+        /// <param name="effect">Effect to set.</param>
+        void Set(Effect effect);
 
         /// <summary>
-        /// Invalid product.
+        /// Sets an effect on this device, taking a parameter.
         /// </summary>
-        [PublicAPI]
-        Invalid
+        /// <param name="effect">Effect to set.</param>
+        /// <param name="param">Effect-specific parameter to use.</param>
+        void Set(Effect effect, IntPtr param);
     }
 }

@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Led.cs" company="Corale">
+// <copyright file="Effect.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,43 +28,43 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Razer.Mouse
+namespace Corale.Colore.Razer.Headset.Effects
 {
     using Corale.Colore.Annotations;
 
     /// <summary>
-    /// LEDs that can be the target of color changes.
+    /// Standard effects for headsets.
     /// </summary>
-    public enum Led : uint
+    public enum Effect
     {
         /// <summary>
-        /// No LED.
+        /// No effect.
         /// </summary>
         [PublicAPI]
         None = 0,
 
         /// <summary>
-        /// The LED illuminating the scroll wheel.
+        /// Static color.
         /// </summary>
         [PublicAPI]
-        ScrollWheel = 0x0001,
+        Static,
 
         /// <summary>
-        /// The LED illuminating the logo present on the mouse.
+        /// Slow fade between two colors.
         /// </summary>
         [PublicAPI]
-        Logo = 0x0002,
+        Breathing,
 
         /// <summary>
-        /// The mouse backlight.
+        /// Cycles the entire spectrum.
         /// </summary>
         [PublicAPI]
-        Backlight = 0x0003,
+        SpectrumCycling,
 
         /// <summary>
-        /// Invalid LED.
+        /// Invalid effect.
         /// </summary>
         [PublicAPI]
-        Invalid = 0xFFFF
+        Invalid
     }
 }

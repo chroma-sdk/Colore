@@ -37,11 +37,18 @@ namespace Corale.Colore.Core
     using Corale.Colore.Events;
     using Corale.Colore.Razer;
 
+    using log4net;
+
     /// <summary>
     /// Main class for interacting with the Chroma SDK.
     /// </summary>
     public sealed class Chroma : IChroma
     {
+        /// <summary>
+        /// Logger instance for this class.
+        /// </summary>
+        private static readonly ILog Log = LogManager.GetLogger(typeof(Chroma));
+
         /// <summary>
         /// Holds the application-wide instance of the <see cref="IChroma" /> interface.
         /// </summary>
@@ -62,7 +69,10 @@ namespace Corale.Colore.Core
         /// </summary>
         private Chroma()
         {
+            Log.Info("Chroma is initializing.");
+            Log.Debug("Calling SDK Init function");
             NativeWrapper.Init();
+            Log.Debug("Resetting _registeredHandle");
             _registeredHandle = IntPtr.Zero;
         }
 
@@ -145,6 +155,18 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
+        /// Gets an instance of the <see cref="IHeadset" /> interface
+        /// for interacting with a Razer Chroma headset.
+        /// </summary>
+        public IHeadset Headset
+        {
+            get
+            {
+                return Core.Headset.Instance;
+            }
+        }
+
+        /// <summary>
         /// Gets a value indicating whether the Chroma main class has been initialized or not.
         /// </summary>
         internal static bool Initialized
@@ -153,6 +175,21 @@ namespace Corale.Colore.Core
             {
                 return _instance != null;
             }
+        }
+
+        /// <summary>
+        /// Gets an instance of <see cref="IGenericDevice" /> for
+        /// the device with the specified ID.
+        /// </summary>
+        /// <param name="deviceId">
+        /// The <see cref="Guid" /> of the device to get,
+        /// valid IDs can be found in <see cref="Devices" />.
+        /// </param>
+        /// <returns>An instance of <see cref="IGenericDevice" />.</returns>
+        public IGenericDevice GetDevice(Guid deviceId)
+        {
+            Log.DebugFormat("Device {0} requested", deviceId);
+            return GenericDevice.Get(deviceId);
         }
 
         /// <summary>
@@ -218,8 +255,13 @@ namespace Corale.Colore.Core
         /// </remarks>
         public void Register(IntPtr handle)
         {
+            Log.Debug("Registering for Chroma event notifications");
+
             if (_registered)
+            {
+                Log.Debug("Already registered, unregistering before continuing with registration");
                 NativeWrapper.UnregisterEventNotification();
+            }
 
             NativeWrapper.RegisterEventNotification(handle);
             _registered = true;
@@ -233,6 +275,8 @@ namespace Corale.Colore.Core
         {
             if (!_registered)
                 return;
+
+            Log.Debug("Unregistering from Chroma event notifications");
 
             NativeWrapper.UnregisterEventNotification();
             _registered = false;
