@@ -42,18 +42,108 @@ namespace Corale.Colore.Razer.Mouse.Effects
     public struct Breathing
     {
         /// <summary>
-        /// The color of the effect.
+        /// The LED on which to apply the effect.
         /// </summary>
-        [PublicAPI]
-        public Color Color;
+        [UsedImplicitly]
+        public Led Led;
+
+        /// <summary>
+        /// The type of breathing effect.
+        /// </summary>
+        [UsedImplicitly]
+        public BreathingType Type;
+
+        /// <summary>
+        /// Initial effect color.
+        /// </summary>
+        [UsedImplicitly]
+        public Color First;
+
+        /// <summary>
+        /// Second color to breathe to.
+        /// </summary>
+        [UsedImplicitly]
+        public Color Second;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Breathing" /> struct.
         /// </summary>
-        /// <param name="color">The <see cref="Color" /> to use.</param>
-        public Breathing(Color color)
+        /// <param name="led">The LED on which to apply the effect.</param>
+        /// <param name="type">The type of breathing effect to create.</param>
+        /// <param name="first">The initial <see cref="Color" /> to use.</param>
+        /// <param name="second">The second color.</param>
+        public Breathing(Led led, BreathingType type, Color first, Color second)
         {
-            Color = color;
+            Led = led;
+            Type = type;
+            First = first;
+            Second = second;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Breathing" /> struct for
+        /// making a specified LED breathe randomly.
+        /// </summary>
+        /// <param name="led">The LED on which to apply the effect.</param>
+        public Breathing(Led led)
+            : this(led, BreathingType.Random, Color.Black, Color.Black)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Breathing" /> struct for
+        /// making a specified LED breathe to a single color.
+        /// </summary>
+        /// <param name="led">The LED on which to apply the effect.</param>
+        /// <param name="first">The color to breathe to.</param>
+        public Breathing(Led led, Color first)
+            : this(led, BreathingType.One, first, Color.Black)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Breathing" /> struct for
+        /// making a specified LED breathe between two colors.
+        /// </summary>
+        /// <param name="led">The LED on which to apply the effect.</param>
+        /// <param name="first">Initial color.</param>
+        /// <param name="second">Second color.</param>
+        public Breathing(Led led, Color first, Color second)
+            : this(led, BreathingType.Two, first, second)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Breathing" /> struct for
+        /// making every LED on the mouse follow the specified pattern.
+        /// </summary>
+        /// <param name="type">The type of effect to create.</param>
+        /// <param name="first">Initial color.</param>
+        /// <param name="second">Second color.</param>
+        public Breathing(BreathingType type, Color first, Color second)
+            : this(Led.All, type, first, second)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Breathing" /> struct for
+        /// making every LED breathe to a single color.
+        /// </summary>
+        /// <param name="first">The <see cref="Color" /> to breathe to.</param>
+        public Breathing(Color first)
+            : this(BreathingType.One, first, Color.Black)
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Breathing" /> struct for
+        /// making every LED breathe between two colors.
+        /// </summary>
+        /// <param name="first">Initial color.</param>
+        /// <param name="second">Second color.</param>
+        public Breathing(Color first, Color second)
+            : this(BreathingType.Two, first, second)
+        {
         }
     }
 }

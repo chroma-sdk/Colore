@@ -167,6 +167,30 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
+        /// Gets an instance of the <see cref="IMousepad" /> interface
+        /// for interacting with a Razer Chroma mousepad.
+        /// </summary>
+        public IMousepad Mousepad
+        {
+            get
+            {
+                return Core.Mousepad.Instance;
+            }
+        }
+
+        /// <summary>
+        /// Gets an instance of the <see cref="IKeypad" /> interface
+        /// for interacting with a Razer Chroma keypad.
+        /// </summary>
+        public IKeypad Keypad
+        {
+            get
+            {
+                return Core.Keypad.Instance;
+            }
+        }
+
+        /// <summary>
         /// Gets a value indicating whether the Chroma main class has been initialized or not.
         /// </summary>
         internal static bool Initialized
@@ -178,6 +202,20 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
+        /// Queries the SDK for information regarding a specific device.
+        /// </summary>
+        /// <param name="deviceId">The device ID to query for, valid IDs can be found in <see cref="Devices" />.</param>
+        /// <returns>A struct with information regarding the device type and whether it's connected.</returns>
+        public DeviceInfo Query(Guid deviceId)
+        {
+            if (!Devices.IsValidId(deviceId))
+                throw new ArgumentException("The specified ID does not match any of the valid IDs.", "deviceId");
+
+            Log.DebugFormat("Information for {0} requested", deviceId);
+            return NativeWrapper.QueryDevice(deviceId);
+        }
+
+        /// <summary>
         /// Gets an instance of <see cref="IGenericDevice" /> for
         /// the device with the specified ID.
         /// </summary>
@@ -186,7 +224,7 @@ namespace Corale.Colore.Core
         /// valid IDs can be found in <see cref="Devices" />.
         /// </param>
         /// <returns>An instance of <see cref="IGenericDevice" />.</returns>
-        public IGenericDevice GetDevice(Guid deviceId)
+        public IGenericDevice Get(Guid deviceId)
         {
             Log.DebugFormat("Device {0} requested", deviceId);
             return GenericDevice.Get(deviceId);

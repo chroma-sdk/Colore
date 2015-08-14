@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+// <copyright file="Blinking.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,62 +28,37 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Razer.Keyboard.Effects
+namespace Corale.Colore.Razer.Mouse.Effects
 {
     using Corale.Colore.Annotations;
+    using Corale.Colore.Core;
 
     /// <summary>
-    /// Supported built-in keyboard effects.
+    /// Mouse effect that causes a specified LED to blink.
     /// </summary>
-    [PublicAPI]
-    public enum Effect
+    public struct Blinking
     {
         /// <summary>
-        /// No effect.
+        /// The LED on which to apply the effect.
         /// </summary>
-        [PublicAPI]
-        None = 0,
+        [UsedImplicitly]
+        public Led Led;
 
         /// <summary>
-        /// Breathing effect.
+        /// Color of the blinking effect.
         /// </summary>
-        [PublicAPI]
-        Breathing,
+        [UsedImplicitly]
+        public Color Color;
 
         /// <summary>
-        /// Custom effect.
+        /// Initializes a new instance of the <see cref="Blinking" /> struct.
         /// </summary>
-        [PublicAPI]
-        Custom,
-
-        /// <summary>
-        /// Reactive effect.
-        /// </summary>
-        [PublicAPI]
-        Reactive,
-
-        /// <summary>
-        /// Static effect.
-        /// </summary>
-        [PublicAPI]
-        Static,
-
-        /// <summary>
-        /// Spectrum cycling effect.
-        /// </summary>
-        [PublicAPI]
-        SpectrumCycling,
-
-        /// <summary>
-        /// Wave effect.
-        /// </summary>
-        [PublicAPI]
-        Wave,
-
-        /// <summary>
-        /// Invalid effect.
-        /// </summary>
-        [PublicAPI]
-        Invalid
+        /// <param name="led">The LED on which to apply the effect.</param>
+        /// <param name="color">Color for the blinking effect.</param>
+        public Blinking(Led led, Color color)
+        {
+            Led = led;
+            Color = color;
+        }
     }
 }

@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+// <copyright file="Wave.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,62 +28,28 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Razer.Keyboard.Effects
+namespace Corale.Colore.Razer.Mousepad.Effects
 {
-    using Corale.Colore.Annotations;
+    using System.Runtime.InteropServices;
 
     /// <summary>
-    /// Supported built-in keyboard effects.
+    /// Wave effect for the mousepad.
     /// </summary>
-    [PublicAPI]
-    public enum Effect
+    [StructLayout(LayoutKind.Sequential)]
+    public struct Wave
     {
         /// <summary>
-        /// No effect.
+        /// Direction of the wave.
         /// </summary>
-        [PublicAPI]
-        None = 0,
+        public readonly Direction Direction;
 
         /// <summary>
-        /// Breathing effect.
+        /// Initializes a new instance of the <see cref="Wave" /> struct.
         /// </summary>
-        [PublicAPI]
-        Breathing,
-
-        /// <summary>
-        /// Custom effect.
-        /// </summary>
-        [PublicAPI]
-        Custom,
-
-        /// <summary>
-        /// Reactive effect.
-        /// </summary>
-        [PublicAPI]
-        Reactive,
-
-        /// <summary>
-        /// Static effect.
-        /// </summary>
-        [PublicAPI]
-        Static,
-
-        /// <summary>
-        /// Spectrum cycling effect.
-        /// </summary>
-        [PublicAPI]
-        SpectrumCycling,
-
-        /// <summary>
-        /// Wave effect.
-        /// </summary>
-        [PublicAPI]
-        Wave,
-
-        /// <summary>
-        /// Invalid effect.
-        /// </summary>
-        [PublicAPI]
-        Invalid
+        /// <param name="direction">Direction of the effect.</param>
+        public Wave(Direction direction)
+        {
+            Direction = direction;
+        }
     }
 }

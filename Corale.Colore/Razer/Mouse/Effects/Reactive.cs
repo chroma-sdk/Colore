@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+// <copyright file="Reactive.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,62 +28,55 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Razer.Keyboard.Effects
+namespace Corale.Colore.Razer.Mouse.Effects
 {
-    using Corale.Colore.Annotations;
+    using System.Runtime.InteropServices;
+
+    using Corale.Colore.Core;
 
     /// <summary>
-    /// Supported built-in keyboard effects.
+    /// Reactive effect.
     /// </summary>
-    [PublicAPI]
-    public enum Effect
+    [StructLayout(LayoutKind.Sequential)]
+    public struct Reactive
     {
         /// <summary>
-        /// No effect.
+        /// The LED on which to apply the effect.
         /// </summary>
-        [PublicAPI]
-        None = 0,
+        public Led Led;
 
         /// <summary>
-        /// Breathing effect.
+        /// Duration of the reaction.
         /// </summary>
-        [PublicAPI]
-        Breathing,
+        public Duration Duration;
 
         /// <summary>
-        /// Custom effect.
+        /// Reaction color.
         /// </summary>
-        [PublicAPI]
-        Custom,
+        public Color Color;
 
         /// <summary>
-        /// Reactive effect.
+        /// Initializes a new instance of the <see cref="Reactive" /> struct.
         /// </summary>
-        [PublicAPI]
-        Reactive,
+        /// <param name="led">The LED on which to apply the effect.</param>
+        /// <param name="duration">Duration of the effect.</param>
+        /// <param name="color">Color of the effect.</param>
+        public Reactive(Led led, Duration duration, Color color)
+        {
+            Led = led;
+            Duration = duration;
+            Color = color;
+        }
 
         /// <summary>
-        /// Static effect.
+        /// Initializes a new instance of the <see cref="Reactive" /> struct,
+        /// applying the effect to every LED.
         /// </summary>
-        [PublicAPI]
-        Static,
-
-        /// <summary>
-        /// Spectrum cycling effect.
-        /// </summary>
-        [PublicAPI]
-        SpectrumCycling,
-
-        /// <summary>
-        /// Wave effect.
-        /// </summary>
-        [PublicAPI]
-        Wave,
-
-        /// <summary>
-        /// Invalid effect.
-        /// </summary>
-        [PublicAPI]
-        Invalid
+        /// <param name="duration"></param>
+        /// <param name="color"></param>
+        public Reactive(Duration duration, Color color)
+            : this(Led.All, duration, color)
+        {
+        }
     }
 }

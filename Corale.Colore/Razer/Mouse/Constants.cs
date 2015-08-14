@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+// <copyright file="Constants.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,62 +28,16 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Razer.Keyboard.Effects
+namespace Corale.Colore.Razer.Mouse
 {
-    using Corale.Colore.Annotations;
-
     /// <summary>
-    /// Supported built-in keyboard effects.
+    /// Mouse constants.
     /// </summary>
-    [PublicAPI]
-    public enum Effect
+    public static class Constants
     {
         /// <summary>
-        /// No effect.
+        /// Maximum number of custom LEDs.
         /// </summary>
-        [PublicAPI]
-        None = 0,
-
-        /// <summary>
-        /// Breathing effect.
-        /// </summary>
-        [PublicAPI]
-        Breathing,
-
-        /// <summary>
-        /// Custom effect.
-        /// </summary>
-        [PublicAPI]
-        Custom,
-
-        /// <summary>
-        /// Reactive effect.
-        /// </summary>
-        [PublicAPI]
-        Reactive,
-
-        /// <summary>
-        /// Static effect.
-        /// </summary>
-        [PublicAPI]
-        Static,
-
-        /// <summary>
-        /// Spectrum cycling effect.
-        /// </summary>
-        [PublicAPI]
-        SpectrumCycling,
-
-        /// <summary>
-        /// Wave effect.
-        /// </summary>
-        [PublicAPI]
-        Wave,
-
-        /// <summary>
-        /// Invalid effect.
-        /// </summary>
-        [PublicAPI]
-        Invalid
+        public const int MaxLeds = 30;
     }
 }

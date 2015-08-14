@@ -50,17 +50,39 @@ namespace Corale.Colore.Core
         /// <summary>
         /// Sets a breathing effect on the mouse.
         /// </summary>
-        /// <param name="led">The <see cref="Led" /> to apply the effect on.</param>
         /// <param name="effect">An instance of the <see cref="Breathing" /> effect.</param>
         [PublicAPI]
-        void Set(Led led, Breathing effect);
+        void Set(Breathing effect);
 
         /// <summary>
         /// Sets a static color on the mouse.
         /// </summary>
-        /// <param name="led">The <see cref="Led" /> to apply the effect on.</param>
         /// <param name="effect">An instance of the <see cref="Static" /> effect.</param>
         [PublicAPI]
-        void Set(Led led, Static effect);
+        void Set(Static effect);
+
+        /// <summary>
+        /// Starts a blinking effect on the specified LED.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="Blinking" /> effect.</param>
+        void Set(Blinking effect);
+
+        /// <summary>
+        /// Sets a reactive effect on the mouse.
+        /// </summary>
+        /// <param name="effect">Effect options struct.</param>
+        void Set(Reactive effect);
+
+        /// <summary>
+        /// Sets a spectrum cycling effect on the mouse.
+        /// </summary>
+        /// <param name="effect">Effect options struct.</param>
+        void Set(SpectrumCycling effect);
+
+        /// <summary>
+        /// Sets a wave effect on the mouse.
+        /// </summary>
+        /// <param name="effect">Effect options struct.</param>
+        void Set(Wave effect);
     }
 }

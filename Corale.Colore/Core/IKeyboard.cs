@@ -30,8 +30,6 @@
 
 namespace Corale.Colore.Core
 {
-    using System.Collections.Generic;
-
     using Corale.Colore.Annotations;
     using Corale.Colore.Razer.Keyboard;
     using Corale.Colore.Razer.Keyboard.Effects;
@@ -80,6 +78,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="first">Color to start from.</param>
         /// <param name="second">Color to reach, before going back to <paramref name="first" />.</param>
+        [PublicAPI]
         void Set(Color first, Color second);
 
         /// <summary>
@@ -88,6 +87,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="color">Color to emit on key press.</param>
         /// <param name="duration">How long to illuminate the key after being pressed.</param>
+        [PublicAPI]
         void Set(Color color, Duration duration);
 
         /// <summary>
@@ -99,18 +99,21 @@ namespace Corale.Colore.Core
         /// The passed in arrays cannot have more than <see cref="Constants.MaxRows" /> rows and
         /// not more than <see cref="Constants.MaxColumns" /> columns in any row.
         /// </remarks>
+        [PublicAPI]
         void Set(Color[][] colors);
 
         /// <summary>
         /// Sets a custom grid effect on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        void Set(CustomGrid effect);
+        [PublicAPI]
+        void Set(Custom effect);
 
         /// <summary>
         /// Sets a wave effect on the keyboard in the specified direction.
         /// </summary>
         /// <param name="direction">Direction of the wave.</param>
+        [PublicAPI]
         void Set(Direction direction);
 
         /// <summary>
@@ -118,14 +121,8 @@ namespace Corale.Colore.Core
         /// Currently, this only works for the <see cref="Effect.SpectrumCycling" /> effect.
         /// </summary>
         /// <param name="effect">Effect options.</param>
+        [PublicAPI]
         void Set(Effect effect);
-
-        /// <summary>
-        /// Sets the colors of specific keys, using values from <see cref="Key" /> to
-        /// specify the keys.
-        /// </summary>
-        /// <param name="effects">A collection of custom effect structs.</param>
-        void Set(IEnumerable<Custom> effects);
 
         /// <summary>
         /// Sets the color on a specific row and column on the keyboard grid.
@@ -134,6 +131,7 @@ namespace Corale.Colore.Core
         /// <param name="column">Column to set, between 1 and <see cref="Constants.MaxColumns" />.</param>
         /// <param name="color">Color to set.</param>
         /// <param name="clear">Whether or not to clear the existing colors before setting this one.</param>
+        [PublicAPI]
         void Set(Size row, Size column, Color color, bool clear = false);
 
         /// <summary>

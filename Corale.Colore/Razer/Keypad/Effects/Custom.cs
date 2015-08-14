@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="CustomGrid.cs" company="Corale">
+// <copyright file="Custom.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,7 +28,7 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Razer.Keyboard.Effects
+namespace Corale.Colore.Razer.Keypad.Effects
 {
     using System;
     using System.Collections.Generic;
@@ -38,27 +38,27 @@ namespace Corale.Colore.Razer.Keyboard.Effects
     using Corale.Colore.Core;
 
     /// <summary>
-    /// Describes a custom grid effect for every key.
+    /// Custom effect.
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public struct CustomGrid : IEquatable<CustomGrid>, IEquatable<Color[][]>
+    public struct Custom : IEquatable<Custom>, IEquatable<Color[][]>
     {
         /// <summary>
-        /// Color definitions for each key on the keyboard.
+        /// Color definitions for each key on the keypad.
         /// </summary>
         /// <remarks>
         /// The array is 2-dimensional, with the first dimension
         /// specifying the row for the key, and the second the column.
         /// </remarks>
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = (int)Constants.MaxRows)]
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = Constants.MaxRows)]
         private readonly Row[] _rows;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomGrid" /> struct.
+        /// Initializes a new instance of the <see cref="Custom" /> struct.
         /// </summary>
         /// <param name="colors">The colors to use.</param>
         /// <exception cref="ArgumentException">Thrown if the colors array supplied is of an incorrect size.</exception>
-        public CustomGrid(Color[][] colors)
+        public Custom(Color[][] colors)
         {
             var rows = colors.GetLength(0);
 
@@ -71,7 +71,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
 
             _rows = new Row[Constants.MaxRows];
 
-            for (Size row = 0; row < (int)Constants.MaxRows; row++)
+            for (var row = 0; row < Constants.MaxRows; row++)
             {
                 var inRow = colors[row];
                 _rows[row] = new Row(inRow);
@@ -79,11 +79,11 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomGrid" /> struct
+        /// Initializes a new instance of the <see cref="Custom" /> struct
         /// with every position set to a specific color.
         /// </summary>
         /// <param name="color">The <see cref="Color" /> to set each position to.</param>
-        public CustomGrid(Color color)
+        public Custom(Color color)
         {
             _rows = new Row[Constants.MaxRows];
 
@@ -105,14 +105,6 @@ namespace Corale.Colore.Razer.Keyboard.Effects
                 if (row < 0 || row >= Constants.MaxRows)
                     throw new ArgumentOutOfRangeException("row", row, "Attempted to access a row that does not exist.");
 
-                if (column < 0 || column >= Constants.MaxColumns)
-                {
-                    throw new ArgumentOutOfRangeException(
-                        "column",
-                        column,
-                        "Attempted to access a column that does not exist.");
-                }
-
                 return _rows[row][column];
             }
 
@@ -121,50 +113,42 @@ namespace Corale.Colore.Razer.Keyboard.Effects
                 if (row < 0 || row >= Constants.MaxRows)
                     throw new ArgumentOutOfRangeException("row", row, "Attempted to access a row that does not exist.");
 
-                if (column < 0 || column >= Constants.MaxColumns)
-                {
-                    throw new ArgumentOutOfRangeException(
-                        "column",
-                        column,
-                        "Attempted to access a column that does not exist.");
-                }
-
                 _rows[row][column] = value;
             }
         }
 
         /// <summary>
-        /// Compares an instance of <see cref="CustomGrid" /> with
+        /// Compares an instance of <see cref="Custom" /> with
         /// another object for equality.
         /// </summary>
-        /// <param name="left">The left operand, an instance of <see cref="CustomGrid" />.</param>
+        /// <param name="left">The left operand, an instance of <see cref="Custom" />.</param>
         /// <param name="right">The right operand, any type of object.</param>
         /// <returns><c>true</c> if the two objects are equal, otherwise <c>false</c>.</returns>
-        public static bool operator ==(CustomGrid left, object right)
+        public static bool operator ==(Custom left, object right)
         {
             return left.Equals(right);
         }
 
         /// <summary>
-        /// Compares an instance of <see cref="CustomGrid" /> with
+        /// Compares an instance of <see cref="Custom" /> with
         /// another object for inequality.
         /// </summary>
-        /// <param name="left">The left operand, an instance of <see cref="CustomGrid" />.</param>
+        /// <param name="left">The left operand, an instance of <see cref="Custom" />.</param>
         /// <param name="right">The right operand, any type of object.</param>
         /// <returns><c>true</c> if the two objects are not equal, otherwise <c>false</c>.</returns>
-        public static bool operator !=(CustomGrid left, object right)
+        public static bool operator !=(Custom left, object right)
         {
             return !left.Equals(right);
         }
 
         /// <summary>
-        /// Creates a new empty <see cref="CustomGrid" /> struct.
+        /// Creates a new empty <see cref="Custom" /> struct.
         /// </summary>
-        /// <returns>An instance of <see cref="CustomGrid" />
+        /// <returns>An instance of <see cref="Custom" />
         /// filled with the color black.</returns>
-        public static CustomGrid Create()
+        public static Custom Create()
         {
-            return new CustomGrid(Color.Black);
+            return new Custom(Color.Black);
         }
 
         /// <summary>
@@ -184,10 +168,10 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// </summary>
         public void Clear()
         {
-            for (var row = 0; row < (int)Constants.MaxRows; row++)
+            for (var row = 0; row < Constants.MaxRows; row++)
             {
                 var rowArr = _rows[row];
-                for (var col = 0; col < (int)Constants.MaxColumns; col++)
+                for (var col = 0; col < Constants.MaxColumns; col++)
                     rowArr[col] = Color.Black;
             }
         }
@@ -206,8 +190,8 @@ namespace Corale.Colore.Razer.Keyboard.Effects
             if (ReferenceEquals(obj, null))
                 return false;
 
-            if (obj is CustomGrid)
-                return Equals((CustomGrid)obj);
+            if (obj is Custom)
+                return Equals((Custom)obj);
 
             var arr = obj as Color[][];
             return arr != null && Equals(arr);
@@ -220,8 +204,8 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// <c>true</c> if the current object is equal to the <paramref name="other"/> parameter;
         /// otherwise, <c>false</c>.
         /// </returns>
-        /// <param name="other">A <see cref="CustomGrid" /> to compare with this object.</param>
-        public bool Equals(CustomGrid other)
+        /// <param name="other">A <see cref="Custom" /> to compare with this object.</param>
+        public bool Equals(Custom other)
         {
             for (var row = 0; row < Constants.MaxRows; row++)
             {
@@ -275,7 +259,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
             /// <summary>
             /// Color definitions for the columns of this row.
             /// </summary>
-            [MarshalAs(UnmanagedType.ByValArray, SizeConst = (int)Constants.MaxColumns)]
+            [MarshalAs(UnmanagedType.ByValArray, SizeConst = Constants.MaxColumns)]
             internal readonly uint[] Columns;
 
             /// <summary>
@@ -284,7 +268,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
             /// <param name="colors">Colors for this row.</param>
             internal Row(IReadOnlyList<Color> colors)
             {
-                if (colors.Count != (int)Constants.MaxColumns)
+                if (colors.Count != Constants.MaxColumns)
                 {
                     throw new ArgumentException(
                         "Incorrect color count, expected " + Constants.MaxColumns + " but received " + colors.Count,
@@ -293,7 +277,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
 
                 Columns = new uint[Constants.MaxColumns];
 
-                for (var col = 0; col < (int)Constants.MaxColumns; col++)
+                for (var col = 0; col < Constants.MaxColumns; col++)
                     Columns[col] = colors[col];
             }
 
@@ -306,7 +290,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
             {
                 Columns = new uint[Constants.MaxColumns];
 
-                for (var col = 0; col < (int)Constants.MaxColumns; col++)
+                for (var col = 0; col < Constants.MaxColumns; col++)
                     Columns[col] = color;
             }
 

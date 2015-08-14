@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+// <copyright file="Direction.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,60 +28,35 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Razer.Keyboard.Effects
+namespace Corale.Colore.Razer.Mousepad.Effects
 {
     using Corale.Colore.Annotations;
 
     /// <summary>
-    /// Supported built-in keyboard effects.
+    /// Supported directions for mousepad wave effect.
     /// </summary>
-    [PublicAPI]
-    public enum Effect
+    public enum Direction
     {
         /// <summary>
-        /// No effect.
+        /// No direction.
         /// </summary>
         [PublicAPI]
         None = 0,
 
         /// <summary>
-        /// Breathing effect.
+        /// Wave goes from left to right.
         /// </summary>
         [PublicAPI]
-        Breathing,
+        LeftToRight,
 
         /// <summary>
-        /// Custom effect.
+        /// Wave goes from right to left.
         /// </summary>
         [PublicAPI]
-        Custom,
+        RightToLeft,
 
         /// <summary>
-        /// Reactive effect.
-        /// </summary>
-        [PublicAPI]
-        Reactive,
-
-        /// <summary>
-        /// Static effect.
-        /// </summary>
-        [PublicAPI]
-        Static,
-
-        /// <summary>
-        /// Spectrum cycling effect.
-        /// </summary>
-        [PublicAPI]
-        SpectrumCycling,
-
-        /// <summary>
-        /// Wave effect.
-        /// </summary>
-        [PublicAPI]
-        Wave,
-
-        /// <summary>
-        /// Invalid effect.
+        /// Invalid direction.
         /// </summary>
         [PublicAPI]
         Invalid

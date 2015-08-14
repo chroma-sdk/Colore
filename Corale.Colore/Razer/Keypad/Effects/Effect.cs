@@ -28,14 +28,13 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Razer.Keyboard.Effects
+namespace Corale.Colore.Razer.Keypad.Effects
 {
     using Corale.Colore.Annotations;
 
     /// <summary>
-    /// Supported built-in keyboard effects.
+    /// Supported effects for Chroma keypads.
     /// </summary>
-    [PublicAPI]
     public enum Effect
     {
         /// <summary>
@@ -63,16 +62,16 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         Reactive,
 
         /// <summary>
-        /// Static effect.
-        /// </summary>
-        [PublicAPI]
-        Static,
-
-        /// <summary>
-        /// Spectrum cycling effect.
+        /// Spectrum cycling.
         /// </summary>
         [PublicAPI]
         SpectrumCycling,
+
+        /// <summary>
+        /// Static color.
+        /// </summary>
+        [PublicAPI]
+        Static,
 
         /// <summary>
         /// Wave effect.

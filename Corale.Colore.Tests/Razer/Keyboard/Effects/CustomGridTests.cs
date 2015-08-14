@@ -44,7 +44,7 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
         [Test]
         public void ShouldThrowWhenOutOfRangeGet()
         {
-            var grid = CustomGrid.Create();
+            var grid = Custom.Create();
 
             // ReSharper disable once NotAccessedVariable
             Color dummy;
@@ -85,7 +85,7 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
         [Test]
         public void ShouldThrowWhenOutOfRangeSet()
         {
-            var grid = CustomGrid.Create();
+            var grid = Custom.Create();
 
             Assert.That(
                 () => grid[-1, 0] = Color.Red,
@@ -128,10 +128,10 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
             var arr = new Color[2][];
 
             // ReSharper disable once NotAccessedVariable
-            CustomGrid dummy;
+            Custom dummy;
 
             Assert.That(
-                () => dummy = new CustomGrid(arr),
+                () => dummy = new Custom(arr),
                 Throws.ArgumentException.With.Property("ParamName").EqualTo("colors"));
         }
 
@@ -145,17 +145,17 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
             arr[0] = new Color[2];
 
             // ReSharper disable once NotAccessedVariable
-            CustomGrid dummy;
+            Custom dummy;
 
             Assert.That(
-                () => dummy = new CustomGrid(arr),
+                () => dummy = new Custom(arr),
                 Throws.ArgumentException.With.Property("ParamName").EqualTo("colors"));
         }
 
         [Test]
         public void ShouldSetToBlackWithCreate()
         {
-            var grid = CustomGrid.Create();
+            var grid = Custom.Create();
 
             for (var row = 0; row < Constants.MaxRows; row++)
             {
@@ -167,7 +167,7 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
         [Test]
         public void ShouldSetAllColorsWithColorCtor()
         {
-            var grid = new CustomGrid(Color.Red);
+            var grid = new Custom(Color.Red);
 
             for (var row = 0; row < Constants.MaxRows; row++)
             {
@@ -189,7 +189,7 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
             arr[2][3] = Color.Pink;
             arr[4][0] = Color.Blue;
 
-            var grid = new CustomGrid(arr);
+            var grid = new Custom(arr);
 
             for (var row = 0; row < Constants.MaxRows; row++)
             {
@@ -201,7 +201,7 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
         [Test]
         public void ShouldSetNewColors()
         {
-            var grid = CustomGrid.Create();
+            var grid = Custom.Create();
 
             grid[0, 5] = Color.Red;
 
@@ -211,17 +211,17 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
         [Test]
         public void ShouldClearToBlack()
         {
-            var grid = new CustomGrid(Color.Pink);
+            var grid = new Custom(Color.Pink);
             grid.Clear();
 
-            Assert.That(grid, Is.EqualTo(CustomGrid.Create()));
+            Assert.That(grid, Is.EqualTo(Custom.Create()));
         }
 
         [Test]
         public void ShouldEqualIdenticalGrid()
         {
-            var a = new CustomGrid(Color.Red);
-            var b = new CustomGrid(Color.Red);
+            var a = new Custom(Color.Red);
+            var b = new Custom(Color.Red);
 
             Assert.True(a == b);
             Assert.False(a != b);
@@ -232,8 +232,8 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
         [Test]
         public void ShouldNotEqualDifferentGrid()
         {
-            var a = new CustomGrid(Color.Red);
-            var b = new CustomGrid(Color.Pink);
+            var a = new Custom(Color.Red);
+            var b = new Custom(Color.Pink);
 
             Assert.False(a == b);
             Assert.True(a != b);
@@ -244,7 +244,7 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
         [Test]
         public void ShouldEqualIdenticalArray()
         {
-            var grid = new CustomGrid(Color.Red);
+            var grid = new Custom(Color.Red);
             var arr = new Color[Constants.MaxRows][];
 
             // Populate the 2D array
@@ -264,7 +264,7 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
         [Test]
         public void ShouldNotEqualDifferentArray()
         {
-            var grid = new CustomGrid(Color.Pink);
+            var grid = new Custom(Color.Pink);
             var arr = new Color[Constants.MaxRows][];
 
             // Populate the 2D array
@@ -284,7 +284,7 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
         [Test]
         public void ShouldNotEqualArrayWithInvalidRowCount()
         {
-            var grid = CustomGrid.Create();
+            var grid = Custom.Create();
             var arr = new Color[2][];
 
             Assert.False(grid == arr);
@@ -296,7 +296,7 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
         [Test]
         public void ShouldNotEqualArrayWithInvalidColumnCount()
         {
-            var grid = CustomGrid.Create();
+            var grid = Custom.Create();
             var arr = new Color[Constants.MaxRows][];
             arr[0] = new Color[2];
 
@@ -309,7 +309,7 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
         [Test]
         public void ShouldNotEqualArbitraryObject()
         {
-            var grid = CustomGrid.Create();
+            var grid = Custom.Create();
             var obj = new object();
 
             Assert.False(grid == obj);
@@ -321,7 +321,7 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
         [Test]
         public void ShouldNotEqualNull()
         {
-            var grid = CustomGrid.Create();
+            var grid = Custom.Create();
 
             Assert.False(grid == null);
             Assert.True(grid != null);

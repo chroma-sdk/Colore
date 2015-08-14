@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+// <copyright file="None.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,62 +28,28 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Razer.Keyboard.Effects
+namespace Corale.Colore.Razer.Mouse.Effects
 {
-    using Corale.Colore.Annotations;
+    using System.Runtime.InteropServices;
 
     /// <summary>
-    /// Supported built-in keyboard effects.
+    /// No effect (resets the affected LEDs).
     /// </summary>
-    [PublicAPI]
-    public enum Effect
+    [StructLayout(LayoutKind.Sequential)]
+    public struct None
     {
         /// <summary>
-        /// No effect.
+        /// The LED that should have its effects reset.
         /// </summary>
-        [PublicAPI]
-        None = 0,
+        public Led Led;
 
         /// <summary>
-        /// Breathing effect.
+        /// Initializes a new instance of the <see cref="None" /> struct.
         /// </summary>
-        [PublicAPI]
-        Breathing,
-
-        /// <summary>
-        /// Custom effect.
-        /// </summary>
-        [PublicAPI]
-        Custom,
-
-        /// <summary>
-        /// Reactive effect.
-        /// </summary>
-        [PublicAPI]
-        Reactive,
-
-        /// <summary>
-        /// Static effect.
-        /// </summary>
-        [PublicAPI]
-        Static,
-
-        /// <summary>
-        /// Spectrum cycling effect.
-        /// </summary>
-        [PublicAPI]
-        SpectrumCycling,
-
-        /// <summary>
-        /// Wave effect.
-        /// </summary>
-        [PublicAPI]
-        Wave,
-
-        /// <summary>
-        /// Invalid effect.
-        /// </summary>
-        [PublicAPI]
-        Invalid
+        /// <param name="led">The LED that should be reset.</param>
+        public None(Led led)
+        {
+            Led = led;
+        }
     }
 }

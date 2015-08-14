@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+// <copyright file="Constants.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,62 +28,31 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Razer.Keyboard.Effects
+namespace Corale.Colore.Razer.Keypad
 {
     using Corale.Colore.Annotations;
 
     /// <summary>
-    /// Supported built-in keyboard effects.
+    /// Keypad constants.
     /// </summary>
-    [PublicAPI]
-    public enum Effect
+    public static class Constants
     {
         /// <summary>
-        /// No effect.
+        /// Maximum number of rows.
         /// </summary>
         [PublicAPI]
-        None = 0,
+        public const int MaxRows = 4;
 
         /// <summary>
-        /// Breathing effect.
+        /// Maximum number of columns.
         /// </summary>
         [PublicAPI]
-        Breathing,
+        public const int MaxColumns = 5;
 
         /// <summary>
-        /// Custom effect.
+        /// Total number of keys.
         /// </summary>
         [PublicAPI]
-        Custom,
-
-        /// <summary>
-        /// Reactive effect.
-        /// </summary>
-        [PublicAPI]
-        Reactive,
-
-        /// <summary>
-        /// Static effect.
-        /// </summary>
-        [PublicAPI]
-        Static,
-
-        /// <summary>
-        /// Spectrum cycling effect.
-        /// </summary>
-        [PublicAPI]
-        SpectrumCycling,
-
-        /// <summary>
-        /// Wave effect.
-        /// </summary>
-        [PublicAPI]
-        Wave,
-
-        /// <summary>
-        /// Invalid effect.
-        /// </summary>
-        [PublicAPI]
-        Invalid
+        public const int MaxKeys = MaxRows * MaxColumns;
     }
 }

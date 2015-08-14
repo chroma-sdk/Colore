@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+// <copyright file="Duration.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,60 +28,41 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Razer.Keyboard.Effects
+namespace Corale.Colore.Razer.Keypad.Effects
 {
     using Corale.Colore.Annotations;
 
     /// <summary>
-    /// Supported built-in keyboard effects.
+    /// Supported durations for the reactive effect type.
     /// </summary>
-    [PublicAPI]
-    public enum Effect
+    public enum Duration
     {
         /// <summary>
-        /// No effect.
+        /// No duration.
         /// </summary>
         [PublicAPI]
         None = 0,
 
         /// <summary>
-        /// Breathing effect.
+        /// Short duration.
         /// </summary>
         [PublicAPI]
-        Breathing,
+        Short,
 
         /// <summary>
-        /// Custom effect.
+        /// Medium duration.
         /// </summary>
         [PublicAPI]
-        Custom,
+        Medium,
 
         /// <summary>
-        /// Reactive effect.
+        /// Long duration.
         /// </summary>
         [PublicAPI]
-        Reactive,
+        Long,
 
         /// <summary>
-        /// Static effect.
-        /// </summary>
-        [PublicAPI]
-        Static,
-
-        /// <summary>
-        /// Spectrum cycling effect.
-        /// </summary>
-        [PublicAPI]
-        SpectrumCycling,
-
-        /// <summary>
-        /// Wave effect.
-        /// </summary>
-        [PublicAPI]
-        Wave,
-
-        /// <summary>
-        /// Invalid effect.
+        /// Invalid duration.
         /// </summary>
         [PublicAPI]
         Invalid

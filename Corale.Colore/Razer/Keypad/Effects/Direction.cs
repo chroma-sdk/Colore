@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="CustomTests.cs" company="Corale">
+// <copyright file="Direction.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,27 +28,37 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Tests.Razer.Keyboard.Effects
+namespace Corale.Colore.Razer.Keypad.Effects
 {
-    using Corale.Colore.Core;
-    using Corale.Colore.Razer.Keyboard;
-    using Corale.Colore.Razer.Keyboard.Effects;
+    using Corale.Colore.Annotations;
 
-    using NUnit.Framework;
-
-    [TestFixture]
-    public class CustomTests
+    /// <summary>
+    /// Directions for the wave effect type.
+    /// </summary>
+    public enum Direction
     {
-        [Test]
-        public void ShouldConstructWithCorrectKey()
-        {
-            Assert.That(new Custom(Key.C, Color.Black).Key, Is.EqualTo(Key.C));
-        }
+        /// <summary>
+        /// No direction.
+        /// </summary>
+        [PublicAPI]
+        None = 0,
 
-        [Test]
-        public void ShouldConstructWithCorrectColor()
-        {
-            Assert.That(new Custom(Key.A, Color.Pink).Color, Is.EqualTo(Color.Pink));
-        }
+        /// <summary>
+        /// Wave goes from left to right.
+        /// </summary>
+        [PublicAPI]
+        LeftToRight,
+
+        /// <summary>
+        /// Wave goes from right to left.
+        /// </summary>
+        [PublicAPI]
+        RightToLeft,
+
+        /// <summary>
+        /// Invalid direction.
+        /// </summary>
+        [PublicAPI]
+        Invalid
     }
 }

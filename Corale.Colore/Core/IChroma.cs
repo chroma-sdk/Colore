@@ -97,6 +97,28 @@ namespace Corale.Colore.Core
         IHeadset Headset { get; }
 
         /// <summary>
+        /// Gets an instance of the <see cref="IMousepad" /> interface
+        /// for interacting with a Razer Chroma mousepad.
+        /// </summary>
+        [PublicAPI]
+        IMousepad Mousepad { get; }
+
+        /// <summary>
+        /// Gets an instance of the <see cref="IKeypad" /> interface
+        /// for interacting with a Razer Chroma keypad.
+        /// </summary>
+        [PublicAPI]
+        IKeypad Keypad { get; }
+
+        /// <summary>
+        /// Queries the SDK for information regarding a specific device.
+        /// </summary>
+        /// <param name="deviceId">The device ID to query for, valid IDs can be found in <see cref="Devices" />.</param>
+        /// <returns>A struct with information regarding the device type and whether it's connected.</returns>
+        [PublicAPI]
+        DeviceInfo Query(Guid deviceId);
+
+        /// <summary>
         /// Gets an instance of <see cref="IGenericDevice" /> for
         /// the device with the specified ID.
         /// </summary>
@@ -106,7 +128,7 @@ namespace Corale.Colore.Core
         /// </param>
         /// <returns>An instance of <see cref="IGenericDevice" />.</returns>
         [PublicAPI]
-        IGenericDevice GetDevice(Guid deviceId);
+        IGenericDevice Get(Guid deviceId);
 
         /// <summary>
         /// Handles a Windows message and fires the appropriate events.
