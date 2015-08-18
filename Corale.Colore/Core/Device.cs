@@ -50,8 +50,11 @@ namespace Corale.Colore.Core
         /// </summary>
         public void Clear()
         {
-            if (CurrentEffectId != Guid.Empty)
-                NativeWrapper.DeleteEffect(CurrentEffectId);
+            if (CurrentEffectId == Guid.Empty)
+                return;
+
+            NativeWrapper.DeleteEffect(CurrentEffectId);
+            CurrentEffectId = Guid.Empty;
         }
 
         /// <summary>
