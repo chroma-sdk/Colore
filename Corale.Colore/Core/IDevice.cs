@@ -42,6 +42,7 @@ namespace Corale.Colore.Core
         /// <summary>
         /// Clears the current effect on the device.
         /// </summary>
+        [PublicAPI]
         void Clear();
 
         /// <summary>
