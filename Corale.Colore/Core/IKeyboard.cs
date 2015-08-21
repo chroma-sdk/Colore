@@ -98,6 +98,9 @@ namespace Corale.Colore.Core
         /// <remarks>
         /// The passed in arrays cannot have more than <see cref="Constants.MaxRows" /> rows and
         /// not more than <see cref="Constants.MaxColumns" /> columns in any row.
+        /// <para />
+        /// This will overwrite the internal <see cref="Custom" />
+        /// struct in the <see cref="Keyboard" /> class.
         /// </remarks>
         [PublicAPI]
         void Set(Color[][] colors);
@@ -106,6 +109,10 @@ namespace Corale.Colore.Core
         /// Sets a custom grid effect on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
+        /// <remarks>
+        /// This will overwrite the current internal <see cref="Custom" />
+        /// struct in the <see cref="Keyboard" /> class.
+        /// </remarks>
         [PublicAPI]
         void Set(Custom effect);
 

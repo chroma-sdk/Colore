@@ -155,7 +155,8 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         public override void Set(Color color)
         {
-            Set(NativeWrapper.CreateKeyboardEffect(new Static { Color = color }));
+            _grid.Set(color);
+            Set(NativeWrapper.CreateKeyboardEffect(_grid));
         }
 
         /// <summary>
@@ -188,6 +189,9 @@ namespace Corale.Colore.Core
         /// <remarks>
         /// The passed in arrays cannot have more than <see cref="Constants.MaxRows" /> rows and
         /// not more than <see cref="Constants.MaxColumns" /> columns in any row.
+        /// <para />
+        /// This will overwrite the internal <see cref="Custom" />
+        /// struct in the <see cref="Keyboard" /> class.
         /// </remarks>
         public void Set(Color[][] colors)
         {
@@ -198,9 +202,14 @@ namespace Corale.Colore.Core
         /// Sets a custom grid effect on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
+        /// <remarks>
+        /// This will overwrite the current internal <see cref="Custom" />
+        /// struct in the <see cref="Keyboard" /> class.
+        /// </remarks>
         public void Set(Custom effect)
         {
-            Set(NativeWrapper.CreateKeyboardEffect(effect));
+            _grid = effect;
+            Set(NativeWrapper.CreateKeyboardEffect(_grid));
         }
 
         /// <summary>
@@ -236,7 +245,7 @@ namespace Corale.Colore.Core
                 _grid.Clear();
 
             _grid[(int)row, (int)column] = color;
-            Set(_grid);
+            Set(NativeWrapper.CreateKeyboardEffect(_grid));
         }
 
         /// <summary>
@@ -251,7 +260,7 @@ namespace Corale.Colore.Core
                 _grid.Clear();
 
             _grid[key] = color;
-            Set(_grid);
+            Set(NativeWrapper.CreateKeyboardEffect(_grid));
         }
 
         /// <summary>

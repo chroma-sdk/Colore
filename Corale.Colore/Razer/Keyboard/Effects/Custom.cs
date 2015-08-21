@@ -279,6 +279,17 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         }
 
         /// <summary>
+        /// Sets the entire grid to a specific <see cref="Color" />.
+        /// </summary>
+        /// <param name="color">The <see cref="Color" /> to apply.</param>
+        [PublicAPI]
+        public void Set(Color color)
+        {
+            for (var row = 0; row < Constants.MaxRows; row++)
+                _rows[row].Set(color);
+        }
+
+        /// <summary>
         /// Container struct holding color definitions for a single row in the custom grid.
         /// </summary>
         [StructLayout(LayoutKind.Sequential)]
@@ -288,7 +299,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
             /// Color definitions for the columns of this row.
             /// </summary>
             [MarshalAs(UnmanagedType.ByValArray, SizeConst = (int)Constants.MaxColumns)]
-            internal readonly uint[] Columns;
+            private readonly uint[] _columns;
 
             /// <summary>
             /// Initializes a new instance of the <see cref="Row" /> struct.
@@ -303,10 +314,10 @@ namespace Corale.Colore.Razer.Keyboard.Effects
                         "colors");
                 }
 
-                Columns = new uint[Constants.MaxColumns];
+                _columns = new uint[Constants.MaxColumns];
 
                 for (var col = 0; col < (int)Constants.MaxColumns; col++)
-                    Columns[col] = colors[col];
+                    _columns[col] = colors[col];
             }
 
             /// <summary>
@@ -316,10 +327,10 @@ namespace Corale.Colore.Razer.Keyboard.Effects
             /// <param name="color">The <see cref="Color" /> to set each column to.</param>
             internal Row(Color color)
             {
-                Columns = new uint[Constants.MaxColumns];
+                _columns = new uint[Constants.MaxColumns];
 
                 for (var col = 0; col < (int)Constants.MaxColumns; col++)
-                    Columns[col] = color;
+                    _columns[col] = color;
             }
 
             /// <summary>
@@ -339,7 +350,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
                             "Attempted to access a column that does not exist.");
                     }
 
-                    return Columns[column];
+                    return _columns[column];
                 }
 
                 set
@@ -352,7 +363,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
                             "Attempted to access a column that does not exist.");
                     }
 
-                    Columns[column] = value;
+                    _columns[column] = value;
                 }
             }
 
@@ -363,7 +374,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
             /// <returns>An array of unsigned integeres representing the colors of the row.</returns>
             public static implicit operator uint[](Row row)
             {
-                return row.Columns;
+                return row._columns;
             }
 
             /// <summary>
@@ -375,7 +386,17 @@ namespace Corale.Colore.Razer.Keyboard.Effects
             /// <filterpriority>2</filterpriority>
             public override int GetHashCode()
             {
-                return Columns == null ? 0 : Columns.GetHashCode();
+                return _columns == null ? 0 : _columns.GetHashCode();
+            }
+
+            /// <summary>
+            /// Sets the entire row to a specific <see cref="Color" />.
+            /// </summary>
+            /// <param name="color">The <see cref="Color" /> to apply.</param>
+            public void Set(Color color)
+            {
+                for (var column = 0; column < Constants.MaxColumns; column++)
+                    _columns[column] = color;
             }
         }
     }
