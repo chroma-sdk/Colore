@@ -47,11 +47,7 @@ namespace Corale.Colore.Core
         /// </summary>
         public void Clear()
         {
-            if (CurrentEffectId == Guid.Empty)
-                return;
-
-            NativeWrapper.DeleteEffect(CurrentEffectId);
-            CurrentEffectId = Guid.Empty;
+            Set(Color.Black);
         }
 
         /// <summary>
@@ -66,7 +62,12 @@ namespace Corale.Colore.Core
         /// <param name="guid">GUID to set.</param>
         public void Set(Guid guid)
         {
-            Clear();
+            if (CurrentEffectId != Guid.Empty)
+            {
+                NativeWrapper.DeleteEffect(CurrentEffectId);
+                CurrentEffectId = Guid.Empty;
+            }
+
             NativeWrapper.SetEffect(guid);
             CurrentEffectId = guid;
         }
