@@ -280,8 +280,12 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="keys">The keys which should have their color changed.</param>
         /// <param name="color">The <see cref="Color" /> to apply.</param>
-        public void Set(IEnumerable<Key> keys, Color color)
+        /// <param name="clear"></param>
+        public void Set(IEnumerable<Key> keys, Color color, bool clear = false)
         {
+            if (clear)
+                Clear();
+
             foreach (var key in keys)
                 Set(key, color);
         }

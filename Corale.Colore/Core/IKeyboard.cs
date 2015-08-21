@@ -148,7 +148,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="key">Key to modify.</param>
         /// <param name="color">Color to set.</param>
-        /// <param name="clear">If true, the keyboard will first be cleared before setting the key.</param>
+        /// <param name="clear">If <c>true</c>, the keyboard will first be cleared before setting the key.</param>
         [PublicAPI]
         void Set(Key key, Color color, bool clear = false);
 
@@ -165,8 +165,9 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="keys">The keys which should have their color changed.</param>
         /// <param name="color">The <see cref="Color" /> to apply.</param>
+        /// <param name="clear">If <c>true</c>, the keyboard will first be cleared before setting the keys.</param>
         [PublicAPI]
-        void Set(IEnumerable<Key> keys, Color color);
+        void Set(IEnumerable<Key> keys, Color color, bool clear = false);
 
         /// <summary>
         /// Sets a reactive effect on the keyboard.
