@@ -31,6 +31,7 @@
 namespace Corale.Colore.Core
 {
     using System;
+    using System.Collections.Generic;
 
     using Corale.Colore.Annotations;
     using Corale.Colore.Razer.Keyboard;
@@ -261,6 +262,28 @@ namespace Corale.Colore.Core
 
             _grid[key] = color;
             Set(NativeWrapper.CreateKeyboardEffect(_grid));
+        }
+
+        /// <summary>
+        /// Sets the specified color on a set of keys.
+        /// </summary>
+        /// <param name="color">The <see cref="Color" /> to apply.</param>
+        /// <param name="keys">The keys which should have this color applied.</param>
+        public void Set(Color color, params Key[] keys)
+        {
+            foreach (var key in keys)
+                Set(key, color);
+        }
+
+        /// <summary>
+        /// Sets a color on a collection of keys.
+        /// </summary>
+        /// <param name="keys">The keys which should have their color changed.</param>
+        /// <param name="color">The <see cref="Color" /> to apply.</param>
+        public void Set(IEnumerable<Key> keys, Color color)
+        {
+            foreach (var key in keys)
+                Set(key, color);
         }
 
         /// <summary>

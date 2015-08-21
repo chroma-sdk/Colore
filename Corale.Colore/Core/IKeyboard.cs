@@ -30,6 +30,8 @@
 
 namespace Corale.Colore.Core
 {
+    using System.Collections.Generic;
+
     using Corale.Colore.Annotations;
     using Corale.Colore.Razer.Keyboard;
     using Corale.Colore.Razer.Keyboard.Effects;
@@ -149,6 +151,22 @@ namespace Corale.Colore.Core
         /// <param name="clear">If true, the keyboard will first be cleared before setting the key.</param>
         [PublicAPI]
         void Set(Key key, Color color, bool clear = false);
+
+        /// <summary>
+        /// Sets the specified color on a set of keys.
+        /// </summary>
+        /// <param name="color">The <see cref="Color" /> to apply.</param>
+        /// <param name="keys">The keys which should have this color applied.</param>
+        [PublicAPI]
+        void Set(Color color, params Key[] keys);
+
+        /// <summary>
+        /// Sets a color on a collection of keys.
+        /// </summary>
+        /// <param name="keys">The keys which should have their color changed.</param>
+        /// <param name="color">The <see cref="Color" /> to apply.</param>
+        [PublicAPI]
+        void Set(IEnumerable<Key> keys, Color color);
 
         /// <summary>
         /// Sets a reactive effect on the keyboard.
