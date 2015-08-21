@@ -40,6 +40,12 @@ namespace Corale.Colore.Core
     public interface IDevice
     {
         /// <summary>
+        /// Gets the ID of the currently active effect.
+        /// </summary>
+        [PublicAPI]
+        Guid CurrentEffectId { get; }
+
+        /// <summary>
         /// Clears the current effect on the device.
         /// </summary>
         [PublicAPI]

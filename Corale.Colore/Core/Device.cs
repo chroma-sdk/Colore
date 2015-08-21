@@ -32,8 +32,6 @@ namespace Corale.Colore.Core
 {
     using System;
 
-    using Corale.Colore.Annotations;
-
     /// <summary>
     /// Base class for devices, containing code common between all devices.
     /// </summary>
@@ -42,7 +40,6 @@ namespace Corale.Colore.Core
         /// <summary>
         /// Gets or sets the ID of the currently active effect.
         /// </summary>
-        [PublicAPI]
         public Guid CurrentEffectId { get; protected set; }
 
         /// <summary>
