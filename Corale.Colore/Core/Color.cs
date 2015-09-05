@@ -351,7 +351,10 @@ namespace Corale.Colore.Core
         /// <param name="other">An instance of <see cref="System.Drawing.Color" /> to compare with this object.</param>
         public bool Equals(System.Drawing.Color other)
         {
-            return R == other.R && G == other.G && B == other.B && A == other.A;
+            // Do not require matching alpha values for now, as it seems Razer do
+            // not properly support alpha yet.
+            // TODO: Change this back when Razer implements alpha
+            return R == other.R && G == other.G && B == other.B; // && A == other.A;
         }
 
         /// <summary>
