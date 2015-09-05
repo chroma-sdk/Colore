@@ -268,11 +268,13 @@ namespace Corale.Colore.Core
         /// Sets the specified color on a set of keys.
         /// </summary>
         /// <param name="color">The <see cref="Color" /> to apply.</param>
-        /// <param name="keys">The keys which should have this color applied.</param>
-        public void Set(Color color, params Key[] keys)
+        /// <param name="key">First key to change.</param>
+        /// <param name="keys">Additional keys that should also have the color applied.</param>
+        public void Set(Color color, Key key, params Key[] keys)
         {
-            foreach (var key in keys)
-                Set(key, color);
+            Set(key, color);
+            foreach (var additional in keys)
+                Set(additional, color);
         }
 
         /// <summary>
