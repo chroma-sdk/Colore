@@ -47,18 +47,108 @@ namespace Corale.Colore.Razer.Mouse
         /// The LED illuminating the scroll wheel.
         /// </summary>
         [PublicAPI]
-        ScrollWheel = 0x0001,
+        ScrollWheel = 1,
 
         /// <summary>
         /// The LED illuminating the logo present on the mouse.
         /// </summary>
         [PublicAPI]
-        Logo = 0x0002,
+        Logo = 2,
 
         /// <summary>
-        /// Invalid LED.
+        /// The mouse backlight.
         /// </summary>
         [PublicAPI]
-        Invalid = 0xFFFF
+        Backlight = 3,
+
+        /// <summary>
+        /// Side strip LED 1 (Mamba TE).
+        /// </summary>
+        [PublicAPI]
+        Strip1 = 4,
+
+        /// <summary>
+        /// Side strip LED 2 (Mamba TE).
+        /// </summary>
+        [PublicAPI]
+        Strip2 = 5,
+
+        /// <summary>
+        /// Side strip LED 3 (Mamba TE).
+        /// </summary>
+        [PublicAPI]
+        Strip3 = 6,
+
+        /// <summary>
+        /// Side strip LED 4 (Mamba TE).
+        /// </summary>
+        [PublicAPI]
+        Strip4 = 7,
+
+        /// <summary>
+        /// Side strip LED 5 (Mamba TE).
+        /// </summary>
+        [PublicAPI]
+        Strip5 = 8,
+
+        /// <summary>
+        /// Side strip LED 6 (Mamba TE).
+        /// </summary>
+        [PublicAPI]
+        Strip6 = 9,
+
+        /// <summary>
+        /// Side strip LED 7 (Mamba TE).
+        /// </summary>
+        [PublicAPI]
+        Strip7 = 10,
+
+        /// <summary>
+        /// Side strip LED 8 (Mamba TE).
+        /// </summary>
+        [PublicAPI]
+        Strip8 = 11,
+
+        /// <summary>
+        /// Side strip LED 9 (Mamba TE).
+        /// </summary>
+        [PublicAPI]
+        Strip9 = 12,
+
+        /// <summary>
+        /// Side strip LED 10 (Mamba TE).
+        /// </summary>
+        [PublicAPI]
+        Strip10 = 13,
+
+        /// <summary>
+        /// Side strip LED 11 (Mamba TE).
+        /// </summary>
+        [PublicAPI]
+        Strip11 = 14,
+
+        /// <summary>
+        /// Side strip LED 12 (Mamba TE).
+        /// </summary>
+        [PublicAPI]
+        Strip12 = 15,
+
+        /// <summary>
+        /// Side strip LED 13 (Mamba TE).
+        /// </summary>
+        [PublicAPI]
+        Strip13 = 16,
+
+        /// <summary>
+        /// Side strip LED 14 (Mamba TE).
+        /// </summary>
+        [PublicAPI]
+        Strip14 = 17,
+
+        /// <summary>
+        /// All LEDs.
+        /// </summary>
+        [PublicAPI]
+        All = 0xFFFF
     }
 }

@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Product.cs" company="Corale">
+// <copyright file="Direction.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,33 +28,35 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Razer
+namespace Corale.Colore.Razer.Keypad.Effects
 {
     using Corale.Colore.Annotations;
 
     /// <summary>
-    /// Chroma-supported products.
+    /// Directions for the wave effect type.
     /// </summary>
-    [PublicAPI]
-    public enum Product
+    public enum Direction
     {
         /// <summary>
-        /// No product.
+        /// No direction.
         /// </summary>
         [PublicAPI]
         None = 0,
 
         /// <summary>
-        /// The Razer BlackWidow Chroma.
+        /// Wave goes from left to right.
         /// </summary>
-        /// <remarks>
-        /// Device Id = <c>2EA1BB63-CA28-428D-9F06-196B88330BBB</c>.
-        /// </remarks>
         [PublicAPI]
-        BlackWidowChroma,
+        LeftToRight,
 
         /// <summary>
-        /// Invalid product.
+        /// Wave goes from right to left.
+        /// </summary>
+        [PublicAPI]
+        RightToLeft,
+
+        /// <summary>
+        /// Invalid direction.
         /// </summary>
         [PublicAPI]
         Invalid

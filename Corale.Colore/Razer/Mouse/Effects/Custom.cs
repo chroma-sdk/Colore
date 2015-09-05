@@ -32,27 +32,31 @@ namespace Corale.Colore.Razer.Mouse.Effects
 {
     using System.Runtime.InteropServices;
 
-    using Corale.Colore.Annotations;
     using Corale.Colore.Core;
 
     /// <summary>
-    /// Describes the custom effect type for a specific LED.
+    /// Custom effect for mouse LEDs.
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public struct Custom
     {
         /// <summary>
-        /// The color of the effect.
+        /// Colors for each LED.
         /// </summary>
-        /// <remarks>Defined as a COLORREF in the C header.</remarks>
-        [PublicAPI]
-        public Color Color;
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = Constants.MaxLeds)]
+        public readonly Color[] Colors;
 
         /// <summary>
-        /// The LED which this effect should affect.
+        /// Initializes a new instance of the <see cref="Custom" /> struct with
+        /// a default color for each LED.
         /// </summary>
-        /// <remarks>Defined as a DWORD in the C header.</remarks>
-        [PublicAPI]
-        public Led Led;
+        /// <param name="color">The color to set each LED to initially.</param>
+        public Custom(Color color)
+        {
+            Colors = new Color[Constants.MaxLeds];
+
+            for (var i = 0; i < Colors.Length; i++)
+                Colors[i] = color;
+        }
     }
 }

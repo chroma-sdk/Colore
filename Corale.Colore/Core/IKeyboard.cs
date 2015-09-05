@@ -80,6 +80,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="first">Color to start from.</param>
         /// <param name="second">Color to reach, before going back to <paramref name="first" />.</param>
+        [PublicAPI]
         void Set(Color first, Color second);
 
         /// <summary>
@@ -88,6 +89,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="color">Color to emit on key press.</param>
         /// <param name="duration">How long to illuminate the key after being pressed.</param>
+        [PublicAPI]
         void Set(Color color, Duration duration);
 
         /// <summary>
@@ -98,19 +100,29 @@ namespace Corale.Colore.Core
         /// <remarks>
         /// The passed in arrays cannot have more than <see cref="Constants.MaxRows" /> rows and
         /// not more than <see cref="Constants.MaxColumns" /> columns in any row.
+        /// <para />
+        /// This will overwrite the internal <see cref="Custom" />
+        /// struct in the <see cref="Keyboard" /> class.
         /// </remarks>
+        [PublicAPI]
         void Set(Color[][] colors);
 
         /// <summary>
         /// Sets a custom grid effect on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        void Set(CustomGrid effect);
+        /// <remarks>
+        /// This will overwrite the current internal <see cref="Custom" />
+        /// struct in the <see cref="Keyboard" /> class.
+        /// </remarks>
+        [PublicAPI]
+        void Set(Custom effect);
 
         /// <summary>
         /// Sets a wave effect on the keyboard in the specified direction.
         /// </summary>
         /// <param name="direction">Direction of the wave.</param>
+        [PublicAPI]
         void Set(Direction direction);
 
         /// <summary>
@@ -118,14 +130,8 @@ namespace Corale.Colore.Core
         /// Currently, this only works for the <see cref="Effect.SpectrumCycling" /> effect.
         /// </summary>
         /// <param name="effect">Effect options.</param>
+        [PublicAPI]
         void Set(Effect effect);
-
-        /// <summary>
-        /// Sets the colors of specific keys, using values from <see cref="Key" /> to
-        /// specify the keys.
-        /// </summary>
-        /// <param name="effects">A collection of custom effect structs.</param>
-        void Set(IEnumerable<Custom> effects);
 
         /// <summary>
         /// Sets the color on a specific row and column on the keyboard grid.
@@ -134,6 +140,7 @@ namespace Corale.Colore.Core
         /// <param name="column">Column to set, between 1 and <see cref="Constants.MaxColumns" />.</param>
         /// <param name="color">Color to set.</param>
         /// <param name="clear">Whether or not to clear the existing colors before setting this one.</param>
+        [PublicAPI]
         void Set(Size row, Size column, Color color, bool clear = false);
 
         /// <summary>
@@ -141,9 +148,27 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="key">Key to modify.</param>
         /// <param name="color">Color to set.</param>
-        /// <param name="clear">If true, the keyboard will first be cleared before setting the key.</param>
+        /// <param name="clear">If <c>true</c>, the keyboard will first be cleared before setting the key.</param>
         [PublicAPI]
         void Set(Key key, Color color, bool clear = false);
+
+        /// <summary>
+        /// Sets the specified color on a set of keys.
+        /// </summary>
+        /// <param name="color">The <see cref="Color" /> to apply.</param>
+        /// <param name="key">First key to change.</param>
+        /// <param name="keys">Additional keys that should also have the color applied.</param>
+        [PublicAPI]
+        void Set(Color color, Key key, params Key[] keys);
+
+        /// <summary>
+        /// Sets a color on a collection of keys.
+        /// </summary>
+        /// <param name="keys">The keys which should have their color changed.</param>
+        /// <param name="color">The <see cref="Color" /> to apply.</param>
+        /// <param name="clear">If <c>true</c>, the keyboard will first be cleared before setting the keys.</param>
+        [PublicAPI]
+        void Set(IEnumerable<Key> keys, Color color, bool clear = false);
 
         /// <summary>
         /// Sets a reactive effect on the keyboard.

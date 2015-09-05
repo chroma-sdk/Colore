@@ -30,11 +30,11 @@
 
 namespace Corale.Colore.Core
 {
-    using System;
-
     using Corale.Colore.Annotations;
     using Corale.Colore.Razer.Mouse;
     using Corale.Colore.Razer.Mouse.Effects;
+
+    using log4net;
 
     /// <summary>
     /// Class for interacting with a Chroma mouse.
@@ -42,6 +42,11 @@ namespace Corale.Colore.Core
     [PublicAPI]
     public sealed class Mouse : Device, IMouse
     {
+        /// <summary>
+        /// Logger instance for this class.
+        /// </summary>
+        private static readonly ILog Log = LogManager.GetLogger(typeof(Mouse));
+
         /// <summary>
         /// Holds the application-wide instance of the <see cref="IMouse" /> interface.
         /// </summary>
@@ -52,6 +57,8 @@ namespace Corale.Colore.Core
         /// </summary>
         private Mouse()
         {
+            Log.Info("Mouse is initializing");
+            Chroma.Initialize();
         }
 
         /// <summary>
@@ -62,7 +69,6 @@ namespace Corale.Colore.Core
         {
             get
             {
-                Chroma.Initialize();
                 return _instance ?? (_instance = new Mouse());
             }
         }
@@ -74,7 +80,61 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         public void Set(Led led, Color color)
         {
-            throw new NotImplementedException();
+            Set(NativeWrapper.CreateMouseEffect(new Static(led, color)));
+        }
+
+        /// <summary>
+        /// Sets a breathing effect on the mouse.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="Breathing" /> effect.</param>
+        public void Set(Breathing effect)
+        {
+            Set(NativeWrapper.CreateMouseEffect(effect));
+        }
+
+        /// <summary>
+        /// Sets a static color on the mouse.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="Static" /> effect.</param>
+        public void Set(Static effect)
+        {
+            Set(NativeWrapper.CreateMouseEffect(effect));
+        }
+
+        /// <summary>
+        /// Starts a blinking effect on the specified LED.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="Blinking" /> effect.</param>
+        public void Set(Blinking effect)
+        {
+            Set(NativeWrapper.CreateMouseEffect(effect));
+        }
+
+        /// <summary>
+        /// Sets a reactive effect on the mouse.
+        /// </summary>
+        /// <param name="effect">Effect options struct.</param>
+        public void Set(Reactive effect)
+        {
+            Set(NativeWrapper.CreateMouseEffect(effect));
+        }
+
+        /// <summary>
+        /// Sets a spectrum cycling effect on the mouse.
+        /// </summary>
+        /// <param name="effect">Effect options struct.</param>
+        public void Set(SpectrumCycling effect)
+        {
+            Set(NativeWrapper.CreateMouseEffect(effect));
+        }
+
+        /// <summary>
+        /// Sets a wave effect on the mouse.
+        /// </summary>
+        /// <param name="effect">Effect options struct.</param>
+        public void Set(Wave effect)
+        {
+            Set(NativeWrapper.CreateMouseEffect(effect));
         }
 
         /// <summary>
@@ -83,7 +143,7 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         public override void Set(Color color)
         {
-            Set(NativeWrapper.CreateMouseEffect(Led.Logo, new Static { Color = color }));
+            Set(NativeWrapper.CreateMouseEffect(new Static(Led.All, color)));
         }
     }
 }

@@ -44,10 +44,10 @@ namespace Corale.Colore.Razer.Mouse.Effects
         None = 0,
 
         /// <summary>
-        /// The spectrum cycling effect.
+        /// Blinking effect.
         /// </summary>
         [PublicAPI]
-        SpectrumCycling,
+        Blinking,
 
         /// <summary>
         /// The breathing effect.
@@ -56,16 +56,34 @@ namespace Corale.Colore.Razer.Mouse.Effects
         Breathing,
 
         /// <summary>
+        /// A custom effect.
+        /// </summary>
+        [PublicAPI]
+        Custom,
+
+        /// <summary>
+        /// Reactive effect.
+        /// </summary>
+        [PublicAPI]
+        Reactive,
+
+        /// <summary>
+        /// The spectrum cycling effect.
+        /// </summary>
+        [PublicAPI]
+        SpectrumCycling,
+
+        /// <summary>
         /// Static color effect.
         /// </summary>
         [PublicAPI]
         Static,
 
         /// <summary>
-        /// Custom effect.
+        /// Wave effect.
         /// </summary>
         [PublicAPI]
-        Custom,
+        Wave,
 
         /// <summary>
         /// Invalid effect.

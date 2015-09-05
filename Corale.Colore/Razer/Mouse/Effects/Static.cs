@@ -30,18 +30,38 @@
 
 namespace Corale.Colore.Razer.Mouse.Effects
 {
+    using System.Runtime.InteropServices;
+
     using Corale.Colore.Annotations;
     using Corale.Colore.Core;
 
     /// <summary>
     /// Describes the static effect type.
     /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
     public struct Static
     {
         /// <summary>
+        /// The LED on which to apply the color.
+        /// </summary>
+        [UsedImplicitly]
+        public Led Led;
+
+        /// <summary>
         /// The color to apply.
         /// </summary>
-        [PublicAPI]
+        [UsedImplicitly]
         public Color Color;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Static" /> struct.
+        /// </summary>
+        /// <param name="led">The <see cref="Led" /> on which to apply the color.</param>
+        /// <param name="color">The <see cref="Color" /> to set.</param>
+        public Static(Led led, Color color)
+        {
+            Led = led;
+            Color = color;
+        }
     }
 }

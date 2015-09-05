@@ -32,11 +32,12 @@ namespace Corale.Colore.Core
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
 
     using Corale.Colore.Annotations;
     using Corale.Colore.Razer.Keyboard;
     using Corale.Colore.Razer.Keyboard.Effects;
+
+    using log4net;
 
     /// <summary>
     /// Class for interacting with a Chroma keyboard.
@@ -45,60 +46,39 @@ namespace Corale.Colore.Core
     public sealed class Keyboard : Device, IKeyboard
     {
         /// <summary>
+        /// Logger instance for this class.
+        /// </summary>
+        private static readonly ILog Log = LogManager.GetLogger(typeof(Keyboard));
+
+        /// <summary>
         /// Holds the application-wide instance of the <see cref="Keyboard" /> class.
         /// </summary>
         private static IKeyboard _instance;
 
         /// <summary>
-        /// Array with custom effect structs for every key.
-        /// Used when setting colors on a per-key basis.
-        /// </summary>
-        private readonly Custom[] _custom;
-
-        /// <summary>
-        /// Maps <see cref="Key" /> enumeration values to their respective index in the
-        /// <see cref="_custom" /> array.
-        /// </summary>
-        private readonly Dictionary<Key, int> _keyIndexMapping;
-
-        /// <summary>
         /// Grid struct used for the helper methods.
         /// </summary>
-        private CustomGrid _grid;
+        private Custom _grid;
 
         /// <summary>
         /// Prevents a default instance of the <see cref="Keyboard" /> class from being created.
         /// </summary>
         private Keyboard()
         {
+            Log.Info("Keyboard initializing...");
+
+            Chroma.Initialize();
+
             CurrentEffectId = Guid.Empty;
 
-            // Initialize the color array
-            var names = Enum.GetNames(typeof(Key)).Where(n => n != "Invalid").ToArray();
-            _custom = new Custom[names.Length];
-            _keyIndexMapping = new Dictionary<Key, int>(names.Length);
-
-            for (var i = 0; i < names.Length; i++)
-            {
-                var name = names[i];
-                Key key;
-                var parsed = Enum.TryParse(name, false, out key);
-
-                if (!parsed)
-                {
-                    throw new ColoreException(
-                        "Failed to parse defined enum value, expected following to parse: " + name);
-                }
-
-                _keyIndexMapping[key] = i;
-                _custom[i] = new Custom { Color = Color.Black, Key = key };
-            }
-
+            // We keep a local copy of a grid to speed up grid operations
+            Log.Debug("Creating grid array");
             var gridArray = new Color[Constants.MaxRows][];
             for (var i = 0; i < Constants.MaxRows; i++)
                 gridArray[i] = new Color[Constants.MaxColumns];
 
-            _grid = new CustomGrid(gridArray);
+            Log.Debug("Initializing private copy of Custom");
+            _grid = new Custom(gridArray);
         }
 
         /// <summary>
@@ -109,7 +89,6 @@ namespace Corale.Colore.Core
         {
             get
             {
-                Chroma.Initialize();
                 return _instance ?? (_instance = new Keyboard());
             }
         }
@@ -123,7 +102,7 @@ namespace Corale.Colore.Core
         {
             get
             {
-                return _custom[_keyIndexMapping[key]].Color;
+                return _grid[key];
             }
 
             set
@@ -159,7 +138,7 @@ namespace Corale.Colore.Core
         /// <returns><c>true</c> if the key has a color set, otherwise <c>false</c>.</returns>
         public bool IsSet(Key key)
         {
-            return _custom[_keyIndexMapping[key]].Color != Color.Black;
+            return _grid[key] != Color.Black;
         }
 
         /// <summary>
@@ -177,7 +156,8 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         public override void Set(Color color)
         {
-            Set(NativeWrapper.CreateKeyboardEffect(new Static { Color = color }));
+            _grid.Set(color);
+            Set(NativeWrapper.CreateKeyboardEffect(_grid));
         }
 
         /// <summary>
@@ -210,19 +190,27 @@ namespace Corale.Colore.Core
         /// <remarks>
         /// The passed in arrays cannot have more than <see cref="Constants.MaxRows" /> rows and
         /// not more than <see cref="Constants.MaxColumns" /> columns in any row.
+        /// <para />
+        /// This will overwrite the internal <see cref="Custom" />
+        /// struct in the <see cref="Keyboard" /> class.
         /// </remarks>
         public void Set(Color[][] colors)
         {
-            Set(new CustomGrid(colors));
+            Set(new Custom(colors));
         }
 
         /// <summary>
         /// Sets a custom grid effect on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        public void Set(CustomGrid effect)
+        /// <remarks>
+        /// This will overwrite the current internal <see cref="Custom" />
+        /// struct in the <see cref="Keyboard" /> class.
+        /// </remarks>
+        public void Set(Custom effect)
         {
-            Set(NativeWrapper.CreateKeyboardCustomGridEffects(effect));
+            _grid = effect;
+            Set(NativeWrapper.CreateKeyboardEffect(_grid));
         }
 
         /// <summary>
@@ -245,16 +233,6 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Sets the colors of specific keys, using values from <see cref="Key" /> to
-        /// specify the keys.
-        /// </summary>
-        /// <param name="effects">A collection of custom effect structs.</param>
-        public void Set(IEnumerable<Custom> effects)
-        {
-            Set(NativeWrapper.CreateKeyboardCustomEffects(effects));
-        }
-
-        /// <summary>
         /// Sets the color on a specific row and column on the keyboard grid.
         /// </summary>
         /// <param name="row">Row to set, between 0 and <see cref="Constants.MaxRows" /> (exclusive upper-bound).</param>
@@ -265,13 +243,10 @@ namespace Corale.Colore.Core
         public void Set(Size row, Size column, Color color, bool clear = false)
         {
             if (clear)
-            {
-                // ReSharper disable once ImpureMethodCallOnReadonlyValueField
                 _grid.Clear();
-            }
 
             _grid[(int)row, (int)column] = color;
-            Set(_grid);
+            Set(NativeWrapper.CreateKeyboardEffect(_grid));
         }
 
         /// <summary>
@@ -283,13 +258,41 @@ namespace Corale.Colore.Core
         public void Set(Key key, Color color, bool clear = false)
         {
             if (clear)
-            {
-                for (var i = 0; i < _custom.Length; i++)
-                    _custom[i].Color = Color.Black;
-            }
+                _grid.Clear();
 
-            _custom[_keyIndexMapping[key]].Color = color;
-            Set(NativeWrapper.CreateKeyboardCustomEffects(_custom));
+            _grid[key] = color;
+            Set(NativeWrapper.CreateKeyboardEffect(_grid));
+        }
+
+        /// <summary>
+        /// Sets the specified color on a set of keys.
+        /// </summary>
+        /// <param name="color">The <see cref="Color" /> to apply.</param>
+        /// <param name="key">First key to change.</param>
+        /// <param name="keys">Additional keys that should also have the color applied.</param>
+        public void Set(Color color, Key key, params Key[] keys)
+        {
+            Set(key, color);
+            foreach (var additional in keys)
+                Set(additional, color);
+        }
+
+        /// <summary>
+        /// Sets a color on a collection of keys.
+        /// </summary>
+        /// <param name="keys">The keys which should have their color changed.</param>
+        /// <param name="color">The <see cref="Color" /> to apply.</param>
+        /// <param name="clear">
+        /// If <c>true</c>, the keyboard keys will be cleared before
+        /// applying the new colors.
+        /// </param>
+        public void Set(IEnumerable<Key> keys, Color color, bool clear = false)
+        {
+            if (clear)
+                Clear();
+
+            foreach (var key in keys)
+                Set(key, color);
         }
 
         /// <summary>

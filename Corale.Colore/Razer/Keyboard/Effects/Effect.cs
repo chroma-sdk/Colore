@@ -45,22 +45,16 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         None = 0,
 
         /// <summary>
-        /// Wave effect.
-        /// </summary>
-        [PublicAPI]
-        Wave,
-
-        /// <summary>
-        /// Spectrum cycling effect.
-        /// </summary>
-        [PublicAPI]
-        SpectrumCycling,
-
-        /// <summary>
         /// Breathing effect.
         /// </summary>
         [PublicAPI]
         Breathing,
+
+        /// <summary>
+        /// Custom effect.
+        /// </summary>
+        [PublicAPI]
+        Custom,
 
         /// <summary>
         /// Reactive effect.
@@ -73,6 +67,18 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// </summary>
         [PublicAPI]
         Static,
+
+        /// <summary>
+        /// Spectrum cycling effect.
+        /// </summary>
+        [PublicAPI]
+        SpectrumCycling,
+
+        /// <summary>
+        /// Wave effect.
+        /// </summary>
+        [PublicAPI]
+        Wave,
 
         /// <summary>
         /// Invalid effect.
