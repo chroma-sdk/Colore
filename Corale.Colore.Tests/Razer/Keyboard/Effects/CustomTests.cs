@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="CustomGridTests.cs" company="Corale">
+// <copyright file="CustomTests.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -39,7 +39,7 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
     using NUnit.Framework;
 
     [TestFixture]
-    public class CustomGridTests
+    public class CustomTests
     {
         [Test]
         public void ShouldThrowWhenOutOfRangeGet()
