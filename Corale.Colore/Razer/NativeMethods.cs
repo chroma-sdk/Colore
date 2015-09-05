@@ -304,7 +304,6 @@ namespace Corale.Colore.Razer
         /// <summary>
         /// Create mouse effect.
         /// </summary>
-        /// <param name="zone">The zone, or in this case LED, in which the effect is going to be applied.</param>
         /// <param name="effect">
         /// Standard effect type. These include <see cref="Mouse.Effects.Effect.SpectrumCycling" />,
         /// <see cref="Mouse.Effects.Effect.Breathing" />, and <see cref="Mouse.Effects.Effect.Static" />.
@@ -337,7 +336,6 @@ namespace Corale.Colore.Razer
         /// </remarks>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         internal delegate Result CreateMouseEffectDelegate(
-            [In] RZID zone,
             [In] Mouse.Effects.Effect effect,
             [In] IntPtr param,
             [In, Out] ref Guid effectId);
