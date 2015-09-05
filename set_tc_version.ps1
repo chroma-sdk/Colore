@@ -1,11 +1,12 @@
-$buildCounter = "%build.counter%"
-$branch = "%teamcity.build.branch%"
+$buildCounter = "$env:build_counter"
+$branch = "$env:teamcity_build_branch"
 
 $prefix = 'refs/heads/'
 $tagPrefix = 'refs/tags/'
 $isTag = False
 
 $friendlyVersion = '0.0.0'
+$buildNumber = "${friendlyVersion}.${buildCounter}"
 
 if ($branch.StartsWith($prefix))
 {
@@ -17,6 +18,7 @@ elseif ($branch.StartsWith($tagPrefix))
     $isTag = True
 }
 
+Write-Host "Build counter: $buildCounter"
 Write-Host "Branch: $branch"
 
 if ($branch -eq 'master')
@@ -40,5 +42,5 @@ Write-Host "##teamcity[setParameter name='Version' value='$friendlyVersion']"
 
 if (!$isTag)
 {
-    Write-Host "##teamcity[setParameter name='InfoVersion' value='$friendlyVersion-$branch]"
+    Write-Host "##teamcity[setParameter name='InfoVersion' value='$friendlyVersion-$branch']"
 }
