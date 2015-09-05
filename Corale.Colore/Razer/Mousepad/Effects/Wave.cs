@@ -33,7 +33,7 @@ namespace Corale.Colore.Razer.Mousepad.Effects
     using System.Runtime.InteropServices;
 
     /// <summary>
-    /// Wave effect for the mousepad.
+    /// Wave effect for the mouse pad.
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public struct Wave

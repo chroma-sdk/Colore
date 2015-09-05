@@ -35,7 +35,7 @@ namespace Corale.Colore.Razer.Mousepad.Effects
     using Corale.Colore.Core;
 
     /// <summary>
-    /// Custom effect for mousepad.
+    /// Custom effect for mouse pad.
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public struct Custom

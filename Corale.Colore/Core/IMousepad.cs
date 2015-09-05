@@ -33,30 +33,30 @@ namespace Corale.Colore.Core
     using Corale.Colore.Razer.Mousepad.Effects;
 
     /// <summary>
-    /// Interface for mousepad functionality.
+    /// Interface for mouse pad functionality.
     /// </summary>
     public interface IMousepad : IDevice
     {
         /// <summary>
-        /// Sets a breathing effect on the mousepad.
+        /// Sets a breathing effect on the mouse pad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Breathing" /> struct.</param>
         void Set(Breathing effect);
 
         /// <summary>
-        /// Sets a static color effect on the mousepad.
+        /// Sets a static color effect on the mouse pad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
         void Set(Static effect);
 
         /// <summary>
-        /// Sets a wave effect on the mousepad.
+        /// Sets a wave effect on the mouse pad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Wave" /> struct.</param>
         void Set(Wave effect);
 
         /// <summary>
-        /// Sets a custom effect on the mousepad.
+        /// Sets a custom effect on the mouse pad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
         void Set(Custom effect);

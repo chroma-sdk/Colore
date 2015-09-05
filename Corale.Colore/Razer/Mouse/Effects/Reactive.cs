@@ -72,8 +72,8 @@ namespace Corale.Colore.Razer.Mouse.Effects
         /// Initializes a new instance of the <see cref="Reactive" /> struct,
         /// applying the effect to every LED.
         /// </summary>
-        /// <param name="duration"></param>
-        /// <param name="color"></param>
+        /// <param name="duration">Duration of the effect.</param>
+        /// <param name="color">Color of the effect.</param>
         public Reactive(Duration duration, Color color)
             : this(Led.All, duration, color)
         {

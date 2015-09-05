@@ -98,7 +98,7 @@ namespace Corale.Colore.Core
 
         /// <summary>
         /// Gets an instance of the <see cref="IMousepad" /> interface
-        /// for interacting with a Razer Chroma mousepad.
+        /// for interacting with a Razer Chroma mouse pad.
         /// </summary>
         [PublicAPI]
         IMousepad Mousepad { get; }

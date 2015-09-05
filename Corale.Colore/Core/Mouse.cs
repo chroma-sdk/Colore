@@ -95,7 +95,6 @@ namespace Corale.Colore.Core
         /// <summary>
         /// Sets a static color on the mouse.
         /// </summary>
-        /// <param name="led">The <see cref="Led" /> to apply the effect on.</param>
         /// <param name="effect">An instance of the <see cref="Static" /> effect.</param>
         public void Set(Static effect)
         {

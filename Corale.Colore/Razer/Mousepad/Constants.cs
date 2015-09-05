@@ -31,7 +31,7 @@
 namespace Corale.Colore.Razer.Mousepad
 {
     /// <summary>
-    /// Mousepad constants.
+    /// Mouse pad constants.
     /// </summary>
     public static class Constants
     {

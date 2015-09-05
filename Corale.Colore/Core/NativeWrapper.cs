@@ -257,7 +257,7 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Creates a standard mousepad effect with the specified parameters.
+        /// Creates a standard mouse pad effect with the specified parameters.
         /// </summary>
         /// <param name="effect">The type of effect to create.</param>
         /// <param name="param">Effect-specific parameter.</param>
@@ -272,7 +272,7 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Creates a breathing effect for the mousepad.
+        /// Creates a breathing effect for the mouse pad.
         /// </summary>
         /// <param name="effect">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
@@ -282,7 +282,7 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Creates a static effect for the mousepad.
+        /// Creates a static effect for the mouse pad.
         /// </summary>
         /// <param name="effect">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
@@ -292,7 +292,7 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Creates a wave effect for the mousepad.
+        /// Creates a wave effect for the mouse pad.
         /// </summary>
         /// <param name="effect">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
@@ -302,7 +302,7 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Creates a custom effect for the mousepad.
+        /// Creates a custom effect for the mouse pad.
         /// </summary>
         /// <param name="effect">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
@@ -533,7 +533,7 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Helper method for creating mousepad effects with parameter struct.
+        /// Helper method for creating mouse pad effects with parameter struct.
         /// </summary>
         /// <typeparam name="T">The effect struct type.</typeparam>
         /// <param name="effect">The type of effect to create.</param>
@@ -554,6 +554,13 @@ namespace Corale.Colore.Core
             }
         }
 
+        /// <summary>
+        /// Helper method for creating keypad effects with parameter struct.
+        /// </summary>
+        /// <typeparam name="T">The effect struct type.</typeparam>
+        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="struct">Effect options struct.</param>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
         private static Guid CreateKeypadEffect<T>(Razer.Keypad.Effects.Effect effect, T @struct) where T : struct
         {
             var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(@struct));

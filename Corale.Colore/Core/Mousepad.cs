@@ -35,7 +35,7 @@ namespace Corale.Colore.Core
     using log4net;
 
     /// <summary>
-    /// Class for interacting with a Chroma mousepad.
+    /// Class for interacting with a Chroma mouse pad.
     /// </summary>
     public sealed class Mousepad : Device, IMousepad
     {
@@ -79,7 +79,7 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Sets a breathing effect on the mousepad.
+        /// Sets a breathing effect on the mouse pad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Breathing" /> struct.</param>
         public void Set(Breathing effect)
@@ -88,7 +88,7 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Sets a static color effect on the mousepad.
+        /// Sets a static color effect on the mouse pad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
         public void Set(Static effect)
@@ -97,7 +97,7 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Sets a wave effect on the mousepad.
+        /// Sets a wave effect on the mouse pad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Wave" /> struct.</param>
         public void Set(Wave effect)
@@ -106,7 +106,7 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Sets a custom effect on the mousepad.
+        /// Sets a custom effect on the mouse pad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
         public void Set(Custom effect)

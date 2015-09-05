@@ -33,7 +33,7 @@ namespace Corale.Colore.Razer.Mousepad.Effects
     using Corale.Colore.Annotations;
 
     /// <summary>
-    /// Supported breathing effect types for mousepads.
+    /// Supported breathing effect types for mouse pads.
     /// </summary>
     public enum BreathingType
     {

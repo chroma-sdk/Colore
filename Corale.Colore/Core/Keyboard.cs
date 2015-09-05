@@ -280,7 +280,10 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="keys">The keys which should have their color changed.</param>
         /// <param name="color">The <see cref="Color" /> to apply.</param>
-        /// <param name="clear"></param>
+        /// <param name="clear">
+        /// If <c>true</c>, the keyboard keys will be cleared before
+        /// applying the new colors.
+        /// </param>
         public void Set(IEnumerable<Key> keys, Color color, bool clear = false)
         {
             if (clear)

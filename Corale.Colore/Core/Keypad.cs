@@ -91,6 +91,7 @@ namespace Corale.Colore.Core
             {
                 return _custom[row, column];
             }
+
             set
             {
                 _custom[row, column] = value;

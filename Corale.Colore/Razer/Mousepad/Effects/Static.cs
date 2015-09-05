@@ -35,7 +35,7 @@ namespace Corale.Colore.Razer.Mousepad.Effects
     using Corale.Colore.Core;
 
     /// <summary>
-    /// Static effect for mousepad.
+    /// Static effect for mouse pad.
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
     public struct Static

@@ -51,7 +51,7 @@ namespace Corale.Colore.Razer
         Headset,
 
         /// <summary>
-        /// A mousepad.
+        /// A mouse pad.
         /// </summary>
         Mousepad,
 
