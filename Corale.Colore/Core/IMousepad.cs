@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+// <copyright file="IMousepad.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,62 +28,37 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Razer.Keyboard.Effects
+namespace Corale.Colore.Core
 {
-    using Corale.Colore.Annotations;
+    using Corale.Colore.Razer.Mousepad.Effects;
 
     /// <summary>
-    /// Supported built-in keyboard effects.
+    /// Interface for mouse pad functionality.
     /// </summary>
-    [PublicAPI]
-    public enum Effect
+    public interface IMousepad : IDevice
     {
         /// <summary>
-        /// No effect.
+        /// Sets a breathing effect on the mouse pad.
         /// </summary>
-        [PublicAPI]
-        None = 0,
+        /// <param name="effect">An instance of the <see cref="Breathing" /> struct.</param>
+        void Set(Breathing effect);
 
         /// <summary>
-        /// Breathing effect.
+        /// Sets a static color effect on the mouse pad.
         /// </summary>
-        [PublicAPI]
-        Breathing,
+        /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
+        void Set(Static effect);
 
         /// <summary>
-        /// Custom effect.
+        /// Sets a wave effect on the mouse pad.
         /// </summary>
-        [PublicAPI]
-        Custom,
+        /// <param name="effect">An instance of the <see cref="Wave" /> struct.</param>
+        void Set(Wave effect);
 
         /// <summary>
-        /// Reactive effect.
+        /// Sets a custom effect on the mouse pad.
         /// </summary>
-        [PublicAPI]
-        Reactive,
-
-        /// <summary>
-        /// Static effect.
-        /// </summary>
-        [PublicAPI]
-        Static,
-
-        /// <summary>
-        /// Spectrum cycling effect.
-        /// </summary>
-        [PublicAPI]
-        SpectrumCycling,
-
-        /// <summary>
-        /// Wave effect.
-        /// </summary>
-        [PublicAPI]
-        Wave,
-
-        /// <summary>
-        /// Invalid effect.
-        /// </summary>
-        [PublicAPI]
-        Invalid
+        /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
+        void Set(Custom effect);
     }
 }

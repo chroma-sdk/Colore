@@ -32,8 +32,6 @@ namespace Corale.Colore.Core
 {
     using System;
 
-    using Corale.Colore.Annotations;
-
     /// <summary>
     /// Base class for devices, containing code common between all devices.
     /// </summary>
@@ -42,7 +40,6 @@ namespace Corale.Colore.Core
         /// <summary>
         /// Gets or sets the ID of the currently active effect.
         /// </summary>
-        [PublicAPI]
         public Guid CurrentEffectId { get; protected set; }
 
         /// <summary>
@@ -50,8 +47,7 @@ namespace Corale.Colore.Core
         /// </summary>
         public void Clear()
         {
-            if (CurrentEffectId != Guid.Empty)
-                NativeWrapper.DeleteEffect(CurrentEffectId);
+            Set(Color.Black);
         }
 
         /// <summary>
@@ -66,7 +62,12 @@ namespace Corale.Colore.Core
         /// <param name="guid">GUID to set.</param>
         public void Set(Guid guid)
         {
-            Clear();
+            if (CurrentEffectId != Guid.Empty)
+            {
+                NativeWrapper.DeleteEffect(CurrentEffectId);
+                CurrentEffectId = Guid.Empty;
+            }
+
             NativeWrapper.SetEffect(guid);
             CurrentEffectId = guid;
         }

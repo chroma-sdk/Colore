@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+// <copyright file="DeviceType.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,62 +28,36 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Razer.Keyboard.Effects
+namespace Corale.Colore.Razer
 {
-    using Corale.Colore.Annotations;
-
     /// <summary>
-    /// Supported built-in keyboard effects.
+    /// Device types supported by the Chroma SDK.
     /// </summary>
-    [PublicAPI]
-    public enum Effect
+    public enum DeviceType
     {
         /// <summary>
-        /// No effect.
+        /// A keyboard device.
         /// </summary>
-        [PublicAPI]
-        None = 0,
+        Keyboard = 1,
 
         /// <summary>
-        /// Breathing effect.
+        /// A mouse device.
         /// </summary>
-        [PublicAPI]
-        Breathing,
+        Mouse,
 
         /// <summary>
-        /// Custom effect.
+        /// A headset device.
         /// </summary>
-        [PublicAPI]
-        Custom,
+        Headset,
 
         /// <summary>
-        /// Reactive effect.
+        /// A mouse pad.
         /// </summary>
-        [PublicAPI]
-        Reactive,
+        Mousepad,
 
         /// <summary>
-        /// Static effect.
+        /// A keypad.
         /// </summary>
-        [PublicAPI]
-        Static,
-
-        /// <summary>
-        /// Spectrum cycling effect.
-        /// </summary>
-        [PublicAPI]
-        SpectrumCycling,
-
-        /// <summary>
-        /// Wave effect.
-        /// </summary>
-        [PublicAPI]
-        Wave,
-
-        /// <summary>
-        /// Invalid effect.
-        /// </summary>
-        [PublicAPI]
-        Invalid
+        Keypad
     }
 }

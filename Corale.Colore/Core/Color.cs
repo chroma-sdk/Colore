@@ -93,19 +93,15 @@ namespace Corale.Colore.Core
         /// Internal color value.
         /// </summary>
         /// <remarks>
-        /// Format: <c>0x00BBGGRR</c>.
+        /// Format: <c>0xAABBGGRR</c>.
         /// </remarks>
         private readonly uint _value;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Color" /> struct using an integer
-        /// color value in the format <c>0x00BBGGRR</c>.
+        /// color value in the format <c>0xAABBGGRR</c>.
         /// </summary>
         /// <param name="value">Value to create the color from.</param>
-        /// <remarks>
-        /// The left-padding zeroes can be omitted,
-        /// leading to a format similar to that used on the web.
-        /// </remarks>
         public Color(uint value)
         {
             _value = value;
@@ -113,44 +109,48 @@ namespace Corale.Colore.Core
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Color" /> struct using three
-        /// distinct R, G, and B byte values.
+        /// distinct R, G, B, and A (optional) byte values. An alpha value of <c>0</c>
+        /// is treated as fully opaque.
         /// </summary>
         /// <param name="red">The red component.</param>
         /// <param name="green">The green component.</param>
         /// <param name="blue">The blue component.</param>
-        public Color(byte red, byte green, byte blue)
-            : this(red + ((uint)green << 8) + ((uint)blue << 16))
+        /// <param name="alpha">The alpha component (<c>0</c> = fully opaque).</param>
+        public Color(byte red, byte green, byte blue, byte alpha = 0)
+            : this(red + ((uint)green << 8) + ((uint)blue << 16) + ((uint)alpha << 24))
         {
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Color" /> struct using
         /// three <see cref="System.Single" /> (<c>float</c>) values for the
-        /// R, G, and B channels.
+        /// R, G, B, and A (optional) channels.
         /// </summary>
         /// <param name="red">The red component (<c>0.0f</c> to <c>1.0f</c>, inclusive).</param>
         /// <param name="green">The green component (<c>0.0f</c> to <c>1.0f</c>, inclusive).</param>
         /// <param name="blue">The blue component (<c>0.0f</c> to <c>1.0f</c>, inclusive).</param>
+        /// <param name="alpha">The alpha component (<c>0.0f</c> to <c>1.0f</c>, inclusive, <c>0.0f</c> = fully opaque).</param>
         /// <remarks>
         /// Each parameter value must be between <c>0.0f</c> and <c>1.0f</c> (inclusive).
         /// </remarks>
-        public Color(float red, float green, float blue)
-            : this((byte)(red * 255), (byte)(green * 255), (byte)(blue * 255))
+        public Color(float red, float green, float blue, float alpha = 0.0f)
+            : this((byte)(red * 255), (byte)(green * 255), (byte)(blue * 255), (byte)(alpha * 255))
         {
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Color" /> struct using
-        /// three <see cref="System.Double" /> values for the R, G, and B channels.
+        /// three <see cref="System.Double" /> values for the R, G, B, and A (optional) channels.
         /// </summary>
         /// <param name="red">The red component (<c>0.0</c> to <c>1.0</c>, inclusive).</param>
         /// <param name="green">The green component (<c>0.0</c> to <c>1.0</c>, inclusive).</param>
         /// <param name="blue">The blue component (<c>0.0</c> to <c>1.0</c>, inclusive).</param>
+        /// <param name="alpha">The alpha component (<c>0.0</c> to <c>1.0</c>, inclusive, <c>0.0</c> = fully opaque).</param>
         /// <remarks>
         /// Each parameter value must be between <c>0.0</c> and <c>1.0</c> (inclusive).
         /// </remarks>
-        public Color(double red, double green, double blue)
-            : this((byte)(red * 255), (byte)(green * 255), (byte)(blue * 255))
+        public Color(double red, double green, double blue, double alpha = 0.0)
+            : this((byte)(red * 255), (byte)(green * 255), (byte)(blue * 255), (byte)(alpha * 255))
         {
         }
 
@@ -160,8 +160,19 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="source">An instance of the <see cref="System.Drawing.Color" /> struct.</param>
         public Color(System.Drawing.Color source)
-            : this(source.R, source.G, source.B)
+            : this(source.R, source.G, source.B, source.A)
         {
+        }
+
+        /// <summary>
+        /// Gets the alpha component of the color as a byte.
+        /// </summary>
+        public byte A
+        {
+            get
+            {
+                return (byte)((_value >> 24) & 0xFF);
+            }
         }
 
         /// <summary>
@@ -244,7 +255,7 @@ namespace Corale.Colore.Core
         /// </remarks>
         public static explicit operator System.Drawing.Color(Color color)
         {
-            return System.Drawing.Color.FromArgb(color.R, color.G, color.B);
+            return System.Drawing.Color.FromArgb(color.A, color.R, color.G, color.B);
         }
 
         /// <summary>
@@ -260,7 +271,7 @@ namespace Corale.Colore.Core
         /// </remarks>
         public static explicit operator Color(System.Drawing.Color color)
         {
-            return new Color(color.R, color.G, color.B);
+            return new Color(color.R, color.G, color.B, color.A);
         }
 
         /// <summary>
@@ -340,7 +351,10 @@ namespace Corale.Colore.Core
         /// <param name="other">An instance of <see cref="System.Drawing.Color" /> to compare with this object.</param>
         public bool Equals(System.Drawing.Color other)
         {
-            return R == other.R && G == other.G && B == other.B;
+            // Do not require matching alpha values for now, as it seems Razer do
+            // not properly support alpha yet.
+            // TODO: Change this back when Razer implements alpha
+            return R == other.R && G == other.G && B == other.B; // && A == other.A;
         }
 
         /// <summary>

@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+// <copyright file="Reactive.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,62 +28,37 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Razer.Keyboard.Effects
+namespace Corale.Colore.Razer.Keypad.Effects
 {
-    using Corale.Colore.Annotations;
+    using System.Runtime.InteropServices;
+
+    using Corale.Colore.Core;
 
     /// <summary>
-    /// Supported built-in keyboard effects.
+    /// Reactive effect.
     /// </summary>
-    [PublicAPI]
-    public enum Effect
+    [StructLayout(LayoutKind.Sequential)]
+    public struct Reactive
     {
         /// <summary>
-        /// No effect.
+        /// Duration of the effect.
         /// </summary>
-        [PublicAPI]
-        None = 0,
+        public Duration Duration;
 
         /// <summary>
-        /// Breathing effect.
+        /// Reaction color.
         /// </summary>
-        [PublicAPI]
-        Breathing,
+        public Color Color;
 
         /// <summary>
-        /// Custom effect.
+        /// Initializes a new instance of the <see cref="Reactive" /> struct.
         /// </summary>
-        [PublicAPI]
-        Custom,
-
-        /// <summary>
-        /// Reactive effect.
-        /// </summary>
-        [PublicAPI]
-        Reactive,
-
-        /// <summary>
-        /// Static effect.
-        /// </summary>
-        [PublicAPI]
-        Static,
-
-        /// <summary>
-        /// Spectrum cycling effect.
-        /// </summary>
-        [PublicAPI]
-        SpectrumCycling,
-
-        /// <summary>
-        /// Wave effect.
-        /// </summary>
-        [PublicAPI]
-        Wave,
-
-        /// <summary>
-        /// Invalid effect.
-        /// </summary>
-        [PublicAPI]
-        Invalid
+        /// <param name="duration">Duration of the effect.</param>
+        /// <param name="color">Color of the effect.</param>
+        public Reactive(Duration duration, Color color)
+        {
+            Duration = duration;
+            Color = color;
+        }
     }
 }

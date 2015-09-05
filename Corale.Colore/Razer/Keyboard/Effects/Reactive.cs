@@ -42,16 +42,16 @@ namespace Corale.Colore.Razer.Keyboard.Effects
     public struct Reactive
     {
         /// <summary>
-        /// Color of the effect.
-        /// </summary>
-        [PublicAPI]
-        public Color Color;
-
-        /// <summary>
         /// The duration of the effect.
         /// </summary>
         [PublicAPI]
         public Duration Duration;
+
+        /// <summary>
+        /// Color of the effect.
+        /// </summary>
+        [PublicAPI]
+        public Color Color;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Reactive" /> struct.

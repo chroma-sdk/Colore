@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+// <copyright file="BreathingType.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,60 +28,29 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Razer.Keyboard.Effects
+namespace Corale.Colore.Razer.Mousepad.Effects
 {
     using Corale.Colore.Annotations;
 
     /// <summary>
-    /// Supported built-in keyboard effects.
+    /// Supported breathing effect types for mouse pads.
     /// </summary>
-    [PublicAPI]
-    public enum Effect
+    public enum BreathingType
     {
         /// <summary>
-        /// No effect.
+        /// Breathes between two specified colors.
         /// </summary>
         [PublicAPI]
-        None = 0,
+        Two = 1,
 
         /// <summary>
-        /// Breathing effect.
+        /// Breathes between two random colors.
         /// </summary>
         [PublicAPI]
-        Breathing,
+        Random,
 
         /// <summary>
-        /// Custom effect.
-        /// </summary>
-        [PublicAPI]
-        Custom,
-
-        /// <summary>
-        /// Reactive effect.
-        /// </summary>
-        [PublicAPI]
-        Reactive,
-
-        /// <summary>
-        /// Static effect.
-        /// </summary>
-        [PublicAPI]
-        Static,
-
-        /// <summary>
-        /// Spectrum cycling effect.
-        /// </summary>
-        [PublicAPI]
-        SpectrumCycling,
-
-        /// <summary>
-        /// Wave effect.
-        /// </summary>
-        [PublicAPI]
-        Wave,
-
-        /// <summary>
-        /// Invalid effect.
+        /// Invalid type.
         /// </summary>
         [PublicAPI]
         Invalid

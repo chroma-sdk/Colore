@@ -608,7 +608,7 @@ namespace Corale.Colore.Razer.Keyboard
         Macro2 = 0x0200,
 
         /// <summary>
-        /// Macro Key 3.
+        /// Macro key 3.
         /// </summary>
         [PublicAPI]
         Macro3 = 0x0300,

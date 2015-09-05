@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+// <copyright file="IKeypad.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,62 +28,60 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Razer.Keyboard.Effects
+namespace Corale.Colore.Core
 {
     using Corale.Colore.Annotations;
+    using Corale.Colore.Razer.Keypad;
+    using Corale.Colore.Razer.Keypad.Effects;
 
     /// <summary>
-    /// Supported built-in keyboard effects.
+    /// Interface for keypad functions.
     /// </summary>
-    [PublicAPI]
-    public enum Effect
+    public interface IKeypad : IDevice
     {
         /// <summary>
-        /// No effect.
+        /// Gets or sets a color at the specified position in the keypad's
+        /// grid layout.
         /// </summary>
+        /// <param name="row">The row to access (between <c>0</c> and <see cref="Constants.MaxRows" />).</param>
+        /// <param name="column">The column to access (between <c>0</c> and <see cref="Constants.MaxColumns" />).</param>
+        /// <returns>The <see cref="Color" /> at the specified position.</returns>
         [PublicAPI]
-        None = 0,
+        Color this[int row, int column] { get; set; }
 
         /// <summary>
-        /// Breathing effect.
+        /// Sets a <see cref="Breathing" /> effect on the keypad.
         /// </summary>
+        /// <param name="effect">An instance of the <see cref="Breathing" /> struct.</param>
         [PublicAPI]
-        Breathing,
+        void Set(Breathing effect);
 
         /// <summary>
-        /// Custom effect.
+        /// Sets a <see cref="Custom" /> effect on the keypad.
         /// </summary>
+        /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
         [PublicAPI]
-        Custom,
+        void Set(Custom effect);
 
         /// <summary>
-        /// Reactive effect.
+        /// Sets a <see cref="Reactive" /> effect on the keypad.
         /// </summary>
+        /// <param name="effect">An instance of the <see cref="Reactive" /> struct.</param>
         [PublicAPI]
-        Reactive,
+        void Set(Reactive effect);
 
         /// <summary>
-        /// Static effect.
+        /// Sets a <see cref="Static" /> effect on the keypad.
         /// </summary>
+        /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
         [PublicAPI]
-        Static,
+        void Set(Static effect);
 
         /// <summary>
-        /// Spectrum cycling effect.
+        /// Sets a <see cref="Wave" /> effect on the keypad.
         /// </summary>
+        /// <param name="effect">An instance of the <see cref="Wave" /> struct.</param>
         [PublicAPI]
-        SpectrumCycling,
-
-        /// <summary>
-        /// Wave effect.
-        /// </summary>
-        [PublicAPI]
-        Wave,
-
-        /// <summary>
-        /// Invalid effect.
-        /// </summary>
-        [PublicAPI]
-        Invalid
+        void Set(Wave effect);
     }
 }

@@ -28,14 +28,13 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Razer.Keyboard.Effects
+namespace Corale.Colore.Razer.Mousepad.Effects
 {
     using Corale.Colore.Annotations;
 
     /// <summary>
-    /// Supported built-in keyboard effects.
+    /// Effects supported by Chroma mouse pads.
     /// </summary>
-    [PublicAPI]
     public enum Effect
     {
         /// <summary>
@@ -51,22 +50,10 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         Breathing,
 
         /// <summary>
-        /// Custom effect.
+        /// A custom effect.
         /// </summary>
         [PublicAPI]
         Custom,
-
-        /// <summary>
-        /// Reactive effect.
-        /// </summary>
-        [PublicAPI]
-        Reactive,
-
-        /// <summary>
-        /// Static effect.
-        /// </summary>
-        [PublicAPI]
-        Static,
 
         /// <summary>
         /// Spectrum cycling effect.
@@ -75,13 +62,19 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         SpectrumCycling,
 
         /// <summary>
+        /// Static color.
+        /// </summary>
+        [PublicAPI]
+        Static,
+
+        /// <summary>
         /// Wave effect.
         /// </summary>
         [PublicAPI]
         Wave,
 
         /// <summary>
-        /// Invalid effect.
+        /// Invalid effect type.
         /// </summary>
         [PublicAPI]
         Invalid

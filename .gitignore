@@ -191,3 +191,7 @@ coverage.xml
 # Ignore generated documentation
 docs
 
+# Ignore GTAGS/HTAGS files
+GPATH
+GRTAGS
+GTAGS

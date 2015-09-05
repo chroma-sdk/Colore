@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+// <copyright file="Static.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,62 +28,30 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Razer.Keyboard.Effects
+namespace Corale.Colore.Razer.Keypad.Effects
 {
-    using Corale.Colore.Annotations;
+    using System.Runtime.InteropServices;
+
+    using Corale.Colore.Core;
 
     /// <summary>
-    /// Supported built-in keyboard effects.
+    /// Static color effect.
     /// </summary>
-    [PublicAPI]
-    public enum Effect
+    [StructLayout(LayoutKind.Sequential)]
+    public struct Static
     {
         /// <summary>
-        /// No effect.
+        /// Color to use.
         /// </summary>
-        [PublicAPI]
-        None = 0,
+        public Color Color;
 
         /// <summary>
-        /// Breathing effect.
+        /// Initializes a new instance of the <see cref="Static" /> struct.
         /// </summary>
-        [PublicAPI]
-        Breathing,
-
-        /// <summary>
-        /// Custom effect.
-        /// </summary>
-        [PublicAPI]
-        Custom,
-
-        /// <summary>
-        /// Reactive effect.
-        /// </summary>
-        [PublicAPI]
-        Reactive,
-
-        /// <summary>
-        /// Static effect.
-        /// </summary>
-        [PublicAPI]
-        Static,
-
-        /// <summary>
-        /// Spectrum cycling effect.
-        /// </summary>
-        [PublicAPI]
-        SpectrumCycling,
-
-        /// <summary>
-        /// Wave effect.
-        /// </summary>
-        [PublicAPI]
-        Wave,
-
-        /// <summary>
-        /// Invalid effect.
-        /// </summary>
-        [PublicAPI]
-        Invalid
+        /// <param name="color">Color to set.</param>
+        public Static(Color color)
+        {
+            Color = color;
+        }
     }
 }

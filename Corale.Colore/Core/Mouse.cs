@@ -80,27 +80,61 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         public void Set(Led led, Color color)
         {
-            Set(NativeWrapper.CreateMouseEffect(led, new Static { Color = color }));
+            Set(NativeWrapper.CreateMouseEffect(new Static(led, color)));
         }
 
         /// <summary>
         /// Sets a breathing effect on the mouse.
         /// </summary>
-        /// <param name="led">The <see cref="Led" /> to apply the effect on.</param>
         /// <param name="effect">An instance of the <see cref="Breathing" /> effect.</param>
-        public void Set(Led led, Breathing effect)
+        public void Set(Breathing effect)
         {
-            Set(NativeWrapper.CreateMouseEffect(led, effect));
+            Set(NativeWrapper.CreateMouseEffect(effect));
         }
 
         /// <summary>
         /// Sets a static color on the mouse.
         /// </summary>
-        /// <param name="led">The <see cref="Led" /> to apply the effect on.</param>
         /// <param name="effect">An instance of the <see cref="Static" /> effect.</param>
-        public void Set(Led led, Static effect)
+        public void Set(Static effect)
         {
-            Set(NativeWrapper.CreateMouseEffect(led, effect));
+            Set(NativeWrapper.CreateMouseEffect(effect));
+        }
+
+        /// <summary>
+        /// Starts a blinking effect on the specified LED.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="Blinking" /> effect.</param>
+        public void Set(Blinking effect)
+        {
+            Set(NativeWrapper.CreateMouseEffect(effect));
+        }
+
+        /// <summary>
+        /// Sets a reactive effect on the mouse.
+        /// </summary>
+        /// <param name="effect">Effect options struct.</param>
+        public void Set(Reactive effect)
+        {
+            Set(NativeWrapper.CreateMouseEffect(effect));
+        }
+
+        /// <summary>
+        /// Sets a spectrum cycling effect on the mouse.
+        /// </summary>
+        /// <param name="effect">Effect options struct.</param>
+        public void Set(SpectrumCycling effect)
+        {
+            Set(NativeWrapper.CreateMouseEffect(effect));
+        }
+
+        /// <summary>
+        /// Sets a wave effect on the mouse.
+        /// </summary>
+        /// <param name="effect">Effect options struct.</param>
+        public void Set(Wave effect)
+        {
+            Set(NativeWrapper.CreateMouseEffect(effect));
         }
 
         /// <summary>
@@ -109,10 +143,7 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         public override void Set(Color color)
         {
-            var effect = new Static(color);
-            Set(NativeWrapper.CreateMouseEffect(Led.Logo, effect));
-            Set(NativeWrapper.CreateMouseEffect(Led.ScrollWheel, effect));
-            Set(NativeWrapper.CreateMouseEffect(Led.Backlight, effect));
+            Set(NativeWrapper.CreateMouseEffect(new Static(Led.All, color)));
         }
     }
 }
