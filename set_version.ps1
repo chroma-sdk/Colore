@@ -39,6 +39,7 @@ elseif ($branch -eq 'develop')
 }
 elseif ($branch -match "^v\d+\.\d+\.\d+$")
 {
+    $isTag = $True
     $friendlyVersion = $branch.substring(1)
     $buildNumber = "${friendlyVersion}.${buildCounter}"
 }
