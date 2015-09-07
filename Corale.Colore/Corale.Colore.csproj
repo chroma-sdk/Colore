@@ -106,6 +106,9 @@
     <Compile Include="Core\Mousepad.cs" />
     <Compile Include="Core\NativeWrapper.cs" />
     <Compile Include="Core\Size.cs" />
+    <Compile Include="Drawing\ChromaGraphics.cs" />
+    <Compile Include="Drawing\ColorF.cs" />
+    <Compile Include="Drawing\Core.cs" />
     <Compile Include="Events\ApplicationStateEventArgs.cs" />
     <Compile Include="Events\SdkSupportEventArgs.cs" />
     <Compile Include="Native\Kernel32\NativeMethods.cs" />
