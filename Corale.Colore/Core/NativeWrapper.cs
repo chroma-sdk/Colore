@@ -153,7 +153,7 @@ namespace Corale.Colore.Core
 
 
         /// <summary>
-        /// Create a keyboard effect without a parameter.
+        /// Create a mouse effect without a parameter.
         /// </summary>
         /// <param name="effect">The type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
@@ -284,7 +284,7 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Create a keyboard effect without a parameter.
+        /// Create a mousepad effect without a parameter.
         /// </summary>
         /// <param name="effect">The type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
@@ -350,7 +350,7 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Create a keyboard effect without a parameter.
+        /// Create a keypad effect without a parameter.
         /// </summary>
         /// <param name="effect">The type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
