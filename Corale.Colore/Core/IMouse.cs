@@ -92,6 +92,5 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="effect">Effect options struct.</param>
         void Set(Wave effect);
-        
     }
 }

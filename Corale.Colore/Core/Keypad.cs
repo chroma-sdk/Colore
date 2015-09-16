@@ -162,6 +162,5 @@ namespace Corale.Colore.Core
         {
             Set(NativeWrapper.CreateKeypadEffect(effect));
         }
-
     }
 }

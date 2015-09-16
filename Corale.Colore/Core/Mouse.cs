@@ -83,7 +83,6 @@ namespace Corale.Colore.Core
             Set(NativeWrapper.CreateMouseEffect(new Static(led, color)));
         }
 
-
         /// <summary>
         /// Sets an effect without any parameters.
         /// Currently, this only works for the <see cref="Effect.None" /> effect.
