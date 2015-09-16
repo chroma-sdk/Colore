@@ -79,7 +79,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="effect">The type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        /// <remarks>This is currently only valid for <see cref="Razer.Keyboard.Effects.Effect.None" />.</remarks>
+        /// <remarks>This is currently valid for <see cref="Razer.Keyboard.Effects.Effect.None" /> and <see cref="Razer.Keyboard.Effects.Effect.SpectrumCycling" />.</remarks>
         internal static Guid CreateKeyboardEffect(Razer.Keyboard.Effects.Effect effect)
         {
             return CreateKeyboardEffect(effect, IntPtr.Zero);
