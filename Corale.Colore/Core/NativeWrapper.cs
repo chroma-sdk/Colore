@@ -151,7 +151,6 @@ namespace Corale.Colore.Core
             return guid;
         }
 
-
         /// <summary>
         /// Create a mouse effect without a parameter.
         /// </summary>
