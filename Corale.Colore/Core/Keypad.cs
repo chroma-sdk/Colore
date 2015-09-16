@@ -109,6 +109,16 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
+        /// Sets an effect without any parameters.
+        /// Currently, this only works for the <see cref="Effect.None" /> effect.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        public void Set(Effect effect)
+        {
+            Set(NativeWrapper.CreateKeypadEffect(effect));
+        }
+
+        /// <summary>
         /// Sets a <see cref="Breathing" /> effect on the keypad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Breathing" /> struct.</param>
@@ -152,5 +162,6 @@ namespace Corale.Colore.Core
         {
             Set(NativeWrapper.CreateKeypadEffect(effect));
         }
+
     }
 }

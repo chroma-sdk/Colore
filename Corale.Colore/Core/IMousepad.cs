@@ -31,6 +31,8 @@
 namespace Corale.Colore.Core
 {
     using Corale.Colore.Razer.Mousepad.Effects;
+    using Corale.Colore.Annotations;
+    using Corale.Colore.Razer.Mousepad;
 
     /// <summary>
     /// Interface for mouse pad functionality.
@@ -60,5 +62,13 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
         void Set(Custom effect);
+
+        /// <summary>
+        /// Sets an effect without any parameters.
+        /// Currently, this only works for the <see cref="Effect.None" /> effect.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        [PublicAPI]
+        void Set(Effect effect);
     }
 }
