@@ -79,6 +79,16 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
+        /// Sets an effect without any parameters.
+        /// Currently, this only works for the <see cref="Effect.None" /> effect.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        public void Set(Effect effect)
+        {
+            Set(NativeWrapper.CreateMousepadEffect(effect));
+        }
+
+        /// <summary>
         /// Sets a breathing effect on the mouse pad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Breathing" /> struct.</param>
