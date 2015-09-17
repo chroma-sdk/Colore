@@ -347,10 +347,10 @@ namespace Corale.Colore.Razer
             foreach (var fieldInfo in fieldsInfo.Where(fi => fi.FieldType == typeof(Result)))
             {
                 var value = fieldInfo.GetValue(null);
-                var attr = fieldInfo.GetCustomAttribute<DescriptionAttribute>(false);
+                var attr = fieldInfo.GetCustomAttributes(typeof(DescriptionAttribute),false)[0];
 
                 if (attr != null && value is Result)
-                    cache[(Result)value] = new Metadata(fieldInfo.Name, attr.Description);
+                    cache[(Result)value] = new Metadata(fieldInfo.Name, ((DescriptionAttribute)attr).Description);
             }
 
             return cache;
