@@ -52,6 +52,20 @@ namespace Corale.Colore.Native.Kernel32
         [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = "LoadLibrary", SetLastError = true,
             ThrowOnUnmappableChar = true, BestFitMapping = false)]
         internal static extern IntPtr LoadLibrary([MarshalAs(UnmanagedType.LPStr)] string filename);
+
+        [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = "GetCurrentProcess", SetLastError = true,
+            ThrowOnUnmappableChar = true, BestFitMapping = false)]
+        internal static extern IntPtr GetCurrentProcess();
+
+        [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = "GetModuleHandle", SetLastError = true,
+            ThrowOnUnmappableChar = true, BestFitMapping = false)]
+        internal static extern IntPtr GetModuleHandle(string moduleName);
+
+        [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = "GetModuleHandle", SetLastError = true,
+            ThrowOnUnmappableChar = true, BestFitMapping = false)]
+        internal static extern bool IsWow64Process(IntPtr hProcess, out bool wow64Process);
+
+
     }
 }
 
