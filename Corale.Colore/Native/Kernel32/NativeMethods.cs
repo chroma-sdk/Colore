@@ -28,8 +28,6 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-#if ANYCPU
-
 namespace Corale.Colore.Native.Kernel32
 {
     using System;
@@ -64,9 +62,5 @@ namespace Corale.Colore.Native.Kernel32
         [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = "GetModuleHandle", SetLastError = true,
             ThrowOnUnmappableChar = true, BestFitMapping = false)]
         internal static extern bool IsWow64Process(IntPtr hProcess, out bool wow64Process);
-
-
     }
 }
-
-#endif
