@@ -32,7 +32,7 @@ namespace Corale.Colore
 {
     using System;
 
-    using Colore.Native.Kernel32;
+    using Corale.Colore.Native.Kernel32;
 
     /// <summary>
     /// Helper to get the architecture of the OS.
@@ -41,31 +41,26 @@ namespace Corale.Colore
     public static class EnvironmentHelper
     {
         /// <summary>
-        /// <returns>Returns true if the OS is 64-bit</returns>.
+        /// Determines whether the current system is 64-bit.
         /// </summary>
+        /// <returns><c>true</c> if the system is 64-bit.</returns>
         public static bool Is64BitOperatingSystem()
         {
-
             // Check if this process is natively an x64 process. If it is, it will only run on x64 environments, thus, the environment must be x64.
             if (IntPtr.Size == 8)
                 return true;
 
             // Check if this process is an x86 process running on an x64 environment.
-            IntPtr moduleHandle = NativeMethods.GetModuleHandle("kernel32");
-            if (moduleHandle != IntPtr.Zero)
-            {
-                IntPtr processAddress = NativeMethods.GetProcAddress(moduleHandle, "IsWow64Process");
-                if (processAddress != IntPtr.Zero)
-                {
-                    bool result;
-                    if (NativeMethods.IsWow64Process(NativeMethods.GetCurrentProcess(), out result) && result)
-                        return true;
-                }
-            }
+            var moduleHandle = NativeMethods.GetModuleHandle("kernel32");
+            if (moduleHandle == IntPtr.Zero)
+                return false;
 
-            // The environment must be an x86 environment.
-            return false;
+            var processAddress = NativeMethods.GetProcAddress(moduleHandle, "IsWow64Process");
+            if (processAddress == IntPtr.Zero)
+                return false;
+
+            bool result;
+            return NativeMethods.IsWow64Process(NativeMethods.GetCurrentProcess(), out result) && result;
         }
-
     }
 }
