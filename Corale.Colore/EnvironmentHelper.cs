@@ -34,7 +34,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace Corale.Colore.Razer
+namespace Corale.Colore
 {
     /// <summary>
     /// Helper to get the architecture of the OS.
