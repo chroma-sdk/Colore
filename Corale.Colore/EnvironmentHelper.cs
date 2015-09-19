@@ -40,6 +40,9 @@ namespace Corale.Colore
     /// </summary>
     public static class EnvironmentHelper
     {
+        /// <summary>
+        /// <returns>Returns true if the OS is 64-bit</returns>.
+        /// </summary>
         public static bool Is64BitOperatingSystem()
         {
             // Check if this process is natively an x64 process. If it is, it will only run on x64 environments, thus, the environment must be x64.

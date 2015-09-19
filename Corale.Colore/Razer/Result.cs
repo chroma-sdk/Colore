@@ -214,7 +214,7 @@ namespace Corale.Colore.Razer
         /// </summary>
         /// <param name="result">An instance of the <see cref="Result" /> to convert.</param>
         /// <returns>The integer equivalent of the <paramref name="result" />.</returns>
-        public static implicit operator int(Result result)
+        public static implicit operator int (Result result)
         {
             return result._value;
         }
@@ -237,7 +237,7 @@ namespace Corale.Colore.Razer
         /// <c>true</c> if the <paramref name="result" /> represents a <c>true</c> value (success),
         /// otherwise <c>false</c> (failure).
         /// </returns>
-        public static implicit operator bool(Result result)
+        public static implicit operator bool (Result result)
         {
             return result == RzSuccess;
         }
@@ -347,10 +347,10 @@ namespace Corale.Colore.Razer
             foreach (var fieldInfo in fieldsInfo.Where(fi => fi.FieldType == typeof(Result)))
             {
                 var value = fieldInfo.GetValue(null);
-                var attr = fieldInfo.GetCustomAttributes(typeof(DescriptionAttribute),false)[0];
+                var attr = Attribute.GetCustomAttribute(fieldInfo, typeof(DescriptionAttribute)) as DescriptionAttribute;
 
                 if (attr != null && value is Result)
-                    cache[(Result)value] = new Metadata(fieldInfo.Name, ((DescriptionAttribute)attr).Description);
+                    cache[(Result)value] = new Metadata(fieldInfo.Name, attr.Description);
             }
 
             return cache;
