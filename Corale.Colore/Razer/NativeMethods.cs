@@ -160,28 +160,17 @@ namespace Corale.Colore.Razer
             Justification = "Can't get rid of this exception as we depend on architecture and library to work.")]
         static NativeMethods()
         {
-            // Get the current processor architecture the CLR is running as
-            PortableExecutableKinds peKind;
-            ImageFileMachine machine;
-            typeof(object).Module.GetPEKind(out peKind, out machine);
-
-            switch (machine)
+            if (EnvironmentHelper.Is64BitOperatingSystem())
             {
-                case ImageFileMachine.AMD64:
-                case ImageFileMachine.IA64:
-                    // We are running 64-bit!
-                    ChromaSdkPointer = Native.Kernel32.NativeMethods.LoadLibrary("RzChromaSDK64.dll");
-                    SystemArchitecture = Architecture.X64;
-                    break;
-
-                case ImageFileMachine.I386:
-                    // We are running 32-bit!
-                    ChromaSdkPointer = Native.Kernel32.NativeMethods.LoadLibrary("RzChromaSDK.dll");
-                    SystemArchitecture = Architecture.X86;
-                    break;
-
-                default:
-                    throw new ColoreException("Unsupported system platform: " + machine);
+                // We are running 64-bit!
+                ChromaSdkPointer = Native.Kernel32.NativeMethods.LoadLibrary("RzChromaSDK64.dll");
+                SystemArchitecture = Architecture.X64;
+            }
+            else
+            {
+                // We are running 32-bit!
+                ChromaSdkPointer = Native.Kernel32.NativeMethods.LoadLibrary("RzChromaSDK.dll");
+                SystemArchitecture = Architecture.X86;
             }
 
             if (ChromaSdkPointer == IntPtr.Zero)

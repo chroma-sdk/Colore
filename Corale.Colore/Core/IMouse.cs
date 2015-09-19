@@ -48,6 +48,14 @@ namespace Corale.Colore.Core
         void Set(Led led, Color color);
 
         /// <summary>
+        /// Sets an effect without any parameters.
+        /// Currently, this only works for the <see cref="Effect.None" /> effect.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        [PublicAPI]
+        void Set(Effect effect);
+
+        /// <summary>
         /// Sets a breathing effect on the mouse.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Breathing" /> effect.</param>

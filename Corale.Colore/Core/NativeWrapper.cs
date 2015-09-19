@@ -79,7 +79,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="effect">The type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        /// <remarks>This is currently only valid for <see cref="Razer.Keyboard.Effects.Effect.SpectrumCycling" />.</remarks>
+        /// <remarks>This is currently valid for <see cref="Razer.Keyboard.Effects.Effect.None" /> and <see cref="Razer.Keyboard.Effects.Effect.SpectrumCycling" />.</remarks>
         internal static Guid CreateKeyboardEffect(Razer.Keyboard.Effects.Effect effect)
         {
             return CreateKeyboardEffect(effect, IntPtr.Zero);
@@ -149,6 +149,17 @@ namespace Corale.Colore.Core
             if (!result)
                 throw new NativeCallException("CreateMouseEffect", result);
             return guid;
+        }
+
+        /// <summary>
+        /// Create a mouse effect without a parameter.
+        /// </summary>
+        /// <param name="effect">The type of effect to create.</param>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
+        /// <remarks>This is currently only valid for <see cref="Razer.Mouse.Effects.Effect.None" />.</remarks>
+        internal static Guid CreateMouseEffect(Razer.Mouse.Effects.Effect effect)
+        {
+            return CreateMouseEffect(effect, IntPtr.Zero);
         }
 
         /// <summary>
@@ -272,6 +283,17 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
+        /// Create a mousepad effect without a parameter.
+        /// </summary>
+        /// <param name="effect">The type of effect to create.</param>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
+        /// <remarks>This is currently only valid for <see cref="Razer.Mousepad.Effects.Effect.None" />.</remarks>
+        internal static Guid CreateMousepadEffect(Razer.Mousepad.Effects.Effect effect)
+        {
+            return CreateMousepadEffect(effect, IntPtr.Zero);
+        }
+
+        /// <summary>
         /// Creates a breathing effect for the mouse pad.
         /// </summary>
         /// <param name="effect">Effect options struct.</param>
@@ -324,6 +346,17 @@ namespace Corale.Colore.Core
             if (!result)
                 throw new NativeCallException("CreateKeypadEffect", result);
             return guid;
+        }
+
+        /// <summary>
+        /// Create a keypad effect without a parameter.
+        /// </summary>
+        /// <param name="effect">The type of effect to create.</param>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
+        /// <remarks>This is currently only valid for <see cref="Razer.Keypad.Effects.Effect.None" />.</remarks>
+        internal static Guid CreateKeypadEffect(Razer.Keypad.Effects.Effect effect)
+        {
+            return CreateKeypadEffect(effect, IntPtr.Zero);
         }
 
         /// <summary>

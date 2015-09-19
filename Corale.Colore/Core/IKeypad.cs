@@ -83,5 +83,13 @@ namespace Corale.Colore.Core
         /// <param name="effect">An instance of the <see cref="Wave" /> struct.</param>
         [PublicAPI]
         void Set(Wave effect);
+
+        /// <summary>
+        /// Sets an effect without any parameters.
+        /// Currently, this only works for the <see cref="Effect.None" /> effect.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        [PublicAPI]
+        void Set(Effect effect);
     }
 }

@@ -224,7 +224,7 @@ namespace Corale.Colore.Core
 
         /// <summary>
         /// Sets an effect without any parameters.
-        /// Currently, this only works for the <see cref="Effect.SpectrumCycling" /> effect.
+        /// Currently, this only works for the <see cref="Effect.None" /> and <see cref="Effect.SpectrumCycling" /> effects.
         /// </summary>
         /// <param name="effect">Effect options.</param>
         public void Set(Effect effect)
