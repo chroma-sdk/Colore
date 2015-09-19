@@ -45,9 +45,11 @@ namespace Corale.Colore
         /// </summary>
         public static bool Is64BitOperatingSystem()
         {
+
             // Check if this process is natively an x64 process. If it is, it will only run on x64 environments, thus, the environment must be x64.
             if (IntPtr.Size == 8)
                 return true;
+
             // Check if this process is an x86 process running on an x64 environment.
             IntPtr moduleHandle = NativeMethods.GetModuleHandle("kernel32");
             if (moduleHandle != IntPtr.Zero)
@@ -60,6 +62,7 @@ namespace Corale.Colore
                         return true;
                 }
             }
+
             // The environment must be an x86 environment.
             return false;
         }
