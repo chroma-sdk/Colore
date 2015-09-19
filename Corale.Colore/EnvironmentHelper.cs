@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="NativeMethods.cs" company="Corale">
+// <copyright file="EnvironmentHelper.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,39 +28,44 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Native.Kernel32
+namespace Corale.Colore
 {
     using System;
-    using System.Runtime.InteropServices;
+
+    using Colore.Native.Kernel32;
 
     /// <summary>
-    /// Native methods from <c>kernel32</c> module.
+    /// Helper to get the architecture of the OS.
+    /// Taken from here: http://stackoverflow.com/a/28866330/1104531
     /// </summary>
-    internal static class NativeMethods
+    public static class EnvironmentHelper
     {
         /// <summary>
-        /// Name of the DLL from which functions are imported.
+        /// <returns>Returns true if the OS is 64-bit</returns>.
         /// </summary>
-        private const string DllName = "kernel32.dll";
+        public static bool Is64BitOperatingSystem()
+        {
 
-        [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = "GetProcAddress", ExactSpelling = true,
-            SetLastError = true, ThrowOnUnmappableChar = true, BestFitMapping = false)]
-        internal static extern IntPtr GetProcAddress(IntPtr module, [MarshalAs(UnmanagedType.LPStr)] string procName);
+            // Check if this process is natively an x64 process. If it is, it will only run on x64 environments, thus, the environment must be x64.
+            if (IntPtr.Size == 8)
+                return true;
 
-        [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = "LoadLibrary", SetLastError = true,
-            ThrowOnUnmappableChar = true, BestFitMapping = false)]
-        internal static extern IntPtr LoadLibrary([MarshalAs(UnmanagedType.LPStr)] string filename);
+            // Check if this process is an x86 process running on an x64 environment.
+            IntPtr moduleHandle = NativeMethods.GetModuleHandle("kernel32");
+            if (moduleHandle != IntPtr.Zero)
+            {
+                IntPtr processAddress = NativeMethods.GetProcAddress(moduleHandle, "IsWow64Process");
+                if (processAddress != IntPtr.Zero)
+                {
+                    bool result;
+                    if (NativeMethods.IsWow64Process(NativeMethods.GetCurrentProcess(), out result) && result)
+                        return true;
+                }
+            }
 
-        [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = "GetCurrentProcess", SetLastError = true,
-            ThrowOnUnmappableChar = true, BestFitMapping = false)]
-        internal static extern IntPtr GetCurrentProcess();
+            // The environment must be an x86 environment.
+            return false;
+        }
 
-        [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = "GetModuleHandle", SetLastError = true,
-            ThrowOnUnmappableChar = true, BestFitMapping = false)]
-        internal static extern IntPtr GetModuleHandle(string moduleName);
-
-        [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = "GetModuleHandle", SetLastError = true,
-            ThrowOnUnmappableChar = true, BestFitMapping = false)]
-        internal static extern bool IsWow64Process(IntPtr hProcess, out bool wow64Process);
     }
 }
