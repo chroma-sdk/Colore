@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['devicetype',['DeviceType',['../namespace_corale_1_1_colore_1_1_razer.html#ac5d6192a3d5d3c657e9cebbcef34360b',1,'Corale::Colore::Razer']]],
+  ['direction',['Direction',['../namespace_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects.html#a5bf238833f9ca051d9bc69b89739d41a',1,'Corale.Colore.Razer.Keyboard.Effects.Direction()'],['../namespace_corale_1_1_colore_1_1_razer_1_1_keypad_1_1_effects.html#a50747c86790fdd62c0f7ae78b7fa3b96',1,'Corale.Colore.Razer.Keypad.Effects.Direction()'],['../namespace_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects.html#a72de570f2ef017d735ea62b0c704b2b7',1,'Corale.Colore.Razer.Mouse.Effects.Direction()'],['../namespace_corale_1_1_colore_1_1_razer_1_1_mousepad_1_1_effects.html#a04f051fcca8ce2b8235a66fe556c341b',1,'Corale.Colore.Razer.Mousepad.Effects.Direction()']]],
+  ['duration',['Duration',['../namespace_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects.html#a1b60c4ba95eaf40d52b9da1e93f9b4db',1,'Corale.Colore.Razer.Keyboard.Effects.Duration()'],['../namespace_corale_1_1_colore_1_1_razer_1_1_keypad_1_1_effects.html#a8f1b0ccd801cab6ff803399532141ff3',1,'Corale.Colore.Razer.Keypad.Effects.Duration()'],['../namespace_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects.html#a7af065c83ee5017a556fecf694fd3f16',1,'Corale.Colore.Razer.Mouse.Effects.Duration()']]]
+];

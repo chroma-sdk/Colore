@@ -1,0 +1,5 @@
+<map id="Corale.Colore.Core.Mousepad" name="Corale.Colore.Core.Mousepad">
+<area shape="rect" id="node2" href="$class_corale_1_1_colore_1_1_core_1_1_device.html" title="Base class for devices, containing code common between all devices. " alt="" coords="25,80,85,107"/>
+<area shape="rect" id="node3" href="$interface_corale_1_1_colore_1_1_core_1_1_i_device.html" title="Interface for functionality common with all devices. " alt="" coords="71,5,134,32"/>
+<area shape="rect" id="node4" href="$interface_corale_1_1_colore_1_1_core_1_1_i_mousepad.html" title="Interface for mouse pad functionality. " alt="" coords="109,80,195,107"/>
+</map>

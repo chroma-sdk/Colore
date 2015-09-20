@@ -1,0 +1,4 @@
+<map id="Corale.Colore.ColoreException" name="Corale.Colore.ColoreException">
+<area shape="rect" id="node3" href="$class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html" title="Thrown when a native function returns an erroneous result value. " alt="" coords="399,5,576,47"/>
+<area shape="rect" id="node4" href="$class_corale_1_1_colore_1_1_razer_1_1_unsupported_device_exception.html" title="Thrown when an invalid Guid is passed to the constructor of GenericDevice. " alt="" coords="380,71,595,112"/>
+</map>

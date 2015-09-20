@@ -1,0 +1,5 @@
+<map id="PathReferenceAttribute" name="PathReferenceAttribute">
+<area shape="rect" id="node3" href="$class_asp_mvc_area_attribute.html" title="ASP.NET MVC attribute. Indicates that a parameter is an MVC area. Use this attribute for custom wrapp..." alt="" coords="5,155,149,181"/>
+<area shape="rect" id="node4" href="$class_asp_mvc_partial_view_attribute.html" title="ASP.NET MVC attribute. If applied to a parameter, indicates that the parameter is an MVC partial view..." alt="" coords="174,155,357,181"/>
+<area shape="rect" id="node5" href="$class_asp_mvc_view_attribute.html" title="ASP.NET MVC attribute. If applied to a parameter, indicates that the parameter is an MVC view..." alt="" coords="381,155,526,181"/>
+</map>

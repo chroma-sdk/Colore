@@ -1,0 +1,5 @@
+<map id="Corale.Colore.Core.Keypad" name="Corale.Colore.Core.Keypad">
+<area shape="rect" id="node2" href="$class_corale_1_1_colore_1_1_core_1_1_device.html" title="Base class for devices, containing code common between all devices. " alt="" coords="21,80,81,107"/>
+<area shape="rect" id="node3" href="$interface_corale_1_1_colore_1_1_core_1_1_i_device.html" title="Interface for functionality common with all devices. " alt="" coords="63,5,126,32"/>
+<area shape="rect" id="node4" href="$interface_corale_1_1_colore_1_1_core_1_1_i_keypad.html" title="Interface for keypad functions. " alt="" coords="105,80,175,107"/>
+</map>

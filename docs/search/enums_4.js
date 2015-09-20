@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['effect',['Effect',['../namespace_corale_1_1_colore_1_1_razer.html#a811c71ff1bc7862a0055b1b94973bbf6',1,'Corale.Colore.Razer.Effect()'],['../namespace_corale_1_1_colore_1_1_razer_1_1_headset_1_1_effects.html#a8a163d7ce29aa164bc26f0fb641aacbc',1,'Corale.Colore.Razer.Headset.Effects.Effect()'],['../namespace_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects.html#a14259d37217830cbcd52b25abd0551a7',1,'Corale.Colore.Razer.Keyboard.Effects.Effect()'],['../namespace_corale_1_1_colore_1_1_razer_1_1_keypad_1_1_effects.html#a30da6552e7389b065384b21013565e14',1,'Corale.Colore.Razer.Keypad.Effects.Effect()'],['../namespace_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects.html#a68e1a04aecd0f365c9b4c9b3974c2606',1,'Corale.Colore.Razer.Mouse.Effects.Effect()'],['../namespace_corale_1_1_colore_1_1_razer_1_1_mousepad_1_1_effects.html#aeadf87df164118248ad69c2126288225',1,'Corale.Colore.Razer.Mousepad.Effects.Effect()']]]
+];

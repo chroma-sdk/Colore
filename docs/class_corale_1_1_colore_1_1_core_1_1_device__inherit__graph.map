@@ -1,0 +1,9 @@
+<map id="Corale.Colore.Core.Device" name="Corale.Colore.Core.Device">
+<area shape="rect" id="node3" href="$class_corale_1_1_colore_1_1_core_1_1_generic_device.html" title="A generic device. " alt="" coords="345,5,525,47"/>
+<area shape="rect" id="node4" href="$class_corale_1_1_colore_1_1_core_1_1_headset.html" title="Class for interacting with Chroma Headsets. " alt="" coords="343,71,526,98"/>
+<area shape="rect" id="node5" href="$class_corale_1_1_colore_1_1_core_1_1_keyboard.html" title="Class for interacting with a Chroma keyboard. " alt="" coords="339,122,530,149"/>
+<area shape="rect" id="node6" href="$class_corale_1_1_colore_1_1_core_1_1_keypad.html" title="Class for interacting with a Chroma keypad. " alt="" coords="345,173,524,199"/>
+<area shape="rect" id="node7" href="$class_corale_1_1_colore_1_1_core_1_1_mouse.html" title="Class for interacting with a Chroma mouse. " alt="" coords="347,223,522,250"/>
+<area shape="rect" id="node8" href="$class_corale_1_1_colore_1_1_core_1_1_mousepad.html" title="Class for interacting with a Chroma mouse pad. " alt="" coords="337,274,532,301"/>
+<area shape="rect" id="node2" href="$interface_corale_1_1_colore_1_1_core_1_1_i_device.html" title="Interface for functionality common with all devices. " alt="" coords="5,147,68,174"/>
+</map>

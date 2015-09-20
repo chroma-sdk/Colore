@@ -1,0 +1,28 @@
+var class_corale_1_1_colore_1_1_core_1_1_chroma =
+[
+    [ "Chroma", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#a9e2ba79edf5ad1f211628158b697bd74", null ],
+    [ "~Chroma", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#af21ea75fd398f64c776a2581093ebea8", null ],
+    [ "Get", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#ab4d1b0ae2393c58b5dba6d29fc3b09f2", null ],
+    [ "HandleMessage", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#a1c5da90a13860c0f0df641e8aa4bbef6", null ],
+    [ "Initialize", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#a261c92ac0e73b99e242faf4f44135945", null ],
+    [ "OnApplicationState", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#abfcdd3595d65a5e03ffeceb1754cc8dd", null ],
+    [ "OnDeviceAccess", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#a864095b966a314e6dc7c3428a943f8fb", null ],
+    [ "OnSdkSupport", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#acb1d1d5d3679cca90402c0ca69060da4", null ],
+    [ "Query", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#aa90ba702cb9575a5e30dc4adc7d82aa7", null ],
+    [ "Register", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#a26ab88bce1af92a62a1223b787fc28a9", null ],
+    [ "Unregister", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#a86bbabbbc631a965ce8174bc774456c3", null ],
+    [ "_instance", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#a4b0d3547c278fc5b998bd862f02ea075", null ],
+    [ "_registered", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#a5af2c5c8a35cafa2bf29cf15c8818a9c", null ],
+    [ "_registeredHandle", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#a7af28742e4498ee49976c32ed55578e2", null ],
+    [ "Log", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#a78d149c9dbe6ea5a8b48c0a8aed74dd4", null ],
+    [ "Headset", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#ac8d26365589102206e721c36111b53fa", null ],
+    [ "Initialized", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#a9a7631ccfa205dadf51df87774465b0a", null ],
+    [ "Instance", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#ae655ff835350011e316acaa64feeaad6", null ],
+    [ "Keyboard", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#a76706525a61f5687789e188a486a3b54", null ],
+    [ "Keypad", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#ab1837bc68e4efe85c9929a3af8db96a4", null ],
+    [ "Mouse", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#a0e643eb53062ff0a0d9167fed881b0fd", null ],
+    [ "Mousepad", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#a7977659f7359e4ebd19ae37fcce6a37d", null ],
+    [ "ApplicationState", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#aa8164951f2c248a87579ff5e61880e8f", null ],
+    [ "DeviceAccess", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#abcb64f83276d018d15c0bea74b06870a", null ],
+    [ "SdkSupport", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#afa48be599def144ed37add01959e2e40", null ]
+];
