@@ -94,7 +94,10 @@
     <Compile Include="Core\Chroma.cs" />
     <Compile Include="Core\Color.cs" />
     <Compile Include="Core\Device.cs" />
+    <Compile Include="Core\SimpleHeadset.cs" />
     <Compile Include="Core\SimpleKeyboard.cs" />
+    <Compile Include="Core\SimpleKeypad.cs" />
+    <Compile Include="Core\SimpleMouse.cs" />
     <Compile Include="Core\SimpleMousepad.cs" />
     <Compile Include="EnvironmentHelper.cs" />
     <Compile Include="Core\GenericDevice.cs" />

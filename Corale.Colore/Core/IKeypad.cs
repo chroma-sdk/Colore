@@ -54,35 +54,35 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Breathing" /> struct.</param>
         [PublicAPI]
-        void Set(Breathing effect);
+        void SetBreathing(Breathing effect);
 
         /// <summary>
         /// Sets a <see cref="Custom" /> effect on the keypad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
         [PublicAPI]
-        void Set(Custom effect);
+        void SetCustom(Custom effect);
 
         /// <summary>
         /// Sets a <see cref="Reactive" /> effect on the keypad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Reactive" /> struct.</param>
         [PublicAPI]
-        void Set(Reactive effect);
+        void SetReactive(Reactive effect);
 
         /// <summary>
         /// Sets a <see cref="Static" /> effect on the keypad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
         [PublicAPI]
-        void Set(Static effect);
+        void SetStatic(Static effect);
 
         /// <summary>
         /// Sets a <see cref="Wave" /> effect on the keypad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Wave" /> struct.</param>
         [PublicAPI]
-        void Set(Wave effect);
+        void SetWave(Wave effect);
 
         /// <summary>
         /// Sets an effect without any parameters.
@@ -90,6 +90,6 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="effect">Effect options.</param>
         [PublicAPI]
-        void Set(Effect effect);
+        void SetEffect(Effect effect);
     }
 }

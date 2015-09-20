@@ -43,28 +43,28 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Breathing" /> struct.</param>
         [PublicAPI]
-        void Set(Breathing effect);
+        void SetBreathing(Breathing effect);
 
         /// <summary>
         /// Sets a static color effect on the mouse pad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
         [PublicAPI]
-        void Set(Static effect);
+        void SetStatic(Static effect);
 
         /// <summary>
         /// Sets a wave effect on the mouse pad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Wave" /> struct.</param>
         [PublicAPI]
-        void Set(Wave effect);
+        void SetWave(Wave effect);
 
         /// <summary>
         /// Sets a custom effect on the mouse pad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
         [PublicAPI]
-        void Set(Custom effect);
+        void SetCustom(Custom effect);
 
         /// <summary>
         /// Sets an effect without any parameters.
@@ -72,6 +72,6 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="effect">Effect options.</param>
         [PublicAPI]
-        void Set(Effect effect);
+        void SetEffect(Effect effect);
     }
 }

@@ -124,9 +124,9 @@ namespace Corale.Colore.Core
         /// Sets a parameter-less effect on this device.
         /// </summary>
         /// <param name="effect">Effect to set.</param>
-        public void Set(Effect effect)
+        public void SetEffect(Effect effect)
         {
-            Set(effect, IntPtr.Zero);
+            SetEffect(effect, IntPtr.Zero);
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="effect">Effect to set.</param>
         /// <param name="param">Effect-specific parameter to use.</param>
-        public void Set(Effect effect, IntPtr param)
+        public void SetEffect(Effect effect, IntPtr param)
         {
             SetGuid(NativeWrapper.CreateEffect(DeviceId, effect, param));
         }
