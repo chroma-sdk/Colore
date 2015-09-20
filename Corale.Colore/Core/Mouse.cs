@@ -151,7 +151,7 @@ namespace Corale.Colore.Core
         /// Sets the color of all LEDs on the mouse.
         /// </summary>
         /// <param name="color">Color to set.</param>
-        public override void Set(Color color)
+        public override void SetAll(Color color)
         {
             Set(NativeWrapper.CreateMouseEffect(new Static(Led.All, color)));
         }

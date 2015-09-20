@@ -73,7 +73,7 @@ namespace Corale.Colore.Core
         /// Sets the color of all components on this device.
         /// </summary>
         /// <param name="color">Color to set.</param>
-        public override void Set(Color color)
+        public override void SetAll(Color color)
         {
             Set(new Static(color));
         }

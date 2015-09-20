@@ -30,14 +30,12 @@
 
 namespace Corale.Colore.Core
 {
-    using System;
-    using System.Collections.Generic;
-
     using Corale.Colore.Annotations;
     using Corale.Colore.Razer.Keyboard;
     using Corale.Colore.Razer.Keyboard.Effects;
-
     using log4net;
+    using System;
+    using System.Collections.Generic;
 
     /// <summary>
     /// Class for interacting with a Chroma keyboard.
@@ -145,7 +143,7 @@ namespace Corale.Colore.Core
         /// Sets a breathing effect on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        public void SetBreathingEffect(Breathing effect)
+        public void SetBreathing(Breathing effect)
         {
             Set(NativeWrapper.CreateKeyboardEffect(effect));
         }
@@ -154,7 +152,7 @@ namespace Corale.Colore.Core
         /// Sets the color of all keys on the keyboard.
         /// </summary>
         /// <param name="color">Color to set.</param>
-        public void SetAllKeysColor(Color color)
+        public void SetAll(Color color)
         {
             _grid.Set(color);
             Set(NativeWrapper.CreateKeyboardEffect(_grid));
@@ -168,7 +166,7 @@ namespace Corale.Colore.Core
         /// <param name="second">Color to reach, before going back to <paramref name="first" />.</param>
         public void SetBreathingColors(Color first, Color second)
         {
-            SetBreathingEffect(new Breathing(first, second));
+            SetBreathing(new Breathing(first, second));
         }
 
         /// <summary>

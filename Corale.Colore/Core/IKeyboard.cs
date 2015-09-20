@@ -72,7 +72,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="effect">Effect options.</param>
         [PublicAPI]
-        void SetBreathingEffect(Breathing effect);
+        void SetBreathing(Breathing effect);
 
         /// <summary>
         /// Sets a breathing effect on the keyboard, fading between the
