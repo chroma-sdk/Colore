@@ -38,7 +38,8 @@ namespace Corale.Colore.Core
     using Corale.Colore.Razer.Keyboard.Effects;
 
     using log4net;
-     /// <summary>
+
+    /// <summary>
     /// Class for interacting with a Chroma keyboard.
     /// </summary>
     [PublicAPI]

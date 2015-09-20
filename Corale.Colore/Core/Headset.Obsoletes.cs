@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="SimpleHeadset.cs" company="Corale">
+// <copyright file="Headset.Obsoletes.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
