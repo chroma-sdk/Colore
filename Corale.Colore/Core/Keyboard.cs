@@ -38,8 +38,7 @@ namespace Corale.Colore.Core
     using Corale.Colore.Razer.Keyboard.Effects;
 
     using log4net;
-  
-    /// <summary>
+     /// <summary>
     /// Class for interacting with a Chroma keyboard.
     /// </summary>
     [PublicAPI]
@@ -166,7 +165,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="first">Color to start from.</param>
         /// <param name="second">Color to reach, before going back to <paramref name="first" />.</param>
-        public void SetBreathingColors(Color first, Color second)
+        public void SetBreathing(Color first, Color second)
         {
             SetBreathing(new Breathing(first, second));
         }
@@ -194,7 +193,7 @@ namespace Corale.Colore.Core
         /// This will overwrite the internal <see cref="Custom" />
         /// struct in the <see cref="Keyboard" /> class.
         /// </remarks>
-        public void SetCustomGrid(Color[][] colors)
+        public void SetGrid(Color[][] colors)
         {
             SetCustom(new Custom(colors));
         }
@@ -270,7 +269,7 @@ namespace Corale.Colore.Core
         /// <param name="color">The <see cref="Color" /> to apply.</param>
         /// <param name="key">First key to change.</param>
         /// <param name="keys">Additional keys that should also have the color applied.</param>
-        public void SetKeyGroup(Color color, Key key, params Key[] keys)
+        public void SetKeys(Color color, Key key, params Key[] keys)
         {
             SetKey(key, color);
             foreach (var additional in keys)
@@ -286,7 +285,7 @@ namespace Corale.Colore.Core
         /// If <c>true</c>, the keyboard keys will be cleared before
         /// applying the new colors.
         /// </param>
-        public void SetKeyGroup(IEnumerable<Key> keys, Color color, bool clear = false)
+        public void SetKeys(IEnumerable<Key> keys, Color color, bool clear = false)
         {
             if (clear)
                 Clear();

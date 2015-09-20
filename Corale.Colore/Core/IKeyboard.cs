@@ -81,7 +81,7 @@ namespace Corale.Colore.Core
         /// <param name="first">Color to start from.</param>
         /// <param name="second">Color to reach, before going back to <paramref name="first" />.</param>
         [PublicAPI]
-        void SetBreathingColors(Color first, Color second);
+        void SetBreathing(Color first, Color second);
 
         /// <summary>
         /// Sets a reactive effect on the keyboard with the specified
@@ -105,7 +105,7 @@ namespace Corale.Colore.Core
         /// struct in the <see cref="Keyboard" /> class.
         /// </remarks>
         [PublicAPI]
-        void SetCustomGrid(Color[][] colors);
+        void SetGrid(Color[][] colors);
 
         /// <summary>
         /// Sets a custom grid effect on the keyboard.
@@ -159,7 +159,7 @@ namespace Corale.Colore.Core
         /// <param name="key">First key to change.</param>
         /// <param name="keys">Additional keys that should also have the color applied.</param>
         [PublicAPI]
-        void SetKeyGroup(Color color, Key key, params Key[] keys);
+        void SetKeys(Color color, Key key, params Key[] keys);
 
         /// <summary>
         /// Sets a color on a collection of keys.
@@ -168,7 +168,7 @@ namespace Corale.Colore.Core
         /// <param name="color">The <see cref="Color" /> to apply.</param>
         /// <param name="clear">If <c>true</c>, the keyboard will first be cleared before setting the keys.</param>
         [PublicAPI]
-        void SetKeyGroup(IEnumerable<Key> keys, Color color, bool clear = false);
+        void SetKeys(IEnumerable<Key> keys, Color color, bool clear = false);
 
         /// <summary>
         /// Sets a reactive effect on the keyboard.

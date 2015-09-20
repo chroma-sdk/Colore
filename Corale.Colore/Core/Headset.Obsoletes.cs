@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="SimpleMousepad.cs" company="Corale">
+// <copyright file="SimpleHeadset.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -31,62 +31,49 @@
 namespace Corale.Colore.Core
 {
     using System;
-    using Corale.Colore.Razer.Mousepad.Effects;
+    using Corale.Colore.Razer.Headset.Effects;
 
     /// <summary>
-    /// Class for interacting with a Chroma mouse pad.
+    /// Class for interacting with Chroma Headsets.
     /// </summary>
-    public sealed partial class Mousepad
+    public sealed partial class Headset : Device, IHeadset
     {
         /// <summary>
-        /// Sets an effect without any parameters.
-        /// Currently, this only works for the <see cref="Effect.None" /> effect.
+        /// Sets an effect on the headset that doesn't
+        /// take any parameters, currently only valid
+        /// for the <see cref="Effect.SpectrumCycling" /> effect.
         /// </summary>
-        /// <param name="effect">Effect options.</param>
+        /// <param name="effect">The type of effect to set.</param>
         [Obsolete("Set is deprecated, please use SetEffect.", false)]
         public void Set(Effect effect)
         {
-            SetGuid(NativeWrapper.CreateMousepadEffect(effect));
+            SetEffect(effect);
         }
 
         /// <summary>
-        /// Sets a breathing effect on the mouse pad.
+        /// Sets a new static effect on the headset.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="Breathing" /> struct.</param>
-        [Obsolete("Set is deprecated, please use SetBreathing.", false)]
-        public void Set(Breathing effect)
-        {
-            SetGuid(NativeWrapper.CreateMousepadEffect(effect));
-        }
-
-        /// <summary>
-        /// Sets a static color effect on the mouse pad.
-        /// </summary>
-        /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
+        /// <param name="effect">
+        /// An instance of the <see cref="Static" /> struct
+        /// describing the effect.
+        /// </param>
         [Obsolete("Set is deprecated, please use SetStatic.", false)]
         public void Set(Static effect)
         {
-            SetGuid(NativeWrapper.CreateMousepadEffect(effect));
+            SetStatic(effect);
         }
 
         /// <summary>
-        /// Sets a wave effect on the mouse pad.
+        /// Sets a new breathing effect on the headset.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="Wave" /> struct.</param>
-        [Obsolete("Set is deprecated, please use SetWave.", false)]
-        public void Set(Wave effect)
+        /// <param name="effect">
+        /// An instance of the <see cref="Breathing" /> struct
+        /// describing the effect.
+        /// </param>
+        [Obsolete("Set is deprecated, please use SetBreathing.", false)]
+        public void Set(Breathing effect)
         {
-            SetGuid(NativeWrapper.CreateMousepadEffect(effect));
-        }
-
-        /// <summary>
-        /// Sets a custom effect on the mouse pad.
-        /// </summary>
-        /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
-        [Obsolete("Set is deprecated, please use SetCustom.", false)]
-        public void Set(Custom effect)
-        {
-            SetGuid(NativeWrapper.CreateMousepadEffect(effect));
+            SetBreathing(effect);
         }
     }
 }

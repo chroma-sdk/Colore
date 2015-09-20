@@ -184,7 +184,7 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
             for (var row = 0; row < Constants.MaxRows; row++)
                 arr[row] = new Color[Constants.MaxColumns];
 
-            // SetGuid some arbitrary colors to test
+            // Set some arbitrary colors to test
             arr[0][5] = Color.Purple;
             arr[2][3] = Color.Pink;
             arr[4][0] = Color.Blue;

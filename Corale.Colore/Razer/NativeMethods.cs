@@ -299,7 +299,7 @@ namespace Corale.Colore.Razer
         /// Depends on which LED.
         /// </param>
         /// <param name="param">Pointer to a parameter type specified by <paramref name="effect" />.</param>
-        /// <param name="effectId">SetGuid to valid effect ID if successful. Pass <see cref="IntPtr.Zero" /> if not required.</param>
+        /// <param name="effectId">Set to valid effect ID if successful. Pass <see cref="IntPtr.Zero" /> if not required.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
         /// <remarks>
         /// The <paramref name="param" /> parameter should point to the relevant struct for the passed in effect,
@@ -334,7 +334,7 @@ namespace Corale.Colore.Razer
         /// </summary>
         /// <param name="effect">Standard effect type.</param>
         /// <param name="param">Pointer to a parameter type specified by <paramref name="effect" />.</param>
-        /// <param name="effectId">SetGuid to valid effect ID if successful. Pass <see cref="IntPtr.Zero" /> if not required.</param>
+        /// <param name="effectId">Set to valid effect ID if successful. Pass <see cref="IntPtr.Zero" /> if not required.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         internal delegate Result CreateHeadsetEffectDelegate(
@@ -377,7 +377,7 @@ namespace Corale.Colore.Razer
         internal delegate Result DeleteEffectDelegate([In] Guid effectId);
 
         /// <summary>
-        /// SetGuid effect.
+        /// Set effect.
         /// </summary>
         /// <param name="effectId">ID of the effect that needs to be set.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
@@ -573,7 +573,7 @@ namespace Corale.Colore.Razer
         /// Depends on which LED.
         /// </param>
         /// <param name="param">Pointer to a parameter type specified by <paramref name="effect" />.</param>
-        /// <param name="effectId">SetGuid to valid effect ID if successful. Pass <see cref="IntPtr.Zero" /> if not required.</param>
+        /// <param name="effectId">Set to valid effect ID if successful. Pass <see cref="IntPtr.Zero" /> if not required.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
         /// <remarks>
         /// The <paramref name="param" /> parameter should point to the relevant struct for the passed in effect,
@@ -609,7 +609,7 @@ namespace Corale.Colore.Razer
         /// </summary>
         /// <param name="effect">Standard effect type.</param>
         /// <param name="param">Pointer to a parameter type specified by <paramref name="effect" />.</param>
-        /// <param name="effectId">SetGuid to valid effect ID if successful. Pass <see cref="IntPtr.Zero" /> if not required.</param>
+        /// <param name="effectId">Set to valid effect ID if successful. Pass <see cref="IntPtr.Zero" /> if not required.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
         [DllImport(DllName, CallingConvention = FunctionConvention, EntryPoint = "CreateHeadsetEffect", SetLastError = true)]
         internal static extern Result CreateHeadsetEffect(
@@ -652,7 +652,7 @@ namespace Corale.Colore.Razer
         internal static extern Result DeleteEffect([In] Guid effectId);
 
         /// <summary>
-        /// SetGuid effect.
+        /// Set effect.
         /// </summary>
         /// <param name="effectId">ID of the effect that needs to be set.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>

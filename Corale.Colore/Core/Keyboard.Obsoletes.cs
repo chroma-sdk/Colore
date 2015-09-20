@@ -100,7 +100,7 @@ namespace Corale.Colore.Core
         [Obsolete("Set is deprecated, please use SetCustom.", false)]
         public void Set(Color[][] colors)
         {
-            SetCustomGrid(colors);
+            SetGrid(colors);
         }
 
         /// <summary>
@@ -173,7 +173,7 @@ namespace Corale.Colore.Core
         [Obsolete("Set is deprecated, please use SetKeyGroup.", false)]
         public void Set(Color color, Key key, params Key[] keys)
         {
-            SetKeyGroup(color, key, keys);
+            SetKeys(color, key, keys);
         }
 
         /// <summary>
@@ -188,7 +188,7 @@ namespace Corale.Colore.Core
         [Obsolete("Set is deprecated, please use SetKeyGroup.", false)]
         public void Set(IEnumerable<Key> keys, Color color, bool clear = false)
         {
-           SetKeyGroup(keys, color, clear);
+            SetKeys(keys, color, clear);
         }
 
         /// <summary>

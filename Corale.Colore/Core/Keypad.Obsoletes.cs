@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="SimpleMouse.cs" company="Corale">
+// <copyright file="SimpleKeypad.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -31,26 +31,13 @@
 namespace Corale.Colore.Core
 {
     using System;
-
-    using Corale.Colore.Razer.Mouse;
-    using Corale.Colore.Razer.Mouse.Effects;
+    using Corale.Colore.Razer.Keypad.Effects;
 
     /// <summary>
-    /// Class for interacting with a Chroma mouse.
+    /// Class for interacting with a Chroma keypad.
     /// </summary>
-    public sealed partial class Mouse
+    public sealed partial class Keypad : Device, IKeypad
     {
-        /// <summary>
-        /// Sets the color of a specific LED on the mouse.
-        /// </summary>
-        /// <param name="led">Which LED to modify.</param>
-        /// <param name="color">Color to set.</param>
-        [Obsolete("Set is deprecated, please use SetLed.", false)]
-        public void Set(Led led, Color color)
-        {
-            SetLed(led, color);
-        }
-
         /// <summary>
         /// Sets an effect without any parameters.
         /// Currently, this only works for the <see cref="Effect.None" /> effect.
@@ -63,9 +50,9 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Sets a breathing effect on the mouse.
+        /// Sets a <see cref="Breathing" /> effect on the keypad.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="Breathing" /> effect.</param>
+        /// <param name="effect">An instance of the <see cref="Breathing" /> struct.</param>
         [Obsolete("Set is deprecated, please use SetBreathing.", false)]
         public void Set(Breathing effect)
         {
@@ -73,9 +60,29 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Sets a static color on the mouse.
+        /// Sets a <see cref="Custom" /> effect on the keypad.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="Static" /> effect.</param>
+        /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
+        [Obsolete("Set is deprecated, please use SetCustom.", false)]
+        public void Set(Custom effect)
+        {
+            SetCustom(effect);
+        }
+
+        /// <summary>
+        /// Sets a <see cref="Reactive" /> effect on the keypad.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="Reactive" /> struct.</param>
+        [Obsolete("Set is deprecated, please use SetReactive.", false)]
+        public void Set(Reactive effect)
+        {
+           SetReactive(effect);
+        }
+
+        /// <summary>
+        /// Sets a <see cref="Static" /> effect on the keypad.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
         [Obsolete("Set is deprecated, please use SetStatic.", false)]
         public void Set(Static effect)
         {
@@ -83,39 +90,9 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Starts a blinking effect on the specified LED.
+        /// Sets a <see cref="Wave" /> effect on the keypad.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="Blinking" /> effect.</param>
-        [Obsolete("Set is deprecated, please use SetBlinking.", false)]
-        public void Set(Blinking effect)
-        {
-            SetBlinking(effect);
-        }
-
-        /// <summary>
-        /// Sets a reactive effect on the mouse.
-        /// </summary>
-        /// <param name="effect">Effect options struct.</param>
-        [Obsolete("Set is deprecated, please use SetReactive.", false)]
-        public void Set(Reactive effect)
-        {
-            SetReactive(effect);
-        }
-
-        /// <summary>
-        /// Sets a spectrum cycling effect on the mouse.
-        /// </summary>
-        /// <param name="effect">Effect options struct.</param>
-        [Obsolete("Set is deprecated, please use SetSpectrumCycling.", false)]
-        public void Set(SpectrumCycling effect)
-        {
-            SetSpectrumCycling(effect);
-        }
-
-        /// <summary>
-        /// Sets a wave effect on the mouse.
-        /// </summary>
-        /// <param name="effect">Effect options struct.</param>
+        /// <param name="effect">An instance of the <see cref="Wave" /> struct.</param>
         [Obsolete("Set is deprecated, please use SetWave.", false)]
         public void Set(Wave effect)
         {
