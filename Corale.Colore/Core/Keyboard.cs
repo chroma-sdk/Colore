@@ -30,13 +30,15 @@
 
 namespace Corale.Colore.Core
 {
-    using Corale.Colore.Annotations;
-    using Corale.Colore.Razer.Keyboard;
-    using Corale.Colore.Razer.Keyboard.Effects;
-    using log4net;
     using System;
     using System.Collections.Generic;
 
+    using Corale.Colore.Annotations;
+    using Corale.Colore.Razer.Keyboard;
+    using Corale.Colore.Razer.Keyboard.Effects;
+
+    using log4net;
+  
     /// <summary>
     /// Class for interacting with a Chroma keyboard.
     /// </summary>
@@ -152,7 +154,7 @@ namespace Corale.Colore.Core
         /// Sets the color of all keys on the keyboard.
         /// </summary>
         /// <param name="color">Color to set.</param>
-        public void SetAll(Color color)
+        public override void SetAll(Color color)
         {
             _grid.Set(color);
             Set(NativeWrapper.CreateKeyboardEffect(_grid));
