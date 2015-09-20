@@ -56,7 +56,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="color">Color to set.</param>
         [PublicAPI]
-        void Set(Color color);
+        void SetAllKeysColor(Color color);
 
         /// <summary>
         /// Updates the device to use the effect pointed to by the specified GUID.

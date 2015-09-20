@@ -107,7 +107,7 @@ namespace Corale.Colore.Core
 
             set
             {
-                Set(key, value);
+                SetKeyColor(key, value);
             }
         }
 
@@ -127,7 +127,7 @@ namespace Corale.Colore.Core
 
             set
             {
-                Set(row, column, value);
+                SetPosition(row, column, value);
             }
         }
 
@@ -145,7 +145,7 @@ namespace Corale.Colore.Core
         /// Sets a breathing effect on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        public void Set(Breathing effect)
+        public void SetBreathingEffect(Breathing effect)
         {
             Set(NativeWrapper.CreateKeyboardEffect(effect));
         }
@@ -154,7 +154,7 @@ namespace Corale.Colore.Core
         /// Sets the color of all keys on the keyboard.
         /// </summary>
         /// <param name="color">Color to set.</param>
-        public override void Set(Color color)
+        public void SetAllKeysColor(Color color)
         {
             _grid.Set(color);
             Set(NativeWrapper.CreateKeyboardEffect(_grid));
@@ -166,9 +166,9 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="first">Color to start from.</param>
         /// <param name="second">Color to reach, before going back to <paramref name="first" />.</param>
-        public void Set(Color first, Color second)
+        public void SetBreathingColors(Color first, Color second)
         {
-            Set(new Breathing(first, second));
+            SetBreathingEffect(new Breathing(first, second));
         }
 
         /// <summary>
@@ -177,9 +177,9 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="color">Color to emit on key press.</param>
         /// <param name="duration">How long to illuminate the key after being pressed.</param>
-        public void Set(Color color, Duration duration)
+        public void SetReactive(Color color, Duration duration)
         {
-            Set(new Reactive(color, duration));
+            SetReactive(new Reactive(color, duration));
         }
 
         /// <summary>
@@ -194,9 +194,9 @@ namespace Corale.Colore.Core
         /// This will overwrite the internal <see cref="Custom" />
         /// struct in the <see cref="Keyboard" /> class.
         /// </remarks>
-        public void Set(Color[][] colors)
+        public void SetCustomGrid(Color[][] colors)
         {
-            Set(new Custom(colors));
+            SetCustom(new Custom(colors));
         }
 
         /// <summary>
@@ -207,7 +207,7 @@ namespace Corale.Colore.Core
         /// This will overwrite the current internal <see cref="Custom" />
         /// struct in the <see cref="Keyboard" /> class.
         /// </remarks>
-        public void Set(Custom effect)
+        public void SetCustom(Custom effect)
         {
             _grid = effect;
             Set(NativeWrapper.CreateKeyboardEffect(_grid));
@@ -217,9 +217,9 @@ namespace Corale.Colore.Core
         /// Sets a wave effect on the keyboard in the specified direction.
         /// </summary>
         /// <param name="direction">Direction of the wave.</param>
-        public void Set(Direction direction)
+        public void SetWaveWithDirection(Direction direction)
         {
-            Set(new Wave(direction));
+            SetWave(new Wave(direction));
         }
 
         /// <summary>
@@ -227,7 +227,7 @@ namespace Corale.Colore.Core
         /// Currently, this only works for the <see cref="Effect.None" /> and <see cref="Effect.SpectrumCycling" /> effects.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        public void Set(Effect effect)
+        public void SetEffect(Effect effect)
         {
             Set(NativeWrapper.CreateKeyboardEffect(effect));
         }
@@ -240,7 +240,7 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         /// <param name="clear">Whether or not to clear the existing colors before setting this one.</param>
         /// <exception cref="ArgumentException">Thrown if the row or column parameters are outside the valid ranges.</exception>
-        public void Set(Size row, Size column, Color color, bool clear = false)
+        public void SetPosition(Size row, Size column, Color color, bool clear = false)
         {
             if (clear)
                 _grid.Clear();
@@ -255,7 +255,7 @@ namespace Corale.Colore.Core
         /// <param name="key">Key to modify.</param>
         /// <param name="color">Color to set.</param>
         /// <param name="clear">If true, the keyboard will first be cleared before setting the key.</param>
-        public void Set(Key key, Color color, bool clear = false)
+        public void SetKeyColor(Key key, Color color, bool clear = false)
         {
             if (clear)
                 _grid.Clear();
@@ -270,11 +270,11 @@ namespace Corale.Colore.Core
         /// <param name="color">The <see cref="Color" /> to apply.</param>
         /// <param name="key">First key to change.</param>
         /// <param name="keys">Additional keys that should also have the color applied.</param>
-        public void Set(Color color, Key key, params Key[] keys)
+        public void SetKeyGroupColor(Color color, Key key, params Key[] keys)
         {
-            Set(key, color);
+            SetKeyColor(key, color);
             foreach (var additional in keys)
-                Set(additional, color);
+                SetKeyColor(additional, color);
         }
 
         /// <summary>
@@ -286,20 +286,20 @@ namespace Corale.Colore.Core
         /// If <c>true</c>, the keyboard keys will be cleared before
         /// applying the new colors.
         /// </param>
-        public void Set(IEnumerable<Key> keys, Color color, bool clear = false)
+        public void SetKeyGroupColor(IEnumerable<Key> keys, Color color, bool clear = false)
         {
             if (clear)
                 Clear();
 
             foreach (var key in keys)
-                Set(key, color);
+                SetKeyColor(key, color);
         }
 
         /// <summary>
         /// Sets a reactive effect on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        public void Set(Reactive effect)
+        public void SetReactive(Reactive effect)
         {
             Set(NativeWrapper.CreateKeyboardEffect(effect));
         }
@@ -308,7 +308,7 @@ namespace Corale.Colore.Core
         /// Sets a static color on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        public void Set(Static effect)
+        public void SetStatic(Static effect)
         {
             Set(NativeWrapper.CreateKeyboardEffect(effect));
         }
@@ -317,7 +317,7 @@ namespace Corale.Colore.Core
         /// Sets a wave effect on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        public void Set(Wave effect)
+        public void SetWave(Wave effect)
         {
             Set(NativeWrapper.CreateKeyboardEffect(effect));
         }
