@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="IMousepad.cs" company="Corale">
+// <copyright file="SimpleKeypad.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -30,48 +30,73 @@
 
 namespace Corale.Colore.Core
 {
-    using Corale.Colore.Annotations;
-    using Corale.Colore.Razer.Mousepad.Effects;
+    using System;
+    using Corale.Colore.Razer.Keypad.Effects;
 
     /// <summary>
-    /// Interface for mouse pad functionality.
+    /// Class for interacting with a Chroma keypad.
     /// </summary>
-    public interface IMousepad : IDevice
+    public sealed partial class Keypad : Device, IKeypad
     {
-        /// <summary>
-        /// Sets a breathing effect on the mouse pad.
-        /// </summary>
-        /// <param name="effect">An instance of the <see cref="Breathing" /> struct.</param>
-        [PublicAPI]
-        void SetBreathing(Breathing effect);
-
-        /// <summary>
-        /// Sets a static color effect on the mouse pad.
-        /// </summary>
-        /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
-        [PublicAPI]
-        void SetStatic(Static effect);
-
-        /// <summary>
-        /// Sets a wave effect on the mouse pad.
-        /// </summary>
-        /// <param name="effect">An instance of the <see cref="Wave" /> struct.</param>
-        [PublicAPI]
-        void SetWave(Wave effect);
-
-        /// <summary>
-        /// Sets a custom effect on the mouse pad.
-        /// </summary>
-        /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
-        [PublicAPI]
-        void SetCustom(Custom effect);
-
         /// <summary>
         /// Sets an effect without any parameters.
         /// Currently, this only works for the <see cref="Effect.None" /> effect.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        [PublicAPI]
-        void SetEffect(Effect effect);
+        [Obsolete("Set is deprecated, please use SetEffect.", false)]
+        public void Set(Effect effect)
+        {
+            SetEffect(effect);
+        }
+
+        /// <summary>
+        /// Sets a <see cref="Breathing" /> effect on the keypad.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="Breathing" /> struct.</param>
+        [Obsolete("Set is deprecated, please use SetBreathing.", false)]
+        public void Set(Breathing effect)
+        {
+            SetBreathing(effect);
+        }
+
+        /// <summary>
+        /// Sets a <see cref="Custom" /> effect on the keypad.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
+        [Obsolete("Set is deprecated, please use SetCustom.", false)]
+        public void Set(Custom effect)
+        {
+            SetCustom(effect);
+        }
+
+        /// <summary>
+        /// Sets a <see cref="Reactive" /> effect on the keypad.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="Reactive" /> struct.</param>
+        [Obsolete("Set is deprecated, please use SetReactive.", false)]
+        public void Set(Reactive effect)
+        {
+           SetReactive(effect);
+        }
+
+        /// <summary>
+        /// Sets a <see cref="Static" /> effect on the keypad.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
+        [Obsolete("Set is deprecated, please use SetStatic.", false)]
+        public void Set(Static effect)
+        {
+            SetStatic(effect);
+        }
+
+        /// <summary>
+        /// Sets a <see cref="Wave" /> effect on the keypad.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="Wave" /> struct.</param>
+        [Obsolete("Set is deprecated, please use SetWave.", false)]
+        public void Set(Wave effect)
+        {
+            SetWave(effect);
+        }
     }
 }

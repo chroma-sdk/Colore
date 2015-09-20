@@ -81,7 +81,9 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing">
+      <HintPath>C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Drawing.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
@@ -92,6 +94,11 @@
     <Compile Include="Core\Chroma.cs" />
     <Compile Include="Core\Color.cs" />
     <Compile Include="Core\Device.cs" />
+    <Compile Include="Core\SimpleHeadset.cs" />
+    <Compile Include="Core\SimpleKeyboard.cs" />
+    <Compile Include="Core\SimpleKeypad.cs" />
+    <Compile Include="Core\SimpleMouse.cs" />
+    <Compile Include="Core\SimpleMousepad.cs" />
     <Compile Include="EnvironmentHelper.cs" />
     <Compile Include="Core\GenericDevice.cs" />
     <Compile Include="Core\Headset.cs" />

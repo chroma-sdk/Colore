@@ -37,7 +37,7 @@ namespace Corale.Colore.Core
     /// <summary>
     /// Class for interacting with Chroma Headsets.
     /// </summary>
-    public sealed class Headset : Device, IHeadset
+    public sealed partial class Headset : Device, IHeadset
     {
         /// <summary>
         /// Loggers instance for this class.
@@ -73,9 +73,9 @@ namespace Corale.Colore.Core
         /// Sets the color of all components on this device.
         /// </summary>
         /// <param name="color">Color to set.</param>
-        public override void Set(Color color)
+        public override void SetAll(Color color)
         {
-            Set(new Static(color));
+            SetStatic(new Static(color));
         }
 
         /// <summary>
@@ -84,9 +84,9 @@ namespace Corale.Colore.Core
         /// for the <see cref="Effect.SpectrumCycling" /> effect.
         /// </summary>
         /// <param name="effect">The type of effect to set.</param>
-        public void Set(Effect effect)
+        public void SetEffect(Effect effect)
         {
-            Set(NativeWrapper.CreateHeadsetEffect(effect));
+            SetGuid(NativeWrapper.CreateHeadsetEffect(effect));
         }
 
         /// <summary>
@@ -96,9 +96,9 @@ namespace Corale.Colore.Core
         /// An instance of the <see cref="Static" /> struct
         /// describing the effect.
         /// </param>
-        public void Set(Static effect)
+        public void SetStatic(Static effect)
         {
-            Set(NativeWrapper.CreateHeadsetEffect(effect));
+            SetGuid(NativeWrapper.CreateHeadsetEffect(effect));
         }
 
         /// <summary>
@@ -108,9 +108,9 @@ namespace Corale.Colore.Core
         /// An instance of the <see cref="Breathing" /> struct
         /// describing the effect.
         /// </param>
-        public void Set(Breathing effect)
+        public void SetBreathing(Breathing effect)
         {
-            Set(NativeWrapper.CreateHeadsetEffect(effect));
+            SetGuid(NativeWrapper.CreateHeadsetEffect(effect));
         }
     }
 }

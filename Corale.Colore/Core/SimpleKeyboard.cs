@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Keyboard.cs" company="Corale">
+// <copyright file="SimpleKeyboard.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -33,131 +33,32 @@ namespace Corale.Colore.Core
     using System;
     using System.Collections.Generic;
 
-    using Corale.Colore.Annotations;
     using Corale.Colore.Razer.Keyboard;
     using Corale.Colore.Razer.Keyboard.Effects;
 
-    using log4net;
-  
     /// <summary>
     /// Class for interacting with a Chroma keyboard.
     /// </summary>
-    [PublicAPI]
-    public sealed partial class Keyboard : Device, IKeyboard
+    public sealed partial class Keyboard
     {
-        /// <summary>
-        /// Logger instance for this class.
-        /// </summary>
-        private static readonly ILog Log = LogManager.GetLogger(typeof(Keyboard));
-
-        /// <summary>
-        /// Holds the application-wide instance of the <see cref="Keyboard" /> class.
-        /// </summary>
-        private static IKeyboard _instance;
-
-        /// <summary>
-        /// Grid struct used for the helper methods.
-        /// </summary>
-        private Custom _grid;
-
-        /// <summary>
-        /// Prevents a default instance of the <see cref="Keyboard" /> class from being created.
-        /// </summary>
-        private Keyboard()
-        {
-            Log.Info("Keyboard initializing...");
-
-            Chroma.Initialize();
-
-            CurrentEffectId = Guid.Empty;
-
-            // We keep a local copy of a grid to speed up grid operations
-            Log.Debug("Creating grid array");
-            var gridArray = new Color[Constants.MaxRows][];
-            for (var i = 0; i < Constants.MaxRows; i++)
-                gridArray[i] = new Color[Constants.MaxColumns];
-
-            Log.Debug("Initializing private copy of Custom");
-            _grid = new Custom(gridArray);
-        }
-
-        /// <summary>
-        /// Gets the application-wide instance of the <see cref="IKeyboard" /> interface.
-        /// </summary>
-        [PublicAPI]
-        public static IKeyboard Instance
-        {
-            get
-            {
-                return _instance ?? (_instance = new Keyboard());
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the <see cref="Color" /> for a specific <see cref="Key" /> on the keyboard.
-        /// </summary>
-        /// <param name="key">The key to access.</param>
-        /// <returns>The color currently set for the specified key.</returns>
-        public Color this[Key key]
-        {
-            get
-            {
-                return _grid[key];
-            }
-
-            set
-            {
-                SetKey(key, value);
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the <see cref="Color" /> for a specific row and column on the
-        /// keyboard grid.
-        /// </summary>
-        /// <param name="row">Row to query, between 1 and <see cref="Constants.MaxRows" />.</param>
-        /// <param name="column">Column to query, between 1 and <see cref="Constants.MaxColumns" />.</param>
-        /// <returns>The color currently set on the specified position.</returns>
-        public Color this[Size row, Size column]
-        {
-            get
-            {
-                return _grid[(int)row - 1, (int)column - 1];
-            }
-
-            set
-            {
-                SetPosition(row, column, value);
-            }
-        }
-
-        /// <summary>
-        /// Returns whether a certain key has had a custom color set.
-        /// </summary>
-        /// <param name="key">Key to check.</param>
-        /// <returns><c>true</c> if the key has a color set, otherwise <c>false</c>.</returns>
-        public bool IsSet(Key key)
-        {
-            return _grid[key] != Color.Black;
-        }
-
         /// <summary>
         /// Sets a breathing effect on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        public void SetBreathing(Breathing effect)
+        [Obsolete("Set is deprecated, please use SetBreathing.", false)]
+        public void Set(Breathing effect)
         {
-            SetGuid(NativeWrapper.CreateKeyboardEffect(effect));
+            SetBreathing(effect);
         }
 
         /// <summary>
         /// Sets the color of all keys on the keyboard.
         /// </summary>
         /// <param name="color">Color to set.</param>
-        public override void SetAll(Color color)
+        [Obsolete("Set is deprecated, please use SetAll.", false)]
+        public void Set(Color color)
         {
-            _grid.Set(color);
-            SetGuid(NativeWrapper.CreateKeyboardEffect(_grid));
+            SetAll(color);
         }
 
         /// <summary>
@@ -166,7 +67,8 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="first">Color to start from.</param>
         /// <param name="second">Color to reach, before going back to <paramref name="first" />.</param>
-        public void SetBreathingColors(Color first, Color second)
+        [Obsolete("Set is deprecated, please use SetBreathing.", false)]
+        public void Set(Color first, Color second)
         {
             SetBreathing(new Breathing(first, second));
         }
@@ -177,9 +79,10 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="color">Color to emit on key press.</param>
         /// <param name="duration">How long to illuminate the key after being pressed.</param>
-        public void SetReactive(Color color, Duration duration)
+        [Obsolete("Set is deprecated, please use SetReactive.", false)]
+        public void Set(Color color, Duration duration)
         {
-            SetReactive(new Reactive(color, duration));
+            SetReactive(color, duration);
         }
 
         /// <summary>
@@ -194,9 +97,10 @@ namespace Corale.Colore.Core
         /// This will overwrite the internal <see cref="Custom" />
         /// struct in the <see cref="Keyboard" /> class.
         /// </remarks>
-        public void SetCustomGrid(Color[][] colors)
+        [Obsolete("Set is deprecated, please use SetCustom.", false)]
+        public void Set(Color[][] colors)
         {
-            SetCustom(new Custom(colors));
+            SetCustomGrid(colors);
         }
 
         /// <summary>
@@ -207,19 +111,20 @@ namespace Corale.Colore.Core
         /// This will overwrite the current internal <see cref="Custom" />
         /// struct in the <see cref="Keyboard" /> class.
         /// </remarks>
-        public void SetCustom(Custom effect)
+        [Obsolete("Set is deprecated, please use SetCustom.", false)]
+        public void Set(Custom effect)
         {
-            _grid = effect;
-            SetGuid(NativeWrapper.CreateKeyboardEffect(_grid));
+           SetCustom(effect);
         }
 
         /// <summary>
         /// Sets a wave effect on the keyboard in the specified direction.
         /// </summary>
         /// <param name="direction">Direction of the wave.</param>
-        public void SetWave(Direction direction)
+        [Obsolete("Set is deprecated, please use SetWave.", false)]
+        public void Set(Direction direction)
         {
-            SetWave(new Wave(direction));
+            SetWave(direction);
         }
 
         /// <summary>
@@ -227,9 +132,10 @@ namespace Corale.Colore.Core
         /// Currently, this only works for the <see cref="Effect.None" /> and <see cref="Effect.SpectrumCycling" /> effects.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        public void SetEffect(Effect effect)
+        [Obsolete("Set is deprecated, please use SetEffect.", false)]
+        public void Set(Effect effect)
         {
-            SetGuid(NativeWrapper.CreateKeyboardEffect(effect));
+            SetEffect(effect);
         }
 
         /// <summary>
@@ -240,13 +146,10 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         /// <param name="clear">Whether or not to clear the existing colors before setting this one.</param>
         /// <exception cref="ArgumentException">Thrown if the row or column parameters are outside the valid ranges.</exception>
-        public void SetPosition(Size row, Size column, Color color, bool clear = false)
+        [Obsolete("Set is deprecated, please use SetPosition.", false)]
+        public void Set(Size row, Size column, Color color, bool clear = false)
         {
-            if (clear)
-                _grid.Clear();
-
-            _grid[(int)row, (int)column] = color;
-            SetGuid(NativeWrapper.CreateKeyboardEffect(_grid));
+            SetPosition(row, column, color, clear);
         }
 
         /// <summary>
@@ -255,13 +158,10 @@ namespace Corale.Colore.Core
         /// <param name="key">Key to modify.</param>
         /// <param name="color">Color to set.</param>
         /// <param name="clear">If true, the keyboard will first be cleared before setting the key.</param>
-        public void SetKey(Key key, Color color, bool clear = false)
+        [Obsolete("Set is deprecated, please use SetKey.", false)]
+        public void Set(Key key, Color color, bool clear = false)
         {
-            if (clear)
-                _grid.Clear();
-
-            _grid[key] = color;
-            SetGuid(NativeWrapper.CreateKeyboardEffect(_grid));
+            SetKey(key, color, clear);
         }
 
         /// <summary>
@@ -270,11 +170,10 @@ namespace Corale.Colore.Core
         /// <param name="color">The <see cref="Color" /> to apply.</param>
         /// <param name="key">First key to change.</param>
         /// <param name="keys">Additional keys that should also have the color applied.</param>
-        public void SetKeyGroup(Color color, Key key, params Key[] keys)
+        [Obsolete("Set is deprecated, please use SetKeyGroup.", false)]
+        public void Set(Color color, Key key, params Key[] keys)
         {
-            SetKey(key, color);
-            foreach (var additional in keys)
-                SetKey(additional, color);
+            SetKeyGroup(color, key, keys);
         }
 
         /// <summary>
@@ -286,40 +185,40 @@ namespace Corale.Colore.Core
         /// If <c>true</c>, the keyboard keys will be cleared before
         /// applying the new colors.
         /// </param>
-        public void SetKeyGroup(IEnumerable<Key> keys, Color color, bool clear = false)
+        [Obsolete("Set is deprecated, please use SetKeyGroup.", false)]
+        public void Set(IEnumerable<Key> keys, Color color, bool clear = false)
         {
-            if (clear)
-                Clear();
-
-            foreach (var key in keys)
-                SetKey(key, color);
+           SetKeyGroup(keys, color, clear);
         }
 
         /// <summary>
         /// Sets a reactive effect on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        public void SetReactive(Reactive effect)
+        [Obsolete("Set is deprecated, please use SetReactive.", false)]
+        public void Set(Reactive effect)
         {
-            SetGuid(NativeWrapper.CreateKeyboardEffect(effect));
+            SetReactive(effect);
         }
 
         /// <summary>
         /// Sets a static color on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        public void SetStatic(Static effect)
+        [Obsolete("Set is deprecated, please use SetStatic.", false)]
+        public void Set(Static effect)
         {
-            SetGuid(NativeWrapper.CreateKeyboardEffect(effect));
+            SetStatic(effect);
         }
 
         /// <summary>
         /// Sets a wave effect on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        public void SetWave(Wave effect)
+        [Obsolete("Set is deprecated, please use SetWave.", false)]
+        public void Set(Wave effect)
         {
-            SetGuid(NativeWrapper.CreateKeyboardEffect(effect));
+            SetWave(effect);
         }
     }
 }

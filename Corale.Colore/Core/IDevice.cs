@@ -56,13 +56,13 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="color">Color to set.</param>
         [PublicAPI]
-        void Set(Color color);
+        void SetAll(Color color);
 
         /// <summary>
         /// Updates the device to use the effect pointed to by the specified GUID.
         /// </summary>
         /// <param name="guid">GUID to set.</param>
         [PublicAPI]
-        void Set(Guid guid);
+        void SetGuid(Guid guid);
     }
 }
