@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Headset.cs" company="Corale">
+// <copyright file="SimpleHeadset.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -30,9 +30,8 @@
 
 namespace Corale.Colore.Core
 {
+    using System;
     using Corale.Colore.Razer.Headset.Effects;
-
-    using log4net;
 
     /// <summary>
     /// Class for interacting with Chroma Headsets.
@@ -40,53 +39,15 @@ namespace Corale.Colore.Core
     public sealed partial class Headset : Device, IHeadset
     {
         /// <summary>
-        /// Loggers instance for this class.
-        /// </summary>
-        private static readonly ILog Log = LogManager.GetLogger(typeof(Headset));
-
-        /// <summary>
-        /// Holds the application-wide instance of the <see cref="IHeadset" /> interface.
-        /// </summary>
-        private static IHeadset _instance;
-
-        /// <summary>
-        /// Prevents a default instance of the <see cref="Headset" /> class from being created.
-        /// </summary>
-        private Headset()
-        {
-            Log.Info("Headset is initializing");
-            Chroma.Initialize();
-        }
-
-        /// <summary>
-        /// Gets the application-wide instance of the <see cref="IHeadset" /> interface.
-        /// </summary>
-        public static IHeadset Instance
-        {
-            get
-            {
-                return _instance ?? (_instance = new Headset());
-            }
-        }
-
-        /// <summary>
-        /// Sets the color of all components on this device.
-        /// </summary>
-        /// <param name="color">Color to set.</param>
-        public override void SetAll(Color color)
-        {
-            SetStatic(new Static(color));
-        }
-
-        /// <summary>
         /// Sets an effect on the headset that doesn't
         /// take any parameters, currently only valid
         /// for the <see cref="Effect.SpectrumCycling" /> effect.
         /// </summary>
         /// <param name="effect">The type of effect to set.</param>
-        public void SetEffect(Effect effect)
+        [Obsolete("Set is deprecated, please use SetEffect.", false)]
+        public void Set(Effect effect)
         {
-            SetGuid(NativeWrapper.CreateHeadsetEffect(effect));
+            SetEffect(effect);
         }
 
         /// <summary>
@@ -96,9 +57,10 @@ namespace Corale.Colore.Core
         /// An instance of the <see cref="Static" /> struct
         /// describing the effect.
         /// </param>
-        public void SetStatic(Static effect)
+        [Obsolete("Set is deprecated, please use SetStatic.", false)]
+        public void Set(Static effect)
         {
-            SetGuid(NativeWrapper.CreateHeadsetEffect(effect));
+            SetStatic(effect);
         }
 
         /// <summary>
@@ -108,9 +70,10 @@ namespace Corale.Colore.Core
         /// An instance of the <see cref="Breathing" /> struct
         /// describing the effect.
         /// </param>
-        public void SetBreathing(Breathing effect)
+        [Obsolete("Set is deprecated, please use SetBreathing.", false)]
+        public void Set(Breathing effect)
         {
-            SetGuid(NativeWrapper.CreateHeadsetEffect(effect));
+            SetBreathing(effect);
         }
     }
 }
