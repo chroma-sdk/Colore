@@ -105,7 +105,7 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         public override void SetAll(Color color)
         {
-            Set(NativeWrapper.CreateKeypadEffect(new Static(color)));
+            SetGuid(NativeWrapper.CreateKeypadEffect(new Static(color)));
         }
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">Effect options.</param>
         public void Set(Effect effect)
         {
-            Set(NativeWrapper.CreateKeypadEffect(effect));
+            SetGuid(NativeWrapper.CreateKeypadEffect(effect));
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">An instance of the <see cref="Breathing" /> struct.</param>
         public void Set(Breathing effect)
         {
-            Set(NativeWrapper.CreateKeypadEffect(effect));
+            SetGuid(NativeWrapper.CreateKeypadEffect(effect));
         }
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
         public void Set(Custom effect)
         {
-            Set(NativeWrapper.CreateKeypadEffect(effect));
+            SetGuid(NativeWrapper.CreateKeypadEffect(effect));
         }
 
         /// <summary>
@@ -142,7 +142,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">An instance of the <see cref="Reactive" /> struct.</param>
         public void Set(Reactive effect)
         {
-            Set(NativeWrapper.CreateKeypadEffect(effect));
+            SetGuid(NativeWrapper.CreateKeypadEffect(effect));
         }
 
         /// <summary>
@@ -151,7 +151,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
         public void Set(Static effect)
         {
-            Set(NativeWrapper.CreateKeypadEffect(effect));
+            SetGuid(NativeWrapper.CreateKeypadEffect(effect));
         }
 
         /// <summary>
@@ -160,7 +160,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">An instance of the <see cref="Wave" /> struct.</param>
         public void Set(Wave effect)
         {
-            Set(NativeWrapper.CreateKeypadEffect(effect));
+            SetGuid(NativeWrapper.CreateKeypadEffect(effect));
         }
     }
 }

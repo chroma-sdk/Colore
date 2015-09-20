@@ -75,7 +75,7 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         public override void SetAll(Color color)
         {
-            Set(NativeWrapper.CreateMousepadEffect(new Static(color)));
+            SetGuid(NativeWrapper.CreateMousepadEffect(new Static(color)));
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">Effect options.</param>
         public void SetEffect(Effect effect)
         {
-            Set(NativeWrapper.CreateMousepadEffect(effect));
+            SetGuid(NativeWrapper.CreateMousepadEffect(effect));
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">An instance of the <see cref="Breathing" /> struct.</param>
         public void SetBreathing(Breathing effect)
         {
-            Set(NativeWrapper.CreateMousepadEffect(effect));
+            SetGuid(NativeWrapper.CreateMousepadEffect(effect));
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
         public void SetStatic(Static effect)
         {
-            Set(NativeWrapper.CreateMousepadEffect(effect));
+            SetGuid(NativeWrapper.CreateMousepadEffect(effect));
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">An instance of the <see cref="Wave" /> struct.</param>
         public void SetWave(Wave effect)
         {
-            Set(NativeWrapper.CreateMousepadEffect(effect));
+            SetGuid(NativeWrapper.CreateMousepadEffect(effect));
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
         public void SetCustom(Custom effect)
         {
-            Set(NativeWrapper.CreateMousepadEffect(effect));
+            SetGuid(NativeWrapper.CreateMousepadEffect(effect));
         }
     }
 }

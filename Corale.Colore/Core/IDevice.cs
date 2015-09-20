@@ -63,6 +63,6 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="guid">GUID to set.</param>
         [PublicAPI]
-        void Set(Guid guid);
+        void SetGuid(Guid guid);
     }
 }

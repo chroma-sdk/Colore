@@ -442,7 +442,7 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Set effect.
+        /// SetGuid effect.
         /// </summary>
         /// <param name="guid">Effect ID to set.</param>
         internal static void SetEffect(Guid guid)

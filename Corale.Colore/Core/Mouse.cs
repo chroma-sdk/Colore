@@ -80,7 +80,7 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         public void Set(Led led, Color color)
         {
-            Set(NativeWrapper.CreateMouseEffect(new Static(led, color)));
+            SetGuid(NativeWrapper.CreateMouseEffect(new Static(led, color)));
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">Effect options.</param>
         public void Set(Effect effect)
         {
-            Set(NativeWrapper.CreateMouseEffect(effect));
+            SetGuid(NativeWrapper.CreateMouseEffect(effect));
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">An instance of the <see cref="Breathing" /> effect.</param>
         public void Set(Breathing effect)
         {
-            Set(NativeWrapper.CreateMouseEffect(effect));
+            SetGuid(NativeWrapper.CreateMouseEffect(effect));
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">An instance of the <see cref="Static" /> effect.</param>
         public void Set(Static effect)
         {
-            Set(NativeWrapper.CreateMouseEffect(effect));
+            SetGuid(NativeWrapper.CreateMouseEffect(effect));
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">An instance of the <see cref="Blinking" /> effect.</param>
         public void Set(Blinking effect)
         {
-            Set(NativeWrapper.CreateMouseEffect(effect));
+            SetGuid(NativeWrapper.CreateMouseEffect(effect));
         }
 
         /// <summary>
@@ -126,7 +126,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">Effect options struct.</param>
         public void Set(Reactive effect)
         {
-            Set(NativeWrapper.CreateMouseEffect(effect));
+            SetGuid(NativeWrapper.CreateMouseEffect(effect));
         }
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">Effect options struct.</param>
         public void Set(SpectrumCycling effect)
         {
-            Set(NativeWrapper.CreateMouseEffect(effect));
+            SetGuid(NativeWrapper.CreateMouseEffect(effect));
         }
 
         /// <summary>
@@ -144,7 +144,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">Effect options struct.</param>
         public void Set(Wave effect)
         {
-            Set(NativeWrapper.CreateMouseEffect(effect));
+            SetGuid(NativeWrapper.CreateMouseEffect(effect));
         }
 
         /// <summary>
@@ -153,7 +153,7 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         public override void SetAll(Color color)
         {
-            Set(NativeWrapper.CreateMouseEffect(new Static(Led.All, color)));
+            SetGuid(NativeWrapper.CreateMouseEffect(new Static(Led.All, color)));
         }
     }
 }

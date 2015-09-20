@@ -60,7 +60,7 @@ namespace Corale.Colore.Core
         /// Updates the device to use the effect pointed to by the specified GUID.
         /// </summary>
         /// <param name="guid">GUID to set.</param>
-        public void Set(Guid guid)
+        public void SetGuid(Guid guid)
         {
             if (CurrentEffectId != Guid.Empty)
             {

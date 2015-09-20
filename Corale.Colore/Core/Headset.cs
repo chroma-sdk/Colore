@@ -86,7 +86,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">The type of effect to set.</param>
         public void Set(Effect effect)
         {
-            Set(NativeWrapper.CreateHeadsetEffect(effect));
+            SetGuid(NativeWrapper.CreateHeadsetEffect(effect));
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Corale.Colore.Core
         /// </param>
         public void Set(Static effect)
         {
-            Set(NativeWrapper.CreateHeadsetEffect(effect));
+            SetGuid(NativeWrapper.CreateHeadsetEffect(effect));
         }
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace Corale.Colore.Core
         /// </param>
         public void Set(Breathing effect)
         {
-            Set(NativeWrapper.CreateHeadsetEffect(effect));
+            SetGuid(NativeWrapper.CreateHeadsetEffect(effect));
         }
     }
 }

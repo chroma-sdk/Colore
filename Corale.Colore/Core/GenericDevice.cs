@@ -112,7 +112,7 @@ namespace Corale.Colore.Core
 
             try
             {
-                Set(NativeWrapper.CreateEffect(DeviceId, Effect.Static, colorPtr));
+                SetGuid(NativeWrapper.CreateEffect(DeviceId, Effect.Static, colorPtr));
             }
             finally
             {
@@ -136,7 +136,7 @@ namespace Corale.Colore.Core
         /// <param name="param">Effect-specific parameter to use.</param>
         public void Set(Effect effect, IntPtr param)
         {
-            Set(NativeWrapper.CreateEffect(DeviceId, effect, param));
+            SetGuid(NativeWrapper.CreateEffect(DeviceId, effect, param));
         }
     }
 }

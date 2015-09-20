@@ -123,7 +123,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="direction">Direction of the wave.</param>
         [PublicAPI]
-        void SetWaveWithDirection(Direction direction);
+        void SetWave(Direction direction);
 
         /// <summary>
         /// Sets an effect without any parameters.
@@ -150,7 +150,7 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         /// <param name="clear">If <c>true</c>, the keyboard will first be cleared before setting the key.</param>
         [PublicAPI]
-        void SetKeyColor(Key key, Color color, bool clear = false);
+        void SetKey(Key key, Color color, bool clear = false);
 
         /// <summary>
         /// Sets the specified color on a set of keys.
@@ -159,7 +159,7 @@ namespace Corale.Colore.Core
         /// <param name="key">First key to change.</param>
         /// <param name="keys">Additional keys that should also have the color applied.</param>
         [PublicAPI]
-        void SetKeyGroupColor(Color color, Key key, params Key[] keys);
+        void SetKeyGroup(Color color, Key key, params Key[] keys);
 
         /// <summary>
         /// Sets a color on a collection of keys.
@@ -168,7 +168,7 @@ namespace Corale.Colore.Core
         /// <param name="color">The <see cref="Color" /> to apply.</param>
         /// <param name="clear">If <c>true</c>, the keyboard will first be cleared before setting the keys.</param>
         [PublicAPI]
-        void SetKeyGroupColor(IEnumerable<Key> keys, Color color, bool clear = false);
+        void SetKeyGroup(IEnumerable<Key> keys, Color color, bool clear = false);
 
         /// <summary>
         /// Sets a reactive effect on the keyboard.
