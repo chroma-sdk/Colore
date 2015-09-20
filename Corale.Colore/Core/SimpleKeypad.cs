@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Keypad.cs" company="Corale">
+// <copyright file="SimpleKeypad.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -30,10 +30,8 @@
 
 namespace Corale.Colore.Core
 {
-    using Corale.Colore.Razer.Keypad;
+    using System;
     using Corale.Colore.Razer.Keypad.Effects;
-
-    using log4net;
 
     /// <summary>
     /// Class for interacting with a Chroma keypad.
@@ -41,126 +39,64 @@ namespace Corale.Colore.Core
     public sealed partial class Keypad : Device, IKeypad
     {
         /// <summary>
-        /// Logger instance for this class.
-        /// </summary>
-        private static readonly ILog Log = LogManager.GetLogger(typeof(Keypad));
-
-        /// <summary>
-        /// Singleton instance of this class.
-        /// </summary>
-        private static IKeypad _instance;
-
-        /// <summary>
-        /// Internal instance of a <see cref="Custom" /> struct used for
-        /// the indexer.
-        /// </summary>
-        private Custom _custom;
-
-        /// <summary>
-        /// Prevents a default instance of the <see cref="Keypad" /> class from being created.
-        /// </summary>
-        private Keypad()
-        {
-            Log.Debug("Keypad is initializing");
-            Chroma.Initialize();
-
-            _custom = new Custom(Color.Black);
-        }
-
-        /// <summary>
-        /// Gets the application-wide instance of the <see cref="IKeypad" /> interface.
-        /// </summary>
-        public static IKeypad Instance
-        {
-            get
-            {
-                return _instance ?? (_instance = new Keypad());
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets a color at the specified position in the keypad's
-        /// grid layout.
-        /// </summary>
-        /// <param name="row">The row to access (between <c>0</c> and <see cref="Constants.MaxRows" />).</param>
-        /// <param name="column">The column to access (between <c>0</c> and <see cref="Constants.MaxColumns" />).</param>
-        /// <returns>The <see cref="Color" /> at the specified position.</returns>
-        public Color this[int row, int column]
-        {
-            get
-            {
-                return _custom[row, column];
-            }
-
-            set
-            {
-                _custom[row, column] = value;
-                SetCustom(_custom);
-            }
-        }
-
-        /// <summary>
-        /// Sets the color of all components on this device.
-        /// </summary>
-        /// <param name="color">Color to set.</param>
-        public override void SetAll(Color color)
-        {
-            SetGuid(NativeWrapper.CreateKeypadEffect(new Static(color)));
-        }
-
-        /// <summary>
         /// Sets an effect without any parameters.
         /// Currently, this only works for the <see cref="Effect.None" /> effect.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        public void SetEffect(Effect effect)
+        [Obsolete("Set is deprecated, please use SetEffect.", false)]
+        public void Set(Effect effect)
         {
-            SetGuid(NativeWrapper.CreateKeypadEffect(effect));
+            SetEffect(effect);
         }
 
         /// <summary>
         /// Sets a <see cref="Breathing" /> effect on the keypad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Breathing" /> struct.</param>
-        public void SetBreathing(Breathing effect)
+        [Obsolete("Set is deprecated, please use SetBreathing.", false)]
+        public void Set(Breathing effect)
         {
-            SetGuid(NativeWrapper.CreateKeypadEffect(effect));
+            SetBreathing(effect);
         }
 
         /// <summary>
         /// Sets a <see cref="Custom" /> effect on the keypad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
-        public void SetCustom(Custom effect)
+        [Obsolete("Set is deprecated, please use SetCustom.", false)]
+        public void Set(Custom effect)
         {
-            SetGuid(NativeWrapper.CreateKeypadEffect(effect));
+            SetCustom(effect);
         }
 
         /// <summary>
         /// Sets a <see cref="Reactive" /> effect on the keypad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Reactive" /> struct.</param>
-        public void SetReactive(Reactive effect)
+        [Obsolete("Set is deprecated, please use SetReactive.", false)]
+        public void Set(Reactive effect)
         {
-            SetGuid(NativeWrapper.CreateKeypadEffect(effect));
+           SetReactive(effect);
         }
 
         /// <summary>
         /// Sets a <see cref="Static" /> effect on the keypad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
-        public void SetStatic(Static effect)
+        [Obsolete("Set is deprecated, please use SetStatic.", false)]
+        public void Set(Static effect)
         {
-            SetGuid(NativeWrapper.CreateKeypadEffect(effect));
+            SetStatic(effect);
         }
 
         /// <summary>
         /// Sets a <see cref="Wave" /> effect on the keypad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Wave" /> struct.</param>
-        public void SetWave(Wave effect)
+        [Obsolete("Set is deprecated, please use SetWave.", false)]
+        public void Set(Wave effect)
         {
-            SetGuid(NativeWrapper.CreateKeypadEffect(effect));
+            SetWave(effect);
         }
     }
 }
