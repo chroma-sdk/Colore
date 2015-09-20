@@ -43,7 +43,7 @@ namespace Corale.Colore.Core
         /// Currently, this only works for the <see cref="Effect.None" /> effect.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        [Obsolete("Set is deprecated, please use SetEffect.", false)]
+        [Obsolete("Set is deprecated, please use SetEffect(Effect).", false)]
         public void Set(Effect effect)
         {
             SetEffect(effect);
@@ -53,7 +53,7 @@ namespace Corale.Colore.Core
         /// Sets a <see cref="Breathing" /> effect on the keypad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Breathing" /> struct.</param>
-        [Obsolete("Set is deprecated, please use SetBreathing.", false)]
+        [Obsolete("Set is deprecated, please use SetBreathing(Breathing).", false)]
         public void Set(Breathing effect)
         {
             SetBreathing(effect);
@@ -63,7 +63,7 @@ namespace Corale.Colore.Core
         /// Sets a <see cref="Custom" /> effect on the keypad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
-        [Obsolete("Set is deprecated, please use SetCustom.", false)]
+        [Obsolete("Set is deprecated, please use SetCustom(Custom).", false)]
         public void Set(Custom effect)
         {
             SetCustom(effect);
@@ -73,7 +73,7 @@ namespace Corale.Colore.Core
         /// Sets a <see cref="Reactive" /> effect on the keypad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Reactive" /> struct.</param>
-        [Obsolete("Set is deprecated, please use SetReactive.", false)]
+        [Obsolete("Set is deprecated, please use SetReactive(Reactive).", false)]
         public void Set(Reactive effect)
         {
            SetReactive(effect);
@@ -83,7 +83,7 @@ namespace Corale.Colore.Core
         /// Sets a <see cref="Static" /> effect on the keypad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
-        [Obsolete("Set is deprecated, please use SetStatic.", false)]
+        [Obsolete("Set is deprecated, please use SetStatic(Static).", false)]
         public void Set(Static effect)
         {
             SetStatic(effect);
@@ -93,7 +93,7 @@ namespace Corale.Colore.Core
         /// Sets a <see cref="Wave" /> effect on the keypad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Wave" /> struct.</param>
-        [Obsolete("Set is deprecated, please use SetWave.", false)]
+        [Obsolete("Set is deprecated, please use SetWave(Wave).", false)]
         public void Set(Wave effect)
         {
             SetWave(effect);

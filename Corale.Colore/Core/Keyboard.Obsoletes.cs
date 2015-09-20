@@ -45,7 +45,7 @@ namespace Corale.Colore.Core
         /// Sets a breathing effect on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        [Obsolete("Set is deprecated, please use SetBreathing.", false)]
+        [Obsolete("Set is deprecated, please use SetBreathing(Breathing).", false)]
         public void Set(Breathing effect)
         {
             SetBreathing(effect);
@@ -55,7 +55,7 @@ namespace Corale.Colore.Core
         /// Sets the color of all keys on the keyboard.
         /// </summary>
         /// <param name="color">Color to set.</param>
-        [Obsolete("Set is deprecated, please use SetAll.", false)]
+        [Obsolete("Set is deprecated, please use SetAll(Color).", false)]
         public void Set(Color color)
         {
             SetAll(color);
@@ -67,7 +67,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="first">Color to start from.</param>
         /// <param name="second">Color to reach, before going back to <paramref name="first" />.</param>
-        [Obsolete("Set is deprecated, please use SetBreathing.", false)]
+        [Obsolete("Set is deprecated, please use SetBreathing(Color, Color).", false)]
         public void Set(Color first, Color second)
         {
             SetBreathing(new Breathing(first, second));
@@ -79,7 +79,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="color">Color to emit on key press.</param>
         /// <param name="duration">How long to illuminate the key after being pressed.</param>
-        [Obsolete("Set is deprecated, please use SetReactive.", false)]
+        [Obsolete("Set is deprecated, please use SetReactive(Color, Duration).", false)]
         public void Set(Color color, Duration duration)
         {
             SetReactive(color, duration);
@@ -97,7 +97,7 @@ namespace Corale.Colore.Core
         /// This will overwrite the internal <see cref="Custom" />
         /// struct in the <see cref="Keyboard" /> class.
         /// </remarks>
-        [Obsolete("Set is deprecated, please use SetCustom.", false)]
+        [Obsolete("Set is deprecated, please use SetGrid(Color[][]).", false)]
         public void Set(Color[][] colors)
         {
             SetGrid(colors);
@@ -111,7 +111,7 @@ namespace Corale.Colore.Core
         /// This will overwrite the current internal <see cref="Custom" />
         /// struct in the <see cref="Keyboard" /> class.
         /// </remarks>
-        [Obsolete("Set is deprecated, please use SetCustom.", false)]
+        [Obsolete("Set is deprecated, please use SetCustom(Custom).", false)]
         public void Set(Custom effect)
         {
            SetCustom(effect);
@@ -121,7 +121,7 @@ namespace Corale.Colore.Core
         /// Sets a wave effect on the keyboard in the specified direction.
         /// </summary>
         /// <param name="direction">Direction of the wave.</param>
-        [Obsolete("Set is deprecated, please use SetWave.", false)]
+        [Obsolete("Set is deprecated, please use SetWave(Direction).", false)]
         public void Set(Direction direction)
         {
             SetWave(direction);
@@ -132,7 +132,7 @@ namespace Corale.Colore.Core
         /// Currently, this only works for the <see cref="Effect.None" /> and <see cref="Effect.SpectrumCycling" /> effects.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        [Obsolete("Set is deprecated, please use SetEffect.", false)]
+        [Obsolete("Set is deprecated, please use SetEffect(Effect).", false)]
         public void Set(Effect effect)
         {
             SetEffect(effect);
@@ -146,7 +146,7 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         /// <param name="clear">Whether or not to clear the existing colors before setting this one.</param>
         /// <exception cref="ArgumentException">Thrown if the row or column parameters are outside the valid ranges.</exception>
-        [Obsolete("Set is deprecated, please use SetPosition.", false)]
+        [Obsolete("Set is deprecated, please use SetPosition(Size, Size, Color, bool).", false)]
         public void Set(Size row, Size column, Color color, bool clear = false)
         {
             SetPosition(row, column, color, clear);
@@ -158,7 +158,7 @@ namespace Corale.Colore.Core
         /// <param name="key">Key to modify.</param>
         /// <param name="color">Color to set.</param>
         /// <param name="clear">If true, the keyboard will first be cleared before setting the key.</param>
-        [Obsolete("Set is deprecated, please use SetKey.", false)]
+        [Obsolete("Set is deprecated, please use SetKey(Key, Color, bool).", false)]
         public void Set(Key key, Color color, bool clear = false)
         {
             SetKey(key, color, clear);
@@ -170,7 +170,7 @@ namespace Corale.Colore.Core
         /// <param name="color">The <see cref="Color" /> to apply.</param>
         /// <param name="key">First key to change.</param>
         /// <param name="keys">Additional keys that should also have the color applied.</param>
-        [Obsolete("Set is deprecated, please use SetKeyGroup.", false)]
+        [Obsolete("Set is deprecated, please use SetKeys(Color, Key, Key[][]).", false)]
         public void Set(Color color, Key key, params Key[] keys)
         {
             SetKeys(color, key, keys);
@@ -185,7 +185,7 @@ namespace Corale.Colore.Core
         /// If <c>true</c>, the keyboard keys will be cleared before
         /// applying the new colors.
         /// </param>
-        [Obsolete("Set is deprecated, please use SetKeyGroup.", false)]
+        [Obsolete("Set is deprecated, please use SetKeys(INumerable<Key>, Color, bool).", false)]
         public void Set(IEnumerable<Key> keys, Color color, bool clear = false)
         {
             SetKeys(keys, color, clear);
@@ -195,7 +195,7 @@ namespace Corale.Colore.Core
         /// Sets a reactive effect on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        [Obsolete("Set is deprecated, please use SetReactive.", false)]
+        [Obsolete("Set is deprecated, please use SetReactive(Reactive).", false)]
         public void Set(Reactive effect)
         {
             SetReactive(effect);
@@ -205,7 +205,7 @@ namespace Corale.Colore.Core
         /// Sets a static color on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        [Obsolete("Set is deprecated, please use SetStatic.", false)]
+        [Obsolete("Set is deprecated, please use SetStatic(Static).", false)]
         public void Set(Static effect)
         {
             SetStatic(effect);
@@ -215,7 +215,7 @@ namespace Corale.Colore.Core
         /// Sets a wave effect on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        [Obsolete("Set is deprecated, please use SetWave.", false)]
+        [Obsolete("Set is deprecated, please use SetWave(Wave).", false)]
         public void Set(Wave effect)
         {
             SetWave(effect);

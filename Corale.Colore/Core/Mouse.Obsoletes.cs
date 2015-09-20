@@ -45,7 +45,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="led">Which LED to modify.</param>
         /// <param name="color">Color to set.</param>
-        [Obsolete("Set is deprecated, please use SetLed.", false)]
+        [Obsolete("Set is deprecated, please use SetLed(Led, Color).", false)]
         public void Set(Led led, Color color)
         {
             SetLed(led, color);
@@ -56,7 +56,7 @@ namespace Corale.Colore.Core
         /// Currently, this only works for the <see cref="Effect.None" /> effect.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        [Obsolete("Set is deprecated, please use SetEffect.", false)]
+        [Obsolete("Set is deprecated, please use SetEffect(Effect).", false)]
         public void Set(Effect effect)
         {
             SetEffect(effect);
@@ -66,7 +66,7 @@ namespace Corale.Colore.Core
         /// Sets a breathing effect on the mouse.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Breathing" /> effect.</param>
-        [Obsolete("Set is deprecated, please use SetBreathing.", false)]
+        [Obsolete("Set is deprecated, please use SetBreathing(Breathing).", false)]
         public void Set(Breathing effect)
         {
             SetBreathing(effect);
@@ -76,7 +76,7 @@ namespace Corale.Colore.Core
         /// Sets a static color on the mouse.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Static" /> effect.</param>
-        [Obsolete("Set is deprecated, please use SetStatic.", false)]
+        [Obsolete("Set is deprecated, please use SetStatic(Static).", false)]
         public void Set(Static effect)
         {
             SetStatic(effect);
@@ -86,7 +86,7 @@ namespace Corale.Colore.Core
         /// Starts a blinking effect on the specified LED.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Blinking" /> effect.</param>
-        [Obsolete("Set is deprecated, please use SetBlinking.", false)]
+        [Obsolete("Set is deprecated, please use SetBlinking(Blinking).", false)]
         public void Set(Blinking effect)
         {
             SetBlinking(effect);
@@ -96,7 +96,7 @@ namespace Corale.Colore.Core
         /// Sets a reactive effect on the mouse.
         /// </summary>
         /// <param name="effect">Effect options struct.</param>
-        [Obsolete("Set is deprecated, please use SetReactive.", false)]
+        [Obsolete("Set is deprecated, please use SetReactive(Reactive).", false)]
         public void Set(Reactive effect)
         {
             SetReactive(effect);
@@ -106,7 +106,7 @@ namespace Corale.Colore.Core
         /// Sets a spectrum cycling effect on the mouse.
         /// </summary>
         /// <param name="effect">Effect options struct.</param>
-        [Obsolete("Set is deprecated, please use SetSpectrumCycling.", false)]
+        [Obsolete("Set is deprecated, please use SetSpectrumCycling(SpectrumCycling).", false)]
         public void Set(SpectrumCycling effect)
         {
             SetSpectrumCycling(effect);
@@ -116,7 +116,7 @@ namespace Corale.Colore.Core
         /// Sets a wave effect on the mouse.
         /// </summary>
         /// <param name="effect">Effect options struct.</param>
-        [Obsolete("Set is deprecated, please use SetWave.", false)]
+        [Obsolete("Set is deprecated, please use SetWave(Wave).", false)]
         public void Set(Wave effect)
         {
             SetWave(effect);

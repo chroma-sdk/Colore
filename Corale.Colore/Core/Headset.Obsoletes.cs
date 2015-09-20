@@ -44,7 +44,7 @@ namespace Corale.Colore.Core
         /// for the <see cref="Effect.SpectrumCycling" /> effect.
         /// </summary>
         /// <param name="effect">The type of effect to set.</param>
-        [Obsolete("Set is deprecated, please use SetEffect.", false)]
+        [Obsolete("Set is deprecated, please use SetEffect(Effect).", false)]
         public void Set(Effect effect)
         {
             SetEffect(effect);
@@ -57,7 +57,7 @@ namespace Corale.Colore.Core
         /// An instance of the <see cref="Static" /> struct
         /// describing the effect.
         /// </param>
-        [Obsolete("Set is deprecated, please use SetStatic.", false)]
+        [Obsolete("Set is deprecated, please use SetStatic(Static).", false)]
         public void Set(Static effect)
         {
             SetStatic(effect);
@@ -70,7 +70,7 @@ namespace Corale.Colore.Core
         /// An instance of the <see cref="Breathing" /> struct
         /// describing the effect.
         /// </param>
-        [Obsolete("Set is deprecated, please use SetBreathing.", false)]
+        [Obsolete("Set is deprecated, please use SetBreathing(Breathing).", false)]
         public void Set(Breathing effect)
         {
             SetBreathing(effect);
