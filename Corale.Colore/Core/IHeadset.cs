@@ -43,7 +43,7 @@ namespace Corale.Colore.Core
         /// for the <see cref="Effect.SpectrumCycling" /> effect.
         /// </summary>
         /// <param name="effect">The type of effect to set.</param>
-        void Set(Effect effect);
+        void SetEffect(Effect effect);
 
         /// <summary>
         /// Sets a new static effect on the headset.
@@ -52,7 +52,7 @@ namespace Corale.Colore.Core
         /// An instance of the <see cref="Static" /> struct
         /// describing the effect.
         /// </param>
-        void Set(Static effect);
+        void SetStatic(Static effect);
 
         /// <summary>
         /// Sets a new breathing effect on the headset.
@@ -61,6 +61,6 @@ namespace Corale.Colore.Core
         /// An instance of the <see cref="Breathing" /> struct
         /// describing the effect.
         /// </param>
-        void Set(Breathing effect);
+        void SetBreathing(Breathing effect);
     }
 }

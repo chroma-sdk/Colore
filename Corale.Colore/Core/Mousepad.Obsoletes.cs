@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="IMousepad.cs" company="Corale">
+// <copyright file="Mousepad.Obsoletes.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -30,48 +30,63 @@
 
 namespace Corale.Colore.Core
 {
-    using Corale.Colore.Annotations;
+    using System;
     using Corale.Colore.Razer.Mousepad.Effects;
 
     /// <summary>
-    /// Interface for mouse pad functionality.
+    /// Class for interacting with a Chroma mouse pad.
     /// </summary>
-    public interface IMousepad : IDevice
+    public sealed partial class Mousepad
     {
-        /// <summary>
-        /// Sets a breathing effect on the mouse pad.
-        /// </summary>
-        /// <param name="effect">An instance of the <see cref="Breathing" /> struct.</param>
-        [PublicAPI]
-        void SetBreathing(Breathing effect);
-
-        /// <summary>
-        /// Sets a static color effect on the mouse pad.
-        /// </summary>
-        /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
-        [PublicAPI]
-        void SetStatic(Static effect);
-
-        /// <summary>
-        /// Sets a wave effect on the mouse pad.
-        /// </summary>
-        /// <param name="effect">An instance of the <see cref="Wave" /> struct.</param>
-        [PublicAPI]
-        void SetWave(Wave effect);
-
-        /// <summary>
-        /// Sets a custom effect on the mouse pad.
-        /// </summary>
-        /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
-        [PublicAPI]
-        void SetCustom(Custom effect);
-
         /// <summary>
         /// Sets an effect without any parameters.
         /// Currently, this only works for the <see cref="Effect.None" /> effect.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        [PublicAPI]
-        void SetEffect(Effect effect);
+        [Obsolete("Set is deprecated, please use SetEffect(Effect).", false)]
+        public void Set(Effect effect)
+        {
+            SetGuid(NativeWrapper.CreateMousepadEffect(effect));
+        }
+
+        /// <summary>
+        /// Sets a breathing effect on the mouse pad.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="Breathing" /> struct.</param>
+        [Obsolete("Set is deprecated, please use SetBreathing(Breathing).", false)]
+        public void Set(Breathing effect)
+        {
+            SetGuid(NativeWrapper.CreateMousepadEffect(effect));
+        }
+
+        /// <summary>
+        /// Sets a static color effect on the mouse pad.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
+        [Obsolete("Set is deprecated, please use SetStatic(Static).", false)]
+        public void Set(Static effect)
+        {
+            SetGuid(NativeWrapper.CreateMousepadEffect(effect));
+        }
+
+        /// <summary>
+        /// Sets a wave effect on the mouse pad.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="Wave" /> struct.</param>
+        [Obsolete("Set is deprecated, please use SetWave(Wave).", false)]
+        public void Set(Wave effect)
+        {
+            SetGuid(NativeWrapper.CreateMousepadEffect(effect));
+        }
+
+        /// <summary>
+        /// Sets a custom effect on the mouse pad.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
+        [Obsolete("Set is deprecated, please use SetCustom(Custom).", false)]
+        public void Set(Custom effect)
+        {
+            SetGuid(NativeWrapper.CreateMousepadEffect(effect));
+        }
     }
 }

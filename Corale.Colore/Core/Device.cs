@@ -47,20 +47,20 @@ namespace Corale.Colore.Core
         /// </summary>
         public void Clear()
         {
-            Set(Color.Black);
+            SetAll(Color.Black);
         }
 
         /// <summary>
         /// Sets the color of all components on this device.
         /// </summary>
         /// <param name="color">Color to set.</param>
-        public abstract void Set(Color color);
+        public abstract void SetAll(Color color);
 
         /// <summary>
         /// Updates the device to use the effect pointed to by the specified GUID.
         /// </summary>
         /// <param name="guid">GUID to set.</param>
-        public void Set(Guid guid)
+        public void SetGuid(Guid guid)
         {
             if (CurrentEffectId != Guid.Empty)
             {

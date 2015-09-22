@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="IKeypad.cs" company="Corale">
+// <copyright file="Keypad.Obsoletes.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -30,66 +30,73 @@
 
 namespace Corale.Colore.Core
 {
-    using Corale.Colore.Annotations;
-    using Corale.Colore.Razer.Keypad;
+    using System;
     using Corale.Colore.Razer.Keypad.Effects;
 
     /// <summary>
-    /// Interface for keypad functions.
+    /// Class for interacting with a Chroma keypad.
     /// </summary>
-    public interface IKeypad : IDevice
+    public sealed partial class Keypad : Device, IKeypad
     {
-        /// <summary>
-        /// Gets or sets a color at the specified position in the keypad's
-        /// grid layout.
-        /// </summary>
-        /// <param name="row">The row to access (between <c>0</c> and <see cref="Constants.MaxRows" />).</param>
-        /// <param name="column">The column to access (between <c>0</c> and <see cref="Constants.MaxColumns" />).</param>
-        /// <returns>The <see cref="Color" /> at the specified position.</returns>
-        [PublicAPI]
-        Color this[int row, int column] { get; set; }
-
-        /// <summary>
-        /// Sets a <see cref="Breathing" /> effect on the keypad.
-        /// </summary>
-        /// <param name="effect">An instance of the <see cref="Breathing" /> struct.</param>
-        [PublicAPI]
-        void SetBreathing(Breathing effect);
-
-        /// <summary>
-        /// Sets a <see cref="Custom" /> effect on the keypad.
-        /// </summary>
-        /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
-        [PublicAPI]
-        void SetCustom(Custom effect);
-
-        /// <summary>
-        /// Sets a <see cref="Reactive" /> effect on the keypad.
-        /// </summary>
-        /// <param name="effect">An instance of the <see cref="Reactive" /> struct.</param>
-        [PublicAPI]
-        void SetReactive(Reactive effect);
-
-        /// <summary>
-        /// Sets a <see cref="Static" /> effect on the keypad.
-        /// </summary>
-        /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
-        [PublicAPI]
-        void SetStatic(Static effect);
-
-        /// <summary>
-        /// Sets a <see cref="Wave" /> effect on the keypad.
-        /// </summary>
-        /// <param name="effect">An instance of the <see cref="Wave" /> struct.</param>
-        [PublicAPI]
-        void SetWave(Wave effect);
-
         /// <summary>
         /// Sets an effect without any parameters.
         /// Currently, this only works for the <see cref="Effect.None" /> effect.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        [PublicAPI]
-        void SetEffect(Effect effect);
+        [Obsolete("Set is deprecated, please use SetEffect(Effect).", false)]
+        public void Set(Effect effect)
+        {
+            SetEffect(effect);
+        }
+
+        /// <summary>
+        /// Sets a <see cref="Breathing" /> effect on the keypad.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="Breathing" /> struct.</param>
+        [Obsolete("Set is deprecated, please use SetBreathing(Breathing).", false)]
+        public void Set(Breathing effect)
+        {
+            SetBreathing(effect);
+        }
+
+        /// <summary>
+        /// Sets a <see cref="Custom" /> effect on the keypad.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
+        [Obsolete("Set is deprecated, please use SetCustom(Custom).", false)]
+        public void Set(Custom effect)
+        {
+            SetCustom(effect);
+        }
+
+        /// <summary>
+        /// Sets a <see cref="Reactive" /> effect on the keypad.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="Reactive" /> struct.</param>
+        [Obsolete("Set is deprecated, please use SetReactive(Reactive).", false)]
+        public void Set(Reactive effect)
+        {
+           SetReactive(effect);
+        }
+
+        /// <summary>
+        /// Sets a <see cref="Static" /> effect on the keypad.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
+        [Obsolete("Set is deprecated, please use SetStatic(Static).", false)]
+        public void Set(Static effect)
+        {
+            SetStatic(effect);
+        }
+
+        /// <summary>
+        /// Sets a <see cref="Wave" /> effect on the keypad.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="Wave" /> struct.</param>
+        [Obsolete("Set is deprecated, please use SetWave(Wave).", false)]
+        public void Set(Wave effect)
+        {
+            SetWave(effect);
+        }
     }
 }
