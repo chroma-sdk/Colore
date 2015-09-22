@@ -74,23 +74,6 @@ namespace Corale.Colore.Razer
             0xf3);
 
         /// <summary>
-        /// Naga Epic Chroma edition.
-        /// </summary>
-        [PublicAPI]
-        public static readonly Guid NagaEpicChroma = new Guid(
-            0x29a02acb,
-            0xb882,
-            0x4ee3,
-            0x80,
-            0x45,
-            0xae,
-            0x7a,
-            0x8a,
-            0x21,
-            0x0,
-            0x92);
-
-        /// <summary>
         /// Kraken 7.1 Chroma edition.
         /// </summary>
         [PublicAPI]
@@ -125,21 +108,72 @@ namespace Corale.Colore.Razer
             0xf2);
 
         /// <summary>
-        /// ID matching every Chroma device.
+        /// Orbweaver Chroma edition.
         /// </summary>
         [PublicAPI]
-        public static readonly Guid AllChromaDevices = new Guid(
-            0x5bf2a39c,
-            0x621b,
-            0x4b04,
-            0xba,
-            0x4d,
-            0xdf,
-            0xfc,
-            0x10,
-            0x7c,
-            0x21,
-            0x4d);
+        public static readonly Guid OrbweaverChroma = new Guid(
+            0x9d24b0ab, 
+            0x162, 
+            0x466c,
+            0x96, 
+            0x40,
+            0x7a, 
+            0x92,
+            0x4a, 
+            0xa4,
+            0xd9, 
+            0xfd);
+
+        /// <summary>
+        /// Tartarus Chroma edition.
+        /// </summary>
+        [PublicAPI]
+        public static readonly Guid TartarusChroma = new Guid(
+            0xf0545c,
+            0xe180, 
+            0x4ad1,
+            0x8e,
+            0x8a, 
+            0x41, 
+            0x90, 
+            0x61, 
+            0xce,
+            0x50, 
+            0x5e);
+
+        /// <summary>
+        /// Mamba TE Chroma edition.
+        /// </summary>
+        [PublicAPI]
+        public static readonly Guid MambaTeChroma = new Guid(
+            0x7ec00450,
+            0xe0ee, 
+            0x4289,
+            0x89, 
+            0xd5, 
+            0xd, 
+            0x87, 
+            0x9c, 
+            0x19, 
+            0x6, 
+            0x1a);
+       
+        /// <summary>
+        /// BlackWidow TE Chroma edition.
+        /// </summary>
+        [PublicAPI]
+        public static readonly Guid BlackwidowTeChroma = new Guid(
+           0xed1c1b82,
+           0xbfbe,
+           0x418f, 
+           0xb4, 
+           0x9d, 
+           0xd0, 
+           0x3f, 
+           0x5, 
+           0xb1, 
+           0x49, 
+           0xdf);
 
         /// <summary>
         /// Returns whether a specified <see cref="Guid" /> is a valid device identifier.
@@ -149,8 +183,8 @@ namespace Corale.Colore.Razer
         [PublicAPI]
         public static bool IsValidId(Guid id)
         {
-            return id == BlackwidowChroma || id == DeathadderChroma || id == NagaEpicChroma || id == Kraken71Chroma
-                   || id == FireflyChroma || id == AllChromaDevices;
+            return id == BlackwidowChroma || id == DeathadderChroma || id == OrbweaverChroma || id == TartarusChroma || id == MambaTeChroma || id == BlackwidowTeChroma || id == Kraken71Chroma
+                   || id == FireflyChroma;
         }
     }
 }
