@@ -49,16 +49,6 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Updates the device to use the effect pointed to by the specified GUID.
-        /// </summary>
-        /// <param name="guid">GUID to set.</param>
-        [Obsolete("Set is deprecated, please use SetGuid(Guid).", false)]
-        public override void Set(Guid guid)
-        {
-            SetGuid(guid);
-        }
-
-        /// <summary>
         /// Sets an effect without any parameters.
         /// Currently, this only works for the <see cref="Effect.None" /> effect.
         /// </summary>

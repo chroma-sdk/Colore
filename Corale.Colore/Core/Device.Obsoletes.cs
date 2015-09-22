@@ -49,6 +49,16 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="guid">GUID to set.</param>
         [Obsolete("Set is deprecated, please use SetGuid(Guid).", false)]
-        public abstract void Set(Guid guid);
+        public void Set(Guid guid)
+        {
+            if (CurrentEffectId != Guid.Empty)
+            {
+                NativeWrapper.DeleteEffect(CurrentEffectId);
+                CurrentEffectId = Guid.Empty;
+            }
+
+            NativeWrapper.SetEffect(guid);
+            CurrentEffectId = guid;
+        }
     }
 }

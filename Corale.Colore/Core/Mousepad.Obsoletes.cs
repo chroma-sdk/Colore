@@ -39,16 +39,6 @@ namespace Corale.Colore.Core
     public sealed partial class Mousepad
     {
         /// <summary>
-        /// Updates the device to use the effect pointed to by the specified GUID.
-        /// </summary>
-        /// <param name="guid">GUID to set.</param>
-        [Obsolete("Set is deprecated, please use SetGuid(Guid).", false)]
-        public override void Set(Guid guid)
-        {
-            SetGuid(guid);
-        }
-
-        /// <summary>
         /// Sets the color of all components on this device.
         /// </summary>
         /// <param name="color">Color to set.</param>

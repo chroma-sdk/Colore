@@ -52,16 +52,6 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Updates the device to use the effect pointed to by the specified GUID.
-        /// </summary>
-        /// <param name="guid">GUID to set.</param>
-        [Obsolete("Set is deprecated, please use SetGuid(Guid).", false)]
-        public override void Set(Guid guid)
-        {
-            SetGuid(guid);
-        }
-
-        /// <summary>
         /// Sets a breathing effect on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
