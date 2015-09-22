@@ -36,7 +36,7 @@ namespace Corale.Colore.Core
     /// <summary>
     /// Interface for mouse pad functionality.
     /// </summary>
-    public interface IMousepad : IDevice
+    public partial interface IMousepad : IDevice
     {
         /// <summary>
         /// Sets a breathing effect on the mouse pad.

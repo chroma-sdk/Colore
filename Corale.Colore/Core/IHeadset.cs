@@ -35,7 +35,7 @@ namespace Corale.Colore.Core
     /// <summary>
     /// Interface for headset functionality.
     /// </summary>
-    public interface IHeadset : IDevice
+    public partial interface IHeadset : IDevice
     {
         /// <summary>
         /// Sets an effect on the headset that doesn't

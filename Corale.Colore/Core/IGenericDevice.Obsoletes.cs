@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Headset.Obsoletes.cs" company="Corale">
+// <copyright file="IGenericDevice.Obsoletes.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -31,59 +31,24 @@
 namespace Corale.Colore.Core
 {
     using System;
-    using Corale.Colore.Razer.Headset.Effects;
+    using Corale.Colore.Razer;
 
     /// <summary>
-    /// Class for interacting with Chroma Headsets.
+    /// Interface for generic devices.
     /// </summary>
-    public sealed partial class Headset : Device, IHeadset
+    public partial interface IGenericDevice
     {
         /// <summary>
-        /// Sets the color of all components on this device.
+        /// Sets a parameter-less effect on this device.
         /// </summary>
-        /// <param name="color">Color to set.</param>
-        [Obsolete("Set is deprecated, please use SetAll(Effect).", false)]
-        public override void Set(Color color)
-        {
-            SetAll(color);
-        }
+        /// <param name="effect">Effect to set.</param>
+        void Set(Effect effect);
 
         /// <summary>
-        /// Sets an effect on the headset that doesn't
-        /// take any parameters, currently only valid
-        /// for the <see cref="Effect.SpectrumCycling" /> effect.
+        /// Sets an effect on this device, taking a parameter.
         /// </summary>
-        /// <param name="effect">The type of effect to set.</param>
-        [Obsolete("Set is deprecated, please use SetEffect(Effect).", false)]
-        public void Set(Effect effect)
-        {
-            SetEffect(effect);
-        }
-
-        /// <summary>
-        /// Sets a new static effect on the headset.
-        /// </summary>
-        /// <param name="effect">
-        /// An instance of the <see cref="Static" /> struct
-        /// describing the effect.
-        /// </param>
-        [Obsolete("Set is deprecated, please use SetStatic(Static).", false)]
-        public void Set(Static effect)
-        {
-            SetStatic(effect);
-        }
-
-        /// <summary>
-        /// Sets a new breathing effect on the headset.
-        /// </summary>
-        /// <param name="effect">
-        /// An instance of the <see cref="Breathing" /> struct
-        /// describing the effect.
-        /// </param>
-        [Obsolete("Set is deprecated, please use SetBreathing(Breathing).", false)]
-        public void Set(Breathing effect)
-        {
-            SetBreathing(effect);
-        }
+        /// <param name="effect">Effect to set.</param>
+        /// <param name="param">Effect-specific parameter to use.</param>
+        void Set(Effect effect, IntPtr param);
     }
 }
