@@ -39,6 +39,33 @@ namespace Corale.Colore.Core
     public sealed partial class Headset : Device, IHeadset
     {
         /// <summary>
+        /// Updates the device to use the effect pointed to by the specified GUID.
+        /// </summary>
+        /// <param name="guid">GUID to set.</param>
+        [Obsolete("Set is deprecated, please use SetGuid(Guid).", false)]
+        public override void Set(Guid guid)
+        {
+            if (CurrentEffectId != Guid.Empty)
+            {
+                NativeWrapper.DeleteEffect(CurrentEffectId);
+                CurrentEffectId = Guid.Empty;
+            }
+
+            NativeWrapper.SetEffect(guid);
+            CurrentEffectId = guid;
+        }
+
+        /// <summary>
+        /// Sets the color of all components on this device.
+        /// </summary>
+        /// <param name="color">Color to set.</param>
+        [Obsolete("Set is deprecated, please use SetAll(Effect).", false)]
+        public override void Set(Color color)
+        {
+            SetAll(color);
+        }
+
+        /// <summary>
         /// Sets an effect on the headset that doesn't
         /// take any parameters, currently only valid
         /// for the <see cref="Effect.SpectrumCycling" /> effect.

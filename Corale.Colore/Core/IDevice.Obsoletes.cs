@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="IGenericDevice.cs" company="Corale">
+// <copyright file="IDevice.Obsoletes.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -31,30 +31,27 @@
 namespace Corale.Colore.Core
 {
     using System;
-
-    using Corale.Colore.Razer;
+    using Corale.Colore.Annotations;
 
     /// <summary>
-    /// Interface for generic devices.
+    /// Interface for functionality common with all devices.
     /// </summary>
-    public partial interface IGenericDevice : IDevice
+    public partial interface IDevice
     {
         /// <summary>
-        /// Gets the <see cref="Guid" /> of this device.
+        /// Sets the color of all components on this device.
         /// </summary>
-        Guid DeviceId { get; }
+        /// <param name="color">Color to set.</param>
+        [Obsolete("Set is deprecated, please use SetAll(Color).", false)]
+        [PublicAPI]
+        void Set(Color color);
 
         /// <summary>
-        /// Sets a parameter-less effect on this device.
+        /// Updates the device to use the effect pointed to by the specified GUID.
         /// </summary>
-        /// <param name="effect">Effect to set.</param>
-        void SetEffect(Effect effect);
-
-        /// <summary>
-        /// Sets an effect on this device, taking a parameter.
-        /// </summary>
-        /// <param name="effect">Effect to set.</param>
-        /// <param name="param">Effect-specific parameter to use.</param>
-        void SetEffect(Effect effect, IntPtr param);
+        /// <param name="guid">GUID to set.</param>
+        [Obsolete("Set is deprecated, please use SetGuid(Guid).", false)]
+        [PublicAPI]
+        void Set(Guid guid);
     }
 }

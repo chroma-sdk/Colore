@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="IGenericDevice.cs" company="Corale">
+// <copyright file="IGenericDevice.Obsoletes.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -31,30 +31,24 @@
 namespace Corale.Colore.Core
 {
     using System;
-
     using Corale.Colore.Razer;
 
     /// <summary>
     /// Interface for generic devices.
     /// </summary>
-    public partial interface IGenericDevice : IDevice
+    public partial interface IGenericDevice
     {
-        /// <summary>
-        /// Gets the <see cref="Guid" /> of this device.
-        /// </summary>
-        Guid DeviceId { get; }
-
         /// <summary>
         /// Sets a parameter-less effect on this device.
         /// </summary>
         /// <param name="effect">Effect to set.</param>
-        void SetEffect(Effect effect);
+        void Set(Effect effect);
 
         /// <summary>
         /// Sets an effect on this device, taking a parameter.
         /// </summary>
         /// <param name="effect">Effect to set.</param>
         /// <param name="param">Effect-specific parameter to use.</param>
-        void SetEffect(Effect effect, IntPtr param);
+        void Set(Effect effect, IntPtr param);
     }
 }

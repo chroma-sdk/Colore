@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Mousepad.Obsoletes.cs" company="Corale">
+// <copyright file="GenericDevice.Obsoletes.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -31,13 +31,27 @@
 namespace Corale.Colore.Core
 {
     using System;
-    using Corale.Colore.Razer.Mousepad.Effects;
+    using System.Collections.Generic;
+    using System.Runtime.InteropServices;
+    using Corale.Colore.Annotations;
+    using Corale.Colore.Razer;
+    using log4net;
 
     /// <summary>
-    /// Class for interacting with a Chroma mouse pad.
+    /// A generic device.
     /// </summary>
-    public sealed partial class Mousepad
+    public sealed partial class GenericDevice
     {
+        /// <summary>
+        /// Sets the color of all components on this device.
+        /// </summary>
+        /// <param name="color">Color to set.</param>
+        [Obsolete("Set is deprecated, please use SetAll(Effect).", false)]
+        public override void Set(Color color)
+        {
+            SetAll(color);
+        }
+
         /// <summary>
         /// Updates the device to use the effect pointed to by the specified GUID.
         /// </summary>
@@ -56,64 +70,24 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Sets the color of all components on this device.
+        /// Sets a parameter-less effect on this device.
         /// </summary>
-        /// <param name="color">Color to set.</param>
-        [Obsolete("Set is deprecated, please use SetAll(Effect).", false)]
-        public override void Set(Color color)
-        {
-            SetAll(color);
-        }
-
-        /// <summary>
-        /// Sets an effect without any parameters.
-        /// Currently, this only works for the <see cref="Effect.None" /> effect.
-        /// </summary>
-        /// <param name="effect">Effect options.</param>
+        /// <param name="effect">Effect to set.</param>
         [Obsolete("Set is deprecated, please use SetEffect(Effect).", false)]
         public void Set(Effect effect)
         {
-            SetGuid(NativeWrapper.CreateMousepadEffect(effect));
+            SetEffect(effect, IntPtr.Zero);
         }
 
         /// <summary>
-        /// Sets a breathing effect on the mouse pad.
+        /// Sets an effect on this device, taking a parameter.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="Breathing" /> struct.</param>
-        [Obsolete("Set is deprecated, please use SetBreathing(Breathing).", false)]
-        public void Set(Breathing effect)
+        /// <param name="effect">Effect to set.</param>
+        /// <param name="param">Effect-specific parameter to use.</param>
+        [Obsolete("Set is deprecated, please use SetEffect(Effect, IntPtr).", false)]
+        public void Set(Effect effect, IntPtr param)
         {
-            SetGuid(NativeWrapper.CreateMousepadEffect(effect));
-        }
-
-        /// <summary>
-        /// Sets a static color effect on the mouse pad.
-        /// </summary>
-        /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
-        [Obsolete("Set is deprecated, please use SetStatic(Static).", false)]
-        public void Set(Static effect)
-        {
-            SetGuid(NativeWrapper.CreateMousepadEffect(effect));
-        }
-
-        /// <summary>
-        /// Sets a wave effect on the mouse pad.
-        /// </summary>
-        /// <param name="effect">An instance of the <see cref="Wave" /> struct.</param>
-        [Obsolete("Set is deprecated, please use SetWave(Wave).", false)]
-        public void Set(Wave effect)
-        {
-            SetGuid(NativeWrapper.CreateMousepadEffect(effect));
-        }
-
-        /// <summary>
-        /// Sets a custom effect on the mouse pad.
-        /// </summary>
-        /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
-        [Obsolete("Set is deprecated, please use SetCustom(Custom).", false)]
-        public void Set(Custom effect)
-        {
-            SetGuid(NativeWrapper.CreateMousepadEffect(effect));
+            SetGuid(NativeWrapper.CreateEffect(DeviceId, effect, param));
         }
     }
 }

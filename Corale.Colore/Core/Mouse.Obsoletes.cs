@@ -41,6 +41,33 @@ namespace Corale.Colore.Core
     public sealed partial class Mouse
     {
         /// <summary>
+        /// Updates the device to use the effect pointed to by the specified GUID.
+        /// </summary>
+        /// <param name="guid">GUID to set.</param>
+        [Obsolete("Set is deprecated, please use SetGuid(Guid).", false)]
+        public override void Set(Guid guid)
+        {
+            if (CurrentEffectId != Guid.Empty)
+            {
+                NativeWrapper.DeleteEffect(CurrentEffectId);
+                CurrentEffectId = Guid.Empty;
+            }
+
+            NativeWrapper.SetEffect(guid);
+            CurrentEffectId = guid;
+        }
+
+        /// <summary>
+        /// Sets the color of all components on this device.
+        /// </summary>
+        /// <param name="color">Color to set.</param>
+        [Obsolete("Set is deprecated, please use SetAll(Effect).", false)]
+        public override void Set(Color color)
+        {
+            SetAll(color);
+        }
+
+        /// <summary>
         /// Sets the color of a specific LED on the mouse.
         /// </summary>
         /// <param name="led">Which LED to modify.</param>
