@@ -183,7 +183,8 @@ namespace Corale.Colore.Razer
         [PublicAPI]
         public static bool IsValidId(Guid id)
         {
-            return id == BlackwidowChroma || id == DeathadderChroma || id == OrbweaverChroma || id == TartarusChroma || id == MambaTeChroma || id == BlackwidowTeChroma || id == Kraken71Chroma
+            return id == BlackwidowChroma || id == DeathadderChroma || id == OrbweaverChroma || id == TartarusChroma ||
+                   id == MambaTeChroma || id == BlackwidowTeChroma || id == Kraken71Chroma
                    || id == FireflyChroma;
         }
     }
