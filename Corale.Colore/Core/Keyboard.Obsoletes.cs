@@ -58,14 +58,7 @@ namespace Corale.Colore.Core
         [Obsolete("Set is deprecated, please use SetGuid(Guid).", false)]
         public override void Set(Guid guid)
         {
-            if (CurrentEffectId != Guid.Empty)
-            {
-                NativeWrapper.DeleteEffect(CurrentEffectId);
-                CurrentEffectId = Guid.Empty;
-            }
-
-            NativeWrapper.SetEffect(guid);
-            CurrentEffectId = guid;
+            SetGuid(guid);
         }
 
         /// <summary>
