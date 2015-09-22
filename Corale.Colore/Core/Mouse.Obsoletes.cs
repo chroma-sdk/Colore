@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="IMouse.cs" company="Corale">
+// <copyright file="Mouse.Obsoletes.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -30,67 +30,96 @@
 
 namespace Corale.Colore.Core
 {
-    using Corale.Colore.Annotations;
+    using System;
+
     using Corale.Colore.Razer.Mouse;
     using Corale.Colore.Razer.Mouse.Effects;
 
     /// <summary>
-    /// Interface for mouse functionality.
+    /// Class for interacting with a Chroma mouse.
     /// </summary>
-    public interface IMouse : IDevice
+    public sealed partial class Mouse
     {
         /// <summary>
         /// Sets the color of a specific LED on the mouse.
         /// </summary>
         /// <param name="led">Which LED to modify.</param>
         /// <param name="color">Color to set.</param>
-        [PublicAPI]
-        void SetLed(Led led, Color color);
+        [Obsolete("Set is deprecated, please use SetLed(Led, Color).", false)]
+        public void Set(Led led, Color color)
+        {
+            SetLed(led, color);
+        }
 
         /// <summary>
         /// Sets an effect without any parameters.
         /// Currently, this only works for the <see cref="Effect.None" /> effect.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        [PublicAPI]
-        void SetEffect(Effect effect);
+        [Obsolete("Set is deprecated, please use SetEffect(Effect).", false)]
+        public void Set(Effect effect)
+        {
+            SetEffect(effect);
+        }
 
         /// <summary>
         /// Sets a breathing effect on the mouse.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Breathing" /> effect.</param>
-        [PublicAPI]
-        void SetBreathing(Breathing effect);
+        [Obsolete("Set is deprecated, please use SetBreathing(Breathing).", false)]
+        public void Set(Breathing effect)
+        {
+            SetBreathing(effect);
+        }
 
         /// <summary>
         /// Sets a static color on the mouse.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Static" /> effect.</param>
-        [PublicAPI]
-        void SetStatic(Static effect);
+        [Obsolete("Set is deprecated, please use SetStatic(Static).", false)]
+        public void Set(Static effect)
+        {
+            SetStatic(effect);
+        }
 
         /// <summary>
         /// Starts a blinking effect on the specified LED.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Blinking" /> effect.</param>
-        void SetBlinking(Blinking effect);
+        [Obsolete("Set is deprecated, please use SetBlinking(Blinking).", false)]
+        public void Set(Blinking effect)
+        {
+            SetBlinking(effect);
+        }
 
         /// <summary>
         /// Sets a reactive effect on the mouse.
         /// </summary>
         /// <param name="effect">Effect options struct.</param>
-        void SetReactive(Reactive effect);
+        [Obsolete("Set is deprecated, please use SetReactive(Reactive).", false)]
+        public void Set(Reactive effect)
+        {
+            SetReactive(effect);
+        }
 
         /// <summary>
         /// Sets a spectrum cycling effect on the mouse.
         /// </summary>
         /// <param name="effect">Effect options struct.</param>
-        void SetSpectrumCycling(SpectrumCycling effect);
+        [Obsolete("Set is deprecated, please use SetSpectrumCycling(SpectrumCycling).", false)]
+        public void Set(SpectrumCycling effect)
+        {
+            SetSpectrumCycling(effect);
+        }
 
         /// <summary>
         /// Sets a wave effect on the mouse.
         /// </summary>
         /// <param name="effect">Effect options struct.</param>
-        void SetWave(Wave effect);
+        [Obsolete("Set is deprecated, please use SetWave(Wave).", false)]
+        public void Set(Wave effect)
+        {
+            SetWave(effect);
+        }
     }
 }

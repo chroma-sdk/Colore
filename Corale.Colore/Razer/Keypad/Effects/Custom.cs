@@ -266,7 +266,7 @@ namespace Corale.Colore.Razer.Keypad.Effects
             /// Initializes a new instance of the <see cref="Row" /> struct.
             /// </summary>
             /// <param name="colors">Colors for this row.</param>
-            internal Row(IReadOnlyList<Color> colors)
+            internal Row(IList<Color> colors)
             {
                 if (colors.Count != Constants.MaxColumns)
                 {

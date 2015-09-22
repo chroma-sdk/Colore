@@ -38,7 +38,7 @@ namespace Corale.Colore.Core
     /// <summary>
     /// Class for interacting with a Chroma keypad.
     /// </summary>
-    public sealed class Keypad : Device, IKeypad
+    public sealed partial class Keypad : Device, IKeypad
     {
         /// <summary>
         /// Logger instance for this class.
@@ -95,7 +95,7 @@ namespace Corale.Colore.Core
             set
             {
                 _custom[row, column] = value;
-                Set(_custom);
+                SetCustom(_custom);
             }
         }
 
@@ -103,54 +103,64 @@ namespace Corale.Colore.Core
         /// Sets the color of all components on this device.
         /// </summary>
         /// <param name="color">Color to set.</param>
-        public override void Set(Color color)
+        public override void SetAll(Color color)
         {
-            Set(NativeWrapper.CreateKeypadEffect(new Static(color)));
+            SetGuid(NativeWrapper.CreateKeypadEffect(new Static(color)));
+        }
+
+        /// <summary>
+        /// Sets an effect without any parameters.
+        /// Currently, this only works for the <see cref="Effect.None" /> effect.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        public void SetEffect(Effect effect)
+        {
+            SetGuid(NativeWrapper.CreateKeypadEffect(effect));
         }
 
         /// <summary>
         /// Sets a <see cref="Breathing" /> effect on the keypad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Breathing" /> struct.</param>
-        public void Set(Breathing effect)
+        public void SetBreathing(Breathing effect)
         {
-            Set(NativeWrapper.CreateKeypadEffect(effect));
+            SetGuid(NativeWrapper.CreateKeypadEffect(effect));
         }
 
         /// <summary>
         /// Sets a <see cref="Custom" /> effect on the keypad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
-        public void Set(Custom effect)
+        public void SetCustom(Custom effect)
         {
-            Set(NativeWrapper.CreateKeypadEffect(effect));
+            SetGuid(NativeWrapper.CreateKeypadEffect(effect));
         }
 
         /// <summary>
         /// Sets a <see cref="Reactive" /> effect on the keypad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Reactive" /> struct.</param>
-        public void Set(Reactive effect)
+        public void SetReactive(Reactive effect)
         {
-            Set(NativeWrapper.CreateKeypadEffect(effect));
+            SetGuid(NativeWrapper.CreateKeypadEffect(effect));
         }
 
         /// <summary>
         /// Sets a <see cref="Static" /> effect on the keypad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
-        public void Set(Static effect)
+        public void SetStatic(Static effect)
         {
-            Set(NativeWrapper.CreateKeypadEffect(effect));
+            SetGuid(NativeWrapper.CreateKeypadEffect(effect));
         }
 
         /// <summary>
         /// Sets a <see cref="Wave" /> effect on the keypad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Wave" /> struct.</param>
-        public void Set(Wave effect)
+        public void SetWave(Wave effect)
         {
-            Set(NativeWrapper.CreateKeypadEffect(effect));
+            SetGuid(NativeWrapper.CreateKeypadEffect(effect));
         }
     }
 }

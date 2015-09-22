@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="IMousepad.cs" company="Corale">
+// <copyright file="EnvironmentHelper.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,50 +28,39 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Core
+namespace Corale.Colore
 {
-    using Corale.Colore.Annotations;
-    using Corale.Colore.Razer.Mousepad.Effects;
+    using System;
+
+    using Corale.Colore.Native.Kernel32;
 
     /// <summary>
-    /// Interface for mouse pad functionality.
+    /// Helper to get the architecture of the OS.
+    /// Taken from here: http://stackoverflow.com/a/28866330/1104531
     /// </summary>
-    public interface IMousepad : IDevice
+    public static class EnvironmentHelper
     {
         /// <summary>
-        /// Sets a breathing effect on the mouse pad.
+        /// Determines whether the current system is 64-bit.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="Breathing" /> struct.</param>
-        [PublicAPI]
-        void SetBreathing(Breathing effect);
+        /// <returns><c>true</c> if the system is 64-bit.</returns>
+        public static bool Is64BitOperatingSystem()
+        {
+            // Check if this process is natively an x64 process. If it is, it will only run on x64 environments, thus, the environment must be x64.
+            if (IntPtr.Size == 8)
+                return true;
 
-        /// <summary>
-        /// Sets a static color effect on the mouse pad.
-        /// </summary>
-        /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
-        [PublicAPI]
-        void SetStatic(Static effect);
+            // Check if this process is an x86 process running on an x64 environment.
+            var moduleHandle = NativeMethods.GetModuleHandle("kernel32");
+            if (moduleHandle == IntPtr.Zero)
+                return false;
 
-        /// <summary>
-        /// Sets a wave effect on the mouse pad.
-        /// </summary>
-        /// <param name="effect">An instance of the <see cref="Wave" /> struct.</param>
-        [PublicAPI]
-        void SetWave(Wave effect);
+            var processAddress = NativeMethods.GetProcAddress(moduleHandle, "IsWow64Process");
+            if (processAddress == IntPtr.Zero)
+                return false;
 
-        /// <summary>
-        /// Sets a custom effect on the mouse pad.
-        /// </summary>
-        /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
-        [PublicAPI]
-        void SetCustom(Custom effect);
-
-        /// <summary>
-        /// Sets an effect without any parameters.
-        /// Currently, this only works for the <see cref="Effect.None" /> effect.
-        /// </summary>
-        /// <param name="effect">Effect options.</param>
-        [PublicAPI]
-        void SetEffect(Effect effect);
+            bool result;
+            return NativeMethods.IsWow64Process(NativeMethods.GetCurrentProcess(), out result) && result;
+        }
     }
 }

@@ -40,7 +40,7 @@ namespace Corale.Colore.Core
     /// Class for interacting with a Chroma mouse.
     /// </summary>
     [PublicAPI]
-    public sealed class Mouse : Device, IMouse
+    public sealed partial class Mouse : Device, IMouse
     {
         /// <summary>
         /// Logger instance for this class.
@@ -78,72 +78,82 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="led">Which LED to modify.</param>
         /// <param name="color">Color to set.</param>
-        public void Set(Led led, Color color)
+        public void SetLed(Led led, Color color)
         {
-            Set(NativeWrapper.CreateMouseEffect(new Static(led, color)));
+            SetGuid(NativeWrapper.CreateMouseEffect(new Static(led, color)));
+        }
+
+        /// <summary>
+        /// Sets an effect without any parameters.
+        /// Currently, this only works for the <see cref="Effect.None" /> effect.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        public void SetEffect(Effect effect)
+        {
+            SetGuid(NativeWrapper.CreateMouseEffect(effect));
         }
 
         /// <summary>
         /// Sets a breathing effect on the mouse.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Breathing" /> effect.</param>
-        public void Set(Breathing effect)
+        public void SetBreathing(Breathing effect)
         {
-            Set(NativeWrapper.CreateMouseEffect(effect));
+            SetGuid(NativeWrapper.CreateMouseEffect(effect));
         }
 
         /// <summary>
         /// Sets a static color on the mouse.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Static" /> effect.</param>
-        public void Set(Static effect)
+        public void SetStatic(Static effect)
         {
-            Set(NativeWrapper.CreateMouseEffect(effect));
+            SetGuid(NativeWrapper.CreateMouseEffect(effect));
         }
 
         /// <summary>
         /// Starts a blinking effect on the specified LED.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Blinking" /> effect.</param>
-        public void Set(Blinking effect)
+        public void SetBlinking(Blinking effect)
         {
-            Set(NativeWrapper.CreateMouseEffect(effect));
+            SetGuid(NativeWrapper.CreateMouseEffect(effect));
         }
 
         /// <summary>
         /// Sets a reactive effect on the mouse.
         /// </summary>
         /// <param name="effect">Effect options struct.</param>
-        public void Set(Reactive effect)
+        public void SetReactive(Reactive effect)
         {
-            Set(NativeWrapper.CreateMouseEffect(effect));
+            SetGuid(NativeWrapper.CreateMouseEffect(effect));
         }
 
         /// <summary>
         /// Sets a spectrum cycling effect on the mouse.
         /// </summary>
         /// <param name="effect">Effect options struct.</param>
-        public void Set(SpectrumCycling effect)
+        public void SetSpectrumCycling(SpectrumCycling effect)
         {
-            Set(NativeWrapper.CreateMouseEffect(effect));
+            SetGuid(NativeWrapper.CreateMouseEffect(effect));
         }
 
         /// <summary>
         /// Sets a wave effect on the mouse.
         /// </summary>
         /// <param name="effect">Effect options struct.</param>
-        public void Set(Wave effect)
+        public void SetWave(Wave effect)
         {
-            Set(NativeWrapper.CreateMouseEffect(effect));
+            SetGuid(NativeWrapper.CreateMouseEffect(effect));
         }
 
         /// <summary>
         /// Sets the color of all LEDs on the mouse.
         /// </summary>
         /// <param name="color">Color to set.</param>
-        public override void Set(Color color)
+        public override void SetAll(Color color)
         {
-            Set(NativeWrapper.CreateMouseEffect(new Static(Led.All, color)));
+            SetGuid(NativeWrapper.CreateMouseEffect(new Static(Led.All, color)));
         }
     }
 }

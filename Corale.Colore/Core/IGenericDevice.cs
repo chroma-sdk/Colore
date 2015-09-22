@@ -48,13 +48,13 @@ namespace Corale.Colore.Core
         /// Sets a parameter-less effect on this device.
         /// </summary>
         /// <param name="effect">Effect to set.</param>
-        void Set(Effect effect);
+        void SetEffect(Effect effect);
 
         /// <summary>
         /// Sets an effect on this device, taking a parameter.
         /// </summary>
         /// <param name="effect">Effect to set.</param>
         /// <param name="param">Effect-specific parameter to use.</param>
-        void Set(Effect effect, IntPtr param);
+        void SetEffect(Effect effect, IntPtr param);
     }
 }
