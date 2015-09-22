@@ -38,11 +38,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_annotations_8cs.html",
-"_keyboard_2_effects_2_duration_8cs_source.html",
-"class_collection_access_attribute.html",
-"class_corale_1_1_colore_1_1_razer_1_1_unsupported_device_exception.html#a443ceeebfe4409c9102eecfc26328309",
-"namespace_corale_1_1_colore_1_1_razer_1_1_mousepad_1_1_effects.html",
-"struct_corale_1_1_colore_1_1_razer_1_1_result.html#a0679f720f28b778ae5697cc2978d05da"
+"_keyboard_2_effects_2_duration_8cs.html#a1b60c4ba95eaf40d52b9da1e93f9b4dba8394f0347c184cf156ac5924dccb773b",
+"class_asp_type_property_attribute.html#a44e918652832a5c2272af6b3c85d12d1",
+"class_corale_1_1_colore_1_1_razer_1_1_devices.html#ad3ceb31d228807dfb0b5c8d58b534aa1",
+"interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#a5c57f048095d4b4797dea51cbc08f7fa",
+"struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_breathing.html#a770a947e41a824f222a70ac67f3786c9"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

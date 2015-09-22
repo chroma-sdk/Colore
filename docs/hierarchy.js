@@ -106,7 +106,9 @@ var hierarchy =
       [ "Corale.Colore.Core.Device", "class_corale_1_1_colore_1_1_core_1_1_device.html", [
         [ "Corale.Colore.Core.GenericDevice", "class_corale_1_1_colore_1_1_core_1_1_generic_device.html", null ],
         [ "Corale.Colore.Core.Headset", "class_corale_1_1_colore_1_1_core_1_1_headset.html", null ],
+        [ "Corale.Colore.Core.Headset", "class_corale_1_1_colore_1_1_core_1_1_headset.html", null ],
         [ "Corale.Colore.Core.Keyboard", "class_corale_1_1_colore_1_1_core_1_1_keyboard.html", null ],
+        [ "Corale.Colore.Core.Keypad", "class_corale_1_1_colore_1_1_core_1_1_keypad.html", null ],
         [ "Corale.Colore.Core.Keypad", "class_corale_1_1_colore_1_1_core_1_1_keypad.html", null ],
         [ "Corale.Colore.Core.Mouse", "class_corale_1_1_colore_1_1_core_1_1_mouse.html", null ],
         [ "Corale.Colore.Core.Mousepad", "class_corale_1_1_colore_1_1_core_1_1_mousepad.html", null ]
@@ -115,12 +117,14 @@ var hierarchy =
         [ "Corale.Colore.Core.GenericDevice", "class_corale_1_1_colore_1_1_core_1_1_generic_device.html", null ]
       ] ],
       [ "Corale.Colore.Core.IHeadset", "interface_corale_1_1_colore_1_1_core_1_1_i_headset.html", [
+        [ "Corale.Colore.Core.Headset", "class_corale_1_1_colore_1_1_core_1_1_headset.html", null ],
         [ "Corale.Colore.Core.Headset", "class_corale_1_1_colore_1_1_core_1_1_headset.html", null ]
       ] ],
       [ "Corale.Colore.Core.IKeyboard", "interface_corale_1_1_colore_1_1_core_1_1_i_keyboard.html", [
         [ "Corale.Colore.Core.Keyboard", "class_corale_1_1_colore_1_1_core_1_1_keyboard.html", null ]
       ] ],
       [ "Corale.Colore.Core.IKeypad", "interface_corale_1_1_colore_1_1_core_1_1_i_keypad.html", [
+        [ "Corale.Colore.Core.Keypad", "class_corale_1_1_colore_1_1_core_1_1_keypad.html", null ],
         [ "Corale.Colore.Core.Keypad", "class_corale_1_1_colore_1_1_core_1_1_keypad.html", null ]
       ] ],
       [ "Corale.Colore.Core.IMouse", "interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html", [

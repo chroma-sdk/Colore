@@ -15,6 +15,9 @@ var dir_b0277a4fdac946fbe1408f549d07635c =
     [ "Headset.cs", "_headset_8cs.html", [
       [ "Headset", "class_corale_1_1_colore_1_1_core_1_1_headset.html", "class_corale_1_1_colore_1_1_core_1_1_headset" ]
     ] ],
+    [ "Headset.Obsoletes.cs", "_headset_8_obsoletes_8cs.html", [
+      [ "Headset", "class_corale_1_1_colore_1_1_core_1_1_headset.html", "class_corale_1_1_colore_1_1_core_1_1_headset" ]
+    ] ],
     [ "IChroma.cs", "_i_chroma_8cs.html", [
       [ "IChroma", "interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html", "interface_corale_1_1_colore_1_1_core_1_1_i_chroma" ]
     ] ],
@@ -42,13 +45,25 @@ var dir_b0277a4fdac946fbe1408f549d07635c =
     [ "Keyboard.cs", "_keyboard_8cs.html", [
       [ "Keyboard", "class_corale_1_1_colore_1_1_core_1_1_keyboard.html", "class_corale_1_1_colore_1_1_core_1_1_keyboard" ]
     ] ],
+    [ "Keyboard.Obsoletes.cs", "_keyboard_8_obsoletes_8cs.html", [
+      [ "Keyboard", "class_corale_1_1_colore_1_1_core_1_1_keyboard.html", "class_corale_1_1_colore_1_1_core_1_1_keyboard" ]
+    ] ],
     [ "Keypad.cs", "_keypad_8cs.html", [
+      [ "Keypad", "class_corale_1_1_colore_1_1_core_1_1_keypad.html", "class_corale_1_1_colore_1_1_core_1_1_keypad" ]
+    ] ],
+    [ "Keypad.Obsoletes.cs", "_keypad_8_obsoletes_8cs.html", [
       [ "Keypad", "class_corale_1_1_colore_1_1_core_1_1_keypad.html", "class_corale_1_1_colore_1_1_core_1_1_keypad" ]
     ] ],
     [ "Mouse.cs", "_mouse_8cs.html", [
       [ "Mouse", "class_corale_1_1_colore_1_1_core_1_1_mouse.html", "class_corale_1_1_colore_1_1_core_1_1_mouse" ]
     ] ],
+    [ "Mouse.Obsoletes.cs", "_mouse_8_obsoletes_8cs.html", [
+      [ "Mouse", "class_corale_1_1_colore_1_1_core_1_1_mouse.html", "class_corale_1_1_colore_1_1_core_1_1_mouse" ]
+    ] ],
     [ "Mousepad.cs", "_mousepad_8cs.html", [
+      [ "Mousepad", "class_corale_1_1_colore_1_1_core_1_1_mousepad.html", "class_corale_1_1_colore_1_1_core_1_1_mousepad" ]
+    ] ],
+    [ "Mousepad.Obsoletes.cs", "_mousepad_8_obsoletes_8cs.html", [
       [ "Mousepad", "class_corale_1_1_colore_1_1_core_1_1_mousepad.html", "class_corale_1_1_colore_1_1_core_1_1_mousepad" ]
     ] ],
     [ "NativeWrapper.cs", "_native_wrapper_8cs.html", [
