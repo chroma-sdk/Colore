@@ -93,6 +93,11 @@
     <Compile Include="Core\Color.cs" />
     <Compile Include="Core\Device.cs" />
     <Compile Include="Core\Headset.Obsoletes.cs" />
+    <Compile Include="Core\IHeadset.Obsoletes.cs" />
+    <Compile Include="Core\IKeyboard.Obsoletes.cs" />
+    <Compile Include="Core\IKeypad.Obsoletes.cs" />
+    <Compile Include="Core\IMouse.Obsoletes.cs" />
+    <Compile Include="Core\IMousepad.Obsoletes.cs" />
     <Compile Include="Core\Keyboard.Obsoletes.cs" />
     <Compile Include="Core\Keypad.Obsoletes.cs" />
     <Compile Include="Core\Mouse.Obsoletes.cs" />
