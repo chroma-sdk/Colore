@@ -42,7 +42,7 @@ namespace Corale.Colore.Core
     /// <summary>
     /// A generic device.
     /// </summary>
-    public sealed class GenericDevice : Device, IGenericDevice
+    public sealed partial class GenericDevice : Device, IGenericDevice
     {
         /// <summary>
         /// Logger instance for this class.
@@ -112,7 +112,7 @@ namespace Corale.Colore.Core
 
             try
             {
-                SetGuid(NativeWrapper.CreateEffect(DeviceId, Effect.Static, colorPtr));
+                SetEffect(Effect.Static, colorPtr);
             }
             finally
             {

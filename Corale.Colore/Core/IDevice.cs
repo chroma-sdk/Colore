@@ -37,7 +37,7 @@ namespace Corale.Colore.Core
     /// <summary>
     /// Interface for functionality common with all devices.
     /// </summary>
-    public interface IDevice
+    public partial interface IDevice
     {
         /// <summary>
         /// Gets the ID of the currently active effect.

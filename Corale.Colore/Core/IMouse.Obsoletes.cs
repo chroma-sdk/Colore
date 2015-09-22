@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Mouse.Obsoletes.cs" company="Corale">
+// <copyright file="IMouse.Obsoletes.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -31,35 +31,23 @@
 namespace Corale.Colore.Core
 {
     using System;
-
+    using Corale.Colore.Annotations;
     using Corale.Colore.Razer.Mouse;
     using Corale.Colore.Razer.Mouse.Effects;
 
     /// <summary>
-    /// Class for interacting with a Chroma mouse.
+    /// Interface for mouse functionality.
     /// </summary>
-    public sealed partial class Mouse
+    public partial interface IMouse : IDevice
     {
-        /// <summary>
-        /// Sets the color of all components on this device.
-        /// </summary>
-        /// <param name="color">Color to set.</param>
-        [Obsolete("Set is deprecated, please use SetAll(Effect).", false)]
-        public override void Set(Color color)
-        {
-            SetAll(color);
-        }
-
         /// <summary>
         /// Sets the color of a specific LED on the mouse.
         /// </summary>
         /// <param name="led">Which LED to modify.</param>
         /// <param name="color">Color to set.</param>
         [Obsolete("Set is deprecated, please use SetLed(Led, Color).", false)]
-        public void Set(Led led, Color color)
-        {
-            SetLed(led, color);
-        }
+        [PublicAPI]
+        void Set(Led led, Color color);
 
         /// <summary>
         /// Sets an effect without any parameters.
@@ -67,69 +55,51 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="effect">Effect options.</param>
         [Obsolete("Set is deprecated, please use SetEffect(Effect).", false)]
-        public void Set(Effect effect)
-        {
-            SetEffect(effect);
-        }
+        [PublicAPI]
+        void Set(Effect effect);
 
         /// <summary>
         /// Sets a breathing effect on the mouse.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Breathing" /> effect.</param>
         [Obsolete("Set is deprecated, please use SetBreathing(Breathing).", false)]
-        public void Set(Breathing effect)
-        {
-            SetBreathing(effect);
-        }
+        [PublicAPI]
+        void Set(Breathing effect);
 
         /// <summary>
         /// Sets a static color on the mouse.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Static" /> effect.</param>
         [Obsolete("Set is deprecated, please use SetStatic(Static).", false)]
-        public void Set(Static effect)
-        {
-            SetStatic(effect);
-        }
+        [PublicAPI]
+        void Set(Static effect);
 
         /// <summary>
         /// Starts a blinking effect on the specified LED.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Blinking" /> effect.</param>
         [Obsolete("Set is deprecated, please use SetBlinking(Blinking).", false)]
-        public void Set(Blinking effect)
-        {
-            SetBlinking(effect);
-        }
+        void Set(Blinking effect);
 
         /// <summary>
         /// Sets a reactive effect on the mouse.
         /// </summary>
         /// <param name="effect">Effect options struct.</param>
         [Obsolete("Set is deprecated, please use SetReactive(Reactive).", false)]
-        public void Set(Reactive effect)
-        {
-            SetReactive(effect);
-        }
+        void Set(Reactive effect);
 
         /// <summary>
         /// Sets a spectrum cycling effect on the mouse.
         /// </summary>
         /// <param name="effect">Effect options struct.</param>
         [Obsolete("Set is deprecated, please use SetSpectrumCycling(SpectrumCycling).", false)]
-        public void Set(SpectrumCycling effect)
-        {
-            SetSpectrumCycling(effect);
-        }
+        void Set(SpectrumCycling effect);
 
         /// <summary>
         /// Sets a wave effect on the mouse.
         /// </summary>
         /// <param name="effect">Effect options struct.</param>
         [Obsolete("Set is deprecated, please use SetWave(Wave).", false)]
-        public void Set(Wave effect)
-        {
-            SetWave(effect);
-        }
+        void Set(Wave effect);
     }
 }

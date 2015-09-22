@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Headset.Obsoletes.cs" company="Corale">
+// <copyright file="IKeypad.Obsoletes.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -29,61 +29,64 @@
 // ---------------------------------------------------------------------------------------
 
 namespace Corale.Colore.Core
-{
+{ 
     using System;
-    using Corale.Colore.Razer.Headset.Effects;
+    using Corale.Colore.Annotations;
+    using Corale.Colore.Razer.Keypad;
+    using Corale.Colore.Razer.Keypad.Effects;
 
     /// <summary>
-    /// Class for interacting with Chroma Headsets.
+    /// Interface for keypad functions.
     /// </summary>
-    public sealed partial class Headset : Device, IHeadset
+    public partial interface IKeypad : IDevice
     {
         /// <summary>
-        /// Sets the color of all components on this device.
+        /// Sets a <see cref="Breathing" /> effect on the keypad.
         /// </summary>
-        /// <param name="color">Color to set.</param>
-        [Obsolete("Set is deprecated, please use SetAll(Effect).", false)]
-        public override void Set(Color color)
-        {
-            SetAll(color);
-        }
-
-        /// <summary>
-        /// Sets an effect on the headset that doesn't
-        /// take any parameters, currently only valid
-        /// for the <see cref="Effect.SpectrumCycling" /> effect.
-        /// </summary>
-        /// <param name="effect">The type of effect to set.</param>
-        [Obsolete("Set is deprecated, please use SetEffect(Effect).", false)]
-        public void Set(Effect effect)
-        {
-            SetEffect(effect);
-        }
-
-        /// <summary>
-        /// Sets a new static effect on the headset.
-        /// </summary>
-        /// <param name="effect">
-        /// An instance of the <see cref="Static" /> struct
-        /// describing the effect.
-        /// </param>
-        [Obsolete("Set is deprecated, please use SetStatic(Static).", false)]
-        public void Set(Static effect)
-        {
-            SetStatic(effect);
-        }
-
-        /// <summary>
-        /// Sets a new breathing effect on the headset.
-        /// </summary>
-        /// <param name="effect">
-        /// An instance of the <see cref="Breathing" /> struct
-        /// describing the effect.
-        /// </param>
+        /// <param name="effect">An instance of the <see cref="Breathing" /> struct.</param>
         [Obsolete("Set is deprecated, please use SetBreathing(Breathing).", false)]
-        public void Set(Breathing effect)
-        {
-            SetBreathing(effect);
-        }
+        [PublicAPI]
+        void Set(Breathing effect);
+
+        /// <summary>
+        /// Sets a <see cref="Custom" /> effect on the keypad.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
+        [Obsolete("Set is deprecated, please use SetCustom(Custom).", false)]
+        [PublicAPI]
+        void Set(Custom effect);
+
+        /// <summary>
+        /// Sets a <see cref="Reactive" /> effect on the keypad.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="Reactive" /> struct.</param>
+        [Obsolete("Set is deprecated, please use SetReactive(Reactive).", false)]
+        [PublicAPI]
+        void Set(Reactive effect);
+
+        /// <summary>
+        /// Sets a <see cref="Static" /> effect on the keypad.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
+        [Obsolete("Set is deprecated, please use SetStatic(Static).", false)]
+        [PublicAPI]
+        void Set(Static effect);
+
+        /// <summary>
+        /// Sets a <see cref="Wave" /> effect on the keypad.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="Wave" /> struct.</param>
+        [Obsolete("Set is deprecated, please use SetWave(Wave).", false)]
+        [PublicAPI]
+        void Set(Wave effect);
+
+        /// <summary>
+        /// Sets an effect without any parameters.
+        /// Currently, this only works for the <see cref="Effect.None" /> effect.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        [Obsolete("Set is deprecated, please use SetEffect(Effect).", false)]
+        [PublicAPI]
+        void Set(Effect effect);
     }
 }
