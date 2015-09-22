@@ -112,7 +112,7 @@ namespace Corale.Colore.Core
 
             try
             {
-                SetGuid(NativeWrapper.CreateEffect(DeviceId, Effect.Static, colorPtr));
+                SetEffect(Effect.Static, colorPtr);
             }
             finally
             {
