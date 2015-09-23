@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['green',['Green',['../struct_corale_1_1_colore_1_1_core_1_1_color.html#a9cf73f0bed90036b5b5dc0a1cf3934b1',1,'Corale::Colore::Core::Color']]]
+  ['hotpink',['HotPink',['../struct_corale_1_1_colore_1_1_core_1_1_color.html#a1953d872f26b0e0c5755e134f2924a8a',1,'Corale::Colore::Core::Color']]]
 ];

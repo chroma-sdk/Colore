@@ -28,22 +28,22 @@
 <polygon fill="midnightblue" stroke="midnightblue" points="36.2338,-45.5665 34.9481,-56.083 42.5114,-48.6636 36.2338,-45.5665"/>
 </g>
 <!-- Node2&#45;&gt;Node1 -->
-<g id="edge5" class="edge"><title>Node2&#45;&gt;Node1</title>
+<g id="edge6" class="edge"><title>Node2&#45;&gt;Node1</title>
 <path fill="none" stroke="midnightblue" d="M51.4205,-48.144C58.2036,-38.7357 64.9458,-27.4046 68.1211,-19.7511"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="48.6297,-46.0314 45.2807,-56.083 54.167,-50.3137 48.6297,-46.0314"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
 <g id="a_node3"><a xlink:href="interface_corale_1_1_colore_1_1_core_1_1_i_device.html" target="_top" xlink:title="Interface for functionality common with all devices. ">
-<polygon fill="white" stroke="black" points="45,-112.5 45,-131.5 92,-131.5 92,-112.5 45,-112.5"/>
-<text text-anchor="middle" x="68.5" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">IDevice</text>
+<polygon fill="white" stroke="black" points="79,-112.5 79,-131.5 126,-131.5 126,-112.5 79,-112.5"/>
+<text text-anchor="middle" x="102.5" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">IDevice</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node2 -->
 <g id="edge2" class="edge"><title>Node3&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M57.5228,-103.566C51.673,-94.2747 44.7305,-83.2484 40.0099,-75.7511"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="54.5956,-105.486 62.8856,-112.083 60.5192,-101.756 54.5956,-105.486"/>
+<path fill="none" stroke="midnightblue" d="M83.738,-106.101C71.5001,-96.3824 55.9413,-84.0269 45.6242,-75.8339"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="81.5669,-108.846 91.5746,-112.324 85.9201,-103.364 81.5669,-108.846"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
@@ -55,8 +55,13 @@
 </g>
 <!-- Node3&#45;&gt;Node4 -->
 <g id="edge4" class="edge"><title>Node3&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M79.4772,-103.566C85.327,-94.2747 92.2695,-83.2484 96.9901,-75.7511"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="76.4808,-101.756 74.1144,-112.083 82.4044,-105.486 76.4808,-101.756"/>
+<path fill="none" stroke="midnightblue" d="M96.0276,-102.101C95.3956,-93.1357 95.8427,-82.8579 97.369,-75.7511"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="92.5658,-102.622 97.3337,-112.083 99.5067,-101.713 92.5658,-102.622"/>
+</g>
+<!-- Node3&#45;&gt;Node4 -->
+<g id="edge5" class="edge"><title>Node3&#45;&gt;Node4</title>
+<path fill="none" stroke="midnightblue" d="M108.972,-102.101C109.604,-93.1357 109.157,-82.8579 107.631,-75.7511"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="105.493,-101.713 107.666,-112.083 112.434,-102.622 105.493,-101.713"/>
 </g>
 <!-- Node4&#45;&gt;Node1 -->
 <g id="edge3" class="edge"><title>Node4&#45;&gt;Node1</title>
@@ -64,7 +69,7 @@
 <polygon fill="midnightblue" stroke="midnightblue" points="82.833,-50.3137 91.7193,-56.083 88.3703,-46.0314 82.833,-50.3137"/>
 </g>
 <!-- Node4&#45;&gt;Node1 -->
-<g id="edge6" class="edge"><title>Node4&#45;&gt;Node1</title>
+<g id="edge7" class="edge"><title>Node4&#45;&gt;Node1</title>
 <path fill="none" stroke="midnightblue" d="M97.5622,-46.9827C92.5174,-37.8168 85.3397,-27.0922 79.1409,-19.7511"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="94.4886,-48.6636 102.052,-56.083 100.766,-45.5665 94.4886,-48.6636"/>
 </g>

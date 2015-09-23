@@ -1,6 +1,7 @@
 var class_corale_1_1_colore_1_1_core_1_1_keypad =
 [
     [ "Keypad", "class_corale_1_1_colore_1_1_core_1_1_keypad.html#adb1d2598667aa81803bbfc8348c7a1e5", null ],
+    [ "Set", "class_corale_1_1_colore_1_1_core_1_1_keypad.html#ab889f71dc46b73c9192d8f76bdb24146", null ],
     [ "Set", "class_corale_1_1_colore_1_1_core_1_1_keypad.html#aa78824aaaddcf52ef3c0ae782427609b", null ],
     [ "Set", "class_corale_1_1_colore_1_1_core_1_1_keypad.html#a00abd77fc04657cc60d38527a1ca271f", null ],
     [ "Set", "class_corale_1_1_colore_1_1_core_1_1_keypad.html#a408f92ea4d5254787a37822cd018588c", null ],

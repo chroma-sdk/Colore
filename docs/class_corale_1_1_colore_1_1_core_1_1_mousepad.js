@@ -1,6 +1,7 @@
 var class_corale_1_1_colore_1_1_core_1_1_mousepad =
 [
     [ "Mousepad", "class_corale_1_1_colore_1_1_core_1_1_mousepad.html#a29495ea2355b4665c51449c992f47391", null ],
+    [ "Set", "class_corale_1_1_colore_1_1_core_1_1_mousepad.html#a20a4b3a6b5b60233aa2a5e1c0e60e771", null ],
     [ "Set", "class_corale_1_1_colore_1_1_core_1_1_mousepad.html#a249e93a95d79598321835fdbad3b1813", null ],
     [ "Set", "class_corale_1_1_colore_1_1_core_1_1_mousepad.html#ac35ae75b8c9f5889d44cba6d4a9a03d4", null ],
     [ "Set", "class_corale_1_1_colore_1_1_core_1_1_mousepad.html#a99819dd8ce8735c5c39f33b3dbf97ed8", null ],

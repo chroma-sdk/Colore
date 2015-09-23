@@ -1,13 +1,12 @@
 var searchData=
 [
   ['n',['N',['../namespace_corale_1_1_colore_1_1_razer_1_1_keyboard.html#a4434888a1769a87551c60e708fbb9ee2a8d9c307cb7f3c4a32822a51922d1ceaa',1,'Corale::Colore::Razer::Keyboard']]],
-  ['nagaepicchroma',['NagaEpicChroma',['../class_corale_1_1_colore_1_1_razer_1_1_devices.html#ad3ceb31d228807dfb0b5c8d58b534aa1',1,'Corale::Colore::Razer::Devices']]],
   ['name',['Name',['../class_value_provider_attribute.html#a954d0ecb3682e337a4c174d238bdd892',1,'ValueProviderAttribute.Name()'],['../class_html_element_attributes_attribute.html#a6d108098ab54c1770cb01df2e1051fd7',1,'HtmlElementAttributesAttribute.Name()'],['../class_html_attribute_value_attribute.html#ae46f5471839e8bf67fe5177f2b01e514',1,'HtmlAttributeValueAttribute.Name()'],['../class_razor_import_namespace_attribute.html#a9416e58cf9013104dd4d22007c417a89',1,'RazorImportNamespaceAttribute.Name()'],['../struct_corale_1_1_colore_1_1_razer_1_1_result.html#a69ffc748b32467357aa994cb9c95ac79',1,'Corale.Colore.Razer.Result.Name()'],['../struct_corale_1_1_colore_1_1_razer_1_1_result_1_1_metadata.html#a0b0cc79b99b1f8f06efea8d3831f592d',1,'Corale.Colore.Razer.Result.Metadata.Name()']]],
   ['nativecallexception',['NativeCallException',['../class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html#af4c400743a09d70fb56c47b7e8f82ae8',1,'Corale.Colore.Razer.NativeCallException.NativeCallException(string function, Result result)'],['../class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html#a0bd6517243f920b8a7628882ac19d1f7',1,'Corale.Colore.Razer.NativeCallException.NativeCallException(SerializationInfo info, StreamingContext context)']]],
   ['nativecallexception',['NativeCallException',['../class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html',1,'Corale::Colore::Razer']]],
   ['nativecallexception_2ecs',['NativeCallException.cs',['../_native_call_exception_8cs.html',1,'']]],
-  ['nativemethods',['NativeMethods',['../class_corale_1_1_colore_1_1_razer_1_1_native_methods.html',1,'Corale::Colore::Razer']]],
   ['nativemethods',['NativeMethods',['../class_corale_1_1_colore_1_1_native_1_1_kernel32_1_1_native_methods.html',1,'Corale::Colore::Native::Kernel32']]],
+  ['nativemethods',['NativeMethods',['../class_corale_1_1_colore_1_1_razer_1_1_native_methods.html',1,'Corale::Colore::Razer']]],
   ['nativemethods_2ecs',['NativeMethods.cs',['../_native_2_kernel32_2_native_methods_8cs.html',1,'']]],
   ['nativemethods_2ecs',['NativeMethods.cs',['../_razer_2_native_methods_8cs.html',1,'']]],
   ['nativewrapper',['NativeWrapper',['../class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html',1,'Corale::Colore::Core']]],

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['instances',['Instances',['../class_corale_1_1_colore_1_1_core_1_1_generic_device.html#ad53ff164b2f4c6f5b6d616505940e092',1,'Corale::Colore::Core::GenericDevice']]]
+  ['kraken71chroma',['Kraken71Chroma',['../class_corale_1_1_colore_1_1_razer_1_1_devices.html#a171398d6a9e2e7037f52a90de7d54deb',1,'Corale::Colore::Razer::Devices']]]
 ];

@@ -1,9 +1,4 @@
 var searchData=
 [
-  ['maxcolumns',['MaxColumns',['../class_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_constants.html#a1544e48a947a56af76973e0694ab2f32',1,'Corale.Colore.Razer.Keyboard.Constants.MaxColumns()'],['../class_corale_1_1_colore_1_1_razer_1_1_keypad_1_1_constants.html#ab8a3ee824feced3cf6bdd5d764e8bb59',1,'Corale.Colore.Razer.Keypad.Constants.MaxColumns()']]],
-  ['maxcustomeffects',['MaxCustomEffects',['../class_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_constants.html#a44016a1e5c9edee1fed8531d048a7cdf',1,'Corale::Colore::Razer::Keyboard::Constants']]],
-  ['maxkeys',['MaxKeys',['../class_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_constants.html#a005ba5d25449359885c8d2fd6102a4f2',1,'Corale.Colore.Razer.Keyboard.Constants.MaxKeys()'],['../class_corale_1_1_colore_1_1_razer_1_1_keypad_1_1_constants.html#ac06150c391ef1723514f60e945e8e691',1,'Corale.Colore.Razer.Keypad.Constants.MaxKeys()']]],
-  ['maxleds',['MaxLeds',['../class_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_constants.html#ac0cb23af1fe3aa8a2038450100676a1b',1,'Corale.Colore.Razer.Mouse.Constants.MaxLeds()'],['../class_corale_1_1_colore_1_1_razer_1_1_mousepad_1_1_constants.html#a4c4ea3f16599a968faaa06e6c1f15cdc',1,'Corale.Colore.Razer.Mousepad.Constants.MaxLeds()']]],
-  ['maxrows',['MaxRows',['../class_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_constants.html#a64aa02a3a5864da4e74dc2ada72f5acb',1,'Corale.Colore.Razer.Keyboard.Constants.MaxRows()'],['../class_corale_1_1_colore_1_1_razer_1_1_keypad_1_1_constants.html#a102f6eabfd225efb8c3b5a9b67be8c8b',1,'Corale.Colore.Razer.Keypad.Constants.MaxRows()']]],
-  ['messagetemplate',['MessageTemplate',['../class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html#aa6e4246c7367580162bd3a203e940450',1,'Corale.Colore.Razer.NativeCallException.MessageTemplate()'],['../class_corale_1_1_colore_1_1_razer_1_1_unsupported_device_exception.html#a7adc5041b41a493c5bcb5dc9231de652',1,'Corale.Colore.Razer.UnsupportedDeviceException.MessageTemplate()']]]
+  ['notifications',['notifications',['../_annotations_8cs.html#a499afdc7b16351761369c64979c345e5',1,'Annotations.cs']]]
 ];

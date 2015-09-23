@@ -2,8 +2,8 @@ var class_corale_1_1_colore_1_1_core_1_1_keyboard =
 [
     [ "Keyboard", "class_corale_1_1_colore_1_1_core_1_1_keyboard.html#ad2adefc64dcd2780b86d52d0253aafba", null ],
     [ "IsSet", "class_corale_1_1_colore_1_1_core_1_1_keyboard.html#a78066f10a055b423a33f40783246378a", null ],
+    [ "Set", "class_corale_1_1_colore_1_1_core_1_1_keyboard.html#a72522a0cc4a739c1aef20edcd03e485e", null ],
     [ "Set", "class_corale_1_1_colore_1_1_core_1_1_keyboard.html#af03381dff5b078c85d99ad102a4b1e5d", null ],
-    [ "Set", "class_corale_1_1_colore_1_1_core_1_1_keyboard.html#a71fb9a3727a373d327f9f002a537c37f", null ],
     [ "Set", "class_corale_1_1_colore_1_1_core_1_1_keyboard.html#a792e527fbddd750e828719f115e1b603", null ],
     [ "Set", "class_corale_1_1_colore_1_1_core_1_1_keyboard.html#a7797f60fd9073759f3db9ec5044586f9", null ],
     [ "Set", "class_corale_1_1_colore_1_1_core_1_1_keyboard.html#aea037e5e0050415426addafe239931a3", null ],

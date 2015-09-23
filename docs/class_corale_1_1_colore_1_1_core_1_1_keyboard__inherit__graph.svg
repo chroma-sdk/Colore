@@ -30,15 +30,15 @@
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
 <g id="a_node3"><a xlink:href="interface_corale_1_1_colore_1_1_core_1_1_i_device.html" target="_top" xlink:title="Interface for functionality common with all devices. ">
-<polygon fill="white" stroke="black" points="48,-112.5 48,-131.5 95,-131.5 95,-112.5 48,-112.5"/>
-<text text-anchor="middle" x="71.5" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">IDevice</text>
+<polygon fill="white" stroke="black" points="84,-112.5 84,-131.5 131,-131.5 131,-112.5 84,-112.5"/>
+<text text-anchor="middle" x="107.5" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">IDevice</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node2 -->
 <g id="edge2" class="edge"><title>Node3&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M60.1999,-103.566C54.1781,-94.2747 47.0314,-83.2484 42.172,-75.7511"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="57.3444,-105.595 65.7205,-112.083 63.2185,-101.788 57.3444,-105.595"/>
+<path fill="none" stroke="midnightblue" d="M87.9103,-106.101C75.1324,-96.3824 58.8873,-84.0269 48.1149,-75.8339"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="86.0143,-109.056 96.0926,-112.324 90.2519,-103.484 86.0143,-109.056"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
@@ -50,8 +50,13 @@
 </g>
 <!-- Node3&#45;&gt;Node4 -->
 <g id="edge4" class="edge"><title>Node3&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M83.1229,-103.566C89.3168,-94.2747 96.6677,-83.2484 101.666,-75.7511"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="80.0795,-101.821 77.4447,-112.083 85.9039,-105.704 80.0795,-101.821"/>
+<path fill="none" stroke="midnightblue" d="M101.028,-102.101C100.396,-93.1357 100.843,-82.8579 102.369,-75.7511"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="97.5658,-102.622 102.334,-112.083 104.507,-101.713 97.5658,-102.622"/>
+</g>
+<!-- Node3&#45;&gt;Node4 -->
+<g id="edge5" class="edge"><title>Node3&#45;&gt;Node4</title>
+<path fill="none" stroke="midnightblue" d="M113.972,-102.101C114.604,-93.1357 114.157,-82.8579 112.631,-75.7511"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="110.493,-101.713 112.666,-112.083 117.434,-102.622 110.493,-101.713"/>
 </g>
 <!-- Node4&#45;&gt;Node1 -->
 <g id="edge3" class="edge"><title>Node4&#45;&gt;Node1</title>
