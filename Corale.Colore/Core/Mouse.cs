@@ -157,7 +157,7 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Sets a custom effect on the mouse pad.
+        /// Sets a custom effect on the mouse.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
         public void SetCustom(Custom effect)
