@@ -92,5 +92,12 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="effect">Effect options struct.</param>
         void SetWave(Wave effect);
+
+        /// <summary>
+        /// Sets a custom effect on the mouse pad.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
+        [PublicAPI]
+        void SetCustom(Custom effect);
     }
 }
