@@ -162,7 +162,6 @@ namespace Corale.Colore.Core
             return CreateMouseEffect(effect, IntPtr.Zero);
         }
 
-
         /// <summary>
         /// Creates a custom effect for the mouse.
         /// </summary>
