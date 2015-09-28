@@ -162,6 +162,17 @@ namespace Corale.Colore.Core
             return CreateMouseEffect(effect, IntPtr.Zero);
         }
 
+
+        /// <summary>
+        /// Creates a custom effect for the mouse.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
+        internal static Guid CreateMouseEffect(Razer.Mouse.Effects.Custom effect)
+        {
+            return CreateMouseEffect(Razer.Mouse.Effects.Effect.Custom, effect);
+        }
+
         /// <summary>
         /// Creates a breathing effect for the mouse.
         /// </summary>
