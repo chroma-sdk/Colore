@@ -101,7 +101,7 @@ namespace Corale.Colore.Razer.Mouse.Effects
                     throw new ArgumentOutOfRangeException(
                         "led",
                         led,
-                        "Attemped to access an LED that was out of range.");
+                        "Attempted to access an LED that was out of range.");
                 }
 
                 return Colors[led];
