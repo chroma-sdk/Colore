@@ -209,7 +209,7 @@ namespace Corale.Colore.Razer.Mouse.Effects
         /// <filterpriority>2</filterpriority>
         public override int GetHashCode()
         {
-            return (Colors != null ? Colors.GetHashCode() : 0);
+            return Colors != null ? Colors.GetHashCode() : 0;
         }
 
         /// <summary>

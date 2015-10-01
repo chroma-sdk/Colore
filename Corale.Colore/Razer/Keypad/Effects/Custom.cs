@@ -164,6 +164,10 @@ namespace Corale.Colore.Razer.Keypad.Effects
             return _rows == null ? 0 : _rows.GetHashCode();
         }
 
+        /// <summary>
+        /// Sets all LED indices to the specified <see cref="Color" />.
+        /// </summary>
+        /// <param name="color">The <see cref="Color" /> to set.</param>
         public void Set(Color color)
         {
             for (var row = 0; row < Constants.MaxRows; row++)
