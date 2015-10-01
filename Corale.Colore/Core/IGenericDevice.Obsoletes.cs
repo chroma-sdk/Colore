@@ -31,6 +31,8 @@
 namespace Corale.Colore.Core
 {
     using System;
+
+    using Corale.Colore.Annotations;
     using Corale.Colore.Razer;
 
     /// <summary>
@@ -42,6 +44,7 @@ namespace Corale.Colore.Core
         /// Sets a parameter-less effect on this device.
         /// </summary>
         /// <param name="effect">Effect to set.</param>
+        [PublicAPI]
         void Set(Effect effect);
 
         /// <summary>
@@ -49,6 +52,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="effect">Effect to set.</param>
         /// <param name="param">Effect-specific parameter to use.</param>
+        [PublicAPI]
         void Set(Effect effect, IntPtr param);
     }
 }
