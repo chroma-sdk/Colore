@@ -64,7 +64,7 @@ namespace Corale.Colore.Core
             Log.Debug("Keypad is initializing");
             Chroma.Initialize();
 
-            _custom = new Custom(Color.Black);
+            _custom = Custom.Create();
         }
 
         /// <summary>
@@ -105,7 +105,8 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         public override void SetAll(Color color)
         {
-            SetGuid(NativeWrapper.CreateKeypadEffect(new Static(color)));
+            _custom.Set(color);
+            SetCustom(_custom);
         }
 
         /// <summary>
