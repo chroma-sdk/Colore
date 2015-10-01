@@ -31,12 +31,14 @@
 namespace Corale.Colore.Core
 {
     using System;
+
+    using Corale.Colore.Annotations;
     using Corale.Colore.Razer.Headset.Effects;
 
     /// <summary>
     /// Interface for headset functionality.
     /// </summary>
-    public partial interface IHeadset : IDevice
+    public partial interface IHeadset
     {
         /// <summary>
         /// Sets an effect on the headset that doesn't
@@ -45,6 +47,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="effect">The type of effect to set.</param>
         [Obsolete("Set is deprecated, please use SetEffect(Effect).", false)]
+        [PublicAPI]
         void Set(Effect effect);
 
         /// <summary>
@@ -55,6 +58,7 @@ namespace Corale.Colore.Core
         /// describing the effect.
         /// </param>
         [Obsolete("Set is deprecated, please use SetStatic(Static).", false)]
+        [PublicAPI]
         void Set(Static effect);
 
         /// <summary>
@@ -65,6 +69,7 @@ namespace Corale.Colore.Core
         /// describing the effect.
         /// </param>
         [Obsolete("Set is deprecated, please use SetBreathing(Breathing).", false)]
+        [PublicAPI]
         void Set(Breathing effect);
     }
 }
