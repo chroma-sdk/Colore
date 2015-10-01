@@ -31,23 +31,14 @@
 namespace Corale.Colore.Core
 {
     using System;
+
     using Corale.Colore.Razer.Headset.Effects;
 
     /// <summary>
     /// Class for interacting with Chroma Headsets.
     /// </summary>
-    public sealed partial class Headset : Device, IHeadset
+    public sealed partial class Headset
     {
-        /// <summary>
-        /// Sets the color of all components on this device.
-        /// </summary>
-        /// <param name="color">Color to set.</param>
-        [Obsolete("Set is deprecated, please use SetAll(Effect).", false)]
-        public override void Set(Color color)
-        {
-            SetAll(color);
-        }
-
         /// <summary>
         /// Sets an effect on the headset that doesn't
         /// take any parameters, currently only valid

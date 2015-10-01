@@ -41,16 +41,6 @@ namespace Corale.Colore.Core
     public sealed partial class Mouse
     {
         /// <summary>
-        /// Sets the color of all components on this device.
-        /// </summary>
-        /// <param name="color">Color to set.</param>
-        [Obsolete("Set is deprecated, please use SetAll(Effect).", false)]
-        public override void Set(Color color)
-        {
-            SetAll(color);
-        }
-
-        /// <summary>
         /// Sets the color of a specific LED on the mouse.
         /// </summary>
         /// <param name="led">Which LED to modify.</param>

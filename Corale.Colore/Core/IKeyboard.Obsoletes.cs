@@ -39,7 +39,7 @@ namespace Corale.Colore.Core
     /// <summary>
     /// Interface for keyboard functionality.
     /// </summary>
-    public partial interface IKeyboard : IDevice
+    public partial interface IKeyboard
     {
         /// <summary>
         /// Sets a breathing effect on the keyboard.
