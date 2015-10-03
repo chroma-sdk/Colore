@@ -1,10 +1,10 @@
 Colore
 ======
 
-[![MIT License][licensebadge]
-[![Latest GitHub release][ghreleasebadge]
-[![NuGet version][ngverbadge]
-[![NuGet downloads][ngdlbadge]
+[![MIT License][licensebadge]][license]
+[![Latest GitHub release][ghreleasebadge]][ghrelease]
+[![NuGet version][ngverbadge]][ng]
+[![NuGet downloads][ngdlbadge]][ng]
 
 **Develop:**
 [![Build status][devbuildbadge]][devbuild]
@@ -100,9 +100,11 @@ Current projects utilizing this or modified versions of this library:
 
 [license]: http://opensource.org/licenses/MIT
 [licensebadge]: https://img.shields.io/badge/license-MIT-blue.svg
-[ghreleasebadge]: https://img.shields.io/github/release/CoraleStudios/Colore.svg)](https://github.com/CoraleStudios/Colore/releases
-[ngverbadge]: https://img.shields.io/nuget/v/Colore.svg)](https://www.nuget.org/packages/Colore
-[ngdlbadge]: https://img.shields.io/nuget/dt/Colore.svg)](https://www.nuget.org/packages/Colore
+[ghrelease]: https://github.com/CoraleStudios/Colore/releases
+[ghreleasebadge]: https://img.shields.io/github/release/CoraleStudios/Colore.svg
+[ng]: https://www.nuget.org/packages/Colore
+[ngverbadge]: https://img.shields.io/nuget/v/Colore.svg
+[ngdlbadge]: https://img.shields.io/nuget/dt/Colore.svg
 
 [devbuild]: http://tc.sharpblade.net/viewType.html?buildTypeId=colore_mainbuild
 [devbuildbadge]: https://img.shields.io/teamcity/http/tc.sharpblade.net/s/colore_mainbuild.svg?style=flat
