@@ -1,6 +1,7 @@
 Colore
 ======
 
+[![Stories in Ready][wafflebadge]][waffle]
 [![MIT License][licensebadge]][license]
 [![Latest GitHub release][ghreleasebadge]][ghrelease]
 [![NuGet version][ngverbadge]][ng]
@@ -98,6 +99,8 @@ Current projects utilizing this or modified versions of this library:
 [bs]: https://github.com/brandonscott
 [rzdev]: http://developer.razerzone.com/chroma
 
+[waffle]: http://waffle.io/coralestudios/colore
+[wafflebadge]: https://badge.waffle.io/coralestudios/colore.svg?label=ready&title=Ready
 [license]: http://opensource.org/licenses/MIT
 [licensebadge]: https://img.shields.io/badge/license-MIT-blue.svg
 [ghrelease]: https://github.com/CoraleStudios/Colore/releases
