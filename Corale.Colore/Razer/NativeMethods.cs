@@ -174,7 +174,10 @@ namespace Corale.Colore.Razer
             }
 
             if (ChromaSdkPointer == IntPtr.Zero)
-                throw new ColoreException("Failed to dynamically load Chroma SDK library.");
+            {
+                throw new ColoreException(
+                    "Failed to dynamically load Chroma SDK library (Error " + Marshal.GetLastWin32Error() + ").");
+            }
 
             Init = GetDelegateFromLibrary<InitDelegate>(ChromaSdkPointer, "Init");
 
