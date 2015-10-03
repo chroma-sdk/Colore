@@ -161,5 +161,12 @@ namespace Corale.Colore.Core
         /// </summary>
         [PublicAPI]
         void Unregister();
+
+        /// <summary>
+        /// Sets all Chroma devices to the specified <see cref="Color" />.
+        /// </summary>
+        /// <param name="color">The <see cref="Color" /> to set.</param>
+        [PublicAPI]
+        void SetAll(Color color);
     }
 }
