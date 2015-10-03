@@ -53,12 +53,18 @@ namespace Corale.Colore.Core
         private static IMouse _instance;
 
         /// <summary>
+        /// Internal instance of a <see cref="Custom" /> struct.
+        /// </summary>
+        private Custom _custom;
+
+        /// <summary>
         /// Prevents a default instance of the <see cref="Mouse" /> class from being created.
         /// </summary>
         private Mouse()
         {
             Log.Info("Mouse is initializing");
             Chroma.Initialize();
+            _custom = Custom.Create();
         }
 
         /// <summary>
@@ -80,7 +86,8 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         public void SetLed(Led led, Color color)
         {
-            SetGuid(NativeWrapper.CreateMouseEffect(new Static(led, color)));
+            _custom[led] = color;
+            SetCustom(_custom);
         }
 
         /// <summary>
@@ -153,7 +160,17 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         public override void SetAll(Color color)
         {
-            SetGuid(NativeWrapper.CreateMouseEffect(new Static(Led.All, color)));
+            _custom.Set(color);
+            SetCustom(_custom);
+        }
+
+        /// <summary>
+        /// Sets a custom effect on the mouse.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
+        public void SetCustom(Custom effect)
+        {
+            SetGuid(NativeWrapper.CreateMouseEffect(effect));
         }
     }
 }

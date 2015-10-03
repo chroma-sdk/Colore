@@ -202,6 +202,21 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
+        /// Checks if the Chroma SDK is available on this system.
+        /// </summary>
+        /// <returns><c>true</c> if Chroma SDK is available, otherwise <c>false</c>.</returns>
+        [PublicAPI]
+        public static bool IsSdkAvailable()
+        {
+            // We try both 32-bit and 64-bit libraries
+            // If neither exist, we do not have SDK available
+            var sdk32Ptr = Native.Kernel32.NativeMethods.LoadLibrary("RzChromaSDK.dll");
+            var sdk64Ptr = Native.Kernel32.NativeMethods.LoadLibrary("RzChromaSDK64.dll");
+
+            return sdk32Ptr != IntPtr.Zero || sdk64Ptr != IntPtr.Zero;
+        }
+
+        /// <summary>
         /// Queries the SDK for information regarding a specific device.
         /// </summary>
         /// <param name="deviceId">The device ID to query for, valid IDs can be found in <see cref="Devices" />.</param>

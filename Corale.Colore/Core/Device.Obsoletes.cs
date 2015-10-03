@@ -42,7 +42,10 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="color">Color to set.</param>
         [Obsolete("Set is deprecated, please use SetAll(Effect).", false)]
-        public abstract void Set(Color color);
+        public void Set(Color color)
+        {
+            SetAll(color);
+        }
 
         /// <summary>
         /// Updates the device to use the effect pointed to by the specified GUID.

@@ -36,18 +36,8 @@ namespace Corale.Colore.Core
     /// <summary>
     /// Class for interacting with a Chroma keypad.
     /// </summary>
-    public sealed partial class Keypad : Device, IKeypad
+    public sealed partial class Keypad
     {
-        /// <summary>
-        /// Sets the color of all components on this device.
-        /// </summary>
-        /// <param name="color">Color to set.</param>
-        [Obsolete("Set is deprecated, please use SetAll(Effect).", false)]
-        public override void Set(Color color)
-        {
-            SetAll(color);
-        }
-
         /// <summary>
         /// Sets an effect without any parameters.
         /// Currently, this only works for the <see cref="Effect.None" /> effect.
@@ -86,7 +76,7 @@ namespace Corale.Colore.Core
         [Obsolete("Set is deprecated, please use SetReactive(Reactive).", false)]
         public void Set(Reactive effect)
         {
-           SetReactive(effect);
+            SetReactive(effect);
         }
 
         /// <summary>

@@ -31,6 +31,7 @@
 namespace Corale.Colore.Core
 {
     using System;
+
     using Corale.Colore.Razer.Mousepad.Effects;
 
     /// <summary>
@@ -38,16 +39,6 @@ namespace Corale.Colore.Core
     /// </summary>
     public sealed partial class Mousepad
     {
-        /// <summary>
-        /// Sets the color of all components on this device.
-        /// </summary>
-        /// <param name="color">Color to set.</param>
-        [Obsolete("Set is deprecated, please use SetAll(Effect).", false)]
-        public override void Set(Color color)
-        {
-            SetAll(color);
-        }
-
         /// <summary>
         /// Sets an effect without any parameters.
         /// Currently, this only works for the <see cref="Effect.None" /> effect.

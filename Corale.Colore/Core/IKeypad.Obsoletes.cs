@@ -29,16 +29,16 @@
 // ---------------------------------------------------------------------------------------
 
 namespace Corale.Colore.Core
-{ 
+{
     using System;
+
     using Corale.Colore.Annotations;
-    using Corale.Colore.Razer.Keypad;
     using Corale.Colore.Razer.Keypad.Effects;
 
     /// <summary>
     /// Interface for keypad functions.
     /// </summary>
-    public partial interface IKeypad : IDevice
+    public partial interface IKeypad
     {
         /// <summary>
         /// Sets a <see cref="Breathing" /> effect on the keypad.

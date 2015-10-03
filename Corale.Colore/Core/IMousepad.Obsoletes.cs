@@ -31,13 +31,14 @@
 namespace Corale.Colore.Core
 {
     using System;
+
     using Corale.Colore.Annotations;
     using Corale.Colore.Razer.Mousepad.Effects;
 
     /// <summary>
     /// Interface for mouse pad functionality.
     /// </summary>
-    public partial interface IMousepad : IDevice
+    public partial interface IMousepad
     {
         /// <summary>
         /// Sets a breathing effect on the mouse pad.

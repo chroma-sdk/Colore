@@ -42,16 +42,6 @@ namespace Corale.Colore.Core
     public sealed partial class Keyboard
     {
         /// <summary>
-        /// Sets the color of all components on this device.
-        /// </summary>
-        /// <param name="color">Color to set.</param>
-        [Obsolete("Set is deprecated, please use SetAll(Effect).", false)]
-        public override void Set(Color color)
-        {
-            SetAll(color);
-        }
-
-        /// <summary>
         /// Sets a breathing effect on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
@@ -114,7 +104,7 @@ namespace Corale.Colore.Core
         [Obsolete("Set is deprecated, please use SetCustom(Custom).", false)]
         public void Set(Custom effect)
         {
-           SetCustom(effect);
+            SetCustom(effect);
         }
 
         /// <summary>

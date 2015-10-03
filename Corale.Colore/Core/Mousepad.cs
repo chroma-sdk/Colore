@@ -50,12 +50,18 @@ namespace Corale.Colore.Core
         private static IMousepad _instance;
 
         /// <summary>
+        /// Internal <see cref="Custom" /> struct used for effects.
+        /// </summary>
+        private Custom _custom;
+
+        /// <summary>
         /// Prevents a default instance of the <see cref="Mousepad" /> class from being created.
         /// </summary>
         private Mousepad()
         {
             Log.Debug("Mousepad is initializing.");
             Chroma.Initialize();
+            _custom = Custom.Create();
         }
 
         /// <summary>
@@ -75,7 +81,8 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         public override void SetAll(Color color)
         {
-            SetGuid(NativeWrapper.CreateMousepadEffect(new Static(color)));
+            _custom.Set(color);
+            SetCustom(_custom);
         }
 
         /// <summary>
