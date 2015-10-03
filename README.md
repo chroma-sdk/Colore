@@ -1,25 +1,25 @@
 Colore
 ======
 
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](http://opensource.org/licenses/MIT)
-[![GitHub release version](https://img.shields.io/github/release/CoraleStudios/Colore.svg)](https://github.com/CoraleStudios/Colore/releases)
-[![NuGet version](https://img.shields.io/nuget/v/Colore.svg)](https://www.nuget.org/packages/Colore)
-[![NuGet downloads](https://img.shields.io/nuget/dt/Colore.svg)](https://www.nuget.org/packages/Colore)
+[![MIT License][licensebadge]
+[![Latest GitHub release][ghreleasebadge]
+[![NuGet version][ngverbadge]
+[![NuGet downloads][ngdlbadge]
 
 **Develop:**
-[![Build status](https://ci.appveyor.com/api/projects/status/86g99rkyhc57sa74?svg=true)](https://ci.appveyor.com/project/Corale/colore)
-[![Coverage Status](https://coveralls.io/repos/CoraleStudios/Colore/badge.svg?branch=develop)](https://coveralls.io/r/CoraleStudios/Colore?branch=develop)
+[![Build status][devbuildbadge]][devbuild]
+[![Coverage Status][devcoverbadge]][devcover]
 
 **Master:**
-[![Master build status](https://ci.appveyor.com/api/projects/status/86g99rkyhc57sa74/branch/master?svg=true)](https://ci.appveyor.com/project/Corale/colore/branch/master)
-[![Master coverage Status](https://coveralls.io/repos/CoraleStudios/Colore/badge.svg?branch=develop)](https://coveralls.io/r/CoraleStudios/Colore?branch=master)
+[![Master build status][masterbuildbadge]][masterbuild]
+[![Master coverage Status][mastercoverbadge]][mastercover]
 
 A powerful and elegant C# library for Razer Chroma's SDK
 
 Contributing
 ------------
 
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/CoraleStudios/Colore?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Gitter][gitterbadge]][gitter]
 
 *For discussing, you can join the Gitter chat using the badge above. If you want to join the Slack chat, contact [Brandon Scott][bs] ([brandon@brandonscott.co.uk](mailto:brandon@brandonscott.co.uk)) or [Adam Hellberg][sharp] ([sharparam@sharparam.com](mailto:sharparam@sharparam.com)).*
 
@@ -97,3 +97,21 @@ Current projects utilizing this or modified versions of this library:
 [contrib]: ../../wiki/Contributing
 [bs]: https://github.com/brandonscott
 [rzdev]: http://developer.razerzone.com/chroma
+
+[licensebadge]: https://img.shields.io/badge/license-MIT-blue.svg)](http://opensource.org/licenses/MIT
+[ghreleasebadge]: https://img.shields.io/github/release/CoraleStudios/Colore.svg)](https://github.com/CoraleStudios/Colore/releases
+[ngverbadge]: https://img.shields.io/nuget/v/Colore.svg)](https://www.nuget.org/packages/Colore
+[ngdlbadge]: https://img.shields.io/nuget/dt/Colore.svg)](https://www.nuget.org/packages/Colore
+
+[devbuild]: http://tc.sharpblade.net/viewType.html?buildTypeId=colore_mainbuild
+[devbuildbadge]: https://img.shields.io/teamcity/http/tc.sharpblade.net/s/colore_mainbuild.svg?style=flat
+[devcover]: https://coveralls.io/r/CoraleStudios/Colore?branch=develop
+[devcoverbadge]: https://coveralls.io/repos/CoraleStudios/Colore/badge.svg?branch=develop
+
+[masterbuild]: http://tc.sharpblade.net/viewType.html?buildTypeId=colore_releasebuild
+[masterbuildbadge]: https://img.shields.io/teamcity/http/tc.sharpblade.net/s/colore_releasebuild.svg?style=flat
+[mastercover]: https://coveralls.io/r/CoraleStudios/Colore?branch=master
+[mastercoverbadge]: https://coveralls.io/repos/CoraleStudios/Colore/badge.svg?branch=master
+
+[gitter]: https://gitter.im/CoraleStudios/Colore?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
+[gitterbadge]: https://badges.gitter.im/Join%20Chat.svg
