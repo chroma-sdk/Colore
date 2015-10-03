@@ -44,23 +44,24 @@ namespace Corale.Colore.Native.Kernel32
         private const string DllName = "kernel32.dll";
 
         [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = "GetProcAddress", ExactSpelling = true,
-            SetLastError = true, ThrowOnUnmappableChar = true, BestFitMapping = false)]
-        internal static extern IntPtr GetProcAddress(IntPtr module, [MarshalAs(UnmanagedType.LPStr)] string procName);
+            SetLastError = true, BestFitMapping = false)]
+        internal static extern IntPtr GetProcAddress(IntPtr module, string procName);
 
-        [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = "LoadLibrary", SetLastError = true,
-            ThrowOnUnmappableChar = true, BestFitMapping = false)]
+        [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = "LoadLibrary", SetLastError = true)]
         internal static extern IntPtr LoadLibrary([MarshalAs(UnmanagedType.LPStr)] string filename);
 
-        [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = "GetCurrentProcess", SetLastError = true,
-            ThrowOnUnmappableChar = true, BestFitMapping = false)]
+        [DllImport(DllName, EntryPoint = "GetCurrentProcess", SetLastError = true)]
         internal static extern IntPtr GetCurrentProcess();
 
         [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = "GetModuleHandle", SetLastError = true,
-            ThrowOnUnmappableChar = true, BestFitMapping = false)]
+            BestFitMapping = false)]
         internal static extern IntPtr GetModuleHandle(string moduleName);
 
-        [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = "GetModuleHandle", SetLastError = true,
-            ThrowOnUnmappableChar = true, BestFitMapping = false)]
-        internal static extern bool IsWow64Process(IntPtr hProcess, out bool wow64Process);
+        [DllImport(DllName, EntryPoint = "IsWow64Process", SetLastError = true,
+            CallingConvention = CallingConvention.Winapi)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        internal static extern bool IsWow64Process(
+            [In] IntPtr hProcess,
+            [Out] [MarshalAs(UnmanagedType.Bool)] out bool wow64Process);
     }
 }

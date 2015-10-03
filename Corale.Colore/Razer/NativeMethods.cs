@@ -160,7 +160,7 @@ namespace Corale.Colore.Razer
             Justification = "Can't get rid of this exception as we depend on architecture and library to work.")]
         static NativeMethods()
         {
-            if (EnvironmentHelper.Is64BitOperatingSystem())
+            if (EnvironmentHelper.Is64BitProcess() && EnvironmentHelper.Is64BitOperatingSystem())
             {
                 // We are running 64-bit!
                 ChromaSdkPointer = Native.Kernel32.NativeMethods.LoadLibrary("RzChromaSDK64.dll");
@@ -174,7 +174,10 @@ namespace Corale.Colore.Razer
             }
 
             if (ChromaSdkPointer == IntPtr.Zero)
-                throw new ColoreException("Failed to dynamically load Chroma SDK library.");
+            {
+                throw new ColoreException(
+                    "Failed to dynamically load Chroma SDK library (Error " + Marshal.GetLastWin32Error() + ").");
+            }
 
             Init = GetDelegateFromLibrary<InitDelegate>(ChromaSdkPointer, "Init");
 

@@ -62,5 +62,14 @@ namespace Corale.Colore
             bool result;
             return NativeMethods.IsWow64Process(NativeMethods.GetCurrentProcess(), out result) && result;
         }
+
+        /// <summary>
+        /// Determines whether this process is a 64-bit process.
+        /// </summary>
+        /// <returns><c>true</c> if this process is 64-bit, otherwise <c>false</c>.</returns>
+        internal static bool Is64BitProcess()
+        {
+            return IntPtr.Size == 8;
+        }
     }
 }
