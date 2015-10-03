@@ -43,23 +43,19 @@ namespace Corale.Colore.Native.Kernel32
         /// </summary>
         private const string DllName = "kernel32.dll";
 
-        [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = "GetProcAddress", ExactSpelling = true,
-            SetLastError = true)]
+        [DllImport(DllName, CharSet = CharSet.Auto, EntryPoint = "GetProcAddress", SetLastError = true)]
         internal static extern IntPtr GetProcAddress(IntPtr module, string procName);
 
-        [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = "LoadLibrary", ExactSpelling = true,
-            SetLastError = true)]
+        [DllImport(DllName, CharSet = CharSet.Auto, EntryPoint = "LoadLibrary", SetLastError = true)]
         internal static extern IntPtr LoadLibrary([MarshalAs(UnmanagedType.LPStr)] string filename);
 
-        [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = "GetCurrentProcess", ExactSpelling = true,
-            SetLastError = true)]
+        [DllImport(DllName, CharSet = CharSet.Auto, EntryPoint = "GetCurrentProcess", SetLastError = true)]
         internal static extern IntPtr GetCurrentProcess();
 
-        [DllImport(DllName, CharSet = CharSet.Auto, EntryPoint = "GetModuleHandle", ExactSpelling = true,
-            SetLastError = true)]
+        [DllImport(DllName, CharSet = CharSet.Auto, EntryPoint = "GetModuleHandle", SetLastError = true)]
         internal static extern IntPtr GetModuleHandle(string moduleName);
 
-        [DllImport(DllName, EntryPoint = "IsWow64Process", ExactSpelling = true, SetLastError = true,
+        [DllImport(DllName, EntryPoint = "IsWow64Process", SetLastError = true,
             CallingConvention = CallingConvention.Winapi)]
         [return: MarshalAs(UnmanagedType.Bool)]
         internal static extern bool IsWow64Process(
