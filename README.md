@@ -98,7 +98,8 @@ Current projects utilizing this or modified versions of this library:
 [bs]: https://github.com/brandonscott
 [rzdev]: http://developer.razerzone.com/chroma
 
-[licensebadge]: https://img.shields.io/badge/license-MIT-blue.svg)](http://opensource.org/licenses/MIT
+[license]: http://opensource.org/licenses/MIT
+[licensebadge]: https://img.shields.io/badge/license-MIT-blue.svg
 [ghreleasebadge]: https://img.shields.io/github/release/CoraleStudios/Colore.svg)](https://github.com/CoraleStudios/Colore/releases
 [ngverbadge]: https://img.shields.io/nuget/v/Colore.svg)](https://www.nuget.org/packages/Colore
 [ngdlbadge]: https://img.shields.io/nuget/dt/Colore.svg)](https://www.nuget.org/packages/Colore
