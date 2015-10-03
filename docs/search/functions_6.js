@@ -7,5 +7,5 @@ var searchData=
   ['getmetadata',['GetMetadata',['../struct_corale_1_1_colore_1_1_razer_1_1_result.html#aa3f9e7bc3579dd0c382986a98b4b5f2a',1,'Corale::Colore::Razer::Result']]],
   ['getmodulehandle',['GetModuleHandle',['../class_corale_1_1_colore_1_1_native_1_1_kernel32_1_1_native_methods.html#a601160d14a81b3352c299dd78ec81fe0',1,'Corale::Colore::Native::Kernel32::NativeMethods']]],
   ['getobjectdata',['GetObjectData',['../class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html#a2d99bbc0bb96f98dc9767fe831949ea0',1,'Corale.Colore.Razer.NativeCallException.GetObjectData()'],['../class_corale_1_1_colore_1_1_razer_1_1_unsupported_device_exception.html#a11125eb3317893bdd4c17cfa7de00b0c',1,'Corale.Colore.Razer.UnsupportedDeviceException.GetObjectData()']]],
-  ['getprocaddress',['GetProcAddress',['../class_corale_1_1_colore_1_1_native_1_1_kernel32_1_1_native_methods.html#a3b51a4e10c546345d6a6b19dc16cc9fd',1,'Corale::Colore::Native::Kernel32::NativeMethods']]]
+  ['getprocaddress',['GetProcAddress',['../class_corale_1_1_colore_1_1_native_1_1_kernel32_1_1_native_methods.html#ad331a58d25fdba034d4858fc6c3d70f1',1,'Corale::Colore::Native::Kernel32::NativeMethods']]]
 ];

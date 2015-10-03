@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Colore
-   &#160;<span id="projectnumber">2.2.1.78</span>
+   &#160;<span id="projectnumber">2.2.2.81</span>
    </div>
    <div id="projectbrief">C# library for Razer&#39;s Chroma SDK</div>
   </td>
@@ -149,26 +149,27 @@ $(document).ready(function(){initNavTree('_native_2_kernel32_2_native_methods_8c
 <div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_corale_1_1_colore_1_1_native_1_1_kernel32_1_1_native_methods.html#a7c01102d3d4ce4aad3409d14c294dae6">   44</a></span>&#160;        <span class="keyword">private</span> <span class="keyword">const</span> <span class="keywordtype">string</span> DllName = <span class="stringliteral">&quot;kernel32.dll&quot;</span>;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = <span class="stringliteral">&quot;GetProcAddress&quot;</span>, ExactSpelling = <span class="keyword">true</span>,</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            SetLastError = <span class="keyword">true</span>, ThrowOnUnmappableChar = <span class="keyword">true</span>, BestFitMapping = <span class="keyword">false</span>)]</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">internal</span> <span class="keyword">static</span> <span class="keyword">extern</span> IntPtr GetProcAddress(IntPtr module, [MarshalAs(UnmanagedType.LPStr)] <span class="keywordtype">string</span> procName);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            SetLastError = <span class="keyword">true</span>, BestFitMapping = <span class="keyword">false</span>)]</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">internal</span> <span class="keyword">static</span> <span class="keyword">extern</span> IntPtr GetProcAddress(IntPtr module, <span class="keywordtype">string</span> procName);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = <span class="stringliteral">&quot;LoadLibrary&quot;</span>, SetLastError = <span class="keyword">true</span>,</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            ThrowOnUnmappableChar = <span class="keyword">true</span>, BestFitMapping = <span class="keyword">false</span>)]</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">internal</span> <span class="keyword">static</span> <span class="keyword">extern</span> IntPtr LoadLibrary([MarshalAs(UnmanagedType.LPStr)] <span class="keywordtype">string</span> filename);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = <span class="stringliteral">&quot;GetCurrentProcess&quot;</span>, SetLastError = <span class="keyword">true</span>,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            ThrowOnUnmappableChar = <span class="keyword">true</span>, BestFitMapping = <span class="keyword">false</span>)]</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">internal</span> <span class="keyword">static</span> <span class="keyword">extern</span> IntPtr GetCurrentProcess();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = <span class="stringliteral">&quot;GetModuleHandle&quot;</span>, SetLastError = <span class="keyword">true</span>,</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            ThrowOnUnmappableChar = <span class="keyword">true</span>, BestFitMapping = <span class="keyword">false</span>)]</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keyword">internal</span> <span class="keyword">static</span> <span class="keyword">extern</span> IntPtr GetModuleHandle(<span class="keywordtype">string</span> moduleName);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = <span class="stringliteral">&quot;GetModuleHandle&quot;</span>, SetLastError = <span class="keyword">true</span>,</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            ThrowOnUnmappableChar = <span class="keyword">true</span>, BestFitMapping = <span class="keyword">false</span>)]</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keyword">internal</span> <span class="keyword">static</span> <span class="keyword">extern</span> <span class="keywordtype">bool</span> IsWow64Process(IntPtr hProcess, out <span class="keywordtype">bool</span> wow64Process);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = <span class="stringliteral">&quot;LoadLibrary&quot;</span>, SetLastError = <span class="keyword">true</span>)]</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keyword">internal</span> <span class="keyword">static</span> <span class="keyword">extern</span> IntPtr LoadLibrary([MarshalAs(UnmanagedType.LPStr)] <span class="keywordtype">string</span> filename);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        [DllImport(DllName, EntryPoint = <span class="stringliteral">&quot;GetCurrentProcess&quot;</span>, SetLastError = <span class="keyword">true</span>)]</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keyword">internal</span> <span class="keyword">static</span> <span class="keyword">extern</span> IntPtr GetCurrentProcess();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = <span class="stringliteral">&quot;GetModuleHandle&quot;</span>, SetLastError = <span class="keyword">true</span>,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            BestFitMapping = <span class="keyword">false</span>)]</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">internal</span> <span class="keyword">static</span> <span class="keyword">extern</span> IntPtr GetModuleHandle(<span class="keywordtype">string</span> moduleName);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        [DllImport(DllName, EntryPoint = <span class="stringliteral">&quot;IsWow64Process&quot;</span>, SetLastError = <span class="keyword">true</span>,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            CallingConvention = CallingConvention.Winapi)]</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        [<span class="keywordflow">return</span>: MarshalAs(UnmanagedType.Bool)]</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keyword">internal</span> <span class="keyword">static</span> <span class="keyword">extern</span> <span class="keywordtype">bool</span> IsWow64Process(</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            [In] IntPtr hProcess,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            [Out] [MarshalAs(UnmanagedType.Bool)] out <span class="keywordtype">bool</span> wow64Process);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
 <div class="ttc" id="namespace_system_html"><div class="ttname"><a href="namespace_system.html">System</a></div></div>
 <div class="ttc" id="namespace_corale_html"><div class="ttname"><a href="namespace_corale.html">Corale</a></div></div>
 <div class="ttc" id="class_corale_1_1_colore_1_1_native_1_1_kernel32_1_1_native_methods_html"><div class="ttname"><a href="class_corale_1_1_colore_1_1_native_1_1_kernel32_1_1_native_methods.html">Corale.Colore.Native.Kernel32.NativeMethods</a></div><div class="ttdoc">Native methods from kernel32 module. </div><div class="ttdef"><b>Definition:</b> <a href="_native_2_kernel32_2_native_methods_8cs_source.html#l00039">NativeMethods.cs:39</a></div></div>
@@ -178,7 +179,7 @@ $(document).ready(function(){initNavTree('_native_2_kernel32_2_native_methods_8c
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_865a93a85313ae6b2503dfb6975d8750.html">Corale.Colore</a></li><li class="navelem"><a class="el" href="dir_1653420d98b0bad850de2af6d996ef1d.html">Native</a></li><li class="navelem"><a class="el" href="dir_028b21ea94d017d3cbade3074999f54d.html">Kernel32</a></li><li class="navelem"><a class="el" href="_native_2_kernel32_2_native_methods_8cs.html">NativeMethods.cs</a></li>
-    <li class="footer">Generated on Wed Sep 23 2015 01:00:33 for Colore by
+    <li class="footer">Generated on Sat Oct 3 2015 23:04:12 for Colore by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
   </ul>

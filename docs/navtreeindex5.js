@@ -1,5 +1,6 @@
 var NAVTREEINDEX5 =
 {
+"struct_corale_1_1_colore_1_1_razer_1_1_keypad_1_1_effects_1_1_reactive.html#a9788c8b37e6e235125aa155b417d7ac5":[1,0,0,0,4,2,0,2,0],
 "struct_corale_1_1_colore_1_1_razer_1_1_keypad_1_1_effects_1_1_reactive.html#aaa80d61d77bf91855f62ca1d2d422ec1":[1,0,0,0,4,2,0,2,2],
 "struct_corale_1_1_colore_1_1_razer_1_1_keypad_1_1_effects_1_1_static.html":[1,0,0,0,4,2,0,3],
 "struct_corale_1_1_colore_1_1_razer_1_1_keypad_1_1_effects_1_1_static.html#a7d1126ae871ad75cdb123b5f8a9d75eb":[1,0,0,0,4,2,0,3,0],

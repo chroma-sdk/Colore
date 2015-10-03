@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"class_corale_1_1_colore_1_1_environment_helper.html#aee0aebf491cc371f02ecb84aee7224fa":[1,0,0,0,6,0],
 "class_corale_1_1_colore_1_1_events_1_1_application_state_event_args.html":[1,0,0,0,2,0],
 "class_corale_1_1_colore_1_1_events_1_1_application_state_event_args.html#a4be15bf0af2deb9e4604c92cdaf8661a":[1,0,0,0,2,0,0],
 "class_corale_1_1_colore_1_1_events_1_1_application_state_event_args.html#a874bcca786d6a19e602d2875a3e29434":[1,0,0,0,2,0,1],
@@ -14,10 +15,10 @@ var NAVTREEINDEX3 =
 "class_corale_1_1_colore_1_1_events_1_1_sdk_support_event_args.html#afe2338357a72b49b317639c6f373b950":[1,0,0,0,2,2,2],
 "class_corale_1_1_colore_1_1_native_1_1_kernel32_1_1_native_methods.html":[1,0,0,0,3,0,0],
 "class_corale_1_1_colore_1_1_native_1_1_kernel32_1_1_native_methods.html#a27744bbfb4aaa39b47de9e4d6eda30ff":[1,0,0,0,3,0,0,0],
-"class_corale_1_1_colore_1_1_native_1_1_kernel32_1_1_native_methods.html#a3b51a4e10c546345d6a6b19dc16cc9fd":[1,0,0,0,3,0,0,2],
 "class_corale_1_1_colore_1_1_native_1_1_kernel32_1_1_native_methods.html#a601160d14a81b3352c299dd78ec81fe0":[1,0,0,0,3,0,0,1],
 "class_corale_1_1_colore_1_1_native_1_1_kernel32_1_1_native_methods.html#a7c01102d3d4ce4aad3409d14c294dae6":[1,0,0,0,3,0,0,5],
-"class_corale_1_1_colore_1_1_native_1_1_kernel32_1_1_native_methods.html#ab6837544064c71f950f68034c872a087":[1,0,0,0,3,0,0,3],
+"class_corale_1_1_colore_1_1_native_1_1_kernel32_1_1_native_methods.html#ad331a58d25fdba034d4858fc6c3d70f1":[1,0,0,0,3,0,0,2],
+"class_corale_1_1_colore_1_1_native_1_1_kernel32_1_1_native_methods.html#aede13f2aab1d0f0dd17e8101dc6dc4bc":[1,0,0,0,3,0,0,3],
 "class_corale_1_1_colore_1_1_native_1_1_kernel32_1_1_native_methods.html#af588aa0a5c9fe039a5cf5c136d1569c4":[1,0,0,0,3,0,0,4],
 "class_corale_1_1_colore_1_1_razer_1_1_constants.html":[1,0,0,0,4,5],
 "class_corale_1_1_colore_1_1_razer_1_1_constants.html#a254333042aa47733f4cba387403b7bc1":[1,0,0,0,4,5,1],
@@ -165,8 +166,8 @@ var NAVTREEINDEX3 =
 "dir_ebcc5f2159b8e9654cff97801f191bce.html":[2,0,0,4,0],
 "dir_f3ad38167190423c2107342c8f2133b4.html":[2,0,0,4,1],
 "files.html":[2,0],
-"functions.html":[1,3,0],
 "functions.html":[1,3,0,0],
+"functions.html":[1,3,0],
 "functions_a.html":[1,3,0,1],
 "functions_b.html":[1,3,0,2],
 "functions_c.html":[1,3,0,3],
@@ -174,8 +175,8 @@ var NAVTREEINDEX3 =
 "functions_e.html":[1,3,0,5],
 "functions_evnt.html":[1,3,4],
 "functions_f.html":[1,3,0,6],
-"functions_func.html":[1,3,1],
 "functions_func.html":[1,3,1,0],
+"functions_func.html":[1,3,1],
 "functions_func_b.html":[1,3,1,1],
 "functions_func_c.html":[1,3,1,2],
 "functions_func_d.html":[1,3,1,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "interface_corale_1_1_colore_1_1_core_1_1_i_generic_device.html#a1be34b3309a0c2a08cb859bfaada714a":[1,0,0,0,1,7,0],
 "interface_corale_1_1_colore_1_1_core_1_1_i_generic_device.html#a3d13d28951181896073245c0af628573":[1,0,0,0,1,7,3],
 "interface_corale_1_1_colore_1_1_core_1_1_i_generic_device.html#a4013051a81951a68dbc341981c1a081f":[1,0,0,0,1,7,4],
-"interface_corale_1_1_colore_1_1_core_1_1_i_generic_device.html#a8c4a055b72135645f6aa3e3faab9d648":[1,0,0,0,1,7,1],
-"interface_corale_1_1_colore_1_1_core_1_1_i_generic_device.html#af217bbd31c85524082d37a04a2afb4df":[1,0,0,0,1,7,2]
+"interface_corale_1_1_colore_1_1_core_1_1_i_generic_device.html#a8c4a055b72135645f6aa3e3faab9d648":[1,0,0,0,1,7,1]
 };
