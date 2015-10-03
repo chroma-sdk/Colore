@@ -160,7 +160,7 @@ namespace Corale.Colore.Razer
             Justification = "Can't get rid of this exception as we depend on architecture and library to work.")]
         static NativeMethods()
         {
-            if (EnvironmentHelper.Is64BitOperatingSystem())
+            if (EnvironmentHelper.Is64BitProcess() && EnvironmentHelper.Is64BitOperatingSystem())
             {
                 // We are running 64-bit!
                 ChromaSdkPointer = Native.Kernel32.NativeMethods.LoadLibrary("RzChromaSDK64.dll");
