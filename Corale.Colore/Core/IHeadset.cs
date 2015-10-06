@@ -58,6 +58,14 @@ namespace Corale.Colore.Core
         void SetStatic(Static effect);
 
         /// <summary>
+        /// Sets a new <see cref="Static" /> effect on
+        /// the headset using the specified <see cref="Color" />.
+        /// </summary>
+        /// <param name="color"><see cref="Color" /> of the effect.</param>
+        [PublicAPI]
+        void SetStatic(Color color);
+
+        /// <summary>
         /// Sets a new breathing effect on the headset.
         /// </summary>
         /// <param name="effect">
@@ -66,5 +74,13 @@ namespace Corale.Colore.Core
         /// </param>
         [PublicAPI]
         void SetBreathing(Breathing effect);
+
+        /// <summary>
+        /// Sets a new <see cref="Breathing" /> effect on the headset
+        /// using the specified <see cref="Color" />.
+        /// </summary>
+        /// <param name="color"><see cref="Color"/> of the effect.</param>
+        [PublicAPI]
+        void SetBreathing(Color color);
     }
 }

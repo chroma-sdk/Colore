@@ -102,6 +102,16 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
+        /// Sets a new <see cref="Static" /> effect on
+        /// the headset using the specified <see cref="Color" />.
+        /// </summary>
+        /// <param name="color"><see cref="Color" /> of the effect.</param>
+        public void SetStatic(Color color)
+        {
+            SetStatic(new Static(color));
+        }
+
+        /// <summary>
         /// Sets a new breathing effect on the headset.
         /// </summary>
         /// <param name="effect">
@@ -111,6 +121,16 @@ namespace Corale.Colore.Core
         public void SetBreathing(Breathing effect)
         {
             SetGuid(NativeWrapper.CreateHeadsetEffect(effect));
+        }
+
+        /// <summary>
+        /// Sets a new <see cref="Breathing" /> effect on the headset
+        /// using the specified <see cref="Color" />.
+        /// </summary>
+        /// <param name="color"><see cref="Color"/> of the effect.</param>
+        public void SetBreathing(Color color)
+        {
+            SetBreathing(new Breathing(color));
         }
     }
 }
