@@ -38,9 +38,9 @@ var NAVTREEINDEX =
 "_annotations_8cs.html",
 "_keyboard_2_constants_8cs.html",
 "class_asp_mvc_master_location_format_attribute.html",
-"class_corale_1_1_colore_1_1_environment_helper.html#aee0aebf491cc371f02ecb84aee7224fa",
-"interface_corale_1_1_colore_1_1_core_1_1_i_generic_device.html#af217bbd31c85524082d37a04a2afb4df",
-"struct_corale_1_1_colore_1_1_razer_1_1_keypad_1_1_effects_1_1_reactive.html#a9788c8b37e6e235125aa155b417d7ac5"
+"class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html#a9ad5384ee8bb9286fef79862e0064eca",
+"interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html#a56e707afe10db4907abfb15af823b479",
+"struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_custom_1_1_row.html#ac8714a14510f897cbcdbdcc876640a68"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

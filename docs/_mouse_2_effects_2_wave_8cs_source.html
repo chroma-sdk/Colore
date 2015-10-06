@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Colore
-   &#160;<span id="projectnumber">2.2.2.81</span>
+   &#160;<span id="projectnumber">2.3.0.83</span>
    </div>
    <div id="projectbrief">C# library for Razer&#39;s Chroma SDK</div>
   </td>
@@ -141,29 +141,34 @@ $(document).ready(function(){initNavTree('_mouse_2_effects_2_wave_8cs_source.htm
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_corale.html">Corale</a>.Colore.Razer.<a class="code" href="namespace_corale_1_1_colore_1_1_razer.html#ac5d6192a3d5d3c657e9cebbcef34360baf2a47c6809d88e175dade0ef7b16aa13">Mouse</a>.Effects</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_wave.html">   36</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">struct </span><a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_wave.html">Wave</a></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    {</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_wave.html#a114ccdb54f223c0c983d1aaa08295ac3">   41</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects.html#a72de570f2ef017d735ea62b0c704b2b7">Direction</a> <a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_wave.html#a114ccdb54f223c0c983d1aaa08295ac3">Direction</a>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_wave.html#a51525a29f0b724a5d2ff7e1e6b762837">   47</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_wave.html#a51525a29f0b724a5d2ff7e1e6b762837">Wave</a>(Direction direction)</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            Direction = direction;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">using</span> <a class="code" href="namespace_corale.html">Corale</a>.<a class="code" href="namespace_corale_1_1_colore.html">Colore</a>.<a class="code" href="namespace_corale_1_1_colore_1_1_annotations.html">Annotations</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_wave.html">   38</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">struct </span><a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_wave.html">Wave</a></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        [UsedImplicitly]</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_wave.html#a114ccdb54f223c0c983d1aaa08295ac3">   44</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects.html#a72de570f2ef017d735ea62b0c704b2b7">Direction</a> <a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_wave.html#a114ccdb54f223c0c983d1aaa08295ac3">Direction</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_wave.html#a51525a29f0b724a5d2ff7e1e6b762837">   50</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_wave.html#a51525a29f0b724a5d2ff7e1e6b762837">Wave</a>(Direction direction)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            Direction = direction;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
 <div class="ttc" id="namespace_corale_html"><div class="ttname"><a href="namespace_corale.html">Corale</a></div></div>
+<div class="ttc" id="namespace_corale_1_1_colore_1_1_annotations_html"><div class="ttname"><a href="namespace_corale_1_1_colore_1_1_annotations.html">Corale.Colore.Annotations</a></div><div class="ttdef"><b>Definition:</b> <a href="_annotations_8cs_source.html#l00018">Annotations.cs:18</a></div></div>
 <div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_wave_html"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_wave.html">Corale.Colore.Razer.Keyboard.Effects.Wave</a></div><div class="ttdoc">The wave effect for the keyboard. </div><div class="ttdef"><b>Definition:</b> <a href="_keyboard_2_effects_2_wave_8cs_source.html#l00041">Wave.cs:41</a></div></div>
+<div class="ttc" id="namespace_corale_1_1_colore_html"><div class="ttname"><a href="namespace_corale_1_1_colore.html">Corale.Colore</a></div></div>
 <div class="ttc" id="namespace_corale_1_1_colore_1_1_razer_html_ac5d6192a3d5d3c657e9cebbcef34360baf2a47c6809d88e175dade0ef7b16aa13"><div class="ttname"><a href="namespace_corale_1_1_colore_1_1_razer.html#ac5d6192a3d5d3c657e9cebbcef34360baf2a47c6809d88e175dade0ef7b16aa13">Corale.Colore.Razer.DeviceType.Mouse</a></div><div class="ttdoc">A mouse device. </div></div>
 <div class="ttc" id="namespace_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_html_a72de570f2ef017d735ea62b0c704b2b7"><div class="ttname"><a href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects.html#a72de570f2ef017d735ea62b0c704b2b7">Corale.Colore.Razer.Mouse.Effects.Direction</a></div><div class="ttdeci">Direction</div><div class="ttdoc">Direction for wave effect on mouse. </div><div class="ttdef"><b>Definition:</b> <a href="_mouse_2_effects_2_direction_8cs_source.html#l00038">Direction.cs:38</a></div></div>
-<div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_wave_html_a114ccdb54f223c0c983d1aaa08295ac3"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_wave.html#a114ccdb54f223c0c983d1aaa08295ac3">Corale.Colore.Razer.Mouse.Effects.Wave.Direction</a></div><div class="ttdeci">Direction Direction</div><div class="ttdoc">The direction of the wave effect. </div><div class="ttdef"><b>Definition:</b> <a href="_mouse_2_effects_2_wave_8cs_source.html#l00041">Wave.cs:41</a></div></div>
-<div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_wave_html_a51525a29f0b724a5d2ff7e1e6b762837"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_wave.html#a51525a29f0b724a5d2ff7e1e6b762837">Corale.Colore.Razer.Mouse.Effects.Wave.Wave</a></div><div class="ttdeci">Wave(Direction direction)</div><div class="ttdoc">Initializes a new instance of the Wave struct. </div><div class="ttdef"><b>Definition:</b> <a href="_mouse_2_effects_2_wave_8cs_source.html#l00047">Wave.cs:47</a></div></div>
+<div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_wave_html_a114ccdb54f223c0c983d1aaa08295ac3"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_wave.html#a114ccdb54f223c0c983d1aaa08295ac3">Corale.Colore.Razer.Mouse.Effects.Wave.Direction</a></div><div class="ttdeci">Direction Direction</div><div class="ttdoc">The direction of the wave effect. </div><div class="ttdef"><b>Definition:</b> <a href="_mouse_2_effects_2_wave_8cs_source.html#l00044">Wave.cs:44</a></div></div>
+<div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_wave_html_a51525a29f0b724a5d2ff7e1e6b762837"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_wave.html#a51525a29f0b724a5d2ff7e1e6b762837">Corale.Colore.Razer.Mouse.Effects.Wave.Wave</a></div><div class="ttdeci">Wave(Direction direction)</div><div class="ttdoc">Initializes a new instance of the Wave struct. </div><div class="ttdef"><b>Definition:</b> <a href="_mouse_2_effects_2_wave_8cs_source.html#l00050">Wave.cs:50</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_865a93a85313ae6b2503dfb6975d8750.html">Corale.Colore</a></li><li class="navelem"><a class="el" href="dir_4e4b822210286250472cb31b47778e3b.html">Razer</a></li><li class="navelem"><a class="el" href="dir_2cdf075d7cc93ecc53d911cda35f68ac.html">Mouse</a></li><li class="navelem"><a class="el" href="dir_96b52497b4c88890db46c3e726dc7144.html">Effects</a></li><li class="navelem"><a class="el" href="_mouse_2_effects_2_wave_8cs.html">Wave.cs</a></li>
-    <li class="footer">Generated on Sat Oct 3 2015 23:04:13 for Colore by
+    <li class="footer">Generated on Tue Oct 6 2015 22:56:59 for Colore by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
   </ul>

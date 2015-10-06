@@ -4,7 +4,8 @@ var searchData=
   ['initialize',['Initialize',['../class_corale_1_1_colore_1_1_core_1_1_chroma.html#a261c92ac0e73b99e242faf4f44135945',1,'Corale::Colore::Core::Chroma']]],
   ['is64bitoperatingsystem',['Is64BitOperatingSystem',['../class_corale_1_1_colore_1_1_environment_helper.html#aee0aebf491cc371f02ecb84aee7224fa',1,'Corale::Colore::EnvironmentHelper']]],
   ['is64bitprocess',['Is64BitProcess',['../class_corale_1_1_colore_1_1_environment_helper.html#adb011ac805f717417935921c385e5fb3',1,'Corale::Colore::EnvironmentHelper']]],
-  ['isset',['IsSet',['../interface_corale_1_1_colore_1_1_core_1_1_i_keyboard.html#a638d66cf92177cebf6529255f2d018db',1,'Corale.Colore.Core.IKeyboard.IsSet()'],['../class_corale_1_1_colore_1_1_core_1_1_keyboard.html#a78066f10a055b423a33f40783246378a',1,'Corale.Colore.Core.Keyboard.IsSet()']]],
+  ['issdkavailable',['IsSdkAvailable',['../class_corale_1_1_colore_1_1_core_1_1_chroma.html#ab3e4ecccfbd42508d1be2003ae7472f1',1,'Corale::Colore::Core::Chroma']]],
+  ['isset',['IsSet',['../interface_corale_1_1_colore_1_1_core_1_1_i_keyboard.html#a638d66cf92177cebf6529255f2d018db',1,'Corale.Colore.Core.IKeyboard.IsSet()'],['../interface_corale_1_1_colore_1_1_core_1_1_i_keypad.html#a33f74c6874faf2e1dfd3ed7db9e37807',1,'Corale.Colore.Core.IKeypad.IsSet()'],['../class_corale_1_1_colore_1_1_core_1_1_keyboard.html#a78066f10a055b423a33f40783246378a',1,'Corale.Colore.Core.Keyboard.IsSet()'],['../class_corale_1_1_colore_1_1_core_1_1_keypad.html#a91700605bd1326ac7464e8738f5a1723',1,'Corale.Colore.Core.Keypad.IsSet()']]],
   ['isvalidid',['IsValidId',['../class_corale_1_1_colore_1_1_razer_1_1_devices.html#a77a057a19d59d40d69372cfc93cd9c9b',1,'Corale::Colore::Razer::Devices']]],
   ['iswow64process',['IsWow64Process',['../class_corale_1_1_colore_1_1_native_1_1_kernel32_1_1_native_methods.html#aede13f2aab1d0f0dd17e8101dc6dc4bc',1,'Corale::Colore::Native::Kernel32::NativeMethods']]]
 ];

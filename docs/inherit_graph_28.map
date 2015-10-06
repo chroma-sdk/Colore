@@ -1,3 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_breathing.html" title="Describes the breathing effect type. " alt="" coords="5,5,191,47"/>
+<area shape="rect" id="node2" href="$struct_corale_1_1_colore_1_1_core_1_1_size.html" title="Dynamic size type for interacting with Razer&#39;s native code. Emulates size_t from C. " alt="" coords="203,5,364,32"/>
+<area shape="rect" id="node4" href="$struct_corale_1_1_colore_1_1_core_1_1_color.html" title="Represents an RGB color. " alt="" coords="201,107,366,133"/>
+<area shape="rect" id="node5" href="$struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_custom.html" title="Describes a custom grid effect for every key. " alt="" coords="183,158,384,199"/>
+<area shape="rect" id="node6" href="$struct_corale_1_1_colore_1_1_razer_1_1_keypad_1_1_effects_1_1_custom.html" title="Custom effect. " alt="" coords="188,223,379,265"/>
+<area shape="rect" id="node7" href="$struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_custom.html" title="Custom effect for mouse LEDs. " alt="" coords="191,354,376,395"/>
+<area shape="rect" id="node8" href="$struct_corale_1_1_colore_1_1_razer_1_1_mousepad_1_1_effects_1_1_custom.html" title="Custom effect for mouse pad. " alt="" coords="180,289,387,330"/>
+<area shape="rect" id="node9" href="$struct_corale_1_1_colore_1_1_razer_1_1_result.html" title="Struct for containing the result of running a native Chroma SDK function. " alt="" coords="194,56,373,83"/>
 </map>

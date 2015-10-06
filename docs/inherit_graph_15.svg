@@ -11,10 +11,10 @@
 <polygon fill="white" stroke="none" points="-4,4 -4,-35 155,-35 155,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node"><title>Node1</title>
-<g id="a_node1"><a xlink:href="struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_breathing.html" target="_top" xlink:title="Describes the breathing effect. ">
+<g id="a_node1"><a xlink:href="struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_custom_1_1_row.html" target="_top" xlink:title="Container struct holding color definitions for a single row in the custom grid. ">
 <polygon fill="white" stroke="black" points="0,-0.5 0,-30.5 151,-30.5 151,-0.5 0,-0.5"/>
 <text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">Corale.Colore.Razer.Keyboard.</text>
-<text text-anchor="middle" x="75.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">Effects.Breathing</text>
+<text text-anchor="middle" x="75.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">Effects.Custom.Row</text>
 </a>
 </g>
 </g>
