@@ -30,6 +30,7 @@
 
 namespace Corale.Colore.Core
 {
+    using Corale.Colore.Annotations;
     using Corale.Colore.Razer.Headset.Effects;
 
     /// <summary>
@@ -43,6 +44,7 @@ namespace Corale.Colore.Core
         /// for the <see cref="Effect.SpectrumCycling" /> effect.
         /// </summary>
         /// <param name="effect">The type of effect to set.</param>
+        [PublicAPI]
         void SetEffect(Effect effect);
 
         /// <summary>
@@ -52,6 +54,7 @@ namespace Corale.Colore.Core
         /// An instance of the <see cref="Static" /> struct
         /// describing the effect.
         /// </param>
+        [PublicAPI]
         void SetStatic(Static effect);
 
         /// <summary>
@@ -61,6 +64,7 @@ namespace Corale.Colore.Core
         /// An instance of the <see cref="Breathing" /> struct
         /// describing the effect.
         /// </param>
+        [PublicAPI]
         void SetBreathing(Breathing effect);
     }
 }
