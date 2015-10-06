@@ -161,6 +161,7 @@ namespace Corale.Colore.Core
         {
             if (effect == Razer.Mouse.Effects.Effect.None)
                 return CreateMouseEffect(effect, new Razer.Mouse.Effects.None(Razer.Mouse.Led.All));
+
             return CreateMouseEffect(effect, IntPtr.Zero);
         }
 
