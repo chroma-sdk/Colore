@@ -337,6 +337,19 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
+        /// Sets all Chroma devices to the specified <see cref="Color" />.
+        /// </summary>
+        /// <param name="color">The <see cref="Color" /> to set.</param>
+        public void SetAll(Color color)
+        {
+            Keyboard.SetAll(color);
+            Mouse.SetAll(color);
+            Mousepad.SetAll(color);
+            Keypad.SetAll(color);
+            Headset.SetAll(color);
+        }
+
+        /// <summary>
         /// Explicitly creates and initializes the <see cref="_instance" /> field
         /// with a new instance of the <see cref="Chroma" /> class.
         /// </summary>
