@@ -30,6 +30,8 @@
 
 namespace Corale.Colore.Razer.Mouse.Effects
 {
+    using Corale.Colore.Annotations;
+
     /// <summary>
     /// Spectrum cycling effect.
     /// </summary>
@@ -38,6 +40,7 @@ namespace Corale.Colore.Razer.Mouse.Effects
         /// <summary>
         /// The LED on which to apply the effect.
         /// </summary>
+        [UsedImplicitly]
         public Led Led;
 
         /// <summary>
