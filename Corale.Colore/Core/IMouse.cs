@@ -63,6 +63,33 @@ namespace Corale.Colore.Core
         void SetBreathing(Breathing effect);
 
         /// <summary>
+        /// Sets an effect on the mouse that causes it to breathe
+        /// between two different colors, fading to black in-between each one.
+        /// </summary>
+        /// <param name="first">First color to breathe into.</param>
+        /// <param name="second">Second color to breathe into.</param>
+        /// <param name="led">The LED(s) on which to apply the effect.</param>
+        [PublicAPI]
+        void SetBreathing(Color first, Color second, Led led = Led.All);
+
+        /// <summary>
+        /// Sets an effect on the mouse that causes it to breathe
+        /// a single color. The specified color will fade in
+        /// on the mouse, then fade to black, and repeat.
+        /// </summary>
+        /// <param name="color">The color to breathe.</param>
+        /// <param name="led">The LED(s) on which to apply the effect.</param>
+        [PublicAPI]
+        void SetBreathing(Color color, Led led = Led.All);
+
+        /// <summary>
+        /// Instructs the mouse to breathe random colors.
+        /// </summary>
+        /// <param name="led">The LED(s) on which to apply the effect.</param>
+        [PublicAPI]
+        void SetBreathing(Led led = Led.All);
+
+        /// <summary>
         /// Sets a static color on the mouse.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Static" /> effect.</param>
@@ -70,28 +97,71 @@ namespace Corale.Colore.Core
         void SetStatic(Static effect);
 
         /// <summary>
+        /// Sets a static effect on the mouse.
+        /// </summary>
+        /// <param name="color">The color to use.</param>
+        /// <param name="led">Which LED(s) to affect.</param>
+        [PublicAPI]
+        void SetStatic(Color color, Led led = Led.All);
+
+        /// <summary>
         /// Starts a blinking effect on the specified LED.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Blinking" /> effect.</param>
+        [PublicAPI]
         void SetBlinking(Blinking effect);
+
+        /// <summary>
+        /// Starts a blinking effect on the mouse.
+        /// </summary>
+        /// <param name="color">The color to blink with.</param>
+        /// <param name="led">The LED(s) to affect.</param>
+        [PublicAPI]
+        void SetBlinking(Color color, Led led = Led.All);
 
         /// <summary>
         /// Sets a reactive effect on the mouse.
         /// </summary>
         /// <param name="effect">Effect options struct.</param>
+        [PublicAPI]
         void SetReactive(Reactive effect);
+
+        /// <summary>
+        /// Sets a reactive effect on the mouse.
+        /// </summary>
+        /// <param name="duration">How long the effect should last.</param>
+        /// <param name="color">The color to react with.</param>
+        /// <param name="led">Which LED(s) to affect.</param>
+        [PublicAPI]
+        void SetReactive(Duration duration, Color color, Led led = Led.All);
 
         /// <summary>
         /// Sets a spectrum cycling effect on the mouse.
         /// </summary>
         /// <param name="effect">Effect options struct.</param>
+        [PublicAPI]
         void SetSpectrumCycling(SpectrumCycling effect);
+
+        /// <summary>
+        /// Sets a spectrum cycling effect on the mouse.
+        /// </summary>
+        /// <param name="led">The LED(s) to affect.</param>
+        [PublicAPI]
+        void SetSpectrumCycling(Led led = Led.All);
 
         /// <summary>
         /// Sets a wave effect on the mouse.
         /// </summary>
         /// <param name="effect">Effect options struct.</param>
+        [PublicAPI]
         void SetWave(Wave effect);
+
+        /// <summary>
+        /// Sets a wave effect on the mouse.
+        /// </summary>
+        /// <param name="direction">Direction of the wave.</param>
+        [PublicAPI]
+        void SetWave(Direction direction);
 
         /// <summary>
         /// Sets a custom effect on the mouse.

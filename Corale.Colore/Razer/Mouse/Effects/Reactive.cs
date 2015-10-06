@@ -32,6 +32,7 @@ namespace Corale.Colore.Razer.Mouse.Effects
 {
     using System.Runtime.InteropServices;
 
+    using Corale.Colore.Annotations;
     using Corale.Colore.Core;
 
     /// <summary>
@@ -43,16 +44,19 @@ namespace Corale.Colore.Razer.Mouse.Effects
         /// <summary>
         /// The LED on which to apply the effect.
         /// </summary>
+        [UsedImplicitly]
         public Led Led;
 
         /// <summary>
         /// Duration of the reaction.
         /// </summary>
+        [UsedImplicitly]
         public Duration Duration;
 
         /// <summary>
         /// Reaction color.
         /// </summary>
+        [UsedImplicitly]
         public Color Color;
 
         /// <summary>
