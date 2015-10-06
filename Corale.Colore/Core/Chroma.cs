@@ -32,12 +32,15 @@ namespace Corale.Colore.Core
 {
     using System;
     using System.Diagnostics.CodeAnalysis;
+    using System.Security;
 
     using Corale.Colore.Annotations;
     using Corale.Colore.Events;
     using Corale.Colore.Razer;
 
     using log4net;
+
+    using Microsoft.Win32;
 
     /// <summary>
     /// Main class for interacting with the Chroma SDK.
@@ -202,6 +205,66 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
+        /// Checks if the Chroma SDK is available on this system.
+        /// </summary>
+        /// <returns><c>true</c> if Chroma SDK is available, otherwise <c>false</c>.</returns>
+        [PublicAPI]
+        public static bool IsSdkAvailable()
+        {
+            bool dllValid;
+            var regKey = @"SOFTWARE\Razer Chroma SDK";
+
+#if ANYCPU
+            if (EnvironmentHelper.Is64BitProcess() && EnvironmentHelper.Is64BitOperatingSystem())
+            {
+                dllValid = Native.Kernel32.NativeMethods.LoadLibrary("RzChromaSDK64.dll") != IntPtr.Zero;
+                regKey = @"SOFTWARE\Wow6432Node\Razer Chroma SDK";
+            }
+            else
+                dllValid = Native.Kernel32.NativeMethods.LoadLibrary("RzChromaSDK.dll") != IntPtr.Zero;
+#elif WIN64
+            dllValid = Native.Kernel32.NativeMethods.LoadLibrary("RzChromaSDK64.dll") != IntPtr.Zero;
+            regKey = @"SOFTWARE\Wow6432Node\Razer Chroma SDK";
+#else
+            dllValid = Native.Kernel32.NativeMethods.LoadLibrary("RzChromaSDK.dll") != IntPtr.Zero;
+#endif
+
+            bool regEnabled;
+
+            try
+            {
+                using (var key = Registry.LocalMachine.OpenSubKey(regKey))
+                {
+                    if (key != null)
+                    {
+                        var value = key.GetValue("Enable");
+                        var bytes = value as byte[];
+
+                        regEnabled = bytes != null && bytes[0] == 1;
+                    }
+                    else
+                        regEnabled = false;
+                }
+            }
+            catch (SecurityException ex)
+            {
+                // If we can't access the registry, best to just assume
+                // it is enabled.
+                Log.Warn("System raised SecurityException during read of SDK enable flag in registry.", ex);
+                regEnabled = true;
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                // If we can't access the registry, best to just assume
+                // it is enabled.
+                Log.Warn("Not authorized to read registry for SDK enable flag.", ex);
+                regEnabled = true;
+            }
+
+            return dllValid && regEnabled;
+        }
+
+        /// <summary>
         /// Queries the SDK for information regarding a specific device.
         /// </summary>
         /// <param name="deviceId">The device ID to query for, valid IDs can be found in <see cref="Devices" />.</param>
@@ -319,6 +382,19 @@ namespace Corale.Colore.Core
             NativeWrapper.UnregisterEventNotification();
             _registered = false;
             _registeredHandle = IntPtr.Zero;
+        }
+
+        /// <summary>
+        /// Sets all Chroma devices to the specified <see cref="Color" />.
+        /// </summary>
+        /// <param name="color">The <see cref="Color" /> to set.</param>
+        public void SetAll(Color color)
+        {
+            Keyboard.SetAll(color);
+            Mouse.SetAll(color);
+            Mousepad.SetAll(color);
+            Keypad.SetAll(color);
+            Headset.SetAll(color);
         }
 
         /// <summary>

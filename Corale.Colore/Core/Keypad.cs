@@ -64,7 +64,7 @@ namespace Corale.Colore.Core
             Log.Debug("Keypad is initializing");
             Chroma.Initialize();
 
-            _custom = new Custom(Color.Black);
+            _custom = Custom.Create();
         }
 
         /// <summary>
@@ -100,12 +100,24 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
+        /// Returns whether a key has had a custom color set.
+        /// </summary>
+        /// <param name="row">The row to query.</param>
+        /// <param name="column">The column to query.</param>
+        /// <returns><c>true</c> if the position has a color set that is not black, otherwise <c>false</c>.</returns>
+        public bool IsSet(int row, int column)
+        {
+            return this[row, column] != Color.Black;
+        }
+
+        /// <summary>
         /// Sets the color of all components on this device.
         /// </summary>
         /// <param name="color">Color to set.</param>
         public override void SetAll(Color color)
         {
-            SetGuid(NativeWrapper.CreateKeypadEffect(new Static(color)));
+            _custom.Set(color);
+            SetCustom(_custom);
         }
 
         /// <summary>
@@ -128,6 +140,26 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
+        /// Sets a <see cref="Breathing" /> effect on the keypad
+        /// using the specified <see cref="Color" />.
+        /// </summary>
+        /// <param name="first">The first color to breathe into.</param>
+        /// <param name="second">Second color to breathe into.</param>
+        public void SetBreathing(Color first, Color second)
+        {
+            SetBreathing(new Breathing(first, second));
+        }
+
+        /// <summary>
+        /// Sets an effect on the keypad to breathe
+        /// between randomly chosen colors.
+        /// </summary>
+        public void SetBreathing()
+        {
+            SetBreathing(new Breathing(BreathingType.Random, Color.Black, Color.Black));
+        }
+
+        /// <summary>
         /// Sets a <see cref="Custom" /> effect on the keypad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
@@ -146,6 +178,17 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
+        /// Sets a <see cref="Reactive" /> effect on the keypad
+        /// with the specified parameters.
+        /// </summary>
+        /// <param name="duration">Duration of the effect.</param>
+        /// <param name="color">Color of the effect.</param>
+        public void SetReactive(Duration duration, Color color)
+        {
+            SetReactive(new Reactive(duration, color));
+        }
+
+        /// <summary>
         /// Sets a <see cref="Static" /> effect on the keypad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
@@ -155,12 +198,30 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
+        /// Sets a <see cref="Static" /> effect on the keypad.
+        /// </summary>
+        /// <param name="color">Color of the effect.</param>
+        public void SetStatic(Color color)
+        {
+            SetStatic(new Static(color));
+        }
+
+        /// <summary>
         /// Sets a <see cref="Wave" /> effect on the keypad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Wave" /> struct.</param>
         public void SetWave(Wave effect)
         {
             SetGuid(NativeWrapper.CreateKeypadEffect(effect));
+        }
+
+        /// <summary>
+        /// Sets a <see cref="Wave" /> effect on the keypad.
+        /// </summary>
+        /// <param name="direction">Direction of the wave.</param>
+        public void SetWave(Direction direction)
+        {
+            SetWave(new Wave(direction));
         }
     }
 }

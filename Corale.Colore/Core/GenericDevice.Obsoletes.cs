@@ -31,27 +31,14 @@
 namespace Corale.Colore.Core
 {
     using System;
-    using System.Collections.Generic;
-    using System.Runtime.InteropServices;
-    using Corale.Colore.Annotations;
+
     using Corale.Colore.Razer;
-    using log4net;
 
     /// <summary>
     /// A generic device.
     /// </summary>
     public sealed partial class GenericDevice
     {
-        /// <summary>
-        /// Sets the color of all components on this device.
-        /// </summary>
-        /// <param name="color">Color to set.</param>
-        [Obsolete("Set is deprecated, please use SetAll(Effect).", false)]
-        public override void Set(Color color)
-        {
-            SetAll(color);
-        }
-
         /// <summary>
         /// Sets a parameter-less effect on this device.
         /// </summary>

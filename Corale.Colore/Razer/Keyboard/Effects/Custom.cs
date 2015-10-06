@@ -196,12 +196,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// </summary>
         public void Clear()
         {
-            for (var row = 0; row < (int)Constants.MaxRows; row++)
-            {
-                var rowArr = _rows[row];
-                for (var col = 0; col < (int)Constants.MaxColumns; col++)
-                    rowArr[col] = Color.Black;
-            }
+            Set(Color.Black);
         }
 
         /// <summary>

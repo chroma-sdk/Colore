@@ -159,7 +159,20 @@ namespace Corale.Colore.Core
         /// <remarks>This is currently only valid for <see cref="Razer.Mouse.Effects.Effect.None" />.</remarks>
         internal static Guid CreateMouseEffect(Razer.Mouse.Effects.Effect effect)
         {
+            if (effect == Razer.Mouse.Effects.Effect.None)
+                return CreateMouseEffect(effect, new Razer.Mouse.Effects.None(Razer.Mouse.Led.All));
+
             return CreateMouseEffect(effect, IntPtr.Zero);
+        }
+
+        /// <summary>
+        /// Creates a custom effect for the mouse.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
+        internal static Guid CreateMouseEffect(Razer.Mouse.Effects.Custom effect)
+        {
+            return CreateMouseEffect(Razer.Mouse.Effects.Effect.Custom, effect);
         }
 
         /// <summary>

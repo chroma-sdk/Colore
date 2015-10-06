@@ -31,6 +31,7 @@
 namespace Corale.Colore.Core
 {
     using System;
+
     using Corale.Colore.Annotations;
     using Corale.Colore.Razer.Mouse;
     using Corale.Colore.Razer.Mouse.Effects;
@@ -38,7 +39,7 @@ namespace Corale.Colore.Core
     /// <summary>
     /// Interface for mouse functionality.
     /// </summary>
-    public partial interface IMouse : IDevice
+    public partial interface IMouse
     {
         /// <summary>
         /// Sets the color of a specific LED on the mouse.
@@ -79,6 +80,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Blinking" /> effect.</param>
         [Obsolete("Set is deprecated, please use SetBlinking(Blinking).", false)]
+        [PublicAPI]
         void Set(Blinking effect);
 
         /// <summary>
@@ -86,6 +88,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="effect">Effect options struct.</param>
         [Obsolete("Set is deprecated, please use SetReactive(Reactive).", false)]
+        [PublicAPI]
         void Set(Reactive effect);
 
         /// <summary>
@@ -93,6 +96,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="effect">Effect options struct.</param>
         [Obsolete("Set is deprecated, please use SetSpectrumCycling(SpectrumCycling).", false)]
+        [PublicAPI]
         void Set(SpectrumCycling effect);
 
         /// <summary>
@@ -100,6 +104,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="effect">Effect options struct.</param>
         [Obsolete("Set is deprecated, please use SetWave(Wave).", false)]
+        [PublicAPI]
         void Set(Wave effect);
     }
 }

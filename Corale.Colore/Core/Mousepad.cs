@@ -50,12 +50,18 @@ namespace Corale.Colore.Core
         private static IMousepad _instance;
 
         /// <summary>
+        /// Internal <see cref="Custom" /> struct used for effects.
+        /// </summary>
+        private Custom _custom;
+
+        /// <summary>
         /// Prevents a default instance of the <see cref="Mousepad" /> class from being created.
         /// </summary>
         private Mousepad()
         {
             Log.Debug("Mousepad is initializing.");
             Chroma.Initialize();
+            _custom = Custom.Create();
         }
 
         /// <summary>
@@ -75,7 +81,8 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         public override void SetAll(Color color)
         {
-            SetGuid(NativeWrapper.CreateMousepadEffect(new Static(color)));
+            _custom.Set(color);
+            SetCustom(_custom);
         }
 
         /// <summary>
@@ -98,6 +105,25 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
+        /// Sets a breathing effect on the mouse pad.
+        /// </summary>
+        /// <param name="first">First color to breathe into.</param>
+        /// <param name="second">Second color to breathe into.</param>
+        public void SetBreathing(Color first, Color second)
+        {
+            SetBreathing(new Breathing(first, second));
+        }
+
+        /// <summary>
+        /// Sets an effect on the mouse pad that causes
+        /// it to breathe between random colors.
+        /// </summary>
+        public void SetBreathing()
+        {
+            SetBreathing(new Breathing(BreathingType.Random, Color.Black, Color.Black));
+        }
+
+        /// <summary>
         /// Sets a static color effect on the mouse pad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
@@ -107,12 +133,30 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
+        /// Sets a static color effect on the mouse pad.
+        /// </summary>
+        /// <param name="color">Color to set.</param>
+        public void SetStatic(Color color)
+        {
+            SetStatic(new Static(color));
+        }
+
+        /// <summary>
         /// Sets a wave effect on the mouse pad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Wave" /> struct.</param>
         public void SetWave(Wave effect)
         {
             SetGuid(NativeWrapper.CreateMousepadEffect(effect));
+        }
+
+        /// <summary>
+        /// Sets a wave effect on the mouse pad.
+        /// </summary>
+        /// <param name="direction">Direction of the wave.</param>
+        public void SetWave(Direction direction)
+        {
+            SetWave(new Wave(direction));
         }
 
         /// <summary>
