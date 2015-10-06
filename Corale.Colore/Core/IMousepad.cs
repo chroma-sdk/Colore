@@ -46,6 +46,21 @@ namespace Corale.Colore.Core
         void SetBreathing(Breathing effect);
 
         /// <summary>
+        /// Sets a breathing effect on the mouse pad.
+        /// </summary>
+        /// <param name="first">First color to breathe into.</param>
+        /// <param name="second">Second color to breathe into.</param>
+        [PublicAPI]
+        void SetBreathing(Color first, Color second);
+
+        /// <summary>
+        /// Sets an effect on the mouse pad that causes
+        /// it to breathe between random colors.
+        /// </summary>
+        [PublicAPI]
+        void SetBreathing();
+
+        /// <summary>
         /// Sets a static color effect on the mouse pad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
@@ -53,11 +68,25 @@ namespace Corale.Colore.Core
         void SetStatic(Static effect);
 
         /// <summary>
+        /// Sets a static color effect on the mouse pad.
+        /// </summary>
+        /// <param name="color">Color to set.</param>
+        [PublicAPI]
+        void SetStatic(Color color);
+
+        /// <summary>
         /// Sets a wave effect on the mouse pad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Wave" /> struct.</param>
         [PublicAPI]
         void SetWave(Wave effect);
+
+        /// <summary>
+        /// Sets a wave effect on the mouse pad.
+        /// </summary>
+        /// <param name="direction">Direction of the wave.</param>
+        [PublicAPI]
+        void SetWave(Direction direction);
 
         /// <summary>
         /// Sets a custom effect on the mouse pad.

@@ -32,6 +32,7 @@ namespace Corale.Colore.Razer.Mousepad.Effects
 {
     using System.Runtime.InteropServices;
 
+    using Corale.Colore.Annotations;
     using Corale.Colore.Core;
 
     /// <summary>
@@ -43,16 +44,19 @@ namespace Corale.Colore.Razer.Mousepad.Effects
         /// <summary>
         /// The type of breathing effect.
         /// </summary>
+        [UsedImplicitly]
         public readonly BreathingType Type;
 
         /// <summary>
         /// Initial color.
         /// </summary>
+        [UsedImplicitly]
         public readonly Color First;
 
         /// <summary>
         /// Color to "breathe into".
         /// </summary>
+        [UsedImplicitly]
         public readonly Color Second;
 
         /// <summary>

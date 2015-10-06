@@ -50,11 +50,36 @@ namespace Corale.Colore.Core
         Color this[int row, int column] { get; set; }
 
         /// <summary>
+        /// Returns whether a key has had a custom color set.
+        /// </summary>
+        /// <param name="row">The row to query.</param>
+        /// <param name="column">The column to query.</param>
+        /// <returns><c>true</c> if the position has a color set that is not black, otherwise <c>false</c>.</returns>
+        [PublicAPI]
+        bool IsSet(int row, int column);
+
+        /// <summary>
         /// Sets a <see cref="Breathing" /> effect on the keypad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Breathing" /> struct.</param>
         [PublicAPI]
         void SetBreathing(Breathing effect);
+
+        /// <summary>
+        /// Sets a <see cref="Breathing" /> effect on the keypad
+        /// using the specified <see cref="Color" />.
+        /// </summary>
+        /// <param name="first">The first color to breathe into.</param>
+        /// <param name="second">Second color to breathe into.</param>
+        [PublicAPI]
+        void SetBreathing(Color first, Color second);
+
+        /// <summary>
+        /// Sets an effect on the keypad to breathe
+        /// between randomly chosen colors.
+        /// </summary>
+        [PublicAPI]
+        void SetBreathing();
 
         /// <summary>
         /// Sets a <see cref="Custom" /> effect on the keypad.
@@ -71,6 +96,15 @@ namespace Corale.Colore.Core
         void SetReactive(Reactive effect);
 
         /// <summary>
+        /// Sets a <see cref="Reactive" /> effect on the keypad
+        /// with the specified parameters.
+        /// </summary>
+        /// <param name="duration">Duration of the effect.</param>
+        /// <param name="color">Color of the effect.</param>
+        [PublicAPI]
+        void SetReactive(Duration duration, Color color);
+
+        /// <summary>
         /// Sets a <see cref="Static" /> effect on the keypad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
@@ -78,11 +112,25 @@ namespace Corale.Colore.Core
         void SetStatic(Static effect);
 
         /// <summary>
+        /// Sets a <see cref="Static" /> effect on the keypad.
+        /// </summary>
+        /// <param name="color">Color of the effect.</param>
+        [PublicAPI]
+        void SetStatic(Color color);
+
+        /// <summary>
         /// Sets a <see cref="Wave" /> effect on the keypad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Wave" /> struct.</param>
         [PublicAPI]
         void SetWave(Wave effect);
+
+        /// <summary>
+        /// Sets a <see cref="Wave" /> effect on the keypad.
+        /// </summary>
+        /// <param name="direction">Direction of the wave.</param>
+        [PublicAPI]
+        void SetWave(Direction direction);
 
         /// <summary>
         /// Sets an effect without any parameters.
