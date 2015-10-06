@@ -50,6 +50,11 @@ namespace Corale.Colore.Core
         public static readonly Color Blue = new Color(0, 0, 255);
 
         /// <summary>
+        /// Coral color.
+        /// </summary>
+        public static readonly Color Coral = new Color(255, 127, 80); // Reference: https://github.com/CoraleStudios/Colore/issues/78
+
+        /// <summary>
         /// (Neon/bright) green color.
         /// </summary>
         public static readonly Color Green = new Color(0, 255, 0);
@@ -62,17 +67,17 @@ namespace Corale.Colore.Core
         /// <summary>
         /// Orange color.
         /// </summary>
-        public static readonly Color Orange = new Color(0xFFA500);
+        public static readonly Color Orange = new Color(255, 165, 0); // Not blue!
 
         /// <summary>
         /// Pink color.
         /// </summary>
-        public static readonly Color Pink = new Color(255, 0, 255);
+        public static readonly Color Pink = new Color(255, 192, 203);
 
         /// <summary>
         /// Purple color.
         /// </summary>
-        public static readonly Color Purple = new Color(0x800080);
+        public static readonly Color Purple = new Color(128, 0, 128);
 
         /// <summary>
         /// Red color.
@@ -226,7 +231,7 @@ namespace Corale.Colore.Core
         /// <param name="color">The <see cref="Color" /> to convert.</param>
         /// <returns>A <see cref="uint" /> representing the value of the <paramref name="color" /> argument.</returns>
         /// <remarks>The returned <see cref="uint" /> has a format of <c>0x00BBGGRR</c>.</remarks>
-        public static implicit operator uint(Color color)
+        public static implicit operator uint (Color color)
         {
             return color._value;
         }
