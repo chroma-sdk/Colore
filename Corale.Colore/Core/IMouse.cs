@@ -73,24 +73,28 @@ namespace Corale.Colore.Core
         /// Starts a blinking effect on the specified LED.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Blinking" /> effect.</param>
+        [PublicAPI]
         void SetBlinking(Blinking effect);
 
         /// <summary>
         /// Sets a reactive effect on the mouse.
         /// </summary>
         /// <param name="effect">Effect options struct.</param>
+        [PublicAPI]
         void SetReactive(Reactive effect);
 
         /// <summary>
         /// Sets a spectrum cycling effect on the mouse.
         /// </summary>
         /// <param name="effect">Effect options struct.</param>
+        [PublicAPI]
         void SetSpectrumCycling(SpectrumCycling effect);
 
         /// <summary>
         /// Sets a wave effect on the mouse.
         /// </summary>
         /// <param name="effect">Effect options struct.</param>
+        [PublicAPI]
         void SetWave(Wave effect);
 
         /// <summary>
