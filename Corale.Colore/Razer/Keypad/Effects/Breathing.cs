@@ -30,6 +30,7 @@
 
 namespace Corale.Colore.Razer.Keypad.Effects
 {
+    using Corale.Colore.Annotations;
     using Corale.Colore.Core;
 
     /// <summary>
@@ -40,16 +41,19 @@ namespace Corale.Colore.Razer.Keypad.Effects
         /// <summary>
         /// The type of breathing.
         /// </summary>
+        [UsedImplicitly]
         public BreathingType Type;
 
         /// <summary>
         /// Initial color.
         /// </summary>
+        [UsedImplicitly]
         public Color First;
 
         /// <summary>
         /// Second color.
         /// </summary>
+        [UsedImplicitly]
         public Color Second;
 
         /// <summary>
