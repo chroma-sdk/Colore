@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Colore
-   &#160;<span id="projectnumber">2.2.1.78</span>
+   &#160;<span id="projectnumber">2.3.0.83</span>
    </div>
    <div id="projectbrief">C# library for Razer&#39;s Chroma SDK</div>
   </td>
@@ -142,18 +142,23 @@ $(document).ready(function(){initNavTree('_i_generic_device_8_obsoletes_8cs_sour
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_corale.html">Corale</a>.Colore.Core</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">using</span> <a class="code" href="namespace_corale.html">Corale</a>.<a class="code" href="namespace_corale_1_1_colore.html">Colore</a>.<a class="code" href="namespace_corale_1_1_colore_1_1_razer.html">Razer</a>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">public</span> partial <span class="keyword">interface </span>IGenericDevice</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">void</span> Set(<a class="code" href="namespace_corale_1_1_colore_1_1_razer.html#a811c71ff1bc7862a0055b1b94973bbf6">Effect</a> effect);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">void</span> Set(<a class="code" href="namespace_corale_1_1_colore_1_1_razer.html#a811c71ff1bc7862a0055b1b94973bbf6">Effect</a> effect, IntPtr param);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">using</span> <a class="code" href="namespace_corale.html">Corale</a>.<a class="code" href="namespace_corale_1_1_colore.html">Colore</a>.<a class="code" href="namespace_corale_1_1_colore_1_1_annotations.html">Annotations</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">using</span> <a class="code" href="namespace_corale.html">Corale</a>.<a class="code" href="namespace_corale_1_1_colore.html">Colore</a>.<a class="code" href="namespace_corale_1_1_colore_1_1_razer.html">Razer</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">public</span> partial <span class="keyword">interface </span>IGenericDevice</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> Set(<a class="code" href="namespace_corale_1_1_colore_1_1_razer.html#a811c71ff1bc7862a0055b1b94973bbf6">Effect</a> effect);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">void</span> Set(<a class="code" href="namespace_corale_1_1_colore_1_1_razer.html#a811c71ff1bc7862a0055b1b94973bbf6">Effect</a> effect, IntPtr param);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
 <div class="ttc" id="namespace_corale_1_1_colore_1_1_razer_html_a811c71ff1bc7862a0055b1b94973bbf6"><div class="ttname"><a href="namespace_corale_1_1_colore_1_1_razer.html#a811c71ff1bc7862a0055b1b94973bbf6">Corale.Colore.Razer.Effect</a></div><div class="ttdeci">Effect</div><div class="ttdoc">Generic device effects. </div><div class="ttdef"><b>Definition:</b> <a href="_effect_8cs_source.html#l00039">Effect.cs:39</a></div></div>
 <div class="ttc" id="namespace_system_html"><div class="ttname"><a href="namespace_system.html">System</a></div></div>
 <div class="ttc" id="namespace_corale_html"><div class="ttname"><a href="namespace_corale.html">Corale</a></div></div>
+<div class="ttc" id="namespace_corale_1_1_colore_1_1_annotations_html"><div class="ttname"><a href="namespace_corale_1_1_colore_1_1_annotations.html">Corale.Colore.Annotations</a></div><div class="ttdef"><b>Definition:</b> <a href="_annotations_8cs_source.html#l00018">Annotations.cs:18</a></div></div>
 <div class="ttc" id="namespace_corale_1_1_colore_html"><div class="ttname"><a href="namespace_corale_1_1_colore.html">Corale.Colore</a></div></div>
 <div class="ttc" id="namespace_corale_1_1_colore_1_1_razer_html"><div class="ttname"><a href="namespace_corale_1_1_colore_1_1_razer.html">Corale.Colore.Razer</a></div><div class="ttdef"><b>Definition:</b> <a href="_constants_8cs_source.html#l00031">Constants.cs:31</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -162,7 +167,7 @@ $(document).ready(function(){initNavTree('_i_generic_device_8_obsoletes_8cs_sour
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_865a93a85313ae6b2503dfb6975d8750.html">Corale.Colore</a></li><li class="navelem"><a class="el" href="dir_b0277a4fdac946fbe1408f549d07635c.html">Core</a></li><li class="navelem"><a class="el" href="_i_generic_device_8_obsoletes_8cs.html">IGenericDevice.Obsoletes.cs</a></li>
-    <li class="footer">Generated on Wed Sep 23 2015 01:00:33 for Colore by
+    <li class="footer">Generated on Tue Oct 6 2015 22:56:58 for Colore by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
   </ul>

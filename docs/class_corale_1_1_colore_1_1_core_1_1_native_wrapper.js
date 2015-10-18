@@ -24,6 +24,7 @@ var class_corale_1_1_colore_1_1_core_1_1_native_wrapper =
     [ "CreateKeypadEffect< T >", "class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html#a03cf1d4553ae2936b69b1d5643aeafcf", null ],
     [ "CreateMouseEffect", "class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html#af3e7354734ddd265e064c5fd7f930d52", null ],
     [ "CreateMouseEffect", "class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html#ac77a75fb1b8dcfbab859c0df5cbcbfc1", null ],
+    [ "CreateMouseEffect", "class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html#af73981ea1cc11eb861fe9fa570d89456", null ],
     [ "CreateMouseEffect", "class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html#a0151e9a735d161ab3bb29f26f2d41c86", null ],
     [ "CreateMouseEffect", "class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html#a4cac036114dd63bcaef61479257a9f43", null ],
     [ "CreateMouseEffect", "class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html#adb95d4a0485ab001d18a575bbaa5c12f", null ],

@@ -9,11 +9,20 @@ var interface_corale_1_1_colore_1_1_core_1_1_i_mouse =
     [ "Set", "interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#a290d878d1fe1ac58e1d0460796af0d10", null ],
     [ "Set", "interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#ab564daf2a2a0bf96664680457915735a", null ],
     [ "SetBlinking", "interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#a744d08b4f5557fd61c32f47883322a7f", null ],
+    [ "SetBlinking", "interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#aeccb1c173aae23582da9c0f0f51f9728", null ],
     [ "SetBreathing", "interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#ab7a5953b14b935d59dd000e8e30182f6", null ],
+    [ "SetBreathing", "interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#a7e723622be6602a291600ba625f83754", null ],
+    [ "SetBreathing", "interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#ac3c157f90fb49ce483dbceeb0f0a7c81", null ],
+    [ "SetBreathing", "interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#a232745c8889a79db2927cb8f3eaa5945", null ],
+    [ "SetCustom", "interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#a25484a976d961577c34f5dd38c7b643f", null ],
     [ "SetEffect", "interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#aebfe1df67478cfca1693b7adb443ca5f", null ],
     [ "SetLed", "interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#ac419a936d404dcbfff91515dd0b58bcb", null ],
     [ "SetReactive", "interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#a9c211ac17f354089fe55f642c3b94c17", null ],
+    [ "SetReactive", "interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#aa59e767182d0a92c26f0812c9eab6070", null ],
     [ "SetSpectrumCycling", "interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#a5c57f048095d4b4797dea51cbc08f7fa", null ],
+    [ "SetSpectrumCycling", "interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#abc5a7e907ee9efd7cb58247daf840681", null ],
     [ "SetStatic", "interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#a5a595d59da922a421d782ffae57b2cbe", null ],
-    [ "SetWave", "interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#a9258176f6750cddefe1f4540041d2cf1", null ]
+    [ "SetStatic", "interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#aa8e30c913a30586fd09c5b29cff38b93", null ],
+    [ "SetWave", "interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#a9258176f6750cddefe1f4540041d2cf1", null ],
+    [ "SetWave", "interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#a94d611ab90148333241c133e953028cf", null ]
 ];

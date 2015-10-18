@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Colore
-   &#160;<span id="projectnumber">2.2.1.78</span>
+   &#160;<span id="projectnumber">2.3.0.83</span>
    </div>
    <div id="projectbrief">C# library for Razer&#39;s Chroma SDK</div>
   </td>
@@ -111,6 +111,7 @@ $(document).ready(function(){initNavTree('class_corale_1_1_colore_1_1_core_1_1_m
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="class_corale_1_1_colore_1_1_core_1_1_mouse-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -133,7 +134,7 @@ $(document).ready(function(){initNavTree('class_corale_1_1_colore_1_1_core_1_1_m
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_corale_1_1_colore_1_1_core_1_1_mouse__coll__graph.svg" width="362" height="203"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_corale_1_1_colore_1_1_core_1_1_mouse__coll__graph.svg" width="100%" height="500"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -148,27 +149,51 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a49ea7f9e50644a27b598704fd6817db0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_corale_1_1_colore_1_1_core_1_1_mouse.html#a49ea7f9e50644a27b598704fd6817db0">SetBreathing</a> (<a class="el" href="struct_corale_1_1_colore_1_1_razer_1_1_headset_1_1_effects_1_1_breathing.html">Breathing</a> effect)</td></tr>
 <tr class="memdesc:a49ea7f9e50644a27b598704fd6817db0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a breathing effect on the mouse.  <a href="#a49ea7f9e50644a27b598704fd6817db0">More...</a><br /></td></tr>
 <tr class="separator:a49ea7f9e50644a27b598704fd6817db0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11732516a3223c70d90eacf8cdd3a7f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_corale_1_1_colore_1_1_core_1_1_mouse.html#a11732516a3223c70d90eacf8cdd3a7f8">SetBreathing</a> (<a class="el" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> first, <a class="el" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> second, <a class="el" href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html#aafadccaeea2744f65544c5f99264037d">Led</a> led=Led.All)</td></tr>
+<tr class="memdesc:a11732516a3223c70d90eacf8cdd3a7f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets an effect on the mouse that causes it to breathe between two different colors, fading to black in-between each one.  <a href="#a11732516a3223c70d90eacf8cdd3a7f8">More...</a><br /></td></tr>
+<tr class="separator:a11732516a3223c70d90eacf8cdd3a7f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a300f41316785fea14b2304e78f7d7bc2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_corale_1_1_colore_1_1_core_1_1_mouse.html#a300f41316785fea14b2304e78f7d7bc2">SetBreathing</a> (<a class="el" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> color, <a class="el" href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html#aafadccaeea2744f65544c5f99264037d">Led</a> led=Led.All)</td></tr>
+<tr class="memdesc:a300f41316785fea14b2304e78f7d7bc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets an effect on the mouse that causes it to breathe a single color. The specified color will fade in on the mouse, then fade to black, and repeat.  <a href="#a300f41316785fea14b2304e78f7d7bc2">More...</a><br /></td></tr>
+<tr class="separator:a300f41316785fea14b2304e78f7d7bc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cb95f04e068d19fe532df5bbb545884"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_corale_1_1_colore_1_1_core_1_1_mouse.html#a3cb95f04e068d19fe532df5bbb545884">SetBreathing</a> (<a class="el" href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html#aafadccaeea2744f65544c5f99264037d">Led</a> led=Led.All)</td></tr>
+<tr class="memdesc:a3cb95f04e068d19fe532df5bbb545884"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instructs the mouse to breathe random colors.  <a href="#a3cb95f04e068d19fe532df5bbb545884">More...</a><br /></td></tr>
+<tr class="separator:a3cb95f04e068d19fe532df5bbb545884"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11f77fae28b0e5ebd378f1c1c5345ee3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_corale_1_1_colore_1_1_core_1_1_mouse.html#a11f77fae28b0e5ebd378f1c1c5345ee3">SetStatic</a> (<a class="el" href="struct_corale_1_1_colore_1_1_razer_1_1_headset_1_1_effects_1_1_static.html">Static</a> effect)</td></tr>
 <tr class="memdesc:a11f77fae28b0e5ebd378f1c1c5345ee3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a static color on the mouse.  <a href="#a11f77fae28b0e5ebd378f1c1c5345ee3">More...</a><br /></td></tr>
 <tr class="separator:a11f77fae28b0e5ebd378f1c1c5345ee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ef3392cf54c3debfd4595f9abc8befe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_corale_1_1_colore_1_1_core_1_1_mouse.html#a0ef3392cf54c3debfd4595f9abc8befe">SetStatic</a> (<a class="el" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> color, <a class="el" href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html#aafadccaeea2744f65544c5f99264037d">Led</a> led=Led.All)</td></tr>
+<tr class="memdesc:a0ef3392cf54c3debfd4595f9abc8befe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a static effect on the mouse.  <a href="#a0ef3392cf54c3debfd4595f9abc8befe">More...</a><br /></td></tr>
+<tr class="separator:a0ef3392cf54c3debfd4595f9abc8befe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abddc2dc196350127c346f79697a52a84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_corale_1_1_colore_1_1_core_1_1_mouse.html#abddc2dc196350127c346f79697a52a84">SetBlinking</a> (<a class="el" href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_blinking.html">Blinking</a> effect)</td></tr>
 <tr class="memdesc:abddc2dc196350127c346f79697a52a84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts a blinking effect on the specified LED.  <a href="#abddc2dc196350127c346f79697a52a84">More...</a><br /></td></tr>
 <tr class="separator:abddc2dc196350127c346f79697a52a84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe92cfc5d16a828ce2037489c4b41407"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_corale_1_1_colore_1_1_core_1_1_mouse.html#afe92cfc5d16a828ce2037489c4b41407">SetBlinking</a> (<a class="el" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> color, <a class="el" href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html#aafadccaeea2744f65544c5f99264037d">Led</a> led=Led.All)</td></tr>
+<tr class="memdesc:afe92cfc5d16a828ce2037489c4b41407"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts a blinking effect on the mouse.  <a href="#afe92cfc5d16a828ce2037489c4b41407">More...</a><br /></td></tr>
+<tr class="separator:afe92cfc5d16a828ce2037489c4b41407"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a0e7b4fc06763804d5787b6d370f3db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_corale_1_1_colore_1_1_core_1_1_mouse.html#a9a0e7b4fc06763804d5787b6d370f3db">SetReactive</a> (<a class="el" href="struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_reactive.html">Reactive</a> effect)</td></tr>
 <tr class="memdesc:a9a0e7b4fc06763804d5787b6d370f3db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a reactive effect on the mouse.  <a href="#a9a0e7b4fc06763804d5787b6d370f3db">More...</a><br /></td></tr>
 <tr class="separator:a9a0e7b4fc06763804d5787b6d370f3db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf3c5dcea544a4e98a081adaeec96ff4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_corale_1_1_colore_1_1_core_1_1_mouse.html#adf3c5dcea544a4e98a081adaeec96ff4">SetReactive</a> (<a class="el" href="namespace_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects.html#a1b60c4ba95eaf40d52b9da1e93f9b4db">Duration</a> duration, <a class="el" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> color, <a class="el" href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html#aafadccaeea2744f65544c5f99264037d">Led</a> led=Led.All)</td></tr>
+<tr class="memdesc:adf3c5dcea544a4e98a081adaeec96ff4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a reactive effect on the mouse.  <a href="#adf3c5dcea544a4e98a081adaeec96ff4">More...</a><br /></td></tr>
+<tr class="separator:adf3c5dcea544a4e98a081adaeec96ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adee2bf4ed643aa237a5eba5b940eab40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_corale_1_1_colore_1_1_core_1_1_mouse.html#adee2bf4ed643aa237a5eba5b940eab40">SetSpectrumCycling</a> (<a class="el" href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_spectrum_cycling.html">SpectrumCycling</a> effect)</td></tr>
 <tr class="memdesc:adee2bf4ed643aa237a5eba5b940eab40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a spectrum cycling effect on the mouse.  <a href="#adee2bf4ed643aa237a5eba5b940eab40">More...</a><br /></td></tr>
 <tr class="separator:adee2bf4ed643aa237a5eba5b940eab40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac11d13445c6f4ca8368764b87d9bbcd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_corale_1_1_colore_1_1_core_1_1_mouse.html#ac11d13445c6f4ca8368764b87d9bbcd4">SetSpectrumCycling</a> (<a class="el" href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html#aafadccaeea2744f65544c5f99264037d">Led</a> led=Led.All)</td></tr>
+<tr class="memdesc:ac11d13445c6f4ca8368764b87d9bbcd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a spectrum cycling effect on the mouse.  <a href="#ac11d13445c6f4ca8368764b87d9bbcd4">More...</a><br /></td></tr>
+<tr class="separator:ac11d13445c6f4ca8368764b87d9bbcd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac869715466ffd2b6472e10f0763741e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_corale_1_1_colore_1_1_core_1_1_mouse.html#ac869715466ffd2b6472e10f0763741e9">SetWave</a> (<a class="el" href="struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_wave.html">Wave</a> effect)</td></tr>
 <tr class="memdesc:ac869715466ffd2b6472e10f0763741e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a wave effect on the mouse.  <a href="#ac869715466ffd2b6472e10f0763741e9">More...</a><br /></td></tr>
 <tr class="separator:ac869715466ffd2b6472e10f0763741e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e574a5feae12327e71bb55cbc1a9492"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_corale_1_1_colore_1_1_core_1_1_mouse.html#a5e574a5feae12327e71bb55cbc1a9492">SetWave</a> (<a class="el" href="namespace_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects.html#a5bf238833f9ca051d9bc69b89739d41a">Direction</a> direction)</td></tr>
+<tr class="memdesc:a5e574a5feae12327e71bb55cbc1a9492"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a wave effect on the mouse.  <a href="#a5e574a5feae12327e71bb55cbc1a9492">More...</a><br /></td></tr>
+<tr class="separator:a5e574a5feae12327e71bb55cbc1a9492"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5177e61c9a8bf3b6c2edf99a7b041102"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_corale_1_1_colore_1_1_core_1_1_mouse.html#a5177e61c9a8bf3b6c2edf99a7b041102">SetAll</a> (<a class="el" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> color)</td></tr>
 <tr class="memdesc:a5177e61c9a8bf3b6c2edf99a7b041102"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the color of all LEDs on the mouse.  <a href="#a5177e61c9a8bf3b6c2edf99a7b041102">More...</a><br /></td></tr>
 <tr class="separator:a5177e61c9a8bf3b6c2edf99a7b041102"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4bc1603ad2be96e4efdca536cd37364"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_corale_1_1_colore_1_1_core_1_1_mouse.html#ac4bc1603ad2be96e4efdca536cd37364">Set</a> (<a class="el" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> color)</td></tr>
-<tr class="memdesc:ac4bc1603ad2be96e4efdca536cd37364"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the color of all components on this device.  <a href="#ac4bc1603ad2be96e4efdca536cd37364">More...</a><br /></td></tr>
-<tr class="separator:ac4bc1603ad2be96e4efdca536cd37364"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a123efa966c6bc4c14affee4b5f1db8b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_corale_1_1_colore_1_1_core_1_1_mouse.html#a123efa966c6bc4c14affee4b5f1db8b3">SetCustom</a> (<a class="el" href="struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_custom.html">Custom</a> effect)</td></tr>
+<tr class="memdesc:a123efa966c6bc4c14affee4b5f1db8b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a custom effect on the mouse.  <a href="#a123efa966c6bc4c14affee4b5f1db8b3">More...</a><br /></td></tr>
+<tr class="separator:a123efa966c6bc4c14affee4b5f1db8b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5cbf5844a2f38852088c85137d1c7567"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_corale_1_1_colore_1_1_core_1_1_mouse.html#a5cbf5844a2f38852088c85137d1c7567">Set</a> (<a class="el" href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html#aafadccaeea2744f65544c5f99264037d">Led</a> led, <a class="el" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> color)</td></tr>
 <tr class="memdesc:a5cbf5844a2f38852088c85137d1c7567"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the color of a specific LED on the mouse.  <a href="#a5cbf5844a2f38852088c85137d1c7567">More...</a><br /></td></tr>
 <tr class="separator:a5cbf5844a2f38852088c85137d1c7567"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -200,6 +225,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac18cdbbb9c6d64ae7fac57e8f0d1d0b6 inherit pub_methods_class_corale_1_1_colore_1_1_core_1_1_device"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_corale_1_1_colore_1_1_core_1_1_device.html#ac18cdbbb9c6d64ae7fac57e8f0d1d0b6">SetGuid</a> (Guid guid)</td></tr>
 <tr class="memdesc:ac18cdbbb9c6d64ae7fac57e8f0d1d0b6 inherit pub_methods_class_corale_1_1_colore_1_1_core_1_1_device"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the device to use the effect pointed to by the specified GUID.  <a href="#ac18cdbbb9c6d64ae7fac57e8f0d1d0b6">More...</a><br /></td></tr>
 <tr class="separator:ac18cdbbb9c6d64ae7fac57e8f0d1d0b6 inherit pub_methods_class_corale_1_1_colore_1_1_core_1_1_device"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac73b7b9279b6f30b519ae48f5c970fe3 inherit pub_methods_class_corale_1_1_colore_1_1_core_1_1_device"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_corale_1_1_colore_1_1_core_1_1_device.html#ac73b7b9279b6f30b519ae48f5c970fe3">Set</a> (<a class="el" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> color)</td></tr>
+<tr class="memdesc:ac73b7b9279b6f30b519ae48f5c970fe3 inherit pub_methods_class_corale_1_1_colore_1_1_core_1_1_device"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the color of all components on this device.  <a href="#ac73b7b9279b6f30b519ae48f5c970fe3">More...</a><br /></td></tr>
+<tr class="separator:ac73b7b9279b6f30b519ae48f5c970fe3 inherit pub_methods_class_corale_1_1_colore_1_1_core_1_1_device"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad608bbc2051f0545e9e9618b4adbdffd inherit pub_methods_class_corale_1_1_colore_1_1_core_1_1_device"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_corale_1_1_colore_1_1_core_1_1_device.html#ad608bbc2051f0545e9e9618b4adbdffd">Set</a> (Guid guid)</td></tr>
 <tr class="memdesc:ad608bbc2051f0545e9e9618b4adbdffd inherit pub_methods_class_corale_1_1_colore_1_1_core_1_1_device"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the device to use the effect pointed to by the specified GUID.  <a href="#ad608bbc2051f0545e9e9618b4adbdffd">More...</a><br /></td></tr>
 <tr class="separator:ad608bbc2051f0545e9e9618b4adbdffd inherit pub_methods_class_corale_1_1_colore_1_1_core_1_1_device"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -223,6 +251,12 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:a62fd6c1ec345edbeccb1c94ab858ca2c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_corale_1_1_colore_1_1_core_1_1_mouse.html#a62fd6c1ec345edbeccb1c94ab858ca2c">Mouse</a> ()</td></tr>
 <tr class="memdesc:a62fd6c1ec345edbeccb1c94ab858ca2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prevents a default instance of the <a class="el" href="class_corale_1_1_colore_1_1_core_1_1_mouse.html" title="Class for interacting with a Chroma mouse. ">Mouse</a> class from being created.  <a href="#a62fd6c1ec345edbeccb1c94ab858ca2c">More...</a><br /></td></tr>
 <tr class="separator:a62fd6c1ec345edbeccb1c94ab858ca2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ac65fb72d574f020be9ce7c266f183542"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_custom.html">Custom</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_corale_1_1_colore_1_1_core_1_1_mouse.html#ac65fb72d574f020be9ce7c266f183542">_custom</a></td></tr>
+<tr class="memdesc:ac65fb72d574f020be9ce7c266f183542"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal instance of a Custom struct.  <a href="#ac65fb72d574f020be9ce7c266f183542">More...</a><br /></td></tr>
+<tr class="separator:ac65fb72d574f020be9ce7c266f183542"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
@@ -261,47 +295,11 @@ Static Private Attributes</h2></td></tr>
 
 <p>Prevents a default instance of the <a class="el" href="class_corale_1_1_colore_1_1_core_1_1_mouse.html" title="Class for interacting with a Chroma mouse. ">Mouse</a> class from being created. </p>
 
-<p>Definition at line <a class="el" href="_mouse_8cs_source.html#l00058">58</a> of file <a class="el" href="_mouse_8cs_source.html">Mouse.cs</a>.</p>
+<p>Definition at line <a class="el" href="_mouse_8cs_source.html#l00063">63</a> of file <a class="el" href="_mouse_8cs_source.html">Mouse.cs</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="ac4bc1603ad2be96e4efdca536cd37364"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">override void Corale.Colore.Core.Mouse.Set </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a>&#160;</td>
-          <td class="paramname"><em>color</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sets the color of all components on this device. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">color</td><td><a class="el" href="struct_corale_1_1_colore_1_1_core_1_1_color.html" title="Represents an RGB color. ">Color</a> to set.</td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Implements <a class="el" href="class_corale_1_1_colore_1_1_core_1_1_device.html#ab2db1b77d1faeed23ce93a220c0f72e4">Corale.Colore.Core.Device</a>.</p>
-
-<p>Definition at line <a class="el" href="_mouse_8_obsoletes_8cs_source.html#l00048">48</a> of file <a class="el" href="_mouse_8_obsoletes_8cs_source.html">Mouse.Obsoletes.cs</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="a5cbf5844a2f38852088c85137d1c7567"></a>
 <div class="memitem">
 <div class="memproto">
@@ -337,7 +335,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#afba1c16841c62e112adb443f47fa01dc">Corale.Colore.Core.IMouse</a>.</p>
 
-<p>Definition at line <a class="el" href="_mouse_8_obsoletes_8cs_source.html#l00059">59</a> of file <a class="el" href="_mouse_8_obsoletes_8cs_source.html">Mouse.Obsoletes.cs</a>.</p>
+<p>Definition at line <a class="el" href="_mouse_8_obsoletes_8cs_source.html#l00049">49</a> of file <a class="el" href="_mouse_8_obsoletes_8cs_source.html">Mouse.Obsoletes.cs</a>.</p>
 
 </div>
 </div>
@@ -365,7 +363,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#aee8d3d78afa86e3243fbd568f35c8698">Corale.Colore.Core.IMouse</a>.</p>
 
-<p>Definition at line <a class="el" href="_mouse_8_obsoletes_8cs_source.html#l00070">70</a> of file <a class="el" href="_mouse_8_obsoletes_8cs_source.html">Mouse.Obsoletes.cs</a>.</p>
+<p>Definition at line <a class="el" href="_mouse_8_obsoletes_8cs_source.html#l00060">60</a> of file <a class="el" href="_mouse_8_obsoletes_8cs_source.html">Mouse.Obsoletes.cs</a>.</p>
 
 </div>
 </div>
@@ -393,7 +391,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#a798d94638a145edd8a4ad867a1ac4f5c">Corale.Colore.Core.IMouse</a>.</p>
 
-<p>Definition at line <a class="el" href="_mouse_8_obsoletes_8cs_source.html#l00080">80</a> of file <a class="el" href="_mouse_8_obsoletes_8cs_source.html">Mouse.Obsoletes.cs</a>.</p>
+<p>Definition at line <a class="el" href="_mouse_8_obsoletes_8cs_source.html#l00070">70</a> of file <a class="el" href="_mouse_8_obsoletes_8cs_source.html">Mouse.Obsoletes.cs</a>.</p>
 
 </div>
 </div>
@@ -421,7 +419,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#ab5ca92c4314618aadceb80f3565b9080">Corale.Colore.Core.IMouse</a>.</p>
 
-<p>Definition at line <a class="el" href="_mouse_8_obsoletes_8cs_source.html#l00090">90</a> of file <a class="el" href="_mouse_8_obsoletes_8cs_source.html">Mouse.Obsoletes.cs</a>.</p>
+<p>Definition at line <a class="el" href="_mouse_8_obsoletes_8cs_source.html#l00080">80</a> of file <a class="el" href="_mouse_8_obsoletes_8cs_source.html">Mouse.Obsoletes.cs</a>.</p>
 
 </div>
 </div>
@@ -449,7 +447,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#af1500f9ba78586a1a61796378bc09b2b">Corale.Colore.Core.IMouse</a>.</p>
 
-<p>Definition at line <a class="el" href="_mouse_8_obsoletes_8cs_source.html#l00100">100</a> of file <a class="el" href="_mouse_8_obsoletes_8cs_source.html">Mouse.Obsoletes.cs</a>.</p>
+<p>Definition at line <a class="el" href="_mouse_8_obsoletes_8cs_source.html#l00090">90</a> of file <a class="el" href="_mouse_8_obsoletes_8cs_source.html">Mouse.Obsoletes.cs</a>.</p>
 
 </div>
 </div>
@@ -477,7 +475,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#adc699a11942ed1612a9303d2e5d1ef59">Corale.Colore.Core.IMouse</a>.</p>
 
-<p>Definition at line <a class="el" href="_mouse_8_obsoletes_8cs_source.html#l00110">110</a> of file <a class="el" href="_mouse_8_obsoletes_8cs_source.html">Mouse.Obsoletes.cs</a>.</p>
+<p>Definition at line <a class="el" href="_mouse_8_obsoletes_8cs_source.html#l00100">100</a> of file <a class="el" href="_mouse_8_obsoletes_8cs_source.html">Mouse.Obsoletes.cs</a>.</p>
 
 </div>
 </div>
@@ -505,7 +503,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#a290d878d1fe1ac58e1d0460796af0d10">Corale.Colore.Core.IMouse</a>.</p>
 
-<p>Definition at line <a class="el" href="_mouse_8_obsoletes_8cs_source.html#l00120">120</a> of file <a class="el" href="_mouse_8_obsoletes_8cs_source.html">Mouse.Obsoletes.cs</a>.</p>
+<p>Definition at line <a class="el" href="_mouse_8_obsoletes_8cs_source.html#l00110">110</a> of file <a class="el" href="_mouse_8_obsoletes_8cs_source.html">Mouse.Obsoletes.cs</a>.</p>
 
 </div>
 </div>
@@ -533,7 +531,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#ab564daf2a2a0bf96664680457915735a">Corale.Colore.Core.IMouse</a>.</p>
 
-<p>Definition at line <a class="el" href="_mouse_8_obsoletes_8cs_source.html#l00130">130</a> of file <a class="el" href="_mouse_8_obsoletes_8cs_source.html">Mouse.Obsoletes.cs</a>.</p>
+<p>Definition at line <a class="el" href="_mouse_8_obsoletes_8cs_source.html#l00120">120</a> of file <a class="el" href="_mouse_8_obsoletes_8cs_source.html">Mouse.Obsoletes.cs</a>.</p>
 
 </div>
 </div>
@@ -569,7 +567,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="class_corale_1_1_colore_1_1_core_1_1_device.html#a9bd0008eebd6a4e7fa405328d3628519">Corale.Colore.Core.Device</a>.</p>
 
-<p>Definition at line <a class="el" href="_mouse_8cs_source.html#l00154">154</a> of file <a class="el" href="_mouse_8cs_source.html">Mouse.cs</a>.</p>
+<p>Definition at line <a class="el" href="_mouse_8cs_source.html#l00243">243</a> of file <a class="el" href="_mouse_8cs_source.html">Mouse.cs</a>.</p>
 
 </div>
 </div>
@@ -597,7 +595,46 @@ Static Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#a744d08b4f5557fd61c32f47883322a7f">Corale.Colore.Core.IMouse</a>.</p>
 
-<p>Definition at line <a class="el" href="_mouse_8cs_source.html#l00118">118</a> of file <a class="el" href="_mouse_8cs_source.html">Mouse.cs</a>.</p>
+<p>Definition at line <a class="el" href="_mouse_8cs_source.html#l00168">168</a> of file <a class="el" href="_mouse_8cs_source.html">Mouse.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afe92cfc5d16a828ce2037489c4b41407"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Corale.Colore.Core.Mouse.SetBlinking </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a>&#160;</td>
+          <td class="paramname"><em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html#aafadccaeea2744f65544c5f99264037d">Led</a>&#160;</td>
+          <td class="paramname"><em>led</em> = <code>Led.All</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Starts a blinking effect on the mouse. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color</td><td>The color to blink with.</td></tr>
+    <tr><td class="paramname">led</td><td>The LED(s) to affect.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#aeccb1c173aae23582da9c0f0f51f9728">Corale.Colore.Core.IMouse</a>.</p>
+
+<p>Definition at line <a class="el" href="_mouse_8cs_source.html#l00178">178</a> of file <a class="el" href="_mouse_8cs_source.html">Mouse.cs</a>.</p>
 
 </div>
 </div>
@@ -625,7 +662,148 @@ Static Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#ab7a5953b14b935d59dd000e8e30182f6">Corale.Colore.Core.IMouse</a>.</p>
 
-<p>Definition at line <a class="el" href="_mouse_8cs_source.html#l00100">100</a> of file <a class="el" href="_mouse_8cs_source.html">Mouse.cs</a>.</p>
+<p>Definition at line <a class="el" href="_mouse_8cs_source.html#l00107">107</a> of file <a class="el" href="_mouse_8cs_source.html">Mouse.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a11732516a3223c70d90eacf8cdd3a7f8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Corale.Colore.Core.Mouse.SetBreathing </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a>&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a>&#160;</td>
+          <td class="paramname"><em>second</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html#aafadccaeea2744f65544c5f99264037d">Led</a>&#160;</td>
+          <td class="paramname"><em>led</em> = <code>Led.All</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets an effect on the mouse that causes it to breathe between two different colors, fading to black in-between each one. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">first</td><td>First color to breathe into.</td></tr>
+    <tr><td class="paramname">second</td><td>Second color to breathe into.</td></tr>
+    <tr><td class="paramname">led</td><td>The LED(s) on which to apply the effect.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#a7e723622be6602a291600ba625f83754">Corale.Colore.Core.IMouse</a>.</p>
+
+<p>Definition at line <a class="el" href="_mouse_8cs_source.html#l00119">119</a> of file <a class="el" href="_mouse_8cs_source.html">Mouse.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a300f41316785fea14b2304e78f7d7bc2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Corale.Colore.Core.Mouse.SetBreathing </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a>&#160;</td>
+          <td class="paramname"><em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html#aafadccaeea2744f65544c5f99264037d">Led</a>&#160;</td>
+          <td class="paramname"><em>led</em> = <code>Led.All</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets an effect on the mouse that causes it to breathe a single color. The specified color will fade in on the mouse, then fade to black, and repeat. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color</td><td>The color to breathe.</td></tr>
+    <tr><td class="paramname">led</td><td>The LED(s) on which to apply the effect.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#ac3c157f90fb49ce483dbceeb0f0a7c81">Corale.Colore.Core.IMouse</a>.</p>
+
+<p>Definition at line <a class="el" href="_mouse_8cs_source.html#l00131">131</a> of file <a class="el" href="_mouse_8cs_source.html">Mouse.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3cb95f04e068d19fe532df5bbb545884"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Corale.Colore.Core.Mouse.SetBreathing </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html#aafadccaeea2744f65544c5f99264037d">Led</a>&#160;</td>
+          <td class="paramname"><em>led</em> = <code>Led.All</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Instructs the mouse to breathe random colors. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">led</td><td>The LED(s) on which to apply the effect.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#a232745c8889a79db2927cb8f3eaa5945">Corale.Colore.Core.IMouse</a>.</p>
+
+<p>Definition at line <a class="el" href="_mouse_8cs_source.html#l00140">140</a> of file <a class="el" href="_mouse_8cs_source.html">Mouse.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a123efa966c6bc4c14affee4b5f1db8b3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Corale.Colore.Core.Mouse.SetCustom </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_custom.html">Custom</a>&#160;</td>
+          <td class="paramname"><em>effect</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets a custom effect on the mouse. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">effect</td><td>An instance of the Custom struct.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#a25484a976d961577c34f5dd38c7b643f">Corale.Colore.Core.IMouse</a>.</p>
+
+<p>Definition at line <a class="el" href="_mouse_8cs_source.html#l00253">253</a> of file <a class="el" href="_mouse_8cs_source.html">Mouse.cs</a>.</p>
 
 </div>
 </div>
@@ -653,7 +831,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#aebfe1df67478cfca1693b7adb443ca5f">Corale.Colore.Core.IMouse</a>.</p>
 
-<p>Definition at line <a class="el" href="_mouse_8cs_source.html#l00091">91</a> of file <a class="el" href="_mouse_8cs_source.html">Mouse.cs</a>.</p>
+<p>Definition at line <a class="el" href="_mouse_8cs_source.html#l00098">98</a> of file <a class="el" href="_mouse_8cs_source.html">Mouse.cs</a>.</p>
 
 </div>
 </div>
@@ -692,7 +870,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#ac419a936d404dcbfff91515dd0b58bcb">Corale.Colore.Core.IMouse</a>.</p>
 
-<p>Definition at line <a class="el" href="_mouse_8cs_source.html#l00081">81</a> of file <a class="el" href="_mouse_8cs_source.html">Mouse.cs</a>.</p>
+<p>Definition at line <a class="el" href="_mouse_8cs_source.html#l00087">87</a> of file <a class="el" href="_mouse_8cs_source.html">Mouse.cs</a>.</p>
 
 </div>
 </div>
@@ -720,7 +898,53 @@ Static Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#a9c211ac17f354089fe55f642c3b94c17">Corale.Colore.Core.IMouse</a>.</p>
 
-<p>Definition at line <a class="el" href="_mouse_8cs_source.html#l00127">127</a> of file <a class="el" href="_mouse_8cs_source.html">Mouse.cs</a>.</p>
+<p>Definition at line <a class="el" href="_mouse_8cs_source.html#l00187">187</a> of file <a class="el" href="_mouse_8cs_source.html">Mouse.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adf3c5dcea544a4e98a081adaeec96ff4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Corale.Colore.Core.Mouse.SetReactive </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects.html#a1b60c4ba95eaf40d52b9da1e93f9b4db">Duration</a>&#160;</td>
+          <td class="paramname"><em>duration</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a>&#160;</td>
+          <td class="paramname"><em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html#aafadccaeea2744f65544c5f99264037d">Led</a>&#160;</td>
+          <td class="paramname"><em>led</em> = <code>Led.All</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets a reactive effect on the mouse. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">duration</td><td>How long the effect should last.</td></tr>
+    <tr><td class="paramname">color</td><td>The color to react with.</td></tr>
+    <tr><td class="paramname">led</td><td>Which LED(s) to affect.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#aa59e767182d0a92c26f0812c9eab6070">Corale.Colore.Core.IMouse</a>.</p>
+
+<p>Definition at line <a class="el" href="_mouse_8cs_source.html#l00198">198</a> of file <a class="el" href="_mouse_8cs_source.html">Mouse.cs</a>.</p>
 
 </div>
 </div>
@@ -748,7 +972,35 @@ Static Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#a5c57f048095d4b4797dea51cbc08f7fa">Corale.Colore.Core.IMouse</a>.</p>
 
-<p>Definition at line <a class="el" href="_mouse_8cs_source.html#l00136">136</a> of file <a class="el" href="_mouse_8cs_source.html">Mouse.cs</a>.</p>
+<p>Definition at line <a class="el" href="_mouse_8cs_source.html#l00207">207</a> of file <a class="el" href="_mouse_8cs_source.html">Mouse.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac11d13445c6f4ca8368764b87d9bbcd4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Corale.Colore.Core.Mouse.SetSpectrumCycling </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html#aafadccaeea2744f65544c5f99264037d">Led</a>&#160;</td>
+          <td class="paramname"><em>led</em> = <code>Led.All</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets a spectrum cycling effect on the mouse. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">led</td><td>The LED(s) to affect.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#abc5a7e907ee9efd7cb58247daf840681">Corale.Colore.Core.IMouse</a>.</p>
+
+<p>Definition at line <a class="el" href="_mouse_8cs_source.html#l00216">216</a> of file <a class="el" href="_mouse_8cs_source.html">Mouse.cs</a>.</p>
 
 </div>
 </div>
@@ -776,7 +1028,46 @@ Static Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#a5a595d59da922a421d782ffae57b2cbe">Corale.Colore.Core.IMouse</a>.</p>
 
-<p>Definition at line <a class="el" href="_mouse_8cs_source.html#l00109">109</a> of file <a class="el" href="_mouse_8cs_source.html">Mouse.cs</a>.</p>
+<p>Definition at line <a class="el" href="_mouse_8cs_source.html#l00149">149</a> of file <a class="el" href="_mouse_8cs_source.html">Mouse.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0ef3392cf54c3debfd4595f9abc8befe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Corale.Colore.Core.Mouse.SetStatic </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a>&#160;</td>
+          <td class="paramname"><em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html#aafadccaeea2744f65544c5f99264037d">Led</a>&#160;</td>
+          <td class="paramname"><em>led</em> = <code>Led.All</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets a static effect on the mouse. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color</td><td>The color to use.</td></tr>
+    <tr><td class="paramname">led</td><td>Which LED(s) to affect.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#aa8e30c913a30586fd09c5b29cff38b93">Corale.Colore.Core.IMouse</a>.</p>
+
+<p>Definition at line <a class="el" href="_mouse_8cs_source.html#l00159">159</a> of file <a class="el" href="_mouse_8cs_source.html">Mouse.cs</a>.</p>
 
 </div>
 </div>
@@ -804,11 +1095,63 @@ Static Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#a9258176f6750cddefe1f4540041d2cf1">Corale.Colore.Core.IMouse</a>.</p>
 
-<p>Definition at line <a class="el" href="_mouse_8cs_source.html#l00145">145</a> of file <a class="el" href="_mouse_8cs_source.html">Mouse.cs</a>.</p>
+<p>Definition at line <a class="el" href="_mouse_8cs_source.html#l00225">225</a> of file <a class="el" href="_mouse_8cs_source.html">Mouse.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5e574a5feae12327e71bb55cbc1a9492"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Corale.Colore.Core.Mouse.SetWave </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects.html#a5bf238833f9ca051d9bc69b89739d41a">Direction</a>&#160;</td>
+          <td class="paramname"><em>direction</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets a wave effect on the mouse. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">direction</td><td>Direction of the wave.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html#a94d611ab90148333241c133e953028cf">Corale.Colore.Core.IMouse</a>.</p>
+
+<p>Definition at line <a class="el" href="_mouse_8cs_source.html#l00234">234</a> of file <a class="el" href="_mouse_8cs_source.html">Mouse.cs</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="ac65fb72d574f020be9ce7c266f183542"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_custom.html">Custom</a> Corale.Colore.Core.Mouse._custom</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Internal instance of a Custom struct. </p>
+
+<p>Definition at line <a class="el" href="_mouse_8cs_source.html#l00058">58</a> of file <a class="el" href="_mouse_8cs_source.html">Mouse.cs</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="aa571506a31071dbe5fb87c110cf62a79"></a>
 <div class="memitem">
 <div class="memproto">
@@ -878,7 +1221,7 @@ Static Private Attributes</h2></td></tr>
 
 <p>Gets the application-wide instance of the <a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html" title="Interface for mouse functionality. ">IMouse</a> interface. </p>
 
-<p>Definition at line <a class="el" href="_mouse_8cs_source.html#l00069">69</a> of file <a class="el" href="_mouse_8cs_source.html">Mouse.cs</a>.</p>
+<p>Definition at line <a class="el" href="_mouse_8cs_source.html#l00075">75</a> of file <a class="el" href="_mouse_8cs_source.html">Mouse.cs</a>.</p>
 
 </div>
 </div>
@@ -892,7 +1235,7 @@ Static Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_corale.html">Corale</a></li><li class="navelem"><a class="el" href="namespace_corale_1_1_colore.html">Colore</a></li><li class="navelem"><a class="el" href="namespace_corale_1_1_colore_1_1_core.html">Core</a></li><li class="navelem"><a class="el" href="class_corale_1_1_colore_1_1_core_1_1_mouse.html">Mouse</a></li>
-    <li class="footer">Generated on Wed Sep 23 2015 01:00:35 for Colore by
+    <li class="footer">Generated on Tue Oct 6 2015 22:57:00 for Colore by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
   </ul>

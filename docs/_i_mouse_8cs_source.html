@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Colore
-   &#160;<span id="projectnumber">2.2.1.78</span>
+   &#160;<span id="projectnumber">2.3.0.83</span>
    </div>
    <div id="projectbrief">C# library for Razer&#39;s Chroma SDK</div>
   </td>
@@ -156,19 +156,52 @@ $(document).ready(function(){initNavTree('_i_mouse_8cs_source.html','');});
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        [PublicAPI]</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordtype">void</span> SetBreathing(<a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_headset_1_1_effects_1_1_breathing.html">Breathing</a> effect);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        [PublicAPI]</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordtype">void</span> SetStatic(<a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_headset_1_1_effects_1_1_static.html">Static</a> effect);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordtype">void</span> SetBlinking(<a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_blinking.html">Blinking</a> effect);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">void</span> SetReactive(<a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_reactive.html">Reactive</a> effect);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordtype">void</span> SetSpectrumCycling(<a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_spectrum_cycling.html">SpectrumCycling</a> effect);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordtype">void</span> SetWave(<a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_wave.html">Wave</a> effect);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordtype">void</span> SetBreathing(<a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> first, <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> second, <a class="code" href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html#aafadccaeea2744f65544c5f99264037d">Led</a> led = <a class="code" href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html#aafadccaeea2744f65544c5f99264037d">Led</a>.All);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordtype">void</span> SetBreathing(<a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> color, <a class="code" href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html#aafadccaeea2744f65544c5f99264037d">Led</a> led = <a class="code" href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html#aafadccaeea2744f65544c5f99264037d">Led</a>.All);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordtype">void</span> SetBreathing(<a class="code" href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html#aafadccaeea2744f65544c5f99264037d">Led</a> led = <a class="code" href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html#aafadccaeea2744f65544c5f99264037d">Led</a>.All);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordtype">void</span> SetStatic(<a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_headset_1_1_effects_1_1_static.html">Static</a> effect);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordtype">void</span> SetStatic(<a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> color, <a class="code" href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html#aafadccaeea2744f65544c5f99264037d">Led</a> led = <a class="code" href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html#aafadccaeea2744f65544c5f99264037d">Led</a>.All);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordtype">void</span> SetBlinking(<a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_blinking.html">Blinking</a> effect);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordtype">void</span> SetBlinking(<a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> color, <a class="code" href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html#aafadccaeea2744f65544c5f99264037d">Led</a> led = <a class="code" href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html#aafadccaeea2744f65544c5f99264037d">Led</a>.All);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordtype">void</span> SetReactive(<a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_reactive.html">Reactive</a> effect);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordtype">void</span> SetReactive(<a class="code" href="namespace_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects.html#a1b60c4ba95eaf40d52b9da1e93f9b4db">Duration</a> duration, <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> color, <a class="code" href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html#aafadccaeea2744f65544c5f99264037d">Led</a> led = <a class="code" href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html#aafadccaeea2744f65544c5f99264037d">Led</a>.All);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keywordtype">void</span> SetSpectrumCycling(<a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_spectrum_cycling.html">SpectrumCycling</a> effect);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keywordtype">void</span> SetSpectrumCycling(<a class="code" href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html#aafadccaeea2744f65544c5f99264037d">Led</a> led = <a class="code" href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html#aafadccaeea2744f65544c5f99264037d">Led</a>.All);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keywordtype">void</span> SetWave(<a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_wave.html">Wave</a> effect);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordtype">void</span> SetWave(<a class="code" href="namespace_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects.html#a5bf238833f9ca051d9bc69b89739d41a">Direction</a> direction);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keywordtype">void</span> SetCustom(<a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_custom.html">Custom</a> effect);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    }</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;}</div>
+<div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_custom_html"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_custom.html">Corale.Colore.Razer.Keyboard.Effects.Custom</a></div><div class="ttdoc">Describes a custom grid effect for every key. </div><div class="ttdef"><b>Definition:</b> <a href="_keyboard_2_effects_2_custom_8cs_source.html#l00044">Custom.cs:44</a></div></div>
 <div class="ttc" id="namespace_corale_1_1_colore_1_1_razer_1_1_mouse_html"><div class="ttname"><a href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html">Corale.Colore.Razer.Mouse</a></div><div class="ttdef"><b>Definition:</b> <a href="_mouse_2_constants_8cs_source.html#l00031">Constants.cs:31</a></div></div>
+<div class="ttc" id="namespace_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_html_a1b60c4ba95eaf40d52b9da1e93f9b4db"><div class="ttname"><a href="namespace_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects.html#a1b60c4ba95eaf40d52b9da1e93f9b4db">Corale.Colore.Razer.Keyboard.Effects.Duration</a></div><div class="ttdeci">Duration</div><div class="ttdoc">Supported duration lengths. </div><div class="ttdef"><b>Definition:</b> <a href="_keyboard_2_effects_2_duration_8cs_source.html#l00038">Duration.cs:38</a></div></div>
 <div class="ttc" id="namespace_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_html"><div class="ttname"><a href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects.html">Corale.Colore.Razer.Mouse.Effects</a></div><div class="ttdef"><b>Definition:</b> <a href="_blinking_8cs_source.html#l00031">Blinking.cs:31</a></div></div>
 <div class="ttc" id="interface_corale_1_1_colore_1_1_core_1_1_i_mouse_html"><div class="ttname"><a href="interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html">Corale.Colore.Core.IMouse</a></div><div class="ttdoc">Interface for mouse functionality. </div><div class="ttdef"><b>Definition:</b> <a href="_i_mouse_8cs_source.html#l00040">IMouse.cs:40</a></div></div>
 <div class="ttc" id="namespace_corale_1_1_colore_1_1_razer_html_a811c71ff1bc7862a0055b1b94973bbf6"><div class="ttname"><a href="namespace_corale_1_1_colore_1_1_razer.html#a811c71ff1bc7862a0055b1b94973bbf6">Corale.Colore.Razer.Effect</a></div><div class="ttdeci">Effect</div><div class="ttdoc">Generic device effects. </div><div class="ttdef"><b>Definition:</b> <a href="_effect_8cs_source.html#l00039">Effect.cs:39</a></div></div>
@@ -177,12 +210,13 @@ $(document).ready(function(){initNavTree('_i_mouse_8cs_source.html','');});
 <div class="ttc" id="namespace_corale_html"><div class="ttname"><a href="namespace_corale.html">Corale</a></div></div>
 <div class="ttc" id="namespace_corale_1_1_colore_1_1_annotations_html"><div class="ttname"><a href="namespace_corale_1_1_colore_1_1_annotations.html">Corale.Colore.Annotations</a></div><div class="ttdef"><b>Definition:</b> <a href="_annotations_8cs_source.html#l00018">Annotations.cs:18</a></div></div>
 <div class="ttc" id="interface_corale_1_1_colore_1_1_core_1_1_i_device_html"><div class="ttname"><a href="interface_corale_1_1_colore_1_1_core_1_1_i_device.html">Corale.Colore.Core.IDevice</a></div><div class="ttdoc">Interface for functionality common with all devices. </div><div class="ttdef"><b>Definition:</b> <a href="_i_device_8cs_source.html#l00040">IDevice.cs:40</a></div></div>
-<div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_spectrum_cycling_html"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_spectrum_cycling.html">Corale.Colore.Razer.Mouse.Effects.SpectrumCycling</a></div><div class="ttdoc">Spectrum cycling effect. </div><div class="ttdef"><b>Definition:</b> <a href="_spectrum_cycling_8cs_source.html#l00036">SpectrumCycling.cs:36</a></div></div>
+<div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_spectrum_cycling_html"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_spectrum_cycling.html">Corale.Colore.Razer.Mouse.Effects.SpectrumCycling</a></div><div class="ttdoc">Spectrum cycling effect. </div><div class="ttdef"><b>Definition:</b> <a href="_spectrum_cycling_8cs_source.html#l00038">SpectrumCycling.cs:38</a></div></div>
 <div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_headset_1_1_effects_1_1_breathing_html"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_headset_1_1_effects_1_1_breathing.html">Corale.Colore.Razer.Headset.Effects.Breathing</a></div><div class="ttdoc">A breathing effect for a headset. </div><div class="ttdef"><b>Definition:</b> <a href="_headset_2_effects_2_breathing_8cs_source.html#l00039">Breathing.cs:39</a></div></div>
 <div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_wave_html"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_wave.html">Corale.Colore.Razer.Keyboard.Effects.Wave</a></div><div class="ttdoc">The wave effect for the keyboard. </div><div class="ttdef"><b>Definition:</b> <a href="_keyboard_2_effects_2_wave_8cs_source.html#l00041">Wave.cs:41</a></div></div>
 <div class="ttc" id="struct_corale_1_1_colore_1_1_core_1_1_color_html"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Corale.Colore.Core.Color</a></div><div class="ttdoc">Represents an RGB color. </div><div class="ttdef"><b>Definition:</b> <a href="_color_8cs_source.html#l00040">Color.cs:40</a></div></div>
 <div class="ttc" id="namespace_corale_1_1_colore_html"><div class="ttname"><a href="namespace_corale_1_1_colore.html">Corale.Colore</a></div></div>
 <div class="ttc" id="namespace_corale_1_1_colore_1_1_razer_html"><div class="ttname"><a href="namespace_corale_1_1_colore_1_1_razer.html">Corale.Colore.Razer</a></div><div class="ttdef"><b>Definition:</b> <a href="_constants_8cs_source.html#l00031">Constants.cs:31</a></div></div>
+<div class="ttc" id="namespace_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_html_a5bf238833f9ca051d9bc69b89739d41a"><div class="ttname"><a href="namespace_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects.html#a5bf238833f9ca051d9bc69b89739d41a">Corale.Colore.Razer.Keyboard.Effects.Direction</a></div><div class="ttdeci">Direction</div><div class="ttdoc">Direction of the wave effect. </div><div class="ttdef"><b>Definition:</b> <a href="_keyboard_2_effects_2_direction_8cs_source.html#l00038">Direction.cs:38</a></div></div>
 <div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_blinking_html"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_blinking.html">Corale.Colore.Razer.Mouse.Effects.Blinking</a></div><div class="ttdoc">Mouse effect that causes a specified LED to blink. </div><div class="ttdef"><b>Definition:</b> <a href="_blinking_8cs_source.html#l00039">Blinking.cs:39</a></div></div>
 <div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_headset_1_1_effects_1_1_static_html"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_headset_1_1_effects_1_1_static.html">Corale.Colore.Razer.Headset.Effects.Static</a></div><div class="ttdoc">Static color effect. </div><div class="ttdef"><b>Definition:</b> <a href="_headset_2_effects_2_static_8cs_source.html#l00042">Static.cs:42</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -191,7 +225,7 @@ $(document).ready(function(){initNavTree('_i_mouse_8cs_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_865a93a85313ae6b2503dfb6975d8750.html">Corale.Colore</a></li><li class="navelem"><a class="el" href="dir_b0277a4fdac946fbe1408f549d07635c.html">Core</a></li><li class="navelem"><a class="el" href="_i_mouse_8cs.html">IMouse.cs</a></li>
-    <li class="footer">Generated on Wed Sep 23 2015 01:00:33 for Colore by
+    <li class="footer">Generated on Tue Oct 6 2015 22:56:58 for Colore by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
   </ul>

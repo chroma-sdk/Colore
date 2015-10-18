@@ -1,6 +1,8 @@
 <map id="Corale.Colore.Core.Mouse" name="Corale.Colore.Core.Mouse">
-<area shape="rect" id="node2" href="$class_corale_1_1_colore_1_1_core_1_1_device.html" title="Base class for devices, containing code common between all devices. " alt="" coords="5,81,65,108"/>
-<area shape="rect" id="node3" href="$interface_corale_1_1_colore_1_1_core_1_1_i_device.html" title="Interface for functionality common with all devices. " alt="" coords="91,5,153,32"/>
-<area shape="rect" id="node4" href="$interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html" title="Interface for mouse functionality. " alt="" coords="90,81,154,108"/>
-<area shape="rect" id="node5" href="$interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html" title="Interface for mouse functionality. " alt="" coords="179,81,356,108"/>
+<area shape="rect" id="node2" href="$class_corale_1_1_colore_1_1_core_1_1_device.html" title="Base class for devices, containing code common between all devices. " alt="" coords="364,5,424,32"/>
+<area shape="rect" id="node3" href="$interface_corale_1_1_colore_1_1_core_1_1_i_device.html" title="Interface for functionality common with all devices. " alt="" coords="75,55,137,81"/>
+<area shape="rect" id="node4" href="$interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html" title="Interface for mouse functionality. " alt="" coords="362,56,426,83"/>
+<area shape="rect" id="node5" href="$interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html" title="Interface for mouse functionality. " alt="" coords="305,107,483,133"/>
+<area shape="rect" id="node6" href="$struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_custom.html" title="Describes a custom grid effect for every key. " alt="" coords="293,159,495,201"/>
+<area shape="rect" id="node9" href="$struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_custom_1_1_row.html" title="Container struct holding color definitions for a single row in the custom grid. " alt="" coords="5,219,207,261"/>
 </map>

@@ -11,6 +11,7 @@ var struct_corale_1_1_colore_1_1_razer_1_1_keypad_1_1_effects_1_1_custom =
     [ "GetHashCode", "struct_corale_1_1_colore_1_1_razer_1_1_keypad_1_1_effects_1_1_custom.html#a2b71a05178ac8b18b5830c47d943248a", null ],
     [ "operator!=", "struct_corale_1_1_colore_1_1_razer_1_1_keypad_1_1_effects_1_1_custom.html#a6ed0e12c802b10fc8dd3d6534f62afd0", null ],
     [ "operator==", "struct_corale_1_1_colore_1_1_razer_1_1_keypad_1_1_effects_1_1_custom.html#a35b024f13b634c9440367b38278c254d", null ],
+    [ "Set", "struct_corale_1_1_colore_1_1_razer_1_1_keypad_1_1_effects_1_1_custom.html#ab79a2b7b08747c40a6b665e3a984bcb1", null ],
     [ "_rows", "struct_corale_1_1_colore_1_1_razer_1_1_keypad_1_1_effects_1_1_custom.html#afa88d10aea1c5954197b764e5510c01d", null ],
     [ "this[int row, int column]", "struct_corale_1_1_colore_1_1_razer_1_1_keypad_1_1_effects_1_1_custom.html#aae92123ce686e26e3f32691a91f51cc3", null ]
 ];

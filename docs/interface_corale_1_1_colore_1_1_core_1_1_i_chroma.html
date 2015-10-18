@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Colore
-   &#160;<span id="projectnumber">2.2.1.78</span>
+   &#160;<span id="projectnumber">2.3.0.83</span>
    </div>
    <div id="projectbrief">C# library for Razer&#39;s Chroma SDK</div>
   </td>
@@ -145,6 +145,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa754333da7d7783fc5559c29d2e2eba0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html#aa754333da7d7783fc5559c29d2e2eba0">Unregister</a> ()</td></tr>
 <tr class="memdesc:aa754333da7d7783fc5559c29d2e2eba0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregisters from receiving <a class="el" href="class_corale_1_1_colore_1_1_core_1_1_chroma.html" title="Main class for interacting with the Chroma SDK. ">Chroma</a> events.  <a href="#aa754333da7d7783fc5559c29d2e2eba0">More...</a><br /></td></tr>
 <tr class="separator:aa754333da7d7783fc5559c29d2e2eba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac213f458fc1657770a06ea95ce1e8b1c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html#ac213f458fc1657770a06ea95ce1e8b1c">SetAll</a> (<a class="el" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> color)</td></tr>
+<tr class="memdesc:ac213f458fc1657770a06ea95ce1e8b1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets all <a class="el" href="class_corale_1_1_colore_1_1_core_1_1_chroma.html" title="Main class for interacting with the Chroma SDK. ">Chroma</a> devices to the specified <a class="el" href="struct_corale_1_1_colore_1_1_core_1_1_color.html" title="Represents an RGB color. ">Color</a>.  <a href="#ac213f458fc1657770a06ea95ce1e8b1c">More...</a><br /></td></tr>
+<tr class="separator:ac213f458fc1657770a06ea95ce1e8b1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -312,6 +315,32 @@ Events</h2></td></tr>
 <p><a class="el" href="class_corale_1_1_colore_1_1_core_1_1_chroma.html" title="Main class for interacting with the Chroma SDK. ">Chroma</a> events are sent using the Windows message API, as such, there has to be something handling Windows messages to receive them. Messages need to be passed to the message handler in <a class="el" href="namespace_corale_1_1_colore.html">Colore</a> to be processed, as this cannot be automated. </p>
 
 <p>Implemented in <a class="el" href="class_corale_1_1_colore_1_1_core_1_1_chroma.html#a26ab88bce1af92a62a1223b787fc28a9">Corale.Colore.Core.Chroma</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac213f458fc1657770a06ea95ce1e8b1c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Corale.Colore.Core.IChroma.SetAll </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a>&#160;</td>
+          <td class="paramname"><em>color</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets all <a class="el" href="class_corale_1_1_colore_1_1_core_1_1_chroma.html" title="Main class for interacting with the Chroma SDK. ">Chroma</a> devices to the specified <a class="el" href="struct_corale_1_1_colore_1_1_core_1_1_color.html" title="Represents an RGB color. ">Color</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color</td><td>The <a class="el" href="struct_corale_1_1_colore_1_1_core_1_1_color.html" title="Represents an RGB color. ">Color</a> to set.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_corale_1_1_colore_1_1_core_1_1_chroma.html#aed43eedee5c0566395259d7342202791">Corale.Colore.Core.Chroma</a>.</p>
 
 </div>
 </div>
@@ -516,7 +545,7 @@ Events</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_corale.html">Corale</a></li><li class="navelem"><a class="el" href="namespace_corale_1_1_colore.html">Colore</a></li><li class="navelem"><a class="el" href="namespace_corale_1_1_colore_1_1_core.html">Core</a></li><li class="navelem"><a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html">IChroma</a></li>
-    <li class="footer">Generated on Wed Sep 23 2015 01:00:34 for Colore by
+    <li class="footer">Generated on Tue Oct 6 2015 22:57:00 for Colore by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
   </ul>

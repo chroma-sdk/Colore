@@ -1,8 +1,8 @@
 <map id="Corale.Colore.Core.Keyboard" name="Corale.Colore.Core.Keyboard">
 <area shape="rect" id="node2" href="$class_corale_1_1_colore_1_1_core_1_1_device.html" title="Base class for devices, containing code common between all devices. " alt="" coords="364,5,424,32"/>
-<area shape="rect" id="node3" href="$interface_corale_1_1_colore_1_1_core_1_1_i_device.html" title="Interface for functionality common with all devices. " alt="" coords="75,51,137,77"/>
+<area shape="rect" id="node3" href="$interface_corale_1_1_colore_1_1_core_1_1_i_device.html" title="Interface for functionality common with all devices. " alt="" coords="75,55,137,81"/>
 <area shape="rect" id="node4" href="$interface_corale_1_1_colore_1_1_core_1_1_i_keyboard.html" title="Interface for keyboard functionality. " alt="" coords="354,56,434,83"/>
-<area shape="rect" id="node9" href="$interface_corale_1_1_colore_1_1_core_1_1_i_keyboard.html" title="Interface for keyboard functionality. " alt="" coords="297,108,491,135"/>
-<area shape="rect" id="node5" href="$struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_custom.html" title="Describes a custom grid effect for every key. " alt="" coords="293,173,495,214"/>
-<area shape="rect" id="node8" href="$struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_custom_1_1_row.html" title="Container struct holding color definitions for a single row in the custom grid. " alt="" coords="5,246,207,287"/>
+<area shape="rect" id="node9" href="$interface_corale_1_1_colore_1_1_core_1_1_i_keyboard.html" title="Interface for keyboard functionality. " alt="" coords="297,107,491,133"/>
+<area shape="rect" id="node5" href="$struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_custom.html" title="Describes a custom grid effect for every key. " alt="" coords="293,159,495,201"/>
+<area shape="rect" id="node8" href="$struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_custom_1_1_row.html" title="Container struct holding color definitions for a single row in the custom grid. " alt="" coords="5,219,207,261"/>
 </map>

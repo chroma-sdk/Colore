@@ -4,6 +4,7 @@ var interface_corale_1_1_colore_1_1_core_1_1_i_chroma =
     [ "HandleMessage", "interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html#a5a29c6270507a55f342e9efa19442090", null ],
     [ "Query", "interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html#a71a5055d1fac9af244ec71db56c9b1ba", null ],
     [ "Register", "interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html#a4147a7d53c89f4f9f3a26f2bd1d052fa", null ],
+    [ "SetAll", "interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html#ac213f458fc1657770a06ea95ce1e8b1c", null ],
     [ "Unregister", "interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html#aa754333da7d7783fc5559c29d2e2eba0", null ],
     [ "Headset", "interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html#a04bc01d73064695fa85026027dc76855", null ],
     [ "Keyboard", "interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html#ac29200a1f37f14d89cf3292ba5081e91", null ],
