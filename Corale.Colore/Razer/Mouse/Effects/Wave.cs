@@ -30,6 +30,8 @@
 
 namespace Corale.Colore.Razer.Mouse.Effects
 {
+    using Corale.Colore.Annotations;
+
     /// <summary>
     /// Wave effect.
     /// </summary>
@@ -38,6 +40,7 @@ namespace Corale.Colore.Razer.Mouse.Effects
         /// <summary>
         /// The direction of the wave effect.
         /// </summary>
+        [UsedImplicitly]
         public Direction Direction;
 
         /// <summary>
