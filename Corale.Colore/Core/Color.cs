@@ -231,7 +231,7 @@ namespace Corale.Colore.Core
         /// <param name="color">The <see cref="Color" /> to convert.</param>
         /// <returns>A <see cref="uint" /> representing the value of the <paramref name="color" /> argument.</returns>
         /// <remarks>The returned <see cref="uint" /> has a format of <c>0x00BBGGRR</c>.</remarks>
-        public static implicit operator uint (Color color)
+        public static implicit operator uint(Color color)
         {
             return color._value;
         }
