@@ -119,61 +119,61 @@ namespace Corale.Colore.Razer.Keyboard
         /// 1 key.
         /// </summary>
         [PublicAPI]
-        One = 0x0102,
+        D1 = 0x0102,
 
         /// <summary>
         /// 2 key.
         /// </summary>
         [PublicAPI]
-        Two = 0x0103,
+        D2 = 0x0103,
 
         /// <summary>
         /// 3 key.
         /// </summary>
         [PublicAPI]
-        Three = 0x0104,
+        D3 = 0x0104,
 
         /// <summary>
         /// 4 key.
         /// </summary>
         [PublicAPI]
-        Four = 0x0105,
+        D4 = 0x0105,
 
         /// <summary>
         /// 5 key.
         /// </summary>
         [PublicAPI]
-        Five = 0x0106,
+        D5 = 0x0106,
 
         /// <summary>
         /// 6 key.
         /// </summary>
         [PublicAPI]
-        Six = 0x0107,
+        D6 = 0x0107,
 
         /// <summary>
         /// 7 key.
         /// </summary>
         [PublicAPI]
-        Seven = 0x0108,
+        D7 = 0x0108,
 
         /// <summary>
         /// 8 key.
         /// </summary>
         [PublicAPI]
-        Eight = 0x0109,
+        D8 = 0x0109,
 
         /// <summary>
         /// 9 key.
         /// </summary>
         [PublicAPI]
-        Nine = 0x010A,
+        D9 = 0x010A,
 
         /// <summary>
         /// 0 key.
         /// </summary>
         [PublicAPI]
-        Zero = 0x010B,
+        D0 = 0x010B,
 
         /// <summary>
         /// A key.
@@ -629,91 +629,91 @@ namespace Corale.Colore.Razer.Keyboard
         /// Tilde (~) key. 半角/全角.
         /// </summary>
         [PublicAPI]
-        Oem1 = 0x0101,
+        OemTilde = 0x0101,
 
         /// <summary>
         /// Minus (-) key.
         /// </summary>
         [PublicAPI]
-        Oem2 = 0x010C,
+        OemMinus = 0x010C,
 
         /// <summary>
         /// Equal sign (=) key.
         /// </summary>
         [PublicAPI]
-        Oem3 = 0x010D,
+        OemEquals = 0x010D,
 
         /// <summary>
         /// Left square bracket ([) key.
         /// </summary>
         [PublicAPI]
-        Oem4 = 0x020C,
+        OemLeftBracket = 0x020C,
 
         /// <summary>
         /// Right square bracket (]) key.
         /// </summary>
         [PublicAPI]
-        Oem5 = 0x020D,
+        OemRightBracket = 0x020D,
 
         /// <summary>
         /// Forwards slash (/) key.
         /// </summary>
         [PublicAPI]
-        Oem6 = 0x020E,
+        OemSlash = 0x020E,
 
         /// <summary>
         /// Semi-colon (;) key.
         /// </summary>
         [PublicAPI]
-        Oem7 = 0x030B,
+        OemSemiColon = 0x030B,
 
         /// <summary>
         /// Apostrophe (') key.
         /// </summary>
         [PublicAPI]
-        Oem8 = 0x030C,
+        OemApostrophe = 0x030C,
 
         /// <summary>
         /// Comma (,) key.
         /// </summary>
         [PublicAPI]
-        Oem9 = 0x040A,
+        OemComma = 0x040A,
 
         /// <summary>
         /// Period/full stop (.) key.
         /// </summary>
         [PublicAPI]
-        Oem10 = 0x040B,
+        OemPeriod = 0x040B,
 
         /// <summary>
         /// Backslash (\) key.
         /// </summary>
         [PublicAPI]
-        Oem11 = 0x040C,
+        OemBackslash = 0x040C,
 
         /// <summary>
         /// Pound sign (#) key.
         /// </summary>
         [PublicAPI]
-        Eur1 = 0x030D,
+        EurPound = 0x030D,
 
         /// <summary>
         /// Backslash (\) key.
         /// </summary>
         [PublicAPI]
-        Eur2 = 0x0402,
+        EurBackslash = 0x0402,
 
         /// <summary>
         /// Yen (¥) key.
         /// </summary>
         [PublicAPI]
-        Jpn1 = 0x0015,
+        JpnYen = 0x0015,
 
         /// <summary>
         /// Forward slash (/) key.
         /// </summary>
         [PublicAPI]
-        Jpn2 = 0x040D,
+        JpnSlash = 0x040D,
 
         /// <summary>
         /// 無変換 key.
@@ -737,7 +737,7 @@ namespace Corale.Colore.Razer.Keyboard
         /// Pipe character (|) key.
         /// </summary>
         [PublicAPI]
-        Kor1 = 0x0015,
+        KorPipe = 0x0015,
 
         /// <summary>
         /// Unknown Korean key.
