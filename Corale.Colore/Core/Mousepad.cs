@@ -45,6 +45,11 @@ namespace Corale.Colore.Core
         private static readonly ILog Log = LogManager.GetLogger(typeof(Mousepad));
 
         /// <summary>
+        /// Lock object for thread-safe init.
+        /// </summary>
+        private static readonly object InitLock = new object();
+
+        /// <summary>
         /// Singleton instance.
         /// </summary>
         private static IMousepad _instance;
@@ -71,7 +76,10 @@ namespace Corale.Colore.Core
         {
             get
             {
-                return _instance ?? (_instance = new Mousepad());
+                lock (InitLock)
+                {
+                    return _instance ?? (_instance = new Mousepad());
+                }
             }
         }
 

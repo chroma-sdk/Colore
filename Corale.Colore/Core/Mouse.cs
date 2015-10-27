@@ -48,6 +48,11 @@ namespace Corale.Colore.Core
         private static readonly ILog Log = LogManager.GetLogger(typeof(Mouse));
 
         /// <summary>
+        /// Lock object for thread-safe init.
+        /// </summary>
+        private static readonly object InitLock = new object();
+
+        /// <summary>
         /// Holds the application-wide instance of the <see cref="IMouse" /> interface.
         /// </summary>
         private static IMouse _instance;
@@ -75,7 +80,10 @@ namespace Corale.Colore.Core
         {
             get
             {
-                return _instance ?? (_instance = new Mouse());
+                lock (InitLock)
+                {
+                    return _instance ?? (_instance = new Mouse());
+                }
             }
         }
 
