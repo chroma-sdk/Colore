@@ -51,6 +51,11 @@ namespace Corale.Colore.Core
         private static readonly ILog Log = LogManager.GetLogger(typeof(Keyboard));
 
         /// <summary>
+        /// Lock object for thread-safe init.
+        /// </summary>
+        private static readonly object InitLock = new object();
+
+        /// <summary>
         /// Holds the application-wide instance of the <see cref="Keyboard" /> class.
         /// </summary>
         private static IKeyboard _instance;
@@ -89,7 +94,10 @@ namespace Corale.Colore.Core
         {
             get
             {
-                return _instance ?? (_instance = new Keyboard());
+                lock (InitLock)
+                {
+                    return _instance ?? (_instance = new Keyboard());
+                }
             }
         }
 

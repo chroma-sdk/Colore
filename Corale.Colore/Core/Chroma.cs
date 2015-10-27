@@ -53,6 +53,11 @@ namespace Corale.Colore.Core
         private static readonly ILog Log = LogManager.GetLogger(typeof(Chroma));
 
         /// <summary>
+        /// Mutex lock for thread-safe init calls.
+        /// </summary>
+        private static readonly object InitLock = new object();
+
+        /// <summary>
         /// Holds the application-wide instance of the <see cref="IChroma" /> interface.
         /// </summary>
         private static IChroma _instance;
@@ -129,7 +134,10 @@ namespace Corale.Colore.Core
         {
             get
             {
-                return _instance ?? (_instance = new Chroma());
+                lock (InitLock)
+                {
+                    return _instance ?? (_instance = new Chroma());
+                }
             }
         }
 
@@ -238,15 +246,14 @@ namespace Corale.Colore.Core
                     if (key != null)
                     {
                         var value = key.GetValue("Enable");
-                        
+
                         if (value is int)
-                        {
                             regEnabled = (int)value == 1;
-                        }
                         else
                         {
                             regEnabled = true;
-                            Log.Warn("Chroma SDK has changed registry setting format. Please update Colore to latest version.");
+                            Log.Warn(
+                                "Chroma SDK has changed registry setting format. Please update Colore to latest version.");
                             Log.DebugFormat("New Enabled type: {0}", value.GetType());
                         }
                     }

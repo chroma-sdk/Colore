@@ -46,6 +46,11 @@ namespace Corale.Colore.Core
         private static readonly ILog Log = LogManager.GetLogger(typeof(Keypad));
 
         /// <summary>
+        /// Lock object for thread-safe init.
+        /// </summary>
+        private static readonly object InitLock = new object();
+
+        /// <summary>
         /// Singleton instance of this class.
         /// </summary>
         private static IKeypad _instance;
@@ -74,7 +79,10 @@ namespace Corale.Colore.Core
         {
             get
             {
-                return _instance ?? (_instance = new Keypad());
+                lock (InitLock)
+                {
+                    return _instance ?? (_instance = new Keypad());
+                }
             }
         }
 
