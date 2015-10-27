@@ -76,6 +76,25 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
+        /// Gets or sets a specific LED on the mouse pad.
+        /// </summary>
+        /// <param name="index">The index to access.</param>
+        /// <returns>The current <see cref="Color" /> at the <paramref name="index"/>.</returns>
+        public Color this[int index]
+        {
+            get
+            {
+                return _custom[index];
+            }
+
+            set
+            {
+                _custom[index] = value;
+                SetCustom(_custom);
+            }
+        }
+
+        /// <summary>
         /// Sets the color of all components on this device.
         /// </summary>
         /// <param name="color">Color to set.</param>
