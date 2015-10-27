@@ -62,7 +62,7 @@ namespace Corale.Colore.Core
         /// <summary>
         /// Orange color.
         /// </summary>
-        public static readonly Color Orange = new Color(0xFFA500);
+        public static readonly Color Orange = new Color(0x00A5FF);
 
         /// <summary>
         /// Pink color.

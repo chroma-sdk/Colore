@@ -238,9 +238,17 @@ namespace Corale.Colore.Core
                     if (key != null)
                     {
                         var value = key.GetValue("Enable");
-                        var bytes = value as byte[];
-
-                        regEnabled = bytes != null && bytes[0] == 1;
+                        
+                        if (value is int)
+                        {
+                            regEnabled = (int)value == 1;
+                        }
+                        else
+                        {
+                            regEnabled = true;
+                            Log.Warn("Chroma SDK has changed registry setting format. Please update Colore to latest version.");
+                            Log.DebugFormat("New Enabled type: {0}", value.GetType());
+                        }
                     }
                     else
                         regEnabled = false;
