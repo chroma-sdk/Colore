@@ -35,12 +35,19 @@ namespace Corale.Colore.Core
 
     using Corale.Colore.Razer;
     using Corale.Colore.Razer.Keyboard.Effects;
+    
+    using log4net;
 
     /// <summary>
     /// Helper class to more easily make calls to native Chroma SDK functions.
     /// </summary>
     internal static class NativeWrapper
     {
+        /// <summary>
+        /// Logger instance for this class.
+        /// </summary>
+        private static readonly ILog Log = LogManager.GetLogger(typeof(NativeWrapper));
+        
         /// <summary>
         /// Creates an effect for a device.
         /// </summary>
@@ -461,7 +468,14 @@ namespace Corale.Colore.Core
         internal static void SetEffect(Guid guid)
         {
             var result = NativeMethods.SetEffect(guid);
-            if (!result)
+            if (result)
+                return;
+            
+            if (result == Result.RzAccessDenied)
+            {
+                Log.Warn("Ambigous RzAccessDenied error thrown from call to native function SetEffect.");
+            }
+            else
                 throw new NativeCallException("SetEffect", result);
         }
 
