@@ -471,10 +471,17 @@ namespace Corale.Colore.Core
             if (result)
                 return;
             
-            if (result == Result.RzAccessDenied)
-                Log.Warn("Ambigous RzAccessDenied error thrown from call to native function SetEffect.");
-            else
-                throw new NativeCallException("SetEffect", result);
+            switch (result)
+            {
+                case Result.RzResourceDisabled:
+                case Result.RzAccessDenied:
+                    Log.WarnFormat("Ambigous {0} error thrown from call to native function SetEffect.", result);
+                    break;
+
+                default
+                    throw new NativeCallException("SetEffect", result);
+                    break;
+            }
         }
 
         /// <summary>
