@@ -45,5 +45,6 @@ var class_corale_1_1_colore_1_1_core_1_1_native_wrapper =
     [ "RegisterEventNotification", "class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html#aaee45e85e5ee5d9f54d55f125db11744", null ],
     [ "SetEffect", "class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html#a552b1354d7e38b1d609b289313df785d", null ],
     [ "UnInit", "class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html#a26754c3961528acb2cecc3255ee4d6bc", null ],
-    [ "UnregisterEventNotification", "class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html#a649d6042c560128ac31ceb580e1d1808", null ]
+    [ "UnregisterEventNotification", "class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html#a649d6042c560128ac31ceb580e1d1808", null ],
+    [ "Log", "class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html#acaa9990cc7651071c6ba3fef17d3095c", null ]
 ];
