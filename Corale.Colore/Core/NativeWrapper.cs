@@ -478,7 +478,7 @@ namespace Corale.Colore.Core
                     Log.WarnFormat("Ambiguous {0} error thrown from call to native function SetEffect.", result);
                     break;
 
-                default
+                default:
                     throw new NativeCallException("SetEffect", result);
                     break;
             }
