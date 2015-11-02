@@ -39,6 +39,14 @@ namespace Corale.Colore.Core
     public partial interface IMousepad : IDevice
     {
         /// <summary>
+        /// Gets or sets a specific LED on the mouse pad.
+        /// </summary>
+        /// <param name="index">The index to access.</param>
+        /// <returns>The current <see cref="Color" /> at the <paramref name="index"/>.</returns>
+        [PublicAPI]
+        Color this[int index] { get; set; }
+
+        /// <summary>
         /// Sets a breathing effect on the mouse pad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Breathing" /> struct.</param>
