@@ -53,6 +53,11 @@ namespace Corale.Colore.Core
         private static readonly ILog Log = LogManager.GetLogger(typeof(Chroma));
 
         /// <summary>
+        /// Keeps track of whether the SDK has been initialized.
+        /// </summary>
+        private static bool _initialized;
+
+        /// <summary>
         /// Holds the application-wide instance of the <see cref="IChroma" /> interface.
         /// </summary>
         private static IChroma _instance;
@@ -75,6 +80,7 @@ namespace Corale.Colore.Core
             Log.Info("Chroma is initializing.");
             Log.Debug("Calling SDK Init function");
             NativeWrapper.Init();
+            _initialized = true;
             Log.Debug("Resetting _registeredHandle");
             _registeredHandle = IntPtr.Zero;
         }
@@ -87,6 +93,9 @@ namespace Corale.Colore.Core
         /// </remarks>
         ~Chroma()
         {
+            if (!_initialized)
+                return;
+
             Unregister();
             NativeWrapper.UnInit();
         }
@@ -238,15 +247,14 @@ namespace Corale.Colore.Core
                     if (key != null)
                     {
                         var value = key.GetValue("Enable");
-                        
+
                         if (value is int)
-                        {
                             regEnabled = (int)value == 1;
-                        }
                         else
                         {
                             regEnabled = true;
-                            Log.Warn("Chroma SDK has changed registry setting format. Please update Colore to latest version.");
+                            Log.Warn(
+                                "Chroma SDK has changed registry setting format. Please update Colore to latest version.");
                             Log.DebugFormat("New Enabled type: {0}", value.GetType());
                         }
                     }
