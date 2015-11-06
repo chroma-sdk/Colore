@@ -35,7 +35,7 @@ namespace Corale.Colore.Razer.Keyboard
     /// <summary>
     /// Marks a <see cref="Key" /> value as unsafe.
     /// </summary>
-    [AttributeUsage(AttributeTargets.Enum)]
+    [AttributeUsage(AttributeTargets.Field)]
     public class UnsafeKeyAttribute : Attribute
     {
     }
