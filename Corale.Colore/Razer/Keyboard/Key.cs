@@ -533,6 +533,7 @@ namespace Corale.Colore.Razer.Keyboard
         /// Enter key.
         /// </summary>
         [PublicAPI]
+        [UnsafeKey]
         Enter = 0x030E,
 
         /// <summary>
@@ -587,12 +588,14 @@ namespace Corale.Colore.Razer.Keyboard
         /// Left shift key.
         /// </summary>
         [PublicAPI]
+        [UnsafeKey]
         LeftShift = 0x0401,
 
         /// <summary>
         /// Right shift key.
         /// </summary>
         [PublicAPI]
+        [UnsafeKey]
         RightShift = 0x040E,
 
         /// <summary>
@@ -659,6 +662,7 @@ namespace Corale.Colore.Razer.Keyboard
         /// Forwards slash (/) key.
         /// </summary>
         [PublicAPI]
+        [UnsafeKey]
         OemSlash = 0x020E,
 
         /// <summary>
@@ -695,42 +699,49 @@ namespace Corale.Colore.Razer.Keyboard
         /// Pound sign (#) key.
         /// </summary>
         [PublicAPI]
+        [UnsafeKey]
         EurPound = 0x030D,
 
         /// <summary>
         /// Backslash (\) key.
         /// </summary>
         [PublicAPI]
+        [UnsafeKey]
         EurBackslash = 0x0402,
 
         /// <summary>
         /// Yen (¥) key.
         /// </summary>
         [PublicAPI]
+        [UnsafeKey]
         JpnYen = 0x0015,
 
         /// <summary>
         /// Forward slash (/) key.
         /// </summary>
         [PublicAPI]
+        [UnsafeKey]
         JpnSlash = 0x040D,
 
         /// <summary>
         /// 無変換 key.
         /// </summary>
         [PublicAPI]
+        [UnsafeKey]
         Jpn3 = 0x0504,
 
         /// <summary>
         /// 変換 key.
         /// </summary>
         [PublicAPI]
+        [UnsafeKey]
         Jpn4 = 0x0509,
 
         /// <summary>
         /// ひらがな/カタカナ key.
         /// </summary>
         [PublicAPI]
+        [UnsafeKey]
         Jpn5 = 0x050A,
 
         /// <summary>
