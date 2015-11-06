@@ -665,7 +665,7 @@ namespace Corale.Colore.Razer.Keyboard
         /// Semi-colon (;) key.
         /// </summary>
         [PublicAPI]
-        OemSemiColon = 0x030B,
+        OemSemicolon = 0x030B,
 
         /// <summary>
         /// Apostrophe (') key.
