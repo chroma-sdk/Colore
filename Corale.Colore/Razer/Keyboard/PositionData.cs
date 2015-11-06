@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="UnsafePositions.cs" company="Corale">
+// <copyright file="PositionData.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -37,6 +37,9 @@ namespace Corale.Colore.Razer.Keyboard
     /// </summary>
     public static class PositionData
     {
+        /// <summary>
+        /// Set of positions that are unsafe to use.
+        /// </summary>
         internal static readonly HashSet<int> UnsafePositions = new HashSet<int>
         {
             0x0000,
