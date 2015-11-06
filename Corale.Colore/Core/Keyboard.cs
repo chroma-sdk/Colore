@@ -32,6 +32,7 @@ namespace Corale.Colore.Core
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
 
     using Corale.Colore.Annotations;
     using Corale.Colore.Razer.Keyboard;
@@ -129,6 +130,41 @@ namespace Corale.Colore.Core
             {
                 SetPosition(row, column, value);
             }
+        }
+
+        /// <summary>
+        /// Returns whether the specified key is safe to use.
+        /// </summary>
+        /// <param name="key">The <see cref="Key" /> to test.</param>
+        /// <returns><c>true</c> if the <see cref="Key" /> is safe, otherwise <c>false</c>.</returns>
+        /// <remarks>
+        /// A "safe" key means one that will always be visible if lit up,
+        /// regardless of the physical layout of the keyboard.
+        /// </remarks>
+        [PublicAPI]
+        public static bool IsKeySafe(Key key)
+        {
+            var attr =
+                typeof(Key).GetMember(key.ToString())[0].GetCustomAttributes(typeof(UnsafeKeyAttribute), false)
+                                                        .FirstOrDefault();
+
+            return attr == null;
+        }
+
+        /// <summary>
+        /// Returns whether the specified position is safe to use.
+        /// </summary>
+        /// <param name="row">Row to query.</param>
+        /// <param name="column">Column to query.</param>
+        /// <returns><c>true</c> if the position is safe, otherwise false.</returns>
+        /// <remarks>
+        /// A "safe" positions means one that will always be visible of lit up,
+        /// regardless of the physical layout of the keyboard.
+        /// </remarks>
+        [PublicAPI]
+        public static bool IsPositionSafe(Size row, Size column)
+        {
+            return !PositionData.UnsafePositions.Contains(((int)row << 8) | (int)column);
         }
 
         /// <summary>
