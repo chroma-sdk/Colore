@@ -157,6 +157,7 @@
     <Compile Include="Razer\Mouse\Effects\Breathing.cs" />
     <Compile Include="Razer\Mouse\Effects\BreathingType.cs" />
     <Compile Include="Razer\Mouse\Effects\Custom.cs" />
+    <Compile Include="Razer\Mouse\Effects\CustomGrid.cs" />
     <Compile Include="Razer\Mouse\Effects\Direction.cs" />
     <Compile Include="Razer\Mouse\Effects\Duration.cs" />
     <Compile Include="Razer\Mouse\Effects\Effect.cs" />
@@ -164,6 +165,7 @@
     <Compile Include="Razer\Mouse\Effects\Reactive.cs" />
     <Compile Include="Razer\Mouse\Effects\SpectrumCycling.cs" />
     <Compile Include="Razer\Mouse\Effects\Wave.cs" />
+    <Compile Include="Razer\Mouse\GridLed.cs" />
     <Compile Include="Razer\Mouse\Led.cs" />
     <Compile Include="Razer\Mouse\Effects\Static.cs" />
     <Compile Include="Razer\NativeCallException.cs" />
