@@ -33,6 +33,8 @@ namespace Corale.Colore.Core
     using System;
     using System.Runtime.InteropServices;
 
+    using Corale.Colore.Annotations;
+
     /// <summary>
     /// Represents an RGB color.
     /// </summary>
@@ -167,6 +169,7 @@ namespace Corale.Colore.Core
         /// <summary>
         /// Gets the alpha component of the color as a byte.
         /// </summary>
+        [PublicAPI]
         public byte A
         {
             get
@@ -178,6 +181,7 @@ namespace Corale.Colore.Core
         /// <summary>
         /// Gets the blue component of the color as a byte.
         /// </summary>
+        [PublicAPI]
         public byte B
         {
             get
@@ -189,6 +193,7 @@ namespace Corale.Colore.Core
         /// <summary>
         /// Gets the green component of the color as a byte.
         /// </summary>
+        [PublicAPI]
         public byte G
         {
             get
@@ -200,6 +205,7 @@ namespace Corale.Colore.Core
         /// <summary>
         /// Gets the red component of the color as a byte.
         /// </summary>
+        [PublicAPI]
         public byte R
         {
             get
@@ -212,6 +218,7 @@ namespace Corale.Colore.Core
         /// Gets the unsigned integer representing
         /// the color. On the form <c>0x00BBGGRR</c>.
         /// </summary>
+        [PublicAPI]
         public uint Value
         {
             get
