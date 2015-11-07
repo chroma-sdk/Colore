@@ -37,7 +37,7 @@ namespace Corale.Colore.Core
     /// <summary>
     /// Interface for mouse functionality.
     /// </summary>
-    public partial interface IMouse : IDevice
+    public interface IMouse : IDevice
     {
         /// <summary>
         /// Sets the color of a specific LED on the mouse.

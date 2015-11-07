@@ -37,7 +37,7 @@ namespace Corale.Colore.Core
     /// <summary>
     /// Class for interacting with a Chroma mouse pad.
     /// </summary>
-    public sealed partial class Mousepad : Device, IMousepad
+    public sealed class Mousepad : Device, IMousepad
     {
         /// <summary>
         /// Logger instance for this class.

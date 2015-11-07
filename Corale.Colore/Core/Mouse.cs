@@ -40,7 +40,7 @@ namespace Corale.Colore.Core
     /// Class for interacting with a Chroma mouse.
     /// </summary>
     [PublicAPI]
-    public sealed partial class Mouse : Device, IMouse
+    public sealed class Mouse : Device, IMouse
     {
         /// <summary>
         /// Logger instance for this class.

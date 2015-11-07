@@ -38,7 +38,7 @@ namespace Corale.Colore.Core
     /// <summary>
     /// Class for interacting with a Chroma keypad.
     /// </summary>
-    public sealed partial class Keypad : Device, IKeypad
+    public sealed class Keypad : Device, IKeypad
     {
         /// <summary>
         /// Logger instance for this class.

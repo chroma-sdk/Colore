@@ -32,22 +32,25 @@ namespace Corale.Colore.Core
 {
     using System;
 
+    using Corale.Colore.Annotations;
     using Corale.Colore.Razer;
 
     /// <summary>
     /// Interface for generic devices.
     /// </summary>
-    public partial interface IGenericDevice : IDevice
+    public interface IGenericDevice : IDevice
     {
         /// <summary>
         /// Gets the <see cref="Guid" /> of this device.
         /// </summary>
+        [PublicAPI]
         Guid DeviceId { get; }
 
         /// <summary>
         /// Sets a parameter-less effect on this device.
         /// </summary>
         /// <param name="effect">Effect to set.</param>
+        [PublicAPI]
         void SetEffect(Effect effect);
 
         /// <summary>
@@ -55,6 +58,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="effect">Effect to set.</param>
         /// <param name="param">Effect-specific parameter to use.</param>
+        [PublicAPI]
         void SetEffect(Effect effect, IntPtr param);
     }
 }

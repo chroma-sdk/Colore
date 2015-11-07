@@ -39,7 +39,7 @@ namespace Corale.Colore.Core
     /// <summary>
     /// Interface for keyboard functionality.
     /// </summary>
-    public partial interface IKeyboard : IDevice
+    public interface IKeyboard : IDevice
     {
         /// <summary>
         /// Gets or sets the <see cref="Color" /> for a specific <see cref="Key" /> on the keyboard.
