@@ -170,5 +170,12 @@ namespace Corale.Colore.Core
         /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
         [PublicAPI]
         void SetCustom(Custom effect);
+
+        /// <summary>
+        /// Sets a custom grid effect on the mouse.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="CustomGrid" /> struct.</param>
+        [PublicAPI]
+        void SetGrid(CustomGrid effect);
     }
 }

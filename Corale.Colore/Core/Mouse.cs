@@ -58,6 +58,11 @@ namespace Corale.Colore.Core
         private Custom _custom;
 
         /// <summary>
+        /// Internal instance of a <see cref="CustomGrid" /> struct.
+        /// </summary>
+        private CustomGrid _customGrid;
+
+        /// <summary>
         /// Prevents a default instance of the <see cref="Mouse" /> class from being created.
         /// </summary>
         private Mouse()
@@ -65,6 +70,7 @@ namespace Corale.Colore.Core
             Log.Info("Mouse is initializing");
             Chroma.Initialize();
             _custom = Custom.Create();
+            _customGrid = CustomGrid.Create();
         }
 
         /// <summary>
@@ -88,7 +94,13 @@ namespace Corale.Colore.Core
         public void SetLed(Led led, Color color, bool clear = false)
         {
             if (clear)
+            {
                 _custom.Clear();
+
+                // Clear the grid effect as well, this way the mouse
+                // will behave slightly more predictable for the caller.
+                _customGrid.Clear();
+            }
 
             _custom[led] = color;
             SetCustom(_custom);
@@ -246,8 +258,11 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         public override void SetAll(Color color)
         {
+            // We update both the Custom and CustomGrid effect to keep them both
+            // as synced as possible.
             _custom.Set(color);
-            SetCustom(_custom);
+            _customGrid.Set(color);
+            SetGrid(_customGrid);
         }
 
         /// <summary>
@@ -255,6 +270,15 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
         public void SetCustom(Custom effect)
+        {
+            SetGuid(NativeWrapper.CreateMouseEffect(effect));
+        }
+
+        /// <summary>
+        /// Sets a custom grid effect on the mouse.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="CustomGrid" /> struct.</param>
+        public void SetGrid(CustomGrid effect)
         {
             SetGuid(NativeWrapper.CreateMouseEffect(effect));
         }
