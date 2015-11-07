@@ -35,7 +35,7 @@ namespace Corale.Colore.Core
     /// <summary>
     /// Base class for devices, containing code common between all devices.
     /// </summary>
-    public abstract partial class Device : IDevice
+    public abstract class Device : IDevice
     {
         /// <summary>
         /// Gets or sets the ID of the currently active effect.

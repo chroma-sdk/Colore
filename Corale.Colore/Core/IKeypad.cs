@@ -37,7 +37,7 @@ namespace Corale.Colore.Core
     /// <summary>
     /// Interface for keypad functions.
     /// </summary>
-    public partial interface IKeypad : IDevice
+    public interface IKeypad : IDevice
     {
         /// <summary>
         /// Gets or sets a color at the specified position in the keypad's

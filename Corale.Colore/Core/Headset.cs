@@ -37,7 +37,7 @@ namespace Corale.Colore.Core
     /// <summary>
     /// Class for interacting with Chroma Headsets.
     /// </summary>
-    public sealed partial class Headset : Device, IHeadset
+    public sealed class Headset : Device, IHeadset
     {
         /// <summary>
         /// Loggers instance for this class.

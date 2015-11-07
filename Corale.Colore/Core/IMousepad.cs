@@ -36,7 +36,7 @@ namespace Corale.Colore.Core
     /// <summary>
     /// Interface for mouse pad functionality.
     /// </summary>
-    public partial interface IMousepad : IDevice
+    public interface IMousepad : IDevice
     {
         /// <summary>
         /// Gets or sets a specific LED on the mouse pad.
