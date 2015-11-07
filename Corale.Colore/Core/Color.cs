@@ -354,7 +354,7 @@ namespace Corale.Colore.Core
         /// <returns><c>true</c> of the two are equal, false otherwise.</returns>
         public bool Equals(Color other)
         {
-            return _value.Equals(other);
+            return _value.Equals(other._value);
         }
 
         /// <summary>
