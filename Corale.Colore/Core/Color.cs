@@ -101,7 +101,8 @@ namespace Corale.Colore.Core
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Color" /> struct using an integer
-        /// color value in the format <c>0xAABBGGRR</c>.
+        /// color value in the format <c>0xAABBGGRR</c>. Where the alpha component ranges
+        /// from <c>0x00</c> (fully transparent) to <c>0xFF</c> (fully opaque).
         /// </summary>
         /// <param name="value">Value to create the color from.</param>
         [PublicAPI]
@@ -120,7 +121,7 @@ namespace Corale.Colore.Core
         /// <param name="blue">The blue component.</param>
         /// <param name="alpha">The alpha component (<c>0</c> = fully opaque).</param>
         [PublicAPI]
-        public Color(byte red, byte green, byte blue, byte alpha = 0)
+        public Color(byte red, byte green, byte blue, byte alpha = 255)
             : this(red + ((uint)green << 8) + ((uint)blue << 16) + ((uint)alpha << 24))
         {
         }
@@ -138,7 +139,7 @@ namespace Corale.Colore.Core
         /// Each parameter value must be between <c>0.0f</c> and <c>1.0f</c> (inclusive).
         /// </remarks>
         [PublicAPI]
-        public Color(float red, float green, float blue, float alpha = 0.0f)
+        public Color(float red, float green, float blue, float alpha = 1.0f)
             : this((byte)(red * 255), (byte)(green * 255), (byte)(blue * 255), (byte)(alpha * 255))
         {
         }
@@ -155,7 +156,7 @@ namespace Corale.Colore.Core
         /// Each parameter value must be between <c>0.0</c> and <c>1.0</c> (inclusive).
         /// </remarks>
         [PublicAPI]
-        public Color(double red, double green, double blue, double alpha = 0.0)
+        public Color(double red, double green, double blue, double alpha = 1.0)
             : this((byte)(red * 255), (byte)(green * 255), (byte)(blue * 255), (byte)(alpha * 255))
         {
         }
@@ -220,7 +221,7 @@ namespace Corale.Colore.Core
 
         /// <summary>
         /// Gets the unsigned integer representing
-        /// the color. On the form <c>0x00BBGGRR</c>.
+        /// the color. On the form <c>0xAABBGGRR</c>.
         /// </summary>
         [PublicAPI]
         public uint Value
@@ -236,14 +237,15 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="color">The <see cref="Color" /> to convert.</param>
         /// <returns>A <see cref="uint" /> representing the value of the <paramref name="color" /> argument.</returns>
-        /// <remarks>The returned <see cref="uint" /> has a format of <c>0x00BBGGRR</c>.</remarks>
+        /// <remarks>The returned <see cref="uint" /> has a format of <c>0xAABBGGRR</c>.</remarks>
         public static implicit operator uint(Color color)
         {
             return color._value;
         }
 
         /// <summary>
-        /// Converts <paramref name="value" /> to an instance of the <see cref="Color" /> struct.
+        /// Converts a <c>uint</c> <paramref name="value" /> in the format of <c>0xAABBGGRR</c>
+        /// to a new instance of the <see cref="Color" /> struct.
         /// </summary>
         /// <param name="value">The <see cref="uint" /> to convert, on the form <c>0x00BBGGRR</c>.</param>
         /// <returns>An instance of <see cref="Color" /> representing the color value of <paramref name="value" />.</returns>
