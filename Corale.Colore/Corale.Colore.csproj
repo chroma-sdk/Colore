@@ -132,6 +132,8 @@
     <Compile Include="Razer\Keyboard\Effects\Static.cs" />
     <Compile Include="Razer\Keyboard\Effects\Wave.cs" />
     <Compile Include="Razer\Keyboard\Key.cs" />
+    <Compile Include="Razer\Keyboard\UnsafeKeyAttribute.cs" />
+    <Compile Include="Razer\Keyboard\PositionData.cs" />
     <Compile Include="Razer\Keypad\Constants.cs" />
     <Compile Include="Razer\Keypad\Effects\Breathing.cs" />
     <Compile Include="Razer\Keypad\Effects\BreathingType.cs" />
