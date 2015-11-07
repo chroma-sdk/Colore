@@ -297,6 +297,33 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
+        /// Creates a new <see cref="Color" /> from an ARGB integer value
+        /// in the format of <c>0xAARRGGBB</c> where the alpha component
+        /// ranges from <c>0x00</c> (fully transparent) to <c>0xFF</c> (fully opaque).
+        /// </summary>
+        /// <param name="value">The ARGB value to convert from.</param>
+        /// <returns>A new instance of the <see cref="Color" /> struct.</returns>
+        [PublicAPI]
+        public static Color FromArgb(uint value)
+        {
+            var abgr = (value & 0xFF00FF00) | ((value & 0xFF0000) >> 16) | ((value & 0xFF) << 16);
+            return new Color(abgr);
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="Color" /> from an RGB integer value
+        /// in the format of <c>0xRRGGBB</c>.
+        /// </summary>
+        /// <param name="value">The RGB value to convert from.</param>
+        /// <returns>A new instance of the <see cref="Color" /> struct.</returns>
+        [PublicAPI]
+        public static Color FromRgb(uint value)
+        {
+            var abgr = 0xFF000000 | ((value & 0xFF0000) >> 16) | (value & 0xFF00) | ((value & 0xFF) << 16);
+            return new Color(abgr);
+        }
+
+        /// <summary>
         /// Returns a value indicating whether this instance of <see cref="Color" />
         /// is equal to an <see cref="object" /> <paramref name="other" />.
         /// </summary>
