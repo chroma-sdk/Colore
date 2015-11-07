@@ -35,6 +35,8 @@ namespace Corale.Colore.Core
 
     using Corale.Colore.Annotations;
 
+    using SystemColor = System.Drawing.Color;
+
     /// <summary>
     /// Represents an RGB color.
     /// </summary>
@@ -218,7 +220,7 @@ namespace Corale.Colore.Core
         /// </remarks>
         public static explicit operator System.Drawing.Color(Color color)
         {
-            return System.Drawing.Color.FromArgb(color.A, color.R, color.G, color.B);
+            return SystemColor.FromArgb(color.A, color.R, color.G, color.B);
         }
 
         /// <summary>
@@ -303,8 +305,8 @@ namespace Corale.Colore.Core
             if (other is uint)
                 return Equals((uint)other);
 
-            if (other is System.Drawing.Color)
-                return Equals((System.Drawing.Color)other);
+            if (other is SystemColor)
+                return Equals((SystemColor)other);
 
             return false;
         }
@@ -339,7 +341,7 @@ namespace Corale.Colore.Core
         /// <c>true</c> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <c>false</c>.
         /// </returns>
         /// <param name="other">An instance of <see cref="System.Drawing.Color" /> to compare with this object.</param>
-        public bool Equals(System.Drawing.Color other)
+        public bool Equals(SystemColor other)
         {
             // Do not require matching alpha values for now, as it seems Razer do
             // not properly support alpha yet.
