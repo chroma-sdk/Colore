@@ -34,70 +34,111 @@ namespace Corale.Colore.Tests.Core
 
     using NUnit.Framework;
 
+    using SystemColor = System.Drawing.Color;
+    using WpfColor = System.Windows.Media.Color;
+
     [TestFixture]
     public class ColorTests
     {
         [Test]
         public void ShouldConstructCorrectly()
         {
-            Assert.AreEqual(new Color(0x00123456).Value, 0x00123456);
+            Assert.AreEqual(new Color(0x78123456).Value, 0x78123456);
         }
 
         [Test]
         public void ShouldConstructFromColor()
         {
-            var c = new Color(0x00123456);
+            var c = new Color(0x78123456);
             Assert.AreEqual(new Color(c), c);
         }
 
         [Test]
         public void ShouldConvertRgbBytesCorrectly()
         {
-            const uint V = 0x00FFFFFF;
-            const byte R = 255;
-            const byte G = 255;
-            const byte B = 255;
-            var c = new Color(R, G, B);
+            const uint V = 0x8056F5C8;
+            const byte R = 200;
+            const byte G = 245;
+            const byte B = 86;
+            const byte A = 128;
+            var c = new Color(R, G, B, A);
             Assert.AreEqual(c.Value, V);
             Assert.AreEqual(c.R, R);
             Assert.AreEqual(c.G, G);
             Assert.AreEqual(c.B, B);
+            Assert.AreEqual(c.A, A);
         }
 
         [Test]
         public void ShouldConvertRgbDoublesCorrectly()
         {
-            const uint V = 0x00FFFFFF;
-            const double R = 1.0;
-            const double G = 1.0;
-            const double B = 1.0;
-            const byte Expected = 255;
-            var c = new Color(R, G, B);
+            const uint V = 0x7F3D89CC;
+            const double R = 0.8;
+            const double G = 0.54;
+            const double B = 0.24;
+            const double A = 0.5;
+            const byte ExpectedR = (byte)(R * 255);
+            const byte ExpectedG = (byte)(G * 255);
+            const byte ExpectedB = (byte)(B * 255);
+            const byte ExpectedA = (byte)(A * 255);
+            var c = new Color(R, G, B, A);
             Assert.AreEqual(c.Value, V);
-            Assert.AreEqual(c.R, Expected);
-            Assert.AreEqual(c.G, Expected);
-            Assert.AreEqual(c.B, Expected);
+            Assert.AreEqual(c.R, ExpectedR);
+            Assert.AreEqual(c.G, ExpectedG);
+            Assert.AreEqual(c.B, ExpectedB);
+            Assert.AreEqual(c.A, ExpectedA);
         }
 
         [Test]
         public void ShouldConvertRgbFloatsCorrectly()
         {
-            const uint V = 0x00FFFFFF;
-            const float R = 1.0f;
-            const float G = 1.0f;
-            const float B = 1.0f;
-            const byte Expected = 255;
-            var c = new Color(R, G, B);
+            const uint V = 0xD8E533CC;
+            const float R = 0.8f;
+            const float G = 0.2f;
+            const float B = 0.9f;
+            const float A = 0.85f;
+            const byte ExpectedR = (byte)(R * 255);
+            const byte ExpectedG = (byte)(G * 255);
+            const byte ExpectedB = (byte)(B * 255);
+            const byte ExpectedA = (byte)(A * 255);
+            var c = new Color(R, G, B, A);
             Assert.AreEqual(c.Value, V);
-            Assert.AreEqual(c.R, Expected);
-            Assert.AreEqual(c.G, Expected);
-            Assert.AreEqual(c.B, Expected);
+            Assert.AreEqual(c.R, ExpectedR);
+            Assert.AreEqual(c.G, ExpectedG);
+            Assert.AreEqual(c.B, ExpectedB);
+            Assert.AreEqual(c.A, ExpectedA);
         }
 
         [Test]
-        public void ShouldDefaultToBlackColor()
+        public void ShouldConstructFromArgb()
         {
-            Assert.AreEqual(new Color(), Color.Black);
+            var expected = new Color(0x12345678);
+            var actual = Color.FromArgb(0x12785634);
+
+            Assert.AreEqual(expected.Value, actual.Value);
+            Assert.AreEqual(expected.R, actual.R);
+            Assert.AreEqual(expected.G, actual.G);
+            Assert.AreEqual(expected.B, actual.B);
+            Assert.AreEqual(expected.A, actual.A);
+        }
+
+        [Test]
+        public void ShouldConstructFromRgb()
+        {
+            var expected = new Color(0xFF123456);
+            var actual = Color.FromRgb(0x563412);
+
+            Assert.AreEqual(expected.Value, actual.Value);
+            Assert.AreEqual(expected.R, actual.R);
+            Assert.AreEqual(expected.G, actual.G);
+            Assert.AreEqual(expected.B, actual.B);
+            Assert.AreEqual(expected.A, actual.A);
+        }
+
+        [Test]
+        public void ShouldDefaultToEmptyColor()
+        {
+            Assert.AreEqual(new Color().Value, 0);
         }
 
         [Test]
@@ -114,7 +155,7 @@ namespace Corale.Colore.Tests.Core
         public void ShouldEqualIdenticalUint()
         {
             var a = new Color(255, 0, 255);
-            const uint B = 0x00FF00FF;
+            const uint B = 0xFFFF00FF;
             Assert.AreEqual(a, B);
             Assert.True(a == B);
             Assert.False(a != B);
@@ -206,46 +247,143 @@ namespace Corale.Colore.Tests.Core
         }
 
         [Test]
-        public void ShouldConstructFromSystemColor()
+        public void ShouldConvertFromSystemColor()
         {
-            var source = System.Drawing.Color.FromArgb(5, 10, 15);
-            var coloreColor = new Color(source);
+            var source = SystemColor.FromArgb(5, 10, 15, 20);
+            var coloreColor = Color.FromSystemColor(source);
 
             Assert.AreEqual(source.R, coloreColor.R);
             Assert.AreEqual(source.G, coloreColor.G);
             Assert.AreEqual(source.B, coloreColor.B);
+            Assert.AreEqual(source.A, coloreColor.A);
         }
 
         [Test]
-        public void ShouldConvertToSystemColor()
+        public void ShouldExplicitCastToSystemColor()
         {
-            var coloreColor = new Color(1, 2, 4);
-            var systemColor = (System.Drawing.Color)coloreColor;
+            var coloreColor = new Color(1, 2, 4, 8);
+            var systemColor = (SystemColor)coloreColor;
 
             Assert.AreEqual(coloreColor.R, systemColor.R);
             Assert.AreEqual(coloreColor.G, systemColor.G);
             Assert.AreEqual(coloreColor.B, systemColor.B);
+            Assert.AreEqual(coloreColor.A, systemColor.A);
         }
 
         [Test]
-        public void ShouldConvertFromSystemColor()
+        public void ShouldExplicitCastFromSystemColor()
         {
-            var systemColor = System.Drawing.Color.FromArgb(5, 10, 15);
+            var systemColor = SystemColor.FromArgb(5, 10, 15, 20);
             var coloreColor = (Color)systemColor;
 
             Assert.AreEqual(systemColor.R, coloreColor.R);
             Assert.AreEqual(systemColor.G, coloreColor.G);
             Assert.AreEqual(systemColor.B, coloreColor.B);
+            Assert.AreEqual(systemColor.A, coloreColor.A);
+        }
+
+        [Test]
+        public void ShouldImplicitCastToSystemColor()
+        {
+            var coloreColor = new Color(1, 2, 4, 8);
+            SystemColor systemColor = coloreColor;
+
+            Assert.AreEqual(coloreColor.R, systemColor.R);
+            Assert.AreEqual(coloreColor.G, systemColor.G);
+            Assert.AreEqual(coloreColor.B, systemColor.B);
+            Assert.AreEqual(coloreColor.A, systemColor.A);
+        }
+
+        [Test]
+        public void ShouldImplicitCastFromSystemColor()
+        {
+            var systemColor = SystemColor.FromArgb(5, 10, 15, 20);
+            Color coloreColor = systemColor;
+
+            Assert.AreEqual(systemColor.R, coloreColor.R);
+            Assert.AreEqual(systemColor.G, coloreColor.G);
+            Assert.AreEqual(systemColor.B, coloreColor.B);
+            Assert.AreEqual(systemColor.A, coloreColor.A);
         }
 
         [Test]
         public void ShouldEqualSystemColorUsingOverload()
         {
-            var coloreColor = new Color(1, 2, 3);
-            var systemColor = System.Drawing.Color.FromArgb(1, 2, 3);
+            var coloreColor = new Color(1, 2, 3, 8);
+            var systemColor = SystemColor.FromArgb(8, 1, 2, 3);
 
             Assert.True(coloreColor.Equals(systemColor));
             Assert.AreEqual(coloreColor, systemColor);
+        }
+
+        [Test]
+        public void ShouldConvertFromWpfColor()
+        {
+            var wpfColor = WpfColor.FromArgb(5, 10, 15, 20);
+            var coloreColor = Color.FromWpfColor(wpfColor);
+
+            Assert.AreEqual(wpfColor.R, coloreColor.R);
+            Assert.AreEqual(wpfColor.G, coloreColor.G);
+            Assert.AreEqual(wpfColor.B, coloreColor.B);
+            Assert.AreEqual(wpfColor.A, coloreColor.A);
+        }
+
+        [Test]
+        public void ShouldExplicitCastToWpfColor()
+        {
+            var coloreColor = new Color(1, 2, 4, 8);
+            var wpfColor = (WpfColor)coloreColor;
+
+            Assert.AreEqual(coloreColor.R, wpfColor.R);
+            Assert.AreEqual(coloreColor.G, wpfColor.G);
+            Assert.AreEqual(coloreColor.B, wpfColor.B);
+            Assert.AreEqual(coloreColor.A, wpfColor.A);
+        }
+
+        [Test]
+        public void ShouldExplicitCastFromWpfColor()
+        {
+            var wpfColor = WpfColor.FromArgb(5, 10, 15, 20);
+            var coloreColor = (Color)wpfColor;
+
+            Assert.AreEqual(wpfColor.R, coloreColor.R);
+            Assert.AreEqual(wpfColor.G, coloreColor.G);
+            Assert.AreEqual(wpfColor.B, coloreColor.B);
+            Assert.AreEqual(wpfColor.A, coloreColor.A);
+        }
+
+        [Test]
+        public void ShouldImplicitCastToWpfColor()
+        {
+            var coloreColor = new Color(1, 2, 4, 8);
+            WpfColor wpfColor = coloreColor;
+
+            Assert.AreEqual(coloreColor.R, wpfColor.R);
+            Assert.AreEqual(coloreColor.G, wpfColor.G);
+            Assert.AreEqual(coloreColor.B, wpfColor.B);
+            Assert.AreEqual(coloreColor.A, wpfColor.A);
+        }
+
+        [Test]
+        public void ShouldImplicitCastFromWpfColor()
+        {
+            var wpfColor = WpfColor.FromArgb(5, 10, 15, 20);
+            Color coloreColor = wpfColor;
+
+            Assert.AreEqual(wpfColor.R, coloreColor.R);
+            Assert.AreEqual(wpfColor.G, coloreColor.G);
+            Assert.AreEqual(wpfColor.B, coloreColor.B);
+            Assert.AreEqual(wpfColor.A, coloreColor.A);
+        }
+
+        [Test]
+        public void ShouldEqualWpfColorUsingOverload()
+        {
+            var coloreColor = new Color(1, 2, 3, 8);
+            var wpfColor = WpfColor.FromArgb(8, 1, 2, 3);
+
+            Assert.True(coloreColor.Equals(wpfColor));
+            Assert.AreEqual(coloreColor, wpfColor);
         }
     }
 }
