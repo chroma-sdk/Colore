@@ -214,10 +214,6 @@ namespace Corale.Colore.Core
         /// An instance of <see cref="System.Drawing.Color" /> representing the
         /// value of the <paramref name="color" /> argument.
         /// </returns>
-        /// <remarks>
-        /// This is an explicit cast since casting a <see cref="System.Drawing.Color" /> struct to <see cref="Color" />
-        /// is explicit.
-        /// </remarks>
         public static explicit operator System.Drawing.Color(Color color)
         {
             return SystemColor.FromArgb(color.A, color.R, color.G, color.B);
@@ -343,10 +339,7 @@ namespace Corale.Colore.Core
         /// <param name="other">An instance of <see cref="System.Drawing.Color" /> to compare with this object.</param>
         public bool Equals(SystemColor other)
         {
-            // Do not require matching alpha values for now, as it seems Razer do
-            // not properly support alpha yet.
-            // TODO: Change this back when Razer implements alpha
-            return R == other.R && G == other.G && B == other.B; // && A == other.A;
+            return R == other.R && G == other.G && B == other.B && A == other.A;
         }
 
         /// <summary>
