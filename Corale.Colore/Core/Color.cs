@@ -36,12 +36,13 @@ namespace Corale.Colore.Core
     using Corale.Colore.Annotations;
 
     using SystemColor = System.Drawing.Color;
+    using WpfColor = System.Windows.Media.Color;
 
     /// <summary>
     /// Represents an RGB color.
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Size = sizeof(uint))]
-    public struct Color : IEquatable<Color>, IEquatable<uint>, IEquatable<System.Drawing.Color>
+    public partial struct Color : IEquatable<Color>, IEquatable<uint>, IEquatable<SystemColor>, IEquatable<WpfColor>
     {
         /// <summary>
         /// Internal color value.
@@ -220,8 +221,30 @@ namespace Corale.Colore.Core
         {
             return FromSystemColor(color);
         }
+
+        /// <summary>
+        /// Converts a <see cref="Color" /> struct to a <see cref="System.Windows.Media.Color" /> struct.
+        /// </summary>
+        /// <param name="color">The <see cref="Color" /> to convert.</param>
+        /// <returns>
+        /// An instance of <see cref="System.Windows.Media.Color" /> representing the
+        /// value of the <paramref name="color" /> argument.
+        /// </returns>
+        public static implicit operator WpfColor(Color color)
         {
-            return new Color(color.R, color.G, color.B, color.A);
+            return WpfColor.FromArgb(color.A, color.R, color.G, color.B);
+        }
+
+        /// <summary>
+        /// Converts a <see cref="System.Windows.Media.Color" /> struct to a <see cref="Color" /> struct.
+        /// </summary>
+        /// <param name="color">The <see cref="System.Windows.Media.Color" /> to convert.</param>
+        /// <returns>
+        /// An instance of <see cref="Color" /> representing the value of the <paramref name="color" /> argument.
+        /// </returns>
+        public static implicit operator Color(WpfColor color)
+        {
+            return FromWpfColor(color);
         }
 
         /// <summary>
@@ -254,6 +277,18 @@ namespace Corale.Colore.Core
         /// <returns>A new instance of the <see cref="Color" /> struct.</returns>
         [PublicAPI]
         public static Color FromSystemColor(SystemColor source)
+        {
+            return new Color(source.R, source.G, source.B, source.A);
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="Color" /> from the source
+        /// <see cref="System.Windows.Media.Color" />.
+        /// </summary>
+        /// <param name="source">The source object to construct color from.</param>
+        /// <returns>A new instance of the <see cref="Color" /> struct.</returns>
+        [PublicAPI]
+        public static Color FromWpfColor(WpfColor source)
         {
             return new Color(source.R, source.G, source.B, source.A);
         }
@@ -305,6 +340,9 @@ namespace Corale.Colore.Core
             if (other is SystemColor)
                 return Equals((SystemColor)other);
 
+            if (other is WpfColor)
+                return Equals((WpfColor)other);
+
             return false;
         }
 
@@ -341,6 +379,17 @@ namespace Corale.Colore.Core
         public bool Equals(SystemColor other)
         {
             return R == other.R && G == other.G && B == other.B && A == other.A;
+        }
+
+        /// <summary>
+        /// Indicates whether the current object is equal to an instance of a
+        /// <see cref="System.Windows.Media.Color" /> struct.
+        /// </summary>
+        /// <param name="other">An instance of <see cref="System.Windows.Media.Color" /> to compare with this object.</param>
+        /// <returns><c>true</c> if the current object is equal to the <paramref name="other" /> parameter; otherwise, <c>false</c>.</returns>
+        public bool Equals(WpfColor other)
+        {
+            return R == other.R && G == other.G && B == other.B & A == other.A;
         }
 
         /// <summary>
