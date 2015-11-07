@@ -86,6 +86,85 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
+        /// Gets or sets the <see cref="Color" /> for a specific LED index on the mouse.
+        /// </summary>
+        /// <param name="index">The index to query, between <c>0</c> and <see cref="Constants.MaxLeds" /> (exclusive).</param>
+        /// <returns>The <see cref="Color" /> at the specified index.</returns>
+        public Color this[int index]
+        {
+            get
+            {
+                return _custom[index];
+            }
+
+            set
+            {
+                _custom[index] = value;
+                SetCustom(_custom);
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the <see cref="Color" /> for a specific <see cref="Led" /> on the mouse.
+        /// </summary>
+        /// <param name="led">The <see cref="Led" /> to query.</param>
+        /// <returns>The <see cref="Color" /> currently set for the specified <see cref="Led" />.</returns>
+        public Color this[Led led]
+        {
+            get
+            {
+                return _custom[led];
+            }
+
+            set
+            {
+                _custom[led] = value;
+                SetCustom(_custom);
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the <see cref="Color" /> for a specific position
+        /// on the mouse's virtual grid.
+        /// </summary>
+        /// <param name="row">The row to query, between <c>0</c> and <see cref="Constants.MaxRows" /> (exclusive).</param>
+        /// <param name="column">The column to query, between <c>0</c> and <see cref="Constants.MaxColumns" /> (exclusive).</param>
+        /// <returns>The <see cref="Color" /> at the specified position.</returns>
+        public Color this[int row, int column]
+        {
+            get
+            {
+                return _customGrid[row, column];
+            }
+
+            set
+            {
+                _customGrid[row, column] = value;
+                SetGrid(_customGrid);
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the <see cref="Color" /> for a specified <see cref="GridLed" />
+        /// on the mouse's virtual grid.
+        /// </summary>
+        /// <param name="led">The <see cref="GridLed" /> to query.</param>
+        /// <returns>The <see cref="Color" /> currently set for the specified <see cref="GridLed" />.</returns>
+        public Color this[GridLed led]
+        {
+            get
+            {
+                return _customGrid[led];
+            }
+
+            set
+            {
+                _customGrid[led] = value;
+                SetGrid(_customGrid);
+            }
+        }
+
+        /// <summary>
         /// Sets the color of a specific LED on the mouse.
         /// </summary>
         /// <param name="led">Which LED to modify.</param>
