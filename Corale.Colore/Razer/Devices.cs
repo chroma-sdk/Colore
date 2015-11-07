@@ -43,7 +43,7 @@ namespace Corale.Colore.Razer
         /// Blackwidow Chroma edition.
         /// </summary>
         [PublicAPI]
-        public static readonly Guid BlackwidowChroma = new Guid(
+        public static readonly Guid Blackwidow = new Guid(
             0x2ea1bb63,
             0xca28,
             0x428d,
@@ -60,7 +60,7 @@ namespace Corale.Colore.Razer
         /// Deathadder Chroma edition.
         /// </summary>
         [PublicAPI]
-        public static readonly Guid DeathadderChroma = new Guid(
+        public static readonly Guid Deathadder = new Guid(
             0xaec50d91,
             0xb1f1,
             0x452f,
@@ -77,7 +77,7 @@ namespace Corale.Colore.Razer
         /// Kraken 7.1 Chroma edition.
         /// </summary>
         [PublicAPI]
-        public static readonly Guid Kraken71Chroma = new Guid(
+        public static readonly Guid Kraken71 = new Guid(
             0xcd1e09a5,
             0xd5e6,
             0x4a6c,
@@ -94,7 +94,7 @@ namespace Corale.Colore.Razer
         /// Firefly Chroma edition.
         /// </summary>
         [PublicAPI]
-        public static readonly Guid FireflyChroma = new Guid(
+        public static readonly Guid Firefly = new Guid(
             0x80f95a94,
             0x73d2,
             0x48ca,
@@ -111,69 +111,103 @@ namespace Corale.Colore.Razer
         /// Orbweaver Chroma edition.
         /// </summary>
         [PublicAPI]
-        public static readonly Guid OrbweaverChroma = new Guid(
-            0x9d24b0ab, 
-            0x162, 
+        public static readonly Guid Orbweaver = new Guid(
+            0x9d24b0ab,
+            0x162,
             0x466c,
-            0x96, 
+            0x96,
             0x40,
-            0x7a, 
+            0x7a,
             0x92,
-            0x4a, 
+            0x4a,
             0xa4,
-            0xd9, 
+            0xd9,
             0xfd);
 
         /// <summary>
         /// Tartarus Chroma edition.
         /// </summary>
         [PublicAPI]
-        public static readonly Guid TartarusChroma = new Guid(
+        public static readonly Guid Tartarus = new Guid(
             0xf0545c,
-            0xe180, 
+            0xe180,
             0x4ad1,
             0x8e,
-            0x8a, 
-            0x41, 
-            0x90, 
-            0x61, 
+            0x8a,
+            0x41,
+            0x90,
+            0x61,
             0xce,
-            0x50, 
+            0x50,
             0x5e);
 
         /// <summary>
         /// Mamba TE Chroma edition.
         /// </summary>
         [PublicAPI]
-        public static readonly Guid MambaTeChroma = new Guid(
+        public static readonly Guid MambaTe = new Guid(
             0x7ec00450,
-            0xe0ee, 
+            0xe0ee,
             0x4289,
-            0x89, 
-            0xd5, 
-            0xd, 
-            0x87, 
-            0x9c, 
-            0x19, 
-            0x6, 
+            0x89,
+            0xd5,
+            0xd,
+            0x87,
+            0x9c,
+            0x19,
+            0x6,
             0x1a);
-       
+
         /// <summary>
         /// BlackWidow TE Chroma edition.
         /// </summary>
         [PublicAPI]
-        public static readonly Guid BlackwidowTeChroma = new Guid(
-           0xed1c1b82,
-           0xbfbe,
-           0x418f, 
-           0xb4, 
-           0x9d, 
-           0xd0, 
-           0x3f, 
-           0x5, 
-           0xb1, 
-           0x49, 
-           0xdf);
+        public static readonly Guid BlackwidowTe = new Guid(
+            0xed1c1b82,
+            0xbfbe,
+            0x418f,
+            0xb4,
+            0x9d,
+            0xd0,
+            0x3f,
+            0x5,
+            0xb1,
+            0x49,
+            0xdf);
+
+        /// <summary>
+        /// Deathstalker Chroma edition.
+        /// </summary>
+        [PublicAPI]
+        public static readonly Guid Deathstalker = new Guid(
+            0x18c5ad9b,
+            0x4326,
+            0x4828,
+            0x92,
+            0xc4,
+            0x26,
+            0x69,
+            0xa6,
+            0x6d,
+            0x22,
+            0x83);
+
+        /// <summary>
+        /// Diamondback Chroma edition.
+        /// </summary>
+        [PublicAPI]
+        public static readonly Guid Diamondback = new Guid(
+            0xff8a5929,
+            0x4512,
+            0x4257,
+            0x8d,
+            0x59,
+            0xc6,
+            0x47,
+            0xbf,
+            0x99,
+            0x35,
+            0xd0);
 
         /// <summary>
         /// Returns whether a specified <see cref="Guid" /> is a valid device identifier.
@@ -183,9 +217,8 @@ namespace Corale.Colore.Razer
         [PublicAPI]
         public static bool IsValidId(Guid id)
         {
-            return id == BlackwidowChroma || id == DeathadderChroma || id == OrbweaverChroma || id == TartarusChroma ||
-                   id == MambaTeChroma || id == BlackwidowTeChroma || id == Kraken71Chroma
-                   || id == FireflyChroma;
+            return id == Blackwidow || id == Deathadder || id == Orbweaver || id == Tartarus || id == MambaTe
+                   || id == BlackwidowTe || id == Kraken71 || id == Firefly || id == Deathstalker || id == Diamondback;
         }
     }
 }
