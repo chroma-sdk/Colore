@@ -84,8 +84,12 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="led">Which LED to modify.</param>
         /// <param name="color">Color to set.</param>
-        public void SetLed(Led led, Color color)
+        /// <param name="clear">If <c>true</c>, the mouse will first be cleared before setting the LED.</param>
+        public void SetLed(Led led, Color color, bool clear = false)
         {
+            if (clear)
+                _custom.Clear();
+
             _custom[led] = color;
             SetCustom(_custom);
         }

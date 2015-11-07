@@ -44,8 +44,9 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="led">Which LED to modify.</param>
         /// <param name="color">Color to set.</param>
+        /// <param name="clear">If <c>true</c>, the mouse will first be cleared before setting the LED.</param>
         [PublicAPI]
-        void SetLed(Led led, Color color);
+        void SetLed(Led led, Color color, bool clear = false);
 
         /// <summary>
         /// Sets an effect without any parameters.
