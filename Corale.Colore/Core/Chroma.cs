@@ -53,14 +53,14 @@ namespace Corale.Colore.Core
         private static readonly ILog Log = LogManager.GetLogger(typeof(Chroma));
 
         /// <summary>
-        /// Keeps track of whether the SDK has been initialized.
-        /// </summary>
-        private static bool _initialized;
-
-        /// <summary>
         /// Mutex lock for thread-safe init calls.
         /// </summary>
         private static readonly object InitLock = new object();
+
+        /// <summary>
+        /// Keeps track of whether the SDK has been initialized.
+        /// </summary>
+        private static bool _initialized;
 
         /// <summary>
         /// Holds the application-wide instance of the <see cref="IChroma" /> interface.
