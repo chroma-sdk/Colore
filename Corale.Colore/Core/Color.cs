@@ -104,6 +104,7 @@ namespace Corale.Colore.Core
         /// color value in the format <c>0xAABBGGRR</c>.
         /// </summary>
         /// <param name="value">Value to create the color from.</param>
+        [PublicAPI]
         public Color(uint value)
         {
             _value = value;
@@ -118,6 +119,7 @@ namespace Corale.Colore.Core
         /// <param name="green">The green component.</param>
         /// <param name="blue">The blue component.</param>
         /// <param name="alpha">The alpha component (<c>0</c> = fully opaque).</param>
+        [PublicAPI]
         public Color(byte red, byte green, byte blue, byte alpha = 0)
             : this(red + ((uint)green << 8) + ((uint)blue << 16) + ((uint)alpha << 24))
         {
@@ -135,6 +137,7 @@ namespace Corale.Colore.Core
         /// <remarks>
         /// Each parameter value must be between <c>0.0f</c> and <c>1.0f</c> (inclusive).
         /// </remarks>
+        [PublicAPI]
         public Color(float red, float green, float blue, float alpha = 0.0f)
             : this((byte)(red * 255), (byte)(green * 255), (byte)(blue * 255), (byte)(alpha * 255))
         {
@@ -151,6 +154,7 @@ namespace Corale.Colore.Core
         /// <remarks>
         /// Each parameter value must be between <c>0.0</c> and <c>1.0</c> (inclusive).
         /// </remarks>
+        [PublicAPI]
         public Color(double red, double green, double blue, double alpha = 0.0)
             : this((byte)(red * 255), (byte)(green * 255), (byte)(blue * 255), (byte)(alpha * 255))
         {
