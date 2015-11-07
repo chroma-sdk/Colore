@@ -114,16 +114,6 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Color" /> struct using
-        /// a <see cref="System.Drawing.Color" /> struct as the source.
-        /// </summary>
-        /// <param name="source">An instance of the <see cref="System.Drawing.Color" /> struct.</param>
-        public Color(System.Drawing.Color source)
-            : this(source.R, source.G, source.B, source.A)
-        {
-        }
-
-        /// <summary>
         /// Gets the alpha component of the color as a byte.
         /// </summary>
         [PublicAPI]
@@ -214,7 +204,7 @@ namespace Corale.Colore.Core
         /// An instance of <see cref="System.Drawing.Color" /> representing the
         /// value of the <paramref name="color" /> argument.
         /// </returns>
-        public static explicit operator System.Drawing.Color(Color color)
+        public static implicit operator SystemColor(Color color)
         {
             return SystemColor.FromArgb(color.A, color.R, color.G, color.B);
         }
@@ -226,11 +216,10 @@ namespace Corale.Colore.Core
         /// <returns>
         /// An instance of <see cref="Color" /> representing the value of the <paramref name="color" /> argument.
         /// </returns>
-        /// <remarks>
-        /// This is an explicit cast since the alpha component of the <see cref="System.Drawing.Color" />
-        /// struct is discarded.
-        /// </remarks>
-        public static explicit operator Color(System.Drawing.Color color)
+        public static implicit operator Color(SystemColor color)
+        {
+            return FromSystemColor(color);
+        }
         {
             return new Color(color.R, color.G, color.B, color.A);
         }
@@ -255,6 +244,18 @@ namespace Corale.Colore.Core
         public static bool operator !=(Color left, object right)
         {
             return !left.Equals(right);
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="Color" /> from the source
+        /// <see cref="System.Drawing.Color" />.
+        /// </summary>
+        /// <param name="source">The source object to construct color from.</param>
+        /// <returns>A new instance of the <see cref="Color" /> struct.</returns>
+        [PublicAPI]
+        public static Color FromSystemColor(SystemColor source)
+        {
+            return new Color(source.R, source.G, source.B, source.A);
         }
 
         /// <summary>
