@@ -91,6 +91,7 @@
     <Compile Include="ColoreException.cs" />
     <Compile Include="Core\Chroma.cs" />
     <Compile Include="Core\Color.cs" />
+    <Compile Include="Core\Color.Defines.cs" />
     <Compile Include="Core\Device.cs" />
     <Compile Include="Core\Device.Obsoletes.cs" />
     <Compile Include="Core\GenericDevice.Obsoletes.cs" />
