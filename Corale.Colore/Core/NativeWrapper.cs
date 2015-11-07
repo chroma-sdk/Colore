@@ -35,7 +35,7 @@ namespace Corale.Colore.Core
 
     using Corale.Colore.Razer;
     using Corale.Colore.Razer.Keyboard.Effects;
-    
+
     using log4net;
 
     /// <summary>
@@ -47,7 +47,7 @@ namespace Corale.Colore.Core
         /// Logger instance for this class.
         /// </summary>
         private static readonly ILog Log = LogManager.GetLogger(typeof(NativeWrapper));
-        
+
         /// <summary>
         /// Creates an effect for a device.
         /// </summary>
@@ -180,6 +180,16 @@ namespace Corale.Colore.Core
         internal static Guid CreateMouseEffect(Razer.Mouse.Effects.Custom effect)
         {
             return CreateMouseEffect(Razer.Mouse.Effects.Effect.Custom, effect);
+        }
+
+        /// <summary>
+        /// Creates a custom grid effect for the mouse.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
+        internal static Guid CreateMouseEffect(Razer.Mouse.Effects.CustomGrid effect)
+        {
+            return CreateMouseEffect(Razer.Mouse.Effects.Effect.CustomGrid, effect);
         }
 
         /// <summary>
@@ -470,7 +480,7 @@ namespace Corale.Colore.Core
             var result = NativeMethods.SetEffect(guid);
             if (result)
                 return;
-            
+
             if (result == Result.RzResourceDisabled || result == Result.RzAccessDenied)
                 Log.WarnFormat("Ambiguous {0} error thrown from call to native function SetEffect.", result);
             else
