@@ -38,13 +38,13 @@ namespace Corale.Colore
     /// Helper to get the architecture of the OS.
     /// Taken from here: http://stackoverflow.com/a/28866330/1104531
     /// </summary>
-    public static class EnvironmentHelper
+    internal static class EnvironmentHelper
     {
         /// <summary>
         /// Determines whether the current system is 64-bit.
         /// </summary>
         /// <returns><c>true</c> if the system is 64-bit.</returns>
-        public static bool Is64BitOperatingSystem()
+        internal static bool Is64BitOperatingSystem()
         {
             // Check if this process is natively an x64 process. If it is, it will only run on x64 environments, thus, the environment must be x64.
             if (IntPtr.Size == 8)
