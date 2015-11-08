@@ -53,6 +53,11 @@ namespace Corale.Colore.Core
         private static readonly ILog Log = LogManager.GetLogger(typeof(Chroma));
 
         /// <summary>
+        /// Mutex lock for thread-safe init calls.
+        /// </summary>
+        private static readonly object InitLock = new object();
+
+        /// <summary>
         /// Keeps track of whether the SDK has been initialized.
         /// </summary>
         private static bool _initialized;
@@ -138,7 +143,10 @@ namespace Corale.Colore.Core
         {
             get
             {
-                return _instance ?? (_instance = new Chroma());
+                lock (InitLock)
+                {
+                    return _instance ?? (_instance = new Chroma());
+                }
             }
         }
 
