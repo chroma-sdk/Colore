@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+// <copyright file="GridLed.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,73 +28,145 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Razer.Mouse.Effects
+namespace Corale.Colore.Razer.Mouse
 {
     using Corale.Colore.Annotations;
 
     /// <summary>
-    /// Supported built-in mouse effects.
+    /// LED definitions for the virtual grid.
     /// </summary>
-    public enum Effect
+    public enum GridLed
     {
         /// <summary>
-        /// No effect.
+        /// The LED illuminating the scroll wheel.
         /// </summary>
         [PublicAPI]
-        None = 0,
+        ScrollWheel = 0x0203,
 
         /// <summary>
-        /// Blinking effect.
+        /// The LED illuminating the logo present on the mouse.
         /// </summary>
         [PublicAPI]
-        Blinking,
+        Logo = 0x0703,
 
         /// <summary>
-        /// The breathing effect.
+        /// The mouse backlight.
         /// </summary>
         [PublicAPI]
-        Breathing,
+        Backlight = 0x0403,
 
         /// <summary>
-        /// A custom effect.
+        /// First LED on left side.
         /// </summary>
         [PublicAPI]
-        Custom,
+        LeftSide1 = 0x0100,
 
         /// <summary>
-        /// Reactive effect.
+        /// Second LED on left side.
         /// </summary>
         [PublicAPI]
-        Reactive,
+        LeftSide2 = 0x0200,
 
         /// <summary>
-        /// The spectrum cycling effect.
+        /// Third LED on left side.
         /// </summary>
         [PublicAPI]
-        SpectrumCycling,
+        LeftSide3 = 0x0300,
 
         /// <summary>
-        /// Static color effect.
+        /// Fourth LED on left side.
         /// </summary>
         [PublicAPI]
-        Static,
+        LeftSide4 = 0x0400,
 
         /// <summary>
-        /// Wave effect.
+        /// Fifth LED on left side.
         /// </summary>
         [PublicAPI]
-        Wave,
+        LeftSide5 = 0x0500,
 
         /// <summary>
-        /// Custom grid effect.
+        /// Sixth LED on left side.
         /// </summary>
         [PublicAPI]
-        CustomGrid,
+        LeftSide6 = 0x0600,
 
         /// <summary>
-        /// Invalid effect.
+        /// Seventh LED on left side.
         /// </summary>
         [PublicAPI]
-        Invalid
+        LeftSide7 = 0x0700,
+
+        /// <summary>
+        /// First bottom LED.
+        /// </summary>
+        [PublicAPI]
+        Bottom1 = 0x0801,
+
+        /// <summary>
+        /// Second bottom LED.
+        /// </summary>
+        [PublicAPI]
+        Bottom2 = 0x0802,
+
+        /// <summary>
+        /// Third bottom LED.
+        /// </summary>
+        [PublicAPI]
+        Bottom3 = 0x0803,
+
+        /// <summary>
+        /// Fourth bottom LED.
+        /// </summary>
+        [PublicAPI]
+        Bottom4 = 0x0804,
+
+        /// <summary>
+        /// Fifth bottom LED.
+        /// </summary>
+        [PublicAPI]
+        Bottom5 = 0x0805,
+
+        /// <summary>
+        /// First LED on right side.
+        /// </summary>
+        [PublicAPI]
+        RightSide1 = 0x0106,
+
+        /// <summary>
+        /// Second LED on right side.
+        /// </summary>
+        [PublicAPI]
+        RightSide2 = 0x0206,
+
+        /// <summary>
+        /// Third LED on right side.
+        /// </summary>
+        [PublicAPI]
+        RightSide3 = 0x0306,
+
+        /// <summary>
+        /// Fourth LED on right side.
+        /// </summary>
+        [PublicAPI]
+        RightSide4 = 0x0406,
+
+        /// <summary>
+        /// Fifth LED on right side.
+        /// </summary>
+        [PublicAPI]
+        RightSide5 = 0x0506,
+
+        /// <summary>
+        /// Sixth LED on right side.
+        /// </summary>
+        [PublicAPI]
+        RightSide6 = 0x0606,
+
+        /// <summary>
+        /// Seventh LED on right side.
+        /// </summary>
+        [PublicAPI]
+        RightSide7 = 0x0706
     }
 }

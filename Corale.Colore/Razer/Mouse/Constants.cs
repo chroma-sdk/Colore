@@ -39,5 +39,15 @@ namespace Corale.Colore.Razer.Mouse
         /// Maximum number of custom LEDs.
         /// </summary>
         public const int MaxLeds = 30;
+
+        /// <summary>
+        /// Maximum number of LED rows.
+        /// </summary>
+        public const int MaxRows = 9;
+
+        /// <summary>
+        /// Maximum number of LED columns.
+        /// </summary>
+        public const int MaxColumns = 7;
     }
 }

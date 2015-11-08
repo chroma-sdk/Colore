@@ -40,12 +40,48 @@ namespace Corale.Colore.Core
     public interface IMouse : IDevice
     {
         /// <summary>
+        /// Gets or sets the <see cref="Color" /> for a specific LED index on the mouse.
+        /// </summary>
+        /// <param name="index">The index to query, between <c>0</c> and <see cref="Constants.MaxLeds" /> (exclusive).</param>
+        /// <returns>The <see cref="Color" /> at the specified index.</returns>
+        [PublicAPI]
+        Color this[int index] { get; set; }
+
+        /// <summary>
+        /// Gets or sets the <see cref="Color" /> for a specific <see cref="Led" /> on the mouse.
+        /// </summary>
+        /// <param name="led">The <see cref="Led" /> to query.</param>
+        /// <returns>The <see cref="Color" /> currently set for the specified <see cref="Led" />.</returns>
+        [PublicAPI]
+        Color this[Led led] { get; set; }
+
+        /// <summary>
+        /// Gets or sets the <see cref="Color" /> for a specific position
+        /// on the mouse's virtual grid.
+        /// </summary>
+        /// <param name="row">The row to query, between <c>0</c> and <see cref="Constants.MaxRows" /> (exclusive).</param>
+        /// <param name="column">The column to query, between <c>0</c> and <see cref="Constants.MaxColumns" /> (exclusive).</param>
+        /// <returns>The <see cref="Color" /> at the specified position.</returns>
+        [PublicAPI]
+        Color this[int row, int column] { get; set; }
+
+        /// <summary>
+        /// Gets or sets the <see cref="Color" /> for a specified <see cref="GridLed" />
+        /// on the mouse's virtual grid.
+        /// </summary>
+        /// <param name="led">The <see cref="GridLed" /> to query.</param>
+        /// <returns>The <see cref="Color" /> currently set for the specified <see cref="GridLed" />.</returns>
+        [PublicAPI]
+        Color this[GridLed led] { get; set; }
+
+        /// <summary>
         /// Sets the color of a specific LED on the mouse.
         /// </summary>
         /// <param name="led">Which LED to modify.</param>
         /// <param name="color">Color to set.</param>
+        /// <param name="clear">If <c>true</c>, the mouse will first be cleared before setting the LED.</param>
         [PublicAPI]
-        void SetLed(Led led, Color color);
+        void SetLed(Led led, Color color, bool clear = false);
 
         /// <summary>
         /// Sets an effect without any parameters.
@@ -169,5 +205,12 @@ namespace Corale.Colore.Core
         /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
         [PublicAPI]
         void SetCustom(Custom effect);
+
+        /// <summary>
+        /// Sets a custom grid effect on the mouse.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="CustomGrid" /> struct.</param>
+        [PublicAPI]
+        void SetGrid(CustomGrid effect);
     }
 }
