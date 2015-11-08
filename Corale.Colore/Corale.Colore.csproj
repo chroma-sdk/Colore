@@ -79,6 +79,7 @@
       <HintPath>..\packages\log4net.2.0.3\lib\net35-full\log4net.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -91,6 +92,7 @@
     <Compile Include="ColoreException.cs" />
     <Compile Include="Core\Chroma.cs" />
     <Compile Include="Core\Color.cs" />
+    <Compile Include="Core\Color.Defines.cs" />
     <Compile Include="Core\Device.cs" />
     <Compile Include="EnvironmentHelper.cs" />
     <Compile Include="Core\GenericDevice.cs" />
