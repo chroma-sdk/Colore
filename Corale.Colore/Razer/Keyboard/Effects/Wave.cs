@@ -44,7 +44,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// Direction of wave effect.
         /// </summary>
         [PublicAPI]
-        public Direction Direction;
+        public readonly Direction Direction;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Wave" /> struct.

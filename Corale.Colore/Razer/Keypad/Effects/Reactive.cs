@@ -32,6 +32,7 @@ namespace Corale.Colore.Razer.Keypad.Effects
 {
     using System.Runtime.InteropServices;
 
+    using Corale.Colore.Annotations;
     using Corale.Colore.Core;
 
     /// <summary>
@@ -43,12 +44,14 @@ namespace Corale.Colore.Razer.Keypad.Effects
         /// <summary>
         /// Duration of the effect.
         /// </summary>
-        public Duration Duration;
+        [UsedImplicitly]
+        public readonly Duration Duration;
 
         /// <summary>
         /// Reaction color.
         /// </summary>
-        public Color Color;
+        [UsedImplicitly]
+        public readonly Color Color;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Reactive" /> struct.

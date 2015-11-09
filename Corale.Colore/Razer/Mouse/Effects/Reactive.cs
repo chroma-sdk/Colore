@@ -45,19 +45,19 @@ namespace Corale.Colore.Razer.Mouse.Effects
         /// The LED on which to apply the effect.
         /// </summary>
         [UsedImplicitly]
-        public Led Led;
+        public readonly Led Led;
 
         /// <summary>
         /// Duration of the reaction.
         /// </summary>
         [UsedImplicitly]
-        public Duration Duration;
+        public readonly Duration Duration;
 
         /// <summary>
         /// Reaction color.
         /// </summary>
         [UsedImplicitly]
-        public Color Color;
+        public readonly Color Color;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Reactive" /> struct.

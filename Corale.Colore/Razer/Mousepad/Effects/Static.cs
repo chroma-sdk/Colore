@@ -45,7 +45,7 @@ namespace Corale.Colore.Razer.Mousepad.Effects
         /// The color to use.
         /// </summary>
         [UsedImplicitly]
-        public Color Color;
+        public readonly Color Color;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Static" /> struct.
