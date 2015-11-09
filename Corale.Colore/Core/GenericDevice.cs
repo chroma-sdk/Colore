@@ -93,7 +93,7 @@ namespace Corale.Colore.Core
         [PublicAPI]
         public static IGenericDevice Get(Guid deviceId)
         {
-            Chroma.Initialize();
+            Chroma.InitInstance();
 
             if (!Instances.ContainsKey(deviceId))
                 Instances[deviceId] = new GenericDevice(deviceId);

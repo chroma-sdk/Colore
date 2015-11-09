@@ -73,7 +73,7 @@ namespace Corale.Colore.Core
         private Mouse()
         {
             Log.Info("Mouse is initializing");
-            Chroma.Initialize();
+            Chroma.InitInstance();
             _custom = Custom.Create();
             _customGrid = CustomGrid.Create();
         }

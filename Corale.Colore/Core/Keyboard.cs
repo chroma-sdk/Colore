@@ -73,7 +73,7 @@ namespace Corale.Colore.Core
         {
             Log.Info("Keyboard initializing...");
 
-            Chroma.Initialize();
+            Chroma.InitInstance();
 
             CurrentEffectId = Guid.Empty;
 

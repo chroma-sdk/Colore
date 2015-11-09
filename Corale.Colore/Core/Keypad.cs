@@ -67,7 +67,7 @@ namespace Corale.Colore.Core
         private Keypad()
         {
             Log.Debug("Keypad is initializing");
-            Chroma.Initialize();
+            Chroma.InitInstance();
 
             _custom = Custom.Create();
         }
