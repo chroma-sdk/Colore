@@ -273,9 +273,10 @@ namespace Corale.Colore.Core
         /// Initializes the SDK if it hasn't already.
         /// </summary>
         /// <remarks>
-        /// Manually modifying the SDK init state is <b>untested</b>
-        /// and may result in <emph>undefined behaviour</emph>, usage
-        /// is at <b>your own risk</b>.
+        /// <span style="color: red;">Manual manipulation of the SDK state is
+        /// <strong>not supported by the CoraleStudios team</strong> and may
+        /// result in <emph>undefined behaviour</emph>. Usage of this method is
+        /// <strong>at your own risk</strong>.</span>
         /// </remarks>
         public void Initialize()
         {
@@ -294,9 +295,13 @@ namespace Corale.Colore.Core
         /// Uninitializes the SDK if it has been initialized.
         /// </summary>
         /// <remarks>
-        /// Manually modifying the SDK init state is <b>untested</b>
-        /// and may result in <emph>undefined behaviour</emph>, usage
-        /// is at <b>your own risk</b>.
+        /// <span style="color: red;">Manual manipulation of the SDK state is
+        /// <strong>not supported by the CoraleStudios team</strong> and may
+        /// result in <emph>undefined behaviour</emph>. Usage of this method is
+        /// <strong>at your own risk</strong>. Usage of SDK functions while
+        /// the SDK is in an <emph>uninitialized</emph> state is <strong>highly
+        /// advised against</strong> and <emph>WILL</emph> result in catastrophic
+        /// failure. <strong>YOU HAVE BEEN WARNED</strong>.</span>
         /// </remarks>
         public void Uninitialize()
         {
