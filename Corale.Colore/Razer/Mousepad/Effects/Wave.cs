@@ -32,6 +32,8 @@ namespace Corale.Colore.Razer.Mousepad.Effects
 {
     using System.Runtime.InteropServices;
 
+    using Corale.Colore.Annotations;
+
     /// <summary>
     /// Wave effect for the mouse pad.
     /// </summary>
@@ -41,6 +43,7 @@ namespace Corale.Colore.Razer.Mousepad.Effects
         /// <summary>
         /// Direction of the wave.
         /// </summary>
+        [UsedImplicitly]
         public readonly Direction Direction;
 
         /// <summary>

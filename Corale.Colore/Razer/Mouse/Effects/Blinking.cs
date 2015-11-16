@@ -30,25 +30,28 @@
 
 namespace Corale.Colore.Razer.Mouse.Effects
 {
+    using System.Runtime.InteropServices;
+
     using Corale.Colore.Annotations;
     using Corale.Colore.Core;
 
     /// <summary>
     /// Mouse effect that causes a specified LED to blink.
     /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
     public struct Blinking
     {
         /// <summary>
         /// The LED on which to apply the effect.
         /// </summary>
         [UsedImplicitly]
-        public Led Led;
+        public readonly Led Led;
 
         /// <summary>
         /// Color of the blinking effect.
         /// </summary>
         [UsedImplicitly]
-        public Color Color;
+        public readonly Color Color;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Blinking" /> struct.

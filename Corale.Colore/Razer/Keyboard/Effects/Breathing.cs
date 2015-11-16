@@ -45,13 +45,13 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// First color.
         /// </summary>
         [PublicAPI]
-        public Color First;
+        public readonly Color First;
 
         /// <summary>
         /// Second color.
         /// </summary>
         [PublicAPI]
-        public Color Second;
+        public readonly Color Second;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Breathing" /> struct.

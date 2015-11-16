@@ -32,6 +32,8 @@ namespace Corale.Colore.Razer.Mouse.Effects
 {
     using System.Runtime.InteropServices;
 
+    using Corale.Colore.Annotations;
+
     /// <summary>
     /// No effect (resets the affected LEDs).
     /// </summary>
@@ -41,7 +43,8 @@ namespace Corale.Colore.Razer.Mouse.Effects
         /// <summary>
         /// The LED that should have its effects reset.
         /// </summary>
-        public Led Led;
+        [UsedImplicitly]
+        public readonly Led Led;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="None" /> struct.
