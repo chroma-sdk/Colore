@@ -308,6 +308,12 @@ namespace Corale.Colore.Core
             if (!Initialized)
                 return;
 
+            ((Device)Keyboard).DeleteCurrentEffect();
+            ((Device)Mouse).DeleteCurrentEffect();
+            ((Device)Keypad).DeleteCurrentEffect();
+            ((Device)Mousepad).DeleteCurrentEffect();
+            ((Device)Headset).DeleteCurrentEffect();
+
             Unregister();
             NativeWrapper.UnInit();
 
