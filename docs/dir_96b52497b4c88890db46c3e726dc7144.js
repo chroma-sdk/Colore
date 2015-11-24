@@ -10,6 +10,10 @@ var dir_96b52497b4c88890db46c3e726dc7144 =
     [ "Custom.cs", "_mouse_2_effects_2_custom_8cs.html", [
       [ "Custom", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_custom.html", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_custom" ]
     ] ],
+    [ "CustomGrid.cs", "_custom_grid_8cs.html", [
+      [ "CustomGrid", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_custom_grid.html", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_custom_grid" ],
+      [ "Row", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_custom_grid_1_1_row.html", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_custom_grid_1_1_row" ]
+    ] ],
     [ "Direction.cs", "_mouse_2_effects_2_direction_8cs.html", "_mouse_2_effects_2_direction_8cs" ],
     [ "Duration.cs", "_mouse_2_effects_2_duration_8cs.html", "_mouse_2_effects_2_duration_8cs" ],
     [ "Effect.cs", "_mouse_2_effects_2_effect_8cs.html", "_mouse_2_effects_2_effect_8cs" ],

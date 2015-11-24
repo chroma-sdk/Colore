@@ -1,12 +1,6 @@
 var interface_corale_1_1_colore_1_1_core_1_1_i_keypad =
 [
     [ "IsSet", "interface_corale_1_1_colore_1_1_core_1_1_i_keypad.html#a33f74c6874faf2e1dfd3ed7db9e37807", null ],
-    [ "Set", "interface_corale_1_1_colore_1_1_core_1_1_i_keypad.html#af2c240a2dd176db9724e001631966c3d", null ],
-    [ "Set", "interface_corale_1_1_colore_1_1_core_1_1_i_keypad.html#a73995df37a51a04b625ba1a6d99af4ca", null ],
-    [ "Set", "interface_corale_1_1_colore_1_1_core_1_1_i_keypad.html#afa6b30d8da4ff329edfbc16fb302ce4b", null ],
-    [ "Set", "interface_corale_1_1_colore_1_1_core_1_1_i_keypad.html#a7b92f4cabb604d4d687c512fcc1fd7f0", null ],
-    [ "Set", "interface_corale_1_1_colore_1_1_core_1_1_i_keypad.html#a914bcf975da1f5c3e5f652c92cee3160", null ],
-    [ "Set", "interface_corale_1_1_colore_1_1_core_1_1_i_keypad.html#af458a37d4f3a181daa2a6eba7db71b06", null ],
     [ "SetBreathing", "interface_corale_1_1_colore_1_1_core_1_1_i_keypad.html#a08991092f7605bc4d9b982936104efcc", null ],
     [ "SetBreathing", "interface_corale_1_1_colore_1_1_core_1_1_i_keypad.html#aaed596e7bf3ec1e8e2c2015a3bb68129", null ],
     [ "SetBreathing", "interface_corale_1_1_colore_1_1_core_1_1_i_keypad.html#adba02e224936984c272aefd26a2ebc90", null ],

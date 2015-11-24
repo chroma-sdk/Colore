@@ -7,8 +7,8 @@ var struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_breathing =
     [ "Breathing", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_breathing.html#a8f473a4c58cf0748b814b612daeb0f2a", null ],
     [ "Breathing", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_breathing.html#a2ac66d1d8f09ae397bb175b2cfce7c73", null ],
     [ "Breathing", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_breathing.html#a629b5ae5ba34cf206bdcae7290e4619c", null ],
-    [ "First", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_breathing.html#a79bdaabff2e4ef43514ecce968345118", null ],
-    [ "Led", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_breathing.html#ad3bc436ecf3fd9d6b3ba859e3abc436a", null ],
-    [ "Second", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_breathing.html#a7de6bfbe1d289377dd8f11e96574fc65", null ],
-    [ "Type", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_breathing.html#a8259cffd2188a0317126a6d18b53af3b", null ]
+    [ "First", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_breathing.html#af8a703c32deb617d26e6181e2d4ddb86", null ],
+    [ "Led", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_breathing.html#a0ee6f059e288b8d5710ffee064b98ecd", null ],
+    [ "Second", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_breathing.html#affd89c3ebe5e65be47f36ed4b3f010af", null ],
+    [ "Type", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_breathing.html#ad9050869d2720037a9756da0f6f245eb", null ]
 ];

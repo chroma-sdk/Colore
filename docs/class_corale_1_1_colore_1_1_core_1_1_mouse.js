@@ -1,14 +1,6 @@
 var class_corale_1_1_colore_1_1_core_1_1_mouse =
 [
     [ "Mouse", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#a62fd6c1ec345edbeccb1c94ab858ca2c", null ],
-    [ "Set", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#a5cbf5844a2f38852088c85137d1c7567", null ],
-    [ "Set", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#a8b96af081006999cf786c75444e8cbb4", null ],
-    [ "Set", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#a112168d7545e826a9d398e9fd8991e3a", null ],
-    [ "Set", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#ac921d705f193fc972a48b3dac2f22565", null ],
-    [ "Set", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#ae5e34da86b729dead3c6b66e8a3429f5", null ],
-    [ "Set", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#a07eba1bde491d767f2ea6b6187687383", null ],
-    [ "Set", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#a5ac7b5e0040763e1db90b8d07280a553", null ],
-    [ "Set", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#acc4981be490b99a873478980e68ecc04", null ],
     [ "SetAll", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#a5177e61c9a8bf3b6c2edf99a7b041102", null ],
     [ "SetBlinking", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#abddc2dc196350127c346f79697a52a84", null ],
     [ "SetBlinking", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#afe92cfc5d16a828ce2037489c4b41407", null ],
@@ -18,7 +10,8 @@ var class_corale_1_1_colore_1_1_core_1_1_mouse =
     [ "SetBreathing", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#a3cb95f04e068d19fe532df5bbb545884", null ],
     [ "SetCustom", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#a123efa966c6bc4c14affee4b5f1db8b3", null ],
     [ "SetEffect", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#a564fc9660fc86b6825d8a77fd142aa0a", null ],
-    [ "SetLed", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#ace8dd2b2ceb4cb28852b3d79479173d9", null ],
+    [ "SetGrid", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#a96b404031cd687b2890c37451b65eb04", null ],
+    [ "SetLed", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#ae7fd4093f3b3e7f0dda29f15df964728", null ],
     [ "SetReactive", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#a9a0e7b4fc06763804d5787b6d370f3db", null ],
     [ "SetReactive", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#adf3c5dcea544a4e98a081adaeec96ff4", null ],
     [ "SetSpectrumCycling", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#adee2bf4ed643aa237a5eba5b940eab40", null ],
@@ -28,7 +21,13 @@ var class_corale_1_1_colore_1_1_core_1_1_mouse =
     [ "SetWave", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#ac869715466ffd2b6472e10f0763741e9", null ],
     [ "SetWave", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#a5e574a5feae12327e71bb55cbc1a9492", null ],
     [ "_custom", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#ac65fb72d574f020be9ce7c266f183542", null ],
+    [ "_customGrid", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#a52a8660cd4e10909f9f90e2d2170f0e2", null ],
     [ "_instance", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#aa571506a31071dbe5fb87c110cf62a79", null ],
+    [ "InitLock", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#ace5d37ca170f5c70cd73393b8ee43bc7", null ],
     [ "Log", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#ae3b4257211cda8ecf88df56d2f5c3dfd", null ],
-    [ "Instance", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#a6cb76f2ee6dcc538004590968d70ef79", null ]
+    [ "Instance", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#a6cb76f2ee6dcc538004590968d70ef79", null ],
+    [ "this[GridLed led]", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#a31d40b0da96de21fdb2373b34812d298", null ],
+    [ "this[int index]", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#aa68ffd131ea49e69e8ee4ea7d74a6e64", null ],
+    [ "this[int row, int column]", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#abe9a192a3b46589739516cb2b113010d", null ],
+    [ "this[Led led]", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#a7fc18b31d7bb417d98b5d158966a37ac", null ]
 ];

@@ -11,6 +11,6 @@ var struct_corale_1_1_colore_1_1_razer_1_1_mousepad_1_1_effects_1_1_custom =
     [ "operator!=", "struct_corale_1_1_colore_1_1_razer_1_1_mousepad_1_1_effects_1_1_custom.html#a85ebf1b0edb0b9db8afee6b13476445a", null ],
     [ "operator==", "struct_corale_1_1_colore_1_1_razer_1_1_mousepad_1_1_effects_1_1_custom.html#a6cc829f236249b35b9ec97173f616b86", null ],
     [ "Set", "struct_corale_1_1_colore_1_1_razer_1_1_mousepad_1_1_effects_1_1_custom.html#afbc923138b5a3fc76417ddcdfbb77832", null ],
-    [ "Colors", "struct_corale_1_1_colore_1_1_razer_1_1_mousepad_1_1_effects_1_1_custom.html#a31021089c05bb9aa72c589249fd85bd5", null ],
+    [ "_colors", "struct_corale_1_1_colore_1_1_razer_1_1_mousepad_1_1_effects_1_1_custom.html#a66ba70dfe4e988325e190a5d3c7b9f6f", null ],
     [ "this[int led]", "struct_corale_1_1_colore_1_1_razer_1_1_mousepad_1_1_effects_1_1_custom.html#a9f7e351118bdde9075a1afd82222fea5", null ]
 ];

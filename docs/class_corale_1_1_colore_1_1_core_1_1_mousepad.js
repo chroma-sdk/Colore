@@ -1,11 +1,6 @@
 var class_corale_1_1_colore_1_1_core_1_1_mousepad =
 [
     [ "Mousepad", "class_corale_1_1_colore_1_1_core_1_1_mousepad.html#a29495ea2355b4665c51449c992f47391", null ],
-    [ "Set", "class_corale_1_1_colore_1_1_core_1_1_mousepad.html#a249e93a95d79598321835fdbad3b1813", null ],
-    [ "Set", "class_corale_1_1_colore_1_1_core_1_1_mousepad.html#ac35ae75b8c9f5889d44cba6d4a9a03d4", null ],
-    [ "Set", "class_corale_1_1_colore_1_1_core_1_1_mousepad.html#a99819dd8ce8735c5c39f33b3dbf97ed8", null ],
-    [ "Set", "class_corale_1_1_colore_1_1_core_1_1_mousepad.html#aafdc276e31ba154744573289276e4c27", null ],
-    [ "Set", "class_corale_1_1_colore_1_1_core_1_1_mousepad.html#ab6cfd01c4b978b83e2d9595d09f0bd97", null ],
     [ "SetAll", "class_corale_1_1_colore_1_1_core_1_1_mousepad.html#a0843100c268c647a4b059d877fe14c41", null ],
     [ "SetBreathing", "class_corale_1_1_colore_1_1_core_1_1_mousepad.html#abeb4dc66b82165d4be56cd636562575a", null ],
     [ "SetBreathing", "class_corale_1_1_colore_1_1_core_1_1_mousepad.html#a6f07f64726f587b8c5efb6272b2b9fca", null ],
@@ -18,6 +13,8 @@ var class_corale_1_1_colore_1_1_core_1_1_mousepad =
     [ "SetWave", "class_corale_1_1_colore_1_1_core_1_1_mousepad.html#a2bb58169886dd4e1d51a95311e050924", null ],
     [ "_custom", "class_corale_1_1_colore_1_1_core_1_1_mousepad.html#a7974cf4f991b8462a9d2dfb24b801a48", null ],
     [ "_instance", "class_corale_1_1_colore_1_1_core_1_1_mousepad.html#a4e13deed0f145d9ab4bc48aea4f65fd6", null ],
+    [ "InitLock", "class_corale_1_1_colore_1_1_core_1_1_mousepad.html#af493e84e6fdf5fc46ef9ec1b2e4a6ecc", null ],
     [ "Log", "class_corale_1_1_colore_1_1_core_1_1_mousepad.html#a91caf0ccaf4811dcb284cac5774ad993", null ],
-    [ "Instance", "class_corale_1_1_colore_1_1_core_1_1_mousepad.html#afe18fffb4f8d605ff1f3cf2160cc16fd", null ]
+    [ "Instance", "class_corale_1_1_colore_1_1_core_1_1_mousepad.html#afe18fffb4f8d605ff1f3cf2160cc16fd", null ],
+    [ "this[int index]", "class_corale_1_1_colore_1_1_core_1_1_mousepad.html#ad1d9bfcbf81a15c179279a7c224ad8ae", null ]
 ];

@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['wave_2ecs',['Wave.cs',['../_keyboard_2_effects_2_wave_8cs.html',1,'']]],
-  ['wave_2ecs',['Wave.cs',['../_mousepad_2_effects_2_wave_8cs.html',1,'']]],
-  ['wave_2ecs',['Wave.cs',['../_mouse_2_effects_2_wave_8cs.html',1,'']]],
-  ['wave_2ecs',['Wave.cs',['../_keypad_2_effects_2_wave_8cs.html',1,'']]]
+  ['unsafekeyattribute_2ecs',['UnsafeKeyAttribute.cs',['../_unsafe_key_attribute_8cs.html',1,'']]],
+  ['unsupporteddeviceexception_2ecs',['UnsupportedDeviceException.cs',['../_unsupported_device_exception_8cs.html',1,'']]]
 ];

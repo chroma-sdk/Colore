@@ -1,12 +1,14 @@
 var class_corale_1_1_colore_1_1_razer_1_1_devices =
 [
     [ "IsValidId", "class_corale_1_1_colore_1_1_razer_1_1_devices.html#a77a057a19d59d40d69372cfc93cd9c9b", null ],
-    [ "BlackwidowChroma", "class_corale_1_1_colore_1_1_razer_1_1_devices.html#aaa2250064b61da30f7c496da1947a343", null ],
-    [ "BlackwidowTeChroma", "class_corale_1_1_colore_1_1_razer_1_1_devices.html#a39cd7a07cb9bb3f3cc0f7f1bef760923", null ],
-    [ "DeathadderChroma", "class_corale_1_1_colore_1_1_razer_1_1_devices.html#ae4375c4802d2d944c5f860dc40c36b1b", null ],
-    [ "FireflyChroma", "class_corale_1_1_colore_1_1_razer_1_1_devices.html#aefe31d25b264970b5b063a4ed796ce8c", null ],
-    [ "Kraken71Chroma", "class_corale_1_1_colore_1_1_razer_1_1_devices.html#a171398d6a9e2e7037f52a90de7d54deb", null ],
-    [ "MambaTeChroma", "class_corale_1_1_colore_1_1_razer_1_1_devices.html#a5a2a3cf274cfa60611ef3094ce6c72dc", null ],
-    [ "OrbweaverChroma", "class_corale_1_1_colore_1_1_razer_1_1_devices.html#ae1b7d61672668d08e844f3adf58ec28c", null ],
-    [ "TartarusChroma", "class_corale_1_1_colore_1_1_razer_1_1_devices.html#a6647e83c0ed5c1a58d778eadd9e9cdbd", null ]
+    [ "Blackwidow", "class_corale_1_1_colore_1_1_razer_1_1_devices.html#ac49019915fde2957cd12a99682ba01b6", null ],
+    [ "BlackwidowTe", "class_corale_1_1_colore_1_1_razer_1_1_devices.html#ad0c5613e99457304392a55520ced9b42", null ],
+    [ "Deathadder", "class_corale_1_1_colore_1_1_razer_1_1_devices.html#af1340aed8b497589a8c051ad7a016a3d", null ],
+    [ "Deathstalker", "class_corale_1_1_colore_1_1_razer_1_1_devices.html#a2b6ec63d7e32ca5bf832e336bd635268", null ],
+    [ "Diamondback", "class_corale_1_1_colore_1_1_razer_1_1_devices.html#acf08fb584dae855e6938f6c588666373", null ],
+    [ "Firefly", "class_corale_1_1_colore_1_1_razer_1_1_devices.html#ad2f23d4c172e377999b501c5fc919a02", null ],
+    [ "Kraken71", "class_corale_1_1_colore_1_1_razer_1_1_devices.html#af0e3dd7ef4a6eed7fceb001289a3b638", null ],
+    [ "MambaTe", "class_corale_1_1_colore_1_1_razer_1_1_devices.html#a40b9c64adc9ffaa70e7705eb015e8ec3", null ],
+    [ "Orbweaver", "class_corale_1_1_colore_1_1_razer_1_1_devices.html#a610ec0f204d0d88cf07980b18d2294b8", null ],
+    [ "Tartarus", "class_corale_1_1_colore_1_1_razer_1_1_devices.html#a61205727128f652bb10ec960207233f8", null ]
 ];

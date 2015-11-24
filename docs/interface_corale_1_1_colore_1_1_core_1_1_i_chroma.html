@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Colore
-   &#160;<span id="projectnumber">2.3.2.87</span>
+   &#160;<span id="projectnumber">3.0.0.89</span>
    </div>
    <div id="projectbrief">C# library for Razer&#39;s Chroma SDK</div>
   </td>
@@ -130,6 +130,12 @@ $(document).ready(function(){initNavTree('interface_corale_1_1_colore_1_1_core_1
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a92d9975244f2e51355bdbf49d1b0c1ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html#a92d9975244f2e51355bdbf49d1b0c1ac">Initialize</a> ()</td></tr>
+<tr class="memdesc:a92d9975244f2e51355bdbf49d1b0c1ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the SDK if it hasn't already.  <a href="#a92d9975244f2e51355bdbf49d1b0c1ac">More...</a><br /></td></tr>
+<tr class="separator:a92d9975244f2e51355bdbf49d1b0c1ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3159dc4cd7e46f89be5a883a9a855446"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html#a3159dc4cd7e46f89be5a883a9a855446">Uninitialize</a> ()</td></tr>
+<tr class="memdesc:a3159dc4cd7e46f89be5a883a9a855446"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uninitializes the SDK if it has been initialized.  <a href="#a3159dc4cd7e46f89be5a883a9a855446">More...</a><br /></td></tr>
+<tr class="separator:a3159dc4cd7e46f89be5a883a9a855446"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71a5055d1fac9af244ec71db56c9b1ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_corale_1_1_colore_1_1_razer_1_1_device_info.html">DeviceInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html#a71a5055d1fac9af244ec71db56c9b1ba">Query</a> (Guid deviceId)</td></tr>
 <tr class="memdesc:a71a5055d1fac9af244ec71db56c9b1ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries the SDK for information regarding a specific device.  <a href="#a71a5055d1fac9af244ec71db56c9b1ba">More...</a><br /></td></tr>
 <tr class="separator:a71a5055d1fac9af244ec71db56c9b1ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -166,6 +172,9 @@ Properties</h2></td></tr>
 <tr class="memitem:a56e707afe10db4907abfb15af823b479"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_keypad.html">IKeypad</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html#a56e707afe10db4907abfb15af823b479">Keypad</a><code> [get]</code></td></tr>
 <tr class="memdesc:a56e707afe10db4907abfb15af823b479"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an instance of the <a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_keypad.html" title="Interface for keypad functions. ">IKeypad</a> interface for interacting with a <a class="el" href="namespace_corale_1_1_colore_1_1_razer.html">Razer</a> <a class="el" href="class_corale_1_1_colore_1_1_core_1_1_chroma.html" title="Main class for interacting with the Chroma SDK. ">Chroma</a> keypad.  <a href="#a56e707afe10db4907abfb15af823b479">More...</a><br /></td></tr>
 <tr class="separator:a56e707afe10db4907abfb15af823b479"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20af43731e285d2d48aa7416127404d2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html#a20af43731e285d2d48aa7416127404d2">Initialized</a><code> [get]</code></td></tr>
+<tr class="memdesc:a20af43731e285d2d48aa7416127404d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the <a class="el" href="class_corale_1_1_colore_1_1_core_1_1_chroma.html" title="Main class for interacting with the Chroma SDK. ">Chroma</a> SDK has been initialized or not.  <a href="#a20af43731e285d2d48aa7416127404d2">More...</a><br /></td></tr>
+<tr class="separator:a20af43731e285d2d48aa7416127404d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="events"></a>
 Events</h2></td></tr>
@@ -264,6 +273,26 @@ Events</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a92d9975244f2e51355bdbf49d1b0c1ac"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Corale.Colore.Core.IChroma.Initialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes the SDK if it hasn't already. </p>
+<p>Manually modifying the SDK init state is <b>untested</b> and may result in &lt;emph&gt;undefined behaviour&lt;/emph&gt;, usage is at <b>your own risk</b>. </p>
+
+<p>Implemented in <a class="el" href="class_corale_1_1_colore_1_1_core_1_1_chroma.html#a2af5f29da4b5415f076c43fff1f3c49e">Corale.Colore.Core.Chroma</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a71a5055d1fac9af244ec71db56c9b1ba"></a>
 <div class="memitem">
 <div class="memproto">
@@ -344,6 +373,26 @@ Events</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a3159dc4cd7e46f89be5a883a9a855446"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Corale.Colore.Core.IChroma.Uninitialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Uninitializes the SDK if it has been initialized. </p>
+<p>Manually modifying the SDK init state is <b>untested</b> and may result in &lt;emph&gt;undefined behaviour&lt;/emph&gt;, usage is at <b>your own risk</b>. </p>
+
+<p>Implemented in <a class="el" href="class_corale_1_1_colore_1_1_core_1_1_chroma.html#a1e6ab156c7c8ba5305d9d920d8e5bc5f">Corale.Colore.Core.Chroma</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="aa754333da7d7783fc5559c29d2e2eba0"></a>
 <div class="memitem">
 <div class="memproto">
@@ -385,6 +434,30 @@ Events</h2></td></tr>
 <p>Gets an instance of the <a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_headset.html" title="Interface for headset functionality. ">IHeadset</a> interface for interacting with a <a class="el" href="namespace_corale_1_1_colore_1_1_razer.html">Razer</a> <a class="el" href="class_corale_1_1_colore_1_1_core_1_1_chroma.html" title="Main class for interacting with the Chroma SDK. ">Chroma</a> headset. </p>
 
 <p>Definition at line <a class="el" href="_i_chroma_8cs_source.html#l00097">97</a> of file <a class="el" href="_i_chroma_8cs_source.html">IChroma.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a20af43731e285d2d48aa7416127404d2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Corale.Colore.Core.IChroma.Initialized</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a value indicating whether the <a class="el" href="class_corale_1_1_colore_1_1_core_1_1_chroma.html" title="Main class for interacting with the Chroma SDK. ">Chroma</a> SDK has been initialized or not. </p>
+
+<p>Definition at line <a class="el" href="_i_chroma_8cs_source.html#l00118">118</a> of file <a class="el" href="_i_chroma_8cs_source.html">IChroma.cs</a>.</p>
 
 </div>
 </div>
@@ -545,7 +618,7 @@ Events</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespace_corale.html">Corale</a></li><li class="navelem"><a class="el" href="namespace_corale_1_1_colore.html">Colore</a></li><li class="navelem"><a class="el" href="namespace_corale_1_1_colore_1_1_core.html">Core</a></li><li class="navelem"><a class="el" href="interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html">IChroma</a></li>
-    <li class="footer">Generated on Wed Oct 28 2015 13:45:03 for Colore by
+    <li class="footer">Generated on Tue Nov 24 2015 17:45:51 for Colore by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
   </ul>

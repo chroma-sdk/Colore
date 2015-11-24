@@ -36,11 +36,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_annotations_8cs.html",
-"_keyboard_2_constants_8cs.html",
-"class_asp_mvc_master_location_format_attribute.html",
-"class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html#a9ad5384ee8bb9286fef79862e0064eca",
-"interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html#a471bbfec433f7215d8457c7d2c12703c",
-"struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_custom_1_1_row.html#abf928ae9c1dc6888bea5a7283e91989e"
+"_key_8cs.html#a4434888a1769a87551c60e708fbb9ee2af09564c9ca56850d4cd6b3319e541aee",
+"class_asp_mvc_area_view_location_format_attribute.html#ac3d03e8d1371c427048f84046c327e0e",
+"class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html#aee279b83b4bbe85249970d7bda5eab60",
+"interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html#a61f98b3ac4e932a42b7d02134d72cf12",
+"struct_corale_1_1_colore_1_1_razer_1_1_keypad_1_1_effects_1_1_custom.html#ab79a2b7b08747c40a6b665e3a984bcb1"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['implicitusekindflags',['ImplicitUseKindFlags',['../_annotations_8cs.html#acc26806cec0b003502b38c6c2ee67fd1',1,'Annotations.cs']]],
-  ['implicitusetargetflags',['ImplicitUseTargetFlags',['../_annotations_8cs.html#a59f21202ead30f3d1e2093e42214bf7c',1,'Annotations.cs']]]
+  ['gridled',['GridLed',['../namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html#a46bb84f09eb3ad0b2ea8877b670e8a2c',1,'Corale::Colore::Razer::Mouse']]]
 ];

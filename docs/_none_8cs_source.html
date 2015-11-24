@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Colore
-   &#160;<span id="projectnumber">2.3.2.87</span>
+   &#160;<span id="projectnumber">3.0.0.89</span>
    </div>
    <div id="projectbrief">C# library for Razer&#39;s Chroma SDK</div>
   </td>
@@ -143,31 +143,36 @@ $(document).ready(function(){initNavTree('_none_8cs_source.html','');});
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>.Runtime.InteropServices;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    [StructLayout(LayoutKind.Sequential)]</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_none.html">   39</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">struct </span><a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_none.html">None</a></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_none.html#a0d127dcde05e8c79b25b4a8ca123fabb">   44</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html#aafadccaeea2744f65544c5f99264037d">Led</a> <a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_none.html#a0d127dcde05e8c79b25b4a8ca123fabb">Led</a>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_none.html#ab98c491d2f26972cb4f2fbebc7450310">   50</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_none.html#ab98c491d2f26972cb4f2fbebc7450310">None</a>(Led led)</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            Led = led;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">using</span> <a class="code" href="namespace_corale.html">Corale</a>.<a class="code" href="namespace_corale_1_1_colore.html">Colore</a>.<a class="code" href="namespace_corale_1_1_colore_1_1_annotations.html">Annotations</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    [StructLayout(LayoutKind.Sequential)]</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_none.html">   41</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">struct </span><a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_none.html">None</a></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        [UsedImplicitly]</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_none.html#a68d8db1fc59b8165419ada7fb53efb84">   47</a></span>&#160;        <span class="keyword">public</span> readonly <a class="code" href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html#aafadccaeea2744f65544c5f99264037d">Led</a> <a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_none.html#a68d8db1fc59b8165419ada7fb53efb84">Led</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_none.html#ab98c491d2f26972cb4f2fbebc7450310">   53</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_none.html#ab98c491d2f26972cb4f2fbebc7450310">None</a>(Led led)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            Led = led;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
 <div class="ttc" id="namespace_system_html"><div class="ttname"><a href="namespace_system.html">System</a></div></div>
 <div class="ttc" id="namespace_corale_1_1_colore_1_1_razer_1_1_mouse_html_aafadccaeea2744f65544c5f99264037d"><div class="ttname"><a href="namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html#aafadccaeea2744f65544c5f99264037d">Corale.Colore.Razer.Mouse.Led</a></div><div class="ttdeci">Led</div><div class="ttdoc">LEDs that can be the target of color changes. </div><div class="ttdef"><b>Definition:</b> <a href="_led_8cs_source.html#l00038">Led.cs:38</a></div></div>
-<div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_none_html_a0d127dcde05e8c79b25b4a8ca123fabb"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_none.html#a0d127dcde05e8c79b25b4a8ca123fabb">Corale.Colore.Razer.Mouse.Effects.None.Led</a></div><div class="ttdeci">Led Led</div><div class="ttdoc">The LED that should have its effects reset. </div><div class="ttdef"><b>Definition:</b> <a href="_none_8cs_source.html#l00044">None.cs:44</a></div></div>
 <div class="ttc" id="namespace_corale_html"><div class="ttname"><a href="namespace_corale.html">Corale</a></div></div>
-<div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_none_html"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_none.html">Corale.Colore.Razer.Mouse.Effects.None</a></div><div class="ttdoc">No effect (resets the affected LEDs). </div><div class="ttdef"><b>Definition:</b> <a href="_none_8cs_source.html#l00039">None.cs:39</a></div></div>
+<div class="ttc" id="namespace_corale_1_1_colore_1_1_annotations_html"><div class="ttname"><a href="namespace_corale_1_1_colore_1_1_annotations.html">Corale.Colore.Annotations</a></div><div class="ttdef"><b>Definition:</b> <a href="_annotations_8cs_source.html#l00018">Annotations.cs:18</a></div></div>
+<div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_none_html"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_none.html">Corale.Colore.Razer.Mouse.Effects.None</a></div><div class="ttdoc">No effect (resets the affected LEDs). </div><div class="ttdef"><b>Definition:</b> <a href="_none_8cs_source.html#l00041">None.cs:41</a></div></div>
+<div class="ttc" id="namespace_corale_1_1_colore_html"><div class="ttname"><a href="namespace_corale_1_1_colore.html">Corale.Colore</a></div></div>
 <div class="ttc" id="namespace_corale_1_1_colore_1_1_razer_html_ac5d6192a3d5d3c657e9cebbcef34360baf2a47c6809d88e175dade0ef7b16aa13"><div class="ttname"><a href="namespace_corale_1_1_colore_1_1_razer.html#ac5d6192a3d5d3c657e9cebbcef34360baf2a47c6809d88e175dade0ef7b16aa13">Corale.Colore.Razer.DeviceType.Mouse</a></div><div class="ttdoc">A mouse device. </div></div>
-<div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_none_html_ab98c491d2f26972cb4f2fbebc7450310"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_none.html#ab98c491d2f26972cb4f2fbebc7450310">Corale.Colore.Razer.Mouse.Effects.None.None</a></div><div class="ttdeci">None(Led led)</div><div class="ttdoc">Initializes a new instance of the None struct. </div><div class="ttdef"><b>Definition:</b> <a href="_none_8cs_source.html#l00050">None.cs:50</a></div></div>
+<div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_none_html_ab98c491d2f26972cb4f2fbebc7450310"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_none.html#ab98c491d2f26972cb4f2fbebc7450310">Corale.Colore.Razer.Mouse.Effects.None.None</a></div><div class="ttdeci">None(Led led)</div><div class="ttdoc">Initializes a new instance of the None struct. </div><div class="ttdef"><b>Definition:</b> <a href="_none_8cs_source.html#l00053">None.cs:53</a></div></div>
+<div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_none_html_a68d8db1fc59b8165419ada7fb53efb84"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_none.html#a68d8db1fc59b8165419ada7fb53efb84">Corale.Colore.Razer.Mouse.Effects.None.Led</a></div><div class="ttdeci">readonly Led Led</div><div class="ttdoc">The LED that should have its effects reset. </div><div class="ttdef"><b>Definition:</b> <a href="_none_8cs_source.html#l00047">None.cs:47</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_865a93a85313ae6b2503dfb6975d8750.html">Corale.Colore</a></li><li class="navelem"><a class="el" href="dir_4e4b822210286250472cb31b47778e3b.html">Razer</a></li><li class="navelem"><a class="el" href="dir_2cdf075d7cc93ecc53d911cda35f68ac.html">Mouse</a></li><li class="navelem"><a class="el" href="dir_96b52497b4c88890db46c3e726dc7144.html">Effects</a></li><li class="navelem"><a class="el" href="_none_8cs.html">None.cs</a></li>
-    <li class="footer">Generated on Wed Oct 28 2015 13:45:02 for Colore by
+    <li class="footer">Generated on Tue Nov 24 2015 17:45:50 for Colore by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
   </ul>
