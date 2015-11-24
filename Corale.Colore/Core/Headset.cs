@@ -55,7 +55,7 @@ namespace Corale.Colore.Core
         private Headset()
         {
             Log.Info("Headset is initializing");
-            Chroma.Initialize();
+            Chroma.InitInstance();
         }
 
         /// <summary>

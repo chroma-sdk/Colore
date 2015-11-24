@@ -65,7 +65,7 @@ namespace Corale.Colore.Core
         private Mousepad()
         {
             Log.Debug("Mousepad is initializing.");
-            Chroma.Initialize();
+            Chroma.InitInstance();
             _custom = Custom.Create();
         }
 

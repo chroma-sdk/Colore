@@ -111,6 +111,35 @@ namespace Corale.Colore.Core
         IKeypad Keypad { get; }
 
         /// <summary>
+        /// Gets a value indicating whether the Chroma
+        /// SDK has been initialized or not.
+        /// </summary>
+        [PublicAPI]
+        bool Initialized { get; }
+
+        /// <summary>
+        /// Initializes the SDK if it hasn't already.
+        /// </summary>
+        /// <remarks>
+        /// Manually modifying the SDK init state is <b>untested</b>
+        /// and may result in <emph>undefined behaviour</emph>, usage
+        /// is at <b>your own risk</b>.
+        /// </remarks>
+        [PublicAPI]
+        void Initialize();
+
+        /// <summary>
+        /// Uninitializes the SDK if it has been initialized.
+        /// </summary>
+        /// <remarks>
+        /// Manually modifying the SDK init state is <b>untested</b>
+        /// and may result in <emph>undefined behaviour</emph>, usage
+        /// is at <b>your own risk</b>.
+        /// </remarks>
+        [PublicAPI]
+        void Uninitialize();
+
+        /// <summary>
         /// Queries the SDK for information regarding a specific device.
         /// </summary>
         /// <param name="deviceId">The device ID to query for, valid IDs can be found in <see cref="Devices" />.</param>
