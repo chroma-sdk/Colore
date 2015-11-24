@@ -42,19 +42,19 @@ namespace Corale.Colore.Razer.Keypad.Effects
         /// The type of breathing.
         /// </summary>
         [UsedImplicitly]
-        public BreathingType Type;
+        public readonly BreathingType Type;
 
         /// <summary>
         /// Initial color.
         /// </summary>
         [UsedImplicitly]
-        public Color First;
+        public readonly Color First;
 
         /// <summary>
         /// Second color.
         /// </summary>
         [UsedImplicitly]
-        public Color Second;
+        public readonly Color Second;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Breathing" /> struct.

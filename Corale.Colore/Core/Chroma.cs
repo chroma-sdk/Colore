@@ -53,6 +53,11 @@ namespace Corale.Colore.Core
         private static readonly ILog Log = LogManager.GetLogger(typeof(Chroma));
 
         /// <summary>
+        /// Mutex lock for thread-safe init calls.
+        /// </summary>
+        private static readonly object InitLock = new object();
+
+        /// <summary>
         /// Holds the application-wide instance of the <see cref="IChroma" /> interface.
         /// </summary>
         private static IChroma _instance;
@@ -72,11 +77,7 @@ namespace Corale.Colore.Core
         /// </summary>
         private Chroma()
         {
-            Log.Info("Chroma is initializing.");
-            Log.Debug("Calling SDK Init function");
-            NativeWrapper.Init();
-            Log.Debug("Resetting _registeredHandle");
-            _registeredHandle = IntPtr.Zero;
+            Initialize();
         }
 
         /// <summary>
@@ -87,8 +88,7 @@ namespace Corale.Colore.Core
         /// </remarks>
         ~Chroma()
         {
-            Unregister();
-            NativeWrapper.UnInit();
+            Uninitialize();
         }
 
         /// <summary>
@@ -129,7 +129,10 @@ namespace Corale.Colore.Core
         {
             get
             {
-                return _instance ?? (_instance = new Chroma());
+                lock (InitLock)
+                {
+                    return _instance ?? (_instance = new Chroma());
+                }
             }
         }
 
@@ -194,15 +197,10 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Gets a value indicating whether the Chroma main class has been initialized or not.
+        /// Gets a value indicating whether the Chroma
+        /// SDK has been initialized or not.
         /// </summary>
-        internal static bool Initialized
-        {
-            get
-            {
-                return _instance != null;
-            }
-        }
+        public bool Initialized { get; private set; }
 
         /// <summary>
         /// Checks if the Chroma SDK is available on this system.
@@ -238,9 +236,16 @@ namespace Corale.Colore.Core
                     if (key != null)
                     {
                         var value = key.GetValue("Enable");
-                        var bytes = value as byte[];
 
-                        regEnabled = bytes != null && bytes[0] == 1;
+                        if (value is int)
+                            regEnabled = (int)value == 1;
+                        else
+                        {
+                            regEnabled = true;
+                            Log.Warn(
+                                "Chroma SDK has changed registry setting format. Please update Colore to latest version.");
+                            Log.DebugFormat("New Enabled type: {0}", value.GetType());
+                        }
                     }
                     else
                         regEnabled = false;
@@ -262,6 +267,57 @@ namespace Corale.Colore.Core
             }
 
             return dllValid && regEnabled;
+        }
+
+        /// <summary>
+        /// Initializes the SDK if it hasn't already.
+        /// </summary>
+        /// <remarks>
+        /// <span style="color: red;">Manual manipulation of the SDK state is
+        /// <strong>not supported by the CoraleStudios team</strong> and may
+        /// result in <emph>undefined behaviour</emph>. Usage of this method is
+        /// <strong>at your own risk</strong>.</span>
+        /// </remarks>
+        public void Initialize()
+        {
+            if (Initialized)
+                return;
+
+            Log.Info("Chroma is initializing.");
+            Log.Debug("Calling SDK Init function");
+            NativeWrapper.Init();
+            Initialized = true;
+            Log.Debug("Resetting _registeredHandle");
+            _registeredHandle = IntPtr.Zero;
+        }
+
+        /// <summary>
+        /// Uninitializes the SDK if it has been initialized.
+        /// </summary>
+        /// <remarks>
+        /// <span style="color: red;">Manual manipulation of the SDK state is
+        /// <strong>not supported by the CoraleStudios team</strong> and may
+        /// result in <emph>undefined behaviour</emph>. Usage of this method is
+        /// <strong>at your own risk</strong>. Usage of SDK functions while
+        /// the SDK is in an <emph>uninitialized</emph> state is <strong>highly
+        /// advised against</strong> and <emph>WILL</emph> result in catastrophic
+        /// failure. <strong>YOU HAVE BEEN WARNED</strong>.</span>
+        /// </remarks>
+        public void Uninitialize()
+        {
+            if (!Initialized)
+                return;
+
+            ((Device)Keyboard).DeleteCurrentEffect();
+            ((Device)Mouse).DeleteCurrentEffect();
+            ((Device)Keypad).DeleteCurrentEffect();
+            ((Device)Mousepad).DeleteCurrentEffect();
+            ((Device)Headset).DeleteCurrentEffect();
+
+            Unregister();
+            NativeWrapper.UnInit();
+
+            Initialized = false;
         }
 
         /// <summary>
@@ -404,10 +460,9 @@ namespace Corale.Colore.Core
         /// <remarks>
         /// For internal use by singleton accessors in device interface implementations.
         /// </remarks>
-        internal static void Initialize()
+        internal static void InitInstance()
         {
-            if (!Initialized)
-                _instance = new Chroma();
+            Instance.Initialize();
         }
 
         /// <summary>

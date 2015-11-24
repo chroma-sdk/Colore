@@ -33,62 +33,17 @@ namespace Corale.Colore.Core
     using System;
     using System.Runtime.InteropServices;
 
+    using Corale.Colore.Annotations;
+
+    using SystemColor = System.Drawing.Color;
+    using WpfColor = System.Windows.Media.Color;
+
     /// <summary>
     /// Represents an RGB color.
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Size = sizeof(uint))]
-    public struct Color : IEquatable<Color>, IEquatable<uint>, IEquatable<System.Drawing.Color>
+    public partial struct Color : IEquatable<Color>, IEquatable<uint>, IEquatable<SystemColor>, IEquatable<WpfColor>
     {
-        /// <summary>
-        /// Black color.
-        /// </summary>
-        public static readonly Color Black = new Color(0, 0, 0);
-
-        /// <summary>
-        /// (Dark) blue color.
-        /// </summary>
-        public static readonly Color Blue = new Color(0, 0, 255);
-
-        /// <summary>
-        /// (Neon/bright) green color.
-        /// </summary>
-        public static readonly Color Green = new Color(0, 255, 0);
-
-        /// <summary>
-        /// Hot pink color.
-        /// </summary>
-        public static readonly Color HotPink = new Color(255, 105, 180);
-
-        /// <summary>
-        /// Orange color.
-        /// </summary>
-        public static readonly Color Orange = new Color(0xFFA500);
-
-        /// <summary>
-        /// Pink color.
-        /// </summary>
-        public static readonly Color Pink = new Color(255, 0, 255);
-
-        /// <summary>
-        /// Purple color.
-        /// </summary>
-        public static readonly Color Purple = new Color(0x800080);
-
-        /// <summary>
-        /// Red color.
-        /// </summary>
-        public static readonly Color Red = new Color(255, 0, 0);
-
-        /// <summary>
-        /// White color.
-        /// </summary>
-        public static readonly Color White = new Color(255, 255, 255);
-
-        /// <summary>
-        /// Yellow color.
-        /// </summary>
-        public static readonly Color Yellow = new Color(255, 255, 0);
-
         /// <summary>
         /// Internal color value.
         /// </summary>
@@ -99,9 +54,11 @@ namespace Corale.Colore.Core
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Color" /> struct using an integer
-        /// color value in the format <c>0xAABBGGRR</c>.
+        /// color value in the format <c>0xAABBGGRR</c>. Where the alpha component ranges
+        /// from <c>0x00</c> (fully transparent) to <c>0xFF</c> (fully opaque).
         /// </summary>
         /// <param name="value">Value to create the color from.</param>
+        [PublicAPI]
         public Color(uint value)
         {
             _value = value;
@@ -116,7 +73,8 @@ namespace Corale.Colore.Core
         /// <param name="green">The green component.</param>
         /// <param name="blue">The blue component.</param>
         /// <param name="alpha">The alpha component (<c>0</c> = fully opaque).</param>
-        public Color(byte red, byte green, byte blue, byte alpha = 0)
+        [PublicAPI]
+        public Color(byte red, byte green, byte blue, byte alpha = 255)
             : this(red + ((uint)green << 8) + ((uint)blue << 16) + ((uint)alpha << 24))
         {
         }
@@ -133,7 +91,8 @@ namespace Corale.Colore.Core
         /// <remarks>
         /// Each parameter value must be between <c>0.0f</c> and <c>1.0f</c> (inclusive).
         /// </remarks>
-        public Color(float red, float green, float blue, float alpha = 0.0f)
+        [PublicAPI]
+        public Color(float red, float green, float blue, float alpha = 1.0f)
             : this((byte)(red * 255), (byte)(green * 255), (byte)(blue * 255), (byte)(alpha * 255))
         {
         }
@@ -149,24 +108,16 @@ namespace Corale.Colore.Core
         /// <remarks>
         /// Each parameter value must be between <c>0.0</c> and <c>1.0</c> (inclusive).
         /// </remarks>
-        public Color(double red, double green, double blue, double alpha = 0.0)
+        [PublicAPI]
+        public Color(double red, double green, double blue, double alpha = 1.0)
             : this((byte)(red * 255), (byte)(green * 255), (byte)(blue * 255), (byte)(alpha * 255))
-        {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Color" /> struct using
-        /// a <see cref="System.Drawing.Color" /> struct as the source.
-        /// </summary>
-        /// <param name="source">An instance of the <see cref="System.Drawing.Color" /> struct.</param>
-        public Color(System.Drawing.Color source)
-            : this(source.R, source.G, source.B, source.A)
         {
         }
 
         /// <summary>
         /// Gets the alpha component of the color as a byte.
         /// </summary>
+        [PublicAPI]
         public byte A
         {
             get
@@ -178,6 +129,7 @@ namespace Corale.Colore.Core
         /// <summary>
         /// Gets the blue component of the color as a byte.
         /// </summary>
+        [PublicAPI]
         public byte B
         {
             get
@@ -189,6 +141,7 @@ namespace Corale.Colore.Core
         /// <summary>
         /// Gets the green component of the color as a byte.
         /// </summary>
+        [PublicAPI]
         public byte G
         {
             get
@@ -200,6 +153,7 @@ namespace Corale.Colore.Core
         /// <summary>
         /// Gets the red component of the color as a byte.
         /// </summary>
+        [PublicAPI]
         public byte R
         {
             get
@@ -210,8 +164,9 @@ namespace Corale.Colore.Core
 
         /// <summary>
         /// Gets the unsigned integer representing
-        /// the color. On the form <c>0x00BBGGRR</c>.
+        /// the color. On the form <c>0xAABBGGRR</c>.
         /// </summary>
+        [PublicAPI]
         public uint Value
         {
             get
@@ -225,14 +180,15 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="color">The <see cref="Color" /> to convert.</param>
         /// <returns>A <see cref="uint" /> representing the value of the <paramref name="color" /> argument.</returns>
-        /// <remarks>The returned <see cref="uint" /> has a format of <c>0x00BBGGRR</c>.</remarks>
+        /// <remarks>The returned <see cref="uint" /> has a format of <c>0xAABBGGRR</c>.</remarks>
         public static implicit operator uint(Color color)
         {
             return color._value;
         }
 
         /// <summary>
-        /// Converts <paramref name="value" /> to an instance of the <see cref="Color" /> struct.
+        /// Converts a <c>uint</c> <paramref name="value" /> in the format of <c>0xAABBGGRR</c>
+        /// to a new instance of the <see cref="Color" /> struct.
         /// </summary>
         /// <param name="value">The <see cref="uint" /> to convert, on the form <c>0x00BBGGRR</c>.</param>
         /// <returns>An instance of <see cref="Color" /> representing the color value of <paramref name="value" />.</returns>
@@ -249,13 +205,9 @@ namespace Corale.Colore.Core
         /// An instance of <see cref="System.Drawing.Color" /> representing the
         /// value of the <paramref name="color" /> argument.
         /// </returns>
-        /// <remarks>
-        /// This is an explicit cast since casting a <see cref="System.Drawing.Color" /> struct to <see cref="Color" />
-        /// is explicit.
-        /// </remarks>
-        public static explicit operator System.Drawing.Color(Color color)
+        public static implicit operator SystemColor(Color color)
         {
-            return System.Drawing.Color.FromArgb(color.A, color.R, color.G, color.B);
+            return SystemColor.FromArgb(color.A, color.R, color.G, color.B);
         }
 
         /// <summary>
@@ -265,13 +217,34 @@ namespace Corale.Colore.Core
         /// <returns>
         /// An instance of <see cref="Color" /> representing the value of the <paramref name="color" /> argument.
         /// </returns>
-        /// <remarks>
-        /// This is an explicit cast since the alpha component of the <see cref="System.Drawing.Color" />
-        /// struct is discarded.
-        /// </remarks>
-        public static explicit operator Color(System.Drawing.Color color)
+        public static implicit operator Color(SystemColor color)
         {
-            return new Color(color.R, color.G, color.B, color.A);
+            return FromSystemColor(color);
+        }
+
+        /// <summary>
+        /// Converts a <see cref="Color" /> struct to a <see cref="System.Windows.Media.Color" /> struct.
+        /// </summary>
+        /// <param name="color">The <see cref="Color" /> to convert.</param>
+        /// <returns>
+        /// An instance of <see cref="System.Windows.Media.Color" /> representing the
+        /// value of the <paramref name="color" /> argument.
+        /// </returns>
+        public static implicit operator WpfColor(Color color)
+        {
+            return WpfColor.FromArgb(color.A, color.R, color.G, color.B);
+        }
+
+        /// <summary>
+        /// Converts a <see cref="System.Windows.Media.Color" /> struct to a <see cref="Color" /> struct.
+        /// </summary>
+        /// <param name="color">The <see cref="System.Windows.Media.Color" /> to convert.</param>
+        /// <returns>
+        /// An instance of <see cref="Color" /> representing the value of the <paramref name="color" /> argument.
+        /// </returns>
+        public static implicit operator Color(WpfColor color)
+        {
+            return FromWpfColor(color);
         }
 
         /// <summary>
@@ -297,6 +270,57 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
+        /// Creates a new <see cref="Color" /> from the source
+        /// <see cref="System.Drawing.Color" />.
+        /// </summary>
+        /// <param name="source">The source object to construct color from.</param>
+        /// <returns>A new instance of the <see cref="Color" /> struct.</returns>
+        [PublicAPI]
+        public static Color FromSystemColor(SystemColor source)
+        {
+            return new Color(source.R, source.G, source.B, source.A);
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="Color" /> from the source
+        /// <see cref="System.Windows.Media.Color" />.
+        /// </summary>
+        /// <param name="source">The source object to construct color from.</param>
+        /// <returns>A new instance of the <see cref="Color" /> struct.</returns>
+        [PublicAPI]
+        public static Color FromWpfColor(WpfColor source)
+        {
+            return new Color(source.R, source.G, source.B, source.A);
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="Color" /> from an ARGB integer value
+        /// in the format of <c>0xAARRGGBB</c> where the alpha component
+        /// ranges from <c>0x00</c> (fully transparent) to <c>0xFF</c> (fully opaque).
+        /// </summary>
+        /// <param name="value">The ARGB value to convert from.</param>
+        /// <returns>A new instance of the <see cref="Color" /> struct.</returns>
+        [PublicAPI]
+        public static Color FromArgb(uint value)
+        {
+            var abgr = (value & 0xFF00FF00) | ((value & 0xFF0000) >> 16) | ((value & 0xFF) << 16);
+            return new Color(abgr);
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="Color" /> from an RGB integer value
+        /// in the format of <c>0xRRGGBB</c>.
+        /// </summary>
+        /// <param name="value">The RGB value to convert from.</param>
+        /// <returns>A new instance of the <see cref="Color" /> struct.</returns>
+        [PublicAPI]
+        public static Color FromRgb(uint value)
+        {
+            var abgr = 0xFF000000 | ((value & 0xFF0000) >> 16) | (value & 0xFF00) | ((value & 0xFF) << 16);
+            return new Color(abgr);
+        }
+
+        /// <summary>
         /// Returns a value indicating whether this instance of <see cref="Color" />
         /// is equal to an <see cref="object" /> <paramref name="other" />.
         /// </summary>
@@ -313,8 +337,11 @@ namespace Corale.Colore.Core
             if (other is uint)
                 return Equals((uint)other);
 
-            if (other is System.Drawing.Color)
-                return Equals((System.Drawing.Color)other);
+            if (other is SystemColor)
+                return Equals((SystemColor)other);
+
+            if (other is WpfColor)
+                return Equals((WpfColor)other);
 
             return false;
         }
@@ -327,7 +354,7 @@ namespace Corale.Colore.Core
         /// <returns><c>true</c> of the two are equal, false otherwise.</returns>
         public bool Equals(Color other)
         {
-            return _value.Equals(other);
+            return _value.Equals(other._value);
         }
 
         /// <summary>
@@ -349,12 +376,20 @@ namespace Corale.Colore.Core
         /// <c>true</c> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <c>false</c>.
         /// </returns>
         /// <param name="other">An instance of <see cref="System.Drawing.Color" /> to compare with this object.</param>
-        public bool Equals(System.Drawing.Color other)
+        public bool Equals(SystemColor other)
         {
-            // Do not require matching alpha values for now, as it seems Razer do
-            // not properly support alpha yet.
-            // TODO: Change this back when Razer implements alpha
-            return R == other.R && G == other.G && B == other.B; // && A == other.A;
+            return R == other.R && G == other.G && B == other.B && A == other.A;
+        }
+
+        /// <summary>
+        /// Indicates whether the current object is equal to an instance of a
+        /// <see cref="System.Windows.Media.Color" /> struct.
+        /// </summary>
+        /// <param name="other">An instance of <see cref="System.Windows.Media.Color" /> to compare with this object.</param>
+        /// <returns><c>true</c> if the current object is equal to the <paramref name="other" /> parameter; otherwise, <c>false</c>.</returns>
+        public bool Equals(WpfColor other)
+        {
+            return R == other.R && G == other.G && B == other.B & A == other.A;
         }
 
         /// <summary>

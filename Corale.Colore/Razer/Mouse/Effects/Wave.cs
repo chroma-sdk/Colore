@@ -41,7 +41,7 @@ namespace Corale.Colore.Razer.Mouse.Effects
         /// The direction of the wave effect.
         /// </summary>
         [UsedImplicitly]
-        public Direction Direction;
+        public readonly Direction Direction;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Wave" /> struct.

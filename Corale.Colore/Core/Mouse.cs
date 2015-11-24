@@ -40,12 +40,17 @@ namespace Corale.Colore.Core
     /// Class for interacting with a Chroma mouse.
     /// </summary>
     [PublicAPI]
-    public sealed partial class Mouse : Device, IMouse
+    public sealed class Mouse : Device, IMouse
     {
         /// <summary>
         /// Logger instance for this class.
         /// </summary>
         private static readonly ILog Log = LogManager.GetLogger(typeof(Mouse));
+
+        /// <summary>
+        /// Lock object for thread-safe init.
+        /// </summary>
+        private static readonly object InitLock = new object();
 
         /// <summary>
         /// Holds the application-wide instance of the <see cref="IMouse" /> interface.
@@ -58,13 +63,19 @@ namespace Corale.Colore.Core
         private Custom _custom;
 
         /// <summary>
+        /// Internal instance of a <see cref="CustomGrid" /> struct.
+        /// </summary>
+        private CustomGrid _customGrid;
+
+        /// <summary>
         /// Prevents a default instance of the <see cref="Mouse" /> class from being created.
         /// </summary>
         private Mouse()
         {
             Log.Info("Mouse is initializing");
-            Chroma.Initialize();
+            Chroma.InitInstance();
             _custom = Custom.Create();
+            _customGrid = CustomGrid.Create();
         }
 
         /// <summary>
@@ -75,7 +86,89 @@ namespace Corale.Colore.Core
         {
             get
             {
-                return _instance ?? (_instance = new Mouse());
+                lock (InitLock)
+                {
+                    return _instance ?? (_instance = new Mouse());
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the <see cref="Color" /> for a specific LED index on the mouse.
+        /// </summary>
+        /// <param name="index">The index to query, between <c>0</c> and <see cref="Constants.MaxLeds" /> (exclusive).</param>
+        /// <returns>The <see cref="Color" /> at the specified index.</returns>
+        public Color this[int index]
+        {
+            get
+            {
+                return _custom[index];
+            }
+
+            set
+            {
+                _custom[index] = value;
+                SetCustom(_custom);
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the <see cref="Color" /> for a specific <see cref="Led" /> on the mouse.
+        /// </summary>
+        /// <param name="led">The <see cref="Led" /> to query.</param>
+        /// <returns>The <see cref="Color" /> currently set for the specified <see cref="Led" />.</returns>
+        public Color this[Led led]
+        {
+            get
+            {
+                return _custom[led];
+            }
+
+            set
+            {
+                _custom[led] = value;
+                SetCustom(_custom);
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the <see cref="Color" /> for a specific position
+        /// on the mouse's virtual grid.
+        /// </summary>
+        /// <param name="row">The row to query, between <c>0</c> and <see cref="Constants.MaxRows" /> (exclusive).</param>
+        /// <param name="column">The column to query, between <c>0</c> and <see cref="Constants.MaxColumns" /> (exclusive).</param>
+        /// <returns>The <see cref="Color" /> at the specified position.</returns>
+        public Color this[int row, int column]
+        {
+            get
+            {
+                return _customGrid[row, column];
+            }
+
+            set
+            {
+                _customGrid[row, column] = value;
+                SetGrid(_customGrid);
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the <see cref="Color" /> for a specified <see cref="GridLed" />
+        /// on the mouse's virtual grid.
+        /// </summary>
+        /// <param name="led">The <see cref="GridLed" /> to query.</param>
+        /// <returns>The <see cref="Color" /> currently set for the specified <see cref="GridLed" />.</returns>
+        public Color this[GridLed led]
+        {
+            get
+            {
+                return _customGrid[led];
+            }
+
+            set
+            {
+                _customGrid[led] = value;
+                SetGrid(_customGrid);
             }
         }
 
@@ -84,8 +177,18 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="led">Which LED to modify.</param>
         /// <param name="color">Color to set.</param>
-        public void SetLed(Led led, Color color)
+        /// <param name="clear">If <c>true</c>, the mouse will first be cleared before setting the LED.</param>
+        public void SetLed(Led led, Color color, bool clear = false)
         {
+            if (clear)
+            {
+                _custom.Clear();
+
+                // Clear the grid effect as well, this way the mouse
+                // will behave slightly more predictable for the caller.
+                _customGrid.Clear();
+            }
+
             _custom[led] = color;
             SetCustom(_custom);
         }
@@ -242,8 +345,11 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         public override void SetAll(Color color)
         {
+            // We update both the Custom and CustomGrid effect to keep them both
+            // as synced as possible.
             _custom.Set(color);
-            SetCustom(_custom);
+            _customGrid.Set(color);
+            SetGrid(_customGrid);
         }
 
         /// <summary>
@@ -251,6 +357,15 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
         public void SetCustom(Custom effect)
+        {
+            SetGuid(NativeWrapper.CreateMouseEffect(effect));
+        }
+
+        /// <summary>
+        /// Sets a custom grid effect on the mouse.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="CustomGrid" /> struct.</param>
+        public void SetGrid(CustomGrid effect)
         {
             SetGuid(NativeWrapper.CreateMouseEffect(effect));
         }

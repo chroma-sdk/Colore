@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="IMousepad.cs" company="Corale">
+// <copyright file="GridLed.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,87 +28,145 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Core
+namespace Corale.Colore.Razer.Mouse
 {
     using Corale.Colore.Annotations;
-    using Corale.Colore.Razer.Mousepad.Effects;
 
     /// <summary>
-    /// Interface for mouse pad functionality.
+    /// LED definitions for the virtual grid.
     /// </summary>
-    public interface IMousepad : IDevice
+    public enum GridLed
     {
         /// <summary>
-        /// Gets or sets a specific LED on the mouse pad.
+        /// The LED illuminating the scroll wheel.
         /// </summary>
-        /// <param name="index">The index to access.</param>
-        /// <returns>The current <see cref="Color" /> at the <paramref name="index"/>.</returns>
         [PublicAPI]
-        Color this[int index] { get; set; }
+        ScrollWheel = 0x0203,
 
         /// <summary>
-        /// Sets a breathing effect on the mouse pad.
+        /// The LED illuminating the logo present on the mouse.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="Breathing" /> struct.</param>
         [PublicAPI]
-        void SetBreathing(Breathing effect);
+        Logo = 0x0703,
 
         /// <summary>
-        /// Sets a breathing effect on the mouse pad.
+        /// The mouse backlight.
         /// </summary>
-        /// <param name="first">First color to breathe into.</param>
-        /// <param name="second">Second color to breathe into.</param>
         [PublicAPI]
-        void SetBreathing(Color first, Color second);
+        Backlight = 0x0403,
 
         /// <summary>
-        /// Sets an effect on the mouse pad that causes
-        /// it to breathe between random colors.
+        /// First LED on left side.
         /// </summary>
         [PublicAPI]
-        void SetBreathing();
+        LeftSide1 = 0x0100,
 
         /// <summary>
-        /// Sets a static color effect on the mouse pad.
+        /// Second LED on left side.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
         [PublicAPI]
-        void SetStatic(Static effect);
+        LeftSide2 = 0x0200,
 
         /// <summary>
-        /// Sets a static color effect on the mouse pad.
+        /// Third LED on left side.
         /// </summary>
-        /// <param name="color">Color to set.</param>
         [PublicAPI]
-        void SetStatic(Color color);
+        LeftSide3 = 0x0300,
 
         /// <summary>
-        /// Sets a wave effect on the mouse pad.
+        /// Fourth LED on left side.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="Wave" /> struct.</param>
         [PublicAPI]
-        void SetWave(Wave effect);
+        LeftSide4 = 0x0400,
 
         /// <summary>
-        /// Sets a wave effect on the mouse pad.
+        /// Fifth LED on left side.
         /// </summary>
-        /// <param name="direction">Direction of the wave.</param>
         [PublicAPI]
-        void SetWave(Direction direction);
+        LeftSide5 = 0x0500,
 
         /// <summary>
-        /// Sets a custom effect on the mouse pad.
+        /// Sixth LED on left side.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
         [PublicAPI]
-        void SetCustom(Custom effect);
+        LeftSide6 = 0x0600,
 
         /// <summary>
-        /// Sets an effect without any parameters.
-        /// Currently, this only works for the <see cref="Effect.None" /> effect.
+        /// Seventh LED on left side.
         /// </summary>
-        /// <param name="effect">Effect options.</param>
         [PublicAPI]
-        void SetEffect(Effect effect);
+        LeftSide7 = 0x0700,
+
+        /// <summary>
+        /// First bottom LED.
+        /// </summary>
+        [PublicAPI]
+        Bottom1 = 0x0801,
+
+        /// <summary>
+        /// Second bottom LED.
+        /// </summary>
+        [PublicAPI]
+        Bottom2 = 0x0802,
+
+        /// <summary>
+        /// Third bottom LED.
+        /// </summary>
+        [PublicAPI]
+        Bottom3 = 0x0803,
+
+        /// <summary>
+        /// Fourth bottom LED.
+        /// </summary>
+        [PublicAPI]
+        Bottom4 = 0x0804,
+
+        /// <summary>
+        /// Fifth bottom LED.
+        /// </summary>
+        [PublicAPI]
+        Bottom5 = 0x0805,
+
+        /// <summary>
+        /// First LED on right side.
+        /// </summary>
+        [PublicAPI]
+        RightSide1 = 0x0106,
+
+        /// <summary>
+        /// Second LED on right side.
+        /// </summary>
+        [PublicAPI]
+        RightSide2 = 0x0206,
+
+        /// <summary>
+        /// Third LED on right side.
+        /// </summary>
+        [PublicAPI]
+        RightSide3 = 0x0306,
+
+        /// <summary>
+        /// Fourth LED on right side.
+        /// </summary>
+        [PublicAPI]
+        RightSide4 = 0x0406,
+
+        /// <summary>
+        /// Fifth LED on right side.
+        /// </summary>
+        [PublicAPI]
+        RightSide5 = 0x0506,
+
+        /// <summary>
+        /// Sixth LED on right side.
+        /// </summary>
+        [PublicAPI]
+        RightSide6 = 0x0606,
+
+        /// <summary>
+        /// Seventh LED on right side.
+        /// </summary>
+        [PublicAPI]
+        RightSide7 = 0x0706
     }
 }

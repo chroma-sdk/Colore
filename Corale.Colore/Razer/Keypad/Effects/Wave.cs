@@ -32,6 +32,8 @@ namespace Corale.Colore.Razer.Keypad.Effects
 {
     using System.Runtime.InteropServices;
 
+    using Corale.Colore.Annotations;
+
     /// <summary>
     /// Wave effect.
     /// </summary>
@@ -41,6 +43,7 @@ namespace Corale.Colore.Razer.Keypad.Effects
         /// <summary>
         /// Direction of the wave effect.
         /// </summary>
+        [UsedImplicitly]
         public readonly Direction Direction;
 
         /// <summary>

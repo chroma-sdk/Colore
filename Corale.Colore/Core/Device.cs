@@ -35,7 +35,7 @@ namespace Corale.Colore.Core
     /// <summary>
     /// Base class for devices, containing code common between all devices.
     /// </summary>
-    public abstract partial class Device : IDevice
+    public abstract class Device : IDevice
     {
         /// <summary>
         /// Gets or sets the ID of the currently active effect.
@@ -62,14 +62,21 @@ namespace Corale.Colore.Core
         /// <param name="guid">GUID to set.</param>
         public void SetGuid(Guid guid)
         {
-            if (CurrentEffectId != Guid.Empty)
-            {
-                NativeWrapper.DeleteEffect(CurrentEffectId);
-                CurrentEffectId = Guid.Empty;
-            }
-
+            DeleteCurrentEffect();
             NativeWrapper.SetEffect(guid);
             CurrentEffectId = guid;
+        }
+
+        /// <summary>
+        /// Deletes the currently set effect.
+        /// </summary>
+        internal void DeleteCurrentEffect()
+        {
+            if (CurrentEffectId == Guid.Empty)
+                return;
+
+            NativeWrapper.DeleteEffect(CurrentEffectId);
+            CurrentEffectId = Guid.Empty;
         }
     }
 }

@@ -45,13 +45,13 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// The duration of the effect.
         /// </summary>
         [PublicAPI]
-        public Duration Duration;
+        public readonly Duration Duration;
 
         /// <summary>
         /// Color of the effect.
         /// </summary>
         [PublicAPI]
-        public Color Color;
+        public readonly Color Color;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Reactive" /> struct.

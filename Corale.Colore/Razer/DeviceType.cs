@@ -30,6 +30,8 @@
 
 namespace Corale.Colore.Razer
 {
+    using Corale.Colore.Annotations;
+
     /// <summary>
     /// Device types supported by the Chroma SDK.
     /// </summary>
@@ -38,26 +40,31 @@ namespace Corale.Colore.Razer
         /// <summary>
         /// A keyboard device.
         /// </summary>
+        [PublicAPI]
         Keyboard = 1,
 
         /// <summary>
         /// A mouse device.
         /// </summary>
+        [PublicAPI]
         Mouse,
 
         /// <summary>
         /// A headset device.
         /// </summary>
+        [PublicAPI]
         Headset,
 
         /// <summary>
         /// A mouse pad.
         /// </summary>
+        [PublicAPI]
         Mousepad,
 
         /// <summary>
         /// A keypad.
         /// </summary>
+        [PublicAPI]
         Keypad
     }
 }

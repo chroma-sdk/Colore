@@ -37,12 +37,17 @@ namespace Corale.Colore.Core
     /// <summary>
     /// Class for interacting with a Chroma mouse pad.
     /// </summary>
-    public sealed partial class Mousepad : Device, IMousepad
+    public sealed class Mousepad : Device, IMousepad
     {
         /// <summary>
         /// Logger instance for this class.
         /// </summary>
         private static readonly ILog Log = LogManager.GetLogger(typeof(Mousepad));
+
+        /// <summary>
+        /// Lock object for thread-safe init.
+        /// </summary>
+        private static readonly object InitLock = new object();
 
         /// <summary>
         /// Singleton instance.
@@ -60,7 +65,7 @@ namespace Corale.Colore.Core
         private Mousepad()
         {
             Log.Debug("Mousepad is initializing.");
-            Chroma.Initialize();
+            Chroma.InitInstance();
             _custom = Custom.Create();
         }
 
@@ -71,7 +76,29 @@ namespace Corale.Colore.Core
         {
             get
             {
-                return _instance ?? (_instance = new Mousepad());
+                lock (InitLock)
+                {
+                    return _instance ?? (_instance = new Mousepad());
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets a specific LED on the mouse pad.
+        /// </summary>
+        /// <param name="index">The index to access.</param>
+        /// <returns>The current <see cref="Color" /> at the <paramref name="index"/>.</returns>
+        public Color this[int index]
+        {
+            get
+            {
+                return _custom[index];
+            }
+
+            set
+            {
+                _custom[index] = value;
+                SetCustom(_custom);
             }
         }
 

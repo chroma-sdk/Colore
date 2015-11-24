@@ -41,7 +41,7 @@ namespace Corale.Colore.Razer.Mouse.Effects
         /// The LED on which to apply the effect.
         /// </summary>
         [UsedImplicitly]
-        public Led Led;
+        public readonly Led Led;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SpectrumCycling" /> struct.

@@ -38,12 +38,17 @@ namespace Corale.Colore.Core
     /// <summary>
     /// Class for interacting with a Chroma keypad.
     /// </summary>
-    public sealed partial class Keypad : Device, IKeypad
+    public sealed class Keypad : Device, IKeypad
     {
         /// <summary>
         /// Logger instance for this class.
         /// </summary>
         private static readonly ILog Log = LogManager.GetLogger(typeof(Keypad));
+
+        /// <summary>
+        /// Lock object for thread-safe init.
+        /// </summary>
+        private static readonly object InitLock = new object();
 
         /// <summary>
         /// Singleton instance of this class.
@@ -62,7 +67,7 @@ namespace Corale.Colore.Core
         private Keypad()
         {
             Log.Debug("Keypad is initializing");
-            Chroma.Initialize();
+            Chroma.InitInstance();
 
             _custom = Custom.Create();
         }
@@ -74,7 +79,10 @@ namespace Corale.Colore.Core
         {
             get
             {
-                return _instance ?? (_instance = new Keypad());
+                lock (InitLock)
+                {
+                    return _instance ?? (_instance = new Keypad());
+                }
             }
         }
 

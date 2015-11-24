@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Headset.Obsoletes.cs" company="Corale">
+// <copyright file="PositionData.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -28,53 +28,47 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Core
+namespace Corale.Colore.Razer.Keyboard
 {
-    using System;
-
-    using Corale.Colore.Razer.Headset.Effects;
+    using System.Collections.Generic;
 
     /// <summary>
-    /// Class for interacting with Chroma Headsets.
+    /// Contains methods to determine if a grid positions is safe.
     /// </summary>
-    public sealed partial class Headset
+    public static class PositionData
     {
         /// <summary>
-        /// Sets an effect on the headset that doesn't
-        /// take any parameters, currently only valid
-        /// for the <see cref="Effect.SpectrumCycling" /> effect.
+        /// Set of positions that are unsafe to use.
         /// </summary>
-        /// <param name="effect">The type of effect to set.</param>
-        [Obsolete("Set is deprecated, please use SetEffect(Effect).", false)]
-        public void Set(Effect effect)
+        internal static readonly HashSet<int> UnsafePositions = new HashSet<int>
         {
-            SetEffect(effect);
-        }
-
-        /// <summary>
-        /// Sets a new static effect on the headset.
-        /// </summary>
-        /// <param name="effect">
-        /// An instance of the <see cref="Static" /> struct
-        /// describing the effect.
-        /// </param>
-        [Obsolete("Set is deprecated, please use SetStatic(Static).", false)]
-        public void Set(Static effect)
-        {
-            SetStatic(effect);
-        }
-
-        /// <summary>
-        /// Sets a new breathing effect on the headset.
-        /// </summary>
-        /// <param name="effect">
-        /// An instance of the <see cref="Breathing" /> struct
-        /// describing the effect.
-        /// </param>
-        [Obsolete("Set is deprecated, please use SetBreathing(Breathing).", false)]
-        public void Set(Breathing effect)
-        {
-            SetBreathing(effect);
-        }
+            0x0000,
+            0x0002,
+            0x0012,
+            0x0013,
+            0x0014,
+            0x0015,
+            0x020E,
+            0x030D,
+            0x030E,
+            0x030F,
+            0x0310,
+            0x0311,
+            0x0315,
+            0x0401,
+            0x0402,
+            0x040D,
+            0x040E,
+            0x040F,
+            0x0411,
+            0x0504,
+            0x0505,
+            0x0506,
+            0x0508,
+            0x0509,
+            0x050A,
+            0x0512,
+            0x0515
+        };
     }
 }

@@ -45,13 +45,13 @@ namespace Corale.Colore.Razer.Mouse.Effects
         /// The LED on which to apply the color.
         /// </summary>
         [UsedImplicitly]
-        public Led Led;
+        public readonly Led Led;
 
         /// <summary>
         /// The color to apply.
         /// </summary>
         [UsedImplicitly]
-        public Color Color;
+        public readonly Color Color;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Static" /> struct.

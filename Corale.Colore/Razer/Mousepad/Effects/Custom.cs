@@ -28,8 +28,6 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-#pragma warning disable 618
-
 namespace Corale.Colore.Razer.Mousepad.Effects
 {
     using System;
@@ -49,8 +47,7 @@ namespace Corale.Colore.Razer.Mousepad.Effects
         /// Colors for the LEDs.
         /// </summary>
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = Constants.MaxLeds)]
-        [Obsolete("Accessing the Colors array directly has been deprecated, please use the indexer instead.")]
-        public readonly Color[] Colors;
+        private readonly Color[] _colors;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Custom" /> struct with
@@ -59,10 +56,10 @@ namespace Corale.Colore.Razer.Mousepad.Effects
         /// <param name="color">The color to set every LED to initially.</param>
         public Custom(Color color)
         {
-            Colors = new Color[Constants.MaxLeds];
+            _colors = new Color[Constants.MaxLeds];
 
-            for (var i = 0; i < Colors.Length; i++)
-                Colors[i] = color;
+            for (var i = 0; i < _colors.Length; i++)
+                _colors[i] = color;
         }
 
         /// <summary>
@@ -79,10 +76,10 @@ namespace Corale.Colore.Razer.Mousepad.Effects
                     "colors");
             }
 
-            Colors = new Color[Constants.MaxLeds];
+            _colors = new Color[Constants.MaxLeds];
 
-            for (var i = 0; i < Colors.Length; i++)
-                Colors[i] = colors[i];
+            for (var i = 0; i < _colors.Length; i++)
+                _colors[i] = colors[i];
         }
 
         /// <summary>
@@ -103,7 +100,7 @@ namespace Corale.Colore.Razer.Mousepad.Effects
                         "Attempted to access an LED that was out of range.");
                 }
 
-                return Colors[led];
+                return _colors[led];
             }
 
             set
@@ -116,7 +113,7 @@ namespace Corale.Colore.Razer.Mousepad.Effects
                         "Attempted to access an LED that was out of range.");
                 }
 
-                Colors[led] = value;
+                _colors[led] = value;
             }
         }
 
@@ -163,7 +160,7 @@ namespace Corale.Colore.Razer.Mousepad.Effects
         /// <filterpriority>2</filterpriority>
         public override int GetHashCode()
         {
-            return Colors != null ? Colors.GetHashCode() : 0;
+            return _colors != null ? _colors.GetHashCode() : 0;
         }
 
         /// <summary>
@@ -174,7 +171,7 @@ namespace Corale.Colore.Razer.Mousepad.Effects
         public void Set(Color color)
         {
             for (var i = 0; i < Constants.MaxLeds; i++)
-                Colors[i] = color;
+                _colors[i] = color;
         }
 
         /// <summary>

@@ -42,7 +42,7 @@ namespace Corale.Colore.Razer.Headset.Effects
         /// The color of the effect.
         /// </summary>
         [PublicAPI]
-        public Color Color;
+        public readonly Color Color;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Breathing" /> struct.
