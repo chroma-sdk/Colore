@@ -62,12 +62,6 @@ namespace Corale.Colore.Razer.Mouse.Effects
         Custom,
 
         /// <summary>
-        /// Custom grid effect.
-        /// </summary>
-        [PublicAPI]
-        CustomGrid,
-
-        /// <summary>
         /// Reactive effect.
         /// </summary>
         [PublicAPI]
@@ -90,6 +84,12 @@ namespace Corale.Colore.Razer.Mouse.Effects
         /// </summary>
         [PublicAPI]
         Wave,
+
+        /// <summary>
+        /// Custom grid effect.
+        /// </summary>
+        [PublicAPI]
+        CustomGrid,
 
         /// <summary>
         /// Invalid effect.
