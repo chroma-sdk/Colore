@@ -216,6 +216,15 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
+        /// Sets a breathing effect on the keyboard, fading
+        /// between randomly chosen colors.
+        /// </summary>
+        public void SetBreathing()
+        {
+            SetBreathing(new Breathing(BreathingType.Random, Color.Black, Color.Black));
+        }
+
+        /// <summary>
         /// Sets a reactive effect on the keyboard with the specified
         /// color and duration.
         /// </summary>

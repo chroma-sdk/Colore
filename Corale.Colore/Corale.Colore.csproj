@@ -126,6 +126,7 @@
     <Compile Include="Razer\Keyboard\Constants.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Razer\Keyboard\Effects\Breathing.cs" />
+    <Compile Include="Razer\Keyboard\Effects\BreathingType.cs" />
     <Compile Include="Razer\Keyboard\Effects\Custom.cs" />
     <Compile Include="Razer\Keyboard\Effects\Direction.cs" />
     <Compile Include="Razer\Keyboard\Effects\Duration.cs" />
