@@ -44,7 +44,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// <summary>
         /// The type of breathing effect.
         /// </summary>
-        [UsedImplicitly]
+        [PublicAPI]
         public readonly BreathingType Type;
 
         /// <summary>
