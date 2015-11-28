@@ -1,6 +1,6 @@
-// ---------------------------------------------------------------------------------------
-// <copyright file="Breathing.cs" company="Corale">
-//     Copyright � 2015 by Adam Hellberg and Brandon Scott.
+﻿// ---------------------------------------------------------------------------------------
+// <copyright file="BreathingType.cs" company="Corale">
+//     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -30,57 +30,29 @@
 
 namespace Corale.Colore.Razer.Keyboard.Effects
 {
-    using System.Runtime.InteropServices;
-
     using Corale.Colore.Annotations;
-    using Corale.Colore.Core;
 
     /// <summary>
-    /// Describes the breathing effect.
+    /// Supported breathing effect types for mouse pads.
     /// </summary>
-    [StructLayout(LayoutKind.Sequential)]
-    public struct Breathing
+    public enum BreathingType
     {
         /// <summary>
-        /// The type of breathing effect.
-        /// </summary>
-        [UsedImplicitly]
-        public readonly BreathingType Type;
-
-        /// <summary>
-        /// First color.
+        /// Breathes between two specified colors.
         /// </summary>
         [PublicAPI]
-        public readonly Color First;
+        Two = 1,
 
         /// <summary>
-        /// Second color.
+        /// Breathes between two random colors.
         /// </summary>
         [PublicAPI]
-        public readonly Color Second;
+        Random,
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Breathing" /> struct.
+        /// Invalid type.
         /// </summary>
-        /// <param name="type">The type of breathing effect.</param>
-        /// <param name="first">Initial color.</param>
-        /// <param name="second">Second color.</param>
-        public Breathing(BreathingType type, Color first, Color second)
-        {
-            Type = type;
-            First = first;
-            Second = second;
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Breathing" /> struct with
-        /// two colors to breathe between.
-        /// </summary>
-        /// <param name="first">Initial color.</param>
-        /// <param name="second">Second color.</param>
-        public Breathing(Color first, Color second)
-            : this(BreathingType.Two, first, second)
-        {
-        }
+        [PublicAPI]
+        Invalid
     }
 }
