@@ -28,6 +28,7 @@ namespace Corale.Colore.Razer
     using System;
     using System.Globalization;
     using System.Runtime.Serialization;
+    using System.Security;
     using System.Security.Permissions;
 
     using Corale.Colore.Core;
@@ -88,6 +89,7 @@ namespace Corale.Colore.Razer
         /// </summary>
         /// <param name="info">Serialization info object.</param>
         /// <param name="context">Streaming context.</param>
+        [SecurityCritical]
         [SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
         public override void GetObjectData(SerializationInfo info, StreamingContext context)
         {

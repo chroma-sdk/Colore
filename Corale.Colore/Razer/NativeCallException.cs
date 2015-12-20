@@ -29,6 +29,7 @@ namespace Corale.Colore.Razer
     using System.ComponentModel;
     using System.Globalization;
     using System.Runtime.Serialization;
+    using System.Security;
     using System.Security.Permissions;
 
     /// <summary>
@@ -57,6 +58,7 @@ namespace Corale.Colore.Razer
         /// </summary>
         /// <param name="function">The name of the function that was called.</param>
         /// <param name="result">The result returned from the called function.</param>
+        [SecuritySafeCritical]
         internal NativeCallException(string function, Result result)
             : base(
                 string.Format(CultureInfo.InvariantCulture, MessageTemplate, function, result),
@@ -106,6 +108,7 @@ namespace Corale.Colore.Razer
         /// </summary>
         /// <param name="info">Serialization info object.</param>
         /// <param name="context">Streaming context.</param>
+        [SecurityCritical]
         [SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
         public override void GetObjectData(SerializationInfo info, StreamingContext context)
         {

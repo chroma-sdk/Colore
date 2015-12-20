@@ -202,6 +202,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <returns><c>true</c> if Chroma SDK is available, otherwise <c>false</c>.</returns>
         [PublicAPI]
+        [SecurityCritical]
         public static bool IsSdkAvailable()
         {
             bool dllValid;
@@ -320,6 +321,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="deviceId">The device ID to query for, valid IDs can be found in <see cref="Devices" />.</param>
         /// <returns>A struct with information regarding the device type and whether it's connected.</returns>
+        [SecurityCritical]
         public DeviceInfo Query(Guid deviceId)
         {
             if (!Devices.IsValidId(deviceId))

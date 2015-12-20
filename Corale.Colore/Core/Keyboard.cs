@@ -186,7 +186,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">Effect options.</param>
         public void SetBreathing(Breathing effect)
         {
-            SetGuid(NativeWrapper.CreateKeyboardEffect(effect));
+            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.Breathing, effect));
         }
 
         /// <summary>
@@ -196,7 +196,7 @@ namespace Corale.Colore.Core
         public override void SetAll(Color color)
         {
             _grid.Set(color);
-            SetGuid(NativeWrapper.CreateKeyboardEffect(_grid));
+            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.Custom, _grid));
         }
 
         /// <summary>
@@ -258,7 +258,7 @@ namespace Corale.Colore.Core
         public void SetCustom(Custom effect)
         {
             _grid = effect;
-            SetGuid(NativeWrapper.CreateKeyboardEffect(_grid));
+            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.Custom, _grid));
         }
 
         /// <summary>
@@ -277,7 +277,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">Effect options.</param>
         public void SetEffect(Effect effect)
         {
-            SetGuid(NativeWrapper.CreateKeyboardEffect(effect));
+            SetGuid(NativeWrapper.CreateKeyboardEffect(effect, IntPtr.Zero));
         }
 
         /// <summary>
@@ -294,7 +294,7 @@ namespace Corale.Colore.Core
                 _grid.Clear();
 
             _grid[row, column] = color;
-            SetGuid(NativeWrapper.CreateKeyboardEffect(_grid));
+            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.Custom, _grid));
         }
 
         /// <summary>
@@ -309,7 +309,7 @@ namespace Corale.Colore.Core
                 _grid.Clear();
 
             _grid[key] = color;
-            SetGuid(NativeWrapper.CreateKeyboardEffect(_grid));
+            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.Custom, _grid));
         }
 
         /// <summary>
@@ -349,7 +349,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">Effect options.</param>
         public void SetReactive(Reactive effect)
         {
-            SetGuid(NativeWrapper.CreateKeyboardEffect(effect));
+            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.Reactive, effect));
         }
 
         /// <summary>
@@ -358,7 +358,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">Effect options.</param>
         public void SetStatic(Static effect)
         {
-            SetGuid(NativeWrapper.CreateKeyboardEffect(effect));
+            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.Static, effect));
         }
 
         /// <summary>
@@ -367,7 +367,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">Effect options.</param>
         public void SetWave(Wave effect)
         {
-            SetGuid(NativeWrapper.CreateKeyboardEffect(effect));
+            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.Wave, effect));
         }
     }
 }

@@ -27,6 +27,7 @@ namespace Corale.Colore.Core
 {
     using System;
     using System.Runtime.InteropServices;
+    using System.Security;
 
     using Corale.Colore.Razer;
     using Corale.Colore.Razer.Keyboard.Effects;
@@ -77,67 +78,6 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Create a keyboard effect without a parameter.
-        /// </summary>
-        /// <param name="effect">The type of effect to create.</param>
-        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        /// <remarks>This is currently valid for <see cref="Razer.Keyboard.Effects.Effect.None" /> and <see cref="Razer.Keyboard.Effects.Effect.SpectrumCycling" />.</remarks>
-        internal static Guid CreateKeyboardEffect(Razer.Keyboard.Effects.Effect effect)
-        {
-            return CreateKeyboardEffect(effect, IntPtr.Zero);
-        }
-
-        /// <summary>
-        /// Creates a breathing effect for the keyboard.
-        /// </summary>
-        /// <param name="effect">Effect options.</param>
-        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        internal static Guid CreateKeyboardEffect(Breathing effect)
-        {
-            return CreateKeyboardEffect(Razer.Keyboard.Effects.Effect.Breathing, effect);
-        }
-
-        /// <summary>
-        /// Creates a reactive effect for the keyboard.
-        /// </summary>
-        /// <param name="effect">Effect options.</param>
-        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        internal static Guid CreateKeyboardEffect(Reactive effect)
-        {
-            return CreateKeyboardEffect(Razer.Keyboard.Effects.Effect.Reactive, effect);
-        }
-
-        /// <summary>
-        /// Creates a static color effect for the keyboard.
-        /// </summary>
-        /// <param name="effect">Effect options.</param>
-        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        internal static Guid CreateKeyboardEffect(Static effect)
-        {
-            return CreateKeyboardEffect(Razer.Keyboard.Effects.Effect.Static, effect);
-        }
-
-        /// <summary>
-        /// Creates a wave effect for the keyboard.
-        /// </summary>
-        /// <param name="effect">Effect options.</param>
-        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        internal static Guid CreateKeyboardEffect(Wave effect)
-        {
-            return CreateKeyboardEffect(Razer.Keyboard.Effects.Effect.Wave, effect);
-        }
-
-        /// <summary>
-        /// Creates a custom effect for the keyboard.
-        /// </summary>
-        /// <param name="effect">Effect options.</param>
-        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        internal static Guid CreateKeyboardEffect(Custom effect)
-        {
-            return CreateKeyboardEffect(Razer.Keyboard.Effects.Effect.Custom, effect);
-        }
-
-        /// <summary>
         /// Creates a standard mouse effect with the specified parameters.
         /// </summary>
         /// <param name="effect">The type of effect to create.</param>
@@ -151,100 +91,6 @@ namespace Corale.Colore.Core
             if (!result)
                 throw new NativeCallException("CreateMouseEffect", result);
             return guid;
-        }
-
-        /// <summary>
-        /// Create a mouse effect without a parameter.
-        /// </summary>
-        /// <param name="effect">The type of effect to create.</param>
-        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        /// <remarks>This is currently only valid for <see cref="Razer.Mouse.Effects.Effect.None" />.</remarks>
-        internal static Guid CreateMouseEffect(Razer.Mouse.Effects.Effect effect)
-        {
-            if (effect == Razer.Mouse.Effects.Effect.None)
-                return CreateMouseEffect(effect, new Razer.Mouse.Effects.None(Razer.Mouse.Led.All));
-
-            return CreateMouseEffect(effect, IntPtr.Zero);
-        }
-
-        /// <summary>
-        /// Creates a custom effect for the mouse.
-        /// </summary>
-        /// <param name="effect">Effect options.</param>
-        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        internal static Guid CreateMouseEffect(Razer.Mouse.Effects.Custom effect)
-        {
-            return CreateMouseEffect(Razer.Mouse.Effects.Effect.Custom, effect);
-        }
-
-        /// <summary>
-        /// Creates a custom grid effect for the mouse.
-        /// </summary>
-        /// <param name="effect">Effect options.</param>
-        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        internal static Guid CreateMouseEffect(Razer.Mouse.Effects.CustomGrid effect)
-        {
-            return CreateMouseEffect(Razer.Mouse.Effects.Effect.CustomGrid, effect);
-        }
-
-        /// <summary>
-        /// Creates a breathing effect for the mouse.
-        /// </summary>
-        /// <param name="effect">Effect options.</param>
-        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        internal static Guid CreateMouseEffect(Razer.Mouse.Effects.Breathing effect)
-        {
-            return CreateMouseEffect(Razer.Mouse.Effects.Effect.Breathing, effect);
-        }
-
-        /// <summary>
-        /// Creates a static color effect for the mouse.
-        /// </summary>
-        /// <param name="effect">Effect options.</param>
-        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        internal static Guid CreateMouseEffect(Razer.Mouse.Effects.Static effect)
-        {
-            return CreateMouseEffect(Razer.Mouse.Effects.Effect.Static, effect);
-        }
-
-        /// <summary>
-        /// Creates a blinking effect for the mouse.
-        /// </summary>
-        /// <param name="effect">Effect options struct.</param>
-        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        internal static Guid CreateMouseEffect(Razer.Mouse.Effects.Blinking effect)
-        {
-            return CreateMouseEffect(Razer.Mouse.Effects.Effect.Blinking, effect);
-        }
-
-        /// <summary>
-        /// Creates a reactive effect for the mouse.
-        /// </summary>
-        /// <param name="effect">Effect options struct.</param>
-        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        internal static Guid CreateMouseEffect(Razer.Mouse.Effects.Reactive effect)
-        {
-            return CreateMouseEffect(Razer.Mouse.Effects.Effect.Reactive, effect);
-        }
-
-        /// <summary>
-        /// Creates a spectrum cycling effect for the mouse.
-        /// </summary>
-        /// <param name="effect">Effect options struct.</param>
-        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        internal static Guid CreateMouseEffect(Razer.Mouse.Effects.SpectrumCycling effect)
-        {
-            return CreateMouseEffect(Razer.Mouse.Effects.Effect.SpectrumCycling, effect);
-        }
-
-        /// <summary>
-        /// Creates a wave effect for the mouse.
-        /// </summary>
-        /// <param name="effect">Effect options struct.</param>
-        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        internal static Guid CreateMouseEffect(Razer.Mouse.Effects.Wave effect)
-        {
-            return CreateMouseEffect(Razer.Mouse.Effects.Effect.Wave, effect);
         }
 
         /// <summary>
@@ -263,36 +109,6 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Creates a standard effect for the headset that takes no parameter.
-        /// </summary>
-        /// <param name="effect">The type of effect to create.</param>
-        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        internal static Guid CreateHeadsetEffect(Razer.Headset.Effects.Effect effect)
-        {
-            return CreateHeadsetEffect(effect, IntPtr.Zero);
-        }
-
-        /// <summary>
-        /// Creates a static color effect for the headset.
-        /// </summary>
-        /// <param name="effect">The effect struct.</param>
-        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        internal static Guid CreateHeadsetEffect(Razer.Headset.Effects.Static effect)
-        {
-            return CreateHeadsetEffect(Razer.Headset.Effects.Effect.Static, effect);
-        }
-
-        /// <summary>
-        /// Creates a breathing effect for the headset.
-        /// </summary>
-        /// <param name="effect">The effect struct.</param>
-        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        internal static Guid CreateHeadsetEffect(Razer.Headset.Effects.Breathing effect)
-        {
-            return CreateHeadsetEffect(Razer.Headset.Effects.Effect.Breathing, effect);
-        }
-
-        /// <summary>
         /// Creates a standard mouse pad effect with the specified parameters.
         /// </summary>
         /// <param name="effect">The type of effect to create.</param>
@@ -308,57 +124,6 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Create a mousepad effect without a parameter.
-        /// </summary>
-        /// <param name="effect">The type of effect to create.</param>
-        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        /// <remarks>This is currently only valid for <see cref="Razer.Mousepad.Effects.Effect.None" />.</remarks>
-        internal static Guid CreateMousepadEffect(Razer.Mousepad.Effects.Effect effect)
-        {
-            return CreateMousepadEffect(effect, IntPtr.Zero);
-        }
-
-        /// <summary>
-        /// Creates a breathing effect for the mouse pad.
-        /// </summary>
-        /// <param name="effect">Effect options struct.</param>
-        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        internal static Guid CreateMousepadEffect(Razer.Mousepad.Effects.Breathing effect)
-        {
-            return CreateMousepadEffect(Razer.Mousepad.Effects.Effect.Breathing, effect);
-        }
-
-        /// <summary>
-        /// Creates a static effect for the mouse pad.
-        /// </summary>
-        /// <param name="effect">Effect options struct.</param>
-        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        internal static Guid CreateMousepadEffect(Razer.Mousepad.Effects.Static effect)
-        {
-            return CreateMousepadEffect(Razer.Mousepad.Effects.Effect.Static, effect);
-        }
-
-        /// <summary>
-        /// Creates a wave effect for the mouse pad.
-        /// </summary>
-        /// <param name="effect">Effect options struct.</param>
-        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        internal static Guid CreateMousepadEffect(Razer.Mousepad.Effects.Wave effect)
-        {
-            return CreateMousepadEffect(Razer.Mousepad.Effects.Effect.Wave, effect);
-        }
-
-        /// <summary>
-        /// Creates a custom effect for the mouse pad.
-        /// </summary>
-        /// <param name="effect">Effect options struct.</param>
-        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        internal static Guid CreateMousepadEffect(Razer.Mousepad.Effects.Custom effect)
-        {
-            return CreateMousepadEffect(Razer.Mousepad.Effects.Effect.Custom, effect);
-        }
-
-        /// <summary>
         /// Creates a standard keypad effect with the specified parameters.
         /// </summary>
         /// <param name="effect">The type of effect to create.</param>
@@ -371,67 +136,6 @@ namespace Corale.Colore.Core
             if (!result)
                 throw new NativeCallException("CreateKeypadEffect", result);
             return guid;
-        }
-
-        /// <summary>
-        /// Create a keypad effect without a parameter.
-        /// </summary>
-        /// <param name="effect">The type of effect to create.</param>
-        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        /// <remarks>This is currently only valid for <see cref="Razer.Keypad.Effects.Effect.None" />.</remarks>
-        internal static Guid CreateKeypadEffect(Razer.Keypad.Effects.Effect effect)
-        {
-            return CreateKeypadEffect(effect, IntPtr.Zero);
-        }
-
-        /// <summary>
-        /// Creates a breathing effect for the keypad.
-        /// </summary>
-        /// <param name="effect">Effect options struct.</param>
-        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        internal static Guid CreateKeypadEffect(Razer.Keypad.Effects.Breathing effect)
-        {
-            return CreateKeypadEffect(Razer.Keypad.Effects.Effect.Breathing, effect);
-        }
-
-        /// <summary>
-        /// Creates a static effect for the keypad.
-        /// </summary>
-        /// <param name="effect">Effect options struct.</param>
-        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        internal static Guid CreateKeypadEffect(Razer.Keypad.Effects.Static effect)
-        {
-            return CreateKeypadEffect(Razer.Keypad.Effects.Effect.Static, effect);
-        }
-
-        /// <summary>
-        /// Creates a wave effect for the keypad.
-        /// </summary>
-        /// <param name="effect">Effect options struct.</param>
-        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        internal static Guid CreateKeypadEffect(Razer.Keypad.Effects.Wave effect)
-        {
-            return CreateKeypadEffect(Razer.Keypad.Effects.Effect.Wave, effect);
-        }
-
-        /// <summary>
-        /// Creates a custom effect for the keypad.
-        /// </summary>
-        /// <param name="effect">Effect options struct.</param>
-        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        internal static Guid CreateKeypadEffect(Razer.Keypad.Effects.Custom effect)
-        {
-            return CreateKeypadEffect(Razer.Keypad.Effects.Effect.Custom, effect);
-        }
-
-        /// <summary>
-        /// Creates a reactive effect for the keypad.
-        /// </summary>
-        /// <param name="effect">Effect options struct.</param>
-        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        internal static Guid CreateKeypadEffect(Razer.Keypad.Effects.Reactive effect)
-        {
-            return CreateKeypadEffect(Razer.Keypad.Effects.Effect.Reactive, effect);
         }
 
         /// <summary>
@@ -507,6 +211,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="id">Device ID, found in <see cref="Devices" />.</param>
         /// <returns>A populated <see cref="DeviceInfo" /> structure with information about the requested device.</returns>
+        [SecuritySafeCritical]
         internal static DeviceInfo QueryDevice(Guid id)
         {
             var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(DeviceInfo)));
@@ -538,7 +243,8 @@ namespace Corale.Colore.Core
         /// <param name="effect">The type of effect to create.</param>
         /// <param name="struct">The effect structure parameter.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        private static Guid CreateKeyboardEffect<T>(Razer.Keyboard.Effects.Effect effect, T @struct) where T : struct
+        [SecuritySafeCritical]
+        internal static Guid CreateKeyboardEffect<T>(Razer.Keyboard.Effects.Effect effect, T @struct) where T : struct
         {
             var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(@struct));
             Marshal.StructureToPtr(@struct, ptr, false);
@@ -559,7 +265,8 @@ namespace Corale.Colore.Core
         /// <param name="effect">The type of effect to create.</param>
         /// <param name="struct">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        private static Guid CreateMouseEffect<T>(Razer.Mouse.Effects.Effect effect, T @struct) where T : struct
+        [SecuritySafeCritical]
+        internal static Guid CreateMouseEffect<T>(Razer.Mouse.Effects.Effect effect, T @struct) where T : struct
         {
             var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(@struct));
             Marshal.StructureToPtr(@struct, ptr, false);
@@ -580,7 +287,8 @@ namespace Corale.Colore.Core
         /// <param name="effect">The type of effect to create.</param>
         /// <param name="struct">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        private static Guid CreateHeadsetEffect<T>(Razer.Headset.Effects.Effect effect, T @struct) where T : struct
+        [SecuritySafeCritical]
+        internal static Guid CreateHeadsetEffect<T>(Razer.Headset.Effects.Effect effect, T @struct) where T : struct
         {
             var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(@struct));
             Marshal.StructureToPtr(@struct, ptr, false);
@@ -602,7 +310,8 @@ namespace Corale.Colore.Core
         /// <param name="effect">The type of effect to create.</param>
         /// <param name="struct">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        private static Guid CreateMousepadEffect<T>(Razer.Mousepad.Effects.Effect effect, T @struct) where T : struct
+        [SecuritySafeCritical]
+        internal static Guid CreateMousepadEffect<T>(Razer.Mousepad.Effects.Effect effect, T @struct) where T : struct
         {
             var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(@struct));
             Marshal.StructureToPtr(@struct, ptr, false);
@@ -624,7 +333,8 @@ namespace Corale.Colore.Core
         /// <param name="effect">The type of effect to create.</param>
         /// <param name="struct">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        private static Guid CreateKeypadEffect<T>(Razer.Keypad.Effects.Effect effect, T @struct) where T : struct
+        [SecuritySafeCritical]
+        internal static Guid CreateKeypadEffect<T>(Razer.Keypad.Effects.Effect effect, T @struct) where T : struct
         {
             var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(@struct));
             Marshal.StructureToPtr(@struct, ptr, false);
