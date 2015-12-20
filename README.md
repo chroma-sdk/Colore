@@ -42,8 +42,6 @@ This project is licensed under the MIT license, please see the file **LICENSE** 
 Razer is a trademark and/or a registered trademark of Razer USA Ltd.  
 All other trademarks are property of their respective owners.
 
-This project is in no way endorsed, sponsored or approved by Razer.
-
 Dependencies
 ------------
 
