@@ -58,13 +58,7 @@ namespace Corale.Colore.Core
         /// <summary>
         /// Gets the application-wide instance of the <see cref="IHeadset" /> interface.
         /// </summary>
-        public static IHeadset Instance
-        {
-            get
-            {
-                return _instance ?? (_instance = new Headset());
-            }
-        }
+        public static IHeadset Instance => _instance ?? (_instance = new Headset());
 
         /// <summary>
         /// Sets the color of all components on this device.

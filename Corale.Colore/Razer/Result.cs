@@ -137,46 +137,22 @@ namespace Corale.Colore.Razer
         /// <summary>
         /// Gets the help description for the current error value.
         /// </summary>
-        public string Description
-        {
-            get
-            {
-                return FieldMetadata.ContainsKey(this) ? FieldMetadata[this].Description : "Unknown.";
-            }
-        }
+        public string Description => FieldMetadata.ContainsKey(this) ? FieldMetadata[this].Description : "Unknown.";
 
         /// <summary>
         /// Gets a value indicating whether the result means failure.
         /// </summary>
-        public bool Failed
-        {
-            get
-            {
-                return this != RzSuccess;
-            }
-        }
+        public bool Failed => this != RzSuccess;
 
         /// <summary>
         /// Gets the name of the error as defined in source code.
         /// </summary>
-        public string Name
-        {
-            get
-            {
-                return FieldMetadata.ContainsKey(this) ? FieldMetadata[this].Name : "Unknown";
-            }
-        }
+        public string Name => FieldMetadata.ContainsKey(this) ? FieldMetadata[this].Name : "Unknown";
 
         /// <summary>
         /// Gets a value indicating whether the result was a success.
         /// </summary>
-        public bool Success
-        {
-            get
-            {
-                return this == RzSuccess;
-            }
-        }
+        public bool Success => this == RzSuccess;
 
         /// <summary>
         /// Indicates whether an instance of the <see cref="Result" /> struct is
@@ -328,7 +304,7 @@ namespace Corale.Colore.Razer
         /// <filterpriority>2</filterpriority>
         public override string ToString()
         {
-            return string.Format("{0}: {1} ({2})", Name, Description, _value);
+            return $"{Name}: {Description} ({_value})";
         }
 
         /// <summary>
@@ -358,47 +334,25 @@ namespace Corale.Colore.Razer
         private struct Metadata
         {
             /// <summary>
-            /// Description of the result.
-            /// </summary>
-            private readonly string _description;
-
-            /// <summary>
-            /// Name of the result (name of the field).
-            /// </summary>
-            private readonly string _name;
-
-            /// <summary>
             /// Initializes a new instance of the <see cref="Metadata" /> struct.
             /// </summary>
             /// <param name="name">Result name.</param>
             /// <param name="description">Result description.</param>
             internal Metadata(string name, string description)
             {
-                _name = name;
-                _description = description;
+                Name = name;
+                Description = description;
             }
 
             /// <summary>
             /// Gets a human-readable description for the result.
             /// </summary>
-            internal string Description
-            {
-                get
-                {
-                    return _description;
-                }
-            }
+            internal string Description { get; }
 
             /// <summary>
             /// Gets the name of the result.
             /// </summary>
-            internal string Name
-            {
-                get
-                {
-                    return _name;
-                }
-            }
+            internal string Name { get; }
         }
 
         /// <summary>
@@ -408,29 +362,18 @@ namespace Corale.Colore.Razer
         private sealed class DescriptionAttribute : Attribute
         {
             /// <summary>
-            /// The description of the associated field.
-            /// </summary>
-            private readonly string _description;
-
-            /// <summary>
             /// Initializes a new instance of the <see cref="DescriptionAttribute" /> class.
             /// </summary>
             /// <param name="description">Description to set.</param>
             internal DescriptionAttribute(string description)
             {
-                _description = description;
+                Description = description;
             }
 
             /// <summary>
             /// Gets a human-readable description of the result.
             /// </summary>
-            internal string Description
-            {
-                get
-                {
-                    return _description;
-                }
-            }
+            internal string Description { get; }
         }
     }
 }

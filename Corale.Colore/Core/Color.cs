@@ -113,62 +113,32 @@ namespace Corale.Colore.Core
         /// Gets the alpha component of the color as a byte.
         /// </summary>
         [PublicAPI]
-        public byte A
-        {
-            get
-            {
-                return (byte)((_value >> 24) & 0xFF);
-            }
-        }
+        public byte A => (byte)((_value >> 24) & 0xFF);
 
         /// <summary>
         /// Gets the blue component of the color as a byte.
         /// </summary>
         [PublicAPI]
-        public byte B
-        {
-            get
-            {
-                return (byte)((_value >> 16) & 0xFF);
-            }
-        }
+        public byte B => (byte)((_value >> 16) & 0xFF);
 
         /// <summary>
         /// Gets the green component of the color as a byte.
         /// </summary>
         [PublicAPI]
-        public byte G
-        {
-            get
-            {
-                return (byte)((_value >> 8) & 0xFF);
-            }
-        }
+        public byte G => (byte)((_value >> 8) & 0xFF);
 
         /// <summary>
         /// Gets the red component of the color as a byte.
         /// </summary>
         [PublicAPI]
-        public byte R
-        {
-            get
-            {
-                return (byte)(_value & 0xFF);
-            }
-        }
+        public byte R => (byte)(_value & 0xFF);
 
         /// <summary>
         /// Gets the unsigned integer representing
         /// the color. On the form <c>0xAABBGGRR</c>.
         /// </summary>
         [PublicAPI]
-        public uint Value
-        {
-            get
-            {
-                return _value;
-            }
-        }
+        public uint Value => _value;
 
         /// <summary>
         /// Converts a <see cref="Color" /> struct to a <see cref="uint" />.

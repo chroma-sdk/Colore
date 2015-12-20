@@ -51,7 +51,7 @@ namespace Corale.Colore.Core
         /// <param name="param">Effect-specific parameter.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
         /// <seealso cref="Razer.NativeMethods.CreateEffect" />
-        internal static Guid CreateEffect(Guid device, Razer.Effect effect, IntPtr param)
+        internal static Guid CreateEffect(Guid device, Effect effect, IntPtr param)
         {
             var guid = Guid.Empty;
             var result = NativeMethods.CreateEffect(device, effect, param, ref guid);

@@ -26,7 +26,7 @@
         {
             const string Func = "TestFunc";
             var result = Result.RzSuccess;
-            var expected = string.Format("Call to native Chroma SDK function {0} failed with error: {1}", Func, result);
+            var expected = $"Call to native Chroma SDK function {Func} failed with error: {result}";
 
             Assert.AreEqual(expected, new NativeCallException(Func, result).Message);
         }

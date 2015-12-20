@@ -35,29 +35,18 @@ namespace Corale.Colore.Events
     public sealed class DeviceAccessEventArgs : EventArgs
     {
         /// <summary>
-        /// Whether or not device access has been granted.
-        /// </summary>
-        private readonly bool _granted;
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="DeviceAccessEventArgs" /> class.
         /// </summary>
         /// <param name="granted">Value indicating whether device access was granted.</param>
         internal DeviceAccessEventArgs(bool granted)
         {
-            _granted = granted;
+            Granted = granted;
         }
 
         /// <summary>
         /// Gets a value indicating whether device access has been granted.
         /// </summary>
         [PublicAPI]
-        public bool Granted
-        {
-            get
-            {
-                return _granted;
-            }
-        }
+        public bool Granted { get; }
     }
 }
