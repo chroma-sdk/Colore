@@ -93,7 +93,7 @@ namespace Corale.Colore.Core
         /// <summary>
         /// Gets or sets the <see cref="Color" /> for a specific LED index on the mouse.
         /// </summary>
-        /// <param name="index">The index to query, between <c>0</c> and <see cref="Constants.MaxLeds" /> (exclusive).</param>
+        /// <param name="index">The index to query, between <c>0</c> and <see cref="Constants.MaxLeds" /> (exclusive upper-bound).</param>
         /// <returns>The <see cref="Color" /> at the specified index.</returns>
         public Color this[int index]
         {
@@ -132,8 +132,8 @@ namespace Corale.Colore.Core
         /// Gets or sets the <see cref="Color" /> for a specific position
         /// on the mouse's virtual grid.
         /// </summary>
-        /// <param name="row">The row to query, between <c>0</c> and <see cref="Constants.MaxRows" /> (exclusive).</param>
-        /// <param name="column">The column to query, between <c>0</c> and <see cref="Constants.MaxColumns" /> (exclusive).</param>
+        /// <param name="row">The row to query, between <c>0</c> and <see cref="Constants.MaxRows" /> (exclusive upper-bound).</param>
+        /// <param name="column">The column to query, between <c>0</c> and <see cref="Constants.MaxColumns" /> (exclusive upper-bound).</param>
         /// <returns>The <see cref="Color" /> at the specified position.</returns>
         public Color this[int row, int column]
         {

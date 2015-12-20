@@ -47,7 +47,7 @@ namespace Corale.Colore.Core
         private static readonly ILog Log = LogManager.GetLogger(typeof(Keyboard));
 
         /// <summary>
-        /// Lock object for thread-safe init.
+        /// Lock object for thread-safe initialization.
         /// </summary>
         private static readonly object InitLock = new object();
 
@@ -119,8 +119,8 @@ namespace Corale.Colore.Core
         /// Gets or sets the <see cref="Color" /> for a specific row and column on the
         /// keyboard grid.
         /// </summary>
-        /// <param name="row">Row to query, between 1 and <see cref="Constants.MaxRows" />.</param>
-        /// <param name="column">Column to query, between 1 and <see cref="Constants.MaxColumns" />.</param>
+        /// <param name="row">Row to query, between 0 and <see cref="Constants.MaxRows" /> (exclusive upper-bound).</param>
+        /// <param name="column">Column to query, between 0 and <see cref="Constants.MaxColumns" /> (exclusive upper-bound).</param>
         /// <returns>The color currently set on the specified position.</returns>
         public Color this[int row, int column]
         {
