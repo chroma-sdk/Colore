@@ -31,6 +31,7 @@ namespace Corale.Colore.Razer
     using System.Security;
     using System.Security.Permissions;
 
+    using Corale.Colore.Annotations;
     using Corale.Colore.Core;
 
     /// <summary>
@@ -76,6 +77,7 @@ namespace Corale.Colore.Razer
         /// <summary>
         /// Gets the <see cref="Guid" /> of the device.
         /// </summary>
+        [PublicAPI]
         public Guid DeviceId
         {
             get
