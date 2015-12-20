@@ -69,7 +69,7 @@ namespace Corale.Colore.Razer.Mouse.Effects
                 throw new ArgumentException(
                     "Colors list has incorrect number of rows, should be " + Constants.MaxLeds + ", received "
                     + colors.Count,
-                    "colors");
+                    nameof(colors));
             }
 
             _colors = new Color[Constants.MaxLeds];
@@ -91,7 +91,7 @@ namespace Corale.Colore.Razer.Mouse.Effects
                 if (led < 0 || led >= Constants.MaxLeds)
                 {
                     throw new ArgumentOutOfRangeException(
-                        "led",
+                        nameof(led),
                         led,
                         "Attempted to access an LED that was out of range.");
                 }
@@ -104,7 +104,7 @@ namespace Corale.Colore.Razer.Mouse.Effects
                 if (led < 0 || led > Constants.MaxLeds)
                 {
                     throw new ArgumentOutOfRangeException(
-                        "led",
+                        nameof(led),
                         led,
                         "Attempted to access an LED that was out of range.");
                 }
@@ -124,7 +124,7 @@ namespace Corale.Colore.Razer.Mouse.Effects
             get
             {
                 if (led == Led.All)
-                    throw new ArgumentException("Led.All cannot be accessed through indexer.", "led");
+                    throw new ArgumentException("Led.All cannot be accessed through indexer.", nameof(led));
 
                 return this[(int)led];
             }
@@ -132,7 +132,7 @@ namespace Corale.Colore.Razer.Mouse.Effects
             set
             {
                 if (led == Led.All)
-                    throw new ArgumentException("Led.All cannot be accessed through indexer.", "led");
+                    throw new ArgumentException("Led.All cannot be accessed through indexer.", nameof(led));
 
                 this[(int)led] = value;
             }
@@ -201,7 +201,7 @@ namespace Corale.Colore.Razer.Mouse.Effects
         /// <filterpriority>2</filterpriority>
         public override int GetHashCode()
         {
-            return _colors != null ? _colors.GetHashCode() : 0;
+            return _colors?.GetHashCode() ?? 0;
         }
 
         /// <summary>

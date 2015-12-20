@@ -35,29 +35,18 @@ namespace Corale.Colore.Events
     public sealed class ApplicationStateEventArgs : EventArgs
     {
         /// <summary>
-        /// Whether or not application is enabled.
-        /// </summary>
-        private readonly bool _enabled;
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="ApplicationStateEventArgs" /> class.
         /// </summary>
         /// <param name="enabled">Value indicating whether the application has been enabled.</param>
         internal ApplicationStateEventArgs(bool enabled)
         {
-            _enabled = enabled;
+            Enabled = enabled;
         }
 
         /// <summary>
         /// Gets a value indicating whether or not the application has been enabled.
         /// </summary>
         [PublicAPI]
-        public bool Enabled
-        {
-            get
-            {
-                return _enabled;
-            }
-        }
+        public bool Enabled { get; }
     }
 }

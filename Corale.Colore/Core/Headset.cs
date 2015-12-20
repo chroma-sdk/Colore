@@ -25,6 +25,8 @@
 
 namespace Corale.Colore.Core
 {
+    using System;
+
     using Corale.Colore.Razer.Headset.Effects;
 
     using log4net;
@@ -56,13 +58,7 @@ namespace Corale.Colore.Core
         /// <summary>
         /// Gets the application-wide instance of the <see cref="IHeadset" /> interface.
         /// </summary>
-        public static IHeadset Instance
-        {
-            get
-            {
-                return _instance ?? (_instance = new Headset());
-            }
-        }
+        public static IHeadset Instance => _instance ?? (_instance = new Headset());
 
         /// <summary>
         /// Sets the color of all components on this device.
@@ -81,7 +77,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">The type of effect to set.</param>
         public void SetEffect(Effect effect)
         {
-            SetGuid(NativeWrapper.CreateHeadsetEffect(effect));
+            SetGuid(NativeWrapper.CreateHeadsetEffect(effect, IntPtr.Zero));
         }
 
         /// <summary>
@@ -93,7 +89,7 @@ namespace Corale.Colore.Core
         /// </param>
         public void SetStatic(Static effect)
         {
-            SetGuid(NativeWrapper.CreateHeadsetEffect(effect));
+            SetGuid(NativeWrapper.CreateHeadsetEffect(Effect.Static, effect));
         }
 
         /// <summary>
@@ -115,7 +111,7 @@ namespace Corale.Colore.Core
         /// </param>
         public void SetBreathing(Breathing effect)
         {
-            SetGuid(NativeWrapper.CreateHeadsetEffect(effect));
+            SetGuid(NativeWrapper.CreateHeadsetEffect(Effect.Breathing, effect));
         }
 
         /// <summary>

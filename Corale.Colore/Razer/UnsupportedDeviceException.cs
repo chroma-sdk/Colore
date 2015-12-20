@@ -28,8 +28,10 @@ namespace Corale.Colore.Razer
     using System;
     using System.Globalization;
     using System.Runtime.Serialization;
+    using System.Security;
     using System.Security.Permissions;
 
+    using Corale.Colore.Annotations;
     using Corale.Colore.Core;
 
     /// <summary>
@@ -45,11 +47,6 @@ namespace Corale.Colore.Razer
         private const string MessageTemplate = "Attempted to initialize an unsupported device with ID: {0}";
 
         /// <summary>
-        /// The ID of the device that was requested.
-        /// </summary>
-        private readonly Guid _deviceId;
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="UnsupportedDeviceException" /> class.
         /// </summary>
         /// <param name="deviceId">The <see cref="Guid" /> of the device.</param>
@@ -57,7 +54,7 @@ namespace Corale.Colore.Razer
         internal UnsupportedDeviceException(Guid deviceId, Exception innerException = null)
             : base(string.Format(CultureInfo.InvariantCulture, MessageTemplate, deviceId), innerException)
         {
-            _deviceId = deviceId;
+            DeviceId = deviceId;
         }
 
         /// <summary>
@@ -69,25 +66,21 @@ namespace Corale.Colore.Razer
         private UnsupportedDeviceException(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
-            _deviceId = (Guid)info.GetValue("DeviceId", typeof(Guid));
+            DeviceId = (Guid)info.GetValue("DeviceId", typeof(Guid));
         }
 
         /// <summary>
         /// Gets the <see cref="Guid" /> of the device.
         /// </summary>
-        public Guid DeviceId
-        {
-            get
-            {
-                return _deviceId;
-            }
-        }
+        [PublicAPI]
+        public Guid DeviceId { get; }
 
         /// <summary>
         /// Adds object data to serialization object.
         /// </summary>
         /// <param name="info">Serialization info object.</param>
         /// <param name="context">Streaming context.</param>
+        [SecurityCritical]
         [SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
         public override void GetObjectData(SerializationInfo info, StreamingContext context)
         {

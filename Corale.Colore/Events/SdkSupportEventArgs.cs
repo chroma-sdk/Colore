@@ -35,29 +35,18 @@ namespace Corale.Colore.Events
     public sealed class SdkSupportEventArgs : EventArgs
     {
         /// <summary>
-        /// Whether or not SDK support is enabled.
-        /// </summary>
-        private readonly bool _enabled;
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="SdkSupportEventArgs" /> class.
         /// </summary>
         /// <param name="enabled">Value indicating whether SDK support is enabled.</param>
         internal SdkSupportEventArgs(bool enabled)
         {
-            _enabled = enabled;
+            Enabled = enabled;
         }
 
         /// <summary>
         /// Gets a value indicating whether SDK support is enabled.
         /// </summary>
         [PublicAPI]
-        public bool Enabled
-        {
-            get
-            {
-                return _enabled;
-            }
-        }
+        public bool Enabled { get; }
     }
 }

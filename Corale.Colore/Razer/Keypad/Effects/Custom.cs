@@ -61,7 +61,7 @@ namespace Corale.Colore.Razer.Keypad.Effects
             {
                 throw new ArgumentException(
                     "Colors array has incorrect number of rows, should be " + Constants.MaxRows + ", received " + rows,
-                    "colors");
+                    nameof(colors));
             }
 
             _rows = new Row[Constants.MaxRows];
@@ -98,7 +98,12 @@ namespace Corale.Colore.Razer.Keypad.Effects
             get
             {
                 if (row < 0 || row >= Constants.MaxRows)
-                    throw new ArgumentOutOfRangeException("row", row, "Attempted to access a row that does not exist.");
+                {
+                    throw new ArgumentOutOfRangeException(
+                        nameof(row),
+                        row,
+                        "Attempted to access a row that does not exist.");
+                }
 
                 return _rows[row][column];
             }
@@ -106,7 +111,12 @@ namespace Corale.Colore.Razer.Keypad.Effects
             set
             {
                 if (row < 0 || row >= Constants.MaxRows)
-                    throw new ArgumentOutOfRangeException("row", row, "Attempted to access a row that does not exist.");
+                {
+                    throw new ArgumentOutOfRangeException(
+                        nameof(row),
+                        row,
+                        "Attempted to access a row that does not exist.");
+                }
 
                 _rows[row][column] = value;
             }
@@ -156,7 +166,7 @@ namespace Corale.Colore.Razer.Keypad.Effects
         /// <filterpriority>2</filterpriority>
         public override int GetHashCode()
         {
-            return _rows == null ? 0 : _rows.GetHashCode();
+            return _rows?.GetHashCode() ?? 0;
         }
 
         /// <summary>
@@ -274,7 +284,7 @@ namespace Corale.Colore.Razer.Keypad.Effects
                 {
                     throw new ArgumentException(
                         "Incorrect color count, expected " + Constants.MaxColumns + " but received " + colors.Count,
-                        "colors");
+                        nameof(colors));
                 }
 
                 _columns = new uint[Constants.MaxColumns];
@@ -308,7 +318,7 @@ namespace Corale.Colore.Razer.Keypad.Effects
                     if (column < 0 || column >= Constants.MaxColumns)
                     {
                         throw new ArgumentOutOfRangeException(
-                            "column",
+                            nameof(column),
                             column,
                             "Attempted to access a column that does not exist.");
                     }
@@ -321,7 +331,7 @@ namespace Corale.Colore.Razer.Keypad.Effects
                     if (column < 0 || column >= Constants.MaxColumns)
                     {
                         throw new ArgumentOutOfRangeException(
-                            "column",
+                            nameof(column),
                             column,
                             "Attempted to access a column that does not exist.");
                     }
@@ -349,7 +359,7 @@ namespace Corale.Colore.Razer.Keypad.Effects
             /// <filterpriority>2</filterpriority>
             public override int GetHashCode()
             {
-                return _columns == null ? 0 : _columns.GetHashCode();
+                return _columns?.GetHashCode() ?? 0;
             }
 
             /// <summary>

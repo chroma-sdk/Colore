@@ -135,61 +135,31 @@ namespace Corale.Colore.Core
         /// Gets an instance of the <see cref="IKeyboard" /> interface
         /// for interacting with a Razer Chroma keyboard.
         /// </summary>
-        public IKeyboard Keyboard
-        {
-            get
-            {
-                return Core.Keyboard.Instance;
-            }
-        }
+        public IKeyboard Keyboard => Core.Keyboard.Instance;
 
         /// <summary>
         /// Gets an instance of the <see cref="IMouse" /> interface
         /// for interacting with a Razer Chroma mouse.
         /// </summary>
-        public IMouse Mouse
-        {
-            get
-            {
-                return Core.Mouse.Instance;
-            }
-        }
+        public IMouse Mouse => Core.Mouse.Instance;
 
         /// <summary>
         /// Gets an instance of the <see cref="IHeadset" /> interface
         /// for interacting with a Razer Chroma headset.
         /// </summary>
-        public IHeadset Headset
-        {
-            get
-            {
-                return Core.Headset.Instance;
-            }
-        }
+        public IHeadset Headset => Core.Headset.Instance;
 
         /// <summary>
         /// Gets an instance of the <see cref="IMousepad" /> interface
         /// for interacting with a Razer Chroma mouse pad.
         /// </summary>
-        public IMousepad Mousepad
-        {
-            get
-            {
-                return Core.Mousepad.Instance;
-            }
-        }
+        public IMousepad Mousepad => Core.Mousepad.Instance;
 
         /// <summary>
         /// Gets an instance of the <see cref="IKeypad" /> interface
         /// for interacting with a Razer Chroma keypad.
         /// </summary>
-        public IKeypad Keypad
-        {
-            get
-            {
-                return Core.Keypad.Instance;
-            }
-        }
+        public IKeypad Keypad => Core.Keypad.Instance;
 
         /// <summary>
         /// Gets a value indicating whether the Chroma
@@ -202,6 +172,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <returns><c>true</c> if Chroma SDK is available, otherwise <c>false</c>.</returns>
         [PublicAPI]
+        [SecurityCritical]
         public static bool IsSdkAvailable()
         {
             bool dllValid;
@@ -320,10 +291,11 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="deviceId">The device ID to query for, valid IDs can be found in <see cref="Devices" />.</param>
         /// <returns>A struct with information regarding the device type and whether it's connected.</returns>
+        [SecurityCritical]
         public DeviceInfo Query(Guid deviceId)
         {
             if (!Devices.IsValidId(deviceId))
-                throw new ArgumentException("The specified ID does not match any of the valid IDs.", "deviceId");
+                throw new ArgumentException("The specified ID does not match any of the valid IDs.", nameof(deviceId));
 
             Log.DebugFormat("Information for {0} requested", deviceId);
             return NativeWrapper.QueryDevice(deviceId);
@@ -364,7 +336,7 @@ namespace Corale.Colore.Core
             {
                 throw new ArgumentException(
                     "The specified window handle does not match the currently registered one.",
-                    "handle");
+                    nameof(handle));
             }
 
             if (msgId != Constants.WmChromaEvent)
@@ -466,9 +438,7 @@ namespace Corale.Colore.Core
         /// <param name="enabled">Whether or not the application was put in an enabled state.</param>
         private void OnApplicationState(bool enabled)
         {
-            var handler = ApplicationState;
-            if (handler != null)
-                handler(this, new ApplicationStateEventArgs(enabled));
+            ApplicationState?.Invoke(this, new ApplicationStateEventArgs(enabled));
         }
 
         /// <summary>
@@ -477,9 +447,7 @@ namespace Corale.Colore.Core
         /// <param name="granted">Whether or not access to the device was granted.</param>
         private void OnDeviceAccess(bool granted)
         {
-            var handler = DeviceAccess;
-            if (handler != null)
-                handler(this, new DeviceAccessEventArgs(granted));
+            DeviceAccess?.Invoke(this, new DeviceAccessEventArgs(granted));
         }
 
         /// <summary>
@@ -488,9 +456,7 @@ namespace Corale.Colore.Core
         /// <param name="enabled">Whether or not the SDK is supported.</param>
         private void OnSdkSupport(bool enabled)
         {
-            var handler = SdkSupport;
-            if (handler != null)
-                handler(this, new SdkSupportEventArgs(enabled));
+            SdkSupport?.Invoke(this, new SdkSupportEventArgs(enabled));
         }
     }
 }
