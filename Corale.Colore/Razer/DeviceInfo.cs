@@ -27,6 +27,8 @@ namespace Corale.Colore.Razer
 {
     using System.Runtime.InteropServices;
 
+    using Corale.Colore.Annotations;
+
     /// <summary>
     /// Information about a device.
     /// </summary>
@@ -36,11 +38,13 @@ namespace Corale.Colore.Razer
         /// <summary>
         /// The type of device this is.
         /// </summary>
+        [PublicAPI]
         public readonly DeviceType Type;
 
         /// <summary>
         /// Whether this device is connected.
         /// </summary>
+        [PublicAPI]
         public readonly bool Connected;
     }
 }
