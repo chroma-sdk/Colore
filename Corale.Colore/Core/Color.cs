@@ -76,7 +76,7 @@ namespace Corale.Colore.Core
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Color" /> struct using
-        /// three <see cref="System.Single" /> (<c>float</c>) values for the
+        /// three <see cref="float" /> (<c>float</c>) values for the
         /// R, G, B, and A (optional) channels.
         /// </summary>
         /// <param name="red">The red component (<c>0.0f</c> to <c>1.0f</c>, inclusive).</param>
@@ -94,7 +94,7 @@ namespace Corale.Colore.Core
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Color" /> struct using
-        /// three <see cref="System.Double" /> values for the R, G, B, and A (optional) channels.
+        /// three <see cref="double" /> values for the R, G, B, and A (optional) channels.
         /// </summary>
         /// <param name="red">The red component (<c>0.0</c> to <c>1.0</c>, inclusive).</param>
         /// <param name="green">The green component (<c>0.0</c> to <c>1.0</c>, inclusive).</param>

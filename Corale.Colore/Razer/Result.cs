@@ -38,8 +38,7 @@ namespace Corale.Colore.Razer
     /// </summary>
     /// <remarks>
     /// <c>RZRESULT</c> is a <c>typedef</c> of <c>LONG</c> on C-side. <c>LONG</c> is always 32-bit in WinAPI.
-    /// This means we don't need to have architecture-dependent base type,
-    /// like with the <see cref="Corale.Colore.Core.Size" /> struct.
+    /// This means we don't need to have architecture-dependent base type.
     /// </remarks>
     public struct Result : IEquatable<int>, IEquatable<Result>
     {
@@ -204,6 +203,7 @@ namespace Corale.Colore.Razer
             return !result;
         }
 
+#pragma warning disable SA1201 // Elements must appear in the correct order
         /// <summary>
         /// Converts a <see cref="Result" /> struct to its integer equivalent.
         /// </summary>
@@ -213,6 +213,7 @@ namespace Corale.Colore.Razer
         {
             return result._value;
         }
+#pragma warning restore SA1201 // Elements must appear in the correct order
 
         /// <summary>
         /// Converts an integer value to its equivalent <see cref="Result" /> object.

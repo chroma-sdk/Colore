@@ -45,7 +45,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// The array is 2-dimensional, with the first dimension
         /// specifying the row for the key, and the second the column.
         /// </remarks>
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = (int)Constants.MaxRows)]
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = Constants.MaxRows)]
         private readonly Row[] _rows;
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
 
             _rows = new Row[Constants.MaxRows];
 
-            for (Size row = 0; row < (int)Constants.MaxRows; row++)
+            for (uint row = 0; row < Constants.MaxRows; row++)
             {
                 var inRow = colors[row];
                 _rows[row] = new Row(inRow);

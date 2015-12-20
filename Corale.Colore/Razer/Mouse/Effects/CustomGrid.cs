@@ -65,7 +65,7 @@ namespace Corale.Colore.Razer.Mouse.Effects
 
             _rows = new Row[Constants.MaxRows];
 
-            for (Size row = 0; row < Constants.MaxRows; row++)
+            for (var row = 0; row < Constants.MaxRows; row++)
             {
                 var inRow = colors[row];
                 _rows[row] = new Row(inRow);

@@ -36,24 +36,24 @@ namespace Corale.Colore.Razer.Keyboard
         /// The maximum number of rows on the keyboard
         /// </summary>
         [PublicAPI]
-        public const uint MaxRows = 6;
+        public const int MaxRows = 6;
 
         /// <summary>
         /// The maximum number of columns on the keyboard
         /// </summary>
         [PublicAPI]
-        public const uint MaxColumns = 22;
+        public const int MaxColumns = 22;
 
         /// <summary>
         /// The maximum number of keys on the keyboard
         /// </summary>
         [PublicAPI]
-        public const uint MaxKeys = MaxRows * MaxColumns;
+        public const int MaxKeys = MaxRows * MaxColumns;
 
         /// <summary>
         /// The maximum number of custom effects based on the maximum keys
         /// </summary>
         [PublicAPI]
-        public const uint MaxCustomEffects = MaxKeys;
+        public const int MaxCustomEffects = MaxKeys;
     }
 }
