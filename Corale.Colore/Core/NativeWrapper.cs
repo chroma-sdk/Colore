@@ -30,7 +30,6 @@ namespace Corale.Colore.Core
     using System.Security;
 
     using Corale.Colore.Razer;
-    using Corale.Colore.Razer.Keyboard.Effects;
 
     using log4net;
 
