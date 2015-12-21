@@ -13,7 +13,7 @@ If ($Platform -ne "Any CPU")
 }
 
 $dir = "Corale.Colore.Tests\bin\$Configuration"
-$dll = "$dir\Corale.Colore.Tests.dll"
+$dll = "Corale.Colore.Tests.dll"
 $nunit = "packages\NUnit.Console.3.0.1\tools\nunit3-console.exe"
 $filter = "+[Corale.Colore*]* -[*Tests]* -[*]*Constants -[*]Corale.Colore.Native* -[*]*NativeMethods -[*]*NativeWrapper -[*]Corale.Colore.Annotations*"
 $targetArgs = "$dll"
