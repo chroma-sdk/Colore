@@ -34,4 +34,4 @@ $Env:GIT_BRANCH = git --% name-rev --name-only HEAD
 
 .\packages\OpenCover.4.6.166\tools\OpenCover.Console.exe --% -register "-filter:%OPENCOVER_FILTER%" "-target:%NUNIT_EXEC%" "-targetargs:%TARGET_ARGS%" "-targetdir:%TARGET_DIR%" -output:coverage.xml
 
-.\packages\coveralls.net.0.6.0\tools\csmacnz.Coveralls.exe --% --opencover -i coverage.xml --useRelativePaths --repoTokenVariable COVERALLS_REPO_TOKEN --jobId %CI_JOB_ID% --serviceName TeamCity --commitId %GIT_HASH% --commitBranch %GIT_BRANCH% --commitAuthor %GIT_NAME% --commitEmail %GIT_EMAIL% --commitMessage %GIT_SUBJECT%
+.\packages\coveralls.net.0.6.0\tools\csmacnz.Coveralls.exe --% --opencover -i coverage.xml --useRelativePaths --repoTokenVariable COVERALLS_REPO_TOKEN --jobId %CI_JOB_ID% --serviceName TeamCity --commitId "%GIT_HASH%" --commitBranch "%GIT_BRANCH%" --commitAuthor "%GIT_NAME%" --commitEmail "%GIT_EMAIL%" --commitMessage "%GIT_SUBJECT%"
