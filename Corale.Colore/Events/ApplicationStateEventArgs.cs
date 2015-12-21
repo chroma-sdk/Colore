@@ -19,11 +19,6 @@
 //     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
-//     Disclaimer: Corale and/or Colore is in no way affiliated with Razer and/or any
-//     of its employees and/or licensors. Corale, Adam Hellberg, and/or Brandon Scott
-//     do not take responsibility for any harm caused, direct or indirect, to any
-//     Razer peripherals via the use of Colore.
-//
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
 // ---------------------------------------------------------------------------------------
@@ -40,29 +35,18 @@ namespace Corale.Colore.Events
     public sealed class ApplicationStateEventArgs : EventArgs
     {
         /// <summary>
-        /// Whether or not application is enabled.
-        /// </summary>
-        private readonly bool _enabled;
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="ApplicationStateEventArgs" /> class.
         /// </summary>
         /// <param name="enabled">Value indicating whether the application has been enabled.</param>
         internal ApplicationStateEventArgs(bool enabled)
         {
-            _enabled = enabled;
+            Enabled = enabled;
         }
 
         /// <summary>
         /// Gets a value indicating whether or not the application has been enabled.
         /// </summary>
         [PublicAPI]
-        public bool Enabled
-        {
-            get
-            {
-                return _enabled;
-            }
-        }
+        public bool Enabled { get; }
     }
 }

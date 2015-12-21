@@ -19,11 +19,6 @@
 //     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
-//     Disclaimer: Corale and/or Colore is in no way affiliated with Razer and/or any
-//     of its employees and/or licensors. Corale, Adam Hellberg, and/or Brandon Scott
-//     do not take responsibility for any harm caused, direct or indirect, to any
-//     Razer peripherals via the use of Colore.
-//
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
 // ---------------------------------------------------------------------------------------
@@ -31,6 +26,7 @@
 namespace Corale.Colore
 {
     using System;
+    using System.Security;
 
     using Corale.Colore.Native.Kernel32;
 
@@ -44,6 +40,7 @@ namespace Corale.Colore
         /// Determines whether the current system is 64-bit.
         /// </summary>
         /// <returns><c>true</c> if the system is 64-bit.</returns>
+        [SecurityCritical]
         internal static bool Is64BitOperatingSystem()
         {
             // Check if this process is natively an x64 process. If it is, it will only run on x64 environments, thus, the environment must be x64.

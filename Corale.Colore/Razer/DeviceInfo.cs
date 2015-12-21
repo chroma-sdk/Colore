@@ -19,11 +19,6 @@
 //     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
-//     Disclaimer: Corale and/or Colore is in no way affiliated with Razer and/or any
-//     of its employees and/or licensors. Corale, Adam Hellberg, and/or Brandon Scott
-//     do not take responsibility for any harm caused, direct or indirect, to any
-//     Razer peripherals via the use of Colore.
-//
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
 // ---------------------------------------------------------------------------------------
@@ -31,6 +26,8 @@
 namespace Corale.Colore.Razer
 {
     using System.Runtime.InteropServices;
+
+    using Corale.Colore.Annotations;
 
     /// <summary>
     /// Information about a device.
@@ -41,11 +38,13 @@ namespace Corale.Colore.Razer
         /// <summary>
         /// The type of device this is.
         /// </summary>
+        [PublicAPI]
         public readonly DeviceType Type;
 
         /// <summary>
         /// Whether this device is connected.
         /// </summary>
+        [PublicAPI]
         public readonly bool Connected;
     }
 }

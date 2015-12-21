@@ -19,17 +19,14 @@
 //     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
-//     Disclaimer: Corale and/or Colore is in no way affiliated with Razer and/or any
-//     of its employees and/or licensors. Corale, Adam Hellberg, and/or Brandon Scott
-//     do not take responsibility for any harm caused, direct or indirect, to any
-//     Razer peripherals via the use of Colore.
-//
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
 namespace Corale.Colore.Core
 {
+    using System;
+
     using Corale.Colore.Annotations;
     using Corale.Colore.Razer.Mouse;
     using Corale.Colore.Razer.Mouse.Effects;
@@ -96,7 +93,7 @@ namespace Corale.Colore.Core
         /// <summary>
         /// Gets or sets the <see cref="Color" /> for a specific LED index on the mouse.
         /// </summary>
-        /// <param name="index">The index to query, between <c>0</c> and <see cref="Constants.MaxLeds" /> (exclusive).</param>
+        /// <param name="index">The index to query, between <c>0</c> and <see cref="Constants.MaxLeds" /> (exclusive upper-bound).</param>
         /// <returns>The <see cref="Color" /> at the specified index.</returns>
         public Color this[int index]
         {
@@ -135,8 +132,8 @@ namespace Corale.Colore.Core
         /// Gets or sets the <see cref="Color" /> for a specific position
         /// on the mouse's virtual grid.
         /// </summary>
-        /// <param name="row">The row to query, between <c>0</c> and <see cref="Constants.MaxRows" /> (exclusive).</param>
-        /// <param name="column">The column to query, between <c>0</c> and <see cref="Constants.MaxColumns" /> (exclusive).</param>
+        /// <param name="row">The row to query, between <c>0</c> and <see cref="Constants.MaxRows" /> (exclusive upper-bound).</param>
+        /// <param name="column">The column to query, between <c>0</c> and <see cref="Constants.MaxColumns" /> (exclusive upper-bound).</param>
         /// <returns>The <see cref="Color" /> at the specified position.</returns>
         public Color this[int row, int column]
         {
@@ -200,7 +197,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">Effect options.</param>
         public void SetEffect(Effect effect)
         {
-            SetGuid(NativeWrapper.CreateMouseEffect(effect));
+            SetGuid(NativeWrapper.CreateMouseEffect(effect, IntPtr.Zero));
         }
 
         /// <summary>
@@ -209,7 +206,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">An instance of the <see cref="Breathing" /> effect.</param>
         public void SetBreathing(Breathing effect)
         {
-            SetGuid(NativeWrapper.CreateMouseEffect(effect));
+            SetGuid(NativeWrapper.CreateMouseEffect(Effect.Breathing, effect));
         }
 
         /// <summary>
@@ -251,7 +248,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">An instance of the <see cref="Static" /> effect.</param>
         public void SetStatic(Static effect)
         {
-            SetGuid(NativeWrapper.CreateMouseEffect(effect));
+            SetGuid(NativeWrapper.CreateMouseEffect(Effect.Static, effect));
         }
 
         /// <summary>
@@ -270,7 +267,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">An instance of the <see cref="Blinking" /> effect.</param>
         public void SetBlinking(Blinking effect)
         {
-            SetGuid(NativeWrapper.CreateMouseEffect(effect));
+            SetGuid(NativeWrapper.CreateMouseEffect(Effect.Blinking, effect));
         }
 
         /// <summary>
@@ -289,7 +286,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">Effect options struct.</param>
         public void SetReactive(Reactive effect)
         {
-            SetGuid(NativeWrapper.CreateMouseEffect(effect));
+            SetGuid(NativeWrapper.CreateMouseEffect(Effect.Reactive, effect));
         }
 
         /// <summary>
@@ -309,7 +306,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">Effect options struct.</param>
         public void SetSpectrumCycling(SpectrumCycling effect)
         {
-            SetGuid(NativeWrapper.CreateMouseEffect(effect));
+            SetGuid(NativeWrapper.CreateMouseEffect(Effect.SpectrumCycling, effect));
         }
 
         /// <summary>
@@ -327,7 +324,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">Effect options struct.</param>
         public void SetWave(Wave effect)
         {
-            SetGuid(NativeWrapper.CreateMouseEffect(effect));
+            SetGuid(NativeWrapper.CreateMouseEffect(Effect.Wave, effect));
         }
 
         /// <summary>
@@ -358,7 +355,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
         public void SetCustom(Custom effect)
         {
-            SetGuid(NativeWrapper.CreateMouseEffect(effect));
+            SetGuid(NativeWrapper.CreateMouseEffect(Effect.Custom, effect));
         }
 
         /// <summary>
@@ -367,7 +364,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">An instance of the <see cref="CustomGrid" /> struct.</param>
         public void SetGrid(CustomGrid effect)
         {
-            SetGuid(NativeWrapper.CreateMouseEffect(effect));
+            SetGuid(NativeWrapper.CreateMouseEffect(Effect.CustomGrid, effect));
         }
     }
 }

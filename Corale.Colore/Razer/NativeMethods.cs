@@ -19,11 +19,6 @@
 //     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
-//     Disclaimer: Corale and/or Colore is in no way affiliated with Razer and/or any
-//     of its employees and/or licensors. Corale, Adam Hellberg, and/or Brandon Scott
-//     do not take responsibility for any harm caused, direct or indirect, to any
-//     Razer peripherals via the use of Colore.
-//
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
 // ---------------------------------------------------------------------------------------
@@ -33,6 +28,7 @@ namespace Corale.Colore.Razer
     using System;
     using System.Diagnostics.CodeAnalysis;
     using System.Runtime.InteropServices;
+    using System.Security;
 
     using Corale.Colore.Razer.Keyboard;
 
@@ -156,6 +152,7 @@ namespace Corale.Colore.Razer
         /// <summary>
         /// Initializes static members of the <see cref="NativeMethods" /> class.
         /// </summary>
+        [SecurityCritical]
         [SuppressMessage("Microsoft.Design", "CA1065:DoNotRaiseExceptionsInUnexpectedLocations",
             Justification = "Can't get rid of this exception as we depend on architecture and library to work.")]
         static NativeMethods()
@@ -476,6 +473,7 @@ namespace Corale.Colore.Razer
         /// <param name="lib">A pointer to the loaded library to load the function from.</param>
         /// <param name="name">Name of the function to load.</param>
         /// <returns>A delegate of type <typeparamref name="T" /> for the specified function.</returns>
+        [SecurityCritical]
         private static T GetDelegateFromLibrary<T>(IntPtr lib, string name)
         {
             var functionPtr = Native.Kernel32.NativeMethods.GetProcAddress(lib, name);

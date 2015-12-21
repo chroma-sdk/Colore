@@ -19,17 +19,14 @@
 //     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
-//     Disclaimer: Corale and/or Colore is in no way affiliated with Razer and/or any
-//     of its employees and/or licensors. Corale, Adam Hellberg, and/or Brandon Scott
-//     do not take responsibility for any harm caused, direct or indirect, to any
-//     Razer peripherals via the use of Colore.
-//
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
 namespace Corale.Colore.Core
 {
+    using System;
+
     using Corale.Colore.Razer.Keypad;
     using Corale.Colore.Razer.Keypad.Effects;
 
@@ -90,8 +87,8 @@ namespace Corale.Colore.Core
         /// Gets or sets a color at the specified position in the keypad's
         /// grid layout.
         /// </summary>
-        /// <param name="row">The row to access (between <c>0</c> and <see cref="Constants.MaxRows" />).</param>
-        /// <param name="column">The column to access (between <c>0</c> and <see cref="Constants.MaxColumns" />).</param>
+        /// <param name="row">The row to access (between <c>0</c> and <see cref="Constants.MaxRows" />, exclusive upper-bound).</param>
+        /// <param name="column">The column to access (between <c>0</c> and <see cref="Constants.MaxColumns" />, exclusive upper-bound).</param>
         /// <returns>The <see cref="Color" /> at the specified position.</returns>
         public Color this[int row, int column]
         {
@@ -135,7 +132,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">Effect options.</param>
         public void SetEffect(Effect effect)
         {
-            SetGuid(NativeWrapper.CreateKeypadEffect(effect));
+            SetGuid(NativeWrapper.CreateKeypadEffect(effect, IntPtr.Zero));
         }
 
         /// <summary>
@@ -144,7 +141,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">An instance of the <see cref="Breathing" /> struct.</param>
         public void SetBreathing(Breathing effect)
         {
-            SetGuid(NativeWrapper.CreateKeypadEffect(effect));
+            SetGuid(NativeWrapper.CreateKeypadEffect(Effect.Breathing, effect));
         }
 
         /// <summary>
@@ -173,7 +170,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
         public void SetCustom(Custom effect)
         {
-            SetGuid(NativeWrapper.CreateKeypadEffect(effect));
+            SetGuid(NativeWrapper.CreateKeypadEffect(Effect.Custom, effect));
         }
 
         /// <summary>
@@ -182,7 +179,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">An instance of the <see cref="Reactive" /> struct.</param>
         public void SetReactive(Reactive effect)
         {
-            SetGuid(NativeWrapper.CreateKeypadEffect(effect));
+            SetGuid(NativeWrapper.CreateKeypadEffect(Effect.Reactive, effect));
         }
 
         /// <summary>
@@ -202,7 +199,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
         public void SetStatic(Static effect)
         {
-            SetGuid(NativeWrapper.CreateKeypadEffect(effect));
+            SetGuid(NativeWrapper.CreateKeypadEffect(Effect.Static, effect));
         }
 
         /// <summary>
@@ -220,7 +217,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">An instance of the <see cref="Wave" /> struct.</param>
         public void SetWave(Wave effect)
         {
-            SetGuid(NativeWrapper.CreateKeypadEffect(effect));
+            SetGuid(NativeWrapper.CreateKeypadEffect(Effect.Wave, effect));
         }
 
         /// <summary>

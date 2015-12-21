@@ -19,11 +19,6 @@
 //     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
-//     Disclaimer: Corale and/or Colore is in no way affiliated with Razer and/or any
-//     of its employees and/or licensors. Corale, Adam Hellberg, and/or Brandon Scott
-//     do not take responsibility for any harm caused, direct or indirect, to any
-//     Razer peripherals via the use of Colore.
-//
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
 // ---------------------------------------------------------------------------------------
@@ -52,7 +47,7 @@ namespace Corale.Colore.Core
         private static readonly ILog Log = LogManager.GetLogger(typeof(Keyboard));
 
         /// <summary>
-        /// Lock object for thread-safe init.
+        /// Lock object for thread-safe initialization.
         /// </summary>
         private static readonly object InitLock = new object();
 
@@ -124,14 +119,14 @@ namespace Corale.Colore.Core
         /// Gets or sets the <see cref="Color" /> for a specific row and column on the
         /// keyboard grid.
         /// </summary>
-        /// <param name="row">Row to query, between 1 and <see cref="Constants.MaxRows" />.</param>
-        /// <param name="column">Column to query, between 1 and <see cref="Constants.MaxColumns" />.</param>
+        /// <param name="row">Row to query, between 0 and <see cref="Constants.MaxRows" /> (exclusive upper-bound).</param>
+        /// <param name="column">Column to query, between 0 and <see cref="Constants.MaxColumns" /> (exclusive upper-bound).</param>
         /// <returns>The color currently set on the specified position.</returns>
-        public Color this[Size row, Size column]
+        public Color this[int row, int column]
         {
             get
             {
-                return _grid[(int)row - 1, (int)column - 1];
+                return _grid[row - 1, column - 1];
             }
 
             set
@@ -154,7 +149,7 @@ namespace Corale.Colore.Core
         {
             var attr =
                 typeof(Key).GetMember(key.ToString())[0].GetCustomAttributes(typeof(UnsafeKeyAttribute), false)
-                                                        .FirstOrDefault();
+                    .FirstOrDefault();
 
             return attr == null;
         }
@@ -170,9 +165,9 @@ namespace Corale.Colore.Core
         /// regardless of the physical layout of the keyboard.
         /// </remarks>
         [PublicAPI]
-        public static bool IsPositionSafe(Size row, Size column)
+        public static bool IsPositionSafe(int row, int column)
         {
-            return !PositionData.UnsafePositions.Contains(((int)row << 8) | (int)column);
+            return !PositionData.UnsafePositions.Contains((row << 8) | column);
         }
 
         /// <summary>
@@ -191,7 +186,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">Effect options.</param>
         public void SetBreathing(Breathing effect)
         {
-            SetGuid(NativeWrapper.CreateKeyboardEffect(effect));
+            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.Breathing, effect));
         }
 
         /// <summary>
@@ -201,7 +196,7 @@ namespace Corale.Colore.Core
         public override void SetAll(Color color)
         {
             _grid.Set(color);
-            SetGuid(NativeWrapper.CreateKeyboardEffect(_grid));
+            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.Custom, _grid));
         }
 
         /// <summary>
@@ -263,7 +258,7 @@ namespace Corale.Colore.Core
         public void SetCustom(Custom effect)
         {
             _grid = effect;
-            SetGuid(NativeWrapper.CreateKeyboardEffect(_grid));
+            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.Custom, _grid));
         }
 
         /// <summary>
@@ -282,7 +277,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">Effect options.</param>
         public void SetEffect(Effect effect)
         {
-            SetGuid(NativeWrapper.CreateKeyboardEffect(effect));
+            SetGuid(NativeWrapper.CreateKeyboardEffect(effect, IntPtr.Zero));
         }
 
         /// <summary>
@@ -293,13 +288,13 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         /// <param name="clear">Whether or not to clear the existing colors before setting this one.</param>
         /// <exception cref="ArgumentException">Thrown if the row or column parameters are outside the valid ranges.</exception>
-        public void SetPosition(Size row, Size column, Color color, bool clear = false)
+        public void SetPosition(int row, int column, Color color, bool clear = false)
         {
             if (clear)
                 _grid.Clear();
 
-            _grid[(int)row, (int)column] = color;
-            SetGuid(NativeWrapper.CreateKeyboardEffect(_grid));
+            _grid[row, column] = color;
+            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.Custom, _grid));
         }
 
         /// <summary>
@@ -314,7 +309,7 @@ namespace Corale.Colore.Core
                 _grid.Clear();
 
             _grid[key] = color;
-            SetGuid(NativeWrapper.CreateKeyboardEffect(_grid));
+            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.Custom, _grid));
         }
 
         /// <summary>
@@ -354,7 +349,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">Effect options.</param>
         public void SetReactive(Reactive effect)
         {
-            SetGuid(NativeWrapper.CreateKeyboardEffect(effect));
+            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.Reactive, effect));
         }
 
         /// <summary>
@@ -363,7 +358,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">Effect options.</param>
         public void SetStatic(Static effect)
         {
-            SetGuid(NativeWrapper.CreateKeyboardEffect(effect));
+            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.Static, effect));
         }
 
         /// <summary>
@@ -372,7 +367,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">Effect options.</param>
         public void SetWave(Wave effect)
         {
-            SetGuid(NativeWrapper.CreateKeyboardEffect(effect));
+            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.Wave, effect));
         }
     }
 }

@@ -19,11 +19,6 @@
 //     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
-//     Disclaimer: Corale and/or Colore is in no way affiliated with Razer and/or any
-//     of its employees and/or licensors. Corale, Adam Hellberg, and/or Brandon Scott
-//     do not take responsibility for any harm caused, direct or indirect, to any
-//     Razer peripherals via the use of Colore.
-//
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
 // ---------------------------------------------------------------------------------------
@@ -33,6 +28,7 @@ namespace Corale.Colore.Core
     using System;
     using System.Collections.Generic;
     using System.Runtime.InteropServices;
+    using System.Security;
 
     using Corale.Colore.Annotations;
     using Corale.Colore.Razer;
@@ -55,11 +51,6 @@ namespace Corale.Colore.Core
         private static readonly Dictionary<Guid, GenericDevice> Instances = new Dictionary<Guid, GenericDevice>();
 
         /// <summary>
-        /// The <see cref="Guid" /> of this device.
-        /// </summary>
-        private readonly Guid _deviceId;
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="GenericDevice" /> class.
         /// </summary>
         /// <param name="deviceId">The <see cref="Guid" /> of the device.</param>
@@ -70,19 +61,13 @@ namespace Corale.Colore.Core
             if (!Devices.IsValidId(deviceId))
                 throw new UnsupportedDeviceException(deviceId);
 
-            _deviceId = deviceId;
+            DeviceId = deviceId;
         }
 
         /// <summary>
         /// Gets the <see cref="Guid" /> of this device.
         /// </summary>
-        public Guid DeviceId
-        {
-            get
-            {
-                return _deviceId;
-            }
-        }
+        public Guid DeviceId { get; }
 
         /// <summary>
         /// Gets a <see cref="IGenericDevice" /> instance for the device
@@ -105,6 +90,7 @@ namespace Corale.Colore.Core
         /// Sets the color of all components on this device.
         /// </summary>
         /// <param name="color">Color to set.</param>
+        [SecuritySafeCritical]
         public override void SetAll(Color color)
         {
             var colorPtr = Marshal.AllocHGlobal(Marshal.SizeOf(color));

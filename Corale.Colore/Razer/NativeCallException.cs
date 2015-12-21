@@ -19,11 +19,6 @@
 //     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
-//     Disclaimer: Corale and/or Colore is in no way affiliated with Razer and/or any
-//     of its employees and/or licensors. Corale, Adam Hellberg, and/or Brandon Scott
-//     do not take responsibility for any harm caused, direct or indirect, to any
-//     Razer peripherals via the use of Colore.
-//
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
 // ---------------------------------------------------------------------------------------
@@ -34,6 +29,7 @@ namespace Corale.Colore.Razer
     using System.ComponentModel;
     using System.Globalization;
     using System.Runtime.Serialization;
+    using System.Security;
     using System.Security.Permissions;
 
     /// <summary>
@@ -48,27 +44,18 @@ namespace Corale.Colore.Razer
         private const string MessageTemplate = "Call to native Chroma SDK function {0} failed with error: {1}";
 
         /// <summary>
-        /// The function that was called.
-        /// </summary>
-        private readonly string _function;
-
-        /// <summary>
-        /// The result returned from the function.
-        /// </summary>
-        private readonly Result _result;
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="NativeCallException" /> class.
         /// </summary>
         /// <param name="function">The name of the function that was called.</param>
         /// <param name="result">The result returned from the called function.</param>
+        [SecuritySafeCritical]
         internal NativeCallException(string function, Result result)
             : base(
                 string.Format(CultureInfo.InvariantCulture, MessageTemplate, function, result),
                 new Win32Exception(result))
         {
-            _function = function;
-            _result = result;
+            Function = function;
+            Result = result;
         }
 
         /// <summary>
@@ -79,44 +66,33 @@ namespace Corale.Colore.Razer
         private NativeCallException(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
-            _function = info.GetString("Function");
-            _result = info.GetInt32("Result");
+            Function = info.GetString("Function");
+            Result = info.GetInt32("Result");
         }
 
         /// <summary>
         /// Gets the name of the native function that was called.
         /// </summary>
-        public string Function
-        {
-            get
-            {
-                return _function;
-            }
-        }
+        public string Function { get; }
 
         /// <summary>
         /// Gets the <see cref="Result" /> object indicating
         /// the result returned from the native function.
         /// </summary>
-        public Result Result
-        {
-            get
-            {
-                return _result;
-            }
-        }
+        public Result Result { get; }
 
         /// <summary>
         /// Adds object data to serialization object.
         /// </summary>
         /// <param name="info">Serialization info object.</param>
         /// <param name="context">Streaming context.</param>
+        [SecurityCritical]
         [SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
         public override void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             base.GetObjectData(info, context);
 
-            info.AddValue("Function", _function);
+            info.AddValue("Function", Function);
             info.AddValue("Result", (int)Result);
         }
     }
