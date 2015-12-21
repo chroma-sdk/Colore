@@ -32,6 +32,14 @@ $Env:GIT_EMAIL = $git_info[2]
 $Env:GIT_SUBJECT = $git_info[3]
 $Env:GIT_BRANCH = git --% name-rev --name-only HEAD
 
+If ($Env:GIT_BRANCH -eq "undefined")
+{
+    # If the branch is undefined we are most likely building a PR
+    # and the coveralls tool does not yet support sending PR
+    # data to coveralls properly
+    Exit
+}
+
 .\packages\OpenCover.4.6.166\tools\OpenCover.Console.exe --% -register "-filter:%OPENCOVER_FILTER%" "-target:%NUNIT_EXEC%" "-targetargs:%TARGET_ARGS%" "-targetdir:%TARGET_DIR%" -output:coverage.xml
 
 .\packages\coveralls.net.0.6.0\tools\csmacnz.Coveralls.exe --% --opencover -i coverage.xml --useRelativePaths --repoTokenVariable COVERALLS_REPO_TOKEN --jobId %CI_JOB_ID% --serviceName TeamCity --commitId "%GIT_HASH%" --commitBranch "%GIT_BRANCH%" --commitAuthor "%GIT_NAME%" --commitEmail "%GIT_EMAIL%" --commitMessage "%GIT_SUBJECT%"
