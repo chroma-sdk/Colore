@@ -1,4 +1,7 @@
-﻿namespace Corale.Colore.Tester
+﻿using System.Diagnostics;
+using System.Windows.Media;
+
+namespace Corale.Colore.Tester
 {
     using System;
     using System.Collections.Generic;
@@ -18,11 +21,21 @@
         private Duration _selectedReactiveDuration;
         private Direction _selectedWaveDirection;
 
+        public int Col { get; set; }
+
+        public int Row { get; set; }
+
+        public SolidColorBrush ColorOne { get; set; } = new SolidColorBrush();
+
+        public SolidColorBrush ColorTwo { get; set; } = new SolidColorBrush();
+
         public ViewModel()
         {
             this.SelectedKey = Key.A;
             this.SelectedReactiveDuration = Duration.Long;
             this.SelectedWaveDirection = Direction.LeftToRight;
+            ColorOne.Color = Color.Red;
+            ColorTwo.Color = Color.Blue;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -71,15 +84,20 @@
             }
         }
 
-        public ICommand AllCommand => new DelegateCommand(() => Core.Keyboard.Instance.SetAll(Color.Red));
+        public ICommand AllCommand => new DelegateCommand(() => Core.Keyboard.Instance.SetAll(ColorOne.Color));
 
-        public ICommand BreathingCommand => new DelegateCommand(() => Core.Keyboard.Instance.SetBreathing(Color.Red, Color.Blue));
+        public ICommand BreathingCommand => new DelegateCommand(() => Core.Keyboard.Instance.SetBreathing(ColorOne.Color, ColorTwo.Color));
 
-        public ICommand ReactiveCommand => new DelegateCommand(() => Core.Keyboard.Instance.SetReactive(Color.Red, this.SelectedReactiveDuration));
+        public ICommand ReactiveCommand => new DelegateCommand(() => Core.Keyboard.Instance.SetReactive(ColorOne.Color, this.SelectedReactiveDuration));
 
         public ICommand WaveCommand => new DelegateCommand(() => Core.Keyboard.Instance.SetWave(this.SelectedWaveDirection));
 
-        public ICommand StaticCommand => new DelegateCommand(() => Core.Keyboard.Instance.SetStatic(new Static(Color.Red)));
+        public ICommand StaticCommand => new DelegateCommand(() => Core.Keyboard.Instance.SetStatic(new Static(ColorOne.Color)));
+
+        public ICommand IndexerCommand
+            => new DelegateCommand(() => Core.Keyboard.Instance[this.Row, this.Col] = ColorOne.Color);
+
+        public ICommand KeyCommand => new DelegateCommand(() => Core.Keyboard.Instance[SelectedKey] = ColorOne.Color);
 
         public IEnumerable<Razer.Keyboard.Key> KeyValues => Enum.GetValues(typeof(Razer.Keyboard.Key)).Cast<Razer.Keyboard.Key>();
 

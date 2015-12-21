@@ -37,11 +37,11 @@
                         <Label Content="Colors" HorizontalAlignment="Center" FontSize="16px"></Label>
                         <StackPanel Orientation="Horizontal">
                             <Label>Color One</Label>
-                            <xckt:ColorPicker Margin="3,0,0,0" ShowDropDownButton="False" SelectedColor="Red" ShowAvailableColors="False" ShowRecentColors="True" Width="55"/>
+                            <xckt:ColorPicker Margin="3,0,0,0" ShowDropDownButton="False" SelectedColor="{Binding ColorOne.Color}" ShowAvailableColors="False" ShowRecentColors="True" Width="55"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0,4,0,0">
                             <Label>Color Two</Label>
-                            <xckt:ColorPicker Margin="4,0,0,0" ShowDropDownButton="False" SelectedColor="Blue" ShowAvailableColors="False" ShowRecentColors="True"/>
+                            <xckt:ColorPicker Margin="4,0,0,0" ShowDropDownButton="False" SelectedColor="{Binding ColorTwo.Color}" ShowAvailableColors="False" ShowRecentColors="True"/>
                         </StackPanel>
 
                         <Label Content="Key/Position Effects" HorizontalAlignment="Center" FontSize="16px"></Label>
@@ -51,12 +51,15 @@
                         </StackPanel>
                         <StackPanel Height="40" VerticalAlignment="Top" Margin="10,0" Grid.Column="1" Orientation="Horizontal">
                             <Label x:Name="RowLabel" Content="Row" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                            <TextBox x:Name="RowPositionTextbox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="28"/>
+                            <TextBox x:Name="RowPositionTextbox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding Row, Mode=TwoWay}" VerticalAlignment="Top" Width="28"/>
                             <Label x:Name="ColLabel" Content="Col"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                            <TextBox x:Name="ColumnPositionTextbox" HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="28"/>
+                            <TextBox x:Name="ColumnPositionTextbox" HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="{Binding Col, Mode=TwoWay}" VerticalAlignment="Top" Width="28"/>
 
                         </StackPanel>
-
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button x:Name="SetKey" Content="SetKey" Height="26"  HorizontalAlignment="Center" Command="{Binding KeyCommand}"/>
+                            <Button x:Name="SetIndexer" Content="SetIndexer" Margin="8,0,0,0" Height="26"  HorizontalAlignment="Center" Command="{Binding IndexerCommand}"/>
+                        </StackPanel>
                     </StackPanel>
                 </Grid>
             </TabItem>
