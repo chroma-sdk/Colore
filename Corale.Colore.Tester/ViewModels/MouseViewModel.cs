@@ -1,4 +1,7 @@
-﻿namespace Corale.Colore.Tester.ViewModels
+﻿using Corale.Colore.Core;
+using Corale.Colore.Razer;
+
+namespace Corale.Colore.Tester.ViewModels
 {
     using System;
     using System.Collections.Generic;

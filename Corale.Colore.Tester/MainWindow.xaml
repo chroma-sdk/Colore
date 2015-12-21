@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         Title="Colore Integration Testing Tool" Height="300" Width="679.577">
     <Grid>
-       
+
         <TabControl x:Name="DevicesTabControl" HorizontalAlignment="Left" Height="269" VerticalAlignment="Top" Width="672">
             <TabItem Header="Keyboard">
                 <Grid Background="#FFE5E5E5">
@@ -246,7 +246,32 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Misc">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <Grid Background="#FFE5E5E5">
+                        <Grid.DataContext>
+                            <viewModels:MiscViewModel/>
+                        </Grid.DataContext>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40*"/>
+                            <ColumnDefinition Width="24*"/>
+                            <ColumnDefinition Width="10*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel HorizontalAlignment="Left" Height="241" VerticalAlignment="Top" Grid.Column="0" Width="243">
+                            <Label Content="Misc Commands" HorizontalAlignment="Center" FontSize="16px"/>
+                            <Button x:Name="SetAllDevicesButton" Content="Set All Devices" VerticalAlignment="Top" Margin="84,6,70,0" Command="{Binding AllCommand, Mode=OneWay}"/>
+                            <Button x:Name="InitializeButton" Content="Initialize" VerticalAlignment="Top" Margin="84,6,70,0" Command="{Binding InitializeCommand, Mode=OneWay}"/>
+                            <Button x:Name="UninitializeButton" Content="Uninitialize" VerticalAlignment="Top" Margin="84,6,70,0" Command="{Binding UninitializeCommand, Mode=OneWay}"/>
+                        </StackPanel>
+                        <StackPanel Height="241" VerticalAlignment="Top" Margin="10,0" Grid.Column="1" Orientation="Vertical">
+                            <Label Content="Colors" HorizontalAlignment="Center" FontSize="16px"/>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="Color One"/>
+                                <xckt:ColorPicker Margin="3,0,0,0" ShowDropDownButton="False" SelectedColor="{Binding ColorOne.Color}" ShowAvailableColors="False" ShowRecentColors="True" Width="55"/>
+                            </StackPanel>
+                            <StackPanel/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
             </TabItem>
         </TabControl>
 

@@ -62,6 +62,7 @@
     </Compile>
     <Compile Include="Classes\DelegateCommand.cs" />
     <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="ViewModels\MiscViewModel.cs" />
     <Compile Include="ViewModels\HeadsetViewModel.cs" />
     <Compile Include="ViewModels\KeyboardViewModel.cs" />
     <Compile Include="ViewModels\KeypadViewModel.cs" />
