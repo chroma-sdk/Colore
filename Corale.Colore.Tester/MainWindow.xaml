@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Corale.Colore.Tester"
+        xmlns:xckt="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
         Title="Colore Integration Testing Tool" Height="300" Width="679.577">
     <Grid>
@@ -14,32 +15,48 @@
             <TabItem Header="Keyboard">
                 <Grid Background="#FFE5E5E5">
                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40*"/>
                         <ColumnDefinition Width="24*"/>
-                        <ColumnDefinition Width="24*"/>
-                        <ColumnDefinition Width="29*"/>
+                        <ColumnDefinition Width="10*"/>
                     </Grid.ColumnDefinitions>
-                    <StackPanel HorizontalAlignment="Left" Height="241" VerticalAlignment="Top" Width="144">
+                    <StackPanel HorizontalAlignment="Left" Height="241" VerticalAlignment="Top" Grid.Column="0" Width="243">
                         <Label Content="Simple Effects" HorizontalAlignment="Center" FontSize="16px"></Label>
-                        <Button x:Name="SetAllButton" Content="SetAll" VerticalAlignment="Top" Width="75" Margin="0,6,0,0"/>
-                        <Button x:Name="SetBreathingButton" Content="SetBreathing" VerticalAlignment="Top" Width="75" Margin="0,6,0,0"/>
-                        <Button x:Name="SetReactiveButton" Content="SetReactive" VerticalAlignment="Top" Width="75" Margin="0,6,0,0"/>
-                        <Button x:Name="SetWaveButton" Content="SetWave" VerticalAlignment="Top" Width="75" Margin="0,6,0,0"/>
-                        <Button x:Name="SetStaticButton" Content="SetStatic" VerticalAlignment="Top" Width="75" Margin="0,6,0,0"/>
+                        <Button x:Name="SetAllButton" Content="SetAll" VerticalAlignment="Top" Width="75" Margin="0,6,0,0" Command="{Binding AllCommand, Mode=OneWay}"/>
+                        <Button x:Name="SetBreathingButton" Content="SetBreathing" VerticalAlignment="Top" Width="75" Margin="0,6,0,0" Command="{Binding BreathingCommand, Mode=OneWay}"/>
+                        <StackPanel Orientation="Horizontal" Margin="0,6,0,0" HorizontalAlignment="Center">
+                            <Button x:Name="SetReactiveButton" Content="SetReactive" VerticalAlignment="Top" Width="75" Command="{Binding ReactiveCommand, Mode=OneWay}"/>
+                            <ComboBox Height="22" Margin="8,0,0,0" Width="98" ItemsSource="{Binding ReactiveDurationValues}" SelectedItem="{Binding SelectedReactiveDuration, Mode=TwoWay}"></ComboBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,6,0,0" HorizontalAlignment="Center">
+                            <Button x:Name="SetWaveButton" Content="SetWave" VerticalAlignment="Top" Width="75" Command="{Binding WaveCommand, Mode=OneWay}"/>
+                            <ComboBox Height="22" Margin="8,0,0,0" Width="98" ItemsSource="{Binding WaveDirectionValues}" SelectedItem="{Binding SelectedWaveDirection, Mode=TwoWay}"></ComboBox>
+                        </StackPanel>
+                        <Button x:Name="SetStaticButton" Content="SetStatic" VerticalAlignment="Top" Width="75" Margin="0,6,0,0" Command="{Binding StaticCommand, Mode=OneWay}"/>
                     </StackPanel>
                     <StackPanel Height="241" VerticalAlignment="Top" Margin="10,0" Grid.Column="1" Orientation="Vertical">
+                        <Label Content="Colors" HorizontalAlignment="Center" FontSize="16px"></Label>
+                        <StackPanel Orientation="Horizontal">
+                            <Label>Color One</Label>
+                            <xckt:ColorPicker Margin="3,0,0,0" ShowDropDownButton="False" SelectedColor="Red" ShowAvailableColors="False" ShowRecentColors="True" Width="55"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,4,0,0">
+                            <Label>Color Two</Label>
+                            <xckt:ColorPicker Margin="4,0,0,0" ShowDropDownButton="False" SelectedColor="Blue" ShowAvailableColors="False" ShowRecentColors="True"/>
+                        </StackPanel>
+
                         <Label Content="Key/Position Effects" HorizontalAlignment="Center" FontSize="16px"></Label>
                         <StackPanel Height="40" VerticalAlignment="Top" Margin="10,0" Grid.Column="1" Orientation="Horizontal">
                             <Label x:Name="KeyLabel" Content="Key" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                            <ComboBox x:Name="KeySelectionComboBox" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="130" Grid.Column="1" ItemsSource="{Binding KeyValues}"/>
-                         </StackPanel>
+                            <ComboBox x:Name="KeySelectionComboBox" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="130" Grid.Column="1" ItemsSource="{Binding KeyValues}" SelectedItem="{Binding SelectedKey, Mode=TwoWay}"/>
+                        </StackPanel>
                         <StackPanel Height="40" VerticalAlignment="Top" Margin="10,0" Grid.Column="1" Orientation="Horizontal">
                             <Label x:Name="RowLabel" Content="Row" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                             <TextBox x:Name="RowPositionTextbox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="28"/>
                             <Label x:Name="ColLabel" Content="Col"  HorizontalAlignment="Left" VerticalAlignment="Top"/>
                             <TextBox x:Name="ColumnPositionTextbox" HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="28"/>
-                           
+
                         </StackPanel>
-                        
+
                     </StackPanel>
                 </Grid>
             </TabItem>
