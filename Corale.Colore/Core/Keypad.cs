@@ -186,11 +186,11 @@ namespace Corale.Colore.Core
         /// Sets a <see cref="Reactive" /> effect on the keypad
         /// with the specified parameters.
         /// </summary>
-        /// <param name="duration">Duration of the effect.</param>
         /// <param name="color">Color of the effect.</param>
-        public void SetReactive(Duration duration, Color color)
+        /// <param name="duration">Duration of the effect.</param>
+        public void SetReactive(Color color, Duration duration)
         {
-            SetReactive(new Reactive(duration, color));
+            SetReactive(new Reactive(color, duration));
         }
 
         /// <summary>
