@@ -25,7 +25,9 @@
 
 namespace Corale.Colore.Tester
 {
+    using System.Text.RegularExpressions;
     using System.Windows;
+    using System.Windows.Input;
 
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -35,6 +37,17 @@ namespace Corale.Colore.Tester
         public MainWindow()
         {
             this.InitializeComponent();
+        }
+
+        private void TextValidation(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !IsTextAllowed(e.Text);
+        }
+
+        private bool IsTextAllowed(string text)
+        {
+            var regex = new Regex("[^0-9.-]+");
+            return !regex.IsMatch(text);
         }
     }
 }
