@@ -29,11 +29,13 @@ namespace Corale.Colore.Tester
     using System.Collections.Generic;
     using System.ComponentModel;
     using System.Linq;
+    using System.Windows;
     using System.Windows.Input;
     using System.Windows.Media;
     using Corale.Colore.Razer.Keyboard.Effects;
     using Corale.Colore.Razer.Mouse;
     using Corale.Colore.Tester.Classes;
+    using Duration = Corale.Colore.Razer.Keyboard.Effects.Duration;
     using Key = Corale.Colore.Razer.Keyboard.Key;
 
     public class KeyboardViewModel : INotifyPropertyChanged
@@ -112,19 +114,18 @@ namespace Corale.Colore.Tester
 
         public ICommand ReactiveCommand
             =>
-                new DelegateCommand(
-                    () => Core.Keyboard.Instance.SetReactive(ColorOne.Color, this.SelectedReactiveDuration));
+                new DelegateCommand(SetReactiveEffect);
 
         public ICommand WaveCommand
-            => new DelegateCommand(() => Core.Keyboard.Instance.SetWave(this.SelectedWaveDirection));
+            => new DelegateCommand(SetWaveEffect);
 
         public ICommand StaticCommand
             => new DelegateCommand(() => Core.Keyboard.Instance.SetStatic(new Static(ColorOne.Color)));
 
         public ICommand IndexerCommand
-            => new DelegateCommand(() => Core.Keyboard.Instance[this.Row, this.Col] = ColorOne.Color);
+            => new DelegateCommand(SetIndexerEffect);
 
-        public ICommand KeyCommand => new DelegateCommand(() => Core.Keyboard.Instance[SelectedKey] = ColorOne.Color);
+        public ICommand KeyCommand => new DelegateCommand(SetKeyColor);
 
         public ICommand ClearCommand => new DelegateCommand(() => Core.Keyboard.Instance.Clear());
 
@@ -138,6 +139,54 @@ namespace Corale.Colore.Tester
         protected virtual void OnPropertyChanged(string propertyName)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void SetReactiveEffect()
+        {
+            try
+            {
+                Core.Keyboard.Instance.SetReactive(ColorOne.Color, this.SelectedReactiveDuration);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void SetWaveEffect()
+        {
+            try
+            {
+                Core.Keyboard.Instance.SetWave(this.SelectedWaveDirection);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void SetKeyColor()
+        {
+            try
+            {
+                Core.Keyboard.Instance[SelectedKey] = ColorOne.Color;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void SetIndexerEffect()
+        {
+            try
+            {
+                Core.Keyboard.Instance[this.Row, this.Col] = ColorOne.Color;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

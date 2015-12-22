@@ -106,12 +106,19 @@
                             <ColumnDefinition Width="10*" />
                         </Grid.ColumnDefinitions>
                         <StackPanel HorizontalAlignment="Left" Height="241" VerticalAlignment="Top" Grid.Column="0"
-                                    Width="243">
+                                    Width="360">
                             <Label Content="Simple Effects" HorizontalAlignment="Center" FontSize="16px" />
                             <Button x:Name="SetAllButton1" Content="SetAll" VerticalAlignment="Top" Width="75"
                                     Margin="0,6,0,0" Command="{Binding AllCommand, Mode=OneWay}" />
-                            <Button x:Name="SetBreathingButton1" Content="SetBreathing" VerticalAlignment="Top"
-                                    Width="75" Margin="0,6,0,0" Command="{Binding BreathingCommand, Mode=OneWay}" />
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                             <Button x:Name="SetBreathingColorMouseButton" Content="One Color Breathe" VerticalAlignment="Top"
+                                    Width="110" Margin="2,6,0,0" Command="{Binding BreathingOneColorCommand, Mode=OneWay}" />
+                                <Button x:Name="SetBreathingColorsMouseButton" Content="Two Color Breathe" VerticalAlignment="Top"
+                                    Width="110" Margin="2,6,0,0" Command="{Binding BreathingTwoColorCommand, Mode=OneWay}" />
+                                <Button x:Name="SetBreathingRandomMouseButton" Content="Random Color Breathe" VerticalAlignment="Top"
+                                    Width="130" Margin="2,6,0,0" Command="{Binding BreathingRandomColorCommand, Mode=OneWay}" />
+                            </StackPanel>
+
                             <StackPanel Orientation="Horizontal" Margin="0,6,0,0" HorizontalAlignment="Center">
                                 <Button x:Name="SetReactiveButton1" Content="SetReactive" VerticalAlignment="Top"
                                         Width="75" Command="{Binding ReactiveCommand, Mode=OneWay}" />
@@ -148,34 +155,29 @@
                                                   SelectedColor="{Binding ColorTwo.Color}" ShowAvailableColors="False"
                                                   ShowRecentColors="True" />
                             </StackPanel>
+                           
+                            <Label Content="Led/Position Effects" HorizontalAlignment="Center" FontSize="16px" />
                             <StackPanel Height="40" VerticalAlignment="Top" Margin="10,0" Grid.Column="1"
                                         Orientation="Horizontal">
-                                <Label x:Name="RowLabel1" Content="Row" HorizontalAlignment="Left"
-                                       VerticalAlignment="Top" />
-                                <TextBox x:Name="RowPositionTextbox1" HorizontalAlignment="Left" Height="23"
-                                         TextWrapping="Wrap" Text="{Binding Row, Mode=TwoWay}" VerticalAlignment="Top"
-                                         Width="28" />
-                                <Label x:Name="ColLabel1" Content="Col" HorizontalAlignment="Left"
-                                       VerticalAlignment="Top" />
-                                <TextBox x:Name="ColumnPositionTextbox1" HorizontalAlignment="Left" Height="23"
-                                         TextWrapping="Wrap" Text="{Binding Col, Mode=TwoWay}" VerticalAlignment="Top"
-                                         Width="28" />
-
-                            </StackPanel>
-                            <Label Content="Key/Position Effects" HorizontalAlignment="Center" FontSize="16px" />
-                            <StackPanel Height="40" VerticalAlignment="Top" Margin="10,0" Grid.Column="1"
-                                        Orientation="Horizontal">
-                                <Label x:Name="LedLabel" Content="Key" HorizontalAlignment="Left"
+                                <Label x:Name="LedLabel" Content="Led" HorizontalAlignment="Left"
                                        VerticalAlignment="Top" />
                                 <ComboBox x:Name="LedComboBox" HorizontalAlignment="Left" VerticalAlignment="Top"
                                           Width="130" Grid.Column="1" ItemsSource="{Binding LedValues}"
                                           SelectedItem="{Binding SelectedLed, Mode=TwoWay}" />
                             </StackPanel>
+                            <StackPanel Height="40" VerticalAlignment="Top" Margin="10,0" Grid.Column="1"
+                                        Orientation="Horizontal">
+                                <Label x:Name="GridLed" Content="Led" HorizontalAlignment="Left"
+                                       VerticalAlignment="Top" />
+                                <ComboBox x:Name="GridLedComboBox" HorizontalAlignment="Left" VerticalAlignment="Top"
+                                          Width="130" Grid.Column="1" ItemsSource="{Binding GridLedValues}"
+                                          SelectedItem="{Binding SelectedGridLed, Mode=TwoWay}" />
+                            </StackPanel>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                                 <Button x:Name="SetLed" Content="SetLed" Height="26" HorizontalAlignment="Center"
-                                        Command="{Binding KeyCommand}" />
-                                <Button x:Name="SetMouseIndexer" Content="SetIndexer" Margin="8,0,0,0" Height="26"
-                                        HorizontalAlignment="Center" Command="{Binding IndexerCommand}" />
+                                        Command="{Binding LedCommand}" />
+                                <Button x:Name="SetMouseGridLed" Content="Set Grid Led" Margin="8,0,0,0" Height="26"
+                                        HorizontalAlignment="Center" Command="{Binding GridLedCommand}" />
                             </StackPanel>
                         </StackPanel>
                     </Grid>

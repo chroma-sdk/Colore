@@ -29,6 +29,7 @@ namespace Corale.Colore.Tester.ViewModels
     using System.Collections.Generic;
     using System.ComponentModel;
     using System.Linq;
+    using System.Windows;
     using System.Windows.Input;
     using System.Windows.Media;
     using Corale.Colore.Razer.Mousepad.Effects;
@@ -73,13 +74,13 @@ namespace Corale.Colore.Tester.ViewModels
             => new DelegateCommand(() => Core.Mousepad.Instance.SetBreathing(this.ColorOne.Color, this.ColorTwo.Color));
 
         public ICommand WaveCommand
-            => new DelegateCommand(() => Core.Mousepad.Instance.SetWave(this.SelectedWaveDirection));
+            => new DelegateCommand(SetWaveEffect);
 
         public ICommand StaticCommand
             => new DelegateCommand(() => Core.Mousepad.Instance.SetStatic(this.ColorOne.Color));
 
         public ICommand IndexerCommand
-            => new DelegateCommand(() => Core.Mousepad.Instance[this.Index] = this.ColorOne.Color);
+            => new DelegateCommand(SetIndexerEffect);
 
         public ICommand ClearCommand => new DelegateCommand(() => Core.Mousepad.Instance.Clear());
 
@@ -92,6 +93,30 @@ namespace Corale.Colore.Tester.ViewModels
         protected virtual void OnPropertyChanged(string propertyName)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void SetWaveEffect()
+        {
+            try
+            {
+                Core.Mousepad.Instance.SetWave(this.SelectedWaveDirection);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void SetIndexerEffect()
+        {
+            try
+            {
+                Core.Mousepad.Instance[this.Index] = this.ColorOne.Color;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
