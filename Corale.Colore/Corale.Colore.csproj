@@ -22,9 +22,10 @@
     <DebugType>full</DebugType>
     <PlatformTarget>x64</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>Corale.Colore.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\Corale.Colore.ruleset</CodeAnalysisRuleSet>
     <DocumentationFile>bin\x64\Debug\Corale.Colore.xml</DocumentationFile>
     <RunCodeAnalysis>false</RunCodeAnalysis>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <OutputPath>bin\x64\Release\</OutputPath>
@@ -33,9 +34,10 @@
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>x64</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>Corale.Colore.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\Corale.Colore.ruleset</CodeAnalysisRuleSet>
     <DocumentationFile>bin\x64\Release\Corale.Colore.xml</DocumentationFile>
     <RunCodeAnalysis>true</RunCodeAnalysis>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -44,9 +46,10 @@
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>Corale.Colore.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\Corale.Colore.ruleset</CodeAnalysisRuleSet>
     <DocumentationFile>bin\x86\Debug\Corale.Colore.xml</DocumentationFile>
     <RunCodeAnalysis>false</RunCodeAnalysis>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\Release\</OutputPath>
@@ -55,9 +58,10 @@
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>x86</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>Corale.Colore.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\Corale.Colore.ruleset</CodeAnalysisRuleSet>
     <DocumentationFile>bin\x86\Release\Corale.Colore.xml</DocumentationFile>
     <RunCodeAnalysis>true</RunCodeAnalysis>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
@@ -67,8 +71,9 @@
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>Corale.Colore.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\Corale.Colore.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>false</RunCodeAnalysis>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <OutputPath>bin\Release\</OutputPath>
@@ -78,8 +83,9 @@
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>Corale.Colore.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\Corale.Colore.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>true</RunCodeAnalysis>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
@@ -198,7 +204,6 @@
     <Compile Include="Events\DeviceAccessEventArgs.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Corale.Colore.ruleset" />
     <None Include="packages.config" />
     <AdditionalFiles Include="stylecop.json" />
   </ItemGroup>
