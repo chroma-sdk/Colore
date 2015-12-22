@@ -45,6 +45,7 @@ namespace Corale.Colore.Tester.ViewModels
             this.ColorTwo.Color = Core.Color.Blue;
         }
 
+        /// <inheritdoc/>
         public event PropertyChangedEventHandler PropertyChanged;
 
         public int Index { get; set; }
@@ -69,16 +70,22 @@ namespace Corale.Colore.Tester.ViewModels
 
         public ICommand AllCommand => new DelegateCommand(() => Core.Mousepad.Instance.SetAll(this.ColorOne.Color));
 
-        public ICommand BreathingCommand => new DelegateCommand(() => Core.Mousepad.Instance.SetBreathing(this.ColorOne.Color, this.ColorTwo.Color));
+        public ICommand BreathingCommand
+            => new DelegateCommand(() => Core.Mousepad.Instance.SetBreathing(this.ColorOne.Color, this.ColorTwo.Color));
 
-        public ICommand WaveCommand => new DelegateCommand(() => Core.Mousepad.Instance.SetWave(this.SelectedWaveDirection));
+        public ICommand WaveCommand
+            => new DelegateCommand(() => Core.Mousepad.Instance.SetWave(this.SelectedWaveDirection));
 
-        public ICommand StaticCommand => new DelegateCommand(() => Core.Mousepad.Instance.SetStatic(this.ColorOne.Color));
+        public ICommand StaticCommand
+            => new DelegateCommand(() => Core.Mousepad.Instance.SetStatic(this.ColorOne.Color));
 
         public ICommand IndexerCommand
             => new DelegateCommand(() => Core.Mousepad.Instance[this.Index] = this.ColorOne.Color);
 
-        public IEnumerable<Razer.Mouse.Led> LedValues => Enum.GetValues(typeof(Razer.Mouse.Led)).Cast<Razer.Mouse.Led>();
+        public ICommand ClearCommand => new DelegateCommand(() => Core.Mousepad.Instance.Clear());
+
+        public IEnumerable<Razer.Mouse.Led> LedValues
+            => Enum.GetValues(typeof(Razer.Mouse.Led)).Cast<Razer.Mouse.Led>();
 
         public IEnumerable<Direction> WaveDirectionValues => Enum.GetValues(typeof(Direction)).Cast<Direction>();
 

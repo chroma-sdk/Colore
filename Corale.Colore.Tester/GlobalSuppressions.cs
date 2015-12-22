@@ -1,5 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
-// <copyright file="DelegateCommand.cs" company="Corale">
+﻿// <copyright file="GlobalSuppressions.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -21,37 +20,5 @@
 //
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
-// ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Tester.Classes
-{
-    using System;
-    using System.Windows.Input;
-
-    public class DelegateCommand : ICommand
-    {
-        public DelegateCommand(Action action)
-        {
-            this.CommandAction = action;
-        }
-
-#pragma warning disable CS0067
-        /// <inheritdoc/>
-        public event EventHandler CanExecuteChanged;
-#pragma warning restore CS0067
-
-        public Action CommandAction { get; }
-
-        /// <inheritdoc/>
-        public void Execute(object parameter)
-        {
-            this.CommandAction();
-        }
-
-        /// <inheritdoc/>
-        public bool CanExecute(object parameter)
-        {
-            return true;
-        }
-    }
-}
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1652:Enable XML documentation output", Justification = "Tests don't need docs")]

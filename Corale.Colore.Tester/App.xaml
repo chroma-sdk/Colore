@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:Corale.Colore.Tester"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+
     </Application.Resources>
 </Application>

@@ -1,10 +1,34 @@
-﻿namespace Corale.Colore.Tester.ViewModels
+﻿// ---------------------------------------------------------------------------------------
+// <copyright file="KeypadViewModel.cs" company="Corale">
+//     Copyright © 2015 by Adam Hellberg and Brandon Scott.
+//
+//     Permission is hereby granted, free of charge, to any person obtaining a copy of
+//     this software and associated documentation files (the "Software"), to deal in
+//     the Software without restriction, including without limitation the rights to
+//     use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+//     of the Software, and to permit persons to whom the Software is furnished to do
+//     so, subject to the following conditions:
+//
+//     The above copyright notice and this permission notice shall be included in all
+//     copies or substantial portions of the Software.
+//
+//     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//     FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+//     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+//     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+//
+//     "Razer" is a trademark of Razer USA Ltd.
+// </copyright>
+// ---------------------------------------------------------------------------------------
+
+namespace Corale.Colore.Tester.ViewModels
 {
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
     using System.Linq;
-    using System.Text;
     using System.Windows.Input;
     using System.Windows.Media;
     using Corale.Colore.Razer.Keypad.Effects;
@@ -17,6 +41,7 @@
         private Key _selectedKey;
         private Duration _selectedReactiveDuration;
         private Direction _selectedWaveDirection;
+
         public KeypadViewModel()
         {
             this.SelectedKey = Key.A;
@@ -26,6 +51,9 @@
             ColorTwo.Color = Core.Color.Blue;
         }
 
+        /// <inheritdoc/>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public int Col { get; set; }
 
         public int Row { get; set; }
@@ -33,8 +61,6 @@
         public SolidColorBrush ColorOne { get; set; } = new SolidColorBrush();
 
         public SolidColorBrush ColorTwo { get; set; } = new SolidColorBrush();
-
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public Led Keys { get; set; }
 
@@ -82,13 +108,19 @@
 
         public ICommand AllCommand => new DelegateCommand(() => Core.Keypad.Instance.SetAll(ColorOne.Color));
 
-        public ICommand BreathingCommand => new DelegateCommand(() => Core.Keypad.Instance.SetBreathing(ColorOne.Color, ColorTwo.Color));
+        public ICommand BreathingCommand
+            => new DelegateCommand(() => Core.Keypad.Instance.SetBreathing(ColorOne.Color, ColorTwo.Color));
 
-        public ICommand ReactiveCommand => new DelegateCommand(() => Core.Keypad.Instance.SetReactive(this.SelectedReactiveDuration, ColorOne.Color));
+        public ICommand ReactiveCommand
+            =>
+                new DelegateCommand(
+                    () => Core.Keypad.Instance.SetReactive(this.SelectedReactiveDuration, ColorOne.Color));
 
-        public ICommand WaveCommand => new DelegateCommand(() => Core.Keypad.Instance.SetWave(this.SelectedWaveDirection));
+        public ICommand WaveCommand
+            => new DelegateCommand(() => Core.Keypad.Instance.SetWave(this.SelectedWaveDirection));
 
-        public ICommand StaticCommand => new DelegateCommand(() => Core.Keypad.Instance.SetStatic(new Static(ColorOne.Color)));
+        public ICommand StaticCommand
+            => new DelegateCommand(() => Core.Keypad.Instance.SetStatic(new Static(ColorOne.Color)));
 
         public ICommand IndexerCommand
             => new DelegateCommand(() => Core.Keypad.Instance[this.Row, this.Col] = ColorOne.Color);
@@ -96,6 +128,8 @@
         public IEnumerable<Direction> WaveDirectionValues => Enum.GetValues(typeof(Direction)).Cast<Direction>();
 
         public IEnumerable<Duration> ReactiveDurationValues => Enum.GetValues(typeof(Duration)).Cast<Duration>();
+
+        public ICommand ClearCommand => new DelegateCommand(() => Core.Keypad.Instance.Clear());
 
         [Annotations.NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged(string propertyName)

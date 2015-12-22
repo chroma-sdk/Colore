@@ -1,5 +1,27 @@
-﻿using Corale.Colore.Core;
-using Corale.Colore.Razer;
+﻿// ---------------------------------------------------------------------------------------
+// <copyright file="MouseViewModel.cs" company="Corale">
+//     Copyright © 2015 by Adam Hellberg and Brandon Scott.
+//
+//     Permission is hereby granted, free of charge, to any person obtaining a copy of
+//     this software and associated documentation files (the "Software"), to deal in
+//     the Software without restriction, including without limitation the rights to
+//     use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+//     of the Software, and to permit persons to whom the Software is furnished to do
+//     so, subject to the following conditions:
+//
+//     The above copyright notice and this permission notice shall be included in all
+//     copies or substantial portions of the Software.
+//
+//     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//     FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+//     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+//     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+//
+//     "Razer" is a trademark of Razer USA Ltd.
+// </copyright>
+// ---------------------------------------------------------------------------------------
 
 namespace Corale.Colore.Tester.ViewModels
 {
@@ -15,9 +37,11 @@ namespace Corale.Colore.Tester.ViewModels
 
     public class MouseViewModel : INotifyPropertyChanged
     {
-        private Led selectedLed;
-        private Duration selectedReactiveDuration;
-        private Direction selectedWaveDirection;
+        private Led _selectedLed;
+
+        private Duration _selectedReactiveDuration;
+
+        private Direction _selectedWaveDirection;
 
         public MouseViewModel()
         {
@@ -44,12 +68,12 @@ namespace Corale.Colore.Tester.ViewModels
         {
             get
             {
-                return this.selectedLed;
+                return this._selectedLed;
             }
 
             set
             {
-                this.selectedLed = value;
+                this._selectedLed = value;
                 this.OnPropertyChanged(nameof(this.SelectedLed));
             }
         }
@@ -58,12 +82,12 @@ namespace Corale.Colore.Tester.ViewModels
         {
             get
             {
-                return this.selectedReactiveDuration;
+                return this._selectedReactiveDuration;
             }
 
             set
             {
-                this.selectedReactiveDuration = value;
+                this._selectedReactiveDuration = value;
                 this.OnPropertyChanged(nameof(this.SelectedReactiveDuration));
             }
         }
@@ -72,12 +96,12 @@ namespace Corale.Colore.Tester.ViewModels
         {
             get
             {
-                return this.selectedWaveDirection;
+                return this._selectedWaveDirection;
             }
 
             set
             {
-                this.selectedWaveDirection = value;
+                this._selectedWaveDirection = value;
                 this.OnPropertyChanged(nameof(this.SelectedWaveDirection));
             }
         }
@@ -98,6 +122,8 @@ namespace Corale.Colore.Tester.ViewModels
         public ICommand KeyCommand => new DelegateCommand(() => Core.Mouse.Instance[this.SelectedLed] = this.ColorOne.Color);
 
         public ICommand BlinkingCommand => new DelegateCommand(() => Core.Mouse.Instance.SetBlinking(this.ColorOne.Color, this.SelectedLed));
+
+        public ICommand ClearCommand => new DelegateCommand(() => Core.Mouse.Instance.Clear());
 
         public IEnumerable<Razer.Mouse.Led> LedValues => Enum.GetValues(typeof(Razer.Mouse.Led)).Cast<Razer.Mouse.Led>();
 
