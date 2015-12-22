@@ -133,7 +133,7 @@ namespace Corale.Colore.Tests.Core
         [Test]
         public void ShouldDefaultToEmptyColor()
         {
-            Assert.AreEqual(new Color().Value, 0);
+            Assert.AreEqual(default(Color).Value, 0);
         }
 
         [Test]
@@ -219,8 +219,8 @@ namespace Corale.Colore.Tests.Core
             const uint A = 0x00FFFFFF;
             var b = new Color(0x00FFFFFF);
             Assert.AreEqual(A, b);
-            Assert.True(A == b);
-            Assert.False(A != b);
+            Assert.True(b == A);
+            Assert.False(b != A);
         }
 
         [Test]
@@ -237,8 +237,8 @@ namespace Corale.Colore.Tests.Core
             const uint A = 0x00FF00FF;
             var b = new Color(0x00FFFFFF);
             Assert.AreNotEqual(A, b);
-            Assert.False(A == b);
-            Assert.True(A != b);
+            Assert.False(b == A);
+            Assert.True(b != A);
         }
 
         [Test]
