@@ -51,12 +51,12 @@ namespace Corale.Colore.Razer.Keypad.Effects
         /// <summary>
         /// Initializes a new instance of the <see cref="Reactive" /> struct.
         /// </summary>
-        /// <param name="duration">Duration of the effect.</param>
         /// <param name="color">Color of the effect.</param>
-        public Reactive(Duration duration, Color color)
+        /// <param name="duration">Duration of the effect.</param>
+        public Reactive(Color color, Duration duration)
         {
-            Duration = duration;
             Color = color;
+            Duration = duration;
         }
     }
 }
