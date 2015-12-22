@@ -90,6 +90,7 @@
     <Compile Include="Events\ApplicationStateEventArgsTests.cs" />
     <Compile Include="Events\DeviceAccessEventArgsTests.cs" />
     <Compile Include="Events\SdkSupportEventArgsTests.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Core\ColorTests.cs" />
     <Compile Include="Razer\Keyboard\Effects\BreathingTests.cs" />
