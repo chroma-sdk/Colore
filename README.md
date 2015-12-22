@@ -107,13 +107,13 @@ Current projects utilizing this or modified versions of this library:
 [ngverbadge]: https://img.shields.io/nuget/v/Colore.svg
 [ngdlbadge]: https://img.shields.io/nuget/dt/Colore.svg
 
-[devbuild]: http://tc.sharpblade.net/viewType.html?buildTypeId=colore_mainbuild
-[devbuildbadge]: https://img.shields.io/teamcity/http/tc.sharpblade.net/s/colore_mainbuild.svg?style=flat
+[devbuild]: http://tc.coralestudios.com/viewType.html?buildTypeId=colore_mainbuild
+[devbuildbadge]: https://img.shields.io/teamcity/http/tc.coralestudios.com/s/colore_mainbuild.svg?style=flat
 [devcover]: https://coveralls.io/r/CoraleStudios/Colore?branch=develop
 [devcoverbadge]: https://coveralls.io/repos/CoraleStudios/Colore/badge.svg?branch=develop
 
-[masterbuild]: http://tc.sharpblade.net/viewType.html?buildTypeId=colore_releasebuild
-[masterbuildbadge]: https://img.shields.io/teamcity/http/tc.sharpblade.net/s/colore_releasebuild.svg?style=flat
+[masterbuild]: http://tc.coralestudios.com/viewType.html?buildTypeId=colore_releasebuild
+[masterbuildbadge]: https://img.shields.io/teamcity/http/tc.coralestudios.com/s/colore_releasebuild.svg?style=flat
 [mastercover]: https://coveralls.io/r/CoraleStudios/Colore?branch=master
 [mastercoverbadge]: https://coveralls.io/repos/CoraleStudios/Colore/badge.svg?branch=master
 
