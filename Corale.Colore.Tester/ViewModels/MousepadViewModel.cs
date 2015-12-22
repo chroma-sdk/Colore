@@ -36,7 +36,7 @@ namespace Corale.Colore.Tester.ViewModels
 
     public class MousepadViewModel : INotifyPropertyChanged
     {
-        private Direction selectedWaveDirection;
+        private Direction _selectedWaveDirection;
 
         public MousepadViewModel()
         {
@@ -45,7 +45,6 @@ namespace Corale.Colore.Tester.ViewModels
             this.ColorTwo.Color = Core.Color.Blue;
         }
 
-        /// <inheritdoc/>
         public event PropertyChangedEventHandler PropertyChanged;
 
         public int Index { get; set; }
@@ -58,12 +57,12 @@ namespace Corale.Colore.Tester.ViewModels
         {
             get
             {
-                return this.selectedWaveDirection;
+                return this._selectedWaveDirection;
             }
 
             set
             {
-                this.selectedWaveDirection = value;
+                this._selectedWaveDirection = value;
                 this.OnPropertyChanged(nameof(this.SelectedWaveDirection));
             }
         }

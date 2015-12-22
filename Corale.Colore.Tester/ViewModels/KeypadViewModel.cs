@@ -51,7 +51,6 @@ namespace Corale.Colore.Tester.ViewModels
             ColorTwo.Color = Core.Color.Blue;
         }
 
-        /// <inheritdoc/>
         public event PropertyChangedEventHandler PropertyChanged;
 
         public int Col { get; set; }

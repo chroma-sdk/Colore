@@ -39,7 +39,6 @@ namespace Corale.Colore.Tester.ViewModels
             ColorOne.Color = Core.Color.Red;
         }
 
-        /// <inheritdoc/>
         public event PropertyChangedEventHandler PropertyChanged;
 
         public SolidColorBrush ColorOne { get; set; } = new SolidColorBrush();

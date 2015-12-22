@@ -36,19 +36,16 @@ namespace Corale.Colore.Tester.Classes
         }
 
 #pragma warning disable CS0067
-        /// <inheritdoc/>
         public event EventHandler CanExecuteChanged;
 #pragma warning restore CS0067
 
         public Action CommandAction { get; }
 
-        /// <inheritdoc/>
         public void Execute(object parameter)
         {
             this.CommandAction();
         }
 
-        /// <inheritdoc/>
         public bool CanExecute(object parameter)
         {
             return true;
