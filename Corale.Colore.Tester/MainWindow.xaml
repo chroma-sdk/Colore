@@ -43,8 +43,6 @@
                                       ItemsSource="{Binding WaveDirectionValues}"
                                       SelectedItem="{Binding SelectedWaveDirection, Mode=TwoWay}" />
                         </StackPanel>
-                        <Button x:Name="SetStaticButton" Content="SetStatic" VerticalAlignment="Top" Width="75"
-                                Margin="0,6,0,0" Command="{Binding StaticCommand, Mode=OneWay}" />
                         <Button x:Name="SetStaticButton_Copy" Content="SetStatic" VerticalAlignment="Top" Width="75"
                                 Margin="0,6,0,0" Command="{Binding StaticCommand, Mode=OneWay}" />
                         <Button x:Name="ClearButton" Content="Clear" VerticalAlignment="Top" Width="75"
