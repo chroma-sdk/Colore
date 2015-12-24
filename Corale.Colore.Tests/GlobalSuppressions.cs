@@ -1,5 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
-// <copyright file="WaveTests.cs" company="Corale">
+﻿// <copyright file="GlobalSuppressions.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -21,21 +20,5 @@
 //
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
-// ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Tests.Razer.Keyboard.Effects
-{
-    using Corale.Colore.Razer.Keyboard.Effects;
-
-    using NUnit.Framework;
-
-    [TestFixture]
-    public class WaveTests
-    {
-        [Test]
-        public void ShouldConstructWithCorrectDirection()
-        {
-            Assert.That(new Wave(Direction.LeftToRight).Direction, Is.EqualTo(Direction.LeftToRight));
-        }
-    }
-}
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1652:Enable XML documentation output", Justification = "Tests don't need docs")]

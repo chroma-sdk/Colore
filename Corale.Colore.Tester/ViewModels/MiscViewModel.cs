@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="WaveTests.cs" company="Corale">
+// <copyright file="MiscViewModel.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,19 +23,40 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Tests.Razer.Keyboard.Effects
+namespace Corale.Colore.Tester.ViewModels
 {
-    using Corale.Colore.Razer.Keyboard.Effects;
+    using System.ComponentModel;
+    using System.Windows.Input;
+    using System.Windows.Media;
+    using Corale.Colore.Annotations;
+    using Corale.Colore.Tester.Classes;
+    using Color = Corale.Colore.Core.Color;
 
-    using NUnit.Framework;
-
-    [TestFixture]
-    public class WaveTests
+    public class MiscViewModel : INotifyPropertyChanged
     {
-        [Test]
-        public void ShouldConstructWithCorrectDirection()
+        public MiscViewModel()
         {
-            Assert.That(new Wave(Direction.LeftToRight).Direction, Is.EqualTo(Direction.LeftToRight));
+            ColorOne.Color = Core.Color.Red;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public SolidColorBrush ColorOne { get; set; } = new SolidColorBrush();
+
+        public string QueryGuid { get; set; }
+
+        public ICommand AllCommand => new DelegateCommand(() => Core.Chroma.Instance.SetAll(ColorOne.Color));
+
+        public ICommand InitializeCommand => new DelegateCommand(() => Core.Chroma.Instance.Initialize());
+
+        public ICommand UninitializeCommand => new DelegateCommand(() => Core.Chroma.Instance.Uninitialize());
+
+        public ICommand ClearCommand => new DelegateCommand(() => Core.Chroma.Instance.SetAll(Color.Black));
+
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="WaveTests.cs" company="Corale">
+// <copyright file="HeadsetViewModel.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,19 +23,38 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Tests.Razer.Keyboard.Effects
+namespace Corale.Colore.Tester.ViewModels
 {
-    using Corale.Colore.Razer.Keyboard.Effects;
+    using System.ComponentModel;
+    using System.Windows.Input;
+    using System.Windows.Media;
+    using Corale.Colore.Annotations;
+    using Corale.Colore.Tester.Classes;
 
-    using NUnit.Framework;
-
-    [TestFixture]
-    public class WaveTests
+    public class HeadsetViewModel : INotifyPropertyChanged
     {
-        [Test]
-        public void ShouldConstructWithCorrectDirection()
+        public HeadsetViewModel()
         {
-            Assert.That(new Wave(Direction.LeftToRight).Direction, Is.EqualTo(Direction.LeftToRight));
+            ColorOne.Color = Core.Color.Red;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public SolidColorBrush ColorOne { get; set; } = new SolidColorBrush();
+
+        public ICommand AllCommand => new DelegateCommand(() => Core.Headset.Instance.SetAll(ColorOne.Color));
+
+        public ICommand BreathingCommand
+            => new DelegateCommand(() => Core.Headset.Instance.SetBreathing(ColorOne.Color));
+
+        public ICommand StaticCommand => new DelegateCommand(() => Core.Headset.Instance.SetStatic(ColorOne.Color));
+
+        public ICommand ClearCommand => new DelegateCommand(() => Core.Headset.Instance.Clear());
+
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="WaveTests.cs" company="Corale">
+// <copyright file="App.xaml.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,19 +23,14 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Tests.Razer.Keyboard.Effects
+namespace Corale.Colore.Tester
 {
-    using Corale.Colore.Razer.Keyboard.Effects;
+    using System.Windows;
 
-    using NUnit.Framework;
-
-    [TestFixture]
-    public class WaveTests
+    /// <summary>
+    /// Interaction logic for App.xaml
+    /// </summary>
+    public partial class App : Application
     {
-        [Test]
-        public void ShouldConstructWithCorrectDirection()
-        {
-            Assert.That(new Wave(Direction.LeftToRight).Direction, Is.EqualTo(Direction.LeftToRight));
-        }
     }
 }

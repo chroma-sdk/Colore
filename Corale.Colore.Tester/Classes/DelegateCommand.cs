@@ -1,5 +1,5 @@
 ﻿// ---------------------------------------------------------------------------------------
-// <copyright file="WaveTests.cs" company="Corale">
+// <copyright file="DelegateCommand.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,19 +23,32 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Tests.Razer.Keyboard.Effects
+namespace Corale.Colore.Tester.Classes
 {
-    using Corale.Colore.Razer.Keyboard.Effects;
+    using System;
+    using System.Windows.Input;
 
-    using NUnit.Framework;
-
-    [TestFixture]
-    public class WaveTests
+    public class DelegateCommand : ICommand
     {
-        [Test]
-        public void ShouldConstructWithCorrectDirection()
+        public DelegateCommand(Action action)
         {
-            Assert.That(new Wave(Direction.LeftToRight).Direction, Is.EqualTo(Direction.LeftToRight));
+            this.CommandAction = action;
+        }
+
+#pragma warning disable CS0067
+        public event EventHandler CanExecuteChanged;
+#pragma warning restore CS0067
+
+        public Action CommandAction { get; }
+
+        public void Execute(object parameter)
+        {
+            this.CommandAction();
+        }
+
+        public bool CanExecute(object parameter)
+        {
+            return true;
         }
     }
 }
