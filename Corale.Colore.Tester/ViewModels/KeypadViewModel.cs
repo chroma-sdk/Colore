@@ -142,7 +142,7 @@ namespace Corale.Colore.Tester.ViewModels
         {
             try
             {
-                Core.Keypad.Instance.SetReactive(this.SelectedReactiveDuration, ColorOne.Color);
+                Core.Keypad.Instance.SetReactive(ColorOne.Color, this.SelectedReactiveDuration);
             }
             catch (Exception ex)
             {
