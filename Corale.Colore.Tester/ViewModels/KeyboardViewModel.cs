@@ -23,7 +23,7 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Tester
+namespace Corale.Colore.Tester.ViewModels
 {
     using System;
     using System.Collections.Generic;
@@ -32,11 +32,11 @@ namespace Corale.Colore.Tester
     using System.Windows;
     using System.Windows.Input;
     using System.Windows.Media;
-    using Corale.Colore.Razer.Keyboard.Effects;
-    using Corale.Colore.Razer.Mouse;
-    using Corale.Colore.Tester.Classes;
-    using Duration = Corale.Colore.Razer.Keyboard.Effects.Duration;
-    using Key = Corale.Colore.Razer.Keyboard.Key;
+    using Classes;
+    using Razer.Keyboard.Effects;
+    using Razer.Mouse;
+    using Duration = Razer.Keyboard.Effects.Duration;
+    using Key = Razer.Keyboard.Key;
 
     public class KeyboardViewModel : INotifyPropertyChanged
     {
@@ -46,9 +46,9 @@ namespace Corale.Colore.Tester
 
         public KeyboardViewModel()
         {
-            this.SelectedKey = Key.A;
-            this.SelectedReactiveDuration = Duration.Long;
-            this.SelectedWaveDirection = Direction.LeftToRight;
+            SelectedKey = Key.A;
+            SelectedReactiveDuration = Duration.Long;
+            SelectedWaveDirection = Direction.LeftToRight;
             ColorOne.Color = Core.Color.Red;
             ColorTwo.Color = Core.Color.Blue;
         }
@@ -69,13 +69,13 @@ namespace Corale.Colore.Tester
         {
             get
             {
-                return this._selectedKey;
+                return _selectedKey;
             }
 
             set
             {
-                this._selectedKey = value;
-                this.OnPropertyChanged(nameof(this.SelectedKey));
+                _selectedKey = value;
+                OnPropertyChanged(nameof(SelectedKey));
             }
         }
 
@@ -83,13 +83,13 @@ namespace Corale.Colore.Tester
         {
             get
             {
-                return this._selectedReactiveDuration;
+                return _selectedReactiveDuration;
             }
 
             set
             {
-                this._selectedReactiveDuration = value;
-                this.OnPropertyChanged(nameof(this.SelectedReactiveDuration));
+                _selectedReactiveDuration = value;
+                OnPropertyChanged(nameof(SelectedReactiveDuration));
             }
         }
 
@@ -103,7 +103,7 @@ namespace Corale.Colore.Tester
             set
             {
                 _selectedWaveDirection = value;
-                this.OnPropertyChanged(nameof(SelectedWaveDirection));
+                OnPropertyChanged(nameof(SelectedWaveDirection));
             }
         }
 
@@ -129,8 +129,8 @@ namespace Corale.Colore.Tester
 
         public ICommand ClearCommand => new DelegateCommand(() => Core.Keyboard.Instance.Clear());
 
-        public IEnumerable<Razer.Keyboard.Key> KeyValues
-            => Enum.GetValues(typeof(Razer.Keyboard.Key)).Cast<Razer.Keyboard.Key>();
+        public IEnumerable<Key> KeyValues
+            => Enum.GetValues(typeof(Key)).Cast<Key>();
 
         public IEnumerable<Direction> WaveDirectionValues => Enum.GetValues(typeof(Direction)).Cast<Direction>();
 
@@ -138,14 +138,14 @@ namespace Corale.Colore.Tester
 
         protected virtual void OnPropertyChanged(string propertyName)
         {
-            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         private void SetReactiveEffect()
         {
             try
             {
-                Core.Keyboard.Instance.SetReactive(ColorOne.Color, this.SelectedReactiveDuration);
+                Core.Keyboard.Instance.SetReactive(ColorOne.Color, SelectedReactiveDuration);
             }
             catch (Exception ex)
             {
@@ -157,7 +157,7 @@ namespace Corale.Colore.Tester
         {
             try
             {
-                Core.Keyboard.Instance.SetWave(this.SelectedWaveDirection);
+                Core.Keyboard.Instance.SetWave(SelectedWaveDirection);
             }
             catch (Exception ex)
             {
@@ -181,7 +181,7 @@ namespace Corale.Colore.Tester
         {
             try
             {
-                Core.Keyboard.Instance[this.Row, this.Col] = ColorOne.Color;
+                Core.Keyboard.Instance[Row, Col] = ColorOne.Color;
             }
             catch (Exception ex)
             {

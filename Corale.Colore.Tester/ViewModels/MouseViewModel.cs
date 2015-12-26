@@ -32,10 +32,10 @@ namespace Corale.Colore.Tester.ViewModels
     using System.Windows;
     using System.Windows.Input;
     using System.Windows.Media;
-    using Corale.Colore.Razer.Mouse;
-    using Corale.Colore.Razer.Mouse.Effects;
-    using Corale.Colore.Tester.Classes;
-    using Duration = Corale.Colore.Razer.Mouse.Effects.Duration;
+    using Classes;
+    using Razer.Mouse;
+    using Razer.Mouse.Effects;
+    using Duration = Razer.Mouse.Effects.Duration;
 
     public class MouseViewModel : INotifyPropertyChanged
     {
@@ -49,12 +49,12 @@ namespace Corale.Colore.Tester.ViewModels
 
         public MouseViewModel()
         {
-            this.SelectedLed = Led.All;
-            this.SelectedGridLed = GridLed.Logo;
-            this.SelectedReactiveDuration = Duration.Long;
-            this.SelectedWaveDirection = Direction.FrontToBack;
-            this.ColorOne.Color = Core.Color.Red;
-            this.ColorTwo.Color = Core.Color.Blue;
+            SelectedLed = Led.All;
+            SelectedGridLed = GridLed.Logo;
+            SelectedReactiveDuration = Duration.Long;
+            SelectedWaveDirection = Direction.FrontToBack;
+            ColorOne.Color = Core.Color.Red;
+            ColorTwo.Color = Core.Color.Blue;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -73,13 +73,13 @@ namespace Corale.Colore.Tester.ViewModels
         {
             get
             {
-                return this._selectedLed;
+                return _selectedLed;
             }
 
             set
             {
-                this._selectedLed = value;
-                this.OnPropertyChanged(nameof(this.SelectedLed));
+                _selectedLed = value;
+                OnPropertyChanged(nameof(SelectedLed));
             }
         }
 
@@ -87,13 +87,13 @@ namespace Corale.Colore.Tester.ViewModels
         {
             get
             {
-                return this._selectedGridLed;
+                return _selectedGridLed;
             }
 
             set
             {
-                this._selectedGridLed = value;
-                this.OnPropertyChanged(nameof(this.SelectedGridLed));
+                _selectedGridLed = value;
+                OnPropertyChanged(nameof(SelectedGridLed));
             }
         }
 
@@ -101,13 +101,13 @@ namespace Corale.Colore.Tester.ViewModels
         {
             get
             {
-                return this._selectedReactiveDuration;
+                return _selectedReactiveDuration;
             }
 
             set
             {
-                this._selectedReactiveDuration = value;
-                this.OnPropertyChanged(nameof(this.SelectedReactiveDuration));
+                _selectedReactiveDuration = value;
+                OnPropertyChanged(nameof(SelectedReactiveDuration));
             }
         }
 
@@ -115,21 +115,21 @@ namespace Corale.Colore.Tester.ViewModels
         {
             get
             {
-                return this._selectedWaveDirection;
+                return _selectedWaveDirection;
             }
 
             set
             {
-                this._selectedWaveDirection = value;
-                this.OnPropertyChanged(nameof(this.SelectedWaveDirection));
+                _selectedWaveDirection = value;
+                OnPropertyChanged(nameof(SelectedWaveDirection));
             }
         }
 
-        public ICommand AllCommand => new DelegateCommand(() => Core.Mouse.Instance.SetAll(this.ColorOne.Color));
+        public ICommand AllCommand => new DelegateCommand(() => Core.Mouse.Instance.SetAll(ColorOne.Color));
 
-        public ICommand BreathingOneColorCommand => new DelegateCommand(() => Core.Mouse.Instance.SetBreathing(this.ColorOne.Color, SelectedLed));
+        public ICommand BreathingOneColorCommand => new DelegateCommand(() => Core.Mouse.Instance.SetBreathing(ColorOne.Color, SelectedLed));
 
-        public ICommand BreathingTwoColorCommand => new DelegateCommand(() => Core.Mouse.Instance.SetBreathing(this.ColorOne.Color, this.ColorTwo.Color));
+        public ICommand BreathingTwoColorCommand => new DelegateCommand(() => Core.Mouse.Instance.SetBreathing(ColorOne.Color, ColorTwo.Color));
 
         public ICommand BreathingRandomColorCommand
             => new DelegateCommand(() => Core.Mouse.Instance.SetBreathing(SelectedLed));
@@ -138,20 +138,20 @@ namespace Corale.Colore.Tester.ViewModels
 
         public ICommand WaveCommand => new DelegateCommand(SetWaveEffect);
 
-        public ICommand StaticCommand => new DelegateCommand(() => Core.Mouse.Instance.SetStatic(new Static(this.SelectedLed, this.ColorOne.Color)));
+        public ICommand StaticCommand => new DelegateCommand(() => Core.Mouse.Instance.SetStatic(new Static(SelectedLed, ColorOne.Color)));
 
         public ICommand GridLedCommand
             => new DelegateCommand(SetGridLedEffect);
 
         public ICommand LedCommand => new DelegateCommand(SetLedEffect);
 
-        public ICommand BlinkingCommand => new DelegateCommand(() => Core.Mouse.Instance.SetBlinking(this.ColorOne.Color, this.SelectedLed));
+        public ICommand BlinkingCommand => new DelegateCommand(() => Core.Mouse.Instance.SetBlinking(ColorOne.Color, SelectedLed));
 
         public ICommand ClearCommand => new DelegateCommand(() => Core.Mouse.Instance.Clear());
 
-        public IEnumerable<Razer.Mouse.Led> LedValues => Enum.GetValues(typeof(Razer.Mouse.Led)).Cast<Razer.Mouse.Led>();
+        public IEnumerable<Led> LedValues => Enum.GetValues(typeof(Led)).Cast<Led>();
 
-        public IEnumerable<Razer.Mouse.GridLed> GridLedValues => Enum.GetValues(typeof(Razer.Mouse.GridLed)).Cast<Razer.Mouse.GridLed>();
+        public IEnumerable<GridLed> GridLedValues => Enum.GetValues(typeof(GridLed)).Cast<GridLed>();
 
         public IEnumerable<Direction> WaveDirectionValues => Enum.GetValues(typeof(Direction)).Cast<Direction>();
 
@@ -160,14 +160,14 @@ namespace Corale.Colore.Tester.ViewModels
         [Annotations.NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged(string propertyName)
         {
-            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         private void SetReactiveEffect()
         {
             try
             {
-                Core.Mouse.Instance.SetReactive(this.SelectedReactiveDuration, this.ColorOne.Color, this.SelectedLed);
+                Core.Mouse.Instance.SetReactive(SelectedReactiveDuration, ColorOne.Color, SelectedLed);
             }
             catch (Exception ex)
             {
@@ -179,7 +179,7 @@ namespace Corale.Colore.Tester.ViewModels
         {
             try
             {
-                Core.Mouse.Instance.SetWave(this.SelectedWaveDirection);
+                Core.Mouse.Instance.SetWave(SelectedWaveDirection);
             }
             catch (Exception ex)
             {
@@ -191,7 +191,7 @@ namespace Corale.Colore.Tester.ViewModels
         {
             try
             {
-                Core.Mouse.Instance[SelectedGridLed] = this.ColorOne.Color;
+                Core.Mouse.Instance[SelectedGridLed] = ColorOne.Color;
             }
             catch (Exception ex)
             {
@@ -203,7 +203,7 @@ namespace Corale.Colore.Tester.ViewModels
         {
             try
             {
-                Core.Mouse.Instance[this.SelectedLed] = this.ColorOne.Color;
+                Core.Mouse.Instance[SelectedLed] = ColorOne.Color;
             }
             catch (Exception ex)
             {

@@ -32,7 +32,7 @@ namespace Corale.Colore.Tester.Classes
     {
         public DelegateCommand(Action action)
         {
-            this.CommandAction = action;
+            CommandAction = action;
         }
 
 #pragma warning disable CS0067
@@ -43,7 +43,7 @@ namespace Corale.Colore.Tester.Classes
 
         public void Execute(object parameter)
         {
-            this.CommandAction();
+            CommandAction();
         }
 
         public bool CanExecute(object parameter)

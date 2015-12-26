@@ -28,16 +28,15 @@ namespace Corale.Colore.Tester.ViewModels
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
-    using System.Configuration;
     using System.Linq;
     using System.Windows;
     using System.Windows.Input;
     using System.Windows.Media;
-    using Corale.Colore.Razer.Keypad.Effects;
-    using Corale.Colore.Razer.Mouse;
-    using Corale.Colore.Tester.Classes;
-    using Duration = Corale.Colore.Razer.Keypad.Effects.Duration;
-    using Key = Corale.Colore.Razer.Keyboard.Key;
+    using Classes;
+    using Razer.Keypad.Effects;
+    using Razer.Mouse;
+    using Duration = Razer.Keypad.Effects.Duration;
+    using Key = Razer.Keyboard.Key;
 
     public class KeypadViewModel : INotifyPropertyChanged
     {
@@ -47,9 +46,9 @@ namespace Corale.Colore.Tester.ViewModels
 
         public KeypadViewModel()
         {
-            this.SelectedKey = Key.A;
-            this.SelectedReactiveDuration = Duration.Long;
-            this.SelectedWaveDirection = Direction.LeftToRight;
+            SelectedKey = Key.A;
+            SelectedReactiveDuration = Duration.Long;
+            SelectedWaveDirection = Direction.LeftToRight;
             ColorOne.Color = Core.Color.Red;
             ColorTwo.Color = Core.Color.Blue;
         }
@@ -70,13 +69,13 @@ namespace Corale.Colore.Tester.ViewModels
         {
             get
             {
-                return this._selectedKey;
+                return _selectedKey;
             }
 
             set
             {
-                this._selectedKey = value;
-                this.OnPropertyChanged(nameof(this.SelectedKey));
+                _selectedKey = value;
+                OnPropertyChanged(nameof(SelectedKey));
             }
         }
 
@@ -84,13 +83,13 @@ namespace Corale.Colore.Tester.ViewModels
         {
             get
             {
-                return this._selectedReactiveDuration;
+                return _selectedReactiveDuration;
             }
 
             set
             {
-                this._selectedReactiveDuration = value;
-                this.OnPropertyChanged(nameof(this.SelectedReactiveDuration));
+                _selectedReactiveDuration = value;
+                OnPropertyChanged(nameof(SelectedReactiveDuration));
             }
         }
 
@@ -104,7 +103,7 @@ namespace Corale.Colore.Tester.ViewModels
             set
             {
                 _selectedWaveDirection = value;
-                this.OnPropertyChanged(nameof(SelectedWaveDirection));
+                OnPropertyChanged(nameof(SelectedWaveDirection));
             }
         }
 
@@ -135,14 +134,14 @@ namespace Corale.Colore.Tester.ViewModels
         [Annotations.NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged(string propertyName)
         {
-            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         private void SetReactiveEffect()
         {
             try
             {
-                Core.Keypad.Instance.SetReactive(ColorOne.Color, this.SelectedReactiveDuration);
+                Core.Keypad.Instance.SetReactive(ColorOne.Color, SelectedReactiveDuration);
             }
             catch (Exception ex)
             {
@@ -154,7 +153,7 @@ namespace Corale.Colore.Tester.ViewModels
         {
             try
             {
-                Core.Keypad.Instance.SetWave(this.SelectedWaveDirection);
+                Core.Keypad.Instance.SetWave(SelectedWaveDirection);
             }
             catch (Exception ex)
             {
@@ -166,7 +165,7 @@ namespace Corale.Colore.Tester.ViewModels
         {
             try
             {
-                Core.Keypad.Instance[this.Row, this.Col] = ColorOne.Color;
+                Core.Keypad.Instance[Row, Col] = ColorOne.Color;
             }
             catch (Exception ex)
             {

@@ -28,8 +28,8 @@ namespace Corale.Colore.Tester.ViewModels
     using System.ComponentModel;
     using System.Windows.Input;
     using System.Windows.Media;
-    using Corale.Colore.Annotations;
-    using Corale.Colore.Tester.Classes;
+    using Annotations;
+    using Classes;
 
     public class HeadsetViewModel : INotifyPropertyChanged
     {

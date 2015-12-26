@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Corale.Colore.Tester"
         xmlns:xckt="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:viewModels="clr-namespace:Corale.Colore.Tester.ViewModels"
         mc:Ignorable="d"
@@ -15,7 +14,7 @@
             <TabItem Header="Keyboard">
                 <Grid Background="#FFE5E5E5">
                     <Grid.DataContext>
-                        <local:KeyboardViewModel />
+                        <viewModels:KeyboardViewModel />
                     </Grid.DataContext>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="40*" />
@@ -43,7 +42,7 @@
                                       ItemsSource="{Binding WaveDirectionValues}"
                                       SelectedItem="{Binding SelectedWaveDirection, Mode=TwoWay}" />
                         </StackPanel>
-                        <Button x:Name="SetStaticButton_Copy" Content="SetStatic" VerticalAlignment="Top" Width="75"
+                        <Button x:Name="SetKeyboarsStaticButton" Content="SetStatic" VerticalAlignment="Top" Width="75"
                                 Margin="0,6,0,0" Command="{Binding StaticCommand, Mode=OneWay}" />
                         <Button x:Name="ClearButton" Content="Clear" VerticalAlignment="Top" Width="75"
                                 Margin="0,6,0,0" Command="{Binding ClearCommand, Mode=OneWay}" />
@@ -65,14 +64,14 @@
                         </StackPanel>
 
                         <Label Content="Key/Position Effects" HorizontalAlignment="Center" FontSize="16px" />
-                        <StackPanel Height="40" VerticalAlignment="Top" Margin="10,0" Grid.Column="1"
+                        <StackPanel Height="40" VerticalAlignment="Top" Margin="10,0"
                                     Orientation="Horizontal">
                             <Label x:Name="KeyLabel" Content="Key" HorizontalAlignment="Left" VerticalAlignment="Top" />
                             <ComboBox x:Name="KeySelectionComboBox" HorizontalAlignment="Left" VerticalAlignment="Top"
-                                      Width="130" Grid.Column="1" ItemsSource="{Binding KeyValues}"
+                                      Width="130" ItemsSource="{Binding KeyValues}"
                                       SelectedItem="{Binding SelectedKey, Mode=TwoWay}" />
                         </StackPanel>
-                        <StackPanel Height="40" VerticalAlignment="Top" Margin="10,0" Grid.Column="1"
+                        <StackPanel Height="40" VerticalAlignment="Top" Margin="10,0"
                                     Orientation="Horizontal">
                             <Label x:Name="RowLabel" Content="Row" HorizontalAlignment="Left" VerticalAlignment="Top" />
                             <TextBox x:Name="RowPositionTextbox" HorizontalAlignment="Left" Height="23"
@@ -157,20 +156,20 @@
                             </StackPanel>
                            
                             <Label Content="Led/Position Effects" HorizontalAlignment="Center" FontSize="16px" />
-                            <StackPanel Height="40" VerticalAlignment="Top" Margin="10,0" Grid.Column="1"
+                            <StackPanel Height="40" VerticalAlignment="Top" Margin="10,0"
                                         Orientation="Horizontal">
                                 <Label x:Name="LedLabel" Content="Led" HorizontalAlignment="Left"
                                        VerticalAlignment="Top" />
                                 <ComboBox x:Name="LedComboBox" HorizontalAlignment="Left" VerticalAlignment="Top"
-                                          Width="130" Grid.Column="1" ItemsSource="{Binding LedValues}"
+                                          Width="130" ItemsSource="{Binding LedValues}"
                                           SelectedItem="{Binding SelectedLed, Mode=TwoWay}" />
                             </StackPanel>
-                            <StackPanel Height="40" VerticalAlignment="Top" Margin="10,0" Grid.Column="1"
+                            <StackPanel Height="40" VerticalAlignment="Top" Margin="10,0"
                                         Orientation="Horizontal">
                                 <Label x:Name="GridLed" Content="Led" HorizontalAlignment="Left"
                                        VerticalAlignment="Top" />
                                 <ComboBox x:Name="GridLedComboBox" HorizontalAlignment="Left" VerticalAlignment="Top"
-                                          Width="130" Grid.Column="1" ItemsSource="{Binding GridLedValues}"
+                                          Width="130" ItemsSource="{Binding GridLedValues}"
                                           SelectedItem="{Binding SelectedGridLed, Mode=TwoWay}" />
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -228,7 +227,7 @@
                                                   SelectedColor="{Binding ColorTwo.Color}" ShowAvailableColors="False"
                                                   ShowRecentColors="True" />
                             </StackPanel>
-                            <StackPanel Height="40" VerticalAlignment="Top" Margin="10,0" Grid.Column="1"
+                            <StackPanel Height="40" VerticalAlignment="Top" Margin="10,0"
                                         Orientation="Horizontal">
                                 <Label x:Name="IndexLabel" Content="Index" HorizontalAlignment="Left"
                                        VerticalAlignment="Top" />
@@ -300,7 +299,7 @@
                             </StackPanel>
 
                             <Label Content="Position Effects" HorizontalAlignment="Center" FontSize="16px" />
-                            <StackPanel Height="40" VerticalAlignment="Top" Margin="10,0" Grid.Column="1"
+                            <StackPanel Height="40" VerticalAlignment="Top" Margin="10,0"
                                         Orientation="Horizontal">
                                 <Label x:Name="RowLabel2" Content="Row" HorizontalAlignment="Left"
                                        VerticalAlignment="Top" />
@@ -354,7 +353,7 @@
                                               ShowRecentColors="True" Width="55" />
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="0,4,0,0" />
-                        <StackPanel Height="40" VerticalAlignment="Top" Margin="10,0" Grid.Column="1"
+                        <StackPanel Height="40" VerticalAlignment="Top" Margin="10,0"
                                     Orientation="Horizontal" />
 
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" />

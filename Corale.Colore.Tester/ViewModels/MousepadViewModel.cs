@@ -32,8 +32,8 @@ namespace Corale.Colore.Tester.ViewModels
     using System.Windows;
     using System.Windows.Input;
     using System.Windows.Media;
-    using Corale.Colore.Razer.Mousepad.Effects;
-    using Corale.Colore.Tester.Classes;
+    using Classes;
+    using Razer.Mousepad.Effects;
 
     public class MousepadViewModel : INotifyPropertyChanged
     {
@@ -41,9 +41,9 @@ namespace Corale.Colore.Tester.ViewModels
 
         public MousepadViewModel()
         {
-            this.SelectedWaveDirection = Direction.LeftToRight;
-            this.ColorOne.Color = Core.Color.Red;
-            this.ColorTwo.Color = Core.Color.Blue;
+            SelectedWaveDirection = Direction.LeftToRight;
+            ColorOne.Color = Core.Color.Red;
+            ColorTwo.Color = Core.Color.Blue;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -58,26 +58,26 @@ namespace Corale.Colore.Tester.ViewModels
         {
             get
             {
-                return this._selectedWaveDirection;
+                return _selectedWaveDirection;
             }
 
             set
             {
-                this._selectedWaveDirection = value;
-                this.OnPropertyChanged(nameof(this.SelectedWaveDirection));
+                _selectedWaveDirection = value;
+                OnPropertyChanged(nameof(SelectedWaveDirection));
             }
         }
 
-        public ICommand AllCommand => new DelegateCommand(() => Core.Mousepad.Instance.SetAll(this.ColorOne.Color));
+        public ICommand AllCommand => new DelegateCommand(() => Core.Mousepad.Instance.SetAll(ColorOne.Color));
 
         public ICommand BreathingCommand
-            => new DelegateCommand(() => Core.Mousepad.Instance.SetBreathing(this.ColorOne.Color, this.ColorTwo.Color));
+            => new DelegateCommand(() => Core.Mousepad.Instance.SetBreathing(ColorOne.Color, ColorTwo.Color));
 
         public ICommand WaveCommand
             => new DelegateCommand(SetWaveEffect);
 
         public ICommand StaticCommand
-            => new DelegateCommand(() => Core.Mousepad.Instance.SetStatic(this.ColorOne.Color));
+            => new DelegateCommand(() => Core.Mousepad.Instance.SetStatic(ColorOne.Color));
 
         public ICommand IndexerCommand
             => new DelegateCommand(SetIndexerEffect);
@@ -92,14 +92,14 @@ namespace Corale.Colore.Tester.ViewModels
         [Annotations.NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged(string propertyName)
         {
-            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         private void SetWaveEffect()
         {
             try
             {
-                Core.Mousepad.Instance.SetWave(this.SelectedWaveDirection);
+                Core.Mousepad.Instance.SetWave(SelectedWaveDirection);
             }
             catch (Exception ex)
             {
@@ -111,7 +111,7 @@ namespace Corale.Colore.Tester.ViewModels
         {
             try
             {
-                Core.Mousepad.Instance[this.Index] = this.ColorOne.Color;
+                Core.Mousepad.Instance[Index] = ColorOne.Color;
             }
             catch (Exception ex)
             {
