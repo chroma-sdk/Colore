@@ -99,6 +99,10 @@
     <Compile Include="Razer\Keyboard\Effects\ReactiveTests.cs" />
     <Compile Include="Razer\Keyboard\Effects\StaticTests.cs" />
     <Compile Include="Razer\Keyboard\Effects\WaveTests.cs" />
+    <Compile Include="Razer\Mousepad\Effects\BreathingTests.cs" />
+    <Compile Include="Razer\Mousepad\Effects\CustomTests.cs" />
+    <Compile Include="Razer\Mousepad\Effects\StaticTests.cs" />
+    <Compile Include="Razer\Mousepad\Effects\WaveTests.cs" />
     <Compile Include="Razer\NativeCallExceptionTests.cs" />
     <Compile Include="Razer\ResultTests.cs" />
     <Compile Include="Razer\UnsupportedDeviceExceptionTests.cs" />
