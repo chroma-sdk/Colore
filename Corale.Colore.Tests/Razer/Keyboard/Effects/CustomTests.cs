@@ -323,5 +323,39 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
             Assert.False(grid.Equals(null));
             Assert.AreNotEqual(grid, null);
         }
+
+        [Test]
+        public void ShouldGetWithIndexIndexer()
+        {
+            var grid = new Custom(Color.Red);
+            Assert.AreEqual(Color.Red, grid[3, 3]);
+        }
+
+        [Test]
+        public void ShouldGetWithKeyIndexer()
+        {
+            var grid = new Custom(Color.Red);
+            Assert.AreEqual(Color.Red, grid[Key.Escape]);
+        }
+
+        [Test]
+        public void ShouldSetWithIndexIndexer()
+        {
+            var grid = Custom.Create();
+
+            grid[5, 5] = Color.Red;
+
+            Assert.AreEqual(Color.Red, grid[5, 5]);
+        }
+
+        [Test]
+        public void ShouldSetWithKeyIndexer()
+        {
+            var grid = Custom.Create();
+
+            grid[Key.Escape] = Color.Red;
+
+            Assert.AreEqual(Color.Red, grid[Key.Escape]);
+        }
     }
 }
