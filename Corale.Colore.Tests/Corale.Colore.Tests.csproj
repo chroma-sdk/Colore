@@ -101,6 +101,7 @@
     <Compile Include="Razer\Keyboard\Effects\WaveTests.cs" />
     <Compile Include="Razer\NativeCallExceptionTests.cs" />
     <Compile Include="Razer\ResultTests.cs" />
+    <Compile Include="Razer\UnsupportedDeviceExceptionTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Corale.Colore\Corale.Colore.csproj">
