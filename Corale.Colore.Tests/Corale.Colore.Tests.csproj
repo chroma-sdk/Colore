@@ -93,6 +93,7 @@
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Core\ColorTests.cs" />
+    <Compile Include="Razer\DevicesTests.cs" />
     <Compile Include="Razer\Keyboard\Effects\BreathingTests.cs" />
     <Compile Include="Razer\Keyboard\Effects\CustomTests.cs" />
     <Compile Include="Razer\Keyboard\Effects\ReactiveTests.cs" />
