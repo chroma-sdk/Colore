@@ -28,15 +28,15 @@ namespace Corale.Colore.Tester.ViewModels
     using System.ComponentModel;
     using System.Windows.Input;
     using System.Windows.Media;
-    using Corale.Colore.Annotations;
-    using Corale.Colore.Tester.Classes;
-    using Color = Corale.Colore.Core.Color;
+    using Annotations;
+    using Classes;
+    using Color = Core.Color;
 
     public class MiscViewModel : INotifyPropertyChanged
     {
         public MiscViewModel()
         {
-            ColorOne.Color = Core.Color.Red;
+            ColorOne.Color = Color.Red;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

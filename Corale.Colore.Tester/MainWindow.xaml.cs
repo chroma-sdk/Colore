@@ -26,17 +26,16 @@
 namespace Corale.Colore.Tester
 {
     using System.Text.RegularExpressions;
-    using System.Windows;
     using System.Windows.Input;
 
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         public MainWindow()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
         private void TextValidation(object sender, TextCompositionEventArgs e)
