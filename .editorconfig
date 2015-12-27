@@ -10,7 +10,10 @@ charset = utf-8
 [*.sln]
 indent_style = tab
 
-[*.{csproj,yml,nuspec},packages.config]
+[*.{csproj,yml,nuspec}]
+indent_size = 2
+
+[packages.config]
 indent_size = 2
 
 [*.md]
