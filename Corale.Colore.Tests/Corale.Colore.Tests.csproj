@@ -112,6 +112,7 @@
     <Compile Include="Razer\Mousepad\Effects\WaveTests.cs" />
     <Compile Include="Razer\Mouse\Effects\BlinkingTests.cs" />
     <Compile Include="Razer\Mouse\Effects\BreathingTests.cs" />
+    <Compile Include="Razer\Mouse\Effects\CustomGridTests.cs" />
     <Compile Include="Razer\Mouse\Effects\CustomTests.cs" />
     <Compile Include="Razer\Mouse\Effects\NoneTests.cs" />
     <Compile Include="Razer\Mouse\Effects\ReactiveTests.cs" />
