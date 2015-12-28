@@ -93,13 +93,35 @@
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Core\ColorTests.cs" />
+    <Compile Include="Razer\DevicesTests.cs" />
+    <Compile Include="Razer\Headset\Effects\BreathingTests.cs" />
+    <Compile Include="Razer\Headset\Effects\StaticTests.cs" />
     <Compile Include="Razer\Keyboard\Effects\BreathingTests.cs" />
     <Compile Include="Razer\Keyboard\Effects\CustomTests.cs" />
     <Compile Include="Razer\Keyboard\Effects\ReactiveTests.cs" />
     <Compile Include="Razer\Keyboard\Effects\StaticTests.cs" />
     <Compile Include="Razer\Keyboard\Effects\WaveTests.cs" />
+    <Compile Include="Razer\Keypad\Effects\BreathingTests.cs" />
+    <Compile Include="Razer\Keypad\Effects\CustomTests.cs" />
+    <Compile Include="Razer\Keypad\Effects\ReactiveTests.cs" />
+    <Compile Include="Razer\Keypad\Effects\StaticTests.cs" />
+    <Compile Include="Razer\Keypad\Effects\WaveTests.cs" />
+    <Compile Include="Razer\Mousepad\Effects\BreathingTests.cs" />
+    <Compile Include="Razer\Mousepad\Effects\CustomTests.cs" />
+    <Compile Include="Razer\Mousepad\Effects\StaticTests.cs" />
+    <Compile Include="Razer\Mousepad\Effects\WaveTests.cs" />
+    <Compile Include="Razer\Mouse\Effects\BlinkingTests.cs" />
+    <Compile Include="Razer\Mouse\Effects\BreathingTests.cs" />
+    <Compile Include="Razer\Mouse\Effects\CustomGridTests.cs" />
+    <Compile Include="Razer\Mouse\Effects\CustomTests.cs" />
+    <Compile Include="Razer\Mouse\Effects\NoneTests.cs" />
+    <Compile Include="Razer\Mouse\Effects\ReactiveTests.cs" />
+    <Compile Include="Razer\Mouse\Effects\SpectrumCyclingTests.cs" />
+    <Compile Include="Razer\Mouse\Effects\StaticTests.cs" />
+    <Compile Include="Razer\Mouse\Effects\WaveTests.cs" />
     <Compile Include="Razer\NativeCallExceptionTests.cs" />
     <Compile Include="Razer\ResultTests.cs" />
+    <Compile Include="Razer\UnsupportedDeviceExceptionTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Corale.Colore\Corale.Colore.csproj">

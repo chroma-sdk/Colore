@@ -101,7 +101,7 @@ namespace Corale.Colore.Razer.Mouse.Effects
 
             set
             {
-                if (led < 0 || led > Constants.MaxLeds)
+                if (led < 0 || led >= Constants.MaxLeds)
                 {
                     throw new ArgumentOutOfRangeException(
                         nameof(led),

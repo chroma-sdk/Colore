@@ -1,5 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
-// <copyright file="CustomTests.cs" company="Corale">
+﻿// <copyright file="CustomTests.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -21,15 +20,14 @@
 //
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
-// ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Tests.Razer.Keyboard.Effects
+namespace Corale.Colore.Tests.Razer.Keypad.Effects
 {
     using System;
 
     using Corale.Colore.Core;
-    using Corale.Colore.Razer.Keyboard;
-    using Corale.Colore.Razer.Keyboard.Effects;
+    using Corale.Colore.Razer.Keypad;
+    using Corale.Colore.Razer.Keypad.Effects;
 
     using NUnit.Framework;
 
@@ -180,9 +178,9 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
                 arr[row] = new Color[Constants.MaxColumns];
 
             // Set some arbitrary colors to test
-            arr[0][5] = Color.Purple;
+            arr[0][4] = Color.Purple;
             arr[2][3] = Color.Pink;
-            arr[4][0] = Color.Blue;
+            arr[3][0] = Color.Blue;
 
             var grid = new Custom(arr);
 
@@ -198,9 +196,9 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
         {
             var grid = Custom.Create();
 
-            grid[0, 5] = Color.Red;
+            grid[0, 4] = Color.Red;
 
-            Assert.That(grid[0, 5], Is.EqualTo(Color.Red));
+            Assert.That(grid[0, 4], Is.EqualTo(Color.Red));
         }
 
         [Test]
@@ -210,6 +208,19 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
             grid.Clear();
 
             Assert.That(grid, Is.EqualTo(Custom.Create()));
+        }
+
+        [Test]
+        public void ShouldSetColorsProperly()
+        {
+            var grid = Custom.Create();
+            grid.Set(Color.Red);
+
+            for (var row = 0; row < Constants.MaxRows; row++)
+            {
+                for (var column = 0; column < Constants.MaxColumns; column++)
+                    Assert.AreEqual(Color.Red, grid[row, column]);
+            }
         }
 
         [Test]
@@ -332,30 +343,13 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
         }
 
         [Test]
-        public void ShouldGetWithKeyIndexer()
-        {
-            var grid = new Custom(Color.Red);
-            Assert.AreEqual(Color.Red, grid[Key.Escape]);
-        }
-
-        [Test]
         public void ShouldSetWithIndexIndexer()
         {
             var grid = Custom.Create();
 
-            grid[5, 5] = Color.Red;
+            grid[3, 4] = Color.Red;
 
-            Assert.AreEqual(Color.Red, grid[5, 5]);
-        }
-
-        [Test]
-        public void ShouldSetWithKeyIndexer()
-        {
-            var grid = Custom.Create();
-
-            grid[Key.Escape] = Color.Red;
-
-            Assert.AreEqual(Color.Red, grid[Key.Escape]);
+            Assert.AreEqual(Color.Red, grid[3, 4]);
         }
     }
 }
