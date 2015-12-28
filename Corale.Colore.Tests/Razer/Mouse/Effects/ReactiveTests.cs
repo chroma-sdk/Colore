@@ -23,8 +23,8 @@
 
 namespace Corale.Colore.Tests.Razer.Mouse.Effects
 {
-    using Colore.Razer.Mouse;
     using Colore.Core;
+    using Colore.Razer.Mouse;
     using Colore.Razer.Mouse.Effects;
 
     using NUnit.Framework;
