@@ -53,12 +53,12 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
                       .EqualTo(-1));
 
             Assert.That(
-                () => dummy = grid[Constants.MaxRows + 1, 0],
+                () => dummy = grid[Constants.MaxRows, 0],
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
                       .With.Property("ParamName")
                       .EqualTo("row")
                       .And.Property("ActualValue")
-                      .EqualTo(Constants.MaxRows + 1));
+                      .EqualTo(Constants.MaxRows));
 
             Assert.That(
                 () => dummy = grid[0, -1],
@@ -69,12 +69,12 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
                       .EqualTo(-1));
 
             Assert.That(
-                () => dummy = grid[0, Constants.MaxColumns + 1],
+                () => dummy = grid[0, Constants.MaxColumns],
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
                       .With.Property("ParamName")
                       .EqualTo("column")
                       .And.Property("ActualValue")
-                      .EqualTo(Constants.MaxColumns + 1));
+                      .EqualTo(Constants.MaxColumns));
         }
 
         [Test]
@@ -91,12 +91,12 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
                       .EqualTo(-1));
 
             Assert.That(
-                () => grid[Constants.MaxRows + 1, 0] = Color.Red,
+                () => grid[Constants.MaxRows, 0] = Color.Red,
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
                       .With.Property("ParamName")
                       .EqualTo("row")
                       .And.Property("ActualValue")
-                      .EqualTo(Constants.MaxRows + 1));
+                      .EqualTo(Constants.MaxRows));
 
             Assert.That(
                 () => grid[0, -1] = Color.Red,
@@ -107,12 +107,12 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
                       .EqualTo(-1));
 
             Assert.That(
-                () => grid[0, Constants.MaxColumns + 1] = Color.Red,
+                () => grid[0, Constants.MaxColumns] = Color.Red,
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
                       .With.Property("ParamName")
                       .EqualTo("column")
                       .And.Property("ActualValue")
-                      .EqualTo(Constants.MaxColumns + 1));
+                      .EqualTo(Constants.MaxColumns));
         }
 
         [Test]
