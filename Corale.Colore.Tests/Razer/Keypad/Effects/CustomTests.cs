@@ -23,12 +23,14 @@
 
 namespace Corale.Colore.Tests.Razer.Keypad.Effects
 {
+    using System;
+
     using Corale.Colore.Core;
     using Corale.Colore.Razer.Keypad;
     using Corale.Colore.Razer.Keypad.Effects;
 
     using NUnit.Framework;
-    using System;
+
     [TestFixture]
     public class CustomTests
     {
