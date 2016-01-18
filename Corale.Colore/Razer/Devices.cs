@@ -205,6 +205,108 @@ namespace Corale.Colore.Razer
             0xd0);
 
         /// <summary>
+        /// Orochi Chroma edition.
+        /// </summary>
+        [PublicAPI]
+        public static readonly Guid Orochi = new Guid(
+            0x52c15681,
+            0x4ece,
+            0x4dd9,
+            0x8a,
+            0x52,
+            0xa1,
+            0x41,
+            0x84,
+            0x59,
+            0xeb,
+            0x34);
+
+        /// <summary>
+        /// Blade Stealth.
+        /// </summary>
+        [PublicAPI]
+        public static readonly Guid BladeStealth = new Guid(
+            0xc83bdfe8,
+            0xe7fc,
+            0x40e0,
+            0x99,
+            0xdb,
+            0x87,
+            0x2e,
+            0x23,
+            0xf1,
+            0x98,
+            0x91);
+
+        /// <summary>
+        /// Overwatch Keyboard.
+        /// </summary>
+        [PublicAPI]
+        public static readonly Guid OverwatchKeyboard = new Guid(
+            0x872ab2a9,
+            0x7959,
+            0x4478,
+            0x9f,
+            0xed,
+            0x15,
+            0xf6,
+            0x18,
+            0x6e,
+            0x72,
+            0xe4);
+
+        /// <summary>
+        /// Mamba (wireless) Chroma edition.
+        /// </summary>
+        [PublicAPI]
+        public static readonly Guid Mamba = new Guid(
+            0xd527cbdc,
+            0xeb0a,
+            0x483a,
+            0x9e,
+            0x89,
+            0x66,
+            0xd5,
+            0x4,
+            0x63,
+            0xec,
+            0x6c);
+
+        /// <summary>
+        /// Naga Chroma edition.
+        /// </summary>
+        [PublicAPI]
+        public static readonly Guid Naga = new Guid(
+            0xf1876328,
+            0x6ca4,
+            0x46ae,
+            0xbe,
+            0x4,
+            0xbe,
+            0x81,
+            0x2b,
+            0x41,
+            0x44,
+            0x33);
+
+        /// <summary>
+        /// Naga Epic Chroma edition.
+        /// </summary>
+        [PublicAPI]
+        public static readonly Guid NagaEpic = new Guid(
+            0xd714c50b,
+            0x7158,
+            0x4368,
+            0xb9,
+            0x9c,
+            0x60,
+            0x1a,
+            0xcb,
+            0x98,
+            0x5e,
+            0x98);
+
+        /// <summary>
         /// Returns whether a specified <see cref="Guid" /> is a valid device identifier.
         /// </summary>
         /// <param name="id">the <see cref="Guid" /> to check.</param>
@@ -213,7 +315,8 @@ namespace Corale.Colore.Razer
         public static bool IsValidId(Guid id)
         {
             return id == Blackwidow || id == Deathadder || id == Orbweaver || id == Tartarus || id == MambaTe
-                   || id == BlackwidowTe || id == Kraken71 || id == Firefly || id == Deathstalker || id == Diamondback;
+                   || id == BlackwidowTe || id == Kraken71 || id == Firefly || id == Deathstalker || id == Diamondback || id == Mamba
+                   || id == OverwatchKeyboard || id == Orochi || id == BladeStealth || id == Naga || id == NagaEpic;
         }
     }
 }
