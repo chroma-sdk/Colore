@@ -19,11 +19,6 @@
 //     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
-//     Disclaimer: Corale and/or Colore is in no way affiliated with Razer and/or any
-//     of its employees and/or licensors. Corale, Adam Hellberg, and/or Brandon Scott
-//     do not take responsibility for any harm caused, direct or indirect, to any
-//     Razer peripherals via the use of Colore.
-//
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
 // ---------------------------------------------------------------------------------------
@@ -81,7 +76,7 @@ namespace Corale.Colore.Core
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Color" /> struct using
-        /// three <see cref="System.Single" /> (<c>float</c>) values for the
+        /// three <see cref="float" /> (<c>float</c>) values for the
         /// R, G, B, and A (optional) channels.
         /// </summary>
         /// <param name="red">The red component (<c>0.0f</c> to <c>1.0f</c>, inclusive).</param>
@@ -99,7 +94,7 @@ namespace Corale.Colore.Core
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Color" /> struct using
-        /// three <see cref="System.Double" /> values for the R, G, B, and A (optional) channels.
+        /// three <see cref="double" /> values for the R, G, B, and A (optional) channels.
         /// </summary>
         /// <param name="red">The red component (<c>0.0</c> to <c>1.0</c>, inclusive).</param>
         /// <param name="green">The green component (<c>0.0</c> to <c>1.0</c>, inclusive).</param>
@@ -118,62 +113,32 @@ namespace Corale.Colore.Core
         /// Gets the alpha component of the color as a byte.
         /// </summary>
         [PublicAPI]
-        public byte A
-        {
-            get
-            {
-                return (byte)((_value >> 24) & 0xFF);
-            }
-        }
+        public byte A => (byte)((_value >> 24) & 0xFF);
 
         /// <summary>
         /// Gets the blue component of the color as a byte.
         /// </summary>
         [PublicAPI]
-        public byte B
-        {
-            get
-            {
-                return (byte)((_value >> 16) & 0xFF);
-            }
-        }
+        public byte B => (byte)((_value >> 16) & 0xFF);
 
         /// <summary>
         /// Gets the green component of the color as a byte.
         /// </summary>
         [PublicAPI]
-        public byte G
-        {
-            get
-            {
-                return (byte)((_value >> 8) & 0xFF);
-            }
-        }
+        public byte G => (byte)((_value >> 8) & 0xFF);
 
         /// <summary>
         /// Gets the red component of the color as a byte.
         /// </summary>
         [PublicAPI]
-        public byte R
-        {
-            get
-            {
-                return (byte)(_value & 0xFF);
-            }
-        }
+        public byte R => (byte)(_value & 0xFF);
 
         /// <summary>
         /// Gets the unsigned integer representing
         /// the color. On the form <c>0xAABBGGRR</c>.
         /// </summary>
         [PublicAPI]
-        public uint Value
-        {
-            get
-            {
-                return _value;
-            }
-        }
+        public uint Value => _value;
 
         /// <summary>
         /// Converts a <see cref="Color" /> struct to a <see cref="uint" />.

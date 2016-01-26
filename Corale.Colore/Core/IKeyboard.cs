@@ -19,11 +19,6 @@
 //     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
-//     Disclaimer: Corale and/or Colore is in no way affiliated with Razer and/or any
-//     of its employees and/or licensors. Corale, Adam Hellberg, and/or Brandon Scott
-//     do not take responsibility for any harm caused, direct or indirect, to any
-//     Razer peripherals via the use of Colore.
-//
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
 // ---------------------------------------------------------------------------------------
@@ -53,11 +48,11 @@ namespace Corale.Colore.Core
         /// Gets or sets the <see cref="Color" /> for a specific row and column on the
         /// keyboard grid.
         /// </summary>
-        /// <param name="row">Row to query, between 1 and <see cref="Constants.MaxRows" />.</param>
-        /// <param name="column">Column to query, between 1 and <see cref="Constants.MaxColumns" />.</param>
+        /// <param name="row">Row to query, between 0 and <see cref="Constants.MaxRows" /> (exclusive upper-bound).</param>
+        /// <param name="column">Column to query, between 0 and <see cref="Constants.MaxColumns" /> (exclusive upper-bound).</param>
         /// <returns>The color currently set on the specified position.</returns>
         [PublicAPI]
-        Color this[Size row, Size column] { get; set; }
+        Color this[int row, int column] { get; set; }
 
         /// <summary>
         /// Returns whether a certain key has had a custom color set.
@@ -148,7 +143,7 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         /// <param name="clear">Whether or not to clear the existing colors before setting this one.</param>
         [PublicAPI]
-        void SetPosition(Size row, Size column, Color color, bool clear = false);
+        void SetPosition(int row, int column, Color color, bool clear = false);
 
         /// <summary>
         /// Sets the color of a specific key on the keyboard.

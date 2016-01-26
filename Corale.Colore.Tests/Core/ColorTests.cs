@@ -19,11 +19,6 @@
 //     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
-//     Disclaimer: Corale and/or Colore is in no way affiliated with Razer and/or any
-//     of its employees and/or licensors. Corale, Adam Hellberg, and/or Brandon Scott
-//     do not take responsibility for any harm caused, direct or indirect, to any
-//     Razer peripherals via the use of Colore.
-//
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
 // ---------------------------------------------------------------------------------------
@@ -138,7 +133,7 @@ namespace Corale.Colore.Tests.Core
         [Test]
         public void ShouldDefaultToEmptyColor()
         {
-            Assert.AreEqual(new Color().Value, 0);
+            Assert.AreEqual(default(Color).Value, 0);
         }
 
         [Test]
@@ -224,8 +219,8 @@ namespace Corale.Colore.Tests.Core
             const uint A = 0x00FFFFFF;
             var b = new Color(0x00FFFFFF);
             Assert.AreEqual(A, b);
-            Assert.True(A == b);
-            Assert.False(A != b);
+            Assert.True(b == A);
+            Assert.False(b != A);
         }
 
         [Test]
@@ -242,8 +237,8 @@ namespace Corale.Colore.Tests.Core
             const uint A = 0x00FF00FF;
             var b = new Color(0x00FFFFFF);
             Assert.AreNotEqual(A, b);
-            Assert.False(A == b);
-            Assert.True(A != b);
+            Assert.False(b == A);
+            Assert.True(b != A);
         }
 
         [Test]

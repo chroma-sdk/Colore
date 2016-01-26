@@ -19,17 +19,14 @@
 //     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
-//     Disclaimer: Corale and/or Colore is in no way affiliated with Razer and/or any
-//     of its employees and/or licensors. Corale, Adam Hellberg, and/or Brandon Scott
-//     do not take responsibility for any harm caused, direct or indirect, to any
-//     Razer peripherals via the use of Colore.
-//
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
 namespace Corale.Colore.Core
 {
+    using System;
+
     using Corale.Colore.Razer.Mousepad.Effects;
 
     using log4net;
@@ -119,7 +116,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">Effect options.</param>
         public void SetEffect(Effect effect)
         {
-            SetGuid(NativeWrapper.CreateMousepadEffect(effect));
+            SetGuid(NativeWrapper.CreateMousepadEffect(effect, IntPtr.Zero));
         }
 
         /// <summary>
@@ -128,7 +125,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">An instance of the <see cref="Breathing" /> struct.</param>
         public void SetBreathing(Breathing effect)
         {
-            SetGuid(NativeWrapper.CreateMousepadEffect(effect));
+            SetGuid(NativeWrapper.CreateMousepadEffect(Effect.Breathing, effect));
         }
 
         /// <summary>
@@ -156,7 +153,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
         public void SetStatic(Static effect)
         {
-            SetGuid(NativeWrapper.CreateMousepadEffect(effect));
+            SetGuid(NativeWrapper.CreateMousepadEffect(Effect.Static, effect));
         }
 
         /// <summary>
@@ -174,7 +171,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">An instance of the <see cref="Wave" /> struct.</param>
         public void SetWave(Wave effect)
         {
-            SetGuid(NativeWrapper.CreateMousepadEffect(effect));
+            SetGuid(NativeWrapper.CreateMousepadEffect(Effect.Wave, effect));
         }
 
         /// <summary>
@@ -192,7 +189,7 @@ namespace Corale.Colore.Core
         /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
         public void SetCustom(Custom effect)
         {
-            SetGuid(NativeWrapper.CreateMousepadEffect(effect));
+            SetGuid(NativeWrapper.CreateMousepadEffect(Effect.Custom, effect));
         }
     }
 }

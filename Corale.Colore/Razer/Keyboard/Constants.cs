@@ -19,11 +19,6 @@
 //     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
-//     Disclaimer: Corale and/or Colore is in no way affiliated with Razer and/or any
-//     of its employees and/or licensors. Corale, Adam Hellberg, and/or Brandon Scott
-//     do not take responsibility for any harm caused, direct or indirect, to any
-//     Razer peripherals via the use of Colore.
-//
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
 // ---------------------------------------------------------------------------------------
@@ -41,24 +36,24 @@ namespace Corale.Colore.Razer.Keyboard
         /// The maximum number of rows on the keyboard
         /// </summary>
         [PublicAPI]
-        public const uint MaxRows = 6;
+        public const int MaxRows = 6;
 
         /// <summary>
         /// The maximum number of columns on the keyboard
         /// </summary>
         [PublicAPI]
-        public const uint MaxColumns = 22;
+        public const int MaxColumns = 22;
 
         /// <summary>
         /// The maximum number of keys on the keyboard
         /// </summary>
         [PublicAPI]
-        public const uint MaxKeys = MaxRows * MaxColumns;
+        public const int MaxKeys = MaxRows * MaxColumns;
 
         /// <summary>
         /// The maximum number of custom effects based on the maximum keys
         /// </summary>
         [PublicAPI]
-        public const uint MaxCustomEffects = MaxKeys;
+        public const int MaxCustomEffects = MaxKeys;
     }
 }

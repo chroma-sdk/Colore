@@ -19,11 +19,6 @@
 //     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
-//     Disclaimer: Corale and/or Colore is in no way affiliated with Razer and/or any
-//     of its employees and/or licensors. Corale, Adam Hellberg, and/or Brandon Scott
-//     do not take responsibility for any harm caused, direct or indirect, to any
-//     Razer peripherals via the use of Colore.
-//
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
 // ---------------------------------------------------------------------------------------
@@ -65,12 +60,12 @@ namespace Corale.Colore.Razer.Mouse.Effects
             {
                 throw new ArgumentException(
                     "Colors array has incorrect number of rows, should be " + Constants.MaxRows + ", received " + rows,
-                    "colors");
+                    nameof(colors));
             }
 
             _rows = new Row[Constants.MaxRows];
 
-            for (Size row = 0; row < Constants.MaxRows; row++)
+            for (var row = 0; row < Constants.MaxRows; row++)
             {
                 var inRow = colors[row];
                 _rows[row] = new Row(inRow);
@@ -102,7 +97,7 @@ namespace Corale.Colore.Razer.Mouse.Effects
             get
             {
                 if (row < 0 || row >= Constants.MaxRows)
-                    throw new ArgumentOutOfRangeException("row", row, "Attempted to access a row that does not exist.");
+                    throw new ArgumentOutOfRangeException(nameof(row), row, "Attempted to access a row that does not exist.");
 
                 return _rows[row][column];
             }
@@ -110,7 +105,7 @@ namespace Corale.Colore.Razer.Mouse.Effects
             set
             {
                 if (row < 0 || row >= Constants.MaxRows)
-                    throw new ArgumentOutOfRangeException("row", row, "Attempted to access a row that does not exist.");
+                    throw new ArgumentOutOfRangeException(nameof(row), row, "Attempted to access a row that does not exist.");
 
                 _rows[row][column] = value;
             }
@@ -182,7 +177,7 @@ namespace Corale.Colore.Razer.Mouse.Effects
         /// </returns>
         public override int GetHashCode()
         {
-            return _rows == null ? 0 : _rows.GetHashCode();
+            return _rows?.GetHashCode() ?? 0;
         }
 
         /// <summary>
@@ -300,7 +295,7 @@ namespace Corale.Colore.Razer.Mouse.Effects
                 {
                     throw new ArgumentException(
                         "Incorrect color count, expected " + Constants.MaxColumns + " but received " + colors.Count,
-                        "colors");
+                        nameof(colors));
                 }
 
                 _columns = new uint[Constants.MaxColumns];
@@ -334,7 +329,7 @@ namespace Corale.Colore.Razer.Mouse.Effects
                     if (column < 0 || column >= Constants.MaxColumns)
                     {
                         throw new ArgumentOutOfRangeException(
-                            "column",
+                            nameof(column),
                             column,
                             "Attempted to access a column that does not exist.");
                     }
@@ -347,7 +342,7 @@ namespace Corale.Colore.Razer.Mouse.Effects
                     if (column < 0 || column >= Constants.MaxColumns)
                     {
                         throw new ArgumentOutOfRangeException(
-                            "column",
+                            nameof(column),
                             column,
                             "Attempted to access a column that does not exist.");
                     }
@@ -375,7 +370,7 @@ namespace Corale.Colore.Razer.Mouse.Effects
             /// <filterpriority>2</filterpriority>
             public override int GetHashCode()
             {
-                return _columns == null ? 0 : _columns.GetHashCode();
+                return _columns?.GetHashCode() ?? 0;
             }
 
             /// <summary>

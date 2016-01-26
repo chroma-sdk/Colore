@@ -19,11 +19,6 @@
 //     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
-//     Disclaimer: Corale and/or Colore is in no way affiliated with Razer and/or any
-//     of its employees and/or licensors. Corale, Adam Hellberg, and/or Brandon Scott
-//     do not take responsibility for any harm caused, direct or indirect, to any
-//     Razer peripherals via the use of Colore.
-//
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
 // ---------------------------------------------------------------------------------------
@@ -73,7 +68,7 @@ namespace Corale.Colore.Razer.Mousepad.Effects
             {
                 throw new ArgumentException(
                     "Invalid length of color list, expected " + Constants.MaxLeds + " but received " + colors.Count,
-                    "colors");
+                    nameof(colors));
             }
 
             _colors = new Color[Constants.MaxLeds];
@@ -95,7 +90,7 @@ namespace Corale.Colore.Razer.Mousepad.Effects
                 if (led < 0 || led >= Constants.MaxLeds)
                 {
                     throw new ArgumentOutOfRangeException(
-                        "led",
+                        nameof(led),
                         led,
                         "Attempted to access an LED that was out of range.");
                 }
@@ -108,7 +103,7 @@ namespace Corale.Colore.Razer.Mousepad.Effects
                 if (led < 0 || led >= Constants.MaxLeds)
                 {
                     throw new ArgumentOutOfRangeException(
-                        "led",
+                        nameof(led),
                         led,
                         "Attempted to access an LED that was out of range.");
                 }
@@ -160,7 +155,7 @@ namespace Corale.Colore.Razer.Mousepad.Effects
         /// <filterpriority>2</filterpriority>
         public override int GetHashCode()
         {
-            return _colors != null ? _colors.GetHashCode() : 0;
+            return _colors?.GetHashCode() ?? 0;
         }
 
         /// <summary>

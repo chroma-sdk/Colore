@@ -19,11 +19,6 @@
 //     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
-//     Disclaimer: Corale and/or Colore is in no way affiliated with Razer and/or any
-//     of its employees and/or licensors. Corale, Adam Hellberg, and/or Brandon Scott
-//     do not take responsibility for any harm caused, direct or indirect, to any
-//     Razer peripherals via the use of Colore.
-//
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
 // ---------------------------------------------------------------------------------------
@@ -40,29 +35,18 @@ namespace Corale.Colore.Events
     public sealed class DeviceAccessEventArgs : EventArgs
     {
         /// <summary>
-        /// Whether or not device access has been granted.
-        /// </summary>
-        private readonly bool _granted;
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="DeviceAccessEventArgs" /> class.
         /// </summary>
         /// <param name="granted">Value indicating whether device access was granted.</param>
         internal DeviceAccessEventArgs(bool granted)
         {
-            _granted = granted;
+            Granted = granted;
         }
 
         /// <summary>
         /// Gets a value indicating whether device access has been granted.
         /// </summary>
         [PublicAPI]
-        public bool Granted
-        {
-            get
-            {
-                return _granted;
-            }
-        }
+        public bool Granted { get; }
     }
 }

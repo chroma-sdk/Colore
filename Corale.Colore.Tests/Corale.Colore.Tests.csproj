@@ -19,7 +19,7 @@
     <DebugType>full</DebugType>
     <PlatformTarget>x64</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\Corale.Colore.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
     <OutputPath>bin\x64\Release\</OutputPath>
@@ -28,7 +28,7 @@
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>x64</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\Corale.Colore.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -37,7 +37,7 @@
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\Corale.Colore.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\Release\</OutputPath>
@@ -46,7 +46,7 @@
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>x86</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\Corale.Colore.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
@@ -55,7 +55,7 @@
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\Corale.Colore.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <OutputPath>bin\Release\</OutputPath>
@@ -64,14 +64,16 @@
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\Corale.Colore.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Moq">
-      <HintPath>..\packages\Moq.4.2.1502.0911\lib\net40\Moq.dll</HintPath>
+    <Reference Include="Moq, Version=4.2.1510.2205, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\packages\Moq.4.2.1510.2205\lib\net40\Moq.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="nunit.framework, Version=2.6.4.14350, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    <Reference Include="nunit.framework, Version=3.0.5813.39031, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.0.1\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
@@ -88,16 +90,38 @@
     <Compile Include="Events\ApplicationStateEventArgsTests.cs" />
     <Compile Include="Events\DeviceAccessEventArgsTests.cs" />
     <Compile Include="Events\SdkSupportEventArgsTests.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Core\ColorTests.cs" />
+    <Compile Include="Razer\DevicesTests.cs" />
+    <Compile Include="Razer\Headset\Effects\BreathingTests.cs" />
+    <Compile Include="Razer\Headset\Effects\StaticTests.cs" />
     <Compile Include="Razer\Keyboard\Effects\BreathingTests.cs" />
     <Compile Include="Razer\Keyboard\Effects\CustomTests.cs" />
     <Compile Include="Razer\Keyboard\Effects\ReactiveTests.cs" />
     <Compile Include="Razer\Keyboard\Effects\StaticTests.cs" />
     <Compile Include="Razer\Keyboard\Effects\WaveTests.cs" />
+    <Compile Include="Razer\Keypad\Effects\BreathingTests.cs" />
+    <Compile Include="Razer\Keypad\Effects\CustomTests.cs" />
+    <Compile Include="Razer\Keypad\Effects\ReactiveTests.cs" />
+    <Compile Include="Razer\Keypad\Effects\StaticTests.cs" />
+    <Compile Include="Razer\Keypad\Effects\WaveTests.cs" />
+    <Compile Include="Razer\Mousepad\Effects\BreathingTests.cs" />
+    <Compile Include="Razer\Mousepad\Effects\CustomTests.cs" />
+    <Compile Include="Razer\Mousepad\Effects\StaticTests.cs" />
+    <Compile Include="Razer\Mousepad\Effects\WaveTests.cs" />
+    <Compile Include="Razer\Mouse\Effects\BlinkingTests.cs" />
+    <Compile Include="Razer\Mouse\Effects\BreathingTests.cs" />
+    <Compile Include="Razer\Mouse\Effects\CustomGridTests.cs" />
+    <Compile Include="Razer\Mouse\Effects\CustomTests.cs" />
+    <Compile Include="Razer\Mouse\Effects\NoneTests.cs" />
+    <Compile Include="Razer\Mouse\Effects\ReactiveTests.cs" />
+    <Compile Include="Razer\Mouse\Effects\SpectrumCyclingTests.cs" />
+    <Compile Include="Razer\Mouse\Effects\StaticTests.cs" />
+    <Compile Include="Razer\Mouse\Effects\WaveTests.cs" />
     <Compile Include="Razer\NativeCallExceptionTests.cs" />
     <Compile Include="Razer\ResultTests.cs" />
-    <Compile Include="Razer\SizeTests.cs" />
+    <Compile Include="Razer\UnsupportedDeviceExceptionTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Corale.Colore\Corale.Colore.csproj">
@@ -106,10 +130,18 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <AdditionalFiles Include="..\stylecop.json">
+      <Link>stylecop.json</Link>
+    </AdditionalFiles>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0-rc2\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0-rc2\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0-rc2\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>

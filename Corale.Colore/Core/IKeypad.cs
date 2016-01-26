@@ -19,11 +19,6 @@
 //     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
-//     Disclaimer: Corale and/or Colore is in no way affiliated with Razer and/or any
-//     of its employees and/or licensors. Corale, Adam Hellberg, and/or Brandon Scott
-//     do not take responsibility for any harm caused, direct or indirect, to any
-//     Razer peripherals via the use of Colore.
-//
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
 // ---------------------------------------------------------------------------------------
@@ -43,8 +38,8 @@ namespace Corale.Colore.Core
         /// Gets or sets a color at the specified position in the keypad's
         /// grid layout.
         /// </summary>
-        /// <param name="row">The row to access (between <c>0</c> and <see cref="Constants.MaxRows" />).</param>
-        /// <param name="column">The column to access (between <c>0</c> and <see cref="Constants.MaxColumns" />).</param>
+        /// <param name="row">The row to access (between <c>0</c> and <see cref="Constants.MaxRows" />, exclusive upper-bound).</param>
+        /// <param name="column">The column to access (between <c>0</c> and <see cref="Constants.MaxColumns" />, exclusive upper-bound).</param>
         /// <returns>The <see cref="Color" /> at the specified position.</returns>
         [PublicAPI]
         Color this[int row, int column] { get; set; }
@@ -99,10 +94,10 @@ namespace Corale.Colore.Core
         /// Sets a <see cref="Reactive" /> effect on the keypad
         /// with the specified parameters.
         /// </summary>
-        /// <param name="duration">Duration of the effect.</param>
         /// <param name="color">Color of the effect.</param>
+        /// <param name="duration">Duration of the effect.</param>
         [PublicAPI]
-        void SetReactive(Duration duration, Color color);
+        void SetReactive(Color color, Duration duration);
 
         /// <summary>
         /// Sets a <see cref="Static" /> effect on the keypad.

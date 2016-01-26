@@ -19,11 +19,6 @@
 //     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
-//     Disclaimer: Corale and/or Colore is in no way affiliated with Razer and/or any
-//     of its employees and/or licensors. Corale, Adam Hellberg, and/or Brandon Scott
-//     do not take responsibility for any harm caused, direct or indirect, to any
-//     Razer peripherals via the use of Colore.
-//
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
 // ---------------------------------------------------------------------------------------
@@ -58,12 +53,12 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
                       .EqualTo(-1));
 
             Assert.That(
-                () => dummy = grid[(int)Constants.MaxRows + 1, 0],
+                () => dummy = grid[Constants.MaxRows, 0],
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
                       .With.Property("ParamName")
                       .EqualTo("row")
                       .And.Property("ActualValue")
-                      .EqualTo(Constants.MaxRows + 1));
+                      .EqualTo(Constants.MaxRows));
 
             Assert.That(
                 () => dummy = grid[0, -1],
@@ -74,12 +69,12 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
                       .EqualTo(-1));
 
             Assert.That(
-                () => dummy = grid[0, (int)Constants.MaxColumns + 1],
+                () => dummy = grid[0, Constants.MaxColumns],
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
                       .With.Property("ParamName")
                       .EqualTo("column")
                       .And.Property("ActualValue")
-                      .EqualTo(Constants.MaxColumns + 1));
+                      .EqualTo(Constants.MaxColumns));
         }
 
         [Test]
@@ -96,12 +91,12 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
                       .EqualTo(-1));
 
             Assert.That(
-                () => grid[(int)Constants.MaxRows + 1, 0] = Color.Red,
+                () => grid[Constants.MaxRows, 0] = Color.Red,
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
                       .With.Property("ParamName")
                       .EqualTo("row")
                       .And.Property("ActualValue")
-                      .EqualTo(Constants.MaxRows + 1));
+                      .EqualTo(Constants.MaxRows));
 
             Assert.That(
                 () => grid[0, -1] = Color.Red,
@@ -112,12 +107,12 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
                       .EqualTo(-1));
 
             Assert.That(
-                () => grid[0, (int)Constants.MaxColumns + 1] = Color.Red,
+                () => grid[0, Constants.MaxColumns] = Color.Red,
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
                       .With.Property("ParamName")
                       .EqualTo("column")
                       .And.Property("ActualValue")
-                      .EqualTo(Constants.MaxColumns + 1));
+                      .EqualTo(Constants.MaxColumns));
         }
 
         [Test]
@@ -327,6 +322,40 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
             Assert.True(grid != null);
             Assert.False(grid.Equals(null));
             Assert.AreNotEqual(grid, null);
+        }
+
+        [Test]
+        public void ShouldGetWithIndexIndexer()
+        {
+            var grid = new Custom(Color.Red);
+            Assert.AreEqual(Color.Red, grid[3, 3]);
+        }
+
+        [Test]
+        public void ShouldGetWithKeyIndexer()
+        {
+            var grid = new Custom(Color.Red);
+            Assert.AreEqual(Color.Red, grid[Key.Escape]);
+        }
+
+        [Test]
+        public void ShouldSetWithIndexIndexer()
+        {
+            var grid = Custom.Create();
+
+            grid[5, 5] = Color.Red;
+
+            Assert.AreEqual(Color.Red, grid[5, 5]);
+        }
+
+        [Test]
+        public void ShouldSetWithKeyIndexer()
+        {
+            var grid = Custom.Create();
+
+            grid[Key.Escape] = Color.Red;
+
+            Assert.AreEqual(Color.Red, grid[Key.Escape]);
         }
     }
 }
