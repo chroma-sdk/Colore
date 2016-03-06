@@ -26,7 +26,10 @@
 namespace Corale.Colore.Core
 {
     using System;
+
+    using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
+    using System.Linq;
     using System.Security;
 
     using Corale.Colore.Annotations;
@@ -56,6 +59,11 @@ namespace Corale.Colore.Core
         /// Holds the application-wide instance of the <see cref="IChroma" /> interface.
         /// </summary>
         private static IChroma _instance;
+
+        /// <summary>
+        /// Keeps a record of connected devices.
+        /// </summary>
+        private static IDictionary<Guid, DeviceInfo> _connectedDevices;
 
         /// <summary>
         /// Keeps track of whether we have registered to receive Chroma events.
@@ -134,6 +142,28 @@ namespace Corale.Colore.Core
                 {
                     return _instance ?? (_instance = new Chroma());
                 }
+            }
+        }
+
+        /// <summary>
+        /// Gets a list of currently connected devices.
+        /// </summary>
+        [PublicAPI]
+        public IDictionary<Guid, DeviceInfo> ConnectedDevices
+        {
+            get
+            {
+                _connectedDevices = new Dictionary<Guid, DeviceInfo>();
+
+            var devices = (from field in typeof(Devices).GetFields() where field.FieldType == typeof(Guid) select (Guid)field.GetValue(typeof(Devices))).ToList();
+            foreach (Guid deviceId in devices)
+            {
+                var deviceInfo = Query(deviceId);
+                if (deviceInfo.Connected)
+                    _connectedDevices.Add(deviceId, deviceInfo);
+            }
+
+            return _connectedDevices;
             }
         }
 
@@ -320,6 +350,18 @@ namespace Corale.Colore.Core
 
             Log.DebugFormat("Information for {0} requested", deviceId);
             return NativeWrapper.QueryDevice(deviceId);
+        }
+
+        /// <summary>
+        /// Queries the SDK for connected devices of a specific device type.
+        /// </summary>
+        /// <param name="deviceType">The device type to query for, valid types can be found in <see cref="DeviceType" />.</param>
+        /// <returns>A list with information regarding the devices that are connected.</returns>
+        [SecurityCritical]
+        public List<Guid> Query(DeviceType deviceType)
+        {
+            Log.DebugFormat("Information for {0} requested", deviceType);
+            return Instance.ConnectedDevices.Where(x => x.Value.Type == DeviceType.Headset).Select(x => x.Key).ToList();
         }
 
         /// <summary>

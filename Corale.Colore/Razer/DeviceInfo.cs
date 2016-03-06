@@ -25,6 +25,7 @@
 
 namespace Corale.Colore.Razer
 {
+    using System;
     using System.Runtime.InteropServices;
 
     using Corale.Colore.Annotations;

@@ -26,10 +26,10 @@
 namespace Corale.Colore.Core
 {
     using System;
+    using System.Collections.Generic;
 
     using Corale.Colore.Razer.Keypad;
     using Corale.Colore.Razer.Keypad.Effects;
-
     using log4net;
 
     /// <summary>
@@ -80,6 +80,17 @@ namespace Corale.Colore.Core
                 {
                     return _instance ?? (_instance = new Keypad());
                 }
+            }
+        }
+
+        /// <summary>
+        /// Gets a list of connected devices for this type
+        /// </summary>
+        public override List<Guid> ConnectedDevices
+        {
+            get
+            {
+                return Chroma.Instance.Query(Razer.DeviceType.Keypad);
             }
         }
 

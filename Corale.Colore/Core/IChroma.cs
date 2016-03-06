@@ -26,6 +26,7 @@
 namespace Corale.Colore.Core
 {
     using System;
+    using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
 
     using Corale.Colore.Annotations;
@@ -119,6 +120,13 @@ namespace Corale.Colore.Core
         SdkVersion SdkVersion { get; }
 
         /// <summary>
+        /// Gets a value indicating whether the Chroma
+        /// SDK has been initialized or not.
+        /// </summary>
+        [PublicAPI]
+        IDictionary<Guid, DeviceInfo> ConnectedDevices { get; }
+
+        /// <summary>
         /// Initializes the SDK if it hasn't already.
         /// </summary>
         /// <remarks>
@@ -147,6 +155,14 @@ namespace Corale.Colore.Core
         /// <returns>A struct with information regarding the device type and whether it's connected.</returns>
         [PublicAPI]
         DeviceInfo Query(Guid deviceId);
+
+        /// <summary>
+        /// Queries the SDK for connected devices of a specific device type.
+        /// </summary>
+        /// <param name="deviceType">The device type to query for, valid types can be found in <see cref="DeviceType" />.</param>
+        /// <returns>A list with information regarding the devices that are connected.</returns>
+        [PublicAPI]
+        List<Guid> Query(DeviceType deviceType);
 
         /// <summary>
         /// Gets an instance of <see cref="IGenericDevice" /> for

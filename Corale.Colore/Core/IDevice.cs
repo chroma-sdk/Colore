@@ -26,6 +26,7 @@
 namespace Corale.Colore.Core
 {
     using System;
+    using System.Collections.Generic;
 
     using Corale.Colore.Annotations;
 
@@ -34,6 +35,20 @@ namespace Corale.Colore.Core
     /// </summary>
     public interface IDevice
     {
+        /// <summary>
+        /// Gets a value indicating whether this device
+        /// is connected or not.
+        /// </summary>
+        [PublicAPI]
+        bool Connected { get; }
+
+        /// <summary>
+        /// Gets a list of connected devices for this type
+        /// is connected or not.
+        /// </summary>
+        [PublicAPI]
+        List<Guid> ConnectedDevices { get; }
+
         /// <summary>
         /// Gets the ID of the currently active effect.
         /// </summary>

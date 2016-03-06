@@ -69,6 +69,24 @@ namespace Corale.Colore.Core
         /// </summary>
         public Guid DeviceId { get; }
 
+        /// <inheritdoc/>
+        public override bool Connected
+        {
+            get
+            {
+                return false;
+            }
+        }
+
+        /// <inheritdoc/>
+        public override List<Guid> ConnectedDevices
+        {
+            get
+            {
+                return new List<Guid>();
+            }
+        }
+
         /// <summary>
         /// Gets a <see cref="IGenericDevice" /> instance for the device
         /// with the specified ID.

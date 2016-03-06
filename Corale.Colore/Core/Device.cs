@@ -26,6 +26,7 @@
 namespace Corale.Colore.Core
 {
     using System;
+    using System.Collections.Generic;
 
     /// <summary>
     /// Base class for devices, containing code common between all devices.
@@ -36,6 +37,23 @@ namespace Corale.Colore.Core
         /// Gets or sets the ID of the currently active effect.
         /// </summary>
         public Guid CurrentEffectId { get; protected set; }
+
+        /// <summary>
+        /// Gets a value indicating whether this device
+        /// is connected
+        /// </summary>
+        public virtual bool Connected
+        {
+            get
+            {
+                return ConnectedDevices.Count > 0;
+            }
+        }
+
+        /// <summary>
+        /// Gets a list of connected devices for this type.
+        /// </summary>
+        public abstract List<Guid> ConnectedDevices { get; }
 
         /// <summary>
         /// Clears the current effect on the device.
