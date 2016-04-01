@@ -60,7 +60,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
             if (rows != Constants.MaxRows)
             {
                 throw new ArgumentException(
-                    "Colors array has incorrect number of rows, should be " + Constants.MaxRows + ", received " + rows,
+                    $"Colors array has incorrect number of rows, should be {Constants.MaxRows}, received {rows}.",
                     nameof(colors));
             }
 
