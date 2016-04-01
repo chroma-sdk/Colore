@@ -109,7 +109,7 @@ namespace Corale.Colore.Razer.Keypad.Effects
             _colors = new Color[Constants.MaxKeys];
 
             for (var index = 0; index < Constants.MaxKeys; index++)
-                _colors[index] = color;
+                this[index] = color;
         }
 
         /// <summary>
