@@ -320,7 +320,8 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
 
             Assert.False(grid == null);
             Assert.True(grid != null);
-            Assert.False(grid.Equals(null));
+            Assert.False(grid.Equals((Color[][])null));
+            Assert.False(grid.Equals((Color[])null));
             Assert.AreNotEqual(grid, null);
         }
 
