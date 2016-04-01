@@ -163,7 +163,7 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
         }
 
         [Test]
-        public void ShouldThrowWhenInvalidRowCount()
+        public void ShouldThrowWhenInvalid2DRowCount()
         {
             // We don't need to set up the columns as the code should throw before
             // it reaches the point of iterating rows
@@ -178,13 +178,26 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
         }
 
         [Test]
-        public void ShouldThrowWhenInvalidColumnCount()
+        public void ShouldThrowWhenInvalid2DColumnCount()
         {
             var arr = new Color[Constants.MaxRows][];
 
             // We only need to populate one of the rows, as the
             // code shouldn't check further anyway.
             arr[0] = new Color[2];
+
+            // ReSharper disable once NotAccessedVariable
+            Custom dummy;
+
+            Assert.That(
+                () => dummy = new Custom(arr),
+                Throws.ArgumentException.With.Property("ParamName").EqualTo("colors"));
+        }
+
+        [Test]
+        public void ShouldThrowWhenInvalid1DSize()
+        {
+            var arr = new Color[2];
 
             // ReSharper disable once NotAccessedVariable
             Custom dummy;
