@@ -450,7 +450,7 @@ namespace Corale.Colore.Tests.Razer.Mouse.Effects
         [Test]
         public void ShouldNotEqual1DArrayWithInvalidSize()
         {
-            var grid = Custom.Create();
+            var grid = CustomGrid.Create();
             var arr = new Color[2];
 
             Assert.False(grid == arr);
