@@ -41,8 +41,9 @@ namespace Corale.Colore.Razer.Keypad.Effects
         /// Color definitions for each key on the keypad.
         /// </summary>
         /// <remarks>
-        /// The array is 2-dimensional, with the first dimension
-        /// specifying the row for the key, and the second the column.
+        /// The array is 1-dimensional, but will be passed to code expecting
+        /// a 2-dimensional array. Access to this array is done using indices
+        /// according to: <c>column + row * Constants.MaxColumns</c>
         /// </remarks>
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = Constants.MaxKeys)]
         private readonly Color[] _colors;
