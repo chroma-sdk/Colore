@@ -68,6 +68,13 @@ namespace Corale.Colore.Razer.Keyboard.Effects
 
             for (var row = 0; row < Constants.MaxRows; row++)
             {
+                if (colors[row].Length != Constants.MaxColumns)
+                {
+                    throw new ArgumentException(
+                        $"Colors array has incorrect number of columns, should be {Constants.MaxColumns}, received {colors[row].Length} for row {row}.",
+                        nameof(colors));
+                }
+
                 for (var column = 0; column < Constants.MaxColumns; column++)
                     this[row, column] = colors[row][column];
             }
@@ -125,6 +132,14 @@ namespace Corale.Colore.Razer.Keyboard.Effects
                         "Attempted to access a row that does not exist.");
                 }
 
+                if (column < 0 || column >= Constants.MaxColumns)
+                {
+                    throw new ArgumentOutOfRangeException(
+                        nameof(column),
+                        column,
+                        "Attempted to access a column that does not exist.");
+                }
+
 #pragma warning disable SA1407 // Arithmetic expressions must declare precedence
                 return _colors[column + row * Constants.MaxColumns];
 #pragma warning restore SA1407 // Arithmetic expressions must declare precedence
@@ -138,6 +153,14 @@ namespace Corale.Colore.Razer.Keyboard.Effects
                         nameof(row),
                         row,
                         "Attempted to access a row that does not exist.");
+                }
+
+                if (column < 0 || column >= Constants.MaxColumns)
+                {
+                    throw new ArgumentOutOfRangeException(
+                        nameof(column),
+                        column,
+                        "Attempted to access a column that does not exist.");
                 }
 
 #pragma warning disable SA1407 // Arithmetic expressions must declare precedence
@@ -156,7 +179,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         {
             get
             {
-                if (index < 0 || index > Constants.MaxKeys)
+                if (index < 0 || index >= Constants.MaxKeys)
                 {
                     throw new ArgumentOutOfRangeException(
                         nameof(index),
@@ -280,8 +303,14 @@ namespace Corale.Colore.Razer.Keyboard.Effects
             if (obj is Custom)
                 return Equals((Custom)obj);
 
-            var arr = obj as Color[][];
-            return arr != null && Equals(arr);
+            var arr2D = obj as Color[][];
+
+            if (arr2D != null)
+                return Equals(arr2D);
+
+            var arr1D = obj as Color[];
+
+            return arr1D != null && Equals(arr1D);
         }
 
         /// <summary>
