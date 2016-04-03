@@ -1,5 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+﻿// <copyright file="Starlight.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -21,70 +20,57 @@
 //
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
-// ---------------------------------------------------------------------------------------
 
 namespace Corale.Colore.Razer.Keyboard.Effects
 {
+    using System.Runtime.InteropServices;
+
     using Corale.Colore.Annotations;
+    using Corale.Colore.Core;
 
     /// <summary>
-    /// Supported built-in keyboard effects.
+    /// Describes the starlight effect.
     /// </summary>
-    [PublicAPI]
-    public enum Effect
+    [StructLayout(LayoutKind.Sequential)]
+    public struct Starlight
     {
         /// <summary>
-        /// No effect.
+        /// Effect type.
         /// </summary>
         [PublicAPI]
-        None = 0,
+        public readonly StarlightType Type;
 
         /// <summary>
-        /// Breathing effect.
+        /// The first color to use.
         /// </summary>
         [PublicAPI]
-        Breathing,
+        public readonly Color FirstColor;
 
         /// <summary>
-        /// Custom effect.
+        /// The second color to use.
         /// </summary>
         [PublicAPI]
-        Custom,
+        public readonly Color SecondColor;
 
         /// <summary>
-        /// Reactive effect.
+        /// Duration of the effect.
         /// </summary>
         [PublicAPI]
-        Reactive,
+        public readonly Duration Duration;
 
         /// <summary>
-        /// Static effect.
+        /// Initializes a new instance of the <see cref="Starlight" /> struct.
         /// </summary>
-        [PublicAPI]
-        Static,
-
-        /// <summary>
-        /// Spectrum cycling effect.
-        /// </summary>
-        [PublicAPI]
-        SpectrumCycling,
-
-        /// <summary>
-        /// Wave effect.
-        /// </summary>
-        [PublicAPI]
-        Wave,
-
-        /// <summary>
-        /// Starlight effect.
-        /// </summary>
-        [PublicAPI]
-        Starlight,
-
-        /// <summary>
-        /// Invalid effect.
-        /// </summary>
-        [PublicAPI]
-        Invalid
+        /// <param name="type">Effect type.</param>
+        /// <param name="firstColor">First color to use.</param>
+        /// <param name="secondColor">Second color to use.</param>
+        /// <param name="duration">Duration of the effect.</param>
+        public Starlight(StarlightType type, Color firstColor, Color secondColor, Duration duration)
+        {
+            Type = type;
+            FirstColor = firstColor;
+            SecondColor = secondColor;
+            Duration = duration;
+        }
     }
 }

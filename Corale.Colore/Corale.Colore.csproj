@@ -146,6 +146,8 @@
     <Compile Include="Razer\Keyboard\Effects\Duration.cs" />
     <Compile Include="Razer\Keyboard\Effects\Effect.cs" />
     <Compile Include="Razer\Keyboard\Effects\Reactive.cs" />
+    <Compile Include="Razer\Keyboard\Effects\Starlight.cs" />
+    <Compile Include="Razer\Keyboard\Effects\StarlightType.cs" />
     <Compile Include="Razer\Keyboard\Effects\Static.cs" />
     <Compile Include="Razer\Keyboard\Effects\Wave.cs" />
     <Compile Include="Razer\Keyboard\Key.cs" />
