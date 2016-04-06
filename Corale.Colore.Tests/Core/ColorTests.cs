@@ -131,6 +131,19 @@ namespace Corale.Colore.Tests.Core
         }
 
         [Test]
+        public void ShouldConstructFromHsv()
+        {
+            var red = Color.FromHsv(0, 100, 100);
+            var green = Color.FromHsv(120, 100, 100);
+            var blue = Color.FromHsv(240, 100, 100);
+            var hotPink = Color.FromHsv(330, 58.8, 100);
+            Assert.AreEqual(Color.Red, red);
+            Assert.AreEqual(Color.Green, green);
+            Assert.AreEqual(Color.Blue, blue);
+            Assert.AreEqual(Color.HotPink, hotPink);
+        }
+
+        [Test]
         public void ShouldDefaultToEmptyColor()
         {
             Assert.AreEqual(default(Color).Value, 0);

@@ -262,13 +262,15 @@ namespace Corale.Colore.Core
         /// Creates a new <see cref="Color" /> from the HSV values
         /// </summary>
         /// <param name="hue">The <c>HUE</c> component (<c>0.0</c> to <c>360.0</c>, inclusive).</param>
-        /// <param name="saturation">The <c>SATURATION</c> component (<c>0.0</c> to <c>1.0</c>, inclusive).</param>
-        /// <param name="value">The <c>VALUE</c> component (<c>0.0</c> to <c>1.0</c>, inclusive).</param>
+        /// <param name="saturation">The <c>SATURATION</c> component in percentage (<c>0.0</c> to <c>100.0</c>, inclusive).</param>
+        /// <param name="value">The <c>VALUE</c> component in percentage (<c>0.0</c> to <c>100.0</c>, inclusive).</param>
         /// <returns>A new instance of the <see cref="Color" /> struct.</returns>
         [PublicAPI]
-        public static Color FromHSVColor(double hue, double saturation, double value)
+        public static Color FromHsv(double hue, double saturation, double value)
         {
             double h = hue;
+            saturation = saturation / 100;
+            value = value / 100;
             while (h < 0)
             {
                 h += 360;
@@ -465,20 +467,6 @@ namespace Corale.Colore.Core
         public override int GetHashCode()
         {
             return (int)_value;
-        }
-
-        /// <summary>
-        /// Clamp a value to 0-255
-        /// </summary>
-        /// <param name="i">The value to be clamped.</param>
-        /// <returns>A value between 0 and 255.</returns>
-        private static int Clamp(int i)
-        {
-            if (i < 0)
-                return 0;
-            if (i > 255)
-                return 255;
-            return i;
         }
     }
 }
