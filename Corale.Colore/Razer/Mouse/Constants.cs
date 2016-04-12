@@ -44,5 +44,10 @@ namespace Corale.Colore.Razer.Mouse
         /// Maximum number of LED columns.
         /// </summary>
         public const int MaxColumns = 7;
+
+        /// <summary>
+        /// Maximum number of LEDs on the grid layout.
+        /// </summary>
+        public const int MaxGridLeds = MaxRows * MaxColumns;
     }
 }
