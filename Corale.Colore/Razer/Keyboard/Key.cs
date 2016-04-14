@@ -33,6 +33,12 @@ namespace Corale.Colore.Razer.Keyboard
     public enum Key
     {
         /// <summary>
+        /// The Razer logo on the keyboard.
+        /// </summary>
+        [PublicAPI]
+        Logo = 0x0014,
+
+        /// <summary>
         /// Esc key.
         /// </summary>
         [PublicAPI]
