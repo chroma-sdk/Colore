@@ -26,6 +26,7 @@
 namespace Corale.Colore.Razer.Mouse.Effects
 {
     using System;
+    using System.Collections.Generic;
     using System.Runtime.InteropServices;
 
     using Corale.Colore.Annotations;
@@ -84,12 +85,12 @@ namespace Corale.Colore.Razer.Mouse.Effects
         /// </summary>
         /// <param name="colors">The colors to use.</param>
         /// <exception cref="ArgumentException">Thrown if the colors array supplied is of an invalid size.</exception>
-        public CustomGrid(Color[] colors)
+        public CustomGrid(IList<Color> colors)
         {
-            if (colors.Length != Constants.MaxGridLeds)
+            if (colors.Count != Constants.MaxGridLeds)
             {
                 throw new ArgumentException(
-                    $"Colors array has incorrect size, should be {Constants.MaxGridLeds}, actual is {colors.Length}.",
+                    $"Colors array has incorrect size, should be {Constants.MaxGridLeds}, actual is {colors.Count}.",
                     nameof(colors));
             }
 

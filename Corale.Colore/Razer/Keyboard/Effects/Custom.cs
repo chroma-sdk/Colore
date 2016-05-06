@@ -26,6 +26,7 @@
 namespace Corale.Colore.Razer.Keyboard.Effects
 {
     using System;
+    using System.Collections.Generic;
     using System.Runtime.InteropServices;
 
     using Corale.Colore.Annotations;
@@ -85,12 +86,12 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// </summary>
         /// <param name="colors">The colors to use.</param>
         /// <exception cref="ArgumentException">Thrown if the colors array supplied is of an incorrect size.</exception>
-        public Custom(Color[] colors)
+        public Custom(IList<Color> colors)
         {
-            if (colors.Length != Constants.MaxKeys)
+            if (colors.Count != Constants.MaxKeys)
             {
                 throw new ArgumentException(
-                    $"Colors array has incorrect size, should be {Constants.MaxKeys}, actual is {colors.Length}.",
+                    $"Colors array has incorrect size, should be {Constants.MaxKeys}, actual is {colors.Count}.",
                     nameof(colors));
             }
 
