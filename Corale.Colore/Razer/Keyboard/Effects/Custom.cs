@@ -114,6 +114,16 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="Custom" /> struct
+        /// with the colors copied from another struct of the same type.
+        /// </summary>
+        /// <param name="other">The <see cref="Custom" /> struct to copy data from.</param>
+        public Custom(Custom other)
+            : this(other._colors)
+        {
+        }
+
+        /// <summary>
         /// Gets or sets cells in the custom grid.
         /// </summary>
         /// <param name="row">Row to access, zero indexed.</param>
@@ -264,6 +274,16 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         public static Custom Create()
         {
             return new Custom(Color.Black);
+        }
+
+        /// <summary>
+        /// Returns a copy of this struct.
+        /// </summary>
+        /// <returns>A copy of this struct.</returns>
+        [PublicAPI]
+        public Custom Clone()
+        {
+            return new Custom(this);
         }
 
         /// <summary>

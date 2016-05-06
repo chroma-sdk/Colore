@@ -113,6 +113,16 @@ namespace Corale.Colore.Razer.Mouse.Effects
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="CustomGrid" /> struct
+        /// with the colors copied from another struct of the same type.
+        /// </summary>
+        /// <param name="other">The <see cref="CustomGrid" /> struct to copy data from.</param>
+        public CustomGrid(CustomGrid other)
+            : this(other._colors)
+        {
+        }
+
+        /// <summary>
         /// Gets or sets cells in the <see cref="CustomGrid" />.
         /// </summary>
         /// <param name="row">Row to access, zero indexed.</param>
@@ -259,6 +269,16 @@ namespace Corale.Colore.Razer.Mouse.Effects
         public static CustomGrid Create()
         {
             return new CustomGrid(Color.Black);
+        }
+
+        /// <summary>
+        /// Returns a copy of this struct.
+        /// </summary>
+        /// <returns>A copy of this struct.</returns>
+        [PublicAPI]
+        public CustomGrid Clone()
+        {
+            return new CustomGrid(this);
         }
 
         /// <summary>
