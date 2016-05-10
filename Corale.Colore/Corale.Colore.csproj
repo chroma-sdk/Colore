@@ -191,6 +191,7 @@
     </Compile>
     <Compile Include="Razer\Result.cs" />
     <Compile Include="Razer\UnsupportedDeviceException.cs" />
+    <Compile Include="SdkVersion.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Events\DeviceAccessEventArgs.cs" />
