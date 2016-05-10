@@ -112,6 +112,30 @@ namespace Corale.Colore
         }
 
         /// <summary>
+        /// Checks if an instance of <see cref="SdkVersion" /> is considered
+        /// to be less than or equal to another object.
+        /// </summary>
+        /// <param name="left">The left operand, an instance of <see cref="SdkVersion" />.</param>
+        /// <param name="right">The right operand, any type of object.</param>
+        /// <returns><c>true</c> if <paramref name="left" /> is less than or equal to <paramref name="right" />, otherwise <c>false</c>.</returns>
+        public static bool operator <=(SdkVersion left, object right)
+        {
+            return left.CompareTo(right) <= 0;
+        }
+
+        /// <summary>
+        /// Checks if an instance of <see cref="SdkVersion" /> is considered
+        /// to be greater than or equal to another object.
+        /// </summary>
+        /// <param name="left">The left operand, an instance of <see cref="SdkVersion" />.</param>
+        /// <param name="right">The right operand, any type of object.</param>
+        /// <returns><c>true</c> if <paramref name="left" /> is greater than or equal to <paramref name="right" />, otherwise <c>false</c>.</returns>
+        public static bool operator >=(SdkVersion left, object right)
+        {
+            return left.CompareTo(right) >= 0;
+        }
+
+        /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
         /// </summary>
         /// <returns>
