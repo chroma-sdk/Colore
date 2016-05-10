@@ -84,7 +84,7 @@ namespace Corale.Colore
         /// <returns><c>true</c> if the two objects are not equal, otherwise <c>false</c>.</returns>
         public static bool operator !=(SdkVersion left, object right)
         {
-            return left.Equals(right);
+            return !left.Equals(right);
         }
 
         /// <summary>
