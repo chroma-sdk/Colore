@@ -487,5 +487,25 @@ namespace Corale.Colore.Tests.Razer.Keypad.Effects
 
             Assert.AreEqual(Color.Red, grid[5]);
         }
+
+        [Test]
+        public void ClonedStructShouldBeIdentical()
+        {
+            var original = new Custom(Color.Red);
+            var clone = original.Clone();
+
+            Assert.That(clone, Is.EqualTo(original));
+        }
+
+        [Test]
+        public void ClonedStructShouldBeIndependent()
+        {
+            var original = new Custom(Color.Red);
+            var clone = original.Clone();
+
+            clone.Set(Color.Blue);
+
+            Assert.That(clone, Is.Not.EqualTo(original));
+        }
     }
 }

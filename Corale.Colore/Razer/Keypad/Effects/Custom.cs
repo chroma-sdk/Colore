@@ -26,6 +26,7 @@
 namespace Corale.Colore.Razer.Keypad.Effects
 {
     using System;
+    using System.Collections.Generic;
     using System.Runtime.InteropServices;
 
     using Corale.Colore.Annotations;
@@ -85,12 +86,12 @@ namespace Corale.Colore.Razer.Keypad.Effects
         /// </summary>
         /// <param name="colors">The colors to use.</param>
         /// <exception cref="ArgumentException">Thrown if the colors array supplied is of an invalid size.</exception>
-        public Custom(Color[] colors)
+        public Custom(IList<Color> colors)
         {
-            if (colors.Length != Constants.MaxKeys)
+            if (colors.Count != Constants.MaxKeys)
             {
                 throw new ArgumentException(
-                    $"Colors array has incorrect size, should be {Constants.MaxKeys}, actual is {colors.Length}.",
+                    $"Colors array has incorrect size, should be {Constants.MaxKeys}, actual is {colors.Count}.",
                     nameof(colors));
             }
 
@@ -111,6 +112,16 @@ namespace Corale.Colore.Razer.Keypad.Effects
 
             for (var index = 0; index < Constants.MaxKeys; index++)
                 this[index] = color;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Custom" /> struct
+        /// with color values copied from another struct of the same type.
+        /// </summary>
+        /// <param name="other">The struct to copy data from.</param>
+        public Custom(Custom other)
+            : this(other._colors)
+        {
         }
 
         /// <summary>
@@ -237,6 +248,16 @@ namespace Corale.Colore.Razer.Keypad.Effects
         public static Custom Create()
         {
             return new Custom(Color.Black);
+        }
+
+        /// <summary>
+        /// Returns a copy of this struct.
+        /// </summary>
+        /// <returns>A copy of this struct.</returns>
+        [PublicAPI]
+        public Custom Clone()
+        {
+            return new Custom(this);
         }
 
         /// <summary>

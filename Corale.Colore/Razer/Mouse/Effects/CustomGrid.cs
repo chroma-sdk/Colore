@@ -26,6 +26,7 @@
 namespace Corale.Colore.Razer.Mouse.Effects
 {
     using System;
+    using System.Collections.Generic;
     using System.Runtime.InteropServices;
 
     using Corale.Colore.Annotations;
@@ -84,12 +85,12 @@ namespace Corale.Colore.Razer.Mouse.Effects
         /// </summary>
         /// <param name="colors">The colors to use.</param>
         /// <exception cref="ArgumentException">Thrown if the colors array supplied is of an invalid size.</exception>
-        public CustomGrid(Color[] colors)
+        public CustomGrid(IList<Color> colors)
         {
-            if (colors.Length != Constants.MaxGridLeds)
+            if (colors.Count != Constants.MaxGridLeds)
             {
                 throw new ArgumentException(
-                    $"Colors array has incorrect size, should be {Constants.MaxGridLeds}, actual is {colors.Length}.",
+                    $"Colors array has incorrect size, should be {Constants.MaxGridLeds}, actual is {colors.Count}.",
                     nameof(colors));
             }
 
@@ -110,6 +111,16 @@ namespace Corale.Colore.Razer.Mouse.Effects
 
             for (var index = 0; index < Constants.MaxGridLeds; index++)
                 this[index] = color;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomGrid" /> struct
+        /// with the colors copied from another struct of the same type.
+        /// </summary>
+        /// <param name="other">The <see cref="CustomGrid" /> struct to copy data from.</param>
+        public CustomGrid(CustomGrid other)
+            : this(other._colors)
+        {
         }
 
         /// <summary>
@@ -259,6 +270,16 @@ namespace Corale.Colore.Razer.Mouse.Effects
         public static CustomGrid Create()
         {
             return new CustomGrid(Color.Black);
+        }
+
+        /// <summary>
+        /// Returns a copy of this struct.
+        /// </summary>
+        /// <returns>A copy of this struct.</returns>
+        [PublicAPI]
+        public CustomGrid Clone()
+        {
+            return new CustomGrid(this);
         }
 
         /// <summary>
