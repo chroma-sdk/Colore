@@ -48,9 +48,22 @@ namespace Corale.Colore.Core
         /// <c>true</c> if the version was retrieved successfully and stored in <paramref name="ver" />,
         /// otherwise <c>false</c> with <c>(0, 0, 0)</c> stored in <paramref name="ver" />.
         /// </returns>
+        [SecurityCritical]
         internal static bool TryGetSdkVersion(out SdkVersion ver)
         {
+#if ANYCPU
+#pragma warning disable SA1312 // Variable names must begin with lower-case letter
+            // ReSharper disable once InconsistentNaming
+            var RegKey = @"SOFTWARE\Razer Chroma SDK";
+#pragma warning restore SA1312 // Variable names must begin with lower-case letter
+
+            if (EnvironmentHelper.Is64BitProcess() && EnvironmentHelper.Is64BitOperatingSystem())
+                RegKey = @"SOFTWARE\WOW6432Node\Razer Chroma SDK";
+#elif WIN64
+            const string RegKey = @"SOFTWARE\WOW6432Node\Razer Chroma SDK";
+#else
             const string RegKey = @"SOFTWARE\Razer Chroma SDK";
+#endif
 
             try
             {
