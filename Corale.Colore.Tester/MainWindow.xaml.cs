@@ -23,6 +23,8 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
+using Corale.Colore.Core;
+
 namespace Corale.Colore.Tester
 {
     using System.Text.RegularExpressions;
@@ -36,6 +38,9 @@ namespace Corale.Colore.Tester
         public MainWindow()
         {
             InitializeComponent();
+
+            // Update the window title to include SDK version
+            Title = $"{Title} | SDK v{Chroma.Instance.SdkVersion}";
         }
 
         private void TextValidation(object sender, TextCompositionEventArgs e)
