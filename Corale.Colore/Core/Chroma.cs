@@ -176,7 +176,6 @@ namespace Corale.Colore.Core
         /// <summary>
         /// Gets the version of the Chroma SDK that Colore is currently using.
         /// </summary>
-        [PublicAPI]
         public SdkVersion SdkVersion => _sdkVersion;
 
         /// <summary>
