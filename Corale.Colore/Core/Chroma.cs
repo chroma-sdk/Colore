@@ -255,6 +255,7 @@ namespace Corale.Colore.Core
         /// result in <emph>undefined behaviour</emph>. Usage of this method is
         /// <strong>at your own risk</strong>.</span>
         /// </remarks>
+        [SecuritySafeCritical]
         public void Initialize()
         {
             if (Initialized)
