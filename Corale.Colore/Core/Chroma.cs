@@ -263,7 +263,7 @@ namespace Corale.Colore.Core
 
             Log.Info("Chroma is initializing.");
 
-            Log.Debug("Retrieveing SDK version");
+            Log.Debug("Retrieving SDK version");
             var versionSuccess = RegistryHelper.TryGetSdkVersion(out _sdkVersion);
 
             if (versionSuccess)
