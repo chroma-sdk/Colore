@@ -68,6 +68,12 @@ namespace Corale.Colore.Core
         private IntPtr _registeredHandle;
 
         /// <summary>
+        /// Version of the Chroma SDK as retrieved from the registry at
+        /// the point of initialization.
+        /// </summary>
+        private SdkVersion _sdkVersion;
+
+        /// <summary>
         /// Prevents a default instance of the <see cref="Chroma" /> class from being created.
         /// </summary>
         private Chroma()
@@ -168,6 +174,11 @@ namespace Corale.Colore.Core
         public bool Initialized { get; private set; }
 
         /// <summary>
+        /// Gets the version of the Chroma SDK that Colore is currently using.
+        /// </summary>
+        public SdkVersion SdkVersion => _sdkVersion;
+
+        /// <summary>
         /// Checks if the Chroma SDK is available on this system.
         /// </summary>
         /// <returns><c>true</c> if Chroma SDK is available, otherwise <c>false</c>.</returns>
@@ -244,12 +255,22 @@ namespace Corale.Colore.Core
         /// result in <emph>undefined behaviour</emph>. Usage of this method is
         /// <strong>at your own risk</strong>.</span>
         /// </remarks>
+        [SecuritySafeCritical]
         public void Initialize()
         {
             if (Initialized)
                 return;
 
             Log.Info("Chroma is initializing.");
+
+            Log.Debug("Retrieving SDK version");
+            var versionSuccess = RegistryHelper.TryGetSdkVersion(out _sdkVersion);
+
+            if (versionSuccess)
+                Log.InfoFormat("Colore is running against SDK version {0}.", SdkVersion);
+            else
+                Log.Warn("Failed to retrieve SDK version from registry!");
+
             Log.Debug("Calling SDK Init function");
             NativeWrapper.Init();
             Initialized = true;

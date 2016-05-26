@@ -109,6 +109,7 @@
     <Compile Include="Core\Color.cs" />
     <Compile Include="Core\Color.Defines.cs" />
     <Compile Include="Core\Device.cs" />
+    <Compile Include="Core\RegistryHelper.cs" />
     <Compile Include="EnvironmentHelper.cs" />
     <Compile Include="Core\GenericDevice.cs" />
     <Compile Include="Core\Headset.cs" />
@@ -191,6 +192,7 @@
     </Compile>
     <Compile Include="Razer\Result.cs" />
     <Compile Include="Razer\UnsupportedDeviceException.cs" />
+    <Compile Include="SdkVersion.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Events\DeviceAccessEventArgs.cs" />

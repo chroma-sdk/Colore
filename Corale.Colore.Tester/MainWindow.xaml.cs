@@ -28,6 +28,8 @@ namespace Corale.Colore.Tester
     using System.Text.RegularExpressions;
     using System.Windows.Input;
 
+    using Corale.Colore.Core;
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -36,6 +38,9 @@ namespace Corale.Colore.Tester
         public MainWindow()
         {
             InitializeComponent();
+
+            // Update the window title to include SDK version
+            Title = $"{Title} | SDK v{Chroma.Instance.SdkVersion}";
         }
 
         private void TextValidation(object sender, TextCompositionEventArgs e)

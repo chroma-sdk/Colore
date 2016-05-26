@@ -122,6 +122,7 @@
     <Compile Include="Razer\NativeCallExceptionTests.cs" />
     <Compile Include="Razer\ResultTests.cs" />
     <Compile Include="Razer\UnsupportedDeviceExceptionTests.cs" />
+    <Compile Include="SdkVersionTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Corale.Colore\Corale.Colore.csproj">
