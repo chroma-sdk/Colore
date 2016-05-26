@@ -18,6 +18,7 @@
 	<s:String x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/FORCE_WHILE_BRACES_STYLE/@EntryValue">ONLY_FOR_MULTILINE</s:String>
 	<s:Boolean x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/LINE_FEED_AT_FILE_END/@EntryValue">True</s:Boolean>
 	<s:String x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/SIMPLE_EMBEDDED_STATEMENT_STYLE/@EntryValue">LINE_BREAK</s:String>
+	<s:Boolean x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/SPACE_AFTER_TYPECAST_PARENTHESES/@EntryValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/SPACE_AROUND_MULTIPLICATIVE_OP/@EntryValue">True</s:Boolean>
 	<s:String x:Key="/Default/CodeStyle/CodeFormatting/CSharpFormat/WRAP_ARRAY_INITIALIZER_STYLE/@EntryValue">CHOP_IF_LONG</s:String>
 	<s:String x:Key="/Default/CodeStyle/CSharpFileLayoutPatterns/Pattern/@EntryValue">&lt;?xml version="1.0" encoding="utf-16"?&gt;&#xD;
