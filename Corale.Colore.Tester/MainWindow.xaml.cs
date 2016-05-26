@@ -23,12 +23,12 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-using Corale.Colore.Core;
-
 namespace Corale.Colore.Tester
 {
     using System.Text.RegularExpressions;
     using System.Windows.Input;
+
+    using Corale.Colore.Core;
 
     /// <summary>
     /// Interaction logic for MainWindow.xaml
