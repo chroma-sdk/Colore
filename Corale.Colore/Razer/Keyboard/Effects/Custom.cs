@@ -26,7 +26,6 @@
 namespace Corale.Colore.Razer.Keyboard.Effects
 {
     using System;
-    using System.Collections.Generic;
     using System.Runtime.InteropServices;
 
     using Corale.Colore.Annotations;
@@ -36,7 +35,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
     /// Describes a custom grid effect for every key.
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public struct Custom : IEquatable<Custom>, IEquatable<Color[][]>, IEquatable<Color[]>
+    public struct Custom : IEquatable<Custom>
     {
         /// <summary>
         /// Color definitions for each key on the keyboard.
@@ -50,56 +49,15 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         private readonly Color[] _colors;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Custom" /> struct.
+        /// Color definitions for the key translation mode.
         /// </summary>
-        /// <param name="colors">The colors to use.</param>
-        /// <exception cref="ArgumentException">Thrown if the colors array supplied is of an incorrect size.</exception>
-        public Custom(Color[][] colors)
-        {
-            var rows = colors.GetLength(0);
-
-            if (rows != Constants.MaxRows)
-            {
-                throw new ArgumentException(
-                    $"Colors array has incorrect number of rows, should be {Constants.MaxRows}, received {rows}.",
-                    nameof(colors));
-            }
-
-            _colors = new Color[Constants.MaxKeys];
-
-            for (var row = 0; row < Constants.MaxRows; row++)
-            {
-                if (colors[row].Length != Constants.MaxColumns)
-                {
-                    throw new ArgumentException(
-                        $"Colors array has incorrect number of columns, should be {Constants.MaxColumns}, received {colors[row].Length} for row {row}.",
-                        nameof(colors));
-                }
-
-                for (var column = 0; column < Constants.MaxColumns; column++)
-                    this[row, column] = colors[row][column];
-            }
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Custom" /> struct.
-        /// </summary>
-        /// <param name="colors">The colors to use.</param>
-        /// <exception cref="ArgumentException">Thrown if the colors array supplied is of an incorrect size.</exception>
-        public Custom(IList<Color> colors)
-        {
-            if (colors.Count != Constants.MaxKeys)
-            {
-                throw new ArgumentException(
-                    $"Colors array has incorrect size, should be {Constants.MaxKeys}, actual is {colors.Count}.",
-                    nameof(colors));
-            }
-
-            _colors = new Color[Constants.MaxKeys];
-
-            for (var index = 0; index < Constants.MaxKeys; index++)
-                this[index] = colors[index];
-        }
+        /// <remarks>
+        /// Colors set in here will, if flagged with <c>0x01000000</c>,
+        /// automatically be translated to the proper keyboard location
+        /// depending on the users keyboard configuration.
+        /// </remarks>
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = Constants.MaxKeys)]
+        private readonly Color[] _keys;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Custom" /> struct
@@ -109,9 +67,13 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         public Custom(Color color)
         {
             _colors = new Color[Constants.MaxKeys];
+            _keys = new Color[Constants.MaxKeys];
 
             for (var index = 0; index < Constants.MaxKeys; index++)
+            {
+                this[(Key)index] = color;
                 this[index] = color;
+            }
         }
 
         /// <summary>
@@ -120,8 +82,15 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// </summary>
         /// <param name="other">The <see cref="Custom" /> struct to copy data from.</param>
         public Custom(Custom other)
-            : this(other._colors)
         {
+            _colors = new Color[Constants.MaxKeys];
+            _keys = new Color[Constants.MaxKeys];
+
+            for (var index = 0; index < Constants.MaxKeys; index++)
+            {
+                this[(Key)index] = other[(Key)index];
+                this[index] = other[index];
+            }
         }
 
         /// <summary>
@@ -175,8 +144,11 @@ namespace Corale.Colore.Razer.Keyboard.Effects
                 }
 
 #pragma warning disable SA1407 // Arithmetic expressions must declare precedence
-                _colors[column + row * Constants.MaxColumns] = value;
+                var index = column + row * Constants.MaxColumns;
 #pragma warning restore SA1407 // Arithmetic expressions must declare precedence
+
+                _keys[index] = _keys[index] & 0xFFFFFF;
+                _colors[index] = value;
             }
         }
 
@@ -211,12 +183,15 @@ namespace Corale.Colore.Razer.Keyboard.Effects
                         "Attempted to access an index that does not exist.");
                 }
 
+                _keys[index] = _keys[index] & 0xFFFFFF;
                 _colors[index] = value;
             }
         }
 
         /// <summary>
         /// Gets or sets the color for a specific key in the custom grid.
+        /// The SDK will handle translation of location data to access the
+        /// correct key depending on user configuration.
         /// </summary>
         /// <param name="key">The <see cref="Key" /> to access.</param>
         /// <returns>The <see cref="Color" /> for the specified key.</returns>
@@ -239,7 +214,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
             {
                 var row = (int)key >> 8;
                 var column = (int)key & 0xFF;
-                this[row, column] = value;
+                this[row, column] = Constants.KeyFlag | value;
             }
         }
 
@@ -288,23 +263,23 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         }
 
         /// <summary>
-        /// Returns the hash code for this instance.
-        /// </summary>
-        /// <returns>
-        /// A 32-bit signed integer that is the hash code for this instance.
-        /// </returns>
-        /// <filterpriority>2</filterpriority>
-        public override int GetHashCode()
-        {
-            return _colors?.GetHashCode() ?? 0;
-        }
-
-        /// <summary>
         /// Clears the colors from the grid, setting them to <see cref="Color.Black" />.
         /// </summary>
         public void Clear()
         {
             Set(Color.Black);
+        }
+
+        /// <summary>
+        /// Returns the hash code for this instance.
+        /// </summary>
+        /// <returns>A 32-bit signed integer that is the hash code for this instance.</returns>
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                return (_colors.GetHashCode() * 397) ^ _keys.GetHashCode();
+            }
         }
 
         /// <summary>
@@ -321,17 +296,10 @@ namespace Corale.Colore.Razer.Keyboard.Effects
             if (ReferenceEquals(obj, null))
                 return false;
 
-            if (obj is Custom)
-                return Equals((Custom)obj);
+            if (!(obj is Custom))
+                return false;
 
-            var arr2D = obj as Color[][];
-
-            if (arr2D != null)
-                return Equals(arr2D);
-
-            var arr1D = obj as Color[];
-
-            return arr1D != null && Equals(arr1D);
+            return Equals((Custom)obj);
         }
 
         /// <summary>
@@ -344,66 +312,9 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// <param name="other">A <see cref="Custom" /> to compare with this object.</param>
         public bool Equals(Custom other)
         {
-            for (var row = 0; row < Constants.MaxRows; row++)
-            {
-                for (var col = 0; col < Constants.MaxColumns; col++)
-                {
-                    if (this[row, col] != other[row, col])
-                        return false;
-                }
-            }
-
-            return true;
-        }
-
-        /// <summary>
-        /// Indicates whether the current object is equal to an instance of
-        /// a 2-dimensional array of <see cref="Color" />.
-        /// </summary>
-        /// <returns>
-        /// <c>true</c> if the <paramref name="other" /> object has the same
-        /// number of rows and columns, and contain matching colors; otherwise, <c>false</c>.
-        /// </returns>
-        /// <param name="other">
-        /// A 2-dimensional array of <see cref="Color" /> to compare with this object.
-        /// </param>
-        public bool Equals(Color[][] other)
-        {
-            if (other == null || other.GetLength(0) != Constants.MaxRows)
-                return false;
-
-            for (var row = 0; row < Constants.MaxRows; row++)
-            {
-                if (other[row].Length != Constants.MaxColumns)
-                    return false;
-
-                for (var col = 0; col < Constants.MaxColumns; col++)
-                {
-                    if (this[row, col] != other[row][col])
-                        return false;
-                }
-            }
-
-            return true;
-        }
-
-        /// <summary>
-        /// Indicates whether the current object is equal to an instance of
-        /// an array of <see cref="Color" />.
-        /// </summary>
-        /// <param name="other">An array of <see cref="Color" /> to compare with this object.</param>
-        /// <returns>
-        /// <c>true</c> if the <paramref name="other" /> object has the same
-        /// number of elements, and contain matching colors; otherwise, <c>false</c>.
-        /// </returns>
-        public bool Equals(Color[] other)
-        {
-            if (other == null || other.Length != Constants.MaxKeys)
-                return false;
-
             for (var index = 0; index < Constants.MaxKeys; index++)
             {
-                if (other[index] != this[index])
+                if (this[index] != other[index] || this[(Key)index] != other[(Key)index])
                     return false;
             }
 
@@ -418,7 +329,10 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         public void Set(Color color)
         {
             for (var index = 0; index < Constants.MaxKeys; index++)
-                _colors[index] = color;
+            {
+                this[(Key)index] = color;
+                this[index] = color;
+            }
         }
     }
 }

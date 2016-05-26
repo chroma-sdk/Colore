@@ -55,13 +55,11 @@ namespace Corale.Colore.Tests.Core
             const byte R = 200;
             const byte G = 245;
             const byte B = 86;
-            const byte A = 128;
-            var c = new Color(R, G, B, A);
+            var c = new Color(R, G, B);
             Assert.AreEqual(c.Value, V);
             Assert.AreEqual(c.R, R);
             Assert.AreEqual(c.G, G);
             Assert.AreEqual(c.B, B);
-            Assert.AreEqual(c.A, A);
         }
 
         [Test]
@@ -71,17 +69,14 @@ namespace Corale.Colore.Tests.Core
             const double R = 0.8;
             const double G = 0.54;
             const double B = 0.24;
-            const double A = 0.5;
             const byte ExpectedR = (byte)(R * 255);
             const byte ExpectedG = (byte)(G * 255);
             const byte ExpectedB = (byte)(B * 255);
-            const byte ExpectedA = (byte)(A * 255);
-            var c = new Color(R, G, B, A);
+            var c = new Color(R, G, B);
             Assert.AreEqual(c.Value, V);
             Assert.AreEqual(c.R, ExpectedR);
             Assert.AreEqual(c.G, ExpectedG);
             Assert.AreEqual(c.B, ExpectedB);
-            Assert.AreEqual(c.A, ExpectedA);
         }
 
         [Test]
@@ -91,30 +86,14 @@ namespace Corale.Colore.Tests.Core
             const float R = 0.8f;
             const float G = 0.2f;
             const float B = 0.9f;
-            const float A = 0.85f;
             const byte ExpectedR = (byte)(R * 255);
             const byte ExpectedG = (byte)(G * 255);
             const byte ExpectedB = (byte)(B * 255);
-            const byte ExpectedA = (byte)(A * 255);
-            var c = new Color(R, G, B, A);
+            var c = new Color(R, G, B);
             Assert.AreEqual(c.Value, V);
             Assert.AreEqual(c.R, ExpectedR);
             Assert.AreEqual(c.G, ExpectedG);
             Assert.AreEqual(c.B, ExpectedB);
-            Assert.AreEqual(c.A, ExpectedA);
-        }
-
-        [Test]
-        public void ShouldConstructFromArgb()
-        {
-            var expected = new Color(0x12345678);
-            var actual = Color.FromArgb(0x12785634);
-
-            Assert.AreEqual(expected.Value, actual.Value);
-            Assert.AreEqual(expected.R, actual.R);
-            Assert.AreEqual(expected.G, actual.G);
-            Assert.AreEqual(expected.B, actual.B);
-            Assert.AreEqual(expected.A, actual.A);
         }
 
         [Test]
@@ -127,7 +106,6 @@ namespace Corale.Colore.Tests.Core
             Assert.AreEqual(expected.R, actual.R);
             Assert.AreEqual(expected.G, actual.G);
             Assert.AreEqual(expected.B, actual.B);
-            Assert.AreEqual(expected.A, actual.A);
         }
 
         [Test]
@@ -250,19 +228,17 @@ namespace Corale.Colore.Tests.Core
             Assert.AreEqual(source.R, coloreColor.R);
             Assert.AreEqual(source.G, coloreColor.G);
             Assert.AreEqual(source.B, coloreColor.B);
-            Assert.AreEqual(source.A, coloreColor.A);
         }
 
         [Test]
         public void ShouldExplicitCastToSystemColor()
         {
-            var coloreColor = new Color(1, 2, 4, 8);
+            var coloreColor = new Color(1, 2, 4);
             var systemColor = (SystemColor)coloreColor;
 
             Assert.AreEqual(coloreColor.R, systemColor.R);
             Assert.AreEqual(coloreColor.G, systemColor.G);
             Assert.AreEqual(coloreColor.B, systemColor.B);
-            Assert.AreEqual(coloreColor.A, systemColor.A);
         }
 
         [Test]
@@ -274,19 +250,17 @@ namespace Corale.Colore.Tests.Core
             Assert.AreEqual(systemColor.R, coloreColor.R);
             Assert.AreEqual(systemColor.G, coloreColor.G);
             Assert.AreEqual(systemColor.B, coloreColor.B);
-            Assert.AreEqual(systemColor.A, coloreColor.A);
         }
 
         [Test]
         public void ShouldImplicitCastToSystemColor()
         {
-            var coloreColor = new Color(1, 2, 4, 8);
+            var coloreColor = new Color(1, 2, 4);
             SystemColor systemColor = coloreColor;
 
             Assert.AreEqual(coloreColor.R, systemColor.R);
             Assert.AreEqual(coloreColor.G, systemColor.G);
             Assert.AreEqual(coloreColor.B, systemColor.B);
-            Assert.AreEqual(coloreColor.A, systemColor.A);
         }
 
         [Test]
@@ -298,13 +272,12 @@ namespace Corale.Colore.Tests.Core
             Assert.AreEqual(systemColor.R, coloreColor.R);
             Assert.AreEqual(systemColor.G, coloreColor.G);
             Assert.AreEqual(systemColor.B, coloreColor.B);
-            Assert.AreEqual(systemColor.A, coloreColor.A);
         }
 
         [Test]
         public void ShouldEqualSystemColorUsingOverload()
         {
-            var coloreColor = new Color(1, 2, 3, 8);
+            var coloreColor = new Color(1, 2, 3);
             var systemColor = SystemColor.FromArgb(8, 1, 2, 3);
 
             Assert.True(coloreColor.Equals(systemColor));
@@ -320,19 +293,17 @@ namespace Corale.Colore.Tests.Core
             Assert.AreEqual(wpfColor.R, coloreColor.R);
             Assert.AreEqual(wpfColor.G, coloreColor.G);
             Assert.AreEqual(wpfColor.B, coloreColor.B);
-            Assert.AreEqual(wpfColor.A, coloreColor.A);
         }
 
         [Test]
         public void ShouldExplicitCastToWpfColor()
         {
-            var coloreColor = new Color(1, 2, 4, 8);
+            var coloreColor = new Color(1, 2, 4);
             var wpfColor = (WpfColor)coloreColor;
 
             Assert.AreEqual(coloreColor.R, wpfColor.R);
             Assert.AreEqual(coloreColor.G, wpfColor.G);
             Assert.AreEqual(coloreColor.B, wpfColor.B);
-            Assert.AreEqual(coloreColor.A, wpfColor.A);
         }
 
         [Test]
@@ -344,19 +315,17 @@ namespace Corale.Colore.Tests.Core
             Assert.AreEqual(wpfColor.R, coloreColor.R);
             Assert.AreEqual(wpfColor.G, coloreColor.G);
             Assert.AreEqual(wpfColor.B, coloreColor.B);
-            Assert.AreEqual(wpfColor.A, coloreColor.A);
         }
 
         [Test]
         public void ShouldImplicitCastToWpfColor()
         {
-            var coloreColor = new Color(1, 2, 4, 8);
+            var coloreColor = new Color(1, 2, 4);
             WpfColor wpfColor = coloreColor;
 
             Assert.AreEqual(coloreColor.R, wpfColor.R);
             Assert.AreEqual(coloreColor.G, wpfColor.G);
             Assert.AreEqual(coloreColor.B, wpfColor.B);
-            Assert.AreEqual(coloreColor.A, wpfColor.A);
         }
 
         [Test]
@@ -368,17 +337,25 @@ namespace Corale.Colore.Tests.Core
             Assert.AreEqual(wpfColor.R, coloreColor.R);
             Assert.AreEqual(wpfColor.G, coloreColor.G);
             Assert.AreEqual(wpfColor.B, coloreColor.B);
-            Assert.AreEqual(wpfColor.A, coloreColor.A);
         }
 
         [Test]
         public void ShouldEqualWpfColorUsingOverload()
         {
-            var coloreColor = new Color(1, 2, 3, 8);
+            var coloreColor = new Color(1, 2, 3);
             var wpfColor = WpfColor.FromArgb(8, 1, 2, 3);
 
             Assert.True(coloreColor.Equals(wpfColor));
             Assert.AreEqual(coloreColor, wpfColor);
+        }
+
+        [Test]
+        public void ShouldNotIgnoreHigherBitsOnCompare()
+        {
+            Color a = 0x55123456;
+            Color b = 0x66123456;
+
+            Assert.That(a, Is.Not.EqualTo(b));
         }
     }
 }

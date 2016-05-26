@@ -55,5 +55,10 @@ namespace Corale.Colore.Razer.Keyboard
         /// </summary>
         [PublicAPI]
         public const int MaxCustomEffects = MaxKeys;
+
+        /// <summary>
+        /// The bit that needs to be set for key mode to be active on a color.
+        /// </summary>
+        internal const int KeyFlag = 0x01000000;
     }
 }
