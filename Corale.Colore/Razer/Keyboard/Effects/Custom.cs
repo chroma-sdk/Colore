@@ -70,10 +70,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
             _keys = new Color[Constants.MaxKeys];
 
             for (var index = 0; index < Constants.MaxKeys; index++)
-            {
-                this[(Key)index] = color;
                 this[index] = color;
-            }
         }
 
         /// <summary>
