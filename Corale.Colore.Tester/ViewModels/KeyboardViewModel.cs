@@ -55,8 +55,8 @@ namespace Corale.Colore.Tester.ViewModels
             SelectedWaveDirection = Direction.LeftToRight;
             SelectedStarlightType = StarlightType.Two;
             SelectedStarlightDuration = Duration.Long;
-            ColorOne.Color = Core.Color.Red;
-            ColorTwo.Color = Core.Color.Blue;
+            ColorOne.Color = (Corale.Colore.Wpf.Color)Core.Color.Red;
+            ColorTwo.Color = (Corale.Colore.Wpf.Color)Core.Color.Blue;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -141,10 +141,10 @@ namespace Corale.Colore.Tester.ViewModels
             }
         }
 
-        public ICommand AllCommand => new DelegateCommand(() => Core.Keyboard.Instance.SetAll(ColorOne.Color));
+        public ICommand AllCommand => new DelegateCommand(() => Core.Keyboard.Instance.SetAll((Corale.Colore.Wpf.Color)ColorOne.Color));
 
         public ICommand BreathingCommand
-            => new DelegateCommand(() => Core.Keyboard.Instance.SetBreathing(ColorOne.Color, ColorTwo.Color));
+            => new DelegateCommand(() => Core.Keyboard.Instance.SetBreathing((Corale.Colore.Wpf.Color)ColorOne.Color, (Corale.Colore.Wpf.Color)ColorTwo.Color));
 
         public ICommand ReactiveCommand
             =>
@@ -156,7 +156,7 @@ namespace Corale.Colore.Tester.ViewModels
         public ICommand StarlightCommand => new DelegateCommand(SetStarlightEffect);
 
         public ICommand StaticCommand
-            => new DelegateCommand(() => Core.Keyboard.Instance.SetStatic(new Static(ColorOne.Color)));
+            => new DelegateCommand(() => Core.Keyboard.Instance.SetStatic(new Static((Corale.Colore.Wpf.Color)ColorOne.Color)));
 
         public ICommand IndexerCommand
             => new DelegateCommand(SetIndexerEffect);
@@ -186,7 +186,7 @@ namespace Corale.Colore.Tester.ViewModels
         {
             try
             {
-                Core.Keyboard.Instance.SetReactive(ColorOne.Color, SelectedReactiveDuration);
+                Core.Keyboard.Instance.SetReactive((Corale.Colore.Wpf.Color)ColorOne.Color, SelectedReactiveDuration);
             }
             catch (Exception ex)
             {
@@ -211,7 +211,7 @@ namespace Corale.Colore.Tester.ViewModels
             try
             {
                 Core.Keyboard.Instance.SetStarlight(
-                    new Starlight(SelectedStarlightType, ColorOne.Color, ColorTwo.Color, SelectedStarlightDuration));
+                    new Starlight(SelectedStarlightType, (Corale.Colore.Wpf.Color)ColorOne.Color, (Corale.Colore.Wpf.Color)ColorTwo.Color, SelectedStarlightDuration));
             }
             catch (Exception ex)
             {
@@ -223,7 +223,7 @@ namespace Corale.Colore.Tester.ViewModels
         {
             try
             {
-                Core.Keyboard.Instance[SelectedKey] = ColorOne.Color;
+                Core.Keyboard.Instance[SelectedKey] = (Corale.Colore.Wpf.Color)ColorOne.Color;
             }
             catch (Exception ex)
             {
@@ -235,7 +235,7 @@ namespace Corale.Colore.Tester.ViewModels
         {
             try
             {
-                Core.Keyboard.Instance[Row, Col] = ColorOne.Color;
+                Core.Keyboard.Instance[Row, Col] = (Corale.Colore.Wpf.Color)ColorOne.Color;
             }
             catch (Exception ex)
             {

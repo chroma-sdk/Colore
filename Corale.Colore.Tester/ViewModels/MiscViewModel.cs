@@ -36,7 +36,7 @@ namespace Corale.Colore.Tester.ViewModels
     {
         public MiscViewModel()
         {
-            ColorOne.Color = Color.Red;
+            ColorOne.Color = (Corale.Colore.Wpf.Color)Color.Red;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -45,7 +45,7 @@ namespace Corale.Colore.Tester.ViewModels
 
         public string QueryGuid { get; set; }
 
-        public ICommand AllCommand => new DelegateCommand(() => Core.Chroma.Instance.SetAll(ColorOne.Color));
+        public ICommand AllCommand => new DelegateCommand(() => Core.Chroma.Instance.SetAll((Corale.Colore.Wpf.Color)ColorOne.Color));
 
         public ICommand InitializeCommand => new DelegateCommand(() => Core.Chroma.Instance.Initialize());
 

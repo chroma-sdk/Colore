@@ -151,6 +151,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Corale.Colore.Wpf\Corale.Colore.Wpf.csproj">
+      <Project>{8ee8578b-53a7-40d9-9470-e562dde15786}</Project>
+      <Name>Corale.Colore.Wpf</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Corale.Colore\Corale.Colore.csproj">
       <Project>{5fe57efb-ef8f-4c1b-8c13-0f85f3befffa}</Project>
       <Name>Corale.Colore</Name>

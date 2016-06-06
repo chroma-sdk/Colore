@@ -35,19 +35,19 @@ namespace Corale.Colore.Tester.ViewModels
     {
         public HeadsetViewModel()
         {
-            ColorOne.Color = Core.Color.Red;
+            ColorOne.Color = (Corale.Colore.Wpf.Color)Core.Color.Red;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         public SolidColorBrush ColorOne { get; set; } = new SolidColorBrush();
 
-        public ICommand AllCommand => new DelegateCommand(() => Core.Headset.Instance.SetAll(ColorOne.Color));
+        public ICommand AllCommand => new DelegateCommand(() => Core.Headset.Instance.SetAll((Corale.Colore.Wpf.Color)ColorOne.Color));
 
         public ICommand BreathingCommand
-            => new DelegateCommand(() => Core.Headset.Instance.SetBreathing(ColorOne.Color));
+            => new DelegateCommand(() => Core.Headset.Instance.SetBreathing((Corale.Colore.Wpf.Color)ColorOne.Color));
 
-        public ICommand StaticCommand => new DelegateCommand(() => Core.Headset.Instance.SetStatic(ColorOne.Color));
+        public ICommand StaticCommand => new DelegateCommand(() => Core.Headset.Instance.SetStatic((Corale.Colore.Wpf.Color)ColorOne.Color));
 
         public ICommand ClearCommand => new DelegateCommand(() => Core.Headset.Instance.Clear());
 

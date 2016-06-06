@@ -49,8 +49,8 @@ namespace Corale.Colore.Tester.ViewModels
             SelectedKey = Key.A;
             SelectedReactiveDuration = Duration.Long;
             SelectedWaveDirection = Direction.LeftToRight;
-            ColorOne.Color = Core.Color.Red;
-            ColorTwo.Color = Core.Color.Blue;
+            ColorOne.Color = (Corale.Colore.Wpf.Color)Core.Color.Red;
+            ColorTwo.Color = (Corale.Colore.Wpf.Color)Core.Color.Blue;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -107,10 +107,10 @@ namespace Corale.Colore.Tester.ViewModels
             }
         }
 
-        public ICommand AllCommand => new DelegateCommand(() => Core.Keypad.Instance.SetAll(ColorOne.Color));
+        public ICommand AllCommand => new DelegateCommand(() => Core.Keypad.Instance.SetAll((Corale.Colore.Wpf.Color)ColorOne.Color));
 
         public ICommand BreathingCommand
-            => new DelegateCommand(() => Core.Keypad.Instance.SetBreathing(ColorOne.Color, ColorTwo.Color));
+            => new DelegateCommand(() => Core.Keypad.Instance.SetBreathing((Corale.Colore.Wpf.Color)ColorOne.Color, (Corale.Colore.Wpf.Color)ColorTwo.Color));
 
         public ICommand ReactiveCommand
             =>
@@ -120,7 +120,7 @@ namespace Corale.Colore.Tester.ViewModels
             => new DelegateCommand(SetWaveEffect);
 
         public ICommand StaticCommand
-            => new DelegateCommand(() => Core.Keypad.Instance.SetStatic(new Static(ColorOne.Color)));
+            => new DelegateCommand(() => Core.Keypad.Instance.SetStatic(new Static((Corale.Colore.Wpf.Color)ColorOne.Color)));
 
         public ICommand IndexerCommand
             => new DelegateCommand(SetIndexerEffect);
@@ -141,7 +141,7 @@ namespace Corale.Colore.Tester.ViewModels
         {
             try
             {
-                Core.Keypad.Instance.SetReactive(ColorOne.Color, SelectedReactiveDuration);
+                Core.Keypad.Instance.SetReactive((Corale.Colore.Wpf.Color)ColorOne.Color, SelectedReactiveDuration);
             }
             catch (Exception ex)
             {
@@ -165,7 +165,7 @@ namespace Corale.Colore.Tester.ViewModels
         {
             try
             {
-                Core.Keypad.Instance[Row, Col] = ColorOne.Color;
+                Core.Keypad.Instance[Row, Col] = (Corale.Colore.Wpf.Color)ColorOne.Color;
             }
             catch (Exception ex)
             {

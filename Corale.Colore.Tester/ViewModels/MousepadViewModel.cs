@@ -42,8 +42,8 @@ namespace Corale.Colore.Tester.ViewModels
         public MousepadViewModel()
         {
             SelectedWaveDirection = Direction.LeftToRight;
-            ColorOne.Color = Core.Color.Red;
-            ColorTwo.Color = Core.Color.Blue;
+            ColorOne.Color = (Corale.Colore.Wpf.Color)Core.Color.Red;
+            ColorTwo.Color = (Corale.Colore.Wpf.Color)Core.Color.Blue;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -68,16 +68,16 @@ namespace Corale.Colore.Tester.ViewModels
             }
         }
 
-        public ICommand AllCommand => new DelegateCommand(() => Core.Mousepad.Instance.SetAll(ColorOne.Color));
+        public ICommand AllCommand => new DelegateCommand(() => Core.Mousepad.Instance.SetAll((Corale.Colore.Wpf.Color)ColorOne.Color));
 
         public ICommand BreathingCommand
-            => new DelegateCommand(() => Core.Mousepad.Instance.SetBreathing(ColorOne.Color, ColorTwo.Color));
+            => new DelegateCommand(() => Core.Mousepad.Instance.SetBreathing((Corale.Colore.Wpf.Color)ColorOne.Color, (Corale.Colore.Wpf.Color)ColorTwo.Color));
 
         public ICommand WaveCommand
             => new DelegateCommand(SetWaveEffect);
 
         public ICommand StaticCommand
-            => new DelegateCommand(() => Core.Mousepad.Instance.SetStatic(ColorOne.Color));
+            => new DelegateCommand(() => Core.Mousepad.Instance.SetStatic((Corale.Colore.Wpf.Color)ColorOne.Color));
 
         public ICommand IndexerCommand
             => new DelegateCommand(SetIndexerEffect);
@@ -111,7 +111,7 @@ namespace Corale.Colore.Tester.ViewModels
         {
             try
             {
-                Core.Mousepad.Instance[Index] = ColorOne.Color;
+                Core.Mousepad.Instance[Index] = (Corale.Colore.Wpf.Color)ColorOne.Color;
             }
             catch (Exception ex)
             {
