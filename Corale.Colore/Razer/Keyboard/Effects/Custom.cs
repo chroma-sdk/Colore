@@ -202,16 +202,12 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         {
             get
             {
-                var row = (int)key >> 8;
-                var column = (int)key & 0xFF;
-                return this[row, column];
+                return _keys[(int)key];
             }
 
             set
             {
-                var row = (int)key >> 8;
-                var column = (int)key & 0xFF;
-                this[row, column] = Constants.KeyFlag | value;
+                _keys[(int)key] = Constants.KeyFlag | value;
             }
         }
 
