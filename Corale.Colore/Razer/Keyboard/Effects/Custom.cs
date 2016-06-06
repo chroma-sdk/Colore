@@ -117,9 +117,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
                         "Attempted to access a column that does not exist.");
                 }
 
-#pragma warning disable SA1407 // Arithmetic expressions must declare precedence
                 return _colors[column + row * Constants.MaxColumns];
-#pragma warning restore SA1407 // Arithmetic expressions must declare precedence
             }
 
             set
@@ -140,9 +138,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
                         "Attempted to access a column that does not exist.");
                 }
 
-#pragma warning disable SA1407 // Arithmetic expressions must declare precedence
                 var index = column + row * Constants.MaxColumns;
-#pragma warning restore SA1407 // Arithmetic expressions must declare precedence
 
                 _keys[index] = _keys[index] & 0xFFFFFF;
                 _colors[index] = value;
