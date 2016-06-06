@@ -178,5 +178,12 @@ namespace Corale.Colore.Core
         /// <param name="effect">Effect options.</param>
         [PublicAPI]
         void SetWave(Wave effect);
+
+        /// <summary>
+        /// Sets a starlight effect on the keyboard.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        [PublicAPI]
+        void SetStarlight(Starlight effect);
     }
 }

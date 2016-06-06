@@ -1,5 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+﻿// <copyright file="StarlightType.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -21,70 +20,26 @@
 //
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
-// ---------------------------------------------------------------------------------------
 
 namespace Corale.Colore.Razer.Keyboard.Effects
 {
     using Corale.Colore.Annotations;
 
     /// <summary>
-    /// Supported built-in keyboard effects.
+    /// Supported starlight effect types for the keyboard.
     /// </summary>
-    [PublicAPI]
-    public enum Effect
+    public enum StarlightType
     {
         /// <summary>
-        /// No effect.
+        /// Two colors.
         /// </summary>
         [PublicAPI]
-        None = 0,
+        Two,
 
         /// <summary>
-        /// Breathing effect.
+        /// Random colors.
         /// </summary>
         [PublicAPI]
-        Breathing,
-
-        /// <summary>
-        /// Custom effect.
-        /// </summary>
-        [PublicAPI]
-        Custom,
-
-        /// <summary>
-        /// Reactive effect.
-        /// </summary>
-        [PublicAPI]
-        Reactive,
-
-        /// <summary>
-        /// Static effect.
-        /// </summary>
-        [PublicAPI]
-        Static,
-
-        /// <summary>
-        /// Spectrum cycling effect.
-        /// </summary>
-        [PublicAPI]
-        SpectrumCycling,
-
-        /// <summary>
-        /// Wave effect.
-        /// </summary>
-        [PublicAPI]
-        Wave,
-
-        /// <summary>
-        /// Starlight effect.
-        /// </summary>
-        [PublicAPI]
-        Starlight,
-
-        /// <summary>
-        /// Invalid effect.
-        /// </summary>
-        [PublicAPI]
-        Invalid
+        Random
     }
 }

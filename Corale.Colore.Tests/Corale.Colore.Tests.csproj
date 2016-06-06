@@ -99,6 +99,7 @@
     <Compile Include="Razer\Keyboard\Effects\BreathingTests.cs" />
     <Compile Include="Razer\Keyboard\Effects\CustomTests.cs" />
     <Compile Include="Razer\Keyboard\Effects\ReactiveTests.cs" />
+    <Compile Include="Razer\Keyboard\Effects\StarlightTests.cs" />
     <Compile Include="Razer\Keyboard\Effects\StaticTests.cs" />
     <Compile Include="Razer\Keyboard\Effects\WaveTests.cs" />
     <Compile Include="Razer\Keypad\Effects\BreathingTests.cs" />

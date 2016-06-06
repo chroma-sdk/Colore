@@ -348,5 +348,14 @@ namespace Corale.Colore.Core
         {
             SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.Wave, effect));
         }
+
+        /// <summary>
+        /// Sets a starlight effect on the keyboard.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        public void SetStarlight(Starlight effect)
+        {
+            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.Starlight, effect));
+        }
     }
 }
