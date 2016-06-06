@@ -34,7 +34,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         /// Two colors.
         /// </summary>
         [PublicAPI]
-        Two,
+        Two = 1,
 
         /// <summary>
         /// Random colors.
