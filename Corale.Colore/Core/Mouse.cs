@@ -366,5 +366,13 @@ namespace Corale.Colore.Core
         {
             SetGuid(NativeWrapper.CreateMouseEffect(Effect.CustomGrid, effect));
         }
+
+        /// <summary>
+        /// Clears the effects on the current device type.
+        /// </summary>
+        public override void Clear()
+        {
+            SetEffect(Effect.None);
+        }
     }
 }

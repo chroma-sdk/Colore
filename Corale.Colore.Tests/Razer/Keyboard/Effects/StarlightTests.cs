@@ -1,5 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
-// <copyright file="MainWindow.xaml.cs" company="Corale">
+﻿// <copyright file="StarlightTests.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -21,37 +20,47 @@
 //
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
-// ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Tester
+namespace Corale.Colore.Tests.Razer.Keyboard.Effects
 {
-    using System.Text.RegularExpressions;
-    using System.Windows.Input;
-
     using Corale.Colore.Core;
+    using Corale.Colore.Razer.Keyboard.Effects;
 
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow
+    using NUnit.Framework;
+
+    [TestFixture]
+    public class StarlightTests
     {
-        public MainWindow()
+        [Test]
+        public void ShouldConstructWithCorrectType()
         {
-            InitializeComponent();
-
-            // Update the window title to include SDK version
-            Title = $"{Title} | SDK v{Chroma.Instance.SdkVersion}";
+            Assert.That(
+                new Starlight(StarlightType.Two, Color.Black, Color.Black, Duration.Short).Type,
+                Is.EqualTo(StarlightType.Two));
         }
 
-        private void TextValidation(object sender, TextCompositionEventArgs e)
+        [Test]
+        public void ShouldConstructWithCorrectFirstColor()
         {
-            e.Handled = !IsTextAllowed(e.Text);
+            Assert.That(
+                new Starlight(StarlightType.Random, Color.Red, Color.Black, Duration.Short).FirstColor,
+                Is.EqualTo(Color.Red));
         }
 
-        private bool IsTextAllowed(string text)
+        [Test]
+        public void ShouldConstructWithCorrectSecondColor()
         {
-            var regex = new Regex("[^0-9.-]+");
-            return !regex.IsMatch(text);
+            Assert.That(
+                new Starlight(StarlightType.Random, Color.Black, Color.Red, Duration.Short).SecondColor,
+                Is.EqualTo(Color.Red));
+        }
+
+        [Test]
+        public void ShouldConstructWithCorrectDuration()
+        {
+            Assert.That(
+                new Starlight(StarlightType.Random, Color.Black, Color.Black, Duration.Medium).Duration,
+                Is.EqualTo(Duration.Medium));
         }
     }
 }

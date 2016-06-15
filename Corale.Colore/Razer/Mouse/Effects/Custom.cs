@@ -79,6 +79,16 @@ namespace Corale.Colore.Razer.Mouse.Effects
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="Custom" /> struct
+        /// with the colors copied from another struct of the same type.
+        /// </summary>
+        /// <param name="other">The struct to copy data from.</param>
+        public Custom(Custom other)
+            : this(other._colors)
+        {
+        }
+
+        /// <summary>
         /// Gets or sets LEDs in the custom array.
         /// </summary>
         /// <param name="led">Index of the LED to access.</param>
@@ -170,6 +180,16 @@ namespace Corale.Colore.Razer.Mouse.Effects
         public static Custom Create()
         {
             return new Custom(Color.Black);
+        }
+
+        /// <summary>
+        /// Returns a copy of this struct.
+        /// </summary>
+        /// <returns>A copy of this struct.</returns>
+        [PublicAPI]
+        public Custom Clone()
+        {
+            return new Custom(this);
         }
 
         /// <summary>

@@ -1,5 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Device.cs" company="Corale">
+﻿// <copyright file="Starlight.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -21,57 +20,57 @@
 //
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
-// ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Core
+namespace Corale.Colore.Razer.Keyboard.Effects
 {
-    using System;
+    using System.Runtime.InteropServices;
+
+    using Corale.Colore.Annotations;
+    using Corale.Colore.Core;
 
     /// <summary>
-    /// Base class for devices, containing code common between all devices.
+    /// Describes the starlight effect.
     /// </summary>
-    public abstract class Device : IDevice
+    [StructLayout(LayoutKind.Sequential)]
+    public struct Starlight
     {
         /// <summary>
-        /// Gets or sets the ID of the currently active effect.
+        /// Effect type.
         /// </summary>
-        public Guid CurrentEffectId { get; protected set; }
+        [PublicAPI]
+        public readonly StarlightType Type;
 
         /// <summary>
-        /// Clears the current effect on the device.
+        /// The first color to use.
         /// </summary>
-        public virtual void Clear()
+        [PublicAPI]
+        public readonly Color FirstColor;
+
+        /// <summary>
+        /// The second color to use.
+        /// </summary>
+        [PublicAPI]
+        public readonly Color SecondColor;
+
+        /// <summary>
+        /// Duration of the effect.
+        /// </summary>
+        [PublicAPI]
+        public readonly Duration Duration;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Starlight" /> struct.
+        /// </summary>
+        /// <param name="type">Effect type.</param>
+        /// <param name="firstColor">First color to use.</param>
+        /// <param name="secondColor">Second color to use.</param>
+        /// <param name="duration">Duration of the effect.</param>
+        public Starlight(StarlightType type, Color firstColor, Color secondColor, Duration duration)
         {
-            SetAll(Color.Black);
-        }
-
-        /// <summary>
-        /// Sets the color of all components on this device.
-        /// </summary>
-        /// <param name="color">Color to set.</param>
-        public abstract void SetAll(Color color);
-
-        /// <summary>
-        /// Updates the device to use the effect pointed to by the specified GUID.
-        /// </summary>
-        /// <param name="guid">GUID to set.</param>
-        public void SetGuid(Guid guid)
-        {
-            DeleteCurrentEffect();
-            NativeWrapper.SetEffect(guid);
-            CurrentEffectId = guid;
-        }
-
-        /// <summary>
-        /// Deletes the currently set effect.
-        /// </summary>
-        internal void DeleteCurrentEffect()
-        {
-            if (CurrentEffectId == Guid.Empty)
-                return;
-
-            NativeWrapper.DeleteEffect(CurrentEffectId);
-            CurrentEffectId = Guid.Empty;
+            Type = type;
+            FirstColor = firstColor;
+            SecondColor = secondColor;
+            Duration = duration;
         }
     }
 }
