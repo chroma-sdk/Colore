@@ -30,13 +30,14 @@ namespace Corale.Colore.Tester.ViewModels
     using System.Windows.Media;
     using Annotations;
     using Classes;
+    using Wpf;
     using Color = Core.Color;
 
     public class MiscViewModel : INotifyPropertyChanged
     {
         public MiscViewModel()
         {
-            ColorOne.Color = (Corale.Colore.Wpf.Color)Color.Red;
+            ColorOne.Color = Color.Red.ToWpfColor();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -45,7 +46,7 @@ namespace Corale.Colore.Tester.ViewModels
 
         public string QueryGuid { get; set; }
 
-        public ICommand AllCommand => new DelegateCommand(() => Core.Chroma.Instance.SetAll((Corale.Colore.Wpf.Color)ColorOne.Color));
+        public ICommand AllCommand => new DelegateCommand(() => Core.Chroma.Instance.SetAll(ColorOne.Color.ToColoreColor()));
 
         public ICommand InitializeCommand => new DelegateCommand(() => Core.Chroma.Instance.Initialize());
 
