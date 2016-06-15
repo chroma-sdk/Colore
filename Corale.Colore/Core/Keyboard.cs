@@ -126,7 +126,7 @@ namespace Corale.Colore.Core
         {
             get
             {
-                return _grid[row, column];
+                return _grid[row - 1, column - 1];
             }
 
             set
