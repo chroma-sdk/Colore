@@ -1,4 +1,4 @@
-// <copyright file="Color.cs" company="Corale">
+// <copyright file="Extensions.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
