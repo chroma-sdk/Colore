@@ -29,9 +29,21 @@ namespace Corale.Colore.Wpf
 
     using WpfColor = System.Windows.Media.Color;
 
+    /// <summary>
+    /// Extension methods for integrating Colore with WPF.
+    /// </summary>
     [PublicAPI]
     public static class Extensions
     {
+        /// <summary>
+        /// Converts a WPF <see cref="WpfColor" /> to a
+        /// Colore <see cref="ColoreColor" />.
+        /// </summary>
+        /// <param name="source">The color to convert.</param>
+        /// <returns>
+        /// A <see cref="ColoreColor" /> representing the
+        /// given <see cref="WpfColor" />.
+        /// </returns>
         public static ColoreColor ToColoreColor(this WpfColor source)
         {
             return new ColoreColor(source.R, source.G, source.B);

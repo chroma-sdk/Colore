@@ -29,9 +29,21 @@ namespace Corale.Colore.WinForms
 
     using SystemColor = System.Drawing.Color;
 
+    /// <summary>
+    /// Extension methods for integrating Colore with WinForms.
+    /// </summary>
     [PublicAPI]
     public static class Extensions
     {
+        /// <summary>
+        /// Converts a System.Drawing <see cref="SystemColor" /> to a
+        /// Colore <see cref="ColoreColor" />.
+        /// </summary>
+        /// <param name="source">The color to convert.</param>
+        /// <returns>
+        /// A <see cref="ColoreColor" /> representing the
+        /// given <see cref="SystemColor" />.
+        /// </returns>
         public static ColoreColor ToColoreColor(this SystemColor source)
         {
             return new ColoreColor(source.R, source.G, source.B);
