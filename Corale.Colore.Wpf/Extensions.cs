@@ -48,5 +48,19 @@ namespace Corale.Colore.Wpf
         {
             return new ColoreColor(source.R, source.G, source.B);
         }
+
+        /// <summary>
+        /// Converts a Colore <see cref="ColoreColor" /> to a
+        /// WPF <see cref="WpfColor" />
+        /// </summary>
+        /// <param name="source">The color to convert.</param>
+        /// <returns>
+        /// A <see cref="WpfColor" /> representing the
+        /// given <see cref="ColoreColor" />.
+        /// </returns>
+        public static WpfColor ToWpfColor(this ColoreColor source)
+        {
+            return WpfColor.FromRgb(source.R, source.G, source.B);
+        }
     }
 }
