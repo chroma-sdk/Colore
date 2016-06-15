@@ -2,7 +2,7 @@
 Param(
     [Parameter(Mandatory=$True, Position=1)]
     [int]$buildCounter,
-    
+
     [Parameter(Mandatory=$True, Position=2)]
     [string]$branch
 )
@@ -55,8 +55,19 @@ Write-Host "##teamcity[buildNumber '$buildNumber']"
 Write-Host "##teamcity[setParameter name='Version' value='$friendlyVersion']"
 Write-Host "##teamcity[setParameter name='InfoVersion' value='$infoVersion']"
 
-(Get-Content Corale.Colore/Properties/AssemblyInfo.cs) `
-    -replace '^\[assembly: AssemblyVersion.+$', "[assembly: AssemblyVersion(`"$friendlyVersion`")]" `
-    -replace '^\[assembly: AssemblyFileVersion.+$', "[assembly: AssemblyFileVersion(`"$buildNumber`")]" `
-    -replace '^\[assembly: AssemblyInformationalVersion.+$', "[assembly: AssemblyInformationalVersion(`"$infoVersion`")]" |
-Out-File Corale.Colore/Properties/AssemblyInfo.cs
+function Update-File
+{
+    Param([String]$file)
+
+    Write-Host "Updating version in file $file"
+
+    (Get-Content $file) `
+        -replace '^\[assembly: AssemblyVersion.+$', "[assembly: AssemblyVersion(`"$friendlyVersion`")]" `
+        -replace '^\[assembly: AssemblyFileVersion.+$', "[assembly: AssemblyFileVersion(`"$buildNumber`")]" `
+        -replace '^\[assembly: AssemblyInformationalVersion.+$', "[assembly: AssemblyInformationalVersion(`"$infoVersion`")]" |
+    Out-File $file
+}
+
+Update-File Corale.Colore/Properties/AssemblyInfo.cs
+Update-File Corale.Colore.Wpf/Properties/AssemblyInfo.cs
+Update-File Corale.Colore.WinForms/Properties/AssemblyInfo.cs
