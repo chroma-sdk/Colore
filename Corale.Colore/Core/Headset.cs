@@ -123,5 +123,13 @@ namespace Corale.Colore.Core
         {
             SetBreathing(new Breathing(color));
         }
+
+        /// <summary>
+        /// Clears the effects on the current device type.
+        /// </summary>
+        public override void Clear()
+        {
+            SetEffect(Effect.None);
+        }
     }
 }
