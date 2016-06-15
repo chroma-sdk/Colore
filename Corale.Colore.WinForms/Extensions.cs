@@ -60,7 +60,7 @@ namespace Corale.Colore.WinForms
         /// </returns>
         public static SystemColor ToSystemColor(this ColoreColor source)
         {
-            return SystemColor.FromRgb(source.R, source.G, source.B);
+            return SystemColor.FromArgb(source.R, source.G, source.B);
         }
     }
 }
