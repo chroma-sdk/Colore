@@ -66,6 +66,7 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         public override void SetAll(Color color)
         {
+            Clear();
             SetStatic(new Static(color));
         }
 
