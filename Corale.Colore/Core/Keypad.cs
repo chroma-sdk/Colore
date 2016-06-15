@@ -228,5 +228,13 @@ namespace Corale.Colore.Core
         {
             SetWave(new Wave(direction));
         }
+
+        /// <summary>
+        /// Clears the effects on the current device type.
+        /// </summary>
+        public override void Clear()
+        {
+            SetEffect(Effect.None);
+        }
     }
 }
