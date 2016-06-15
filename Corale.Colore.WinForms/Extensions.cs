@@ -1,4 +1,4 @@
-﻿// <copyright file="Color.cs" company="Corale">
+// <copyright file="Color.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -21,42 +21,20 @@
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
 
-namespace Corale.Colore.Wpf
+namespace Corale.Colore.WinForms
 {
     using Corale.Colore.Annotations;
 
     using ColoreColor = Corale.Colore.Core.Color;
 
-    using WpfColor = System.Windows.Media.Color;
+    using SystemColor = System.Drawing.Color;
 
     [PublicAPI]
-    public struct Color
+    public static class Extensions
     {
-        private readonly WpfColor _internal;
-
-        public Color(WpfColor source)
+        public static ColoreColor ToColoreColor(this SystemColor source)
         {
-            _internal = source;
-        }
-
-        public static implicit operator ColoreColor(Color color)
-        {
-            return new ColoreColor(color._internal.R, color._internal.G, color._internal.B);
-        }
-
-        public static implicit operator Color(WpfColor color)
-        {
-            return new Color(color);
-        }
-
-        public static implicit operator WpfColor(Color color)
-        {
-            return color._internal;
-        }
-
-        public static implicit operator Color(ColoreColor color)
-        {
-            return new Color(WpfColor.FromRgb(color.R, color.G, color.B));
+            return new ColoreColor(source.R, source.G, source.B);
         }
     }
 }
