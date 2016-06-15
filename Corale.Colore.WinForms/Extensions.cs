@@ -51,7 +51,7 @@ namespace Corale.Colore.WinForms
 
         /// <summary>
         /// Converts a Colore <see cref="ColoreColor" /> to a
-        /// System.Drawing <see cref="WpfColor" />
+        /// System.Drawing <see cref="SystemColor" />
         /// </summary>
         /// <param name="source">The color to convert.</param>
         /// <returns>
