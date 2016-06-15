@@ -124,5 +124,13 @@ namespace Corale.Colore.Core
         {
             SetGuid(NativeWrapper.CreateEffect(DeviceId, effect, param));
         }
+
+        /// <summary>
+        /// Clears the effects on the current device type.
+        /// </summary>
+        public override void Clear()
+        {
+            SetEffect(Effect.None);
+        }
     }
 }
