@@ -48,5 +48,19 @@ namespace Corale.Colore.WinForms
         {
             return new ColoreColor(source.R, source.G, source.B);
         }
+
+        /// <summary>
+        /// Converts a Colore <see cref="ColoreColor" /> to a
+        /// System.Drawing <see cref="WpfColor" />
+        /// </summary>
+        /// <param name="source">The color to convert.</param>
+        /// <returns>
+        /// A <see cref="SystemColor" /> representing the
+        /// given <see cref="ColoreColor" />.
+        /// </returns>
+        public static SystemColor ToSystemColor(this ColoreColor source)
+        {
+            return SystemColor.FromRgb(source.R, source.G, source.B);
+        }
     }
 }
