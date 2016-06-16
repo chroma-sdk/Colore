@@ -230,26 +230,6 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
         }
 
         [Test]
-        public void ShouldEqualIdentical2DArray()
-        {
-            var grid = new Custom(Color.Red);
-            var arr = new Color[Constants.MaxRows][];
-
-            // Populate the 2D array
-            for (var row = 0; row < Constants.MaxRows; row++)
-            {
-                arr[row] = new Color[Constants.MaxColumns];
-                for (var col = 0; col < Constants.MaxColumns; col++)
-                    arr[row][col] = Color.Red;
-            }
-
-            Assert.True(grid == arr);
-            Assert.False(grid != arr);
-            Assert.True(grid.Equals(arr));
-            Assert.AreEqual(grid, arr);
-        }
-
-        [Test]
         public void ShouldNotEqualDifferent2DArray()
         {
             var grid = new Custom(Color.Pink);
@@ -287,49 +267,6 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
             var grid = Custom.Create();
             var arr = new Color[Constants.MaxRows][];
             arr[0] = new Color[2];
-
-            Assert.False(grid == arr);
-            Assert.True(grid != arr);
-            Assert.False(grid.Equals(arr));
-            Assert.AreNotEqual(grid, arr);
-        }
-
-        [Test]
-        public void ShouldEqualIdentical1DArray()
-        {
-            var grid = new Custom(Color.Red);
-            var arr = new Color[Constants.MaxKeys];
-
-            // Populate the 1D array
-            for (var index = 0; index < Constants.MaxKeys; index++)
-                arr[index] = Color.Red;
-
-            Assert.True(grid == arr);
-            Assert.False(grid != arr);
-            Assert.True(grid.Equals(arr));
-            Assert.AreEqual(grid, arr);
-        }
-
-        [Test]
-        public void ShouldNotEqualDifferent1DArray()
-        {
-            var grid = new Custom(Color.Pink);
-            var arr = new Color[Constants.MaxKeys];
-
-            for (var index = 0; index < Constants.MaxKeys; index++)
-                arr[index] = Color.Red;
-
-            Assert.False(grid == arr);
-            Assert.True(grid != arr);
-            Assert.False(grid.Equals(arr));
-            Assert.AreNotEqual(grid, arr);
-        }
-
-        [Test]
-        public void ShouldNotEqual1DArrayWithInvalidSize()
-        {
-            var grid = Custom.Create();
-            var arr = new Color[2];
 
             Assert.False(grid == arr);
             Assert.True(grid != arr);
@@ -376,7 +313,8 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
         [Test]
         public void ShouldGetWithKeyIndexer()
         {
-            var grid = new Custom(Color.Red);
+            var grid = Custom.Create();
+            grid[Key.Escape] = Color.Red;
             Assert.AreEqual(Color.Red, grid[Key.Escape]);
         }
 
