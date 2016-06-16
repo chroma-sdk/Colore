@@ -51,7 +51,7 @@ namespace Corale.Colore.Tests.Core
         [Test]
         public void ShouldConvertRgbBytesCorrectly()
         {
-            const uint V = 0x8056F5C8;
+            const uint V = 0x56F5C8;
             const byte R = 200;
             const byte G = 245;
             const byte B = 86;
@@ -65,7 +65,7 @@ namespace Corale.Colore.Tests.Core
         [Test]
         public void ShouldConvertRgbDoublesCorrectly()
         {
-            const uint V = 0x7F3D89CC;
+            const uint V = 0x3D89CC;
             const double R = 0.8;
             const double G = 0.54;
             const double B = 0.24;
@@ -82,7 +82,7 @@ namespace Corale.Colore.Tests.Core
         [Test]
         public void ShouldConvertRgbFloatsCorrectly()
         {
-            const uint V = 0xD8E533CC;
+            const uint V = 0xE533CC;
             const float R = 0.8f;
             const float G = 0.2f;
             const float B = 0.9f;
@@ -99,7 +99,7 @@ namespace Corale.Colore.Tests.Core
         [Test]
         public void ShouldConstructFromRgb()
         {
-            var expected = new Color(0xFF123456);
+            var expected = new Color(0x123456);
             var actual = Color.FromRgb(0x563412);
 
             Assert.AreEqual(expected.Value, actual.Value);
@@ -128,7 +128,7 @@ namespace Corale.Colore.Tests.Core
         public void ShouldEqualIdenticalUint()
         {
             var a = new Color(255, 0, 255);
-            const uint B = 0xFFFF00FF;
+            const uint B = 0xFF00FF;
             Assert.AreEqual(a, B);
             Assert.True(a == B);
             Assert.False(a != B);
