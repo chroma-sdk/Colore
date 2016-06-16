@@ -200,7 +200,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
             {
                 var index = (int)key;
                 index = (index >> 8) * Constants.MaxColumns + (index & 0xFF);
-                return _keys[index];
+                return _keys[index] & 0xFFFFFF;
             }
 
             set
