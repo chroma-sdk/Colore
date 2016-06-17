@@ -40,10 +40,7 @@ namespace Corale.Colore.Core
         /// <summary>
         /// Clears the current effect on the device.
         /// </summary>
-        public virtual void Clear()
-        {
-            SetAll(Color.Black);
-        }
+        public abstract void Clear();
 
         /// <summary>
         /// Sets the color of all components on this device.
