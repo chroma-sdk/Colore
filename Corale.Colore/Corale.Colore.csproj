@@ -109,6 +109,7 @@
     <Compile Include="Core\Color.cs" />
     <Compile Include="Core\Color.Defines.cs" />
     <Compile Include="Core\Device.cs" />
+    <Compile Include="Core\RegistryHelper.cs" />
     <Compile Include="EnvironmentHelper.cs" />
     <Compile Include="Core\GenericDevice.cs" />
     <Compile Include="Core\Headset.cs" />
@@ -146,6 +147,8 @@
     <Compile Include="Razer\Keyboard\Effects\Duration.cs" />
     <Compile Include="Razer\Keyboard\Effects\Effect.cs" />
     <Compile Include="Razer\Keyboard\Effects\Reactive.cs" />
+    <Compile Include="Razer\Keyboard\Effects\Starlight.cs" />
+    <Compile Include="Razer\Keyboard\Effects\StarlightType.cs" />
     <Compile Include="Razer\Keyboard\Effects\Static.cs" />
     <Compile Include="Razer\Keyboard\Effects\Wave.cs" />
     <Compile Include="Razer\Keyboard\Key.cs" />
@@ -191,6 +194,7 @@
     </Compile>
     <Compile Include="Razer\Result.cs" />
     <Compile Include="Razer\UnsupportedDeviceException.cs" />
+    <Compile Include="SdkVersion.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Events\DeviceAccessEventArgs.cs" />

@@ -66,6 +66,7 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         public override void SetAll(Color color)
         {
+            Clear();
             SetStatic(new Static(color));
         }
 
@@ -122,6 +123,14 @@ namespace Corale.Colore.Core
         public void SetBreathing(Color color)
         {
             SetBreathing(new Breathing(color));
+        }
+
+        /// <summary>
+        /// Clears the effects on the current device type.
+        /// </summary>
+        public override void Clear()
+        {
+            SetEffect(Effect.None);
         }
     }
 }

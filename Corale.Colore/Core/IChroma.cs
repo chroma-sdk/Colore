@@ -113,6 +113,12 @@ namespace Corale.Colore.Core
         bool Initialized { get; }
 
         /// <summary>
+        /// Gets the version of the Chroma SDK that Colore is currently using.
+        /// </summary>
+        [PublicAPI]
+        SdkVersion SdkVersion { get; }
+
+        /// <summary>
         /// Initializes the SDK if it hasn't already.
         /// </summary>
         /// <remarks>

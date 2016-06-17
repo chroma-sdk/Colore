@@ -288,5 +288,25 @@ namespace Corale.Colore.Tests.Razer.Mouse.Effects
             Assert.False(effect.Equals(null));
             Assert.AreNotEqual(effect, null);
         }
+
+        [Test]
+        public void ClonedStructShouldBeIdentical()
+        {
+            var original = new Custom(Color.Red);
+            var clone = original.Clone();
+
+            Assert.That(clone, Is.EqualTo(original));
+        }
+
+        [Test]
+        public void ClonedStructShouldBeIndependent()
+        {
+            var original = new Custom(Color.Red);
+            var clone = original.Clone();
+
+            clone.Set(Color.Blue);
+
+            Assert.That(clone, Is.Not.EqualTo(original));
+        }
     }
 }
