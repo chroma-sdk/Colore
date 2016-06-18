@@ -82,6 +82,12 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         Starlight,
 
         /// <summary>
+        /// Custom effect with keys.
+        /// </summary>
+        [PublicAPI]
+        CustomKey,
+
+        /// <summary>
         /// Invalid effect.
         /// </summary>
         [PublicAPI]

@@ -38,6 +38,7 @@ namespace Corale.Colore.Core
     {
         /// <summary>
         /// Gets or sets the <see cref="Color" /> for a specific <see cref="Key" /> on the keyboard.
+        /// The SDK will translate this appropriately depending on user configuration.
         /// </summary>
         /// <param name="key">The key to access.</param>
         /// <returns>The color currently set for the specified key.</returns>
@@ -93,21 +94,6 @@ namespace Corale.Colore.Core
         /// <param name="duration">How long to illuminate the key after being pressed.</param>
         [PublicAPI]
         void SetReactive(Color color, Duration duration);
-
-        /// <summary>
-        /// Sets a custom grid effect on the keyboard using
-        /// a two dimensional array of color values.
-        /// </summary>
-        /// <param name="colors">The grid of colors to use.</param>
-        /// <remarks>
-        /// The passed in arrays cannot have more than <see cref="Constants.MaxRows" /> rows and
-        /// not more than <see cref="Constants.MaxColumns" /> columns in any row.
-        /// <para />
-        /// This will overwrite the internal <see cref="Custom" />
-        /// struct in the <see cref="Keyboard" /> class.
-        /// </remarks>
-        [PublicAPI]
-        void SetGrid(Color[][] colors);
 
         /// <summary>
         /// Sets a custom grid effect on the keyboard.
