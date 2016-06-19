@@ -177,6 +177,8 @@ namespace Corale.Colore.Tester.ViewModels
 
         public IEnumerable<Duration> ReactiveDurationValues => Enum.GetValues(typeof(Duration)).Cast<Duration>();
 
+        public string Connected => "Connected: " + Core.Keyboard.Instance.Connected.ToString();
+
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

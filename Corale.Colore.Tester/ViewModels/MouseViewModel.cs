@@ -157,6 +157,8 @@ namespace Corale.Colore.Tester.ViewModels
 
         public IEnumerable<Duration> ReactiveDurationValues => Enum.GetValues(typeof(Duration)).Cast<Duration>();
 
+        public string Connected => "Connected: " + Core.Mouse.Instance.Connected.ToString();
+
         [Annotations.NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged(string propertyName)
         {

@@ -89,6 +89,8 @@ namespace Corale.Colore.Tester.ViewModels
 
         public IEnumerable<Direction> WaveDirectionValues => Enum.GetValues(typeof(Direction)).Cast<Direction>();
 
+        public string Connected => "Connected: " + Core.Mousepad.Instance.Connected.ToString();
+
         [Annotations.NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged(string propertyName)
         {

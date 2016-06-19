@@ -6,11 +6,10 @@
         xmlns:xckt="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:viewModels="clr-namespace:Corale.Colore.Tester.ViewModels"
         mc:Ignorable="d"
-        Title="Colore Integration Testing Tool" Height="300" Width="679.577">
+        Title="Colore Integration Testing Tool" Height="340" Width="680">
     <Grid>
 
-        <TabControl x:Name="DevicesTabControl" HorizontalAlignment="Left" Height="269" VerticalAlignment="Top"
-                    Width="672">
+        <TabControl x:Name="DevicesTabControl" Height="309" VerticalAlignment="Top">
             <TabItem Header="Keyboard">
                 <Grid Background="#FFE5E5E5">
                     <Grid.DataContext>
@@ -100,6 +99,9 @@
                                     HorizontalAlignment="Center" Command="{Binding IndexerCommand}" />
                         </StackPanel>
                     </StackPanel>
+                    <StatusBar HorizontalAlignment="Left" Height="20" Margin="0,241,-120,0" VerticalAlignment="Top" Width="786" Grid.ColumnSpan="3">
+                        <TextBlock x:Name="KeyboardConnected" Text="{Binding Connected}" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </StatusBar>
 
                 </Grid>
             </TabItem>
@@ -120,7 +122,7 @@
                             <Button x:Name="SetAllButton1" Content="SetAll" VerticalAlignment="Top" Width="75"
                                     Margin="0,6,0,0" Command="{Binding AllCommand, Mode=OneWay}" />
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                             <Button x:Name="SetBreathingColorMouseButton" Content="One Color Breathe" VerticalAlignment="Top"
+                                <Button x:Name="SetBreathingColorMouseButton" Content="One Color Breathe" VerticalAlignment="Top"
                                     Width="110" Margin="2,6,0,0" Command="{Binding BreathingOneColorCommand, Mode=OneWay}" />
                                 <Button x:Name="SetBreathingColorsMouseButton" Content="Two Color Breathe" VerticalAlignment="Top"
                                     Width="110" Margin="2,6,0,0" Command="{Binding BreathingTwoColorCommand, Mode=OneWay}" />
@@ -189,6 +191,9 @@
                                         HorizontalAlignment="Center" Command="{Binding GridLedCommand}" />
                             </StackPanel>
                         </StackPanel>
+                        <StatusBar HorizontalAlignment="Left" Height="20" Margin="0,241,-120,0" VerticalAlignment="Top" Width="786" Grid.ColumnSpan="3">
+                            <TextBlock x:Name="MouseConnected" Text="{Binding Connected}" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </StatusBar>
                     </Grid>
                 </Grid>
             </TabItem>
@@ -252,6 +257,9 @@
                                         Height="26" HorizontalAlignment="Center" Command="{Binding IndexerCommand}" />
                             </StackPanel>
                         </StackPanel>
+                        <StatusBar HorizontalAlignment="Left" Height="20" Margin="0,241,-120,0" VerticalAlignment="Top" Width="786" Grid.ColumnSpan="3">
+                            <TextBlock x:Name="MousepadConnected" Text="{Binding Connected}" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </StatusBar>
                     </Grid>
                 </Grid>
             </TabItem>
@@ -328,6 +336,9 @@
                                         HorizontalAlignment="Center" Command="{Binding IndexerCommand}" />
                             </StackPanel>
                         </StackPanel>
+                        <StatusBar HorizontalAlignment="Left" Height="20" Margin="0,241,-120,0" VerticalAlignment="Top" Width="786" Grid.ColumnSpan="3">
+                            <TextBlock x:Name="KeypadConnected" Text="{Binding Connected}" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </StatusBar>
                     </Grid>
                 </Grid>
             </TabItem>
@@ -368,6 +379,9 @@
 
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" />
                     </StackPanel>
+                    <StatusBar HorizontalAlignment="Left" Height="20" Margin="0,241,-120,0" VerticalAlignment="Top" Width="786" Grid.ColumnSpan="3">
+                        <TextBlock x:Name="HeadsetConnected" Text="{Binding Connected}" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </StatusBar>
                 </Grid>
             </TabItem>
             <TabItem Header="Misc">

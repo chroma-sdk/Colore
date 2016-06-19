@@ -131,6 +131,8 @@ namespace Corale.Colore.Tester.ViewModels
 
         public ICommand ClearCommand => new DelegateCommand(() => Core.Keypad.Instance.Clear());
 
+        public string Connected => "Connected: " + Core.Keypad.Instance.Connected.ToString();
+
         [Annotations.NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged(string propertyName)
         {
