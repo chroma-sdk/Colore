@@ -41,6 +41,11 @@ namespace Corale.Colore.Core
         private static readonly ILog Log = LogManager.GetLogger(typeof(RegistryHelper));
 
         /// <summary>
+        /// The path to the Razer Chroma SDK registry key.
+        /// </summary>
+        private static readonly string SdkRegKeyPath = GetSdkRegKeyPath();
+
+        /// <summary>
         /// Attempts to extract the SDK version from the registry.
         /// </summary>
         /// <param name="ver">The SDK version will be saved in this variable.</param>
@@ -51,23 +56,9 @@ namespace Corale.Colore.Core
         [SecurityCritical]
         internal static bool TryGetSdkVersion(out SdkVersion ver)
         {
-#if ANYCPU
-#pragma warning disable SA1312 // Variable names must begin with lower-case letter
-            // ReSharper disable once InconsistentNaming
-            var RegKey = @"SOFTWARE\Razer Chroma SDK";
-#pragma warning restore SA1312 // Variable names must begin with lower-case letter
-
-            if (EnvironmentHelper.Is64BitProcess() && EnvironmentHelper.Is64BitOperatingSystem())
-                RegKey = @"SOFTWARE\WOW6432Node\Razer Chroma SDK";
-#elif WIN64
-            const string RegKey = @"SOFTWARE\WOW6432Node\Razer Chroma SDK";
-#else
-            const string RegKey = @"SOFTWARE\Razer Chroma SDK";
-#endif
-
             try
             {
-                using (var key = Registry.LocalMachine.OpenSubKey(RegKey, false))
+                using (var key = Registry.LocalMachine.OpenSubKey(SdkRegKeyPath, false))
                 {
                     if (key == null)
                     {
@@ -108,6 +99,24 @@ namespace Corale.Colore.Core
                 ver = new SdkVersion(0, 0, 0);
                 return false;
             }
+        }
+
+        /// <summary>
+        /// Gets the path to the Razer Chroma SDK registry key.
+        /// </summary>
+        /// <returns>Path to the Razer Chroma SDK registry key.</returns>
+        private static string GetSdkRegKeyPath()
+        {
+#if ANYCPU
+            if (EnvironmentHelper.Is64BitProcess() && EnvironmentHelper.Is64BitOperatingSystem())
+                return @"SOFTWARE\WOW6432Node\Razer Chroma SDK";
+
+            return @"SOFTWARE\Razer Chroma SDK";
+#elif WIN64
+            return @"SOFTWARE\WOW6432Node\Razer Chroma SDK";
+#else
+            return @"SOFTWARE\Razer Chroma SDK";
+#endif
         }
     }
 }
