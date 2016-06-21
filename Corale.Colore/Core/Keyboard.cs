@@ -359,7 +359,7 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Clears the effects on the current device type.
+        /// Clears the current effect on the Keyboard.
         /// </summary>
         public override void Clear()
         {

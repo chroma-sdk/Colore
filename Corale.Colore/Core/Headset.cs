@@ -125,7 +125,7 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Clears the effects on the current device type.
+        /// Clears the current effect on the Headset.
         /// </summary>
         public override void Clear()
         {
