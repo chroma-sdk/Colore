@@ -123,5 +123,13 @@ namespace Corale.Colore.Core
         {
             SetBreathing(new Breathing(color));
         }
+
+        /// <summary>
+        /// Clears the current effect on the Headset.
+        /// </summary>
+        public override void Clear()
+        {
+            SetEffect(Effect.None);
+        }
     }
 }

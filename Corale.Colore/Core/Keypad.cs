@@ -228,5 +228,13 @@ namespace Corale.Colore.Core
         {
             SetWave(new Wave(direction));
         }
+
+        /// <summary>
+        /// Clears the current effect on the Keypad.
+        /// </summary>
+        public override void Clear()
+        {
+            SetEffect(Effect.None);
+        }
     }
 }

@@ -357,5 +357,13 @@ namespace Corale.Colore.Core
         {
             SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.Starlight, effect));
         }
+
+        /// <summary>
+        /// Clears the current effect on the Keyboard.
+        /// </summary>
+        public override void Clear()
+        {
+            SetEffect(Effect.None);
+        }
     }
 }

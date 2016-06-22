@@ -191,5 +191,13 @@ namespace Corale.Colore.Core
         {
             SetGuid(NativeWrapper.CreateMousepadEffect(Effect.Custom, effect));
         }
+
+        /// <summary>
+        /// Clears the current effect on the Mousepad.
+        /// </summary>
+        public override void Clear()
+        {
+            SetEffect(Effect.None);
+        }
     }
 }
