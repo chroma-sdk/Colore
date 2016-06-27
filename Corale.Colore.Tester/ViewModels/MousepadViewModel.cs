@@ -34,6 +34,7 @@ namespace Corale.Colore.Tester.ViewModels
     using System.Windows.Media;
     using Classes;
     using Razer.Mousepad.Effects;
+    using Wpf;
 
     public class MousepadViewModel : INotifyPropertyChanged
     {
@@ -42,8 +43,8 @@ namespace Corale.Colore.Tester.ViewModels
         public MousepadViewModel()
         {
             SelectedWaveDirection = Direction.LeftToRight;
-            ColorOne.Color = Core.Color.Red;
-            ColorTwo.Color = Core.Color.Blue;
+            ColorOne.Color = Core.Color.Red.ToWpfColor();
+            ColorTwo.Color = Core.Color.Blue.ToWpfColor();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -68,16 +69,16 @@ namespace Corale.Colore.Tester.ViewModels
             }
         }
 
-        public ICommand AllCommand => new DelegateCommand(() => Core.Mousepad.Instance.SetAll(ColorOne.Color));
+        public ICommand AllCommand => new DelegateCommand(() => Core.Mousepad.Instance.SetAll(ColorOne.Color.ToColoreColor()));
 
         public ICommand BreathingCommand
-            => new DelegateCommand(() => Core.Mousepad.Instance.SetBreathing(ColorOne.Color, ColorTwo.Color));
+            => new DelegateCommand(() => Core.Mousepad.Instance.SetBreathing(ColorOne.Color.ToColoreColor(), ColorTwo.Color.ToColoreColor()));
 
         public ICommand WaveCommand
             => new DelegateCommand(SetWaveEffect);
 
         public ICommand StaticCommand
-            => new DelegateCommand(() => Core.Mousepad.Instance.SetStatic(ColorOne.Color));
+            => new DelegateCommand(() => Core.Mousepad.Instance.SetStatic(ColorOne.Color.ToColoreColor()));
 
         public ICommand IndexerCommand
             => new DelegateCommand(SetIndexerEffect);
@@ -111,7 +112,7 @@ namespace Corale.Colore.Tester.ViewModels
         {
             try
             {
-                Core.Mousepad.Instance[Index] = ColorOne.Color;
+                Core.Mousepad.Instance[Index] = ColorOne.Color.ToColoreColor();
             }
             catch (Exception ex)
             {
