@@ -41,6 +41,73 @@ namespace Corale.Colore.Core
         private static readonly ILog Log = LogManager.GetLogger(typeof(RegistryHelper));
 
         /// <summary>
+        /// The path to the Razer Chroma SDK registry key.
+        /// </summary>
+        private static readonly string SdkRegKeyPath = GetSdkRegKeyPath();
+
+        /// <summary>
+        /// Checks if the Chroma SDK is available on this system.
+        /// </summary>
+        /// <returns><c>true</c> if Chroma SDK is available, otherwise <c>false</c>.</returns>
+        [SecurityCritical]
+        internal static bool IsSdkAvailable()
+        {
+            bool dllValid;
+
+#if ANYCPU
+            if (EnvironmentHelper.Is64BitProcess() && EnvironmentHelper.Is64BitOperatingSystem())
+                dllValid = Native.Kernel32.NativeMethods.LoadLibrary("RzChromaSDK64.dll") != IntPtr.Zero;
+            else
+                dllValid = Native.Kernel32.NativeMethods.LoadLibrary("RzChromaSDK.dll") != IntPtr.Zero;
+#elif WIN64
+            dllValid = Native.Kernel32.NativeMethods.LoadLibrary("RzChromaSDK64.dll") != IntPtr.Zero;
+#else
+            dllValid = Native.Kernel32.NativeMethods.LoadLibrary("RzChromaSDK.dll") != IntPtr.Zero;
+#endif
+
+            bool regEnabled;
+
+            try
+            {
+                using (var key = Registry.LocalMachine.OpenSubKey(SdkRegKeyPath))
+                {
+                    if (key != null)
+                    {
+                        var value = key.GetValue("Enable");
+
+                        if (value is int)
+                            regEnabled = (int)value == 1;
+                        else
+                        {
+                            regEnabled = true;
+                            Log.Warn(
+                                "Chroma SDK has changed registry setting format. Please update Colore to latest version.");
+                            Log.DebugFormat("New Enabled type: {0}", value.GetType());
+                        }
+                    }
+                    else
+                        regEnabled = false;
+                }
+            }
+            catch (SecurityException ex)
+            {
+                // If we can't access the registry, best to just assume
+                // it is enabled.
+                Log.Warn("System raised SecurityException during read of SDK enable flag in registry.", ex);
+                regEnabled = true;
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                // If we can't access the registry, best to just assume
+                // it is enabled.
+                Log.Warn("Not authorized to read registry for SDK enable flag.", ex);
+                regEnabled = true;
+            }
+
+            return dllValid && regEnabled;
+        }
+
+        /// <summary>
         /// Attempts to extract the SDK version from the registry.
         /// </summary>
         /// <param name="ver">The SDK version will be saved in this variable.</param>
@@ -51,23 +118,9 @@ namespace Corale.Colore.Core
         [SecurityCritical]
         internal static bool TryGetSdkVersion(out SdkVersion ver)
         {
-#if ANYCPU
-#pragma warning disable SA1312 // Variable names must begin with lower-case letter
-            // ReSharper disable once InconsistentNaming
-            var RegKey = @"SOFTWARE\Razer Chroma SDK";
-#pragma warning restore SA1312 // Variable names must begin with lower-case letter
-
-            if (EnvironmentHelper.Is64BitProcess() && EnvironmentHelper.Is64BitOperatingSystem())
-                RegKey = @"SOFTWARE\WOW6432Node\Razer Chroma SDK";
-#elif WIN64
-            const string RegKey = @"SOFTWARE\WOW6432Node\Razer Chroma SDK";
-#else
-            const string RegKey = @"SOFTWARE\Razer Chroma SDK";
-#endif
-
             try
             {
-                using (var key = Registry.LocalMachine.OpenSubKey(RegKey, false))
+                using (var key = Registry.LocalMachine.OpenSubKey(SdkRegKeyPath, false))
                 {
                     if (key == null)
                     {
@@ -108,6 +161,24 @@ namespace Corale.Colore.Core
                 ver = new SdkVersion(0, 0, 0);
                 return false;
             }
+        }
+
+        /// <summary>
+        /// Gets the path to the Razer Chroma SDK registry key.
+        /// </summary>
+        /// <returns>Path to the Razer Chroma SDK registry key.</returns>
+        private static string GetSdkRegKeyPath()
+        {
+#if ANYCPU
+            if (EnvironmentHelper.Is64BitProcess() && EnvironmentHelper.Is64BitOperatingSystem())
+                return @"SOFTWARE\WOW6432Node\Razer Chroma SDK";
+
+            return @"SOFTWARE\Razer Chroma SDK";
+#elif WIN64
+            return @"SOFTWARE\WOW6432Node\Razer Chroma SDK";
+#else
+            return @"SOFTWARE\Razer Chroma SDK";
+#endif
         }
     }
 }
