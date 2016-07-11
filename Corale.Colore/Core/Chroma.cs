@@ -190,7 +190,6 @@ namespace Corale.Colore.Core
         /// result in <emph>undefined behaviour</emph>. Usage of this method is
         /// <strong>at your own risk</strong>.</span>
         /// </remarks>
-        [SecuritySafeCritical]
         public void Initialize()
         {
             if (Initialized)
@@ -247,7 +246,6 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="deviceId">The device ID to query for, valid IDs can be found in <see cref="Devices" />.</param>
         /// <returns>A struct with information regarding the device type and whether it's connected.</returns>
-        [SecurityCritical]
         public DeviceInfo Query(Guid deviceId)
         {
             if (!Devices.IsValidId(deviceId))

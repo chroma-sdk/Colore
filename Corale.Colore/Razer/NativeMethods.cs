@@ -28,7 +28,6 @@ namespace Corale.Colore.Razer
     using System;
     using System.Diagnostics.CodeAnalysis;
     using System.Runtime.InteropServices;
-    using System.Security;
 
     using Corale.Colore.Razer.Keyboard;
 
@@ -152,7 +151,6 @@ namespace Corale.Colore.Razer
         /// <summary>
         /// Initializes static members of the <see cref="NativeMethods" /> class.
         /// </summary>
-        [SecurityCritical]
         [SuppressMessage("Microsoft.Design", "CA1065:DoNotRaiseExceptionsInUnexpectedLocations",
             Justification = "Can't get rid of this exception as we depend on architecture and library to work.")]
         static NativeMethods()
@@ -473,7 +471,6 @@ namespace Corale.Colore.Razer
         /// <param name="lib">A pointer to the loaded library to load the function from.</param>
         /// <param name="name">Name of the function to load.</param>
         /// <returns>A delegate of type <typeparamref name="T" /> for the specified function.</returns>
-        [SecurityCritical]
         private static T GetDelegateFromLibrary<T>(IntPtr lib, string name)
         {
             var functionPtr = Native.Kernel32.NativeMethods.GetProcAddress(lib, name);

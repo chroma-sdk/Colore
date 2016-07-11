@@ -40,7 +40,6 @@ namespace Corale.Colore
         /// Determines whether the current system is 64-bit.
         /// </summary>
         /// <returns><c>true</c> if the system is 64-bit.</returns>
-        [SecurityCritical]
         internal static bool Is64BitOperatingSystem()
         {
             // Check if this process is natively an x64 process. If it is, it will only run on x64 environments, thus, the environment must be x64.

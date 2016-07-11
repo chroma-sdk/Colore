@@ -209,7 +209,6 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="id">Device ID, found in <see cref="Devices" />.</param>
         /// <returns>A populated <see cref="DeviceInfo" /> structure with information about the requested device.</returns>
-        [SecuritySafeCritical]
         internal static DeviceInfo QueryDevice(Guid id)
         {
             var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(DeviceInfo)));
@@ -241,7 +240,6 @@ namespace Corale.Colore.Core
         /// <param name="effect">The type of effect to create.</param>
         /// <param name="struct">The effect structure parameter.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        [SecuritySafeCritical]
         internal static Guid CreateKeyboardEffect<T>(Razer.Keyboard.Effects.Effect effect, T @struct) where T : struct
         {
             var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(@struct));
@@ -263,7 +261,6 @@ namespace Corale.Colore.Core
         /// <param name="effect">The type of effect to create.</param>
         /// <param name="struct">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        [SecuritySafeCritical]
         internal static Guid CreateMouseEffect<T>(Razer.Mouse.Effects.Effect effect, T @struct) where T : struct
         {
             var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(@struct));
@@ -285,7 +282,6 @@ namespace Corale.Colore.Core
         /// <param name="effect">The type of effect to create.</param>
         /// <param name="struct">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        [SecuritySafeCritical]
         internal static Guid CreateHeadsetEffect<T>(Razer.Headset.Effects.Effect effect, T @struct) where T : struct
         {
             var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(@struct));
@@ -308,7 +304,6 @@ namespace Corale.Colore.Core
         /// <param name="effect">The type of effect to create.</param>
         /// <param name="struct">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        [SecuritySafeCritical]
         internal static Guid CreateMousepadEffect<T>(Razer.Mousepad.Effects.Effect effect, T @struct) where T : struct
         {
             var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(@struct));
@@ -331,7 +326,6 @@ namespace Corale.Colore.Core
         /// <param name="effect">The type of effect to create.</param>
         /// <param name="struct">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        [SecuritySafeCritical]
         internal static Guid CreateKeypadEffect<T>(Razer.Keypad.Effects.Effect effect, T @struct) where T : struct
         {
             var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(@struct));
