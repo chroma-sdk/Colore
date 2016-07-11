@@ -174,9 +174,7 @@ namespace Corale.Colore.Logging
             _source.Listeners.Clear();
 
             foreach (TraceListener listener in parent.Listeners)
-            {
                 _source.Listeners.Add(listener);
-            }
 
             SourceCache[Name] = _source;
         }
