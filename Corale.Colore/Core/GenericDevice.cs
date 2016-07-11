@@ -31,9 +31,8 @@ namespace Corale.Colore.Core
     using System.Security;
 
     using Corale.Colore.Annotations;
+    using Corale.Colore.Logging;
     using Corale.Colore.Razer;
-
-    using log4net;
 
     /// <summary>
     /// A generic device.

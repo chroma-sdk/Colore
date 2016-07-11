@@ -31,9 +31,8 @@ namespace Corale.Colore.Core
 
     using Corale.Colore.Annotations;
     using Corale.Colore.Events;
+    using Corale.Colore.Logging;
     using Corale.Colore.Razer;
-
-    using log4net;
 
     /// <summary>
     /// Main class for interacting with the Chroma SDK.

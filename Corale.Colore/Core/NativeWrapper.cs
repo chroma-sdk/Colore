@@ -29,9 +29,8 @@ namespace Corale.Colore.Core
     using System.Runtime.InteropServices;
     using System.Security;
 
+    using Corale.Colore.Logging;
     using Corale.Colore.Razer;
-
-    using log4net;
 
     /// <summary>
     /// Helper class to more easily make calls to native Chroma SDK functions.

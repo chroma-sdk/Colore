@@ -1,5 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
-// <copyright file="App.xaml.cs" company="Corale">
+﻿// <copyright file="LogLevel.cs" company="Corale">
 //     Copyright © 2015 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -21,20 +20,37 @@
 //
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
-// ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Tester
+namespace Corale.Colore.Logging
 {
-    using System.Diagnostics;
-
     /// <summary>
-    /// Interaction logic for App.xaml
+    /// Available logging levels for the internal loggers.
     /// </summary>
-    public partial class App
+    internal enum LogLevel
     {
-        public App()
-        {
-            Trace.AutoFlush = true;
-        }
+        /// <summary>
+        /// A <c>DEBUG</c> level message.
+        /// </summary>
+        Debug,
+
+        /// <summary>
+        /// An <c>INFO</c> level message.
+        /// </summary>
+        Info,
+
+        /// <summary>
+        /// A <c>WARN</c> level message.
+        /// </summary>
+        Warn,
+
+        /// <summary>
+        /// An <c>ERROR</c> level message.
+        /// </summary>
+        Error,
+
+        /// <summary>
+        /// A <c>FATAL</c> level message.
+        /// </summary>
+        Fatal
     }
 }

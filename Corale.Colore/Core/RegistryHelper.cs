@@ -26,7 +26,7 @@ namespace Corale.Colore.Core
     using System;
     using System.Security;
 
-    using log4net;
+    using Corale.Colore.Logging;
 
     using Microsoft.Win32;
 

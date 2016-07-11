@@ -30,10 +30,9 @@ namespace Corale.Colore.Core
     using System.Linq;
 
     using Corale.Colore.Annotations;
+    using Corale.Colore.Logging;
     using Corale.Colore.Razer.Keyboard;
     using Corale.Colore.Razer.Keyboard.Effects;
-
-    using log4net;
 
     /// <summary>
     /// Class for interacting with a Chroma keyboard.
