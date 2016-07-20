@@ -27,9 +27,8 @@ namespace Corale.Colore.Core
 {
     using System;
 
+    using Corale.Colore.Logging;
     using Corale.Colore.Razer.Headset.Effects;
-
-    using log4net;
 
     /// <summary>
     /// Class for interacting with Chroma Headsets.

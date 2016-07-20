@@ -26,25 +26,11 @@
 namespace Corale.Colore.Razer
 {
     using System;
-    using System.Diagnostics.CodeAnalysis;
     using System.Runtime.InteropServices;
-    using System.Security;
-
-    using Corale.Colore.Razer.Keyboard;
 
 #if ANYCPU
-
-    using System.Reflection;
-
-#else
-
-    using Corale.Colore.Core;
-
+    using System.Diagnostics.CodeAnalysis;
 #endif
-
-    // RZID is typedef'd as DWORD in the C headers
-    // DWORD is 32-bit unsigned integer on Windows
-    using RZID = System.UInt32;
 
     /// <summary>
     /// Native methods from Razer's Chroma SDK.
@@ -73,11 +59,6 @@ namespace Corale.Colore.Razer
 #endif
 
 #if ANYCPU
-
-        /// <summary>
-        /// Architecture of the current system.
-        /// </summary>
-        internal static readonly Architecture SystemArchitecture;
 
         /// <summary>
         /// Stores a reference to the loaded <see cref="InitDelegate" />.
@@ -145,74 +126,68 @@ namespace Corale.Colore.Razer
         internal static readonly QueryDeviceDelegate QueryDevice;
 
         /// <summary>
-        /// Stores the pointer to the loaded Chroma SDK library DLL.
-        /// </summary>
-        private static readonly IntPtr ChromaSdkPointer;
-
-        /// <summary>
         /// Initializes static members of the <see cref="NativeMethods" /> class.
         /// </summary>
-        [SecurityCritical]
         [SuppressMessage("Microsoft.Design", "CA1065:DoNotRaiseExceptionsInUnexpectedLocations",
             Justification = "Can't get rid of this exception as we depend on architecture and library to work.")]
         static NativeMethods()
         {
+            IntPtr chromaSdkPointer;
+
             if (EnvironmentHelper.Is64BitProcess() && EnvironmentHelper.Is64BitOperatingSystem())
             {
                 // We are running 64-bit!
-                ChromaSdkPointer = Native.Kernel32.NativeMethods.LoadLibrary("RzChromaSDK64.dll");
-                SystemArchitecture = Architecture.X64;
+                chromaSdkPointer = Native.Kernel32.NativeMethods.LoadLibrary("RzChromaSDK64.dll");
             }
             else
             {
                 // We are running 32-bit!
-                ChromaSdkPointer = Native.Kernel32.NativeMethods.LoadLibrary("RzChromaSDK.dll");
-                SystemArchitecture = Architecture.X86;
+                chromaSdkPointer = Native.Kernel32.NativeMethods.LoadLibrary("RzChromaSDK.dll");
             }
 
-            if (ChromaSdkPointer == IntPtr.Zero)
+            if (chromaSdkPointer == IntPtr.Zero)
             {
                 throw new ColoreException(
                     "Failed to dynamically load Chroma SDK library (Error " + Marshal.GetLastWin32Error() + ").");
             }
 
-            Init = GetDelegateFromLibrary<InitDelegate>(ChromaSdkPointer, "Init");
+            Init = GetDelegateFromLibrary<InitDelegate>(chromaSdkPointer, "Init");
 
-            UnInit = GetDelegateFromLibrary<UnInitDelegate>(ChromaSdkPointer, "UnInit");
+            UnInit = GetDelegateFromLibrary<UnInitDelegate>(chromaSdkPointer, "UnInit");
 
-            CreateEffect = GetDelegateFromLibrary<CreateEffectDelegate>(ChromaSdkPointer, "CreateEffect");
+            CreateEffect = GetDelegateFromLibrary<CreateEffectDelegate>(chromaSdkPointer, "CreateEffect");
 
             CreateKeyboardEffect = GetDelegateFromLibrary<CreateKeyboardEffectDelegate>(
-                ChromaSdkPointer,
+                chromaSdkPointer,
                 "CreateKeyboardEffect");
 
-            CreateMouseEffect = GetDelegateFromLibrary<CreateMouseEffectDelegate>(ChromaSdkPointer, "CreateMouseEffect");
+            CreateMouseEffect = GetDelegateFromLibrary<CreateMouseEffectDelegate>(chromaSdkPointer, "CreateMouseEffect");
 
             CreateHeadsetEffect = GetDelegateFromLibrary<CreateHeadsetEffectDelegate>(
-                ChromaSdkPointer,
+                chromaSdkPointer,
                 "CreateHeadsetEffect");
 
             CreateMousepadEffect = GetDelegateFromLibrary<CreateMousepadEffectDelegate>(
-                ChromaSdkPointer,
+                chromaSdkPointer,
                 "CreateMousepadEffect");
 
             CreateKeypadEffect = GetDelegateFromLibrary<CreateKeypadEffectDelegate>(
-                ChromaSdkPointer,
+                chromaSdkPointer,
                 "CreateKeypadEffect");
 
-            DeleteEffect = GetDelegateFromLibrary<DeleteEffectDelegate>(ChromaSdkPointer, "DeleteEffect");
+            DeleteEffect = GetDelegateFromLibrary<DeleteEffectDelegate>(chromaSdkPointer, "DeleteEffect");
 
-            SetEffect = GetDelegateFromLibrary<SetEffectDelegate>(ChromaSdkPointer, "SetEffect");
+            SetEffect = GetDelegateFromLibrary<SetEffectDelegate>(chromaSdkPointer, "SetEffect");
 
             RegisterEventNotification = GetDelegateFromLibrary<RegisterEventNotificationDelegate>(
-                ChromaSdkPointer,
+                chromaSdkPointer,
                 "RegisterEventNotification");
 
             UnregisterEventNotification = GetDelegateFromLibrary<UnregisterEventNotificationDelegate>(
-                ChromaSdkPointer,
+                chromaSdkPointer,
                 "UnregisterEventNotification");
 
-            QueryDevice = GetDelegateFromLibrary<QueryDeviceDelegate>(ChromaSdkPointer, "QueryDevice");
+            QueryDevice = GetDelegateFromLibrary<QueryDeviceDelegate>(chromaSdkPointer, "QueryDevice");
         }
 
         /// <summary>
@@ -237,9 +212,10 @@ namespace Corale.Colore.Razer
         /// <param name="param">Effect-specific parameter.</param>
         /// <param name="effectId">Valid effect ID if successful. Use <see cref="Guid.Empty" /> if not required.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
+        [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         internal delegate Result CreateEffectDelegate(
             [In] Guid deviceId,
-            [In] Razer.Effect effect,
+            [In] Effect effect,
             [In] IntPtr param,
             [In, Out] ref Guid effectId);
 
@@ -451,29 +427,12 @@ namespace Corale.Colore.Razer
         internal delegate Result QueryDeviceDelegate([In] Guid deviceId, [Out] IntPtr info);
 
         /// <summary>
-        /// System architecture types.
-        /// </summary>
-        internal enum Architecture
-        {
-            /// <summary>
-            /// 32-bit system.
-            /// </summary>
-            X86,
-
-            /// <summary>
-            /// 64-bit system.
-            /// </summary>
-            X64
-        }
-
-        /// <summary>
         /// Gets a delegate with a specified name from a dynamically loaded library.
         /// </summary>
         /// <typeparam name="T">The type of delegate to get.</typeparam>
         /// <param name="lib">A pointer to the loaded library to load the function from.</param>
         /// <param name="name">Name of the function to load.</param>
         /// <returns>A delegate of type <typeparamref name="T" /> for the specified function.</returns>
-        [SecurityCritical]
         private static T GetDelegateFromLibrary<T>(IntPtr lib, string name)
         {
             var functionPtr = Native.Kernel32.NativeMethods.GetProcAddress(lib, name);

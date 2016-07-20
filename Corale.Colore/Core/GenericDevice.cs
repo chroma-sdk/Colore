@@ -31,9 +31,8 @@ namespace Corale.Colore.Core
     using System.Security;
 
     using Corale.Colore.Annotations;
+    using Corale.Colore.Logging;
     using Corale.Colore.Razer;
-
-    using log4net;
 
     /// <summary>
     /// A generic device.
@@ -90,7 +89,6 @@ namespace Corale.Colore.Core
         /// Sets the color of all components on this device.
         /// </summary>
         /// <param name="color">Color to set.</param>
-        [SecuritySafeCritical]
         public override void SetAll(Color color)
         {
             var colorPtr = Marshal.AllocHGlobal(Marshal.SizeOf(color));

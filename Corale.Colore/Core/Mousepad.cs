@@ -27,9 +27,8 @@ namespace Corale.Colore.Core
 {
     using System;
 
+    using Corale.Colore.Logging;
     using Corale.Colore.Razer.Mousepad.Effects;
-
-    using log4net;
 
     /// <summary>
     /// Class for interacting with a Chroma mouse pad.

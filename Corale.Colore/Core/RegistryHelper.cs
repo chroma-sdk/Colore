@@ -26,7 +26,7 @@ namespace Corale.Colore.Core
     using System;
     using System.Security;
 
-    using log4net;
+    using Corale.Colore.Logging;
 
     using Microsoft.Win32;
 
@@ -49,7 +49,6 @@ namespace Corale.Colore.Core
         /// Checks if the Chroma SDK is available on this system.
         /// </summary>
         /// <returns><c>true</c> if Chroma SDK is available, otherwise <c>false</c>.</returns>
-        [SecurityCritical]
         internal static bool IsSdkAvailable()
         {
             bool dllValid;
@@ -115,7 +114,6 @@ namespace Corale.Colore.Core
         /// <c>true</c> if the version was retrieved successfully and stored in <paramref name="ver" />,
         /// otherwise <c>false</c> with <c>(0, 0, 0)</c> stored in <paramref name="ver" />.
         /// </returns>
-        [SecurityCritical]
         internal static bool TryGetSdkVersion(out SdkVersion ver)
         {
             try
