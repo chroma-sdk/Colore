@@ -1,5 +1,6 @@
-﻿// <copyright file="CustomTests.cs" company="Corale">
-//     Copyright © 2015 by Adam Hellberg and Brandon Scott.
+﻿// ---------------------------------------------------------------------------------------
+// <copyright file="CustomTests.cs" company="Corale">
+//     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -20,6 +21,7 @@
 //
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
+// ---------------------------------------------------------------------------------------
 
 namespace Corale.Colore.Tests.Razer.Keypad.Effects
 {
@@ -124,18 +126,18 @@ namespace Corale.Colore.Tests.Razer.Keypad.Effects
             Assert.That(
                 () => dummy = grid[-1],
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
-                    .With.Property("ParamName")
-                    .EqualTo("index")
-                    .And.Property("ActualValue")
-                    .EqualTo(-1));
+                      .With.Property("ParamName")
+                      .EqualTo("index")
+                      .And.Property("ActualValue")
+                      .EqualTo(-1));
 
             Assert.That(
                 () => dummy = grid[Constants.MaxKeys],
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
-                    .With.Property("ParamName")
-                    .EqualTo("index")
-                    .And.Property("ActualValue")
-                    .EqualTo(Constants.MaxKeys));
+                      .With.Property("ParamName")
+                      .EqualTo("index")
+                      .And.Property("ActualValue")
+                      .EqualTo(Constants.MaxKeys));
         }
 
         [Test]
@@ -146,18 +148,18 @@ namespace Corale.Colore.Tests.Razer.Keypad.Effects
             Assert.That(
                 () => grid[-1] = Color.Red,
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
-                    .With.Property("ParamName")
-                    .EqualTo("index")
-                    .And.Property("ActualValue")
-                    .EqualTo(-1));
+                      .With.Property("ParamName")
+                      .EqualTo("index")
+                      .And.Property("ActualValue")
+                      .EqualTo(-1));
 
             Assert.That(
                 () => grid[Constants.MaxKeys] = Color.Red,
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
-                    .With.Property("ParamName")
-                    .EqualTo("index")
-                    .And.Property("ActualValue")
-                    .EqualTo(Constants.MaxKeys));
+                      .With.Property("ParamName")
+                      .EqualTo("index")
+                      .And.Property("ActualValue")
+                      .EqualTo(Constants.MaxKeys));
         }
 
         [Test]

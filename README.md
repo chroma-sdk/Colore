@@ -35,7 +35,7 @@ Please read the [CONTRIBUTING.md](CONTRIBUTING.md) file before making a pull req
 License
 -------
 
-Copyright &copy; 2015 by [Adam Hellberg][sharp] and [Brandon Scott][bs].
+Copyright &copy; 2015-2016 by [Adam Hellberg][sharp] and [Brandon Scott][bs].
 
 This project is licensed under the MIT license, please see the file **LICENSE** for more information.
 

@@ -1,5 +1,6 @@
-﻿// <copyright file="SdkVersionTests.cs" company="Corale">
-//     Copyright © 2015 by Adam Hellberg and Brandon Scott.
+﻿// ---------------------------------------------------------------------------------------
+// <copyright file="SdkVersionTests.cs" company="Corale">
+//     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -20,6 +21,7 @@
 //
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
+// ---------------------------------------------------------------------------------------
 
 namespace Corale.Colore.Tests
 {
@@ -188,7 +190,9 @@ namespace Corale.Colore.Tests
             var ver = new SdkVersion(1, 2, 3);
             var obj = new object();
 
-            Assert.That(() => ver.CompareTo(obj), Throws.InstanceOf<ArgumentException>().With.Property("ParamName").EqualTo("obj"));
+            Assert.That(
+                () => ver.CompareTo(obj),
+                Throws.InstanceOf<ArgumentException>().With.Property("ParamName").EqualTo("obj"));
         }
     }
 }
