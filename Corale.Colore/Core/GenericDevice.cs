@@ -27,12 +27,11 @@ namespace Corale.Colore.Core
 {
     using System;
     using System.Collections.Generic;
-    using System.Runtime.InteropServices;
-    using System.Security;
 
     using Corale.Colore.Annotations;
     using Corale.Colore.Logging;
     using Corale.Colore.Razer;
+    using Corale.Colore.Razer.Effects;
 
     /// <summary>
     /// A generic device.
@@ -86,22 +85,20 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
+        /// Clears the current effect on Generic Devices.
+        /// </summary>
+        public override void Clear()
+        {
+            SetGuid(NativeWrapper.CreateDeviceEffect(DeviceId, Effect.None, default(None)));
+        }
+
+        /// <summary>
         /// Sets the color of all components on this device.
         /// </summary>
         /// <param name="color">Color to set.</param>
         public override void SetAll(Color color)
         {
-            var colorPtr = Marshal.AllocHGlobal(Marshal.SizeOf(color));
-            Marshal.StructureToPtr(color, colorPtr, false);
-
-            try
-            {
-                SetEffect(Effect.Static, colorPtr);
-            }
-            finally
-            {
-                Marshal.FreeHGlobal(colorPtr);
-            }
+            SetStatic(new Static(color));
         }
 
         /// <summary>
@@ -124,11 +121,75 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Clears the current effect on Generic Devices.
+        /// Sets a blinking effect on this device.
         /// </summary>
-        public override void Clear()
+        /// <param name="effect">Effect options.</param>
+        public void SetBlinking(Blinking effect)
         {
-            SetEffect(Effect.None);
+            SetGuid(NativeWrapper.CreateDeviceEffect(DeviceId, Effect.Blinking, effect));
+        }
+
+        /// <summary>
+        /// Sets a breathing effect on this device.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        public void SetBreathing(Breathing effect)
+        {
+            SetGuid(NativeWrapper.CreateDeviceEffect(DeviceId, Effect.Breathing, effect));
+        }
+
+        /// <summary>
+        /// Sets a custom effect on this device.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        public void SetCustom(Custom effect)
+        {
+            SetGuid(NativeWrapper.CreateDeviceEffect(DeviceId, Effect.Custom, effect));
+        }
+
+        /// <summary>
+        /// Sets a reactive effect on this device.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        public void SetReactive(Reactive effect)
+        {
+            SetGuid(NativeWrapper.CreateDeviceEffect(DeviceId, Effect.Reactive, effect));
+        }
+
+        /// <summary>
+        /// Sets a spectrum cycling effect on this device.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        public void SetSpectrumCycling(SpectrumCycling effect)
+        {
+            SetGuid(NativeWrapper.CreateDeviceEffect(DeviceId, Effect.SpectrumCycling, effect));
+        }
+
+        /// <summary>
+        /// Sets a starlight effect on this device.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        public void SetStarlight(Starlight effect)
+        {
+            SetGuid(NativeWrapper.CreateDeviceEffect(DeviceId, Effect.Starlight, effect));
+        }
+
+        /// <summary>
+        /// Sets a static effect on this device.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        public void SetStatic(Static effect)
+        {
+            SetGuid(NativeWrapper.CreateDeviceEffect(DeviceId, Effect.Static, effect));
+        }
+
+        /// <summary>
+        /// Sets a wave effect on this device.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        public void SetWave(Wave effect)
+        {
+            SetGuid(NativeWrapper.CreateDeviceEffect(DeviceId, Effect.Wave, effect));
         }
     }
 }

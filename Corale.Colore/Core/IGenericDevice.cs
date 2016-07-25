@@ -29,6 +29,7 @@ namespace Corale.Colore.Core
 
     using Corale.Colore.Annotations;
     using Corale.Colore.Razer;
+    using Corale.Colore.Razer.Effects;
 
     /// <summary>
     /// Interface for generic devices.
@@ -55,5 +56,61 @@ namespace Corale.Colore.Core
         /// <param name="param">Effect-specific parameter to use.</param>
         [PublicAPI]
         void SetEffect(Effect effect, IntPtr param);
+
+        /// <summary>
+        /// Sets a blinking effect on this device.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        [PublicAPI]
+        void SetBlinking(Blinking effect);
+
+        /// <summary>
+        /// Sets a breathing effect on this device.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        [PublicAPI]
+        void SetBreathing(Breathing effect);
+
+        /// <summary>
+        /// Sets a custom effect on this device.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        [PublicAPI]
+        void SetCustom(Custom effect);
+
+        /// <summary>
+        /// Sets a reactive effect on this device.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        [PublicAPI]
+        void SetReactive(Reactive effect);
+
+        /// <summary>
+        /// Sets a spectrum cycling effect on this device.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        [PublicAPI]
+        void SetSpectrumCycling(SpectrumCycling effect);
+
+        /// <summary>
+        /// Sets a starlight effect on this device.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        [PublicAPI]
+        void SetStarlight(Starlight effect);
+
+        /// <summary>
+        /// Sets a static effect on this device.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        [PublicAPI]
+        void SetStatic(Static effect);
+
+        /// <summary>
+        /// Sets a wave effect on this device.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        [PublicAPI]
+        void SetWave(Wave effect);
     }
 }

@@ -234,6 +234,28 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
+        /// Helper method for creating device effects with relevant structure parameter.
+        /// </summary>
+        /// <typeparam name="T">The structure type, needs to be compatible with the effect type.</typeparam>
+        /// <param name="device">The ID of the device to create the effect for.</param>
+        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="struct">The effect structure parameter.</param>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
+        internal static Guid CreateDeviceEffect<T>(Guid device, Effect effect, T @struct) where T : struct
+        {
+            var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(@struct));
+            Marshal.StructureToPtr(@struct, ptr, false);
+            try
+            {
+                return CreateEffect(device, effect, ptr);
+            }
+            finally
+            {
+                Marshal.FreeHGlobal(ptr);
+            }
+        }
+
+        /// <summary>
         /// Helper method for creating keyboard effects with relevant structure parameter.
         /// </summary>
         /// <typeparam name="T">The structure type, needs to be compatible with the effect type.</typeparam>
