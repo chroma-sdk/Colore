@@ -31,6 +31,21 @@ namespace Corale.Colore.Razer
     public static class Constants
     {
         /// <summary>
+        /// Maximum number of rows for a generic custom effect.
+        /// </summary>
+        public const int MaxRows = 30;
+
+        /// <summary>
+        /// Maximum number of columns for a generic custom effect.
+        /// </summary>
+        public const int MaxColumns = 30;
+
+        /// <summary>
+        /// Maximum number of color entries for a generic custom effect.
+        /// </summary>
+        public const int MaxColors = MaxRows * MaxColumns;
+
+        /// <summary>
         /// Used by Razer code to send Chroma event messages.
         /// </summary>
         public const uint WmChromaEvent = WmApp + 0x2000;

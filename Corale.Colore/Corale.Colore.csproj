@@ -132,6 +132,19 @@
     <Compile Include="Razer\Devices.cs" />
     <Compile Include="Razer\DeviceType.cs" />
     <Compile Include="Razer\Effect.cs" />
+    <Compile Include="Razer\Effects\Blinking.cs" />
+    <Compile Include="Razer\Effects\Breathing.cs" />
+    <Compile Include="Razer\Effects\BreathingType.cs" />
+    <Compile Include="Razer\Effects\Custom.cs" />
+    <Compile Include="Razer\Effects\Direction.cs" />
+    <Compile Include="Razer\Effects\Duration.cs" />
+    <Compile Include="Razer\Effects\None.cs" />
+    <Compile Include="Razer\Effects\Reactive.cs" />
+    <Compile Include="Razer\Effects\SpectrumCycling.cs" />
+    <Compile Include="Razer\Effects\Starlight.cs" />
+    <Compile Include="Razer\Effects\StarlightType.cs" />
+    <Compile Include="Razer\Effects\Static.cs" />
+    <Compile Include="Razer\Effects\Wave.cs" />
     <Compile Include="Razer\Headset\Effects\Breathing.cs" />
     <Compile Include="Razer\Headset\Effects\Effect.cs" />
     <Compile Include="Razer\Headset\Effects\Static.cs" />
@@ -207,6 +220,7 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
