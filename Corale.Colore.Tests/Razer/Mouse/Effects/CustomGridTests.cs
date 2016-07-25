@@ -1,5 +1,6 @@
-﻿// <copyright file="CustomGridTests.cs" company="Corale">
-//     Copyright © 2015 by Adam Hellberg and Brandon Scott.
+﻿// ---------------------------------------------------------------------------------------
+// <copyright file="CustomGridTests.cs" company="Corale">
+//     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -20,6 +21,7 @@
 //
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
+// ---------------------------------------------------------------------------------------
 
 namespace Corale.Colore.Tests.Razer.Mouse.Effects
 {
@@ -124,34 +126,34 @@ namespace Corale.Colore.Tests.Razer.Mouse.Effects
             Assert.That(
                 () => dummy = effect[-1, 0],
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
-                    .With.Property("ParamName")
-                    .EqualTo("row")
-                    .And.Property("ActualValue")
-                    .EqualTo(-1));
+                      .With.Property("ParamName")
+                      .EqualTo("row")
+                      .And.Property("ActualValue")
+                      .EqualTo(-1));
 
             Assert.That(
                 () => dummy = effect[Constants.MaxRows, 0],
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
-                    .With.Property("ParamName")
-                    .EqualTo("row")
-                    .And.Property("ActualValue")
-                    .EqualTo(Constants.MaxRows));
+                      .With.Property("ParamName")
+                      .EqualTo("row")
+                      .And.Property("ActualValue")
+                      .EqualTo(Constants.MaxRows));
 
             Assert.That(
                 () => dummy = effect[0, -1],
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
-                    .With.Property("ParamName")
-                    .EqualTo("column")
-                    .And.Property("ActualValue")
-                    .EqualTo(-1));
+                      .With.Property("ParamName")
+                      .EqualTo("column")
+                      .And.Property("ActualValue")
+                      .EqualTo(-1));
 
             Assert.That(
                 () => dummy = effect[0, Constants.MaxColumns],
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
-                    .With.Property("ParamName")
-                    .EqualTo("column")
-                    .And.Property("ActualValue")
-                    .EqualTo(Constants.MaxColumns));
+                      .With.Property("ParamName")
+                      .EqualTo("column")
+                      .And.Property("ActualValue")
+                      .EqualTo(Constants.MaxColumns));
         }
 
         [Test]
@@ -162,34 +164,34 @@ namespace Corale.Colore.Tests.Razer.Mouse.Effects
             Assert.That(
                 () => effect[-1, 0] = Color.Red,
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
-                    .With.Property("ParamName")
-                    .EqualTo("row")
-                    .And.Property("ActualValue")
-                    .EqualTo(-1));
+                      .With.Property("ParamName")
+                      .EqualTo("row")
+                      .And.Property("ActualValue")
+                      .EqualTo(-1));
 
             Assert.That(
                 () => effect[Constants.MaxRows, 0] = Color.Red,
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
-                    .With.Property("ParamName")
-                    .EqualTo("row")
-                    .And.Property("ActualValue")
-                    .EqualTo(Constants.MaxRows));
+                      .With.Property("ParamName")
+                      .EqualTo("row")
+                      .And.Property("ActualValue")
+                      .EqualTo(Constants.MaxRows));
 
             Assert.That(
                 () => effect[0, -1] = Color.Red,
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
-                    .With.Property("ParamName")
-                    .EqualTo("column")
-                    .And.Property("ActualValue")
-                    .EqualTo(-1));
+                      .With.Property("ParamName")
+                      .EqualTo("column")
+                      .And.Property("ActualValue")
+                      .EqualTo(-1));
 
             Assert.That(
                 () => effect[0, Constants.MaxColumns] = Color.Red,
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
-                    .With.Property("ParamName")
-                    .EqualTo("column")
-                    .And.Property("ActualValue")
-                    .EqualTo(Constants.MaxColumns));
+                      .With.Property("ParamName")
+                      .EqualTo("column")
+                      .And.Property("ActualValue")
+                      .EqualTo(Constants.MaxColumns));
         }
 
         [Test]
@@ -203,18 +205,18 @@ namespace Corale.Colore.Tests.Razer.Mouse.Effects
             Assert.That(
                 () => dummy = grid[-1],
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
-                    .With.Property("ParamName")
-                    .EqualTo("index")
-                    .And.Property("ActualValue")
-                    .EqualTo(-1));
+                      .With.Property("ParamName")
+                      .EqualTo("index")
+                      .And.Property("ActualValue")
+                      .EqualTo(-1));
 
             Assert.That(
                 () => dummy = grid[Constants.MaxGridLeds],
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
-                    .With.Property("ParamName")
-                    .EqualTo("index")
-                    .And.Property("ActualValue")
-                    .EqualTo(Constants.MaxGridLeds));
+                      .With.Property("ParamName")
+                      .EqualTo("index")
+                      .And.Property("ActualValue")
+                      .EqualTo(Constants.MaxGridLeds));
         }
 
         [Test]
@@ -225,18 +227,18 @@ namespace Corale.Colore.Tests.Razer.Mouse.Effects
             Assert.That(
                 () => grid[-1] = Color.Red,
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
-                    .With.Property("ParamName")
-                    .EqualTo("index")
-                    .And.Property("ActualValue")
-                    .EqualTo(-1));
+                      .With.Property("ParamName")
+                      .EqualTo("index")
+                      .And.Property("ActualValue")
+                      .EqualTo(-1));
 
             Assert.That(
                 () => grid[Constants.MaxGridLeds] = Color.Red,
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
-                    .With.Property("ParamName")
-                    .EqualTo("index")
-                    .And.Property("ActualValue")
-                    .EqualTo(Constants.MaxGridLeds));
+                      .With.Property("ParamName")
+                      .EqualTo("index")
+                      .And.Property("ActualValue")
+                      .EqualTo(Constants.MaxGridLeds));
         }
 
         [Test]

@@ -1,6 +1,6 @@
 ﻿// ---------------------------------------------------------------------------------------
 // <copyright file="KeyboardViewModel.cs" company="Corale">
-//     Copyright © 2015 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -32,10 +32,14 @@ namespace Corale.Colore.Tester.ViewModels
     using System.Windows;
     using System.Windows.Input;
     using System.Windows.Media;
+
     using Classes;
+
     using Razer.Keyboard.Effects;
     using Razer.Mouse;
+
     using Wpf;
+
     using Duration = Razer.Keyboard.Effects.Duration;
     using Key = Razer.Keyboard.Key;
 
@@ -142,10 +146,16 @@ namespace Corale.Colore.Tester.ViewModels
             }
         }
 
-        public ICommand AllCommand => new DelegateCommand(() => Core.Keyboard.Instance.SetAll(ColorOne.Color.ToColoreColor()));
+        public ICommand AllCommand
+            => new DelegateCommand(() => Core.Keyboard.Instance.SetAll(ColorOne.Color.ToColoreColor()));
 
         public ICommand BreathingCommand
-            => new DelegateCommand(() => Core.Keyboard.Instance.SetBreathing(ColorOne.Color.ToColoreColor(), ColorTwo.Color.ToColoreColor()));
+            =>
+                new DelegateCommand(
+                    () =>
+                        Core.Keyboard.Instance.SetBreathing(
+                            ColorOne.Color.ToColoreColor(),
+                            ColorTwo.Color.ToColoreColor()));
 
         public ICommand ReactiveCommand
             =>
@@ -212,7 +222,11 @@ namespace Corale.Colore.Tester.ViewModels
             try
             {
                 Core.Keyboard.Instance.SetStarlight(
-                    new Starlight(SelectedStarlightType, ColorOne.Color.ToColoreColor(), ColorTwo.Color.ToColoreColor(), SelectedStarlightDuration));
+                    new Starlight(
+                        SelectedStarlightType,
+                        ColorOne.Color.ToColoreColor(),
+                        ColorTwo.Color.ToColoreColor(),
+                        SelectedStarlightDuration));
             }
             catch (Exception ex)
             {
