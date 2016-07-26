@@ -1,5 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+﻿// <copyright file="Reactive.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -21,76 +20,56 @@
 //
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
-// ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Razer
+namespace Corale.Colore.Razer.Effects
 {
+    using System.Runtime.InteropServices;
+
     using Corale.Colore.Annotations;
+    using Corale.Colore.Core;
 
     /// <summary>
-    /// Generic device effects.
+    /// Describes the reactive effect for system devices.
     /// </summary>
-    /// <remarks>Not all devices are compatible with every effect type.</remarks>
-    public enum Effect
+    [StructLayout(LayoutKind.Sequential)]
+    public struct Reactive
     {
         /// <summary>
-        /// No effect.
+        /// The size of the struct.
         /// </summary>
         [PublicAPI]
-        None = 0,
+        public readonly int Size;
 
         /// <summary>
-        /// The wave effect.
+        /// Additional effect parameter.
         /// </summary>
         [PublicAPI]
-        Wave,
+        public readonly int Parameter;
 
         /// <summary>
-        /// Spectrum cycling effect.
+        /// Duration of the effect.
         /// </summary>
         [PublicAPI]
-        SpectrumCycling,
+        public readonly Duration Duration;
 
         /// <summary>
-        /// Slowly fades between two colors.
+        /// Color of the effect.
         /// </summary>
         [PublicAPI]
-        Breathing,
+        public readonly Color Color;
 
         /// <summary>
-        /// A blinking effect.
+        /// Initializes a new instance of the <see cref="Reactive" /> struct.
         /// </summary>
-        [PublicAPI]
-        Blinking,
-
-        /// <summary>
-        /// Reacts to input.
-        /// </summary>
-        [PublicAPI]
-        Reactive,
-
-        /// <summary>
-        /// Static color.
-        /// </summary>
-        [PublicAPI]
-        Static,
-
-        /// <summary>
-        /// A custom effect.
-        /// </summary>
-        [PublicAPI]
-        Custom,
-
-        /// <summary>
-        /// The starlight effect.
-        /// </summary>
-        [PublicAPI]
-        Starlight,
-
-        /// <summary>
-        /// Invalid effect.
-        /// </summary>
-        [PublicAPI]
-        Invalid
+        /// <param name="duration">Effect duration.</param>
+        /// <param name="color">Effect color.</param>
+        /// <param name="parameter">Additional effect parameter.</param>
+        public Reactive(Duration duration, Color color, int parameter = 0)
+        {
+            Duration = duration;
+            Color = color;
+            Parameter = parameter;
+            Size = Marshal.SizeOf(typeof(Reactive));
+        }
     }
 }

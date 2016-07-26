@@ -1,5 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+﻿// <copyright file="Direction.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -21,76 +20,38 @@
 //
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
-// ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Razer
+namespace Corale.Colore.Razer.Effects
 {
     using Corale.Colore.Annotations;
 
     /// <summary>
-    /// Generic device effects.
+    /// Supported directions for the system wave effect.
     /// </summary>
-    /// <remarks>Not all devices are compatible with every effect type.</remarks>
-    public enum Effect
+    public enum Direction
     {
         /// <summary>
-        /// No effect.
+        /// Left to right.
         /// </summary>
         [PublicAPI]
-        None = 0,
+        LeftToRight = 1,
 
         /// <summary>
-        /// The wave effect.
+        /// Right to left.
         /// </summary>
         [PublicAPI]
-        Wave,
+        RightToLeft,
 
         /// <summary>
-        /// Spectrum cycling effect.
+        /// Front to back.
         /// </summary>
         [PublicAPI]
-        SpectrumCycling,
+        FrontToBack,
 
         /// <summary>
-        /// Slowly fades between two colors.
+        /// Back to front.
         /// </summary>
         [PublicAPI]
-        Breathing,
-
-        /// <summary>
-        /// A blinking effect.
-        /// </summary>
-        [PublicAPI]
-        Blinking,
-
-        /// <summary>
-        /// Reacts to input.
-        /// </summary>
-        [PublicAPI]
-        Reactive,
-
-        /// <summary>
-        /// Static color.
-        /// </summary>
-        [PublicAPI]
-        Static,
-
-        /// <summary>
-        /// A custom effect.
-        /// </summary>
-        [PublicAPI]
-        Custom,
-
-        /// <summary>
-        /// The starlight effect.
-        /// </summary>
-        [PublicAPI]
-        Starlight,
-
-        /// <summary>
-        /// Invalid effect.
-        /// </summary>
-        [PublicAPI]
-        Invalid
+        BackToFront
     }
 }

@@ -1,5 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+﻿// <copyright file="SpectrumCycling.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -21,76 +20,49 @@
 //
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
-// ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Razer
+namespace Corale.Colore.Razer.Effects
 {
+    using System.Runtime.InteropServices;
+
     using Corale.Colore.Annotations;
 
     /// <summary>
-    /// Generic device effects.
+    /// Describes the spectrum cycling effect for system devices.
     /// </summary>
-    /// <remarks>Not all devices are compatible with every effect type.</remarks>
-    public enum Effect
+    [StructLayout(LayoutKind.Sequential)]
+    public struct SpectrumCycling
     {
         /// <summary>
-        /// No effect.
+        /// The size of the struct.
         /// </summary>
         [PublicAPI]
-        None = 0,
+        public readonly int Size;
 
         /// <summary>
-        /// The wave effect.
+        /// Additional effect parameter.
         /// </summary>
         [PublicAPI]
-        Wave,
+        public readonly int Parameter;
 
         /// <summary>
-        /// Spectrum cycling effect.
+        /// Initializes a new instance of the <see cref="SpectrumCycling" /> struct.
         /// </summary>
-        [PublicAPI]
-        SpectrumCycling,
+        /// <param name="parameter">Additional effect parameter to set.</param>
+        public SpectrumCycling(int parameter)
+        {
+            Parameter = parameter;
+            Size = Marshal.SizeOf(typeof(None));
+        }
 
         /// <summary>
-        /// Slowly fades between two colors.
+        /// Creates a new instance of the <see cref="SpectrumCycling" /> struct
+        /// with default values.
         /// </summary>
-        [PublicAPI]
-        Breathing,
-
-        /// <summary>
-        /// A blinking effect.
-        /// </summary>
-        [PublicAPI]
-        Blinking,
-
-        /// <summary>
-        /// Reacts to input.
-        /// </summary>
-        [PublicAPI]
-        Reactive,
-
-        /// <summary>
-        /// Static color.
-        /// </summary>
-        [PublicAPI]
-        Static,
-
-        /// <summary>
-        /// A custom effect.
-        /// </summary>
-        [PublicAPI]
-        Custom,
-
-        /// <summary>
-        /// The starlight effect.
-        /// </summary>
-        [PublicAPI]
-        Starlight,
-
-        /// <summary>
-        /// Invalid effect.
-        /// </summary>
-        [PublicAPI]
-        Invalid
+        /// <returns>A new instance of the <see cref="SpectrumCycling" /> struct.</returns>
+        public static SpectrumCycling Create()
+        {
+            return new SpectrumCycling(0);
+        }
     }
 }

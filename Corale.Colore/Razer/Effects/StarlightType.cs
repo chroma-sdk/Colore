@@ -1,5 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+﻿// <copyright file="StarlightType.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -21,76 +20,26 @@
 //
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
-// ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Razer
+namespace Corale.Colore.Razer.Effects
 {
     using Corale.Colore.Annotations;
 
     /// <summary>
-    /// Generic device effects.
+    /// Supported starlight effect types for system devices.
     /// </summary>
-    /// <remarks>Not all devices are compatible with every effect type.</remarks>
-    public enum Effect
+    public enum StarlightType
     {
         /// <summary>
-        /// No effect.
+        /// Two colors.
         /// </summary>
         [PublicAPI]
-        None = 0,
+        Two = 1,
 
         /// <summary>
-        /// The wave effect.
+        /// Random colors.
         /// </summary>
         [PublicAPI]
-        Wave,
-
-        /// <summary>
-        /// Spectrum cycling effect.
-        /// </summary>
-        [PublicAPI]
-        SpectrumCycling,
-
-        /// <summary>
-        /// Slowly fades between two colors.
-        /// </summary>
-        [PublicAPI]
-        Breathing,
-
-        /// <summary>
-        /// A blinking effect.
-        /// </summary>
-        [PublicAPI]
-        Blinking,
-
-        /// <summary>
-        /// Reacts to input.
-        /// </summary>
-        [PublicAPI]
-        Reactive,
-
-        /// <summary>
-        /// Static color.
-        /// </summary>
-        [PublicAPI]
-        Static,
-
-        /// <summary>
-        /// A custom effect.
-        /// </summary>
-        [PublicAPI]
-        Custom,
-
-        /// <summary>
-        /// The starlight effect.
-        /// </summary>
-        [PublicAPI]
-        Starlight,
-
-        /// <summary>
-        /// Invalid effect.
-        /// </summary>
-        [PublicAPI]
-        Invalid
+        Random
     }
 }

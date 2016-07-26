@@ -1,5 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
-// <copyright file="BreathingType.cs" company="Corale">
+﻿// <copyright file="SpectrumCyclingTests.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -21,33 +20,26 @@
 //
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
-// ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Razer.Keyboard.Effects
+namespace Corale.Colore.Tests.Razer.Effects
 {
-    using Corale.Colore.Annotations;
+    using Corale.Colore.Razer.Effects;
 
-    /// <summary>
-    /// Supported breathing effect types for keyboards.
-    /// </summary>
-    public enum BreathingType
+    using NUnit.Framework;
+
+    [TestFixture]
+    public class SpectrumCyclingTests
     {
-        /// <summary>
-        /// Breathes between two specified colors.
-        /// </summary>
-        [PublicAPI]
-        Two = 1,
+        [Test]
+        public void ShouldConstructWithCorrectParameter()
+        {
+            Assert.That(new SpectrumCycling(42).Parameter, Is.EqualTo(42));
+        }
 
-        /// <summary>
-        /// Breathes between two random colors.
-        /// </summary>
-        [PublicAPI]
-        Random,
-
-        /// <summary>
-        /// Invalid type.
-        /// </summary>
-        [PublicAPI]
-        Invalid
+        [Test]
+        public void CreateShouldSetDefaultParameter()
+        {
+            Assert.That(SpectrumCycling.Create().Parameter, Is.EqualTo(0));
+        }
     }
 }

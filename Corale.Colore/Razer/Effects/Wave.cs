@@ -1,5 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+﻿// <copyright file="Wave.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -21,76 +20,47 @@
 //
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
-// ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Razer
+namespace Corale.Colore.Razer.Effects
 {
+    using System.Runtime.InteropServices;
+
     using Corale.Colore.Annotations;
 
     /// <summary>
-    /// Generic device effects.
+    /// Describes the wave effect for a system device.
     /// </summary>
-    /// <remarks>Not all devices are compatible with every effect type.</remarks>
-    public enum Effect
+    [StructLayout(LayoutKind.Sequential)]
+    public struct Wave
     {
         /// <summary>
-        /// No effect.
+        /// The size of the struct.
         /// </summary>
         [PublicAPI]
-        None = 0,
+        public readonly int Size;
 
         /// <summary>
-        /// The wave effect.
+        /// Additional effect parameter.
         /// </summary>
         [PublicAPI]
-        Wave,
+        public readonly int Parameter;
 
         /// <summary>
-        /// Spectrum cycling effect.
+        /// Direction of the wave.
         /// </summary>
         [PublicAPI]
-        SpectrumCycling,
+        public readonly Direction Direction;
 
         /// <summary>
-        /// Slowly fades between two colors.
+        /// Initializes a new instance of the <see cref="Wave" /> struct.
         /// </summary>
-        [PublicAPI]
-        Breathing,
-
-        /// <summary>
-        /// A blinking effect.
-        /// </summary>
-        [PublicAPI]
-        Blinking,
-
-        /// <summary>
-        /// Reacts to input.
-        /// </summary>
-        [PublicAPI]
-        Reactive,
-
-        /// <summary>
-        /// Static color.
-        /// </summary>
-        [PublicAPI]
-        Static,
-
-        /// <summary>
-        /// A custom effect.
-        /// </summary>
-        [PublicAPI]
-        Custom,
-
-        /// <summary>
-        /// The starlight effect.
-        /// </summary>
-        [PublicAPI]
-        Starlight,
-
-        /// <summary>
-        /// Invalid effect.
-        /// </summary>
-        [PublicAPI]
-        Invalid
+        /// <param name="direction">Direction of the wave.</param>
+        /// <param name="parameter">Additional effect parameter.</param>
+        public Wave(Direction direction, int parameter = 0)
+        {
+            Direction = direction;
+            Parameter = parameter;
+            Size = Marshal.SizeOf(typeof(Wave));
+        }
     }
 }

@@ -29,6 +29,7 @@ namespace Corale.Colore.Core
 
     using Corale.Colore.Annotations;
     using Corale.Colore.Razer;
+    using Corale.Colore.Razer.Effects;
 
     /// <summary>
     /// Interface for generic devices.
@@ -55,5 +56,146 @@ namespace Corale.Colore.Core
         /// <param name="param">Effect-specific parameter to use.</param>
         [PublicAPI]
         void SetEffect(Effect effect, IntPtr param);
+
+        /// <summary>
+        /// Sets a blinking effect on this device.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        [PublicAPI]
+        void SetBlinking(Blinking effect);
+
+        /// <summary>
+        /// Sets a blinking effect on this device.
+        /// </summary>
+        /// <param name="color">Color of the effect.</param>
+        /// <param name="parameter">Additional effect parameter.</param>
+        [PublicAPI]
+        void SetBlinking(Color color, int parameter = 0);
+
+        /// <summary>
+        /// Sets a breathing effect on this device.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        [PublicAPI]
+        void SetBreathing(Breathing effect);
+
+        /// <summary>
+        /// Sets a breathing effect on this device,
+        /// causing it to breathe between random colors.
+        /// </summary>
+        /// <param name="parameter">Additional effect parameter.</param>
+        [PublicAPI]
+        void SetBreathing(int parameter = 0);
+
+        /// <summary>
+        /// Sets a breathing effect on this device,
+        /// causing it to breathe with a single color.
+        /// </summary>
+        /// <param name="color">The color to breathe with.</param>
+        /// <param name="parameter">Additional effect parameter.</param>
+        [PublicAPI]
+        void SetBreathing(Color color, int parameter = 0);
+
+        /// <summary>
+        /// Sets a breathing effect on this device,
+        /// causing it to breathe between two colors.
+        /// </summary>
+        /// <param name="first">The first color to breathe with.</param>
+        /// <param name="second">The second color to breathe with.</param>
+        /// <param name="parameter">Additional effect parameter.</param>
+        [PublicAPI]
+        void SetBreathing(Color first, Color second, int parameter = 0);
+
+        /// <summary>
+        /// Sets a custom effect on this device.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        [PublicAPI]
+        void SetCustom(Custom effect);
+
+        /// <summary>
+        /// Sets a reactive effect on this device.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        [PublicAPI]
+        void SetReactive(Reactive effect);
+
+        /// <summary>
+        /// Sets a reactive effect on this device.
+        /// </summary>
+        /// <param name="color">Color to react with.</param>
+        /// <param name="duration">How long the reaction effect should stay.</param>
+        /// <param name="parameter">Additional effect parameter.</param>
+        [PublicAPI]
+        void SetReactive(Color color, Duration duration, int parameter = 0);
+
+        /// <summary>
+        /// Sets a spectrum cycling effect on this device.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        [PublicAPI]
+        void SetSpectrumCycling(SpectrumCycling effect);
+
+        /// <summary>
+        /// Sets a spectrum cycling effect on this device.
+        /// </summary>
+        /// <param name="parameter">Additional effect parameter.</param>
+        [PublicAPI]
+        void SetSpectrumCycling(int parameter = 0);
+
+        /// <summary>
+        /// Sets a starlight effect on this device.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        [PublicAPI]
+        void SetStarlight(Starlight effect);
+
+        /// <summary>
+        /// Sets a starlight effect on this device, using random colors.
+        /// </summary>
+        /// <param name="duration">Duration of the effect.</param>
+        /// <param name="parameter">Additional effect parameter.</param>
+        [PublicAPI]
+        void SetStarlight(Duration duration, int parameter = 0);
+
+        /// <summary>
+        /// Sets a starlight effect on this device, using specified colors.
+        /// </summary>
+        /// <param name="first">The first color to use.</param>
+        /// <param name="second">The second color to use.</param>
+        /// <param name="duration">Duration of the effect.</param>
+        /// <param name="parameter">Additional effect parameter.</param>
+        [PublicAPI]
+        void SetStarlight(Color first, Color second, Duration duration, int parameter = 0);
+
+        /// <summary>
+        /// Sets a static effect on this device.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        [PublicAPI]
+        void SetStatic(Static effect);
+
+        /// <summary>
+        /// Sets a static effect on this device.
+        /// </summary>
+        /// <param name="color">Color to set.</param>
+        /// <param name="parameter">Additional effect parameter.</param>
+        [PublicAPI]
+        void SetStatic(Color color, int parameter = 0);
+
+        /// <summary>
+        /// Sets a wave effect on this device.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        [PublicAPI]
+        void SetWave(Wave effect);
+
+        /// <summary>
+        /// Sets a wave effect on this device.
+        /// </summary>
+        /// <param name="direction">Direction of the wave.</param>
+        /// <param name="parameter">Additional effect parameter.</param>
+        [PublicAPI]
+        void SetWave(Direction direction, int parameter = 0);
     }
 }
