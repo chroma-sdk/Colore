@@ -49,10 +49,20 @@ namespace Corale.Colore.Razer.Effects
         /// Initializes a new instance of the <see cref="SpectrumCycling" /> struct.
         /// </summary>
         /// <param name="parameter">Additional effect parameter to set.</param>
-        public SpectrumCycling(int parameter = 0)
+        public SpectrumCycling(int parameter)
         {
             Parameter = parameter;
             Size = Marshal.SizeOf(typeof(None));
+        }
+
+        /// <summary>
+        /// Creates a new instance of the <see cref="SpectrumCycling" /> struct
+        /// with default values.
+        /// </summary>
+        /// <returns>A new instance of the <see cref="SpectrumCycling" /> struct.</returns>
+        public static SpectrumCycling Create()
+        {
+            return new SpectrumCycling(0);
         }
     }
 }
