@@ -105,9 +105,20 @@ namespace Corale.Colore.Razer.Effects
         /// Initializes a new instance of the <see cref="Breathing" /> struct.
         /// </summary>
         /// <param name="parameter">Additional effect parameter to set.</param>
-        public Breathing(int parameter = 0)
+        public Breathing(int parameter)
             : this(BreathingType.Random, Color.Black, Color.Black, parameter)
         {
+        }
+
+        /// <summary>
+        /// Returns a new instance of the <see cref="Breathing" /> struct
+        /// setup to perform random breathing with the parameter set to
+        /// zero.
+        /// </summary>
+        /// <returns>A new instance of the <see cref="Breathing" /> struct.</returns>
+        public static Breathing Create()
+        {
+            return new Breathing(0);
         }
     }
 }
