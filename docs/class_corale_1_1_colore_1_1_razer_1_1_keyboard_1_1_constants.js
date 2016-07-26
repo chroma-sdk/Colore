@@ -1,7 +1,8 @@
 var class_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_constants =
 [
-    [ "MaxColumns", "class_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_constants.html#a1544e48a947a56af76973e0694ab2f32", null ],
-    [ "MaxCustomEffects", "class_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_constants.html#a44016a1e5c9edee1fed8531d048a7cdf", null ],
-    [ "MaxKeys", "class_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_constants.html#a005ba5d25449359885c8d2fd6102a4f2", null ],
-    [ "MaxRows", "class_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_constants.html#a64aa02a3a5864da4e74dc2ada72f5acb", null ]
+    [ "KeyFlag", "class_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_constants.html#a0abcffa1a4426dc388d5cd11175fa453", null ],
+    [ "MaxColumns", "class_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_constants.html#a09cdb3d9f04852dd3ec6348e052dedad", null ],
+    [ "MaxCustomEffects", "class_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_constants.html#acfa0cf12cc30601c00ea53ac8fed3126", null ],
+    [ "MaxKeys", "class_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_constants.html#a9bfc8cf2f0af888acb063639ffc4bc81", null ],
+    [ "MaxRows", "class_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_constants.html#a72930fc70ed7808f2c653a14e34ea958", null ]
 ];

@@ -1,6 +1,6 @@
 var dir_96b52497b4c88890db46c3e726dc7144 =
 [
-    [ "Blinking.cs", "_blinking_8cs.html", [
+    [ "Blinking.cs", "_mouse_2_effects_2_blinking_8cs.html", [
       [ "Blinking", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_blinking.html", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_blinking" ]
     ] ],
     [ "Breathing.cs", "_mouse_2_effects_2_breathing_8cs.html", [
@@ -11,19 +11,18 @@ var dir_96b52497b4c88890db46c3e726dc7144 =
       [ "Custom", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_custom.html", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_custom" ]
     ] ],
     [ "CustomGrid.cs", "_custom_grid_8cs.html", [
-      [ "CustomGrid", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_custom_grid.html", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_custom_grid" ],
-      [ "Row", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_custom_grid_1_1_row.html", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_custom_grid_1_1_row" ]
+      [ "CustomGrid", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_custom_grid.html", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_custom_grid" ]
     ] ],
     [ "Direction.cs", "_mouse_2_effects_2_direction_8cs.html", "_mouse_2_effects_2_direction_8cs" ],
     [ "Duration.cs", "_mouse_2_effects_2_duration_8cs.html", "_mouse_2_effects_2_duration_8cs" ],
     [ "Effect.cs", "_mouse_2_effects_2_effect_8cs.html", "_mouse_2_effects_2_effect_8cs" ],
-    [ "None.cs", "_none_8cs.html", [
+    [ "None.cs", "_mouse_2_effects_2_none_8cs.html", [
       [ "None", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_none.html", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_none" ]
     ] ],
     [ "Reactive.cs", "_mouse_2_effects_2_reactive_8cs.html", [
       [ "Reactive", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_reactive.html", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_reactive" ]
     ] ],
-    [ "SpectrumCycling.cs", "_spectrum_cycling_8cs.html", [
+    [ "SpectrumCycling.cs", "_mouse_2_effects_2_spectrum_cycling_8cs.html", [
       [ "SpectrumCycling", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_spectrum_cycling.html", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_spectrum_cycling" ]
     ] ],
     [ "Static.cs", "_mouse_2_effects_2_static_8cs.html", [

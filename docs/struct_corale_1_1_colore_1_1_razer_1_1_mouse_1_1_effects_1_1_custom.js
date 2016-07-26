@@ -2,7 +2,9 @@ var struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_custom =
 [
     [ "Custom", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_custom.html#a9f06bc4c9b1bdf9332fd021e44e93f5c", null ],
     [ "Custom", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_custom.html#ac179524a36b7206e67e6e34d230ffae2", null ],
+    [ "Custom", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_custom.html#a3c3d8b936b7c0356a39f38379930b506", null ],
     [ "Clear", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_custom.html#aef87ebf658d9aab17233854269922a59", null ],
+    [ "Clone", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_custom.html#aa06977e61b6bbab168063f47bc801f2a", null ],
     [ "Create", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_custom.html#aa53cb5236decb19e217db6a18e5ba4ba", null ],
     [ "Equals", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_custom.html#ac89f7aa4097caceaecd1a42dac69f439", null ],
     [ "Equals", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_custom.html#a58d919da104d0d5cc4933635521f64f1", null ],

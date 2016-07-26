@@ -18,5 +18,5 @@ var namespace_corale_1_1_colore_1_1_core =
     [ "Mouse", "class_corale_1_1_colore_1_1_core_1_1_mouse.html", "class_corale_1_1_colore_1_1_core_1_1_mouse" ],
     [ "Mousepad", "class_corale_1_1_colore_1_1_core_1_1_mousepad.html", "class_corale_1_1_colore_1_1_core_1_1_mousepad" ],
     [ "NativeWrapper", "class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html", "class_corale_1_1_colore_1_1_core_1_1_native_wrapper" ],
-    [ "Size", "struct_corale_1_1_colore_1_1_core_1_1_size.html", "struct_corale_1_1_colore_1_1_core_1_1_size" ]
+    [ "RegistryHelper", "class_corale_1_1_colore_1_1_core_1_1_registry_helper.html", "class_corale_1_1_colore_1_1_core_1_1_registry_helper" ]
 ];

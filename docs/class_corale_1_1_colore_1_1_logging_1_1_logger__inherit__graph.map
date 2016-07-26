@@ -1,0 +1,4 @@
+<map id="Corale.Colore.Logging.Logger" name="Corale.Colore.Logging.Logger">
+<area shape="rect" id="node3" href="$class_corale_1_1_colore_1_1_logging_1_1_trace_logger.html" title="A logger using System.Diagnostics to log messages. " alt="" coords="9,155,194,196"/>
+<area shape="rect" id="node2" href="$interface_corale_1_1_colore_1_1_logging_1_1_i_log.html" title="Describes a logger. " alt="" coords="78,5,125,32"/>
+</map>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['value',['value',['../_annotations_8cs.html#aa47dc10177d95db720062975cdba1f3a',1,'Annotations.cs']]]
+  ['unsafepositions',['UnsafePositions',['../class_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_position_data.html#a6e65de69b8a93fc28ec931511aaa9e08',1,'Corale::Colore::Razer::Keyboard::PositionData']]]
 ];

@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Colore
-   &#160;<span id="projectnumber">3.0.1.91</span>
+   &#160;<span id="projectnumber">5.0.0.97</span>
    </div>
    <div id="projectbrief">C# library for Razer&#39;s Chroma SDK</div>
   </td>
@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('_unsafe_key_attribute_8cs_source.html'
 <div class="contents">
 <a href="_unsafe_key_attribute_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// ---------------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// &lt;copyright file=&quot;UnsafeKeyAttribute.cs&quot; company=&quot;Corale&quot;&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//     Copyright © 2015 by Adam Hellberg and Brandon Scott.</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//     Permission is hereby granted, free of charge, to any person obtaining a copy of</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//     this software and associated documentation files (the &quot;Software&quot;), to deal in</span></div>
@@ -130,35 +130,30 @@ $(document).ready(function(){initNavTree('_unsafe_key_attribute_8cs_source.html'
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">//     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">//     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">//     Disclaimer: Corale and/or Colore is in no way affiliated with Razer and/or any</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">//     of its employees and/or licensors. Corale, Adam Hellberg, and/or Brandon Scott</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">//     do not take responsibility for any harm caused, direct or indirect, to any</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//     Razer peripherals via the use of Colore.</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//     &quot;Razer&quot; is a trademark of Razer USA Ltd.</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// &lt;/copyright&gt;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// ---------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_corale.html">Corale</a>.Colore.Razer.<a class="code" href="namespace_corale_1_1_colore_1_1_razer.html#ac5d6192a3d5d3c657e9cebbcef34360ba6ce4d85a628a88bbdb3ac24a8e5a9c2e">Keyboard</a></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    [AttributeUsage(AttributeTargets.Field)]</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_unsafe_key_attribute.html">   39</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_unsafe_key_attribute.html">UnsafeKeyAttribute</a> : Attribute</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">//     &quot;Razer&quot; is a trademark of Razer USA Ltd.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// &lt;/copyright&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// ---------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_corale.html">Corale</a>.Colore.Razer.<a class="code" href="namespace_corale_1_1_colore_1_1_razer.html#ac5d6192a3d5d3c657e9cebbcef34360ba6ce4d85a628a88bbdb3ac24a8e5a9c2e">Keyboard</a></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    [AttributeUsage(AttributeTargets.Field)]</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_unsafe_key_attribute.html">   34</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_unsafe_key_attribute.html">UnsafeKeyAttribute</a> : Attribute</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
 <div class="ttc" id="namespace_system_html"><div class="ttname"><a href="namespace_system.html">System</a></div></div>
 <div class="ttc" id="namespace_corale_html"><div class="ttname"><a href="namespace_corale.html">Corale</a></div></div>
 <div class="ttc" id="namespace_corale_1_1_colore_1_1_razer_html_ac5d6192a3d5d3c657e9cebbcef34360ba6ce4d85a628a88bbdb3ac24a8e5a9c2e"><div class="ttname"><a href="namespace_corale_1_1_colore_1_1_razer.html#ac5d6192a3d5d3c657e9cebbcef34360ba6ce4d85a628a88bbdb3ac24a8e5a9c2e">Corale.Colore.Razer.DeviceType.Keyboard</a></div><div class="ttdoc">A keyboard device. </div></div>
-<div class="ttc" id="class_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_unsafe_key_attribute_html"><div class="ttname"><a href="class_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_unsafe_key_attribute.html">Corale.Colore.Razer.Keyboard.UnsafeKeyAttribute</a></div><div class="ttdoc">Marks a Key value as unsafe. </div><div class="ttdef"><b>Definition:</b> <a href="_unsafe_key_attribute_8cs_source.html#l00039">UnsafeKeyAttribute.cs:39</a></div></div>
+<div class="ttc" id="class_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_unsafe_key_attribute_html"><div class="ttname"><a href="class_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_unsafe_key_attribute.html">Corale.Colore.Razer.Keyboard.UnsafeKeyAttribute</a></div><div class="ttdoc">Marks a Key value as unsafe. </div><div class="ttdef"><b>Definition:</b> <a href="_unsafe_key_attribute_8cs_source.html#l00034">UnsafeKeyAttribute.cs:34</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_865a93a85313ae6b2503dfb6975d8750.html">Corale.Colore</a></li><li class="navelem"><a class="el" href="dir_4e4b822210286250472cb31b47778e3b.html">Razer</a></li><li class="navelem"><a class="el" href="dir_f3ad38167190423c2107342c8f2133b4.html">Keyboard</a></li><li class="navelem"><a class="el" href="_unsafe_key_attribute_8cs.html">UnsafeKeyAttribute.cs</a></li>
-    <li class="footer">Generated on Thu Nov 26 2015 19:30:36 for Colore by
+    <li class="footer">Generated on Tue Jul 26 2016 19:15:03 for Colore by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
   </ul>

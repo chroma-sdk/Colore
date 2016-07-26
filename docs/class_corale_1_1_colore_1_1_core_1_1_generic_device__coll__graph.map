@@ -1,5 +1,6 @@
 <map id="Corale.Colore.Core.GenericDevice" name="Corale.Colore.Core.GenericDevice">
-<area shape="rect" id="node2" href="$class_corale_1_1_colore_1_1_core_1_1_device.html" title="Base class for devices, containing code common between all devices. " alt="" coords="12,80,72,107"/>
-<area shape="rect" id="node3" href="$interface_corale_1_1_colore_1_1_core_1_1_i_device.html" title="Interface for functionality common with all devices. " alt="" coords="64,5,127,32"/>
-<area shape="rect" id="node4" href="$interface_corale_1_1_colore_1_1_core_1_1_i_generic_device.html" title="Interface for generic devices. " alt="" coords="96,80,204,107"/>
+<area shape="rect" id="node2" href="$class_corale_1_1_colore_1_1_core_1_1_device.html" title="Base class for devices, containing code common between all devices. " alt="" coords="5,81,65,108"/>
+<area shape="rect" id="node3" href="$interface_corale_1_1_colore_1_1_core_1_1_i_device.html" title="Interface for functionality common with all devices. " alt="" coords="67,5,129,32"/>
+<area shape="rect" id="node4" href="$interface_corale_1_1_colore_1_1_core_1_1_i_generic_device.html" title="Interface for generic devices. " alt="" coords="89,81,197,108"/>
+<area shape="rect" id="node5" href="$interface_corale_1_1_colore_1_1_logging_1_1_i_log.html" title="Describes a logger. " alt="" coords="221,81,399,108"/>
 </map>

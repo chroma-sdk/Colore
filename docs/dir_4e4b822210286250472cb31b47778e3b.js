@@ -1,5 +1,6 @@
 var dir_4e4b822210286250472cb31b47778e3b =
 [
+    [ "Effects", "dir_0a897c83760f1a266d6f4ffebda21ea4.html", "dir_0a897c83760f1a266d6f4ffebda21ea4" ],
     [ "Headset", "dir_ebcc5f2159b8e9654cff97801f191bce.html", "dir_ebcc5f2159b8e9654cff97801f191bce" ],
     [ "Keyboard", "dir_f3ad38167190423c2107342c8f2133b4.html", "dir_f3ad38167190423c2107342c8f2133b4" ],
     [ "Keypad", "dir_00dd3dc4e9881672ff201ac58186d0e5.html", "dir_00dd3dc4e9881672ff201ac58186d0e5" ],
@@ -19,7 +20,9 @@ var dir_4e4b822210286250472cb31b47778e3b =
     [ "NativeCallException.cs", "_native_call_exception_8cs.html", [
       [ "NativeCallException", "class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html", "class_corale_1_1_colore_1_1_razer_1_1_native_call_exception" ]
     ] ],
-    [ "NativeMethods.cs", "_razer_2_native_methods_8cs.html", "_razer_2_native_methods_8cs" ],
+    [ "NativeMethods.cs", "_razer_2_native_methods_8cs.html", [
+      [ "NativeMethods", "class_corale_1_1_colore_1_1_razer_1_1_native_methods.html", "class_corale_1_1_colore_1_1_razer_1_1_native_methods" ]
+    ] ],
     [ "Result.cs", "_result_8cs.html", [
       [ "Result", "struct_corale_1_1_colore_1_1_razer_1_1_result.html", "struct_corale_1_1_colore_1_1_razer_1_1_result" ],
       [ "Metadata", "struct_corale_1_1_colore_1_1_razer_1_1_result_1_1_metadata.html", "struct_corale_1_1_colore_1_1_razer_1_1_result_1_1_metadata" ],

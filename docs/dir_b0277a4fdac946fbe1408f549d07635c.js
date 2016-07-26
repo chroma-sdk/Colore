@@ -3,7 +3,9 @@ var dir_b0277a4fdac946fbe1408f549d07635c =
     [ "Chroma.cs", "_chroma_8cs.html", [
       [ "Chroma", "class_corale_1_1_colore_1_1_core_1_1_chroma.html", "class_corale_1_1_colore_1_1_core_1_1_chroma" ]
     ] ],
-    [ "Color.cs", "_color_8cs.html", "_color_8cs" ],
+    [ "Color.cs", "_color_8cs.html", [
+      [ "Color", "struct_corale_1_1_colore_1_1_core_1_1_color.html", "struct_corale_1_1_colore_1_1_core_1_1_color" ]
+    ] ],
     [ "Color.Defines.cs", "_color_8_defines_8cs.html", [
       [ "Color", "struct_corale_1_1_colore_1_1_core_1_1_color.html", "struct_corale_1_1_colore_1_1_core_1_1_color" ]
     ] ],
@@ -55,5 +57,7 @@ var dir_b0277a4fdac946fbe1408f549d07635c =
     [ "NativeWrapper.cs", "_native_wrapper_8cs.html", [
       [ "NativeWrapper", "class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html", "class_corale_1_1_colore_1_1_core_1_1_native_wrapper" ]
     ] ],
-    [ "Size.cs", "_size_8cs.html", "_size_8cs" ]
+    [ "RegistryHelper.cs", "_registry_helper_8cs.html", [
+      [ "RegistryHelper", "class_corale_1_1_colore_1_1_core_1_1_registry_helper.html", "class_corale_1_1_colore_1_1_core_1_1_registry_helper" ]
+    ] ]
 ];

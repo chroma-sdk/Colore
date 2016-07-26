@@ -14,6 +14,7 @@ var interface_corale_1_1_colore_1_1_core_1_1_i_chroma =
     [ "Keypad", "interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html#a56e707afe10db4907abfb15af823b479", null ],
     [ "Mouse", "interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html#a5d262e941250d25acc769247cb194ac2", null ],
     [ "Mousepad", "interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html#a21ba63bd315a4c9d52a986ab229a3df7", null ],
+    [ "SdkVersion", "interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html#a5e1b444000fbbcbf18f9b18020e9872e", null ],
     [ "ApplicationState", "interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html#a471bbfec433f7215d8457c7d2c12703c", null ],
     [ "DeviceAccess", "interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html#a3504a7acc5987c7b655f801a743a0022", null ],
     [ "SdkSupport", "interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html#a61f98b3ac4e932a42b7d02134d72cf12", null ]

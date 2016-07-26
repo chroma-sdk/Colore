@@ -5,8 +5,7 @@ var dir_4b6a5a1425fe9435b2b97bc7f7773f3e =
     ] ],
     [ "BreathingType.cs", "_keypad_2_effects_2_breathing_type_8cs.html", "_keypad_2_effects_2_breathing_type_8cs" ],
     [ "Custom.cs", "_keypad_2_effects_2_custom_8cs.html", [
-      [ "Custom", "struct_corale_1_1_colore_1_1_razer_1_1_keypad_1_1_effects_1_1_custom.html", "struct_corale_1_1_colore_1_1_razer_1_1_keypad_1_1_effects_1_1_custom" ],
-      [ "Row", "struct_corale_1_1_colore_1_1_razer_1_1_keypad_1_1_effects_1_1_custom_1_1_row.html", "struct_corale_1_1_colore_1_1_razer_1_1_keypad_1_1_effects_1_1_custom_1_1_row" ]
+      [ "Custom", "struct_corale_1_1_colore_1_1_razer_1_1_keypad_1_1_effects_1_1_custom.html", "struct_corale_1_1_colore_1_1_razer_1_1_keypad_1_1_effects_1_1_custom" ]
     ] ],
     [ "Direction.cs", "_keypad_2_effects_2_direction_8cs.html", "_keypad_2_effects_2_direction_8cs" ],
     [ "Duration.cs", "_keypad_2_effects_2_duration_8cs.html", "_keypad_2_effects_2_duration_8cs" ],

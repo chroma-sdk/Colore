@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Colore
-   &#160;<span id="projectnumber">3.0.1.91</span>
+   &#160;<span id="projectnumber">5.0.0.97</span>
    </div>
    <div id="projectbrief">C# library for Razer&#39;s Chroma SDK</div>
   </td>
@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('_effect_8cs_source.html','');});
 <div class="contents">
 <a href="_effect_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// ---------------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// &lt;copyright file=&quot;Effect.cs&quot; company=&quot;Corale&quot;&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//     Copyright © 2015 by Adam Hellberg and Brandon Scott.</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//     Permission is hereby granted, free of charge, to any person obtaining a copy of</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//     this software and associated documentation files (the &quot;Software&quot;), to deal in</span></div>
@@ -130,69 +130,68 @@ $(document).ready(function(){initNavTree('_effect_8cs_source.html','');});
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">//     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">//     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">//     Disclaimer: Corale and/or Colore is in no way affiliated with Razer and/or any</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">//     of its employees and/or licensors. Corale, Adam Hellberg, and/or Brandon Scott</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">//     do not take responsibility for any harm caused, direct or indirect, to any</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//     Razer peripherals via the use of Colore.</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//     &quot;Razer&quot; is a trademark of Razer USA Ltd.</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// &lt;/copyright&gt;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// ---------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_corale.html">Corale</a>.Colore.Razer</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">using</span> <a class="code" href="namespace_corale.html">Corale</a>.<a class="code" href="namespace_corale_1_1_colore.html">Colore</a>.<a class="code" href="namespace_corale_1_1_colore_1_1_annotations.html">Annotations</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="namespace_corale_1_1_colore_1_1_razer.html#a811c71ff1bc7862a0055b1b94973bbf6">   39</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code" href="namespace_corale_1_1_colore_1_1_razer.html#a811c71ff1bc7862a0055b1b94973bbf6">Effect</a></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        [PublicAPI]</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_none.html">None</a> = 0,</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        [PublicAPI]</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_wave.html">Wave</a>,</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        [PublicAPI]</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_spectrum_cycling.html">SpectrumCycling</a>,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        [PublicAPI]</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_headset_1_1_effects_1_1_breathing.html">Breathing</a>,</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        [PublicAPI]</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_blinking.html">Blinking</a>,</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        [PublicAPI]</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_reactive.html">Reactive</a>,</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        [PublicAPI]</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_headset_1_1_effects_1_1_static.html">Static</a>,</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        [PublicAPI]</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_custom.html">Custom</a>,</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        [PublicAPI]</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <a class="code" href="namespace_corale_1_1_colore_1_1_razer.html#a811c71ff1bc7862a0055b1b94973bbf6a4bbb8f967da6d1a610596d7257179c2b">Invalid</a></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
-<div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_custom_html"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_custom.html">Corale.Colore.Razer.Keyboard.Effects.Custom</a></div><div class="ttdoc">Describes a custom grid effect for every key. </div><div class="ttdef"><b>Definition:</b> <a href="_keyboard_2_effects_2_custom_8cs_source.html#l00044">Custom.cs:44</a></div></div>
-<div class="ttc" id="namespace_corale_1_1_colore_1_1_razer_html_a811c71ff1bc7862a0055b1b94973bbf6"><div class="ttname"><a href="namespace_corale_1_1_colore_1_1_razer.html#a811c71ff1bc7862a0055b1b94973bbf6">Corale.Colore.Razer.Effect</a></div><div class="ttdeci">Effect</div><div class="ttdoc">Generic device effects. </div><div class="ttdef"><b>Definition:</b> <a href="_effect_8cs_source.html#l00039">Effect.cs:39</a></div></div>
-<div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_reactive_html"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_reactive.html">Corale.Colore.Razer.Keyboard.Effects.Reactive</a></div><div class="ttdoc">Describes the reactive effect type. </div><div class="ttdef"><b>Definition:</b> <a href="_keyboard_2_effects_2_reactive_8cs_source.html#l00042">Reactive.cs:42</a></div></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">//     &quot;Razer&quot; is a trademark of Razer USA Ltd.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// &lt;/copyright&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// ---------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_corale.html">Corale</a>.Colore.Razer</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">using</span> <a class="code" href="namespace_corale.html">Corale</a>.<a class="code" href="namespace_corale_1_1_colore.html">Colore</a>.<a class="code" href="namespace_corale_1_1_colore_1_1_annotations.html">Annotations</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="namespace_corale_1_1_colore_1_1_razer.html#a811c71ff1bc7862a0055b1b94973bbf6">   34</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code" href="namespace_corale_1_1_colore_1_1_razer.html#a811c71ff1bc7862a0055b1b94973bbf6">Effect</a></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_none.html">None</a> = 0,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_wave.html">Wave</a>,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_spectrum_cycling.html">SpectrumCycling</a>,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_breathing.html">Breathing</a>,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_blinking.html">Blinking</a>,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_reactive.html">Reactive</a>,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_static.html">Static</a>,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_custom.html">Custom</a>,</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_starlight.html">Starlight</a>,</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <a class="code" href="namespace_corale_1_1_colore_1_1_razer.html#ac5d6192a3d5d3c657e9cebbcef34360ba4bbb8f967da6d1a610596d7257179c2b">Invalid</a></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
+<div class="ttc" id="namespace_corale_1_1_colore_1_1_razer_html_a811c71ff1bc7862a0055b1b94973bbf6"><div class="ttname"><a href="namespace_corale_1_1_colore_1_1_razer.html#a811c71ff1bc7862a0055b1b94973bbf6">Corale.Colore.Razer.Effect</a></div><div class="ttdeci">Effect</div><div class="ttdoc">Generic device effects. </div><div class="ttdef"><b>Definition:</b> <a href="_effect_8cs_source.html#l00034">Effect.cs:34</a></div></div>
+<div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_static_html"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_static.html">Corale.Colore.Razer.Effects.Static</a></div><div class="ttdoc">Describes the static effect for system devices. </div><div class="ttdef"><b>Definition:</b> <a href="_effects_2_static_8cs_source.html#l00035">Static.cs:35</a></div></div>
+<div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_custom_html"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_custom.html">Corale.Colore.Razer.Effects.Custom</a></div><div class="ttdoc">Describes a custom effect for a system device. </div><div class="ttdef"><b>Definition:</b> <a href="_effects_2_custom_8cs_source.html#l00037">Custom.cs:37</a></div></div>
+<div class="ttc" id="namespace_corale_1_1_colore_1_1_razer_html_ac5d6192a3d5d3c657e9cebbcef34360ba4bbb8f967da6d1a610596d7257179c2b"><div class="ttname"><a href="namespace_corale_1_1_colore_1_1_razer.html#ac5d6192a3d5d3c657e9cebbcef34360ba4bbb8f967da6d1a610596d7257179c2b">Corale.Colore.Razer.DeviceType.Invalid</a></div><div class="ttdoc">Invalid device. </div></div>
 <div class="ttc" id="namespace_corale_html"><div class="ttname"><a href="namespace_corale.html">Corale</a></div></div>
 <div class="ttc" id="namespace_corale_1_1_colore_1_1_annotations_html"><div class="ttname"><a href="namespace_corale_1_1_colore_1_1_annotations.html">Corale.Colore.Annotations</a></div><div class="ttdef"><b>Definition:</b> <a href="_annotations_8cs_source.html#l00018">Annotations.cs:18</a></div></div>
-<div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_spectrum_cycling_html"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_spectrum_cycling.html">Corale.Colore.Razer.Mouse.Effects.SpectrumCycling</a></div><div class="ttdoc">Spectrum cycling effect. </div><div class="ttdef"><b>Definition:</b> <a href="_spectrum_cycling_8cs_source.html#l00038">SpectrumCycling.cs:38</a></div></div>
-<div class="ttc" id="namespace_corale_1_1_colore_1_1_razer_html_a811c71ff1bc7862a0055b1b94973bbf6a4bbb8f967da6d1a610596d7257179c2b"><div class="ttname"><a href="namespace_corale_1_1_colore_1_1_razer.html#a811c71ff1bc7862a0055b1b94973bbf6a4bbb8f967da6d1a610596d7257179c2b">Corale.Colore.Razer.Effect.Invalid</a></div><div class="ttdoc">Invalid effect. </div></div>
-<div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_headset_1_1_effects_1_1_breathing_html"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_headset_1_1_effects_1_1_breathing.html">Corale.Colore.Razer.Headset.Effects.Breathing</a></div><div class="ttdoc">A breathing effect for a headset. </div><div class="ttdef"><b>Definition:</b> <a href="_headset_2_effects_2_breathing_8cs_source.html#l00039">Breathing.cs:39</a></div></div>
-<div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_wave_html"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_wave.html">Corale.Colore.Razer.Keyboard.Effects.Wave</a></div><div class="ttdoc">The wave effect for the keyboard. </div><div class="ttdef"><b>Definition:</b> <a href="_keyboard_2_effects_2_wave_8cs_source.html#l00041">Wave.cs:41</a></div></div>
-<div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_none_html"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_none.html">Corale.Colore.Razer.Mouse.Effects.None</a></div><div class="ttdoc">No effect (resets the affected LEDs). </div><div class="ttdef"><b>Definition:</b> <a href="_none_8cs_source.html#l00041">None.cs:41</a></div></div>
+<div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_breathing_html"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_breathing.html">Corale.Colore.Razer.Effects.Breathing</a></div><div class="ttdoc">Describes a breathing effect for a system device. </div><div class="ttdef"><b>Definition:</b> <a href="_effects_2_breathing_8cs_source.html#l00035">Breathing.cs:35</a></div></div>
+<div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_reactive_html"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_reactive.html">Corale.Colore.Razer.Effects.Reactive</a></div><div class="ttdoc">Describes the reactive effect for system devices. </div><div class="ttdef"><b>Definition:</b> <a href="_effects_2_reactive_8cs_source.html#l00035">Reactive.cs:35</a></div></div>
+<div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_none_html"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_none.html">Corale.Colore.Razer.Effects.None</a></div><div class="ttdoc">Describes the NO_EFFECT effect. </div><div class="ttdef"><b>Definition:</b> <a href="_effects_2_none_8cs_source.html#l00034">None.cs:34</a></div></div>
 <div class="ttc" id="namespace_corale_1_1_colore_html"><div class="ttname"><a href="namespace_corale_1_1_colore.html">Corale.Colore</a></div></div>
-<div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_blinking_html"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_blinking.html">Corale.Colore.Razer.Mouse.Effects.Blinking</a></div><div class="ttdoc">Mouse effect that causes a specified LED to blink. </div><div class="ttdef"><b>Definition:</b> <a href="_blinking_8cs_source.html#l00042">Blinking.cs:42</a></div></div>
-<div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_headset_1_1_effects_1_1_static_html"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_headset_1_1_effects_1_1_static.html">Corale.Colore.Razer.Headset.Effects.Static</a></div><div class="ttdoc">Static color effect. </div><div class="ttdef"><b>Definition:</b> <a href="_headset_2_effects_2_static_8cs_source.html#l00042">Static.cs:42</a></div></div>
+<div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_starlight_html"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_starlight.html">Corale.Colore.Razer.Effects.Starlight</a></div><div class="ttdoc">Describes the starlight effect for system devices. </div><div class="ttdef"><b>Definition:</b> <a href="_effects_2_starlight_8cs_source.html#l00035">Starlight.cs:35</a></div></div>
+<div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_spectrum_cycling_html"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_spectrum_cycling.html">Corale.Colore.Razer.Effects.SpectrumCycling</a></div><div class="ttdoc">Describes the spectrum cycling effect for system devices. </div><div class="ttdef"><b>Definition:</b> <a href="_effects_2_spectrum_cycling_8cs_source.html#l00034">SpectrumCycling.cs:34</a></div></div>
+<div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_blinking_html"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_blinking.html">Corale.Colore.Razer.Effects.Blinking</a></div><div class="ttdoc">Describes a blinking effect. </div><div class="ttdef"><b>Definition:</b> <a href="_effects_2_blinking_8cs_source.html#l00035">Blinking.cs:35</a></div></div>
+<div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_wave_html"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_wave.html">Corale.Colore.Razer.Effects.Wave</a></div><div class="ttdoc">Describes the wave effect for a system device. </div><div class="ttdef"><b>Definition:</b> <a href="_effects_2_wave_8cs_source.html#l00034">Wave.cs:34</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_865a93a85313ae6b2503dfb6975d8750.html">Corale.Colore</a></li><li class="navelem"><a class="el" href="dir_4e4b822210286250472cb31b47778e3b.html">Razer</a></li><li class="navelem"><a class="el" href="_effect_8cs.html">Effect.cs</a></li>
-    <li class="footer">Generated on Thu Nov 26 2015 19:30:35 for Colore by
+    <li class="footer">Generated on Tue Jul 26 2016 19:15:02 for Colore by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
   </ul>

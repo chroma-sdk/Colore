@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Colore
-   &#160;<span id="projectnumber">3.0.1.91</span>
+   &#160;<span id="projectnumber">5.0.0.97</span>
    </div>
    <div id="projectbrief">C# library for Razer&#39;s Chroma SDK</div>
   </td>
@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('_native_call_exception_8cs_source.html
 <div class="contents">
 <a href="_native_call_exception_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// ---------------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// &lt;copyright file=&quot;NativeCallException.cs&quot; company=&quot;Corale&quot;&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//     Copyright © 2015 by Adam Hellberg and Brandon Scott.</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//     Permission is hereby granted, free of charge, to any person obtaining a copy of</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//     this software and associated documentation files (the &quot;Software&quot;), to deal in</span></div>
@@ -130,92 +130,69 @@ $(document).ready(function(){initNavTree('_native_call_exception_8cs_source.html
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">//     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">//     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">//     Disclaimer: Corale and/or Colore is in no way affiliated with Razer and/or any</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">//     of its employees and/or licensors. Corale, Adam Hellberg, and/or Brandon Scott</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">//     do not take responsibility for any harm caused, direct or indirect, to any</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//     Razer peripherals via the use of Colore.</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//     &quot;Razer&quot; is a trademark of Razer USA Ltd.</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// &lt;/copyright&gt;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// ---------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_corale.html">Corale</a>.Colore.Razer</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">using</span> System.ComponentModel;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">using</span> System.Globalization;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">using</span> System.Runtime.Serialization;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">using</span> System.Security.Permissions;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    [Serializable]</div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html">   43</a></span>&#160;    <span class="keyword">public</span> sealed <span class="keyword">class </span><a class="code" href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html">NativeCallException</a> : <a class="code" href="class_corale_1_1_colore_1_1_colore_exception.html">ColoreException</a></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html#aa6e4246c7367580162bd3a203e940450">   48</a></span>&#160;        <span class="keyword">private</span> <span class="keyword">const</span> <span class="keywordtype">string</span> MessageTemplate = <span class="stringliteral">&quot;Call to native Chroma SDK function {0} failed with error: {1}&quot;</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html#a54dc66386af800b1dedc812420932163">   53</a></span>&#160;        <span class="keyword">private</span> readonly <span class="keywordtype">string</span> <a class="code" href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html#a54dc66386af800b1dedc812420932163">_function</a>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html#abc2090c7a9a54c2fd6e05ca9ec112aa4">   58</a></span>&#160;        <span class="keyword">private</span> readonly <a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_result.html">Result</a> <a class="code" href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html#abc2090c7a9a54c2fd6e05ca9ec112aa4">_result</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">//     &quot;Razer&quot; is a trademark of Razer USA Ltd.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// &lt;/copyright&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// ---------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_corale.html">Corale</a>.Colore.Razer</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">using</span> System.ComponentModel;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">using</span> System.Globalization;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">using</span> System.Runtime.Serialization;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">using</span> System.Security;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">using</span> System.Security.Permissions;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    [Serializable]</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html">   39</a></span>&#160;    <span class="keyword">public</span> sealed <span class="keyword">class </span><a class="code" href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html">NativeCallException</a> : <a class="code" href="class_corale_1_1_colore_1_1_colore_exception.html">ColoreException</a></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html#aa6e4246c7367580162bd3a203e940450">   44</a></span>&#160;        <span class="keyword">private</span> <span class="keyword">const</span> <span class="keywordtype">string</span> MessageTemplate = <span class="stringliteral">&quot;Call to native Chroma SDK function {0} failed with error: {1}&quot;</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html#af4c400743a09d70fb56c47b7e8f82ae8">   51</a></span>&#160;        <span class="keyword">internal</span> <a class="code" href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html#af4c400743a09d70fb56c47b7e8f82ae8">NativeCallException</a>(<span class="keywordtype">string</span> <span class="keyword">function</span>, <a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_result.html">Result</a> result)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            : base(</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                string.Format(CultureInfo.InvariantCulture, MessageTemplate, function, result),</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                new Win32Exception(result))</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <a class="code" href="namespace_corale_1_1_colore_1_1_razer_1_1_keyboard.html#a4434888a1769a87551c60e708fbb9ee2a86408593c34af77fdd90df932f8b5261">Function</a> = <span class="keyword">function</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_result.html">Result</a> = result;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html#af4c400743a09d70fb56c47b7e8f82ae8">   65</a></span>&#160;        <span class="keyword">internal</span> <a class="code" href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html#af4c400743a09d70fb56c47b7e8f82ae8">NativeCallException</a>(<span class="keywordtype">string</span> <span class="keyword">function</span>, <a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_result.html">Result</a> result)</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            : base(</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                string.Format(CultureInfo.InvariantCulture, MessageTemplate, function, result),</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                new Win32Exception(result))</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            _function = <span class="keyword">function</span>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            _result = result;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html#a0bd6517243f920b8a7628882ac19d1f7">   79</a></span>&#160;        <span class="keyword">private</span> <a class="code" href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html#a0bd6517243f920b8a7628882ac19d1f7">NativeCallException</a>(SerializationInfo info, StreamingContext context)</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            : base(info, context)</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            _function = info.GetString(<span class="stringliteral">&quot;Function&quot;</span>);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            _result = info.GetInt32(<span class="stringliteral">&quot;Result&quot;</span>);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code" href="namespace_corale_1_1_colore_1_1_razer_1_1_keyboard.html#a4434888a1769a87551c60e708fbb9ee2a86408593c34af77fdd90df932f8b5261">Function</a></div>
-<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html#adad777547696f52504f9e4138cae0e1d">   90</a></span>&#160;        {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keyword">get</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <span class="keywordflow">return</span> _function;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keyword">public</span> <a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_result.html">Result</a> <a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_result.html">Result</a></div>
-<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html#a58c6af0dbce1559f083315b6097cf40a">  102</a></span>&#160;        {</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keyword">get</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                <span class="keywordflow">return</span> _result;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        }</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        [SecurityPermission(SecurityAction.Demand, SerializationFormatter = <span class="keyword">true</span>)]</div>
-<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html#a2d99bbc0bb96f98dc9767fe831949ea0">  115</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code" href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html#a2d99bbc0bb96f98dc9767fe831949ea0">GetObjectData</a>(SerializationInfo info, StreamingContext context)</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            base.GetObjectData(info, context);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            info.AddValue(<span class="stringliteral">&quot;Function&quot;</span>, _function);</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            info.AddValue(<span class="stringliteral">&quot;Result&quot;</span>, (<span class="keywordtype">int</span>)<a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_result.html">Result</a>);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        }</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html#a0bd6517243f920b8a7628882ac19d1f7">   65</a></span>&#160;        <span class="keyword">private</span> <a class="code" href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html#a0bd6517243f920b8a7628882ac19d1f7">NativeCallException</a>(SerializationInfo info, StreamingContext context)</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            : base(info, context)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <a class="code" href="namespace_corale_1_1_colore_1_1_razer_1_1_keyboard.html#a4434888a1769a87551c60e708fbb9ee2a86408593c34af77fdd90df932f8b5261">Function</a> = info.GetString(<span class="stringliteral">&quot;Function&quot;</span>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_result.html">Result</a> = info.GetInt32(<span class="stringliteral">&quot;Result&quot;</span>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html#adad777547696f52504f9e4138cae0e1d">   75</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code" href="namespace_corale_1_1_colore_1_1_razer_1_1_keyboard.html#a4434888a1769a87551c60e708fbb9ee2a86408593c34af77fdd90df932f8b5261">Function</a> { <span class="keyword">get</span>; }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html#a58c6af0dbce1559f083315b6097cf40a">   81</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_result.html">Result</a> <a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_result.html">Result</a> { <span class="keyword">get</span>; }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html#a2d99bbc0bb96f98dc9767fe831949ea0">   88</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code" href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html#a2d99bbc0bb96f98dc9767fe831949ea0">GetObjectData</a>(SerializationInfo info, StreamingContext context)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            base.GetObjectData(info, context);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            info.AddValue(<span class="stringliteral">&quot;Function&quot;</span>, <a class="code" href="namespace_corale_1_1_colore_1_1_razer_1_1_keyboard.html#a4434888a1769a87551c60e708fbb9ee2a86408593c34af77fdd90df932f8b5261">Function</a>);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            info.AddValue(<span class="stringliteral">&quot;Result&quot;</span>, (<span class="keywordtype">int</span>)<a class="code" href="struct_corale_1_1_colore_1_1_razer_1_1_result.html">Result</a>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
 <div class="ttc" id="namespace_system_html"><div class="ttname"><a href="namespace_system.html">System</a></div></div>
 <div class="ttc" id="namespace_corale_1_1_colore_1_1_razer_1_1_keyboard_html_a4434888a1769a87551c60e708fbb9ee2a86408593c34af77fdd90df932f8b5261"><div class="ttname"><a href="namespace_corale_1_1_colore_1_1_razer_1_1_keyboard.html#a4434888a1769a87551c60e708fbb9ee2a86408593c34af77fdd90df932f8b5261">Corale.Colore.Razer.Keyboard.Key.Function</a></div><div class="ttdoc">"Fn" function key. </div></div>
-<div class="ttc" id="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception_html_a0bd6517243f920b8a7628882ac19d1f7"><div class="ttname"><a href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html#a0bd6517243f920b8a7628882ac19d1f7">Corale.Colore.Razer.NativeCallException.NativeCallException</a></div><div class="ttdeci">NativeCallException(SerializationInfo info, StreamingContext context)</div><div class="ttdoc">Initializes a new instance of the NativeCallException class. </div><div class="ttdef"><b>Definition:</b> <a href="_native_call_exception_8cs_source.html#l00079">NativeCallException.cs:79</a></div></div>
+<div class="ttc" id="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception_html_a0bd6517243f920b8a7628882ac19d1f7"><div class="ttname"><a href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html#a0bd6517243f920b8a7628882ac19d1f7">Corale.Colore.Razer.NativeCallException.NativeCallException</a></div><div class="ttdeci">NativeCallException(SerializationInfo info, StreamingContext context)</div><div class="ttdoc">Initializes a new instance of the NativeCallException class. </div><div class="ttdef"><b>Definition:</b> <a href="_native_call_exception_8cs_source.html#l00065">NativeCallException.cs:65</a></div></div>
 <div class="ttc" id="namespace_corale_html"><div class="ttname"><a href="namespace_corale.html">Corale</a></div></div>
-<div class="ttc" id="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception_html_a2d99bbc0bb96f98dc9767fe831949ea0"><div class="ttname"><a href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html#a2d99bbc0bb96f98dc9767fe831949ea0">Corale.Colore.Razer.NativeCallException.GetObjectData</a></div><div class="ttdeci">override void GetObjectData(SerializationInfo info, StreamingContext context)</div><div class="ttdoc">Adds object data to serialization object. </div><div class="ttdef"><b>Definition:</b> <a href="_native_call_exception_8cs_source.html#l00115">NativeCallException.cs:115</a></div></div>
-<div class="ttc" id="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception_html_a54dc66386af800b1dedc812420932163"><div class="ttname"><a href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html#a54dc66386af800b1dedc812420932163">Corale.Colore.Razer.NativeCallException._function</a></div><div class="ttdeci">readonly string _function</div><div class="ttdoc">The function that was called. </div><div class="ttdef"><b>Definition:</b> <a href="_native_call_exception_8cs_source.html#l00053">NativeCallException.cs:53</a></div></div>
-<div class="ttc" id="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception_html_af4c400743a09d70fb56c47b7e8f82ae8"><div class="ttname"><a href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html#af4c400743a09d70fb56c47b7e8f82ae8">Corale.Colore.Razer.NativeCallException.NativeCallException</a></div><div class="ttdeci">NativeCallException(string function, Result result)</div><div class="ttdoc">Initializes a new instance of the NativeCallException class. </div><div class="ttdef"><b>Definition:</b> <a href="_native_call_exception_8cs_source.html#l00065">NativeCallException.cs:65</a></div></div>
-<div class="ttc" id="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception_html"><div class="ttname"><a href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html">Corale.Colore.Razer.NativeCallException</a></div><div class="ttdoc">Thrown when a native function returns an erroneous result value. </div><div class="ttdef"><b>Definition:</b> <a href="_native_call_exception_8cs_source.html#l00043">NativeCallException.cs:43</a></div></div>
-<div class="ttc" id="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception_html_abc2090c7a9a54c2fd6e05ca9ec112aa4"><div class="ttname"><a href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html#abc2090c7a9a54c2fd6e05ca9ec112aa4">Corale.Colore.Razer.NativeCallException._result</a></div><div class="ttdeci">readonly Result _result</div><div class="ttdoc">The result returned from the function. </div><div class="ttdef"><b>Definition:</b> <a href="_native_call_exception_8cs_source.html#l00058">NativeCallException.cs:58</a></div></div>
-<div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_result_html"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_result.html">Corale.Colore.Razer.Result</a></div><div class="ttdoc">Struct for containing the result of running a native Chroma SDK function. </div><div class="ttdef"><b>Definition:</b> <a href="_result_8cs_source.html#l00049">Result.cs:49</a></div></div>
-<div class="ttc" id="class_corale_1_1_colore_1_1_colore_exception_html"><div class="ttname"><a href="class_corale_1_1_colore_1_1_colore_exception.html">Corale.Colore.ColoreException</a></div><div class="ttdoc">Generic Colore library exception. </div><div class="ttdef"><b>Definition:</b> <a href="_colore_exception_8cs_source.html#l00040">ColoreException.cs:40</a></div></div>
+<div class="ttc" id="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception_html_a2d99bbc0bb96f98dc9767fe831949ea0"><div class="ttname"><a href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html#a2d99bbc0bb96f98dc9767fe831949ea0">Corale.Colore.Razer.NativeCallException.GetObjectData</a></div><div class="ttdeci">override void GetObjectData(SerializationInfo info, StreamingContext context)</div><div class="ttdoc">Adds object data to serialization object. </div><div class="ttdef"><b>Definition:</b> <a href="_native_call_exception_8cs_source.html#l00088">NativeCallException.cs:88</a></div></div>
+<div class="ttc" id="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception_html_af4c400743a09d70fb56c47b7e8f82ae8"><div class="ttname"><a href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html#af4c400743a09d70fb56c47b7e8f82ae8">Corale.Colore.Razer.NativeCallException.NativeCallException</a></div><div class="ttdeci">NativeCallException(string function, Result result)</div><div class="ttdoc">Initializes a new instance of the NativeCallException class. </div><div class="ttdef"><b>Definition:</b> <a href="_native_call_exception_8cs_source.html#l00051">NativeCallException.cs:51</a></div></div>
+<div class="ttc" id="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception_html"><div class="ttname"><a href="class_corale_1_1_colore_1_1_razer_1_1_native_call_exception.html">Corale.Colore.Razer.NativeCallException</a></div><div class="ttdoc">Thrown when a native function returns an erroneous result value. </div><div class="ttdef"><b>Definition:</b> <a href="_native_call_exception_8cs_source.html#l00039">NativeCallException.cs:39</a></div></div>
+<div class="ttc" id="struct_corale_1_1_colore_1_1_razer_1_1_result_html"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_razer_1_1_result.html">Corale.Colore.Razer.Result</a></div><div class="ttdoc">Struct for containing the result of running a native Chroma SDK function. </div><div class="ttdef"><b>Definition:</b> <a href="_result_8cs_source.html#l00043">Result.cs:43</a></div></div>
+<div class="ttc" id="class_corale_1_1_colore_1_1_colore_exception_html"><div class="ttname"><a href="class_corale_1_1_colore_1_1_colore_exception.html">Corale.Colore.ColoreException</a></div><div class="ttdoc">Generic Colore library exception. </div><div class="ttdef"><b>Definition:</b> <a href="_colore_exception_8cs_source.html#l00035">ColoreException.cs:35</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_865a93a85313ae6b2503dfb6975d8750.html">Corale.Colore</a></li><li class="navelem"><a class="el" href="dir_4e4b822210286250472cb31b47778e3b.html">Razer</a></li><li class="navelem"><a class="el" href="_native_call_exception_8cs.html">NativeCallException.cs</a></li>
-    <li class="footer">Generated on Thu Nov 26 2015 19:30:36 for Colore by
+    <li class="footer">Generated on Tue Jul 26 2016 19:15:03 for Colore by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
   </ul>

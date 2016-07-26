@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['value',['Value',['../struct_corale_1_1_colore_1_1_core_1_1_color.html#a57b49aaa7ab4929a0ceaecd4b17819c8',1,'Corale::Colore::Core::Color']]]
+  ['usekindflags',['UseKindFlags',['../class_used_implicitly_attribute.html#a7755e382c9638ee26bc7a45584ced5ff',1,'UsedImplicitlyAttribute.UseKindFlags()'],['../class_means_implicit_use_attribute.html#af242c18a9e6e8db8d83c212231b1cd8c',1,'MeansImplicitUseAttribute.UseKindFlags()']]]
 ];

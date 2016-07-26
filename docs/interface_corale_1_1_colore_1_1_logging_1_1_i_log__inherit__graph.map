@@ -1,0 +1,4 @@
+<map id="Corale.Colore.Logging.ILog" name="Corale.Colore.Logging.ILog">
+<area shape="rect" id="node2" href="$class_corale_1_1_colore_1_1_logging_1_1_logger.html" title="Base logger class implementing some default behaviour like delegating logging commands to the base Lo..." alt="" coords="5,80,197,107"/>
+<area shape="rect" id="node3" href="$class_corale_1_1_colore_1_1_logging_1_1_trace_logger.html" title="A logger using System.Diagnostics to log messages. " alt="" coords="9,155,194,196"/>
+</map>

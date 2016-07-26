@@ -13,6 +13,7 @@ var searchData=
   ['f7',['F7',['../namespace_corale_1_1_colore_1_1_razer_1_1_keyboard.html#a4434888a1769a87551c60e708fbb9ee2a47489eb597b7db34caa24b1fc78fc839',1,'Corale::Colore::Razer::Keyboard']]],
   ['f8',['F8',['../namespace_corale_1_1_colore_1_1_razer_1_1_keyboard.html#a4434888a1769a87551c60e708fbb9ee2a4787509ad9f9d747a81a30e9dde3d4a7',1,'Corale::Colore::Razer::Keyboard']]],
   ['f9',['F9',['../namespace_corale_1_1_colore_1_1_razer_1_1_keyboard.html#a4434888a1769a87551c60e708fbb9ee2a892a245e287c163080b23db737d3c4c9',1,'Corale::Colore::Razer::Keyboard']]],
-  ['fronttoback',['FrontToBack',['../namespace_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects.html#a72de570f2ef017d735ea62b0c704b2b7a44a4d81c96c5451956c4412d045e32ae',1,'Corale::Colore::Razer::Mouse::Effects']]],
+  ['fatal',['Fatal',['../namespace_corale_1_1_colore_1_1_logging.html#a019a36ec1630226f57681d19f9c7d4f4a882384ec38ce8d9582b57e70861730e4',1,'Corale::Colore::Logging']]],
+  ['fronttoback',['FrontToBack',['../namespace_corale_1_1_colore_1_1_razer_1_1_effects.html#a90d7380f25df3eed05ac903df091b44ea44a4d81c96c5451956c4412d045e32ae',1,'Corale.Colore.Razer.Effects.FrontToBack()'],['../namespace_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects.html#a72de570f2ef017d735ea62b0c704b2b7a44a4d81c96c5451956c4412d045e32ae',1,'Corale.Colore.Razer.Mouse.Effects.FrontToBack()']]],
   ['function',['Function',['../namespace_corale_1_1_colore_1_1_razer_1_1_keyboard.html#a4434888a1769a87551c60e708fbb9ee2a86408593c34af77fdd90df932f8b5261',1,'Corale::Colore::Razer::Keyboard']]]
 ];

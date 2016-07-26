@@ -6,6 +6,7 @@ var searchData=
   ['iheadset',['IHeadset',['../interface_corale_1_1_colore_1_1_core_1_1_i_headset.html',1,'Corale::Colore::Core']]],
   ['ikeyboard',['IKeyboard',['../interface_corale_1_1_colore_1_1_core_1_1_i_keyboard.html',1,'Corale::Colore::Core']]],
   ['ikeypad',['IKeypad',['../interface_corale_1_1_colore_1_1_core_1_1_i_keypad.html',1,'Corale::Colore::Core']]],
+  ['ilog',['ILog',['../interface_corale_1_1_colore_1_1_logging_1_1_i_log.html',1,'Corale::Colore::Logging']]],
   ['imouse',['IMouse',['../interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html',1,'Corale::Colore::Core']]],
   ['imousepad',['IMousepad',['../interface_corale_1_1_colore_1_1_core_1_1_i_mousepad.html',1,'Corale::Colore::Core']]],
   ['instanthandleattribute',['InstantHandleAttribute',['../class_instant_handle_attribute.html',1,'']]],

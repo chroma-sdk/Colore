@@ -9,6 +9,7 @@ var _effect_8cs =
       [ "Reactive", "_effect_8cs.html#a811c71ff1bc7862a0055b1b94973bbf6ac0d2be90914e0cb1d969da682299d7f7", null ],
       [ "Static", "_effect_8cs.html#a811c71ff1bc7862a0055b1b94973bbf6a84a8921b25f505d0d2077aeb5db4bc16", null ],
       [ "Custom", "_effect_8cs.html#a811c71ff1bc7862a0055b1b94973bbf6a90589c47f06eb971d548591f23c285af", null ],
+      [ "Starlight", "_effect_8cs.html#a811c71ff1bc7862a0055b1b94973bbf6ad51792b4d5f7e5523e2fa6df873e8051", null ],
       [ "Invalid", "_effect_8cs.html#a811c71ff1bc7862a0055b1b94973bbf6a4bbb8f967da6d1a610596d7257179c2b", null ]
     ] ]
 ];

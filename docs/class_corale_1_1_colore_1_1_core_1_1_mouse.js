@@ -1,6 +1,7 @@
 var class_corale_1_1_colore_1_1_core_1_1_mouse =
 [
     [ "Mouse", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#a62fd6c1ec345edbeccb1c94ab858ca2c", null ],
+    [ "Clear", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#ad28cc9ed68f334fabd14d300baefadc1", null ],
     [ "SetAll", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#a5177e61c9a8bf3b6c2edf99a7b041102", null ],
     [ "SetBlinking", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#abddc2dc196350127c346f79697a52a84", null ],
     [ "SetBlinking", "class_corale_1_1_colore_1_1_core_1_1_mouse.html#afe92cfc5d16a828ce2037489c4b41407", null ],

@@ -18,7 +18,10 @@ var struct_corale_1_1_colore_1_1_razer_1_1_result =
     [ "operator==", "struct_corale_1_1_colore_1_1_razer_1_1_result.html#a3ee8657af981f44178cda08cdb858e5e", null ],
     [ "ToString", "struct_corale_1_1_colore_1_1_razer_1_1_result.html#ac81dc0dd7ed735210aeb0cf2a70cde54", null ],
     [ "_value", "struct_corale_1_1_colore_1_1_razer_1_1_result.html#acd49e7d2cae3e7d5572a759fcfe414b2", null ],
+    [ "Description", "struct_corale_1_1_colore_1_1_razer_1_1_result.html#ab304ab35815aa490aa49da806879f7b0", null ],
+    [ "Failed", "struct_corale_1_1_colore_1_1_razer_1_1_result.html#a440a4543dfc7647b6e85ab4895a6ade4", null ],
     [ "FieldMetadata", "struct_corale_1_1_colore_1_1_razer_1_1_result.html#a188f31d3247f0f6af739def4acca9570", null ],
+    [ "Name", "struct_corale_1_1_colore_1_1_razer_1_1_result.html#a69ffc748b32467357aa994cb9c95ac79", null ],
     [ "RzAccessDenied", "struct_corale_1_1_colore_1_1_razer_1_1_result.html#aa597a9e2e25b16a6fc4767ebb602e7bf", null ],
     [ "RzFailed", "struct_corale_1_1_colore_1_1_razer_1_1_result.html#aebdb7624f125dc7c500252903ff25dce", null ],
     [ "RzInvalid", "struct_corale_1_1_colore_1_1_razer_1_1_result.html#ad733b2d5baa0b09a15333daffd17420d", null ],
@@ -28,8 +31,5 @@ var struct_corale_1_1_colore_1_1_razer_1_1_result =
     [ "RzResourceDisabled", "struct_corale_1_1_colore_1_1_razer_1_1_result.html#ad059a0c2278d931d3423f479d38098d3", null ],
     [ "RzSingleInstanceApp", "struct_corale_1_1_colore_1_1_razer_1_1_result.html#a8490a63200b8ed7bd256fce1d4e12dbe", null ],
     [ "RzSuccess", "struct_corale_1_1_colore_1_1_razer_1_1_result.html#a35762aa344d6c4d5891f538b6ab335b0", null ],
-    [ "Description", "struct_corale_1_1_colore_1_1_razer_1_1_result.html#ab304ab35815aa490aa49da806879f7b0", null ],
-    [ "Failed", "struct_corale_1_1_colore_1_1_razer_1_1_result.html#a440a4543dfc7647b6e85ab4895a6ade4", null ],
-    [ "Name", "struct_corale_1_1_colore_1_1_razer_1_1_result.html#a69ffc748b32467357aa994cb9c95ac79", null ],
     [ "Success", "struct_corale_1_1_colore_1_1_razer_1_1_result.html#a0679f720f28b778ae5697cc2978d05da", null ]
 ];

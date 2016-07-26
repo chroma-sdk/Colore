@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Colore
-   &#160;<span id="projectnumber">3.0.1.91</span>
+   &#160;<span id="projectnumber">5.0.0.97</span>
    </div>
    <div id="projectbrief">C# library for Razer&#39;s Chroma SDK</div>
   </td>
@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('_color_8_defines_8cs_source.html','');
 <div class="contents">
 <a href="_color_8_defines_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// ---------------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// &lt;copyright file=&quot;Color.Defines.cs&quot; company=&quot;Corale&quot;&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//     Copyright © 2015 by Adam Hellberg and Brandon Scott.</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//     Permission is hereby granted, free of charge, to any person obtaining a copy of</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//     this software and associated documentation files (the &quot;Software&quot;), to deal in</span></div>
@@ -130,55 +130,50 @@ $(document).ready(function(){initNavTree('_color_8_defines_8cs_source.html','');
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">//     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">//     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">//     Disclaimer: Corale and/or Colore is in no way affiliated with Razer and/or any</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">//     of its employees and/or licensors. Corale, Adam Hellberg, and/or Brandon Scott</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">//     do not take responsibility for any harm caused, direct or indirect, to any</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//     Razer peripherals via the use of Colore.</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//     &quot;Razer&quot; is a trademark of Razer USA Ltd.</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// &lt;/copyright&gt;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// ---------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_corale.html">Corale</a>.Colore.Core</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">using</span> <a class="code" href="namespace_corale.html">Corale</a>.<a class="code" href="namespace_corale_1_1_colore.html">Colore</a>.<a class="code" href="namespace_corale_1_1_colore_1_1_annotations.html">Annotations</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">public</span> partial <span class="keyword">struct </span>Color</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        [PublicAPI]</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="struct_corale_1_1_colore_1_1_core_1_1_color.html#a1cbdb6bc8c082f36f5c186e85e2ddb05">   44</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> readonly <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> Black = <span class="keyword">new</span> <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a>(0, 0, 0);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        [PublicAPI]</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="struct_corale_1_1_colore_1_1_core_1_1_color.html#a4fe28ab08569b118df16f487f04857c4">   50</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> readonly <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> Blue = <span class="keyword">new</span> <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a>(0, 0, 255);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        [PublicAPI]</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="struct_corale_1_1_colore_1_1_core_1_1_color.html#a9cf73f0bed90036b5b5dc0a1cf3934b1">   56</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> readonly <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> Green = <span class="keyword">new</span> <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a>(0, 255, 0);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        [PublicAPI]</div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="struct_corale_1_1_colore_1_1_core_1_1_color.html#a1953d872f26b0e0c5755e134f2924a8a">   62</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> readonly <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> HotPink = <span class="keyword">new</span> <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a>(255, 105, 180);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        [PublicAPI]</div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="struct_corale_1_1_colore_1_1_core_1_1_color.html#a2b9b2675e535fec458718d54c2e30d76">   68</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> readonly <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> Orange = FromRgb(0xFFA500);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        [PublicAPI]</div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="struct_corale_1_1_colore_1_1_core_1_1_color.html#ab5b49cfb01cbbfa1a57dc921d117600b">   74</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> readonly <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> Pink = <span class="keyword">new</span> <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a>(255, 0, 255);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        [PublicAPI]</div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="struct_corale_1_1_colore_1_1_core_1_1_color.html#abb34545229afdeb072e1f32ecfd7391f">   80</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> readonly <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> Purple = FromRgb(0x800080);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        [PublicAPI]</div>
-<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="struct_corale_1_1_colore_1_1_core_1_1_color.html#a6cdb6b53a89f33bedd12fe5dfce226dc">   86</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> readonly <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> Red = <span class="keyword">new</span> <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a>(255, 0, 0);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        [PublicAPI]</div>
-<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="struct_corale_1_1_colore_1_1_core_1_1_color.html#aa588e30dfaba8adb59b08c67f53ad1c5">   92</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> readonly <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> White = <span class="keyword">new</span> <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a>(255, 255, 255);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        [PublicAPI]</div>
-<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="struct_corale_1_1_colore_1_1_core_1_1_color.html#aaeee667b68a4e653f03df72f98798d53">   98</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> readonly <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> Yellow = <span class="keyword">new</span> <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a>(255, 255, 0);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">//     &quot;Razer&quot; is a trademark of Razer USA Ltd.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// &lt;/copyright&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// ---------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_corale.html">Corale</a>.Colore.Core</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">using</span> <a class="code" href="namespace_corale.html">Corale</a>.<a class="code" href="namespace_corale_1_1_colore.html">Colore</a>.<a class="code" href="namespace_corale_1_1_colore_1_1_annotations.html">Annotations</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">public</span> partial <span class="keyword">struct </span>Color</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="struct_corale_1_1_colore_1_1_core_1_1_color.html#a1cbdb6bc8c082f36f5c186e85e2ddb05">   39</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> readonly <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> Black = <span class="keyword">new</span> <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a>(0, 0, 0);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="struct_corale_1_1_colore_1_1_core_1_1_color.html#a4fe28ab08569b118df16f487f04857c4">   45</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> readonly <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> Blue = <span class="keyword">new</span> <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a>(0, 0, 255);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="struct_corale_1_1_colore_1_1_core_1_1_color.html#a9cf73f0bed90036b5b5dc0a1cf3934b1">   51</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> readonly <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> Green = <span class="keyword">new</span> <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a>(0, 255, 0);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="struct_corale_1_1_colore_1_1_core_1_1_color.html#a1953d872f26b0e0c5755e134f2924a8a">   57</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> readonly <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> HotPink = <span class="keyword">new</span> <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a>(255, 105, 180);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="struct_corale_1_1_colore_1_1_core_1_1_color.html#a2b9b2675e535fec458718d54c2e30d76">   63</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> readonly <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> Orange = FromRgb(0xFFA500);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="struct_corale_1_1_colore_1_1_core_1_1_color.html#ab5b49cfb01cbbfa1a57dc921d117600b">   69</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> readonly <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> Pink = <span class="keyword">new</span> <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a>(255, 0, 255);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="struct_corale_1_1_colore_1_1_core_1_1_color.html#abb34545229afdeb072e1f32ecfd7391f">   75</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> readonly <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> Purple = FromRgb(0x800080);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="struct_corale_1_1_colore_1_1_core_1_1_color.html#a6cdb6b53a89f33bedd12fe5dfce226dc">   81</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> readonly <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> Red = <span class="keyword">new</span> <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a>(255, 0, 0);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="struct_corale_1_1_colore_1_1_core_1_1_color.html#aa588e30dfaba8adb59b08c67f53ad1c5">   87</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> readonly <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> White = <span class="keyword">new</span> <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a>(255, 255, 255);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        [PublicAPI]</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="struct_corale_1_1_colore_1_1_core_1_1_color.html#aaeee667b68a4e653f03df72f98798d53">   93</a></span>&#160;        <span class="keyword">public</span> <span class="keyword">static</span> readonly <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> Yellow = <span class="keyword">new</span> <a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a>(255, 255, 0);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
 <div class="ttc" id="namespace_corale_html"><div class="ttname"><a href="namespace_corale.html">Corale</a></div></div>
 <div class="ttc" id="namespace_corale_1_1_colore_1_1_annotations_html"><div class="ttname"><a href="namespace_corale_1_1_colore_1_1_annotations.html">Corale.Colore.Annotations</a></div><div class="ttdef"><b>Definition:</b> <a href="_annotations_8cs_source.html#l00018">Annotations.cs:18</a></div></div>
-<div class="ttc" id="struct_corale_1_1_colore_1_1_core_1_1_color_html"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Corale.Colore.Core.Color</a></div><div class="ttdoc">Represents an RGB color. </div><div class="ttdef"><b>Definition:</b> <a href="_color_8cs_source.html#l00045">Color.cs:45</a></div></div>
+<div class="ttc" id="struct_corale_1_1_colore_1_1_core_1_1_color_html"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Corale.Colore.Core.Color</a></div><div class="ttdoc">Represents an RGB color. </div><div class="ttdef"><b>Definition:</b> <a href="_color_8cs_source.html#l00037">Color.cs:37</a></div></div>
 <div class="ttc" id="namespace_corale_1_1_colore_html"><div class="ttname"><a href="namespace_corale_1_1_colore.html">Corale.Colore</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -186,7 +181,7 @@ $(document).ready(function(){initNavTree('_color_8_defines_8cs_source.html','');
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_865a93a85313ae6b2503dfb6975d8750.html">Corale.Colore</a></li><li class="navelem"><a class="el" href="dir_b0277a4fdac946fbe1408f549d07635c.html">Core</a></li><li class="navelem"><a class="el" href="_color_8_defines_8cs.html">Color.Defines.cs</a></li>
-    <li class="footer">Generated on Thu Nov 26 2015 19:30:35 for Colore by
+    <li class="footer">Generated on Tue Jul 26 2016 19:15:02 for Colore by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
   </ul>

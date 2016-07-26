@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['a',['A',['../struct_corale_1_1_colore_1_1_core_1_1_color.html#a7f328eb3b6547d60d46bb5b3230cce4f',1,'Corale.Colore.Core.Color.A()'],['../namespace_corale_1_1_colore_1_1_razer_1_1_keyboard.html#a4434888a1769a87551c60e708fbb9ee2a7fc56270e7a70fa81a5935b72eacbe29',1,'Corale.Colore.Razer.Keyboard.A()']]],
+  ['a',['A',['../namespace_corale_1_1_colore_1_1_razer_1_1_keyboard.html#a4434888a1769a87551c60e708fbb9ee2a7fc56270e7a70fa81a5935b72eacbe29',1,'Corale::Colore::Razer::Keyboard']]],
   ['access',['Access',['../_annotations_8cs.html#acc26806cec0b003502b38c6c2ee67fd1abf733d8a933c1601697f364223fc7ecb',1,'Annotations.cs']]],
   ['all',['All',['../namespace_corale_1_1_colore_1_1_razer_1_1_mouse.html#aafadccaeea2744f65544c5f99264037dab1c94ca2fbc3e78fc30069c8d0f01680',1,'Corale::Colore::Razer::Mouse']]],
   ['annotations_2ecs',['Annotations.cs',['../_annotations_8cs.html',1,'']]],
@@ -33,7 +33,9 @@ var searchData=
   ['aspmvcviewlocationformatattribute',['AspMvcViewLocationFormatAttribute',['../class_asp_mvc_view_location_format_attribute.html',1,'AspMvcViewLocationFormatAttribute'],['../class_asp_mvc_view_location_format_attribute.html#aecb3c29d8605da500d4af960ba99f207',1,'AspMvcViewLocationFormatAttribute.AspMvcViewLocationFormatAttribute()']]],
   ['asprequiredattributeattribute',['AspRequiredAttributeAttribute',['../class_asp_required_attribute_attribute.html',1,'AspRequiredAttributeAttribute'],['../class_asp_required_attribute_attribute.html#a37e197f5a5990c0140d0dc75be9ad6a6',1,'AspRequiredAttributeAttribute.AspRequiredAttributeAttribute()']]],
   ['asptypepropertyattribute',['AspTypePropertyAttribute',['../class_asp_type_property_attribute.html',1,'AspTypePropertyAttribute'],['../class_asp_type_property_attribute.html#a44e918652832a5c2272af6b3c85d12d1',1,'AspTypePropertyAttribute.AspTypePropertyAttribute()']]],
-  ['assemblyinfo_2ecs',['AssemblyInfo.cs',['../_assembly_info_8cs.html',1,'']]],
+  ['assemblyinfo_2ecs',['AssemblyInfo.cs',['../_win_forms_2_properties_2_assembly_info_8cs.html',1,'']]],
+  ['assemblyinfo_2ecs',['AssemblyInfo.cs',['../_properties_2_assembly_info_8cs.html',1,'']]],
+  ['assemblyinfo_2ecs',['AssemblyInfo.cs',['../_wpf_2_properties_2_assembly_info_8cs.html',1,'']]],
   ['assertionconditionattribute',['AssertionConditionAttribute',['../class_assertion_condition_attribute.html',1,'AssertionConditionAttribute'],['../class_assertion_condition_attribute.html#a9e8e78b2fe91bb29f18154940860af32',1,'AssertionConditionAttribute.AssertionConditionAttribute()']]],
   ['assertionconditiontype',['AssertionConditionType',['../_annotations_8cs.html#a016c132b1d3a6c75524ade006560e87d',1,'Annotations.cs']]],
   ['assertionmethodattribute',['AssertionMethodAttribute',['../class_assertion_method_attribute.html',1,'']]],

@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Colore
-   &#160;<span id="projectnumber">3.0.1.91</span>
+   &#160;<span id="projectnumber">5.0.0.97</span>
    </div>
    <div id="projectbrief">C# library for Razer&#39;s Chroma SDK</div>
   </td>
@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('_device_8cs_source.html','');});
 <div class="contents">
 <a href="_device_8cs.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// ---------------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// &lt;copyright file=&quot;Device.cs&quot; company=&quot;Corale&quot;&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//     Copyright © 2015 by Adam Hellberg and Brandon Scott.</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//     Permission is hereby granted, free of charge, to any person obtaining a copy of</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">//     this software and associated documentation files (the &quot;Software&quot;), to deal in</span></div>
@@ -130,66 +130,56 @@ $(document).ready(function(){initNavTree('_device_8cs_source.html','');});
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">//     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">//     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">//     Disclaimer: Corale and/or Colore is in no way affiliated with Razer and/or any</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">//     of its employees and/or licensors. Corale, Adam Hellberg, and/or Brandon Scott</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">//     do not take responsibility for any harm caused, direct or indirect, to any</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//     Razer peripherals via the use of Colore.</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//     &quot;Razer&quot; is a trademark of Razer USA Ltd.</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// &lt;/copyright&gt;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// ---------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_corale.html">Corale</a>.Colore.Core</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_corale_1_1_colore_1_1_core_1_1_device.html">   38</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class </span><a class="code" href="class_corale_1_1_colore_1_1_core_1_1_device.html">Device</a> : <a class="code" href="interface_corale_1_1_colore_1_1_core_1_1_i_device.html">IDevice</a></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_corale_1_1_colore_1_1_core_1_1_device.html#a29cd4fda0c88fb57f4bec36bd76284a2">   43</a></span>&#160;        <span class="keyword">public</span> Guid CurrentEffectId { <span class="keyword">get</span>; <span class="keyword">protected</span> set; }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">//     &quot;Razer&quot; is a trademark of Razer USA Ltd.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// &lt;/copyright&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// ---------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_corale.html">Corale</a>.Colore.Core</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">using</span> <a class="code" href="namespace_system.html">System</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_corale_1_1_colore_1_1_core_1_1_device.html">   33</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class </span><a class="code" href="class_corale_1_1_colore_1_1_core_1_1_device.html">Device</a> : <a class="code" href="interface_corale_1_1_colore_1_1_core_1_1_i_device.html">IDevice</a></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_corale_1_1_colore_1_1_core_1_1_device.html#a29cd4fda0c88fb57f4bec36bd76284a2">   38</a></span>&#160;        <span class="keyword">public</span> Guid CurrentEffectId { <span class="keyword">get</span>; <span class="keyword">protected</span> set; }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keywordtype">void</span> Clear();</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_corale_1_1_colore_1_1_core_1_1_device.html#a211d4f9e798aa29c08c1fce52346178c">   48</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_corale_1_1_colore_1_1_core_1_1_device.html#a211d4f9e798aa29c08c1fce52346178c">Clear</a>()</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            SetAll(<a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a>.<a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html#a1cbdb6bc8c082f36f5c186e85e2ddb05">Black</a>);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keywordtype">void</span> SetAll(<a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> color);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="class_corale_1_1_colore_1_1_core_1_1_device.html#ac18cdbbb9c6d64ae7fac57e8f0d1d0b6">   63</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_corale_1_1_colore_1_1_core_1_1_device.html#ac18cdbbb9c6d64ae7fac57e8f0d1d0b6">SetGuid</a>(Guid guid)</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            DeleteCurrentEffect();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <a class="code" href="class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html">NativeWrapper</a>.<a class="code" href="class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html#a552b1354d7e38b1d609b289313df785d">SetEffect</a>(guid);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            CurrentEffectId = guid;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keywordtype">void</span> SetAll(<a class="code" href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Color</a> color);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_corale_1_1_colore_1_1_core_1_1_device.html#ac18cdbbb9c6d64ae7fac57e8f0d1d0b6">   55</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_corale_1_1_colore_1_1_core_1_1_device.html#ac18cdbbb9c6d64ae7fac57e8f0d1d0b6">SetGuid</a>(Guid guid)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            DeleteCurrentEffect();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <a class="code" href="class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html">NativeWrapper</a>.<a class="code" href="class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html#a552b1354d7e38b1d609b289313df785d">SetEffect</a>(guid);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            CurrentEffectId = guid;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="class_corale_1_1_colore_1_1_core_1_1_device.html#ab15dbdf604c7b7b444753d22cb5fb43e">   65</a></span>&#160;        <span class="keyword">internal</span> <span class="keywordtype">void</span> <a class="code" href="class_corale_1_1_colore_1_1_core_1_1_device.html#ab15dbdf604c7b7b444753d22cb5fb43e">DeleteCurrentEffect</a>()</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordflow">if</span> (CurrentEffectId == Guid.Empty)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="class_corale_1_1_colore_1_1_core_1_1_device.html#ab15dbdf604c7b7b444753d22cb5fb43e">   73</a></span>&#160;        <span class="keyword">internal</span> <span class="keywordtype">void</span> <a class="code" href="class_corale_1_1_colore_1_1_core_1_1_device.html#ab15dbdf604c7b7b444753d22cb5fb43e">DeleteCurrentEffect</a>()</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordflow">if</span> (CurrentEffectId == Guid.Empty)</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <a class="code" href="class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html">NativeWrapper</a>.<a class="code" href="class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html#a9ad5384ee8bb9286fef79862e0064eca">DeleteEffect</a>(CurrentEffectId);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            CurrentEffectId = Guid.Empty;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <a class="code" href="class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html">NativeWrapper</a>.<a class="code" href="class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html#a9ad5384ee8bb9286fef79862e0064eca">DeleteEffect</a>(CurrentEffectId);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            CurrentEffectId = Guid.Empty;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
 <div class="ttc" id="namespace_system_html"><div class="ttname"><a href="namespace_system.html">System</a></div></div>
 <div class="ttc" id="namespace_corale_html"><div class="ttname"><a href="namespace_corale.html">Corale</a></div></div>
-<div class="ttc" id="interface_corale_1_1_colore_1_1_core_1_1_i_device_html"><div class="ttname"><a href="interface_corale_1_1_colore_1_1_core_1_1_i_device.html">Corale.Colore.Core.IDevice</a></div><div class="ttdoc">Interface for functionality common with all devices. </div><div class="ttdef"><b>Definition:</b> <a href="_i_device_8cs_source.html#l00040">IDevice.cs:40</a></div></div>
-<div class="ttc" id="class_corale_1_1_colore_1_1_core_1_1_device_html_ab15dbdf604c7b7b444753d22cb5fb43e"><div class="ttname"><a href="class_corale_1_1_colore_1_1_core_1_1_device.html#ab15dbdf604c7b7b444753d22cb5fb43e">Corale.Colore.Core.Device.DeleteCurrentEffect</a></div><div class="ttdeci">void DeleteCurrentEffect()</div><div class="ttdoc">Deletes the currently set effect. </div><div class="ttdef"><b>Definition:</b> <a href="_device_8cs_source.html#l00073">Device.cs:73</a></div></div>
-<div class="ttc" id="class_corale_1_1_colore_1_1_core_1_1_native_wrapper_html_a552b1354d7e38b1d609b289313df785d"><div class="ttname"><a href="class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html#a552b1354d7e38b1d609b289313df785d">Corale.Colore.Core.NativeWrapper.SetEffect</a></div><div class="ttdeci">static void SetEffect(Guid guid)</div><div class="ttdoc">Set effect. </div><div class="ttdef"><b>Definition:</b> <a href="_native_wrapper_8cs_source.html#l00478">NativeWrapper.cs:478</a></div></div>
-<div class="ttc" id="class_corale_1_1_colore_1_1_core_1_1_device_html_ac18cdbbb9c6d64ae7fac57e8f0d1d0b6"><div class="ttname"><a href="class_corale_1_1_colore_1_1_core_1_1_device.html#ac18cdbbb9c6d64ae7fac57e8f0d1d0b6">Corale.Colore.Core.Device.SetGuid</a></div><div class="ttdeci">void SetGuid(Guid guid)</div><div class="ttdoc">Updates the device to use the effect pointed to by the specified GUID. </div><div class="ttdef"><b>Definition:</b> <a href="_device_8cs_source.html#l00063">Device.cs:63</a></div></div>
-<div class="ttc" id="struct_corale_1_1_colore_1_1_core_1_1_color_html"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Corale.Colore.Core.Color</a></div><div class="ttdoc">Represents an RGB color. </div><div class="ttdef"><b>Definition:</b> <a href="_color_8cs_source.html#l00045">Color.cs:45</a></div></div>
-<div class="ttc" id="struct_corale_1_1_colore_1_1_core_1_1_color_html_a1cbdb6bc8c082f36f5c186e85e2ddb05"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_core_1_1_color.html#a1cbdb6bc8c082f36f5c186e85e2ddb05">Corale.Colore.Core.Color.Black</a></div><div class="ttdeci">static readonly Color Black</div><div class="ttdoc">Black color. </div><div class="ttdef"><b>Definition:</b> <a href="_color_8_defines_8cs_source.html#l00044">Color.Defines.cs:44</a></div></div>
-<div class="ttc" id="class_corale_1_1_colore_1_1_core_1_1_device_html"><div class="ttname"><a href="class_corale_1_1_colore_1_1_core_1_1_device.html">Corale.Colore.Core.Device</a></div><div class="ttdoc">Base class for devices, containing code common between all devices. </div><div class="ttdef"><b>Definition:</b> <a href="_device_8cs_source.html#l00038">Device.cs:38</a></div></div>
-<div class="ttc" id="class_corale_1_1_colore_1_1_core_1_1_device_html_a211d4f9e798aa29c08c1fce52346178c"><div class="ttname"><a href="class_corale_1_1_colore_1_1_core_1_1_device.html#a211d4f9e798aa29c08c1fce52346178c">Corale.Colore.Core.Device.Clear</a></div><div class="ttdeci">void Clear()</div><div class="ttdoc">Clears the current effect on the device. </div><div class="ttdef"><b>Definition:</b> <a href="_device_8cs_source.html#l00048">Device.cs:48</a></div></div>
-<div class="ttc" id="class_corale_1_1_colore_1_1_core_1_1_native_wrapper_html"><div class="ttname"><a href="class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html">Corale.Colore.Core.NativeWrapper</a></div><div class="ttdoc">Helper class to more easily make calls to native Chroma SDK functions. </div><div class="ttdef"><b>Definition:</b> <a href="_native_wrapper_8cs_source.html#l00044">NativeWrapper.cs:44</a></div></div>
-<div class="ttc" id="class_corale_1_1_colore_1_1_core_1_1_native_wrapper_html_a9ad5384ee8bb9286fef79862e0064eca"><div class="ttname"><a href="class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html#a9ad5384ee8bb9286fef79862e0064eca">Corale.Colore.Core.NativeWrapper.DeleteEffect</a></div><div class="ttdeci">static void DeleteEffect(Guid guid)</div><div class="ttdoc">Deletes an effect with the specified Guid. </div><div class="ttdef"><b>Definition:</b> <a href="_native_wrapper_8cs_source.html#l00446">NativeWrapper.cs:446</a></div></div>
+<div class="ttc" id="interface_corale_1_1_colore_1_1_core_1_1_i_device_html"><div class="ttname"><a href="interface_corale_1_1_colore_1_1_core_1_1_i_device.html">Corale.Colore.Core.IDevice</a></div><div class="ttdoc">Interface for functionality common with all devices. </div><div class="ttdef"><b>Definition:</b> <a href="_i_device_8cs_source.html#l00035">IDevice.cs:35</a></div></div>
+<div class="ttc" id="class_corale_1_1_colore_1_1_core_1_1_device_html_ab15dbdf604c7b7b444753d22cb5fb43e"><div class="ttname"><a href="class_corale_1_1_colore_1_1_core_1_1_device.html#ab15dbdf604c7b7b444753d22cb5fb43e">Corale.Colore.Core.Device.DeleteCurrentEffect</a></div><div class="ttdeci">void DeleteCurrentEffect()</div><div class="ttdoc">Deletes the currently set effect. </div><div class="ttdef"><b>Definition:</b> <a href="_device_8cs_source.html#l00065">Device.cs:65</a></div></div>
+<div class="ttc" id="class_corale_1_1_colore_1_1_core_1_1_native_wrapper_html_a552b1354d7e38b1d609b289313df785d"><div class="ttname"><a href="class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html#a552b1354d7e38b1d609b289313df785d">Corale.Colore.Core.NativeWrapper.SetEffect</a></div><div class="ttdeci">static void SetEffect(Guid guid)</div><div class="ttdoc">Set effect. </div><div class="ttdef"><b>Definition:</b> <a href="_native_wrapper_8cs_source.html#l00175">NativeWrapper.cs:175</a></div></div>
+<div class="ttc" id="class_corale_1_1_colore_1_1_core_1_1_device_html_ac18cdbbb9c6d64ae7fac57e8f0d1d0b6"><div class="ttname"><a href="class_corale_1_1_colore_1_1_core_1_1_device.html#ac18cdbbb9c6d64ae7fac57e8f0d1d0b6">Corale.Colore.Core.Device.SetGuid</a></div><div class="ttdeci">void SetGuid(Guid guid)</div><div class="ttdoc">Updates the device to use the effect pointed to by the specified GUID. </div><div class="ttdef"><b>Definition:</b> <a href="_device_8cs_source.html#l00055">Device.cs:55</a></div></div>
+<div class="ttc" id="struct_corale_1_1_colore_1_1_core_1_1_color_html"><div class="ttname"><a href="struct_corale_1_1_colore_1_1_core_1_1_color.html">Corale.Colore.Core.Color</a></div><div class="ttdoc">Represents an RGB color. </div><div class="ttdef"><b>Definition:</b> <a href="_color_8cs_source.html#l00037">Color.cs:37</a></div></div>
+<div class="ttc" id="class_corale_1_1_colore_1_1_core_1_1_device_html"><div class="ttname"><a href="class_corale_1_1_colore_1_1_core_1_1_device.html">Corale.Colore.Core.Device</a></div><div class="ttdoc">Base class for devices, containing code common between all devices. </div><div class="ttdef"><b>Definition:</b> <a href="_device_8cs_source.html#l00033">Device.cs:33</a></div></div>
+<div class="ttc" id="class_corale_1_1_colore_1_1_core_1_1_native_wrapper_html"><div class="ttname"><a href="class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html">Corale.Colore.Core.NativeWrapper</a></div><div class="ttdoc">Helper class to more easily make calls to native Chroma SDK functions. </div><div class="ttdef"><b>Definition:</b> <a href="_native_wrapper_8cs_source.html#l00038">NativeWrapper.cs:38</a></div></div>
+<div class="ttc" id="class_corale_1_1_colore_1_1_core_1_1_native_wrapper_html_a9ad5384ee8bb9286fef79862e0064eca"><div class="ttname"><a href="class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html#a9ad5384ee8bb9286fef79862e0064eca">Corale.Colore.Core.NativeWrapper.DeleteEffect</a></div><div class="ttdeci">static void DeleteEffect(Guid guid)</div><div class="ttdoc">Deletes an effect with the specified Guid. </div><div class="ttdef"><b>Definition:</b> <a href="_native_wrapper_8cs_source.html#l00143">NativeWrapper.cs:143</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_865a93a85313ae6b2503dfb6975d8750.html">Corale.Colore</a></li><li class="navelem"><a class="el" href="dir_b0277a4fdac946fbe1408f549d07635c.html">Core</a></li><li class="navelem"><a class="el" href="_device_8cs.html">Device.cs</a></li>
-    <li class="footer">Generated on Thu Nov 26 2015 19:30:35 for Colore by
+    <li class="footer">Generated on Tue Jul 26 2016 19:15:02 for Colore by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.10 </li>
   </ul>
