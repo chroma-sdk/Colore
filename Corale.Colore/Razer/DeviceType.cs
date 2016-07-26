@@ -1,6 +1,6 @@
 ﻿// ---------------------------------------------------------------------------------------
 // <copyright file="DeviceType.cs" company="Corale">
-//     Copyright © 2015 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -42,24 +42,36 @@ namespace Corale.Colore.Razer
         /// A mouse device.
         /// </summary>
         [PublicAPI]
-        Mouse,
+        Mouse = 2,
 
         /// <summary>
         /// A headset device.
         /// </summary>
         [PublicAPI]
-        Headset,
+        Headset = 3,
 
         /// <summary>
         /// A mouse pad.
         /// </summary>
         [PublicAPI]
-        Mousepad,
+        Mousepad = 4,
 
         /// <summary>
         /// A keypad.
         /// </summary>
         [PublicAPI]
-        Keypad
+        Keypad = 5,
+
+        /// <summary>
+        /// System device.
+        /// </summary>
+        [PublicAPI]
+        System = 6,
+
+        /// <summary>
+        /// Invalid device.
+        /// </summary>
+        [PublicAPI]
+        Invalid
     }
 }

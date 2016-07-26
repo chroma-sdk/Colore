@@ -88,20 +88,12 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\packages\log4net.2.0.5\lib\net35-full\log4net.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ColoreException.cs" />
@@ -109,6 +101,7 @@
     <Compile Include="Core\Color.cs" />
     <Compile Include="Core\Color.Defines.cs" />
     <Compile Include="Core\Device.cs" />
+    <Compile Include="Core\RegistryHelper.cs" />
     <Compile Include="EnvironmentHelper.cs" />
     <Compile Include="Core\GenericDevice.cs" />
     <Compile Include="Core\Headset.cs" />
@@ -127,6 +120,11 @@
     <Compile Include="Core\NativeWrapper.cs" />
     <Compile Include="Events\ApplicationStateEventArgs.cs" />
     <Compile Include="Events\SdkSupportEventArgs.cs" />
+    <Compile Include="Logging\ILog.cs" />
+    <Compile Include="Logging\Logger.cs" />
+    <Compile Include="Logging\LogLevel.cs" />
+    <Compile Include="Logging\LogManager.cs" />
+    <Compile Include="Logging\TraceLogger.cs" />
     <Compile Include="Native\Kernel32\NativeMethods.cs" />
     <Compile Include="Annotations.cs" />
     <Compile Include="Razer\Constants.cs" />
@@ -134,6 +132,19 @@
     <Compile Include="Razer\Devices.cs" />
     <Compile Include="Razer\DeviceType.cs" />
     <Compile Include="Razer\Effect.cs" />
+    <Compile Include="Razer\Effects\Blinking.cs" />
+    <Compile Include="Razer\Effects\Breathing.cs" />
+    <Compile Include="Razer\Effects\BreathingType.cs" />
+    <Compile Include="Razer\Effects\Custom.cs" />
+    <Compile Include="Razer\Effects\Direction.cs" />
+    <Compile Include="Razer\Effects\Duration.cs" />
+    <Compile Include="Razer\Effects\None.cs" />
+    <Compile Include="Razer\Effects\Reactive.cs" />
+    <Compile Include="Razer\Effects\SpectrumCycling.cs" />
+    <Compile Include="Razer\Effects\Starlight.cs" />
+    <Compile Include="Razer\Effects\StarlightType.cs" />
+    <Compile Include="Razer\Effects\Static.cs" />
+    <Compile Include="Razer\Effects\Wave.cs" />
     <Compile Include="Razer\Headset\Effects\Breathing.cs" />
     <Compile Include="Razer\Headset\Effects\Effect.cs" />
     <Compile Include="Razer\Headset\Effects\Static.cs" />
@@ -146,6 +157,8 @@
     <Compile Include="Razer\Keyboard\Effects\Duration.cs" />
     <Compile Include="Razer\Keyboard\Effects\Effect.cs" />
     <Compile Include="Razer\Keyboard\Effects\Reactive.cs" />
+    <Compile Include="Razer\Keyboard\Effects\Starlight.cs" />
+    <Compile Include="Razer\Keyboard\Effects\StarlightType.cs" />
     <Compile Include="Razer\Keyboard\Effects\Static.cs" />
     <Compile Include="Razer\Keyboard\Effects\Wave.cs" />
     <Compile Include="Razer\Keyboard\Key.cs" />
@@ -191,6 +204,7 @@
     </Compile>
     <Compile Include="Razer\Result.cs" />
     <Compile Include="Razer\UnsupportedDeviceException.cs" />
+    <Compile Include="SdkVersion.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Events\DeviceAccessEventArgs.cs" />
@@ -202,10 +216,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0-rc2\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
-    <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0-rc2\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
-    <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0-rc2\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

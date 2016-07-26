@@ -1,6 +1,6 @@
 ﻿// ---------------------------------------------------------------------------------------
 // <copyright file="Custom.cs" company="Corale">
-//     Copyright © 2015 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -76,6 +76,16 @@ namespace Corale.Colore.Razer.Mouse.Effects
 
             for (var index = 0; index < Constants.MaxLeds; index++)
                 _colors[index] = colors[index];
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Custom" /> struct
+        /// with the colors copied from another struct of the same type.
+        /// </summary>
+        /// <param name="other">The struct to copy data from.</param>
+        public Custom(Custom other)
+            : this(other._colors)
+        {
         }
 
         /// <summary>
@@ -170,6 +180,16 @@ namespace Corale.Colore.Razer.Mouse.Effects
         public static Custom Create()
         {
             return new Custom(Color.Black);
+        }
+
+        /// <summary>
+        /// Returns a copy of this struct.
+        /// </summary>
+        /// <returns>A copy of this struct.</returns>
+        [PublicAPI]
+        public Custom Clone()
+        {
+            return new Custom(this);
         }
 
         /// <summary>

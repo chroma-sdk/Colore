@@ -1,6 +1,6 @@
 ﻿// ---------------------------------------------------------------------------------------
 // <copyright file="MouseViewModel.cs" company="Corale">
-//     Copyright © 2015 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -32,9 +32,14 @@ namespace Corale.Colore.Tester.ViewModels
     using System.Windows;
     using System.Windows.Input;
     using System.Windows.Media;
+
     using Classes;
+
     using Razer.Mouse;
     using Razer.Mouse.Effects;
+
+    using Wpf;
+
     using Duration = Razer.Mouse.Effects.Duration;
 
     public class MouseViewModel : INotifyPropertyChanged
@@ -53,8 +58,8 @@ namespace Corale.Colore.Tester.ViewModels
             SelectedGridLed = GridLed.Logo;
             SelectedReactiveDuration = Duration.Long;
             SelectedWaveDirection = Direction.FrontToBack;
-            ColorOne.Color = Core.Color.Red;
-            ColorTwo.Color = Core.Color.Blue;
+            ColorOne.Color = Core.Color.Red.ToWpfColor();
+            ColorTwo.Color = Core.Color.Blue.ToWpfColor();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -125,11 +130,18 @@ namespace Corale.Colore.Tester.ViewModels
             }
         }
 
-        public ICommand AllCommand => new DelegateCommand(() => Core.Mouse.Instance.SetAll(ColorOne.Color));
+        public ICommand AllCommand
+            => new DelegateCommand(() => Core.Mouse.Instance.SetAll(ColorOne.Color.ToColoreColor()));
 
-        public ICommand BreathingOneColorCommand => new DelegateCommand(() => Core.Mouse.Instance.SetBreathing(ColorOne.Color, SelectedLed));
+        public ICommand BreathingOneColorCommand
+            => new DelegateCommand(() => Core.Mouse.Instance.SetBreathing(ColorOne.Color.ToColoreColor(), SelectedLed));
 
-        public ICommand BreathingTwoColorCommand => new DelegateCommand(() => Core.Mouse.Instance.SetBreathing(ColorOne.Color, ColorTwo.Color));
+        public ICommand BreathingTwoColorCommand
+            =>
+                new DelegateCommand(
+                    () =>
+                        Core.Mouse.Instance.SetBreathing(ColorOne.Color.ToColoreColor(), ColorTwo.Color.ToColoreColor()))
+            ;
 
         public ICommand BreathingRandomColorCommand
             => new DelegateCommand(() => Core.Mouse.Instance.SetBreathing(SelectedLed));
@@ -138,14 +150,18 @@ namespace Corale.Colore.Tester.ViewModels
 
         public ICommand WaveCommand => new DelegateCommand(SetWaveEffect);
 
-        public ICommand StaticCommand => new DelegateCommand(() => Core.Mouse.Instance.SetStatic(new Static(SelectedLed, ColorOne.Color)));
+        public ICommand StaticCommand
+            =>
+                new DelegateCommand(
+                    () => Core.Mouse.Instance.SetStatic(new Static(SelectedLed, ColorOne.Color.ToColoreColor())));
 
         public ICommand GridLedCommand
             => new DelegateCommand(SetGridLedEffect);
 
         public ICommand LedCommand => new DelegateCommand(SetLedEffect);
 
-        public ICommand BlinkingCommand => new DelegateCommand(() => Core.Mouse.Instance.SetBlinking(ColorOne.Color, SelectedLed));
+        public ICommand BlinkingCommand
+            => new DelegateCommand(() => Core.Mouse.Instance.SetBlinking(ColorOne.Color.ToColoreColor(), SelectedLed));
 
         public ICommand ClearCommand => new DelegateCommand(() => Core.Mouse.Instance.Clear());
 
@@ -167,7 +183,7 @@ namespace Corale.Colore.Tester.ViewModels
         {
             try
             {
-                Core.Mouse.Instance.SetReactive(SelectedReactiveDuration, ColorOne.Color, SelectedLed);
+                Core.Mouse.Instance.SetReactive(SelectedReactiveDuration, ColorOne.Color.ToColoreColor(), SelectedLed);
             }
             catch (Exception ex)
             {
@@ -191,7 +207,7 @@ namespace Corale.Colore.Tester.ViewModels
         {
             try
             {
-                Core.Mouse.Instance[SelectedGridLed] = ColorOne.Color;
+                Core.Mouse.Instance[SelectedGridLed] = ColorOne.Color.ToColoreColor();
             }
             catch (Exception ex)
             {
@@ -203,7 +219,7 @@ namespace Corale.Colore.Tester.ViewModels
         {
             try
             {
-                Core.Mouse.Instance[SelectedLed] = ColorOne.Color;
+                Core.Mouse.Instance[SelectedLed] = ColorOne.Color.ToColoreColor();
             }
             catch (Exception ex)
             {

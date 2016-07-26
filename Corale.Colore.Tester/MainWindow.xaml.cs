@@ -1,6 +1,6 @@
 ﻿// ---------------------------------------------------------------------------------------
 // <copyright file="MainWindow.xaml.cs" company="Corale">
-//     Copyright © 2015 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -28,6 +28,8 @@ namespace Corale.Colore.Tester
     using System.Text.RegularExpressions;
     using System.Windows.Input;
 
+    using Corale.Colore.Core;
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -36,6 +38,9 @@ namespace Corale.Colore.Tester
         public MainWindow()
         {
             InitializeComponent();
+
+            // Update the window title to include SDK version
+            Title = $"{Title} | SDK v{Chroma.Instance.SdkVersion}";
         }
 
         private void TextValidation(object sender, TextCompositionEventArgs e)

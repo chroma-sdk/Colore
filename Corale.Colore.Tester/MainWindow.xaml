@@ -19,10 +19,10 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="40*" />
                         <ColumnDefinition Width="24*" />
-                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="5*" />
                     </Grid.ColumnDefinitions>
                     <StackPanel HorizontalAlignment="Left" Height="241" VerticalAlignment="Top" Grid.Column="0"
-                                Width="243">
+                                Width="350">
                         <Label Content="Simple Effects" HorizontalAlignment="Center" FontSize="16px" />
                         <Button x:Name="SetAllButton" Content="SetAll" VerticalAlignment="Top" Width="75"
                                 Margin="0,6,0,0" Command="{Binding AllCommand, Mode=OneWay}" />
@@ -42,10 +42,20 @@
                                       ItemsSource="{Binding WaveDirectionValues}"
                                       SelectedItem="{Binding SelectedWaveDirection, Mode=TwoWay}" />
                         </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,6,0,0" HorizontalAlignment="Center">
+                            <Button x:Name="SetStarlightButton" Content="SetStarlight" VerticalAlignment="Top" Width="75"
+                                    Command="{Binding StarlightCommand, Mode=OneWay}" />
+                            <ComboBox Height="22" Margin="8,0,0,0" Width="98"
+                                      ItemsSource="{Binding StarlightTypeValues}"
+                                      SelectedItem="{Binding SelectedStarlightType, Mode=TwoWay}" />
+                            <ComboBox Height="22" Margin="8,0,0,0" Width="98"
+                                      ItemsSource="{Binding StarlightDurationValues}"
+                                      SelectedItem="{Binding SelectedStarlightDuration, Mode=TwoWay}" />
+                        </StackPanel>
                         <Button x:Name="SetKeyboarsStaticButton" Content="SetStatic" VerticalAlignment="Top" Width="75"
-                                Margin="0,6,0,0" Command="{Binding StaticCommand, Mode=OneWay}" />
+                                Margin="84,6,84,0" Command="{Binding StaticCommand, Mode=OneWay}" />
                         <Button x:Name="ClearButton" Content="Clear" VerticalAlignment="Top" Width="75"
-                                Margin="0,6,0,0" Command="{Binding ClearCommand, Mode=OneWay}" />
+                                Margin="84,6,84,0" Command="{Binding ClearCommand, Mode=OneWay}" />
                     </StackPanel>
                     <StackPanel Height="241" VerticalAlignment="Top" Margin="10,0" Grid.Column="1"
                                 Orientation="Vertical">
@@ -154,7 +164,7 @@
                                                   SelectedColor="{Binding ColorTwo.Color}" ShowAvailableColors="False"
                                                   ShowRecentColors="True" />
                             </StackPanel>
-                           
+
                             <Label Content="Led/Position Effects" HorizontalAlignment="Center" FontSize="16px" />
                             <StackPanel Height="40" VerticalAlignment="Top" Margin="10,0"
                                         Orientation="Horizontal">

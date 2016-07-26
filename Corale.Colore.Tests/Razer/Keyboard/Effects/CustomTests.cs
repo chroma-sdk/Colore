@@ -1,6 +1,6 @@
 ﻿// ---------------------------------------------------------------------------------------
 // <copyright file="CustomTests.cs" company="Corale">
-//     Copyright © 2015 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -37,7 +37,7 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
     public class CustomTests
     {
         [Test]
-        public void ShouldThrowWhenOutOfRangeGet()
+        public void ShouldThrowWhenOutOfRange2DGet()
         {
             var grid = Custom.Create();
 
@@ -78,7 +78,7 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
         }
 
         [Test]
-        public void ShouldThrowWhenOutOfRangeSet()
+        public void ShouldThrowWhenOutOfRange2DSet()
         {
             var grid = Custom.Create();
 
@@ -116,35 +116,50 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
         }
 
         [Test]
-        public void ShouldThrowWhenInvalidRowCount()
+        public void ShouldThrowWhenOutOfRange1DGet()
         {
-            // We don't need to set up the columns as the code should throw before
-            // it reaches the point of iterating rows
-            var arr = new Color[2][];
+            var grid = Custom.Create();
 
             // ReSharper disable once NotAccessedVariable
-            Custom dummy;
+            Color dummy;
 
             Assert.That(
-                () => dummy = new Custom(arr),
-                Throws.ArgumentException.With.Property("ParamName").EqualTo("colors"));
+                () => dummy = grid[-1],
+                Throws.InstanceOf<ArgumentOutOfRangeException>()
+                      .With.Property("ParamName")
+                      .EqualTo("index")
+                      .And.Property("ActualValue")
+                      .EqualTo(-1));
+
+            Assert.That(
+                () => dummy = grid[Constants.MaxKeys],
+                Throws.InstanceOf<ArgumentOutOfRangeException>()
+                      .With.Property("ParamName")
+                      .EqualTo("index")
+                      .And.Property("ActualValue")
+                      .EqualTo(Constants.MaxKeys));
         }
 
         [Test]
-        public void ShouldThrowWhenInvalidColumnCount()
+        public void ShouldThrowWhenOutOfRange1DSet()
         {
-            var arr = new Color[Constants.MaxRows][];
-
-            // We only need to populate one of the rows, as the
-            // code shouldn't check further anyway.
-            arr[0] = new Color[2];
-
-            // ReSharper disable once NotAccessedVariable
-            Custom dummy;
+            var grid = Custom.Create();
 
             Assert.That(
-                () => dummy = new Custom(arr),
-                Throws.ArgumentException.With.Property("ParamName").EqualTo("colors"));
+                () => grid[-1] = Color.Red,
+                Throws.InstanceOf<ArgumentOutOfRangeException>()
+                      .With.Property("ParamName")
+                      .EqualTo("index")
+                      .And.Property("ActualValue")
+                      .EqualTo(-1));
+
+            Assert.That(
+                () => grid[Constants.MaxKeys] = Color.Red,
+                Throws.InstanceOf<ArgumentOutOfRangeException>()
+                      .With.Property("ParamName")
+                      .EqualTo("index")
+                      .And.Property("ActualValue")
+                      .EqualTo(Constants.MaxKeys));
         }
 
         [Test]
@@ -168,28 +183,6 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
             {
                 for (var column = 0; column < Constants.MaxColumns; column++)
                     Assert.That(grid[row, column], Is.EqualTo(Color.Red));
-            }
-        }
-
-        [Test]
-        public void ShouldSetProperColorsWithArrCtor()
-        {
-            var arr = new Color[Constants.MaxRows][];
-
-            for (var row = 0; row < Constants.MaxRows; row++)
-                arr[row] = new Color[Constants.MaxColumns];
-
-            // Set some arbitrary colors to test
-            arr[0][5] = Color.Purple;
-            arr[2][3] = Color.Pink;
-            arr[4][0] = Color.Blue;
-
-            var grid = new Custom(arr);
-
-            for (var row = 0; row < Constants.MaxRows; row++)
-            {
-                for (var col = 0; col < Constants.MaxColumns; col++)
-                    Assert.That(grid[row, col], Is.EqualTo(arr[row][col]));
             }
         }
 
@@ -237,27 +230,7 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
         }
 
         [Test]
-        public void ShouldEqualIdenticalArray()
-        {
-            var grid = new Custom(Color.Red);
-            var arr = new Color[Constants.MaxRows][];
-
-            // Populate the 2D array
-            for (var row = 0; row < Constants.MaxRows; row++)
-            {
-                arr[row] = new Color[Constants.MaxColumns];
-                for (var col = 0; col < Constants.MaxColumns; col++)
-                    arr[row][col] = Color.Red;
-            }
-
-            Assert.True(grid == arr);
-            Assert.False(grid != arr);
-            Assert.True(grid.Equals(arr));
-            Assert.AreEqual(grid, arr);
-        }
-
-        [Test]
-        public void ShouldNotEqualDifferentArray()
+        public void ShouldNotEqualDifferent2DArray()
         {
             var grid = new Custom(Color.Pink);
             var arr = new Color[Constants.MaxRows][];
@@ -277,7 +250,7 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
         }
 
         [Test]
-        public void ShouldNotEqualArrayWithInvalidRowCount()
+        public void ShouldNotEqual2DArrayWithInvalidRowCount()
         {
             var grid = Custom.Create();
             var arr = new Color[2][];
@@ -289,7 +262,7 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
         }
 
         [Test]
-        public void ShouldNotEqualArrayWithInvalidColumnCount()
+        public void ShouldNotEqual2DArrayWithInvalidColumnCount()
         {
             var grid = Custom.Create();
             var arr = new Color[Constants.MaxRows][];
@@ -320,22 +293,39 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
 
             Assert.False(grid == null);
             Assert.True(grid != null);
-            Assert.False(grid.Equals(null));
             Assert.AreNotEqual(grid, null);
         }
 
         [Test]
-        public void ShouldGetWithIndexIndexer()
+        public void ShouldGetWithGridIndexer()
         {
             var grid = new Custom(Color.Red);
             Assert.AreEqual(Color.Red, grid[3, 3]);
         }
 
         [Test]
-        public void ShouldGetWithKeyIndexer()
+        public void ShouldGetWithIndexIndexer()
         {
             var grid = new Custom(Color.Red);
+            Assert.AreEqual(Color.Red, grid[3]);
+        }
+
+        [Test]
+        public void ShouldGetWithKeyIndexer()
+        {
+            var grid = Custom.Create();
+            grid[Key.Escape] = Color.Red;
             Assert.AreEqual(Color.Red, grid[Key.Escape]);
+        }
+
+        [Test]
+        public void ShouldSetWithGridIndexer()
+        {
+            var grid = Custom.Create();
+
+            grid[5, 5] = Color.Red;
+
+            Assert.AreEqual(Color.Red, grid[5, 5]);
         }
 
         [Test]
@@ -343,9 +333,9 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
         {
             var grid = Custom.Create();
 
-            grid[5, 5] = Color.Red;
+            grid[5] = Color.Red;
 
-            Assert.AreEqual(Color.Red, grid[5, 5]);
+            Assert.AreEqual(Color.Red, grid[5]);
         }
 
         [Test]
@@ -356,6 +346,26 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
             grid[Key.Escape] = Color.Red;
 
             Assert.AreEqual(Color.Red, grid[Key.Escape]);
+        }
+
+        [Test]
+        public void ClonedStructShouldBeIdentical()
+        {
+            var original = new Custom(Color.Red);
+            var clone = original.Clone();
+
+            Assert.That(clone, Is.EqualTo(original));
+        }
+
+        [Test]
+        public void ClonedStructShouldBeIndependent()
+        {
+            var original = new Custom(Color.Red);
+            var clone = original.Clone();
+
+            clone.Set(Color.Blue);
+
+            Assert.That(clone, Is.Not.EqualTo(original));
         }
     }
 }

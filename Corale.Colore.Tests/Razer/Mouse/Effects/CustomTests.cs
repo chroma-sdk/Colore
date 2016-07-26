@@ -1,5 +1,6 @@
-﻿// <copyright file="CustomTests.cs" company="Corale">
-//     Copyright © 2015 by Adam Hellberg and Brandon Scott.
+﻿// ---------------------------------------------------------------------------------------
+// <copyright file="CustomTests.cs" company="Corale">
+//     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -20,6 +21,7 @@
 //
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
+// ---------------------------------------------------------------------------------------
 
 namespace Corale.Colore.Tests.Razer.Mouse.Effects
 {
@@ -45,18 +47,18 @@ namespace Corale.Colore.Tests.Razer.Mouse.Effects
             Assert.That(
                 () => dummy = effect[-1],
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
-                    .With.Property("ParamName")
-                    .EqualTo("led")
-                    .And.Property("ActualValue")
-                    .EqualTo(-1));
+                      .With.Property("ParamName")
+                      .EqualTo("led")
+                      .And.Property("ActualValue")
+                      .EqualTo(-1));
 
             Assert.That(
                 () => dummy = effect[Constants.MaxLeds],
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
-                    .With.Property("ParamName")
-                    .EqualTo("led")
-                    .And.Property("ActualValue")
-                    .EqualTo(Constants.MaxLeds));
+                      .With.Property("ParamName")
+                      .EqualTo("led")
+                      .And.Property("ActualValue")
+                      .EqualTo(Constants.MaxLeds));
         }
 
         [Test]
@@ -67,18 +69,18 @@ namespace Corale.Colore.Tests.Razer.Mouse.Effects
             Assert.That(
                 () => effect[-1] = Color.Red,
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
-                    .With.Property("ParamName")
-                    .EqualTo("led")
-                    .And.Property("ActualValue")
-                    .EqualTo(-1));
+                      .With.Property("ParamName")
+                      .EqualTo("led")
+                      .And.Property("ActualValue")
+                      .EqualTo(-1));
 
             Assert.That(
                 () => effect[Constants.MaxLeds] = Color.Red,
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
-                    .With.Property("ParamName")
-                    .EqualTo("led")
-                    .And.Property("ActualValue")
-                    .EqualTo(Constants.MaxLeds));
+                      .With.Property("ParamName")
+                      .EqualTo("led")
+                      .And.Property("ActualValue")
+                      .EqualTo(Constants.MaxLeds));
         }
 
         [Test]
@@ -287,6 +289,26 @@ namespace Corale.Colore.Tests.Razer.Mouse.Effects
             Assert.True(effect != null);
             Assert.False(effect.Equals(null));
             Assert.AreNotEqual(effect, null);
+        }
+
+        [Test]
+        public void ClonedStructShouldBeIdentical()
+        {
+            var original = new Custom(Color.Red);
+            var clone = original.Clone();
+
+            Assert.That(clone, Is.EqualTo(original));
+        }
+
+        [Test]
+        public void ClonedStructShouldBeIndependent()
+        {
+            var original = new Custom(Color.Red);
+            var clone = original.Clone();
+
+            clone.Set(Color.Blue);
+
+            Assert.That(clone, Is.Not.EqualTo(original));
         }
     }
 }

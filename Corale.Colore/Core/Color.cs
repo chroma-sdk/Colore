@@ -1,6 +1,6 @@
 ﻿// ---------------------------------------------------------------------------------------
 // <copyright file="Color.cs" company="Corale">
-//     Copyright © 2015 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -30,115 +30,93 @@ namespace Corale.Colore.Core
 
     using Corale.Colore.Annotations;
 
-    using SystemColor = System.Drawing.Color;
-    using WpfColor = System.Windows.Media.Color;
-
     /// <summary>
     /// Represents an RGB color.
     /// </summary>
     [StructLayout(LayoutKind.Sequential, Size = sizeof(uint))]
-    public partial struct Color : IEquatable<Color>, IEquatable<uint>, IEquatable<SystemColor>, IEquatable<WpfColor>
+    public partial struct Color : IEquatable<Color>, IEquatable<uint>
     {
         /// <summary>
-        /// Internal color value.
-        /// </summary>
-        /// <remarks>
-        /// Format: <c>0xAABBGGRR</c>.
-        /// </remarks>
-        private readonly uint _value;
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="Color" /> struct using an integer
-        /// color value in the format <c>0xAABBGGRR</c>. Where the alpha component ranges
-        /// from <c>0x00</c> (fully transparent) to <c>0xFF</c> (fully opaque).
+        /// color value in the format <c>0xKKBBGGRR</c>.
         /// </summary>
         /// <param name="value">Value to create the color from.</param>
         [PublicAPI]
         public Color(uint value)
         {
-            _value = value;
+            Value = value;
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Color" /> struct using three
-        /// distinct R, G, B, and A (optional) byte values. An alpha value of <c>0</c>
-        /// is treated as fully opaque.
+        /// distinct R, G, and B byte values.
         /// </summary>
         /// <param name="red">The red component.</param>
         /// <param name="green">The green component.</param>
         /// <param name="blue">The blue component.</param>
-        /// <param name="alpha">The alpha component (<c>0</c> = fully opaque).</param>
         [PublicAPI]
-        public Color(byte red, byte green, byte blue, byte alpha = 255)
-            : this(red + ((uint)green << 8) + ((uint)blue << 16) + ((uint)alpha << 24))
+        public Color(byte red, byte green, byte blue)
+            : this(red + ((uint)green << 8) + ((uint)blue << 16))
         {
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Color" /> struct using
         /// three <see cref="float" /> (<c>float</c>) values for the
-        /// R, G, B, and A (optional) channels.
+        /// R, G, and B channels.
         /// </summary>
         /// <param name="red">The red component (<c>0.0f</c> to <c>1.0f</c>, inclusive).</param>
         /// <param name="green">The green component (<c>0.0f</c> to <c>1.0f</c>, inclusive).</param>
         /// <param name="blue">The blue component (<c>0.0f</c> to <c>1.0f</c>, inclusive).</param>
-        /// <param name="alpha">The alpha component (<c>0.0f</c> to <c>1.0f</c>, inclusive, <c>0.0f</c> = fully opaque).</param>
         /// <remarks>
         /// Each parameter value must be between <c>0.0f</c> and <c>1.0f</c> (inclusive).
         /// </remarks>
         [PublicAPI]
-        public Color(float red, float green, float blue, float alpha = 1.0f)
-            : this((byte)(red * 255), (byte)(green * 255), (byte)(blue * 255), (byte)(alpha * 255))
+        public Color(float red, float green, float blue)
+            : this((byte)(red * 255), (byte)(green * 255), (byte)(blue * 255))
         {
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Color" /> struct using
-        /// three <see cref="double" /> values for the R, G, B, and A (optional) channels.
+        /// three <see cref="double" /> values for the R, G, and B channels.
         /// </summary>
         /// <param name="red">The red component (<c>0.0</c> to <c>1.0</c>, inclusive).</param>
         /// <param name="green">The green component (<c>0.0</c> to <c>1.0</c>, inclusive).</param>
         /// <param name="blue">The blue component (<c>0.0</c> to <c>1.0</c>, inclusive).</param>
-        /// <param name="alpha">The alpha component (<c>0.0</c> to <c>1.0</c>, inclusive, <c>0.0</c> = fully opaque).</param>
         /// <remarks>
         /// Each parameter value must be between <c>0.0</c> and <c>1.0</c> (inclusive).
         /// </remarks>
         [PublicAPI]
-        public Color(double red, double green, double blue, double alpha = 1.0)
-            : this((byte)(red * 255), (byte)(green * 255), (byte)(blue * 255), (byte)(alpha * 255))
+        public Color(double red, double green, double blue)
+            : this((byte)(red * 255), (byte)(green * 255), (byte)(blue * 255))
         {
         }
-
-        /// <summary>
-        /// Gets the alpha component of the color as a byte.
-        /// </summary>
-        [PublicAPI]
-        public byte A => (byte)((_value >> 24) & 0xFF);
 
         /// <summary>
         /// Gets the blue component of the color as a byte.
         /// </summary>
         [PublicAPI]
-        public byte B => (byte)((_value >> 16) & 0xFF);
+        public byte B => (byte)((Value >> 16) & 0xFF);
 
         /// <summary>
         /// Gets the green component of the color as a byte.
         /// </summary>
         [PublicAPI]
-        public byte G => (byte)((_value >> 8) & 0xFF);
+        public byte G => (byte)((Value >> 8) & 0xFF);
 
         /// <summary>
         /// Gets the red component of the color as a byte.
         /// </summary>
         [PublicAPI]
-        public byte R => (byte)(_value & 0xFF);
+        public byte R => (byte)(Value & 0xFF);
 
         /// <summary>
         /// Gets the unsigned integer representing
-        /// the color. On the form <c>0xAABBGGRR</c>.
+        /// the color. On the form <c>0xKKBBGGRR</c>.
         /// </summary>
         [PublicAPI]
-        public uint Value => _value;
+        public uint Value { get; }
 
         /// <summary>
         /// Converts a <see cref="Color" /> struct to a <see cref="uint" />.
@@ -148,7 +126,7 @@ namespace Corale.Colore.Core
         /// <remarks>The returned <see cref="uint" /> has a format of <c>0xAABBGGRR</c>.</remarks>
         public static implicit operator uint(Color color)
         {
-            return color._value;
+            return color.Value;
         }
 
         /// <summary>
@@ -160,56 +138,6 @@ namespace Corale.Colore.Core
         public static implicit operator Color(uint value)
         {
             return new Color(value);
-        }
-
-        /// <summary>
-        /// Converts a <see cref="Color" /> struct to a <see cref="System.Drawing.Color" /> struct.
-        /// </summary>
-        /// <param name="color">The <see cref="Color" /> to convert.</param>
-        /// <returns>
-        /// An instance of <see cref="System.Drawing.Color" /> representing the
-        /// value of the <paramref name="color" /> argument.
-        /// </returns>
-        public static implicit operator SystemColor(Color color)
-        {
-            return SystemColor.FromArgb(color.A, color.R, color.G, color.B);
-        }
-
-        /// <summary>
-        /// Converts a <see cref="System.Drawing.Color" /> struct to a <see cref="Color" /> struct.
-        /// </summary>
-        /// <param name="color">The <see cref="System.Drawing.Color" /> to convert.</param>
-        /// <returns>
-        /// An instance of <see cref="Color" /> representing the value of the <paramref name="color" /> argument.
-        /// </returns>
-        public static implicit operator Color(SystemColor color)
-        {
-            return FromSystemColor(color);
-        }
-
-        /// <summary>
-        /// Converts a <see cref="Color" /> struct to a <see cref="System.Windows.Media.Color" /> struct.
-        /// </summary>
-        /// <param name="color">The <see cref="Color" /> to convert.</param>
-        /// <returns>
-        /// An instance of <see cref="System.Windows.Media.Color" /> representing the
-        /// value of the <paramref name="color" /> argument.
-        /// </returns>
-        public static implicit operator WpfColor(Color color)
-        {
-            return WpfColor.FromArgb(color.A, color.R, color.G, color.B);
-        }
-
-        /// <summary>
-        /// Converts a <see cref="System.Windows.Media.Color" /> struct to a <see cref="Color" /> struct.
-        /// </summary>
-        /// <param name="color">The <see cref="System.Windows.Media.Color" /> to convert.</param>
-        /// <returns>
-        /// An instance of <see cref="Color" /> representing the value of the <paramref name="color" /> argument.
-        /// </returns>
-        public static implicit operator Color(WpfColor color)
-        {
-            return FromWpfColor(color);
         }
 
         /// <summary>
@@ -235,44 +163,6 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Creates a new <see cref="Color" /> from the source
-        /// <see cref="System.Drawing.Color" />.
-        /// </summary>
-        /// <param name="source">The source object to construct color from.</param>
-        /// <returns>A new instance of the <see cref="Color" /> struct.</returns>
-        [PublicAPI]
-        public static Color FromSystemColor(SystemColor source)
-        {
-            return new Color(source.R, source.G, source.B, source.A);
-        }
-
-        /// <summary>
-        /// Creates a new <see cref="Color" /> from the source
-        /// <see cref="System.Windows.Media.Color" />.
-        /// </summary>
-        /// <param name="source">The source object to construct color from.</param>
-        /// <returns>A new instance of the <see cref="Color" /> struct.</returns>
-        [PublicAPI]
-        public static Color FromWpfColor(WpfColor source)
-        {
-            return new Color(source.R, source.G, source.B, source.A);
-        }
-
-        /// <summary>
-        /// Creates a new <see cref="Color" /> from an ARGB integer value
-        /// in the format of <c>0xAARRGGBB</c> where the alpha component
-        /// ranges from <c>0x00</c> (fully transparent) to <c>0xFF</c> (fully opaque).
-        /// </summary>
-        /// <param name="value">The ARGB value to convert from.</param>
-        /// <returns>A new instance of the <see cref="Color" /> struct.</returns>
-        [PublicAPI]
-        public static Color FromArgb(uint value)
-        {
-            var abgr = (value & 0xFF00FF00) | ((value & 0xFF0000) >> 16) | ((value & 0xFF) << 16);
-            return new Color(abgr);
-        }
-
-        /// <summary>
         /// Creates a new <see cref="Color" /> from an RGB integer value
         /// in the format of <c>0xRRGGBB</c>.
         /// </summary>
@@ -281,8 +171,7 @@ namespace Corale.Colore.Core
         [PublicAPI]
         public static Color FromRgb(uint value)
         {
-            var abgr = 0xFF000000 | ((value & 0xFF0000) >> 16) | (value & 0xFF00) | ((value & 0xFF) << 16);
-            return new Color(abgr);
+            return new Color(((value & 0xFF0000) >> 16) | (value & 0xFF00) | ((value & 0xFF) << 16));
         }
 
         /// <summary>
@@ -302,12 +191,6 @@ namespace Corale.Colore.Core
             if (other is uint)
                 return Equals((uint)other);
 
-            if (other is SystemColor)
-                return Equals((SystemColor)other);
-
-            if (other is WpfColor)
-                return Equals((WpfColor)other);
-
             return false;
         }
 
@@ -317,9 +200,13 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="other">The <see cref="Color" /> to check equality against.</param>
         /// <returns><c>true</c> of the two are equal, false otherwise.</returns>
+        /// <remarks>
+        /// Only compares the lower 32 bits of each color value, in order to
+        /// be able to compare a keymode color to a non-keymode color.
+        /// </remarks>
         public bool Equals(Color other)
         {
-            return _value.Equals(other._value);
+            return Value.Equals(other.Value);
         }
 
         /// <summary>
@@ -328,33 +215,13 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="other">The <see cref="uint" /> to check equality against.</param>
         /// <returns><c>true</c> if the two are equal, <c>false</c> otherwise.</returns>
+        /// <remarks>
+        /// Only compares the lower 32 bits of each value, in order to
+        /// be able to compare a keymode color to a non-keymode color.
+        /// </remarks>
         public bool Equals(uint other)
         {
-            return _value.Equals(other);
-        }
-
-        /// <summary>
-        /// Indicates whether the current object is equal to an instance of a
-        /// <see cref="System.Drawing.Color" /> struct.
-        /// </summary>
-        /// <returns>
-        /// <c>true</c> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <c>false</c>.
-        /// </returns>
-        /// <param name="other">An instance of <see cref="System.Drawing.Color" /> to compare with this object.</param>
-        public bool Equals(SystemColor other)
-        {
-            return R == other.R && G == other.G && B == other.B && A == other.A;
-        }
-
-        /// <summary>
-        /// Indicates whether the current object is equal to an instance of a
-        /// <see cref="System.Windows.Media.Color" /> struct.
-        /// </summary>
-        /// <param name="other">An instance of <see cref="System.Windows.Media.Color" /> to compare with this object.</param>
-        /// <returns><c>true</c> if the current object is equal to the <paramref name="other" /> parameter; otherwise, <c>false</c>.</returns>
-        public bool Equals(WpfColor other)
-        {
-            return R == other.R && G == other.G && B == other.B & A == other.A;
+            return Value.Equals(other);
         }
 
         /// <summary>
@@ -363,7 +230,7 @@ namespace Corale.Colore.Core
         /// <returns>A unique has code.</returns>
         public override int GetHashCode()
         {
-            return (int)_value;
+            return (int)Value;
         }
     }
 }

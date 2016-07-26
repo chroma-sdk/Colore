@@ -1,6 +1,6 @@
 ﻿// ---------------------------------------------------------------------------------------
 // <copyright file="Constants.cs" company="Corale">
-//     Copyright © 2015 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -55,5 +55,10 @@ namespace Corale.Colore.Razer.Keyboard
         /// </summary>
         [PublicAPI]
         public const int MaxCustomEffects = MaxKeys;
+
+        /// <summary>
+        /// The bit that needs to be set for key mode to be active on a color.
+        /// </summary>
+        internal const int KeyFlag = 0x01000000;
     }
 }

@@ -1,6 +1,6 @@
 ﻿// ---------------------------------------------------------------------------------------
 // <copyright file="KeyboardViewModel.cs" company="Corale">
-//     Copyright © 2015 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -32,9 +32,14 @@ namespace Corale.Colore.Tester.ViewModels
     using System.Windows;
     using System.Windows.Input;
     using System.Windows.Media;
+
     using Classes;
+
     using Razer.Keyboard.Effects;
     using Razer.Mouse;
+
+    using Wpf;
+
     using Duration = Razer.Keyboard.Effects.Duration;
     using Key = Razer.Keyboard.Key;
 
@@ -44,13 +49,19 @@ namespace Corale.Colore.Tester.ViewModels
         private Duration _selectedReactiveDuration;
         private Direction _selectedWaveDirection;
 
+        private StarlightType _selectedStarlightType;
+
+        private Duration _selectedStarlightDuration;
+
         public KeyboardViewModel()
         {
             SelectedKey = Key.A;
             SelectedReactiveDuration = Duration.Long;
             SelectedWaveDirection = Direction.LeftToRight;
-            ColorOne.Color = Core.Color.Red;
-            ColorTwo.Color = Core.Color.Blue;
+            SelectedStarlightType = StarlightType.Two;
+            SelectedStarlightDuration = Duration.Long;
+            ColorOne.Color = Core.Color.Red.ToWpfColor();
+            ColorTwo.Color = Core.Color.Blue.ToWpfColor();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -107,10 +118,44 @@ namespace Corale.Colore.Tester.ViewModels
             }
         }
 
-        public ICommand AllCommand => new DelegateCommand(() => Core.Keyboard.Instance.SetAll(ColorOne.Color));
+        public StarlightType SelectedStarlightType
+        {
+            get
+            {
+                return _selectedStarlightType;
+            }
+
+            set
+            {
+                _selectedStarlightType = value;
+                OnPropertyChanged(nameof(SelectedStarlightType));
+            }
+        }
+
+        public Duration SelectedStarlightDuration
+        {
+            get
+            {
+                return _selectedStarlightDuration;
+            }
+
+            set
+            {
+                _selectedStarlightDuration = value;
+                OnPropertyChanged(nameof(SelectedStarlightDuration));
+            }
+        }
+
+        public ICommand AllCommand
+            => new DelegateCommand(() => Core.Keyboard.Instance.SetAll(ColorOne.Color.ToColoreColor()));
 
         public ICommand BreathingCommand
-            => new DelegateCommand(() => Core.Keyboard.Instance.SetBreathing(ColorOne.Color, ColorTwo.Color));
+            =>
+                new DelegateCommand(
+                    () =>
+                        Core.Keyboard.Instance.SetBreathing(
+                            ColorOne.Color.ToColoreColor(),
+                            ColorTwo.Color.ToColoreColor()));
 
         public ICommand ReactiveCommand
             =>
@@ -119,8 +164,10 @@ namespace Corale.Colore.Tester.ViewModels
         public ICommand WaveCommand
             => new DelegateCommand(SetWaveEffect);
 
+        public ICommand StarlightCommand => new DelegateCommand(SetStarlightEffect);
+
         public ICommand StaticCommand
-            => new DelegateCommand(() => Core.Keyboard.Instance.SetStatic(new Static(ColorOne.Color)));
+            => new DelegateCommand(() => Core.Keyboard.Instance.SetStatic(new Static(ColorOne.Color.ToColoreColor())));
 
         public ICommand IndexerCommand
             => new DelegateCommand(SetIndexerEffect);
@@ -134,6 +181,11 @@ namespace Corale.Colore.Tester.ViewModels
 
         public IEnumerable<Direction> WaveDirectionValues => Enum.GetValues(typeof(Direction)).Cast<Direction>();
 
+        public IEnumerable<StarlightType> StarlightTypeValues
+            => Enum.GetValues(typeof(StarlightType)).Cast<StarlightType>();
+
+        public IEnumerable<Duration> StarlightDurationValues => Enum.GetValues(typeof(Duration)).Cast<Duration>();
+
         public IEnumerable<Duration> ReactiveDurationValues => Enum.GetValues(typeof(Duration)).Cast<Duration>();
 
         protected virtual void OnPropertyChanged(string propertyName)
@@ -145,7 +197,7 @@ namespace Corale.Colore.Tester.ViewModels
         {
             try
             {
-                Core.Keyboard.Instance.SetReactive(ColorOne.Color, SelectedReactiveDuration);
+                Core.Keyboard.Instance.SetReactive(ColorOne.Color.ToColoreColor(), SelectedReactiveDuration);
             }
             catch (Exception ex)
             {
@@ -165,11 +217,28 @@ namespace Corale.Colore.Tester.ViewModels
             }
         }
 
+        private void SetStarlightEffect()
+        {
+            try
+            {
+                Core.Keyboard.Instance.SetStarlight(
+                    new Starlight(
+                        SelectedStarlightType,
+                        ColorOne.Color.ToColoreColor(),
+                        ColorTwo.Color.ToColoreColor(),
+                        SelectedStarlightDuration));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
         private void SetKeyColor()
         {
             try
             {
-                Core.Keyboard.Instance[SelectedKey] = ColorOne.Color;
+                Core.Keyboard.Instance[SelectedKey] = ColorOne.Color.ToColoreColor();
             }
             catch (Exception ex)
             {
@@ -181,7 +250,7 @@ namespace Corale.Colore.Tester.ViewModels
         {
             try
             {
-                Core.Keyboard.Instance[Row, Col] = ColorOne.Color;
+                Core.Keyboard.Instance[Row, Col] = ColorOne.Color.ToColoreColor();
             }
             catch (Exception ex)
             {

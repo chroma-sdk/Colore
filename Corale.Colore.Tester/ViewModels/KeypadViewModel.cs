@@ -1,6 +1,6 @@
 ﻿// ---------------------------------------------------------------------------------------
 // <copyright file="KeypadViewModel.cs" company="Corale">
-//     Copyright © 2015 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -32,9 +32,14 @@ namespace Corale.Colore.Tester.ViewModels
     using System.Windows;
     using System.Windows.Input;
     using System.Windows.Media;
+
     using Classes;
+
     using Razer.Keypad.Effects;
     using Razer.Mouse;
+
+    using Wpf;
+
     using Duration = Razer.Keypad.Effects.Duration;
     using Key = Razer.Keyboard.Key;
 
@@ -49,8 +54,8 @@ namespace Corale.Colore.Tester.ViewModels
             SelectedKey = Key.A;
             SelectedReactiveDuration = Duration.Long;
             SelectedWaveDirection = Direction.LeftToRight;
-            ColorOne.Color = Core.Color.Red;
-            ColorTwo.Color = Core.Color.Blue;
+            ColorOne.Color = Core.Color.Red.ToWpfColor();
+            ColorTwo.Color = Core.Color.Blue.ToWpfColor();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -107,10 +112,17 @@ namespace Corale.Colore.Tester.ViewModels
             }
         }
 
-        public ICommand AllCommand => new DelegateCommand(() => Core.Keypad.Instance.SetAll(ColorOne.Color));
+        public ICommand AllCommand
+            => new DelegateCommand(() => Core.Keypad.Instance.SetAll(ColorOne.Color.ToColoreColor()));
 
         public ICommand BreathingCommand
-            => new DelegateCommand(() => Core.Keypad.Instance.SetBreathing(ColorOne.Color, ColorTwo.Color));
+            =>
+                new DelegateCommand(
+                    () =>
+                        Core.Keypad.Instance.SetBreathing(
+                            ColorOne.Color.ToColoreColor(),
+                            ColorTwo.Color.ToColoreColor()))
+            ;
 
         public ICommand ReactiveCommand
             =>
@@ -120,7 +132,7 @@ namespace Corale.Colore.Tester.ViewModels
             => new DelegateCommand(SetWaveEffect);
 
         public ICommand StaticCommand
-            => new DelegateCommand(() => Core.Keypad.Instance.SetStatic(new Static(ColorOne.Color)));
+            => new DelegateCommand(() => Core.Keypad.Instance.SetStatic(new Static(ColorOne.Color.ToColoreColor())));
 
         public ICommand IndexerCommand
             => new DelegateCommand(SetIndexerEffect);
@@ -141,7 +153,7 @@ namespace Corale.Colore.Tester.ViewModels
         {
             try
             {
-                Core.Keypad.Instance.SetReactive(ColorOne.Color, SelectedReactiveDuration);
+                Core.Keypad.Instance.SetReactive(ColorOne.Color.ToColoreColor(), SelectedReactiveDuration);
             }
             catch (Exception ex)
             {
@@ -165,7 +177,7 @@ namespace Corale.Colore.Tester.ViewModels
         {
             try
             {
-                Core.Keypad.Instance[Row, Col] = ColorOne.Color;
+                Core.Keypad.Instance[Row, Col] = ColorOne.Color.ToColoreColor();
             }
             catch (Exception ex)
             {

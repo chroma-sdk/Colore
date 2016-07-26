@@ -1,6 +1,6 @@
 ﻿// ---------------------------------------------------------------------------------------
 // <copyright file="Keyboard.cs" company="Corale">
-//     Copyright © 2015 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -30,10 +30,9 @@ namespace Corale.Colore.Core
     using System.Linq;
 
     using Corale.Colore.Annotations;
+    using Corale.Colore.Logging;
     using Corale.Colore.Razer.Keyboard;
     using Corale.Colore.Razer.Keyboard.Effects;
-
-    using log4net;
 
     /// <summary>
     /// Class for interacting with a Chroma keyboard.
@@ -73,13 +72,8 @@ namespace Corale.Colore.Core
             CurrentEffectId = Guid.Empty;
 
             // We keep a local copy of a grid to speed up grid operations
-            Log.Debug("Creating grid array");
-            var gridArray = new Color[Constants.MaxRows][];
-            for (var i = 0; i < Constants.MaxRows; i++)
-                gridArray[i] = new Color[Constants.MaxColumns];
-
             Log.Debug("Initializing private copy of Custom");
-            _grid = new Custom(gridArray);
+            _grid = Custom.Create();
         }
 
         /// <summary>
@@ -99,6 +93,7 @@ namespace Corale.Colore.Core
 
         /// <summary>
         /// Gets or sets the <see cref="Color" /> for a specific <see cref="Key" /> on the keyboard.
+        /// The SDK will translate this appropriately depending on user configuration.
         /// </summary>
         /// <param name="key">The key to access.</param>
         /// <returns>The color currently set for the specified key.</returns>
@@ -149,7 +144,7 @@ namespace Corale.Colore.Core
         {
             var attr =
                 typeof(Key).GetMember(key.ToString())[0].GetCustomAttributes(typeof(UnsafeKeyAttribute), false)
-                    .FirstOrDefault();
+                                                        .FirstOrDefault();
 
             return attr == null;
         }
@@ -196,7 +191,7 @@ namespace Corale.Colore.Core
         public override void SetAll(Color color)
         {
             _grid.Set(color);
-            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.Custom, _grid));
+            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.CustomKey, _grid));
         }
 
         /// <summary>
@@ -231,23 +226,6 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Sets a custom grid effect on the keyboard using
-        /// a two dimensional array of color values.
-        /// </summary>
-        /// <param name="colors">The grid of colors to use.</param>
-        /// <remarks>
-        /// The passed in arrays cannot have more than <see cref="Constants.MaxRows" /> rows and
-        /// not more than <see cref="Constants.MaxColumns" /> columns in any row.
-        /// <para />
-        /// This will overwrite the internal <see cref="Custom" />
-        /// struct in the <see cref="Keyboard" /> class.
-        /// </remarks>
-        public void SetGrid(Color[][] colors)
-        {
-            SetCustom(new Custom(colors));
-        }
-
-        /// <summary>
         /// Sets a custom grid effect on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
@@ -258,7 +236,7 @@ namespace Corale.Colore.Core
         public void SetCustom(Custom effect)
         {
             _grid = effect;
-            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.Custom, _grid));
+            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.CustomKey, _grid));
         }
 
         /// <summary>
@@ -294,7 +272,7 @@ namespace Corale.Colore.Core
                 _grid.Clear();
 
             _grid[row, column] = color;
-            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.Custom, _grid));
+            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.CustomKey, _grid));
         }
 
         /// <summary>
@@ -309,7 +287,7 @@ namespace Corale.Colore.Core
                 _grid.Clear();
 
             _grid[key] = color;
-            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.Custom, _grid));
+            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.CustomKey, _grid));
         }
 
         /// <summary>
@@ -368,6 +346,23 @@ namespace Corale.Colore.Core
         public void SetWave(Wave effect)
         {
             SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.Wave, effect));
+        }
+
+        /// <summary>
+        /// Sets a starlight effect on the keyboard.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        public void SetStarlight(Starlight effect)
+        {
+            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.Starlight, effect));
+        }
+
+        /// <summary>
+        /// Clears the current effect on the Keyboard.
+        /// </summary>
+        public override void Clear()
+        {
+            SetEffect(Effect.None);
         }
     }
 }

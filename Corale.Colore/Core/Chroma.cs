@@ -1,6 +1,6 @@
 ﻿// ---------------------------------------------------------------------------------------
 // <copyright file="Chroma.cs" company="Corale">
-//     Copyright © 2015 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -31,11 +31,8 @@ namespace Corale.Colore.Core
 
     using Corale.Colore.Annotations;
     using Corale.Colore.Events;
+    using Corale.Colore.Logging;
     using Corale.Colore.Razer;
-
-    using log4net;
-
-    using Microsoft.Win32;
 
     /// <summary>
     /// Main class for interacting with the Chroma SDK.
@@ -66,6 +63,12 @@ namespace Corale.Colore.Core
         /// Keeps track of the window handle that is registered to receive events.
         /// </summary>
         private IntPtr _registeredHandle;
+
+        /// <summary>
+        /// Version of the Chroma SDK as retrieved from the registry at
+        /// the point of initialization.
+        /// </summary>
+        private SdkVersion _sdkVersion;
 
         /// <summary>
         /// Prevents a default instance of the <see cref="Chroma" /> class from being created.
@@ -132,6 +135,12 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
+        /// Gets a value indicating whether the SDK is available on this system.
+        /// </summary>
+        [PublicAPI]
+        public static bool SdkAvailable => RegistryHelper.IsSdkAvailable();
+
+        /// <summary>
         /// Gets an instance of the <see cref="IKeyboard" /> interface
         /// for interacting with a Razer Chroma keyboard.
         /// </summary>
@@ -168,72 +177,9 @@ namespace Corale.Colore.Core
         public bool Initialized { get; private set; }
 
         /// <summary>
-        /// Checks if the Chroma SDK is available on this system.
+        /// Gets the version of the Chroma SDK that Colore is currently using.
         /// </summary>
-        /// <returns><c>true</c> if Chroma SDK is available, otherwise <c>false</c>.</returns>
-        [PublicAPI]
-        [SecurityCritical]
-        public static bool IsSdkAvailable()
-        {
-            bool dllValid;
-            var regKey = @"SOFTWARE\Razer Chroma SDK";
-
-#if ANYCPU
-            if (EnvironmentHelper.Is64BitProcess() && EnvironmentHelper.Is64BitOperatingSystem())
-            {
-                dllValid = Native.Kernel32.NativeMethods.LoadLibrary("RzChromaSDK64.dll") != IntPtr.Zero;
-                regKey = @"SOFTWARE\Wow6432Node\Razer Chroma SDK";
-            }
-            else
-                dllValid = Native.Kernel32.NativeMethods.LoadLibrary("RzChromaSDK.dll") != IntPtr.Zero;
-#elif WIN64
-            dllValid = Native.Kernel32.NativeMethods.LoadLibrary("RzChromaSDK64.dll") != IntPtr.Zero;
-            regKey = @"SOFTWARE\Wow6432Node\Razer Chroma SDK";
-#else
-            dllValid = Native.Kernel32.NativeMethods.LoadLibrary("RzChromaSDK.dll") != IntPtr.Zero;
-#endif
-
-            bool regEnabled;
-
-            try
-            {
-                using (var key = Registry.LocalMachine.OpenSubKey(regKey))
-                {
-                    if (key != null)
-                    {
-                        var value = key.GetValue("Enable");
-
-                        if (value is int)
-                            regEnabled = (int)value == 1;
-                        else
-                        {
-                            regEnabled = true;
-                            Log.Warn(
-                                "Chroma SDK has changed registry setting format. Please update Colore to latest version.");
-                            Log.DebugFormat("New Enabled type: {0}", value.GetType());
-                        }
-                    }
-                    else
-                        regEnabled = false;
-                }
-            }
-            catch (SecurityException ex)
-            {
-                // If we can't access the registry, best to just assume
-                // it is enabled.
-                Log.Warn("System raised SecurityException during read of SDK enable flag in registry.", ex);
-                regEnabled = true;
-            }
-            catch (UnauthorizedAccessException ex)
-            {
-                // If we can't access the registry, best to just assume
-                // it is enabled.
-                Log.Warn("Not authorized to read registry for SDK enable flag.", ex);
-                regEnabled = true;
-            }
-
-            return dllValid && regEnabled;
-        }
+        public SdkVersion SdkVersion => _sdkVersion;
 
         /// <summary>
         /// Initializes the SDK if it hasn't already.
@@ -250,6 +196,15 @@ namespace Corale.Colore.Core
                 return;
 
             Log.Info("Chroma is initializing.");
+
+            Log.Debug("Retrieving SDK version");
+            var versionSuccess = RegistryHelper.TryGetSdkVersion(out _sdkVersion);
+
+            if (versionSuccess)
+                Log.InfoFormat("Colore is running against SDK version {0}.", SdkVersion);
+            else
+                Log.Warn("Failed to retrieve SDK version from registry!");
+
             Log.Debug("Calling SDK Init function");
             NativeWrapper.Init();
             Initialized = true;
@@ -291,7 +246,6 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="deviceId">The device ID to query for, valid IDs can be found in <see cref="Devices" />.</param>
         /// <returns>A struct with information regarding the device type and whether it's connected.</returns>
-        [SecurityCritical]
         public DeviceInfo Query(Guid deviceId)
         {
             if (!Devices.IsValidId(deviceId))

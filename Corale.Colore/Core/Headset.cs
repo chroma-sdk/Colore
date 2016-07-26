@@ -1,6 +1,6 @@
 ﻿// ---------------------------------------------------------------------------------------
 // <copyright file="Headset.cs" company="Corale">
-//     Copyright © 2015 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -27,9 +27,8 @@ namespace Corale.Colore.Core
 {
     using System;
 
+    using Corale.Colore.Logging;
     using Corale.Colore.Razer.Headset.Effects;
-
-    using log4net;
 
     /// <summary>
     /// Class for interacting with Chroma Headsets.
@@ -122,6 +121,14 @@ namespace Corale.Colore.Core
         public void SetBreathing(Color color)
         {
             SetBreathing(new Breathing(color));
+        }
+
+        /// <summary>
+        /// Clears the current effect on the Headset.
+        /// </summary>
+        public override void Clear()
+        {
+            SetEffect(Effect.None);
         }
     }
 }
