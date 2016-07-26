@@ -238,12 +238,11 @@ namespace Corale.Colore.Razer.Effects
         /// <summary>
         /// Creates a new empty <see cref="Custom" /> struct.
         /// </summary>
-        /// <param name="parameter">Additional effect parameter to set.</param>
         /// <returns>An instance of <see cref="Custom" />
         /// filled with the color black.</returns>
-        public static Custom Create(int parameter = 0)
+        public static Custom Create()
         {
-            return new Custom(Color.Black, parameter);
+            return new Custom(Color.Black);
         }
 
         /// <summary>
