@@ -1,5 +1,4 @@
-Colore
-======
+![Colore Logo][colorelogo]
 
 [![Stories in Ready][wafflebadge]][waffle]
 [![MIT License][licensebadge]][license]
@@ -119,3 +118,5 @@ Current projects utilizing this or modified versions of this library:
 
 [gitter]: https://gitter.im/CoraleStudios/Colore?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
 [gitterbadge]: https://badges.gitter.im/Join%20Chat.svg
+
+[colorelogo]: http://coralestudios.github.io/Colore/colore.png
