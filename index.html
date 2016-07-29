@@ -1,132 +1,19 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>Colore by CoraleStudios</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">Colore</h1>
-      <h2 class="project-tagline">A powerful C# library for Razer Chroma&#39;s SDK</h2>
-      <a href="https://github.com/CoraleStudios/Colore" class="btn">View on GitHub</a>
-      <a href="https://github.com/CoraleStudios/Colore/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/CoraleStudios/Colore/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
+---
+layout: default
+title: {{ site.name }}
+---
 
-    <section class="main-content">
-      <h1>
-<a id="colore" class="anchor" href="#colore" aria-hidden="true"><span class="octicon octicon-link"></span></a>Colore</h1>
+<div id="home">
+  <p>Colore is an elegant solution for C# developers to work with Razer's
+    Chroma SDK in a way that feels intuitive and similar to other .NET
+    libraries.</p>
 
-<p><a href="http://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT License"></a>
-<a href="https://github.com/CoraleStudios/Colore/releases"><img src="https://img.shields.io/github/release/CoraleStudios/Colore.svg" alt="GitHub release version"></a>
-<a href="https://www.nuget.org/packages/Colore"><img src="https://img.shields.io/nuget/v/Colore.svg" alt="NuGet version"></a>
-<a href="https://www.nuget.org/packages/Colore"><img src="https://img.shields.io/nuget/dt/Colore.svg" alt="NuGet downloads"></a></p>
+  <h1><a href="/blog">Posts</a></h1>
+  <ul class="posts">
+    {% for post in site.posts limit: 5 %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
 
-<p><strong>Develop:</strong>
-<a href="https://ci.appveyor.com/project/Corale/colore"><img src="https://ci.appveyor.com/api/projects/status/86g99rkyhc57sa74?svg=true" alt="Build status"></a>
-<a href="https://coveralls.io/r/CoraleStudios/Colore?branch=develop"><img src="https://coveralls.io/repos/CoraleStudios/Colore/badge.svg?branch=develop" alt="Coverage Status"></a></p>
-
-<p><strong>Master:</strong>
-<a href="https://ci.appveyor.com/project/Corale/colore/branch/master"><img src="https://ci.appveyor.com/api/projects/status/86g99rkyhc57sa74/branch/master?svg=true" alt="Master build status"></a>
-<a href="https://coveralls.io/r/CoraleStudios/Colore?branch=master"><img src="https://coveralls.io/repos/CoraleStudios/Colore/badge.svg?branch=develop" alt="Master coverage Status"></a></p>
-
-<p>A powerful and elegant C# library for Razer Chroma's SDK</p>
-
-<h2>
-<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h2>
-
-<p><a href="https://gitter.im/CoraleStudios/Colore?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Gitter"></a></p>
-
-<p><em>For discussing, you can join the Gitter chat using the badge above. If you want to join the Slack chat, contact <a href="https://github.com/brandonscott">Brandon Scott</a> (<a href="mailto:brandon@brandonscott.co.uk">brandon@brandonscott.co.uk</a>) or <a href="https://github.com/Sharparam">Adam Hellberg</a> (<a href="mailto:sharparam@sharparam.com">sharparam@sharparam.com</a>).</em></p>
-
-<p>Contributors are very welcome! If you got code fixes, please <a href="../../pull/new/develop">submit a pull request</a> here on GitHub.</p>
-
-<p>If you want to join the development team, please contact <a href="https://github.com/Sharparam">Sharparam</a> or <a href="https://github.com/brandonscott">Brandon</a> on GitHub.</p>
-
-<p>All authors and contributors are listed in the <strong>AUTHORS</strong> file.</p>
-
-<p>Please read the <a href="CONTRIBUTING.md">CONTRIBUTING.md</a> file before making a pull request.</p>
-
-<h2>
-<a id="questions-feedback-bug-reports" class="anchor" href="#questions-feedback-bug-reports" aria-hidden="true"><span class="octicon octicon-link"></span></a>Questions, feedback, bug reports...</h2>
-
-<p>Got a question or found a bug somewhere? Please <a href="https://github.com/CoraleStudios/Colore/issues/new">create a new issue</a> and tell us about it!</p>
-
-<p>You may send in feedback through email as well, but the issues page is preferred as it makes it easier for the development team to organise things!</p>
-
-<h2>
-<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
-
-<p>Copyright © 2015 by <a href="https://github.com/Sharparam">Adam Hellberg</a> and <a href="https://github.com/brandonscott">Brandon Scott</a>.</p>
-
-<p>This project is licensed under the MIT license, please see the file <strong>LICENSE</strong> for more information.</p>
-
-<p>Razer is a trademark and/or a registered trademark of Razer USA Ltd.<br>
-All other trademarks are property of their respective owners.</p>
-
-<p>This project is in no way endorsed, sponsored or approved by Razer.</p>
-
-<h2>
-<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependencies</h2>
-
-<p>Colore depends on the Razer Chroma SDK (RzChromaSDK64.dll or RzChromaSDK.dll).</p>
-
-<p>The Razer Chroma SDK is provided by Razer and <a href="http://developer.razerzone.com/chroma">can be obtained from their website</a>.</p>
-
-<h2>
-<a id="building" class="anchor" href="#building" aria-hidden="true"><span class="octicon octicon-link"></span></a>Building</h2>
-
-<p>It's important to note that the platform under which this project is built plays a huge role on the usability of the library.</p>
-
-<p>When compiling with the x86 or x64 platform set in build configuration, Colore will <strong>only work on the respective system platform</strong>
-(32-bit if compiled using x86, and 64-bit if compiled using x64).</p>
-
-<p>The native methods are imported using <code>DllImport</code> when Colore is compiled in x86 or x64, which is why the setting matters for deployment,
-as this cannot be changed at runtime.</p>
-
-<p>However, if compiling with the "Any CPU" configuration, Colore will dynamically load functions relevant for the current executing platform,
-making it run on both 32- and 64-bit systems without any work having to be done by the dev.</p>
-
-<p>For non-performance critical applications, the "Any CPU" mode should be fine (this is also what the NuGet package is compiled against).</p>
-
-<p>For applications that require peak performance, we recommend shipping separate 32- and 64-bit builds of your application, using the relevant build configurations in Colore.</p>
-
-<p>The below example compiles Colore in Release mode for the x86 (32-bit) platform.</p>
-
-<pre><code>msbuild Colore.sln /p:Configuration=Release;Platform=x86
-</code></pre>
-
-<p>(Replace <code>x86</code> with <code>x64</code> if compiling for Win64, or <code>"Any CPU"</code> if compiling cross-platform)</p>
-
-<p>Make sure that your projects using Colore are also compiled against a matching platform.</p>
-
-<p>Razer's SDK installer <strong>will only install the library relevant for your platform</strong>.</p>
-
-<p>This means that your apps will need to be compiled twice, once for x86 platforms, and once for x64, unless you are using "Any CPU".
-They must both be provided when you distribute your application, depending on what platform the user has.</p>
-
-<h2>
-<a id="projects" class="anchor" href="#projects" aria-hidden="true"><span class="octicon octicon-link"></span></a>Projects</h2>
-
-<p>Current projects utilizing this or modified versions of this library:</p>
-
-<p><em>None right now!</em></p>
-
-<p>(If you want your project listed, just contact <a href="https://github.com/Sharparam">Sharparam</a> or <a href="https://github.com/brandonscott">Brandon</a>)</p>
-
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/CoraleStudios/Colore">Colore</a> is maintained by <a href="https://github.com/CoraleStudios">CoraleStudios</a>.</span>
-
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
-
-    </section>
-
-  
-  </body>
-</html>
+  <p><a href="/about">Read more about Colore</a></p>
+</div>

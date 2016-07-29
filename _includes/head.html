@@ -1,0 +1,13 @@
+<head>
+  <meta charset="UTF-8">
+  {% if page.title == empty %}
+  {% assign title = site.title %}
+  {% else %}
+  {% capture title %}{{ page.title }} - {{ site.title }}{% endcapture %}
+  {% endif %}
+  <title>{{ title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#157878">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
+</head>

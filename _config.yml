@@ -1,0 +1,43 @@
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: Colore
+email: colore@sharparam.com
+tagline: "A powerful C# library for Razer's Chroma SDK."
+description: > # this means to ignore newlines until "baseurl:"
+  A powerful C# library for Razer's Chroma SDK.
+  Colore is an elegant solution for C# developers to work with Razer's
+  Chroma SDK in a way that feels intuitive and similar to other .NET
+  libraries.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://colore.coralestudios.com" # the base hostname & protocol for your site
+#twitter_username: jekyllrb
+github_username: CoraleStudios
+paginate: 5
+paginate_path: "/blog/page:num/"
+permalink: "/blog/:year/:month/:day/:title"
+
+author:
+  name: Corale Studios
+  url: "https://github.com/CoraleStudios"
+
+# Build settings
+markdown: kramdown
+
+gems:
+  - jekyll-paginate
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      title: "Colore"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"

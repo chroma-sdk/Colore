@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+{% assign author = site.data.members[page.author] %}
+
+<article class="post">
+  <h2>{{ page.title }}</h2>
+  <p class="meta">
+    <span class="date">{{ page.date | date_to_string }}</span>
+    {% if author %}
+    by <a class="author" href="https://github.com/{{ author.github }}">{{ author.name }}</a></p>
+    {% endif %}
+
+  {{ content }}
+</article>

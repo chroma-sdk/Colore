@@ -1,0 +1,27 @@
+---
+layout: default
+title: Blog index
+---
+
+{% for post in paginator.posts %}
+{% assign author = site.data.members[post.author] %}
+<section class="post-preview">
+  <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+  <p class="meta">
+    <span class="date">{{ post.date | date_to_string }}</span>
+    {% if author %}
+    by <a class="author" href="https://github.com/{{ author.github }}">{{ author.name }}</a>
+    {% endif %}
+  </p>
+  <p class="excerpt">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</p>
+</section>
+{% endfor %}
+
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+  {% endif %}
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+  {% endif %}
+</div>
