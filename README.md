@@ -119,4 +119,4 @@ Current projects utilizing this or modified versions of this library:
 [gitter]: https://gitter.im/CoraleStudios/Colore?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
 [gitterbadge]: https://badges.gitter.im/Join%20Chat.svg
 
-[colorelogo]: https://raw.githubusercontent.com/CoraleStudios/Colore/gh-pages/colore-logo.png
+[colorelogo]: https://raw.githubusercontent.com/CoraleStudios/Colore/gh-pages/colore.png
