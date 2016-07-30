@@ -1,5 +1,4 @@
-Colore
-======
+![Colore Logo][colorelogo]
 
 [![Build status][devbuildbadge]][devbuild]
 [![Coverage Status][devcoverbadge]][devcover]
@@ -106,3 +105,5 @@ Current projects utilizing this or modified versions of this library:
 
 [gitter]: https://gitter.im/CoraleStudios/Colore?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
 [gitterbadge]: https://badges.gitter.im/Join%20Chat.svg
+
+[colorelogo]: http://colore.coralestudios.com/img/colore.png
