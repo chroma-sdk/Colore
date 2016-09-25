@@ -68,6 +68,20 @@ function Update-File
     Out-File $file
 }
 
+function Update-NuSpec
+{
+    Param([String]$file)
+
+    Write-Host "Updating Colore depend version in file $file"
+
+    (Get-Content $file) `
+        -replace 'COLORE_VERSION', "$friendlyVersion" |
+    Out-File $file
+}
+
 Update-File Corale.Colore/Properties/AssemblyInfo.cs
 Update-File Corale.Colore.Wpf/Properties/AssemblyInfo.cs
 Update-File Corale.Colore.WinForms/Properties/AssemblyInfo.cs
+
+Update-NuSpec Corale.Colore.Wpf/Corale.Colore.Wpf.nuspec
+Update-NuSpec Corale.Colore.WinForms/Corale.Colore.WinForms.nuspec
