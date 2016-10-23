@@ -362,6 +362,7 @@ namespace Corale.Colore.Core
         /// </summary>
         public override void Clear()
         {
+            _grid.Clear();
             SetEffect(Effect.None);
         }
     }

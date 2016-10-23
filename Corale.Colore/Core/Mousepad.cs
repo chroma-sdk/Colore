@@ -196,6 +196,7 @@ namespace Corale.Colore.Core
         /// </summary>
         public override void Clear()
         {
+            _custom.Clear();
             SetEffect(Effect.None);
         }
     }
