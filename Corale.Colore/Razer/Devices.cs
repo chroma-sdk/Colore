@@ -426,7 +426,7 @@ namespace Corale.Colore.Razer
             0x3b);
 
         /// <summary>
-        /// Razer Ornata Keypad.
+        /// Razer Ornata Keyboard.
         /// </summary>
         [PublicAPI]
         public static readonly Guid Ornata = new Guid(
