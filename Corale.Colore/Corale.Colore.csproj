@@ -141,8 +141,6 @@
     <Compile Include="Razer\Effects\None.cs" />
     <Compile Include="Razer\Effects\Reactive.cs" />
     <Compile Include="Razer\Effects\SpectrumCycling.cs" />
-    <Compile Include="Razer\Effects\Starlight.cs" />
-    <Compile Include="Razer\Effects\StarlightType.cs" />
     <Compile Include="Razer\Effects\Static.cs" />
     <Compile Include="Razer\Effects\Wave.cs" />
     <Compile Include="Razer\Headset\Effects\Breathing.cs" />
@@ -157,8 +155,6 @@
     <Compile Include="Razer\Keyboard\Effects\Duration.cs" />
     <Compile Include="Razer\Keyboard\Effects\Effect.cs" />
     <Compile Include="Razer\Keyboard\Effects\Reactive.cs" />
-    <Compile Include="Razer\Keyboard\Effects\Starlight.cs" />
-    <Compile Include="Razer\Keyboard\Effects\StarlightType.cs" />
     <Compile Include="Razer\Keyboard\Effects\Static.cs" />
     <Compile Include="Razer\Keyboard\Effects\Wave.cs" />
     <Compile Include="Razer\Keyboard\Key.cs" />

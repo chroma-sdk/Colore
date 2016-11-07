@@ -144,31 +144,6 @@ namespace Corale.Colore.Core
         void SetSpectrumCycling(int parameter = 0);
 
         /// <summary>
-        /// Sets a starlight effect on this device.
-        /// </summary>
-        /// <param name="effect">Effect options.</param>
-        [PublicAPI]
-        void SetStarlight(Starlight effect);
-
-        /// <summary>
-        /// Sets a starlight effect on this device, using random colors.
-        /// </summary>
-        /// <param name="duration">Duration of the effect.</param>
-        /// <param name="parameter">Additional effect parameter.</param>
-        [PublicAPI]
-        void SetStarlight(Duration duration, int parameter = 0);
-
-        /// <summary>
-        /// Sets a starlight effect on this device, using specified colors.
-        /// </summary>
-        /// <param name="first">The first color to use.</param>
-        /// <param name="second">The second color to use.</param>
-        /// <param name="duration">Duration of the effect.</param>
-        /// <param name="parameter">Additional effect parameter.</param>
-        [PublicAPI]
-        void SetStarlight(Color first, Color second, Duration duration, int parameter = 0);
-
-        /// <summary>
         /// Sets a static effect on this device.
         /// </summary>
         /// <param name="effect">Effect options.</param>
