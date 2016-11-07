@@ -426,6 +426,23 @@ namespace Corale.Colore.Razer
             0x3b);
 
         /// <summary>
+        /// Razer Ornata Keypad.
+        /// </summary>
+        [PublicAPI]
+        public static readonly Guid Ornata = new Guid(
+            0x803378c1,
+            0xcc48,
+            0x4970,
+            0x85,
+            0x39,
+            0xd8,
+            0x28,
+            0xcc,
+            0x1d,
+            0x42,
+            0xa);
+
+        /// <summary>
         /// Returns whether a specified <see cref="Guid" /> is a valid device identifier.
         /// </summary>
         /// <param name="id">the <see cref="Guid" /> to check.</param>
@@ -437,7 +454,7 @@ namespace Corale.Colore.Razer
                    || id == BlackwidowTe || id == Kraken71 || id == Firefly || id == Deathstalker || id == Diamondback
                    || id == Mamba || id == OverwatchKeyboard || id == Orochi || id == BladeStealth || id == Naga
                    || id == NagaEpic || id == Core || id == LenovoY27 || id == LenovoY900 || id == Blade14 || id == BlackwidowX
-                   || id == BlackwidowXTe || id == NagaHex;
+                   || id == BlackwidowXTe || id == NagaHex || id == Ornata;
         }
     }
 }
