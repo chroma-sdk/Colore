@@ -76,10 +76,10 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         Wave,
 
         /// <summary>
-        /// Starlight effect.
+        /// Reserved effect.
         /// </summary>
         [PublicAPI]
-        Starlight,
+        Reserved,
 
         /// <summary>
         /// Custom effect with keys.

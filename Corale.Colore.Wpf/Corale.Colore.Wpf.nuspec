@@ -13,7 +13,7 @@
     <copyright>Copyright (c) 2016 by Adam Hellberg and Brandon Scott.</copyright>
     <tags>Razer Chroma Corale WPF Colore</tags>
     <dependencies>
-      <dependency id="Colore" />
+      <dependency id="Colore" version="COLORE_VERSION" />
     </dependencies>
   </metadata>
 </package>

@@ -229,37 +229,6 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Sets a starlight effect on this device.
-        /// </summary>
-        /// <param name="effect">Effect options.</param>
-        public void SetStarlight(Starlight effect)
-        {
-            SetGuid(NativeWrapper.CreateDeviceEffect(DeviceId, Effect.Starlight, effect));
-        }
-
-        /// <summary>
-        /// Sets a starlight effect on this device, using random colors.
-        /// </summary>
-        /// <param name="duration">Duration of the effect.</param>
-        /// <param name="parameter">Additional effect parameter.</param>
-        public void SetStarlight(Duration duration, int parameter = 0)
-        {
-            SetStarlight(new Starlight(duration, parameter));
-        }
-
-        /// <summary>
-        /// Sets a starlight effect on this device, using specified colors.
-        /// </summary>
-        /// <param name="first">The first color to use.</param>
-        /// <param name="second">The second color to use.</param>
-        /// <param name="duration">Duration of the effect.</param>
-        /// <param name="parameter">Additional effect parameter.</param>
-        public void SetStarlight(Color first, Color second, Duration duration, int parameter = 0)
-        {
-            SetStarlight(new Starlight(duration, first, second, parameter));
-        }
-
-        /// <summary>
         /// Sets a static effect on this device.
         /// </summary>
         /// <param name="effect">Effect options.</param>
