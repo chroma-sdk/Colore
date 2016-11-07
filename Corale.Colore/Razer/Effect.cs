@@ -82,10 +82,9 @@ namespace Corale.Colore.Razer
         Custom,
 
         /// <summary>
-        /// The starlight effect.
+        /// Reserved effect.
         /// </summary>
-        [PublicAPI]
-        Starlight,
+        Reserved,
 
         /// <summary>
         /// Invalid effect.
