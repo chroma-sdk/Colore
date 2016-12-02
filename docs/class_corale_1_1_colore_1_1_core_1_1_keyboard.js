@@ -17,7 +17,6 @@ var class_corale_1_1_colore_1_1_core_1_1_keyboard =
     [ "SetPosition", "class_corale_1_1_colore_1_1_core_1_1_keyboard.html#a923f261d0f7797c92a6f36dd543a22fc", null ],
     [ "SetReactive", "class_corale_1_1_colore_1_1_core_1_1_keyboard.html#a0bb4337c673cb547d7ca439204e03d6b", null ],
     [ "SetReactive", "class_corale_1_1_colore_1_1_core_1_1_keyboard.html#ac96ba11505e5031ca86cc1349b4f1364", null ],
-    [ "SetStarlight", "class_corale_1_1_colore_1_1_core_1_1_keyboard.html#aa5550ab9d0b0e8c74d5036b83c8d7a6b", null ],
     [ "SetStatic", "class_corale_1_1_colore_1_1_core_1_1_keyboard.html#af7a1eaf42fe3eebcf5ac237dd20d70cf", null ],
     [ "SetWave", "class_corale_1_1_colore_1_1_core_1_1_keyboard.html#aef4a4792285f92c328807bb2498c35c6", null ],
     [ "SetWave", "class_corale_1_1_colore_1_1_core_1_1_keyboard.html#a40d65a4556371d35f1fae65162492171", null ],

@@ -6,7 +6,6 @@ var namespace_corale_1_1_colore_1_1_razer_1_1_effects =
     [ "None", "struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_none.html", "struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_none" ],
     [ "Reactive", "struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_reactive.html", "struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_reactive" ],
     [ "SpectrumCycling", "struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_spectrum_cycling.html", "struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_spectrum_cycling" ],
-    [ "Starlight", "struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_starlight.html", "struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_starlight" ],
     [ "Static", "struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_static.html", "struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_static" ],
     [ "Wave", "struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_wave.html", "struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_wave" ]
 ];

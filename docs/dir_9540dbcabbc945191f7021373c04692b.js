@@ -13,10 +13,6 @@ var dir_9540dbcabbc945191f7021373c04692b =
     [ "Reactive.cs", "_keyboard_2_effects_2_reactive_8cs.html", [
       [ "Reactive", "struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_reactive.html", "struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_reactive" ]
     ] ],
-    [ "Starlight.cs", "_keyboard_2_effects_2_starlight_8cs.html", [
-      [ "Starlight", "struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_starlight.html", "struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_starlight" ]
-    ] ],
-    [ "StarlightType.cs", "_keyboard_2_effects_2_starlight_type_8cs.html", "_keyboard_2_effects_2_starlight_type_8cs" ],
     [ "Static.cs", "_keyboard_2_effects_2_static_8cs.html", [
       [ "Static", "struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_static.html", "struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_static" ]
     ] ],

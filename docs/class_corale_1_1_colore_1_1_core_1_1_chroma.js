@@ -29,6 +29,7 @@ var class_corale_1_1_colore_1_1_core_1_1_chroma =
     [ "SdkVersion", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#a0e0cd413828294c47c55c7d37dbba339", null ],
     [ "Initialized", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#a9a7631ccfa205dadf51df87774465b0a", null ],
     [ "Instance", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#ae655ff835350011e316acaa64feeaad6", null ],
+    [ "Version", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#a223875f3d4afa3e28ce0cd9678bbd4a5", null ],
     [ "ApplicationState", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#aa8164951f2c248a87579ff5e61880e8f", null ],
     [ "DeviceAccess", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#abcb64f83276d018d15c0bea74b06870a", null ],
     [ "SdkSupport", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#afa48be599def144ed37add01959e2e40", null ]

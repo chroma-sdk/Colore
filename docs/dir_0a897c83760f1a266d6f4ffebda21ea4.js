@@ -21,10 +21,6 @@ var dir_0a897c83760f1a266d6f4ffebda21ea4 =
     [ "SpectrumCycling.cs", "_effects_2_spectrum_cycling_8cs.html", [
       [ "SpectrumCycling", "struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_spectrum_cycling.html", "struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_spectrum_cycling" ]
     ] ],
-    [ "Starlight.cs", "_effects_2_starlight_8cs.html", [
-      [ "Starlight", "struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_starlight.html", "struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_starlight" ]
-    ] ],
-    [ "StarlightType.cs", "_effects_2_starlight_type_8cs.html", "_effects_2_starlight_type_8cs" ],
     [ "Static.cs", "_effects_2_static_8cs.html", [
       [ "Static", "struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_static.html", "struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_static" ]
     ] ],

@@ -36,12 +36,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_annotations_8cs.html",
-"_key_8cs.html#a4434888a1769a87551c60e708fbb9ee2a8e0411bbc85a52f7986b8ed9beb886ba",
-"_mousepad_2_effects_2_breathing_8cs_source.html",
-"class_corale_1_1_colore_1_1_core_1_1_keypad.html#a59dbdc3f0bc249cb3634680c17943bed",
-"class_means_implicit_use_attribute.html#abf0718c3b739197f26771fb693f280ac",
-"interface_corale_1_1_colore_1_1_core_1_1_i_mousepad.html#ad37b25714e3443a295ef5216ba195031",
-"struct_corale_1_1_colore_1_1_razer_1_1_keypad_1_1_effects_1_1_static.html#a6a6e5501be4476d574cc6f402b4f5051"
+"_key_8cs.html#a4434888a1769a87551c60e708fbb9ee2a982621712db76f723b7bb88b631dc64d",
+"_mousepad_2_effects_2_direction_8cs.html#a04f051fcca8ce2b8235a66fe556c341bad1e80c506f4c89e3c4fb1c1b4867a03c",
+"class_corale_1_1_colore_1_1_core_1_1_keypad.html#af963fd1092157832e06f74f7cbcecb32",
+"class_notify_property_changed_invocator_attribute.html#a53ea804fe542cdfff5c0ffbb47fdaeb0",
+"interface_corale_1_1_colore_1_1_logging_1_1_i_log.html#a6ff9b13dd6c504d3b5b7c7ccd1295232",
+"struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_custom.html#a9f06bc4c9b1bdf9332fd021e44e93f5c"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
