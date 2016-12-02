@@ -27,7 +27,6 @@ namespace Corale.Colore.Core
 {
     using System;
     using System.Diagnostics.CodeAnalysis;
-    using System.Security;
 
     using Corale.Colore.Annotations;
     using Corale.Colore.Events;
@@ -75,6 +74,7 @@ namespace Corale.Colore.Core
         /// </summary>
         private Chroma()
         {
+            Version = typeof(Chroma).Assembly.GetName().Version;
             Initialize();
         }
 
@@ -180,6 +180,11 @@ namespace Corale.Colore.Core
         /// Gets the version of the Chroma SDK that Colore is currently using.
         /// </summary>
         public SdkVersion SdkVersion => _sdkVersion;
+
+        /// <summary>
+        /// Gets the <see cref="System.Version" /> of Colore.
+        /// </summary>
+        public Version Version { get; }
 
         /// <summary>
         /// Initializes the SDK if it hasn't already.

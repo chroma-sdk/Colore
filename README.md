@@ -1,19 +1,11 @@
-Colore
-======
+![Colore Logo][colorelogo]
 
+[![Build status][devbuildbadge]][devbuild]
+[![Coverage Status][devcoverbadge]][devcover]
 [![Stories in Ready][wafflebadge]][waffle]
 [![MIT License][licensebadge]][license]
 [![Latest GitHub release][ghreleasebadge]][ghrelease]
 [![NuGet version][ngverbadge]][ng]
-[![NuGet downloads][ngdlbadge]][ng]
-
-**Develop:**
-[![Build status][devbuildbadge]][devbuild]
-[![Coverage Status][devcoverbadge]][devcover]
-
-**Master:**
-[![Master build status][masterbuildbadge]][masterbuild]
-[![Master coverage Status][mastercoverbadge]][mastercover]
 
 A powerful and elegant C# library for Razer Chroma's SDK
 
@@ -105,17 +97,13 @@ Current projects utilizing this or modified versions of this library:
 [ghreleasebadge]: https://img.shields.io/github/release/CoraleStudios/Colore.svg
 [ng]: https://www.nuget.org/packages/Colore
 [ngverbadge]: https://img.shields.io/nuget/v/Colore.svg
-[ngdlbadge]: https://img.shields.io/nuget/dt/Colore.svg
 
 [devbuild]: http://tc.coralestudios.com/viewType.html?buildTypeId=colore_mainbuild
 [devbuildbadge]: https://img.shields.io/teamcity/http/tc.coralestudios.com/s/colore_mainbuild.svg?style=flat
 [devcover]: https://coveralls.io/r/CoraleStudios/Colore?branch=develop
 [devcoverbadge]: https://coveralls.io/repos/CoraleStudios/Colore/badge.svg?branch=develop
 
-[masterbuild]: http://tc.coralestudios.com/viewType.html?buildTypeId=colore_releasebuild
-[masterbuildbadge]: https://img.shields.io/teamcity/http/tc.coralestudios.com/s/colore_releasebuild.svg?style=flat
-[mastercover]: https://coveralls.io/r/CoraleStudios/Colore?branch=master
-[mastercoverbadge]: https://coveralls.io/repos/CoraleStudios/Colore/badge.svg?branch=master
-
 [gitter]: https://gitter.im/CoraleStudios/Colore?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
 [gitterbadge]: https://badges.gitter.im/Join%20Chat.svg
+
+[colorelogo]: http://colore.coralestudios.com/img/colore.png

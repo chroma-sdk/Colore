@@ -660,11 +660,11 @@ namespace Corale.Colore.Razer.Keyboard
         OemRightBracket = 0x020D,
 
         /// <summary>
-        /// Forwards slash (/) key.
+        /// Backslash (\) key.
         /// </summary>
         [PublicAPI]
         [UnsafeKey]
-        OemSlash = 0x020E,
+        OemBackslash = 0x020E,
 
         /// <summary>
         /// Semi-colon (;) key.
@@ -691,10 +691,10 @@ namespace Corale.Colore.Razer.Keyboard
         OemPeriod = 0x040B,
 
         /// <summary>
-        /// Backslash (\) key.
+        /// Forwards slash (/) key.
         /// </summary>
         [PublicAPI]
-        OemBackslash = 0x040C,
+        OemSlash = 0x040C,
 
         /// <summary>
         /// Pound sign (#) key.

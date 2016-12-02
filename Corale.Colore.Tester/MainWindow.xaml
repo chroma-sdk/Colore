@@ -42,16 +42,6 @@
                                       ItemsSource="{Binding WaveDirectionValues}"
                                       SelectedItem="{Binding SelectedWaveDirection, Mode=TwoWay}" />
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="0,6,0,0" HorizontalAlignment="Center">
-                            <Button x:Name="SetStarlightButton" Content="SetStarlight" VerticalAlignment="Top" Width="75"
-                                    Command="{Binding StarlightCommand, Mode=OneWay}" />
-                            <ComboBox Height="22" Margin="8,0,0,0" Width="98"
-                                      ItemsSource="{Binding StarlightTypeValues}"
-                                      SelectedItem="{Binding SelectedStarlightType, Mode=TwoWay}" />
-                            <ComboBox Height="22" Margin="8,0,0,0" Width="98"
-                                      ItemsSource="{Binding StarlightDurationValues}"
-                                      SelectedItem="{Binding SelectedStarlightDuration, Mode=TwoWay}" />
-                        </StackPanel>
                         <Button x:Name="SetKeyboarsStaticButton" Content="SetStatic" VerticalAlignment="Top" Width="75"
                                 Margin="84,6,84,0" Command="{Binding StaticCommand, Mode=OneWay}" />
                         <Button x:Name="ClearButton" Content="Clear" VerticalAlignment="Top" Width="75"

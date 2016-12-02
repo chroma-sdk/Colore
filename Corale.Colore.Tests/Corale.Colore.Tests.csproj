@@ -104,7 +104,6 @@
     <Compile Include="Razer\Effects\NoneTests.cs" />
     <Compile Include="Razer\Effects\ReactiveTests.cs" />
     <Compile Include="Razer\Effects\SpectrumCyclingTests.cs" />
-    <Compile Include="Razer\Effects\StarlightTests.cs" />
     <Compile Include="Razer\Effects\StaticTests.cs" />
     <Compile Include="Razer\Effects\WaveTests.cs" />
     <Compile Include="Razer\Headset\Effects\BreathingTests.cs" />
@@ -112,7 +111,6 @@
     <Compile Include="Razer\Keyboard\Effects\BreathingTests.cs" />
     <Compile Include="Razer\Keyboard\Effects\CustomTests.cs" />
     <Compile Include="Razer\Keyboard\Effects\ReactiveTests.cs" />
-    <Compile Include="Razer\Keyboard\Effects\StarlightTests.cs" />
     <Compile Include="Razer\Keyboard\Effects\StaticTests.cs" />
     <Compile Include="Razer\Keyboard\Effects\WaveTests.cs" />
     <Compile Include="Razer\Keypad\Effects\BreathingTests.cs" />

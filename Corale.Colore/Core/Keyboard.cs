@@ -349,19 +349,11 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Sets a starlight effect on the keyboard.
-        /// </summary>
-        /// <param name="effect">Effect options.</param>
-        public void SetStarlight(Starlight effect)
-        {
-            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.Starlight, effect));
-        }
-
-        /// <summary>
         /// Clears the current effect on the Keyboard.
         /// </summary>
         public override void Clear()
         {
+            _grid.Clear();
             SetEffect(Effect.None);
         }
     }

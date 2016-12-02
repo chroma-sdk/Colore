@@ -119,6 +119,12 @@ namespace Corale.Colore.Core
         SdkVersion SdkVersion { get; }
 
         /// <summary>
+        /// Gets the <see cref="System.Version" /> of Colore.
+        /// </summary>
+        [PublicAPI]
+        Version Version { get; }
+
+        /// <summary>
         /// Initializes the SDK if it hasn't already.
         /// </summary>
         /// <remarks>

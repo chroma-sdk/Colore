@@ -239,6 +239,23 @@ namespace Corale.Colore.Razer
             0x91);
 
         /// <summary>
+        /// Blade 14 (2016 edition).
+        /// </summary>
+        [PublicAPI]
+        public static readonly Guid Blade14 = new Guid(
+            0xf2bedfaf,
+            0xa0fe,
+            0x4651,
+            0x9d,
+            0x41,
+            0xb6,
+            0xce,
+            0x60,
+            0x3a,
+            0x3d,
+            0xdd);
+
+        /// <summary>
         /// Overwatch Keyboard.
         /// </summary>
         [PublicAPI]
@@ -254,6 +271,40 @@ namespace Corale.Colore.Razer
             0x6e,
             0x72,
             0xe4);
+
+        /// <summary>
+        /// Blackwidow X Keyboard.
+        /// </summary>
+        [PublicAPI]
+        public static readonly Guid BlackwidowX = new Guid(
+            0x5af60076,
+            0xade9,
+            0x43d4,
+            0xb5,
+            0x74,
+            0x52,
+            0x59,
+            0x92,
+            0x93,
+            0xb5,
+            0x54);
+
+        /// <summary>
+        /// Blackwidow X TE Keyboard.
+        /// </summary>
+        [PublicAPI]
+        public static readonly Guid BlackwidowXTe = new Guid(
+           0x2d84dd51,
+           0x3290,
+           0x4aac,
+           0x9a,
+           0x89,
+           0xd8,
+           0xaf,
+           0xde,
+           0x38,
+           0xb5,
+           0x7c);
 
         /// <summary>
         /// Mamba (wireless) Chroma edition.
@@ -307,6 +358,91 @@ namespace Corale.Colore.Razer
             0x98);
 
         /// <summary>
+        /// Naga Hex V2
+        /// </summary>
+        [PublicAPI]
+        public static readonly Guid NagaHex = new Guid(
+            0x195d70f5,
+            0xf285,
+            0x4cff,
+            0x99,
+            0xf2,
+            0xb8,
+            0xc0,
+            0xe9,
+            0x65,
+            0x8d,
+            0xb4);
+
+        /// <summary>
+        /// Core (external graphics enclosure).
+        /// </summary>
+        [PublicAPI]
+        public static readonly Guid Core = new Guid(
+            0x201203b,
+            0x62f3,
+            0x4c50,
+            0x83,
+            0xdd,
+            0x59,
+            0x8b,
+            0xab,
+            0xd2,
+            0x8,
+            0xe0);
+
+        /// <summary>
+        /// Chroma enabled Lenovo Y900.
+        /// </summary>
+        [PublicAPI]
+        public static readonly Guid LenovoY900 = new Guid(
+            0x35f6f18d,
+            0x1ae5,
+            0x436c,
+            0xa5,
+            0x75,
+            0xab,
+            0x44,
+            0xa1,
+            0x27,
+            0x90,
+            0x3a);
+
+        /// <summary>
+        /// Chroma enabled Lenovo Y27.
+        /// </summary>
+        [PublicAPI]
+        public static readonly Guid LenovoY27 = new Guid(
+            0x47db1fa7,
+            0x6b9b,
+            0x4ee6,
+            0xb6,
+            0xf4,
+            0x40,
+            0x71,
+            0xa3,
+            0xb2,
+            0x5,
+            0x3b);
+
+        /// <summary>
+        /// Razer Ornata Keyboard.
+        /// </summary>
+        [PublicAPI]
+        public static readonly Guid Ornata = new Guid(
+            0x803378c1,
+            0xcc48,
+            0x4970,
+            0x85,
+            0x39,
+            0xd8,
+            0x28,
+            0xcc,
+            0x1d,
+            0x42,
+            0xa);
+
+        /// <summary>
         /// Returns whether a specified <see cref="Guid" /> is a valid device identifier.
         /// </summary>
         /// <param name="id">the <see cref="Guid" /> to check.</param>
@@ -317,7 +453,8 @@ namespace Corale.Colore.Razer
             return id == Blackwidow || id == Deathadder || id == Orbweaver || id == Tartarus || id == MambaTe
                    || id == BlackwidowTe || id == Kraken71 || id == Firefly || id == Deathstalker || id == Diamondback
                    || id == Mamba || id == OverwatchKeyboard || id == Orochi || id == BladeStealth || id == Naga
-                   || id == NagaEpic;
+                   || id == NagaEpic || id == Core || id == LenovoY27 || id == LenovoY900 || id == Blade14 || id == BlackwidowX
+                   || id == BlackwidowXTe || id == NagaHex || id == Ornata;
         }
     }
 }
