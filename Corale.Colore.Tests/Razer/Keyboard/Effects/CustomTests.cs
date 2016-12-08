@@ -354,7 +354,8 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
             var original = new Custom(Color.Red)
             {
                 [Key.A] = Color.Green,
-                [0, 0] = Color.Orange
+                [Key.Escape] = Color.Orange,
+                [0, 1] = Color.Orange
             };
             var clone = original.Clone();
 

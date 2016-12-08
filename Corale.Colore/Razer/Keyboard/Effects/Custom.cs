@@ -85,12 +85,8 @@ namespace Corale.Colore.Razer.Keyboard.Effects
 
             for (var index = 0; index < Constants.MaxKeys; index++)
             {
-                _colors[index] = other[index];
-                var otherKeyColor = other[(Key)index];
-                if (otherKeyColor.Value > 0)
-                {
-                    _keys[index] = Constants.KeyFlag | otherKeyColor;
-                }
+                _colors[index] = other._colors[index];
+                _keys[index] = other._keys[index];
             }
         }
 
