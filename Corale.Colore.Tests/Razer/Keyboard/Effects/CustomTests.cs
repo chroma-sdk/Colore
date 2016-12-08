@@ -26,6 +26,7 @@
 namespace Corale.Colore.Tests.Razer.Keyboard.Effects
 {
     using System;
+    using System.Reflection;
 
     using Corale.Colore.Core;
     using Corale.Colore.Razer.Keyboard;
@@ -351,10 +352,34 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
         [Test]
         public void ClonedStructShouldBeIdentical()
         {
-            var original = new Custom(Color.Red);
+            var original = new Custom(Color.Red)
+            {
+                [Key.A] = Color.Green,
+                [0, 0] = Color.Orange
+            };
             var clone = original.Clone();
 
             Assert.That(clone, Is.EqualTo(original));
+
+            var comparePrivateFields = new[]
+            {
+                typeof(Custom).GetField("_colors", BindingFlags.NonPublic | BindingFlags.Instance),
+                typeof(Custom).GetField("_keys", BindingFlags.NonPublic | BindingFlags.Instance)
+            };
+
+            foreach (var compareField in comparePrivateFields)
+            {
+                var originalValue = compareField.GetValue(original) as Color[];
+                var cloneValue = compareField.GetValue(clone) as Color[];
+                Assert.NotNull(originalValue);
+                Assert.NotNull(cloneValue);
+                Assert.That(originalValue.Length, Is.EqualTo(cloneValue.Length));
+
+                for (var index = 0; index < originalValue.Length; index++)
+                {
+                    Assert.That(cloneValue[index].Value, Is.EqualTo(originalValue[index].Value));
+                }
+            }
         }
 
         [Test]
