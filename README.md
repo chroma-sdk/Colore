@@ -74,14 +74,16 @@ Razer's SDK installer **will only install the library relevant for your platform
 This means that your apps will need to be compiled twice, once for x86 platforms, and once for x64, unless you are using "Any CPU".
 They must both be provided when you distribute your application, depending on what platform the user has.
 
-Projects
+Games using Colore
 --------
 
-Current projects utilizing this or modified versions of this library:
+The following games (powered by Unity) are using Colore:
 
-*None right now!*
+[![DubWars](http://cdn.akamai.steamstatic.com/steam/apps/290000/capsule_184x69.jpg)](http://store.steampowered.com/app/290000/) [![Masquerada: Songs and Shadows](http://cdn.akamai.steamstatic.com/steam/apps/459090/capsule_184x69.jpg)](http://store.steampowered.com/app/459090/) [![Nevermind](http://cdn.akamai.steamstatic.com/steam/apps/342260/capsule_184x69.jpg)](http://store.steampowered.com/app/342260/)
+[![Please, Don't Touch Anything 3D](http://cdn.akamai.steamstatic.com/steam/apps/529590/capsule_184x69.jpg)](http://store.steampowered.com/app/529590/) [![Starcrawlers](http://cdn.akamai.steamstatic.com/steam/apps/318970/capsule_184x69.jpg)](http://store.steampowered.com/app/318970/) [![The Little Acre](http://cdn.akamai.steamstatic.com/steam/apps/423590/capsule_184x69.jpg)](http://store.steampowered.com/app/423590/)
 
-(If you want your project listed, just contact [Sharparam][sharp] or [Brandon][bs])
+There may be others we are unaware of, so please let us know if there are any others.
+
 
 [newpull]: ../../pull/new/develop
 [sharp]: https://github.com/Sharparam
