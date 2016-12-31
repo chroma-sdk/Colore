@@ -74,6 +74,13 @@ Razer's SDK installer **will only install the library relevant for your platform
 This means that your apps will need to be compiled twice, once for x86 platforms, and once for x64, unless you are using "Any CPU".
 They must both be provided when you distribute your application, depending on what platform the user has.
 
+Razer Chroma Workshop
+---------------------
+
+Many of the games and apps featured on the [Razer Chroma Workshop](http://www.razerzone.com/chroma-workshop/) have used the Colore library.
+
+The official [Razer Chroma Workshop](http://www.razerzone.com/chroma-workshop/) is your one-stop-shop to get the most out of your Chroma devices. Whether it's smart lighting based on in-game events, standalone apps or stunning profiles created by fans around the world, the Chroma Workshop is where you can explore, download and even share your own creations.
+
 Games using Colore
 --------
 
