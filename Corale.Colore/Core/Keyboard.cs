@@ -191,7 +191,7 @@ namespace Corale.Colore.Core
         public override void SetAll(Color color)
         {
             _grid.Set(color);
-            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.CustomKey, _grid));
+            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.Custom, _grid));
         }
 
         /// <summary>
@@ -236,7 +236,7 @@ namespace Corale.Colore.Core
         public void SetCustom(Custom effect)
         {
             _grid = effect;
-            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.CustomKey, _grid));
+            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.Custom, _grid));
         }
 
         /// <summary>
@@ -272,7 +272,7 @@ namespace Corale.Colore.Core
                 _grid.Clear();
 
             _grid[row, column] = color;
-            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.CustomKey, _grid));
+            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.Custom, _grid));
         }
 
         /// <summary>
