@@ -74,14 +74,32 @@ Razer's SDK installer **will only install the library relevant for your platform
 This means that your apps will need to be compiled twice, once for x86 platforms, and once for x64, unless you are using "Any CPU".
 They must both be provided when you distribute your application, depending on what platform the user has.
 
-Projects
---------
+Razer Chroma Workshop
+---------------------
 
-Current projects utilizing this or modified versions of this library:
+Many of the games and apps featured on the [Razer Chroma Workshop][workshop] have used the Colore library.
 
-*None right now!*
+The official [Razer Chroma Workshop][workshop] is your one-stop-shop to get the most out of your Chroma devices. Whether it's smart lighting based on in-game events, standalone apps or stunning profiles created by fans around the world, the Chroma Workshop is where you can explore, download and even share your own creations.
 
-(If you want your project listed, just contact [Sharparam][sharp] or [Brandon][bs])
+Games using Colore
+------------------
+
+The following games (powered by Unity) are using Colore:
+
+[![DubWars](http://cdn.akamai.steamstatic.com/steam/apps/290000/capsule_184x69.jpg)](http://store.steampowered.com/app/290000/)
+[![Masquerada: Songs and Shadows](http://cdn.akamai.steamstatic.com/steam/apps/459090/capsule_184x69.jpg)](http://store.steampowered.com/app/459090/)
+[![Nevermind](http://cdn.akamai.steamstatic.com/steam/apps/342260/capsule_184x69.jpg)](http://store.steampowered.com/app/342260/)
+[![Please, Don't Touch Anything 3D](http://cdn.akamai.steamstatic.com/steam/apps/529590/capsule_184x69.jpg)](http://store.steampowered.com/app/529590/)
+[![Starcrawlers](http://cdn.akamai.steamstatic.com/steam/apps/318970/capsule_184x69.jpg)](http://store.steampowered.com/app/318970/)
+[![The Little Acre](http://cdn.akamai.steamstatic.com/steam/apps/423590/capsule_184x69.jpg)](http://store.steampowered.com/app/423590/)
+
+Projects using Colore
+---------------------
+
+[Aurora](http://aurora.lastbullet.net/) - Unified lighting effects across multiple brands and various games. ([GitHub](https://github.com/antonpup/Aurora))
+
+There may be others we are unaware of, so please let us know if there are any others.
+
 
 [newpull]: ../../pull/new/develop
 [sharp]: https://github.com/Sharparam
@@ -107,3 +125,5 @@ Current projects utilizing this or modified versions of this library:
 [gitterbadge]: https://badges.gitter.im/Join%20Chat.svg
 
 [colorelogo]: http://colore.coralestudios.com/img/colore.png
+
+[workshop]: http://www.razerzone.com/chroma-workshop/
