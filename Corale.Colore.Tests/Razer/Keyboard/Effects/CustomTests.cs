@@ -351,7 +351,12 @@ namespace Corale.Colore.Tests.Razer.Keyboard.Effects
         [Test]
         public void ClonedStructShouldBeIdentical()
         {
-            var original = new Custom(Color.Red);
+            var original = new Custom(Color.Red)
+            {
+                [Key.A] = Color.Green,
+                [Key.Escape] = Color.Orange,
+                [0, 1] = Color.Orange
+            };
             var clone = original.Clone();
 
             Assert.That(clone, Is.EqualTo(original));
