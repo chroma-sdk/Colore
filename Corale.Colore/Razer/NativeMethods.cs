@@ -626,6 +626,19 @@ namespace Corale.Colore.Razer
             [In, Out] ref Guid effectId);
 
         /// <summary>
+        /// Create Chroma Link effect.
+        /// </summary>
+        /// <param name="effect">Chroma Link effect type.</param>
+        /// <param name="param">Pointer to a parameter type specified by <paramref name="effect" />.</param>
+        /// <param name="effectId">Valid effect ID if successful. Pass <see cref="IntPtr.Zero" /> if not required.</param>
+        /// <returns><see cref="Result" /> value indicating success.</returns>
+        [DllImport(DllName, CallingConvention = FunctionConvention, EntryPoint = "CreateChromaLinkEffect", SetLastError = true)]
+        internal static extern Result CreateChromaLinkEffect(
+            [In] ChromaLink.Effects.Effect effect,
+            [In] IntPtr param,
+            [In, Out] ref Guid effectId);
+
+        /// <summary>
         /// Delete effect.
         /// </summary>
         /// <param name="effectId">ID of the effect that needs to be deleted.</param>

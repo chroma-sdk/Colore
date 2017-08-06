@@ -35,7 +35,7 @@ namespace Corale.Colore.Core
     using Razer.ChromaLink.Effects;
 
     /// <summary>
-    /// Class for interacting with a Chroma keyboard.
+    /// Class for interacting with a Chroma Link.
     /// </summary>
     [PublicAPI]
     public sealed class ChromaLink : Device, IChromaLink
@@ -43,7 +43,7 @@ namespace Corale.Colore.Core
         /// <summary>
         /// Logger instance for this class.
         /// </summary>
-        private static readonly ILog Log = LogManager.GetLogger(typeof(Keypad));
+        private static readonly ILog Log = LogManager.GetLogger(typeof(ChromaLink));
 
         /// <summary>
         /// Lock object for thread-safe init.
@@ -163,7 +163,7 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Clears the current effect on the Keyboard.
+        /// Clears the current effect on the Chroma Link.
         /// </summary>
         public override void Clear()
         {
