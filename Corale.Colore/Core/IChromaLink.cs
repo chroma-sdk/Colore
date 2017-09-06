@@ -33,7 +33,7 @@ namespace Corale.Colore.Core
     /// <summary>
     /// Interface for Chroma Link functionality.
     /// </summary>
-    public interface IChromaLink
+    public interface IChromaLink : IDevice
     {
         /// <summary>
         /// Gets or sets the <see cref="Color" /> for a specific zone on the Chroma Link device.
