@@ -98,10 +98,12 @@
   <ItemGroup>
     <Compile Include="ColoreException.cs" />
     <Compile Include="Core\Chroma.cs" />
+    <Compile Include="Core\ChromaLink.cs" />
     <Compile Include="Core\Color.cs" />
     <Compile Include="Core\Color.Defines.cs" />
     <Compile Include="Core\Device.cs" />
     <Compile Include="Core\RegistryHelper.cs" />
+    <Compile Include="Core\IChromaLink.cs" />
     <Compile Include="EnvironmentHelper.cs" />
     <Compile Include="Core\GenericDevice.cs" />
     <Compile Include="Core\Headset.cs" />
@@ -127,6 +129,10 @@
     <Compile Include="Logging\TraceLogger.cs" />
     <Compile Include="Native\Kernel32\NativeMethods.cs" />
     <Compile Include="Annotations.cs" />
+    <Compile Include="Razer\ChromaLink\Constants.cs" />
+    <Compile Include="Razer\ChromaLink\Effects\Custom.cs" />
+    <Compile Include="Razer\ChromaLink\Effects\Effect.cs" />
+    <Compile Include="Razer\ChromaLink\Effects\Static.cs" />
     <Compile Include="Razer\Constants.cs" />
     <Compile Include="Razer\DeviceInfo.cs" />
     <Compile Include="Razer\Devices.cs" />
