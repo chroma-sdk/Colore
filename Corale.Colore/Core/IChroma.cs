@@ -106,6 +106,13 @@ namespace Corale.Colore.Core
         IKeypad Keypad { get; }
 
         /// <summary>
+        /// Gets an instance of the <see cref="IChromaLink" /> interface
+        /// for interacting with ChromaLink devices.
+        /// </summary>
+        [PublicAPI]
+        IChromaLink ChromaLink { get; }
+
+        /// <summary>
         /// Gets a value indicating whether the Chroma
         /// SDK has been initialized or not.
         /// </summary>
