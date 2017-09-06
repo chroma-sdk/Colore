@@ -171,6 +171,12 @@ namespace Corale.Colore.Core
         public IKeypad Keypad => Core.Keypad.Instance;
 
         /// <summary>
+        /// Gets an instance of the <see cref="IChromaLink" /> interface
+        /// for interacting with ChromaLink devices.
+        /// </summary>
+        public IChromaLink ChromaLink => Core.ChromaLink.Instance;
+
+        /// <summary>
         /// Gets a value indicating whether the Chroma
         /// SDK has been initialized or not.
         /// </summary>
@@ -239,6 +245,7 @@ namespace Corale.Colore.Core
             ((Device)Keypad).DeleteCurrentEffect();
             ((Device)Mousepad).DeleteCurrentEffect();
             ((Device)Headset).DeleteCurrentEffect();
+            ((Device)ChromaLink).DeleteCurrentEffect();
 
             Unregister();
             NativeWrapper.UnInit();

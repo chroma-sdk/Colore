@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="NativeMethods.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -101,6 +101,11 @@ namespace Corale.Colore.Razer
         internal static readonly CreateKeypadEffectDelegate CreateKeypadEffect;
 
         /// <summary>
+        /// Stores a reference to the loaded <see cref="CreateChromaLinkEffectDelegate" />.
+        /// </summary>
+        internal static readonly CreateChromaLinkEffectDelegate CreateChromaLinkEffect;
+
+        /// <summary>
         /// Stores a reference to the loaded <see cref="DeleteEffectDelegate" />.
         /// </summary>
         internal static readonly DeleteEffectDelegate DeleteEffect;
@@ -174,6 +179,10 @@ namespace Corale.Colore.Razer
             CreateKeypadEffect = GetDelegateFromLibrary<CreateKeypadEffectDelegate>(
                 chromaSdkPointer,
                 "CreateKeypadEffect");
+
+            CreateChromaLinkEffect = GetDelegateFromLibrary<CreateChromaLinkEffectDelegate>(
+                    chromaSdkPointer,
+                    "CreateChromaLinkEffect");
 
             DeleteEffect = GetDelegateFromLibrary<DeleteEffectDelegate>(chromaSdkPointer, "DeleteEffect");
 
@@ -341,6 +350,19 @@ namespace Corale.Colore.Razer
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         internal delegate Result CreateKeypadEffectDelegate(
             [In] Keypad.Effects.Effect effect,
+            [In] IntPtr param,
+            [In, Out] ref Guid effectId);
+
+        /// <summary>
+        /// Create Chroma Link effect.
+        /// </summary>
+        /// <param name="effect">Chroma Link effect type.</param>
+        /// <param name="param">Pointer to a parameter type specified by <paramref name="effect" />.</param>
+        /// <param name="effectId">Valid effect ID if successful. Pass <see cref="IntPtr.Zero" /> if not required.</param>
+        /// <returns><see cref="Result" /> value indicating success.</returns>
+        [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
+        internal delegate Result CreateChromaLinkEffectDelegate(
+            [In] ChromaLink.Effects.Effect effect,
             [In] IntPtr param,
             [In, Out] ref Guid effectId);
 
@@ -600,6 +622,19 @@ namespace Corale.Colore.Razer
         [DllImport(DllName, CallingConvention = FunctionConvention, EntryPoint = "CreateKeypadEffect", SetLastError = true)]
         internal static extern Result CreateKeypadEffect(
             [In] Keypad.Effects.Effect effect,
+            [In] IntPtr param,
+            [In, Out] ref Guid effectId);
+
+        /// <summary>
+        /// Create Chroma Link effect.
+        /// </summary>
+        /// <param name="effect">Chroma Link effect type.</param>
+        /// <param name="param">Pointer to a parameter type specified by <paramref name="effect" />.</param>
+        /// <param name="effectId">Valid effect ID if successful. Pass <see cref="IntPtr.Zero" /> if not required.</param>
+        /// <returns><see cref="Result" /> value indicating success.</returns>
+        [DllImport(DllName, CallingConvention = FunctionConvention, EntryPoint = "CreateChromaLinkEffect", SetLastError = true)]
+        internal static extern Result CreateChromaLinkEffect(
+            [In] ChromaLink.Effects.Effect effect,
             [In] IntPtr param,
             [In, Out] ref Guid effectId);
 
