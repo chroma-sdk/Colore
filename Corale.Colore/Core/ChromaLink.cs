@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="ChromaLink.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -89,7 +89,7 @@ namespace Corale.Colore.Core
         /// <summary>
         /// Gets or sets a color at the specified position in the Chroma Link
         /// </summary>
-        /// <param name="index">The index to access (between <c>0</c> and <see cref="Constants.MaxLEDs" />, exclusive upper-bound).</param>
+        /// <param name="index">The index to access (between <c>0</c> and <see cref="Constants.MaxLeds" />, exclusive upper-bound).</param>
         /// <returns>The <see cref="Color" /> at the specified position.</returns>
         public Color this[int index]
         {
