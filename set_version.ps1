@@ -79,9 +79,9 @@ function Update-NuSpec
     Out-File $file
 }
 
-Update-File Corale.Colore/Properties/AssemblyInfo.cs
-Update-File Corale.Colore.Wpf/Properties/AssemblyInfo.cs
-Update-File Corale.Colore.WinForms/Properties/AssemblyInfo.cs
+Update-File src/Corale.Colore/Properties/AssemblyInfo.cs
+Update-File src/Corale.Colore.Wpf/Properties/AssemblyInfo.cs
+Update-File src/Corale.Colore.WinForms/Properties/AssemblyInfo.cs
 
-Update-NuSpec Corale.Colore.Wpf/Corale.Colore.Wpf.nuspec
-Update-NuSpec Corale.Colore.WinForms/Corale.Colore.WinForms.nuspec
+Update-NuSpec src/Corale.Colore.Wpf/Corale.Colore.Wpf.nuspec
+Update-NuSpec src/Corale.Colore.WinForms/Corale.Colore.WinForms.nuspec
