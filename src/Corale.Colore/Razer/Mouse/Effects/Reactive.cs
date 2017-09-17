@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="Reactive.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -25,6 +25,7 @@
 
 namespace Corale.Colore.Razer.Mouse.Effects
 {
+    using System;
     using System.Runtime.InteropServices;
 
     using Corale.Colore.Annotations;
@@ -33,6 +34,7 @@ namespace Corale.Colore.Razer.Mouse.Effects
     /// <summary>
     /// Reactive effect.
     /// </summary>
+    [Obsolete("Use custom effects instead.")]
     [StructLayout(LayoutKind.Sequential)]
     public struct Reactive
     {

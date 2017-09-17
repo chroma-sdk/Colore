@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="Breathing.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -25,12 +25,15 @@
 
 namespace Corale.Colore.Razer.Keypad.Effects
 {
+    using System;
+
     using Corale.Colore.Annotations;
     using Corale.Colore.Core;
 
     /// <summary>
     /// Breathing effect.
     /// </summary>
+    [Obsolete("Use custom effects instead.")]
     public struct Breathing
     {
         /// <summary>

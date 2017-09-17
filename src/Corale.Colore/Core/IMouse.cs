@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="IMouse.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -25,6 +25,8 @@
 
 namespace Corale.Colore.Core
 {
+    using System;
+
     using Corale.Colore.Annotations;
     using Corale.Colore.Razer.Mouse;
     using Corale.Colore.Razer.Mouse.Effects;
@@ -39,6 +41,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="index">The index to query, between <c>0</c> and <see cref="Constants.MaxLeds" /> (exclusive upper-bound).</param>
         /// <returns>The <see cref="Color" /> at the specified index.</returns>
+        [Obsolete("Use the new grid-based custom effects instead.")]
         [PublicAPI]
         Color this[int index] { get; set; }
 
@@ -47,6 +50,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="led">The <see cref="Led" /> to query.</param>
         /// <returns>The <see cref="Color" /> currently set for the specified <see cref="Led" />.</returns>
+        [Obsolete("Use the new grid-based custom effects instead.")]
         [PublicAPI]
         Color this[Led led] { get; set; }
 
@@ -75,6 +79,7 @@ namespace Corale.Colore.Core
         /// <param name="led">Which LED to modify.</param>
         /// <param name="color">Color to set.</param>
         /// <param name="clear">If <c>true</c>, the mouse will first be cleared before setting the LED.</param>
+        [Obsolete("Use the new grid-based custom effects instead.")]
         [PublicAPI]
         void SetLed(Led led, Color color, bool clear = false);
 
@@ -90,6 +95,7 @@ namespace Corale.Colore.Core
         /// Sets a breathing effect on the mouse.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Breathing" /> effect.</param>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         void SetBreathing(Breathing effect);
 
@@ -100,6 +106,7 @@ namespace Corale.Colore.Core
         /// <param name="first">First color to breathe into.</param>
         /// <param name="second">Second color to breathe into.</param>
         /// <param name="led">The LED(s) on which to apply the effect.</param>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         void SetBreathing(Color first, Color second, Led led = Led.All);
 
@@ -110,6 +117,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="color">The color to breathe.</param>
         /// <param name="led">The LED(s) on which to apply the effect.</param>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         void SetBreathing(Color color, Led led = Led.All);
 
@@ -117,6 +125,7 @@ namespace Corale.Colore.Core
         /// Instructs the mouse to breathe random colors.
         /// </summary>
         /// <param name="led">The LED(s) on which to apply the effect.</param>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         void SetBreathing(Led led = Led.All);
 
@@ -139,6 +148,7 @@ namespace Corale.Colore.Core
         /// Starts a blinking effect on the specified LED.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Blinking" /> effect.</param>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         void SetBlinking(Blinking effect);
 
@@ -147,6 +157,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="color">The color to blink with.</param>
         /// <param name="led">The LED(s) to affect.</param>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         void SetBlinking(Color color, Led led = Led.All);
 
@@ -154,6 +165,7 @@ namespace Corale.Colore.Core
         /// Sets a reactive effect on the mouse.
         /// </summary>
         /// <param name="effect">Effect options struct.</param>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         void SetReactive(Reactive effect);
 
@@ -163,6 +175,7 @@ namespace Corale.Colore.Core
         /// <param name="duration">How long the effect should last.</param>
         /// <param name="color">The color to react with.</param>
         /// <param name="led">Which LED(s) to affect.</param>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         void SetReactive(Duration duration, Color color, Led led = Led.All);
 
@@ -170,6 +183,7 @@ namespace Corale.Colore.Core
         /// Sets a spectrum cycling effect on the mouse.
         /// </summary>
         /// <param name="effect">Effect options struct.</param>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         void SetSpectrumCycling(SpectrumCycling effect);
 
@@ -177,6 +191,7 @@ namespace Corale.Colore.Core
         /// Sets a spectrum cycling effect on the mouse.
         /// </summary>
         /// <param name="led">The LED(s) to affect.</param>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         void SetSpectrumCycling(Led led = Led.All);
 
@@ -184,6 +199,7 @@ namespace Corale.Colore.Core
         /// Sets a wave effect on the mouse.
         /// </summary>
         /// <param name="effect">Effect options struct.</param>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         void SetWave(Wave effect);
 
@@ -191,6 +207,7 @@ namespace Corale.Colore.Core
         /// Sets a wave effect on the mouse.
         /// </summary>
         /// <param name="direction">Direction of the wave.</param>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         void SetWave(Direction direction);
 
@@ -198,6 +215,7 @@ namespace Corale.Colore.Core
         /// Sets a custom effect on the mouse.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
+        [Obsolete("Use the new grid-based custom effects instead.")]
         [PublicAPI]
         void SetCustom(Custom effect);
 

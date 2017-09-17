@@ -1,4 +1,4 @@
-﻿// <copyright file="Blinking.cs" company="Corale">
+// <copyright file="Blinking.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,6 +23,7 @@
 
 namespace Corale.Colore.Razer.Effects
 {
+    using System;
     using System.Runtime.InteropServices;
 
     using Corale.Colore.Annotations;
@@ -31,6 +32,7 @@ namespace Corale.Colore.Razer.Effects
     /// <summary>
     /// Describes a blinking effect.
     /// </summary>
+    [Obsolete("Use custom effects instead.")]
     [StructLayout(LayoutKind.Sequential)]
     public struct Blinking
     {
