@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="ColorTests.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -28,9 +28,6 @@ namespace Corale.Colore.Tests.Core
     using Corale.Colore.Core;
 
     using NUnit.Framework;
-
-    using SystemColor = System.Drawing.Color;
-    using WpfColor = System.Windows.Media.Color;
 
     [TestFixture]
     public class ColorTests
