@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="Effect.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -25,6 +25,8 @@
 
 namespace Corale.Colore.Razer.Keypad.Effects
 {
+    using System;
+
     using Corale.Colore.Annotations;
 
     /// <summary>
@@ -41,6 +43,7 @@ namespace Corale.Colore.Razer.Keypad.Effects
         /// <summary>
         /// Breathing effect.
         /// </summary>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         Breathing,
 
@@ -53,12 +56,14 @@ namespace Corale.Colore.Razer.Keypad.Effects
         /// <summary>
         /// Reactive effect.
         /// </summary>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         Reactive,
 
         /// <summary>
         /// Spectrum cycling.
         /// </summary>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         SpectrumCycling,
 
@@ -71,6 +76,7 @@ namespace Corale.Colore.Razer.Keypad.Effects
         /// <summary>
         /// Wave effect.
         /// </summary>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         Wave,
 

@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="Effect.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -25,6 +25,8 @@
 
 namespace Corale.Colore.Razer.Headset.Effects
 {
+    using System;
+
     using Corale.Colore.Annotations;
 
     /// <summary>
@@ -47,14 +49,22 @@ namespace Corale.Colore.Razer.Headset.Effects
         /// <summary>
         /// Slow fade between two colors.
         /// </summary>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         Breathing,
 
         /// <summary>
         /// Cycles the entire spectrum.
         /// </summary>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         SpectrumCycling,
+
+        /// <summary>
+        /// Custom headset effect.
+        /// </summary>
+        [PublicAPI]
+        Custom,
 
         /// <summary>
         /// Invalid effect.

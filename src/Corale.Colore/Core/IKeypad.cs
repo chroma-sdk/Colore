@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="IKeypad.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -25,6 +25,8 @@
 
 namespace Corale.Colore.Core
 {
+    using System;
+
     using Corale.Colore.Annotations;
     using Corale.Colore.Razer.Keypad;
     using Corale.Colore.Razer.Keypad.Effects;
@@ -57,6 +59,7 @@ namespace Corale.Colore.Core
         /// Sets a <see cref="Breathing" /> effect on the keypad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Breathing" /> struct.</param>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         void SetBreathing(Breathing effect);
 
@@ -66,6 +69,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="first">The first color to breathe into.</param>
         /// <param name="second">Second color to breathe into.</param>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         void SetBreathing(Color first, Color second);
 
@@ -73,6 +77,7 @@ namespace Corale.Colore.Core
         /// Sets an effect on the keypad to breathe
         /// between randomly chosen colors.
         /// </summary>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         void SetBreathing();
 
@@ -87,6 +92,7 @@ namespace Corale.Colore.Core
         /// Sets a <see cref="Reactive" /> effect on the keypad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Reactive" /> struct.</param>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         void SetReactive(Reactive effect);
 
@@ -96,6 +102,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="color">Color of the effect.</param>
         /// <param name="duration">Duration of the effect.</param>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         void SetReactive(Color color, Duration duration);
 
@@ -117,6 +124,7 @@ namespace Corale.Colore.Core
         /// Sets a <see cref="Wave" /> effect on the keypad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Wave" /> struct.</param>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         void SetWave(Wave effect);
 
@@ -124,6 +132,7 @@ namespace Corale.Colore.Core
         /// Sets a <see cref="Wave" /> effect on the keypad.
         /// </summary>
         /// <param name="direction">Direction of the wave.</param>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         void SetWave(Direction direction);
 

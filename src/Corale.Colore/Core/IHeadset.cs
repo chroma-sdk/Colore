@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="IHeadset.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -25,6 +25,8 @@
 
 namespace Corale.Colore.Core
 {
+    using System;
+
     using Corale.Colore.Annotations;
     using Corale.Colore.Razer.Headset.Effects;
 
@@ -67,6 +69,7 @@ namespace Corale.Colore.Core
         /// An instance of the <see cref="Breathing" /> struct
         /// describing the effect.
         /// </param>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         void SetBreathing(Breathing effect);
 
@@ -75,6 +78,7 @@ namespace Corale.Colore.Core
         /// using the specified <see cref="Color" />.
         /// </summary>
         /// <param name="color"><see cref="Color"/> of the effect.</param>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         void SetBreathing(Color color);
     }

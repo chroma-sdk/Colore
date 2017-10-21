@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="Wave.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -25,11 +25,14 @@
 
 namespace Corale.Colore.Razer.Mouse.Effects
 {
+    using System;
+
     using Corale.Colore.Annotations;
 
     /// <summary>
     /// Wave effect.
     /// </summary>
+    [Obsolete("Use custom effects instead.")]
     public struct Wave
     {
         /// <summary>

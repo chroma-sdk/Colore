@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="Effect.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -25,6 +25,9 @@
 
 namespace Corale.Colore.Razer
 {
+    using System;
+    using System.ComponentModel;
+
     using Corale.Colore.Annotations;
 
     /// <summary>
@@ -42,36 +45,42 @@ namespace Corale.Colore.Razer
         /// <summary>
         /// The wave effect.
         /// </summary>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         Wave,
 
         /// <summary>
         /// Spectrum cycling effect.
         /// </summary>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         SpectrumCycling,
 
         /// <summary>
         /// Slowly fades between two colors.
         /// </summary>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         Breathing,
 
         /// <summary>
         /// A blinking effect.
         /// </summary>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         Blinking,
 
         /// <summary>
         /// Reacts to input.
         /// </summary>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         Reactive,
 
         /// <summary>
         /// Static color.
         /// </summary>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         Static,
 
@@ -84,6 +93,8 @@ namespace Corale.Colore.Razer
         /// <summary>
         /// Reserved effect.
         /// </summary>
+        [EditorBrowsable(EditorBrowsableState.Advanced)]
+        //// ReSharper disable once UnusedMember.Global
         Reserved,
 
         /// <summary>

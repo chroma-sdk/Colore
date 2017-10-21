@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="Custom.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -35,6 +35,7 @@ namespace Corale.Colore.Razer.Mouse.Effects
     /// <summary>
     /// Custom effect for mouse LEDs.
     /// </summary>
+    [Obsolete("Use the new grid-based custom effects instead.")]
     [StructLayout(LayoutKind.Sequential)]
     public struct Custom : IEquatable<Custom>, IEquatable<IList<Color>>
     {

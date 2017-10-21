@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="IKeyboard.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -25,6 +25,7 @@
 
 namespace Corale.Colore.Core
 {
+    using System;
     using System.Collections.Generic;
 
     using Corale.Colore.Annotations;
@@ -67,6 +68,7 @@ namespace Corale.Colore.Core
         /// Sets a breathing effect on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         void SetBreathing(Breathing effect);
 
@@ -76,6 +78,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="first">Color to start from.</param>
         /// <param name="second">Color to reach, before going back to <paramref name="first" />.</param>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         void SetBreathing(Color first, Color second);
 
@@ -83,6 +86,7 @@ namespace Corale.Colore.Core
         /// Sets an effect on the keyboard, fading between
         /// between randomly chosen colors.
         /// </summary>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         void SetBreathing();
 
@@ -92,6 +96,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="color">Color to emit on key press.</param>
         /// <param name="duration">How long to illuminate the key after being pressed.</param>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         void SetReactive(Color color, Duration duration);
 
@@ -110,6 +115,7 @@ namespace Corale.Colore.Core
         /// Sets a wave effect on the keyboard in the specified direction.
         /// </summary>
         /// <param name="direction">Direction of the wave.</param>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         void SetWave(Direction direction);
 
@@ -162,6 +168,7 @@ namespace Corale.Colore.Core
         /// Sets a reactive effect on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         void SetReactive(Reactive effect);
 
@@ -176,6 +183,7 @@ namespace Corale.Colore.Core
         /// Sets a wave effect on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         void SetWave(Wave effect);
     }

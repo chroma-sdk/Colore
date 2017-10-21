@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="Effect.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -25,6 +25,8 @@
 
 namespace Corale.Colore.Razer.Mouse.Effects
 {
+    using System;
+
     using Corale.Colore.Annotations;
 
     /// <summary>
@@ -41,30 +43,35 @@ namespace Corale.Colore.Razer.Mouse.Effects
         /// <summary>
         /// Blinking effect.
         /// </summary>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         Blinking,
 
         /// <summary>
         /// The breathing effect.
         /// </summary>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         Breathing,
 
         /// <summary>
         /// A custom effect.
         /// </summary>
+        [Obsolete("Use the new grid-based custom effects instead.")]
         [PublicAPI]
         Custom,
 
         /// <summary>
         /// Reactive effect.
         /// </summary>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         Reactive,
 
         /// <summary>
         /// The spectrum cycling effect.
         /// </summary>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         SpectrumCycling,
 
@@ -77,6 +84,7 @@ namespace Corale.Colore.Razer.Mouse.Effects
         /// <summary>
         /// Wave effect.
         /// </summary>
+        [Obsolete("Use custom effects instead.")]
         [PublicAPI]
         Wave,
 
