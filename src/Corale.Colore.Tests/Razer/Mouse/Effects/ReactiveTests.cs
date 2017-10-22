@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="ReactiveTests.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -37,14 +37,14 @@ namespace Corale.Colore.Tests.Razer.Mouse.Effects
         [Test]
         public void ShouldConstructWithCorrectParameters()
         {
-            const Led Led = Led.Logo;
-            const Duration Duration = Duration.Medium;
+            const Led ExpectedLed = Led.Logo;
+            const Duration ExpectedDuration = Duration.Medium;
             var color = Color.Red;
 
-            var effect = new Reactive(Led, Duration, color);
+            var effect = new Reactive(ExpectedLed, ExpectedDuration, color);
 
-            Assert.AreEqual(Led, effect.Led);
-            Assert.AreEqual(Duration, effect.Duration);
+            Assert.AreEqual(ExpectedLed, effect.Led);
+            Assert.AreEqual(ExpectedDuration, effect.Duration);
             Assert.AreEqual(color, effect.Color);
         }
 
