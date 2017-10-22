@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="BreathingTests.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -30,21 +30,21 @@ namespace Corale.Colore.Tests.Razer.Mouse.Effects
     using Colore.Razer.Mouse.Effects;
 
     using NUnit.Framework;
-
+    
     [TestFixture]
     public class BreathingTests
     {
         [Test]
         public void ShouldConstructWithCorrectParameters()
         {
-            const Led Led = Led.Logo;
+            const Led ExpectedLed = Led.Logo;
             const BreathingType Type = BreathingType.Two;
             var first = Color.Red;
             var second = Color.Blue;
 
-            var effect = new Breathing(Led, Type, first, second);
+            var effect = new Breathing(ExpectedLed, Type, first, second);
 
-            Assert.AreEqual(Led, effect.Led);
+            Assert.AreEqual(ExpectedLed, effect.Led);
             Assert.AreEqual(Type, effect.Type);
             Assert.AreEqual(first, effect.First);
             Assert.AreEqual(second, effect.Second);
