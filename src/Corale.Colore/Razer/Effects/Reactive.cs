@@ -26,8 +26,9 @@ namespace Corale.Colore.Razer.Effects
     using System;
     using System.Runtime.InteropServices;
 
-    using Corale.Colore.Annotations;
     using Corale.Colore.Core;
+
+    using JetBrains.Annotations;
 
     /// <summary>
     /// Describes the reactive effect for system devices.

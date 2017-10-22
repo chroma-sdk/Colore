@@ -28,9 +28,10 @@ namespace Corale.Colore.Core
     using System;
     using System.Collections.Generic;
 
-    using Corale.Colore.Annotations;
     using Corale.Colore.Razer.Keyboard;
     using Corale.Colore.Razer.Keyboard.Effects;
+
+    using JetBrains.Annotations;
 
     /// <summary>
     /// Interface for keyboard functionality.

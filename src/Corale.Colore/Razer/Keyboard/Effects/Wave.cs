@@ -28,7 +28,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
     using System;
     using System.Runtime.InteropServices;
 
-    using Corale.Colore.Annotations;
+    using JetBrains.Annotations;
 
     /// <summary>
     /// The wave effect for the keyboard.

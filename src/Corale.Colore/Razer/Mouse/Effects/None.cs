@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="None.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -27,7 +27,7 @@ namespace Corale.Colore.Razer.Mouse.Effects
 {
     using System.Runtime.InteropServices;
 
-    using Corale.Colore.Annotations;
+    using JetBrains.Annotations;
 
     /// <summary>
     /// No effect (resets the affected LEDs).

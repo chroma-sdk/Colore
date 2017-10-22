@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="Direction.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -25,7 +25,7 @@
 
 namespace Corale.Colore.Razer.Keyboard.Effects
 {
-    using Corale.Colore.Annotations;
+    using JetBrains.Annotations;
 
     /// <summary>
     /// Direction of the wave effect.

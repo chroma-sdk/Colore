@@ -464,7 +464,7 @@ namespace Corale.Colore.Razer
                     "Failed to dynamically load function, GetProcAddress returned NULL for  " + name);
             }
 
-            return (T)(object)Marshal.GetDelegateForFunctionPointer(functionPtr, typeof(T));
+            return Marshal.GetDelegateForFunctionPointer<T>(functionPtr);
         }
 
 #else

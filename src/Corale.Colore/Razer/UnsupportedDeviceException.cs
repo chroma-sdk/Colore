@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="UnsupportedDeviceException.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -27,18 +27,13 @@ namespace Corale.Colore.Razer
 {
     using System;
     using System.Globalization;
-    using System.Runtime.Serialization;
-    using System.Security;
-    using System.Security.Permissions;
 
-    using Corale.Colore.Annotations;
-    using Corale.Colore.Core;
+    using JetBrains.Annotations;
 
     /// <summary>
     /// Thrown when an invalid <see cref="Guid" /> is passed to the
-    /// constructor of <see cref="GenericDevice" />.
+    /// constructor of <see cref="Core.GenericDevice" />.
     /// </summary>
-    [Serializable]
     public sealed class UnsupportedDeviceException : ColoreException
     {
         /// <summary>
@@ -51,22 +46,10 @@ namespace Corale.Colore.Razer
         /// </summary>
         /// <param name="deviceId">The <see cref="Guid" /> of the device.</param>
         /// <param name="innerException">Inner exception object.</param>
-        internal UnsupportedDeviceException(Guid deviceId, Exception innerException = null)
+        public UnsupportedDeviceException(Guid deviceId, Exception innerException = null)
             : base(string.Format(CultureInfo.InvariantCulture, MessageTemplate, deviceId), innerException)
         {
             DeviceId = deviceId;
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UnsupportedDeviceException" /> class
-        /// from serialization data.
-        /// </summary>
-        /// <param name="info">Serialization info object.</param>
-        /// <param name="context">Streaming context.</param>
-        private UnsupportedDeviceException(SerializationInfo info, StreamingContext context)
-            : base(info, context)
-        {
-            DeviceId = (Guid)info.GetValue("DeviceId", typeof(Guid));
         }
 
         /// <summary>
@@ -74,17 +57,5 @@ namespace Corale.Colore.Razer
         /// </summary>
         [PublicAPI]
         public Guid DeviceId { get; }
-
-        /// <summary>
-        /// Adds object data to serialization object.
-        /// </summary>
-        /// <param name="info">Serialization info object.</param>
-        /// <param name="context">Streaming context.</param>
-        public override void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            base.GetObjectData(info, context);
-
-            info.AddValue("DeviceId", DeviceId);
-        }
     }
 }

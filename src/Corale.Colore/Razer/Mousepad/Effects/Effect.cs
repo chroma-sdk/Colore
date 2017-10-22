@@ -27,7 +27,7 @@ namespace Corale.Colore.Razer.Mousepad.Effects
 {
     using System;
 
-    using Corale.Colore.Annotations;
+    using JetBrains.Annotations;
 
     /// <summary>
     /// Effects supported by Chroma mouse pads.

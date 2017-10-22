@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="Color.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -28,7 +28,7 @@ namespace Corale.Colore.Core
     using System;
     using System.Runtime.InteropServices;
 
-    using Corale.Colore.Annotations;
+    using JetBrains.Annotations;
 
     /// <summary>
     /// Represents an RGB color.

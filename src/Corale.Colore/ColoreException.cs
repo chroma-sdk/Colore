@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="ColoreException.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -26,12 +26,10 @@
 namespace Corale.Colore
 {
     using System;
-    using System.Runtime.Serialization;
 
     /// <summary>
     /// Generic Colore library exception.
     /// </summary>
-    [Serializable]
     public class ColoreException : Exception
     {
         /// <summary>
@@ -39,19 +37,8 @@ namespace Corale.Colore
         /// </summary>
         /// <param name="message">Exception message.</param>
         /// <param name="innerException">Inner exception object.</param>
-        internal ColoreException(string message = null, Exception innerException = null)
+        public ColoreException(string message = null, Exception innerException = null)
             : base(message, innerException)
-        {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ColoreException" /> class
-        /// from serialization data.
-        /// </summary>
-        /// <param name="info">Serialization info object.</param>
-        /// <param name="context">Streaming context.</param>
-        protected ColoreException(SerializationInfo info, StreamingContext context)
-            : base(info, context)
         {
         }
     }

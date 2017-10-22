@@ -27,8 +27,9 @@ namespace Corale.Colore.Razer.Headset.Effects
 {
     using System;
 
-    using Corale.Colore.Annotations;
     using Corale.Colore.Core;
+
+    using JetBrains.Annotations;
 
     /// <summary>
     /// A breathing effect for a headset.

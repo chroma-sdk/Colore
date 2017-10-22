@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="Result.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -31,7 +31,7 @@ namespace Corale.Colore.Razer
     using System.Linq;
     using System.Reflection;
 
-    using Corale.Colore.Annotations;
+    using JetBrains.Annotations;
 
     /// <summary>
     /// Struct for containing the result of running a native Chroma SDK function.
@@ -319,7 +319,7 @@ namespace Corale.Colore.Razer
             foreach (var fieldInfo in fieldsInfo.Where(fi => fi.FieldType == typeof(Result)))
             {
                 var value = fieldInfo.GetValue(null);
-                var attr = Attribute.GetCustomAttribute(fieldInfo, typeof(DescriptionAttribute)) as DescriptionAttribute;
+                var attr = fieldInfo.GetCustomAttribute<DescriptionAttribute>();
 
                 if (attr != null && value is Result)
                     cache[(Result)value] = new Metadata(fieldInfo.Name, attr.Description);

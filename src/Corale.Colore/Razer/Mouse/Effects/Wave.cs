@@ -27,7 +27,7 @@ namespace Corale.Colore.Razer.Mouse.Effects
 {
     using System;
 
-    using Corale.Colore.Annotations;
+    using JetBrains.Annotations;
 
     /// <summary>
     /// Wave effect.

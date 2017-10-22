@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="ApplicationStateEventArgs.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -27,7 +27,7 @@ namespace Corale.Colore.Events
 {
     using System;
 
-    using Corale.Colore.Annotations;
+    using JetBrains.Annotations;
 
     /// <summary>
     /// Event arguments for the application state event.
@@ -38,7 +38,7 @@ namespace Corale.Colore.Events
         /// Initializes a new instance of the <see cref="ApplicationStateEventArgs" /> class.
         /// </summary>
         /// <param name="enabled">Value indicating whether the application has been enabled.</param>
-        internal ApplicationStateEventArgs(bool enabled)
+        public ApplicationStateEventArgs(bool enabled)
         {
             Enabled = enabled;
         }

@@ -28,8 +28,9 @@ namespace Corale.Colore.Razer.Mousepad.Effects
     using System;
     using System.Runtime.InteropServices;
 
-    using Corale.Colore.Annotations;
     using Corale.Colore.Core;
+
+    using JetBrains.Annotations;
 
     /// <summary>
     /// A breathing effect.

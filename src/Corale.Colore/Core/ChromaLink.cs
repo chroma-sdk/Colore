@@ -25,13 +25,11 @@
 namespace Corale.Colore.Core
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
 
-    using Corale.Colore.Annotations;
-    using Corale.Colore.Logging;
+    using Common.Logging;
 
-    using Razer.ChromaLink;
+    using JetBrains.Annotations;
+
     using Razer.ChromaLink.Effects;
 
     /// <summary>
@@ -89,7 +87,7 @@ namespace Corale.Colore.Core
         /// <summary>
         /// Gets or sets a color at the specified position in the Chroma Link
         /// </summary>
-        /// <param name="index">The index to access (between <c>0</c> and <see cref="Constants.MaxLeds" />, exclusive upper-bound).</param>
+        /// <param name="index">The index to access (between <c>0</c> and <see cref="Razer.ChromaLink.Constants.MaxLeds" />, exclusive upper-bound).</param>
         /// <returns>The <see cref="Color" /> at the specified position.</returns>
         public Color this[int index]
         {

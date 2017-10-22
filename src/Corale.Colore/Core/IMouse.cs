@@ -27,9 +27,10 @@ namespace Corale.Colore.Core
 {
     using System;
 
-    using Corale.Colore.Annotations;
     using Corale.Colore.Razer.Mouse;
     using Corale.Colore.Razer.Mouse.Effects;
+
+    using JetBrains.Annotations;
 
     /// <summary>
     /// Interface for mouse functionality.

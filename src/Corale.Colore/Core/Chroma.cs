@@ -27,11 +27,14 @@ namespace Corale.Colore.Core
 {
     using System;
     using System.Diagnostics.CodeAnalysis;
+    using System.Reflection;
 
-    using Corale.Colore.Annotations;
+    using Common.Logging;
+
     using Corale.Colore.Events;
-    using Corale.Colore.Logging;
     using Corale.Colore.Razer;
+
+    using JetBrains.Annotations;
 
     /// <summary>
     /// Main class for interacting with the Chroma SDK.
@@ -74,7 +77,7 @@ namespace Corale.Colore.Core
         /// </summary>
         private Chroma()
         {
-            Version = typeof(Chroma).Assembly.GetName().Version;
+            Version = typeof(Chroma).GetTypeInfo().Assembly.GetName().Version;
             Initialize();
         }
 

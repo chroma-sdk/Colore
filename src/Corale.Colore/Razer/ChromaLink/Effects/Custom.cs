@@ -29,8 +29,9 @@ namespace Corale.Colore.Razer.ChromaLink.Effects
     using System.Collections.Generic;
     using System.Runtime.InteropServices;
 
-    using Corale.Colore.Annotations;
     using Corale.Colore.Core;
+
+    using JetBrains.Annotations;
 
     /// <summary>
     /// Custom effect.

@@ -1,4 +1,4 @@
-﻿// <copyright file="Custom.cs" company="Corale">
+// <copyright file="Custom.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -27,8 +27,9 @@ namespace Corale.Colore.Razer.Effects
     using System.Collections.Generic;
     using System.Runtime.InteropServices;
 
-    using Corale.Colore.Annotations;
     using Corale.Colore.Core;
+
+    using JetBrains.Annotations;
 
     /// <summary>
     /// Describes a custom effect for a system device.
@@ -121,7 +122,7 @@ namespace Corale.Colore.Razer.Effects
         {
             _colors = new Color[Constants.MaxColors];
             Parameter = parameter;
-            Size = Marshal.SizeOf(typeof(Custom));
+            Size = Marshal.SizeOf<Custom>();
         }
 
         /// <summary>

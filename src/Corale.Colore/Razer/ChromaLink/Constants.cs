@@ -25,7 +25,7 @@
 
 namespace Corale.Colore.Razer.ChromaLink
 {
-    using Corale.Colore.Annotations;
+    using JetBrains.Annotations;
 
     /// <summary>
     /// Chroma Link constants.

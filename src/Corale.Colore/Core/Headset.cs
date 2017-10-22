@@ -27,7 +27,8 @@ namespace Corale.Colore.Core
 {
     using System;
 
-    using Corale.Colore.Logging;
+    using Common.Logging;
+
     using Corale.Colore.Razer.Headset.Effects;
 
     /// <summary>

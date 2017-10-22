@@ -1,4 +1,4 @@
-﻿// <copyright file="None.cs" company="Corale">
+// <copyright file="None.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -25,7 +25,7 @@ namespace Corale.Colore.Razer.Effects
 {
     using System.Runtime.InteropServices;
 
-    using Corale.Colore.Annotations;
+    using JetBrains.Annotations;
 
     /// <summary>
     /// Describes the <c>NO_EFFECT</c> effect.
@@ -52,7 +52,7 @@ namespace Corale.Colore.Razer.Effects
         public None(int parameter = 0)
         {
             Parameter = parameter;
-            Size = Marshal.SizeOf(typeof(None));
+            Size = Marshal.SizeOf<None>();
         }
     }
 }

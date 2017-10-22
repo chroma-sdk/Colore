@@ -27,8 +27,9 @@ namespace Corale.Colore.Core
 {
     using System;
 
-    using Corale.Colore.Annotations;
     using Corale.Colore.Razer.Headset.Effects;
+
+    using JetBrains.Annotations;
 
     /// <summary>
     /// Interface for headset functionality.

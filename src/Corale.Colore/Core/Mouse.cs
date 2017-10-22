@@ -27,10 +27,12 @@ namespace Corale.Colore.Core
 {
     using System;
 
-    using Corale.Colore.Annotations;
-    using Corale.Colore.Logging;
+    using Common.Logging;
+
     using Corale.Colore.Razer.Mouse;
     using Corale.Colore.Razer.Mouse.Effects;
+
+    using JetBrains.Annotations;
 
     /// <summary>
     /// Class for interacting with a Chroma mouse.

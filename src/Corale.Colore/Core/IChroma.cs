@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="IChroma.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -28,9 +28,10 @@ namespace Corale.Colore.Core
     using System;
     using System.Diagnostics.CodeAnalysis;
 
-    using Corale.Colore.Annotations;
     using Corale.Colore.Events;
     using Corale.Colore.Razer;
+
+    using JetBrains.Annotations;
 
     /// <summary>
     /// Interface for basic Chroma functionality.

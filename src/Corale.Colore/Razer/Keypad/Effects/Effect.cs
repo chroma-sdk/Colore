@@ -27,7 +27,7 @@ namespace Corale.Colore.Razer.Keypad.Effects
 {
     using System;
 
-    using Corale.Colore.Annotations;
+    using JetBrains.Annotations;
 
     /// <summary>
     /// Supported effects for Chroma keypads.

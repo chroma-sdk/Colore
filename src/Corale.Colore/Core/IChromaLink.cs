@@ -25,9 +25,8 @@
 
 namespace Corale.Colore.Core
 {
-    using System.Collections.Generic;
+    using JetBrains.Annotations;
 
-    using Corale.Colore.Annotations;
     using Razer.ChromaLink.Effects;
 
     /// <summary>

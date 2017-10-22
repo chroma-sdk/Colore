@@ -28,8 +28,9 @@ namespace Corale.Colore.Razer.Mouse.Effects
     using System;
     using System.Runtime.InteropServices;
 
-    using Corale.Colore.Annotations;
     using Corale.Colore.Core;
+
+    using JetBrains.Annotations;
 
     /// <summary>
     /// Mouse effect that causes a specified LED to blink.

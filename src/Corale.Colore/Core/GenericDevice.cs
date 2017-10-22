@@ -28,10 +28,12 @@ namespace Corale.Colore.Core
     using System;
     using System.Collections.Generic;
 
-    using Corale.Colore.Annotations;
-    using Corale.Colore.Logging;
+    using Common.Logging;
+
     using Corale.Colore.Razer;
     using Corale.Colore.Razer.Effects;
+
+    using JetBrains.Annotations;
 
     /// <summary>
     /// A generic device.

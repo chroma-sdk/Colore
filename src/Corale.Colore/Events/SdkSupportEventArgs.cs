@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="SdkSupportEventArgs.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -27,7 +27,7 @@ namespace Corale.Colore.Events
 {
     using System;
 
-    using Corale.Colore.Annotations;
+    using JetBrains.Annotations;
 
     /// <summary>
     /// Event arguments for the Chroma SDK support event.
@@ -38,7 +38,7 @@ namespace Corale.Colore.Events
         /// Initializes a new instance of the <see cref="SdkSupportEventArgs" /> class.
         /// </summary>
         /// <param name="enabled">Value indicating whether SDK support is enabled.</param>
-        internal SdkSupportEventArgs(bool enabled)
+        public SdkSupportEventArgs(bool enabled)
         {
             Enabled = enabled;
         }

@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="IGenericDevice.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -27,9 +27,10 @@ namespace Corale.Colore.Core
 {
     using System;
 
-    using Corale.Colore.Annotations;
     using Corale.Colore.Razer;
     using Corale.Colore.Razer.Effects;
+
+    using JetBrains.Annotations;
 
     /// <summary>
     /// Interface for generic devices.
