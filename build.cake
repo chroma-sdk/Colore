@@ -2,8 +2,8 @@
 // ARGUMENTS
 ///////////////////////////////////////////////////////////////////////////////
 
-var target = Argument("target", "Default");
-var configuration = Argument("configuration", "Release");
+var target = Argument("Target", "Default");
+var configuration = Argument("Configuration", "Release");
 var platform = Argument("Platform", "AnyCPU");
 var tag = Argument("Tag", "cake");
 
