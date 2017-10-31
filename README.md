@@ -9,6 +9,12 @@
 
 A powerful and elegant C# library for Razer Chroma's SDK
 
+Getting started
+---------------
+
+If you are a new developer and are looking for a helpful guide on how to get started, head on over to
+[the wiki page][getting-started] which describes getting Colore installed and running some example code.
+
 Contributing
 ------------
 
@@ -100,7 +106,7 @@ Projects using Colore
 
 There may be others we are unaware of, so please let us know if there are any others.
 
-
+[getting-started]: https://github.com/CoraleStudios/Colore/wiki/Getting-started
 [newpull]: ../../pull/new/develop
 [sharp]: https://github.com/Sharparam
 [contrib]: ../../wiki/Contributing
