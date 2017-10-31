@@ -3,6 +3,9 @@
   <PropertyGroup>
     <TargetFramework>netstandard1.6</TargetFramework>
     <Platforms>AnyCPU;x64;x86</Platforms>
+    <Version>$(AssemblyVersion)</Version>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -27,6 +30,23 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DefineConstants>TRACE;ANYCPU</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageVersion>$(NuGetVersion)</PackageVersion>
+    <PackageId>Colore</PackageId>
+    <Title>Colore</Title>
+    <Authors>Sharparam</Authors>
+    <Description>A C#/.NET library for interacting with Razer's Chroma SDK.</Description>
+    <Copyright>Copyright (c) 2015-2017 by Adam Hellberg and Brandon Scott.</Copyright>
+    <PackageLicenseUrl>https://github.com/CoraleStudios/Colore/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/CoraleStudios/Colore</PackageProjectUrl>
+    <PackageIconUrl>https://files.sharparam.com/2017/10/31/colore.png</PackageIconUrl>
+    <PackageTags>razer;chroma;corale;led;light;peripheral;gaming</PackageTags>
+    <IncludeSymbols>true</IncludeSymbols>
+    <IncludeSource>true</IncludeSource>
+    <RepositoryUrl>https://github.com/CoraleStudios/Colore</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
