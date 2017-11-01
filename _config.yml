@@ -12,7 +12,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Chroma SDK in a way that feels intuitive and similar to other .NET
   libraries.
 baseurl: "/Colore" # the subpath of your site, e.g. /blog
-url: "https://coralestudios.github.io" # the base hostname & protocol for your site
+url: "https://coralestudios.github.io/Colore" # the base hostname & protocol for your site
 #twitter_username: jekyllrb
 github_username: CoraleStudios
 paginate: 5
