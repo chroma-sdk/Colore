@@ -11,8 +11,8 @@ description: > # this means to ignore newlines until "baseurl:"
   Colore is an elegant solution for C# developers to work with Razer's
   Chroma SDK in a way that feels intuitive and similar to other .NET
   libraries.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://colore.coralestudios.com" # the base hostname & protocol for your site
+baseurl: "/Colore" # the subpath of your site, e.g. /blog
+url: "https://coralestudios.github.io" # the base hostname & protocol for your site
 #twitter_username: jekyllrb
 github_username: CoraleStudios
 paginate: 5
