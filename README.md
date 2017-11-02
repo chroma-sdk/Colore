@@ -20,11 +20,11 @@ Contributing
 
 [![Gitter][gitterbadge]][gitter]
 
-*For discussing, you can join the Gitter chat using the badge above. If you want to join the Slack chat, contact [Brandon Scott][bs] ([brandon@brandonscott.co.uk](mailto:brandon@brandonscott.co.uk)) or [Adam Hellberg][sharp] ([sharparam@sharparam.com](mailto:sharparam@sharparam.com)).*
+*For discussing, you can join the Gitter chat using the badge above. If you want to join the Slack chat, contact [Adam Hellberg][sharp] ([sharparam@sharparam.com](mailto:sharparam@sharparam.com)).*
 
 Contributors are very welcome! If you got code fixes, please [submit a pull request][newpull] here on GitHub.
 
-If you want to join the development team, please contact [Sharparam][sharp] or [Brandon][bs] on GitHub.
+If you want to join the development team, please contact [Sharparam][sharp] on GitHub.
 
 All authors and contributors are listed in the **AUTHORS** file.
 
@@ -46,6 +46,8 @@ Dependencies
 Colore depends on the Razer Chroma SDK (RzChromaSDK64.dll or RzChromaSDK.dll).
 
 The Razer Chroma SDK is provided by Razer and [can be obtained from their website][rzdev].
+
+Other dependencies are installed via NuGet and listed in each project file.
 
 Building
 --------
