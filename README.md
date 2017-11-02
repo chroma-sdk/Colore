@@ -130,6 +130,6 @@ There may be others we are unaware of, so please let us know if there are any ot
 [gitter]: https://gitter.im/CoraleStudios/Colore?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
 [gitterbadge]: https://badges.gitter.im/Join%20Chat.svg
 
-[colorelogo]: http://colore.coralestudios.com/img/colore.png
+[colorelogo]: https://files.sharparam.com/2017/10/31/colore-logo.png
 
 [workshop]: http://www.razerzone.com/chroma-workshop/
