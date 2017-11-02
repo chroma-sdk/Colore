@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="NativeCallException.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -25,17 +25,12 @@
 
 namespace Corale.Colore.Razer
 {
-    using System;
     using System.ComponentModel;
     using System.Globalization;
-    using System.Runtime.Serialization;
-    using System.Security;
-    using System.Security.Permissions;
 
     /// <summary>
     /// Thrown when a native function returns an erroneous result value.
     /// </summary>
-    [Serializable]
     public sealed class NativeCallException : ColoreException
     {
         /// <summary>
@@ -48,25 +43,13 @@ namespace Corale.Colore.Razer
         /// </summary>
         /// <param name="function">The name of the function that was called.</param>
         /// <param name="result">The result returned from the called function.</param>
-        internal NativeCallException(string function, Result result)
+        public NativeCallException(string function, Result result)
             : base(
                 string.Format(CultureInfo.InvariantCulture, MessageTemplate, function, result),
                 new Win32Exception(result))
         {
             Function = function;
             Result = result;
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="NativeCallException" /> class.
-        /// </summary>
-        /// <param name="info">Serialization info object.</param>
-        /// <param name="context">Streaming context.</param>
-        private NativeCallException(SerializationInfo info, StreamingContext context)
-            : base(info, context)
-        {
-            Function = info.GetString("Function");
-            Result = info.GetInt32("Result");
         }
 
         /// <summary>
@@ -79,18 +62,5 @@ namespace Corale.Colore.Razer
         /// the result returned from the native function.
         /// </summary>
         public Result Result { get; }
-
-        /// <summary>
-        /// Adds object data to serialization object.
-        /// </summary>
-        /// <param name="info">Serialization info object.</param>
-        /// <param name="context">Streaming context.</param>
-        public override void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            base.GetObjectData(info, context);
-
-            info.AddValue("Function", Function);
-            info.AddValue("Result", (int)Result);
-        }
     }
 }

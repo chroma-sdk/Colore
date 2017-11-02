@@ -26,7 +26,7 @@ namespace Corale.Colore.Razer.Effects
     using System;
     using System.Runtime.InteropServices;
 
-    using Corale.Colore.Annotations;
+    using JetBrains.Annotations;
 
     /// <summary>
     /// Describes the wave effect for a system device.

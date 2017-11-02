@@ -28,11 +28,14 @@ namespace Corale.Colore.Core
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Reflection;
 
-    using Corale.Colore.Annotations;
-    using Corale.Colore.Logging;
+    using Common.Logging;
+
     using Corale.Colore.Razer.Keyboard;
     using Corale.Colore.Razer.Keyboard.Effects;
+
+    using JetBrains.Annotations;
 
     /// <summary>
     /// Class for interacting with a Chroma keyboard.

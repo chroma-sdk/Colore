@@ -28,7 +28,7 @@ namespace Corale.Colore.Razer
     using System;
     using System.ComponentModel;
 
-    using Corale.Colore.Annotations;
+    using JetBrains.Annotations;
 
     /// <summary>
     /// Generic device effects.

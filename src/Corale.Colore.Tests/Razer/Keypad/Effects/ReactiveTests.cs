@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="ReactiveTests.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -37,12 +37,12 @@ namespace Corale.Colore.Tests.Razer.Keypad.Effects
         public void ShouldConstructWithCorrectColorAndDuration()
         {
             var color = Color.Red;
-            const Duration Duration = Duration.Medium;
+            const Duration ExpectedDuration = Duration.Medium;
 
-            var effect = new Reactive(color, Duration);
+            var effect = new Reactive(color, ExpectedDuration);
 
             Assert.AreEqual(color, effect.Color);
-            Assert.AreEqual(Duration, effect.Duration);
+            Assert.AreEqual(ExpectedDuration, effect.Duration);
         }
     }
 }

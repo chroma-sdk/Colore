@@ -27,9 +27,10 @@ namespace Corale.Colore.Core
 {
     using System;
 
-    using Corale.Colore.Annotations;
     using Corale.Colore.Razer.Keypad;
     using Corale.Colore.Razer.Keypad.Effects;
+
+    using JetBrains.Annotations;
 
     /// <summary>
     /// Interface for keypad functions.

@@ -28,7 +28,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
     using System;
     using System.ComponentModel;
 
-    using Corale.Colore.Annotations;
+    using JetBrains.Annotations;
 
     /// <summary>
     /// Supported built-in keyboard effects.

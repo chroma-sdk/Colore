@@ -27,9 +27,9 @@ namespace Corale.Colore.Core
 {
     using System;
     using System.Runtime.InteropServices;
-    using System.Security;
 
-    using Corale.Colore.Logging;
+    using Common.Logging;
+
     using Corale.Colore.Razer;
 
     /// <summary>
@@ -226,7 +226,7 @@ namespace Corale.Colore.Core
         /// <returns>A populated <see cref="DeviceInfo" /> structure with information about the requested device.</returns>
         internal static DeviceInfo QueryDevice(Guid id)
         {
-            var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(DeviceInfo)));
+            var ptr = Marshal.AllocHGlobal(Marshal.SizeOf<DeviceInfo>());
 
             try
             {
@@ -238,7 +238,7 @@ namespace Corale.Colore.Core
                 if (ptr == IntPtr.Zero)
                     throw new ColoreException("Device query failed, ptr NULL.");
 
-                var info = (DeviceInfo)Marshal.PtrToStructure(ptr, typeof(DeviceInfo));
+                var info = Marshal.PtrToStructure<DeviceInfo>(ptr);
 
                 return info;
             }

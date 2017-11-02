@@ -33,7 +33,7 @@ Please read the [CONTRIBUTING.md](CONTRIBUTING.md) file before making a pull req
 License
 -------
 
-Copyright &copy; 2015-2016 by [Adam Hellberg][sharp] and [Brandon Scott][bs].
+Copyright &copy; 2015-2017 by [Adam Hellberg][sharp] and [Brandon Scott][bs].
 
 This project is licensed under the MIT license, please see the file **LICENSE** for more information.
 
@@ -61,19 +61,22 @@ The native methods are imported using `DllImport` when Colore is compiled in x86
 as this cannot be changed at runtime.
 
 However, if compiling with the "Any CPU" configuration, Colore will dynamically load functions relevant for the current executing platform,
-making it run on both 32- and 64-bit systems without any work having to be done by the dev.
+making it run on both 32- and 64-bit systems without any work having to be done by the developer.
 
 For non-performance critical applications, the "Any CPU" mode should be fine (this is also what the NuGet package is compiled against).
 
 For applications that require peak performance, we recommend shipping separate 32- and 64-bit builds of your application, using the relevant build configurations in Colore.
 
-The below example compiles Colore in Release mode for the x86 (32-bit) platform.
+The below examples compiles Colore in Release mode for the x86 (32-bit), x64 (64-bit), and AnyCPU (MSIL) platforms.
 
 ```
-msbuild Colore.sln /p:Configuration=Release;Platform=x86
+.\build.ps1 -Configuration Release -Platform x86
+.\build.ps1 -Configuration Release -Platform x64
+.\build.ps1 -Configuration Release -Platform AnyCPU
 ```
 
-(Replace `x86` with `x64` if compiling for Win64, or `"Any CPU"` if compiling cross-platform)
+Note that the above commands are executed with [PowerShell][ps]. If you are building on a Linux system or macOS,
+use the `build.sh` script in place of `build.ps1`.
 
 Make sure that your projects using Colore are also compiled against a matching platform.
 
@@ -133,5 +136,7 @@ There may be others we are unaware of, so please let us know if there are any ot
 [gitterbadge]: https://badges.gitter.im/Join%20Chat.svg
 
 [colorelogo]: https://files.sharparam.com/2017/10/31/colore-logo.png
+
+[ps]: https://docs.microsoft.com/en-us/powershell/
 
 [workshop]: http://www.razerzone.com/chroma-workshop/

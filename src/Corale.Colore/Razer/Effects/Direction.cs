@@ -1,4 +1,4 @@
-﻿// <copyright file="Direction.cs" company="Corale">
+// <copyright file="Direction.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,7 +23,7 @@
 
 namespace Corale.Colore.Razer.Effects
 {
-    using Corale.Colore.Annotations;
+    using JetBrains.Annotations;
 
     /// <summary>
     /// Supported directions for the system wave effect.

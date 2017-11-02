@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="DeviceAccessEventArgs.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -27,7 +27,7 @@ namespace Corale.Colore.Events
 {
     using System;
 
-    using Corale.Colore.Annotations;
+    using JetBrains.Annotations;
 
     /// <summary>
     /// Event arguments for the device access event.
@@ -38,7 +38,7 @@ namespace Corale.Colore.Events
         /// Initializes a new instance of the <see cref="DeviceAccessEventArgs" /> class.
         /// </summary>
         /// <param name="granted">Value indicating whether device access was granted.</param>
-        internal DeviceAccessEventArgs(bool granted)
+        public DeviceAccessEventArgs(bool granted)
         {
             Granted = granted;
         }

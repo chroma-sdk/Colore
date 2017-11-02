@@ -26,7 +26,7 @@ namespace Corale.Colore.Razer.Effects
     using System;
     using System.Runtime.InteropServices;
 
-    using Corale.Colore.Annotations;
+    using JetBrains.Annotations;
 
     /// <summary>
     /// Describes the spectrum cycling effect for system devices.

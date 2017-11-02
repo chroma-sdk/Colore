@@ -27,7 +27,7 @@ namespace Corale.Colore.Razer.Headset.Effects
 {
     using System;
 
-    using Corale.Colore.Annotations;
+    using JetBrains.Annotations;
 
     /// <summary>
     /// Standard effects for headsets.
