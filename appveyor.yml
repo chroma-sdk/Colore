@@ -45,6 +45,7 @@ deploy:
     appveyor_repo_tag: true
 
 notifications:
+- provider: GitHubPullRequest
 - provider: Slack
   auth_token:
     secure: q1G3kdpLxdD6RzSNVDZoEktdr3pcUY5KFXqxaV3mzGWWgOAyREl0ZHBNQUSWTLCy
