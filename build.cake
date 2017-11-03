@@ -41,7 +41,7 @@ Teardown(ctx =>
 
 var projects = new[] { "Corale.Colore", "Corale.Colore.Tests" };
 
-var versionInfo = GitVersion(new GitVersionSettings { RepositoryPath = "." });
+var version = GitVersion(new GitVersionSettings { RepositoryPath = "." });
 
 ///////////////////////////////////////////////////////////////////////////////
 // TASKS
@@ -73,8 +73,8 @@ Task("Build")
                 {
                     Configuration = configuration,
                     ArgumentCustomization = args => args
-                        .Append($"/p:AssemblyVersion={versionInfo.AssemblySemVer}")
-                        .Append($"/p:NuGetVersion={versionInfo.NuGetVersionV2}")
+                        .Append($"/p:AssemblyVersion={version.AssemblySemVer}")
+                        .Append($"/p:NuGetVersion={version.NuGetVersionV2}")
                 });
         }
     });
@@ -97,7 +97,7 @@ Task("Dist")
     .Does(() =>
     {
         var dir = $"./src/Corale.Colore/bin/{configuration}/netstandard1.6/";
-        Zip(dir, "./artifacts/colore_anycpu.zip", $"{dir}**/*.*");
+        Zip(dir, $"./artifacts/colore_{version.SemVer}_anycpu.zip", $"{dir}**/*.*");
     });
 
 Task("Publish")
@@ -109,13 +109,13 @@ Task("Publish")
             Configuration = configuration,
             OutputDirectory = "./publish/",
             ArgumentCustomization = args => args
-                .Append($"/p:AssemblyVersion={versionInfo.AssemblySemVer}")
-                .Append($"/p:NuGetVersion={versionInfo.NuGetVersionV2}")
+                .Append($"/p:AssemblyVersion={version.AssemblySemVer}")
+                .Append($"/p:NuGetVersion={version.NuGetVersionV2}")
         };
 
         DotNetCorePublish("src/Corale.Colore", settings);
 
-        Zip($"./publish/", "./artifacts/colore_full.zip", "./publish/**/*.*");
+        Zip($"./publish/", $"./artifacts/colore_{version.SemVer}_full.zip", "./publish/**/*.*");
     });
 
 Task("Pack")
