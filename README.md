@@ -1,6 +1,6 @@
 ![Colore Logo][colorelogo]
 
-[![Build status][devbuildbadge]][devbuild]
+[![Build status][buildbadge]][buildstatus]
 [![Coverage Status][devcoverbadge]][devcover]
 [![Stories in Ready][wafflebadge]][waffle]
 [![MIT License][licensebadge]][license]
@@ -127,8 +127,8 @@ There may be others we are unaware of, so please let us know if there are any ot
 [ng]: https://www.nuget.org/packages/Colore
 [ngverbadge]: https://img.shields.io/nuget/v/Colore.svg
 
-[devbuild]: http://tc.coralestudios.com/viewType.html?buildTypeId=colore_mainbuild
-[devbuildbadge]: https://img.shields.io/teamcity/http/tc.coralestudios.com/s/colore_mainbuild.svg?style=flat
+[buildstatus]: https://ci.appveyor.com/project/Corale/colore
+[buildbadge]: https://ci.appveyor.com/api/projects/status/st3y6fo0jqvhd8cg?svg=true
 [devcover]: https://coveralls.io/r/CoraleStudios/Colore?branch=develop
 [devcoverbadge]: https://coveralls.io/repos/CoraleStudios/Colore/badge.svg?branch=develop
 
