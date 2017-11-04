@@ -2,9 +2,6 @@ image: Visual Studio 2017
 
 version: '{build}'
 
-install:
-- choco install gitversion.portable -pre -y
-
 pull_requests:
   do_not_increment_build_number: true
 
@@ -14,10 +11,6 @@ nuget:
 environment:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
-
-before_build:
-- ps: gitversion /l console /output buildserver
-- cmd: 'ECHO VERSION: %GitVersion_NuGetVersion%'
 
 build_script:
 - ps: .\build.ps1 -Target CI
