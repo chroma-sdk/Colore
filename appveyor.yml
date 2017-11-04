@@ -29,8 +29,6 @@ artifacts:
   name: NuGet
 - path: .\artifacts\**\*.zip
   name: Archive
-- path: .\artifacts\**\*.xml
-  name: TestResult
 
 deploy:
 - provider: NuGet

@@ -85,35 +85,34 @@ Task("Test")
     .IsDependentOn("Build")
     .Does(() =>
     {
+        var settings = new DotNetCoreTestSettings
+        {
+            Configuration = configuration,
+            NoBuild = true
+        };
+
+        if (AppVeyor.IsRunningOnAppVeyor)
+        {
+            settings.ArgumentCustomization = args => args
+                .Append("--logger:AppVeyor");
+        }
+        else
+        {
+            settings.ArgumentCustomization = args => args
+                .Append("--logger:nunit");
+        }
+
         DotNetCoreTest(
             "src/Corale.Colore.Tests/Corale.Colore.Tests.csproj",
-            new DotNetCoreTestSettings
-            {
-                Configuration = configuration,
-                NoBuild = true,
-                ArgumentCustomization = args => args
-                    .Append("--logger:nunit")
-            });
+            settings);
+
+        if (AppVeyor.IsRunningOnAppVeyor)
+        {
+            return;
+        }
 
         var testResults = GetFiles("src/Corale.Colore.Tests/TestResults/*.xml");
-
         CopyFiles(testResults, "./artifacts");
-
-        if (testResults.Count < 1)
-        {
-            Error("Could not find test result files.");
-            return;
-        }
-
-        if (!AppVeyor.IsRunningOnAppVeyor)
-            return;
-
-        Information("Uploading test results to AppVeyor");
-        foreach (var file in testResults)
-        {
-            Information("Uploading {0}", file);
-            AppVeyor.UploadTestResults(file, AppVeyorTestResultsType.NUnit3);
-        }
     });
 
 Task("Dist")
