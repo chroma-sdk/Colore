@@ -1,35 +1,41 @@
 language: csharp
+
 os:
-  - linux
-  - osx
+- linux
+- osx
 
 sudo: required
 dist: trusty
 osx_image: xcode7.2
 
 env:
-  - DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true
-  - DOTNET_CLI_TELEMETRY_OPTOUT=true
+- DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true
+- DOTNET_CLI_TELEMETRY_OPTOUT=true
 
 dotnet: 2.0.2
-mono: latest # Needed for Cake
-
+mono: latest
 addons:
   apt:
     packages:
-      - gettext
-      - libcurl4-openssl-dev
-      - libicu-dev
-      - libssl-dev
-      - libunwind8
-      - zlib1g
+    - gettext
+    - libcurl4-openssl-dev
+    - libicu-dev
+    - libssl-dev
+    - libunwind8
+    - zlib1g
 
 before_install:
-  - git fetch --unshallow
+- git fetch --unshallow
 
 script:
-  - ./build.sh
+- "./build.sh"
 
 cache:
   directories:
-    - tools
+  - tools
+
+notifications:
+  slack:
+    secure: MqiYNfo7mu6JhQ5fxC/piGWHptb0O7SeX74emS6QUMCWBXtpI1VG9qgVt7LOcvSWDZoLB999S6UddSKuTd+SGDYolFnrlNSqChTiWSIxwiF3FsVTLvi2xRkkQTBsl0iK5Q68MPETv8HyzPb2ea7aAKJyd18nZw2NlPq0lTi5JDo=
+    on_success: change
+    on_failure: always
