@@ -41,7 +41,9 @@ Teardown(ctx =>
 
 var projects = new[] { "Corale.Colore", "Corale.Colore.Tests" };
 
-var versionInfo = GitVersion(new GitVersionSettings { RepositoryPath = "." });
+var frameworks = new[] { "netstandard1.3", "net451" };
+
+var version = GitVersion(new GitVersionSettings { RepositoryPath = "." });
 
 ///////////////////////////////////////////////////////////////////////////////
 // TASKS
@@ -73,8 +75,8 @@ Task("Build")
                 {
                     Configuration = configuration,
                     ArgumentCustomization = args => args
-                        .Append($"/p:AssemblyVersion={versionInfo.AssemblySemVer}")
-                        .Append($"/p:NuGetVersion={versionInfo.NuGetVersionV2}")
+                        .Append($"/p:AssemblyVersion={version.AssemblySemVer}")
+                        .Append($"/p:NuGetVersion={version.NuGetVersionV2}")
                 });
         }
     });
@@ -96,26 +98,38 @@ Task("Dist")
     .IsDependentOn("Test")
     .Does(() =>
     {
-        var dir = $"./src/Corale.Colore/bin/{configuration}/netstandard1.6/";
-        Zip(dir, "./artifacts/colore_anycpu.zip", $"{dir}**/*.*");
+        foreach (var framework in frameworks)
+        {
+            var dir = $"./src/Corale.Colore/bin/{configuration}/{framework}/";
+            var target = $"./artifacts/colore_{version.SemVer}_{framework}_anycpu.zip";
+            Information("Zipping {0} to {1}", dir, target);
+            Zip(dir, target, $"{dir}**/*.*");
+        }
     });
 
 Task("Publish")
     .IsDependentOn("Test")
     .Does(() =>
     {
-        var settings = new DotNetCorePublishSettings
+        foreach (var framework in frameworks)
         {
-            Configuration = configuration,
-            OutputDirectory = "./publish/",
-            ArgumentCustomization = args => args
-                .Append($"/p:AssemblyVersion={versionInfo.AssemblySemVer}")
-                .Append($"/p:NuGetVersion={versionInfo.NuGetVersionV2}")
-        };
+            var settings = new DotNetCorePublishSettings
+            {
+                Framework = framework,
+                Configuration = configuration,
+                OutputDirectory = $"./publish/{framework}/",
+                ArgumentCustomization = args => args
+                    .Append($"/p:AssemblyVersion={version.AssemblySemVer}")
+                    .Append($"/p:NuGetVersion={version.NuGetVersionV2}")
+            };
 
-        DotNetCorePublish("src/Corale.Colore", settings);
+            DotNetCorePublish("src/Corale.Colore", settings);
 
-        Zip($"./publish/", "./artifacts/colore_full.zip", "./publish/**/*.*");
+            var dir = $"./publish/{framework}/";
+            var target = $"./artifacts/colore_{version.SemVer}_{framework}_full.zip";
+            Information("Zipping {0} to {1}", dir, target);
+            Zip(dir, target, $"{dir}**/*.*");
+        }
     });
 
 Task("Pack")

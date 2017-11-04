@@ -1,24 +1,24 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="RegistryHelper.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
-//
+// 
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
 //     the Software without restriction, including without limitation the rights to
 //     use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
 //     of the Software, and to permit persons to whom the Software is furnished to do
 //     so, subject to the following conditions:
-//
+// 
 //     The above copyright notice and this permission notice shall be included in all
 //     copies or substantial portions of the Software.
-//
+// 
 //     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 //     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 //     FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 //     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
 //     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-//
+// 
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
 // ---------------------------------------------------------------------------------------
@@ -55,16 +55,10 @@ namespace Corale.Colore.Core
         {
             bool dllValid;
 
-#if ANYCPU
-            if (EnvironmentHelper.Is64BitProcess() && EnvironmentHelper.Is64BitOperatingSystem())
+            if (EnvironmentHelper.Is64Bit())
                 dllValid = Native.Kernel32.NativeMethods.LoadLibrary("RzChromaSDK64.dll") != IntPtr.Zero;
             else
                 dllValid = Native.Kernel32.NativeMethods.LoadLibrary("RzChromaSDK.dll") != IntPtr.Zero;
-#elif WIN64
-            dllValid = Native.Kernel32.NativeMethods.LoadLibrary("RzChromaSDK64.dll") != IntPtr.Zero;
-#else
-            dllValid = Native.Kernel32.NativeMethods.LoadLibrary("RzChromaSDK.dll") != IntPtr.Zero;
-#endif
 
             bool regEnabled;
 
@@ -169,16 +163,9 @@ namespace Corale.Colore.Core
         /// <returns>Path to the Razer Chroma SDK registry key.</returns>
         private static string GetSdkRegKeyPath()
         {
-#if ANYCPU
-            if (EnvironmentHelper.Is64BitProcess() && EnvironmentHelper.Is64BitOperatingSystem())
-                return @"SOFTWARE\WOW6432Node\Razer Chroma SDK";
-
-            return @"SOFTWARE\Razer Chroma SDK";
-#elif WIN64
-            return @"SOFTWARE\WOW6432Node\Razer Chroma SDK";
-#else
-            return @"SOFTWARE\Razer Chroma SDK";
-#endif
+            return EnvironmentHelper.Is64Bit()
+                ? @"SOFTWARE\WOW6432Node\Razer Chroma SDK"
+                : @"SOFTWARE\Razer Chroma SDK";
         }
     }
 }

@@ -1,24 +1,24 @@
 // ---------------------------------------------------------------------------------------
 // <copyright file="Result.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
-//
+// 
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
 //     the Software without restriction, including without limitation the rights to
 //     use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
 //     of the Software, and to permit persons to whom the Software is furnished to do
 //     so, subject to the following conditions:
-//
+// 
 //     The above copyright notice and this permission notice shall be included in all
 //     copies or substantial portions of the Software.
-//
+// 
 //     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 //     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 //     FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 //     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
 //     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 //     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-//
+// 
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
 // ---------------------------------------------------------------------------------------
@@ -27,9 +27,6 @@ namespace Corale.Colore.Razer
 {
     using System;
     using System.Collections.Generic;
-    using System.Diagnostics.CodeAnalysis;
-    using System.Linq;
-    using System.Reflection;
 
     using JetBrains.Annotations;
 
@@ -45,85 +42,86 @@ namespace Corale.Colore.Razer
         /// <summary>
         /// Access denied.
         /// </summary>
-        [Description("Access denied.")]
         [PublicAPI]
         public static readonly Result RzAccessDenied = 5;
 
         /// <summary>
         /// Generic fail error.
         /// </summary>
-        [Description("General failure.")]
         [PublicAPI]
         public static readonly Result RzFailed = unchecked((int)2147500037);
 
         /// <summary>
         /// Invalid error.
         /// </summary>
-        [Description("Invalid.")]
         [PublicAPI]
         public static readonly Result RzInvalid = -1;
 
         /// <summary>
         /// Invalid parameter passed to function.
         /// </summary>
-        [Description("Invalid parameter.")]
         [PublicAPI]
         public static readonly Result RzInvalidParameter = 87;
 
         /// <summary>
         /// The requested operation is not supported.
         /// </summary>
-        [Description("Not supported.")]
         [PublicAPI]
         public static readonly Result RzNotSupported = 50;
 
         /// <summary>
         /// The request was aborted.
         /// </summary>
-        [Description("Request aborted.")]
         [PublicAPI]
         public static readonly Result RzRequestAborted = 1235;
 
         /// <summary>
         /// Resource not available or disabled.
         /// </summary>
-        [Description("Resource not available or disabled.")]
         [PublicAPI]
         public static readonly Result RzResourceDisabled = 4309;
 
         /// <summary>
         /// Cannot start more than one instance of the specified program.
         /// </summary>
-        [Description("Cannot start more than one instance of the specified program.")]
         [PublicAPI]
         public static readonly Result RzSingleInstanceApp = 1152;
 
         /// <summary>
         /// Returned when a function is successful.
         /// </summary>
-        [Description("Success.")]
         [PublicAPI]
         public static readonly Result RzSuccess = 0;
 
-        /// <summary>
-        /// Dictionary used to cache the metadata of the pre-defined error values.
-        /// </summary>
-        private static readonly IDictionary<Result, Metadata> FieldMetadata;
+        private static readonly Dictionary<Result, KeyValuePair<string, string>> Mappings =
+            new Dictionary<Result, KeyValuePair<string, string>>
+            {
+                { 5, new KeyValuePair<string, string>(nameof(RzAccessDenied), "Access denied.") },
+                { unchecked((int)2147500037), new KeyValuePair<string, string>(nameof(RzFailed), "General failure.") },
+                { -1, new KeyValuePair<string, string>(nameof(RzInvalid), "Invalid.") },
+                {
+                    87,
+                    new KeyValuePair<string, string>(nameof(RzInvalidParameter), "Invalid parameter.")
+                },
+                { 50, new KeyValuePair<string, string>(nameof(RzNotSupported), "Not supported.") },
+                { 1235, new KeyValuePair<string, string>(nameof(RzRequestAborted), "Request aborted.") },
+                {
+                    4309,
+                    new KeyValuePair<string, string>(nameof(RzResourceDisabled), "Resource not available or disabled.")
+                },
+                {
+                    1152,
+                    new KeyValuePair<string, string>(
+                        nameof(RzSingleInstanceApp),
+                        "Cannot start more than one instance of the specified program.")
+                },
+                { 0, new KeyValuePair<string, string>(nameof(RzSuccess), "Success.") }
+            };
 
         /// <summary>
         /// Internal result value.
         /// </summary>
         private readonly int _value;
-
-        /// <summary>
-        /// Initializes static members of the <see cref="Result" /> struct.
-        /// </summary>
-        [SuppressMessage("Microsoft.Usage", "CA2207:InitializeValueTypeStaticFieldsInline",
-            Justification = "This is temporary(TM) until ReSharper fixes their bug with sorting members.")]
-        static Result()
-        {
-            FieldMetadata = GetMetadata();
-        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Result" /> struct.
@@ -137,7 +135,7 @@ namespace Corale.Colore.Razer
         /// <summary>
         /// Gets the help description for the current error value.
         /// </summary>
-        public string Description => FieldMetadata.ContainsKey(this) ? FieldMetadata[this].Description : "Unknown.";
+        public string Description => Mappings.ContainsKey(this) ? Mappings[this].Value : "Unknown.";
 
         /// <summary>
         /// Gets a value indicating whether the result means failure.
@@ -147,7 +145,7 @@ namespace Corale.Colore.Razer
         /// <summary>
         /// Gets the name of the error as defined in source code.
         /// </summary>
-        public string Name => FieldMetadata.ContainsKey(this) ? FieldMetadata[this].Name : "Unknown";
+        public string Name => Mappings.ContainsKey(this) ? Mappings[this].Key : "Unknown";
 
         /// <summary>
         /// Gets a value indicating whether the result was a success.
@@ -273,11 +271,14 @@ namespace Corale.Colore.Razer
             if (ReferenceEquals(null, obj))
                 return false;
 
-            if (obj is Result)
-                return Equals((Result)obj);
+            switch (obj)
+            {
+                case Result result:
+                    return Equals(result);
 
-            if (obj is int)
-                return Equals((int)obj);
+                case int value:
+                    return Equals(value);
+            }
 
             return false;
         }
@@ -305,75 +306,6 @@ namespace Corale.Colore.Razer
         public override string ToString()
         {
             return $"{Name}: {Description} ({_value})";
-        }
-
-        /// <summary>
-        /// Retrieves field metadata and returns it as a dictionary.
-        /// </summary>
-        /// <returns>Field metadata.</returns>
-        private static Dictionary<Result, Metadata> GetMetadata()
-        {
-            var cache = new Dictionary<Result, Metadata>();
-
-            var fieldsInfo = typeof(Result).GetFields(BindingFlags.Public | BindingFlags.Static);
-            foreach (var fieldInfo in fieldsInfo.Where(fi => fi.FieldType == typeof(Result)))
-            {
-                var value = fieldInfo.GetValue(null);
-                var attr = fieldInfo.GetCustomAttribute<DescriptionAttribute>();
-
-                if (attr != null && value is Result)
-                    cache[(Result)value] = new Metadata(fieldInfo.Name, attr.Description);
-            }
-
-            return cache;
-        }
-
-        /// <summary>
-        /// Contains metadata for a specific result in the <see cref="Result" /> struct.
-        /// </summary>
-        private struct Metadata
-        {
-            /// <summary>
-            /// Initializes a new instance of the <see cref="Metadata" /> struct.
-            /// </summary>
-            /// <param name="name">Result name.</param>
-            /// <param name="description">Result description.</param>
-            internal Metadata(string name, string description)
-            {
-                Name = name;
-                Description = description;
-            }
-
-            /// <summary>
-            /// Gets a human-readable description for the result.
-            /// </summary>
-            internal string Description { get; }
-
-            /// <summary>
-            /// Gets the name of the result.
-            /// </summary>
-            internal string Name { get; }
-        }
-
-        /// <summary>
-        /// Description attribute used for fields in the <see cref="Result" /> struct.
-        /// </summary>
-        [AttributeUsage(AttributeTargets.Field)]
-        private sealed class DescriptionAttribute : Attribute
-        {
-            /// <summary>
-            /// Initializes a new instance of the <see cref="DescriptionAttribute" /> class.
-            /// </summary>
-            /// <param name="description">Description to set.</param>
-            internal DescriptionAttribute(string description)
-            {
-                Description = description;
-            }
-
-            /// <summary>
-            /// Gets a human-readable description of the result.
-            /// </summary>
-            internal string Description { get; }
         }
     }
 }
