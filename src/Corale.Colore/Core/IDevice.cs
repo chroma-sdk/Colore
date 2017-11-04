@@ -26,6 +26,7 @@
 namespace Corale.Colore.Core
 {
     using System;
+    using System.Threading.Tasks;
 
     using JetBrains.Annotations;
 
@@ -44,20 +45,20 @@ namespace Corale.Colore.Core
         /// Clears the current effect on the device.
         /// </summary>
         [PublicAPI]
-        void Clear();
+        Task<Guid> ClearAsync();
 
         /// <summary>
         /// Sets the color of all components on this device.
         /// </summary>
         /// <param name="color">Color to set.</param>
         [PublicAPI]
-        void SetAll(Color color);
+        Task<Guid> SetAllAsync(Color color);
 
         /// <summary>
         /// Updates the device to use the effect pointed to by the specified GUID.
         /// </summary>
         /// <param name="guid">GUID to set.</param>
         [PublicAPI]
-        void SetGuid(Guid guid);
+        Task<Guid> SetGuidAsync(Guid guid);
     }
 }

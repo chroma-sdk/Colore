@@ -26,11 +26,14 @@
 namespace Corale.Colore.Core
 {
     using System;
+    using System.Threading.Tasks;
 
     using Common.Logging;
 
     using Corale.Colore.Razer.Mousepad.Effects;
 
+    /// <inheritdoc cref="IMousepad" />
+    /// <inheritdoc cref="Device" />
     /// <summary>
     /// Class for interacting with a Chroma mouse pad.
     /// </summary>
@@ -42,117 +45,98 @@ namespace Corale.Colore.Core
         private static readonly ILog Log = LogManager.GetLogger(typeof(Mousepad));
 
         /// <summary>
-        /// Lock object for thread-safe init.
-        /// </summary>
-        private static readonly object InitLock = new object();
-
-        /// <summary>
-        /// Singleton instance.
-        /// </summary>
-        private static IMousepad _instance;
-
-        /// <summary>
         /// Internal <see cref="Custom" /> struct used for effects.
         /// </summary>
         private Custom _custom;
 
+        /// <inheritdoc />
         /// <summary>
-        /// Prevents a default instance of the <see cref="Mousepad" /> class from being created.
+        /// Initializes a new instance of the <see cref="T:Corale.Colore.Core.Mousepad" /> class.
         /// </summary>
-        private Mousepad()
+        public Mousepad(IChromaApi api)
+            : base(api)
         {
             Log.Debug("Mousepad is initializing.");
-            Chroma.InitInstance();
             _custom = Custom.Create();
         }
 
-        /// <summary>
-        /// Gets the application-wide instance of the <see cref="IMousepad" /> interface.
-        /// </summary>
-        public static IMousepad Instance
-        {
-            get
-            {
-                lock (InitLock)
-                {
-                    return _instance ?? (_instance = new Mousepad());
-                }
-            }
-        }
-
+        /// <inheritdoc />
         /// <summary>
         /// Gets or sets a specific LED on the mouse pad.
         /// </summary>
         /// <param name="index">The index to access.</param>
-        /// <returns>The current <see cref="Color" /> at the <paramref name="index"/>.</returns>
+        /// <returns>The current <see cref="T:Corale.Colore.Core.Color" /> at the <paramref name="index" />.</returns>
         public Color this[int index]
         {
-            get
-            {
-                return _custom[index];
-            }
+            get => _custom[index];
 
             set
             {
                 _custom[index] = value;
-                SetCustom(_custom);
+                SetCustomAsync(_custom).Wait();
             }
         }
 
+        /// <inheritdoc cref="Device.SetAllAsync" />
         /// <summary>
         /// Sets the color of all components on this device.
         /// </summary>
         /// <param name="color">Color to set.</param>
-        public override void SetAll(Color color)
+        public override async Task<Guid> SetAllAsync(Color color)
         {
             _custom.Set(color);
-            SetCustom(_custom);
+            return await SetCustomAsync(_custom);
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Sets an effect without any parameters.
-        /// Currently, this only works for the <see cref="Effect.None" /> effect.
+        /// Currently, this only works for the <see cref="F:Corale.Colore.Razer.Mousepad.Effects.Effect.None" /> effect.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        public void SetEffect(Effect effect)
+        public async Task<Guid> SetEffectAsync(Effect effect)
         {
-            SetGuid(NativeWrapper.CreateMousepadEffect(effect, IntPtr.Zero));
+            return await SetGuidAsync(await Api.CreateMousepadEffectAsync(effect));
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Sets a static color effect on the mouse pad.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
-        public void SetStatic(Static effect)
+        /// <param name="effect">An instance of the <see cref="T:Corale.Colore.Razer.Mousepad.Effects.Static" /> struct.</param>
+        public async Task<Guid> SetStaticAsync(Static effect)
         {
-            SetGuid(NativeWrapper.CreateMousepadEffect(Effect.Static, effect));
+            return await SetGuidAsync(await Api.CreateMousepadEffectAsync(Effect.Static, effect));
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Sets a static color effect on the mouse pad.
         /// </summary>
         /// <param name="color">Color to set.</param>
-        public void SetStatic(Color color)
+        public async Task<Guid> SetStaticAsync(Color color)
         {
-            SetStatic(new Static(color));
+            return await SetStaticAsync(new Static(color));
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Sets a custom effect on the mouse pad.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
-        public void SetCustom(Custom effect)
+        /// <param name="effect">An instance of the <see cref="T:Corale.Colore.Razer.Mousepad.Effects.Custom" /> struct.</param>
+        public async Task<Guid> SetCustomAsync(Custom effect)
         {
-            SetGuid(NativeWrapper.CreateMousepadEffect(Effect.Custom, effect));
+            return await SetGuidAsync(await Api.CreateMousepadEffectAsync(Effect.Custom, effect));
         }
 
+        /// <inheritdoc cref="Device.ClearAsync" />
         /// <summary>
         /// Clears the current effect on the Mousepad.
         /// </summary>
-        public override void Clear()
+        public override async Task<Guid> ClearAsync()
         {
             _custom.Clear();
-            SetEffect(Effect.None);
+            return await SetEffectAsync(Effect.None);
         }
     }
 }

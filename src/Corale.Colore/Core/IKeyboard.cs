@@ -25,13 +25,16 @@
 
 namespace Corale.Colore.Core
 {
+    using System;
     using System.Collections.Generic;
+    using System.Threading.Tasks;
 
     using Corale.Colore.Razer.Keyboard;
     using Corale.Colore.Razer.Keyboard.Effects;
 
     using JetBrains.Annotations;
 
+    /// <inheritdoc />
     /// <summary>
     /// Interface for keyboard functionality.
     /// </summary>
@@ -73,7 +76,7 @@ namespace Corale.Colore.Core
         /// struct in the <see cref="Keyboard" /> class.
         /// </remarks>
         [PublicAPI]
-        void SetCustom(Custom effect);
+        Task<Guid> SetCustomAsync(Custom effect);
 
         /// <summary>
         /// Sets an effect without any parameters.
@@ -81,7 +84,7 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="effect">Effect options.</param>
         [PublicAPI]
-        void SetEffect(Effect effect);
+        Task<Guid> SetEffectAsync(Effect effect);
 
         /// <summary>
         /// Sets the color on a specific row and column on the keyboard grid.
@@ -91,7 +94,7 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         /// <param name="clear">Whether or not to clear the existing colors before setting this one.</param>
         [PublicAPI]
-        void SetPosition(int row, int column, Color color, bool clear = false);
+        Task<Guid> SetPositionAsync(int row, int column, Color color, bool clear = false);
 
         /// <summary>
         /// Sets the color of a specific key on the keyboard.
@@ -100,7 +103,7 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         /// <param name="clear">If <c>true</c>, the keyboard will first be cleared before setting the key.</param>
         [PublicAPI]
-        void SetKey(Key key, Color color, bool clear = false);
+        Task<Guid> SetKeyAsync(Key key, Color color, bool clear = false);
 
         /// <summary>
         /// Sets the specified color on a set of keys.
@@ -109,7 +112,7 @@ namespace Corale.Colore.Core
         /// <param name="key">First key to change.</param>
         /// <param name="keys">Additional keys that should also have the color applied.</param>
         [PublicAPI]
-        void SetKeys(Color color, Key key, params Key[] keys);
+        Task<Guid> SetKeysAsync(Color color, Key key, params Key[] keys);
 
         /// <summary>
         /// Sets a color on a collection of keys.
@@ -118,13 +121,13 @@ namespace Corale.Colore.Core
         /// <param name="color">The <see cref="Color" /> to apply.</param>
         /// <param name="clear">If <c>true</c>, the keyboard will first be cleared before setting the keys.</param>
         [PublicAPI]
-        void SetKeys(IEnumerable<Key> keys, Color color, bool clear = false);
+        Task<Guid> SetKeysAsync(IEnumerable<Key> keys, Color color, bool clear = false);
 
         /// <summary>
         /// Sets a static color on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
         [PublicAPI]
-        void SetStatic(Static effect);
+        Task<Guid> SetStaticAsync(Static effect);
     }
 }

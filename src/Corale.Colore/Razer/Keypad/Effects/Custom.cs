@@ -33,6 +33,7 @@ namespace Corale.Colore.Razer.Keypad.Effects
 
     using JetBrains.Annotations;
 
+    /// <inheritdoc cref="IEquatable{Custom}" />
     /// <summary>
     /// Custom effect.
     /// </summary>
@@ -115,8 +116,9 @@ namespace Corale.Colore.Razer.Keypad.Effects
                 this[index] = color;
         }
 
+        /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="Custom" /> struct
+        /// Initializes a new instance of the <see cref="T:Corale.Colore.Razer.Keypad.Effects.Custom" /> struct
         /// with color values copied from another struct of the same type.
         /// </summary>
         /// <param name="other">The struct to copy data from.</param>
@@ -306,27 +308,27 @@ namespace Corale.Colore.Razer.Keypad.Effects
             if (ReferenceEquals(obj, null))
                 return false;
 
-            if (obj is Custom)
-                return Equals((Custom)obj);
+            switch (obj)
+            {
+                case Custom custom:
+                    return Equals(custom);
 
-            var arr2D = obj as Color[][];
+                case Color[][] arr2D:
+                    return Equals(arr2D);
+            }
 
-            if (arr2D != null)
-                return Equals(arr2D);
-
-            var arr1D = obj as Color[];
-
-            return arr1D != null && Equals(arr1D);
+            return obj is Color[] arr1D && Equals(arr1D);
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
         /// </summary>
         /// <returns>
-        /// <c>true</c> if the current object is equal to the <paramref name="other"/> parameter;
+        /// <c>true</c> if the current object is equal to the <paramref name="other" /> parameter;
         /// otherwise, <c>false</c>.
         /// </returns>
-        /// <param name="other">A <see cref="Custom" /> to compare with this object.</param>
+        /// <param name="other">A <see cref="T:Corale.Colore.Razer.Keypad.Effects.Custom" /> to compare with this object.</param>
         public bool Equals(Custom other)
         {
             for (var row = 0; row < Constants.MaxRows; row++)
@@ -341,16 +343,17 @@ namespace Corale.Colore.Razer.Keypad.Effects
             return true;
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Indicates whether the current object is equal to an instance of
-        /// a 2-dimensional array of <see cref="Color" />.
+        /// a 2-dimensional array of <see cref="T:Corale.Colore.Core.Color" />.
         /// </summary>
         /// <returns>
         /// <c>true</c> if the <paramref name="other" /> object has the same
         /// number of rows and columns, and contain matching colors; otherwise, <c>false</c>.
         /// </returns>
         /// <param name="other">
-        /// A 2-dimensional array of <see cref="Color" /> to compare with this object.
+        /// A 2-dimensional array of <see cref="T:Corale.Colore.Core.Color" /> to compare with this object.
         /// </param>
         public bool Equals(Color[][] other)
         {
@@ -372,11 +375,12 @@ namespace Corale.Colore.Razer.Keypad.Effects
             return true;
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Indicates whether the current object is equal to an instance of
-        /// an array of <see cref="Color" />.
+        /// an array of <see cref="T:Corale.Colore.Core.Color" />.
         /// </summary>
-        /// <param name="other">An array of <see cref="Color" /> to compare with this object.</param>
+        /// <param name="other">An array of <see cref="T:Corale.Colore.Core.Color" /> to compare with this object.</param>
         /// <returns>
         /// <c>true</c> if the <paramref name="other" /> object has the same
         /// number of elements, and contain matching colors; otherwise, <c>false</c>.

@@ -25,11 +25,14 @@
 
 namespace Corale.Colore.Core
 {
+    using System.Diagnostics.CodeAnalysis;
+
     using JetBrains.Annotations;
 
     /// <summary>
     /// Represents an RGB color.
     /// </summary>
+    [SuppressMessage("ReSharper", "InheritdocConsiderUsage", Justification = "Nothing to inherit from.")]
     public partial struct Color
     {
         /// <summary>

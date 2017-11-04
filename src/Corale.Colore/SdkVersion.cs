@@ -29,29 +29,14 @@ namespace Corale.Colore
 
     using JetBrains.Annotations;
 
+    /// <inheritdoc cref="IEquatable{SdkVersion}" />
+    /// <inheritdoc cref="IComparable{SdkVersion}" />
+    /// <inheritdoc cref="IComparable" />
     /// <summary>
     /// Describes an SDK version.
     /// </summary>
     public struct SdkVersion : IEquatable<SdkVersion>, IComparable<SdkVersion>, IComparable
     {
-        /// <summary>
-        /// The major part of the version.
-        /// </summary>
-        [PublicAPI]
-        public readonly int Major;
-
-        /// <summary>
-        /// The minor part of the version.
-        /// </summary>
-        [PublicAPI]
-        public readonly int Minor;
-
-        /// <summary>
-        /// The revision part of the version.
-        /// </summary>
-        [PublicAPI]
-        public readonly int Revision;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="SdkVersion" /> struct.
         /// </summary>
@@ -64,6 +49,24 @@ namespace Corale.Colore
             Minor = minor;
             Revision = revision;
         }
+
+        /// <summary>
+        /// The major part of the version.
+        /// </summary>
+        [PublicAPI]
+        public int Major { get; }
+
+        /// <summary>
+        /// The minor part of the version.
+        /// </summary>
+        [PublicAPI]
+        public int Minor { get; }
+
+        /// <summary>
+        /// The revision part of the version.
+        /// </summary>
+        [PublicAPI]
+        public int Revision { get; }
 
         /// <summary>
         /// Compares an instance of <see cref="SdkVersion" /> with
@@ -137,11 +140,12 @@ namespace Corale.Colore
             return left.CompareTo(right) >= 0;
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
         /// </summary>
         /// <returns>
-        /// true if the current object is equal to the <paramref name="other"/> parameter; otherwise, false.
+        /// true if the current object is equal to the <paramref name="other" /> parameter; otherwise, false.
         /// </returns>
         /// <param name="other">An object to compare with this object.</param>
         public bool Equals(SdkVersion other)
@@ -158,7 +162,7 @@ namespace Corale.Colore
         /// <param name="obj">Another object to compare to. </param>
         public override bool Equals(object obj)
         {
-            return obj is SdkVersion && Equals((SdkVersion)obj);
+            return obj is SdkVersion version && Equals(version);
         }
 
         /// <summary>
@@ -178,6 +182,7 @@ namespace Corale.Colore
             }
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Compares the current object with another object of the same type.
         /// </summary>
@@ -209,12 +214,10 @@ namespace Corale.Colore
             if (Major != other.Major)
                 return Major.CompareTo(other.Major);
 
-            if (Minor != other.Minor)
-                return Minor.CompareTo(other.Minor);
-
-            return Revision.CompareTo(other.Revision);
+            return Minor != other.Minor ? Minor.CompareTo(other.Minor) : Revision.CompareTo(other.Revision);
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Compares the current instance with another object of the same type and returns an integer that indicates
         /// whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object.
@@ -241,13 +244,13 @@ namespace Corale.Colore
         /// </list>
         /// </returns>
         /// <param name="obj">An object to compare with this instance. </param>
-        /// <exception cref="T:System.ArgumentException"><paramref name="obj"/> is not the same type as this instance. </exception>
+        /// <exception cref="T:System.ArgumentException"><paramref name="obj" /> is not the same type as this instance. </exception>
         public int CompareTo(object obj)
         {
-            if (!(obj is SdkVersion))
+            if (!(obj is SdkVersion version))
                 throw new ArgumentException("Object must be of type SdkVersion", nameof(obj));
 
-            return CompareTo((SdkVersion)obj);
+            return CompareTo(version);
         }
 
         /// <summary>

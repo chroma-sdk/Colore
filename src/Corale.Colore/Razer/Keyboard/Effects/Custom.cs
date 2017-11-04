@@ -32,6 +32,7 @@ namespace Corale.Colore.Razer.Keyboard.Effects
 
     using JetBrains.Annotations;
 
+    /// <inheritdoc cref="IEquatable{Custom}" />
     /// <summary>
     /// Describes a custom grid effect for every key.
     /// </summary>
@@ -296,19 +297,20 @@ namespace Corale.Colore.Razer.Keyboard.Effects
             return Equals((Custom)obj);
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
         /// </summary>
         /// <returns>
-        /// <c>true</c> if the current object is equal to the <paramref name="other"/> parameter;
+        /// <c>true</c> if the current object is equal to the <paramref name="other" /> parameter;
         /// otherwise, <c>false</c>.
         /// </returns>
-        /// <param name="other">A <see cref="Custom" /> to compare with this object.</param>
+        /// <param name="other">A <see cref="T:Corale.Colore.Razer.Keyboard.Effects.Custom" /> to compare with this object.</param>
         public bool Equals(Custom other)
         {
             for (var index = 0; index < Constants.MaxKeys; index++)
             {
-                if (this._colors[index] != other._colors[index] || this._keys[index] != other._keys[index])
+                if (_colors[index] != other._colors[index] || _keys[index] != other._keys[index])
                     return false;
             }
 

@@ -33,6 +33,7 @@ namespace Corale.Colore.Razer.Mouse.Effects
 
     using JetBrains.Annotations;
 
+    /// <inheritdoc cref="IEquatable{CustomGrid}" />
     /// <summary>
     /// Custom grid effect for mouse LEDs.
     /// </summary>
@@ -114,11 +115,12 @@ namespace Corale.Colore.Razer.Mouse.Effects
                 this[index] = color;
         }
 
+        /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomGrid" /> struct
+        /// Initializes a new instance of the <see cref="T:Corale.Colore.Razer.Mouse.Effects.CustomGrid" /> struct
         /// with the colors copied from another struct of the same type.
         /// </summary>
-        /// <param name="other">The <see cref="CustomGrid" /> struct to copy data from.</param>
+        /// <param name="other">The <see cref="T:Corale.Colore.Razer.Mouse.Effects.CustomGrid" /> struct to copy data from.</param>
         public CustomGrid(CustomGrid other)
             : this(other._colors)
         {
@@ -316,25 +318,25 @@ namespace Corale.Colore.Razer.Mouse.Effects
             if (ReferenceEquals(obj, null))
                 return false;
 
-            if (obj is CustomGrid)
-                return Equals((CustomGrid)obj);
+            switch (obj)
+            {
+                case CustomGrid custom:
+                    return Equals(custom);
 
-            var arr2D = obj as Color[][];
+                case Color[][] arr2D:
+                    return Equals(arr2D);
+            }
 
-            if (arr2D != null)
-                return Equals(arr2D);
-
-            var arr1D = obj as Color[];
-
-            return arr1D != null && Equals(arr1D);
+            return obj is Color[] arr1D && Equals(arr1D);
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
         /// </summary>
-        /// <param name="other">A <see cref="CustomGrid" /> to compare with this object.</param>
+        /// <param name="other">A <see cref="T:Corale.Colore.Razer.Mouse.Effects.CustomGrid" /> to compare with this object.</param>
         /// <returns>
-        /// <c>true</c> if the current object is equal to the <paramref name="other"/> parameter;
+        /// <c>true</c> if the current object is equal to the <paramref name="other" /> parameter;
         /// otherwise, <c>false</c>.
         /// </returns>
         public bool Equals(CustomGrid other)
@@ -351,12 +353,13 @@ namespace Corale.Colore.Razer.Mouse.Effects
             return true;
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Indicates whether the current object is equal to an instance of
-        /// a 2-dimensional array of <see cref="Color" />.
+        /// a 2-dimensional array of <see cref="T:Corale.Colore.Core.Color" />.
         /// </summary>
         /// <param name="other">
-        /// A 2-dimensional array of <see cref="Color" /> to compare with this object.
+        /// A 2-dimensional array of <see cref="T:Corale.Colore.Core.Color" /> to compare with this object.
         /// </param>
         /// <returns>
         /// <c>true</c> if the <paramref name="other" /> object has the same
@@ -382,11 +385,12 @@ namespace Corale.Colore.Razer.Mouse.Effects
             return true;
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Indicates whether the current object is equal to an instance of
-        /// an array of <see cref="Color" />.
+        /// an array of <see cref="T:Corale.Colore.Core.Color" />.
         /// </summary>
-        /// <param name="other">An array of <see cref="Color" /> to compare with this object.</param>
+        /// <param name="other">An array of <see cref="T:Corale.Colore.Core.Color" /> to compare with this object.</param>
         /// <returns>
         /// <c>true</c> if the <paramref name="other" /> object has the same
         /// number of elements, and contain matching colors; otherwise, <c>false</c>.

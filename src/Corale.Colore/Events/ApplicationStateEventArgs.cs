@@ -29,13 +29,15 @@ namespace Corale.Colore.Events
 
     using JetBrains.Annotations;
 
+    /// <inheritdoc />
     /// <summary>
     /// Event arguments for the application state event.
     /// </summary>
     public sealed class ApplicationStateEventArgs : EventArgs
     {
+        /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="ApplicationStateEventArgs" /> class.
+        /// Initializes a new instance of the <see cref="T:Corale.Colore.Events.ApplicationStateEventArgs" /> class.
         /// </summary>
         /// <param name="enabled">Value indicating whether the application has been enabled.</param>
         public ApplicationStateEventArgs(bool enabled)

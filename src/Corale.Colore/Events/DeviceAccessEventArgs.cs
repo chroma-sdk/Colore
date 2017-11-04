@@ -29,13 +29,15 @@ namespace Corale.Colore.Events
 
     using JetBrains.Annotations;
 
+    /// <inheritdoc />
     /// <summary>
     /// Event arguments for the device access event.
     /// </summary>
     public sealed class DeviceAccessEventArgs : EventArgs
     {
+        /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceAccessEventArgs" /> class.
+        /// Initializes a new instance of the <see cref="T:Corale.Colore.Events.DeviceAccessEventArgs" /> class.
         /// </summary>
         /// <param name="granted">Value indicating whether device access was granted.</param>
         public DeviceAccessEventArgs(bool granted)

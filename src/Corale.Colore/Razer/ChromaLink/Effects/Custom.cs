@@ -33,6 +33,7 @@ namespace Corale.Colore.Razer.ChromaLink.Effects
 
     using JetBrains.Annotations;
 
+    /// <inheritdoc cref="IEquatable{Custom}" />
     /// <summary>
     /// Custom effect.
     /// </summary>
@@ -104,8 +105,9 @@ namespace Corale.Colore.Razer.ChromaLink.Effects
                 this[index] = color;
         }
 
+        /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="Custom" /> struct
+        /// Initializes a new instance of the <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Custom" /> struct
         /// with color values copied from another struct of the same type.
         /// </summary>
         /// <param name="other">The struct to copy data from.</param>
@@ -239,22 +241,21 @@ namespace Corale.Colore.Razer.ChromaLink.Effects
             if (ReferenceEquals(obj, null))
                 return false;
 
-            if (obj is Custom)
-                return Equals((Custom)obj);
+            if (obj is Custom custom)
+                return Equals(custom);
 
-            var array = obj as Color[];
-
-            return array != null && Equals(array);
+            return obj is Color[] array && Equals(array);
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
         /// </summary>
         /// <returns>
-        /// <c>true</c> if the current object is equal to the <paramref name="other"/> parameter;
+        /// <c>true</c> if the current object is equal to the <paramref name="other" /> parameter;
         /// otherwise, <c>false</c>.
         /// </returns>
-        /// <param name="other">A <see cref="Custom" /> to compare with this object.</param>
+        /// <param name="other">A <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Custom" /> to compare with this object.</param>
         public bool Equals(Custom other)
         {
             for (var index = 0; index < Constants.MaxLeds; index++)
@@ -266,11 +267,12 @@ namespace Corale.Colore.Razer.ChromaLink.Effects
             return true;
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Indicates whether the current object is equal to an instance of
-        /// an array of <see cref="Color" />.
+        /// an array of <see cref="T:Corale.Colore.Core.Color" />.
         /// </summary>
-        /// <param name="other">An array of <see cref="Color" /> to compare with this object.</param>
+        /// <param name="other">An array of <see cref="T:Corale.Colore.Core.Color" /> to compare with this object.</param>
         /// <returns>
         /// <c>true</c> if the <paramref name="other" /> object has the same
         /// number of elements, and contain matching colors; otherwise, <c>false</c>.

@@ -70,8 +70,8 @@ namespace Corale.Colore.Core
                     {
                         var value = key.GetValue("Enable");
 
-                        if (value is int)
-                            regEnabled = (int)value == 1;
+                        if (value is int i)
+                            regEnabled = i == 1;
                         else
                         {
                             regEnabled = true;
@@ -127,9 +127,9 @@ namespace Corale.Colore.Core
                     var minor = key.GetValue("MinorVersion");
                     var revision = key.GetValue("RevisionNumber");
 
-                    if (major is int && minor is int && revision is int)
+                    if (major is int majorInt && minor is int minorInt && revision is int revInt)
                     {
-                        ver = new SdkVersion((int)major, (int)minor, (int)revision);
+                        ver = new SdkVersion(majorInt, minorInt, revInt);
                         return true;
                     }
 

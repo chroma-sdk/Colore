@@ -25,11 +25,15 @@
 
 namespace Corale.Colore.Core
 {
+    using System;
+    using System.Threading.Tasks;
+
     using Corale.Colore.Razer.Mouse;
     using Corale.Colore.Razer.Mouse.Effects;
 
     using JetBrains.Annotations;
 
+    /// <inheritdoc />
     /// <summary>
     /// Interface for mouse functionality.
     /// </summary>
@@ -60,14 +64,14 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="effect">Effect options.</param>
         [PublicAPI]
-        void SetEffect(Effect effect);
+        Task<Guid> SetEffectAsync(Effect effect);
 
         /// <summary>
         /// Sets a static color on the mouse.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Static" /> effect.</param>
         [PublicAPI]
-        void SetStatic(Static effect);
+        Task<Guid> SetStaticAsync(Static effect);
 
         /// <summary>
         /// Sets a static effect on the mouse.
@@ -75,13 +79,13 @@ namespace Corale.Colore.Core
         /// <param name="color">The color to use.</param>
         /// <param name="led">Which LED(s) to affect.</param>
         [PublicAPI]
-        void SetStatic(Color color, Led led = Led.All);
+        Task<Guid> SetStaticAsync(Color color, Led led = Led.All);
 
         /// <summary>
         /// Sets a custom grid effect on the mouse.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="CustomGrid" /> struct.</param>
         [PublicAPI]
-        void SetGrid(CustomGrid effect);
+        Task<Guid> SetGridAsync(CustomGrid effect);
     }
 }

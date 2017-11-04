@@ -31,6 +31,7 @@ namespace Corale.Colore.Razer.Effects
 
     using JetBrains.Annotations;
 
+    /// <inheritdoc cref="IEquatable{Custom}" />
     /// <summary>
     /// Describes a custom effect for a system device.
     /// </summary>
@@ -55,8 +56,9 @@ namespace Corale.Colore.Razer.Effects
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = Constants.MaxColors)]
         private readonly Color[] _colors;
 
+        /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="Custom" /> struct.
+        /// Initializes a new instance of the <see cref="T:Corale.Colore.Razer.Effects.Custom" /> struct.
         /// </summary>
         /// <param name="color">Color to set on all cells.</param>
         /// <param name="parameter">Additional effect parameter.</param>
@@ -67,10 +69,11 @@ namespace Corale.Colore.Razer.Effects
                 this[index] = color;
         }
 
+        /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="Custom" /> struct.
+        /// Initializes a new instance of the <see cref="T:Corale.Colore.Razer.Effects.Custom" /> struct.
         /// </summary>
-        /// <param name="other">Another <see cref="Custom" /> struct to copy colors and data from.</param>
+        /// <param name="other">Another <see cref="T:Corale.Colore.Razer.Effects.Custom" /> struct to copy colors and data from.</param>
         public Custom(Custom other)
             : this(other.Parameter)
         {
@@ -78,8 +81,9 @@ namespace Corale.Colore.Razer.Effects
                 this[index] = other[index];
         }
 
+        /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="Custom" /> struct.
+        /// Initializes a new instance of the <see cref="T:Corale.Colore.Razer.Effects.Custom" /> struct.
         /// </summary>
         /// <param name="colors">Colors to set.</param>
         /// <param name="parameter">Additional effect parameter.</param>
@@ -93,8 +97,9 @@ namespace Corale.Colore.Razer.Effects
                 this[index] = colors[index];
         }
 
+        /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="Custom" /> struct.
+        /// Initializes a new instance of the <see cref="T:Corale.Colore.Razer.Effects.Custom" /> struct.
         /// </summary>
         /// <param name="colors">2D array of colors to set.</param>
         /// <param name="parameter">Additional effect parameter.</param>
@@ -285,14 +290,15 @@ namespace Corale.Colore.Razer.Effects
             return Equals((Custom)obj);
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
         /// </summary>
         /// <returns>
-        /// <c>true</c> if the current object is equal to the <paramref name="other"/> parameter;
+        /// <c>true</c> if the current object is equal to the <paramref name="other" /> parameter;
         /// otherwise, <c>false</c>.
         /// </returns>
-        /// <param name="other">A <see cref="Custom" /> to compare with this object.</param>
+        /// <param name="other">A <see cref="T:Corale.Colore.Razer.Effects.Custom" /> to compare with this object.</param>
         public bool Equals(Custom other)
         {
             for (var index = 0; index < Constants.MaxColors; index++)

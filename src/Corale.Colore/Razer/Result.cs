@@ -30,6 +30,8 @@ namespace Corale.Colore.Razer
 
     using JetBrains.Annotations;
 
+    /// <inheritdoc cref="IEquatable{Int32}" />
+    /// <inheritdoc cref="IEquatable{Result}" />
     /// <summary>
     /// Struct for containing the result of running a native Chroma SDK function.
     /// </summary>
@@ -119,18 +121,19 @@ namespace Corale.Colore.Razer
             };
 
         /// <summary>
-        /// Internal result value.
-        /// </summary>
-        private readonly int _value;
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="Result" /> struct.
         /// </summary>
         /// <param name="value">Value to store.</param>
         public Result(int value)
         {
-            _value = value;
+            Value = value;
         }
+
+        /// <summary>
+        /// Internal result value.
+        /// </summary>
+        [PublicAPI]
+        public int Value { get; }
 
         /// <summary>
         /// Gets the help description for the current error value.
@@ -185,7 +188,7 @@ namespace Corale.Colore.Razer
         /// <returns>The integer equivalent of the <paramref name="result" />.</returns>
         public static implicit operator int(Result result)
         {
-            return result._value;
+            return result.Value;
         }
 #pragma warning restore SA1201 // Elements must appear in the correct order
 
@@ -234,27 +237,29 @@ namespace Corale.Colore.Razer
             return result;
         }
 
+        /// <inheritdoc />
         /// <summary>
-        /// Indicates whether the internal value of the current <see cref="Result" /> struct
+        /// Indicates whether the internal value of the current <see cref="T:Corale.Colore.Razer.Result" /> struct
         /// is equal to another value.
         /// </summary>
         /// <param name="other">A value to compare with this object's internal value.</param>
         /// <returns><c>true</c> if the internal value is equal to the <paramref name="other" /> parameter, otherwise <c>false</c>.</returns>
         public bool Equals(int other)
         {
-            return _value.Equals(other);
+            return Value.Equals(other);
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
         /// </summary>
         /// <param name="other">An object to compare with this object.</param>
         /// <returns>
-        /// <c>true</c> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <c>false</c>.
+        /// <c>true</c> if the current object is equal to the <paramref name="other" /> parameter; otherwise, <c>false</c>.
         /// </returns>
         public bool Equals(Result other)
         {
-            return Equals(other._value);
+            return Equals(other.Value);
         }
 
         /// <summary>
@@ -292,7 +297,7 @@ namespace Corale.Colore.Razer
         /// <filterpriority>2</filterpriority>
         public override int GetHashCode()
         {
-            return _value;
+            return Value;
         }
 
         /// <summary>
@@ -305,7 +310,7 @@ namespace Corale.Colore.Razer
         /// <filterpriority>2</filterpriority>
         public override string ToString()
         {
-            return $"{Name}: {Description} ({_value})";
+            return $"{Name}: {Description} ({Value})";
         }
     }
 }

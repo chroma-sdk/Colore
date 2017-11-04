@@ -26,11 +26,13 @@
 namespace Corale.Colore.Core
 {
     using System;
+    using System.Threading.Tasks;
 
     using Corale.Colore.Razer.Mousepad.Effects;
 
     using JetBrains.Annotations;
 
+    /// <inheritdoc />
     /// <summary>
     /// Interface for mouse pad functionality.
     /// </summary>
@@ -49,21 +51,21 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
         [PublicAPI]
-        void SetStatic(Static effect);
+        Task<Guid> SetStaticAsync(Static effect);
 
         /// <summary>
         /// Sets a static color effect on the mouse pad.
         /// </summary>
         /// <param name="color">Color to set.</param>
         [PublicAPI]
-        void SetStatic(Color color);
+        Task<Guid> SetStaticAsync(Color color);
 
         /// <summary>
         /// Sets a custom effect on the mouse pad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
         [PublicAPI]
-        void SetCustom(Custom effect);
+        Task<Guid> SetCustomAsync(Custom effect);
 
         /// <summary>
         /// Sets an effect without any parameters.
@@ -71,6 +73,6 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="effect">Effect options.</param>
         [PublicAPI]
-        void SetEffect(Effect effect);
+        Task<Guid> SetEffectAsync(Effect effect);
     }
 }

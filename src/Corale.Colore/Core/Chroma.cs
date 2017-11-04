@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="Chroma.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -26,8 +26,10 @@
 namespace Corale.Colore.Core
 {
     using System;
+    using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
     using System.Reflection;
+    using System.Threading.Tasks;
 
     using Common.Logging;
 
@@ -36,6 +38,7 @@ namespace Corale.Colore.Core
 
     using JetBrains.Annotations;
 
+    /// <inheritdoc />
     /// <summary>
     /// Main class for interacting with the Chroma SDK.
     /// </summary>
@@ -46,15 +49,12 @@ namespace Corale.Colore.Core
         /// </summary>
         private static readonly ILog Log = LogManager.GetLogger(typeof(Chroma));
 
-        /// <summary>
-        /// Mutex lock for thread-safe init calls.
-        /// </summary>
-        private static readonly object InitLock = new object();
+        private readonly IChromaApi _api;
 
         /// <summary>
-        /// Holds the application-wide instance of the <see cref="IChroma" /> interface.
+        /// Cache of created <see cref="IGenericDevice" /> instances.
         /// </summary>
-        private static IChroma _instance;
+        private readonly Dictionary<Guid, IGenericDevice> _deviceInstances;
 
         /// <summary>
         /// Keeps track of whether we have registered to receive Chroma events.
@@ -72,13 +72,27 @@ namespace Corale.Colore.Core
         /// </summary>
         private SdkVersion _sdkVersion;
 
+        private Keyboard _keyboard;
+
+        private Mouse _mouse;
+
+        private Headset _headset;
+
+        private Mousepad _mousepad;
+
+        private Keypad _keypad;
+
+        private ChromaLink _chromaLink;
+
         /// <summary>
         /// Prevents a default instance of the <see cref="Chroma" /> class from being created.
         /// </summary>
-        private Chroma()
+        public Chroma(IChromaApi api)
         {
+            _api = api;
+            _deviceInstances = new Dictionary<Guid, IGenericDevice>();
             Version = typeof(Chroma).GetTypeInfo().Assembly.GetName().Version;
-            Initialize();
+            InitializeAsync().Wait();
         }
 
         /// <summary>
@@ -89,7 +103,7 @@ namespace Corale.Colore.Core
         /// </remarks>
         ~Chroma()
         {
-            Uninitialize();
+            UninitializeAsync().Wait();
         }
 
         /// <summary>
@@ -123,78 +137,73 @@ namespace Corale.Colore.Core
         public event EventHandler<SdkSupportEventArgs> SdkSupport;
 
         /// <summary>
-        /// Gets the application-wide instance of the <see cref="IChroma" /> interface.
-        /// </summary>
-        [PublicAPI]
-        public static IChroma Instance
-        {
-            get
-            {
-                lock (InitLock)
-                {
-                    return _instance ?? (_instance = new Chroma());
-                }
-            }
-        }
-
-        /// <summary>
         /// Gets a value indicating whether the SDK is available on this system.
         /// </summary>
         [PublicAPI]
         public static bool SdkAvailable => RegistryHelper.IsSdkAvailable();
 
+        /// <inheritdoc />
         /// <summary>
-        /// Gets an instance of the <see cref="IKeyboard" /> interface
+        /// Gets an instance of the <see cref="T:Corale.Colore.Core.IKeyboard" /> interface
         /// for interacting with a Razer Chroma keyboard.
         /// </summary>
-        public IKeyboard Keyboard => Core.Keyboard.Instance;
+        public IKeyboard Keyboard => _keyboard ?? (_keyboard = new Keyboard(_api));
 
+        /// <inheritdoc />
         /// <summary>
-        /// Gets an instance of the <see cref="IMouse" /> interface
+        /// Gets an instance of the <see cref="T:Corale.Colore.Core.IMouse" /> interface
         /// for interacting with a Razer Chroma mouse.
         /// </summary>
-        public IMouse Mouse => Core.Mouse.Instance;
+        public IMouse Mouse => _mouse ?? (_mouse = new Mouse(_api));
 
+        /// <inheritdoc />
         /// <summary>
-        /// Gets an instance of the <see cref="IHeadset" /> interface
+        /// Gets an instance of the <see cref="T:Corale.Colore.Core.IHeadset" /> interface
         /// for interacting with a Razer Chroma headset.
         /// </summary>
-        public IHeadset Headset => Core.Headset.Instance;
+        public IHeadset Headset => _headset ?? (_headset = new Headset(_api));
 
+        /// <inheritdoc />
         /// <summary>
-        /// Gets an instance of the <see cref="IMousepad" /> interface
+        /// Gets an instance of the <see cref="T:Corale.Colore.Core.IMousepad" /> interface
         /// for interacting with a Razer Chroma mouse pad.
         /// </summary>
-        public IMousepad Mousepad => Core.Mousepad.Instance;
+        public IMousepad Mousepad => _mousepad ?? (_mousepad = new Mousepad(_api));
 
+        /// <inheritdoc />
         /// <summary>
-        /// Gets an instance of the <see cref="IKeypad" /> interface
+        /// Gets an instance of the <see cref="T:Corale.Colore.Core.IKeypad" /> interface
         /// for interacting with a Razer Chroma keypad.
         /// </summary>
-        public IKeypad Keypad => Core.Keypad.Instance;
+        public IKeypad Keypad => _keypad ?? (_keypad = new Keypad(_api));
 
+        /// <inheritdoc />
         /// <summary>
-        /// Gets an instance of the <see cref="IChromaLink" /> interface
+        /// Gets an instance of the <see cref="T:Corale.Colore.Core.IChromaLink" /> interface
         /// for interacting with ChromaLink devices.
         /// </summary>
-        public IChromaLink ChromaLink => Core.ChromaLink.Instance;
+        public IChromaLink ChromaLink => _chromaLink ?? (_chromaLink = new ChromaLink(_api));
 
+        /// <inheritdoc />
         /// <summary>
         /// Gets a value indicating whether the Chroma
         /// SDK has been initialized or not.
         /// </summary>
         public bool Initialized { get; private set; }
 
+        /// <inheritdoc />
         /// <summary>
         /// Gets the version of the Chroma SDK that Colore is currently using.
         /// </summary>
         public SdkVersion SdkVersion => _sdkVersion;
 
+        /// <inheritdoc />
         /// <summary>
-        /// Gets the <see cref="System.Version" /> of Colore.
+        /// Gets the <see cref="T:System.Version" /> of Colore.
         /// </summary>
         public Version Version { get; }
 
+        /// <inheritdoc />
         /// <summary>
         /// Initializes the SDK if it hasn't already.
         /// </summary>
@@ -204,7 +213,7 @@ namespace Corale.Colore.Core
         /// result in <emph>undefined behaviour</emph>. Usage of this method is
         /// <strong>at your own risk</strong>.</span>
         /// </remarks>
-        public void Initialize()
+        public async Task InitializeAsync()
         {
             if (Initialized)
                 return;
@@ -220,12 +229,13 @@ namespace Corale.Colore.Core
                 Log.Warn("Failed to retrieve SDK version from registry!");
 
             Log.Debug("Calling SDK Init function");
-            NativeWrapper.Init();
+            await _api.InitializeAsync();
             Initialized = true;
             Log.Debug("Resetting _registeredHandle");
             _registeredHandle = IntPtr.Zero;
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Uninitializes the SDK if it has been initialized.
         /// </summary>
@@ -238,53 +248,60 @@ namespace Corale.Colore.Core
         /// advised against</strong> and <emph>WILL</emph> result in catastrophic
         /// failure. <strong>YOU HAVE BEEN WARNED</strong>.</span>
         /// </remarks>
-        public void Uninitialize()
+        public async Task UninitializeAsync()
         {
             if (!Initialized)
                 return;
 
-            ((Device)Keyboard).DeleteCurrentEffect();
-            ((Device)Mouse).DeleteCurrentEffect();
-            ((Device)Keypad).DeleteCurrentEffect();
-            ((Device)Mousepad).DeleteCurrentEffect();
-            ((Device)Headset).DeleteCurrentEffect();
-            ((Device)ChromaLink).DeleteCurrentEffect();
+            _keyboard?.DeleteCurrentEffect();
+            _mouse?.DeleteCurrentEffect();
+            _keypad?.DeleteCurrentEffect();
+            _mousepad?.DeleteCurrentEffect();
+            _headset?.DeleteCurrentEffect();
+            _chromaLink?.DeleteCurrentEffect();
 
             Unregister();
-            NativeWrapper.UnInit();
+            await _api.UninitializeAsync();
 
             Initialized = false;
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Queries the SDK for information regarding a specific device.
         /// </summary>
-        /// <param name="deviceId">The device ID to query for, valid IDs can be found in <see cref="Devices" />.</param>
+        /// <param name="deviceId">The device ID to query for, valid IDs can be found in <see cref="T:Corale.Colore.Razer.Devices" />.</param>
         /// <returns>A struct with information regarding the device type and whether it's connected.</returns>
-        public DeviceInfo Query(Guid deviceId)
+        public async Task<DeviceInfo> QueryAsync(Guid deviceId)
         {
             if (!Devices.IsValidId(deviceId))
                 throw new ArgumentException("The specified ID does not match any of the valid IDs.", nameof(deviceId));
 
             Log.DebugFormat("Information for {0} requested", deviceId);
-            return NativeWrapper.QueryDevice(deviceId);
+            return await _api.QueryDeviceAsync(deviceId);
         }
 
+        /// <inheritdoc />
         /// <summary>
-        /// Gets an instance of <see cref="IGenericDevice" /> for
+        /// Gets an instance of <see cref="T:Corale.Colore.Core.IGenericDevice" /> for
         /// the device with the specified ID.
         /// </summary>
         /// <param name="deviceId">
-        /// The <see cref="Guid" /> of the device to get,
-        /// valid IDs can be found in <see cref="Devices" />.
+        /// The <see cref="T:System.Guid" /> of the device to get,
+        /// valid IDs can be found in <see cref="T:Corale.Colore.Razer.Devices" />.
         /// </param>
-        /// <returns>An instance of <see cref="IGenericDevice" />.</returns>
-        public IGenericDevice Get(Guid deviceId)
+        /// <returns>An instance of <see cref="T:Corale.Colore.Core.IGenericDevice" />.</returns>
+        public Task<IGenericDevice> GetDeviceAsync(Guid deviceId)
         {
             Log.DebugFormat("Device {0} requested", deviceId);
-            return GenericDevice.Get(deviceId);
+            if (_deviceInstances.ContainsKey(deviceId))
+                return Task.FromResult(_deviceInstances[deviceId]);
+            IGenericDevice device = new GenericDevice(deviceId, _api);
+            _deviceInstances[deviceId] = device;
+            return Task.FromResult(device);
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Handles a Windows message and fires the appropriate events.
         /// </summary>
@@ -316,6 +333,8 @@ namespace Corale.Colore.Core
             var type = wParam.ToInt32();
             var state = lParam.ToInt32();
 
+            // Unprocessed types will default to not being handled.
+            // ReSharper disable once SwitchStatementMissingSomeCases
             switch (type)
             {
                 case 1: // Chroma SDK support
@@ -337,6 +356,7 @@ namespace Corale.Colore.Core
             return handled;
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Registers to start receiving Chroma events.
         /// </summary>
@@ -353,14 +373,15 @@ namespace Corale.Colore.Core
             if (_registered)
             {
                 Log.Debug("Already registered, unregistering before continuing with registration");
-                NativeWrapper.UnregisterEventNotification();
+                _api.UnregisterEventNotifications();
             }
 
-            NativeWrapper.RegisterEventNotification(handle);
+            _api.RegisterEventNotifications(handle);
             _registered = true;
             _registeredHandle = handle;
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Unregisters from receiving Chroma events.
         /// </summary>
@@ -371,34 +392,24 @@ namespace Corale.Colore.Core
 
             Log.Debug("Unregistering from Chroma event notifications");
 
-            NativeWrapper.UnregisterEventNotification();
+            _api.UnregisterEventNotifications();
             _registered = false;
             _registeredHandle = IntPtr.Zero;
         }
 
+        /// <inheritdoc />
         /// <summary>
-        /// Sets all Chroma devices to the specified <see cref="Color" />.
+        /// Sets all Chroma devices to the specified <see cref="T:Corale.Colore.Core.Color" />.
         /// </summary>
-        /// <param name="color">The <see cref="Color" /> to set.</param>
-        public void SetAll(Color color)
+        /// <param name="color">The <see cref="T:Corale.Colore.Core.Color" /> to set.</param>
+        public Task SetAllAsync(Color color)
         {
-            Keyboard.SetAll(color);
-            Mouse.SetAll(color);
-            Mousepad.SetAll(color);
-            Keypad.SetAll(color);
-            Headset.SetAll(color);
-        }
-
-        /// <summary>
-        /// Explicitly creates and initializes the <see cref="_instance" /> field
-        /// with a new instance of the <see cref="Chroma" /> class.
-        /// </summary>
-        /// <remarks>
-        /// For internal use by singleton accessors in device interface implementations.
-        /// </remarks>
-        internal static void InitInstance()
-        {
-            Instance.Initialize();
+            Keyboard.SetAllAsync(color);
+            Mouse.SetAllAsync(color);
+            Mousepad.SetAllAsync(color);
+            Keypad.SetAllAsync(color);
+            Headset.SetAllAsync(color);
+            return Task.FromResult(0);
         }
 
         /// <summary>

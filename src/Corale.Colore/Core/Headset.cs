@@ -26,11 +26,14 @@
 namespace Corale.Colore.Core
 {
     using System;
+    using System.Threading.Tasks;
 
     using Common.Logging;
 
     using Corale.Colore.Razer.Headset.Effects;
 
+    /// <inheritdoc cref="IHeadset" />
+    /// <inheritdoc cref="Device" />
     /// <summary>
     /// Class for interacting with Chroma Headsets.
     /// </summary>
@@ -41,73 +44,70 @@ namespace Corale.Colore.Core
         /// </summary>
         private static readonly ILog Log = LogManager.GetLogger(typeof(Headset));
 
+        /// <inheritdoc />
         /// <summary>
-        /// Holds the application-wide instance of the <see cref="IHeadset" /> interface.
+        /// Initializes a new instance of the <see cref="T:Corale.Colore.Core.Headset" /> class.
         /// </summary>
-        private static IHeadset _instance;
-
-        /// <summary>
-        /// Prevents a default instance of the <see cref="Headset" /> class from being created.
-        /// </summary>
-        private Headset()
+        /// <param name="api">Reference to the Chroma API instance in use.</param>
+        public Headset(IChromaApi api)
+            : base(api)
         {
             Log.Info("Headset is initializing");
-            Chroma.InitInstance();
         }
 
-        /// <summary>
-        /// Gets the application-wide instance of the <see cref="IHeadset" /> interface.
-        /// </summary>
-        public static IHeadset Instance => _instance ?? (_instance = new Headset());
-
+        /// <inheritdoc cref="Device.SetAllAsync" />
         /// <summary>
         /// Sets the color of all components on this device.
         /// </summary>
         /// <param name="color">Color to set.</param>
-        public override void SetAll(Color color)
+        public override async Task<Guid> SetAllAsync(Color color)
         {
-            SetStatic(new Static(color));
+            return await SetStaticAsync(new Static(color));
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Sets an effect on the headset that doesn't
         /// take any parameters, currently only valid
-        /// for the <see cref="Effect.SpectrumCycling" /> effect.
+        /// for the <see cref="F:Corale.Colore.Razer.Headset.Effects.Effect.None" /> effect.
         /// </summary>
         /// <param name="effect">The type of effect to set.</param>
-        public void SetEffect(Effect effect)
+        public async Task<Guid> SetEffectAsync(Effect effect)
         {
-            SetGuid(NativeWrapper.CreateHeadsetEffect(effect, IntPtr.Zero));
+            return await SetGuidAsync(await Api.CreateHeadsetEffectAsync(effect));
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Sets a new static effect on the headset.
         /// </summary>
         /// <param name="effect">
-        /// An instance of the <see cref="Static" /> struct
+        /// An instance of the <see cref="T:Corale.Colore.Razer.Headset.Effects.Static" /> struct
         /// describing the effect.
         /// </param>
-        public void SetStatic(Static effect)
+        public async Task<Guid> SetStaticAsync(Static effect)
         {
-            SetGuid(NativeWrapper.CreateHeadsetEffect(Effect.Static, effect));
+            return await SetGuidAsync(await Api.CreateHeadsetEffectAsync(Effect.Static, effect));
         }
 
+        /// <inheritdoc />
         /// <summary>
-        /// Sets a new <see cref="Static" /> effect on
-        /// the headset using the specified <see cref="Color" />.
+        /// Sets a new <see cref="T:Corale.Colore.Razer.Headset.Effects.Static" /> effect on
+        /// the headset using the specified <see cref="T:Corale.Colore.Core.Color" />.
         /// </summary>
-        /// <param name="color"><see cref="Color" /> of the effect.</param>
-        public void SetStatic(Color color)
+        /// <param name="color"><see cref="T:Corale.Colore.Core.Color" /> of the effect.</param>
+        public async Task<Guid> SetStaticAsync(Color color)
         {
-            SetStatic(new Static(color));
+            return await SetStaticAsync(new Static(color));
         }
 
+        /// <inheritdoc cref="Device.ClearAsync" />
         /// <summary>
         /// Clears the current effect on the Headset.
         /// </summary>
-        public override void Clear()
+        public override async Task<Guid> ClearAsync()
         {
-            SetEffect(Effect.None);
+            return await SetEffectAsync(Effect.None);
         }
     }
 }

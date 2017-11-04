@@ -26,15 +26,15 @@
 namespace Corale.Colore.Core
 {
     using System;
-    using System.Collections.Generic;
+    using System.Threading.Tasks;
 
     using Common.Logging;
 
     using Corale.Colore.Razer;
     using Corale.Colore.Razer.Effects;
 
-    using JetBrains.Annotations;
-
+    /// <inheritdoc cref="IGenericDevice" />
+    /// <inheritdoc cref="Device" />
     /// <summary>
     /// A generic device.
     /// </summary>
@@ -45,16 +45,14 @@ namespace Corale.Colore.Core
         /// </summary>
         private static readonly ILog Log = LogManager.GetLogger(typeof(GenericDevice));
 
+        /// <inheritdoc />
         /// <summary>
-        /// Holds generated instances of devices.
+        /// Initializes a new instance of the <see cref="T:Corale.Colore.Core.GenericDevice" /> class.
         /// </summary>
-        private static readonly Dictionary<Guid, GenericDevice> Instances = new Dictionary<Guid, GenericDevice>();
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="GenericDevice" /> class.
-        /// </summary>
-        /// <param name="deviceId">The <see cref="Guid" /> of the device.</param>
-        private GenericDevice(Guid deviceId)
+        /// <param name="deviceId">The <see cref="T:System.Guid" /> of the device.</param>
+        /// <param name="api">Reference to the Chroma API instance in use.</param>
+        public GenericDevice(Guid deviceId, IChromaApi api)
+            : base(api)
         {
             Log.InfoFormat("New generic device initializing: {0}", deviceId);
 
@@ -64,71 +62,60 @@ namespace Corale.Colore.Core
             DeviceId = deviceId;
         }
 
+        /// <inheritdoc />
         /// <summary>
-        /// Gets the <see cref="Guid" /> of this device.
+        /// Gets the <see cref="T:System.Guid" /> of this device.
         /// </summary>
         public Guid DeviceId { get; }
 
-        /// <summary>
-        /// Gets a <see cref="IGenericDevice" /> instance for the device
-        /// with the specified ID.
-        /// </summary>
-        /// <param name="deviceId">The ID of the device to get.</param>
-        /// <returns>An instance of <see cref="IGenericDevice" /> for the requested device.</returns>
-        [PublicAPI]
-        public static IGenericDevice Get(Guid deviceId)
-        {
-            Chroma.InitInstance();
-
-            if (!Instances.ContainsKey(deviceId))
-                Instances[deviceId] = new GenericDevice(deviceId);
-
-            return Instances[deviceId];
-        }
-
+        /// <inheritdoc cref="Device.ClearAsync" />
         /// <summary>
         /// Clears the current effect on Generic Devices.
         /// </summary>
-        public override void Clear()
+        public override async Task<Guid> ClearAsync()
         {
-            SetGuid(NativeWrapper.CreateDeviceEffect(DeviceId, Effect.None, default(None)));
+            return await SetGuidAsync(await Api.CreateDeviceEffectAsync(DeviceId, Effect.None, default(None)));
         }
 
+        /// <inheritdoc cref="Device.SetAllAsync" />
         /// <summary>
         /// Sets the color of all components on this device.
         /// </summary>
         /// <param name="color">Color to set.</param>
-        public override void SetAll(Color color)
+        public override async Task<Guid> SetAllAsync(Color color)
         {
-            SetCustom(new Custom(color));
+            return await SetCustomAsync(new Custom(color));
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Sets a parameter-less effect on this device.
         /// </summary>
         /// <param name="effect">Effect to set.</param>
-        public void SetEffect(Effect effect)
+        public async Task<Guid> SetEffectAsync(Effect effect)
         {
-            SetEffect(effect, IntPtr.Zero);
+            return await SetEffectAsync(effect, IntPtr.Zero);
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Sets an effect on this device, taking a parameter.
         /// </summary>
         /// <param name="effect">Effect to set.</param>
-        /// <param name="param">Effect-specific parameter to use.</param>
-        public void SetEffect(Effect effect, IntPtr param)
+        /// <param name="struct">Effect-specific parameter to use.</param>
+        public async Task<Guid> SetEffectAsync<T>(Effect effect, T @struct) where T : struct
         {
-            SetGuid(NativeWrapper.CreateEffect(DeviceId, effect, param));
+            return await SetGuidAsync(await Api.CreateDeviceEffectAsync(DeviceId, effect, @struct));
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Sets a custom effect on this device.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        public void SetCustom(Custom effect)
+        public async Task<Guid> SetCustomAsync(Custom effect)
         {
-            SetGuid(NativeWrapper.CreateDeviceEffect(DeviceId, Effect.Custom, effect));
+            return await SetGuidAsync(await Api.CreateDeviceEffectAsync(DeviceId, Effect.Custom, effect));
         }
     }
 }

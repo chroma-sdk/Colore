@@ -26,6 +26,7 @@
 namespace Corale.Colore.Core
 {
     using System;
+    using System.Threading.Tasks;
 
     using Common.Logging;
 
@@ -34,6 +35,8 @@ namespace Corale.Colore.Core
 
     using JetBrains.Annotations;
 
+    /// <inheritdoc cref="IMouse" />
+    /// <inheritdoc cref="Device" />
     /// <summary>
     /// Class for interacting with a Chroma mouse.
     /// </summary>
@@ -46,141 +49,119 @@ namespace Corale.Colore.Core
         private static readonly ILog Log = LogManager.GetLogger(typeof(Mouse));
 
         /// <summary>
-        /// Lock object for thread-safe init.
-        /// </summary>
-        private static readonly object InitLock = new object();
-
-        /// <summary>
-        /// Holds the application-wide instance of the <see cref="IMouse" /> interface.
-        /// </summary>
-        private static IMouse _instance;
-
-        /// <summary>
         /// Internal instance of a <see cref="CustomGrid" /> struct.
         /// </summary>
         private CustomGrid _customGrid;
 
+        /// <inheritdoc />
         /// <summary>
-        /// Prevents a default instance of the <see cref="Mouse" /> class from being created.
+        /// Initializes a new instance of the <see cref="T:Corale.Colore.Core.Mouse" /> class.
         /// </summary>
-        private Mouse()
+        public Mouse(IChromaApi api)
+            : base(api)
         {
             Log.Info("Mouse is initializing");
-            Chroma.InitInstance();
             _customGrid = CustomGrid.Create();
         }
 
+        /// <inheritdoc />
         /// <summary>
-        /// Gets the application-wide instance of the <see cref="IMouse" /> interface.
-        /// </summary>
-        [PublicAPI]
-        public static IMouse Instance
-        {
-            get
-            {
-                lock (InitLock)
-                {
-                    return _instance ?? (_instance = new Mouse());
-                }
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the <see cref="Color" /> for a specific position
+        /// Gets or sets the <see cref="T:Corale.Colore.Core.Color" /> for a specific position
         /// on the mouse's virtual grid.
         /// </summary>
-        /// <param name="row">The row to query, between <c>0</c> and <see cref="Constants.MaxRows" /> (exclusive upper-bound).</param>
-        /// <param name="column">The column to query, between <c>0</c> and <see cref="Constants.MaxColumns" /> (exclusive upper-bound).</param>
-        /// <returns>The <see cref="Color" /> at the specified position.</returns>
+        /// <param name="row">The row to query, between <c>0</c> and <see cref="F:Corale.Colore.Razer.Mouse.Constants.MaxRows" /> (exclusive upper-bound).</param>
+        /// <param name="column">The column to query, between <c>0</c> and <see cref="F:Corale.Colore.Razer.Mouse.Constants.MaxColumns" /> (exclusive upper-bound).</param>
+        /// <returns>The <see cref="T:Corale.Colore.Core.Color" /> at the specified position.</returns>
         public Color this[int row, int column]
         {
-            get
-            {
-                return _customGrid[row, column];
-            }
+            get => _customGrid[row, column];
 
             set
             {
                 _customGrid[row, column] = value;
-                SetGrid(_customGrid);
+                SetGridAsync(_customGrid).Wait();
             }
         }
 
+        /// <inheritdoc />
         /// <summary>
-        /// Gets or sets the <see cref="Color" /> for a specified <see cref="GridLed" />
+        /// Gets or sets the <see cref="T:Corale.Colore.Core.Color" /> for a specified <see cref="T:Corale.Colore.Razer.Mouse.GridLed" />
         /// on the mouse's virtual grid.
         /// </summary>
-        /// <param name="led">The <see cref="GridLed" /> to query.</param>
-        /// <returns>The <see cref="Color" /> currently set for the specified <see cref="GridLed" />.</returns>
+        /// <param name="led">The <see cref="T:Corale.Colore.Razer.Mouse.GridLed" /> to query.</param>
+        /// <returns>The <see cref="T:Corale.Colore.Core.Color" /> currently set for the specified <see cref="T:Corale.Colore.Razer.Mouse.GridLed" />.</returns>
         public Color this[GridLed led]
         {
-            get
-            {
-                return _customGrid[led];
-            }
+            get => _customGrid[led];
 
             set
             {
                 _customGrid[led] = value;
-                SetGrid(_customGrid);
+                SetGridAsync(_customGrid).Wait();
             }
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Sets an effect without any parameters.
-        /// Currently, this only works for the <see cref="Effect.None" /> effect.
+        /// Currently, this only works for the <see cref="F:Corale.Colore.Razer.Mouse.Effects.Effect.None" /> effect.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        public void SetEffect(Effect effect)
+        public async Task<Guid> SetEffectAsync(Effect effect)
         {
-            SetGuid(NativeWrapper.CreateMouseEffect(effect, IntPtr.Zero));
+            return await SetGuidAsync(await Api.CreateMouseEffectAsync(effect));
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Sets a static color on the mouse.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="Static" /> effect.</param>
-        public void SetStatic(Static effect)
+        /// <param name="effect">An instance of the <see cref="T:Corale.Colore.Razer.Mouse.Effects.Static" /> effect.</param>
+        public async Task<Guid> SetStaticAsync(Static effect)
         {
-            SetGuid(NativeWrapper.CreateMouseEffect(Effect.Static, effect));
+            return await SetGuidAsync(await Api.CreateMouseEffectAsync(Effect.Static, effect));
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Sets a static effect on the mouse.
         /// </summary>
         /// <param name="color">The color to use.</param>
         /// <param name="led">Which LED(s) to affect.</param>
-        public void SetStatic(Color color, Led led = Led.All)
+        public async Task<Guid> SetStaticAsync(Color color, Led led = Led.All)
         {
-            SetStatic(new Static(led, color));
+            return await SetStaticAsync(new Static(led, color));
         }
 
+        /// <inheritdoc cref="Device.SetAllAsync" />
         /// <summary>
         /// Sets the color of all LEDs on the mouse.
         /// </summary>
         /// <param name="color">Color to set.</param>
-        public override void SetAll(Color color)
+        public override async Task<Guid> SetAllAsync(Color color)
         {
             _customGrid.Set(color);
-            SetGrid(_customGrid);
+            return await SetGridAsync(_customGrid);
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Sets a custom grid effect on the mouse.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="CustomGrid" /> struct.</param>
-        public void SetGrid(CustomGrid effect)
+        /// <param name="effect">An instance of the <see cref="T:Corale.Colore.Razer.Mouse.Effects.CustomGrid" /> struct.</param>
+        public async Task<Guid> SetGridAsync(CustomGrid effect)
         {
-            SetGuid(NativeWrapper.CreateMouseEffect(Effect.CustomGrid, effect));
+            return await SetGuidAsync(await Api.CreateMouseEffectAsync(Effect.CustomGrid, effect));
         }
 
+        /// <inheritdoc cref="Device.ClearAsync" />
         /// <summary>
         /// Clears the current effect on the Mouse.
         /// </summary>
-        public override void Clear()
+        public override async Task<Guid> ClearAsync()
         {
             _customGrid.Clear();
-            SetEffect(Effect.None);
+            return await SetEffectAsync(Effect.None);
         }
     }
 }

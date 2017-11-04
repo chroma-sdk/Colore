@@ -30,9 +30,10 @@ namespace Corale.Colore.Razer
 
     using JetBrains.Annotations;
 
+    /// <inheritdoc />
     /// <summary>
-    /// Thrown when an invalid <see cref="Guid" /> is passed to the
-    /// constructor of <see cref="Core.GenericDevice" />.
+    /// Thrown when an invalid <see cref="T:System.Guid" /> is passed to the
+    /// constructor of <see cref="T:Corale.Colore.Core.GenericDevice" />.
     /// </summary>
     public sealed class UnsupportedDeviceException : ColoreException
     {
@@ -41,10 +42,11 @@ namespace Corale.Colore.Razer
         /// </summary>
         private const string MessageTemplate = "Attempted to initialize an unsupported device with ID: {0}";
 
+        /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="UnsupportedDeviceException" /> class.
+        /// Initializes a new instance of the <see cref="T:Corale.Colore.Razer.UnsupportedDeviceException" /> class.
         /// </summary>
-        /// <param name="deviceId">The <see cref="Guid" /> of the device.</param>
+        /// <param name="deviceId">The <see cref="T:System.Guid" /> of the device.</param>
         /// <param name="innerException">Inner exception object.</param>
         public UnsupportedDeviceException(Guid deviceId, Exception innerException = null)
             : base(string.Format(CultureInfo.InvariantCulture, MessageTemplate, deviceId), innerException)

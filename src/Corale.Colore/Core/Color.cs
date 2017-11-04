@@ -30,6 +30,8 @@ namespace Corale.Colore.Core
 
     using JetBrains.Annotations;
 
+    /// <inheritdoc cref="IEquatable{Color}" />
+    /// <inheritdoc cref="IEquatable{UInt32}" />
     /// <summary>
     /// Represents an RGB color.
     /// </summary>
@@ -47,8 +49,9 @@ namespace Corale.Colore.Core
             Value = value;
         }
 
+        /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="Color" /> struct using three
+        /// Initializes a new instance of the <see cref="T:Corale.Colore.Core.Color" /> struct using three
         /// distinct R, G, and B byte values.
         /// </summary>
         /// <param name="red">The red component.</param>
@@ -60,9 +63,10 @@ namespace Corale.Colore.Core
         {
         }
 
+        /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="Color" /> struct using
-        /// three <see cref="float" /> (<c>float</c>) values for the
+        /// Initializes a new instance of the <see cref="T:Corale.Colore.Core.Color" /> struct using
+        /// three <see cref="T:System.Single" /> (<c>float</c>) values for the
         /// R, G, and B channels.
         /// </summary>
         /// <param name="red">The red component (<c>0.0f</c> to <c>1.0f</c>, inclusive).</param>
@@ -77,9 +81,10 @@ namespace Corale.Colore.Core
         {
         }
 
+        /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="Color" /> struct using
-        /// three <see cref="double" /> values for the R, G, and B channels.
+        /// Initializes a new instance of the <see cref="T:Corale.Colore.Core.Color" /> struct using
+        /// three <see cref="T:System.Double" /> values for the R, G, and B channels.
         /// </summary>
         /// <param name="red">The red component (<c>0.0</c> to <c>1.0</c>, inclusive).</param>
         /// <param name="green">The green component (<c>0.0</c> to <c>1.0</c>, inclusive).</param>
@@ -185,20 +190,24 @@ namespace Corale.Colore.Core
             if (ReferenceEquals(null, other))
                 return false;
 
-            if (other is Color)
-                return Equals((Color)other);
+            switch (other)
+            {
+                case Color color:
+                    return Equals(color);
 
-            if (other is uint)
-                return Equals((uint)other);
+                case uint value:
+                    return Equals(value);
+            }
 
             return false;
         }
 
+        /// <inheritdoc />
         /// <summary>
-        /// Returns a value indicating whether this instance of <see cref="Color" />
-        /// is equal to a <see cref="Color" /> <paramref name="other" />.
+        /// Returns a value indicating whether this instance of <see cref="T:Corale.Colore.Core.Color" />
+        /// is equal to a <see cref="T:Corale.Colore.Core.Color" /> <paramref name="other" />.
         /// </summary>
-        /// <param name="other">The <see cref="Color" /> to check equality against.</param>
+        /// <param name="other">The <see cref="T:Corale.Colore.Core.Color" /> to check equality against.</param>
         /// <returns><c>true</c> of the two are equal, false otherwise.</returns>
         /// <remarks>
         /// Only compares the lower 32 bits of each color value, in order to
@@ -209,11 +218,12 @@ namespace Corale.Colore.Core
             return Value.Equals(other.Value);
         }
 
+        /// <inheritdoc />
         /// <summary>
-        /// Returns a value indicating whether this instance of <see cref="Color" />
-        /// is equal to a <see cref="uint" /> <paramref name="other" />.
+        /// Returns a value indicating whether this instance of <see cref="T:Corale.Colore.Core.Color" />
+        /// is equal to a <see cref="T:System.UInt32" /> <paramref name="other" />.
         /// </summary>
-        /// <param name="other">The <see cref="uint" /> to check equality against.</param>
+        /// <param name="other">The <see cref="T:System.UInt32" /> to check equality against.</param>
         /// <returns><c>true</c> if the two are equal, <c>false</c> otherwise.</returns>
         /// <remarks>
         /// Only compares the lower 32 bits of each value, in order to

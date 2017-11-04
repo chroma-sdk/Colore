@@ -26,11 +26,14 @@
 namespace Corale.Colore.Core
 {
     using System;
+    using System.Threading.Tasks;
 
     using Common.Logging;
 
     using Corale.Colore.Razer.Keypad.Effects;
 
+    /// <inheritdoc cref="IKeypad" />
+    /// <inheritdoc cref="Device" />
     /// <summary>
     /// Class for interacting with a Chroma keypad.
     /// </summary>
@@ -42,67 +45,42 @@ namespace Corale.Colore.Core
         private static readonly ILog Log = LogManager.GetLogger(typeof(Keypad));
 
         /// <summary>
-        /// Lock object for thread-safe init.
-        /// </summary>
-        private static readonly object InitLock = new object();
-
-        /// <summary>
-        /// Singleton instance of this class.
-        /// </summary>
-        private static IKeypad _instance;
-
-        /// <summary>
         /// Internal instance of a <see cref="Custom" /> struct used for
         /// the indexer.
         /// </summary>
         private Custom _custom;
 
+        /// <inheritdoc />
         /// <summary>
-        /// Prevents a default instance of the <see cref="Keypad" /> class from being created.
+        /// Initializes a new instance of the <see cref="T:Corale.Colore.Core.Keypad" /> class.
         /// </summary>
-        private Keypad()
+        public Keypad(IChromaApi api)
+            : base(api)
         {
             Log.Debug("Keypad is initializing");
-            Chroma.InitInstance();
-
             _custom = Custom.Create();
         }
 
-        /// <summary>
-        /// Gets the application-wide instance of the <see cref="IKeypad" /> interface.
-        /// </summary>
-        public static IKeypad Instance
-        {
-            get
-            {
-                lock (InitLock)
-                {
-                    return _instance ?? (_instance = new Keypad());
-                }
-            }
-        }
-
+        /// <inheritdoc />
         /// <summary>
         /// Gets or sets a color at the specified position in the keypad's
         /// grid layout.
         /// </summary>
-        /// <param name="row">The row to access (between <c>0</c> and <see cref="Razer.Keypad.Constants.MaxRows" />, exclusive upper-bound).</param>
-        /// <param name="column">The column to access (between <c>0</c> and <see cref="Razer.Keypad.Constants.MaxColumns" />, exclusive upper-bound).</param>
-        /// <returns>The <see cref="Color" /> at the specified position.</returns>
+        /// <param name="row">The row to access (between <c>0</c> and <see cref="F:Corale.Colore.Razer.Keypad.Constants.MaxRows" />, exclusive upper-bound).</param>
+        /// <param name="column">The column to access (between <c>0</c> and <see cref="F:Corale.Colore.Razer.Keypad.Constants.MaxColumns" />, exclusive upper-bound).</param>
+        /// <returns>The <see cref="T:Corale.Colore.Core.Color" /> at the specified position.</returns>
         public Color this[int row, int column]
         {
-            get
-            {
-                return _custom[row, column];
-            }
+            get => _custom[row, column];
 
             set
             {
                 _custom[row, column] = value;
-                SetCustom(_custom);
+                SetCustomAsync(_custom).Wait();
             }
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Returns whether a key has had a custom color set.
         /// </summary>
@@ -114,60 +92,66 @@ namespace Corale.Colore.Core
             return this[row, column] != Color.Black;
         }
 
+        /// <inheritdoc cref="Device.SetAllAsync" />
         /// <summary>
         /// Sets the color of all components on this device.
         /// </summary>
         /// <param name="color">Color to set.</param>
-        public override void SetAll(Color color)
+        public override async Task<Guid> SetAllAsync(Color color)
         {
             _custom.Set(color);
-            SetCustom(_custom);
+            return await SetCustomAsync(_custom);
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Sets an effect without any parameters.
-        /// Currently, this only works for the <see cref="Effect.None" /> effect.
+        /// Currently, this only works for the <see cref="F:Corale.Colore.Razer.Keypad.Effects.Effect.None" /> effect.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        public void SetEffect(Effect effect)
+        public async Task<Guid> SetEffectAsync(Effect effect)
         {
-            SetGuid(NativeWrapper.CreateKeypadEffect(effect, IntPtr.Zero));
+            return await SetGuidAsync(await Api.CreateKeypadEffectAsync(effect));
         }
 
+        /// <inheritdoc />
         /// <summary>
-        /// Sets a <see cref="Custom" /> effect on the keypad.
+        /// Sets a <see cref="T:Corale.Colore.Razer.Keypad.Effects.Custom" /> effect on the keypad.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
-        public void SetCustom(Custom effect)
+        /// <param name="effect">An instance of the <see cref="T:Corale.Colore.Razer.Keypad.Effects.Custom" /> struct.</param>
+        public async Task<Guid> SetCustomAsync(Custom effect)
         {
-            SetGuid(NativeWrapper.CreateKeypadEffect(Effect.Custom, effect));
+            return await SetGuidAsync(await Api.CreateKeypadEffectAsync(Effect.Custom, effect));
         }
 
+        /// <inheritdoc />
         /// <summary>
-        /// Sets a <see cref="Static" /> effect on the keypad.
+        /// Sets a <see cref="T:Corale.Colore.Razer.Keypad.Effects.Static" /> effect on the keypad.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
-        public void SetStatic(Static effect)
+        /// <param name="effect">An instance of the <see cref="T:Corale.Colore.Razer.Keypad.Effects.Static" /> struct.</param>
+        public async Task<Guid> SetStaticAsync(Static effect)
         {
-            SetGuid(NativeWrapper.CreateKeypadEffect(Effect.Static, effect));
+            return await SetGuidAsync(await Api.CreateKeypadEffectAsync(Effect.Static, effect));
         }
 
+        /// <inheritdoc />
         /// <summary>
-        /// Sets a <see cref="Static" /> effect on the keypad.
+        /// Sets a <see cref="T:Corale.Colore.Razer.Keypad.Effects.Static" /> effect on the keypad.
         /// </summary>
         /// <param name="color">Color of the effect.</param>
-        public void SetStatic(Color color)
+        public async Task<Guid> SetStaticAsync(Color color)
         {
-            SetStatic(new Static(color));
+            return await SetStaticAsync(new Static(color));
         }
 
+        /// <inheritdoc cref="Device.ClearAsync" />
         /// <summary>
         /// Clears the current effect on the Keypad.
         /// </summary>
-        public override void Clear()
+        public override async Task<Guid> ClearAsync()
         {
             _custom.Clear();
-            SetEffect(Effect.None);
+            return await SetEffectAsync(Effect.None);
         }
     }
 }

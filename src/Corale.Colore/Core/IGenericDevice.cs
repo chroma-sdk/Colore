@@ -26,12 +26,14 @@
 namespace Corale.Colore.Core
 {
     using System;
+    using System.Threading.Tasks;
 
     using Corale.Colore.Razer;
     using Corale.Colore.Razer.Effects;
 
     using JetBrains.Annotations;
 
+    /// <inheritdoc />
     /// <summary>
     /// Interface for generic devices.
     /// </summary>
@@ -48,21 +50,21 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="effect">Effect to set.</param>
         [PublicAPI]
-        void SetEffect(Effect effect);
+        Task<Guid> SetEffectAsync(Effect effect);
 
         /// <summary>
         /// Sets an effect on this device, taking a parameter.
         /// </summary>
         /// <param name="effect">Effect to set.</param>
-        /// <param name="param">Effect-specific parameter to use.</param>
+        /// <param name="struct">Effect-specific parameter to use.</param>
         [PublicAPI]
-        void SetEffect(Effect effect, IntPtr param);
+        Task<Guid> SetEffectAsync<T>(Effect effect, T @struct) where T : struct;
 
         /// <summary>
         /// Sets a custom effect on this device.
         /// </summary>
         /// <param name="effect">Effect options.</param>
         [PublicAPI]
-        void SetCustom(Custom effect);
+        Task<Guid> SetCustomAsync(Custom effect);
     }
 }

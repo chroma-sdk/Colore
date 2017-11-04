@@ -27,6 +27,7 @@ namespace Corale.Colore.Core
 {
     using System;
     using System.Diagnostics.CodeAnalysis;
+    using System.Threading.Tasks;
 
     using Corale.Colore.Events;
     using Corale.Colore.Razer;
@@ -141,7 +142,7 @@ namespace Corale.Colore.Core
         /// is at <b>your own risk</b>.
         /// </remarks>
         [PublicAPI]
-        void Initialize();
+        Task InitializeAsync();
 
         /// <summary>
         /// Uninitializes the SDK if it has been initialized.
@@ -152,7 +153,7 @@ namespace Corale.Colore.Core
         /// is at <b>your own risk</b>.
         /// </remarks>
         [PublicAPI]
-        void Uninitialize();
+        Task UninitializeAsync();
 
         /// <summary>
         /// Queries the SDK for information regarding a specific device.
@@ -160,7 +161,7 @@ namespace Corale.Colore.Core
         /// <param name="deviceId">The device ID to query for, valid IDs can be found in <see cref="Devices" />.</param>
         /// <returns>A struct with information regarding the device type and whether it's connected.</returns>
         [PublicAPI]
-        DeviceInfo Query(Guid deviceId);
+        Task<DeviceInfo> QueryAsync(Guid deviceId);
 
         /// <summary>
         /// Gets an instance of <see cref="IGenericDevice" /> for
@@ -172,7 +173,14 @@ namespace Corale.Colore.Core
         /// </param>
         /// <returns>An instance of <see cref="IGenericDevice" />.</returns>
         [PublicAPI]
-        IGenericDevice Get(Guid deviceId);
+        Task<IGenericDevice> GetDeviceAsync(Guid deviceId);
+
+        /// <summary>
+        /// Sets all Chroma devices to the specified <see cref="Color" />.
+        /// </summary>
+        /// <param name="color">The <see cref="Color" /> to set.</param>
+        [PublicAPI]
+        Task SetAllAsync(Color color);
 
         /// <summary>
         /// Handles a Windows message and fires the appropriate events.
@@ -205,12 +213,5 @@ namespace Corale.Colore.Core
         /// </summary>
         [PublicAPI]
         void Unregister();
-
-        /// <summary>
-        /// Sets all Chroma devices to the specified <see cref="Color" />.
-        /// </summary>
-        /// <param name="color">The <see cref="Color" /> to set.</param>
-        [PublicAPI]
-        void SetAll(Color color);
     }
 }

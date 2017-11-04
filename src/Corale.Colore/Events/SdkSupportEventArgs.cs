@@ -29,13 +29,15 @@ namespace Corale.Colore.Events
 
     using JetBrains.Annotations;
 
+    /// <inheritdoc />
     /// <summary>
     /// Event arguments for the Chroma SDK support event.
     /// </summary>
     public sealed class SdkSupportEventArgs : EventArgs
     {
+        /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="SdkSupportEventArgs" /> class.
+        /// Initializes a new instance of the <see cref="T:Corale.Colore.Events.SdkSupportEventArgs" /> class.
         /// </summary>
         /// <param name="enabled">Value indicating whether SDK support is enabled.</param>
         public SdkSupportEventArgs(bool enabled)

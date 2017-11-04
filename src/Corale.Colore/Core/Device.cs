@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="Device.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -26,48 +26,69 @@
 namespace Corale.Colore.Core
 {
     using System;
+    using System.Threading.Tasks;
 
+    /// <inheritdoc />
     /// <summary>
     /// Base class for devices, containing code common between all devices.
     /// </summary>
     public abstract class Device : IDevice
     {
+        /// <inheritdoc />
         /// <summary>
         /// Gets or sets the ID of the currently active effect.
         /// </summary>
         public Guid CurrentEffectId { get; protected set; }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="Device" /> class.
+        /// </summary>
+        /// <param name="api">Reference to the Chroma API in use.</param>
+        protected Device(IChromaApi api)
+        {
+            Api = api;
+        }
+
+        /// <summary>
+        /// Gets the Chroma API instance.
+        /// </summary>
+        protected IChromaApi Api { get; }
+
+        /// <inheritdoc />
+        /// <summary>
         /// Clears the current effect on the device.
         /// </summary>
-        public abstract void Clear();
+        public abstract Task<Guid> ClearAsync();
 
+        /// <inheritdoc />
         /// <summary>
         /// Sets the color of all components on this device.
         /// </summary>
         /// <param name="color">Color to set.</param>
-        public abstract void SetAll(Color color);
+        public abstract Task<Guid> SetAllAsync(Color color);
 
+        /// <inheritdoc />
         /// <summary>
         /// Updates the device to use the effect pointed to by the specified GUID.
         /// </summary>
         /// <param name="guid">GUID to set.</param>
-        public void SetGuid(Guid guid)
+        public async Task<Guid> SetGuidAsync(Guid guid)
         {
-            DeleteCurrentEffect();
-            NativeWrapper.SetEffect(guid);
+            await DeleteCurrentEffect();
+            await Api.SetEffectAsync(guid);
             CurrentEffectId = guid;
+            return CurrentEffectId;
         }
 
         /// <summary>
         /// Deletes the currently set effect.
         /// </summary>
-        internal void DeleteCurrentEffect()
+        internal async Task DeleteCurrentEffect()
         {
             if (CurrentEffectId == Guid.Empty)
                 return;
 
-            NativeWrapper.DeleteEffect(CurrentEffectId);
+            await Api.DeleteEffectAsync(CurrentEffectId);
             CurrentEffectId = Guid.Empty;
         }
     }

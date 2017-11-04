@@ -27,13 +27,15 @@ namespace Corale.Colore
 {
     using System;
 
+    /// <inheritdoc />
     /// <summary>
     /// Generic Colore library exception.
     /// </summary>
     public class ColoreException : Exception
     {
+        /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="ColoreException" /> class.
+        /// Initializes a new instance of the <see cref="T:Corale.Colore.ColoreException" /> class.
         /// </summary>
         /// <param name="message">Exception message.</param>
         /// <param name="innerException">Inner exception object.</param>

@@ -28,6 +28,7 @@ namespace Corale.Colore.Razer
     using System.ComponentModel;
     using System.Globalization;
 
+    /// <inheritdoc />
     /// <summary>
     /// Thrown when a native function returns an erroneous result value.
     /// </summary>
@@ -38,8 +39,9 @@ namespace Corale.Colore.Razer
         /// </summary>
         private const string MessageTemplate = "Call to native Chroma SDK function {0} failed with error: {1}";
 
+        /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="NativeCallException" /> class.
+        /// Initializes a new instance of the <see cref="T:Corale.Colore.Razer.NativeCallException" /> class.
         /// </summary>
         /// <param name="function">The name of the function that was called.</param>
         /// <param name="result">The result returned from the called function.</param>

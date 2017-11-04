@@ -33,6 +33,7 @@ namespace Corale.Colore.Razer.Mousepad.Effects
 
     using JetBrains.Annotations;
 
+    /// <inheritdoc cref="IEquatable{Custom}" />
     /// <summary>
     /// Custom effect for mouse pad.
     /// </summary>
@@ -78,8 +79,9 @@ namespace Corale.Colore.Razer.Mousepad.Effects
                 _colors[i] = colors[i];
         }
 
+        /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="Custom" /> struct
+        /// Initializes a new instance of the <see cref="T:Corale.Colore.Razer.Mousepad.Effects.Custom" /> struct
         /// with the colors copied from another struct of the same type.
         /// </summary>
         /// <param name="other">The struct to copy data from.</param>
@@ -213,19 +215,19 @@ namespace Corale.Colore.Razer.Mousepad.Effects
             if (ReferenceEquals(obj, null))
                 return false;
 
-            if (obj is Custom)
-                return Equals((Custom)obj);
+            if (obj is Custom custom)
+                return Equals(custom);
 
-            var list = obj as IList<Color>;
-            return list != null && Equals(list);
+            return obj is IList<Color> list && Equals(list);
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
         /// </summary>
         /// <param name="other">An object to compare with this object.</param>
         /// <returns>
-        /// <c>true</c> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <c>false</c>.
+        /// <c>true</c> if the current object is equal to the <paramref name="other" /> parameter; otherwise, <c>false</c>.
         /// </returns>
         public bool Equals(Custom other)
         {
@@ -238,13 +240,14 @@ namespace Corale.Colore.Razer.Mousepad.Effects
             return true;
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Indicates whether the current object is equal to an
-        /// instance of <see cref="IList{Color}" />.
+        /// instance of <see cref="T:System.Collections.Generic.IList`1" />.
         /// </summary>
         /// <param name="other">An object to compare with this object.</param>
         /// <returns>
-        /// <c>true</c> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <c>false</c>.
+        /// <c>true</c> if the current object is equal to the <paramref name="other" /> parameter; otherwise, <c>false</c>.
         /// </returns>
         public bool Equals(IList<Color> other)
         {

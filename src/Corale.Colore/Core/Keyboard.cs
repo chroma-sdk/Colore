@@ -27,6 +27,7 @@ namespace Corale.Colore.Core
 {
     using System;
     using System.Collections.Generic;
+    using System.Threading.Tasks;
 
     using Common.Logging;
 
@@ -35,6 +36,8 @@ namespace Corale.Colore.Core
 
     using JetBrains.Annotations;
 
+    /// <inheritdoc cref="IKeyboard" />
+    /// <inheritdoc cref="Device" />
     /// <summary>
     /// Class for interacting with a Chroma keyboard.
     /// </summary>
@@ -47,28 +50,18 @@ namespace Corale.Colore.Core
         private static readonly ILog Log = LogManager.GetLogger(typeof(Keyboard));
 
         /// <summary>
-        /// Lock object for thread-safe initialization.
-        /// </summary>
-        private static readonly object InitLock = new object();
-
-        /// <summary>
-        /// Holds the application-wide instance of the <see cref="Keyboard" /> class.
-        /// </summary>
-        private static IKeyboard _instance;
-
-        /// <summary>
         /// Grid struct used for the helper methods.
         /// </summary>
         private Custom _grid;
 
+        /// <inheritdoc />
         /// <summary>
-        /// Prevents a default instance of the <see cref="Keyboard" /> class from being created.
+        /// Initializes a new instance of the <see cref="T:Corale.Colore.Core.Keyboard" /> class.
         /// </summary>
-        private Keyboard()
+        public Keyboard(IChromaApi api)
+            : base(api)
         {
             Log.Info("Keyboard initializing...");
-
-            Chroma.InitInstance();
 
             CurrentEffectId = Guid.Empty;
 
@@ -77,23 +70,9 @@ namespace Corale.Colore.Core
             _grid = Custom.Create();
         }
 
+        /// <inheritdoc />
         /// <summary>
-        /// Gets the application-wide instance of the <see cref="IKeyboard" /> interface.
-        /// </summary>
-        [PublicAPI]
-        public static IKeyboard Instance
-        {
-            get
-            {
-                lock (InitLock)
-                {
-                    return _instance ?? (_instance = new Keyboard());
-                }
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the <see cref="Color" /> for a specific <see cref="Key" /> on the keyboard.
+        /// Gets or sets the <see cref="T:Corale.Colore.Core.Color" /> for a specific <see cref="T:Corale.Colore.Razer.Keyboard.Key" /> on the keyboard.
         /// The SDK will translate this appropriately depending on user configuration.
         /// </summary>
         /// <param name="key">The key to access.</param>
@@ -101,20 +80,21 @@ namespace Corale.Colore.Core
         public Color this[Key key]
         {
             get => _grid[key];
-            set => SetKey(key, value);
+            set => SetKeyAsync(key, value).Wait();
         }
 
+        /// <inheritdoc />
         /// <summary>
-        /// Gets or sets the <see cref="Color" /> for a specific row and column on the
+        /// Gets or sets the <see cref="T:Corale.Colore.Core.Color" /> for a specific row and column on the
         /// keyboard grid.
         /// </summary>
-        /// <param name="row">Row to query, between 0 and <see cref="Constants.MaxRows" /> (exclusive upper-bound).</param>
-        /// <param name="column">Column to query, between 0 and <see cref="Constants.MaxColumns" /> (exclusive upper-bound).</param>
+        /// <param name="row">Row to query, between 0 and <see cref="F:Corale.Colore.Razer.Keyboard.Constants.MaxRows" /> (exclusive upper-bound).</param>
+        /// <param name="column">Column to query, between 0 and <see cref="F:Corale.Colore.Razer.Keyboard.Constants.MaxColumns" /> (exclusive upper-bound).</param>
         /// <returns>The color currently set on the specified position.</returns>
         public Color this[int row, int column]
         {
             get => _grid[row, column];
-            set => SetPosition(row, column, value);
+            set => SetPositionAsync(row, column, value).Wait();
         }
 
         /// <summary>
@@ -148,6 +128,7 @@ namespace Corale.Colore.Core
             return !PositionData.UnsafePositions.Contains((row << 8) | column);
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Returns whether a certain key has had a custom color set.
         /// </summary>
@@ -158,119 +139,134 @@ namespace Corale.Colore.Core
             return _grid[key] != Color.Black;
         }
 
+        /// <inheritdoc cref="Device.SetAllAsync" />
         /// <summary>
         /// Sets the color of all keys on the keyboard.
         /// </summary>
         /// <param name="color">Color to set.</param>
-        public override void SetAll(Color color)
+        public override async Task<Guid> SetAllAsync(Color color)
         {
             _grid.Set(color);
-            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.CustomKey, _grid));
+            return await SetGuidAsync(await Api.CreateKeyboardEffectAsync(Effect.CustomKey, _grid));
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Sets a custom grid effect on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
         /// <remarks>
-        /// This will overwrite the current internal <see cref="Custom" />
-        /// struct in the <see cref="Keyboard" /> class.
+        /// This will overwrite the current internal <see cref="T:Corale.Colore.Razer.Keyboard.Effects.Custom" />
+        /// struct in the <see cref="T:Corale.Colore.Core.Keyboard" /> class.
         /// </remarks>
-        public void SetCustom(Custom effect)
+        public async Task<Guid> SetCustomAsync(Custom effect)
         {
             _grid = effect;
-            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.CustomKey, _grid));
+            return await SetGuidAsync(await Api.CreateKeyboardEffectAsync(Effect.CustomKey, _grid));
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Sets an effect without any parameters.
-        /// Currently, this only works for the <see cref="Effect.None" /> effect.
+        /// Currently, this only works for the <see cref="F:Corale.Colore.Razer.Keyboard.Effects.Effect.None" /> effect.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        public void SetEffect(Effect effect)
+        public async Task<Guid> SetEffectAsync(Effect effect)
         {
-            SetGuid(NativeWrapper.CreateKeyboardEffect(effect, IntPtr.Zero));
+            return await SetGuidAsync(await Api.CreateKeyboardEffectAsync(effect));
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Sets the color on a specific row and column on the keyboard grid.
         /// </summary>
-        /// <param name="row">Row to set, between 0 and <see cref="Constants.MaxRows" /> (exclusive upper-bound).</param>
-        /// <param name="column">Column to set, between 0 and <see cref="Constants.MaxColumns" /> (exclusive upper-bound).</param>
+        /// <param name="row">Row to set, between 0 and <see cref="F:Corale.Colore.Razer.Keyboard.Constants.MaxRows" /> (exclusive upper-bound).</param>
+        /// <param name="column">Column to set, between 0 and <see cref="F:Corale.Colore.Razer.Keyboard.Constants.MaxColumns" /> (exclusive upper-bound).</param>
         /// <param name="color">Color to set.</param>
         /// <param name="clear">Whether or not to clear the existing colors before setting this one.</param>
-        /// <exception cref="ArgumentException">Thrown if the row or column parameters are outside the valid ranges.</exception>
-        public void SetPosition(int row, int column, Color color, bool clear = false)
+        /// <exception cref="T:System.ArgumentException">Thrown if the row or column parameters are outside the valid ranges.</exception>
+        public async Task<Guid> SetPositionAsync(int row, int column, Color color, bool clear = false)
         {
             if (clear)
                 _grid.Clear();
 
             _grid[row, column] = color;
-            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.CustomKey, _grid));
+            return await SetGuidAsync(await Api.CreateKeyboardEffectAsync(Effect.CustomKey, _grid));
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Sets the color of a specific key on the keyboard.
         /// </summary>
         /// <param name="key">Key to modify.</param>
         /// <param name="color">Color to set.</param>
         /// <param name="clear">If true, the keyboard will first be cleared before setting the key.</param>
-        public void SetKey(Key key, Color color, bool clear = false)
+        public async Task<Guid> SetKeyAsync(Key key, Color color, bool clear = false)
         {
             if (clear)
                 _grid.Clear();
 
             _grid[key] = color;
-            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.CustomKey, _grid));
+            return await SetGuidAsync(await Api.CreateKeyboardEffectAsync(Effect.CustomKey, _grid));
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Sets the specified color on a set of keys.
         /// </summary>
-        /// <param name="color">The <see cref="Color" /> to apply.</param>
+        /// <param name="color">The <see cref="T:Corale.Colore.Core.Color" /> to apply.</param>
         /// <param name="key">First key to change.</param>
         /// <param name="keys">Additional keys that should also have the color applied.</param>
-        public void SetKeys(Color color, Key key, params Key[] keys)
+        public async Task<Guid> SetKeysAsync(Color color, Key key, params Key[] keys)
         {
-            SetKey(key, color);
+            var guid = await SetKeyAsync(key, color);
             foreach (var additional in keys)
-                SetKey(additional, color);
+                guid = await SetKeyAsync(additional, color);
+
+            return guid;
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Sets a color on a collection of keys.
         /// </summary>
         /// <param name="keys">The keys which should have their color changed.</param>
-        /// <param name="color">The <see cref="Color" /> to apply.</param>
+        /// <param name="color">The <see cref="T:Corale.Colore.Core.Color" /> to apply.</param>
         /// <param name="clear">
         /// If <c>true</c>, the keyboard keys will be cleared before
         /// applying the new colors.
         /// </param>
-        public void SetKeys(IEnumerable<Key> keys, Color color, bool clear = false)
+        public async Task<Guid> SetKeysAsync(IEnumerable<Key> keys, Color color, bool clear = false)
         {
+            var guid = Guid.Empty;
+
             if (clear)
-                Clear();
+                guid = await ClearAsync();
 
             foreach (var key in keys)
-                SetKey(key, color);
+                guid = await SetKeyAsync(key, color);
+
+            return guid;
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Sets a static color on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        public void SetStatic(Static effect)
+        public async Task<Guid> SetStaticAsync(Static effect)
         {
-            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.Static, effect));
+            return await SetGuidAsync(await Api.CreateKeyboardEffectAsync(Effect.Static, effect));
         }
 
+        /// <inheritdoc cref="Device.ClearAsync" />
         /// <summary>
         /// Clears the current effect on the Keyboard.
         /// </summary>
-        public override void Clear()
+        public override async Task<Guid> ClearAsync()
         {
             _grid.Clear();
-            SetEffect(Effect.None);
+            return await SetEffectAsync(Effect.None);
         }
     }
 }

@@ -25,6 +25,7 @@
 namespace Corale.Colore.Core
 {
     using System;
+    using System.Threading.Tasks;
 
     using Common.Logging;
 
@@ -32,6 +33,8 @@ namespace Corale.Colore.Core
 
     using Razer.ChromaLink.Effects;
 
+    /// <inheritdoc cref="IChromaLink" />
+    /// <inheritdoc cref="Device" />
     /// <summary>
     /// Class for interacting with a Chroma Link.
     /// </summary>
@@ -44,65 +47,40 @@ namespace Corale.Colore.Core
         private static readonly ILog Log = LogManager.GetLogger(typeof(ChromaLink));
 
         /// <summary>
-        /// Lock object for thread-safe init.
-        /// </summary>
-        private static readonly object InitLock = new object();
-
-        /// <summary>
-        /// Singleton instance of this class.
-        /// </summary>
-        private static IChromaLink _instance;
-
-        /// <summary>
         /// Internal instance of a <see cref="Custom" /> struct used for
         /// the indexer.
         /// </summary>
         private Custom _custom;
 
+        /// <inheritdoc />
         /// <summary>
-        /// Prevents a default instance of the <see cref="ChromaLink" /> class from being created.
+        /// Initializes a new instance of the <see cref="T:Corale.Colore.Core.ChromaLink" /> class.
         /// </summary>
-        private ChromaLink()
+        public ChromaLink(IChromaApi api)
+            : base(api)
         {
             Log.Debug("Chroma Link is initializing");
-            Chroma.InitInstance();
-
             _custom = Custom.Create();
         }
 
-        /// <summary>
-        /// Gets the application-wide instance of the <see cref="IChromaLink" /> interface.
-        /// </summary>
-        public static IChromaLink Instance
-        {
-            get
-            {
-                lock (InitLock)
-                {
-                    return _instance ?? (_instance = new ChromaLink());
-                }
-            }
-        }
-
+        /// <inheritdoc />
         /// <summary>
         /// Gets or sets a color at the specified position in the Chroma Link
         /// </summary>
-        /// <param name="index">The index to access (between <c>0</c> and <see cref="Razer.ChromaLink.Constants.MaxLeds" />, exclusive upper-bound).</param>
-        /// <returns>The <see cref="Color" /> at the specified position.</returns>
+        /// <param name="index">The index to access (between <c>0</c> and <see cref="F:Corale.Colore.Razer.ChromaLink.Constants.MaxLeds" />, exclusive upper-bound).</param>
+        /// <returns>The <see cref="T:Corale.Colore.Core.Color" /> at the specified position.</returns>
         public Color this[int index]
         {
-            get
-            {
-                return _custom[index];
-            }
+            get => _custom[index];
 
             set
             {
                 _custom[index] = value;
-                SetCustom(_custom);
+                SetCustomAsync(_custom).Wait();
             }
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Returns whether an element has had a custom color set.
         /// </summary>
@@ -113,59 +91,65 @@ namespace Corale.Colore.Core
             return this[index] != Color.Black;
         }
 
+        /// <inheritdoc cref="Device.SetAllAsync" />
         /// <summary>
         /// Sets the color of all lights in Chroma Link
         /// </summary>
         /// <param name="color">Color to set.</param>
-        public override void SetAll(Color color)
+        public override async Task<Guid> SetAllAsync(Color color)
         {
             _custom.Set(color);
-            SetCustom(_custom);
+            return await SetCustomAsync(_custom);
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Sets an effect without any parameters.
-        /// Currently, this only works for the <see cref="Effect.None" /> and <see cref="Effect.Static" /> effects.
+        /// Currently, this only works for the <see cref="F:Corale.Colore.Razer.ChromaLink.Effects.Effect.None" /> and <see cref="F:Corale.Colore.Razer.ChromaLink.Effects.Effect.Static" /> effects.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        public void SetEffect(Effect effect)
+        public async Task<Guid> SetEffectAsync(Effect effect)
         {
-            SetGuid(NativeWrapper.CreateChromaLinkEffect(effect, IntPtr.Zero));
+            return await SetGuidAsync(await Api.CreateChromaLinkEffectAsync(effect));
         }
 
+        /// <inheritdoc />
         /// <summary>
-        /// Sets a <see cref="Custom" /> effect on the Chroma Link.
+        /// Sets a <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Custom" /> effect on the Chroma Link.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
-        public void SetCustom(Custom effect)
+        /// <param name="effect">An instance of the <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Custom" /> struct.</param>
+        public async Task<Guid> SetCustomAsync(Custom effect)
         {
-            SetGuid(NativeWrapper.CreateChromaLinkEffect(Effect.Custom, effect));
+            return await SetGuidAsync(await Api.CreateChromaLinkEffectAsync(Effect.Custom, effect));
         }
 
+        /// <inheritdoc />
         /// <summary>
-        /// Sets a <see cref="Static" /> effect on the Chroma Link.
+        /// Sets a <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Static" /> effect on the Chroma Link.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
-        public void SetStatic(Static effect)
+        /// <param name="effect">An instance of the <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Static" /> struct.</param>
+        public async Task<Guid> SetStaticAsync(Static effect)
         {
-            SetGuid(NativeWrapper.CreateChromaLinkEffect(Effect.Static, effect));
+            return await SetGuidAsync(await Api.CreateChromaLinkEffectAsync(Effect.Static, effect));
         }
 
+        /// <inheritdoc />
         /// <summary>
-        /// Sets a <see cref="Static" /> effect on the Chroma Link.
+        /// Sets a <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Static" /> effect on the Chroma Link.
         /// </summary>
         /// <param name="color">Color of the effect.</param>
-        public void SetStatic(Color color)
+        public async Task<Guid> SetStaticAsync(Color color)
         {
-            SetStatic(new Static(color));
+            return await SetStaticAsync(new Static(color));
         }
 
+        /// <inheritdoc cref="Device.ClearAsync" />
         /// <summary>
         /// Clears the current effect on the Chroma Link.
         /// </summary>
-        public override void Clear()
+        public override async Task<Guid> ClearAsync()
         {
-            SetEffect(Effect.None);
+            return await SetEffectAsync(Effect.None);
         }
     }
 }

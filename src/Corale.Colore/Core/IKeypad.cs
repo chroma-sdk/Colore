@@ -25,11 +25,15 @@
 
 namespace Corale.Colore.Core
 {
+    using System;
+    using System.Threading.Tasks;
+
     using Corale.Colore.Razer.Keypad;
     using Corale.Colore.Razer.Keypad.Effects;
 
     using JetBrains.Annotations;
 
+    /// <inheritdoc />
     /// <summary>
     /// Interface for keypad functions.
     /// </summary>
@@ -59,21 +63,21 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
         [PublicAPI]
-        void SetCustom(Custom effect);
+        Task<Guid> SetCustomAsync(Custom effect);
 
         /// <summary>
         /// Sets a <see cref="Static" /> effect on the keypad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
         [PublicAPI]
-        void SetStatic(Static effect);
+        Task<Guid> SetStaticAsync(Static effect);
 
         /// <summary>
         /// Sets a <see cref="Static" /> effect on the keypad.
         /// </summary>
         /// <param name="color">Color of the effect.</param>
         [PublicAPI]
-        void SetStatic(Color color);
+        Task<Guid> SetStaticAsync(Color color);
 
         /// <summary>
         /// Sets an effect without any parameters.
@@ -81,6 +85,6 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="effect">Effect options.</param>
         [PublicAPI]
-        void SetEffect(Effect effect);
+        Task<Guid> SetEffectAsync(Effect effect);
     }
 }

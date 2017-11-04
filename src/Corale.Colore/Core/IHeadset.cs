@@ -26,11 +26,13 @@
 namespace Corale.Colore.Core
 {
     using System;
+    using System.Threading.Tasks;
 
     using Corale.Colore.Razer.Headset.Effects;
 
     using JetBrains.Annotations;
 
+    /// <inheritdoc />
     /// <summary>
     /// Interface for headset functionality.
     /// </summary>
@@ -39,11 +41,11 @@ namespace Corale.Colore.Core
         /// <summary>
         /// Sets an effect on the headset that doesn't
         /// take any parameters, currently only valid
-        /// for the <see cref="Effect.SpectrumCycling" /> effect.
+        /// for the <see cref="Effect.None" /> effect.
         /// </summary>
         /// <param name="effect">The type of effect to set.</param>
         [PublicAPI]
-        void SetEffect(Effect effect);
+        Task<Guid> SetEffectAsync(Effect effect);
 
         /// <summary>
         /// Sets a new static effect on the headset.
@@ -53,7 +55,7 @@ namespace Corale.Colore.Core
         /// describing the effect.
         /// </param>
         [PublicAPI]
-        void SetStatic(Static effect);
+        Task<Guid> SetStaticAsync(Static effect);
 
         /// <summary>
         /// Sets a new <see cref="Static" /> effect on
@@ -61,6 +63,6 @@ namespace Corale.Colore.Core
         /// </summary>
         /// <param name="color"><see cref="Color" /> of the effect.</param>
         [PublicAPI]
-        void SetStatic(Color color);
+        Task<Guid> SetStaticAsync(Color color);
     }
 }
