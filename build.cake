@@ -97,6 +97,8 @@ Task("Test")
 
         var testResults = GetFiles("src/Corale.Colore.Tests/TestResults/*.trx");
 
+        CopyFiles(testResults, "./artifacts");
+
         if (testResults.Count < 1)
         {
             Error("Could not find test result files.");
