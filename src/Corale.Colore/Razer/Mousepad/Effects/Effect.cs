@@ -25,8 +25,6 @@
 
 namespace Corale.Colore.Razer.Mousepad.Effects
 {
-    using System;
-
     using JetBrains.Annotations;
 
     /// <summary>
@@ -41,42 +39,21 @@ namespace Corale.Colore.Razer.Mousepad.Effects
         None = 0,
 
         /// <summary>
-        /// Breathing effect.
-        /// </summary>
-        [Obsolete("Use custom effects instead.")]
-        [PublicAPI]
-        Breathing,
-
-        /// <summary>
         /// A custom effect.
         /// </summary>
         [PublicAPI]
-        Custom,
-
-        /// <summary>
-        /// Spectrum cycling effect.
-        /// </summary>
-        [Obsolete("Use custom effects instead.")]
-        [PublicAPI]
-        SpectrumCycling,
+        Custom = 2,
 
         /// <summary>
         /// Static color.
         /// </summary>
         [PublicAPI]
-        Static,
-
-        /// <summary>
-        /// Wave effect.
-        /// </summary>
-        [Obsolete("Use custom effects instead.")]
-        [PublicAPI]
-        Wave,
+        Static = 4,
 
         /// <summary>
         /// Invalid effect type.
         /// </summary>
         [PublicAPI]
-        Invalid
+        Invalid = 6
     }
 }

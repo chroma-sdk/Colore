@@ -45,31 +45,6 @@ namespace Corale.Colore.Core
         Color this[int index] { get; set; }
 
         /// <summary>
-        /// Sets a breathing effect on the mouse pad.
-        /// </summary>
-        /// <param name="effect">An instance of the <see cref="Breathing" /> struct.</param>
-        [Obsolete("Use custom effects instead.")]
-        [PublicAPI]
-        void SetBreathing(Breathing effect);
-
-        /// <summary>
-        /// Sets a breathing effect on the mouse pad.
-        /// </summary>
-        /// <param name="first">First color to breathe into.</param>
-        /// <param name="second">Second color to breathe into.</param>
-        [Obsolete("Use custom effects instead.")]
-        [PublicAPI]
-        void SetBreathing(Color first, Color second);
-
-        /// <summary>
-        /// Sets an effect on the mouse pad that causes
-        /// it to breathe between random colors.
-        /// </summary>
-        [Obsolete("Use custom effects instead.")]
-        [PublicAPI]
-        void SetBreathing();
-
-        /// <summary>
         /// Sets a static color effect on the mouse pad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
@@ -82,22 +57,6 @@ namespace Corale.Colore.Core
         /// <param name="color">Color to set.</param>
         [PublicAPI]
         void SetStatic(Color color);
-
-        /// <summary>
-        /// Sets a wave effect on the mouse pad.
-        /// </summary>
-        /// <param name="effect">An instance of the <see cref="Wave" /> struct.</param>
-        [Obsolete("Use custom effects instead.")]
-        [PublicAPI]
-        void SetWave(Wave effect);
-
-        /// <summary>
-        /// Sets a wave effect on the mouse pad.
-        /// </summary>
-        /// <param name="direction">Direction of the wave.</param>
-        [Obsolete("Use custom effects instead.")]
-        [PublicAPI]
-        void SetWave(Direction direction);
 
         /// <summary>
         /// Sets a custom effect on the mouse pad.

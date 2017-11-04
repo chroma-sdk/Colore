@@ -25,8 +25,6 @@
 
 namespace Corale.Colore.Razer.Headset.Effects
 {
-    using System;
-
     using JetBrains.Annotations;
 
     /// <summary>
@@ -44,32 +42,18 @@ namespace Corale.Colore.Razer.Headset.Effects
         /// Static color.
         /// </summary>
         [PublicAPI]
-        Static,
-
-        /// <summary>
-        /// Slow fade between two colors.
-        /// </summary>
-        [Obsolete("Use custom effects instead.")]
-        [PublicAPI]
-        Breathing,
-
-        /// <summary>
-        /// Cycles the entire spectrum.
-        /// </summary>
-        [Obsolete("Use custom effects instead.")]
-        [PublicAPI]
-        SpectrumCycling,
+        Static = 1,
 
         /// <summary>
         /// Custom headset effect.
         /// </summary>
         [PublicAPI]
-        Custom,
+        Custom = 4,
 
         /// <summary>
         /// Invalid effect.
         /// </summary>
         [PublicAPI]
-        Invalid
+        Invalid = 5
     }
 }

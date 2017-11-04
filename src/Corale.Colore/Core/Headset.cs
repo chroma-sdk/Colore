@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="Headset.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -100,28 +100,6 @@ namespace Corale.Colore.Core
         public void SetStatic(Color color)
         {
             SetStatic(new Static(color));
-        }
-
-        /// <summary>
-        /// Sets a new breathing effect on the headset.
-        /// </summary>
-        /// <param name="effect">
-        /// An instance of the <see cref="Breathing" /> struct
-        /// describing the effect.
-        /// </param>
-        public void SetBreathing(Breathing effect)
-        {
-            SetGuid(NativeWrapper.CreateHeadsetEffect(Effect.Breathing, effect));
-        }
-
-        /// <summary>
-        /// Sets a new <see cref="Breathing" /> effect on the headset
-        /// using the specified <see cref="Color" />.
-        /// </summary>
-        /// <param name="color"><see cref="Color"/> of the effect.</param>
-        public void SetBreathing(Color color)
-        {
-            SetBreathing(new Breathing(color));
         }
 
         /// <summary>

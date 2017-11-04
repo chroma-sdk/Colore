@@ -25,8 +25,6 @@
 
 namespace Corale.Colore.Razer.Mouse.Effects
 {
-    using System;
-
     using JetBrains.Annotations;
 
     /// <summary>
@@ -41,63 +39,21 @@ namespace Corale.Colore.Razer.Mouse.Effects
         None = 0,
 
         /// <summary>
-        /// Blinking effect.
-        /// </summary>
-        [Obsolete("Use custom effects instead.")]
-        [PublicAPI]
-        Blinking,
-
-        /// <summary>
-        /// The breathing effect.
-        /// </summary>
-        [Obsolete("Use custom effects instead.")]
-        [PublicAPI]
-        Breathing,
-
-        /// <summary>
-        /// A custom effect.
-        /// </summary>
-        [Obsolete("Use the new grid-based custom effects instead.")]
-        [PublicAPI]
-        Custom,
-
-        /// <summary>
-        /// Reactive effect.
-        /// </summary>
-        [Obsolete("Use custom effects instead.")]
-        [PublicAPI]
-        Reactive,
-
-        /// <summary>
-        /// The spectrum cycling effect.
-        /// </summary>
-        [Obsolete("Use custom effects instead.")]
-        [PublicAPI]
-        SpectrumCycling,
-
-        /// <summary>
         /// Static color effect.
         /// </summary>
         [PublicAPI]
-        Static,
-
-        /// <summary>
-        /// Wave effect.
-        /// </summary>
-        [Obsolete("Use custom effects instead.")]
-        [PublicAPI]
-        Wave,
+        Static = 6,
 
         /// <summary>
         /// Custom grid effect.
         /// </summary>
         [PublicAPI]
-        CustomGrid,
+        CustomGrid = 8,
 
         /// <summary>
         /// Invalid effect.
         /// </summary>
         [PublicAPI]
-        Invalid
+        Invalid = 9
     }
 }
