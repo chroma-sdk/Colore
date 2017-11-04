@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------------------
 // <copyright file="IChroma.cs" company="Corale">
-//     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -192,7 +192,9 @@ namespace Corale.Colore.Core
         /// <returns><c>true</c> if the message was handled by Chroma, <c>false</c> otherwise (message was ignored).</returns>
         /// <remarks>Non-Chroma messages will be ignored.</remarks>
         [PublicAPI]
-        [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1305:FieldNamesMustNotUseHungarianNotation",
+        [SuppressMessage(
+            "StyleCop.CSharp.NamingRules",
+            "SA1305:FieldNamesMustNotUseHungarianNotation",
             Justification = "Parameter names match those in the Message struct.")]
         bool HandleMessage(IntPtr handle, int msgId, IntPtr wParam, IntPtr lParam);
 

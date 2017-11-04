@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------------------
 // <copyright file="NativeMethods.cs" company="Corale">
-//     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -76,8 +76,13 @@ namespace Corale.Colore.Native.Kernel32
         /// than by ordinal value and design your application to handle the case when the function is not available.
         /// </para>
         /// </remarks>
-        [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = "GetProcAddress", ExactSpelling = true,
-            SetLastError = true, BestFitMapping = false)]
+        [DllImport(
+            DllName,
+            CharSet = CharSet.Ansi,
+            EntryPoint = "GetProcAddress",
+            ExactSpelling = true,
+            SetLastError = true,
+            BestFitMapping = false)]
         internal static extern IntPtr GetProcAddress(IntPtr module, string procName);
 
         /// <summary>
@@ -194,8 +199,13 @@ namespace Corale.Colore.Native.Kernel32
         /// described in Getting the System Version.
         /// </para>
         /// </remarks>
-        [DllImport(DllName, CharSet = CharSet.Ansi, EntryPoint = "LoadLibrary", SetLastError = true,
-            BestFitMapping = false, ThrowOnUnmappableChar = true)]
+        [DllImport(
+            DllName,
+            CharSet = CharSet.Ansi,
+            EntryPoint = "LoadLibrary",
+            SetLastError = true,
+            BestFitMapping = false,
+            ThrowOnUnmappableChar = true)]
         internal static extern IntPtr LoadLibrary([MarshalAs(UnmanagedType.LPStr)] string filename);
     }
 }

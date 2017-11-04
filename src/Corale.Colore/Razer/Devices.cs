@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------------------
 // <copyright file="Devices.cs" company="Corale">
-//     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -294,17 +294,17 @@ namespace Corale.Colore.Razer
         /// </summary>
         [PublicAPI]
         public static readonly Guid BlackwidowXTe = new Guid(
-           0x2d84dd51,
-           0x3290,
-           0x4aac,
-           0x9a,
-           0x89,
-           0xd8,
-           0xaf,
-           0xde,
-           0x38,
-           0xb5,
-           0x7c);
+            0x2d84dd51,
+            0x3290,
+            0x4aac,
+            0x9a,
+            0x89,
+            0xd8,
+            0xaf,
+            0xde,
+            0x38,
+            0xb5,
+            0x7c);
 
         /// <summary>
         /// Mamba (wireless) Chroma edition.
@@ -453,8 +453,8 @@ namespace Corale.Colore.Razer
             return id == Blackwidow || id == Deathadder || id == Orbweaver || id == Tartarus || id == MambaTe
                    || id == BlackwidowTe || id == Kraken71 || id == Firefly || id == Deathstalker || id == Diamondback
                    || id == Mamba || id == OverwatchKeyboard || id == Orochi || id == BladeStealth || id == Naga
-                   || id == NagaEpic || id == Core || id == LenovoY27 || id == LenovoY900 || id == Blade14 || id == BlackwidowX
-                   || id == BlackwidowXTe || id == NagaHex || id == Ornata;
+                   || id == NagaEpic || id == Core || id == LenovoY27 || id == LenovoY900 || id == Blade14
+                   || id == BlackwidowX || id == BlackwidowXTe || id == NagaHex || id == Ornata;
         }
     }
 }

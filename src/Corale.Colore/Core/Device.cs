@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------------------
 // <copyright file="Device.cs" company="Corale">
-//     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -34,12 +34,6 @@ namespace Corale.Colore.Core
     /// </summary>
     public abstract class Device : IDevice
     {
-        /// <inheritdoc />
-        /// <summary>
-        /// Gets or sets the ID of the currently active effect.
-        /// </summary>
-        public Guid CurrentEffectId { get; protected set; }
-
         /// <summary>
         /// Initializes a new instance of the <see cref="Device" /> class.
         /// </summary>
@@ -48,6 +42,12 @@ namespace Corale.Colore.Core
         {
             Api = api;
         }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Gets or sets the ID of the currently active effect.
+        /// </summary>
+        public Guid CurrentEffectId { get; protected set; }
 
         /// <summary>
         /// Gets the Chroma API instance.
