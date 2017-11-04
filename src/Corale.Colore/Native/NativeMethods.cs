@@ -39,7 +39,10 @@ namespace Corale.Colore.Native
         /// <summary>
         /// Calling convention for API functions.
         /// </summary>
+        //// For some reason FxCop doesn't see that this field is actually used.
+#pragma warning disable CA1823 // Avoid unused private fields
         private const CallingConvention FunctionConvention = CallingConvention.Cdecl;
+#pragma warning restore CA1823 // Avoid unused private fields
 
         /// <summary>
         /// Stores a reference to the loaded <see cref="InitDelegate" />.

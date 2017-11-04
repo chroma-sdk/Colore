@@ -36,7 +36,10 @@ namespace Corale.Colore.Native.Kernel32
         /// <summary>
         /// Name of the DLL from which functions are imported.
         /// </summary>
+        //// For some reason FxCop doesn't see that this field is used.
+#pragma warning disable CA1823 // Avoid unused private fields
         private const string DllName = "kernel32.dll";
+#pragma warning restore CA1823 // Avoid unused private fields
 
         /// <summary>
         /// Retrieves the address of an exported function or variable from the specified dynamic-link library (DLL).
