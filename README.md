@@ -1,6 +1,7 @@
 ![Colore Logo][colorelogo]
 
 [![Build status][buildbadge]][buildstatus]
+[![Test status][testbadge]][teststatus]
 [![MIT License][licensebadge]][license]
 [![Latest GitHub release][ghreleasebadge]][ghrelease]
 [![NuGet version][ngverbadge]][ng]
@@ -125,6 +126,8 @@ There may be others we are unaware of, so please let us know if there are any ot
 
 [buildstatus]: https://ci.appveyor.com/project/Corale/colore
 [buildbadge]: https://ci.appveyor.com/api/projects/status/st3y6fo0jqvhd8cg?svg=true
+[teststatus]: https://ci.appveyor.com/project/Corale/colore/build/tests
+[testbadge]: https://img.shields.io/appveyor/tests/corale/Colore.svg
 
 [gitter]: https://gitter.im/CoraleStudios/Colore?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
 [gitterbadge]: https://badges.gitter.im/Join%20Chat.svg
