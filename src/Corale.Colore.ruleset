@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<RuleSet Name="Rules for Corale.Colore" Description="Code analysis rules for Corale.Colore.csproj." ToolsVersion="14.0">
+<RuleSet Name="Rules for Corale.Colore" Description="Code analysis rules for Corale.Colore.csproj." ToolsVersion="15.0">
   <Rules AnalyzerId="Microsoft.Analyzers.ManagedCodeAnalysis" RuleNamespace="Microsoft.Rules.Managed">
     <Rule Id="CA1001" Action="Warning" />
     <Rule Id="CA1009" Action="Warning" />
@@ -9,7 +9,7 @@
     <Rule Id="CA1060" Action="Warning" />
     <Rule Id="CA1061" Action="Warning" />
     <Rule Id="CA1063" Action="Warning" />
-    <Rule Id="CA1065" Action="Warning" />
+    <Rule Id="CA1065" Action="Hidden" />
     <Rule Id="CA1301" Action="Warning" />
     <Rule Id="CA1400" Action="Warning" />
     <Rule Id="CA1401" Action="Warning" />
@@ -64,16 +64,21 @@
     <Rule Id="CA2241" Action="Warning" />
     <Rule Id="CA2242" Action="Warning" />
   </Rules>
-  <Rules AnalyzerId="Microsoft.CodeAnalysis.CSharp.Features" RuleNamespace="Microsoft.CodeAnalysis.CSharp.Features">
-    <Rule Id="IDE0001" Action="None" />
-  </Rules>
   <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
     <Rule Id="SA1101" Action="None" />
-    <Rule Id="SA1117" Action="None" />
+    <Rule Id="SA1117" Action="Warning" />
     <Rule Id="SA1127" Action="None" />
     <Rule Id="SA1309" Action="None" />
     <Rule Id="SA1407" Action="None" />
     <Rule Id="SA1503" Action="None" />
-    <Rule Id="SA1520" Action="None" />
+    <Rule Id="SA1520" Action="Warning" />
+    <Rule Id="SA1648" Action="None" />
+  </Rules>
+  <Rules AnalyzerId="Microsoft.NetCore.Analyzers" RuleNamespace="Microsoft.NetCore.Analyzers">
+    <Rule Id="CA1305" Action="None" />
+  </Rules>
+  <Rules AnalyzerId="Microsoft.CodeQuality.Analyzers" RuleNamespace="Microsoft.CodeQuality.Analyzers">
+    <Rule Id="CA1707" Action="None" />
+    <Rule Id="CA1065" Action="Hidden" />
   </Rules>
 </RuleSet>

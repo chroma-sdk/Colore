@@ -248,7 +248,7 @@
 	<s:Boolean x:Key="/Default/CodeStyle/CSharpUsing/QualifiedUsingAtNestedScope/@EntryValue">True</s:Boolean>
 	<s:String x:Key="/Default/CodeStyle/FileHeader/FileHeaderText/@EntryValue">---------------------------------------------------------------------------------------&#xD;
 &lt;copyright file="$FILENAME$" company="Corale"&gt;&#xD;
-    Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.&#xD;
+    Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.&#xD;
 &#xD;
     Permission is hereby granted, free of charge, to any person obtaining a copy of&#xD;
     this software and associated documentation files (the "Software"), to deal in&#xD;

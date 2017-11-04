@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------------------
 // <copyright file="ColoreException.cs" company="Corale">
-//     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -27,17 +27,41 @@ namespace Corale.Colore
 {
     using System;
 
+    using JetBrains.Annotations;
+
+    /// <inheritdoc />
     /// <summary>
     /// Generic Colore library exception.
     /// </summary>
     public class ColoreException : Exception
     {
+        /// <inheritdoc />
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ColoreException" /> class.
+        /// </summary>
+        [PublicAPI]
+        public ColoreException()
+        {
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ColoreException" /> class.
+        /// </summary>
+        /// <param name="message">Message describing the exception.</param>
+        [PublicAPI]
+        public ColoreException(string message)
+            : base(message)
+        {
+        }
+
+        /// <inheritdoc />
         /// <summary>
         /// Initializes a new instance of the <see cref="ColoreException" /> class.
         /// </summary>
         /// <param name="message">Exception message.</param>
         /// <param name="innerException">Inner exception object.</param>
-        public ColoreException(string message = null, Exception innerException = null)
+        public ColoreException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
