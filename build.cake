@@ -90,8 +90,28 @@ Task("Test")
             new DotNetCoreTestSettings
             {
                 Configuration = configuration,
-                NoBuild = true
+                NoBuild = true,
+                ArgumentCustomization = args => args
+                    .Append("--logger:trx")
             });
+
+        var testResults = GetFiles("src/Corale.Colore.Tests/TestResults/*.trx");
+
+        if (testResults.Count < 1)
+        {
+            Error("Could not find test result files.");
+            return;
+        }
+
+        if (!AppVeyor.IsRunningOnAppVeyor)
+            return;
+
+        Information("Uploading test results to AppVeyor");
+        foreach (var file in testResults)
+        {
+            Information("Uploading {0}", file);
+            AppVeyor.UploadTestResults(file, AppVeyorTestResultsType.NUnit3);
+        }
     });
 
 Task("Dist")
