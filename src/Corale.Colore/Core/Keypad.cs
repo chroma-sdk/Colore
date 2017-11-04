@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="Keypad.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -135,61 +135,12 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Sets a <see cref="Breathing" /> effect on the keypad.
-        /// </summary>
-        /// <param name="effect">An instance of the <see cref="Breathing" /> struct.</param>
-        public void SetBreathing(Breathing effect)
-        {
-            SetGuid(NativeWrapper.CreateKeypadEffect(Effect.Breathing, effect));
-        }
-
-        /// <summary>
-        /// Sets a <see cref="Breathing" /> effect on the keypad
-        /// using the specified <see cref="Color" />.
-        /// </summary>
-        /// <param name="first">The first color to breathe into.</param>
-        /// <param name="second">Second color to breathe into.</param>
-        public void SetBreathing(Color first, Color second)
-        {
-            SetBreathing(new Breathing(first, second));
-        }
-
-        /// <summary>
-        /// Sets an effect on the keypad to breathe
-        /// between randomly chosen colors.
-        /// </summary>
-        public void SetBreathing()
-        {
-            SetBreathing(new Breathing(BreathingType.Random, Color.Black, Color.Black));
-        }
-
-        /// <summary>
         /// Sets a <see cref="Custom" /> effect on the keypad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
         public void SetCustom(Custom effect)
         {
             SetGuid(NativeWrapper.CreateKeypadEffect(Effect.Custom, effect));
-        }
-
-        /// <summary>
-        /// Sets a <see cref="Reactive" /> effect on the keypad.
-        /// </summary>
-        /// <param name="effect">An instance of the <see cref="Reactive" /> struct.</param>
-        public void SetReactive(Reactive effect)
-        {
-            SetGuid(NativeWrapper.CreateKeypadEffect(Effect.Reactive, effect));
-        }
-
-        /// <summary>
-        /// Sets a <see cref="Reactive" /> effect on the keypad
-        /// with the specified parameters.
-        /// </summary>
-        /// <param name="color">Color of the effect.</param>
-        /// <param name="duration">Duration of the effect.</param>
-        public void SetReactive(Color color, Duration duration)
-        {
-            SetReactive(new Reactive(color, duration));
         }
 
         /// <summary>
@@ -208,24 +159,6 @@ namespace Corale.Colore.Core
         public void SetStatic(Color color)
         {
             SetStatic(new Static(color));
-        }
-
-        /// <summary>
-        /// Sets a <see cref="Wave" /> effect on the keypad.
-        /// </summary>
-        /// <param name="effect">An instance of the <see cref="Wave" /> struct.</param>
-        public void SetWave(Wave effect)
-        {
-            SetGuid(NativeWrapper.CreateKeypadEffect(Effect.Wave, effect));
-        }
-
-        /// <summary>
-        /// Sets a <see cref="Wave" /> effect on the keypad.
-        /// </summary>
-        /// <param name="direction">Direction of the wave.</param>
-        public void SetWave(Direction direction)
-        {
-            SetWave(new Wave(direction));
         }
 
         /// <summary>

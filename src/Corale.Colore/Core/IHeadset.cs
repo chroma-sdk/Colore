@@ -62,25 +62,5 @@ namespace Corale.Colore.Core
         /// <param name="color"><see cref="Color" /> of the effect.</param>
         [PublicAPI]
         void SetStatic(Color color);
-
-        /// <summary>
-        /// Sets a new breathing effect on the headset.
-        /// </summary>
-        /// <param name="effect">
-        /// An instance of the <see cref="Breathing" /> struct
-        /// describing the effect.
-        /// </param>
-        [Obsolete("Use custom effects instead.")]
-        [PublicAPI]
-        void SetBreathing(Breathing effect);
-
-        /// <summary>
-        /// Sets a new <see cref="Breathing" /> effect on the headset
-        /// using the specified <see cref="Color" />.
-        /// </summary>
-        /// <param name="color"><see cref="Color"/> of the effect.</param>
-        [Obsolete("Use custom effects instead.")]
-        [PublicAPI]
-        void SetBreathing(Color color);
     }
 }

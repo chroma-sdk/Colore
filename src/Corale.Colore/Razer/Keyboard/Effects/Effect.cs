@@ -25,7 +25,6 @@
 
 namespace Corale.Colore.Razer.Keyboard.Effects
 {
-    using System;
     using System.ComponentModel;
 
     using JetBrains.Annotations;
@@ -43,62 +42,34 @@ namespace Corale.Colore.Razer.Keyboard.Effects
         None = 0,
 
         /// <summary>
-        /// Breathing effect.
-        /// </summary>
-        [Obsolete("Use custom effects instead.")]
-        [PublicAPI]
-        Breathing,
-
-        /// <summary>
         /// Custom effect.
         /// </summary>
         [PublicAPI]
-        Custom,
-
-        /// <summary>
-        /// Reactive effect.
-        /// </summary>
-        [Obsolete("Use custom effects instead.")]
-        [PublicAPI]
-        Reactive,
+        Custom = 2,
 
         /// <summary>
         /// Static effect.
         /// </summary>
         [PublicAPI]
-        Static,
-
-        /// <summary>
-        /// Spectrum cycling effect.
-        /// </summary>
-        [Obsolete("Use custom effects instead.")]
-        [PublicAPI]
-        SpectrumCycling,
-
-        /// <summary>
-        /// Wave effect.
-        /// </summary>
-        [Obsolete("Use custom effects instead.")]
-        [PublicAPI]
-        Wave,
+        Static = 4,
 
         /// <summary>
         /// Reserved effect.
         /// </summary>
         [EditorBrowsable(EditorBrowsableState.Advanced)]
         [PublicAPI]
-        Reserved,
+        Reserved = 7,
 
         /// <summary>
         /// Custom effect with keys.
         /// </summary>
         [PublicAPI]
-        CustomKey,
+        CustomKey = 8,
 
         /// <summary>
         /// Invalid effect.
         /// </summary>
         [PublicAPI]
-        Invalid
+        Invalid = 9
     }
 }

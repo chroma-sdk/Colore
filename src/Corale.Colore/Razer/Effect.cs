@@ -25,7 +25,6 @@
 
 namespace Corale.Colore.Razer
 {
-    using System;
     using System.ComponentModel;
 
     using JetBrains.Annotations;
@@ -43,64 +42,22 @@ namespace Corale.Colore.Razer
         None = 0,
 
         /// <summary>
-        /// The wave effect.
-        /// </summary>
-        [Obsolete("Use custom effects instead.")]
-        [PublicAPI]
-        Wave,
-
-        /// <summary>
-        /// Spectrum cycling effect.
-        /// </summary>
-        [Obsolete("Use custom effects instead.")]
-        [PublicAPI]
-        SpectrumCycling,
-
-        /// <summary>
-        /// Slowly fades between two colors.
-        /// </summary>
-        [Obsolete("Use custom effects instead.")]
-        [PublicAPI]
-        Breathing,
-
-        /// <summary>
-        /// A blinking effect.
-        /// </summary>
-        [Obsolete("Use custom effects instead.")]
-        [PublicAPI]
-        Blinking,
-
-        /// <summary>
-        /// Reacts to input.
-        /// </summary>
-        [Obsolete("Use custom effects instead.")]
-        [PublicAPI]
-        Reactive,
-
-        /// <summary>
-        /// Static color.
-        /// </summary>
-        [Obsolete("Use custom effects instead.")]
-        [PublicAPI]
-        Static,
-
-        /// <summary>
         /// A custom effect.
         /// </summary>
         [PublicAPI]
-        Custom,
+        Custom = 7,
 
         /// <summary>
         /// Reserved effect.
         /// </summary>
         [EditorBrowsable(EditorBrowsableState.Advanced)]
         //// ReSharper disable once UnusedMember.Global
-        Reserved,
+        Reserved = 8,
 
         /// <summary>
         /// Invalid effect.
         /// </summary>
         [PublicAPI]
-        Invalid
+        Invalid = 9
     }
 }

@@ -533,8 +533,8 @@ namespace Corale.Colore.Razer.Keyboard
         /// <summary>
         /// Enter key.
         /// </summary>
+        /// <remarks>Unsafe key.</remarks>
         [PublicAPI]
-        [UnsafeKey]
         Enter = 0x030E,
 
         /// <summary>
@@ -588,15 +588,15 @@ namespace Corale.Colore.Razer.Keyboard
         /// <summary>
         /// Left shift key.
         /// </summary>
+        /// <remarks>Unsafe key.</remarks>
         [PublicAPI]
-        [UnsafeKey]
         LeftShift = 0x0401,
 
         /// <summary>
         /// Right shift key.
         /// </summary>
+        /// <remarks>Unsafe key.</remarks>
         [PublicAPI]
-        [UnsafeKey]
         RightShift = 0x040E,
 
         /// <summary>
@@ -662,8 +662,8 @@ namespace Corale.Colore.Razer.Keyboard
         /// <summary>
         /// Backslash (\) key.
         /// </summary>
+        /// <remarks>Unsafe key.</remarks>
         [PublicAPI]
-        [UnsafeKey]
         OemBackslash = 0x020E,
 
         /// <summary>
@@ -699,50 +699,50 @@ namespace Corale.Colore.Razer.Keyboard
         /// <summary>
         /// Pound sign (#) key.
         /// </summary>
+        /// <remarks>Unsafe key.</remarks>
         [PublicAPI]
-        [UnsafeKey]
         EurPound = 0x030D,
 
         /// <summary>
         /// Backslash (\) key.
         /// </summary>
+        /// <remarks>Unsafe key.</remarks>
         [PublicAPI]
-        [UnsafeKey]
         EurBackslash = 0x0402,
 
         /// <summary>
         /// Yen (¥) key.
         /// </summary>
+        /// <remarks>Unsafe key.</remarks>
         [PublicAPI]
-        [UnsafeKey]
         JpnYen = 0x0015,
 
         /// <summary>
         /// Forward slash (/) key.
         /// </summary>
+        /// <remarks>Unsafe key.</remarks>
         [PublicAPI]
-        [UnsafeKey]
         JpnSlash = 0x040D,
 
         /// <summary>
         /// 無変換 key.
         /// </summary>
+        /// <remarks>Unsafe key.</remarks>
         [PublicAPI]
-        [UnsafeKey]
         Jpn3 = 0x0504,
 
         /// <summary>
         /// 変換 key.
         /// </summary>
+        /// <remarks>Unsafe key.</remarks>
         [PublicAPI]
-        [UnsafeKey]
         Jpn4 = 0x0509,
 
         /// <summary>
         /// ひらがな/カタカナ key.
         /// </summary>
+        /// <remarks>Unsafe key.</remarks>
         [PublicAPI]
-        [UnsafeKey]
         Jpn5 = 0x050A,
 
         /// <summary>

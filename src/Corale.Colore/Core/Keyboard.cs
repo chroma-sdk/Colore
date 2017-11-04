@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="Keyboard.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -27,8 +27,6 @@ namespace Corale.Colore.Core
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Reflection;
 
     using Common.Logging;
 
@@ -102,15 +100,8 @@ namespace Corale.Colore.Core
         /// <returns>The color currently set for the specified key.</returns>
         public Color this[Key key]
         {
-            get
-            {
-                return _grid[key];
-            }
-
-            set
-            {
-                SetKey(key, value);
-            }
+            get => _grid[key];
+            set => SetKey(key, value);
         }
 
         /// <summary>
@@ -122,15 +113,8 @@ namespace Corale.Colore.Core
         /// <returns>The color currently set on the specified position.</returns>
         public Color this[int row, int column]
         {
-            get
-            {
-                return _grid[row, column];
-            }
-
-            set
-            {
-                SetPosition(row, column, value);
-            }
+            get => _grid[row, column];
+            set => SetPosition(row, column, value);
         }
 
         /// <summary>
@@ -145,11 +129,7 @@ namespace Corale.Colore.Core
         [PublicAPI]
         public static bool IsKeySafe(Key key)
         {
-            var attr =
-                typeof(Key).GetMember(key.ToString())[0].GetCustomAttributes(typeof(UnsafeKeyAttribute), false)
-                                                        .FirstOrDefault();
-
-            return attr == null;
+            return !PositionData.UnsafePositions.Contains((int)key);
         }
 
         /// <summary>
@@ -179,15 +159,6 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Sets a breathing effect on the keyboard.
-        /// </summary>
-        /// <param name="effect">Effect options.</param>
-        public void SetBreathing(Breathing effect)
-        {
-            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.Breathing, effect));
-        }
-
-        /// <summary>
         /// Sets the color of all keys on the keyboard.
         /// </summary>
         /// <param name="color">Color to set.</param>
@@ -195,37 +166,6 @@ namespace Corale.Colore.Core
         {
             _grid.Set(color);
             SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.CustomKey, _grid));
-        }
-
-        /// <summary>
-        /// Sets a breathing effect on the keyboard, fading between the
-        /// two specified colors.
-        /// </summary>
-        /// <param name="first">Color to start from.</param>
-        /// <param name="second">Color to reach, before going back to <paramref name="first" />.</param>
-        public void SetBreathing(Color first, Color second)
-        {
-            SetBreathing(new Breathing(first, second));
-        }
-
-        /// <summary>
-        /// Sets a breathing effect on the keyboard, fading
-        /// between randomly chosen colors.
-        /// </summary>
-        public void SetBreathing()
-        {
-            SetBreathing(new Breathing(BreathingType.Random, Color.Black, Color.Black));
-        }
-
-        /// <summary>
-        /// Sets a reactive effect on the keyboard with the specified
-        /// color and duration.
-        /// </summary>
-        /// <param name="color">Color to emit on key press.</param>
-        /// <param name="duration">How long to illuminate the key after being pressed.</param>
-        public void SetReactive(Color color, Duration duration)
-        {
-            SetReactive(new Reactive(color, duration));
         }
 
         /// <summary>
@@ -243,17 +183,8 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Sets a wave effect on the keyboard in the specified direction.
-        /// </summary>
-        /// <param name="direction">Direction of the wave.</param>
-        public void SetWave(Direction direction)
-        {
-            SetWave(new Wave(direction));
-        }
-
-        /// <summary>
         /// Sets an effect without any parameters.
-        /// Currently, this only works for the <see cref="Effect.None" /> and <see cref="Effect.SpectrumCycling" /> effects.
+        /// Currently, this only works for the <see cref="Effect.None" /> effect.
         /// </summary>
         /// <param name="effect">Effect options.</param>
         public void SetEffect(Effect effect)
@@ -325,30 +256,12 @@ namespace Corale.Colore.Core
         }
 
         /// <summary>
-        /// Sets a reactive effect on the keyboard.
-        /// </summary>
-        /// <param name="effect">Effect options.</param>
-        public void SetReactive(Reactive effect)
-        {
-            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.Reactive, effect));
-        }
-
-        /// <summary>
         /// Sets a static color on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
         public void SetStatic(Static effect)
         {
             SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.Static, effect));
-        }
-
-        /// <summary>
-        /// Sets a wave effect on the keyboard.
-        /// </summary>
-        /// <param name="effect">Effect options.</param>
-        public void SetWave(Wave effect)
-        {
-            SetGuid(NativeWrapper.CreateKeyboardEffect(Effect.Wave, effect));
         }
 
         /// <summary>
