@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="EnvironmentHelper.cs" company="Corale">
 //     Copyright © 2015-2016 by Adam Hellberg and Brandon Scott.
 //
@@ -25,47 +25,22 @@
 
 namespace Corale.Colore
 {
-    using System;
-    using System.Security;
-
-    using Corale.Colore.Native.Kernel32;
+    using System.Runtime.InteropServices;
 
     /// <summary>
     /// Helper to get the architecture of the OS.
-    /// Taken from here: http://stackoverflow.com/a/28866330/1104531
     /// </summary>
     internal static class EnvironmentHelper
     {
         /// <summary>
-        /// Determines whether the current system is 64-bit.
+        /// Determines whether the system is 64-bit.
         /// </summary>
-        /// <returns><c>true</c> if the system is 64-bit.</returns>
-        internal static bool Is64BitOperatingSystem()
+        /// <returns><c>true</c> if the system is 64-bit, otherwise <c>false</c>.</returns>
+        internal static bool Is64Bit()
         {
-            // Check if this process is natively an x64 process. If it is, it will only run on x64 environments, thus, the environment must be x64.
-            if (IntPtr.Size == 8)
-                return true;
-
-            // Check if this process is an x86 process running on an x64 environment.
-            var moduleHandle = NativeMethods.GetModuleHandle("kernel32");
-            if (moduleHandle == IntPtr.Zero)
-                return false;
-
-            var processAddress = NativeMethods.GetProcAddress(moduleHandle, "IsWow64Process");
-            if (processAddress == IntPtr.Zero)
-                return false;
-
-            bool result;
-            return NativeMethods.IsWow64Process(NativeMethods.GetCurrentProcess(), out result) && result;
-        }
-
-        /// <summary>
-        /// Determines whether this process is a 64-bit process.
-        /// </summary>
-        /// <returns><c>true</c> if this process is 64-bit, otherwise <c>false</c>.</returns>
-        internal static bool Is64BitProcess()
-        {
-            return IntPtr.Size == 8;
+            var cpuArch = RuntimeInformation.ProcessArchitecture;
+            var osArch = RuntimeInformation.OSArchitecture;
+            return cpuArch == Architecture.X64 && osArch == Architecture.X64;
         }
     }
 }
