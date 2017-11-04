@@ -24,13 +24,48 @@ var buildNumber = HasArgument("BuildNumber")
                 : 0;
 
 ///////////////////////////////////////////////////////////////////////////////
+// GLOBALS
+///////////////////////////////////////////////////////////////////////////////
+
+var isAppVeyor = AppVeyor.IsRunningOnAppVeyor;
+var isTravis = TravisCI.IsRunningOnTravisCI;
+var isCi = isAppVeyor || isTravis;
+
+///////////////////////////////////////////////////////////////////////////////
 // SETUP / TEARDOWN
 ///////////////////////////////////////////////////////////////////////////////
 
+var projects = new[] {
+    "./src/Corale.Colore/Corale.Colore.csproj",
+    "./src/Corale.Colore.Tests/Corale.Colore.Tests.csproj"
+};
+var mainProject = projects[0];
+var frameworks = new List<string>();
+
+GitVersion version = null;
+
 Setup(ctx =>
 {
-	// Executed BEFORE the first task.
-	Information("Running tasks...");
+    Information("Reading framework settings");
+
+    var xmlValue = XmlPeek(mainProject, "/Project/PropertyGroup/TargetFrameworks");
+    if (string.IsNullOrEmpty(xmlValue))
+    {
+        xmlValue = XmlPeek(mainProject, "/Project/PropertyGroup/TargetFramework");
+    }
+
+    frameworks.AddRange(xmlValue.Split(';'));
+
+    Information("Frameworks: {0}", string.Join(", ", frameworks));
+
+    version = GitVersion(new GitVersionSettings
+    {
+        RepositoryPath = ".",
+        OutputType = isCi ? GitVersionOutput.BuildServer : GitVersionOutput.Json
+    });
+
+    Information("Version: {0} on {1}", version.FullSemVer, version.CommitDate);
+    Information("Commit hash: {0}", version.Sha);
 });
 
 Teardown(ctx =>
@@ -38,12 +73,6 @@ Teardown(ctx =>
 	// Executed AFTER the last task.
 	Information("Finished running tasks.");
 });
-
-var projects = new[] { "Corale.Colore", "Corale.Colore.Tests" };
-
-var frameworks = new[] { "netstandard1.3", "net451" };
-
-var version = GitVersion(new GitVersionSettings { RepositoryPath = "." });
 
 ///////////////////////////////////////////////////////////////////////////////
 // TASKS
@@ -70,7 +99,7 @@ Task("Build")
         foreach (var project in projects)
         {
             DotNetCoreBuild(
-                $"src/{project}/{project}.csproj",
+                project,
                 new DotNetCoreBuildSettings
                 {
                     Configuration = configuration,
