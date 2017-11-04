@@ -29,7 +29,7 @@ artifacts:
   name: NuGet
 - path: .\artifacts\**\*.zip
   name: Archive
-- path: .\artifacts\**\*.trx
+- path: .\artifacts\**\*.xml
   name: TestResult
 
 deploy:

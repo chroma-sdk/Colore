@@ -199,3 +199,6 @@ GTAGS
 # Ignore Cake files
 /tools/*
 !/tools/packages.config
+
+# Ignore artifacts
+/artifacts

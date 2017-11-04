@@ -92,10 +92,10 @@ Task("Test")
                 Configuration = configuration,
                 NoBuild = true,
                 ArgumentCustomization = args => args
-                    .Append("--logger:trx")
+                    .Append("--logger:nunit")
             });
 
-        var testResults = GetFiles("src/Corale.Colore.Tests/TestResults/*.trx");
+        var testResults = GetFiles("src/Corale.Colore.Tests/TestResults/*.xml");
 
         CopyFiles(testResults, "./artifacts");
 
@@ -112,7 +112,7 @@ Task("Test")
         foreach (var file in testResults)
         {
             Information("Uploading {0}", file);
-            AppVeyor.UploadTestResults(file, AppVeyorTestResultsType.MSTest);
+            AppVeyor.UploadTestResults(file, AppVeyorTestResultsType.NUnit3);
         }
     });
 
