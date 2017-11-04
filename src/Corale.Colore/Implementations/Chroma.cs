@@ -50,6 +50,9 @@ namespace Corale.Colore.Implementations
         /// </summary>
         private static readonly ILog Log = LogManager.GetLogger(typeof(Chroma));
 
+        /// <summary>
+        /// Reference to the API instance in use.
+        /// </summary>
         private readonly IChromaApi _api;
 
         /// <summary>
@@ -73,21 +76,40 @@ namespace Corale.Colore.Implementations
         /// </summary>
         private SdkVersion _sdkVersion;
 
+        /// <summary>
+        /// Reference to lazy-loaded <see cref="Keyboard" /> instance.
+        /// </summary>
         private Keyboard _keyboard;
 
+        /// <summary>
+        /// Reference to lazy-loaded <see cref="Mouse" /> instance.
+        /// </summary>
         private Mouse _mouse;
 
+        /// <summary>
+        /// Reference to lazy-loaded <see cref="Headset" /> instance.
+        /// </summary>
         private Headset _headset;
 
+        /// <summary>
+        /// Reference to lazy-loaded <see cref="Mousepad" /> instance.
+        /// </summary>
         private Mousepad _mousepad;
 
+        /// <summary>
+        /// Reference to lazy-loaded <see cref="Keypad" /> instance.
+        /// </summary>
         private Keypad _keypad;
 
+        /// <summary>
+        /// Reference to lazy-loaded <see cref="ChromaLink" /> instance.
+        /// </summary>
         private ChromaLink _chromaLink;
 
         /// <summary>
-        /// Prevents a default instance of the <see cref="Chroma" /> class from being created.
+        /// Initializes a new instance of the <see cref="Chroma" /> class.
         /// </summary>
+        /// <param name="api">API instance to use.</param>
         public Chroma(IChromaApi api)
         {
             _api = api;

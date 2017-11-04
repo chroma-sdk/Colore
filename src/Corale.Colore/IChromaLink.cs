@@ -51,6 +51,7 @@ namespace Corale.Colore
         /// Sets an effect without any parameters.
         /// </summary>
         /// <param name="effect">Effect options.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
         Task<Guid> SetEffectAsync(Effect effect);
 
@@ -66,6 +67,7 @@ namespace Corale.Colore
         /// Sets a <see cref="Custom" /> effect on the Chroma Link.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
         Task<Guid> SetCustomAsync(Custom effect);
 
@@ -73,6 +75,7 @@ namespace Corale.Colore
         /// Sets a <see cref="Static" /> effect on the Chroma Link.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
         Task<Guid> SetStaticAsync(Static effect);
 
@@ -80,6 +83,7 @@ namespace Corale.Colore
         /// Sets a <see cref="Static" /> effect on the Chroma Link.
         /// </summary>
         /// <param name="color">Color of the effect.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
         Task<Guid> SetStaticAsync(Color color);
     }

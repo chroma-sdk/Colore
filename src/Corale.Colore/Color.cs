@@ -51,7 +51,7 @@ namespace Corale.Colore
 
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:Corale.Colore.Color" /> struct using three
+        /// Initializes a new instance of the <see cref="Color" /> struct using three
         /// distinct R, G, and B byte values.
         /// </summary>
         /// <param name="red">The red component.</param>
@@ -65,7 +65,7 @@ namespace Corale.Colore
 
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:Corale.Colore.Color" /> struct using
+        /// Initializes a new instance of the <see cref="Color" /> struct using
         /// three <see cref="T:System.Single" /> (<c>float</c>) values for the
         /// R, G, and B channels.
         /// </summary>
@@ -83,7 +83,7 @@ namespace Corale.Colore
 
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:Corale.Colore.Color" /> struct using
+        /// Initializes a new instance of the <see cref="Color" /> struct using
         /// three <see cref="T:System.Double" /> values for the R, G, and B channels.
         /// </summary>
         /// <param name="red">The red component (<c>0.0</c> to <c>1.0</c>, inclusive).</param>

@@ -42,7 +42,7 @@ namespace Corale.Colore.Native
 
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:Corale.Colore.Native.NativeCallException" /> class.
+        /// Initializes a new instance of the <see cref="NativeCallException" /> class.
         /// </summary>
         /// <param name="function">The name of the function that was called.</param>
         /// <param name="result">The result returned from the called function.</param>

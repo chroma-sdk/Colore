@@ -75,6 +75,7 @@ namespace Corale.Colore
         /// This will overwrite the current internal <see cref="Custom" />
         /// struct in the <see cref="Keyboard" /> class.
         /// </remarks>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
         Task<Guid> SetCustomAsync(Custom effect);
 
@@ -83,6 +84,7 @@ namespace Corale.Colore
         /// Currently, this only works for the <see cref="Effect.None" /> effect.
         /// </summary>
         /// <param name="effect">Effect options.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
         Task<Guid> SetEffectAsync(Effect effect);
 
@@ -93,6 +95,7 @@ namespace Corale.Colore
         /// <param name="column">Column to set, between 1 and <see cref="Effects.Keyboard.Constants.MaxColumns" />.</param>
         /// <param name="color">Color to set.</param>
         /// <param name="clear">Whether or not to clear the existing colors before setting this one.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
         Task<Guid> SetPositionAsync(int row, int column, Color color, bool clear = false);
 
@@ -102,6 +105,7 @@ namespace Corale.Colore
         /// <param name="key">Key to modify.</param>
         /// <param name="color">Color to set.</param>
         /// <param name="clear">If <c>true</c>, the keyboard will first be cleared before setting the key.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
         Task<Guid> SetKeyAsync(Key key, Color color, bool clear = false);
 
@@ -111,6 +115,7 @@ namespace Corale.Colore
         /// <param name="color">The <see cref="Colore.Color" /> to apply.</param>
         /// <param name="key">First key to change.</param>
         /// <param name="keys">Additional keys that should also have the color applied.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
         Task<Guid> SetKeysAsync(Color color, Key key, params Key[] keys);
 
@@ -120,6 +125,7 @@ namespace Corale.Colore
         /// <param name="keys">The keys which should have their color changed.</param>
         /// <param name="color">The <see cref="Colore.Color" /> to apply.</param>
         /// <param name="clear">If <c>true</c>, the keyboard will first be cleared before setting the keys.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
         Task<Guid> SetKeysAsync(IEnumerable<Key> keys, Color color, bool clear = false);
 
@@ -127,6 +133,7 @@ namespace Corale.Colore
         /// Sets a static color on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
         Task<Guid> SetStaticAsync(Static effect);
     }

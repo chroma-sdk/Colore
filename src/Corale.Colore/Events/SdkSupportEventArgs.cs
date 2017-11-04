@@ -37,7 +37,7 @@ namespace Corale.Colore.Events
     {
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:Corale.Colore.Events.SdkSupportEventArgs" /> class.
+        /// Initializes a new instance of the <see cref="SdkSupportEventArgs" /> class.
         /// </summary>
         /// <param name="enabled">Value indicating whether SDK support is enabled.</param>
         public SdkSupportEventArgs(bool enabled)

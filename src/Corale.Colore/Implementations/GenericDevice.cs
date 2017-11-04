@@ -47,7 +47,7 @@ namespace Corale.Colore.Implementations
 
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:Corale.Colore.Implementations.GenericDevice" /> class.
+        /// Initializes a new instance of the <see cref="GenericDevice" /> class.
         /// </summary>
         /// <param name="deviceId">The <see cref="T:System.Guid" /> of the device.</param>
         /// <param name="api">Reference to the Chroma API instance in use.</param>
@@ -103,7 +103,8 @@ namespace Corale.Colore.Implementations
         /// </summary>
         /// <param name="effect">Effect to set.</param>
         /// <param name="struct">Effect-specific parameter to use.</param>
-        public async Task<Guid> SetEffectAsync<T>(Effect effect, T @struct) where T : struct
+        public async Task<Guid> SetEffectAsync<T>(Effect effect, T @struct)
+            where T : struct
         {
             return await SetGuidAsync(await Api.CreateDeviceEffectAsync(DeviceId, effect, @struct));
         }

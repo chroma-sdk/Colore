@@ -47,7 +47,7 @@ namespace Corale.Colore.Implementations
 
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:Corale.Colore.Implementations.Headset" /> class.
+        /// Initializes a new instance of the <see cref="Headset" /> class.
         /// </summary>
         /// <param name="api">Reference to the Chroma API instance in use.</param>
         public Headset(IChromaApi api)

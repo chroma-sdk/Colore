@@ -41,11 +41,13 @@ namespace Corale.Colore.Api
         /// <summary>
         /// Initializes the Chroma SDK.
         /// </summary>
+        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
         Task InitializeAsync();
 
         /// <summary>
         /// Uninitializes the Chroma SDK.
         /// </summary>
+        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
         Task UninitializeAsync();
 
         /// <summary>
@@ -61,12 +63,14 @@ namespace Corale.Colore.Api
         /// Set effect.
         /// </summary>
         /// <param name="effectId">Effect ID to set.</param>
+        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
         Task SetEffectAsync(Guid effectId);
 
         /// <summary>
         /// Deletes an effect with the specified <see cref="Guid" />.
         /// </summary>
         /// <param name="effectId">Effect ID to delete.</param>
+        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
         Task DeleteEffectAsync(Guid effectId);
 
         /// <summary>

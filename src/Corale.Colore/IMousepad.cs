@@ -50,6 +50,7 @@ namespace Corale.Colore
         /// Sets a static color effect on the mouse pad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
         Task<Guid> SetStaticAsync(Static effect);
 
@@ -57,6 +58,7 @@ namespace Corale.Colore
         /// Sets a static color effect on the mouse pad.
         /// </summary>
         /// <param name="color">Color to set.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
         Task<Guid> SetStaticAsync(Color color);
 
@@ -64,6 +66,7 @@ namespace Corale.Colore
         /// Sets a custom effect on the mouse pad.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
         Task<Guid> SetCustomAsync(Custom effect);
 
@@ -72,6 +75,7 @@ namespace Corale.Colore
         /// Currently, this only works for the <see cref="Effect.None" /> effect.
         /// </summary>
         /// <param name="effect">Effect options.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
         Task<Guid> SetEffectAsync(Effect effect);
     }

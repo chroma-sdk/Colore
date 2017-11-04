@@ -94,6 +94,9 @@ namespace Corale.Colore
         [PublicAPI]
         public static readonly Result RzSuccess = 0;
 
+        /// <summary>
+        /// Contains a mapping of result codes to their names and descriptions.
+        /// </summary>
         private static readonly Dictionary<Result, KeyValuePair<string, string>> Mappings =
             new Dictionary<Result, KeyValuePair<string, string>>
             {
@@ -129,7 +132,7 @@ namespace Corale.Colore
         }
 
         /// <summary>
-        /// Internal result value.
+        /// Gets the internal result value.
         /// </summary>
         [PublicAPI]
         public int Value { get; }

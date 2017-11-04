@@ -44,6 +44,7 @@ namespace Corale.Colore
         /// <summary>
         /// Clears the current effect on the device.
         /// </summary>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
         Task<Guid> ClearAsync();
 
@@ -51,6 +52,7 @@ namespace Corale.Colore
         /// Sets the color of all components on this device.
         /// </summary>
         /// <param name="color">Color to set.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
         Task<Guid> SetAllAsync(Color color);
 
@@ -58,6 +60,7 @@ namespace Corale.Colore
         /// Updates the device to use the effect pointed to by the specified GUID.
         /// </summary>
         /// <param name="guid">GUID to set.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
         Task<Guid> SetGuidAsync(Guid guid);
     }

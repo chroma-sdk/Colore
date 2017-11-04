@@ -85,6 +85,7 @@ namespace Corale.Colore.Implementations
         /// <summary>
         /// Deletes the currently set effect.
         /// </summary>
+        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
         internal async Task DeleteCurrentEffect()
         {
             if (CurrentEffectId == Guid.Empty)

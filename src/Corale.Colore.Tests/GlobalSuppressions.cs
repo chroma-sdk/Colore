@@ -1,4 +1,5 @@
-// <copyright file="NoneTests.cs" company="Corale">
+// ---------------------------------------------------------------------------------------
+// <copyright file="GlobalSuppressions.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -20,20 +21,11 @@
 //
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
+// ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Tests.Effects.Generic
-{
-    using Corale.Colore.Effects.Generic;
+using System.Diagnostics.CodeAnalysis;
 
-    using NUnit.Framework;
-
-    [TestFixture]
-    public class NoneTests
-    {
-        [Test]
-        public void ShouldConstructWithCorrectParameter()
-        {
-            Assert.That(new None(42).Parameter, Is.EqualTo(42));
-        }
-    }
-}
+[assembly: SuppressMessage(
+    "StyleCop.CSharp.DocumentationRules",
+    "SA1652:Enable XML documentation output",
+    Justification = "Tests don't need docs.")]

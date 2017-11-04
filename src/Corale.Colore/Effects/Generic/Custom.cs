@@ -58,7 +58,7 @@ namespace Corale.Colore.Effects.Generic
 
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:Corale.Colore.Effects.Generic.Custom" /> struct.
+        /// Initializes a new instance of the <see cref="Custom" /> struct.
         /// </summary>
         /// <param name="color">Color to set on all cells.</param>
         /// <param name="parameter">Additional effect parameter.</param>
@@ -71,7 +71,7 @@ namespace Corale.Colore.Effects.Generic
 
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:Corale.Colore.Effects.Generic.Custom" /> struct.
+        /// Initializes a new instance of the <see cref="Custom" /> struct.
         /// </summary>
         /// <param name="other">Another <see cref="T:Corale.Colore.Effects.Generic.Custom" /> struct to copy colors and data from.</param>
         public Custom(Custom other)
@@ -83,7 +83,7 @@ namespace Corale.Colore.Effects.Generic
 
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:Corale.Colore.Effects.Generic.Custom" /> struct.
+        /// Initializes a new instance of the <see cref="Custom" /> struct.
         /// </summary>
         /// <param name="colors">Colors to set.</param>
         /// <param name="parameter">Additional effect parameter.</param>
@@ -99,7 +99,7 @@ namespace Corale.Colore.Effects.Generic
 
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:Corale.Colore.Effects.Generic.Custom" /> struct.
+        /// Initializes a new instance of the <see cref="Custom" /> struct.
         /// </summary>
         /// <param name="colors">2D array of colors to set.</param>
         /// <param name="parameter">Additional effect parameter.</param>

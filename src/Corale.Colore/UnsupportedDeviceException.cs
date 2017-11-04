@@ -44,7 +44,7 @@ namespace Corale.Colore
 
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:Corale.Colore.UnsupportedDeviceException" /> class.
+        /// Initializes a new instance of the <see cref="UnsupportedDeviceException" /> class.
         /// </summary>
         /// <param name="deviceId">The <see cref="T:System.Guid" /> of the device.</param>
         /// <param name="innerException">Inner exception object.</param>

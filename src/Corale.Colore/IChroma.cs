@@ -140,6 +140,7 @@ namespace Corale.Colore
         /// and may result in <emph>undefined behaviour</emph>, usage
         /// is at <b>your own risk</b>.
         /// </remarks>
+        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
         [PublicAPI]
         Task InitializeAsync();
 
@@ -151,6 +152,7 @@ namespace Corale.Colore
         /// and may result in <emph>undefined behaviour</emph>, usage
         /// is at <b>your own risk</b>.
         /// </remarks>
+        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
         [PublicAPI]
         Task UninitializeAsync();
 
@@ -178,6 +180,7 @@ namespace Corale.Colore
         /// Sets all Chroma devices to the specified <see cref="Color" />.
         /// </summary>
         /// <param name="color">The <see cref="Color" /> to set.</param>
+        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
         [PublicAPI]
         Task SetAllAsync(Color color);
 

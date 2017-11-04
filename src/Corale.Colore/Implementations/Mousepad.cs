@@ -52,7 +52,7 @@ namespace Corale.Colore.Implementations
 
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:Corale.Colore.Implementations.Mousepad" /> class.
+        /// Initializes a new instance of the <see cref="Mousepad" /> class.
         /// </summary>
         public Mousepad(IChromaApi api)
             : base(api)

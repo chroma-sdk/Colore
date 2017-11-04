@@ -37,7 +37,7 @@ namespace Corale.Colore.Events
     {
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:Corale.Colore.Events.DeviceAccessEventArgs" /> class.
+        /// Initializes a new instance of the <see cref="DeviceAccessEventArgs" /> class.
         /// </summary>
         /// <param name="granted">Value indicating whether device access was granted.</param>
         public DeviceAccessEventArgs(bool granted)

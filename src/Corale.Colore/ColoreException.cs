@@ -35,7 +35,7 @@ namespace Corale.Colore
     {
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:Corale.Colore.ColoreException" /> class.
+        /// Initializes a new instance of the <see cref="ColoreException" /> class.
         /// </summary>
         /// <param name="message">Exception message.</param>
         /// <param name="innerException">Inner exception object.</param>

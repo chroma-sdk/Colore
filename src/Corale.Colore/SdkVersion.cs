@@ -51,19 +51,19 @@ namespace Corale.Colore
         }
 
         /// <summary>
-        /// The major part of the version.
+        /// Gets the major part of the version.
         /// </summary>
         [PublicAPI]
         public int Major { get; }
 
         /// <summary>
-        /// The minor part of the version.
+        /// Gets the minor part of the version.
         /// </summary>
         [PublicAPI]
         public int Minor { get; }
 
         /// <summary>
-        /// The revision part of the version.
+        /// Gets the revision part of the version.
         /// </summary>
         [PublicAPI]
         public int Revision { get; }
@@ -247,7 +247,9 @@ namespace Corale.Colore
         /// <exception cref="T:System.ArgumentException"><paramref name="obj" /> is not the same type as this instance. </exception>
         public int CompareTo(object obj)
         {
+#pragma warning disable SA1119 // Statement must not use unnecessary parenthesis
             if (!(obj is SdkVersion version))
+#pragma warning restore SA1119 // Statement must not use unnecessary parenthesis
                 throw new ArgumentException("Object must be of type SdkVersion", nameof(obj));
 
             return CompareTo(version);

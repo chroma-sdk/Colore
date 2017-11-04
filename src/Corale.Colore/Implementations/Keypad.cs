@@ -53,7 +53,7 @@ namespace Corale.Colore.Implementations
 
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:Corale.Colore.Implementations.Keypad" /> class.
+        /// Initializes a new instance of the <see cref="Keypad" /> class.
         /// </summary>
         public Keypad(IChromaApi api)
             : base(api)

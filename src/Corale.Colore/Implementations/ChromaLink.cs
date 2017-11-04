@@ -56,7 +56,7 @@ namespace Corale.Colore.Implementations
 
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:Corale.Colore.Implementations.ChromaLink" /> class.
+        /// Initializes a new instance of the <see cref="ChromaLink" /> class.
         /// </summary>
         public ChromaLink(IChromaApi api)
             : base(api)

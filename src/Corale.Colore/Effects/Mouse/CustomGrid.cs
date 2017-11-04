@@ -115,7 +115,7 @@ namespace Corale.Colore.Effects.Mouse
 
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:Corale.Colore.Razer.Mouse.Effects.CustomGrid" /> struct
+        /// Initializes a new instance of the <see cref="CustomGrid" /> struct
         /// with the colors copied from another struct of the same type.
         /// </summary>
         /// <param name="other">The <see cref="T:Corale.Colore.Razer.Mouse.Effects.CustomGrid" /> struct to copy data from.</param>

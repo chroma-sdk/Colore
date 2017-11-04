@@ -37,7 +37,7 @@ namespace Corale.Colore.Events
     {
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:Corale.Colore.Events.ApplicationStateEventArgs" /> class.
+        /// Initializes a new instance of the <see cref="ApplicationStateEventArgs" /> class.
         /// </summary>
         /// <param name="enabled">Value indicating whether the application has been enabled.</param>
         public ApplicationStateEventArgs(bool enabled)

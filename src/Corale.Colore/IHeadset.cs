@@ -44,6 +44,7 @@ namespace Corale.Colore
         /// for the <see cref="Effect.None" /> effect.
         /// </summary>
         /// <param name="effect">The type of effect to set.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
         Task<Guid> SetEffectAsync(Effect effect);
 
@@ -54,6 +55,7 @@ namespace Corale.Colore
         /// An instance of the <see cref="Static" /> struct
         /// describing the effect.
         /// </param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
         Task<Guid> SetStaticAsync(Static effect);
 
@@ -62,6 +64,7 @@ namespace Corale.Colore
         /// the headset using the specified <see cref="Colore.Color" />.
         /// </summary>
         /// <param name="color"><see cref="Colore.Color" /> of the effect.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
         Task<Guid> SetStaticAsync(Color color);
     }

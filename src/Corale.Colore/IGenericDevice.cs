@@ -48,21 +48,26 @@ namespace Corale.Colore
         /// Sets a parameter-less effect on this device.
         /// </summary>
         /// <param name="effect">Effect to set.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
         Task<Guid> SetEffectAsync(Effect effect);
 
         /// <summary>
         /// Sets an effect on this device, taking a parameter.
         /// </summary>
+        /// <typeparam name="T">The type of effect data to set.</typeparam>
         /// <param name="effect">Effect to set.</param>
         /// <param name="struct">Effect-specific parameter to use.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetEffectAsync<T>(Effect effect, T @struct) where T : struct;
+        Task<Guid> SetEffectAsync<T>(Effect effect, T @struct)
+            where T : struct;
 
         /// <summary>
         /// Sets a custom effect on this device.
         /// </summary>
         /// <param name="effect">Effect options.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
         Task<Guid> SetCustomAsync(Custom effect);
     }

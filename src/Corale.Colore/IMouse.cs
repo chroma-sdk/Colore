@@ -62,6 +62,7 @@ namespace Corale.Colore
         /// Currently, this only works for the <see cref="Effect.None" /> effect.
         /// </summary>
         /// <param name="effect">Effect options.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
         Task<Guid> SetEffectAsync(Effect effect);
 
@@ -69,6 +70,7 @@ namespace Corale.Colore
         /// Sets a static color on the mouse.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="Static" /> effect.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
         Task<Guid> SetStaticAsync(Static effect);
 
@@ -77,6 +79,7 @@ namespace Corale.Colore
         /// </summary>
         /// <param name="color">The color to use.</param>
         /// <param name="led">Which LED(s) to affect.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
         Task<Guid> SetStaticAsync(Color color, Led led = Led.All);
 
@@ -84,6 +87,7 @@ namespace Corale.Colore
         /// Sets a custom grid effect on the mouse.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="CustomGrid" /> struct.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
         Task<Guid> SetGridAsync(CustomGrid effect);
     }

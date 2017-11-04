@@ -79,7 +79,7 @@ namespace Corale.Colore.Effects.Mousepad
 
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:Corale.Colore.Razer.Mousepad.Effects.Custom" /> struct
+        /// Initializes a new instance of the <see cref="Custom" /> struct
         /// with the colors copied from another struct of the same type.
         /// </summary>
         /// <param name="other">The struct to copy data from.</param>

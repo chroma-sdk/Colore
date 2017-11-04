@@ -116,7 +116,7 @@ namespace Corale.Colore.Effects.Keypad
 
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:Corale.Colore.Effects.Keypad.Custom" /> struct
+        /// Initializes a new instance of the <see cref="Custom" /> struct
         /// with color values copied from another struct of the same type.
         /// </summary>
         /// <param name="other">The struct to copy data from.</param>

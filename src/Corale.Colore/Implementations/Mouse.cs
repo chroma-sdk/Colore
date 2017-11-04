@@ -55,7 +55,7 @@ namespace Corale.Colore.Implementations
 
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:Corale.Colore.Implementations.Mouse" /> class.
+        /// Initializes a new instance of the <see cref="Mouse" /> class.
         /// </summary>
         public Mouse(IChromaApi api)
             : base(api)
