@@ -110,7 +110,7 @@ Task("Test")
         foreach (var file in testResults)
         {
             Information("Uploading {0}", file);
-            AppVeyor.UploadTestResults(file, AppVeyorTestResultsType.NUnit3);
+            AppVeyor.UploadTestResults(file, AppVeyorTestResultsType.MSTest);
         }
     });
 
