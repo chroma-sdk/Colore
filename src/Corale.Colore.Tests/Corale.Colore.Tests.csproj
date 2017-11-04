@@ -4,6 +4,7 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <Platforms>AnyCPU;x64;x86</Platforms>
     <CodeAnalysisRuleset>../Corale.Colore.ruleset</CodeAnalysisRuleset>
+    <Features>IOperation</Features>
   </PropertyGroup>
 
   <ItemGroup>

@@ -66,8 +66,7 @@ namespace Corale.Colore
         /// <inheritdoc />
         /// <summary>
         /// Initializes a new instance of the <see cref="Color" /> struct using
-        /// three <see cref="T:System.Single" /> (<c>float</c>) values for the
-        /// R, G, and B channels.
+        /// three <see cref="float" /> values for the R, G, and B channels.
         /// </summary>
         /// <param name="red">The red component (<c>0.0f</c> to <c>1.0f</c>, inclusive).</param>
         /// <param name="green">The green component (<c>0.0f</c> to <c>1.0f</c>, inclusive).</param>
@@ -84,7 +83,7 @@ namespace Corale.Colore
         /// <inheritdoc />
         /// <summary>
         /// Initializes a new instance of the <see cref="Color" /> struct using
-        /// three <see cref="T:System.Double" /> values for the R, G, and B channels.
+        /// three <see cref="double" /> values for the R, G, and B channels.
         /// </summary>
         /// <param name="red">The red component (<c>0.0</c> to <c>1.0</c>, inclusive).</param>
         /// <param name="green">The green component (<c>0.0</c> to <c>1.0</c>, inclusive).</param>
@@ -180,6 +179,27 @@ namespace Corale.Colore
         }
 
         /// <summary>
+        /// Converts an unsigned integer value to a <see cref="Color" /> object.
+        /// </summary>
+        /// <param name="value">The value to convert.</param>
+        /// <returns><see cref="Color" /> representation of the value.</returns>
+        /// <remarks>This is an alias for <see cref="FromRgb" />.</remarks>
+        /// <seealso cref="FromRgb" />
+        public static Color ToColor(uint value)
+        {
+            return value;
+        }
+
+        /// <summary>
+        /// Converts this instance of <see cref="Color" /> to an unsigned integer value.
+        /// </summary>
+        /// <returns>The unsigned integer value of this <see cref="Color" />.</returns>
+        public uint ToUInt32()
+        {
+            return this;
+        }
+
+        /// <summary>
         /// Returns a value indicating whether this instance of <see cref="Color" />
         /// is equal to an <see cref="object" /> <paramref name="other" />.
         /// </summary>
@@ -204,15 +224,16 @@ namespace Corale.Colore
 
         /// <inheritdoc />
         /// <summary>
-        /// Returns a value indicating whether this instance of <see cref="T:Corale.Colore.Color" />
-        /// is equal to a <see cref="T:Corale.Colore.Color" /> <paramref name="other" />.
+        /// Returns a value indicating whether this instance of <see cref="Color" />
+        /// is equal to a <see cref="Color" /> <paramref name="other" />.
         /// </summary>
-        /// <param name="other">The <see cref="T:Corale.Colore.Color" /> to check equality against.</param>
+        /// <param name="other">The <see cref="Color" /> to check equality against.</param>
         /// <returns><c>true</c> of the two are equal, false otherwise.</returns>
         /// <remarks>
         /// Only compares the lower 32 bits of each color value, in order to
         /// be able to compare a keymode color to a non-keymode color.
         /// </remarks>
+        [Pure]
         public bool Equals(Color other)
         {
             return Value.Equals(other.Value);
@@ -220,15 +241,16 @@ namespace Corale.Colore
 
         /// <inheritdoc />
         /// <summary>
-        /// Returns a value indicating whether this instance of <see cref="T:Corale.Colore.Color" />
-        /// is equal to a <see cref="T:System.UInt32" /> <paramref name="other" />.
+        /// Returns a value indicating whether this instance of <see cref="Color" />
+        /// is equal to a <see cref="uint" /> <paramref name="other" />.
         /// </summary>
-        /// <param name="other">The <see cref="T:System.UInt32" /> to check equality against.</param>
+        /// <param name="other">The <see cref="uint" /> to check equality against.</param>
         /// <returns><c>true</c> if the two are equal, <c>false</c> otherwise.</returns>
         /// <remarks>
         /// Only compares the lower 32 bits of each value, in order to
         /// be able to compare a keymode color to a non-keymode color.
         /// </remarks>
+        [Pure]
         public bool Equals(uint other)
         {
             return Value.Equals(other);
@@ -238,6 +260,7 @@ namespace Corale.Colore
         /// Gets the unique hash code for this <see cref="Color" />.
         /// </summary>
         /// <returns>A unique has code.</returns>
+        [Pure]
         public override int GetHashCode()
         {
             return (int)Value;

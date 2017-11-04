@@ -326,7 +326,7 @@ namespace Corale.Colore.Effects.Keypad
         /// <c>true</c> if the current object is equal to the <paramref name="other" /> parameter;
         /// otherwise, <c>false</c>.
         /// </returns>
-        /// <param name="other">A <see cref="T:Corale.Colore.Effects.Keypad.Custom" /> to compare with this object.</param>
+        /// <param name="other">A <see cref="Custom" /> to compare with this object.</param>
         public bool Equals(Custom other)
         {
             for (var row = 0; row < Constants.MaxRows; row++)
@@ -344,14 +344,14 @@ namespace Corale.Colore.Effects.Keypad
         /// <inheritdoc />
         /// <summary>
         /// Indicates whether the current object is equal to an instance of
-        /// a 2-dimensional array of <see cref="T:Corale.Colore.Core.Color" />.
+        /// a 2-dimensional array of <see cref="Color" />.
         /// </summary>
         /// <returns>
         /// <c>true</c> if the <paramref name="other" /> object has the same
         /// number of rows and columns, and contain matching colors; otherwise, <c>false</c>.
         /// </returns>
         /// <param name="other">
-        /// A 2-dimensional array of <see cref="T:Corale.Colore.Core.Color" /> to compare with this object.
+        /// A 2-dimensional array of <see cref="Color" /> to compare with this object.
         /// </param>
         public bool Equals(Color[][] other)
         {
@@ -376,9 +376,9 @@ namespace Corale.Colore.Effects.Keypad
         /// <inheritdoc />
         /// <summary>
         /// Indicates whether the current object is equal to an instance of
-        /// an array of <see cref="T:Corale.Colore.Core.Color" />.
+        /// an array of <see cref="Color" />.
         /// </summary>
-        /// <param name="other">An array of <see cref="T:Corale.Colore.Core.Color" /> to compare with this object.</param>
+        /// <param name="other">An array of <see cref="Color" /> to compare with this object.</param>
         /// <returns>
         /// <c>true</c> if the <paramref name="other" /> object has the same
         /// number of elements, and contain matching colors; otherwise, <c>false</c>.

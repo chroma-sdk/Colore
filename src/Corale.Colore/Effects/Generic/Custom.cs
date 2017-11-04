@@ -23,6 +23,7 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
+#pragma warning disable CA1051 // Do not declare visible instance fields
 namespace Corale.Colore.Effects.Generic
 {
     using System;
@@ -73,7 +74,7 @@ namespace Corale.Colore.Effects.Generic
         /// <summary>
         /// Initializes a new instance of the <see cref="Custom" /> struct.
         /// </summary>
-        /// <param name="other">Another <see cref="T:Corale.Colore.Effects.Generic.Custom" /> struct to copy colors and data from.</param>
+        /// <param name="other">Another <see cref="Corale.Colore.Effects.Generic.Custom" /> struct to copy colors and data from.</param>
         public Custom(Custom other)
             : this(other.Parameter)
         {
@@ -103,7 +104,9 @@ namespace Corale.Colore.Effects.Generic
         /// </summary>
         /// <param name="colors">2D array of colors to set.</param>
         /// <param name="parameter">Additional effect parameter.</param>
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
         public Custom(Color[,] colors, int parameter = 0)
+#pragma warning restore CA1814 // Prefer jagged arrays over multidimensional
             : this(parameter)
         {
             if (colors.GetLength(0) != Constants.MaxRows)
@@ -298,7 +301,7 @@ namespace Corale.Colore.Effects.Generic
         /// <c>true</c> if the current object is equal to the <paramref name="other" /> parameter;
         /// otherwise, <c>false</c>.
         /// </returns>
-        /// <param name="other">A <see cref="T:Corale.Colore.Effects.Generic.Custom" /> to compare with this object.</param>
+        /// <param name="other">A <see cref="Corale.Colore.Effects.Generic.Custom" /> to compare with this object.</param>
         public bool Equals(Custom other)
         {
             for (var index = 0; index < Constants.MaxColors; index++)

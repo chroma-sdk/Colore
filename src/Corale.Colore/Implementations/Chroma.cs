@@ -79,32 +79,32 @@ namespace Corale.Colore.Implementations
         /// <summary>
         /// Reference to lazy-loaded <see cref="Keyboard" /> instance.
         /// </summary>
-        private Keyboard _keyboard;
+        private KeyboardImplementation _keyboard;
 
         /// <summary>
         /// Reference to lazy-loaded <see cref="Mouse" /> instance.
         /// </summary>
-        private Mouse _mouse;
+        private MouseImplementation _mouse;
 
         /// <summary>
         /// Reference to lazy-loaded <see cref="Headset" /> instance.
         /// </summary>
-        private Headset _headset;
+        private HeadsetImplementation _headset;
 
         /// <summary>
         /// Reference to lazy-loaded <see cref="Mousepad" /> instance.
         /// </summary>
-        private Mousepad _mousepad;
+        private MousepadImplementation _mousepad;
 
         /// <summary>
         /// Reference to lazy-loaded <see cref="Keypad" /> instance.
         /// </summary>
-        private Keypad _keypad;
+        private KeypadImplementation _keypad;
 
         /// <summary>
         /// Reference to lazy-loaded <see cref="ChromaLink" /> instance.
         /// </summary>
-        private ChromaLink _chromaLink;
+        private ChromaLinkImplementation _chromaLink;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Chroma" /> class.
@@ -167,45 +167,45 @@ namespace Corale.Colore.Implementations
 
         /// <inheritdoc />
         /// <summary>
-        /// Gets an instance of the <see cref="T:Corale.Colore.IKeyboard" /> interface
+        /// Gets an instance of the <see cref="Corale.Colore.IKeyboard" /> interface
         /// for interacting with a Razer Chroma keyboard.
         /// </summary>
-        public IKeyboard Keyboard => _keyboard ?? (_keyboard = new Keyboard(_api));
+        public IKeyboard Keyboard => _keyboard ?? (_keyboard = new KeyboardImplementation(_api));
 
         /// <inheritdoc />
         /// <summary>
-        /// Gets an instance of the <see cref="T:Corale.Colore.IMouse" /> interface
+        /// Gets an instance of the <see cref="Corale.Colore.IMouse" /> interface
         /// for interacting with a Razer Chroma mouse.
         /// </summary>
-        public IMouse Mouse => _mouse ?? (_mouse = new Mouse(_api));
+        public IMouse Mouse => _mouse ?? (_mouse = new MouseImplementation(_api));
 
         /// <inheritdoc />
         /// <summary>
-        /// Gets an instance of the <see cref="T:Corale.Colore.IHeadset" /> interface
+        /// Gets an instance of the <see cref="Corale.Colore.IHeadset" /> interface
         /// for interacting with a Razer Chroma headset.
         /// </summary>
-        public IHeadset Headset => _headset ?? (_headset = new Headset(_api));
+        public IHeadset Headset => _headset ?? (_headset = new HeadsetImplementation(_api));
 
         /// <inheritdoc />
         /// <summary>
-        /// Gets an instance of the <see cref="T:Corale.Colore.IMousepad" /> interface
+        /// Gets an instance of the <see cref="Corale.Colore.IMousepad" /> interface
         /// for interacting with a Razer Chroma mouse pad.
         /// </summary>
-        public IMousepad Mousepad => _mousepad ?? (_mousepad = new Mousepad(_api));
+        public IMousepad Mousepad => _mousepad ?? (_mousepad = new MousepadImplementation(_api));
 
         /// <inheritdoc />
         /// <summary>
-        /// Gets an instance of the <see cref="T:Corale.Colore.IKeypad" /> interface
+        /// Gets an instance of the <see cref="Corale.Colore.IKeypad" /> interface
         /// for interacting with a Razer Chroma keypad.
         /// </summary>
-        public IKeypad Keypad => _keypad ?? (_keypad = new Keypad(_api));
+        public IKeypad Keypad => _keypad ?? (_keypad = new KeypadImplementation(_api));
 
         /// <inheritdoc />
         /// <summary>
-        /// Gets an instance of the <see cref="T:Corale.Colore.IChromaLink" /> interface
+        /// Gets an instance of the <see cref="Corale.Colore.IChromaLink" /> interface
         /// for interacting with ChromaLink devices.
         /// </summary>
-        public IChromaLink ChromaLink => _chromaLink ?? (_chromaLink = new ChromaLink(_api));
+        public IChromaLink ChromaLink => _chromaLink ?? (_chromaLink = new ChromaLinkImplementation(_api));
 
         /// <inheritdoc />
         /// <summary>
@@ -222,7 +222,7 @@ namespace Corale.Colore.Implementations
 
         /// <inheritdoc />
         /// <summary>
-        /// Gets the <see cref="T:System.Version" /> of Colore.
+        /// Gets the <see cref="System.Version" /> of Colore.
         /// </summary>
         public Version Version { get; }
 
@@ -252,7 +252,7 @@ namespace Corale.Colore.Implementations
                 Log.Warn("Failed to retrieve SDK version from registry!");
 
             Log.Debug("Calling SDK Init function");
-            await _api.InitializeAsync();
+            await _api.InitializeAsync().ConfigureAwait(false);
             Initialized = true;
             Log.Debug("Resetting _registeredHandle");
             _registeredHandle = IntPtr.Zero;
@@ -284,7 +284,7 @@ namespace Corale.Colore.Implementations
             _chromaLink?.DeleteCurrentEffect();
 
             Unregister();
-            await _api.UninitializeAsync();
+            await _api.UninitializeAsync().ConfigureAwait(false);
 
             Initialized = false;
         }
@@ -293,7 +293,7 @@ namespace Corale.Colore.Implementations
         /// <summary>
         /// Queries the SDK for information regarding a specific device.
         /// </summary>
-        /// <param name="deviceId">The device ID to query for, valid IDs can be found in <see cref="T:Corale.Colore.Razer.Devices" />.</param>
+        /// <param name="deviceId">The device ID to query for, valid IDs can be found in <see cref="Devices" />.</param>
         /// <returns>A struct with information regarding the device type and whether it's connected.</returns>
         public async Task<DeviceInfo> QueryAsync(Guid deviceId)
         {
@@ -301,19 +301,19 @@ namespace Corale.Colore.Implementations
                 throw new ArgumentException("The specified ID does not match any of the valid IDs.", nameof(deviceId));
 
             Log.DebugFormat("Information for {0} requested", deviceId);
-            return await _api.QueryDeviceAsync(deviceId);
+            return await _api.QueryDeviceAsync(deviceId).ConfigureAwait(false);
         }
 
         /// <inheritdoc />
         /// <summary>
-        /// Gets an instance of <see cref="T:Corale.Colore.Core.IGenericDevice" /> for
+        /// Gets an instance of <see cref="IGenericDevice" /> for
         /// the device with the specified ID.
         /// </summary>
         /// <param name="deviceId">
-        /// The <see cref="T:System.Guid" /> of the device to get,
-        /// valid IDs can be found in <see cref="T:Corale.Colore.Razer.Devices" />.
+        /// The <see cref="Guid" /> of the device to get,
+        /// valid IDs can be found in <see cref="Devices" />.
         /// </param>
-        /// <returns>An instance of <see cref="T:Corale.Colore.Core.IGenericDevice" />.</returns>
+        /// <returns>An instance of <see cref="IGenericDevice" />.</returns>
         public Task<IGenericDevice> GetDeviceAsync(Guid deviceId)
         {
             Log.DebugFormat("Device {0} requested", deviceId);
@@ -424,9 +424,9 @@ namespace Corale.Colore.Implementations
 
         /// <inheritdoc />
         /// <summary>
-        /// Sets all Chroma devices to the specified <see cref="T:Corale.Colore.Core.Color" />.
+        /// Sets all Chroma devices to the specified <see cref="Color" />.
         /// </summary>
-        /// <param name="color">The <see cref="T:Corale.Colore.Core.Color" /> to set.</param>
+        /// <param name="color">The <see cref="Color" /> to set.</param>
         public Task SetAllAsync(Color color)
         {
             Keyboard.SetAllAsync(color);

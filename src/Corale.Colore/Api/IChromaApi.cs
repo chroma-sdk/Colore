@@ -87,9 +87,9 @@ namespace Corale.Colore.Api
         /// <typeparam name="T">The structure type, needs to be compatible with the effect type.</typeparam>
         /// <param name="deviceId">The ID of the device to create the effect for.</param>
         /// <param name="effect">The type of effect to create.</param>
-        /// <param name="struct">The effect structure parameter.</param>
+        /// <param name="data">The effect structure parameter.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        Task<Guid> CreateDeviceEffectAsync<T>(Guid deviceId, Effect effect, T @struct) where T : struct;
+        Task<Guid> CreateDeviceEffectAsync<T>(Guid deviceId, Effect effect, T data) where T : struct;
 
         /// <summary>
         /// Creates a new keyboard effect without any effect data.
@@ -103,9 +103,9 @@ namespace Corale.Colore.Api
         /// </summary>
         /// <typeparam name="T">The structure type, needs to be compatible with the effect type.</typeparam>
         /// <param name="effect">The type of effect to create.</param>
-        /// <param name="struct">The effect structure parameter.</param>
+        /// <param name="data">The effect structure parameter.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        Task<Guid> CreateKeyboardEffectAsync<T>(Effects.Keyboard.Effect effect, T @struct) where T : struct;
+        Task<Guid> CreateKeyboardEffectAsync<T>(Effects.Keyboard.Effect effect, T data) where T : struct;
 
         /// <summary>
         /// Creates a new mouse effect without any effect data.
@@ -119,9 +119,9 @@ namespace Corale.Colore.Api
         /// </summary>
         /// <typeparam name="T">The effect struct type.</typeparam>
         /// <param name="effect">The type of effect to create.</param>
-        /// <param name="struct">Effect options struct.</param>
+        /// <param name="data">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        Task<Guid> CreateMouseEffectAsync<T>(Effects.Mouse.Effect effect, T @struct) where T : struct;
+        Task<Guid> CreateMouseEffectAsync<T>(Effects.Mouse.Effect effect, T data) where T : struct;
 
         /// <summary>
         /// Creates a new headset effect without any effect data.
@@ -135,9 +135,9 @@ namespace Corale.Colore.Api
         /// </summary>
         /// <typeparam name="T">The effect struct type.</typeparam>
         /// <param name="effect">The type of effect to create.</param>
-        /// <param name="struct">Effect options struct.</param>
+        /// <param name="data">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        Task<Guid> CreateHeadsetEffectAsync<T>(Effects.Headset.Effect effect, T @struct) where T : struct;
+        Task<Guid> CreateHeadsetEffectAsync<T>(Effects.Headset.Effect effect, T data) where T : struct;
 
         /// <summary>
         /// Creates a new mousepad effect without any effect data.
@@ -151,9 +151,9 @@ namespace Corale.Colore.Api
         /// </summary>
         /// <typeparam name="T">The effect struct type.</typeparam>
         /// <param name="effect">The type of effect to create.</param>
-        /// <param name="struct">Effect options struct.</param>
+        /// <param name="data">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        Task<Guid> CreateMousepadEffectAsync<T>(Effects.Mousepad.Effect effect, T @struct) where T : struct;
+        Task<Guid> CreateMousepadEffectAsync<T>(Effects.Mousepad.Effect effect, T data) where T : struct;
 
         /// <summary>
         /// Creates a new keypad effect without any effect data.
@@ -167,9 +167,9 @@ namespace Corale.Colore.Api
         /// </summary>
         /// <typeparam name="T">The effect struct type.</typeparam>
         /// <param name="effect">The type of effect to create.</param>
-        /// <param name="struct">Effect options struct.</param>
+        /// <param name="data">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        Task<Guid> CreateKeypadEffectAsync<T>(Effects.Keypad.Effect effect, T @struct) where T : struct;
+        Task<Guid> CreateKeypadEffectAsync<T>(Effects.Keypad.Effect effect, T data) where T : struct;
 
         /// <summary>
         /// Creates a new Chroma Link effect without any effect data.
@@ -183,9 +183,9 @@ namespace Corale.Colore.Api
         /// </summary>
         /// <typeparam name="T">The effect struct type.</typeparam>
         /// <param name="effect">The type of effect to create.</param>
-        /// <param name="struct">Effect options struct.</param>
+        /// <param name="data">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        Task<Guid> CreateChromaLinkEffectAsync<T>(Effects.ChromaLink.Effect effect, T @struct) where T : struct;
+        Task<Guid> CreateChromaLinkEffectAsync<T>(Effects.ChromaLink.Effect effect, T data) where T : struct;
 
         /// <summary>
         /// Registers for Chroma SDK notifications.

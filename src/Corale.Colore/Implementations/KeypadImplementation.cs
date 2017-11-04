@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Mousepad.cs" company="Corale">
+// <copyright file="KeypadImplementation.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -31,51 +31,66 @@ namespace Corale.Colore.Implementations
     using Common.Logging;
 
     using Corale.Colore.Api;
-    using Corale.Colore.Effects.Mousepad;
+    using Corale.Colore.Effects.Keypad;
 
-    /// <inheritdoc cref="IMousepad" />
+    /// <inheritdoc cref="IKeypad" />
     /// <inheritdoc cref="Device" />
     /// <summary>
-    /// Class for interacting with a Chroma mouse pad.
+    /// Class for interacting with a Chroma keypad.
     /// </summary>
-    public sealed class Mousepad : Device, IMousepad
+    public sealed class KeypadImplementation : Device, IKeypad
     {
         /// <summary>
         /// Logger instance for this class.
         /// </summary>
-        private static readonly ILog Log = LogManager.GetLogger(typeof(Mousepad));
+        private static readonly ILog Log = LogManager.GetLogger(typeof(KeypadImplementation));
 
         /// <summary>
-        /// Internal <see cref="Custom" /> struct used for effects.
+        /// Internal instance of a <see cref="Custom" /> struct used for
+        /// the indexer.
         /// </summary>
         private Custom _custom;
 
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="Mousepad" /> class.
+        /// Initializes a new instance of the <see cref="KeypadImplementation" /> class.
         /// </summary>
-        public Mousepad(IChromaApi api)
+        public KeypadImplementation(IChromaApi api)
             : base(api)
         {
-            Log.Debug("Mousepad is initializing.");
+            Log.Debug("Keypad is initializing");
             _custom = Custom.Create();
         }
 
         /// <inheritdoc />
         /// <summary>
-        /// Gets or sets a specific LED on the mouse pad.
+        /// Gets or sets a color at the specified position in the keypad's
+        /// grid layout.
         /// </summary>
-        /// <param name="index">The index to access.</param>
-        /// <returns>The current <see cref="T:Corale.Colore.Core.Color" /> at the <paramref name="index" />.</returns>
-        public Color this[int index]
+        /// <param name="row">The row to access (between <c>0</c> and <see cref="Constants.MaxRows" />, exclusive upper-bound).</param>
+        /// <param name="column">The column to access (between <c>0</c> and <see cref="Constants.MaxColumns" />, exclusive upper-bound).</param>
+        /// <returns>The <see cref="Color" /> at the specified position.</returns>
+        public Color this[int row, int column]
         {
-            get => _custom[index];
+            get => _custom[row, column];
 
             set
             {
-                _custom[index] = value;
+                _custom[row, column] = value;
                 SetCustomAsync(_custom).Wait();
             }
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Returns whether a key has had a custom color set.
+        /// </summary>
+        /// <param name="row">The row to query.</param>
+        /// <param name="column">The column to query.</param>
+        /// <returns><c>true</c> if the position has a color set that is not black, otherwise <c>false</c>.</returns>
+        public bool IsSet(int row, int column)
+        {
+            return this[row, column] != Color.Black;
         }
 
         /// <inheritdoc cref="Device.SetAllAsync" />
@@ -86,58 +101,58 @@ namespace Corale.Colore.Implementations
         public override async Task<Guid> SetAllAsync(Color color)
         {
             _custom.Set(color);
-            return await SetCustomAsync(_custom);
+            return await SetCustomAsync(_custom).ConfigureAwait(false);
         }
 
         /// <inheritdoc />
         /// <summary>
         /// Sets an effect without any parameters.
-        /// Currently, this only works for the <see cref="F:Corale.Colore.Razer.Mousepad.Effects.Effect.None" /> effect.
+        /// Currently, this only works for the <see cref="Effect.None" /> effect.
         /// </summary>
         /// <param name="effect">Effect options.</param>
         public async Task<Guid> SetEffectAsync(Effect effect)
         {
-            return await SetGuidAsync(await Api.CreateMousepadEffectAsync(effect));
+            return await SetEffectAsync(await Api.CreateKeypadEffectAsync(effect).ConfigureAwait(false)).ConfigureAwait(false);
         }
 
         /// <inheritdoc />
         /// <summary>
-        /// Sets a static color effect on the mouse pad.
+        /// Sets a <see cref="Custom" /> effect on the keypad.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="T:Corale.Colore.Razer.Mousepad.Effects.Static" /> struct.</param>
-        public async Task<Guid> SetStaticAsync(Static effect)
-        {
-            return await SetGuidAsync(await Api.CreateMousepadEffectAsync(Effect.Static, effect));
-        }
-
-        /// <inheritdoc />
-        /// <summary>
-        /// Sets a static color effect on the mouse pad.
-        /// </summary>
-        /// <param name="color">Color to set.</param>
-        public async Task<Guid> SetStaticAsync(Color color)
-        {
-            return await SetStaticAsync(new Static(color));
-        }
-
-        /// <inheritdoc />
-        /// <summary>
-        /// Sets a custom effect on the mouse pad.
-        /// </summary>
-        /// <param name="effect">An instance of the <see cref="T:Corale.Colore.Razer.Mousepad.Effects.Custom" /> struct.</param>
+        /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
         public async Task<Guid> SetCustomAsync(Custom effect)
         {
-            return await SetGuidAsync(await Api.CreateMousepadEffectAsync(Effect.Custom, effect));
+            return await SetEffectAsync(await Api.CreateKeypadEffectAsync(Effect.Custom, effect).ConfigureAwait(false)).ConfigureAwait(false);
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Sets a <see cref="Static" /> effect on the keypad.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
+        public async Task<Guid> SetStaticAsync(Static effect)
+        {
+            return await SetEffectAsync(await Api.CreateKeypadEffectAsync(Effect.Static, effect).ConfigureAwait(false)).ConfigureAwait(false);
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Sets a <see cref="Static" /> effect on the keypad.
+        /// </summary>
+        /// <param name="color">Color of the effect.</param>
+        public async Task<Guid> SetStaticAsync(Color color)
+        {
+            return await SetStaticAsync(new Static(color)).ConfigureAwait(false);
         }
 
         /// <inheritdoc cref="Device.ClearAsync" />
         /// <summary>
-        /// Clears the current effect on the Mousepad.
+        /// Clears the current effect on the Keypad.
         /// </summary>
         public override async Task<Guid> ClearAsync()
         {
             _custom.Clear();
-            return await SetEffectAsync(Effect.None);
+            return await SetEffectAsync(Effect.None).ConfigureAwait(false);
         }
     }
 }

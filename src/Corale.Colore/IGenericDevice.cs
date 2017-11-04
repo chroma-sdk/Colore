@@ -57,10 +57,10 @@ namespace Corale.Colore
         /// </summary>
         /// <typeparam name="T">The type of effect data to set.</typeparam>
         /// <param name="effect">Effect to set.</param>
-        /// <param name="struct">Effect-specific parameter to use.</param>
+        /// <param name="data">Effect-specific parameter to use.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetEffectAsync<T>(Effect effect, T @struct)
+        Task<Guid> SetEffectAsync<T>(Effect effect, T data)
             where T : struct;
 
         /// <summary>

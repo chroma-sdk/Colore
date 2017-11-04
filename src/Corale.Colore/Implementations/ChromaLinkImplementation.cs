@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Keypad.cs" company="Corale">
+// <copyright file="ChromaLinkImplementation.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -31,19 +31,22 @@ namespace Corale.Colore.Implementations
     using Common.Logging;
 
     using Corale.Colore.Api;
-    using Corale.Colore.Effects.Keypad;
+    using Corale.Colore.Effects.ChromaLink;
 
-    /// <inheritdoc cref="IKeypad" />
+    using JetBrains.Annotations;
+
+    /// <inheritdoc cref="IChromaLink" />
     /// <inheritdoc cref="Device" />
     /// <summary>
-    /// Class for interacting with a Chroma keypad.
+    /// Class for interacting with a Chroma Link.
     /// </summary>
-    public sealed class Keypad : Device, IKeypad
+    [PublicAPI]
+    public sealed class ChromaLinkImplementation : Device, IChromaLink
     {
         /// <summary>
         /// Logger instance for this class.
         /// </summary>
-        private static readonly ILog Log = LogManager.GetLogger(typeof(Keypad));
+        private static readonly ILog Log = LogManager.GetLogger(typeof(ChromaLinkImplementation));
 
         /// <summary>
         /// Internal instance of a <see cref="Custom" /> struct used for
@@ -53,106 +56,102 @@ namespace Corale.Colore.Implementations
 
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="Keypad" /> class.
+        /// Initializes a new instance of the <see cref="ChromaLinkImplementation" /> class.
         /// </summary>
-        public Keypad(IChromaApi api)
+        public ChromaLinkImplementation(IChromaApi api)
             : base(api)
         {
-            Log.Debug("Keypad is initializing");
+            Log.Debug("Chroma Link is initializing");
             _custom = Custom.Create();
         }
 
         /// <inheritdoc />
         /// <summary>
-        /// Gets or sets a color at the specified position in the keypad's
-        /// grid layout.
+        /// Gets or sets a color at the specified position in the Chroma Link
         /// </summary>
-        /// <param name="row">The row to access (between <c>0</c> and <see cref="F:Corale.Colore.Razer.Keypad.Constants.MaxRows" />, exclusive upper-bound).</param>
-        /// <param name="column">The column to access (between <c>0</c> and <see cref="F:Corale.Colore.Razer.Keypad.Constants.MaxColumns" />, exclusive upper-bound).</param>
-        /// <returns>The <see cref="T:Corale.Colore.Core.Color" /> at the specified position.</returns>
-        public Color this[int row, int column]
+        /// <param name="index">The index to access (between <c>0</c> and <see cref="Constants.MaxLeds" />, exclusive upper-bound).</param>
+        /// <returns>The <see cref="Color" /> at the specified position.</returns>
+        public Color this[int index]
         {
-            get => _custom[row, column];
+            get => _custom[index];
 
             set
             {
-                _custom[row, column] = value;
+                _custom[index] = value;
                 SetCustomAsync(_custom).Wait();
             }
         }
 
         /// <inheritdoc />
         /// <summary>
-        /// Returns whether a key has had a custom color set.
+        /// Returns whether an element has had a custom color set.
         /// </summary>
-        /// <param name="row">The row to query.</param>
-        /// <param name="column">The column to query.</param>
+        /// <param name="index">The index to query.</param>
         /// <returns><c>true</c> if the position has a color set that is not black, otherwise <c>false</c>.</returns>
-        public bool IsSet(int row, int column)
+        public bool IsSet(int index)
         {
-            return this[row, column] != Color.Black;
+            return this[index] != Color.Black;
         }
 
         /// <inheritdoc cref="Device.SetAllAsync" />
         /// <summary>
-        /// Sets the color of all components on this device.
+        /// Sets the color of all lights in Chroma Link
         /// </summary>
         /// <param name="color">Color to set.</param>
         public override async Task<Guid> SetAllAsync(Color color)
         {
             _custom.Set(color);
-            return await SetCustomAsync(_custom);
+            return await SetCustomAsync(_custom).ConfigureAwait(false);
         }
 
         /// <inheritdoc />
         /// <summary>
         /// Sets an effect without any parameters.
-        /// Currently, this only works for the <see cref="F:Corale.Colore.Razer.Keypad.Effects.Effect.None" /> effect.
+        /// Currently, this only works for the <see cref="Effect.None" /> and <see cref="Effect.Static" /> effects.
         /// </summary>
         /// <param name="effect">Effect options.</param>
         public async Task<Guid> SetEffectAsync(Effect effect)
         {
-            return await SetGuidAsync(await Api.CreateKeypadEffectAsync(effect));
+            return await SetEffectAsync(await Api.CreateChromaLinkEffectAsync(effect).ConfigureAwait(false)).ConfigureAwait(false);
         }
 
         /// <inheritdoc />
         /// <summary>
-        /// Sets a <see cref="T:Corale.Colore.Razer.Keypad.Effects.Custom" /> effect on the keypad.
+        /// Sets a <see cref="Custom" /> effect on the Chroma Link.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="T:Corale.Colore.Razer.Keypad.Effects.Custom" /> struct.</param>
+        /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
         public async Task<Guid> SetCustomAsync(Custom effect)
         {
-            return await SetGuidAsync(await Api.CreateKeypadEffectAsync(Effect.Custom, effect));
+            return await SetEffectAsync(await Api.CreateChromaLinkEffectAsync(Effect.Custom, effect).ConfigureAwait(false)).ConfigureAwait(false);
         }
 
         /// <inheritdoc />
         /// <summary>
-        /// Sets a <see cref="T:Corale.Colore.Razer.Keypad.Effects.Static" /> effect on the keypad.
+        /// Sets a <see cref="Static" /> effect on the Chroma Link.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="T:Corale.Colore.Razer.Keypad.Effects.Static" /> struct.</param>
+        /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
         public async Task<Guid> SetStaticAsync(Static effect)
         {
-            return await SetGuidAsync(await Api.CreateKeypadEffectAsync(Effect.Static, effect));
+            return await SetEffectAsync(await Api.CreateChromaLinkEffectAsync(Effect.Static, effect).ConfigureAwait(false)).ConfigureAwait(false);
         }
 
         /// <inheritdoc />
         /// <summary>
-        /// Sets a <see cref="T:Corale.Colore.Razer.Keypad.Effects.Static" /> effect on the keypad.
+        /// Sets a <see cref="Static" /> effect on the Chroma Link.
         /// </summary>
         /// <param name="color">Color of the effect.</param>
         public async Task<Guid> SetStaticAsync(Color color)
         {
-            return await SetStaticAsync(new Static(color));
+            return await SetStaticAsync(new Static(color)).ConfigureAwait(false);
         }
 
         /// <inheritdoc cref="Device.ClearAsync" />
         /// <summary>
-        /// Clears the current effect on the Keypad.
+        /// Clears the current effect on the Chroma Link.
         /// </summary>
         public override async Task<Guid> ClearAsync()
         {
-            _custom.Clear();
-            return await SetEffectAsync(Effect.None);
+            return await SetEffectAsync(Effect.None).ConfigureAwait(false);
         }
     }
 }

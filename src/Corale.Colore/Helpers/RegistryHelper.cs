@@ -71,7 +71,9 @@ namespace Corale.Colore.Helpers
                         var value = key.GetValue("Enable");
 
                         if (value is int i)
+                        {
                             regEnabled = i == 1;
+                        }
                         else
                         {
                             regEnabled = true;
@@ -81,7 +83,9 @@ namespace Corale.Colore.Helpers
                         }
                     }
                     else
+                    {
                         regEnabled = false;
+                    }
                 }
             }
             catch (SecurityException ex)

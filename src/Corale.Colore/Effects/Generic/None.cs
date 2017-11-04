@@ -23,17 +23,20 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
+#pragma warning disable CA1051 // Do not declare visible instance fields
 namespace Corale.Colore.Effects.Generic
 {
+    using System;
     using System.Runtime.InteropServices;
 
     using JetBrains.Annotations;
 
+    /// <inheritdoc cref="IEquatable{T}" />
     /// <summary>
     /// Describes the <c>NO_EFFECT</c> effect.
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public struct None
+    public struct None : IEquatable<None>
     {
         /// <summary>
         /// The size of the struct.
@@ -55,6 +58,67 @@ namespace Corale.Colore.Effects.Generic
         {
             Parameter = parameter;
             Size = Marshal.SizeOf<None>();
+        }
+
+        /// <summary>
+        /// Checks an instance of <see cref="None" /> for equality with another <see cref="None" /> instance.
+        /// </summary>
+        /// <param name="left">Left operand.</param>
+        /// <param name="right">Right operand.</param>
+        /// <returns><c>true</c> if the two instances are equal, otherwise <c>false</c>.</returns>
+        public static bool operator ==(None left, None right)
+        {
+            return left.Equals(right);
+        }
+
+        /// <summary>
+        /// Checks an instance of <see cref="None" /> for inequality with another <see cref="None" /> instance.
+        /// </summary>
+        /// <param name="left">Left operand.</param>
+        /// <param name="right">Right operand.</param>
+        /// <returns><c>true</c> if the two instances are not equal, otherwise <c>false</c>.</returns>
+        public static bool operator !=(None left, None right)
+        {
+            return !(left == right);
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Indicates whether the current object is equal to another object of the same type.
+        /// </summary>
+        /// <param name="other">An object to compare with this object.</param>
+        /// <returns>
+        /// <c>true</c> if the current object is equal to the <paramref name="other" /> parameter; otherwise, <c>false</c>.
+        /// </returns>
+        public bool Equals(None other)
+        {
+            return Size == other.Size && Parameter == other.Parameter;
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Indicates whether this instance and a specified object are equal.
+        /// </summary>
+        /// <param name="obj">The object to compare with the current instance. </param>
+        /// <returns>
+        /// <c>true</c> if <paramref name="obj" /> and this instance are the same type and represent the same value; otherwise, <c>false</c>.
+        /// </returns>
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj))
+                return false;
+            return obj is None && Equals((None)obj);
+        }
+
+        /// <inheritdoc />
+        /// <summary>Returns the hash code for this instance.</summary>
+        /// <returns>A 32-bit signed integer that is the hash code for this instance.</returns>
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                return (Size * 397) ^ Parameter;
+            }
         }
     }
 }

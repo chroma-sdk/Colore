@@ -73,7 +73,7 @@ namespace Corale.Colore
         /// <param name="effect">Effect options.</param>
         /// <remarks>
         /// This will overwrite the current internal <see cref="Custom" />
-        /// struct in the <see cref="Keyboard" /> class.
+        /// struct in the <see cref="KeyboardImplementation" /> class.
         /// </remarks>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]

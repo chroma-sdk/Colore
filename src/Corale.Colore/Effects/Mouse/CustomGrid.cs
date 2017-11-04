@@ -118,7 +118,7 @@ namespace Corale.Colore.Effects.Mouse
         /// Initializes a new instance of the <see cref="CustomGrid" /> struct
         /// with the colors copied from another struct of the same type.
         /// </summary>
-        /// <param name="other">The <see cref="T:Corale.Colore.Razer.Mouse.Effects.CustomGrid" /> struct to copy data from.</param>
+        /// <param name="other">The <see cref="CustomGrid" /> struct to copy data from.</param>
         public CustomGrid(CustomGrid other)
             : this(other._colors)
         {
@@ -332,7 +332,7 @@ namespace Corale.Colore.Effects.Mouse
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
         /// </summary>
-        /// <param name="other">A <see cref="T:Corale.Colore.Razer.Mouse.Effects.CustomGrid" /> to compare with this object.</param>
+        /// <param name="other">A <see cref="CustomGrid" /> to compare with this object.</param>
         /// <returns>
         /// <c>true</c> if the current object is equal to the <paramref name="other" /> parameter;
         /// otherwise, <c>false</c>.
@@ -354,10 +354,10 @@ namespace Corale.Colore.Effects.Mouse
         /// <inheritdoc />
         /// <summary>
         /// Indicates whether the current object is equal to an instance of
-        /// a 2-dimensional array of <see cref="T:Corale.Colore.Core.Color" />.
+        /// a 2-dimensional array of <see cref="Color" />.
         /// </summary>
         /// <param name="other">
-        /// A 2-dimensional array of <see cref="T:Corale.Colore.Core.Color" /> to compare with this object.
+        /// A 2-dimensional array of <see cref="Color" /> to compare with this object.
         /// </param>
         /// <returns>
         /// <c>true</c> if the <paramref name="other" /> object has the same
@@ -386,9 +386,9 @@ namespace Corale.Colore.Effects.Mouse
         /// <inheritdoc />
         /// <summary>
         /// Indicates whether the current object is equal to an instance of
-        /// an array of <see cref="T:Corale.Colore.Core.Color" />.
+        /// an array of <see cref="Color" />.
         /// </summary>
-        /// <param name="other">An array of <see cref="T:Corale.Colore.Core.Color" /> to compare with this object.</param>
+        /// <param name="other">An array of <see cref="Color" /> to compare with this object.</param>
         /// <returns>
         /// <c>true</c> if the <paramref name="other" /> object has the same
         /// number of elements, and contain matching colors; otherwise, <c>false</c>.

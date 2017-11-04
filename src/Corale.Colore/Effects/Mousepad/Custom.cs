@@ -241,7 +241,7 @@ namespace Corale.Colore.Effects.Mousepad
         /// <inheritdoc />
         /// <summary>
         /// Indicates whether the current object is equal to an
-        /// instance of <see cref="T:System.Collections.Generic.IList`1" />.
+        /// instance of <see cref="IList{Color}" />.
         /// </summary>
         /// <param name="other">An object to compare with this object.</param>
         /// <returns>

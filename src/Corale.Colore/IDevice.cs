@@ -59,9 +59,9 @@ namespace Corale.Colore
         /// <summary>
         /// Updates the device to use the effect pointed to by the specified GUID.
         /// </summary>
-        /// <param name="guid">GUID to set.</param>
+        /// <param name="effectId">GUID to set.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetGuidAsync(Guid guid);
+        Task<Guid> SetEffectAsync(Guid effectId);
     }
 }

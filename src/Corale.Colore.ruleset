@@ -9,7 +9,7 @@
     <Rule Id="CA1060" Action="Warning" />
     <Rule Id="CA1061" Action="Warning" />
     <Rule Id="CA1063" Action="Warning" />
-    <Rule Id="CA1065" Action="Warning" />
+    <Rule Id="CA1065" Action="Hidden" />
     <Rule Id="CA1301" Action="Warning" />
     <Rule Id="CA1400" Action="Warning" />
     <Rule Id="CA1401" Action="Warning" />
@@ -67,11 +67,18 @@
   <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
     <Rule Id="SA1101" Action="None" />
     <Rule Id="SA1117" Action="Warning" />
-    <Rule Id="SA1127" Action="Warning" />
+    <Rule Id="SA1127" Action="None" />
     <Rule Id="SA1309" Action="None" />
     <Rule Id="SA1407" Action="None" />
     <Rule Id="SA1503" Action="None" />
     <Rule Id="SA1520" Action="Warning" />
     <Rule Id="SA1648" Action="None" />
+  </Rules>
+  <Rules AnalyzerId="Microsoft.NetCore.Analyzers" RuleNamespace="Microsoft.NetCore.Analyzers">
+    <Rule Id="CA1305" Action="None" />
+  </Rules>
+  <Rules AnalyzerId="Microsoft.CodeQuality.Analyzers" RuleNamespace="Microsoft.CodeQuality.Analyzers">
+    <Rule Id="CA1707" Action="None" />
+    <Rule Id="CA1065" Action="Hidden" />
   </Rules>
 </RuleSet>

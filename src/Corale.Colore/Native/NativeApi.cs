@@ -75,8 +75,8 @@ namespace Corale.Colore.Native
         /// <summary>
         /// Query for device information.
         /// </summary>
-        /// <param name="deviceId">Device ID, found in <see cref="T:Corale.Colore.Razer.Devices" />.</param>
-        /// <returns>A populated <see cref="T:Corale.Colore.Razer.DeviceInfo" /> structure with information about the requested device.</returns>
+        /// <param name="deviceId">Device ID, found in <see cref="Devices" />.</param>
+        /// <returns>A populated <see cref="DeviceInfo" /> structure with information about the requested device.</returns>
         public Task<DeviceInfo> QueryDeviceAsync(Guid deviceId)
         {
             var ptr = Marshal.AllocHGlobal(Marshal.SizeOf<DeviceInfo>());
@@ -122,7 +122,7 @@ namespace Corale.Colore.Native
 
         /// <inheritdoc />
         /// <summary>
-        /// Deletes an effect with the specified <see cref="T:System.Guid" />.
+        /// Deletes an effect with the specified <see cref="Guid" />.
         /// </summary>
         /// <param name="effectId">Effect ID to delete.</param>
         public Task DeleteEffectAsync(Guid effectId)
@@ -139,7 +139,7 @@ namespace Corale.Colore.Native
         /// </summary>
         /// <param name="deviceId">The ID of the device to create the effect for.</param>
         /// <param name="effect">The type of effect to create.</param>
-        /// <returns>A <see cref="T:System.Guid" /> for the created effect.</returns>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
         public Task<Guid> CreateDeviceEffectAsync(Guid deviceId, Effect effect)
         {
             return Task.FromResult(CreateEffect(deviceId, effect, IntPtr.Zero));
@@ -152,12 +152,12 @@ namespace Corale.Colore.Native
         /// <typeparam name="T">The structure type, needs to be compatible with the effect type.</typeparam>
         /// <param name="deviceId">The ID of the device to create the effect for.</param>
         /// <param name="effect">The type of effect to create.</param>
-        /// <param name="struct">The effect structure parameter.</param>
-        /// <returns>A <see cref="T:System.Guid" /> for the created effect.</returns>
-        public Task<Guid> CreateDeviceEffectAsync<T>(Guid deviceId, Effect effect, T @struct) where T : struct
+        /// <param name="data">The effect structure parameter.</param>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
+        public Task<Guid> CreateDeviceEffectAsync<T>(Guid deviceId, Effect effect, T data) where T : struct
         {
-            var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(@struct));
-            Marshal.StructureToPtr(@struct, ptr, false);
+            var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(data));
+            Marshal.StructureToPtr(data, ptr, false);
             try
             {
                 return Task.FromResult(CreateEffect(deviceId, effect, ptr));
@@ -173,7 +173,7 @@ namespace Corale.Colore.Native
         /// Creates a new keyboard effect without any effect data.
         /// </summary>
         /// <param name="effect">The type of effect to create.</param>
-        /// <returns>A <see cref="T:System.Guid" /> for the created effect.</returns>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
         public Task<Guid> CreateKeyboardEffectAsync(Effects.Keyboard.Effect effect)
         {
             return Task.FromResult(CreateKeyboardEffect(effect, IntPtr.Zero));
@@ -185,12 +185,12 @@ namespace Corale.Colore.Native
         /// </summary>
         /// <typeparam name="T">The structure type, needs to be compatible with the effect type.</typeparam>
         /// <param name="effect">The type of effect to create.</param>
-        /// <param name="struct">The effect structure parameter.</param>
-        /// <returns>A <see cref="T:System.Guid" /> for the created effect.</returns>
-        public Task<Guid> CreateKeyboardEffectAsync<T>(Effects.Keyboard.Effect effect, T @struct) where T : struct
+        /// <param name="data">The effect structure parameter.</param>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
+        public Task<Guid> CreateKeyboardEffectAsync<T>(Effects.Keyboard.Effect effect, T data) where T : struct
         {
-            var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(@struct));
-            Marshal.StructureToPtr(@struct, ptr, false);
+            var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(data));
+            Marshal.StructureToPtr(data, ptr, false);
             try
             {
                 return Task.FromResult(CreateKeyboardEffect(effect, ptr));
@@ -206,7 +206,7 @@ namespace Corale.Colore.Native
         /// Creates a new mouse effect without any effect data.
         /// </summary>
         /// <param name="effect">The type of effect to create.</param>
-        /// <returns>A <see cref="T:System.Guid" /> for the created effect.</returns>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
         public Task<Guid> CreateMouseEffectAsync(Effects.Mouse.Effect effect)
         {
             return Task.FromResult(CreateMouseEffect(effect, IntPtr.Zero));
@@ -218,12 +218,12 @@ namespace Corale.Colore.Native
         /// </summary>
         /// <typeparam name="T">The effect struct type.</typeparam>
         /// <param name="effect">The type of effect to create.</param>
-        /// <param name="struct">Effect options struct.</param>
-        /// <returns>A <see cref="T:System.Guid" /> for the created effect.</returns>
-        public Task<Guid> CreateMouseEffectAsync<T>(Effects.Mouse.Effect effect, T @struct) where T : struct
+        /// <param name="data">Effect options struct.</param>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
+        public Task<Guid> CreateMouseEffectAsync<T>(Effects.Mouse.Effect effect, T data) where T : struct
         {
-            var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(@struct));
-            Marshal.StructureToPtr(@struct, ptr, false);
+            var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(data));
+            Marshal.StructureToPtr(data, ptr, false);
             try
             {
                 return Task.FromResult(CreateMouseEffect(effect, ptr));
@@ -239,7 +239,7 @@ namespace Corale.Colore.Native
         /// Creates a new headset effect without any effect data.
         /// </summary>
         /// <param name="effect">The type of effect to create.</param>
-        /// <returns>A <see cref="T:System.Guid" /> for the created effect.</returns>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
         public Task<Guid> CreateHeadsetEffectAsync(Effects.Headset.Effect effect)
         {
             return Task.FromResult(CreateHeadsetEffect(effect, IntPtr.Zero));
@@ -251,12 +251,12 @@ namespace Corale.Colore.Native
         /// </summary>
         /// <typeparam name="T">The effect struct type.</typeparam>
         /// <param name="effect">The type of effect to create.</param>
-        /// <param name="struct">Effect options struct.</param>
-        /// <returns>A <see cref="T:System.Guid" /> for the created effect.</returns>
-        public Task<Guid> CreateHeadsetEffectAsync<T>(Effects.Headset.Effect effect, T @struct) where T : struct
+        /// <param name="data">Effect options struct.</param>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
+        public Task<Guid> CreateHeadsetEffectAsync<T>(Effects.Headset.Effect effect, T data) where T : struct
         {
-            var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(@struct));
-            Marshal.StructureToPtr(@struct, ptr, false);
+            var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(data));
+            Marshal.StructureToPtr(data, ptr, false);
 
             try
             {
@@ -273,7 +273,7 @@ namespace Corale.Colore.Native
         /// Creates a new mousepad effect without any effect data.
         /// </summary>
         /// <param name="effect">The type of effect to create.</param>
-        /// <returns>A <see cref="T:System.Guid" /> for the created effect.</returns>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
         public Task<Guid> CreateMousepadEffectAsync(Effects.Mousepad.Effect effect)
         {
             return Task.FromResult(CreateMousepadEffect(effect, IntPtr.Zero));
@@ -285,12 +285,12 @@ namespace Corale.Colore.Native
         /// </summary>
         /// <typeparam name="T">The effect struct type.</typeparam>
         /// <param name="effect">The type of effect to create.</param>
-        /// <param name="struct">Effect options struct.</param>
-        /// <returns>A <see cref="T:System.Guid" /> for the created effect.</returns>
-        public Task<Guid> CreateMousepadEffectAsync<T>(Effects.Mousepad.Effect effect, T @struct) where T : struct
+        /// <param name="data">Effect options struct.</param>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
+        public Task<Guid> CreateMousepadEffectAsync<T>(Effects.Mousepad.Effect effect, T data) where T : struct
         {
-            var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(@struct));
-            Marshal.StructureToPtr(@struct, ptr, false);
+            var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(data));
+            Marshal.StructureToPtr(data, ptr, false);
 
             try
             {
@@ -307,7 +307,7 @@ namespace Corale.Colore.Native
         /// Creates a new keypad effect without any effect data.
         /// </summary>
         /// <param name="effect">THe type of effect to create.</param>
-        /// <returns>A <see cref="T:System.Guid" /> for the created effect.</returns>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
         public Task<Guid> CreateKeypadEffectAsync(Effects.Keypad.Effect effect)
         {
             return Task.FromResult(CreateKeypadEffect(effect, IntPtr.Zero));
@@ -319,12 +319,12 @@ namespace Corale.Colore.Native
         /// </summary>
         /// <typeparam name="T">The effect struct type.</typeparam>
         /// <param name="effect">The type of effect to create.</param>
-        /// <param name="struct">Effect options struct.</param>
-        /// <returns>A <see cref="T:System.Guid" /> for the created effect.</returns>
-        public Task<Guid> CreateKeypadEffectAsync<T>(Effects.Keypad.Effect effect, T @struct) where T : struct
+        /// <param name="data">Effect options struct.</param>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
+        public Task<Guid> CreateKeypadEffectAsync<T>(Effects.Keypad.Effect effect, T data) where T : struct
         {
-            var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(@struct));
-            Marshal.StructureToPtr(@struct, ptr, false);
+            var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(data));
+            Marshal.StructureToPtr(data, ptr, false);
 
             try
             {
@@ -341,7 +341,7 @@ namespace Corale.Colore.Native
         /// Creates a new Chroma Link effect without any effect data.
         /// </summary>
         /// <param name="effect">The type of effect to create.</param>
-        /// <returns>A <see cref="T:System.Guid" /> for the created effect.</returns>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
         public Task<Guid> CreateChromaLinkEffectAsync(Effects.ChromaLink.Effect effect)
         {
             return Task.FromResult(CreateChromaLinkEffect(effect, IntPtr.Zero));
@@ -353,13 +353,13 @@ namespace Corale.Colore.Native
         /// </summary>
         /// <typeparam name="T">The effect struct type.</typeparam>
         /// <param name="effect">The type of effect to create.</param>
-        /// <param name="struct">Effect options struct.</param>
-        /// <returns>A <see cref="T:System.Guid" /> for the created effect.</returns>
-        public Task<Guid> CreateChromaLinkEffectAsync<T>(Effects.ChromaLink.Effect effect, T @struct)
+        /// <param name="data">Effect options struct.</param>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
+        public Task<Guid> CreateChromaLinkEffectAsync<T>(Effects.ChromaLink.Effect effect, T data)
             where T : struct
         {
-            var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(@struct));
-            Marshal.StructureToPtr(@struct, ptr, false);
+            var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(data));
+            Marshal.StructureToPtr(data, ptr, false);
 
             try
             {

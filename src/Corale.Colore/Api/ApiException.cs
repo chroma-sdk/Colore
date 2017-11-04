@@ -27,12 +27,46 @@ namespace Corale.Colore.Api
 {
     using System.ComponentModel;
 
+    using JetBrains.Annotations;
+
     /// <inheritdoc />
     /// <summary>
     /// Thrown when a cal to an API function fails.
     /// </summary>
     public class ApiException : ColoreException
     {
+        /// <inheritdoc />
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApiException" /> class.
+        /// </summary>
+        [PublicAPI]
+        public ApiException()
+        {
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApiException" /> class.
+        /// </summary>
+        /// <param name="message">Message describing the exception.</param>
+        [PublicAPI]
+        public ApiException(string message)
+            : base(message)
+        {
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApiException" /> class.
+        /// </summary>
+        /// <param name="message">Message describing the exception.</param>
+        /// <param name="innerException">Inner exception</param>
+        [PublicAPI]
+        public ApiException(string message, System.Exception innerException)
+            : base(message, innerException)
+        {
+        }
+
         /// <inheritdoc />
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiException" /> class.

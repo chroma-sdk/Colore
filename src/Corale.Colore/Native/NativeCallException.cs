@@ -33,7 +33,9 @@ namespace Corale.Colore.Native
     /// <summary>
     /// Thrown when a native function returns an erroneous result value.
     /// </summary>
+#pragma warning disable CA1032 // Implement standard exception constructors
     public sealed class NativeCallException : ApiException
+#pragma warning restore CA1032 // Implement standard exception constructors
     {
         /// <summary>
         /// Template used to construct exception message from.

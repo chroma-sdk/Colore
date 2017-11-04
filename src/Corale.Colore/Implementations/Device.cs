@@ -73,12 +73,12 @@ namespace Corale.Colore.Implementations
         /// <summary>
         /// Updates the device to use the effect pointed to by the specified GUID.
         /// </summary>
-        /// <param name="guid">GUID to set.</param>
-        public async Task<Guid> SetGuidAsync(Guid guid)
+        /// <param name="effectId">GUID to set.</param>
+        public async Task<Guid> SetEffectAsync(Guid effectId)
         {
-            await DeleteCurrentEffect();
-            await Api.SetEffectAsync(guid);
-            CurrentEffectId = guid;
+            await DeleteCurrentEffect().ConfigureAwait(false);
+            await Api.SetEffectAsync(effectId).ConfigureAwait(false);
+            CurrentEffectId = effectId;
             return CurrentEffectId;
         }
 
@@ -91,7 +91,7 @@ namespace Corale.Colore.Implementations
             if (CurrentEffectId == Guid.Empty)
                 return;
 
-            await Api.DeleteEffectAsync(CurrentEffectId);
+            await Api.DeleteEffectAsync(CurrentEffectId).ConfigureAwait(false);
             CurrentEffectId = Guid.Empty;
         }
     }

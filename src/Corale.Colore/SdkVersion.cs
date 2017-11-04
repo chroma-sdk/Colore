@@ -244,7 +244,7 @@ namespace Corale.Colore
         /// </list>
         /// </returns>
         /// <param name="obj">An object to compare with this instance. </param>
-        /// <exception cref="T:System.ArgumentException"><paramref name="obj" /> is not the same type as this instance. </exception>
+        /// <exception cref="ArgumentException"><paramref name="obj" /> is not the same type as this instance. </exception>
         public int CompareTo(object obj)
         {
 #pragma warning disable SA1119 // Statement must not use unnecessary parenthesis
@@ -259,7 +259,7 @@ namespace Corale.Colore
         /// Returns the string representation of this SDK version.
         /// </summary>
         /// <returns>
-        /// A <see cref="T:System.String"/> representing this struct instance.
+        /// A <see cref="string"/> representing this struct instance.
         /// </returns>
         public override string ToString()
         {

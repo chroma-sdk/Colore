@@ -30,7 +30,9 @@ namespace Corale.Colore.Effects.Mouse
     /// <summary>
     /// LEDs that can be the target of color changes.
     /// </summary>
+#pragma warning disable CA1028 // Enum Storage should be Int32
     public enum Led : uint
+#pragma warning restore CA1028 // Enum Storage should be Int32
     {
         /// <summary>
         /// No LED.

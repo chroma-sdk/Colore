@@ -303,7 +303,7 @@ namespace Corale.Colore.Effects.Keyboard
         /// <c>true</c> if the current object is equal to the <paramref name="other" /> parameter;
         /// otherwise, <c>false</c>.
         /// </returns>
-        /// <param name="other">A <see cref="T:Corale.Colore.Razer.Keyboard.Effects.Custom" /> to compare with this object.</param>
+        /// <param name="other">A <see cref="Custom" /> to compare with this object.</param>
         public bool Equals(Custom other)
         {
             for (var index = 0; index < Constants.MaxKeys; index++)

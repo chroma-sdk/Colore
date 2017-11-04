@@ -23,17 +23,20 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
+#pragma warning disable CA1051 // Do not declare visible instance fields
 namespace Corale.Colore
 {
+    using System;
     using System.Runtime.InteropServices;
 
     using JetBrains.Annotations;
 
+    /// <inheritdoc cref="IEquatable{T}" />
     /// <summary>
     /// Information about a device.
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public struct DeviceInfo
+    public struct DeviceInfo : IEquatable<DeviceInfo>
     {
         /// <summary>
         /// The type of device this is.
@@ -46,5 +49,66 @@ namespace Corale.Colore
         /// </summary>
         [PublicAPI]
         public readonly bool Connected;
+
+        /// <summary>
+        /// Checks an instance of <see cref="DeviceInfo" /> for equality with another <see cref="DeviceInfo" /> instance.
+        /// </summary>
+        /// <param name="left">Left operand.</param>
+        /// <param name="right">Right operand.</param>
+        /// <returns><c>true</c> if the two instances are equal, otherwise <c>false</c>.</returns>
+        public static bool operator ==(DeviceInfo left, DeviceInfo right)
+        {
+            return left.Equals(right);
+        }
+
+        /// <summary>
+        /// Checks an instance of <see cref="DeviceInfo" /> for inequality with another <see cref="DeviceInfo" /> instance.
+        /// </summary>
+        /// <param name="left">Left operand.</param>
+        /// <param name="right">Right operand.</param>
+        /// <returns><c>true</c> if the two instances are not equal, otherwise <c>false</c>.</returns>
+        public static bool operator !=(DeviceInfo left, DeviceInfo right)
+        {
+            return !(left == right);
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Indicates whether the current object is equal to another object of the same type.
+        /// </summary>
+        /// <param name="other">An object to compare with this object.</param>
+        /// <returns>
+        /// <c>true</c> if the current object is equal to the <paramref name="other" /> parameter; otherwise, <c>false</c>.
+        /// </returns>
+        public bool Equals(DeviceInfo other)
+        {
+            return Type == other.Type && Connected == other.Connected;
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Indicates whether this instance and a specified object are equal.
+        /// </summary>
+        /// <param name="obj">The object to compare with the current instance. </param>
+        /// <returns>
+        /// <c>true</c> if <paramref name="obj" /> and this instance are the same type and represent the same value; otherwise, <c>false</c>.
+        /// </returns>
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj))
+                return false;
+            return obj is DeviceInfo info && Equals(info);
+        }
+
+        /// <inheritdoc />
+        /// <summary>Returns the hash code for this instance.</summary>
+        /// <returns>A 32-bit signed integer that is the hash code for this instance.</returns>
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                return ((int)Type * 397) ^ Connected.GetHashCode();
+            }
+        }
     }
 }

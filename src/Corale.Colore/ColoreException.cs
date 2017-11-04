@@ -27,6 +27,8 @@ namespace Corale.Colore
 {
     using System;
 
+    using JetBrains.Annotations;
+
     /// <inheritdoc />
     /// <summary>
     /// Generic Colore library exception.
@@ -37,9 +39,29 @@ namespace Corale.Colore
         /// <summary>
         /// Initializes a new instance of the <see cref="ColoreException" /> class.
         /// </summary>
+        [PublicAPI]
+        public ColoreException()
+        {
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ColoreException" /> class.
+        /// </summary>
+        /// <param name="message">Message describing the exception.</param>
+        [PublicAPI]
+        public ColoreException(string message)
+            : base(message)
+        {
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ColoreException" /> class.
+        /// </summary>
         /// <param name="message">Exception message.</param>
         /// <param name="innerException">Inner exception object.</param>
-        public ColoreException(string message = null, Exception innerException = null)
+        public ColoreException(string message, Exception innerException)
             : base(message, innerException)
         {
         }

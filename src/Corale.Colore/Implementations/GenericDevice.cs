@@ -49,7 +49,7 @@ namespace Corale.Colore.Implementations
         /// <summary>
         /// Initializes a new instance of the <see cref="GenericDevice" /> class.
         /// </summary>
-        /// <param name="deviceId">The <see cref="T:System.Guid" /> of the device.</param>
+        /// <param name="deviceId">The <see cref="Guid" /> of the device.</param>
         /// <param name="api">Reference to the Chroma API instance in use.</param>
         public GenericDevice(Guid deviceId, IChromaApi api)
             : base(api)
@@ -64,7 +64,7 @@ namespace Corale.Colore.Implementations
 
         /// <inheritdoc />
         /// <summary>
-        /// Gets the <see cref="T:System.Guid" /> of this device.
+        /// Gets the <see cref="Guid" /> of this device.
         /// </summary>
         public Guid DeviceId { get; }
 
@@ -74,7 +74,7 @@ namespace Corale.Colore.Implementations
         /// </summary>
         public override async Task<Guid> ClearAsync()
         {
-            return await SetGuidAsync(await Api.CreateDeviceEffectAsync(DeviceId, Effect.None, default(None)));
+            return await SetEffectAsync(await Api.CreateDeviceEffectAsync(DeviceId, Effect.None, default(None)).ConfigureAwait(false)).ConfigureAwait(false);
         }
 
         /// <inheritdoc cref="Device.SetAllAsync" />
@@ -84,7 +84,7 @@ namespace Corale.Colore.Implementations
         /// <param name="color">Color to set.</param>
         public override async Task<Guid> SetAllAsync(Color color)
         {
-            return await SetCustomAsync(new Custom(color));
+            return await SetCustomAsync(new Custom(color)).ConfigureAwait(false);
         }
 
         /// <inheritdoc />
@@ -94,7 +94,7 @@ namespace Corale.Colore.Implementations
         /// <param name="effect">Effect to set.</param>
         public async Task<Guid> SetEffectAsync(Effect effect)
         {
-            return await SetEffectAsync(effect, IntPtr.Zero);
+            return await SetEffectAsync(effect, IntPtr.Zero).ConfigureAwait(false);
         }
 
         /// <inheritdoc />
@@ -102,11 +102,11 @@ namespace Corale.Colore.Implementations
         /// Sets an effect on this device, taking a parameter.
         /// </summary>
         /// <param name="effect">Effect to set.</param>
-        /// <param name="struct">Effect-specific parameter to use.</param>
-        public async Task<Guid> SetEffectAsync<T>(Effect effect, T @struct)
+        /// <param name="data">Effect-specific parameter to use.</param>
+        public async Task<Guid> SetEffectAsync<T>(Effect effect, T data)
             where T : struct
         {
-            return await SetGuidAsync(await Api.CreateDeviceEffectAsync(DeviceId, effect, @struct));
+            return await SetEffectAsync(await Api.CreateDeviceEffectAsync(DeviceId, effect, data).ConfigureAwait(false)).ConfigureAwait(false);
         }
 
         /// <inheritdoc />
@@ -116,7 +116,7 @@ namespace Corale.Colore.Implementations
         /// <param name="effect">Effect options.</param>
         public async Task<Guid> SetCustomAsync(Custom effect)
         {
-            return await SetGuidAsync(await Api.CreateDeviceEffectAsync(DeviceId, Effect.Custom, effect));
+            return await SetEffectAsync(await Api.CreateDeviceEffectAsync(DeviceId, Effect.Custom, effect).ConfigureAwait(false)).ConfigureAwait(false);
         }
     }
 }

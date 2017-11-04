@@ -28,14 +28,18 @@ namespace Corale.Colore
     using System;
     using System.Globalization;
 
+    using Corale.Colore.Implementations;
+
     using JetBrains.Annotations;
 
     /// <inheritdoc />
     /// <summary>
-    /// Thrown when an invalid <see cref="T:System.Guid" /> is passed to the
-    /// constructor of <see cref="T:Corale.Colore.Core.GenericDevice" />.
+    /// Thrown when an invalid <see cref="Guid" /> is passed to the
+    /// constructor of <see cref="GenericDevice" />.
     /// </summary>
+#pragma warning disable CA1032 // Implement standard exception constructors
     public sealed class UnsupportedDeviceException : ColoreException
+#pragma warning restore CA1032 // Implement standard exception constructors
     {
         /// <summary>
         /// Template for exception message.
@@ -46,7 +50,7 @@ namespace Corale.Colore
         /// <summary>
         /// Initializes a new instance of the <see cref="UnsupportedDeviceException" /> class.
         /// </summary>
-        /// <param name="deviceId">The <see cref="T:System.Guid" /> of the device.</param>
+        /// <param name="deviceId">The <see cref="Guid" /> of the device.</param>
         /// <param name="innerException">Inner exception object.</param>
         public UnsupportedDeviceException(Guid deviceId, Exception innerException = null)
             : base(string.Format(CultureInfo.InvariantCulture, MessageTemplate, deviceId), innerException)

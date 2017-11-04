@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="ChromaLink.cs" company="Corale">
+// <copyright file="MousepadImplementation.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -31,46 +31,42 @@ namespace Corale.Colore.Implementations
     using Common.Logging;
 
     using Corale.Colore.Api;
-    using Corale.Colore.Effects.ChromaLink;
+    using Corale.Colore.Effects.Mousepad;
 
-    using JetBrains.Annotations;
-
-    /// <inheritdoc cref="IChromaLink" />
+    /// <inheritdoc cref="IMousepad" />
     /// <inheritdoc cref="Device" />
     /// <summary>
-    /// Class for interacting with a Chroma Link.
+    /// Class for interacting with a Chroma mouse pad.
     /// </summary>
-    [PublicAPI]
-    public sealed class ChromaLink : Device, IChromaLink
+    public sealed class MousepadImplementation : Device, IMousepad
     {
         /// <summary>
         /// Logger instance for this class.
         /// </summary>
-        private static readonly ILog Log = LogManager.GetLogger(typeof(ChromaLink));
+        private static readonly ILog Log = LogManager.GetLogger(typeof(MousepadImplementation));
 
         /// <summary>
-        /// Internal instance of a <see cref="Custom" /> struct used for
-        /// the indexer.
+        /// Internal <see cref="Custom" /> struct used for effects.
         /// </summary>
         private Custom _custom;
 
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="ChromaLink" /> class.
+        /// Initializes a new instance of the <see cref="MousepadImplementation" /> class.
         /// </summary>
-        public ChromaLink(IChromaApi api)
+        public MousepadImplementation(IChromaApi api)
             : base(api)
         {
-            Log.Debug("Chroma Link is initializing");
+            Log.Debug("Mousepad is initializing.");
             _custom = Custom.Create();
         }
 
         /// <inheritdoc />
         /// <summary>
-        /// Gets or sets a color at the specified position in the Chroma Link
+        /// Gets or sets a specific LED on the mouse pad.
         /// </summary>
-        /// <param name="index">The index to access (between <c>0</c> and <see cref="F:Corale.Colore.Razer.ChromaLink.Constants.MaxLeds" />, exclusive upper-bound).</param>
-        /// <returns>The <see cref="T:Corale.Colore.Core.Color" /> at the specified position.</returns>
+        /// <param name="index">The index to access.</param>
+        /// <returns>The current <see cref="Color" /> at the <paramref name="index" />.</returns>
         public Color this[int index]
         {
             get => _custom[index];
@@ -82,76 +78,66 @@ namespace Corale.Colore.Implementations
             }
         }
 
-        /// <inheritdoc />
-        /// <summary>
-        /// Returns whether an element has had a custom color set.
-        /// </summary>
-        /// <param name="index">The index to query.</param>
-        /// <returns><c>true</c> if the position has a color set that is not black, otherwise <c>false</c>.</returns>
-        public bool IsSet(int index)
-        {
-            return this[index] != Color.Black;
-        }
-
         /// <inheritdoc cref="Device.SetAllAsync" />
         /// <summary>
-        /// Sets the color of all lights in Chroma Link
+        /// Sets the color of all components on this device.
         /// </summary>
         /// <param name="color">Color to set.</param>
         public override async Task<Guid> SetAllAsync(Color color)
         {
             _custom.Set(color);
-            return await SetCustomAsync(_custom);
+            return await SetCustomAsync(_custom).ConfigureAwait(false);
         }
 
         /// <inheritdoc />
         /// <summary>
         /// Sets an effect without any parameters.
-        /// Currently, this only works for the <see cref="F:Corale.Colore.Razer.ChromaLink.Effects.Effect.None" /> and <see cref="F:Corale.Colore.Razer.ChromaLink.Effects.Effect.Static" /> effects.
+        /// Currently, this only works for the <see cref="Effect.None" /> effect.
         /// </summary>
         /// <param name="effect">Effect options.</param>
         public async Task<Guid> SetEffectAsync(Effect effect)
         {
-            return await SetGuidAsync(await Api.CreateChromaLinkEffectAsync(effect));
+            return await SetEffectAsync(await Api.CreateMousepadEffectAsync(effect).ConfigureAwait(false)).ConfigureAwait(false);
         }
 
         /// <inheritdoc />
         /// <summary>
-        /// Sets a <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Custom" /> effect on the Chroma Link.
+        /// Sets a static color effect on the mouse pad.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Custom" /> struct.</param>
-        public async Task<Guid> SetCustomAsync(Custom effect)
-        {
-            return await SetGuidAsync(await Api.CreateChromaLinkEffectAsync(Effect.Custom, effect));
-        }
-
-        /// <inheritdoc />
-        /// <summary>
-        /// Sets a <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Static" /> effect on the Chroma Link.
-        /// </summary>
-        /// <param name="effect">An instance of the <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Static" /> struct.</param>
+        /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
         public async Task<Guid> SetStaticAsync(Static effect)
         {
-            return await SetGuidAsync(await Api.CreateChromaLinkEffectAsync(Effect.Static, effect));
+            return await SetEffectAsync(await Api.CreateMousepadEffectAsync(Effect.Static, effect).ConfigureAwait(false)).ConfigureAwait(false);
         }
 
         /// <inheritdoc />
         /// <summary>
-        /// Sets a <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Static" /> effect on the Chroma Link.
+        /// Sets a static color effect on the mouse pad.
         /// </summary>
-        /// <param name="color">Color of the effect.</param>
+        /// <param name="color">Color to set.</param>
         public async Task<Guid> SetStaticAsync(Color color)
         {
-            return await SetStaticAsync(new Static(color));
+            return await SetStaticAsync(new Static(color)).ConfigureAwait(false);
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Sets a custom effect on the mouse pad.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
+        public async Task<Guid> SetCustomAsync(Custom effect)
+        {
+            return await SetEffectAsync(await Api.CreateMousepadEffectAsync(Effect.Custom, effect).ConfigureAwait(false)).ConfigureAwait(false);
         }
 
         /// <inheritdoc cref="Device.ClearAsync" />
         /// <summary>
-        /// Clears the current effect on the Chroma Link.
+        /// Clears the current effect on the Mousepad.
         /// </summary>
         public override async Task<Guid> ClearAsync()
         {
-            return await SetEffectAsync(Effect.None);
+            _custom.Clear();
+            return await SetEffectAsync(Effect.None).ConfigureAwait(false);
         }
     }
 }

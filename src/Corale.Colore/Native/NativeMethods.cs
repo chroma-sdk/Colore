@@ -118,7 +118,9 @@ namespace Corale.Colore.Native
             "Microsoft.Design",
             "CA1065:DoNotRaiseExceptionsInUnexpectedLocations",
             Justification = "Can't get rid of this exception as we depend on architecture and library to work.")]
+#pragma warning disable CA1810 // Initialize reference type static fields inline
         static NativeMethods()
+#pragma warning restore CA1810 // Initialize reference type static fields inline
         {
             var chromaSdkPointer = Kernel32.NativeMethods.LoadLibrary(
                 EnvironmentHelper.Is64Bit() ? "RzChromaSDK64.dll" : "RzChromaSDK.dll");

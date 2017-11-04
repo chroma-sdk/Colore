@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Headset.cs" company="Corale">
+// <copyright file="HeadsetImplementation.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -38,19 +38,19 @@ namespace Corale.Colore.Implementations
     /// <summary>
     /// Class for interacting with Chroma Headsets.
     /// </summary>
-    public sealed class Headset : Device, IHeadset
+    public sealed class HeadsetImplementation : Device, IHeadset
     {
         /// <summary>
         /// Loggers instance for this class.
         /// </summary>
-        private static readonly ILog Log = LogManager.GetLogger(typeof(Headset));
+        private static readonly ILog Log = LogManager.GetLogger(typeof(HeadsetImplementation));
 
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="Headset" /> class.
+        /// Initializes a new instance of the <see cref="HeadsetImplementation" /> class.
         /// </summary>
         /// <param name="api">Reference to the Chroma API instance in use.</param>
-        public Headset(IChromaApi api)
+        public HeadsetImplementation(IChromaApi api)
             : base(api)
         {
             Log.Info("Headset is initializing");
@@ -63,19 +63,19 @@ namespace Corale.Colore.Implementations
         /// <param name="color">Color to set.</param>
         public override async Task<Guid> SetAllAsync(Color color)
         {
-            return await SetStaticAsync(new Static(color));
+            return await SetStaticAsync(new Static(color)).ConfigureAwait(false);
         }
 
         /// <inheritdoc />
         /// <summary>
         /// Sets an effect on the headset that doesn't
         /// take any parameters, currently only valid
-        /// for the <see cref="F:Corale.Colore.Razer.Headset.Effects.Effect.None" /> effect.
+        /// for the <see cref="Effect.None" /> effect.
         /// </summary>
         /// <param name="effect">The type of effect to set.</param>
         public async Task<Guid> SetEffectAsync(Effect effect)
         {
-            return await SetGuidAsync(await Api.CreateHeadsetEffectAsync(effect));
+            return await SetEffectAsync(await Api.CreateHeadsetEffectAsync(effect).ConfigureAwait(false)).ConfigureAwait(false);
         }
 
         /// <inheritdoc />
@@ -83,23 +83,23 @@ namespace Corale.Colore.Implementations
         /// Sets a new static effect on the headset.
         /// </summary>
         /// <param name="effect">
-        /// An instance of the <see cref="T:Corale.Colore.Razer.Headset.Effects.Static" /> struct
+        /// An instance of the <see cref="Static" /> struct
         /// describing the effect.
         /// </param>
         public async Task<Guid> SetStaticAsync(Static effect)
         {
-            return await SetGuidAsync(await Api.CreateHeadsetEffectAsync(Effect.Static, effect));
+            return await SetEffectAsync(await Api.CreateHeadsetEffectAsync(Effect.Static, effect).ConfigureAwait(false)).ConfigureAwait(false);
         }
 
         /// <inheritdoc />
         /// <summary>
-        /// Sets a new <see cref="T:Corale.Colore.Razer.Headset.Effects.Static" /> effect on
-        /// the headset using the specified <see cref="T:Corale.Colore.Core.Color" />.
+        /// Sets a new <see cref="Static" /> effect on
+        /// the headset using the specified <see cref="Color" />.
         /// </summary>
-        /// <param name="color"><see cref="T:Corale.Colore.Core.Color" /> of the effect.</param>
+        /// <param name="color"><see cref="Color" /> of the effect.</param>
         public async Task<Guid> SetStaticAsync(Color color)
         {
-            return await SetStaticAsync(new Static(color));
+            return await SetStaticAsync(new Static(color)).ConfigureAwait(false);
         }
 
         /// <inheritdoc cref="Device.ClearAsync" />
@@ -108,7 +108,7 @@ namespace Corale.Colore.Implementations
         /// </summary>
         public override async Task<Guid> ClearAsync()
         {
-            return await SetEffectAsync(Effect.None);
+            return await SetEffectAsync(Effect.None).ConfigureAwait(false);
         }
     }
 }

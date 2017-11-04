@@ -158,6 +158,12 @@ namespace Corale.Colore
         public bool Success => this == RzSuccess;
 
         /// <summary>
+        /// Gets a value indicating whether this instance of <see cref="Result" /> is truthy.
+        /// </summary>
+        /// <returns><c>true</c> if this is a successful result, otherwise <c>false</c>.</returns>
+        public bool IsTrue => this;
+
+        /// <summary>
         /// Indicates whether an instance of the <see cref="Result" /> struct is
         /// equal to another object.
         /// </summary>
@@ -239,9 +245,37 @@ namespace Corale.Colore
             return result;
         }
 
+        /// <summary>
+        /// Convert an integer value to a <see cref="Result" /> object.
+        /// </summary>
+        /// <param name="value">The value to convert.</param>
+        /// <returns>An instance of <see cref="Result" />.</returns>
+        public static Result FromResult(int value)
+        {
+            return value;
+        }
+
+        /// <summary>
+        /// Converts this instance of <see cref="Result" /> to an integer value.
+        /// </summary>
+        /// <returns>The integer value of this <see cref="Result" />.</returns>
+        public int ToInt32()
+        {
+            return this;
+        }
+
+        /// <summary>
+        /// Converts this <see cref="Result" /> to a boolean value.
+        /// </summary>
+        /// <returns>The result of the conversion.</returns>
+        public bool ToBoolean()
+        {
+            return this;
+        }
+
         /// <inheritdoc />
         /// <summary>
-        /// Indicates whether the internal value of the current <see cref="T:Corale.Colore.Result" /> struct
+        /// Indicates whether the internal value of the current <see cref="Result" /> struct
         /// is equal to another value.
         /// </summary>
         /// <param name="other">A value to compare with this object's internal value.</param>
@@ -306,7 +340,7 @@ namespace Corale.Colore
         /// Returns a string representation of the result.
         /// </summary>
         /// <returns>
-        /// A <see cref="T:System.String"/> containing a string representation
+        /// A <see cref="string"/> containing a string representation
         /// of the result complete with name, description, and numeric value.
         /// </returns>
         /// <filterpriority>2</filterpriority>

@@ -23,17 +23,22 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
+#pragma warning disable CA1051 // Do not declare visible instance fields
 namespace Corale.Colore.Effects.Keyboard
 {
+    using System;
     using System.Runtime.InteropServices;
 
     using JetBrains.Annotations;
 
+    /// <inheritdoc cref="IEquatable{T}" />
     /// <summary>
     /// Describes the static effect type.
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public struct Static
+#pragma warning disable CA1716 // Identifiers should not match keywords
+    public struct Static : IEquatable<Static>
+#pragma warning restore CA1716 // Identifiers should not match keywords
     {
         /// <summary>
         /// Color of the effect.
@@ -48,6 +53,64 @@ namespace Corale.Colore.Effects.Keyboard
         public Static(Color color)
         {
             Color = color;
+        }
+
+        /// <summary>
+        /// Checks an instance of <see cref="Static" /> for equality with another <see cref="Static" /> instance.
+        /// </summary>
+        /// <param name="left">Left operand.</param>
+        /// <param name="right">Right operand.</param>
+        /// <returns><c>true</c> if the two instances are equal, otherwise <c>false</c>.</returns>
+        public static bool operator ==(Static left, Static right)
+        {
+            return left.Equals(right);
+        }
+
+        /// <summary>
+        /// Checks an instance of <see cref="Static" /> for inequality with another <see cref="Static" /> instance.
+        /// </summary>
+        /// <param name="left">Left operand.</param>
+        /// <param name="right">Right operand.</param>
+        /// <returns><c>true</c> if the two instances are not equal, otherwise <c>false</c>.</returns>
+        public static bool operator !=(Static left, Static right)
+        {
+            return !(left == right);
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Indicates whether the current object is equal to another object of the same type.
+        /// </summary>
+        /// <param name="other">An object to compare with this object.</param>
+        /// <returns>
+        /// <c>true</c> if the current object is equal to the <paramref name="other" /> parameter; otherwise, <c>false</c>.
+        /// </returns>
+        public bool Equals(Static other)
+        {
+            return Color.Equals(other.Color);
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Indicates whether this instance and a specified object are equal.
+        /// </summary>
+        /// <param name="obj">The object to compare with the current instance. </param>
+        /// <returns>
+        /// <c>true</c> if <paramref name="obj" /> and this instance are the same type and represent the same value; otherwise, <c>false</c>.
+        /// </returns>
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj))
+                return false;
+            return obj is Static effect && Equals(effect);
+        }
+
+        /// <inheritdoc />
+        /// <summary>Returns the hash code for this instance.</summary>
+        /// <returns>A 32-bit signed integer that is the hash code for this instance.</returns>
+        public override int GetHashCode()
+        {
+            return Color.GetHashCode();
         }
     }
 }
