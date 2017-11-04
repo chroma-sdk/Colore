@@ -26,7 +26,7 @@ addons:
       - zlib1g
 
 before_install:
-- git fetch --unshallow
+  - git fetch --unshallow
 
 before_script:
   - chmod +x build.sh
@@ -40,6 +40,6 @@ cache:
 
 notifications:
   slack:
-    secure: MqiYNfo7mu6JhQ5fxC/piGWHptb0O7SeX74emS6QUMCWBXtpI1VG9qgVt7LOcvSWDZoLB999S6UddSKuTd+SGDYolFnrlNSqChTiWSIxwiF3FsVTLvi2xRkkQTBsl0iK5Q68MPETv8HyzPb2ea7aAKJyd18nZw2NlPq0lTi5JDo=
+    secure: S6qmUFLLPAUvDtTCHyVRwMXZFIXIJCApBFNQw/0tAU7bqeqsiNL5+ga4Or1KlOT9HXy3HxprR1sN53fnfW9qEsdtWzCwMhYScG1ljjIs2s7jEjWb14V9X4ufvq2/KwFN2F6QVyEbzq74wJc7HzwpsNRO5pPlRaSxabB7JDdk/Qw=
     on_success: change
     on_failure: always
