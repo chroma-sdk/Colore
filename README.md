@@ -1,8 +1,6 @@
 ![Colore Logo][colorelogo]
 
 [![Build status][buildbadge]][buildstatus]
-[![Coverage Status][devcoverbadge]][devcover]
-[![Stories in Ready][wafflebadge]][waffle]
 [![MIT License][licensebadge]][license]
 [![Latest GitHub release][ghreleasebadge]][ghrelease]
 [![NuGet version][ngverbadge]][ng]
@@ -118,8 +116,6 @@ There may be others we are unaware of, so please let us know if there are any ot
 [bs]: https://github.com/brandonscott
 [rzdev]: http://developer.razerzone.com/chroma
 
-[waffle]: http://waffle.io/coralestudios/colore
-[wafflebadge]: https://badge.waffle.io/coralestudios/colore.svg?label=ready&title=Ready
 [license]: http://opensource.org/licenses/MIT
 [licensebadge]: https://img.shields.io/badge/license-MIT-blue.svg
 [ghrelease]: https://github.com/CoraleStudios/Colore/releases
@@ -129,8 +125,6 @@ There may be others we are unaware of, so please let us know if there are any ot
 
 [buildstatus]: https://ci.appveyor.com/project/Corale/colore
 [buildbadge]: https://ci.appveyor.com/api/projects/status/st3y6fo0jqvhd8cg?svg=true
-[devcover]: https://coveralls.io/r/CoraleStudios/Colore?branch=develop
-[devcoverbadge]: https://coveralls.io/repos/CoraleStudios/Colore/badge.svg?branch=develop
 
 [gitter]: https://gitter.im/CoraleStudios/Colore?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
 [gitterbadge]: https://badges.gitter.im/Join%20Chat.svg
