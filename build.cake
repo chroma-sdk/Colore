@@ -1,3 +1,4 @@
+#addin nuget:?package=Cake.DocFx
 #tool "nuget:?package=GitVersion.CommandLine"
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -234,10 +235,19 @@ Task("Pack")
         MoveFiles(GetFiles("./src/**/*.nupkg"), "./artifacts");
     });
 
+Task("Docs")
+    .IsDependentOn("Build")
+    .Does(() =>
+    {
+        DocFxBuild("./docs/docfx.json");
+        Zip("./docs/_site", $"./artifacts/colore_{version.SemVer}_docs.zip");
+    });
+
 Task("CI")
     .IsDependentOn("Dist")
     .IsDependentOn("Publish")
-    .IsDependentOn("Pack");
+    .IsDependentOn("Pack")
+    .IsDependentOn("Docs");
 
 Task("Default")
     .IsDependentOn("Test");
