@@ -139,6 +139,9 @@ Task("Build")
     .IsDependentOn("Restore")
     .Does(() =>
     {
+        if (isTravis)
+            FixNUnitLoggerPaths();
+
         if (isWindows)
         {
             Build(mainProject);
@@ -174,9 +177,6 @@ Task("Test")
             settings.ArgumentCustomization = args => args
                 .Append("--logger:nunit");
         }
-
-        if (isTravis)
-            FixNUnitLoggerPaths();
 
         DotNetCoreTest(testProject, settings);
 
