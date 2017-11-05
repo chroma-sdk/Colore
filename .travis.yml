@@ -18,6 +18,7 @@ env:
 dotnet: 2.0.0
 mono: latest
 addons:
+  ssh_known_hosts: github.com
   apt:
     packages:
       - gettext
