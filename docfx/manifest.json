@@ -1,0 +1,1050 @@
+{
+  "homepages": [],
+  "source_base_path": "E:/Users/adamh/Projects/CSharp/Colore/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Api.ApiException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Api.ApiException.html",
+          "hash": "tfXQGbXwLYCzx6f3xXhqVA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Api.IChromaApi.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Api.IChromaApi.html",
+          "hash": "3RB8zNNUSodaynOxZorakg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Api.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Api.html",
+          "hash": "1rdTMhCectUrRLfG++E3lg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Color.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Color.html",
+          "hash": "J170rlZYo4Z+lFOK3t4ZmQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.ColoreException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.ColoreException.html",
+          "hash": "aNeZQDV5tj53Lk85b7U7xQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.ColoreProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.ColoreProvider.html",
+          "hash": "XmvN3MmW+S0ov5KfPqVlQA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Constants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Constants.html",
+          "hash": "fS5JLsRgay/MlHBFj7gWFQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.DeviceInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.DeviceInfo.html",
+          "hash": "rokgUYJfBWEvm3iLPOuapw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.DeviceType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.DeviceType.html",
+          "hash": "oFgZqj/1UEUsFqVjizhAag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Devices.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Devices.html",
+          "hash": "DrOj43jxs0NQkqLEZTh7bA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.ChromaLink.Constants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.ChromaLink.Constants.html",
+          "hash": "/TaqhOh2pdcADQuVaG7Rzg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.ChromaLink.Custom.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.ChromaLink.Custom.html",
+          "hash": "uhW2qo7vkzGFG5h5Tyzq8A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.ChromaLink.Effect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.ChromaLink.Effect.html",
+          "hash": "IyopcgOO76qCxYepVYzRXA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.ChromaLink.Static.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.ChromaLink.Static.html",
+          "hash": "uoIH45QsfmtfNmso1a+0qw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.ChromaLink.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.ChromaLink.html",
+          "hash": "4ohAcUdLU/cupUwaIcU4Rw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Generic.Custom.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Generic.Custom.html",
+          "hash": "lrQFLIsLG4W2+jFG4nuhWg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Generic.Effect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Generic.Effect.html",
+          "hash": "PVhtXhDb6FbZY/yv1aKJvg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Generic.None.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Generic.None.html",
+          "hash": "IT7oIkW9wtdVz0c45drqAQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Generic.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Generic.html",
+          "hash": "aKq+rzoYDMoDTj6gimW6/w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Headset.Effect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Headset.Effect.html",
+          "hash": "V/M1Nb2sGufs0GrM8h2jxQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Headset.Static.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Headset.Static.html",
+          "hash": "OS60kMOINcx2TsPwxWq5ZQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Headset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Headset.html",
+          "hash": "aMzXpecLxvWy3LTyxt36XQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Keyboard.Constants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Keyboard.Constants.html",
+          "hash": "jBDLrrmbFuvV8YYwgLFAQQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Keyboard.Custom.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Keyboard.Custom.html",
+          "hash": "NqjCo4VUOeeqzS59wbNq/Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Keyboard.Effect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Keyboard.Effect.html",
+          "hash": "OnjvyDngk/32knrnz1jhug=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Keyboard.Key.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Keyboard.Key.html",
+          "hash": "x8w4nl23G9Cb/j+RIW4ciA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Keyboard.PositionData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Keyboard.PositionData.html",
+          "hash": "TAUuWDw8cic0A6iCt1lvQw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Keyboard.Static.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Keyboard.Static.html",
+          "hash": "dx1t7X5ejieYxj11USXCwg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Keyboard.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Keyboard.html",
+          "hash": "wruplqkvYMkqDfnX+16qPg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Keypad.Constants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Keypad.Constants.html",
+          "hash": "S3z5C4qL5mqSFFF9jpu2Cg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Keypad.Custom.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Keypad.Custom.html",
+          "hash": "yjZvIMUqPi1hcf+f1aApkA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Keypad.Effect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Keypad.Effect.html",
+          "hash": "Mh25zWEac3z2YDXA9xRwIw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Keypad.Static.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Keypad.Static.html",
+          "hash": "10cEOaaITg+m24EZsX8ISA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Keypad.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Keypad.html",
+          "hash": "zigsaIfpUeaxTCofXrZyWw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Mouse.Constants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Mouse.Constants.html",
+          "hash": "/aifMe+7XdbBnL8oD6yx4Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Mouse.CustomGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Mouse.CustomGrid.html",
+          "hash": "UFTicUgALYONZIysF1R9mg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Mouse.Effect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Mouse.Effect.html",
+          "hash": "r01k6CgTXydgyIao7O+lkA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Mouse.GridLed.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Mouse.GridLed.html",
+          "hash": "FflhP/gk+vSWNFIVmeW1YA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Mouse.Led.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Mouse.Led.html",
+          "hash": "I1SeMGmqrCxn1Wa7KdZgXA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Mouse.Static.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Mouse.Static.html",
+          "hash": "VByWPEdoaf7QCQ58nGRhhA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Mouse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Mouse.html",
+          "hash": "duDxK/st8Z7SYmoZgCbeRw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Mousepad.Constants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Mousepad.Constants.html",
+          "hash": "VEhQ5g2koqCDKkAhoMXksA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Mousepad.Custom.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Mousepad.Custom.html",
+          "hash": "UIXWGZoFiJDCYQhm2ZwR2g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Mousepad.Effect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Mousepad.Effect.html",
+          "hash": "fTJX2P0r2T0x2sp+O79j2A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Mousepad.Static.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Mousepad.Static.html",
+          "hash": "DWnQWKQ8YaZZUgDytSWh9w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Mousepad.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Mousepad.html",
+          "hash": "szQEjU236bfMypvOmDLgrw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Events.ApplicationStateEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Events.ApplicationStateEventArgs.html",
+          "hash": "MsWk/6CFOVSyOKouLrxBLQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Events.DeviceAccessEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Events.DeviceAccessEventArgs.html",
+          "hash": "2Ar6BvJySPGVJcqdKGqeYQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Events.SdkSupportEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Events.SdkSupportEventArgs.html",
+          "hash": "zY09XKKpqAUhZT8FI6+nbQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Events.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Events.html",
+          "hash": "spssSfYVE8DrQPj8KMhUzw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Helpers.TaskHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Helpers.TaskHelper.html",
+          "hash": "UoZDdSAoHBiRsWvu9VS+Hw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Helpers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Helpers.html",
+          "hash": "Q1lRFGHHvdva3K/4moJ+lw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.IChroma.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.IChroma.html",
+          "hash": "pcngCIE5yHs8wb1YCmxsKg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.IChromaLink.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.IChromaLink.html",
+          "hash": "a1zGEY/AaVRSHkFwiCipyA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.IDevice.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.IDevice.html",
+          "hash": "ba1u3H5lHjnsJ2v/cncpdw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.IGenericDevice.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.IGenericDevice.html",
+          "hash": "1MH1fN4OrAKAYl4/ztWZ3g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.IHeadset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.IHeadset.html",
+          "hash": "Jn9VFzNq2Wc93ZUhbS2P/g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.IKeyboard.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.IKeyboard.html",
+          "hash": "EUG63BieqImtO8ygF9/WvA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.IKeypad.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.IKeypad.html",
+          "hash": "8jRl9mKSCrJcTj/1P15Juw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.IMouse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.IMouse.html",
+          "hash": "O65Vb8VTwbEkiz6gqNIPlg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.IMousepad.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.IMousepad.html",
+          "hash": "GrNJvCt0LHRuxv+L0+enIQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Implementations.Chroma.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Implementations.Chroma.html",
+          "hash": "0fJelzQ4YWbxDEZKph8+Dg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Implementations.ChromaLinkImplementation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Implementations.ChromaLinkImplementation.html",
+          "hash": "LeI3B8XlsOlwk9ucexZTrw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Implementations.Device.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Implementations.Device.html",
+          "hash": "PDDRkMuyAK+4T/8gDfQmKg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Implementations.GenericDevice.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Implementations.GenericDevice.html",
+          "hash": "XBz3vV3BuNd0VNwXCykdIA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Implementations.HeadsetImplementation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Implementations.HeadsetImplementation.html",
+          "hash": "7hBjRhUiF+IQaPusVA1VDw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Implementations.KeyboardImplementation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Implementations.KeyboardImplementation.html",
+          "hash": "VndpTG98tXxievVIVFR2OQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Implementations.KeypadImplementation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Implementations.KeypadImplementation.html",
+          "hash": "wyzxULaY7jmfMATOvpH3Gg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Implementations.MouseImplementation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Implementations.MouseImplementation.html",
+          "hash": "EalAQzCLnlT/ZeDM6TffyA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Implementations.MousepadImplementation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Implementations.MousepadImplementation.html",
+          "hash": "UylA0V+awhqPXL9grN+BrA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Implementations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Implementations.html",
+          "hash": "HicuyFJgjOq4UlZbU0jJcQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Native.NativeCallException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Native.NativeCallException.html",
+          "hash": "goNftmCJGA24KUV7WKrzsA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Native.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Native.html",
+          "hash": "qhCYNHvMgXZ5tEft07+riA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Result.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Result.html",
+          "hash": "0jNZxlGXOvX43keX8yNJww=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.SdkVersion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.SdkVersion.html",
+          "hash": "F+hh5cPiwy42Tc+8paUqYA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.UnsupportedDeviceException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.UnsupportedDeviceException.html",
+          "hash": "lZ7ZtpSR/tIgyAD8ce4UjQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.html",
+          "hash": "5fTVGVrrvIjk31wZkLtkFw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "2peGdjAs1TwDR4+af6Mv9w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "GbQBLA8ve+GWEnW4pWFu0w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "cTHqZOD9dxzW/7RQPPYdMQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "xVlQaX7Tk85omoiWv3O+Ag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "+y5pRfWbzhU9Lqm2A8yU4Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "ob7LqWp4kTNLz+9W4omdTw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build"
+      },
+      "processors": {
+        "RestApiDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor RestApiDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build"
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build"
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing"
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
