@@ -199,3 +199,6 @@ GTAGS
 
 # Ignore artifacts
 /artifacts
+
+# Ignore gh-pages folder
+/gh-pages
