@@ -4,7 +4,7 @@ set -euf -o pipefail
 
 target=devdocs
 
-if [ $# -e 1 ] && [ $1 == 'release' ];
+if [ $# -eq 1 ] && [ "$1" == 'release' ];
 then
     echo 'Deploying docs in RELEASE mode'
     target=docs
@@ -24,6 +24,7 @@ cp -r docs/_site gh-pages/${target}
 gitdata="$(git log -n 1 --format 'commit %h - %s')"
 echo "Git data: ${gitdata}"
 
+(
 cd gh-pages
 git add ${target}
 git commit -m <<EOF
@@ -35,6 +36,6 @@ Target: ${target}
 EOF
 
 git push origin gh-pages
+)
 
-cd ..
 rm -rf gh-pages
