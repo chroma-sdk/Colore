@@ -5,7 +5,7 @@
         {
           "cwd": "..",
           "files": [
-            "src/Corale.Colore/Corale.Colore.csproj"
+            "src/Corale.Colore/bin/Release/netstandard1.3/Corale.Colore.dll"
           ],
           "exclude": [
             "**/obj/**",
