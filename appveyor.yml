@@ -14,6 +14,9 @@ environment:
   access_token:
     secure: ZWDltUxdxnkQ9jf+HC+g7Hxm4Nke7H7AtMv4NWu5Uf+ZP4DV77Vc3C2B87moIUK0
 
+cache:
+  - tools
+
 init:
   - git config --global user.email "deploy@appveyor.com"
   - git config --global user.name "AppVeyor CI"
