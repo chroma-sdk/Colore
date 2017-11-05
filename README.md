@@ -1,10 +1,18 @@
-![Colore Logo][colorelogo]
+# ![Colore][colorelogo]
 
-[![Build status][buildbadge]][buildstatus]
-[![Test status][testbadge]][teststatus]
 [![MIT License][licensebadge]][license]
 [![Latest GitHub release][ghreleasebadge]][ghrelease]
 [![NuGet version][ngverbadge]][ng]
+
+**[Master][master]:**
+[![Build status][appveyor-master-badge]][appveyor-master-status]
+[![TravisCI Status][travis-master-badge]][travis-master-status]
+[![Test status][test-master-badge]][test-master-status]
+
+**[Develop][develop]:**
+[![Build status][appveyor-develop-badge]][appveyor-develop-status]
+[![TravisCI Status][travis-develop-badge]][travis-develop-status]
+[![Test status][test-develop-badge]][test-develop-status]
 
 A powerful and elegant C# library for Razer Chroma's SDK
 
@@ -25,64 +33,88 @@ Contributors are very welcome! If you got code fixes, please [submit a pull requ
 
 If you want to join the development team, please contact [Sharparam][sharp] on GitHub.
 
-All authors and contributors are listed in the **AUTHORS** file.
+All authors and contributors are listed in the [`AUTHORS`](AUTHORS) file.
 
-Please read the [CONTRIBUTING.md](CONTRIBUTING.md) file before making a pull request.
+Please read the [`CONTRIBUTING.md`](CONTRIBUTING.md) file before making a pull request.
 
 License
 -------
 
 Copyright &copy; 2015-2017 by [Adam Hellberg][sharp] and [Brandon Scott][bs].
 
-This project is licensed under the MIT license, please see the file **LICENSE** for more information.
+This project is licensed under the MIT license, please see the file [`LICENSE`](LICENSE) for more information.
 
 Razer is a trademark and/or a registered trademark of Razer USA Ltd.  
 All other trademarks are property of their respective owners.
 
+Installing
+----------
+
+Using Colore in your project is simple, all you have to do is install it with NuGet!
+
+```powershell
+Install-Package Colore
+```
+
+Or using the .NET CLI tools:
+
+```powershell
+dotnet add package Colore
+```
+
+You can also search for it in Visual Studio by right clicking your project and choosing "Manage NuGet Packages..." and install it the GUI way.
+
+### Extensions
+
+The [WPF][colore-wpf] and [WinForms][colore-winforms] extension packages for Colore are not yet available for the new Colore version, but will be on NuGet soon, so stay tuned!
+
+Using
+-----
+
+Obtain a reference to an `IChroma` instance by calling `Corale.Colore.ColoreProvider.CreateNative()`.
+
+This instance initializes the Chroma SDK so it is important you **save this reference** for the lifetime of your application!
+If you need to dispose of it and obtain a new one later, be sure to call the uninitialize method first!
+
+Currently there is only support for binding to the [native Chroma SDK][chroma-native].
+Support for the [REST API][chroma-rest] is planned and will be implemented for the 6.0 release.
+
+For a more in-depth guide on how to get started, check out [our wiki][getting-started].
+
 Dependencies
 ------------
 
-Colore depends on the Razer Chroma SDK (RzChromaSDK64.dll or RzChromaSDK.dll).
+Colore depends on the Razer Chroma SDK (`RzChromaSDK64.dll` or `RzChromaSDK.dll`).
 
-The Razer Chroma SDK is provided by Razer and [can be obtained from their website][rzdev].
+The Razer Chroma SDK is provided by Razer and installed together with the [Synapse application][synapse].
+More information can be read [on their website][rzdev].
 
 Other dependencies are installed via NuGet and listed in each project file.
 
 Building
 --------
 
-It's important to note that the platform under which this project is built plays a huge role on the usability of the library.
+Colore supports building for multiple target frameworks.
+At the moment, these are .NET Standard 1.3 and .NET Framework 4.5.1.
+When building the project, DLLs for both frameworks will be generated in the output folders, under the folder names `netstandard1.3` and `net451`.
+Use the ones fitting for your application.
 
-When compiling with the x86 or x64 platform set in build configuration, Colore will **only work on the respective system platform**
-(32-bit if compiled using x86, and 64-bit if compiled using x64).
+The below examples compiles Colore in Release mode.
 
-The native methods are imported using `DllImport` when Colore is compiled in x86 or x64, which is why the setting matters for deployment,
-as this cannot be changed at runtime.
-
-However, if compiling with the "Any CPU" configuration, Colore will dynamically load functions relevant for the current executing platform,
-making it run on both 32- and 64-bit systems without any work having to be done by the developer.
-
-For non-performance critical applications, the "Any CPU" mode should be fine (this is also what the NuGet package is compiled against).
-
-For applications that require peak performance, we recommend shipping separate 32- and 64-bit builds of your application, using the relevant build configurations in Colore.
-
-The below examples compiles Colore in Release mode for the x86 (32-bit), x64 (64-bit), and AnyCPU (MSIL) platforms.
-
+```powershell
+.\build.ps1 -Configuration Release
 ```
-.\build.ps1 -Configuration Release -Platform x86
-.\build.ps1 -Configuration Release -Platform x64
-.\build.ps1 -Configuration Release -Platform AnyCPU
+
+You can also use the "CI" build target to generate the same artifacts made available for each release of Colore.
+
+```powershell
+.\build.ps1 -Configuration Release -Target CI
 ```
+
+You will find the resulting artifact files under the `artifacts` folder in the root of the repository.
 
 Note that the above commands are executed with [PowerShell][ps]. If you are building on a Linux system or macOS,
-use the `build.sh` script in place of `build.ps1`.
-
-Make sure that your projects using Colore are also compiled against a matching platform.
-
-Razer's SDK installer **will only install the library relevant for your platform**.
-
-This means that your apps will need to be compiled twice, once for x86 platforms, and once for x64, unless you are using "Any CPU".
-They must both be provided when you distribute your application, depending on what platform the user has.
+use the `build.sh` script in place of `build.ps1` (you may have to make it executable first with `chmod +x build.sh`).
 
 Razer Chroma Workshop
 ---------------------
@@ -115,7 +147,8 @@ There may be others we are unaware of, so please let us know if there are any ot
 [sharp]: https://github.com/Sharparam
 [contrib]: ../../wiki/Contributing
 [bs]: https://github.com/brandonscott
-[rzdev]: http://developer.razerzone.com/chroma
+[master]: https://github.com/CoraleStudios/Colore/tree/master
+[develop]: https://github.com/CoraleStudios/Colore/tree/develop
 
 [license]: http://opensource.org/licenses/MIT
 [licensebadge]: https://img.shields.io/badge/license-MIT-blue.svg
@@ -124,15 +157,31 @@ There may be others we are unaware of, so please let us know if there are any ot
 [ng]: https://www.nuget.org/packages/Colore
 [ngverbadge]: https://img.shields.io/nuget/v/Colore.svg
 
-[buildstatus]: https://ci.appveyor.com/project/Corale/colore
-[buildbadge]: https://ci.appveyor.com/api/projects/status/st3y6fo0jqvhd8cg?svg=true
-[teststatus]: https://ci.appveyor.com/project/Corale/colore/build/tests
-[testbadge]: https://img.shields.io/appveyor/tests/corale/Colore.svg
+[appveyor-develop-status]: https://ci.appveyor.com/project/Corale/colore/branch/develop
+[appveyor-develop-badge]: https://ci.appveyor.com/api/projects/status/st3y6fo0jqvhd8cg/branch/develop?svg=true
+[travis-develop-status]: https://travis-ci.org/CoraleStudios/Colore
+[travis-develop-badge]: https://travis-ci.org/CoraleStudios/Colore.svg?branch=develop
+[test-develop-status]: https://ci.appveyor.com/project/Corale/colore/branch/develop/tests
+[test-develop-badge]: https://img.shields.io/appveyor/tests/corale/Colore/develop.svg
+
+[appveyor-master-status]: https://ci.appveyor.com/project/Corale/colore/branch/master
+[appveyor-master-badge]: https://ci.appveyor.com/api/projects/status/st3y6fo0jqvhd8cg/branch/master?svg=true
+[travis-master-status]: https://travis-ci.org/CoraleStudios/Colore
+[travis-master-badge]: https://travis-ci.org/CoraleStudios/Colore.svg?branch=master
+[test-master-status]: https://ci.appveyor.com/project/Corale/colore/branch/master/tests
+[test-master-badge]: https://img.shields.io/appveyor/tests/corale/Colore/master.svg
 
 [gitter]: https://gitter.im/CoraleStudios/Colore?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
 [gitterbadge]: https://badges.gitter.im/Join%20Chat.svg
 
 [colorelogo]: https://files.sharparam.com/2017/10/31/colore-logo.png
+[colore-wpf]: https://github.com/CoraleStudios/Colore.Wpf
+[colore-winforms]: https://github.com/CoraleStudios/Colore.WinForms
+
+[rzdev]: http://developer.razerzone.com/chroma
+[synapse]: https://www.razerzone.com/synapse
+[chroma-native]: https://assets.razerzone.com/dev_portal/C%2B%2B/html/index.html
+[chroma-rest]: https://assets.razerzone.com/dev_portal/REST/html/index.html
 
 [ps]: https://docs.microsoft.com/en-us/powershell/
 
