@@ -19,7 +19,7 @@ init:
   - git config --global user.name "AppVeyor CI"
 
 install:
-  - choco install docfx -d -y
+  - choco install docfx -y
 
 build_script:
 - ps: .\build.ps1 -Target CI
