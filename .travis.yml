@@ -12,6 +12,8 @@ env:
   global:
     - DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true
     - DOTNET_CLI_TELEMETRY_OPTOUT=true
+    - DOCFX_SOURCE_BRANCH_NAME=$TRAVIS_BRANCH
+    - secure: kReI3QWEt5AqP92v/z2ZLO8bFOSgAXcGpsIFUHzFGpetHw8poBFW2GK+ZXbxGXddRfDVsFxptBbAxMihuhX6ljHyOcxkqAsSvs4C+s+XqUtR7oCi4ye2nXhSL30mJTk/o6KZTTL7/LomR9FONf7/3ws26uf/fcstpvNTbiiuV6Y=
 
 dotnet: 2.0.0
 mono: latest
@@ -24,23 +26,48 @@ addons:
       - libssl-dev
       - libunwind8
       - zlib1g
+      - unzip
 
 before_install:
-  - git fetch --unshallow
+  - openssl aes-256-cbc -K $encrypted_4aec57e632b7_key -iv $encrypted_4aec57e632b7_iv -in travis/.deploykey.enc -out travis/.deploykey -d
+  - chmod go-rwx travis/.deploykey
+  - eval `ssh-agent -s`
+  - ssh-add travis/.deploykey
+  - git config user.name "Travis CI"
+  - git config user.email "noreply@travis-ci.org"
+  - chmod +x build.sh
+  - chmod +x travis/*.sh
+  - "./travis/fix-branches.sh"
 
 before_script:
+  - wget https://github.com/dotnet/docfx/releases/download/v2.26.4/docfx.zip
+  - unzip docfx.zip -d docfx
+  - export PATH=$PATH:$PWD/docfx/
   - chmod +x build.sh
 
 script:
-  - "./build.sh"
+  - "./build.sh -t CI"
+
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: travis/deploy-docs.sh
+    on:
+      branch: develop
+  - provider: script
+    skip_cleanup: true
+    script: travis/deploy-docs.sh release
+    on:
+      tags: true
 
 cache:
   directories:
     - tools
+    - $HOME/.nuget/packages
 
 notifications:
   slack:
     rooms:
-      - secure: "R4MPX1npR0bqYK+4Ce/TF4ECjV0UETKEO/3/xZ2ZGibdHKU0IfPjD81uY//qaTldD0HgOu0CTEseocnjEYeit01QdUDjjdrL+/F4t0SNabBomjt+V5COUXXePHqov9lB89yBn+6GfbpkPjS89dW8bGv6SqfTZr3G1hNBMUhl96g="
+      - secure: R4MPX1npR0bqYK+4Ce/TF4ECjV0UETKEO/3/xZ2ZGibdHKU0IfPjD81uY//qaTldD0HgOu0CTEseocnjEYeit01QdUDjjdrL+/F4t0SNabBomjt+V5COUXXePHqov9lB89yBn+6GfbpkPjS89dW8bGv6SqfTZr3G1hNBMUhl96g=
     on_success: change
     on_failure: always

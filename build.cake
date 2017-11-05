@@ -1,3 +1,4 @@
+#addin nuget:?package=Cake.DocFx
 #tool "nuget:?package=GitVersion.CommandLine"
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -44,6 +45,13 @@ GitVersion version = null;
 
 Setup(ctx =>
 {
+    Information("PATH is {0}", EnvironmentVariable("PATH"));
+    var docFxBranch = EnvironmentVariable("DOCFX_SOURCE_BRANCH_NAME");
+    if (docFxBranch != null)
+        Information("DocFx branch is {0}", docFxBranch);
+    if (isTravis)
+        Information("Travis branch is {0}", EnvironmentVariable("TRAVIS_BRANCH"));
+
     Information("Reading framework settings");
 
     var xmlValue = XmlPeek(mainProject, "/Project/PropertyGroup/TargetFrameworks");
@@ -234,10 +242,30 @@ Task("Pack")
         MoveFiles(GetFiles("./src/**/*.nupkg"), "./artifacts");
     });
 
+Task("Docs")
+    .IsDependentOn("Build")
+    .Does(() =>
+    {
+        DocFxMetadata("./docs/docfx.json");
+        if (isTravis)
+        {
+            DocFxBuild("./docs/docfx.json", new DocFxBuildSettings
+            {
+                ToolPath = "./docfx/docfx.exe"
+            });
+        }
+        else
+        {
+            DocFxBuild("./docs/docfx.json");
+        }
+        Zip("./docs/_site", $"./artifacts/colore_{version.SemVer}_docs.zip");
+    });
+
 Task("CI")
     .IsDependentOn("Dist")
     .IsDependentOn("Publish")
-    .IsDependentOn("Pack");
+    .IsDependentOn("Pack")
+    .IsDependentOn("Docs");
 
 Task("Default")
     .IsDependentOn("Test");

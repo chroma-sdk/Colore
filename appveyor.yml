@@ -11,6 +11,18 @@ nuget:
 environment:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
+  access_token:
+    secure: ZWDltUxdxnkQ9jf+HC+g7Hxm4Nke7H7AtMv4NWu5Uf+ZP4DV77Vc3C2B87moIUK0
+
+cache:
+  - tools
+
+init:
+  - git config --global user.email "deploy@appveyor.com"
+  - git config --global user.name "AppVeyor CI"
+
+install:
+  - choco install docfx -y
 
 build_script:
 - ps: .\build.ps1 -Target CI
