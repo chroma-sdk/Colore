@@ -49,6 +49,8 @@ Setup(ctx =>
     var docFxBranch = EnvironmentVariable("DOCFX_SOURCE_BRANCH_NAME");
     if (docFxBranch != null)
         Information("DocFx branch is {0}", docFxBranch);
+    if (isTravis)
+        Information("Travis branch is {0}", EnvironmentVariable("TRAVIS_BRANCH"));
 
     Information("Reading framework settings");
 

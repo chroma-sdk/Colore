@@ -29,6 +29,8 @@ addons:
 
 before_install:
   - git fetch origin +refs/heads/*:refs/remotes/origin/* --unshallow
+  - git remote set-branches --add origin master
+  - git remote set-branches --add origin develop
 
 before_script:
   - wget https://github.com/dotnet/docfx/releases/download/v2.26.4/docfx.zip
