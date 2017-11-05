@@ -32,7 +32,7 @@ before_script:
   - chmod +x build.sh
 
 script:
-  - "./build.sh"
+  - "./build.sh -Target CI"
 
 cache:
   directories:
