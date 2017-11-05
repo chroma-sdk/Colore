@@ -21,7 +21,7 @@ rm -rf gh-pages/${target}
 
 echo 'Copying new documentation'
 cp -r docs/_site gh-pages/${target}
-gitdata="$(git log -n 1 --format 'commit %h - %s')"
+gitdata="$(git log -n 1 --format='commit %h - %s')"
 echo "Git data: ${gitdata}"
 
 (
