@@ -12,6 +12,7 @@ env:
   global:
     - DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true
     - DOTNET_CLI_TELEMETRY_OPTOUT=true
+    - DOCFX_SOURCE_BRANCH_NAME=$TRAVIS_BRANCH
 
 dotnet: 2.0.0
 mono: latest
@@ -24,15 +25,19 @@ addons:
       - libssl-dev
       - libunwind8
       - zlib1g
+      - unzip
 
 before_install:
   - git fetch --unshallow
 
 before_script:
+  - wget https://github.com/dotnet/docfx/releases/download/v2.26.4/docfx.zip
+  - unzip docfx.zip -d docfx
+  - export PATH=$PATH:$PWD/docfx
   - chmod +x build.sh
 
 script:
-  - "./build.sh -Target CI"
+  - "./build.sh -t CI"
 
 cache:
   directories:

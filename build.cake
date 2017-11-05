@@ -239,7 +239,16 @@ Task("Docs")
     .IsDependentOn("Build")
     .Does(() =>
     {
-        DocFxBuild("./docs/docfx.json");
+        if (isTravis)
+        {
+            DocFxBuild("./docs/docfx.json", new DocFxBuildSettings
+            {
+                ToolPath = "./docfx/docfx.exe"
+            });
+        }
+        else
+            DocFxBuild("./docs/docfx.json");
+
         Zip("./docs/_site", $"./artifacts/colore_{version.SemVer}_docs.zip");
     });
 
