@@ -55,11 +55,13 @@ deploy:
     script: travis/deploy-docs.sh
     on:
       branch: develop
+      condition: $TRAVIS_OS_NAME = linux
   - provider: script
     skip_cleanup: true
     script: travis/deploy-docs.sh release
     on:
       tags: true
+      condition: $TRAVIS_OS_NAME = linux
 
 cache:
   directories:
