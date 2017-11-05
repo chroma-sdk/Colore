@@ -28,7 +28,7 @@ addons:
       - unzip
 
 before_install:
-  - git fetch --unshallow
+  - git fetch origin +refs/heads/*:refs/remotes/origin/* --unshallow
 
 before_script:
   - wget https://github.com/dotnet/docfx/releases/download/v2.26.4/docfx.zip
