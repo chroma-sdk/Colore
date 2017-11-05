@@ -30,6 +30,7 @@ var buildNumber = HasArgument("BuildNumber")
 var isAppVeyor = AppVeyor.IsRunningOnAppVeyor;
 var isTravis = TravisCI.IsRunningOnTravisCI;
 var isCi = isAppVeyor || isTravis;
+var isWindows = IsRunningOnWindows();
 
 ///////////////////////////////////////////////////////////////////////////////
 // SETUP / TEARDOWN
@@ -61,11 +62,16 @@ Setup(ctx =>
 
     Information("Frameworks: {0}", string.Join(", ", frameworks));
 
-    version = GitVersion(new GitVersionSettings
+    if (isCi)
     {
-        RepositoryPath = ".",
-        OutputType = isCi ? GitVersionOutput.BuildServer : GitVersionOutput.Json
-    });
+        GitVersion(new GitVersionSettings
+        {
+            RepositoryPath = ".",
+            OutputType = GitVersionOutput.BuildServer
+        });
+    }
+
+    version = GitVersion(new GitVersionSettings { RepositoryPath = "." });
 
     Information("Version: {0} on {1}", version.FullSemVer, version.CommitDate);
     Information("Commit hash: {0}", version.Sha);
