@@ -3,13 +3,12 @@
     {
       "src": [
         {
-          "cwd": "..",
+          "cwd": "../src",
           "files": [
-            "src/Corale.Colore/bin/Release/netstandard1.3/Corale.Colore.dll"
+            "Corale.Colore/bin/Release/netstandard1.3/Corale.Colore.dll"
           ],
           "exclude": [
             "**/obj/**",
-            "**/bin/**",
             "_site/**"
           ]
         }
