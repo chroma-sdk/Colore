@@ -84,6 +84,23 @@ Teardown(ctx =>
 // HELPERS
 ///////////////////////////////////////////////////////////////////////////////
 
+void FixNUnitLoggerPaths()
+{
+    Information("Fixing NUnitXML.TestLogger paths");
+    var files = GetFiles("/home/travis/.nuget/packages/nunitxml.testlogger/*/build/_common/*.dll");
+
+    foreach (var file in files)
+    {
+        if (file.GetFilenameWithoutExtension().ToString().Contains("Nunit"))
+        {
+            var full = file.ToString();
+            var fix = full.Replace("Nunit", "NUnit");
+            Information("{0} --> {1}", full, fix);
+            MoveFile(full, fix);
+        }
+    }
+}
+
 void Build(string project, string framework = null)
 {
     var settings = new DotNetCoreBuildSettings
@@ -157,6 +174,9 @@ Task("Test")
             settings.ArgumentCustomization = args => args
                 .Append("--logger:nunit");
         }
+
+        if (isTravis)
+            FixNUnitLoggerPaths();
 
         DotNetCoreTest(testProject, settings);
 
