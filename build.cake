@@ -36,11 +36,8 @@ var isWindows = IsRunningOnWindows();
 // SETUP / TEARDOWN
 ///////////////////////////////////////////////////////////////////////////////
 
-var projects = new[] {
-    "./src/Corale.Colore/Corale.Colore.csproj",
-    "./src/Corale.Colore.Tests/Corale.Colore.Tests.csproj"
-};
-var mainProject = projects[0];
+var mainProject = "./src/Corale.Colore/Corale.Colore.csproj";
+var testProject = "./src/Corale.Colore.Tests/Corale.Colore.Tests.csproj";
 var frameworks = new List<string>();
 
 GitVersion version = null;
@@ -84,6 +81,26 @@ Teardown(ctx =>
 });
 
 ///////////////////////////////////////////////////////////////////////////////
+// HELPERS
+///////////////////////////////////////////////////////////////////////////////
+
+void Build(string project, string framework = null)
+{
+    var settings = new DotNetCoreBuildSettings
+    {
+        Configuration = configuration,
+        ArgumentCustomization = args => args
+            .Append($"/p:AssemblyVersion={version.AssemblySemVer}")
+            .Append($"/p:NuGetVersion={version.NuGetVersionV2}")
+    };
+
+    if (!string.IsNullOrEmpty(framework))
+        settings.Framework = framework;
+
+    DotNetCoreBuild(project, settings);
+}
+
+///////////////////////////////////////////////////////////////////////////////
 // TASKS
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -105,18 +122,19 @@ Task("Build")
     .IsDependentOn("Restore")
     .Does(() =>
     {
-        foreach (var project in projects)
+        if (isWindows)
         {
-            DotNetCoreBuild(
-                project,
-                new DotNetCoreBuildSettings
-                {
-                    Configuration = configuration,
-                    ArgumentCustomization = args => args
-                        .Append($"/p:AssemblyVersion={version.AssemblySemVer}")
-                        .Append($"/p:NuGetVersion={version.NuGetVersionV2}")
-                });
+            Build(mainProject);
         }
+        else
+        {
+            foreach (var framework in frameworks)
+            {
+                Build(mainProject, framework);
+            }
+        }
+
+        Build(testProject);
     });
 
 Task("Test")
@@ -140,9 +158,7 @@ Task("Test")
                 .Append("--logger:nunit");
         }
 
-        DotNetCoreTest(
-            "src/Corale.Colore.Tests/Corale.Colore.Tests.csproj",
-            settings);
+        DotNetCoreTest(testProject, settings);
 
         if (AppVeyor.IsRunningOnAppVeyor)
         {
