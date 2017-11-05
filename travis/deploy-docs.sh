@@ -27,13 +27,11 @@ echo "Git data: ${gitdata}"
 (
 cd gh-pages
 git add ${target}
-git commit -m <<EOF
-[AUTOMATED] Documentation update
+git commit -m "[AUTOMATED] Documentation update
 
 Timestamp: $(date "+%Y-%m-%d %H:%M:%S")
 From ${gitdata}
-Target: ${target}
-EOF
+Target: ${target}"
 
 git push origin gh-pages
 )
