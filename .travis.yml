@@ -40,6 +40,6 @@ cache:
 
 notifications:
   slack:
-    secure: S6qmUFLLPAUvDtTCHyVRwMXZFIXIJCApBFNQw/0tAU7bqeqsiNL5+ga4Or1KlOT9HXy3HxprR1sN53fnfW9qEsdtWzCwMhYScG1ljjIs2s7jEjWb14V9X4ufvq2/KwFN2F6QVyEbzq74wJc7HzwpsNRO5pPlRaSxabB7JDdk/Qw=
+    secure: "R4MPX1npR0bqYK+4Ce/TF4ECjV0UETKEO/3/xZ2ZGibdHKU0IfPjD81uY//qaTldD0HgOu0CTEseocnjEYeit01QdUDjjdrL+/F4t0SNabBomjt+V5COUXXePHqov9lB89yBn+6GfbpkPjS89dW8bGv6SqfTZr3G1hNBMUhl96g="
     on_success: change
     on_failure: always
