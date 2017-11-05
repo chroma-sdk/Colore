@@ -33,7 +33,7 @@ before_install:
 before_script:
   - wget https://github.com/dotnet/docfx/releases/download/v2.26.4/docfx.zip
   - unzip docfx.zip -d docfx
-  - export PATH=$PATH:$PWD/docfx
+  - export PATH=$PATH:$PWD/docfx/
   - chmod +x build.sh
 
 script:

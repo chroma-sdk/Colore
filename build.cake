@@ -45,6 +45,11 @@ GitVersion version = null;
 
 Setup(ctx =>
 {
+    Information("PATH is {0}", EnvironmentVariable("PATH"));
+    var docFxBranch = EnvironmentVariable("DOCFX_SOURCE_BRANCH_NAME");
+    if (docFxBranch != null)
+        Information("DocFx branch is {0}", docFxBranch);
+
     Information("Reading framework settings");
 
     var xmlValue = XmlPeek(mainProject, "/Project/PropertyGroup/TargetFrameworks");
