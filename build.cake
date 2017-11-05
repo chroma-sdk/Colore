@@ -54,7 +54,10 @@ Setup(ctx =>
         xmlValue = XmlPeek(mainProject, "/Project/PropertyGroup/TargetFramework");
     }
 
-    frameworks.AddRange(xmlValue.Split(';'));
+    if (isWindows)
+        frameworks.AddRange(xmlValue.Split(';'));
+    else
+        frameworks.AddRange(xmlValue.Split(';').Where(v => !v.StartsWith("net4")));
 
     Information("Frameworks: {0}", string.Join(", ", frameworks));
 
