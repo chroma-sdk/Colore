@@ -3,8 +3,9 @@
     {
       "src": [
         {
+          "cwd": "..",
           "files": [
-            "../src/Corale.Colore/Corale.Colore.csproj"
+            "src/Corale.Colore/Corale.Colore.csproj"
           ],
           "exclude": [
             "**/obj/**",

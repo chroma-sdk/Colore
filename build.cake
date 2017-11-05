@@ -246,6 +246,7 @@ Task("Docs")
     .IsDependentOn("Build")
     .Does(() =>
     {
+        DocFxMetadata("./docs/docfx.json");
         if (isTravis)
         {
             DocFxBuild("./docs/docfx.json", new DocFxBuildSettings
@@ -254,8 +255,9 @@ Task("Docs")
             });
         }
         else
+        {
             DocFxBuild("./docs/docfx.json");
-
+        }
         Zip("./docs/_site", $"./artifacts/colore_{version.SemVer}_docs.zip");
     });
 
