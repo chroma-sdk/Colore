@@ -28,6 +28,8 @@ addons:
       - unzip
 
 before_install:
+  - chmod +x build.sh
+  - chmod +x travis/fix-branches.sh
   - ./travis/fix-branches.sh
 
 before_script:
