@@ -7,7 +7,7 @@ In order to make the code neat, readable, and organized properly, there are some
 Always remember, if you are unsure about something: check the existing source to get an idea of how things should look!
 
 If you have more specific questions about the guidelines or other things about the project, feel free to contact anyone
-listed under `PRIMARY AUTHORS` in the [AUTHORS file][authors] or [create an issue][] in the [main repo][]. You can also
+listed under `PRIMARY AUTHORS` in the [`AUTHORS` file][authors] or [create an issue][] in the [main repo][]. You can also
 [join the Gitter chat][gitter] and ask your questions.
 
 ## Cloning the repo
@@ -23,45 +23,34 @@ git clone git@github.com:<your-username>/Colore.git
  * Design your code to be event-driven when possible, it makes it easier for applications to implement the library.
  * Follow common C# practices for cleaner looking code (properties instead of `Get<Name>` methods, for example).
 
-## Development requirements
+## Development environment
 
-*2015-12-22:* With Colore now being written using C# 6.0 features, you will need to use an edition of
-Visual Studio 2015 to develop on Colore.
+*2017-11-05:* With Colore now being written using C# 7.0 and .NET Core features, you will need to use an edition of [Visual Studio 2017][vs-dl] to develop on Colore.
 
-## StyleCop
+Installing the [latest .NET Core SDK][core-dl] can also help as VS2017 currently does not download the latest version in its installer.
+
+## Code analyzers
 
 *Updated 2015-12-22: Colore is now on C# 6.0 which meant a move from the old StyleCop package to the new
 StyleCop.Analyzers package which implements StyleCop rules as Roslyn analyzers.*
 
-Colore references the [StyleCop.Analyzers][stylecopanalyzers] package,
+Colore references the [StyleCop.Analyzers][stylecopanalyzers] and various other code analyzer packages,
 which will analyze the code and point out any errors.
 
-A global ruleset file `Corale.Colore.ruleset` provided with Colore defines the rules we use for Colore and will be
-used by analyzing tools automatically.
+A global ruleset file `Corale.Colore.ruleset` provided with Colore defines the rules we use for Colore and will be used by analyzing tools automatically.
 
-If there are any conflicts between this guide and what StyleCop tells you, **always follow what StyleCop says**.
+If there are any conflicts between this guide and what analyzers tell you, **generally follow what the analyzer says**.
 This guide may not always be up to date with the latest changes to what rules we are using. If you feel unsure,
 feel free to create an issue or contact the primary developers or post a question in the [Gitter][gitter] chat room.
 
-### StyleCop exception cases
-
-If you feel unsure about whether a certain StyleCop rule should *really* be followed,
-feel free to [create an issue][] with your question.
-
-You may also submit a pull request with your changes and we will notify you if something looks wrong.
+Some analyzers can be very strict, or in some cases wrong about pieces of code.
+If you feel like there's a warning that should be suppressed for a section of code or even globally, feel free to do so but **always mention this and your reasoning for doing so in your PR**. We will discuss the suppression further in the PR.
 
 ## ReSharper
 
 ReSharper is used by the primary developers of Colore and as such, we provide a setting file with Colore that
 configures ReSharper with the settings we recommend using (such as naming conventions). If you use ReSharper,
 make sure that the *team-shared* settings are being used.
-
-### StyleCop plugin in ReSharper
-
-Currently (2015-12-22) there seem to be issues with the StyleCop plugin in ReSharper (regardless of which version
-is used) which makes ReSharper perform StyleCop analysis according to the default ruleset even if the
-`StyleCop.Analyzers` package is installed. We therefore recommend *disabling the StyleCop plugin in ReSharper*
-if it isn't already.
 
 ## Mandatory file header
 
@@ -74,7 +63,7 @@ quick fix from within the editor.
 ```
 // ---------------------------------------------------------------------------------------
 // <copyright file="{NAME OF FILE WITH EXTENSION}" company="Corale">
-//     Copyright © 2015 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -154,7 +143,7 @@ Try not to catch the base `Exception` class, always catch specific exceptions th
 When throwing exceptions, throw a type that is relevant to the error that occurred, don't throw a base `Exception`
 if an argument is `null`, throw the `ArgumentNullException`.
 
-If creating custom exception types, append `Exception` to the name and inherit from the relevant base exception class,
+If creating custom exception types, append `Exception` to the name and inherit from the relevant base `ColoreException` class or one of the other exception classes in Colore,
 as per usual C# guidelines. Try to keep exception names short but descriptive.
 
 ## Usage of the `var` keyword
@@ -180,10 +169,13 @@ var myArray = new SpecialSuperType[10];
 
 ## Calling native Chroma SDK functions
 
-**Never call native SDK functions directly**. If implementing new SDK functions, add a wrapper function for them in
-[NativeWrapper.cs][nativewrapper] first, then call them using that wrapper. Look at the existing code in the file for
-an idea of how they are written. The bare requirement for a wrapper function is that it must encapsulate and isolate
-the API call fully and handle the returned result value, throwing a `NativeCallException` if it failed.
+**Never call native SDK functions directly**.
+
+Always call SDK functions via the `IChromaApi` interface that is provided to all device classes as well as the main `Chroma` class.
+
+When implementing a new SDK function, add a fitting method in the `IChromaApi` interface and then implement the method in each SDK implementation wrapper (native and REST API).
+
+Remember to design the method on `IChromaApi` to be friendly in a C# context. The implementation will take care of making the calls to the underlying SDK, not the user of the API interface.
 
 ## Documenting your code
 
@@ -222,35 +214,34 @@ documentation that is easy (ok, most of the time anyway) to understand.
 ## Submitting a pull request
 
 Good, we didn't scare you off with all these requirements,
-and you are on your way to submitting your first pull request! (Hopefully).
+and you are on your way to submitting your first pull request!
 
-When making a pull request, if is often convenient to make a branch just for that request (so that you can continue
-working on your main development branch while your pull request is being reviewed). These branches are typically
-named `patch-<counter>` but can be anything you desire, like a descriptive name for what the PR is about. If you
-decide to name branches based on the change, make sure you keep them quite short.
+When making a pull request, if is often convenient to make a branch just for that request (so that you can continue working on your main development branch while your pull request is being reviewed).
+These branches are typically named `patch-<counter>` but can be anything you desire, like a descriptive name for what the PR is about.
+If you decide to name branches based on the change, make sure you keep them quite short.
 
-Another very positive thing for both you and us, the maintainers, is to avoid pull requests with a lot of commits that
-don't share anything in common. Imagine if you submit a pull request that implements a car and a bicycle. We decide
-that we like your car implementation, but not the bicycle one. But we can't choose, as you put them both in the
-same pull request!
+Another very positive thing for both you and us, the maintainers, is to avoid pull requests with a lot of commits that don't share anything in common.
+Imagine if you submit a pull request that implements a car and a pineapple.
+We decide that we like your car implementation, but that we're not quite ready for fruits yet.
+But we cannot choose, as you put them both in the same pull request!
 
 So always make sure that your pull request is handling **one type of feature or change**.
 
 Other things to keep in mind is to include details about what your feature or change is about in the pull request
 message. The more information the better! And make sure to give your pull request a relevant name, too.
 
+When you submit a pull request, there will be a handy template for you to read through so you don't forget any of the important parts!
+
 ### Pull request target branch
 
 When submitting your pull request, make sure you are targeting the [`develop`][develop] branch of the main repo.
 If you target the wrong branch we will close your pull request. Don't feel bad though, just re-create it with the
-correct target branch! (We have to close it as GitHub does not support changing the target
-branch on an existing pull request.)
+correct target branch! (We have to close it as GitHub does not support changing the target branch on an existing pull request.)
 
 #### Hotfixes
 
 Hotfixes are special, and are treated differently than other branches. A hotfix is branched from master and merged
-back into master and then to develop. If you ever write a hotfix, keep this in mind. **Hotfixes branch from master,
-*not develop*.**
+back into master and then to develop. If you ever write a hotfix, keep this in mind. **Hotfixes branch from master, *not develop*.**
 
 [AUTHORS]: AUTHORS
 [create an issue]: https://github.com/CoraleStudios/Colore/issues/new
@@ -259,4 +250,7 @@ back into master and then to develop. If you ever write a hotfix, keep this in m
 [nativewrapper]: Colore/Core/NativeWrapper.cs
 [develop]: https://github.com/CoraleStudios/Colore/tree/develop
 [gitter]: https://gitter.im/CoraleStudios/Colore?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
+
+[vs-dl]: https://www.visualstudio.com/downloads/
+[core-dl]: https://www.microsoft.com/net/download/windows
 [stylecopanalyzers]: https://github.com/DotNetAnalyzers/StyleCopAnalyzers
