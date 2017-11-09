@@ -12,9 +12,9 @@ If ($Platform -ne "Any CPU")
     Exit
 }
 
-$dir = "Corale.Colore.Tests\bin\$Configuration"
+$dir = "src\Corale.Colore.Tests\bin\$Configuration"
 $dll = "Corale.Colore.Tests.dll"
-$nunit = "packages\NUnit.ConsoleRunner.3.2.1\tools\nunit3-console.exe"
+$nunit = "src\packages\NUnit.ConsoleRunner.3.2.1\tools\nunit3-console.exe"
 $filter = "+[Corale.Colore*]* -[*Tests]* -[*]*Constants -[*]Corale.Colore.Native* -[*]*NativeMethods -[*]*NativeWrapper -[*]Corale.Colore.Annotations*"
 $targetArgs = "$dll"
 
@@ -40,6 +40,6 @@ If ($Env:GIT_BRANCH -eq "undefined")
     Exit
 }
 
-.\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe --% -register "-filter:%OPENCOVER_FILTER%" "-target:%NUNIT_EXEC%" "-targetargs:%TARGET_ARGS%" "-targetdir:%TARGET_DIR%" -output:coverage.xml
+.\src\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe --% -register "-filter:%OPENCOVER_FILTER%" "-target:%NUNIT_EXEC%" "-targetargs:%TARGET_ARGS%" "-targetdir:%TARGET_DIR%" -output:coverage.xml
 
-.\packages\coveralls.net.0.6.0\tools\csmacnz.Coveralls.exe --% --opencover -i coverage.xml --useRelativePaths --repoTokenVariable COVERALLS_REPO_TOKEN --jobId %CI_JOB_ID% --serviceName TeamCity --commitId "%GIT_HASH%" --commitBranch "%GIT_BRANCH%" --commitAuthor "%GIT_NAME%" --commitEmail "%GIT_EMAIL%" --commitMessage "%GIT_SUBJECT%"
+.\src\packages\coveralls.net.0.6.0\tools\csmacnz.Coveralls.exe --% --opencover -i coverage.xml --useRelativePaths --repoTokenVariable COVERALLS_REPO_TOKEN --jobId %CI_JOB_ID% --serviceName TeamCity --commitId "%GIT_HASH%" --commitBranch "%GIT_BRANCH%" --commitAuthor "%GIT_NAME%" --commitEmail "%GIT_EMAIL%" --commitMessage "%GIT_SUBJECT%"

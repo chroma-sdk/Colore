@@ -195,3 +195,7 @@ docs
 GPATH
 GRTAGS
 GTAGS
+
+# Ignore Cake files
+/tools/*
+!/tools/packages.config

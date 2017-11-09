@@ -9,16 +9,22 @@
 
 A powerful and elegant C# library for Razer Chroma's SDK
 
+Getting started
+---------------
+
+If you are a new developer and are looking for a helpful guide on how to get started, head on over to
+[the wiki page][getting-started] which describes getting Colore installed and running some example code.
+
 Contributing
 ------------
 
 [![Gitter][gitterbadge]][gitter]
 
-*For discussing, you can join the Gitter chat using the badge above. If you want to join the Slack chat, contact [Brandon Scott][bs] ([brandon@brandonscott.co.uk](mailto:brandon@brandonscott.co.uk)) or [Adam Hellberg][sharp] ([sharparam@sharparam.com](mailto:sharparam@sharparam.com)).*
+*For discussing, you can join the Gitter chat using the badge above. If you want to join the Slack chat, contact [Adam Hellberg][sharp] ([sharparam@sharparam.com](mailto:sharparam@sharparam.com)).*
 
 Contributors are very welcome! If you got code fixes, please [submit a pull request][newpull] here on GitHub.
 
-If you want to join the development team, please contact [Sharparam][sharp] or [Brandon][bs] on GitHub.
+If you want to join the development team, please contact [Sharparam][sharp] on GitHub.
 
 All authors and contributors are listed in the **AUTHORS** file.
 
@@ -40,6 +46,8 @@ Dependencies
 Colore depends on the Razer Chroma SDK (RzChromaSDK64.dll or RzChromaSDK.dll).
 
 The Razer Chroma SDK is provided by Razer and [can be obtained from their website][rzdev].
+
+Other dependencies are installed via NuGet and listed in each project file.
 
 Building
 --------
@@ -74,15 +82,33 @@ Razer's SDK installer **will only install the library relevant for your platform
 This means that your apps will need to be compiled twice, once for x86 platforms, and once for x64, unless you are using "Any CPU".
 They must both be provided when you distribute your application, depending on what platform the user has.
 
-Projects
---------
+Razer Chroma Workshop
+---------------------
 
-Current projects utilizing this or modified versions of this library:
+Many of the games and apps featured on the [Razer Chroma Workshop][workshop] have used the Colore library.
 
-*None right now!*
+The official [Razer Chroma Workshop][workshop] is your one-stop-shop to get the most out of your Chroma devices. Whether it's smart lighting based on in-game events, standalone apps or stunning profiles created by fans around the world, the Chroma Workshop is where you can explore, download and even share your own creations.
 
-(If you want your project listed, just contact [Sharparam][sharp] or [Brandon][bs])
+Games using Colore
+------------------
 
+The following games (powered by Unity) are using Colore:
+
+[![DubWars](http://cdn.akamai.steamstatic.com/steam/apps/290000/capsule_184x69.jpg)](http://store.steampowered.com/app/290000/)
+[![Masquerada: Songs and Shadows](http://cdn.akamai.steamstatic.com/steam/apps/459090/capsule_184x69.jpg)](http://store.steampowered.com/app/459090/)
+[![Nevermind](http://cdn.akamai.steamstatic.com/steam/apps/342260/capsule_184x69.jpg)](http://store.steampowered.com/app/342260/)
+[![Please, Don't Touch Anything 3D](http://cdn.akamai.steamstatic.com/steam/apps/529590/capsule_184x69.jpg)](http://store.steampowered.com/app/529590/)
+[![Starcrawlers](http://cdn.akamai.steamstatic.com/steam/apps/318970/capsule_184x69.jpg)](http://store.steampowered.com/app/318970/)
+[![The Little Acre](http://cdn.akamai.steamstatic.com/steam/apps/423590/capsule_184x69.jpg)](http://store.steampowered.com/app/423590/)
+
+Projects using Colore
+---------------------
+
+[Aurora](http://aurora.lastbullet.net/) - Unified lighting effects across multiple brands and various games. ([GitHub](https://github.com/antonpup/Aurora))
+
+There may be others we are unaware of, so please let us know if there are any others.
+
+[getting-started]: https://github.com/CoraleStudios/Colore/wiki/Getting-started
 [newpull]: ../../pull/new/develop
 [sharp]: https://github.com/Sharparam
 [contrib]: ../../wiki/Contributing
@@ -106,4 +132,6 @@ Current projects utilizing this or modified versions of this library:
 [gitter]: https://gitter.im/CoraleStudios/Colore?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
 [gitterbadge]: https://badges.gitter.im/Join%20Chat.svg
 
-[colorelogo]: http://colore.coralestudios.com/img/colore.png
+[colorelogo]: https://files.sharparam.com/2017/10/31/colore-logo.png
+
+[workshop]: http://www.razerzone.com/chroma-workshop/
