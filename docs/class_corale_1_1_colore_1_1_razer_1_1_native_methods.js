@@ -1,5 +1,6 @@
 var class_corale_1_1_colore_1_1_razer_1_1_native_methods =
 [
+    [ "CreateChromaLinkEffect", "class_corale_1_1_colore_1_1_razer_1_1_native_methods.html#aaf54481efd7108b38dd9f58582481d8c", null ],
     [ "CreateEffect", "class_corale_1_1_colore_1_1_razer_1_1_native_methods.html#abbc817033492f7acea3656f7c574128a", null ],
     [ "CreateHeadsetEffect", "class_corale_1_1_colore_1_1_razer_1_1_native_methods.html#a6008e0d5de77b948b6dd64cc3bde04a0", null ],
     [ "CreateKeyboardEffect", "class_corale_1_1_colore_1_1_razer_1_1_native_methods.html#af832773781a62463b15fc832c58a5bb3", null ],

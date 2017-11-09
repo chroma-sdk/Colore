@@ -2,8 +2,8 @@
 <area shape="rect" id="node2" href="$class_corale_1_1_colore_1_1_core_1_1_device.html" title="Base class for devices, containing code common between all devices. " alt="" coords="521,5,581,32"/>
 <area shape="rect" id="node3" href="$interface_corale_1_1_colore_1_1_core_1_1_i_device.html" title="Interface for functionality common with all devices. " alt="" coords="243,56,306,83"/>
 <area shape="rect" id="node4" href="$interface_corale_1_1_colore_1_1_core_1_1_i_mousepad.html" title="Interface for mouse pad functionality. " alt="" coords="509,56,594,83"/>
-<area shape="rect" id="node6" href="$interface_corale_1_1_colore_1_1_core_1_1_i_mousepad.html" title="Interface for mouse pad functionality. " alt="" coords="452,107,651,133"/>
+<area shape="rect" id="node12" href="$interface_corale_1_1_colore_1_1_core_1_1_i_mousepad.html" title="Interface for mouse pad functionality. " alt="" coords="452,107,651,133"/>
 <area shape="rect" id="node5" href="$interface_corale_1_1_colore_1_1_logging_1_1_i_log.html" title="Describes a logger. " alt="" coords="463,157,640,184"/>
-<area shape="rect" id="node7" href="$struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_custom.html" title="Describes a custom effect for a system device. " alt="" coords="458,209,645,250"/>
-<area shape="rect" id="node9" href="$struct_corale_1_1_colore_1_1_core_1_1_color.html" title="Represents an RGB color. " alt="" coords="192,396,357,423"/>
+<area shape="rect" id="node6" href="$struct_corale_1_1_colore_1_1_razer_1_1_chroma_link_1_1_effects_1_1_custom.html" title="Custom effect. " alt="" coords="458,209,645,250"/>
+<area shape="rect" id="node9" href="$struct_corale_1_1_colore_1_1_core_1_1_color.html" title="Represents an RGB color. " alt="" coords="192,452,357,479"/>
 </map>

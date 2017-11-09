@@ -9,49 +9,49 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 260)">
 <title>Corale.Colore.Razer.Mouse.Effects.Custom</title>
 <polygon fill="white" stroke="none" points="-4,4 -4,-260 427,-260 427,4 -4,4"/>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node3 -->
+<g id="node1" class="node"><title>Node3</title>
 <polygon fill="#bfbfbf" stroke="black" points="110.5,-0.5 110.5,-30.5 249.5,-30.5 249.5,-0.5 110.5,-0.5"/>
 <text text-anchor="start" x="118.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">Corale.Colore.Razer.Mouse.</text>
 <text text-anchor="middle" x="180" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">Effects.Custom</text>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
+<!-- Node4 -->
+<g id="node2" class="node"><title>Node4</title>
 <polygon fill="white" stroke="#bfbfbf" points="0,-129 0,-148 114,-148 114,-129 0,-129"/>
 <text text-anchor="middle" x="57" y="-136" font-family="Helvetica,sans-Serif" font-size="10.00">IEquatable&lt; Custom &gt;</text>
 </g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
+<!-- Node4&#45;&gt;Node3 -->
+<g id="edge1" class="edge"><title>Node4&#45;&gt;Node3</title>
 <path fill="none" stroke="midnightblue" d="M73.1893,-121.574C97.4076,-97.7495 142.681,-53.212 165.729,-30.5392"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="70.5202,-119.29 65.8459,-128.798 75.4292,-124.28 70.5202,-119.29"/>
 </g>
-<!-- Node3 -->
-<g id="node3" class="node"><title>Node3</title>
+<!-- Node5 -->
+<g id="node3" class="node"><title>Node5</title>
 <polygon fill="white" stroke="#bfbfbf" points="132.5,-123.5 132.5,-153.5 227.5,-153.5 227.5,-123.5 132.5,-123.5"/>
 <text text-anchor="start" x="140.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">IEquatable&lt; IList&lt;</text>
 <text text-anchor="middle" x="180" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00"> Color &gt;&gt;</text>
 </g>
-<!-- Node3&#45;&gt;Node1 -->
-<g id="edge2" class="edge"><title>Node3&#45;&gt;Node1</title>
+<!-- Node5&#45;&gt;Node3 -->
+<g id="edge2" class="edge"><title>Node5&#45;&gt;Node3</title>
 <path fill="none" stroke="midnightblue" d="M180,-113.116C180,-88.4368 180,-51.1119 180,-30.8368"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="176.5,-113.145 180,-123.145 183.5,-113.145 176.5,-113.145"/>
 </g>
-<!-- Node4 -->
-<g id="node4" class="node"><title>Node4</title>
+<!-- Node6 -->
+<g id="node4" class="node"><title>Node6</title>
 <g id="a_node4"><a xlink:href="struct_corale_1_1_colore_1_1_core_1_1_color.html" target="_top" xlink:title="Represents an RGB color. ">
 <polygon fill="white" stroke="black" points="246,-129 246,-148 370,-148 370,-129 246,-129"/>
 <text text-anchor="middle" x="308" y="-136" font-family="Helvetica,sans-Serif" font-size="10.00">Corale.Colore.Core.Color</text>
 </a>
 </g>
 </g>
-<!-- Node4&#45;&gt;Node1 -->
-<g id="edge3" class="edge"><title>Node4&#45;&gt;Node1</title>
+<!-- Node6&#45;&gt;Node3 -->
+<g id="edge3" class="edge"><title>Node6&#45;&gt;Node3</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M291.48,-121.884C266.36,-98.1372 218.94,-53.3106 194.851,-30.5392"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="289.123,-124.472 298.795,-128.798 293.932,-119.385 289.123,-124.472"/>
 <text text-anchor="middle" x="242.5" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00"> _colors</text>
 </g>
-<!-- Node4&#45;&gt;Node4 -->
-<g id="edge6" class="edge"><title>Node4&#45;&gt;Node4</title>
+<!-- Node6&#45;&gt;Node6 -->
+<g id="edge6" class="edge"><title>Node6&#45;&gt;Node6</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M337.035,-150.784C361.863,-156.245 388,-152.151 388,-138.5 388,-123.037 354.464,-119.836 327.282,-128.896"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="337.852,-147.379 327.282,-148.104 335.997,-154.128 337.852,-147.379"/>
 <text text-anchor="middle" x="405.5" y="-191" font-family="Helvetica,sans-Serif" font-size="10.00"> Yellow</text>
@@ -66,23 +66,23 @@
 <text text-anchor="middle" x="405.5" y="-92" font-family="Helvetica,sans-Serif" font-size="10.00">Green</text>
 <text text-anchor="middle" x="405.5" y="-81" font-family="Helvetica,sans-Serif" font-size="10.00">...</text>
 </g>
-<!-- Node5 -->
-<g id="node5" class="node"><title>Node5</title>
+<!-- Node7 -->
+<g id="node5" class="node"><title>Node7</title>
 <polygon fill="white" stroke="#bfbfbf" points="197.5,-236.5 197.5,-255.5 300.5,-255.5 300.5,-236.5 197.5,-236.5"/>
 <text text-anchor="middle" x="249" y="-243.5" font-family="Helvetica,sans-Serif" font-size="10.00">IEquatable&lt; Color &gt;</text>
 </g>
-<!-- Node5&#45;&gt;Node4 -->
-<g id="edge4" class="edge"><title>Node5&#45;&gt;Node4</title>
+<!-- Node7&#45;&gt;Node6 -->
+<g id="edge4" class="edge"><title>Node7&#45;&gt;Node6</title>
 <path fill="none" stroke="midnightblue" d="M258.837,-227.41C271.61,-204.571 293.412,-165.586 303.105,-148.253"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="255.654,-225.93 253.828,-236.366 261.764,-229.347 255.654,-225.93"/>
 </g>
-<!-- Node6 -->
-<g id="node6" class="node"><title>Node6</title>
+<!-- Node8 -->
+<g id="node6" class="node"><title>Node8</title>
 <polygon fill="white" stroke="#bfbfbf" points="319,-236.5 319,-255.5 415,-255.5 415,-236.5 319,-236.5"/>
 <text text-anchor="middle" x="367" y="-243.5" font-family="Helvetica,sans-Serif" font-size="10.00">IEquatable&lt; uint &gt;</text>
 </g>
-<!-- Node6&#45;&gt;Node4 -->
-<g id="edge5" class="edge"><title>Node6&#45;&gt;Node4</title>
+<!-- Node8&#45;&gt;Node6 -->
+<g id="edge5" class="edge"><title>Node8&#45;&gt;Node6</title>
 <path fill="none" stroke="midnightblue" d="M357.163,-227.41C344.39,-204.571 322.588,-165.586 312.895,-148.253"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="354.236,-229.347 362.172,-236.366 360.346,-225.93 354.236,-229.347"/>
 </g>

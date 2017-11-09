@@ -36,12 +36,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_annotations_8cs.html",
-"_key_8cs.html#a4434888a1769a87551c60e708fbb9ee2a982621712db76f723b7bb88b631dc64d",
-"_mousepad_2_effects_2_direction_8cs.html#a04f051fcca8ce2b8235a66fe556c341bad1e80c506f4c89e3c4fb1c1b4867a03c",
-"class_corale_1_1_colore_1_1_core_1_1_keypad.html#af963fd1092157832e06f74f7cbcecb32",
-"class_notify_property_changed_invocator_attribute.html#a53ea804fe542cdfff5c0ffbb47fdaeb0",
-"interface_corale_1_1_colore_1_1_logging_1_1_i_log.html#a6ff9b13dd6c504d3b5b7c7ccd1295232",
-"struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_custom.html#a9f06bc4c9b1bdf9332fd021e44e93f5c"
+"_key_8cs.html#a4434888a1769a87551c60e708fbb9ee2a7fee165fee036b58e2e460ca8e006f03",
+"_mouse_2_effects_2_wave_8cs_source.html",
+"class_corale_1_1_colore_1_1_core_1_1_keyboard.html#a73a873de5606ad656a5fedb1ceec68a3",
+"class_corale_1_1_colore_1_1_razer_1_1_native_methods.html#af832773781a62463b15fc832c58a5bb3",
+"interface_corale_1_1_colore_1_1_core_1_1_i_keypad.html#a33f74c6874faf2e1dfd3ed7db9e37807",
+"struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_custom.html#a7bca9bf8c8ef14017d03ba3d3b2ff4f4"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

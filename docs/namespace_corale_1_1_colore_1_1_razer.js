@@ -1,5 +1,6 @@
 var namespace_corale_1_1_colore_1_1_razer =
 [
+    [ "ChromaLink", "namespace_corale_1_1_colore_1_1_razer_1_1_chroma_link.html", "namespace_corale_1_1_colore_1_1_razer_1_1_chroma_link" ],
     [ "Effects", "namespace_corale_1_1_colore_1_1_razer_1_1_effects.html", "namespace_corale_1_1_colore_1_1_razer_1_1_effects" ],
     [ "Headset", "namespace_corale_1_1_colore_1_1_razer_1_1_headset.html", "namespace_corale_1_1_colore_1_1_razer_1_1_headset" ],
     [ "Keyboard", "namespace_corale_1_1_colore_1_1_razer_1_1_keyboard.html", "namespace_corale_1_1_colore_1_1_razer_1_1_keyboard" ],

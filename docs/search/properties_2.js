@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['chromalink',['ChromaLink',['../interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html#af501f7a5720faca0ee1bea63ca7aeadf',1,'Corale::Colore::Core::IChroma']]],
   ['collectionaccesstype',['CollectionAccessType',['../class_collection_access_attribute.html#a6f4227ee9e50c5103d73637cef1a3a9e',1,'CollectionAccessAttribute']]],
   ['comment',['Comment',['../class_public_a_p_i_attribute.html#a4488351c8b5d0090c2bf8d69380acf6a',1,'PublicAPIAttribute']]],
   ['conditiontype',['ConditionType',['../class_assertion_condition_attribute.html#ad07b5dd15df52a5c307ed41dda8299ef',1,'AssertionConditionAttribute']]],

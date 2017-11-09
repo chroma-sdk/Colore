@@ -1,15 +1,11 @@
 var searchData=
 [
   ['annotations',['Annotations',['../namespace_corale_1_1_colore_1_1_annotations.html',1,'Corale::Colore']]],
+  ['chromalink',['ChromaLink',['../namespace_corale_1_1_colore_1_1_razer_1_1_chroma_link.html',1,'Corale::Colore::Razer']]],
   ['colore',['Colore',['../namespace_corale_1_1_colore.html',1,'Corale']]],
   ['corale',['Corale',['../namespace_corale.html',1,'']]],
   ['core',['Core',['../namespace_corale_1_1_colore_1_1_core.html',1,'Corale::Colore']]],
-  ['effects',['Effects',['../namespace_corale_1_1_colore_1_1_razer_1_1_keypad_1_1_effects.html',1,'Corale::Colore::Razer::Keypad']]],
-  ['effects',['Effects',['../namespace_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects.html',1,'Corale::Colore::Razer::Mouse']]],
-  ['effects',['Effects',['../namespace_corale_1_1_colore_1_1_razer_1_1_effects.html',1,'Corale::Colore::Razer']]],
-  ['effects',['Effects',['../namespace_corale_1_1_colore_1_1_razer_1_1_mousepad_1_1_effects.html',1,'Corale::Colore::Razer::Mousepad']]],
-  ['effects',['Effects',['../namespace_corale_1_1_colore_1_1_razer_1_1_headset_1_1_effects.html',1,'Corale::Colore::Razer::Headset']]],
-  ['effects',['Effects',['../namespace_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects.html',1,'Corale::Colore::Razer::Keyboard']]],
+  ['effects',['Effects',['../namespace_corale_1_1_colore_1_1_razer_1_1_chroma_link_1_1_effects.html',1,'Corale.Colore.Razer.ChromaLink.Effects'],['../namespace_corale_1_1_colore_1_1_razer_1_1_effects.html',1,'Corale.Colore.Razer.Effects'],['../namespace_corale_1_1_colore_1_1_razer_1_1_headset_1_1_effects.html',1,'Corale.Colore.Razer.Headset.Effects'],['../namespace_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects.html',1,'Corale.Colore.Razer.Keyboard.Effects'],['../namespace_corale_1_1_colore_1_1_razer_1_1_keypad_1_1_effects.html',1,'Corale.Colore.Razer.Keypad.Effects'],['../namespace_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects.html',1,'Corale.Colore.Razer.Mouse.Effects'],['../namespace_corale_1_1_colore_1_1_razer_1_1_mousepad_1_1_effects.html',1,'Corale.Colore.Razer.Mousepad.Effects']]],
   ['events',['Events',['../namespace_corale_1_1_colore_1_1_events.html',1,'Corale::Colore']]],
   ['headset',['Headset',['../namespace_corale_1_1_colore_1_1_razer_1_1_headset.html',1,'Corale::Colore::Razer']]],
   ['kernel32',['Kernel32',['../namespace_corale_1_1_colore_1_1_native_1_1_kernel32.html',1,'Corale::Colore::Native']]],

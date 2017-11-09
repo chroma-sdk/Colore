@@ -76,6 +76,7 @@ var hierarchy =
     [ "Corale.Colore.Razer.Keypad.Effects.Breathing", "struct_corale_1_1_colore_1_1_razer_1_1_keypad_1_1_effects_1_1_breathing.html", null ],
     [ "Corale.Colore.Razer.Mouse.Effects.Breathing", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_breathing.html", null ],
     [ "Corale.Colore.Razer.Mousepad.Constants", "class_corale_1_1_colore_1_1_razer_1_1_mousepad_1_1_constants.html", null ],
+    [ "Corale.Colore.Razer.ChromaLink.Constants", "class_corale_1_1_colore_1_1_razer_1_1_chroma_link_1_1_constants.html", null ],
     [ "Corale.Colore.Razer.Constants", "class_corale_1_1_colore_1_1_razer_1_1_constants.html", null ],
     [ "Corale.Colore.Razer.Keyboard.Constants", "class_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_constants.html", null ],
     [ "Corale.Colore.Razer.Keypad.Constants", "class_corale_1_1_colore_1_1_razer_1_1_keypad_1_1_constants.html", null ],
@@ -94,8 +95,8 @@ var hierarchy =
         [ "Corale.Colore.Razer.UnsupportedDeviceException", "class_corale_1_1_colore_1_1_razer_1_1_unsupported_device_exception.html", null ]
       ] ]
     ] ],
-    [ "Corale.Colore.Wpf.Extensions", "class_corale_1_1_colore_1_1_wpf_1_1_extensions.html", null ],
     [ "Corale.Colore.WinForms.Extensions", "class_corale_1_1_colore_1_1_win_forms_1_1_extensions.html", null ],
+    [ "Corale.Colore.Wpf.Extensions", "class_corale_1_1_colore_1_1_wpf_1_1_extensions.html", null ],
     [ "Corale.Colore.Core.IChroma", "interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html", [
       [ "Corale.Colore.Core.Chroma", "class_corale_1_1_colore_1_1_core_1_1_chroma.html", null ]
     ] ],
@@ -105,12 +106,16 @@ var hierarchy =
     ] ],
     [ "Corale.Colore.Core.IDevice", "interface_corale_1_1_colore_1_1_core_1_1_i_device.html", [
       [ "Corale.Colore.Core.Device", "class_corale_1_1_colore_1_1_core_1_1_device.html", [
+        [ "Corale.Colore.Core.ChromaLink", "class_corale_1_1_colore_1_1_core_1_1_chroma_link.html", null ],
         [ "Corale.Colore.Core.GenericDevice", "class_corale_1_1_colore_1_1_core_1_1_generic_device.html", null ],
         [ "Corale.Colore.Core.Headset", "class_corale_1_1_colore_1_1_core_1_1_headset.html", null ],
         [ "Corale.Colore.Core.Keyboard", "class_corale_1_1_colore_1_1_core_1_1_keyboard.html", null ],
         [ "Corale.Colore.Core.Keypad", "class_corale_1_1_colore_1_1_core_1_1_keypad.html", null ],
         [ "Corale.Colore.Core.Mouse", "class_corale_1_1_colore_1_1_core_1_1_mouse.html", null ],
         [ "Corale.Colore.Core.Mousepad", "class_corale_1_1_colore_1_1_core_1_1_mousepad.html", null ]
+      ] ],
+      [ "Corale.Colore.Core.IChromaLink", "interface_corale_1_1_colore_1_1_core_1_1_i_chroma_link.html", [
+        [ "Corale.Colore.Core.ChromaLink", "class_corale_1_1_colore_1_1_core_1_1_chroma_link.html", null ]
       ] ],
       [ "Corale.Colore.Core.IGenericDevice", "interface_corale_1_1_colore_1_1_core_1_1_i_generic_device.html", [
         [ "Corale.Colore.Core.GenericDevice", "class_corale_1_1_colore_1_1_core_1_1_generic_device.html", null ]
@@ -134,6 +139,8 @@ var hierarchy =
     [ "IEquatable", null, [
       [ "Corale.Colore.Core.Color", "struct_corale_1_1_colore_1_1_core_1_1_color.html", null ],
       [ "Corale.Colore.Core.Color", "struct_corale_1_1_colore_1_1_core_1_1_color.html", null ],
+      [ "Corale.Colore.Razer.ChromaLink.Effects.Custom", "struct_corale_1_1_colore_1_1_razer_1_1_chroma_link_1_1_effects_1_1_custom.html", null ],
+      [ "Corale.Colore.Razer.ChromaLink.Effects.Custom", "struct_corale_1_1_colore_1_1_razer_1_1_chroma_link_1_1_effects_1_1_custom.html", null ],
       [ "Corale.Colore.Razer.Effects.Custom", "struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_custom.html", null ],
       [ "Corale.Colore.Razer.Keyboard.Effects.Custom", "struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_custom.html", null ],
       [ "Corale.Colore.Razer.Keypad.Effects.Custom", "struct_corale_1_1_colore_1_1_razer_1_1_keypad_1_1_effects_1_1_custom.html", null ],
@@ -162,8 +169,8 @@ var hierarchy =
     [ "Corale.Colore.Native.Kernel32.NativeMethods", "class_corale_1_1_colore_1_1_native_1_1_kernel32_1_1_native_methods.html", null ],
     [ "Corale.Colore.Razer.NativeMethods", "class_corale_1_1_colore_1_1_razer_1_1_native_methods.html", null ],
     [ "Corale.Colore.Core.NativeWrapper", "class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html", null ],
-    [ "Corale.Colore.Razer.Effects.None", "struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_none.html", null ],
     [ "Corale.Colore.Razer.Mouse.Effects.None", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_none.html", null ],
+    [ "Corale.Colore.Razer.Effects.None", "struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_none.html", null ],
     [ "Corale.Colore.Razer.Keyboard.PositionData", "class_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_position_data.html", null ],
     [ "Corale.Colore.Razer.Keyboard.Effects.Reactive", "struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_reactive.html", null ],
     [ "Corale.Colore.Razer.Mouse.Effects.Reactive", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_reactive.html", null ],
@@ -172,15 +179,16 @@ var hierarchy =
     [ "Corale.Colore.Core.RegistryHelper", "class_corale_1_1_colore_1_1_core_1_1_registry_helper.html", null ],
     [ "Corale.Colore.Razer.Effects.SpectrumCycling", "struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_spectrum_cycling.html", null ],
     [ "Corale.Colore.Razer.Mouse.Effects.SpectrumCycling", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_spectrum_cycling.html", null ],
-    [ "Corale.Colore.Razer.Effects.Static", "struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_static.html", null ],
-    [ "Corale.Colore.Razer.Headset.Effects.Static", "struct_corale_1_1_colore_1_1_razer_1_1_headset_1_1_effects_1_1_static.html", null ],
-    [ "Corale.Colore.Razer.Mousepad.Effects.Static", "struct_corale_1_1_colore_1_1_razer_1_1_mousepad_1_1_effects_1_1_static.html", null ],
-    [ "Corale.Colore.Razer.Mouse.Effects.Static", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_static.html", null ],
-    [ "Corale.Colore.Razer.Keyboard.Effects.Static", "struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_static.html", null ],
+    [ "Corale.Colore.Razer.ChromaLink.Effects.Static", "struct_corale_1_1_colore_1_1_razer_1_1_chroma_link_1_1_effects_1_1_static.html", null ],
     [ "Corale.Colore.Razer.Keypad.Effects.Static", "struct_corale_1_1_colore_1_1_razer_1_1_keypad_1_1_effects_1_1_static.html", null ],
-    [ "Corale.Colore.Razer.Mousepad.Effects.Wave", "struct_corale_1_1_colore_1_1_razer_1_1_mousepad_1_1_effects_1_1_wave.html", null ],
+    [ "Corale.Colore.Razer.Mouse.Effects.Static", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_static.html", null ],
+    [ "Corale.Colore.Razer.Headset.Effects.Static", "struct_corale_1_1_colore_1_1_razer_1_1_headset_1_1_effects_1_1_static.html", null ],
+    [ "Corale.Colore.Razer.Keyboard.Effects.Static", "struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_static.html", null ],
+    [ "Corale.Colore.Razer.Mousepad.Effects.Static", "struct_corale_1_1_colore_1_1_razer_1_1_mousepad_1_1_effects_1_1_static.html", null ],
+    [ "Corale.Colore.Razer.Effects.Static", "struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_static.html", null ],
+    [ "Corale.Colore.Razer.Effects.Wave", "struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_wave.html", null ],
+    [ "Corale.Colore.Razer.Mouse.Effects.Wave", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_wave.html", null ],
     [ "Corale.Colore.Razer.Keypad.Effects.Wave", "struct_corale_1_1_colore_1_1_razer_1_1_keypad_1_1_effects_1_1_wave.html", null ],
     [ "Corale.Colore.Razer.Keyboard.Effects.Wave", "struct_corale_1_1_colore_1_1_razer_1_1_keyboard_1_1_effects_1_1_wave.html", null ],
-    [ "Corale.Colore.Razer.Effects.Wave", "struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_wave.html", null ],
-    [ "Corale.Colore.Razer.Mouse.Effects.Wave", "struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_wave.html", null ]
+    [ "Corale.Colore.Razer.Mousepad.Effects.Wave", "struct_corale_1_1_colore_1_1_razer_1_1_mousepad_1_1_effects_1_1_wave.html", null ]
 ];

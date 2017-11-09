@@ -8,6 +8,7 @@ var interface_corale_1_1_colore_1_1_core_1_1_i_chroma =
     [ "SetAll", "interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html#ac213f458fc1657770a06ea95ce1e8b1c", null ],
     [ "Uninitialize", "interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html#a3159dc4cd7e46f89be5a883a9a855446", null ],
     [ "Unregister", "interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html#aa754333da7d7783fc5559c29d2e2eba0", null ],
+    [ "ChromaLink", "interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html#af501f7a5720faca0ee1bea63ca7aeadf", null ],
     [ "Headset", "interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html#a04bc01d73064695fa85026027dc76855", null ],
     [ "Initialized", "interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html#a20af43731e285d2d48aa7416127404d2", null ],
     [ "Keyboard", "interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html#ac29200a1f37f14d89cf3292ba5081e91", null ],

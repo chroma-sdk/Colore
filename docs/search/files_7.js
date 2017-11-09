@@ -1,6 +1,7 @@
 var searchData=
 [
   ['ichroma_2ecs',['IChroma.cs',['../_i_chroma_8cs.html',1,'']]],
+  ['ichromalink_2ecs',['IChromaLink.cs',['../_i_chroma_link_8cs.html',1,'']]],
   ['idevice_2ecs',['IDevice.cs',['../_i_device_8cs.html',1,'']]],
   ['igenericdevice_2ecs',['IGenericDevice.cs',['../_i_generic_device_8cs.html',1,'']]],
   ['iheadset_2ecs',['IHeadset.cs',['../_i_headset_8cs.html',1,'']]],

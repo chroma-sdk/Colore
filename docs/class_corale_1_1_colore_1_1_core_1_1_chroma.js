@@ -18,6 +18,7 @@ var class_corale_1_1_colore_1_1_core_1_1_chroma =
     [ "_registered", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#a5af2c5c8a35cafa2bf29cf15c8818a9c", null ],
     [ "_registeredHandle", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#a7af28742e4498ee49976c32ed55578e2", null ],
     [ "_sdkVersion", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#aaa94f934147197b5642835317a675c16", null ],
+    [ "ChromaLink", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#a4e6df9e6bbb9aa04b7d0b1581c69768d", null ],
     [ "Headset", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#ac8d26365589102206e721c36111b53fa", null ],
     [ "InitLock", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#a44864350c895b8dfac44dc704d168912", null ],
     [ "Keyboard", "class_corale_1_1_colore_1_1_core_1_1_chroma.html#a76706525a61f5687789e188a486a3b54", null ],

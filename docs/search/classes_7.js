@@ -1,6 +1,7 @@
 var searchData=
 [
   ['ichroma',['IChroma',['../interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html',1,'Corale::Colore::Core']]],
+  ['ichromalink',['IChromaLink',['../interface_corale_1_1_colore_1_1_core_1_1_i_chroma_link.html',1,'Corale::Colore::Core']]],
   ['idevice',['IDevice',['../interface_corale_1_1_colore_1_1_core_1_1_i_device.html',1,'Corale::Colore::Core']]],
   ['igenericdevice',['IGenericDevice',['../interface_corale_1_1_colore_1_1_core_1_1_i_generic_device.html',1,'Corale::Colore::Core']]],
   ['iheadset',['IHeadset',['../interface_corale_1_1_colore_1_1_core_1_1_i_headset.html',1,'Corale::Colore::Core']]],

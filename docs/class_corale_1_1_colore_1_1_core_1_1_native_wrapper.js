@@ -1,5 +1,7 @@
 var class_corale_1_1_colore_1_1_core_1_1_native_wrapper =
 [
+    [ "CreateChromaLinkEffect", "class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html#a9765ebdf10c640b1f941ec234715a134", null ],
+    [ "CreateChromaLinkEffect< T >", "class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html#ac235a392a03957b209e760d3b4ec774a", null ],
     [ "CreateDeviceEffect< T >", "class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html#a9806e53b58f5c59c3641de7418a59596", null ],
     [ "CreateEffect", "class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html#a26c9a9b7805aa1960205a25fd951598c", null ],
     [ "CreateHeadsetEffect", "class_corale_1_1_colore_1_1_core_1_1_native_wrapper.html#a53bc0ba4e3d5d395a76dbba26546b8b6", null ],

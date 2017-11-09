@@ -1,10 +1,10 @@
 <map id="Corale.Colore.Core.Mouse" name="Corale.Colore.Core.Mouse">
 <area shape="rect" id="node2" href="$class_corale_1_1_colore_1_1_core_1_1_device.html" title="Base class for devices, containing code common between all devices. " alt="" coords="526,5,586,32"/>
-<area shape="rect" id="node3" href="$interface_corale_1_1_colore_1_1_core_1_1_i_device.html" title="Interface for functionality common with all devices. " alt="" coords="249,53,311,80"/>
+<area shape="rect" id="node3" href="$interface_corale_1_1_colore_1_1_core_1_1_i_device.html" title="Interface for functionality common with all devices. " alt="" coords="249,56,311,83"/>
 <area shape="rect" id="node4" href="$interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html" title="Interface for mouse functionality. " alt="" coords="524,56,588,83"/>
-<area shape="rect" id="node6" href="$interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html" title="Interface for mouse functionality. " alt="" coords="467,107,645,133"/>
-<area shape="rect" id="node5" href="$interface_corale_1_1_colore_1_1_logging_1_1_i_log.html" title="Describes a logger. " alt="" coords="467,157,645,184"/>
-<area shape="rect" id="node7" href="$struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_custom_grid.html" title="Custom grid effect for mouse LEDs. " alt="" coords="463,209,649,250"/>
-<area shape="rect" id="node11" href="$struct_corale_1_1_colore_1_1_core_1_1_color.html" title="Represents an RGB color. " alt="" coords="197,453,363,480"/>
-<area shape="rect" id="node14" href="$struct_corale_1_1_colore_1_1_razer_1_1_effects_1_1_custom.html" title="Describes a custom effect for a system device. " alt="" coords="463,446,649,487"/>
+<area shape="rect" id="node12" href="$interface_corale_1_1_colore_1_1_core_1_1_i_mouse.html" title="Interface for mouse functionality. " alt="" coords="467,157,645,184"/>
+<area shape="rect" id="node5" href="$interface_corale_1_1_colore_1_1_logging_1_1_i_log.html" title="Describes a logger. " alt="" coords="467,107,645,133"/>
+<area shape="rect" id="node6" href="$struct_corale_1_1_colore_1_1_razer_1_1_chroma_link_1_1_effects_1_1_custom.html" title="Custom effect. " alt="" coords="463,209,649,250"/>
+<area shape="rect" id="node13" href="$struct_corale_1_1_colore_1_1_razer_1_1_mouse_1_1_effects_1_1_custom_grid.html" title="Custom grid effect for mouse LEDs. " alt="" coords="463,434,649,475"/>
+<area shape="rect" id="node9" href="$struct_corale_1_1_colore_1_1_core_1_1_color.html" title="Represents an RGB color. " alt="" coords="197,441,363,468"/>
 </map>

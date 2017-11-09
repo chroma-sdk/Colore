@@ -9,84 +9,84 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 159)">
 <title>Corale.Colore.Core.Headset</title>
 <polygon fill="white" stroke="none" points="-4,4 -4,-159 432,-159 432,4 -4,4"/>
-<!-- Node1 -->
-<g id="node1" class="node"><title>Node1</title>
+<!-- Node4 -->
+<g id="node1" class="node"><title>Node4</title>
 <polygon fill="#bfbfbf" stroke="black" points="80,-0.5 80,-19.5 217,-19.5 217,-0.5 80,-0.5"/>
 <text text-anchor="middle" x="148.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">Corale.Colore.Core.Headset</text>
 </g>
-<!-- Node2 -->
-<g id="node2" class="node"><title>Node2</title>
+<!-- Node5 -->
+<g id="node2" class="node"><title>Node5</title>
 <g id="a_node2"><a xlink:href="class_corale_1_1_colore_1_1_core_1_1_device.html" target="_top" xlink:title="Base class for devices, containing code common between all devices. ">
 <polygon fill="white" stroke="black" points="0,-78.5 0,-97.5 45,-97.5 45,-78.5 0,-78.5"/>
 <text text-anchor="middle" x="22.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">Device</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node1 -->
-<g id="edge1" class="edge"><title>Node2&#45;&gt;Node1</title>
+<!-- Node5&#45;&gt;Node4 -->
+<g id="edge1" class="edge"><title>Node5&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M45.7425,-72.9807C71.6321,-57.3648 112.669,-32.6121 134.215,-19.6165"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="43.709,-70.1198 36.9538,-78.2818 47.3245,-76.1139 43.709,-70.1198"/>
 </g>
-<!-- Node3 -->
-<g id="node3" class="node"><title>Node3</title>
+<!-- Node6 -->
+<g id="node3" class="node"><title>Node6</title>
 <g id="a_node3"><a xlink:href="interface_corale_1_1_colore_1_1_core_1_1_i_device.html" target="_top" xlink:title="Interface for functionality common with all devices. ">
 <polygon fill="white" stroke="black" points="67,-135.5 67,-154.5 114,-154.5 114,-135.5 67,-135.5"/>
 <text text-anchor="middle" x="90.5" y="-142.5" font-family="Helvetica,sans-Serif" font-size="10.00">IDevice</text>
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node2 -->
-<g id="edge2" class="edge"><title>Node3&#45;&gt;Node2</title>
+<!-- Node6&#45;&gt;Node5 -->
+<g id="edge2" class="edge"><title>Node6&#45;&gt;Node5</title>
 <path fill="none" stroke="midnightblue" d="M71.9524,-128.998C59.5438,-118.962 43.6472,-106.104 33.2748,-97.7149"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="69.8988,-131.839 79.875,-135.406 74.3009,-126.396 69.8988,-131.839"/>
 </g>
-<!-- Node4 -->
-<g id="node4" class="node"><title>Node4</title>
+<!-- Node7 -->
+<g id="node4" class="node"><title>Node7</title>
 <g id="a_node4"><a xlink:href="interface_corale_1_1_colore_1_1_core_1_1_i_headset.html" target="_top" xlink:title="Interface for headset functionality. ">
 <polygon fill="white" stroke="black" points="63,-78.5 63,-97.5 118,-97.5 118,-78.5 63,-78.5"/>
 <text text-anchor="middle" x="90.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">IHeadset</text>
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node4 -->
-<g id="edge4" class="edge"><title>Node3&#45;&gt;Node4</title>
+<!-- Node6&#45;&gt;Node7 -->
+<g id="edge4" class="edge"><title>Node6&#45;&gt;Node7</title>
 <path fill="none" stroke="midnightblue" d="M90.5,-125.117C90.5,-115.817 90.5,-105.056 90.5,-97.7149"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="87.0001,-125.406 90.5,-135.406 94.0001,-125.406 87.0001,-125.406"/>
 </g>
-<!-- Node6 -->
-<g id="node6" class="node"><title>Node6</title>
+<!-- Node9 -->
+<g id="node6" class="node"><title>Node9</title>
 <g id="a_node6"><a xlink:href="interface_corale_1_1_colore_1_1_core_1_1_i_headset.html" target="_top" xlink:title="Interface for headset functionality. ">
 <polygon fill="white" stroke="black" points="136.5,-78.5 136.5,-97.5 276.5,-97.5 276.5,-78.5 136.5,-78.5"/>
 <text text-anchor="middle" x="206.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">Corale.Colore.Core.IHeadset</text>
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node6 -->
-<g id="edge7" class="edge"><title>Node3&#45;&gt;Node6</title>
+<!-- Node6&#45;&gt;Node9 -->
+<g id="edge7" class="edge"><title>Node6&#45;&gt;Node9</title>
 <path fill="none" stroke="midnightblue" d="M117.716,-131.096C139.546,-120.745 169.569,-106.511 188.502,-97.5334"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="116.161,-127.959 108.625,-135.406 119.16,-134.285 116.161,-127.959"/>
 </g>
-<!-- Node4&#45;&gt;Node1 -->
-<g id="edge3" class="edge"><title>Node4&#45;&gt;Node1</title>
+<!-- Node7&#45;&gt;Node4 -->
+<g id="edge3" class="edge"><title>Node7&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M103.469,-70.0056C115.402,-54.3693 132.616,-31.8142 141.924,-19.6165"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="100.438,-68.2089 97.1533,-78.2818 106.002,-72.4557 100.438,-68.2089"/>
 </g>
-<!-- Node5 -->
-<g id="node5" class="node"><title>Node5</title>
+<!-- Node8 -->
+<g id="node5" class="node"><title>Node8</title>
 <g id="a_node5"><a xlink:href="interface_corale_1_1_colore_1_1_logging_1_1_i_log.html" target="_top" xlink:title="Describes a logger. ">
 <polygon fill="white" stroke="black" points="295,-78.5 295,-97.5 428,-97.5 428,-78.5 295,-78.5"/>
 <text text-anchor="middle" x="361.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">Corale.Colore.Logging.ILog</text>
 </a>
 </g>
 </g>
-<!-- Node5&#45;&gt;Node1 -->
-<g id="edge5" class="edge"><title>Node5&#45;&gt;Node1</title>
+<!-- Node8&#45;&gt;Node4 -->
+<g id="edge5" class="edge"><title>Node8&#45;&gt;Node4</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M331.009,-74.6041C305.409,-64.3492 267.785,-49.6327 234.5,-38 215.591,-31.3914 194.091,-24.6414 177.318,-19.5436"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="329.946,-77.9491 340.53,-78.4344 332.559,-71.4549 329.946,-77.9491"/>
 <text text-anchor="middle" x="301" y="-46.5" font-family="Helvetica,sans-Serif" font-size="10.00"> Log</text>
 </g>
-<!-- Node6&#45;&gt;Node1 -->
-<g id="edge6" class="edge"><title>Node6&#45;&gt;Node1</title>
+<!-- Node9&#45;&gt;Node4 -->
+<g id="edge6" class="edge"><title>Node9&#45;&gt;Node4</title>
 <path fill="none" stroke="#9a32cd" stroke-dasharray="5,2" d="M193.531,-70.0056C181.598,-54.3693 164.384,-31.8142 155.076,-19.6165"/>
 <polygon fill="#9a32cd" stroke="#9a32cd" points="190.998,-72.4557 199.847,-78.2818 196.562,-68.2089 190.998,-72.4557"/>
 <text text-anchor="middle" x="207.5" y="-52" font-family="Helvetica,sans-Serif" font-size="10.00"> _instance</text>

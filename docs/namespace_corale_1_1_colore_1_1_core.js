@@ -1,11 +1,13 @@
 var namespace_corale_1_1_colore_1_1_core =
 [
     [ "Chroma", "class_corale_1_1_colore_1_1_core_1_1_chroma.html", "class_corale_1_1_colore_1_1_core_1_1_chroma" ],
+    [ "ChromaLink", "class_corale_1_1_colore_1_1_core_1_1_chroma_link.html", "class_corale_1_1_colore_1_1_core_1_1_chroma_link" ],
     [ "Color", "struct_corale_1_1_colore_1_1_core_1_1_color.html", "struct_corale_1_1_colore_1_1_core_1_1_color" ],
     [ "Device", "class_corale_1_1_colore_1_1_core_1_1_device.html", "class_corale_1_1_colore_1_1_core_1_1_device" ],
     [ "GenericDevice", "class_corale_1_1_colore_1_1_core_1_1_generic_device.html", "class_corale_1_1_colore_1_1_core_1_1_generic_device" ],
     [ "Headset", "class_corale_1_1_colore_1_1_core_1_1_headset.html", "class_corale_1_1_colore_1_1_core_1_1_headset" ],
     [ "IChroma", "interface_corale_1_1_colore_1_1_core_1_1_i_chroma.html", "interface_corale_1_1_colore_1_1_core_1_1_i_chroma" ],
+    [ "IChromaLink", "interface_corale_1_1_colore_1_1_core_1_1_i_chroma_link.html", "interface_corale_1_1_colore_1_1_core_1_1_i_chroma_link" ],
     [ "IDevice", "interface_corale_1_1_colore_1_1_core_1_1_i_device.html", "interface_corale_1_1_colore_1_1_core_1_1_i_device" ],
     [ "IGenericDevice", "interface_corale_1_1_colore_1_1_core_1_1_i_generic_device.html", "interface_corale_1_1_colore_1_1_core_1_1_i_generic_device" ],
     [ "IHeadset", "interface_corale_1_1_colore_1_1_core_1_1_i_headset.html", "interface_corale_1_1_colore_1_1_core_1_1_i_headset" ],
