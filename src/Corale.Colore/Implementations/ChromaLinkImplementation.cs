@@ -33,15 +33,12 @@ namespace Corale.Colore.Implementations
     using Corale.Colore.Api;
     using Corale.Colore.Effects.ChromaLink;
 
-    using JetBrains.Annotations;
-
     /// <inheritdoc cref="IChromaLink" />
-    /// <inheritdoc cref="Device" />
+    /// <inheritdoc cref="DeviceImplementation" />
     /// <summary>
     /// Class for interacting with a Chroma Link.
     /// </summary>
-    [PublicAPI]
-    public sealed class ChromaLinkImplementation : Device, IChromaLink
+    internal sealed class ChromaLinkImplementation : DeviceImplementation, IChromaLink
     {
         /// <summary>
         /// Logger instance for this class.
@@ -93,7 +90,7 @@ namespace Corale.Colore.Implementations
             return this[index] != Color.Black;
         }
 
-        /// <inheritdoc cref="Device.SetAllAsync" />
+        /// <inheritdoc cref="DeviceImplementation.SetAllAsync" />
         /// <summary>
         /// Sets the color of all lights in Chroma Link
         /// </summary>
@@ -145,7 +142,7 @@ namespace Corale.Colore.Implementations
             return await SetStaticAsync(new Static(color)).ConfigureAwait(false);
         }
 
-        /// <inheritdoc cref="Device.ClearAsync" />
+        /// <inheritdoc cref="DeviceImplementation.ClearAsync" />
         /// <summary>
         /// Clears the current effect on the Chroma Link.
         /// </summary>

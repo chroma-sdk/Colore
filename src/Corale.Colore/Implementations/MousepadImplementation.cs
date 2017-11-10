@@ -34,11 +34,11 @@ namespace Corale.Colore.Implementations
     using Corale.Colore.Effects.Mousepad;
 
     /// <inheritdoc cref="IMousepad" />
-    /// <inheritdoc cref="Device" />
+    /// <inheritdoc cref="DeviceImplementation" />
     /// <summary>
     /// Class for interacting with a Chroma mouse pad.
     /// </summary>
-    public sealed class MousepadImplementation : Device, IMousepad
+    internal sealed class MousepadImplementation : DeviceImplementation, IMousepad
     {
         /// <summary>
         /// Logger instance for this class.
@@ -78,7 +78,7 @@ namespace Corale.Colore.Implementations
             }
         }
 
-        /// <inheritdoc cref="Device.SetAllAsync" />
+        /// <inheritdoc cref="DeviceImplementation.SetAllAsync" />
         /// <summary>
         /// Sets the color of all components on this device.
         /// </summary>
@@ -130,7 +130,7 @@ namespace Corale.Colore.Implementations
             return await SetEffectAsync(await Api.CreateMousepadEffectAsync(Effect.Custom, effect).ConfigureAwait(false)).ConfigureAwait(false);
         }
 
-        /// <inheritdoc cref="Device.ClearAsync" />
+        /// <inheritdoc cref="DeviceImplementation.ClearAsync" />
         /// <summary>
         /// Clears the current effect on the Mousepad.
         /// </summary>

@@ -37,12 +37,11 @@ namespace Corale.Colore.Implementations
     using JetBrains.Annotations;
 
     /// <inheritdoc cref="IKeyboard" />
-    /// <inheritdoc cref="Device" />
+    /// <inheritdoc cref="DeviceImplementation" />
     /// <summary>
     /// Class for interacting with a Chroma keyboard.
     /// </summary>
-    [PublicAPI]
-    public sealed class KeyboardImplementation : Device, IKeyboard
+    internal sealed class KeyboardImplementation : DeviceImplementation, IKeyboard
     {
         /// <summary>
         /// Logger instance for this class.
@@ -139,7 +138,7 @@ namespace Corale.Colore.Implementations
             return _grid[key] != Color.Black;
         }
 
-        /// <inheritdoc cref="Device.SetAllAsync" />
+        /// <inheritdoc cref="DeviceImplementation.SetAllAsync" />
         /// <summary>
         /// Sets the color of all keys on the keyboard.
         /// </summary>
@@ -259,7 +258,7 @@ namespace Corale.Colore.Implementations
             return await SetEffectAsync(await Api.CreateKeyboardEffectAsync(Effect.Static, effect).ConfigureAwait(false)).ConfigureAwait(false);
         }
 
-        /// <inheritdoc cref="Device.ClearAsync" />
+        /// <inheritdoc cref="DeviceImplementation.ClearAsync" />
         /// <summary>
         /// Clears the current effect on the Keyboard.
         /// </summary>

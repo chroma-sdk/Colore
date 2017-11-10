@@ -53,7 +53,7 @@ namespace Corale.Colore
         /// <returns>A new instance of <see cref="IChroma" />.</returns>
         public static IChroma Create(IChromaApi api)
         {
-            return new Chroma(api);
+            return new ChromaImplementation(api);
         }
     }
 }

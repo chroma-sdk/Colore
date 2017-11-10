@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Device.cs" company="Corale">
+// <copyright file="DeviceImplementation.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -34,13 +34,13 @@ namespace Corale.Colore.Implementations
     /// <summary>
     /// Base class for devices, containing code common between all devices.
     /// </summary>
-    public abstract class Device : IDevice
+    internal abstract class DeviceImplementation : IDevice
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Device" /> class.
+        /// Initializes a new instance of the <see cref="DeviceImplementation" /> class.
         /// </summary>
         /// <param name="api">Reference to the Chroma API in use.</param>
-        protected Device(IChromaApi api)
+        protected DeviceImplementation(IChromaApi api)
         {
             Api = api;
         }

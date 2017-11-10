@@ -34,11 +34,11 @@ namespace Corale.Colore.Implementations
     using Corale.Colore.Effects.Headset;
 
     /// <inheritdoc cref="IHeadset" />
-    /// <inheritdoc cref="Device" />
+    /// <inheritdoc cref="DeviceImplementation" />
     /// <summary>
     /// Class for interacting with Chroma Headsets.
     /// </summary>
-    public sealed class HeadsetImplementation : Device, IHeadset
+    internal sealed class HeadsetImplementation : DeviceImplementation, IHeadset
     {
         /// <summary>
         /// Loggers instance for this class.
@@ -56,7 +56,7 @@ namespace Corale.Colore.Implementations
             Log.Info("Headset is initializing");
         }
 
-        /// <inheritdoc cref="Device.SetAllAsync" />
+        /// <inheritdoc cref="DeviceImplementation.SetAllAsync" />
         /// <summary>
         /// Sets the color of all components on this device.
         /// </summary>
@@ -102,7 +102,7 @@ namespace Corale.Colore.Implementations
             return await SetStaticAsync(new Static(color)).ConfigureAwait(false);
         }
 
-        /// <inheritdoc cref="Device.ClearAsync" />
+        /// <inheritdoc cref="DeviceImplementation.ClearAsync" />
         /// <summary>
         /// Clears the current effect on the Headset.
         /// </summary>

@@ -36,12 +36,12 @@ namespace Corale.Colore.Implementations
     using JetBrains.Annotations;
 
     /// <inheritdoc cref="IMouse" />
-    /// <inheritdoc cref="Device" />
+    /// <inheritdoc cref="DeviceImplementation" />
     /// <summary>
     /// Class for interacting with a Chroma mouse.
     /// </summary>
     [PublicAPI]
-    public sealed class MouseImplementation : Device, IMouse
+    internal sealed class MouseImplementation : DeviceImplementation, IMouse
     {
         /// <summary>
         /// Logger instance for this class.
@@ -133,7 +133,7 @@ namespace Corale.Colore.Implementations
             return await SetStaticAsync(new Static(led, color)).ConfigureAwait(false);
         }
 
-        /// <inheritdoc cref="Device.SetAllAsync" />
+        /// <inheritdoc cref="DeviceImplementation.SetAllAsync" />
         /// <summary>
         /// Sets the color of all LEDs on the mouse.
         /// </summary>
@@ -154,7 +154,7 @@ namespace Corale.Colore.Implementations
             return await SetEffectAsync(await Api.CreateMouseEffectAsync(Effect.CustomGrid, effect).ConfigureAwait(false)).ConfigureAwait(false);
         }
 
-        /// <inheritdoc cref="Device.ClearAsync" />
+        /// <inheritdoc cref="DeviceImplementation.ClearAsync" />
         /// <summary>
         /// Clears the current effect on the Mouse.
         /// </summary>

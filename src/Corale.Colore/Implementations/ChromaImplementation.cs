@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Chroma.cs" company="Corale">
+// <copyright file="ChromaImplementation.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -43,12 +43,12 @@ namespace Corale.Colore.Implementations
     /// <summary>
     /// Main class for interacting with the Chroma SDK.
     /// </summary>
-    public sealed class Chroma : IChroma
+    internal sealed class ChromaImplementation : IChroma
     {
         /// <summary>
         /// Logger instance for this class.
         /// </summary>
-        private static readonly ILog Log = LogManager.GetLogger(typeof(Chroma));
+        private static readonly ILog Log = LogManager.GetLogger(typeof(ChromaImplementation));
 
         /// <summary>
         /// Reference to the API instance in use.
@@ -107,24 +107,24 @@ namespace Corale.Colore.Implementations
         private ChromaLinkImplementation _chromaLink;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Chroma" /> class.
+        /// Initializes a new instance of the <see cref="ChromaImplementation" /> class.
         /// </summary>
         /// <param name="api">API instance to use.</param>
-        public Chroma(IChromaApi api)
+        public ChromaImplementation(IChromaApi api)
         {
             _api = api;
             _deviceInstances = new Dictionary<Guid, IGenericDevice>();
-            Version = typeof(Chroma).GetTypeInfo().Assembly.GetName().Version;
+            Version = typeof(ChromaImplementation).GetTypeInfo().Assembly.GetName().Version;
             InitializeAsync().Wait();
         }
 
         /// <summary>
-        /// Finalizes an instance of the <see cref="Chroma" /> class.
+        /// Finalizes an instance of the <see cref="ChromaImplementation" /> class.
         /// </summary>
         /// <remarks>
         /// Calls the SDK <c>UnInit</c> function.
         /// </remarks>
-        ~Chroma()
+        ~ChromaImplementation()
         {
             UninitializeAsync().Wait();
         }
@@ -319,7 +319,7 @@ namespace Corale.Colore.Implementations
             Log.DebugFormat("Device {0} requested", deviceId);
             if (_deviceInstances.ContainsKey(deviceId))
                 return Task.FromResult(_deviceInstances[deviceId]);
-            IGenericDevice device = new GenericDevice(deviceId, _api);
+            IGenericDevice device = new GenericDeviceImplementation(deviceId, _api);
             _deviceInstances[deviceId] = device;
             return Task.FromResult(device);
         }

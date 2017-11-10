@@ -34,11 +34,11 @@ namespace Corale.Colore.Implementations
     using Corale.Colore.Effects.Keypad;
 
     /// <inheritdoc cref="IKeypad" />
-    /// <inheritdoc cref="Device" />
+    /// <inheritdoc cref="DeviceImplementation" />
     /// <summary>
     /// Class for interacting with a Chroma keypad.
     /// </summary>
-    public sealed class KeypadImplementation : Device, IKeypad
+    internal sealed class KeypadImplementation : DeviceImplementation, IKeypad
     {
         /// <summary>
         /// Logger instance for this class.
@@ -93,7 +93,7 @@ namespace Corale.Colore.Implementations
             return this[row, column] != Color.Black;
         }
 
-        /// <inheritdoc cref="Device.SetAllAsync" />
+        /// <inheritdoc cref="DeviceImplementation.SetAllAsync" />
         /// <summary>
         /// Sets the color of all components on this device.
         /// </summary>
@@ -145,7 +145,7 @@ namespace Corale.Colore.Implementations
             return await SetStaticAsync(new Static(color)).ConfigureAwait(false);
         }
 
-        /// <inheritdoc cref="Device.ClearAsync" />
+        /// <inheritdoc cref="DeviceImplementation.ClearAsync" />
         /// <summary>
         /// Clears the current effect on the Keypad.
         /// </summary>

@@ -35,7 +35,7 @@ namespace Corale.Colore
     /// <inheritdoc />
     /// <summary>
     /// Thrown when an invalid <see cref="Guid" /> is passed to the
-    /// constructor of <see cref="GenericDevice" />.
+    /// constructor of <see cref="GenericDeviceImplementation" />.
     /// </summary>
 #pragma warning disable CA1032 // Implement standard exception constructors
     public sealed class UnsupportedDeviceException : ColoreException

@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="GenericDevice.cs" company="Corale">
+// <copyright file="GenericDeviceImplementation.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -34,24 +34,24 @@ namespace Corale.Colore.Implementations
     using Corale.Colore.Effects.Generic;
 
     /// <inheritdoc cref="IGenericDevice" />
-    /// <inheritdoc cref="Device" />
+    /// <inheritdoc cref="DeviceImplementation" />
     /// <summary>
     /// A generic device.
     /// </summary>
-    public sealed class GenericDevice : Device, IGenericDevice
+    internal sealed class GenericDeviceImplementation : DeviceImplementation, IGenericDevice
     {
         /// <summary>
         /// Logger instance for this class.
         /// </summary>
-        private static readonly ILog Log = LogManager.GetLogger(typeof(GenericDevice));
+        private static readonly ILog Log = LogManager.GetLogger(typeof(GenericDeviceImplementation));
 
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="GenericDevice" /> class.
+        /// Initializes a new instance of the <see cref="GenericDeviceImplementation" /> class.
         /// </summary>
         /// <param name="deviceId">The <see cref="Guid" /> of the device.</param>
         /// <param name="api">Reference to the Chroma API instance in use.</param>
-        public GenericDevice(Guid deviceId, IChromaApi api)
+        public GenericDeviceImplementation(Guid deviceId, IChromaApi api)
             : base(api)
         {
             Log.InfoFormat("New generic device initializing: {0}", deviceId);
@@ -68,7 +68,7 @@ namespace Corale.Colore.Implementations
         /// </summary>
         public Guid DeviceId { get; }
 
-        /// <inheritdoc cref="Device.ClearAsync" />
+        /// <inheritdoc cref="DeviceImplementation.ClearAsync" />
         /// <summary>
         /// Clears the current effect on Generic Devices.
         /// </summary>
@@ -77,7 +77,7 @@ namespace Corale.Colore.Implementations
             return await SetEffectAsync(await Api.CreateDeviceEffectAsync(DeviceId, Effect.None, default(None)).ConfigureAwait(false)).ConfigureAwait(false);
         }
 
-        /// <inheritdoc cref="Device.SetAllAsync" />
+        /// <inheritdoc cref="DeviceImplementation.SetAllAsync" />
         /// <summary>
         /// Sets the color of all components on this device.
         /// </summary>
