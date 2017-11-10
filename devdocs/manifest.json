@@ -693,7 +693,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.IKeyboard.html",
-          "hash": "EUG63BieqImtO8ygF9/WvA=="
+          "hash": "jeerksk60RUnqLJ3UX64+Q=="
         }
       },
       "is_incremental": false,
@@ -730,126 +730,6 @@
         ".html": {
           "relative_path": "api/Corale.Colore.IMousepad.html",
           "hash": "GrNJvCt0LHRuxv+L0+enIQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Corale.Colore.Implementations.Chroma.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Corale.Colore.Implementations.Chroma.html",
-          "hash": "0fJelzQ4YWbxDEZKph8+Dg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Corale.Colore.Implementations.ChromaLinkImplementation.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Corale.Colore.Implementations.ChromaLinkImplementation.html",
-          "hash": "LeI3B8XlsOlwk9ucexZTrw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Corale.Colore.Implementations.Device.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Corale.Colore.Implementations.Device.html",
-          "hash": "PDDRkMuyAK+4T/8gDfQmKg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Corale.Colore.Implementations.GenericDevice.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Corale.Colore.Implementations.GenericDevice.html",
-          "hash": "XBz3vV3BuNd0VNwXCykdIA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Corale.Colore.Implementations.HeadsetImplementation.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Corale.Colore.Implementations.HeadsetImplementation.html",
-          "hash": "7hBjRhUiF+IQaPusVA1VDw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Corale.Colore.Implementations.KeyboardImplementation.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Corale.Colore.Implementations.KeyboardImplementation.html",
-          "hash": "VndpTG98tXxievVIVFR2OQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Corale.Colore.Implementations.KeypadImplementation.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Corale.Colore.Implementations.KeypadImplementation.html",
-          "hash": "wyzxULaY7jmfMATOvpH3Gg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Corale.Colore.Implementations.MouseImplementation.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Corale.Colore.Implementations.MouseImplementation.html",
-          "hash": "EalAQzCLnlT/ZeDM6TffyA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Corale.Colore.Implementations.MousepadImplementation.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Corale.Colore.Implementations.MousepadImplementation.html",
-          "hash": "UylA0V+awhqPXL9grN+BrA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Corale.Colore.Implementations.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Corale.Colore.Implementations.html",
-          "hash": "HicuyFJgjOq4UlZbU0jJcQ=="
         }
       },
       "is_incremental": false,
@@ -909,7 +789,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.UnsupportedDeviceException.html",
-          "hash": "Pc865ZYlC8PpKwieCdAgJQ=="
+          "hash": "myHAbCgPIv+rxToX4HnDHQ=="
         }
       },
       "is_incremental": false,
@@ -921,7 +801,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.html",
-          "hash": "5fTVGVrrvIjk31wZkLtkFw=="
+          "hash": "ksI+abs5mUzWEW1pdzPlew=="
         }
       },
       "is_incremental": false,
@@ -945,7 +825,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "GbQBLA8ve+GWEnW4pWFu0w=="
+          "hash": "vWLYC3oBiQsOIz0G1d8+Tw=="
         }
       },
       "is_incremental": false,
@@ -1008,16 +888,16 @@
         "incrementalPhase": "build"
       },
       "processors": {
-        "TocDocumentProcessor": {
+        "RestApiDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build"
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
+          "details": "Processor RestApiDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
         "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        },
+        "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         },
@@ -1026,9 +906,9 @@
           "details": "Processor ResourceDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
-        "RestApiDocumentProcessor": {
+        "TocDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor RestApiDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         }
       }
