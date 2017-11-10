@@ -39,7 +39,7 @@ namespace Corale.Colore.Native
     /// <summary>
     /// Helper class to more easily make calls to native Chroma SDK functions.
     /// </summary>
-    internal class NativeApi : IChromaApi
+    internal sealed class NativeApi : IChromaApi
     {
         /// <summary>
         /// Logger instance for this class.
