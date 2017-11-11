@@ -28,6 +28,8 @@ namespace Corale.Colore.Tests
     using System;
     using System.Reflection;
 
+    using Corale.Colore.Data;
+
     using NUnit.Framework;
 
     [TestFixture]

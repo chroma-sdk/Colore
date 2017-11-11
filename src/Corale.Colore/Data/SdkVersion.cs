@@ -23,7 +23,7 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore
+namespace Corale.Colore.Data
 {
     using System;
 

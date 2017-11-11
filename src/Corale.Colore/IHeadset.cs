@@ -28,6 +28,7 @@ namespace Corale.Colore
     using System;
     using System.Threading.Tasks;
 
+    using Corale.Colore.Data;
     using Corale.Colore.Effects.Headset;
 
     using JetBrains.Annotations;
@@ -61,9 +62,9 @@ namespace Corale.Colore
 
         /// <summary>
         /// Sets a new <see cref="Static" /> effect on
-        /// the headset using the specified <see cref="Colore.Color" />.
+        /// the headset using the specified <see cref="Color" />.
         /// </summary>
-        /// <param name="color"><see cref="Colore.Color" /> of the effect.</param>
+        /// <param name="color"><see cref="Color" /> of the effect.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
         Task<Guid> SetStaticAsync(Color color);

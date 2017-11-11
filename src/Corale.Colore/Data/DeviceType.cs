@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+// <copyright file="DeviceType.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,9 +23,8 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Effects.Keyboard
+namespace Corale.Colore.Data
 {
-    using System.ComponentModel;
     using System.Runtime.Serialization;
 
     using JetBrains.Annotations;
@@ -34,53 +33,65 @@ namespace Corale.Colore.Effects.Keyboard
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Supported built-in keyboard effects.
+    /// Device types supported by the Chroma SDK.
     /// </summary>
-    [PublicAPI]
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum Effect
+    public enum DeviceType
     {
         /// <summary>
-        /// No effect.
+        /// A keyboard device.
         /// </summary>
         [PublicAPI]
-        [EnumMember(Value = "CHROMA_NONE")]
-        None = 0,
+        [EnumMember(Value = "keyboard")]
+        Keyboard = 1,
 
         /// <summary>
-        /// Custom effect.
+        /// A mouse device.
         /// </summary>
         [PublicAPI]
-        [EnumMember(Value = "CHROMA_CUSTOM")]
-        Custom = 2,
+        [EnumMember(Value = "mouse")]
+        Mouse = 2,
 
         /// <summary>
-        /// Static effect.
+        /// A headset device.
         /// </summary>
         [PublicAPI]
-        [EnumMember(Value = "CHROMA_STATIC")]
-        Static = 4,
+        [EnumMember(Value = "headset")]
+        Headset = 3,
 
         /// <summary>
-        /// Reserved effect.
+        /// A mouse pad.
         /// </summary>
-        [EditorBrowsable(EditorBrowsableState.Advanced)]
         [PublicAPI]
-        [EnumMember(Value = "CHROMA_RESERVED")]
-        Reserved = 7,
+        [EnumMember(Value = "mousepad")]
+        Mousepad = 4,
 
         /// <summary>
-        /// Custom effect with keys.
+        /// A keypad.
         /// </summary>
         [PublicAPI]
-        [EnumMember(Value = "CHROMA_CUSTOM_KEY")]
-        CustomKey = 8,
+        [EnumMember(Value = "keypad")]
+        Keypad = 5,
 
         /// <summary>
-        /// Invalid effect.
+        /// System device.
         /// </summary>
         [PublicAPI]
-        [EnumMember(Value = "CHROMA_INVALID")]
-        Invalid = 9
+        [EnumMember(Value = "system")]
+        System = 6,
+
+        /// <summary>
+        /// Invalid device.
+        /// </summary>
+        [PublicAPI]
+        [EnumMember(Value = "invalid")]
+        Invalid,
+
+        /// <summary>
+        /// ChromaLink device.
+        /// </summary>
+        [PublicAPI]
+        [EnumMember(Value = "chromalink")]
+        ChromaLink
     }
 }

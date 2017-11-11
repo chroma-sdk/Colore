@@ -25,6 +25,7 @@ namespace Corale.Colore.Tests.Effects.Generic
 {
     using System;
 
+    using Corale.Colore.Data;
     using Corale.Colore.Effects.Generic;
 
     using NUnit.Framework;

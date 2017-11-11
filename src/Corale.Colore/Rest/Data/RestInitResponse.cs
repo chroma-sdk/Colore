@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+// <copyright file="RestInitResponse.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,64 +23,39 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Effects.Keyboard
+namespace Corale.Colore.Rest.Data
 {
-    using System.ComponentModel;
-    using System.Runtime.Serialization;
-
-    using JetBrains.Annotations;
+    using System;
 
     using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Supported built-in keyboard effects.
+    /// Response returned from Chroma REST API on initialization.
     /// </summary>
-    [PublicAPI]
-    [JsonConverter(typeof(StringEnumConverter))]
-    public enum Effect
+    public class RestInitResponse
     {
         /// <summary>
-        /// No effect.
+        /// Initializes a new instance of the <see cref="RestInitResponse" /> class.
         /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_NONE")]
-        None = 0,
+        /// <param name="session">Session ID.</param>
+        /// <param name="uri">API URI.</param>
+        [JsonConstructor]
+        public RestInitResponse(int session, Uri uri)
+        {
+            Session = session;
+            Uri = uri;
+        }
 
         /// <summary>
-        /// Custom effect.
+        /// Gets the session ID.
         /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_CUSTOM")]
-        Custom = 2,
+        [JsonProperty("sessionid")]
+        public int Session { get; }
 
         /// <summary>
-        /// Static effect.
+        /// Gets the URI to use for subsequent API calls.
         /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_STATIC")]
-        Static = 4,
-
-        /// <summary>
-        /// Reserved effect.
-        /// </summary>
-        [EditorBrowsable(EditorBrowsableState.Advanced)]
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_RESERVED")]
-        Reserved = 7,
-
-        /// <summary>
-        /// Custom effect with keys.
-        /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_CUSTOM_KEY")]
-        CustomKey = 8,
-
-        /// <summary>
-        /// Invalid effect.
-        /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_INVALID")]
-        Invalid = 9
+        [JsonProperty("uri")]
+        public Uri Uri { get; }
     }
 }

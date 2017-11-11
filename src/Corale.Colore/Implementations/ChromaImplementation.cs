@@ -34,6 +34,7 @@ namespace Corale.Colore.Implementations
     using Common.Logging;
 
     using Corale.Colore.Api;
+    using Corale.Colore.Data;
     using Corale.Colore.Events;
     using Corale.Colore.Helpers;
 
@@ -110,12 +111,13 @@ namespace Corale.Colore.Implementations
         /// Initializes a new instance of the <see cref="ChromaImplementation" /> class.
         /// </summary>
         /// <param name="api">API instance to use.</param>
-        public ChromaImplementation(IChromaApi api)
+        /// <param name="info">Information about the application.</param>
+        public ChromaImplementation(IChromaApi api, AppInfo info)
         {
             _api = api;
             _deviceInstances = new Dictionary<Guid, IGenericDevice>();
             Version = typeof(ChromaImplementation).GetTypeInfo().Assembly.GetName().Version;
-            InitializeAsync().Wait();
+            InitializeAsync(info).Wait();
         }
 
         /// <summary>
@@ -230,13 +232,14 @@ namespace Corale.Colore.Implementations
         /// <summary>
         /// Initializes the SDK if it hasn't already.
         /// </summary>
+        /// <param name="info">Information about the application.</param>
         /// <remarks>
         /// <span style="color: red;">Manual manipulation of the SDK state is
         /// <strong>not supported by the CoraleStudios team</strong> and may
         /// result in <emph>undefined behaviour</emph>. Usage of this method is
         /// <strong>at your own risk</strong>.</span>
         /// </remarks>
-        public async Task InitializeAsync()
+        public async Task InitializeAsync(AppInfo info)
         {
             if (Initialized)
                 return;
@@ -252,7 +255,7 @@ namespace Corale.Colore.Implementations
                 Log.Warn("Failed to retrieve SDK version from registry!");
 
             Log.Debug("Calling SDK Init function");
-            await _api.InitializeAsync().ConfigureAwait(false);
+            await _api.InitializeAsync(info).ConfigureAwait(false);
             Initialized = true;
             Log.Debug("Resetting _registeredHandle");
             _registeredHandle = IntPtr.Zero;

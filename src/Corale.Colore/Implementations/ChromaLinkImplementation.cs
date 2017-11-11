@@ -31,6 +31,7 @@ namespace Corale.Colore.Implementations
     using Common.Logging;
 
     using Corale.Colore.Api;
+    using Corale.Colore.Data;
     using Corale.Colore.Effects.ChromaLink;
 
     /// <inheritdoc cref="IChromaLink" />
@@ -66,7 +67,7 @@ namespace Corale.Colore.Implementations
         /// <summary>
         /// Gets or sets a color at the specified position in the Chroma Link
         /// </summary>
-        /// <param name="index">The index to access (between <c>0</c> and <see cref="Constants.MaxLeds" />, exclusive upper-bound).</param>
+        /// <param name="index">The index to access (between <c>0</c> and <see cref="Effects.ChromaLink.Constants.MaxLeds" />, exclusive upper-bound).</param>
         /// <returns>The <see cref="Color" /> at the specified position.</returns>
         public Color this[int index]
         {

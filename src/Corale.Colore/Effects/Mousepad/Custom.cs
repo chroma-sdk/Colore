@@ -29,6 +29,8 @@ namespace Corale.Colore.Effects.Mousepad
     using System.Collections.Generic;
     using System.Runtime.InteropServices;
 
+    using Corale.Colore.Data;
+
     using JetBrains.Annotations;
 
     /// <inheritdoc cref="IEquatable{T}" />

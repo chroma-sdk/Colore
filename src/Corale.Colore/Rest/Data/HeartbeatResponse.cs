@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+// <copyright file="HeartbeatResponse.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,64 +23,29 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Effects.Keyboard
+namespace Corale.Colore.Rest.Data
 {
-    using System.ComponentModel;
-    using System.Runtime.Serialization;
-
-    using JetBrains.Annotations;
-
     using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Supported built-in keyboard effects.
+    /// Response returned by Chroma REST API on heartbeat requests.
     /// </summary>
-    [PublicAPI]
-    [JsonConverter(typeof(StringEnumConverter))]
-    public enum Effect
+    public sealed class HeartbeatResponse
     {
         /// <summary>
-        /// No effect.
+        /// Initializes a new instance of the <see cref="HeartbeatResponse" /> class.
         /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_NONE")]
-        None = 0,
+        /// <param name="tick">Tick count.</param>
+        [JsonConstructor]
+        public HeartbeatResponse(int tick)
+        {
+            Tick = tick;
+        }
 
         /// <summary>
-        /// Custom effect.
+        /// Gets the tick count for this heartbeat.
         /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_CUSTOM")]
-        Custom = 2,
-
-        /// <summary>
-        /// Static effect.
-        /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_STATIC")]
-        Static = 4,
-
-        /// <summary>
-        /// Reserved effect.
-        /// </summary>
-        [EditorBrowsable(EditorBrowsableState.Advanced)]
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_RESERVED")]
-        Reserved = 7,
-
-        /// <summary>
-        /// Custom effect with keys.
-        /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_CUSTOM_KEY")]
-        CustomKey = 8,
-
-        /// <summary>
-        /// Invalid effect.
-        /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_INVALID")]
-        Invalid = 9
+        [JsonProperty("tick")]
+        public int Tick { get; }
     }
 }

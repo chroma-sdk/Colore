@@ -28,6 +28,7 @@ namespace Corale.Colore.Api
     using System;
     using System.Threading.Tasks;
 
+    using Corale.Colore.Data;
     using Corale.Colore.Effects.Generic;
 
     using JetBrains.Annotations;
@@ -41,8 +42,9 @@ namespace Corale.Colore.Api
         /// <summary>
         /// Initializes the Chroma SDK.
         /// </summary>
+        /// <param name="info">Information about the application.</param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
-        Task InitializeAsync();
+        Task InitializeAsync(AppInfo info);
 
         /// <summary>
         /// Uninitializes the Chroma SDK.

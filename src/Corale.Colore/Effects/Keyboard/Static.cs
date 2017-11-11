@@ -24,10 +24,13 @@
 // ---------------------------------------------------------------------------------------
 
 #pragma warning disable CA1051 // Do not declare visible instance fields
+
 namespace Corale.Colore.Effects.Keyboard
 {
     using System;
     using System.Runtime.InteropServices;
+
+    using Corale.Colore.Data;
 
     using JetBrains.Annotations;
 

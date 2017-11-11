@@ -27,9 +27,12 @@ namespace Corale.Colore.Tests.Effects.Mousepad.Effects
 {
     using System;
 
+    using Corale.Colore.Data;
     using Corale.Colore.Effects.Mousepad;
 
     using NUnit.Framework;
+
+    using Constants = Corale.Colore.Effects.Mousepad.Constants;
 
     [TestFixture]
     public class CustomTests

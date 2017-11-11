@@ -31,6 +31,7 @@ namespace Corale.Colore.Implementations
     using Common.Logging;
 
     using Corale.Colore.Api;
+    using Corale.Colore.Data;
     using Corale.Colore.Effects.Mouse;
 
     using JetBrains.Annotations;
@@ -69,8 +70,8 @@ namespace Corale.Colore.Implementations
         /// Gets or sets the <see cref="Color" /> for a specific position
         /// on the mouse's virtual grid.
         /// </summary>
-        /// <param name="row">The row to query, between <c>0</c> and <see cref="Constants.MaxRows" /> (exclusive upper-bound).</param>
-        /// <param name="column">The column to query, between <c>0</c> and <see cref="Constants.MaxColumns" /> (exclusive upper-bound).</param>
+        /// <param name="row">The row to query, between <c>0</c> and <see cref="Effects.Mouse.Constants.MaxRows" /> (exclusive upper-bound).</param>
+        /// <param name="column">The column to query, between <c>0</c> and <see cref="Effects.Mouse.Constants.MaxColumns" /> (exclusive upper-bound).</param>
         /// <returns>The <see cref="Color" /> at the specified position.</returns>
         public Color this[int row, int column]
         {

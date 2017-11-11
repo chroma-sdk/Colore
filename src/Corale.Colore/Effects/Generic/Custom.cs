@@ -24,11 +24,14 @@
 // ---------------------------------------------------------------------------------------
 
 #pragma warning disable CA1051 // Do not declare visible instance fields
+
 namespace Corale.Colore.Effects.Generic
 {
     using System;
     using System.Collections.Generic;
     using System.Runtime.InteropServices;
+
+    using Corale.Colore.Data;
 
     using JetBrains.Annotations;
 
@@ -105,6 +108,7 @@ namespace Corale.Colore.Effects.Generic
         /// <param name="colors">2D array of colors to set.</param>
         /// <param name="parameter">Additional effect parameter.</param>
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
         public Custom(Color[,] colors, int parameter = 0)
 #pragma warning restore CA1814 // Prefer jagged arrays over multidimensional
             : this(parameter)

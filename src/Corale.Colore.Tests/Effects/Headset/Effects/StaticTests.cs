@@ -25,6 +25,7 @@
 
 namespace Corale.Colore.Tests.Effects.Headset.Effects
 {
+    using Corale.Colore.Data;
     using Corale.Colore.Effects.Headset;
 
     using NUnit.Framework;

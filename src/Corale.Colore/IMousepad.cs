@@ -28,6 +28,7 @@ namespace Corale.Colore
     using System;
     using System.Threading.Tasks;
 
+    using Corale.Colore.Data;
     using Corale.Colore.Effects.Mousepad;
 
     using JetBrains.Annotations;
@@ -42,7 +43,7 @@ namespace Corale.Colore
         /// Gets or sets a specific LED on the mouse pad.
         /// </summary>
         /// <param name="index">The index to access.</param>
-        /// <returns>The current <see cref="Colore.Color" /> at the <paramref name="index"/>.</returns>
+        /// <returns>The current <see cref="Color" /> at the <paramref name="index"/>.</returns>
         [PublicAPI]
         Color this[int index] { get; set; }
 

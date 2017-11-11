@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+// <copyright file="RestCallResponse.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -22,65 +22,42 @@
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
 // ---------------------------------------------------------------------------------------
-
-namespace Corale.Colore.Effects.Keyboard
+namespace Corale.Colore.Rest.Data
 {
-    using System.ComponentModel;
-    using System.Runtime.Serialization;
+    using System;
+
+    using Corale.Colore.Data;
 
     using JetBrains.Annotations;
 
     using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Supported built-in keyboard effects.
+    /// Contains responses from the Razer Chroma REST API.
     /// </summary>
-    [PublicAPI]
-    [JsonConverter(typeof(StringEnumConverter))]
-    public enum Effect
+    public sealed class RestCallResponse
     {
         /// <summary>
-        /// No effect.
+        /// Initializes a new instance of the <see cref="RestCallResponse" /> class.
         /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_NONE")]
-        None = 0,
+        /// <param name="result">Result code.</param>
+        /// <param name="effectId">Effect ID (<c>null</c> if PUT was used).</param>
+        [JsonConstructor]
+        public RestCallResponse(Result result, Guid? effectId)
+        {
+            Result = result;
+            EffectId = effectId;
+        }
 
         /// <summary>
-        /// Custom effect.
+        /// Gets the result code obtained from the API call.
         /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_CUSTOM")]
-        Custom = 2,
+        public Result Result { get; }
 
         /// <summary>
-        /// Static effect.
+        /// Gets the effect ID obtained from the API call (will be <c>null</c> if PUT was used to create an effect).
         /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_STATIC")]
-        Static = 4,
-
-        /// <summary>
-        /// Reserved effect.
-        /// </summary>
-        [EditorBrowsable(EditorBrowsableState.Advanced)]
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_RESERVED")]
-        Reserved = 7,
-
-        /// <summary>
-        /// Custom effect with keys.
-        /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_CUSTOM_KEY")]
-        CustomKey = 8,
-
-        /// <summary>
-        /// Invalid effect.
-        /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_INVALID")]
-        Invalid = 9
+        [CanBeNull]
+        public Guid? EffectId { get; }
     }
 }

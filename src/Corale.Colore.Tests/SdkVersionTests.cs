@@ -1,4 +1,4 @@
-﻿// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 // <copyright file="SdkVersionTests.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
@@ -26,6 +26,8 @@
 namespace Corale.Colore.Tests
 {
     using System;
+
+    using Corale.Colore.Data;
 
     using NUnit.Framework;
 

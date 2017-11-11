@@ -23,7 +23,7 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore
+namespace Corale.Colore.Data
 {
     using System;
     using System.Collections.Generic;
@@ -189,6 +189,7 @@ namespace Corale.Colore
         }
 
 #pragma warning disable SA1201 // Elements must appear in the correct order
+
         /// <summary>
         /// Converts a <see cref="Result" /> struct to its integer equivalent.
         /// </summary>
@@ -198,6 +199,7 @@ namespace Corale.Colore
         {
             return result.Value;
         }
+
 #pragma warning restore SA1201 // Elements must appear in the correct order
 
         /// <summary>

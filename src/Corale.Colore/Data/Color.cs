@@ -23,7 +23,7 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore
+namespace Corale.Colore.Data
 {
     using System;
     using System.Runtime.InteropServices;
@@ -31,7 +31,6 @@ namespace Corale.Colore
     using JetBrains.Annotations;
 
     /// <inheritdoc cref="IEquatable{T}" />
-    /// <inheritdoc cref="IEquatable{UInt32}" />
     /// <summary>
     /// Represents an RGB color.
     /// </summary>

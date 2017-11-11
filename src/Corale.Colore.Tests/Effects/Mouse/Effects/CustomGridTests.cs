@@ -27,9 +27,12 @@ namespace Corale.Colore.Tests.Effects.Mouse.Effects
 {
     using System;
 
+    using Corale.Colore.Data;
     using Corale.Colore.Effects.Mouse;
 
     using NUnit.Framework;
+
+    using Constants = Corale.Colore.Effects.Mouse.Constants;
 
     [TestFixture]
     public class CustomGridTests

@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+// <copyright file="Author.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,64 +23,53 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Effects.Keyboard
+namespace Corale.Colore.Data
 {
-    using System.ComponentModel;
-    using System.Runtime.Serialization;
-
-    using JetBrains.Annotations;
+    using System;
 
     using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Supported built-in keyboard effects.
+    /// Contains author information for a Chroma application.
     /// </summary>
-    [PublicAPI]
-    [JsonConverter(typeof(StringEnumConverter))]
-    public enum Effect
+    public sealed class Author
     {
         /// <summary>
-        /// No effect.
+        /// Initializes a new instance of the <see cref="Author" /> class.
         /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_NONE")]
-        None = 0,
+        /// <param name="name">Name of the author.</param>
+        /// <param name="contact">Contact information for the author.</param>
+        [JsonConstructor]
+        public Author(string name, string contact)
+        {
+            if (name.Length > Constants.MaxAuthorNameLength)
+            {
+                throw new ArgumentException(
+                    $"Author name is too long, max length is {Constants.MaxAuthorNameLength}",
+                    nameof(name));
+            }
+
+            if (contact.Length > Constants.MaxAuthorContactLength)
+            {
+                throw new ArgumentException(
+                    $"Author contact is too long, max length is {Constants.MaxAuthorContactLength}",
+                    nameof(contact));
+            }
+
+            Name = name;
+            Contact = contact;
+        }
 
         /// <summary>
-        /// Custom effect.
+        /// Gets the name of the application author.
         /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_CUSTOM")]
-        Custom = 2,
+        [JsonProperty("name")]
+        public string Name { get; }
 
         /// <summary>
-        /// Static effect.
+        /// Gets contact information for the author.
         /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_STATIC")]
-        Static = 4,
-
-        /// <summary>
-        /// Reserved effect.
-        /// </summary>
-        [EditorBrowsable(EditorBrowsableState.Advanced)]
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_RESERVED")]
-        Reserved = 7,
-
-        /// <summary>
-        /// Custom effect with keys.
-        /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_CUSTOM_KEY")]
-        CustomKey = 8,
-
-        /// <summary>
-        /// Invalid effect.
-        /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_INVALID")]
-        Invalid = 9
+        [JsonProperty("contact")]
+        public string Contact { get; }
     }
 }

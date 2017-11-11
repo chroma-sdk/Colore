@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="DeviceType.cs" company="Corale">
+// <copyright file="UriHelper.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,55 +23,28 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore
+namespace Corale.Colore.Helpers
 {
-    using JetBrains.Annotations;
+    using System;
 
     /// <summary>
-    /// Device types supported by the Chroma SDK.
+    /// Provides helper methods for working with URIs.
     /// </summary>
-    public enum DeviceType
+    internal static class UriHelper
     {
         /// <summary>
-        /// A keyboard device.
+        /// Appends a <see cref="Uri" /> to another.
         /// </summary>
-        [PublicAPI]
-        Keyboard = 1,
-
-        /// <summary>
-        /// A mouse device.
-        /// </summary>
-        [PublicAPI]
-        Mouse = 2,
-
-        /// <summary>
-        /// A headset device.
-        /// </summary>
-        [PublicAPI]
-        Headset = 3,
-
-        /// <summary>
-        /// A mouse pad.
-        /// </summary>
-        [PublicAPI]
-        Mousepad = 4,
-
-        /// <summary>
-        /// A keypad.
-        /// </summary>
-        [PublicAPI]
-        Keypad = 5,
-
-        /// <summary>
-        /// System device.
-        /// </summary>
-        [PublicAPI]
-        System = 6,
-
-        /// <summary>
-        /// Invalid device.
-        /// </summary>
-        [PublicAPI]
-        Invalid
+        /// <param name="uri">The "left" part of the new URI.</param>
+        /// <param name="resource">The resource, or "right" part of the new URI.</param>
+        /// <returns>
+        /// A new <see cref="Uri" /> with <paramref name="resource" /> appended to <paramref name="uri" />.
+        /// </returns>
+        public static Uri Append(this Uri uri, Uri resource)
+        {
+            var left = uri.ToString().TrimEnd('/');
+            var right = resource.ToString().TrimStart('/');
+            return new Uri($"{left}/{right}");
+        }
     }
 }

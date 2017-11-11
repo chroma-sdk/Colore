@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+// <copyright file="Color.Defines.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,64 +23,76 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Effects.Keyboard
+namespace Corale.Colore.Data
 {
-    using System.ComponentModel;
-    using System.Runtime.Serialization;
+    using System.Diagnostics.CodeAnalysis;
 
     using JetBrains.Annotations;
 
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-
     /// <summary>
-    /// Supported built-in keyboard effects.
+    /// Represents an RGB color.
     /// </summary>
-    [PublicAPI]
-    [JsonConverter(typeof(StringEnumConverter))]
-    public enum Effect
+    [SuppressMessage("ReSharper", "InheritdocConsiderUsage", Justification = "Nothing to inherit from.")]
+    public partial struct Color
     {
         /// <summary>
-        /// No effect.
+        /// Black color.
         /// </summary>
         [PublicAPI]
-        [EnumMember(Value = "CHROMA_NONE")]
-        None = 0,
+        public static readonly Color Black = new Color(0, 0, 0);
 
         /// <summary>
-        /// Custom effect.
+        /// (Dark) blue color.
         /// </summary>
         [PublicAPI]
-        [EnumMember(Value = "CHROMA_CUSTOM")]
-        Custom = 2,
+        public static readonly Color Blue = new Color(0, 0, 255);
 
         /// <summary>
-        /// Static effect.
+        /// (Neon/bright) green color.
         /// </summary>
         [PublicAPI]
-        [EnumMember(Value = "CHROMA_STATIC")]
-        Static = 4,
+        public static readonly Color Green = new Color(0, 255, 0);
 
         /// <summary>
-        /// Reserved effect.
+        /// Hot pink color.
         /// </summary>
-        [EditorBrowsable(EditorBrowsableState.Advanced)]
         [PublicAPI]
-        [EnumMember(Value = "CHROMA_RESERVED")]
-        Reserved = 7,
+        public static readonly Color HotPink = new Color(255, 105, 180);
 
         /// <summary>
-        /// Custom effect with keys.
+        /// Orange color.
         /// </summary>
         [PublicAPI]
-        [EnumMember(Value = "CHROMA_CUSTOM_KEY")]
-        CustomKey = 8,
+        public static readonly Color Orange = FromRgb(0xFFA500);
 
         /// <summary>
-        /// Invalid effect.
+        /// Pink color.
         /// </summary>
         [PublicAPI]
-        [EnumMember(Value = "CHROMA_INVALID")]
-        Invalid = 9
+        public static readonly Color Pink = new Color(255, 0, 255);
+
+        /// <summary>
+        /// Purple color.
+        /// </summary>
+        [PublicAPI]
+        public static readonly Color Purple = FromRgb(0x800080);
+
+        /// <summary>
+        /// Red color.
+        /// </summary>
+        [PublicAPI]
+        public static readonly Color Red = new Color(255, 0, 0);
+
+        /// <summary>
+        /// White color.
+        /// </summary>
+        [PublicAPI]
+        public static readonly Color White = new Color(255, 255, 255);
+
+        /// <summary>
+        /// Yellow color.
+        /// </summary>
+        [PublicAPI]
+        public static readonly Color Yellow = new Color(255, 255, 0);
     }
 }

@@ -27,6 +27,8 @@ namespace Corale.Colore.Api
 {
     using System.ComponentModel;
 
+    using Corale.Colore.Data;
+
     using JetBrains.Annotations;
 
     /// <inheritdoc />

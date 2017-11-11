@@ -27,6 +27,7 @@ namespace Corale.Colore.Tests.Native
 {
     using System.ComponentModel;
 
+    using Corale.Colore.Data;
     using Corale.Colore.Native;
 
     using NUnit.Framework;

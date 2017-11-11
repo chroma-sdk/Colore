@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="DeviceImplementation.cs" company="Corale">
+// <copyright file="RestResponse.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -22,78 +22,79 @@
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
 // ---------------------------------------------------------------------------------------
-
-namespace Corale.Colore.Implementations
+namespace Corale.Colore.Rest
 {
     using System;
-    using System.Threading.Tasks;
+    using System.Net;
 
-    using Corale.Colore.Api;
-    using Corale.Colore.Data;
+    using JetBrains.Annotations;
+
+    using Newtonsoft.Json;
 
     /// <inheritdoc />
     /// <summary>
-    /// Base class for devices, containing code common between all devices.
+    /// Contains the response from calling a REST API method.
     /// </summary>
-    internal abstract class DeviceImplementation : IDevice
+    /// <typeparam name="TData">The type contained in this response.</typeparam>
+    internal class RestResponse<TData> : IRestResponse<TData>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceImplementation" /> class.
+        /// Initializes a new instance of the <see cref="RestResponse{TData}" /> class.
         /// </summary>
-        /// <param name="api">Reference to the Chroma API in use.</param>
-        protected DeviceImplementation(IChromaApi api)
+        /// <param name="status">HTTP status returned from the API.</param>
+        /// <param name="content">String content returned from the API.</param>
+        public RestResponse(HttpStatusCode status, [CanBeNull] string content)
         {
-            Api = api;
+            Status = status;
+            Content = content;
+
+            var code = (int)Status;
+            IsSuccessful = code >= 200 && code < 300;
         }
 
         /// <inheritdoc />
         /// <summary>
-        /// Gets or sets the ID of the currently active effect.
+        /// Gets the HTTP status of the response.
         /// </summary>
-        public Guid CurrentEffectId { get; protected set; }
-
-        /// <summary>
-        /// Gets the Chroma API instance.
-        /// </summary>
-        protected IChromaApi Api { get; }
+        public HttpStatusCode Status { get; }
 
         /// <inheritdoc />
         /// <summary>
-        /// Clears the current effect on the device.
+        /// Gets a value indicating whether the request was successful.
         /// </summary>
-        public abstract Task<Guid> ClearAsync();
+        public bool IsSuccessful { get; }
 
         /// <inheritdoc />
         /// <summary>
-        /// Sets the color of all components on this device.
+        /// Gets the string content of the response body.
         /// </summary>
-        /// <param name="color">Color to set.</param>
-        public abstract Task<Guid> SetAllAsync(Color color);
+        public string Content { get; }
 
         /// <inheritdoc />
         /// <summary>
-        /// Updates the device to use the effect pointed to by the specified GUID.
+        /// Gets the typed data returned from the request.
         /// </summary>
-        /// <param name="effectId">GUID to set.</param>
-        public async Task<Guid> SetEffectAsync(Guid effectId)
+        public TData Data => Deserialize<TData>();
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Attempts to deserialize <see cref="Content" /> into the target type.
+        /// </summary>
+        /// <typeparam name="T">The type to deserialize into.</typeparam>
+        /// <returns>An instance of <typeparamref name="T" />.</returns>
+        public T Deserialize<T>()
         {
-            await DeleteCurrentEffect().ConfigureAwait(false);
-            await Api.SetEffectAsync(effectId).ConfigureAwait(false);
-            CurrentEffectId = effectId;
-            return CurrentEffectId;
-        }
+            if (string.IsNullOrWhiteSpace(Content))
+                return default(T);
 
-        /// <summary>
-        /// Deletes the currently set effect.
-        /// </summary>
-        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
-        internal async Task DeleteCurrentEffect()
-        {
-            if (CurrentEffectId == Guid.Empty)
-                return;
-
-            await Api.DeleteEffectAsync(CurrentEffectId).ConfigureAwait(false);
-            CurrentEffectId = Guid.Empty;
+            try
+            {
+                return JsonConvert.DeserializeObject<T>(Content);
+            }
+            catch (JsonSerializationException)
+            {
+                return default(T);
+            }
         }
     }
 }

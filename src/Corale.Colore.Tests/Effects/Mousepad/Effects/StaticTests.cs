@@ -25,6 +25,7 @@
 
 namespace Corale.Colore.Tests.Effects.Mousepad.Effects
 {
+    using Corale.Colore.Data;
     using Corale.Colore.Effects.Mousepad;
 
     using NUnit.Framework;

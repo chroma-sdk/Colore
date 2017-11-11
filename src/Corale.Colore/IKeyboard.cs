@@ -29,6 +29,7 @@ namespace Corale.Colore
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
+    using Corale.Colore.Data;
     using Corale.Colore.Effects.Keyboard;
     using Corale.Colore.Implementations;
 
@@ -41,7 +42,7 @@ namespace Corale.Colore
     public interface IKeyboard : IDevice
     {
         /// <summary>
-        /// Gets or sets the <see cref="Colore.Color" /> for a specific <see cref="Key" /> on the keyboard.
+        /// Gets or sets the <see cref="Color" /> for a specific <see cref="Key" /> on the keyboard.
         /// The SDK will translate this appropriately depending on user configuration.
         /// </summary>
         /// <param name="key">The key to access.</param>
@@ -50,7 +51,7 @@ namespace Corale.Colore
         Color this[Key key] { get; set; }
 
         /// <summary>
-        /// Gets or sets the <see cref="Colore.Color" /> for a specific row and column on the
+        /// Gets or sets the <see cref="Color" /> for a specific row and column on the
         /// keyboard grid.
         /// </summary>
         /// <param name="row">Row to query, between 0 and <see cref="Effects.Keyboard.Constants.MaxRows" /> (exclusive upper-bound).</param>
@@ -112,7 +113,7 @@ namespace Corale.Colore
         /// <summary>
         /// Sets the specified color on a set of keys.
         /// </summary>
-        /// <param name="color">The <see cref="Colore.Color" /> to apply.</param>
+        /// <param name="color">The <see cref="Color" /> to apply.</param>
         /// <param name="key">First key to change.</param>
         /// <param name="keys">Additional keys that should also have the color applied.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
@@ -123,7 +124,7 @@ namespace Corale.Colore
         /// Sets a color on a collection of keys.
         /// </summary>
         /// <param name="keys">The keys which should have their color changed.</param>
-        /// <param name="color">The <see cref="Colore.Color" /> to apply.</param>
+        /// <param name="color">The <see cref="Color" /> to apply.</param>
         /// <param name="clear">If <c>true</c>, the keyboard will first be cleared before setting the keys.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]

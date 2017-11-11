@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+// <copyright file="IRestResponse.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,64 +23,46 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Effects.Keyboard
+namespace Corale.Colore.Rest
 {
-    using System.ComponentModel;
-    using System.Runtime.Serialization;
+    using System.Net;
 
     using JetBrains.Annotations;
 
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-
     /// <summary>
-    /// Supported built-in keyboard effects.
+    /// Represents a response from calling a REST API.
     /// </summary>
-    [PublicAPI]
-    [JsonConverter(typeof(StringEnumConverter))]
-    public enum Effect
+    /// <typeparam name="TData">The type contained in this response.</typeparam>
+    public interface IRestResponse<out TData>
     {
         /// <summary>
-        /// No effect.
+        /// Gets the HTTP status of the response.
         /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_NONE")]
-        None = 0,
+        HttpStatusCode Status { get; }
 
         /// <summary>
-        /// Custom effect.
+        /// Gets a value indicating whether the REST request was successful.
         /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_CUSTOM")]
-        Custom = 2,
+        bool IsSuccessful { get; }
 
         /// <summary>
-        /// Static effect.
+        /// Gets the body content as a <see cref="string" />, or <c>null</c> if no content.
         /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_STATIC")]
-        Static = 4,
+        [CanBeNull]
+        string Content { get; }
 
         /// <summary>
-        /// Reserved effect.
+        /// Gets the data returned from the request.
         /// </summary>
-        [EditorBrowsable(EditorBrowsableState.Advanced)]
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_RESERVED")]
-        Reserved = 7,
+        [CanBeNull]
+        TData Data { get; }
 
         /// <summary>
-        /// Custom effect with keys.
+        /// Deserializes the response content into the specified type.
         /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_CUSTOM_KEY")]
-        CustomKey = 8,
-
-        /// <summary>
-        /// Invalid effect.
-        /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_INVALID")]
-        Invalid = 9
+        /// <typeparam name="T">The type to deserialize into.</typeparam>
+        /// <returns>An instance of <typeparamref name="T" />.</returns>
+        [CanBeNull]
+        T Deserialize<T>();
     }
 }
