@@ -45,6 +45,7 @@ deploy:
     appveyor_repo_tag: true
 - provider: NuGet
   server: https://www.myget.org/F/coralestudios/api/v2/package
+  symbol_server: https://www.myget.org/F/coralestudios/symbols/api/v2/package
   name: production
   api_key:
     secure: vG2UFV8FgS2hYY1QfkXshHO9hvm3rgV2pEKXB7WBDR/Y+qHp1N+audYtqmfdD1NB
@@ -61,6 +62,7 @@ deploy:
     appveyor_repo_tag: true
 - provider: NuGet
   server: https://www.myget.org/F/coralestudios/api/v2/package
+  symbol_server: https://www.myget.org/F/coralestudios/symbols/api/v2/package
   name: development
   api_key:
     secure: vG2UFV8FgS2hYY1QfkXshHO9hvm3rgV2pEKXB7WBDR/Y+qHp1N+audYtqmfdD1NB
