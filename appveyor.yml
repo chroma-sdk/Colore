@@ -40,6 +40,15 @@ deploy:
   name: production
   api_key:
     secure: 0kgF06I+L8BAOvMagk7Muw+mkYQnZXAh+HO0S4Rnbr4BSuKWVCD5lBd5N4mpyABJ
+  artifact: NuGet
+  on:
+    appveyor_repo_tag: true
+- provider: NuGet
+  server: https://www.myget.org/F/coralestudios/api/v2/package
+  name: production
+  api_key:
+    secure: vG2UFV8FgS2hYY1QfkXshHO9hvm3rgV2pEKXB7WBDR/Y+qHp1N+audYtqmfdD1NB
+  artifact: NuGet
   on:
     appveyor_repo_tag: true
 - provider: GitHub
@@ -50,6 +59,14 @@ deploy:
   draft: true
   on:
     appveyor_repo_tag: true
+- provider: NuGet
+  server: https://www.myget.org/F/coralestudios/api/v2/package
+  name: development
+  api_key:
+    secure: vG2UFV8FgS2hYY1QfkXshHO9hvm3rgV2pEKXB7WBDR/Y+qHp1N+audYtqmfdD1NB
+  artifact: NuGet
+  on:
+    branch: develop
 
 notifications:
 - provider: GitHubPullRequest
