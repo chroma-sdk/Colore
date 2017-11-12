@@ -3,20 +3,15 @@
     {
       "src": [
         {
-          "cwd": "../src",
+          "src": "../src",
           "files": [
             "Corale.Colore/bin/Release/netstandard1.3/Corale.Colore.dll"
           ],
-          "exclude": [
-            "**/obj/**",
-            "_site/**"
-          ]
+          "exclude": [ "**/obj/**" ]
         }
       ],
       "dest": "api",
-      "properties": {
-        "TargetFramework": "netstandard1.3"
-      }
+      "properties": { "TargetFramework": "netstandard1.3" }
     }
   ],
   "build": {
@@ -33,20 +28,31 @@
           "articles/**/toc.yml",
           "toc.yml",
           "*.md",
-          "../*.md",
-          "../.github/CODE_OF_CONDUCT.md"
         ],
         "exclude": [
           "obj/**",
           "_site/**"
         ]
+      },
+      {
+        "src": "..",
+        "files": [
+          "*.md",
+          "LICENSE",
+          "AUTHORS",
+          "CODEOWNERS"
+        ],
+        "dest": "./"
+      },
+      {
+        "src": "../.github",
+        "files": [ "CODE_OF_CONDUCT.md" ],
+        "dest": "./"
       }
     ],
     "resource": [
       {
-        "files": [
-          "images/**"
-        ],
+        "files": [ "images/**" ],
         "exclude": [
           "obj/**",
           "_site/**"
@@ -55,9 +61,7 @@
     ],
     "overwrite": [
       {
-        "files": [
-          "apidoc/**.md"
-        ],
+        "files": [ "apidoc/**.md" ],
         "exclude": [
           "obj/**",
           "_site/**"
@@ -65,71 +69,18 @@
       }
     ],
     "dest": "_site",
-    "globalMetadataFiles": [],
+    "globalMetadata": {
+      "_appLogoPath": "images/colore.png",
+      "_enableSearch": true
+    },
     "fileMetadataFiles": [],
-    "template": [
-      "default"
-    ],
+    "template": [ "default", "theme" ],
     "postProcessors": [],
     "noLangKeyword": false,
     "keepFileLink": false,
-    "cleanupCacheHistory": false
-  },
-  "pdf": {
-    "content": [
-      {
-        "files": [
-          "api/**.yml"
-        ],
-        "exclude": [
-          "**/toc.yml",
-          "**/toc.md"
-        ]
-      },
-      {
-        "files": [
-          "articles/**.md",
-          "articles/**/toc.yml",
-          "toc.yml",
-          "*.md",
-          "pdf/*"
-        ],
-        "exclude": [
-          "**/bin/**",
-          "**/obj/**",
-          "_site_pdf/**",
-          "**/toc.yml",
-          "**/toc.md"
-        ]
-      },
-      {
-        "files": "pdf/toc.yml"
-      }
-    ],
-    "resource": [
-      {
-        "files": [
-          "images/**"
-        ],
-        "exclude": [
-          "**/bin/**",
-          "**/obj/**",
-          "_site_pdf/**"
-        ]
-      }
-    ],
-    "overwrite": [
-      {
-        "files": [
-          "apidoc/**.md"
-        ],
-        "exclude": [
-          "**/bin/**",
-          "**/obj/**",
-          "_site_pdf/**"
-        ]
-      }
-    ],
-    "dest": "_site_pdf"
+    "cleanupCacheHistory": false,
+    "sitemap": {
+      "baseUrl": "https://coralestudios.github.io/Colore/docs/"
+    }
   }
 }
