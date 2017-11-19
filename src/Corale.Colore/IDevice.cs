@@ -28,6 +28,8 @@ namespace Corale.Colore
     using System;
     using System.Threading.Tasks;
 
+    using Corale.Colore.Data;
+
     using JetBrains.Annotations;
 
     /// <summary>

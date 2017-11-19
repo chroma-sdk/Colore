@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Color.Defines.cs" company="Corale">
+// <copyright file="Constants.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,76 +23,61 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore
+namespace Corale.Colore.Data
 {
-    using System.Diagnostics.CodeAnalysis;
-
-    using JetBrains.Annotations;
-
     /// <summary>
-    /// Represents an RGB color.
+    /// The definitions of generic constant values used in the project
     /// </summary>
-    [SuppressMessage("ReSharper", "InheritdocConsiderUsage", Justification = "Nothing to inherit from.")]
-    public partial struct Color
+    public static class Constants
     {
         /// <summary>
-        /// Black color.
+        /// Maximum number of rows for a generic custom effect.
         /// </summary>
-        [PublicAPI]
-        public static readonly Color Black = new Color(0, 0, 0);
+        public const int MaxRows = 30;
 
         /// <summary>
-        /// (Dark) blue color.
+        /// Maximum number of columns for a generic custom effect.
         /// </summary>
-        [PublicAPI]
-        public static readonly Color Blue = new Color(0, 0, 255);
+        public const int MaxColumns = 30;
 
         /// <summary>
-        /// (Neon/bright) green color.
+        /// Maximum number of color entries for a generic custom effect.
         /// </summary>
-        [PublicAPI]
-        public static readonly Color Green = new Color(0, 255, 0);
+        public const int MaxColors = MaxRows * MaxColumns;
 
         /// <summary>
-        /// Hot pink color.
+        /// Used by Razer code to send Chroma event messages.
         /// </summary>
-        [PublicAPI]
-        public static readonly Color HotPink = new Color(255, 105, 180);
+        public const uint WmChromaEvent = WmApp + 0x2000;
 
         /// <summary>
-        /// Orange color.
+        /// Max size of an application title.
         /// </summary>
-        [PublicAPI]
-        public static readonly Color Orange = FromRgb(0xFFA500);
+        internal const int MaxAppTitleLength = 256;
 
         /// <summary>
-        /// Pink color.
+        /// Max size of an application description.
         /// </summary>
-        [PublicAPI]
-        public static readonly Color Pink = new Color(255, 0, 255);
+        internal const int MaxAppDescriptionLength = 1024;
 
         /// <summary>
-        /// Purple color.
+        /// Max size of an author name.
         /// </summary>
-        [PublicAPI]
-        public static readonly Color Purple = FromRgb(0x800080);
+        internal const int MaxAuthorNameLength = 256;
 
         /// <summary>
-        /// Red color.
+        /// Max size of an author's contact information.
         /// </summary>
-        [PublicAPI]
-        public static readonly Color Red = new Color(255, 0, 0);
+        internal const int MaxAuthorContactLength = 256;
 
         /// <summary>
-        /// White color.
+        /// Used to define private messages, usually of the form WM_APP+x, where x is an integer value.
         /// </summary>
-        [PublicAPI]
-        public static readonly Color White = new Color(255, 255, 255);
-
-        /// <summary>
-        /// Yellow color.
-        /// </summary>
-        [PublicAPI]
-        public static readonly Color Yellow = new Color(255, 255, 0);
+        /// <remarks>
+        /// The <strong>WM_APP</strong> constant is used to distinguish between message values
+        /// that are reserved for use by the system and values that can be used by an
+        /// application to send messages within a private window class.
+        /// </remarks>
+        private const uint WmApp = 0x8000;
     }
 }

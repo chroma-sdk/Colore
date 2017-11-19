@@ -29,6 +29,7 @@ namespace Corale.Colore.Native
     using System.Diagnostics.CodeAnalysis;
     using System.Runtime.InteropServices;
 
+    using Corale.Colore.Data;
     using Corale.Colore.Helpers;
 
     /// <summary>
@@ -263,8 +264,8 @@ namespace Corale.Colore.Native
         /// <term><see cref="Effects.Mouse.Static" /></term>
         /// </item>
         /// <item>
-        /// <term><see cref="Effects.Mouse.Effect.CustomGrid" /></term>
-        /// <term><see cref="Effects.Mouse.CustomGrid" /></term>
+        /// <term><see cref="Effects.Mouse.Effect.Custom" /></term>
+        /// <term><see cref="Effects.Mouse.Custom" /></term>
         /// </item>
         /// </list>
         /// </remarks>
@@ -349,7 +350,7 @@ namespace Corale.Colore.Native
         /// <returns><see cref="Result" /> value indicating success.</returns>
         /// <remarks>
         /// <strong>Messages can only be handled in a Windows message pumping thread.</strong>
-        /// <see cref="Colore.Constants.WmChromaEvent" /> will be sent if there is an event.
+        /// <see cref="Constants.WmChromaEvent" /> will be sent if there is an event.
         /// Possible combination of <c>wParam</c> and <c>lParam</c> values are explained in the below table.
         /// <list type="table">
         /// <listheader>

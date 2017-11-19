@@ -26,31 +26,32 @@
 namespace Corale.Colore.Effects.Generic
 {
     using System.ComponentModel;
+    using System.Runtime.Serialization;
 
     using JetBrains.Annotations;
+
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
 
     /// <summary>
     /// Generic device effects.
     /// </summary>
     /// <remarks>Not all devices are compatible with every effect type.</remarks>
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum Effect
     {
         /// <summary>
         /// No effect.
         /// </summary>
         [PublicAPI]
+        [EnumMember(Value = "CHROMA_NONE")]
         None = 0,
-
-        /// <summary>
-        /// A custom effect.
-        /// </summary>
-        [PublicAPI]
-        Custom = 7,
 
         /// <summary>
         /// Reserved effect.
         /// </summary>
         [EditorBrowsable(EditorBrowsableState.Advanced)]
+        [EnumMember(Value = "CHROMA_RESERVED")]
         //// ReSharper disable once UnusedMember.Global
         Reserved = 8,
 
@@ -58,6 +59,7 @@ namespace Corale.Colore.Effects.Generic
         /// Invalid effect.
         /// </summary>
         [PublicAPI]
+        [EnumMember(Value = "CHROMA_INVALID")]
         Invalid = 9
     }
 }

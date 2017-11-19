@@ -28,12 +28,14 @@ namespace Corale.Colore.Native
     using System.Globalization;
 
     using Corale.Colore.Api;
+    using Corale.Colore.Data;
 
     /// <inheritdoc />
     /// <summary>
     /// Thrown when a native function returns an erroneous result value.
     /// </summary>
 #pragma warning disable CA1032 // Implement standard exception constructors
+
     public sealed class NativeCallException : ApiException
 #pragma warning restore CA1032 // Implement standard exception constructors
     {

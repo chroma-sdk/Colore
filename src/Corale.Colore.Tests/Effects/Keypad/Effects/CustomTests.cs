@@ -27,9 +27,12 @@ namespace Corale.Colore.Tests.Effects.Keypad.Effects
 {
     using System;
 
+    using Corale.Colore.Data;
     using Corale.Colore.Effects.Keypad;
 
     using NUnit.Framework;
+
+    using Constants = Corale.Colore.Effects.Keypad.Constants;
 
     [TestFixture]
     public class CustomTests

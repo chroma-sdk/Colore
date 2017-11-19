@@ -31,6 +31,7 @@ namespace Corale.Colore.Implementations
     using Common.Logging;
 
     using Corale.Colore.Api;
+    using Corale.Colore.Data;
     using Corale.Colore.Effects.Generic;
 
     /// <inheritdoc cref="IGenericDevice" />
@@ -74,7 +75,9 @@ namespace Corale.Colore.Implementations
         /// </summary>
         public override async Task<Guid> ClearAsync()
         {
-            return await SetEffectAsync(await Api.CreateDeviceEffectAsync(DeviceId, Effect.None, default(None)).ConfigureAwait(false)).ConfigureAwait(false);
+            return await SetEffectAsync(
+                    await Api.CreateDeviceEffectAsync(DeviceId, Effect.None, default(None)).ConfigureAwait(false))
+                .ConfigureAwait(false);
         }
 
         /// <inheritdoc cref="DeviceImplementation.SetAllAsync" />
@@ -82,9 +85,9 @@ namespace Corale.Colore.Implementations
         /// Sets the color of all components on this device.
         /// </summary>
         /// <param name="color">Color to set.</param>
-        public override async Task<Guid> SetAllAsync(Color color)
+        public override Task<Guid> SetAllAsync(Color color)
         {
-            return await SetCustomAsync(new Custom(color)).ConfigureAwait(false);
+            throw new NotSupportedException("Setting colors is not supported on generic devices.");
         }
 
         /// <inheritdoc />
@@ -106,17 +109,8 @@ namespace Corale.Colore.Implementations
         public async Task<Guid> SetEffectAsync<T>(Effect effect, T data)
             where T : struct
         {
-            return await SetEffectAsync(await Api.CreateDeviceEffectAsync(DeviceId, effect, data).ConfigureAwait(false)).ConfigureAwait(false);
-        }
-
-        /// <inheritdoc />
-        /// <summary>
-        /// Sets a custom effect on this device.
-        /// </summary>
-        /// <param name="effect">Effect options.</param>
-        public async Task<Guid> SetCustomAsync(Custom effect)
-        {
-            return await SetEffectAsync(await Api.CreateDeviceEffectAsync(DeviceId, Effect.Custom, effect).ConfigureAwait(false)).ConfigureAwait(false);
+            return await SetEffectAsync(await Api.CreateDeviceEffectAsync(DeviceId, effect, data).ConfigureAwait(false))
+                .ConfigureAwait(false);
         }
     }
 }

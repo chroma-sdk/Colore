@@ -27,9 +27,12 @@ namespace Corale.Colore.Tests.Effects.Keyboard.Effects
 {
     using System;
 
+    using Corale.Colore.Data;
     using Corale.Colore.Effects.Keyboard;
 
     using NUnit.Framework;
+
+    using Constants = Corale.Colore.Effects.Keyboard.Constants;
 
     [TestFixture]
     public class CustomTests

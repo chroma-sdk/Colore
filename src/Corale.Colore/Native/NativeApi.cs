@@ -32,6 +32,7 @@ namespace Corale.Colore.Native
     using Common.Logging;
 
     using Corale.Colore.Api;
+    using Corale.Colore.Data;
     using Corale.Colore.Effects.Generic;
     using Corale.Colore.Helpers;
 
@@ -50,7 +51,8 @@ namespace Corale.Colore.Native
         /// <summary>
         /// Initializes the Chroma SDK.
         /// </summary>
-        public Task InitializeAsync()
+        /// <param name="info">Information about the application, currently unused for native SDK.</param>
+        public Task InitializeAsync(AppInfo info)
         {
             var result = NativeMethods.Init();
             if (!result)

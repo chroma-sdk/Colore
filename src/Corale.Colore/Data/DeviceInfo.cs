@@ -24,7 +24,8 @@
 // ---------------------------------------------------------------------------------------
 
 #pragma warning disable CA1051 // Do not declare visible instance fields
-namespace Corale.Colore
+
+namespace Corale.Colore.Data
 {
     using System;
     using System.Runtime.InteropServices;

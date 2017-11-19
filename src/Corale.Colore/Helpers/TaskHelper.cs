@@ -22,6 +22,7 @@
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
 // ---------------------------------------------------------------------------------------
+
 namespace Corale.Colore.Helpers
 {
     using System.Threading.Tasks;
@@ -29,15 +30,15 @@ namespace Corale.Colore.Helpers
     /// <summary>
     /// Contains helper functions for working with async tasks.
     /// </summary>
-    public static class TaskHelper
+    internal static class TaskHelper
     {
         /// <summary>
         /// Gets a "completed task" object.
         /// </summary>
 #if NET451
-        public static readonly Task CompletedTask = Task.FromResult(0);
+        internal static readonly Task CompletedTask = Task.FromResult(0);
 #else
-        public static readonly Task CompletedTask = Task.CompletedTask;
+        internal static readonly Task CompletedTask = Task.CompletedTask;
 #endif
     }
 }

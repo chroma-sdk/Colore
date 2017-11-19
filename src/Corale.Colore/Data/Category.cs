@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Constants.cs" company="Corale">
+// <copyright file="Category.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,41 +23,33 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore
+namespace Corale.Colore.Data
 {
+    using System.Runtime.Serialization;
+
+    using JetBrains.Annotations;
+
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
+
     /// <summary>
-    /// The definitions of generic constant values used in the project
+    /// Chroma application categories.
     /// </summary>
-    public static class Constants
+    [JsonConverter(typeof(StringEnumConverter))]
+    public enum Category
     {
         /// <summary>
-        /// Maximum number of rows for a generic custom effect.
+        /// Application, anything that is not a game.
         /// </summary>
-        public const int MaxRows = 30;
+        [PublicAPI]
+        [EnumMember(Value = "application")]
+        Application,
 
         /// <summary>
-        /// Maximum number of columns for a generic custom effect.
+        /// Game or other interactive entertainment.
         /// </summary>
-        public const int MaxColumns = 30;
-
-        /// <summary>
-        /// Maximum number of color entries for a generic custom effect.
-        /// </summary>
-        public const int MaxColors = MaxRows * MaxColumns;
-
-        /// <summary>
-        /// Used by Razer code to send Chroma event messages.
-        /// </summary>
-        public const uint WmChromaEvent = WmApp + 0x2000;
-
-        /// <summary>
-        /// Used to define private messages, usually of the form WM_APP+x, where x is an integer value.
-        /// </summary>
-        /// <remarks>
-        /// The <strong>WM_APP</strong> constant is used to distinguish between message values
-        /// that are reserved for use by the system and values that can be used by an
-        /// application to send messages within a private window class.
-        /// </remarks>
-        private const uint WmApp = 0x8000;
+        [PublicAPI]
+        [EnumMember(Value = "game")]
+        Game
     }
 }

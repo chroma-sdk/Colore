@@ -28,6 +28,7 @@ namespace Corale.Colore
     using System;
     using System.Threading.Tasks;
 
+    using Corale.Colore.Data;
     using Corale.Colore.Effects.Mouse;
 
     using JetBrains.Annotations;
@@ -39,21 +40,21 @@ namespace Corale.Colore
     public interface IMouse : IDevice
     {
         /// <summary>
-        /// Gets or sets the <see cref="Colore.Color" /> for a specific position
+        /// Gets or sets the <see cref="Color" /> for a specific position
         /// on the mouse's virtual grid.
         /// </summary>
         /// <param name="row">The row to query, between <c>0</c> and <see cref="Effects.Mouse.Constants.MaxRows" /> (exclusive upper-bound).</param>
         /// <param name="column">The column to query, between <c>0</c> and <see cref="Effects.Mouse.Constants.MaxColumns" /> (exclusive upper-bound).</param>
-        /// <returns>The <see cref="Colore.Color" /> at the specified position.</returns>
+        /// <returns>The <see cref="Color" /> at the specified position.</returns>
         [PublicAPI]
         Color this[int row, int column] { get; set; }
 
         /// <summary>
-        /// Gets or sets the <see cref="Colore.Color" /> for a specified <see cref="GridLed" />
+        /// Gets or sets the <see cref="Color" /> for a specified <see cref="GridLed" />
         /// on the mouse's virtual grid.
         /// </summary>
         /// <param name="led">The <see cref="GridLed" /> to query.</param>
-        /// <returns>The <see cref="Colore.Color" /> currently set for the specified <see cref="GridLed" />.</returns>
+        /// <returns>The <see cref="Color" /> currently set for the specified <see cref="GridLed" />.</returns>
         [PublicAPI]
         Color this[GridLed led] { get; set; }
 
@@ -86,9 +87,9 @@ namespace Corale.Colore
         /// <summary>
         /// Sets a custom grid effect on the mouse.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="CustomGrid" /> struct.</param>
+        /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetGridAsync(CustomGrid effect);
+        Task<Guid> SetGridAsync(Custom effect);
     }
 }

@@ -25,48 +25,46 @@
 
 namespace Corale.Colore.Effects.ChromaLink
 {
+    using System.Runtime.Serialization;
+
     using JetBrains.Annotations;
+
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
 
     /// <summary>
     /// Supported built-in Chroma Link effects.
     /// </summary>
     [PublicAPI]
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum Effect
     {
         /// <summary>
         /// No effect.
         /// </summary>
         [PublicAPI]
+        [EnumMember(Value = "CHROMA_NONE")]
         None = 0,
 
         /// <summary>
         /// No effect.
         /// </summary>
         [PublicAPI]
+        [EnumMember(Value = "CHROMA_CUSTOM")]
         Custom,
 
         /// <summary>
         /// No effect.
         /// </summary>
         [PublicAPI]
+        [EnumMember(Value = "CHROMA_STATIC")]
         Static,
-
-        /// <summary>
-        /// Slow fade between two colors.
-        /// </summary>
-        [PublicAPI]
-        Breathing,
-
-        /// <summary>
-        /// Cycles the entire spectrum.
-        /// </summary>
-        [PublicAPI]
-        SpectrumCycling,
 
         /// <summary>
         /// No effect.
         /// </summary>
         [PublicAPI]
+        [EnumMember(Value = "CHROMA_INVALID")]
         Invalid
     }
 }

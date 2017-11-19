@@ -26,31 +26,39 @@
 namespace Corale.Colore.Effects.Keyboard
 {
     using System.ComponentModel;
+    using System.Runtime.Serialization;
 
     using JetBrains.Annotations;
+
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
 
     /// <summary>
     /// Supported built-in keyboard effects.
     /// </summary>
     [PublicAPI]
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum Effect
     {
         /// <summary>
         /// No effect.
         /// </summary>
         [PublicAPI]
+        [EnumMember(Value = "CHROMA_NONE")]
         None = 0,
 
         /// <summary>
         /// Custom effect.
         /// </summary>
         [PublicAPI]
+        [EnumMember(Value = "CHROMA_CUSTOM")]
         Custom = 2,
 
         /// <summary>
         /// Static effect.
         /// </summary>
         [PublicAPI]
+        [EnumMember(Value = "CHROMA_STATIC")]
         Static = 4,
 
         /// <summary>
@@ -58,18 +66,21 @@ namespace Corale.Colore.Effects.Keyboard
         /// </summary>
         [EditorBrowsable(EditorBrowsableState.Advanced)]
         [PublicAPI]
+        [EnumMember(Value = "CHROMA_RESERVED")]
         Reserved = 7,
 
         /// <summary>
         /// Custom effect with keys.
         /// </summary>
         [PublicAPI]
+        [EnumMember(Value = "CHROMA_CUSTOM_KEY")]
         CustomKey = 8,
 
         /// <summary>
         /// Invalid effect.
         /// </summary>
         [PublicAPI]
+        [EnumMember(Value = "CHROMA_INVALID")]
         Invalid = 9
     }
 }

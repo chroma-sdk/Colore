@@ -32,6 +32,7 @@ namespace Corale.Colore.Implementations
     using Common.Logging;
 
     using Corale.Colore.Api;
+    using Corale.Colore.Data;
     using Corale.Colore.Effects.Keyboard;
 
     using JetBrains.Annotations;
@@ -87,8 +88,8 @@ namespace Corale.Colore.Implementations
         /// Gets or sets the <see cref="Color" /> for a specific row and column on the
         /// keyboard grid.
         /// </summary>
-        /// <param name="row">Row to query, between 0 and <see cref="Constants.MaxRows" /> (exclusive upper-bound).</param>
-        /// <param name="column">Column to query, between 0 and <see cref="Constants.MaxColumns" /> (exclusive upper-bound).</param>
+        /// <param name="row">Row to query, between 0 and <see cref="Effects.Keyboard.Constants.MaxRows" /> (exclusive upper-bound).</param>
+        /// <param name="column">Column to query, between 0 and <see cref="Effects.Keyboard.Constants.MaxColumns" /> (exclusive upper-bound).</param>
         /// <returns>The color currently set on the specified position.</returns>
         public Color this[int row, int column]
         {
@@ -179,8 +180,8 @@ namespace Corale.Colore.Implementations
         /// <summary>
         /// Sets the color on a specific row and column on the keyboard grid.
         /// </summary>
-        /// <param name="row">Row to set, between 0 and <see cref="Constants.MaxRows" /> (exclusive upper-bound).</param>
-        /// <param name="column">Column to set, between 0 and <see cref="Constants.MaxColumns" /> (exclusive upper-bound).</param>
+        /// <param name="row">Row to set, between 0 and <see cref="Effects.Keyboard.Constants.MaxRows" /> (exclusive upper-bound).</param>
+        /// <param name="column">Column to set, between 0 and <see cref="Effects.Keyboard.Constants.MaxColumns" /> (exclusive upper-bound).</param>
         /// <param name="color">Color to set.</param>
         /// <param name="clear">Whether or not to clear the existing colors before setting this one.</param>
         /// <exception cref="System.ArgumentException">Thrown if the row or column parameters are outside the valid ranges.</exception>

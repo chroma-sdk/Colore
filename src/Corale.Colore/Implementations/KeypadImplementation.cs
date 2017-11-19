@@ -31,6 +31,7 @@ namespace Corale.Colore.Implementations
     using Common.Logging;
 
     using Corale.Colore.Api;
+    using Corale.Colore.Data;
     using Corale.Colore.Effects.Keypad;
 
     /// <inheritdoc cref="IKeypad" />
@@ -67,8 +68,8 @@ namespace Corale.Colore.Implementations
         /// Gets or sets a color at the specified position in the keypad's
         /// grid layout.
         /// </summary>
-        /// <param name="row">The row to access (between <c>0</c> and <see cref="Constants.MaxRows" />, exclusive upper-bound).</param>
-        /// <param name="column">The column to access (between <c>0</c> and <see cref="Constants.MaxColumns" />, exclusive upper-bound).</param>
+        /// <param name="row">The row to access (between <c>0</c> and <see cref="Effects.Keypad.Constants.MaxRows" />, exclusive upper-bound).</param>
+        /// <param name="column">The column to access (between <c>0</c> and <see cref="Effects.Keypad.Constants.MaxColumns" />, exclusive upper-bound).</param>
         /// <returns>The <see cref="Color" /> at the specified position.</returns>
         public Color this[int row, int column]
         {

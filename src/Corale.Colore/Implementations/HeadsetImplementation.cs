@@ -31,6 +31,7 @@ namespace Corale.Colore.Implementations
     using Common.Logging;
 
     using Corale.Colore.Api;
+    using Corale.Colore.Data;
     using Corale.Colore.Effects.Headset;
 
     /// <inheritdoc cref="IHeadset" />

@@ -25,35 +25,45 @@
 
 namespace Corale.Colore.Effects.Headset
 {
+    using System.Runtime.Serialization;
+
     using JetBrains.Annotations;
+
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
 
     /// <summary>
     /// Standard effects for headsets.
     /// </summary>
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum Effect
     {
         /// <summary>
         /// No effect.
         /// </summary>
         [PublicAPI]
+        [EnumMember(Value = "CHROMA_NONE")]
         None = 0,
 
         /// <summary>
         /// Static color.
         /// </summary>
         [PublicAPI]
+        [EnumMember(Value = "CHROMA_STATIC")]
         Static = 1,
 
         /// <summary>
         /// Custom headset effect.
         /// </summary>
         [PublicAPI]
+        [EnumMember(Value = "CHROMA_CUSTOM")]
         Custom = 4,
 
         /// <summary>
         /// Invalid effect.
         /// </summary>
         [PublicAPI]
+        [EnumMember(Value = "CHROMA_INVALID")]
         Invalid = 5
     }
 }

@@ -29,6 +29,7 @@ namespace Corale.Colore.Implementations
     using System.Threading.Tasks;
 
     using Corale.Colore.Api;
+    using Corale.Colore.Data;
 
     /// <inheritdoc />
     /// <summary>

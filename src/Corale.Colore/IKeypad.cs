@@ -28,6 +28,7 @@ namespace Corale.Colore
     using System;
     using System.Threading.Tasks;
 
+    using Corale.Colore.Data;
     using Corale.Colore.Effects.Keypad;
 
     using JetBrains.Annotations;
@@ -44,7 +45,7 @@ namespace Corale.Colore
         /// </summary>
         /// <param name="row">The row to access (between <c>0</c> and <see cref="Effects.Keypad.Constants.MaxRows" />, exclusive upper-bound).</param>
         /// <param name="column">The column to access (between <c>0</c> and <see cref="Effects.Keypad.Constants.MaxColumns" />, exclusive upper-bound).</param>
-        /// <returns>The <see cref="Colore.Color" /> at the specified position.</returns>
+        /// <returns>The <see cref="Color" /> at the specified position.</returns>
         [PublicAPI]
         Color this[int row, int column] { get; set; }
 

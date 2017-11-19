@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="DeviceType.cs" company="Corale">
+// <copyright file="ArrayHelper.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,55 +23,37 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore
+namespace Corale.Colore.Helpers
 {
-    using JetBrains.Annotations;
+    using Corale.Colore.Data;
 
     /// <summary>
-    /// Device types supported by the Chroma SDK.
+    /// Contains helper methods for working with arrays.
     /// </summary>
-    public enum DeviceType
+    internal static class ArrayHelper
     {
         /// <summary>
-        /// A keyboard device.
+        /// Copies a single-dimensional <see cref="Color" /> array to a multi-dimensional one.
         /// </summary>
-        [PublicAPI]
-        Keyboard = 1,
+        /// <param name="source">Source array to copy from.</param>
+        /// <param name="destination">Destination array to copy into.</param>
+        /// <remarks>
+        /// <paramref name="destination" /> array must be large enough to contain the values in the <paramref name="source" /> array.
+        /// </remarks>
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-        /// <summary>
-        /// A mouse device.
-        /// </summary>
-        [PublicAPI]
-        Mouse = 2,
+        internal static void CopyToMultidimensional(this Color[] source, Color[,] destination)
+        {
+            var rows = destination.GetLength(0);
+            var cols = destination.GetLength(1);
 
-        /// <summary>
-        /// A headset device.
-        /// </summary>
-        [PublicAPI]
-        Headset = 3,
+            for (var row = 0; row < rows; row++)
+            {
+                for (var col = 0; col < cols; col++)
+                    destination[row, col] = source[row * cols + col];
+            }
+        }
 
-        /// <summary>
-        /// A mouse pad.
-        /// </summary>
-        [PublicAPI]
-        Mousepad = 4,
-
-        /// <summary>
-        /// A keypad.
-        /// </summary>
-        [PublicAPI]
-        Keypad = 5,
-
-        /// <summary>
-        /// System device.
-        /// </summary>
-        [PublicAPI]
-        System = 6,
-
-        /// <summary>
-        /// Invalid device.
-        /// </summary>
-        [PublicAPI]
-        Invalid
+#pragma warning restore CA1814 // Prefer jagged arrays over multidimensional
     }
 }

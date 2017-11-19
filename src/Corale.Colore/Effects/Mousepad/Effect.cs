@@ -25,35 +25,45 @@
 
 namespace Corale.Colore.Effects.Mousepad
 {
+    using System.Runtime.Serialization;
+
     using JetBrains.Annotations;
+
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
 
     /// <summary>
     /// Effects supported by Chroma mouse pads.
     /// </summary>
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum Effect
     {
         /// <summary>
         /// No effect.
         /// </summary>
         [PublicAPI]
+        [EnumMember(Value = "CHROMA_NONE")]
         None = 0,
 
         /// <summary>
         /// A custom effect.
         /// </summary>
         [PublicAPI]
+        [EnumMember(Value = "CHROMA_CUSTOM")]
         Custom = 2,
 
         /// <summary>
         /// Static color.
         /// </summary>
         [PublicAPI]
+        [EnumMember(Value = "CHROMA_STATIC")]
         Static = 4,
 
         /// <summary>
         /// Invalid effect type.
         /// </summary>
         [PublicAPI]
+        [EnumMember(Value = "CHROMA_INVALID")]
         Invalid = 6
     }
 }

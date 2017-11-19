@@ -25,6 +25,7 @@
 
 namespace Corale.Colore.Tests.Effects.Keyboard.Effects
 {
+    using Corale.Colore.Data;
     using Corale.Colore.Effects.Keyboard;
 
     using NUnit.Framework;

@@ -25,6 +25,8 @@
 
 namespace Corale.Colore.Tests
 {
+    using Corale.Colore.Data;
+
     using NUnit.Framework;
 
     [TestFixture]

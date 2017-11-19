@@ -30,6 +30,8 @@ namespace Corale.Colore.Helpers
 
     using Common.Logging;
 
+    using Corale.Colore.Data;
+
     using Microsoft.Win32;
 
     /// <summary>

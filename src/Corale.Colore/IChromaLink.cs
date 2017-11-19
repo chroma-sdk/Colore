@@ -28,6 +28,7 @@ namespace Corale.Colore
     using System;
     using System.Threading.Tasks;
 
+    using Corale.Colore.Data;
     using Corale.Colore.Effects.ChromaLink;
 
     using JetBrains.Annotations;
@@ -39,7 +40,7 @@ namespace Corale.Colore
     public interface IChromaLink : IDevice
     {
         /// <summary>
-        /// Gets or sets the <see cref="Colore.Color" /> for a specific zone on the Chroma Link device.
+        /// Gets or sets the <see cref="Color" /> for a specific zone on the Chroma Link device.
         /// The SDK will translate this appropriately depending on user configuration.
         /// </summary>
         /// <param name="index">The zone to access.</param>

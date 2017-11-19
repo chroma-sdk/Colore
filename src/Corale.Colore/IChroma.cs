@@ -29,6 +29,7 @@ namespace Corale.Colore
     using System.Diagnostics.CodeAnalysis;
     using System.Threading.Tasks;
 
+    using Corale.Colore.Data;
     using Corale.Colore.Events;
 
     using JetBrains.Annotations;
@@ -135,6 +136,7 @@ namespace Corale.Colore
         /// <summary>
         /// Initializes the SDK if it hasn't already.
         /// </summary>
+        /// <param name="info">Information about the application.</param>
         /// <remarks>
         /// Manually modifying the SDK init state is <b>untested</b>
         /// and may result in <emph>undefined behaviour</emph>, usage
@@ -142,7 +144,7 @@ namespace Corale.Colore
         /// </remarks>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
         [PublicAPI]
-        Task InitializeAsync();
+        Task InitializeAsync(AppInfo info);
 
         /// <summary>
         /// Uninitializes the SDK if it has been initialized.

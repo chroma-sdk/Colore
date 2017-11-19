@@ -24,17 +24,24 @@
 // ---------------------------------------------------------------------------------------
 
 #pragma warning disable CA1051 // Do not declare visible instance fields
+
 namespace Corale.Colore.Effects.Mousepad
 {
     using System;
     using System.Runtime.InteropServices;
 
+    using Corale.Colore.Data;
+    using Corale.Colore.Serialization;
+
     using JetBrains.Annotations;
+
+    using Newtonsoft.Json;
 
     /// <inheritdoc cref="IEquatable{T}" />
     /// <summary>
     /// Static effect for mouse pad.
     /// </summary>
+    [JsonConverter(typeof(MousepadStaticConverter))]
     [StructLayout(LayoutKind.Sequential)]
 #pragma warning disable CA1716 // Identifiers should not match keywords
     public struct Static : IEquatable<Static>

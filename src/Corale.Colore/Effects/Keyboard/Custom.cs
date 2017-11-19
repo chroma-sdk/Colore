@@ -26,14 +26,22 @@
 namespace Corale.Colore.Effects.Keyboard
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
     using System.Runtime.InteropServices;
 
+    using Corale.Colore.Data;
+    using Corale.Colore.Helpers;
+    using Corale.Colore.Serialization;
+
     using JetBrains.Annotations;
+
+    using Newtonsoft.Json;
 
     /// <inheritdoc cref="IEquatable{T}" />
     /// <summary>
     /// Describes a custom grid effect for every key.
     /// </summary>
+    [JsonConverter(typeof(KeyboardCustomConverter))]
     [StructLayout(LayoutKind.Sequential)]
     public struct Custom : IEquatable<Custom>
     {
@@ -289,10 +297,10 @@ namespace Corale.Colore.Effects.Keyboard
             if (ReferenceEquals(obj, null))
                 return false;
 
-            if (!(obj is Custom))
-                return false;
+            if (obj is Custom custom)
+                return Equals(custom);
 
-            return Equals((Custom)obj);
+            return false;
         }
 
         /// <inheritdoc />
@@ -327,6 +335,24 @@ namespace Corale.Colore.Effects.Keyboard
                 this[(Key)index] = color;
                 this[index] = color;
             }
+        }
+
+        /// <summary>
+        /// Retrieves the internal backing arrays as multi-dimensional <see cref="Color" /> arrays.
+        /// </summary>
+        /// <returns>A <see cref="ValueTuple{T1,T2}" /> containing the two arrays.</returns>
+        [SuppressMessage("StyleCop", "SA1008", Justification = "StyleCop not compatible with C# 7 yet.")]
+        internal (Color[,] Colors, Color[,] Keys) ToMultiArrays()
+        {
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+            var colors = new Color[Constants.MaxRows, Constants.MaxColumns];
+            var keys = new Color[Constants.MaxRows, Constants.MaxColumns];
+#pragma warning restore CA1814 // Prefer jagged arrays over multidimensional
+
+            _colors.CopyToMultidimensional(colors);
+            _keys.CopyToMultidimensional(keys);
+
+            return (colors, keys);
         }
     }
 }
