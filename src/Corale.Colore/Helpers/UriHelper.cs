@@ -40,7 +40,7 @@ namespace Corale.Colore.Helpers
         /// <returns>
         /// A new <see cref="Uri" /> with <paramref name="resource" /> appended to <paramref name="uri" />.
         /// </returns>
-        public static Uri Append(this Uri uri, Uri resource)
+        internal static Uri Append(this Uri uri, Uri resource)
         {
             var left = uri.ToString().TrimEnd('/');
             var right = resource.ToString().TrimStart('/');

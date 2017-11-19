@@ -22,17 +22,15 @@
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
 // ---------------------------------------------------------------------------------------
+
 namespace Corale.Colore.Helpers
 {
-    using System;
-    using System.Linq;
-
     using Corale.Colore.Data;
 
     /// <summary>
     /// Contains helper methods for working with arrays.
     /// </summary>
-    public static class ArrayHelper
+    internal static class ArrayHelper
     {
         /// <summary>
         /// Copies a single-dimensional <see cref="Color" /> array to a multi-dimensional one.
@@ -42,10 +40,9 @@ namespace Corale.Colore.Helpers
         /// <remarks>
         /// <paramref name="destination" /> array must be large enough to contain the values in the <paramref name="source" /> array.
         /// </remarks>
-
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-        public static void CopyToMultidimensional(this Color[] source, Color[,] destination)
+        internal static void CopyToMultidimensional(this Color[] source, Color[,] destination)
         {
             var rows = destination.GetLength(0);
             var cols = destination.GetLength(1);

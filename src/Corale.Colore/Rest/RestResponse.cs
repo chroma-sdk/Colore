@@ -24,7 +24,6 @@
 // ---------------------------------------------------------------------------------------
 namespace Corale.Colore.Rest
 {
-    using System;
     using System.Net;
 
     using JetBrains.Annotations;
@@ -36,7 +35,7 @@ namespace Corale.Colore.Rest
     /// Contains the response from calling a REST API method.
     /// </summary>
     /// <typeparam name="TData">The type contained in this response.</typeparam>
-    internal class RestResponse<TData> : IRestResponse<TData>
+    internal sealed class RestResponse<TData> : IRestResponse<TData>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RestResponse{TData}" /> class.

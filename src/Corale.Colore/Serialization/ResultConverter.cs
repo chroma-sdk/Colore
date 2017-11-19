@@ -32,10 +32,11 @@ namespace Corale.Colore.Serialization
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
 
+    /// <inheritdoc />
     /// <summary>
     /// Converts <see cref="Result" /> objects to/from JSON.
     /// </summary>
-    public class ResultConverter : JsonConverter
+    internal sealed class ResultConverter : JsonConverter
     {
         /// <inheritdoc />
         /// <summary>
