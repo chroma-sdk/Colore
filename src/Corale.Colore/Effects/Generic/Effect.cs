@@ -48,13 +48,6 @@ namespace Corale.Colore.Effects.Generic
         None = 0,
 
         /// <summary>
-        /// A custom effect.
-        /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_CUSTOM")]
-        Custom = 7,
-
-        /// <summary>
         /// Reserved effect.
         /// </summary>
         [EditorBrowsable(EditorBrowsableState.Advanced)]

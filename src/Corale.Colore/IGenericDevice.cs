@@ -62,13 +62,5 @@ namespace Corale.Colore
         [PublicAPI]
         Task<Guid> SetEffectAsync<T>(Effect effect, T data)
             where T : struct;
-
-        /// <summary>
-        /// Sets a custom effect on this device.
-        /// </summary>
-        /// <param name="effect">Effect options.</param>
-        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
-        Task<Guid> SetCustomAsync(Custom effect);
     }
 }
