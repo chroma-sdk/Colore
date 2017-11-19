@@ -28,7 +28,11 @@ namespace Corale.Colore.Data
     using System;
     using System.Collections.Generic;
 
+    using Corale.Colore.Serialization;
+
     using JetBrains.Annotations;
+
+    using Newtonsoft.Json;
 
     /// <inheritdoc cref="IEquatable{T}" />
     /// <summary>
@@ -38,6 +42,7 @@ namespace Corale.Colore.Data
     /// <c>RZRESULT</c> is a <c>typedef</c> of <c>LONG</c> on C-side. <c>LONG</c> is always 32-bit in WinAPI.
     /// This means we don't need to have architecture-dependent base type.
     /// </remarks>
+    [JsonConverter(typeof(ResultConverter))]
     public struct Result : IEquatable<int>, IEquatable<Result>
     {
         /// <summary>
