@@ -162,7 +162,7 @@ namespace Corale.Colore.Rest
         /// <inheritdoc />
         public Task<DeviceInfo> QueryDeviceAsync(Guid deviceId)
         {
-            throw new NotImplementedException("Chroma REST API does not support device querying");
+            throw new NotSupportedException("Chroma REST API does not support device querying");
         }
 
         /// <inheritdoc />
@@ -231,14 +231,16 @@ namespace Corale.Colore.Rest
                 throw new ApiException("Exception when calling SetEffect API", data.Result);
         }
 
+        /// <inheritdoc />
         public Task<Guid> CreateDeviceEffectAsync(Guid deviceId, Effect effect)
         {
-            throw new NotImplementedException();
+            throw new NotSupportedException("Chroma REST API does not support generic device effects");
         }
 
+        /// <inheritdoc />
         public Task<Guid> CreateDeviceEffectAsync<T>(Guid deviceId, Effect effect, T data) where T : struct
         {
-            throw new NotImplementedException();
+            throw new NotSupportedException("Chroma REST API does not support generic device effects");
         }
 
         public Task<Guid> CreateKeyboardEffectAsync(Effects.Keyboard.Effect effect)
@@ -304,13 +306,13 @@ namespace Corale.Colore.Rest
         /// <inheritdoc />
         public void RegisterEventNotifications(IntPtr windowHandle)
         {
-            throw new NotImplementedException("Event notifications are not supported in Chroma REST API");
+            throw new NotSupportedException("Event notifications are not supported in Chroma REST API");
         }
 
         /// <inheritdoc />
         public void UnregisterEventNotifications()
         {
-            throw new NotImplementedException("Event notifications are not supported in Chroma REST API");
+            throw new NotSupportedException("Event notifications are not supported in Chroma REST API");
         }
 
         /// <inheritdoc />
