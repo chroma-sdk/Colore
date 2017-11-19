@@ -26,6 +26,7 @@
 namespace Corale.Colore.Serialization
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
 
     using Corale.Colore.Data;
 
@@ -36,6 +37,10 @@ namespace Corale.Colore.Serialization
     /// <summary>
     /// Converts <see cref="Color" /> to/from JSON.
     /// </summary>
+    [SuppressMessage(
+        "Microsoft.Performance",
+        "CA1812:AvoidUninstantiatedInternalClasses",
+        Justification = "Instantiated by Newtonsoft.Json")]
     internal sealed class ColorConverter : JsonConverter
     {
         /// <inheritdoc />

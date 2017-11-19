@@ -25,6 +25,7 @@
 namespace Corale.Colore.Serialization
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
 
     using Corale.Colore.Effects.Keypad;
     using Corale.Colore.Rest.Data;
@@ -36,6 +37,10 @@ namespace Corale.Colore.Serialization
     /// Converts keypad <see cref="Custom" /> objects to JSON.
     /// </summary>
     /// <remarks>Does not support converting JSON into <see cref="Custom" /> objects.</remarks>
+    [SuppressMessage(
+        "Microsoft.Performance",
+        "CA1812:AvoidUninstantiatedInternalClasses",
+        Justification = "Instantiated by Newtonsoft.Json")]
     internal sealed class KeypadCustomConverter : JsonConverter
     {
         /// <inheritdoc />

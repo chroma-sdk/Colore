@@ -26,12 +26,17 @@
 namespace Corale.Colore.Rest.Data
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
 
     using Newtonsoft.Json;
 
     /// <summary>
     /// Response returned from Chroma REST API on initialization.
     /// </summary>
+    [SuppressMessage(
+        "Microsoft.Performance",
+        "CA1812:AvoidUninstantiatedInternalClasses",
+        Justification = "Instantiated by Newtonsoft.Json")]
     internal sealed class RestInitResponse
     {
         /// <summary>

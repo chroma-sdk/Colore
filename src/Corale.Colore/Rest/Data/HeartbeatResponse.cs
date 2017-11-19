@@ -25,11 +25,17 @@
 
 namespace Corale.Colore.Rest.Data
 {
+    using System.Diagnostics.CodeAnalysis;
+
     using Newtonsoft.Json;
 
     /// <summary>
     /// Response returned by Chroma REST API on heartbeat requests.
     /// </summary>
+    [SuppressMessage(
+        "Microsoft.Performance",
+        "CA1812:AvoidUninstantiatedInternalClasses",
+        Justification = "Instantiated by Newtonsoft.Json")]
     internal sealed class HeartbeatResponse
     {
         /// <summary>

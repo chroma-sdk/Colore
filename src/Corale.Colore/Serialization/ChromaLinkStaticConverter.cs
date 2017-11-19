@@ -26,6 +26,7 @@
 namespace Corale.Colore.Serialization
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
 
     using Corale.Colore.Effects.ChromaLink;
     using Corale.Colore.Rest.Data;
@@ -37,6 +38,10 @@ namespace Corale.Colore.Serialization
     /// Converts Chroma Link <see cref="Static" /> objects to JSON.
     /// </summary>
     /// <remarks>Does not support converting JSON into <see cref="Static" /> objects.</remarks>
+    [SuppressMessage(
+        "Microsoft.Performance",
+        "CA1812:AvoidUninstantiatedInternalClasses",
+        Justification = "Instantiated by Newtonsoft.Json")]
     internal sealed class ChromaLinkStaticConverter : JsonConverter
     {
         /// <inheritdoc />

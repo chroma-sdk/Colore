@@ -25,6 +25,7 @@
 namespace Corale.Colore.Rest.Data
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
 
     using Corale.Colore.Data;
 
@@ -35,6 +36,10 @@ namespace Corale.Colore.Rest.Data
     /// <summary>
     /// Contains responses from the Razer Chroma REST API.
     /// </summary>
+    [SuppressMessage(
+        "Microsoft.Performance",
+        "CA1812:AvoidUninstantiatedInternalClasses",
+        Justification = "Instantiated by Newtonsoft.Json")]
     internal sealed class RestCallResponse
     {
         /// <summary>
