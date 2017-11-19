@@ -25,35 +25,45 @@
 
 namespace Corale.Colore.Effects.Keypad
 {
+    using System.Runtime.Serialization;
+
     using JetBrains.Annotations;
+
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
 
     /// <summary>
     /// Supported effects for Chroma keypads.
     /// </summary>
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum Effect
     {
         /// <summary>
         /// No effect.
         /// </summary>
         [PublicAPI]
+        [EnumMember(Value = "CHROMA_NONE")]
         None = 0,
 
         /// <summary>
         /// Custom effect.
         /// </summary>
         [PublicAPI]
+        [EnumMember(Value = "CHROMA_CUSTOM")]
         Custom = 2,
 
         /// <summary>
         /// Static color.
         /// </summary>
         [PublicAPI]
+        [EnumMember(Value = "CHROMA_STATIC")]
         Static = 5,
 
         /// <summary>
         /// Invalid effect.
         /// </summary>
         [PublicAPI]
+        [EnumMember(Value = "CHROMA_INVALID")]
         Invalid = 7
     }
 }

@@ -25,23 +25,31 @@
 
 namespace Corale.Colore.Effects.Mouse
 {
+    using System.Runtime.Serialization;
+
     using JetBrains.Annotations;
+
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
 
     /// <summary>
     /// Supported built-in mouse effects.
     /// </summary>
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum Effect
     {
         /// <summary>
         /// No effect.
         /// </summary>
         [PublicAPI]
+        [EnumMember(Value = "CHROMA_NONE")]
         None = 0,
 
         /// <summary>
         /// Static color effect.
         /// </summary>
         [PublicAPI]
+        [EnumMember(Value = "CHROMA_STATIC")]
         Static = 6,
 
         /// <summary>
@@ -49,11 +57,13 @@ namespace Corale.Colore.Effects.Mouse
         /// </summary>
         [PublicAPI]
         CustomGrid = 8,
+        [EnumMember(Value = "CHROMA_CUSTOM2")]
 
         /// <summary>
         /// Invalid effect.
         /// </summary>
         [PublicAPI]
+        [EnumMember(Value = "CHROMA_INVALID")]
         Invalid = 9
     }
 }
