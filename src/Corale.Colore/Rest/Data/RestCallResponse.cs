@@ -35,7 +35,7 @@ namespace Corale.Colore.Rest.Data
     /// <summary>
     /// Contains responses from the Razer Chroma REST API.
     /// </summary>
-    public sealed class RestCallResponse
+    internal sealed class RestCallResponse
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RestCallResponse" /> class.

@@ -30,7 +30,7 @@ namespace Corale.Colore.Rest.Data
     /// <summary>
     /// Response returned by Chroma REST API on heartbeat requests.
     /// </summary>
-    public sealed class HeartbeatResponse
+    internal sealed class HeartbeatResponse
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="HeartbeatResponse" /> class.

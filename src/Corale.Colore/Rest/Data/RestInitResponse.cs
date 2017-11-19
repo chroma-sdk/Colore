@@ -32,7 +32,7 @@ namespace Corale.Colore.Rest.Data
     /// <summary>
     /// Response returned from Chroma REST API on initialization.
     /// </summary>
-    public class RestInitResponse
+    internal sealed class RestInitResponse
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RestInitResponse" /> class.
