@@ -87,9 +87,9 @@ namespace Corale.Colore
         /// <summary>
         /// Sets a custom grid effect on the mouse.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="CustomGrid" /> struct.</param>
+        /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetGridAsync(CustomGrid effect);
+        Task<Guid> SetGridAsync(Custom effect);
     }
 }

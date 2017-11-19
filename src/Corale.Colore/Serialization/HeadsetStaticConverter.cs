@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+// <copyright file="HeadsetStaticConverter.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,47 +23,45 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Effects.Mouse
+namespace Corale.Colore.Serialization
 {
-    using System.Runtime.Serialization;
+    using System;
 
-    using JetBrains.Annotations;
+    using Corale.Colore.Effects.Headset;
+    using Corale.Colore.Rest.Data;
 
     using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
 
+    /// <inheritdoc />
     /// <summary>
-    /// Supported built-in mouse effects.
+    /// Converts headset <see cref="Static" /> objects to JSON.
     /// </summary>
-    [JsonConverter(typeof(StringEnumConverter))]
-    public enum Effect
+    /// <remarks>Does not support converting JSON into <see cref="Static" /> objects.</remarks>
+    internal sealed class HeadsetStaticConverter : JsonConverter
     {
-        /// <summary>
-        /// No effect.
-        /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_NONE")]
-        None = 0,
+        /// <inheritdoc />
+        /// <summary>Writes the JSON representation of a headset <see cref="Static" /> object.</summary>
+        /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
+        /// <param name="value">The <see cref="Static" /> value.</param>
+        /// <param name="serializer">The calling serializer.</param>
+        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        {
+            var effect = (Static)value;
+            var data = new EffectData(Effect.Static, effect.Color);
+            serializer.Serialize(writer, data);
+        }
 
-        /// <summary>
-        /// Static color effect.
-        /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_STATIC")]
-        Static = 6,
+        /// <inheritdoc />
+        public override object ReadJson(
+            JsonReader reader,
+            Type objectType,
+            object existingValue,
+            JsonSerializer serializer)
+        {
+            throw new NotSupportedException("Only writing of keypad Static objects is supported.");
+        }
 
-        /// <summary>
-        /// Custom grid effect.
-        /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_CUSTOM2")]
-        Custom = 8,
-
-        /// <summary>
-        /// Invalid effect.
-        /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_INVALID")]
-        Invalid = 9
+        /// <inheritdoc />
+        public override bool CanConvert(Type objectType) => objectType == typeof(Static);
     }
 }

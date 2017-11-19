@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+// <copyright file="EffectData.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,47 +23,43 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Effects.Mouse
+namespace Corale.Colore.Rest.Data
 {
-    using System.Runtime.Serialization;
-
     using JetBrains.Annotations;
 
     using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Supported built-in mouse effects.
+    /// Contains data for an effect to be sent to the REST API.
     /// </summary>
-    [JsonConverter(typeof(StringEnumConverter))]
-    public enum Effect
+    internal struct EffectData
     {
         /// <summary>
-        /// No effect.
+        /// Initializes a new instance of the <see cref="EffectData" /> structure.
         /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_NONE")]
-        None = 0,
+        /// <param name="effect">Type of effect to create, should be a value from one of the <c>Effect</c> enumerations.</param>
+        /// <param name="payload">Effect data, if applicable.</param>
+        internal EffectData([NotNull] object effect, [CanBeNull] object payload = null)
+        {
+            Effect = effect;
+            Payload = payload;
+        }
 
         /// <summary>
-        /// Static color effect.
+        /// Gets the type of the effect.
         /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_STATIC")]
-        Static = 6,
+        [NotNull]
+        [JsonProperty("effect")]
+        public object Effect { get; }
 
         /// <summary>
-        /// Custom grid effect.
+        /// Gets effect data, or <c>null</c> if not applicable for the current effect type.
         /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_CUSTOM2")]
-        Custom = 8,
-
-        /// <summary>
-        /// Invalid effect.
-        /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_INVALID")]
-        Invalid = 9
+        [CanBeNull]
+        [JsonProperty(
+            "param",
+            DefaultValueHandling = DefaultValueHandling.Ignore,
+            NullValueHandling = NullValueHandling.Ignore)]
+        public object Payload { get; }
     }
 }

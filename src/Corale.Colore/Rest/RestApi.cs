@@ -243,64 +243,148 @@ namespace Corale.Colore.Rest
             throw new NotSupportedException("Chroma REST API does not support generic device effects");
         }
 
-        public Task<Guid> CreateKeyboardEffectAsync(Effects.Keyboard.Effect effect)
+        /// <inheritdoc />
+        /// <summary>
+        /// Creates a new keyboard effect without any effect data by sending a POST request to the keyboard API.
+        /// </summary>
+        /// <param name="effect">The type of effect to create.</param>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
+        public async Task<Guid> CreateKeyboardEffectAsync(Effects.Keyboard.Effect effect)
         {
-            throw new NotImplementedException();
+            return await CreateEffectAsync("/keyboard", new EffectData(effect)).ConfigureAwait(false);
         }
 
-        public Task<Guid> CreateKeyboardEffectAsync<T>(Effects.Keyboard.Effect effect, T data) where T : struct
+        /// <inheritdoc />
+        /// <summary>
+        /// Creates a new keyboard effect with the specified effect data by sending a POST request to the keyboard API.
+        /// </summary>
+        /// <typeparam name="T">The structure type, needs to be compatible with the effect type.</typeparam>
+        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="data">The effect structure parameter.</param>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
+        public async Task<Guid> CreateKeyboardEffectAsync<T>(Effects.Keyboard.Effect effect, T data) where T : struct
         {
-            throw new NotImplementedException();
+            return await CreateEffectAsync("/keyboard", data).ConfigureAwait(false);
         }
 
-        public Task<Guid> CreateMouseEffectAsync(Effects.Mouse.Effect effect)
+        /// <inheritdoc />
+        /// <summary>
+        /// Creates a new mouse effect without any effect data by sending a POST request to the mouse API.
+        /// </summary>
+        /// <param name="effect">The type of effect to create.</param>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
+        public async Task<Guid> CreateMouseEffectAsync(Effects.Mouse.Effect effect)
         {
-            throw new NotImplementedException();
+            return await CreateEffectAsync("/mouse", new EffectData(effect)).ConfigureAwait(false);
         }
 
-        public Task<Guid> CreateMouseEffectAsync<T>(Effects.Mouse.Effect effect, T data) where T : struct
+        /// <inheritdoc />
+        /// <summary>
+        /// Creates a new mouse effect with the specified effect data by sending a POST request to the mouse API.
+        /// </summary>
+        /// <typeparam name="T">The effect struct type.</typeparam>
+        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="data">Effect options struct.</param>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
+        public async Task<Guid> CreateMouseEffectAsync<T>(Effects.Mouse.Effect effect, T data) where T : struct
         {
-            throw new NotImplementedException();
+            return await CreateEffectAsync("/mouse", data).ConfigureAwait(false);
         }
 
-        public Task<Guid> CreateHeadsetEffectAsync(Effects.Headset.Effect effect)
+        /// <inheritdoc />
+        /// <summary>
+        /// Creates a new headset effect without any effect data by sending a POST request to the headset API.
+        /// </summary>
+        /// <param name="effect">The type of effect to create.</param>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
+        public async Task<Guid> CreateHeadsetEffectAsync(Effects.Headset.Effect effect)
         {
-            throw new NotImplementedException();
+            return await CreateEffectAsync("/headset", new EffectData(effect)).ConfigureAwait(false);
         }
 
-        public Task<Guid> CreateHeadsetEffectAsync<T>(Effects.Headset.Effect effect, T data) where T : struct
+        /// <inheritdoc />
+        /// <summary>
+        /// Creates a new headset effect with the specified effect data by sending a POST request to the headset API.
+        /// </summary>
+        /// <typeparam name="T">The effect struct type.</typeparam>
+        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="data">Effect options struct.</param>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
+        public async Task<Guid> CreateHeadsetEffectAsync<T>(Effects.Headset.Effect effect, T data) where T : struct
         {
-            throw new NotImplementedException();
+            return await CreateEffectAsync("/headset", data).ConfigureAwait(false);
         }
 
-        public Task<Guid> CreateMousepadEffectAsync(Effects.Mousepad.Effect effect)
+        /// <inheritdoc />
+        /// <summary>
+        /// Creates a new mousepad effect without any effect data by sending a POST request to the mousepad API.
+        /// </summary>
+        /// <param name="effect">The type of effect to create.</param>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
+        public async Task<Guid> CreateMousepadEffectAsync(Effects.Mousepad.Effect effect)
         {
-            throw new NotImplementedException();
+            return await CreateEffectAsync("/mousepad", new EffectData(effect)).ConfigureAwait(false);
         }
 
-        public Task<Guid> CreateMousepadEffectAsync<T>(Effects.Mousepad.Effect effect, T data) where T : struct
+        /// <inheritdoc />
+        /// <summary>
+        /// Creates a new mousepad effect with the specified effect data by sending a POST request to the mousepad API.
+        /// </summary>
+        /// <typeparam name="T">The effect struct type.</typeparam>
+        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="data">Effect options struct.</param>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
+        public async Task<Guid> CreateMousepadEffectAsync<T>(Effects.Mousepad.Effect effect, T data) where T : struct
         {
-            throw new NotImplementedException();
+            return await CreateEffectAsync("/mousepad", data).ConfigureAwait(false);
         }
 
-        public Task<Guid> CreateKeypadEffectAsync(Effects.Keypad.Effect effect)
+        /// <inheritdoc />
+        /// <summary>
+        /// Creates a new keypad effect without any effect data by sending a POST request to the keypad API.
+        /// </summary>
+        /// <param name="effect">THe type of effect to create.</param>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
+        public async Task<Guid> CreateKeypadEffectAsync(Effects.Keypad.Effect effect)
         {
-            throw new NotImplementedException();
+            return await CreateEffectAsync("/keypad", new EffectData(effect)).ConfigureAwait(false);
         }
 
-        public Task<Guid> CreateKeypadEffectAsync<T>(Effects.Keypad.Effect effect, T data) where T : struct
+        /// <inheritdoc />
+        /// <summary>
+        /// Creates a new keypad effect with the specified effect data by sending a POST request to the keypad API.
+        /// </summary>
+        /// <typeparam name="T">The effect struct type.</typeparam>
+        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="data">Effect options struct.</param>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
+        public async Task<Guid> CreateKeypadEffectAsync<T>(Effects.Keypad.Effect effect, T data) where T : struct
         {
-            throw new NotImplementedException();
+            return await CreateEffectAsync("/keypad", data).ConfigureAwait(false);
         }
 
-        public Task<Guid> CreateChromaLinkEffectAsync(Effects.ChromaLink.Effect effect)
+        /// <inheritdoc />
+        /// <summary>
+        /// Creates a new Chroma Link effect without any effect data by sending a POST request to the Chroma Link API.
+        /// </summary>
+        /// <param name="effect">The type of effect to create.</param>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
+        public async Task<Guid> CreateChromaLinkEffectAsync(Effects.ChromaLink.Effect effect)
         {
-            throw new NotImplementedException();
+            return await CreateEffectAsync("/chromalink", new EffectData(effect)).ConfigureAwait(false);
         }
 
-        public Task<Guid> CreateChromaLinkEffectAsync<T>(Effects.ChromaLink.Effect effect, T data) where T : struct
+        /// <inheritdoc />
+        /// <summary>
+        /// Creates a new Chroma Link effect with the specified effect data by sending a POST request to the Chroma Link API.
+        /// </summary>
+        /// <typeparam name="T">The effect struct type.</typeparam>
+        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="data">Effect options struct.</param>
+        /// <returns>A <see cref="Guid" /> for the created effect.</returns>
+        public async Task<Guid> CreateChromaLinkEffectAsync<T>(Effects.ChromaLink.Effect effect, T data) where T : struct
         {
-            throw new NotImplementedException();
+            return await CreateEffectAsync("/chromalink", data).ConfigureAwait(false);
         }
 
         /// <inheritdoc />
@@ -362,6 +446,44 @@ namespace Corale.Colore.Rest
 #if DEBUG
             Log.TraceFormat("Heartbeat complete, tick: {0}", response.Data.Tick);
 #endif
+        }
+
+        /// <summary>
+        /// Creates a Chroma effect using the specified API endpoint and effect data.
+        /// </summary>
+        /// <param name="endpoint">Device endpoint to create effect at.</param>
+        /// <param name="data">Effect data.</param>
+        /// <returns>A <see cref="Guid" /> identifying the newly created effect.</returns>
+        /// <exception cref="RestException">Thrown if there is an error calling the REST API.</exception>
+        /// <exception cref="ApiException">Thrown if the SDK returns an exception creating the effect.</exception>
+        private async Task<Guid> CreateEffectAsync(string endpoint, object data)
+        {
+            var response = await _client.PostAsync<RestCallResponse>(endpoint, data).ConfigureAwait(false);
+
+            if (!response.IsSuccessful)
+            {
+                var ex = new RestException(
+                    $"Failed to create effect at {endpoint}",
+                    response.Data?.Result ?? Result.RzFailed,
+                    new Uri(_client.BaseAddress, endpoint),
+                    response.Status,
+                    response.Data);
+                Log.Error("Failed to create effect", ex);
+                throw ex;
+            }
+
+            var responseData = response.Data;
+
+            if (responseData == null)
+                throw new ApiException("Effect creation API returned NULL response");
+
+            if (!responseData.Result)
+                throw new ApiException("Exception when calling SetEffect API", responseData.Result);
+
+            if (responseData.EffectId == null)
+                throw new ApiException("Got NULL GUID from creating effect", responseData.Result);
+
+            return responseData.EffectId.Value;
         }
     }
 }

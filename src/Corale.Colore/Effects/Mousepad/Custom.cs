@@ -30,13 +30,17 @@ namespace Corale.Colore.Effects.Mousepad
     using System.Runtime.InteropServices;
 
     using Corale.Colore.Data;
+    using Corale.Colore.Serialization;
 
     using JetBrains.Annotations;
+
+    using Newtonsoft.Json;
 
     /// <inheritdoc cref="IEquatable{T}" />
     /// <summary>
     /// Custom effect for mouse pad.
     /// </summary>
+    [JsonConverter(typeof(MousepadCustomConverter))]
     [StructLayout(LayoutKind.Sequential)]
     public struct Custom : IEquatable<Custom>, IEquatable<IList<Color>>
     {
@@ -89,6 +93,11 @@ namespace Corale.Colore.Effects.Mousepad
             : this(other._colors)
         {
         }
+
+        /// <summary>
+        /// Gets the internal <see cref="Color" /> backing array.
+        /// </summary>
+        internal Color[] Colors => _colors;
 
         /// <summary>
         /// Gets or sets LEDs in the custom array.

@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+// <copyright file="ArrayHelper.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -22,48 +22,41 @@
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
 // ---------------------------------------------------------------------------------------
-
-namespace Corale.Colore.Effects.Mouse
+namespace Corale.Colore.Helpers
 {
-    using System.Runtime.Serialization;
+    using System;
+    using System.Linq;
 
-    using JetBrains.Annotations;
-
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
+    using Corale.Colore.Data;
 
     /// <summary>
-    /// Supported built-in mouse effects.
+    /// Contains helper methods for working with arrays.
     /// </summary>
-    [JsonConverter(typeof(StringEnumConverter))]
-    public enum Effect
+    public static class ArrayHelper
     {
         /// <summary>
-        /// No effect.
+        /// Copies a single-dimensional <see cref="Color" /> array to a multi-dimensional one.
         /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_NONE")]
-        None = 0,
+        /// <param name="source">Source array to copy from.</param>
+        /// <param name="destination">Destination array to copy into.</param>
+        /// <remarks>
+        /// <paramref name="destination" /> array must be large enough to contain the values in the <paramref name="source" /> array.
+        /// </remarks>
 
-        /// <summary>
-        /// Static color effect.
-        /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_STATIC")]
-        Static = 6,
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-        /// <summary>
-        /// Custom grid effect.
-        /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_CUSTOM2")]
-        Custom = 8,
+        public static void CopyToMultidimensional(this Color[] source, Color[,] destination)
+        {
+            var rows = destination.GetLength(0);
+            var cols = destination.GetLength(1);
 
-        /// <summary>
-        /// Invalid effect.
-        /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_INVALID")]
-        Invalid = 9
+            for (var row = 0; row < rows; row++)
+            {
+                for (var col = 0; col < cols; col++)
+                    destination[row, col] = source[row * cols + col];
+            }
+        }
+
+#pragma warning restore CA1814 // Prefer jagged arrays over multidimensional
     }
 }

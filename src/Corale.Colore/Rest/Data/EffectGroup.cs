@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+// <copyright file="EffectGroup.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -22,48 +22,33 @@
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
 // ---------------------------------------------------------------------------------------
-
-namespace Corale.Colore.Effects.Mouse
+namespace Corale.Colore.Rest.Data
 {
-    using System.Runtime.Serialization;
+    using System.Collections.Generic;
 
     using JetBrains.Annotations;
 
     using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Supported built-in mouse effects.
+    /// Represents a collection of <see cref="EffectData" />.
     /// </summary>
-    [JsonConverter(typeof(StringEnumConverter))]
-    public enum Effect
+    internal struct EffectGroup
     {
         /// <summary>
-        /// No effect.
+        /// Initializes a new instance of the <see cref="EffectGroup" /> structure.
         /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_NONE")]
-        None = 0,
+        /// <param name="effects"><see cref="EffectData" /> to include in the group.</param>
+        internal EffectGroup([NotNull] IEnumerable<EffectData> effects)
+        {
+            Effects = effects;
+        }
 
         /// <summary>
-        /// Static color effect.
+        /// Gets the various <see cref="EffectData" /> contained in this group.
         /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_STATIC")]
-        Static = 6,
-
-        /// <summary>
-        /// Custom grid effect.
-        /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_CUSTOM2")]
-        Custom = 8,
-
-        /// <summary>
-        /// Invalid effect.
-        /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_INVALID")]
-        Invalid = 9
+        [NotNull]
+        [JsonProperty("effects")]
+        public IEnumerable<EffectData> Effects { get; }
     }
 }

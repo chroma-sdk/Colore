@@ -264,8 +264,8 @@ namespace Corale.Colore.Native
         /// <term><see cref="Effects.Mouse.Static" /></term>
         /// </item>
         /// <item>
-        /// <term><see cref="Effects.Mouse.Effect.CustomGrid" /></term>
-        /// <term><see cref="Effects.Mouse.CustomGrid" /></term>
+        /// <term><see cref="Effects.Mouse.Effect.Custom" /></term>
+        /// <term><see cref="Effects.Mouse.Custom" /></term>
         /// </item>
         /// </list>
         /// </remarks>

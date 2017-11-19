@@ -30,13 +30,17 @@ namespace Corale.Colore.Effects.ChromaLink
     using System.Runtime.InteropServices;
 
     using Corale.Colore.Data;
+    using Corale.Colore.Serialization;
 
     using JetBrains.Annotations;
+
+    using Newtonsoft.Json;
 
     /// <inheritdoc cref="IEquatable{T}" />
     /// <summary>
     /// Custom effect.
     /// </summary>
+    [JsonConverter(typeof(ChromaLinkCustomConverter))]
     [StructLayout(LayoutKind.Sequential)]
     public struct Custom : IEquatable<Custom>, IEquatable<Color[]>
     {
@@ -115,6 +119,11 @@ namespace Corale.Colore.Effects.ChromaLink
             : this(other._colors)
         {
         }
+
+        /// <summary>
+        /// Gets the backing array for the <see cref="Color" /> data.
+        /// </summary>
+        internal Color[] Colors => _colors;
 
         /// <summary>
         /// Gets or sets a position in the custom array.

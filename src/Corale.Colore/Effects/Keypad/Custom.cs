@@ -30,13 +30,18 @@ namespace Corale.Colore.Effects.Keypad
     using System.Runtime.InteropServices;
 
     using Corale.Colore.Data;
+    using Corale.Colore.Helpers;
+    using Corale.Colore.Serialization;
 
     using JetBrains.Annotations;
+
+    using Newtonsoft.Json;
 
     /// <inheritdoc cref="IEquatable{T}" />
     /// <summary>
     /// Custom effect.
     /// </summary>
+    [JsonConverter(typeof(KeypadCustomConverter))]
     [StructLayout(LayoutKind.Sequential)]
     public struct Custom : IEquatable<Custom>, IEquatable<Color[][]>, IEquatable<Color[]>
     {
@@ -398,5 +403,22 @@ namespace Corale.Colore.Effects.Keypad
 
             return true;
         }
+
+        /// <summary>
+        /// Retrieves the internal backing array as a multi-dimensional <see cref="Color" /> array.
+        /// </summary>
+        /// <returns>
+        /// An instance of <c><see cref="Color" />[<see cref="Constants.MaxRows" />, <see cref="Constants.MaxColumns" />]</c>.
+        /// </returns>
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
+        internal Color[,] ToMultiArray()
+        {
+            var destination = new Color[Constants.MaxRows, Constants.MaxColumns];
+            _colors.CopyToMultidimensional(destination);
+            return destination;
+        }
+
+#pragma warning restore CA1814 // Prefer jagged arrays over multidimensional
     }
 }

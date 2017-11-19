@@ -50,9 +50,9 @@ namespace Corale.Colore.Implementations
         private static readonly ILog Log = LogManager.GetLogger(typeof(MouseImplementation));
 
         /// <summary>
-        /// Internal instance of a <see cref="CustomGrid" /> struct.
+        /// Internal instance of a <see cref="Custom" /> struct.
         /// </summary>
-        private CustomGrid _customGrid;
+        private Custom _custom;
 
         /// <inheritdoc />
         /// <summary>
@@ -62,7 +62,7 @@ namespace Corale.Colore.Implementations
             : base(api)
         {
             Log.Info("Mouse is initializing");
-            _customGrid = CustomGrid.Create();
+            _custom = Custom.Create();
         }
 
         /// <inheritdoc />
@@ -75,12 +75,12 @@ namespace Corale.Colore.Implementations
         /// <returns>The <see cref="Color" /> at the specified position.</returns>
         public Color this[int row, int column]
         {
-            get => _customGrid[row, column];
+            get => _custom[row, column];
 
             set
             {
-                _customGrid[row, column] = value;
-                SetGridAsync(_customGrid).Wait();
+                _custom[row, column] = value;
+                SetGridAsync(_custom).Wait();
             }
         }
 
@@ -93,12 +93,12 @@ namespace Corale.Colore.Implementations
         /// <returns>The <see cref="Color" /> currently set for the specified <see cref="GridLed" />.</returns>
         public Color this[GridLed led]
         {
-            get => _customGrid[led];
+            get => _custom[led];
 
             set
             {
-                _customGrid[led] = value;
-                SetGridAsync(_customGrid).Wait();
+                _custom[led] = value;
+                SetGridAsync(_custom).Wait();
             }
         }
 
@@ -141,18 +141,18 @@ namespace Corale.Colore.Implementations
         /// <param name="color">Color to set.</param>
         public override async Task<Guid> SetAllAsync(Color color)
         {
-            _customGrid.Set(color);
-            return await SetGridAsync(_customGrid).ConfigureAwait(false);
+            _custom.Set(color);
+            return await SetGridAsync(_custom).ConfigureAwait(false);
         }
 
         /// <inheritdoc />
         /// <summary>
         /// Sets a custom grid effect on the mouse.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="CustomGrid" /> struct.</param>
-        public async Task<Guid> SetGridAsync(CustomGrid effect)
+        /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
+        public async Task<Guid> SetGridAsync(Custom effect)
         {
-            return await SetEffectAsync(await Api.CreateMouseEffectAsync(Effect.CustomGrid, effect).ConfigureAwait(false)).ConfigureAwait(false);
+            return await SetEffectAsync(await Api.CreateMouseEffectAsync(Effect.Custom, effect).ConfigureAwait(false)).ConfigureAwait(false);
         }
 
         /// <inheritdoc cref="DeviceImplementation.ClearAsync" />
@@ -161,7 +161,7 @@ namespace Corale.Colore.Implementations
         /// </summary>
         public override async Task<Guid> ClearAsync()
         {
-            _customGrid.Clear();
+            _custom.Clear();
             return await SetEffectAsync(Effect.None).ConfigureAwait(false);
         }
     }

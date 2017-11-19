@@ -31,13 +31,17 @@ namespace Corale.Colore.Effects.Keypad
     using System.Runtime.InteropServices;
 
     using Corale.Colore.Data;
+    using Corale.Colore.Serialization;
 
     using JetBrains.Annotations;
+
+    using Newtonsoft.Json;
 
     /// <inheritdoc cref="IEquatable{T}" />
     /// <summary>
     /// Static color effect.
     /// </summary>
+    [JsonConverter(typeof(KeypadStaticConverter))]
     [StructLayout(LayoutKind.Sequential)]
 #pragma warning disable CA1716 // Identifiers should not match keywords
     public struct Static : IEquatable<Static>
