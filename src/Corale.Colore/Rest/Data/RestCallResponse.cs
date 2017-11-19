@@ -52,12 +52,14 @@ namespace Corale.Colore.Rest.Data
         /// <summary>
         /// Gets the result code obtained from the API call.
         /// </summary>
+        [JsonProperty("result")]
         public Result Result { get; }
 
         /// <summary>
         /// Gets the effect ID obtained from the API call (will be <c>null</c> if PUT was used to create an effect).
         /// </summary>
         [CanBeNull]
+        [JsonProperty("id")]
         public Guid? EffectId { get; }
     }
 }
