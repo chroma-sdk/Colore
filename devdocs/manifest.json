@@ -428,18 +428,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Corale.Colore.Effects.Keyboard.PositionData.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Corale.Colore.Effects.Keyboard.PositionData.html",
-          "hash": "qZ6ZKkd+QSEyUi4D89+uTQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Corale.Colore.Effects.Keyboard.Static.yml",
       "output": {
         ".html": {
@@ -456,7 +444,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.Effects.Keyboard.html",
-          "hash": "YUlN+wGf4fsIHTE02jiNng=="
+          "hash": "9z+9ED+alXm3lZBDa2uY7g=="
         }
       },
       "is_incremental": false,
@@ -936,7 +924,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "uwBWOZos6ComBeMn/hbyiQ=="
+          "hash": "OBQaSPKiL+NQW+1G0NEzjQ=="
         }
       },
       "is_incremental": false,
@@ -1025,9 +1013,17 @@
         "incrementalPhase": "build"
       },
       "processors": {
-        "TocDocumentProcessor": {
+        "RestApiDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "details": "Processor RestApiDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
           "incrementalPhase": "build"
         },
         "ResourceDocumentProcessor": {
@@ -1035,17 +1031,9 @@
           "details": "Processor ResourceDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
-        "RestApiDocumentProcessor": {
+        "TocDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor RestApiDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build"
-        },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build"
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         }
       }

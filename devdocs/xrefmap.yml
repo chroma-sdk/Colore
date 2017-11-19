@@ -3169,12 +3169,6 @@ references:
   commentId: F:Corale.Colore.Effects.Keyboard.Key.Z
   fullName: Corale.Colore.Effects.Keyboard.Key.Z
   nameWithType: Key.Z
-- uid: Corale.Colore.Effects.Keyboard.PositionData
-  name: PositionData
-  href: api/Corale.Colore.Effects.Keyboard.PositionData.html
-  commentId: T:Corale.Colore.Effects.Keyboard.PositionData
-  fullName: Corale.Colore.Effects.Keyboard.PositionData
-  nameWithType: PositionData
 - uid: Corale.Colore.Effects.Keyboard.Static
   name: Static
   href: api/Corale.Colore.Effects.Keyboard.Static.html
