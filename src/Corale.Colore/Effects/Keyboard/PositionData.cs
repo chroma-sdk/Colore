@@ -30,7 +30,7 @@ namespace Corale.Colore.Effects.Keyboard
     /// <summary>
     /// Contains methods to determine if a grid positions is safe.
     /// </summary>
-    public static class PositionData
+    internal static class PositionData
     {
         /// <summary>
         /// Set of positions that are unsafe to use.
