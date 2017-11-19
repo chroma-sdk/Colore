@@ -58,7 +58,7 @@ namespace Corale.Colore.Serialization
             object existingValue,
             JsonSerializer serializer)
         {
-            throw new NotSupportedException("Only writing of Keyboard Static objects is supported.");
+            throw new NotSupportedException("Only writing of Chroma Link Static objects is supported.");
         }
 
         /// <inheritdoc />

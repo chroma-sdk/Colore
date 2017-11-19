@@ -40,9 +40,9 @@ namespace Corale.Colore.Serialization
     internal sealed class KeyboardStaticConverter : JsonConverter
     {
         /// <inheritdoc />
-        /// <summary>Writes the JSON representation of a keyboard <see cref="Custom" /> object.</summary>
+        /// <summary>Writes the JSON representation of a keyboard <see cref="Static" /> object.</summary>
         /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
-        /// <param name="value">The <see cref="Custom" /> value.</param>
+        /// <param name="value">The <see cref="Static" /> value.</param>
         /// <param name="serializer">The calling serializer.</param>
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
