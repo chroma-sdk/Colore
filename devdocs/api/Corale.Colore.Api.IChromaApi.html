@@ -928,14 +928,32 @@
   
   
   <a id="Corale_Colore_Api_IChromaApi_InitializeAsync_" data-uid="Corale.Colore.Api.IChromaApi.InitializeAsync*"></a>
-  <h4 id="Corale_Colore_Api_IChromaApi_InitializeAsync" data-uid="Corale.Colore.Api.IChromaApi.InitializeAsync">InitializeAsync()</h4>
+  <h4 id="Corale_Colore_Api_IChromaApi_InitializeAsync_Corale_Colore_Data_AppInfo_" data-uid="Corale.Colore.Api.IChromaApi.InitializeAsync(Corale.Colore.Data.AppInfo)">InitializeAsync(AppInfo)</h4>
   <div class="markdown level1 summary"><p>Initializes the Chroma SDK.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task InitializeAsync()</code></pre>
+    <pre><code class="lang-csharp hljs">Task InitializeAsync(AppInfo info)</code></pre>
   </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Corale.Colore.Data.AppInfo.html">AppInfo</a></td>
+        <td><span class="parametername">info</span></td>
+        <td><p>Information about the application.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
@@ -976,7 +994,7 @@
       <tr>
         <td><span class="xref">System.Guid</span></td>
         <td><span class="parametername">deviceId</span></td>
-        <td><p>Device ID, found in <a class="xref" href="Corale.Colore.Devices.html">Devices</a>.</p>
+        <td><p>Device ID, found in <a class="xref" href="Corale.Colore.Data.Devices.html">Devices</a>.</p>
 </td>
       </tr>
     </tbody>
@@ -991,8 +1009,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Corale.Colore.DeviceInfo.html">DeviceInfo</a>&gt;</td>
-        <td><p>A populated <a class="xref" href="Corale.Colore.DeviceInfo.html">DeviceInfo</a> structure with information about the requested device.</p>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Corale.Colore.Data.DeviceInfo.html">DeviceInfo</a>&gt;</td>
+        <td><p>A populated <a class="xref" href="Corale.Colore.Data.DeviceInfo.html">DeviceInfo</a> structure with information about the requested device.</p>
 </td>
       </tr>
     </tbody>

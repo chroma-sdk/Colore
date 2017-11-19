@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class Constants
+    <title>Interface IRestResponse&lt;TData&gt;
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class Constants
+    <meta name="title" content="Interface IRestResponse&lt;TData&gt;
    ">
     <meta name="generator" content="docfx 2.26.4.0">
     
@@ -68,38 +68,50 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Corale.Colore.Constants">
+            <article class="content wrap" id="_content" data-uid="Corale.Colore.Rest.IRestResponse`1">
   
   
-  <h1 id="Corale_Colore_Constants" data-uid="Corale.Colore.Constants" class="text-break">Class Constants
+  <h1 id="Corale_Colore_Rest_IRestResponse_1" data-uid="Corale.Colore.Rest.IRestResponse`1" class="text-break">Interface IRestResponse&lt;TData&gt;
   </h1>
-  <div class="markdown level0 summary"><p>The definitions of generic constant values used in the project</p>
+  <div class="markdown level0 summary"><p>Represents a response from calling a REST API.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">Constants</span></div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Corale.Colore.html">Corale.Colore</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Corale.Colore.Rest.html">Corale.Colore.Rest</a></h6>
   <h6><strong>Assembly</strong>: Corale.Colore.dll</h6>
-  <h5 id="Corale_Colore_Constants_syntax">Syntax</h5>
+  <h5 id="Corale_Colore_Rest_IRestResponse_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class Constants : Object</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IRestResponse&lt;out TData&gt;</code></pre>
   </div>
-  <h3 id="fields">Fields
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TData</span></td>
+        <td><p>The type contained in this response.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
   </h3>
   
   
-  <h4 id="Corale_Colore_Constants_MaxColors" data-uid="Corale.Colore.Constants.MaxColors">MaxColors</h4>
-  <div class="markdown level1 summary"><p>Maximum number of color entries for a generic custom effect.</p>
+  <a id="Corale_Colore_Rest_IRestResponse_1_Content_" data-uid="Corale.Colore.Rest.IRestResponse`1.Content*"></a>
+  <h4 id="Corale_Colore_Rest_IRestResponse_1_Content" data-uid="Corale.Colore.Rest.IRestResponse`1.Content">Content</h4>
+  <div class="markdown level1 summary"><p>Gets the body content as a <span class="xref">System.String</span>, or <code>null</code> if no content.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const int MaxColors = 900</code></pre>
+    <pre><code class="lang-csharp hljs">string Content { get; }</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
+  <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -109,22 +121,23 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Int32</span></td>
+        <td><span class="xref">System.String</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <h4 id="Corale_Colore_Constants_MaxColumns" data-uid="Corale.Colore.Constants.MaxColumns">MaxColumns</h4>
-  <div class="markdown level1 summary"><p>Maximum number of columns for a generic custom effect.</p>
+  <a id="Corale_Colore_Rest_IRestResponse_1_Data_" data-uid="Corale.Colore.Rest.IRestResponse`1.Data*"></a>
+  <h4 id="Corale_Colore_Rest_IRestResponse_1_Data" data-uid="Corale.Colore.Rest.IRestResponse`1.Data">Data</h4>
+  <div class="markdown level1 summary"><p>Gets the data returned from the request.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const int MaxColumns = 30</code></pre>
+    <pre><code class="lang-csharp hljs">TData Data { get; }</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
+  <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -134,22 +147,23 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Int32</span></td>
+        <td><span class="xref">TData</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <h4 id="Corale_Colore_Constants_MaxRows" data-uid="Corale.Colore.Constants.MaxRows">MaxRows</h4>
-  <div class="markdown level1 summary"><p>Maximum number of rows for a generic custom effect.</p>
+  <a id="Corale_Colore_Rest_IRestResponse_1_IsSuccessful_" data-uid="Corale.Colore.Rest.IRestResponse`1.IsSuccessful*"></a>
+  <h4 id="Corale_Colore_Rest_IRestResponse_1_IsSuccessful" data-uid="Corale.Colore.Rest.IRestResponse`1.IsSuccessful">IsSuccessful</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether the REST request was successful.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const int MaxRows = 30</code></pre>
+    <pre><code class="lang-csharp hljs">bool IsSuccessful { get; }</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
+  <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -159,22 +173,23 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Int32</span></td>
+        <td><span class="xref">System.Boolean</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   
   
-  <h4 id="Corale_Colore_Constants_WmChromaEvent" data-uid="Corale.Colore.Constants.WmChromaEvent">WmChromaEvent</h4>
-  <div class="markdown level1 summary"><p>Used by Razer code to send Chroma event messages.</p>
+  <a id="Corale_Colore_Rest_IRestResponse_1_Status_" data-uid="Corale.Colore.Rest.IRestResponse`1.Status*"></a>
+  <h4 id="Corale_Colore_Rest_IRestResponse_1_Status" data-uid="Corale.Colore.Rest.IRestResponse`1.Status">Status</h4>
+  <div class="markdown level1 summary"><p>Gets the HTTP status of the response.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const uint WmChromaEvent = 40960U</code></pre>
+    <pre><code class="lang-csharp hljs">HttpStatusCode Status { get; }</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
+  <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -184,8 +199,53 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="xref">System.Net.HttpStatusCode</span></td>
         <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Corale_Colore_Rest_IRestResponse_1_Deserialize_" data-uid="Corale.Colore.Rest.IRestResponse`1.Deserialize*"></a>
+  <h4 id="Corale_Colore_Rest_IRestResponse_1_Deserialize__1" data-uid="Corale.Colore.Rest.IRestResponse`1.Deserialize``1">Deserialize&lt;T&gt;()</h4>
+  <div class="markdown level1 summary"><p>Deserializes the response content into the specified type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">T Deserialize&lt;T&gt;()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>An instance of <code data-dev-comment-type="typeparamref" class="typeparamref">T</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type to deserialize into.</p>
+</td>
       </tr>
     </tbody>
   </table>

@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.Api.ApiException.html",
-          "hash": "RElu9f8irumdWQCBLU/4Zw=="
+          "hash": "MhbZTDbVAb/5Dv8u9TEIBA=="
         }
       },
       "is_incremental": false,
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.Api.IChromaApi.html",
-          "hash": "3RB8zNNUSodaynOxZorakg=="
+          "hash": "+BNUTJEvRP5rilXSA/XoRg=="
         }
       },
       "is_incremental": false,
@@ -34,18 +34,6 @@
         ".html": {
           "relative_path": "api/Corale.Colore.Api.html",
           "hash": "1rdTMhCectUrRLfG++E3lg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Corale.Colore.Color.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Corale.Colore.Color.html",
-          "hash": "cYjjV+G3BBArPbP1Knvj4Q=="
         }
       },
       "is_incremental": false,
@@ -69,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.ColoreProvider.html",
-          "hash": "XmvN3MmW+S0ov5KfPqVlQA=="
+          "hash": "6q+tlupUcqQPbbbmLPlZag=="
         }
       },
       "is_incremental": false,
@@ -77,11 +65,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Corale.Colore.Constants.yml",
+      "source_relative_path": "api/Corale.Colore.Data.AppInfo.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Corale.Colore.Constants.html",
-          "hash": "fS5JLsRgay/MlHBFj7gWFQ=="
+          "relative_path": "api/Corale.Colore.Data.AppInfo.html",
+          "hash": "EAXgYk/j1DLrz9dzyrBOHg=="
         }
       },
       "is_incremental": false,
@@ -89,11 +77,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Corale.Colore.DeviceInfo.yml",
+      "source_relative_path": "api/Corale.Colore.Data.Author.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Corale.Colore.DeviceInfo.html",
-          "hash": "iSHx4nTSJugbM6vg21WoEQ=="
+          "relative_path": "api/Corale.Colore.Data.Author.html",
+          "hash": "jo5QC1qjE4L/XEoU1NDtXQ=="
         }
       },
       "is_incremental": false,
@@ -101,11 +89,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Corale.Colore.DeviceType.yml",
+      "source_relative_path": "api/Corale.Colore.Data.Category.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Corale.Colore.DeviceType.html",
-          "hash": "sywJ4i2Xltgp9V0kd2xVfg=="
+          "relative_path": "api/Corale.Colore.Data.Category.html",
+          "hash": "PdJawVGhZjbxVllIx2S9iQ=="
         }
       },
       "is_incremental": false,
@@ -113,11 +101,95 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Corale.Colore.Devices.yml",
+      "source_relative_path": "api/Corale.Colore.Data.Color.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Corale.Colore.Devices.html",
-          "hash": "DrOj43jxs0NQkqLEZTh7bA=="
+          "relative_path": "api/Corale.Colore.Data.Color.html",
+          "hash": "0tW7at5S7aL+lz0c0xiLVg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Data.Constants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Data.Constants.html",
+          "hash": "pUxJjnc38YYjFpFPSobmZQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Data.DeviceInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Data.DeviceInfo.html",
+          "hash": "DeNXdOrZ9wov3Yxb7+4zyQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Data.DeviceType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Data.DeviceType.html",
+          "hash": "SVvoHHDD1jSJ4EQKi+3DZQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Data.Devices.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Data.Devices.html",
+          "hash": "4+d+VdJXA9K+S5pVmduH+Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Data.Result.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Data.Result.html",
+          "hash": "P/efri7KbSI2iSUS44UzXg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Data.SdkVersion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Data.SdkVersion.html",
+          "hash": "I/MUq+KGQZmg9iIxDul1iQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Data.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Data.html",
+          "hash": "jpcf96xZbKt9XlmFHzhaqQ=="
         }
       },
       "is_incremental": false,
@@ -141,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.Effects.ChromaLink.Custom.html",
-          "hash": "BMFNVjs/pg/xSOdUtDQn7w=="
+          "hash": "dS9XqPMhU0yMn66nT6FdKA=="
         }
       },
       "is_incremental": false,
@@ -153,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.Effects.ChromaLink.Effect.html",
-          "hash": "/3pkxtEM7NauqxkTKVntUA=="
+          "hash": "EXIehRgGhWbmhCfpbCqRuw=="
         }
       },
       "is_incremental": false,
@@ -165,7 +237,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.Effects.ChromaLink.Static.html",
-          "hash": "sfU5aJL8RVQzP5bmWaAT3Q=="
+          "hash": "iTj7i7IPQEF6uenIzwMF0Q=="
         }
       },
       "is_incremental": false,
@@ -185,23 +257,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Corale.Colore.Effects.Generic.Custom.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Corale.Colore.Effects.Generic.Custom.html",
-          "hash": "zpJYGCMDQAokgGiBsI/5Rg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Corale.Colore.Effects.Generic.Effect.yml",
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.Effects.Generic.Effect.html",
-          "hash": "iIE8qk/y0bSvmQAI797/Ig=="
+          "hash": "H4WD8Dk1ESbKiBrbbMpSBg=="
         }
       },
       "is_incremental": false,
@@ -225,7 +285,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.Effects.Generic.html",
-          "hash": "aKq+rzoYDMoDTj6gimW6/w=="
+          "hash": "PmzfPrmMEjtj4uvjxdK9Gw=="
         }
       },
       "is_incremental": false,
@@ -249,7 +309,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.Effects.Headset.Static.html",
-          "hash": "oN8dOnJwLFIqbdyzr8yNvA=="
+          "hash": "0xzFBi3yJ7rNmEOyun/lpQ=="
         }
       },
       "is_incremental": false,
@@ -285,7 +345,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.Effects.Keyboard.Custom.html",
-          "hash": "pzCt+TM/LzsGEJy7L9wKKw=="
+          "hash": "gclGdhns6ZGI7kiuk08AgA=="
         }
       },
       "is_incremental": false,
@@ -333,7 +393,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.Effects.Keyboard.Static.html",
-          "hash": "7hr+u20RrZn6ChJiZd+P1A=="
+          "hash": "w0zlBoVTsDnybs8khmjdRQ=="
         }
       },
       "is_incremental": false,
@@ -369,7 +429,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.Effects.Keypad.Custom.html",
-          "hash": "RMsXWCZ1NgEPDnBt+zq49g=="
+          "hash": "XLquMuNmbWAz8FHa/z8D0Q=="
         }
       },
       "is_incremental": false,
@@ -393,7 +453,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.Effects.Keypad.Static.html",
-          "hash": "c60ycR46rAPRdP0wQxNAaA=="
+          "hash": "/ucK6HzwcriyswLooXW90w=="
         }
       },
       "is_incremental": false,
@@ -425,11 +485,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Corale.Colore.Effects.Mouse.CustomGrid.yml",
+      "source_relative_path": "api/Corale.Colore.Effects.Mouse.Custom.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Corale.Colore.Effects.Mouse.CustomGrid.html",
-          "hash": "CfqzfE3FswS5kS8tA32mqQ=="
+          "relative_path": "api/Corale.Colore.Effects.Mouse.Custom.html",
+          "hash": "k3JT7V+5rPzt145rCXj3SQ=="
         }
       },
       "is_incremental": false,
@@ -441,7 +501,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.Effects.Mouse.Effect.html",
-          "hash": "7FlOEFedVxjd4Yi5uNuDbQ=="
+          "hash": "74icK2XaWbbWSCmJ9pq5aA=="
         }
       },
       "is_incremental": false,
@@ -477,7 +537,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.Effects.Mouse.Static.html",
-          "hash": "5p6ybF0LLdCu336kEL5DcA=="
+          "hash": "dV/4JdzaOiwNpmwjou+dbg=="
         }
       },
       "is_incremental": false,
@@ -489,7 +549,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.Effects.Mouse.html",
-          "hash": "duDxK/st8Z7SYmoZgCbeRw=="
+          "hash": "wSvUKdeL8YaQTBDpICjuow=="
         }
       },
       "is_incremental": false,
@@ -513,7 +573,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.Effects.Mousepad.Custom.html",
-          "hash": "MWPo8tc7M5k9W3G6HmI6ow=="
+          "hash": "qAcA8rKQQbJwqu/raM3OMQ=="
         }
       },
       "is_incremental": false,
@@ -537,7 +597,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.Effects.Mousepad.Static.html",
-          "hash": "o+PaHVkkzv63TgL2Gee2zQ=="
+          "hash": "+0lmrcOwvDcpAYSVDfiZUA=="
         }
       },
       "is_incremental": false,
@@ -605,35 +665,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Corale.Colore.Helpers.TaskHelper.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Corale.Colore.Helpers.TaskHelper.html",
-          "hash": "UoZDdSAoHBiRsWvu9VS+Hw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Corale.Colore.Helpers.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Corale.Colore.Helpers.html",
-          "hash": "Q1lRFGHHvdva3K/4moJ+lw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Corale.Colore.IChroma.yml",
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.IChroma.html",
-          "hash": "pcngCIE5yHs8wb1YCmxsKg=="
+          "hash": "QVQprBdHBLBOVo289toIDQ=="
         }
       },
       "is_incremental": false,
@@ -645,7 +681,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.IChromaLink.html",
-          "hash": "a1zGEY/AaVRSHkFwiCipyA=="
+          "hash": "jx8owZxC9WEhMBapgfxS8w=="
         }
       },
       "is_incremental": false,
@@ -657,7 +693,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.IDevice.html",
-          "hash": "ba1u3H5lHjnsJ2v/cncpdw=="
+          "hash": "qxxArjueOtNjKAfJzLuxYg=="
         }
       },
       "is_incremental": false,
@@ -669,7 +705,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.IGenericDevice.html",
-          "hash": "1MH1fN4OrAKAYl4/ztWZ3g=="
+          "hash": "hnzUvhp7Jcc7FK8TEvAFeg=="
         }
       },
       "is_incremental": false,
@@ -681,7 +717,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.IHeadset.html",
-          "hash": "Jn9VFzNq2Wc93ZUhbS2P/g=="
+          "hash": "4bgQfnmzXj45IbKZ7FhF8Q=="
         }
       },
       "is_incremental": false,
@@ -693,7 +729,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.IKeyboard.html",
-          "hash": "jeerksk60RUnqLJ3UX64+Q=="
+          "hash": "dNPVnUhsuoOSjyfZPUa8zw=="
         }
       },
       "is_incremental": false,
@@ -705,7 +741,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.IKeypad.html",
-          "hash": "8jRl9mKSCrJcTj/1P15Juw=="
+          "hash": "FCWMKTcnTUK12UUN+pIG0Q=="
         }
       },
       "is_incremental": false,
@@ -717,7 +753,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.IMouse.html",
-          "hash": "O65Vb8VTwbEkiz6gqNIPlg=="
+          "hash": "F7gFpCJkbl1LP9LGYt/V1g=="
         }
       },
       "is_incremental": false,
@@ -729,7 +765,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.IMousepad.html",
-          "hash": "GrNJvCt0LHRuxv+L0+enIQ=="
+          "hash": "yFKttuzji+Z7V6+dh8YGnQ=="
         }
       },
       "is_incremental": false,
@@ -741,7 +777,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.Native.NativeCallException.html",
-          "hash": "5eRTts4P9gmb/9e5pWdleA=="
+          "hash": "QYJk/WJ8G/Hh2cvuBS0L/w=="
         }
       },
       "is_incremental": false,
@@ -761,11 +797,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Corale.Colore.Result.yml",
+      "source_relative_path": "api/Corale.Colore.Rest.IRestClient.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Corale.Colore.Result.html",
-          "hash": "QRTntxcj0JZB0+2wNFXUHQ=="
+          "relative_path": "api/Corale.Colore.Rest.IRestClient.html",
+          "hash": "HkIuTUlu9J1XEtFAHUV/bQ=="
         }
       },
       "is_incremental": false,
@@ -773,11 +809,35 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Corale.Colore.SdkVersion.yml",
+      "source_relative_path": "api/Corale.Colore.Rest.IRestResponse-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Corale.Colore.SdkVersion.html",
-          "hash": "OiilmaUsSFgSnQo5F1HD/Q=="
+          "relative_path": "api/Corale.Colore.Rest.IRestResponse-1.html",
+          "hash": "+7XB7YK3V78haJq9yMOkVQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Rest.RestException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Rest.RestException.html",
+          "hash": "XAbO4pr0kUxcB7/Lj8X+5w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Rest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Rest.html",
+          "hash": "f+8N/sHmUqag42vKpa4ggQ=="
         }
       },
       "is_incremental": false,
@@ -801,7 +861,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.html",
-          "hash": "ksI+abs5mUzWEW1pdzPlew=="
+          "hash": "p9TDsuyf9P7OWaSlpdw7dA=="
         }
       },
       "is_incremental": false,
@@ -825,7 +885,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "vWLYC3oBiQsOIz0G1d8+Tw=="
+          "hash": "uwBWOZos6ComBeMn/hbyiQ=="
         }
       },
       "is_incremental": false,
@@ -893,12 +953,11 @@
           "details": "Processor RestApiDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
-        "TocDocumentProcessor": {
+        "ConceptualDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
-        "ConceptualDocumentProcessor": {
+        "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         },
@@ -907,8 +966,9 @@
           "details": "Processor ResourceDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
-        "ManagedReferenceDocumentProcessor": {
+        "TocDocumentProcessor": {
           "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         }
       }
