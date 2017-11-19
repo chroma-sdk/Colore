@@ -71,8 +71,4 @@
       <Version>2.2.29</Version>
     </PackageReference>
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Serialization\" />
-  </ItemGroup>
 </Project>
