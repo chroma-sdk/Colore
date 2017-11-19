@@ -89,6 +89,7 @@ namespace Corale.Colore.Rest
         /// </summary>
         /// <param name="info">Information about the application.</param>
         /// <returns>An object representing the progress of this asynchronous task.</returns>
+        /// <exception cref="RestException">Thrown if there is an error calling the REST API.</exception>
         public async Task InitializeAsync(AppInfo info)
         {
             Log.Info("Initializing SDK via /razer/chromasdk endpoint");
@@ -97,15 +98,28 @@ namespace Corale.Colore.Rest
 
             if (!response.IsSuccessful)
             {
-                Log.Error("Chroma SDK initialization failed");
-                throw new RestException(
+                var ex = new RestException(
                     "Failed to initialize Chroma REST API",
                     Result.RzFailed,
                     new Uri(_client.BaseAddress, "/razer/chromasdk"),
                     response.Status);
+                Log.Error("Chroma SDK initialization failed", ex);
+                throw ex;
             }
 
             var data = response.Data;
+
+            if (data == null)
+            {
+                var ex = new RestException(
+                    "REST API returned NULL data",
+                    Result.RzFailed,
+                    new Uri(_client.BaseAddress, "/razer/chromasdk"),
+                    response.Status);
+                Log.Error("Got NULL data from REST API", ex);
+                throw ex;
+            }
+
             _session = data.Session;
             _client.BaseAddress = data.Uri;
 
@@ -119,6 +133,8 @@ namespace Corale.Colore.Rest
         /// Uninitializes the Chroma SDK by sending a DELETE request to <c>/</c>.
         /// </summary>
         /// <returns>A <see cref="Task" /> representing the asynchronous operation.</returns>
+        /// <exception cref="RestException">Thrown if there is an error calling the REST API.</exception>
+        /// <exception cref="ApiException">Thrown if the SDK responds with an error code.</exception>
         public async Task UninitializeAsync()
         {
             var response = await _client.DeleteAsync<RestCallResponse>("/").ConfigureAwait(false);
@@ -155,6 +171,8 @@ namespace Corale.Colore.Rest
         /// </summary>
         /// <param name="effectId">Effect ID to set.</param>
         /// <returns>A <see cref="Task" /> representing the asynchronous operation.</returns>
+        /// <exception cref="RestException">Thrown if there is an error calling the REST API.</exception>
+        /// <exception cref="ApiException">Thrown if the SDK responds with an error code.</exception>
         public async Task SetEffectAsync(Guid effectId)
         {
             var response = await _client.PutAsync<RestCallResponse>("/effect", new { id = effectId })
@@ -186,6 +204,8 @@ namespace Corale.Colore.Rest
         /// </summary>
         /// <param name="effectId">Effect ID to delete.</param>
         /// <returns>A <see cref="Task" /> representing the asynchronous operation.</returns>
+        /// <exception cref="RestException">Thrown if there is an error calling the REST API.</exception>
+        /// <exception cref="ApiException">Thrown if the SDK responds with an error code.</exception>
         public async Task DeleteEffectAsync(Guid effectId)
         {
             var response = await _client.DeleteAsync<RestCallResponse>("/effect", new { id = effectId })
@@ -306,6 +326,7 @@ namespace Corale.Colore.Rest
         /// <summary>
         /// Handles sending regular calls to the heartbeat API, in order to keep the connection alive.
         /// </summary>
+        /// <exception cref="RestException">Thrown if there is an error calling the REST API.</exception>
         private void SendHeartbeat()
         {
             Log.Trace("Sending heartbeat");
@@ -313,12 +334,24 @@ namespace Corale.Colore.Rest
 
             if (!response.IsSuccessful)
             {
-                Log.Error("Heartbeat call failed");
-                throw new RestException(
+                var ex = new RestException(
                     "Call to heartbeat API failed",
                     Result.RzFailed,
                     new Uri(_client.BaseAddress, "/heartbeat"),
                     response.Status);
+                Log.Error("Heartbeat call failed", ex);
+                throw ex;
+            }
+
+            if (response.Data == null)
+            {
+                var ex = new RestException(
+                    "Got NULL data from heartbeat call",
+                    Result.RzFailed,
+                    new Uri(_client.BaseAddress, "/heartbeat"),
+                    response.Status);
+                Log.Error("Got NULL data from heartbeat call", ex);
+                throw ex;
             }
 
             Log.TraceFormat("Heartbeat complete, tick: {0}", response.Data.Tick);
