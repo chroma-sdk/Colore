@@ -1,0 +1,4 @@
+/* Fix navbar logo extending past navbar height */
+a.navbar-brand > img#logo {
+  max-height: 90%;
+}
