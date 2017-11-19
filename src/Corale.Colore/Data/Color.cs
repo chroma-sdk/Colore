@@ -28,12 +28,17 @@ namespace Corale.Colore.Data
     using System;
     using System.Runtime.InteropServices;
 
+    using Corale.Colore.Serialization;
+
     using JetBrains.Annotations;
+
+    using Newtonsoft.Json;
 
     /// <inheritdoc cref="IEquatable{T}" />
     /// <summary>
     /// Represents an RGB color.
     /// </summary>
+    [JsonConverter(typeof(ColorConverter))]
     [StructLayout(LayoutKind.Sequential, Size = sizeof(uint))]
     public partial struct Color : IEquatable<Color>, IEquatable<uint>
     {
