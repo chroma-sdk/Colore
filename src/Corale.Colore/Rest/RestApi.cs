@@ -331,7 +331,10 @@ namespace Corale.Colore.Rest
         /// <exception cref="RestException">Thrown if there is an error calling the REST API.</exception>
         private void SendHeartbeat()
         {
+#if DEBUG
             Log.Trace("Sending heartbeat");
+#endif
+
             var response = _client.PutAsync<HeartbeatResponse>("/heartbeat").Result;
 
             if (!response.IsSuccessful)
@@ -356,7 +359,9 @@ namespace Corale.Colore.Rest
                 throw ex;
             }
 
+#if DEBUG
             Log.TraceFormat("Heartbeat complete, tick: {0}", response.Data.Tick);
+#endif
         }
     }
 }
