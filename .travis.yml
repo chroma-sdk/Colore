@@ -12,7 +12,7 @@ env:
     - DOCFX_SOURCE_BRANCH_NAME=$TRAVIS_BRANCH
     - secure: kReI3QWEt5AqP92v/z2ZLO8bFOSgAXcGpsIFUHzFGpetHw8poBFW2GK+ZXbxGXddRfDVsFxptBbAxMihuhX6ljHyOcxkqAsSvs4C+s+XqUtR7oCi4ye2nXhSL30mJTk/o6KZTTL7/LomR9FONf7/3ws26uf/fcstpvNTbiiuV6Y=
 
-dotnet: 2.0.0
+dotnet: 2.1.4
 mono: latest
 addons:
   ssh_known_hosts: github.com
