@@ -213,9 +213,9 @@ namespace Corale.Colore.Rest
 
             if (!response.IsSuccessful)
             {
-                Log.Error("Failed to set effect ID");
+                Log.Error("Failed to delete effect ID");
                 throw new RestException(
-                    "Failed to set effect ID",
+                    "Failed to delete effect ID",
                     response.Data?.Result ?? Result.RzFailed,
                     new Uri(_client.BaseAddress, "/effect"),
                     response.Status,
@@ -225,10 +225,10 @@ namespace Corale.Colore.Rest
             var data = response.Data;
 
             if (data == null)
-                throw new ApiException("SetEffect API returned NULL response");
+                throw new ApiException("DeleteEffect API returned NULL response");
 
             if (!data.Result)
-                throw new ApiException("Exception when calling SetEffect API", data.Result);
+                throw new ApiException("Exception when calling DeleteEffect API", data.Result);
         }
 
         /// <inheritdoc />
