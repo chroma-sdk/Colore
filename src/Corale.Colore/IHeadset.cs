@@ -40,6 +40,14 @@ namespace Corale.Colore
     public interface IHeadset : IDevice
     {
         /// <summary>
+        /// Gets or sets the color of a specific LED on the headset.
+        /// </summary>
+        /// <param name="index">The index to access.</param>
+        /// <returns>The current <see cref="Color" /> at the <paramref name="index" />.</returns>
+        [PublicAPI]
+        Color this[int index] { get; set; }
+
+        /// <summary>
         /// Sets an effect on the headset that doesn't
         /// take any parameters, currently only valid
         /// for the <see cref="Effect.None" /> effect.
@@ -68,5 +76,16 @@ namespace Corale.Colore
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
         Task<Guid> SetStaticAsync(Color color);
+
+        /// <summary>
+        /// Sets a new <see cref="Custom" /> effect on the headset.
+        /// </summary>
+        /// <param name="effect">
+        /// An instance of the <see cref="Custom" /> struct
+        /// describing the effect.
+        /// </param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
+        [PublicAPI]
+        Task<Guid> SetCustomAsync(Custom effect);
     }
 }
