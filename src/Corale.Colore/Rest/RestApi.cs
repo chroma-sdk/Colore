@@ -68,6 +68,15 @@ namespace Corale.Colore.Rest
         private readonly Timer _heartbeatTimer;
 
         /// <summary>
+        /// The original base URI for the Chroma REST API.
+        /// </summary>
+        /// <remarks>
+        /// Used for calls to init if the SDK was previously initialized,
+        /// to restore the original base address before the new init call.
+        /// </remarks>
+        private readonly Uri _baseUri;
+
+        /// <summary>
         /// Keeps track of current session ID.
         /// </summary>
         private int _session;
@@ -80,6 +89,7 @@ namespace Corale.Colore.Rest
         {
             Log.InfoFormat("Initializing REST API client at {0}", client.BaseAddress);
             _client = client;
+            _baseUri = client.BaseAddress;
             _heartbeatTimer = new Timer(state => SendHeartbeat(), null, Timeout.Infinite, HeartbeatInterval);
         }
 
@@ -93,6 +103,8 @@ namespace Corale.Colore.Rest
         public async Task InitializeAsync(AppInfo info)
         {
             Log.Info("Initializing SDK via /razer/chromasdk endpoint");
+
+            _client.BaseAddress = _baseUri;
 
             var response = await _client.PostAsync<RestInitResponse>("/razer/chromasdk", info).ConfigureAwait(false);
 
