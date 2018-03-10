@@ -404,7 +404,7 @@ namespace Corale.Colore.Native
         /// <param name="param">Effect-specific parameter.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
         /// <seealso cref="NativeMethods.CreateEffect" />
-        private Guid CreateEffect(Guid device, Effect effect, IntPtr param)
+        private static Guid CreateEffect(Guid device, Effect effect, IntPtr param)
         {
             var guid = Guid.Empty;
             var result = NativeMethods.CreateEffect(device, effect, param, ref guid);
@@ -420,7 +420,7 @@ namespace Corale.Colore.Native
         /// <param name="param">Context-sensitive effect parameter.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
         /// <seealso cref="NativeMethods.CreateKeyboardEffect" />
-        private Guid CreateKeyboardEffect(Effects.Keyboard.Effect effect, IntPtr param)
+        private static Guid CreateKeyboardEffect(Effects.Keyboard.Effect effect, IntPtr param)
         {
             var guid = Guid.Empty;
             var result = NativeMethods.CreateKeyboardEffect(effect, param, ref guid);
@@ -436,7 +436,7 @@ namespace Corale.Colore.Native
         /// <param name="param">Context-sensitive effect parameter.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
         /// <seealso cref="NativeMethods.CreateMouseEffect" />
-        private Guid CreateMouseEffect(Effects.Mouse.Effect effect, IntPtr param)
+        private static Guid CreateMouseEffect(Effects.Mouse.Effect effect, IntPtr param)
         {
             var guid = Guid.Empty;
             var result = NativeMethods.CreateMouseEffect(effect, param, ref guid);
@@ -451,7 +451,7 @@ namespace Corale.Colore.Native
         /// <param name="effect">The type of effect to create.</param>
         /// <param name="param">Effect-specific parameter.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        private Guid CreateHeadsetEffect(Effects.Headset.Effect effect, IntPtr param)
+        private static Guid CreateHeadsetEffect(Effects.Headset.Effect effect, IntPtr param)
         {
             var guid = Guid.Empty;
             var result = NativeMethods.CreateHeadsetEffect(effect, param, ref guid);
@@ -466,7 +466,7 @@ namespace Corale.Colore.Native
         /// <param name="effect">The type of effect to create.</param>
         /// <param name="param">Effect-specific parameter.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        private Guid CreateMousepadEffect(Effects.Mousepad.Effect effect, IntPtr param)
+        private static Guid CreateMousepadEffect(Effects.Mousepad.Effect effect, IntPtr param)
         {
             var guid = Guid.Empty;
             var result = NativeMethods.CreateMousepadEffect(effect, param, ref guid);
@@ -481,7 +481,7 @@ namespace Corale.Colore.Native
         /// <param name="effect">The type of effect to create.</param>
         /// <param name="param">Effect-specific parameters.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        private Guid CreateKeypadEffect(Effects.Keypad.Effect effect, IntPtr param)
+        private static Guid CreateKeypadEffect(Effects.Keypad.Effect effect, IntPtr param)
         {
             var guid = Guid.Empty;
             var result = NativeMethods.CreateKeypadEffect(effect, param, ref guid);
@@ -496,7 +496,7 @@ namespace Corale.Colore.Native
         /// <param name="effect">The type of Chroma Link effect to create.</param>
         /// <param name="param">Effect-specific parameters.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        private Guid CreateChromaLinkEffect(Effects.ChromaLink.Effect effect, IntPtr param)
+        private static Guid CreateChromaLinkEffect(Effects.ChromaLink.Effect effect, IntPtr param)
         {
             var guid = Guid.Empty;
             var result = NativeMethods.CreateChromaLinkEffect(effect, param, ref guid);
