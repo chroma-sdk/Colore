@@ -46,6 +46,11 @@ namespace Corale.Colore.Implementations
         /// </summary>
         private static readonly ILog Log = LogManager.GetLogger(typeof(HeadsetImplementation));
 
+        /// <summary>
+        /// Internal <see cref="Custom" /> struct used for effects.
+        /// </summary>
+        private Custom _custom;
+
         /// <inheritdoc />
         /// <summary>
         /// Initializes a new instance of the <see cref="HeadsetImplementation" /> class.
@@ -55,6 +60,24 @@ namespace Corale.Colore.Implementations
             : base(api)
         {
             Log.Info("Headset is initializing");
+            _custom = Custom.Create();
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Gets or sets the color of a specific LED on the headset.
+        /// </summary>
+        /// <param name="index">The index to access.</param>
+        /// <returns>The current <see cref="Color" /> at the <paramref name="index" />.</returns>
+        public Color this[int index]
+        {
+            get => _custom[index];
+
+            set
+            {
+                _custom[index] = value;
+                SetCustomAsync(_custom).Wait();
+            }
         }
 
         /// <inheritdoc cref="DeviceImplementation.SetAllAsync" />
@@ -64,6 +87,7 @@ namespace Corale.Colore.Implementations
         /// <param name="color">Color to set.</param>
         public override async Task<Guid> SetAllAsync(Color color)
         {
+            _custom.Set(color);
             return await SetStaticAsync(new Static(color)).ConfigureAwait(false);
         }
 
@@ -76,7 +100,8 @@ namespace Corale.Colore.Implementations
         /// <param name="effect">The type of effect to set.</param>
         public async Task<Guid> SetEffectAsync(Effect effect)
         {
-            return await SetEffectAsync(await Api.CreateHeadsetEffectAsync(effect).ConfigureAwait(false)).ConfigureAwait(false);
+            return await SetEffectAsync(await Api.CreateHeadsetEffectAsync(effect).ConfigureAwait(false))
+                .ConfigureAwait(false);
         }
 
         /// <inheritdoc />
@@ -89,7 +114,8 @@ namespace Corale.Colore.Implementations
         /// </param>
         public async Task<Guid> SetStaticAsync(Static effect)
         {
-            return await SetEffectAsync(await Api.CreateHeadsetEffectAsync(Effect.Static, effect).ConfigureAwait(false)).ConfigureAwait(false);
+            return await SetEffectAsync(await Api.CreateHeadsetEffectAsync(Effect.Static, effect).ConfigureAwait(false))
+                .ConfigureAwait(false);
         }
 
         /// <inheritdoc />
@@ -103,12 +129,28 @@ namespace Corale.Colore.Implementations
             return await SetStaticAsync(new Static(color)).ConfigureAwait(false);
         }
 
+        /// <inheritdoc />
+        /// <summary>
+        /// Sets a new <see cref="Custom" /> effect on the headset.
+        /// </summary>
+        /// <param name="effect">
+        /// An instance of the <see cref="Custom" /> struct
+        /// describing the effect.
+        /// </param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
+        public async Task<Guid> SetCustomAsync(Custom effect)
+        {
+            return await SetEffectAsync(await Api.CreateHeadsetEffectAsync(Effect.Custom, effect).ConfigureAwait(false))
+                .ConfigureAwait(false);
+        }
+
         /// <inheritdoc cref="DeviceImplementation.ClearAsync" />
         /// <summary>
         /// Clears the current effect on the Headset.
         /// </summary>
         public override async Task<Guid> ClearAsync()
         {
+            _custom.Clear();
             return await SetEffectAsync(Effect.None).ConfigureAwait(false);
         }
     }
