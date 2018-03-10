@@ -169,6 +169,9 @@ namespace Corale.Colore.Rest
 
             if (!data.Result)
                 throw new ApiException("Exception when calling uninitialize API", data.Result);
+
+            Log.Debug("Stopping heartbeat timer");
+            _heartbeatTimer.Change(Timeout.Infinite, Timeout.Infinite);
         }
 
         /// <inheritdoc />
