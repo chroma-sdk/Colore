@@ -2050,6 +2050,168 @@ references:
   commentId: N:Corale.Colore.Effects.Headset
   fullName: Corale.Colore.Effects.Headset
   nameWithType: Corale.Colore.Effects.Headset
+- uid: Corale.Colore.Effects.Headset.Constants
+  name: Constants
+  href: api/Corale.Colore.Effects.Headset.Constants.html
+  commentId: T:Corale.Colore.Effects.Headset.Constants
+  fullName: Corale.Colore.Effects.Headset.Constants
+  nameWithType: Constants
+- uid: Corale.Colore.Effects.Headset.Constants.MaxLeds
+  name: MaxLeds
+  href: api/Corale.Colore.Effects.Headset.Constants.html#Corale_Colore_Effects_Headset_Constants_MaxLeds
+  commentId: F:Corale.Colore.Effects.Headset.Constants.MaxLeds
+  fullName: Corale.Colore.Effects.Headset.Constants.MaxLeds
+  nameWithType: Constants.MaxLeds
+- uid: Corale.Colore.Effects.Headset.Custom
+  name: Custom
+  href: api/Corale.Colore.Effects.Headset.Custom.html
+  commentId: T:Corale.Colore.Effects.Headset.Custom
+  fullName: Corale.Colore.Effects.Headset.Custom
+  nameWithType: Custom
+- uid: Corale.Colore.Effects.Headset.Custom.#ctor(Corale.Colore.Data.Color)
+  name: Custom(Color)
+  href: api/Corale.Colore.Effects.Headset.Custom.html#Corale_Colore_Effects_Headset_Custom__ctor_Corale_Colore_Data_Color_
+  commentId: M:Corale.Colore.Effects.Headset.Custom.#ctor(Corale.Colore.Data.Color)
+  fullName: Corale.Colore.Effects.Headset.Custom.Custom(Corale.Colore.Data.Color)
+  nameWithType: Custom.Custom(Color)
+- uid: Corale.Colore.Effects.Headset.Custom.#ctor(Corale.Colore.Effects.Headset.Custom)
+  name: Custom(Custom)
+  href: api/Corale.Colore.Effects.Headset.Custom.html#Corale_Colore_Effects_Headset_Custom__ctor_Corale_Colore_Effects_Headset_Custom_
+  commentId: M:Corale.Colore.Effects.Headset.Custom.#ctor(Corale.Colore.Effects.Headset.Custom)
+  fullName: Corale.Colore.Effects.Headset.Custom.Custom(Corale.Colore.Effects.Headset.Custom)
+  nameWithType: Custom.Custom(Custom)
+- uid: Corale.Colore.Effects.Headset.Custom.#ctor(System.Collections.Generic.IList{Corale.Colore.Data.Color})
+  name: Custom(IList<Color>)
+  href: api/Corale.Colore.Effects.Headset.Custom.html#Corale_Colore_Effects_Headset_Custom__ctor_System_Collections_Generic_IList_Corale_Colore_Data_Color__
+  commentId: M:Corale.Colore.Effects.Headset.Custom.#ctor(System.Collections.Generic.IList{Corale.Colore.Data.Color})
+  name.vb: Custom(IList(Of Color))
+  fullName: Corale.Colore.Effects.Headset.Custom.Custom(System.Collections.Generic.IList<Corale.Colore.Data.Color>)
+  fullName.vb: Corale.Colore.Effects.Headset.Custom.Custom(System.Collections.Generic.IList(Of Corale.Colore.Data.Color))
+  nameWithType: Custom.Custom(IList<Color>)
+  nameWithType.vb: Custom.Custom(IList(Of Color))
+- uid: Corale.Colore.Effects.Headset.Custom.#ctor*
+  name: Custom
+  href: api/Corale.Colore.Effects.Headset.Custom.html#Corale_Colore_Effects_Headset_Custom__ctor_
+  commentId: Overload:Corale.Colore.Effects.Headset.Custom.#ctor
+  fullName: Corale.Colore.Effects.Headset.Custom.Custom
+  nameWithType: Custom.Custom
+- uid: Corale.Colore.Effects.Headset.Custom.Clear
+  name: Clear()
+  href: api/Corale.Colore.Effects.Headset.Custom.html#Corale_Colore_Effects_Headset_Custom_Clear
+  commentId: M:Corale.Colore.Effects.Headset.Custom.Clear
+  fullName: Corale.Colore.Effects.Headset.Custom.Clear()
+  nameWithType: Custom.Clear()
+- uid: Corale.Colore.Effects.Headset.Custom.Clear*
+  name: Clear
+  href: api/Corale.Colore.Effects.Headset.Custom.html#Corale_Colore_Effects_Headset_Custom_Clear_
+  commentId: Overload:Corale.Colore.Effects.Headset.Custom.Clear
+  fullName: Corale.Colore.Effects.Headset.Custom.Clear
+  nameWithType: Custom.Clear
+- uid: Corale.Colore.Effects.Headset.Custom.Clone
+  name: Clone()
+  href: api/Corale.Colore.Effects.Headset.Custom.html#Corale_Colore_Effects_Headset_Custom_Clone
+  commentId: M:Corale.Colore.Effects.Headset.Custom.Clone
+  fullName: Corale.Colore.Effects.Headset.Custom.Clone()
+  nameWithType: Custom.Clone()
+- uid: Corale.Colore.Effects.Headset.Custom.Clone*
+  name: Clone
+  href: api/Corale.Colore.Effects.Headset.Custom.html#Corale_Colore_Effects_Headset_Custom_Clone_
+  commentId: Overload:Corale.Colore.Effects.Headset.Custom.Clone
+  fullName: Corale.Colore.Effects.Headset.Custom.Clone
+  nameWithType: Custom.Clone
+- uid: Corale.Colore.Effects.Headset.Custom.Create
+  name: Create()
+  href: api/Corale.Colore.Effects.Headset.Custom.html#Corale_Colore_Effects_Headset_Custom_Create
+  commentId: M:Corale.Colore.Effects.Headset.Custom.Create
+  fullName: Corale.Colore.Effects.Headset.Custom.Create()
+  nameWithType: Custom.Create()
+- uid: Corale.Colore.Effects.Headset.Custom.Create*
+  name: Create
+  href: api/Corale.Colore.Effects.Headset.Custom.html#Corale_Colore_Effects_Headset_Custom_Create_
+  commentId: Overload:Corale.Colore.Effects.Headset.Custom.Create
+  fullName: Corale.Colore.Effects.Headset.Custom.Create
+  nameWithType: Custom.Create
+- uid: Corale.Colore.Effects.Headset.Custom.Equals(Corale.Colore.Effects.Headset.Custom)
+  name: Equals(Custom)
+  href: api/Corale.Colore.Effects.Headset.Custom.html#Corale_Colore_Effects_Headset_Custom_Equals_Corale_Colore_Effects_Headset_Custom_
+  commentId: M:Corale.Colore.Effects.Headset.Custom.Equals(Corale.Colore.Effects.Headset.Custom)
+  fullName: Corale.Colore.Effects.Headset.Custom.Equals(Corale.Colore.Effects.Headset.Custom)
+  nameWithType: Custom.Equals(Custom)
+- uid: Corale.Colore.Effects.Headset.Custom.Equals(System.Object)
+  name: Equals(Object)
+  href: api/Corale.Colore.Effects.Headset.Custom.html#Corale_Colore_Effects_Headset_Custom_Equals_System_Object_
+  commentId: M:Corale.Colore.Effects.Headset.Custom.Equals(System.Object)
+  fullName: Corale.Colore.Effects.Headset.Custom.Equals(System.Object)
+  nameWithType: Custom.Equals(Object)
+- uid: Corale.Colore.Effects.Headset.Custom.Equals*
+  name: Equals
+  href: api/Corale.Colore.Effects.Headset.Custom.html#Corale_Colore_Effects_Headset_Custom_Equals_
+  commentId: Overload:Corale.Colore.Effects.Headset.Custom.Equals
+  fullName: Corale.Colore.Effects.Headset.Custom.Equals
+  nameWithType: Custom.Equals
+- uid: Corale.Colore.Effects.Headset.Custom.GetHashCode
+  name: GetHashCode()
+  href: api/Corale.Colore.Effects.Headset.Custom.html#Corale_Colore_Effects_Headset_Custom_GetHashCode
+  commentId: M:Corale.Colore.Effects.Headset.Custom.GetHashCode
+  fullName: Corale.Colore.Effects.Headset.Custom.GetHashCode()
+  nameWithType: Custom.GetHashCode()
+- uid: Corale.Colore.Effects.Headset.Custom.GetHashCode*
+  name: GetHashCode
+  href: api/Corale.Colore.Effects.Headset.Custom.html#Corale_Colore_Effects_Headset_Custom_GetHashCode_
+  commentId: Overload:Corale.Colore.Effects.Headset.Custom.GetHashCode
+  fullName: Corale.Colore.Effects.Headset.Custom.GetHashCode
+  nameWithType: Custom.GetHashCode
+- uid: Corale.Colore.Effects.Headset.Custom.Item(System.Int32)
+  name: Item[Int32]
+  href: api/Corale.Colore.Effects.Headset.Custom.html#Corale_Colore_Effects_Headset_Custom_Item_System_Int32_
+  commentId: P:Corale.Colore.Effects.Headset.Custom.Item(System.Int32)
+  name.vb: Item(Int32)
+  fullName: Corale.Colore.Effects.Headset.Custom.Item[System.Int32]
+  fullName.vb: Corale.Colore.Effects.Headset.Custom.Item(System.Int32)
+  nameWithType: Custom.Item[Int32]
+  nameWithType.vb: Custom.Item(Int32)
+- uid: Corale.Colore.Effects.Headset.Custom.Item*
+  name: Item
+  href: api/Corale.Colore.Effects.Headset.Custom.html#Corale_Colore_Effects_Headset_Custom_Item_
+  commentId: Overload:Corale.Colore.Effects.Headset.Custom.Item
+  fullName: Corale.Colore.Effects.Headset.Custom.Item
+  nameWithType: Custom.Item
+- uid: Corale.Colore.Effects.Headset.Custom.op_Equality(Corale.Colore.Effects.Headset.Custom,System.Object)
+  name: Equality(Custom, Object)
+  href: api/Corale.Colore.Effects.Headset.Custom.html#Corale_Colore_Effects_Headset_Custom_op_Equality_Corale_Colore_Effects_Headset_Custom_System_Object_
+  commentId: M:Corale.Colore.Effects.Headset.Custom.op_Equality(Corale.Colore.Effects.Headset.Custom,System.Object)
+  fullName: Corale.Colore.Effects.Headset.Custom.Equality(Corale.Colore.Effects.Headset.Custom, System.Object)
+  nameWithType: Custom.Equality(Custom, Object)
+- uid: Corale.Colore.Effects.Headset.Custom.op_Equality*
+  name: Equality
+  href: api/Corale.Colore.Effects.Headset.Custom.html#Corale_Colore_Effects_Headset_Custom_op_Equality_
+  commentId: Overload:Corale.Colore.Effects.Headset.Custom.op_Equality
+  fullName: Corale.Colore.Effects.Headset.Custom.Equality
+  nameWithType: Custom.Equality
+- uid: Corale.Colore.Effects.Headset.Custom.op_Inequality(Corale.Colore.Effects.Headset.Custom,System.Object)
+  name: Inequality(Custom, Object)
+  href: api/Corale.Colore.Effects.Headset.Custom.html#Corale_Colore_Effects_Headset_Custom_op_Inequality_Corale_Colore_Effects_Headset_Custom_System_Object_
+  commentId: M:Corale.Colore.Effects.Headset.Custom.op_Inequality(Corale.Colore.Effects.Headset.Custom,System.Object)
+  fullName: Corale.Colore.Effects.Headset.Custom.Inequality(Corale.Colore.Effects.Headset.Custom, System.Object)
+  nameWithType: Custom.Inequality(Custom, Object)
+- uid: Corale.Colore.Effects.Headset.Custom.op_Inequality*
+  name: Inequality
+  href: api/Corale.Colore.Effects.Headset.Custom.html#Corale_Colore_Effects_Headset_Custom_op_Inequality_
+  commentId: Overload:Corale.Colore.Effects.Headset.Custom.op_Inequality
+  fullName: Corale.Colore.Effects.Headset.Custom.Inequality
+  nameWithType: Custom.Inequality
+- uid: Corale.Colore.Effects.Headset.Custom.Set(Corale.Colore.Data.Color)
+  name: Set(Color)
+  href: api/Corale.Colore.Effects.Headset.Custom.html#Corale_Colore_Effects_Headset_Custom_Set_Corale_Colore_Data_Color_
+  commentId: M:Corale.Colore.Effects.Headset.Custom.Set(Corale.Colore.Data.Color)
+  fullName: Corale.Colore.Effects.Headset.Custom.Set(Corale.Colore.Data.Color)
+  nameWithType: Custom.Set(Color)
+- uid: Corale.Colore.Effects.Headset.Custom.Set*
+  name: Set
+  href: api/Corale.Colore.Effects.Headset.Custom.html#Corale_Colore_Effects_Headset_Custom_Set_
+  commentId: Overload:Corale.Colore.Effects.Headset.Custom.Set
+  fullName: Corale.Colore.Effects.Headset.Custom.Set
+  nameWithType: Custom.Set
 - uid: Corale.Colore.Effects.Headset.Effect
   name: Effect
   href: api/Corale.Colore.Effects.Headset.Effect.html
@@ -4981,6 +5143,33 @@ references:
   commentId: T:Corale.Colore.IHeadset
   fullName: Corale.Colore.IHeadset
   nameWithType: IHeadset
+- uid: Corale.Colore.IHeadset.Item(System.Int32)
+  name: Item[Int32]
+  href: api/Corale.Colore.IHeadset.html#Corale_Colore_IHeadset_Item_System_Int32_
+  commentId: P:Corale.Colore.IHeadset.Item(System.Int32)
+  name.vb: Item(Int32)
+  fullName: Corale.Colore.IHeadset.Item[System.Int32]
+  fullName.vb: Corale.Colore.IHeadset.Item(System.Int32)
+  nameWithType: IHeadset.Item[Int32]
+  nameWithType.vb: IHeadset.Item(Int32)
+- uid: Corale.Colore.IHeadset.Item*
+  name: Item
+  href: api/Corale.Colore.IHeadset.html#Corale_Colore_IHeadset_Item_
+  commentId: Overload:Corale.Colore.IHeadset.Item
+  fullName: Corale.Colore.IHeadset.Item
+  nameWithType: IHeadset.Item
+- uid: Corale.Colore.IHeadset.SetCustomAsync(Corale.Colore.Effects.Headset.Custom)
+  name: SetCustomAsync(Custom)
+  href: api/Corale.Colore.IHeadset.html#Corale_Colore_IHeadset_SetCustomAsync_Corale_Colore_Effects_Headset_Custom_
+  commentId: M:Corale.Colore.IHeadset.SetCustomAsync(Corale.Colore.Effects.Headset.Custom)
+  fullName: Corale.Colore.IHeadset.SetCustomAsync(Corale.Colore.Effects.Headset.Custom)
+  nameWithType: IHeadset.SetCustomAsync(Custom)
+- uid: Corale.Colore.IHeadset.SetCustomAsync*
+  name: SetCustomAsync
+  href: api/Corale.Colore.IHeadset.html#Corale_Colore_IHeadset_SetCustomAsync_
+  commentId: Overload:Corale.Colore.IHeadset.SetCustomAsync
+  fullName: Corale.Colore.IHeadset.SetCustomAsync
+  nameWithType: IHeadset.SetCustomAsync
 - uid: Corale.Colore.IHeadset.SetEffectAsync(Corale.Colore.Effects.Headset.Effect)
   name: SetEffectAsync(Effect)
   href: api/Corale.Colore.IHeadset.html#Corale_Colore_IHeadset_SetEffectAsync_Corale_Colore_Effects_Headset_Effect_

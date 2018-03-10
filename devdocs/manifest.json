@@ -344,6 +344,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Headset.Constants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Headset.Constants.html",
+          "hash": "A8MwGAIE34PTZSdTub9pMg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Headset.Custom.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Headset.Custom.html",
+          "hash": "Hq3EU66BlUaOZovqEQcR9g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Corale.Colore.Effects.Headset.Effect.yml",
       "output": {
         ".html": {
@@ -372,7 +396,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.Effects.Headset.html",
-          "hash": "ruZ+qBa3Z/82Va73GpnTQA=="
+          "hash": "UFa03d/HR0uKkyNEAiETXw=="
         }
       },
       "is_incremental": false,
@@ -756,7 +780,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.IHeadset.html",
-          "hash": "Q6sb2wDO9jbkrG1KO1CwNw=="
+          "hash": "B0HbVnzuU6hMdHSnkOXSZg=="
         }
       },
       "is_incremental": false,
@@ -924,7 +948,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "OBQaSPKiL+NQW+1G0NEzjQ=="
+          "hash": "11Y4lxrZgOgLg8yVwyieFg=="
         }
       },
       "is_incremental": false,
@@ -1018,11 +1042,11 @@
           "details": "Processor RestApiDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
-        "ManagedReferenceDocumentProcessor": {
+        "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         },
-        "ConceptualDocumentProcessor": {
+        "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         },
