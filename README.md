@@ -3,6 +3,7 @@
 [![MIT License][licensebadge]][license]
 [![Latest GitHub release][ghreleasebadge]][ghrelease]
 [![NuGet version][ngverbadge]][ng]
+[![MyGet version][mgverbadge]][mg]
 
 **[Master][master]:**
 [![Build status][appveyor-master-badge]][appveyor-master-status]
@@ -156,6 +157,8 @@ There may be others we are unaware of, so please let us know if there are any ot
 [ghreleasebadge]: https://img.shields.io/github/release/CoraleStudios/Colore.svg
 [ng]: https://www.nuget.org/packages/Colore
 [ngverbadge]: https://img.shields.io/nuget/v/Colore.svg
+[mg]: https://www.myget.org/feed/coralestudios/package/nuget/Colore
+[mgverbadge]: https://img.shields.io/myget/coralestudios/vpre/Colore.svg?label=myget
 
 [appveyor-develop-status]: https://ci.appveyor.com/project/Corale/colore/branch/develop
 [appveyor-develop-badge]: https://ci.appveyor.com/api/projects/status/st3y6fo0jqvhd8cg/branch/develop?svg=true
