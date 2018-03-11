@@ -334,48 +334,54 @@ references:
   commentId: T:Corale.Colore.ColoreProvider
   fullName: Corale.Colore.ColoreProvider
   nameWithType: ColoreProvider
-- uid: Corale.Colore.ColoreProvider.Create(Corale.Colore.Data.AppInfo,Corale.Colore.Api.IChromaApi)
-  name: Create(AppInfo, IChromaApi)
-  href: api/Corale.Colore.ColoreProvider.html#Corale_Colore_ColoreProvider_Create_Corale_Colore_Data_AppInfo_Corale_Colore_Api_IChromaApi_
-  commentId: M:Corale.Colore.ColoreProvider.Create(Corale.Colore.Data.AppInfo,Corale.Colore.Api.IChromaApi)
-  fullName: Corale.Colore.ColoreProvider.Create(Corale.Colore.Data.AppInfo, Corale.Colore.Api.IChromaApi)
-  nameWithType: ColoreProvider.Create(AppInfo, IChromaApi)
-- uid: Corale.Colore.ColoreProvider.Create*
-  name: Create
-  href: api/Corale.Colore.ColoreProvider.html#Corale_Colore_ColoreProvider_Create_
-  commentId: Overload:Corale.Colore.ColoreProvider.Create
-  fullName: Corale.Colore.ColoreProvider.Create
-  nameWithType: ColoreProvider.Create
-- uid: Corale.Colore.ColoreProvider.CreateNative
-  name: CreateNative()
-  href: api/Corale.Colore.ColoreProvider.html#Corale_Colore_ColoreProvider_CreateNative
-  commentId: M:Corale.Colore.ColoreProvider.CreateNative
-  fullName: Corale.Colore.ColoreProvider.CreateNative()
-  nameWithType: ColoreProvider.CreateNative()
-- uid: Corale.Colore.ColoreProvider.CreateNative*
-  name: CreateNative
-  href: api/Corale.Colore.ColoreProvider.html#Corale_Colore_ColoreProvider_CreateNative_
-  commentId: Overload:Corale.Colore.ColoreProvider.CreateNative
-  fullName: Corale.Colore.ColoreProvider.CreateNative
-  nameWithType: ColoreProvider.CreateNative
-- uid: Corale.Colore.ColoreProvider.CreateRest(Corale.Colore.Data.AppInfo,System.String)
-  name: CreateRest(AppInfo, String)
-  href: api/Corale.Colore.ColoreProvider.html#Corale_Colore_ColoreProvider_CreateRest_Corale_Colore_Data_AppInfo_System_String_
-  commentId: M:Corale.Colore.ColoreProvider.CreateRest(Corale.Colore.Data.AppInfo,System.String)
-  fullName: Corale.Colore.ColoreProvider.CreateRest(Corale.Colore.Data.AppInfo, System.String)
-  nameWithType: ColoreProvider.CreateRest(AppInfo, String)
-- uid: Corale.Colore.ColoreProvider.CreateRest(Corale.Colore.Data.AppInfo,System.Uri)
-  name: CreateRest(AppInfo, Uri)
-  href: api/Corale.Colore.ColoreProvider.html#Corale_Colore_ColoreProvider_CreateRest_Corale_Colore_Data_AppInfo_System_Uri_
-  commentId: M:Corale.Colore.ColoreProvider.CreateRest(Corale.Colore.Data.AppInfo,System.Uri)
-  fullName: Corale.Colore.ColoreProvider.CreateRest(Corale.Colore.Data.AppInfo, System.Uri)
-  nameWithType: ColoreProvider.CreateRest(AppInfo, Uri)
-- uid: Corale.Colore.ColoreProvider.CreateRest*
-  name: CreateRest
-  href: api/Corale.Colore.ColoreProvider.html#Corale_Colore_ColoreProvider_CreateRest_
-  commentId: Overload:Corale.Colore.ColoreProvider.CreateRest
-  fullName: Corale.Colore.ColoreProvider.CreateRest
-  nameWithType: ColoreProvider.CreateRest
+- uid: Corale.Colore.ColoreProvider.CreateAsync(Corale.Colore.Data.AppInfo,Corale.Colore.Api.IChromaApi)
+  name: CreateAsync(AppInfo, IChromaApi)
+  href: api/Corale.Colore.ColoreProvider.html#Corale_Colore_ColoreProvider_CreateAsync_Corale_Colore_Data_AppInfo_Corale_Colore_Api_IChromaApi_
+  commentId: M:Corale.Colore.ColoreProvider.CreateAsync(Corale.Colore.Data.AppInfo,Corale.Colore.Api.IChromaApi)
+  fullName: Corale.Colore.ColoreProvider.CreateAsync(Corale.Colore.Data.AppInfo, Corale.Colore.Api.IChromaApi)
+  nameWithType: ColoreProvider.CreateAsync(AppInfo, IChromaApi)
+- uid: Corale.Colore.ColoreProvider.CreateAsync*
+  name: CreateAsync
+  href: api/Corale.Colore.ColoreProvider.html#Corale_Colore_ColoreProvider_CreateAsync_
+  commentId: Overload:Corale.Colore.ColoreProvider.CreateAsync
+  fullName: Corale.Colore.ColoreProvider.CreateAsync
+  nameWithType: ColoreProvider.CreateAsync
+- uid: Corale.Colore.ColoreProvider.CreateNativeAsync
+  name: CreateNativeAsync()
+  href: api/Corale.Colore.ColoreProvider.html#Corale_Colore_ColoreProvider_CreateNativeAsync
+  commentId: M:Corale.Colore.ColoreProvider.CreateNativeAsync
+  fullName: Corale.Colore.ColoreProvider.CreateNativeAsync()
+  nameWithType: ColoreProvider.CreateNativeAsync()
+- uid: Corale.Colore.ColoreProvider.CreateNativeAsync*
+  name: CreateNativeAsync
+  href: api/Corale.Colore.ColoreProvider.html#Corale_Colore_ColoreProvider_CreateNativeAsync_
+  commentId: Overload:Corale.Colore.ColoreProvider.CreateNativeAsync
+  fullName: Corale.Colore.ColoreProvider.CreateNativeAsync
+  nameWithType: ColoreProvider.CreateNativeAsync
+- uid: Corale.Colore.ColoreProvider.CreateRestAsync(Corale.Colore.Data.AppInfo,System.Boolean)
+  name: CreateRestAsync(AppInfo, Boolean)
+  href: api/Corale.Colore.ColoreProvider.html#Corale_Colore_ColoreProvider_CreateRestAsync_Corale_Colore_Data_AppInfo_System_Boolean_
+  commentId: M:Corale.Colore.ColoreProvider.CreateRestAsync(Corale.Colore.Data.AppInfo,System.Boolean)
+  fullName: Corale.Colore.ColoreProvider.CreateRestAsync(Corale.Colore.Data.AppInfo, System.Boolean)
+  nameWithType: ColoreProvider.CreateRestAsync(AppInfo, Boolean)
+- uid: Corale.Colore.ColoreProvider.CreateRestAsync(Corale.Colore.Data.AppInfo,System.String)
+  name: CreateRestAsync(AppInfo, String)
+  href: api/Corale.Colore.ColoreProvider.html#Corale_Colore_ColoreProvider_CreateRestAsync_Corale_Colore_Data_AppInfo_System_String_
+  commentId: M:Corale.Colore.ColoreProvider.CreateRestAsync(Corale.Colore.Data.AppInfo,System.String)
+  fullName: Corale.Colore.ColoreProvider.CreateRestAsync(Corale.Colore.Data.AppInfo, System.String)
+  nameWithType: ColoreProvider.CreateRestAsync(AppInfo, String)
+- uid: Corale.Colore.ColoreProvider.CreateRestAsync(Corale.Colore.Data.AppInfo,System.Uri)
+  name: CreateRestAsync(AppInfo, Uri)
+  href: api/Corale.Colore.ColoreProvider.html#Corale_Colore_ColoreProvider_CreateRestAsync_Corale_Colore_Data_AppInfo_System_Uri_
+  commentId: M:Corale.Colore.ColoreProvider.CreateRestAsync(Corale.Colore.Data.AppInfo,System.Uri)
+  fullName: Corale.Colore.ColoreProvider.CreateRestAsync(Corale.Colore.Data.AppInfo, System.Uri)
+  nameWithType: ColoreProvider.CreateRestAsync(AppInfo, Uri)
+- uid: Corale.Colore.ColoreProvider.CreateRestAsync*
+  name: CreateRestAsync
+  href: api/Corale.Colore.ColoreProvider.html#Corale_Colore_ColoreProvider_CreateRestAsync_
+  commentId: Overload:Corale.Colore.ColoreProvider.CreateRestAsync
+  fullName: Corale.Colore.ColoreProvider.CreateRestAsync
+  nameWithType: ColoreProvider.CreateRestAsync
 - uid: Corale.Colore.Data
   name: Corale.Colore.Data
   href: api/Corale.Colore.Data.html

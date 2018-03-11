@@ -99,14 +99,14 @@
   </h3>
   
   
-  <a id="Corale_Colore_ColoreProvider_Create_" data-uid="Corale.Colore.ColoreProvider.Create*"></a>
-  <h4 id="Corale_Colore_ColoreProvider_Create_Corale_Colore_Data_AppInfo_Corale_Colore_Api_IChromaApi_" data-uid="Corale.Colore.ColoreProvider.Create(Corale.Colore.Data.AppInfo,Corale.Colore.Api.IChromaApi)">Create(AppInfo, IChromaApi)</h4>
+  <a id="Corale_Colore_ColoreProvider_CreateAsync_" data-uid="Corale.Colore.ColoreProvider.CreateAsync*"></a>
+  <h4 id="Corale_Colore_ColoreProvider_CreateAsync_Corale_Colore_Data_AppInfo_Corale_Colore_Api_IChromaApi_" data-uid="Corale.Colore.ColoreProvider.CreateAsync(Corale.Colore.Data.AppInfo,Corale.Colore.Api.IChromaApi)">CreateAsync(AppInfo, IChromaApi)</h4>
   <div class="markdown level1 summary"><p>Creates a new <a class="xref" href="Corale.Colore.IChroma.html">IChroma</a> instance using the specified API instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task&lt;IChroma&gt; Create(AppInfo info, IChromaApi api)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Task&lt;IChroma&gt; CreateAsync(AppInfo info, IChromaApi api)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -150,14 +150,14 @@
   </table>
   
   
-  <a id="Corale_Colore_ColoreProvider_CreateNative_" data-uid="Corale.Colore.ColoreProvider.CreateNative*"></a>
-  <h4 id="Corale_Colore_ColoreProvider_CreateNative" data-uid="Corale.Colore.ColoreProvider.CreateNative">CreateNative()</h4>
+  <a id="Corale_Colore_ColoreProvider_CreateNativeAsync_" data-uid="Corale.Colore.ColoreProvider.CreateNativeAsync*"></a>
+  <h4 id="Corale_Colore_ColoreProvider_CreateNativeAsync" data-uid="Corale.Colore.ColoreProvider.CreateNativeAsync">CreateNativeAsync()</h4>
   <div class="markdown level1 summary"><p>Creates a new <a class="xref" href="Corale.Colore.IChroma.html">IChroma</a> instance using the native Razer Chroma SDK.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task&lt;IChroma&gt; CreateNative()</code></pre>
+    <pre><code class="lang-csharp hljs">public static Task&lt;IChroma&gt; CreateNativeAsync()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -177,14 +177,65 @@
   </table>
   
   
-  <a id="Corale_Colore_ColoreProvider_CreateRest_" data-uid="Corale.Colore.ColoreProvider.CreateRest*"></a>
-  <h4 id="Corale_Colore_ColoreProvider_CreateRest_Corale_Colore_Data_AppInfo_System_String_" data-uid="Corale.Colore.ColoreProvider.CreateRest(Corale.Colore.Data.AppInfo,System.String)">CreateRest(AppInfo, String)</h4>
+  <a id="Corale_Colore_ColoreProvider_CreateRestAsync_" data-uid="Corale.Colore.ColoreProvider.CreateRestAsync*"></a>
+  <h4 id="Corale_Colore_ColoreProvider_CreateRestAsync_Corale_Colore_Data_AppInfo_System_Boolean_" data-uid="Corale.Colore.ColoreProvider.CreateRestAsync(Corale.Colore.Data.AppInfo,System.Boolean)">CreateRestAsync(AppInfo, Boolean)</h4>
   <div class="markdown level1 summary"><p>Creates a new <a class="xref" href="Corale.Colore.IChroma.html">IChroma</a> instance using the Chroma REST API.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task&lt;IChroma&gt; CreateRest(AppInfo info, string endpoint = &quot;http://localhost:54235&quot;)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Task&lt;IChroma&gt; CreateRestAsync(AppInfo info, bool ssl)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Corale.Colore.Data.AppInfo.html">AppInfo</a></td>
+        <td><span class="parametername">info</span></td>
+        <td><p>Information about the application.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">ssl</span></td>
+        <td><p>Whether to use the HTTPS endpoint for SDK communication.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Corale.Colore.IChroma.html">IChroma</a>&gt;</td>
+        <td><p>A new instance of <a class="xref" href="Corale.Colore.IChroma.html">IChroma</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Corale_Colore_ColoreProvider_CreateRestAsync_" data-uid="Corale.Colore.ColoreProvider.CreateRestAsync*"></a>
+  <h4 id="Corale_Colore_ColoreProvider_CreateRestAsync_Corale_Colore_Data_AppInfo_System_String_" data-uid="Corale.Colore.ColoreProvider.CreateRestAsync(Corale.Colore.Data.AppInfo,System.String)">CreateRestAsync(AppInfo, String)</h4>
+  <div class="markdown level1 summary"><p>Creates a new <a class="xref" href="Corale.Colore.IChroma.html">IChroma</a> instance using the Chroma REST API.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task&lt;IChroma&gt; CreateRestAsync(AppInfo info, string endpoint = &quot;http://localhost:54235&quot;)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -228,14 +279,14 @@
   </table>
   
   
-  <a id="Corale_Colore_ColoreProvider_CreateRest_" data-uid="Corale.Colore.ColoreProvider.CreateRest*"></a>
-  <h4 id="Corale_Colore_ColoreProvider_CreateRest_Corale_Colore_Data_AppInfo_System_Uri_" data-uid="Corale.Colore.ColoreProvider.CreateRest(Corale.Colore.Data.AppInfo,System.Uri)">CreateRest(AppInfo, Uri)</h4>
+  <a id="Corale_Colore_ColoreProvider_CreateRestAsync_" data-uid="Corale.Colore.ColoreProvider.CreateRestAsync*"></a>
+  <h4 id="Corale_Colore_ColoreProvider_CreateRestAsync_Corale_Colore_Data_AppInfo_System_Uri_" data-uid="Corale.Colore.ColoreProvider.CreateRestAsync(Corale.Colore.Data.AppInfo,System.Uri)">CreateRestAsync(AppInfo, Uri)</h4>
   <div class="markdown level1 summary"><p>Creates a new <a class="xref" href="Corale.Colore.IChroma.html">IChroma</a> instance using the Chroma REST API.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task&lt;IChroma&gt; CreateRest(AppInfo info, Uri endpoint)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Task&lt;IChroma&gt; CreateRestAsync(AppInfo info, Uri endpoint)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">

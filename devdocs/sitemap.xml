@@ -2,481 +2,481 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/CODE_OF_CONDUCT.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/CONTRIBUTING.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/README.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Api.ApiException.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Api.IChromaApi.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Api.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.ColoreException.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.ColoreProvider.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Data.AppInfo.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Data.Author.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Data.Category.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Data.Color.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Data.Constants.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Data.DeviceInfo.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Data.Devices.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Data.DeviceType.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Data.Result.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Data.SdkVersion.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Data.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.ChromaLink.Constants.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.ChromaLink.Custom.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.ChromaLink.Effect.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.ChromaLink.Static.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.ChromaLink.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.Generic.Effect.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.Generic.None.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.Generic.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.Headset.Constants.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.Headset.Custom.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.Headset.Effect.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.Headset.Static.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.Headset.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.Keyboard.Constants.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.Keyboard.Custom.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.Keyboard.Effect.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.Keyboard.Key.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.Keyboard.Static.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.Keyboard.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.Keypad.Constants.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.Keypad.Custom.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.Keypad.Effect.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.Keypad.Static.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.Keypad.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.Mouse.Constants.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.Mouse.Custom.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.Mouse.Effect.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.Mouse.GridLed.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.Mouse.Led.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.Mouse.Static.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.Mouse.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.Mousepad.Constants.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.Mousepad.Custom.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.Mousepad.Effect.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.Mousepad.Static.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Effects.Mousepad.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Events.ApplicationStateEventArgs.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Events.DeviceAccessEventArgs.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Events.SdkSupportEventArgs.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Events.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.IChroma.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.IChromaLink.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.IDevice.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.IGenericDevice.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.IHeadset.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.IKeyboard.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.IKeypad.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.IMouse.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.IMousepad.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Native.NativeCallException.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Native.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Rest.IRestClient.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Rest.IRestResponse-1.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Rest.RestException.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.Rest.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.UnsupportedDeviceException.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Corale.Colore.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/index.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/articles/getting-started.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/articles/intro.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/index.html</loc>
-    <lastmod>2018-03-10T06:53:11+00:00</lastmod>
+    <lastmod>2018-03-11T04:33:15+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
