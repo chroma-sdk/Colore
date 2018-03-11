@@ -58,12 +58,12 @@ namespace Corale.Colore
         /// Creates a new <see cref="IChroma" /> instance using the native Razer Chroma SDK.
         /// </summary>
         /// <returns>A new instance of <see cref="IChroma" />.</returns>
-        public static async Task<IChroma> CreateNative()
+        public static async Task<IChroma> CreateNativeAsync()
         {
             Log.Debug("Creating new native IChroma instance");
 
             // The native SDK currently does not make use of application info
-            return await Create(null, new NativeApi()).ConfigureAwait(false);
+            return await CreateAsync(null, new NativeApi()).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -72,9 +72,21 @@ namespace Corale.Colore
         /// <param name="info">Information about the application.</param>
         /// <param name="endpoint">The endpoint to use for initializing the Chroma SDK.</param>
         /// <returns>A new instance of <see cref="IChroma" />.</returns>
-        public static async Task<IChroma> CreateRest(AppInfo info, string endpoint = RestApi.DefaultEndpoint)
+        public static async Task<IChroma> CreateRestAsync(AppInfo info, string endpoint = RestApi.DefaultEndpoint)
         {
-            return await CreateRest(info, new Uri(endpoint)).ConfigureAwait(false);
+            return await CreateRestAsync(info, new Uri(endpoint)).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="IChroma" /> instance using the Chroma REST API.
+        /// </summary>
+        /// <param name="info">Information about the application.</param>
+        /// <param name="ssl">Whether to use the HTTPS endpoint for SDK communication.</param>
+        /// <returns>A new instance of <see cref="IChroma" />.</returns>
+        public static Task<IChroma> CreateRestAsync(AppInfo info, bool ssl)
+        {
+            var endpoint = ssl ? RestApi.DefaultSslEndpoint : RestApi.DefaultEndpoint;
+            return CreateRestAsync(info, endpoint);
         }
 
         /// <summary>
@@ -83,10 +95,10 @@ namespace Corale.Colore
         /// <param name="info">Information about the application.</param>
         /// <param name="endpoint">The endpoint to use for initializing the Chroma SDK.</param>
         /// <returns>A new instance of <see cref="IChroma" />.</returns>
-        public static async Task<IChroma> CreateRest(AppInfo info, Uri endpoint)
+        public static async Task<IChroma> CreateRestAsync(AppInfo info, Uri endpoint)
         {
             Log.DebugFormat("Creating new REST API IChroma instance at {0}", endpoint.ToString());
-            return await Create(info, new RestApi(new RestClient(endpoint))).ConfigureAwait(false);
+            return await CreateAsync(info, new RestApi(new RestClient(endpoint))).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -95,9 +107,9 @@ namespace Corale.Colore
         /// <param name="info">Information about the application.</param>
         /// <param name="api">The API instance to use to route SDK calls.</param>
         /// <returns>A new instance of <see cref="IChroma" />.</returns>
-        public static async Task<IChroma> Create(AppInfo info, IChromaApi api)
+        public static async Task<IChroma> CreateAsync(AppInfo info, IChromaApi api)
         {
-            await ClearCurrent().ConfigureAwait(false);
+            await ClearCurrentAsync().ConfigureAwait(false);
             _instance = new ChromaImplementation(api, info);
             return _instance;
         }
@@ -106,7 +118,7 @@ namespace Corale.Colore
         /// Clears the current <see cref="IChroma" /> instance, if necessary.
         /// </summary>
         /// <returns>An object representing the progress of this asynchronous task.</returns>
-        private static async Task ClearCurrent()
+        private static async Task ClearCurrentAsync()
         {
             if (_instance == null)
                 return;

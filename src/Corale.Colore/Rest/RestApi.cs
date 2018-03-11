@@ -43,9 +43,14 @@ namespace Corale.Colore.Rest
     internal sealed class RestApi : IChromaApi, IDisposable
     {
         /// <summary>
-        /// Default endpoint for accessing the Chroma SDK on the local machine.
+        /// Default endpoint for accessing the Chroma SDK on the local machine over HTTP.
         /// </summary>
         internal const string DefaultEndpoint = "http://localhost:54235";
+
+        /// <summary>
+        /// Default endpoint for accessing the Chroma SDK on the local machine over HTTPS.
+        /// </summary>
+        internal const string DefaultSslEndpoint = "https://localhost:54236";
 
         /// <summary>
         /// Interval (in milliseconds) to wait between each heartbeat call.
