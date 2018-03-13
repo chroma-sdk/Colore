@@ -55,7 +55,7 @@ namespace Corale.Colore.Data
         /// Generic fail error.
         /// </summary>
         [PublicAPI]
-        public static readonly Result RzFailed = unchecked((int)2147500037);
+        public static readonly Result RzFailed = unchecked(-2147467259);
 
         /// <summary>
         /// Invalid error.
@@ -106,7 +106,7 @@ namespace Corale.Colore.Data
             new Dictionary<Result, KeyValuePair<string, string>>
             {
                 { 5, new KeyValuePair<string, string>(nameof(RzAccessDenied), "Access denied.") },
-                { unchecked((int)2147500037), new KeyValuePair<string, string>(nameof(RzFailed), "General failure.") },
+                { unchecked(-2147467259), new KeyValuePair<string, string>(nameof(RzFailed), "General failure.") },
                 { -1, new KeyValuePair<string, string>(nameof(RzInvalid), "Invalid.") },
                 {
                     87,
