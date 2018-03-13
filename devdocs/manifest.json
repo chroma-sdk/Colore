@@ -72,7 +72,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.Api.IChromaApi.html",
-          "hash": "BHY5kT2HcnEo88PDjLHjxw=="
+          "hash": "GJv6MkS83ZlJcaibaVBIdA=="
         }
       },
       "is_incremental": false,
@@ -180,7 +180,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.Data.DeviceInfo.html",
-          "hash": "zBlWOy5k6Q7yi5LkQeXMEw=="
+          "hash": "KyLlPYyt0G9/UWFhoNv6QQ=="
         }
       },
       "is_incremental": false,
@@ -204,7 +204,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.Data.Devices.html",
-          "hash": "s5KppW203371giad9wsAjg=="
+          "hash": "taSk5s1QJt2lTYBcFgZV3A=="
         }
       },
       "is_incremental": false,
@@ -217,6 +217,18 @@
         ".html": {
           "relative_path": "api/Corale.Colore.Data.Result.html",
           "hash": "JCnsjDLoLhehq54tT1cVRg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Data.SdkDeviceInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Data.SdkDeviceInfo.html",
+          "hash": "kgFMIOGgcPDE2tRn6v77EQ=="
         }
       },
       "is_incremental": false,
@@ -240,7 +252,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.Data.html",
-          "hash": "AMnF2OMsBFs+/BgAQdkWFg=="
+          "hash": "6YcG2dQ5nqeW+P+i2c+CQw=="
         }
       },
       "is_incremental": false,
@@ -960,7 +972,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "UFq7FpvjEcrexkTgdogxkA=="
+          "hash": "1u85cA+mjzX8Rt5ULdVyiA=="
         }
       },
       "is_incremental": false,
@@ -1049,13 +1061,14 @@
         "incrementalPhase": "build"
       },
       "processors": {
+        "RestApiDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor RestApiDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
         "TocDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build"
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
           "incrementalPhase": "build"
         },
         "ConceptualDocumentProcessor": {
@@ -1067,9 +1080,8 @@
           "details": "Processor ResourceDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
-        "RestApiDocumentProcessor": {
+        "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor RestApiDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         }
       }

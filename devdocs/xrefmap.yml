@@ -847,9 +847,27 @@ references:
 - uid: Corale.Colore.Data.DeviceInfo.Connected
   name: Connected
   href: api/Corale.Colore.Data.DeviceInfo.html#Corale_Colore_Data_DeviceInfo_Connected
-  commentId: F:Corale.Colore.Data.DeviceInfo.Connected
+  commentId: P:Corale.Colore.Data.DeviceInfo.Connected
   fullName: Corale.Colore.Data.DeviceInfo.Connected
   nameWithType: DeviceInfo.Connected
+- uid: Corale.Colore.Data.DeviceInfo.Connected*
+  name: Connected
+  href: api/Corale.Colore.Data.DeviceInfo.html#Corale_Colore_Data_DeviceInfo_Connected_
+  commentId: Overload:Corale.Colore.Data.DeviceInfo.Connected
+  fullName: Corale.Colore.Data.DeviceInfo.Connected
+  nameWithType: DeviceInfo.Connected
+- uid: Corale.Colore.Data.DeviceInfo.Description
+  name: Description
+  href: api/Corale.Colore.Data.DeviceInfo.html#Corale_Colore_Data_DeviceInfo_Description
+  commentId: P:Corale.Colore.Data.DeviceInfo.Description
+  fullName: Corale.Colore.Data.DeviceInfo.Description
+  nameWithType: DeviceInfo.Description
+- uid: Corale.Colore.Data.DeviceInfo.Description*
+  name: Description
+  href: api/Corale.Colore.Data.DeviceInfo.html#Corale_Colore_Data_DeviceInfo_Description_
+  commentId: Overload:Corale.Colore.Data.DeviceInfo.Description
+  fullName: Corale.Colore.Data.DeviceInfo.Description
+  nameWithType: DeviceInfo.Description
 - uid: Corale.Colore.Data.DeviceInfo.Equals(Corale.Colore.Data.DeviceInfo)
   name: Equals(DeviceInfo)
   href: api/Corale.Colore.Data.DeviceInfo.html#Corale_Colore_Data_DeviceInfo_Equals_Corale_Colore_Data_DeviceInfo_
@@ -880,24 +898,48 @@ references:
   commentId: Overload:Corale.Colore.Data.DeviceInfo.GetHashCode
   fullName: Corale.Colore.Data.DeviceInfo.GetHashCode
   nameWithType: DeviceInfo.GetHashCode
-- uid: Corale.Colore.Data.DeviceInfo.op_Equality(Corale.Colore.Data.DeviceInfo,Corale.Colore.Data.DeviceInfo)
-  name: Equality(DeviceInfo, DeviceInfo)
-  href: api/Corale.Colore.Data.DeviceInfo.html#Corale_Colore_Data_DeviceInfo_op_Equality_Corale_Colore_Data_DeviceInfo_Corale_Colore_Data_DeviceInfo_
-  commentId: M:Corale.Colore.Data.DeviceInfo.op_Equality(Corale.Colore.Data.DeviceInfo,Corale.Colore.Data.DeviceInfo)
-  fullName: Corale.Colore.Data.DeviceInfo.Equality(Corale.Colore.Data.DeviceInfo, Corale.Colore.Data.DeviceInfo)
-  nameWithType: DeviceInfo.Equality(DeviceInfo, DeviceInfo)
+- uid: Corale.Colore.Data.DeviceInfo.Id
+  name: Id
+  href: api/Corale.Colore.Data.DeviceInfo.html#Corale_Colore_Data_DeviceInfo_Id
+  commentId: P:Corale.Colore.Data.DeviceInfo.Id
+  fullName: Corale.Colore.Data.DeviceInfo.Id
+  nameWithType: DeviceInfo.Id
+- uid: Corale.Colore.Data.DeviceInfo.Id*
+  name: Id
+  href: api/Corale.Colore.Data.DeviceInfo.html#Corale_Colore_Data_DeviceInfo_Id_
+  commentId: Overload:Corale.Colore.Data.DeviceInfo.Id
+  fullName: Corale.Colore.Data.DeviceInfo.Id
+  nameWithType: DeviceInfo.Id
+- uid: Corale.Colore.Data.DeviceInfo.Name
+  name: Name
+  href: api/Corale.Colore.Data.DeviceInfo.html#Corale_Colore_Data_DeviceInfo_Name
+  commentId: P:Corale.Colore.Data.DeviceInfo.Name
+  fullName: Corale.Colore.Data.DeviceInfo.Name
+  nameWithType: DeviceInfo.Name
+- uid: Corale.Colore.Data.DeviceInfo.Name*
+  name: Name
+  href: api/Corale.Colore.Data.DeviceInfo.html#Corale_Colore_Data_DeviceInfo_Name_
+  commentId: Overload:Corale.Colore.Data.DeviceInfo.Name
+  fullName: Corale.Colore.Data.DeviceInfo.Name
+  nameWithType: DeviceInfo.Name
+- uid: Corale.Colore.Data.DeviceInfo.op_Equality(Corale.Colore.Data.DeviceInfo,System.Object)
+  name: Equality(DeviceInfo, Object)
+  href: api/Corale.Colore.Data.DeviceInfo.html#Corale_Colore_Data_DeviceInfo_op_Equality_Corale_Colore_Data_DeviceInfo_System_Object_
+  commentId: M:Corale.Colore.Data.DeviceInfo.op_Equality(Corale.Colore.Data.DeviceInfo,System.Object)
+  fullName: Corale.Colore.Data.DeviceInfo.Equality(Corale.Colore.Data.DeviceInfo, System.Object)
+  nameWithType: DeviceInfo.Equality(DeviceInfo, Object)
 - uid: Corale.Colore.Data.DeviceInfo.op_Equality*
   name: Equality
   href: api/Corale.Colore.Data.DeviceInfo.html#Corale_Colore_Data_DeviceInfo_op_Equality_
   commentId: Overload:Corale.Colore.Data.DeviceInfo.op_Equality
   fullName: Corale.Colore.Data.DeviceInfo.Equality
   nameWithType: DeviceInfo.Equality
-- uid: Corale.Colore.Data.DeviceInfo.op_Inequality(Corale.Colore.Data.DeviceInfo,Corale.Colore.Data.DeviceInfo)
-  name: Inequality(DeviceInfo, DeviceInfo)
-  href: api/Corale.Colore.Data.DeviceInfo.html#Corale_Colore_Data_DeviceInfo_op_Inequality_Corale_Colore_Data_DeviceInfo_Corale_Colore_Data_DeviceInfo_
-  commentId: M:Corale.Colore.Data.DeviceInfo.op_Inequality(Corale.Colore.Data.DeviceInfo,Corale.Colore.Data.DeviceInfo)
-  fullName: Corale.Colore.Data.DeviceInfo.Inequality(Corale.Colore.Data.DeviceInfo, Corale.Colore.Data.DeviceInfo)
-  nameWithType: DeviceInfo.Inequality(DeviceInfo, DeviceInfo)
+- uid: Corale.Colore.Data.DeviceInfo.op_Inequality(Corale.Colore.Data.DeviceInfo,System.Object)
+  name: Inequality(DeviceInfo, Object)
+  href: api/Corale.Colore.Data.DeviceInfo.html#Corale_Colore_Data_DeviceInfo_op_Inequality_Corale_Colore_Data_DeviceInfo_System_Object_
+  commentId: M:Corale.Colore.Data.DeviceInfo.op_Inequality(Corale.Colore.Data.DeviceInfo,System.Object)
+  fullName: Corale.Colore.Data.DeviceInfo.Inequality(Corale.Colore.Data.DeviceInfo, System.Object)
+  nameWithType: DeviceInfo.Inequality(DeviceInfo, Object)
 - uid: Corale.Colore.Data.DeviceInfo.op_Inequality*
   name: Inequality
   href: api/Corale.Colore.Data.DeviceInfo.html#Corale_Colore_Data_DeviceInfo_op_Inequality_
@@ -907,7 +949,13 @@ references:
 - uid: Corale.Colore.Data.DeviceInfo.Type
   name: Type
   href: api/Corale.Colore.Data.DeviceInfo.html#Corale_Colore_Data_DeviceInfo_Type
-  commentId: F:Corale.Colore.Data.DeviceInfo.Type
+  commentId: P:Corale.Colore.Data.DeviceInfo.Type
+  fullName: Corale.Colore.Data.DeviceInfo.Type
+  nameWithType: DeviceInfo.Type
+- uid: Corale.Colore.Data.DeviceInfo.Type*
+  name: Type
+  href: api/Corale.Colore.Data.DeviceInfo.html#Corale_Colore_Data_DeviceInfo_Type_
+  commentId: Overload:Corale.Colore.Data.DeviceInfo.Type
   fullName: Corale.Colore.Data.DeviceInfo.Type
   nameWithType: DeviceInfo.Type
 - uid: Corale.Colore.Data.Devices
@@ -982,6 +1030,30 @@ references:
   commentId: F:Corale.Colore.Data.Devices.Firefly
   fullName: Corale.Colore.Data.Devices.Firefly
   nameWithType: Devices.Firefly
+- uid: Corale.Colore.Data.Devices.GetDescription(System.Guid)
+  name: GetDescription(Guid)
+  href: api/Corale.Colore.Data.Devices.html#Corale_Colore_Data_Devices_GetDescription_System_Guid_
+  commentId: M:Corale.Colore.Data.Devices.GetDescription(System.Guid)
+  fullName: Corale.Colore.Data.Devices.GetDescription(System.Guid)
+  nameWithType: Devices.GetDescription(Guid)
+- uid: Corale.Colore.Data.Devices.GetDescription*
+  name: GetDescription
+  href: api/Corale.Colore.Data.Devices.html#Corale_Colore_Data_Devices_GetDescription_
+  commentId: Overload:Corale.Colore.Data.Devices.GetDescription
+  fullName: Corale.Colore.Data.Devices.GetDescription
+  nameWithType: Devices.GetDescription
+- uid: Corale.Colore.Data.Devices.GetName(System.Guid)
+  name: GetName(Guid)
+  href: api/Corale.Colore.Data.Devices.html#Corale_Colore_Data_Devices_GetName_System_Guid_
+  commentId: M:Corale.Colore.Data.Devices.GetName(System.Guid)
+  fullName: Corale.Colore.Data.Devices.GetName(System.Guid)
+  nameWithType: Devices.GetName(Guid)
+- uid: Corale.Colore.Data.Devices.GetName*
+  name: GetName
+  href: api/Corale.Colore.Data.Devices.html#Corale_Colore_Data_Devices_GetName_
+  commentId: Overload:Corale.Colore.Data.Devices.GetName
+  fullName: Corale.Colore.Data.Devices.GetName
+  nameWithType: Devices.GetName
 - uid: Corale.Colore.Data.Devices.IsValidId(System.Guid)
   name: IsValidId(Guid)
   href: api/Corale.Colore.Data.Devices.html#Corale_Colore_Data_Devices_IsValidId_System_Guid_
@@ -1444,6 +1516,78 @@ references:
   commentId: Overload:Corale.Colore.Data.Result.Value
   fullName: Corale.Colore.Data.Result.Value
   nameWithType: Result.Value
+- uid: Corale.Colore.Data.SdkDeviceInfo
+  name: SdkDeviceInfo
+  href: api/Corale.Colore.Data.SdkDeviceInfo.html
+  commentId: T:Corale.Colore.Data.SdkDeviceInfo
+  fullName: Corale.Colore.Data.SdkDeviceInfo
+  nameWithType: SdkDeviceInfo
+- uid: Corale.Colore.Data.SdkDeviceInfo.Connected
+  name: Connected
+  href: api/Corale.Colore.Data.SdkDeviceInfo.html#Corale_Colore_Data_SdkDeviceInfo_Connected
+  commentId: F:Corale.Colore.Data.SdkDeviceInfo.Connected
+  fullName: Corale.Colore.Data.SdkDeviceInfo.Connected
+  nameWithType: SdkDeviceInfo.Connected
+- uid: Corale.Colore.Data.SdkDeviceInfo.Equals(Corale.Colore.Data.SdkDeviceInfo)
+  name: Equals(SdkDeviceInfo)
+  href: api/Corale.Colore.Data.SdkDeviceInfo.html#Corale_Colore_Data_SdkDeviceInfo_Equals_Corale_Colore_Data_SdkDeviceInfo_
+  commentId: M:Corale.Colore.Data.SdkDeviceInfo.Equals(Corale.Colore.Data.SdkDeviceInfo)
+  fullName: Corale.Colore.Data.SdkDeviceInfo.Equals(Corale.Colore.Data.SdkDeviceInfo)
+  nameWithType: SdkDeviceInfo.Equals(SdkDeviceInfo)
+- uid: Corale.Colore.Data.SdkDeviceInfo.Equals(System.Object)
+  name: Equals(Object)
+  href: api/Corale.Colore.Data.SdkDeviceInfo.html#Corale_Colore_Data_SdkDeviceInfo_Equals_System_Object_
+  commentId: M:Corale.Colore.Data.SdkDeviceInfo.Equals(System.Object)
+  fullName: Corale.Colore.Data.SdkDeviceInfo.Equals(System.Object)
+  nameWithType: SdkDeviceInfo.Equals(Object)
+- uid: Corale.Colore.Data.SdkDeviceInfo.Equals*
+  name: Equals
+  href: api/Corale.Colore.Data.SdkDeviceInfo.html#Corale_Colore_Data_SdkDeviceInfo_Equals_
+  commentId: Overload:Corale.Colore.Data.SdkDeviceInfo.Equals
+  fullName: Corale.Colore.Data.SdkDeviceInfo.Equals
+  nameWithType: SdkDeviceInfo.Equals
+- uid: Corale.Colore.Data.SdkDeviceInfo.GetHashCode
+  name: GetHashCode()
+  href: api/Corale.Colore.Data.SdkDeviceInfo.html#Corale_Colore_Data_SdkDeviceInfo_GetHashCode
+  commentId: M:Corale.Colore.Data.SdkDeviceInfo.GetHashCode
+  fullName: Corale.Colore.Data.SdkDeviceInfo.GetHashCode()
+  nameWithType: SdkDeviceInfo.GetHashCode()
+- uid: Corale.Colore.Data.SdkDeviceInfo.GetHashCode*
+  name: GetHashCode
+  href: api/Corale.Colore.Data.SdkDeviceInfo.html#Corale_Colore_Data_SdkDeviceInfo_GetHashCode_
+  commentId: Overload:Corale.Colore.Data.SdkDeviceInfo.GetHashCode
+  fullName: Corale.Colore.Data.SdkDeviceInfo.GetHashCode
+  nameWithType: SdkDeviceInfo.GetHashCode
+- uid: Corale.Colore.Data.SdkDeviceInfo.op_Equality(Corale.Colore.Data.SdkDeviceInfo,Corale.Colore.Data.SdkDeviceInfo)
+  name: Equality(SdkDeviceInfo, SdkDeviceInfo)
+  href: api/Corale.Colore.Data.SdkDeviceInfo.html#Corale_Colore_Data_SdkDeviceInfo_op_Equality_Corale_Colore_Data_SdkDeviceInfo_Corale_Colore_Data_SdkDeviceInfo_
+  commentId: M:Corale.Colore.Data.SdkDeviceInfo.op_Equality(Corale.Colore.Data.SdkDeviceInfo,Corale.Colore.Data.SdkDeviceInfo)
+  fullName: Corale.Colore.Data.SdkDeviceInfo.Equality(Corale.Colore.Data.SdkDeviceInfo, Corale.Colore.Data.SdkDeviceInfo)
+  nameWithType: SdkDeviceInfo.Equality(SdkDeviceInfo, SdkDeviceInfo)
+- uid: Corale.Colore.Data.SdkDeviceInfo.op_Equality*
+  name: Equality
+  href: api/Corale.Colore.Data.SdkDeviceInfo.html#Corale_Colore_Data_SdkDeviceInfo_op_Equality_
+  commentId: Overload:Corale.Colore.Data.SdkDeviceInfo.op_Equality
+  fullName: Corale.Colore.Data.SdkDeviceInfo.Equality
+  nameWithType: SdkDeviceInfo.Equality
+- uid: Corale.Colore.Data.SdkDeviceInfo.op_Inequality(Corale.Colore.Data.SdkDeviceInfo,Corale.Colore.Data.SdkDeviceInfo)
+  name: Inequality(SdkDeviceInfo, SdkDeviceInfo)
+  href: api/Corale.Colore.Data.SdkDeviceInfo.html#Corale_Colore_Data_SdkDeviceInfo_op_Inequality_Corale_Colore_Data_SdkDeviceInfo_Corale_Colore_Data_SdkDeviceInfo_
+  commentId: M:Corale.Colore.Data.SdkDeviceInfo.op_Inequality(Corale.Colore.Data.SdkDeviceInfo,Corale.Colore.Data.SdkDeviceInfo)
+  fullName: Corale.Colore.Data.SdkDeviceInfo.Inequality(Corale.Colore.Data.SdkDeviceInfo, Corale.Colore.Data.SdkDeviceInfo)
+  nameWithType: SdkDeviceInfo.Inequality(SdkDeviceInfo, SdkDeviceInfo)
+- uid: Corale.Colore.Data.SdkDeviceInfo.op_Inequality*
+  name: Inequality
+  href: api/Corale.Colore.Data.SdkDeviceInfo.html#Corale_Colore_Data_SdkDeviceInfo_op_Inequality_
+  commentId: Overload:Corale.Colore.Data.SdkDeviceInfo.op_Inequality
+  fullName: Corale.Colore.Data.SdkDeviceInfo.Inequality
+  nameWithType: SdkDeviceInfo.Inequality
+- uid: Corale.Colore.Data.SdkDeviceInfo.Type
+  name: Type
+  href: api/Corale.Colore.Data.SdkDeviceInfo.html#Corale_Colore_Data_SdkDeviceInfo_Type
+  commentId: F:Corale.Colore.Data.SdkDeviceInfo.Type
+  fullName: Corale.Colore.Data.SdkDeviceInfo.Type
+  nameWithType: SdkDeviceInfo.Type
 - uid: Corale.Colore.Data.SdkVersion
   name: SdkVersion
   href: api/Corale.Colore.Data.SdkVersion.html

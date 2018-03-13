@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class DeviceInfo
+    <title>Class SdkDeviceInfo
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class DeviceInfo
+    <meta name="title" content="Class SdkDeviceInfo
    ">
     <meta name="generator" content="docfx 2.26.4.0">
     
@@ -76,43 +76,42 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Corale.Colore.Data.DeviceInfo">
+            <article class="content wrap" id="_content" data-uid="Corale.Colore.Data.SdkDeviceInfo">
   
   
-  <h1 id="Corale_Colore_Data_DeviceInfo" data-uid="Corale.Colore.Data.DeviceInfo" class="text-break">Class DeviceInfo
+  <h1 id="Corale_Colore_Data_SdkDeviceInfo" data-uid="Corale.Colore.Data.SdkDeviceInfo" class="text-break">Class SdkDeviceInfo
   </h1>
-  <div class="markdown level0 summary"><p>Contains information about a device.</p>
+  <div class="markdown level0 summary"><p>Information about a device.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.ValueType</span></div>
-    <div class="level1"><span class="xref">DeviceInfo</span></div>
+    <div class="level1"><span class="xref">SdkDeviceInfo</span></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
-    <div><span class="xref">System.IEquatable</span>&lt;<a class="xref" href="Corale.Colore.Data.DeviceInfo.html">DeviceInfo</a>&gt;</div>
+    <div><span class="xref">System.IEquatable</span>&lt;<a class="xref" href="Corale.Colore.Data.SdkDeviceInfo.html">SdkDeviceInfo</a>&gt;</div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Corale.Colore.Data.html">Corale.Colore.Data</a></h6>
   <h6><strong>Assembly</strong>: Corale.Colore.dll</h6>
-  <h5 id="Corale_Colore_Data_DeviceInfo_syntax">Syntax</h5>
+  <h5 id="Corale_Colore_Data_SdkDeviceInfo_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class DeviceInfo : ValueType, IEquatable&lt;DeviceInfo&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class SdkDeviceInfo : ValueType, IEquatable&lt;SdkDeviceInfo&gt;</code></pre>
   </div>
-  <h3 id="properties">Properties
+  <h3 id="fields">Fields
   </h3>
   
   
-  <a id="Corale_Colore_Data_DeviceInfo_Connected_" data-uid="Corale.Colore.Data.DeviceInfo.Connected*"></a>
-  <h4 id="Corale_Colore_Data_DeviceInfo_Connected" data-uid="Corale.Colore.Data.DeviceInfo.Connected">Connected</h4>
-  <div class="markdown level1 summary"><p>Gets a value indicating whether the device is currently connected.</p>
+  <h4 id="Corale_Colore_Data_SdkDeviceInfo_Connected" data-uid="Corale.Colore.Data.SdkDeviceInfo.Connected">Connected</h4>
+  <div class="markdown level1 summary"><p>Whether this device is connected.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Connected { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public readonly bool Connected</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -129,94 +128,15 @@
   </table>
   
   
-  <a id="Corale_Colore_Data_DeviceInfo_Description_" data-uid="Corale.Colore.Data.DeviceInfo.Description*"></a>
-  <h4 id="Corale_Colore_Data_DeviceInfo_Description" data-uid="Corale.Colore.Data.DeviceInfo.Description">Description</h4>
-  <div class="markdown level1 summary"><p>Gets a description of the device.</p>
+  <h4 id="Corale_Colore_Data_SdkDeviceInfo_Type" data-uid="Corale.Colore.Data.SdkDeviceInfo.Type">Type</h4>
+  <div class="markdown level1 summary"><p>The type of device this is.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Description { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public readonly DeviceType Type</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Corale_Colore_Data_DeviceInfo_Id_" data-uid="Corale.Colore.Data.DeviceInfo.Id*"></a>
-  <h4 id="Corale_Colore_Data_DeviceInfo_Id" data-uid="Corale.Colore.Data.DeviceInfo.Id">Id</h4>
-  <div class="markdown level1 summary"><p>Gets the unique ID of the device.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Guid Id { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Guid</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Corale_Colore_Data_DeviceInfo_Name_" data-uid="Corale.Colore.Data.DeviceInfo.Name*"></a>
-  <h4 id="Corale_Colore_Data_DeviceInfo_Name" data-uid="Corale.Colore.Data.DeviceInfo.Name">Name</h4>
-  <div class="markdown level1 summary"><p>Gets the device name.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Name { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="Corale_Colore_Data_DeviceInfo_Type_" data-uid="Corale.Colore.Data.DeviceInfo.Type*"></a>
-  <h4 id="Corale_Colore_Data_DeviceInfo_Type" data-uid="Corale.Colore.Data.DeviceInfo.Type">Type</h4>
-  <div class="markdown level1 summary"><p>Gets the type of the device.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DeviceType Type { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -235,14 +155,14 @@
   </h3>
   
   
-  <a id="Corale_Colore_Data_DeviceInfo_Equals_" data-uid="Corale.Colore.Data.DeviceInfo.Equals*"></a>
-  <h4 id="Corale_Colore_Data_DeviceInfo_Equals_Corale_Colore_Data_DeviceInfo_" data-uid="Corale.Colore.Data.DeviceInfo.Equals(Corale.Colore.Data.DeviceInfo)">Equals(DeviceInfo)</h4>
+  <a id="Corale_Colore_Data_SdkDeviceInfo_Equals_" data-uid="Corale.Colore.Data.SdkDeviceInfo.Equals*"></a>
+  <h4 id="Corale_Colore_Data_SdkDeviceInfo_Equals_Corale_Colore_Data_SdkDeviceInfo_" data-uid="Corale.Colore.Data.SdkDeviceInfo.Equals(Corale.Colore.Data.SdkDeviceInfo)">Equals(SdkDeviceInfo)</h4>
   <div class="markdown level1 summary"><p>Indicates whether the current object is equal to another object of the same type.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Equals(DeviceInfo other)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool Equals(SdkDeviceInfo other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -255,7 +175,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Corale.Colore.Data.DeviceInfo.html">DeviceInfo</a></td>
+        <td><a class="xref" href="Corale.Colore.Data.SdkDeviceInfo.html">SdkDeviceInfo</a></td>
         <td><span class="parametername">other</span></td>
         <td><p>An object to compare with this object.</p>
 </td>
@@ -280,8 +200,8 @@
   </table>
   
   
-  <a id="Corale_Colore_Data_DeviceInfo_Equals_" data-uid="Corale.Colore.Data.DeviceInfo.Equals*"></a>
-  <h4 id="Corale_Colore_Data_DeviceInfo_Equals_System_Object_" data-uid="Corale.Colore.Data.DeviceInfo.Equals(System.Object)">Equals(Object)</h4>
+  <a id="Corale_Colore_Data_SdkDeviceInfo_Equals_" data-uid="Corale.Colore.Data.SdkDeviceInfo.Equals*"></a>
+  <h4 id="Corale_Colore_Data_SdkDeviceInfo_Equals_System_Object_" data-uid="Corale.Colore.Data.SdkDeviceInfo.Equals(System.Object)">Equals(Object)</h4>
   <div class="markdown level1 summary"><p>Indicates whether this instance and a specified object are equal.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -302,7 +222,7 @@
       <tr>
         <td><span class="xref">System.Object</span></td>
         <td><span class="parametername">obj</span></td>
-        <td><p>The object to compare with the current instance.</p>
+        <td><p>The object to compare with the current instance. </p>
 </td>
       </tr>
     </tbody>
@@ -325,8 +245,8 @@
   </table>
   
   
-  <a id="Corale_Colore_Data_DeviceInfo_GetHashCode_" data-uid="Corale.Colore.Data.DeviceInfo.GetHashCode*"></a>
-  <h4 id="Corale_Colore_Data_DeviceInfo_GetHashCode" data-uid="Corale.Colore.Data.DeviceInfo.GetHashCode">GetHashCode()</h4>
+  <a id="Corale_Colore_Data_SdkDeviceInfo_GetHashCode_" data-uid="Corale.Colore.Data.SdkDeviceInfo.GetHashCode*"></a>
+  <h4 id="Corale_Colore_Data_SdkDeviceInfo_GetHashCode" data-uid="Corale.Colore.Data.SdkDeviceInfo.GetHashCode">GetHashCode()</h4>
   <div class="markdown level1 summary"><p>Returns the hash code for this instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -354,15 +274,14 @@
   </h3>
   
   
-  <a id="Corale_Colore_Data_DeviceInfo_op_Equality_" data-uid="Corale.Colore.Data.DeviceInfo.op_Equality*"></a>
-  <h4 id="Corale_Colore_Data_DeviceInfo_op_Equality_Corale_Colore_Data_DeviceInfo_System_Object_" data-uid="Corale.Colore.Data.DeviceInfo.op_Equality(Corale.Colore.Data.DeviceInfo,System.Object)">Equality(DeviceInfo, Object)</h4>
-  <div class="markdown level1 summary"><p>Compares an instance of <a class="xref" href="Corale.Colore.Data.DeviceInfo.html">DeviceInfo</a> with
-another object for equality.</p>
+  <a id="Corale_Colore_Data_SdkDeviceInfo_op_Equality_" data-uid="Corale.Colore.Data.SdkDeviceInfo.op_Equality*"></a>
+  <h4 id="Corale_Colore_Data_SdkDeviceInfo_op_Equality_Corale_Colore_Data_SdkDeviceInfo_Corale_Colore_Data_SdkDeviceInfo_" data-uid="Corale.Colore.Data.SdkDeviceInfo.op_Equality(Corale.Colore.Data.SdkDeviceInfo,Corale.Colore.Data.SdkDeviceInfo)">Equality(SdkDeviceInfo, SdkDeviceInfo)</h4>
+  <div class="markdown level1 summary"><p>Checks an instance of <a class="xref" href="Corale.Colore.Data.SdkDeviceInfo.html">SdkDeviceInfo</a> for equality with another <a class="xref" href="Corale.Colore.Data.SdkDeviceInfo.html">SdkDeviceInfo</a> instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool operator ==(DeviceInfo left, object right)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool operator ==(SdkDeviceInfo left, SdkDeviceInfo right)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -375,15 +294,15 @@ another object for equality.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Corale.Colore.Data.DeviceInfo.html">DeviceInfo</a></td>
+        <td><a class="xref" href="Corale.Colore.Data.SdkDeviceInfo.html">SdkDeviceInfo</a></td>
         <td><span class="parametername">left</span></td>
-        <td><p>The left operand, an instance of <a class="xref" href="Corale.Colore.Data.DeviceInfo.html">DeviceInfo</a>.</p>
+        <td><p>Left operand.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Object</span></td>
+        <td><a class="xref" href="Corale.Colore.Data.SdkDeviceInfo.html">SdkDeviceInfo</a></td>
         <td><span class="parametername">right</span></td>
-        <td><p>The right operand, any type of object.</p>
+        <td><p>Right operand.</p>
 </td>
       </tr>
     </tbody>
@@ -399,22 +318,21 @@ another object for equality.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td><p><code>true</code> if the two objects are equal, otherwise <code>false</code>.</p>
+        <td><p><code>true</code> if the two instances are equal, otherwise <code>false</code>.</p>
 </td>
       </tr>
     </tbody>
   </table>
   
   
-  <a id="Corale_Colore_Data_DeviceInfo_op_Inequality_" data-uid="Corale.Colore.Data.DeviceInfo.op_Inequality*"></a>
-  <h4 id="Corale_Colore_Data_DeviceInfo_op_Inequality_Corale_Colore_Data_DeviceInfo_System_Object_" data-uid="Corale.Colore.Data.DeviceInfo.op_Inequality(Corale.Colore.Data.DeviceInfo,System.Object)">Inequality(DeviceInfo, Object)</h4>
-  <div class="markdown level1 summary"><p>Compares an instance of <a class="xref" href="Corale.Colore.Data.DeviceInfo.html">DeviceInfo</a> with
-another object for inequality.</p>
+  <a id="Corale_Colore_Data_SdkDeviceInfo_op_Inequality_" data-uid="Corale.Colore.Data.SdkDeviceInfo.op_Inequality*"></a>
+  <h4 id="Corale_Colore_Data_SdkDeviceInfo_op_Inequality_Corale_Colore_Data_SdkDeviceInfo_Corale_Colore_Data_SdkDeviceInfo_" data-uid="Corale.Colore.Data.SdkDeviceInfo.op_Inequality(Corale.Colore.Data.SdkDeviceInfo,Corale.Colore.Data.SdkDeviceInfo)">Inequality(SdkDeviceInfo, SdkDeviceInfo)</h4>
+  <div class="markdown level1 summary"><p>Checks an instance of <a class="xref" href="Corale.Colore.Data.SdkDeviceInfo.html">SdkDeviceInfo</a> for inequality with another <a class="xref" href="Corale.Colore.Data.SdkDeviceInfo.html">SdkDeviceInfo</a> instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool operator !=(DeviceInfo left, object right)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool operator !=(SdkDeviceInfo left, SdkDeviceInfo right)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -427,15 +345,15 @@ another object for inequality.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Corale.Colore.Data.DeviceInfo.html">DeviceInfo</a></td>
+        <td><a class="xref" href="Corale.Colore.Data.SdkDeviceInfo.html">SdkDeviceInfo</a></td>
         <td><span class="parametername">left</span></td>
-        <td><p>The left operand, an instance of <a class="xref" href="Corale.Colore.Data.DeviceInfo.html">DeviceInfo</a>.</p>
+        <td><p>Left operand.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Object</span></td>
+        <td><a class="xref" href="Corale.Colore.Data.SdkDeviceInfo.html">SdkDeviceInfo</a></td>
         <td><span class="parametername">right</span></td>
-        <td><p>The right operand, any type of object.</p>
+        <td><p>Right operand.</p>
 </td>
       </tr>
     </tbody>
@@ -451,7 +369,7 @@ another object for inequality.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td><p><code>true</code> if the two objects are not equal, otherwise <code>false</code>.</p>
+        <td><p><code>true</code> if the two instances are not equal, otherwise <code>false</code>.</p>
 </td>
       </tr>
     </tbody>
