@@ -512,11 +512,21 @@ namespace Corale.Colore.Data
             return GetDeviceMetadata(deviceId).Description;
         }
 
+        /// <summary>
+        /// Gets device metadata for a specific device ID.
+        /// </summary>
+        /// <param name="deviceId">The device ID to get metadata for.</param>
+        /// <returns>An instance of <see cref="Metadata" /> for the specified device.</returns>
         internal static Metadata GetDeviceMetadata(Guid deviceId)
         {
             return !MetadataCache.ContainsKey(deviceId) ? BuildMetadataCacheWithId(deviceId) : MetadataCache[deviceId];
         }
 
+        /// <summary>
+        /// Builds the metadata cache and returns cache entry for the specified device ID.
+        /// </summary>
+        /// <param name="deviceId">Device ID to return metadata for.</param>
+        /// <returns>An instance of <see cref="Metadata" /> for the specified device.</returns>
         private static Metadata BuildMetadataCacheWithId(Guid deviceId)
         {
             var fields = typeof(Devices).GetFields(BindingFlags.Static | BindingFlags.Public)
@@ -543,16 +553,30 @@ namespace Corale.Colore.Data
                 nameof(deviceId));
         }
 
+        /// <summary>
+        /// Holds metadata for a device.
+        /// </summary>
         internal struct Metadata
         {
+            /// <summary>
+            /// Initializes a new instance of the <see cref="Metadata" /> struct.
+            /// </summary>
+            /// <param name="name">Device name.</param>
+            /// <param name="description">Device description.</param>
             internal Metadata(string name, string description)
             {
                 Name = name;
                 Description = description ?? name;
             }
 
+            /// <summary>
+            /// Gets the name of the device.
+            /// </summary>
             internal string Name { get; }
 
+            /// <summary>
+            /// Gets a description of the device.
+            /// </summary>
             internal string Description { get; }
         }
     }
