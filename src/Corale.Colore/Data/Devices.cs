@@ -38,9 +38,6 @@ namespace Corale.Colore.Data
     /// </summary>
     public static class Devices
     {
-        private static readonly ConcurrentDictionary<Guid, Metadata> MetadataCache =
-            new ConcurrentDictionary<Guid, Metadata>();
-
         /// <summary>
         /// Blackwidow Chroma edition.
         /// </summary>
@@ -472,6 +469,12 @@ namespace Corale.Colore.Data
             0x1d,
             0x42,
             0xa);
+
+        /// <summary>
+        /// Dictionary holding cached metadata for each device GUID.
+        /// </summary>
+        private static readonly ConcurrentDictionary<Guid, Metadata> MetadataCache =
+            new ConcurrentDictionary<Guid, Metadata>();
 
         /// <summary>
         /// Returns whether a specified <see cref="Guid" /> is a valid device identifier.
