@@ -248,11 +248,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Corale.Colore.Effects.ChromaLink.Constants.yml",
+      "source_relative_path": "api/Corale.Colore.Effects.ChromaLink.ChromaLinkConstants.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Corale.Colore.Effects.ChromaLink.Constants.html",
-          "hash": "Y7qg89qwTe5iC8L/JQ++FA=="
+          "relative_path": "api/Corale.Colore.Effects.ChromaLink.ChromaLinkConstants.html",
+          "hash": "xdH3ibch6lPbL0KtTvvQ+A=="
         }
       },
       "is_incremental": false,
@@ -300,7 +300,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.Effects.ChromaLink.html",
-          "hash": "Os1nEm/w2tAZkYzsvua2ag=="
+          "hash": "R9rotD38nj+uvx5R0ogn9w=="
         }
       },
       "is_incremental": false,
@@ -344,18 +344,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Corale.Colore.Effects.Headset.Constants.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Corale.Colore.Effects.Headset.Constants.html",
-          "hash": "A8MwGAIE34PTZSdTub9pMg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Corale.Colore.Effects.Headset.Custom.yml",
       "output": {
         ".html": {
@@ -380,6 +368,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Headset.HeadsetConstants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Headset.HeadsetConstants.html",
+          "hash": "EyNYMi5QCQskHPxjBXspNQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Corale.Colore.Effects.Headset.Static.yml",
       "output": {
         ".html": {
@@ -396,19 +396,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.Effects.Headset.html",
-          "hash": "UFa03d/HR0uKkyNEAiETXw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Corale.Colore.Effects.Keyboard.Constants.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Corale.Colore.Effects.Keyboard.Constants.html",
-          "hash": "oByqvBHsvKfds2QvWi803Q=="
+          "hash": "CtBzdHhNaJmSbVMleDbFjg=="
         }
       },
       "is_incremental": false,
@@ -421,6 +409,18 @@
         ".html": {
           "relative_path": "api/Corale.Colore.Effects.Keyboard.Custom.html",
           "hash": "PnQmm0JR/ILChsgs8UvchA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Keyboard.DeathstalkerGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Keyboard.DeathstalkerGrid.html",
+          "hash": "v5miADqnZAm9PZDTNNQh8A=="
         }
       },
       "is_incremental": false,
@@ -452,6 +452,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Keyboard.KeyboardConstants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Keyboard.KeyboardConstants.html",
+          "hash": "S9paUxtdA7xrw466QehgDw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Corale.Colore.Effects.Keyboard.Static.yml",
       "output": {
         ".html": {
@@ -468,19 +480,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.Effects.Keyboard.html",
-          "hash": "9z+9ED+alXm3lZBDa2uY7g=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Corale.Colore.Effects.Keypad.Constants.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Corale.Colore.Effects.Keypad.Constants.html",
-          "hash": "9DB9UTAaJVy6ilTmlPFSOA=="
+          "hash": "S02qft4ZrQTGSFME25NOrA=="
         }
       },
       "is_incremental": false,
@@ -512,6 +512,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Keypad.KeypadConstants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Keypad.KeypadConstants.html",
+          "hash": "dCZAXIm8peOYac9g+kcb3w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Corale.Colore.Effects.Keypad.Static.yml",
       "output": {
         ".html": {
@@ -528,19 +540,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.Effects.Keypad.html",
-          "hash": "Q4atUBlxsKKDudKqAvGF5A=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Corale.Colore.Effects.Mouse.Constants.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Corale.Colore.Effects.Mouse.Constants.html",
-          "hash": "l0HeVC4faDXCd1etDMx+RA=="
+          "hash": "xlY8wSkXPf89Kh2lwLj3lA=="
         }
       },
       "is_incremental": false,
@@ -596,6 +596,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Mouse.MouseConstants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Mouse.MouseConstants.html",
+          "hash": "qrMl3n69jAmjZfNPkpLGiQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Corale.Colore.Effects.Mouse.Static.yml",
       "output": {
         ".html": {
@@ -612,19 +624,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.Effects.Mouse.html",
-          "hash": "c3FYrh4aFlFi1GjGlmqC6Q=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Corale.Colore.Effects.Mousepad.Constants.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Corale.Colore.Effects.Mousepad.Constants.html",
-          "hash": "fg7To9TB3nTcwjcuJbaXDA=="
+          "hash": "T6VZgXds9XuCbAEQirAuiw=="
         }
       },
       "is_incremental": false,
@@ -656,6 +656,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Effects.Mousepad.MousepadConstants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Effects.Mousepad.MousepadConstants.html",
+          "hash": "fHmtSgcZxXiY5C6EwHr/Pg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Corale.Colore.Effects.Mousepad.Static.yml",
       "output": {
         ".html": {
@@ -672,7 +684,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.Effects.Mousepad.html",
-          "hash": "Ejp5ZLStqGBWNozyXqhZEg=="
+          "hash": "nqSerJ9TBoRKA7q19I4+LQ=="
         }
       },
       "is_incremental": false,
@@ -792,7 +804,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.IKeyboard.html",
-          "hash": "iCP+qoRxCMooJEkhUuQzbQ=="
+          "hash": "1F6770+9ghzBgMYo2kctvg=="
         }
       },
       "is_incremental": false,
@@ -804,7 +816,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.IKeypad.html",
-          "hash": "4Vvowph+SpcpN6RkiQ8D6A=="
+          "hash": "nhIm3Zf5427GJBgtDaAuCQ=="
         }
       },
       "is_incremental": false,
@@ -816,7 +828,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Corale.Colore.IMouse.html",
-          "hash": "6rmrQLF8U8qx2rHtkLmakg=="
+          "hash": "tCrR22IMLiBtqeawCRKDaw=="
         }
       },
       "is_incremental": false,
@@ -948,7 +960,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "11Y4lxrZgOgLg8yVwyieFg=="
+          "hash": "UFq7FpvjEcrexkTgdogxkA=="
         }
       },
       "is_incremental": false,
@@ -1037,11 +1049,6 @@
         "incrementalPhase": "build"
       },
       "processors": {
-        "RestApiDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor RestApiDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build"
-        },
         "TocDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
@@ -1058,6 +1065,11 @@
         "ResourceDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor ResourceDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "RestApiDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor RestApiDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         }
       }

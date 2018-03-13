@@ -1636,18 +1636,18 @@ references:
   commentId: N:Corale.Colore.Effects.ChromaLink
   fullName: Corale.Colore.Effects.ChromaLink
   nameWithType: Corale.Colore.Effects.ChromaLink
-- uid: Corale.Colore.Effects.ChromaLink.Constants
-  name: Constants
-  href: api/Corale.Colore.Effects.ChromaLink.Constants.html
-  commentId: T:Corale.Colore.Effects.ChromaLink.Constants
-  fullName: Corale.Colore.Effects.ChromaLink.Constants
-  nameWithType: Constants
-- uid: Corale.Colore.Effects.ChromaLink.Constants.MaxLeds
+- uid: Corale.Colore.Effects.ChromaLink.ChromaLinkConstants
+  name: ChromaLinkConstants
+  href: api/Corale.Colore.Effects.ChromaLink.ChromaLinkConstants.html
+  commentId: T:Corale.Colore.Effects.ChromaLink.ChromaLinkConstants
+  fullName: Corale.Colore.Effects.ChromaLink.ChromaLinkConstants
+  nameWithType: ChromaLinkConstants
+- uid: Corale.Colore.Effects.ChromaLink.ChromaLinkConstants.MaxLeds
   name: MaxLeds
-  href: api/Corale.Colore.Effects.ChromaLink.Constants.html#Corale_Colore_Effects_ChromaLink_Constants_MaxLeds
-  commentId: F:Corale.Colore.Effects.ChromaLink.Constants.MaxLeds
-  fullName: Corale.Colore.Effects.ChromaLink.Constants.MaxLeds
-  nameWithType: Constants.MaxLeds
+  href: api/Corale.Colore.Effects.ChromaLink.ChromaLinkConstants.html#Corale_Colore_Effects_ChromaLink_ChromaLinkConstants_MaxLeds
+  commentId: F:Corale.Colore.Effects.ChromaLink.ChromaLinkConstants.MaxLeds
+  fullName: Corale.Colore.Effects.ChromaLink.ChromaLinkConstants.MaxLeds
+  nameWithType: ChromaLinkConstants.MaxLeds
 - uid: Corale.Colore.Effects.ChromaLink.Custom
   name: Custom
   href: api/Corale.Colore.Effects.ChromaLink.Custom.html
@@ -2056,18 +2056,6 @@ references:
   commentId: N:Corale.Colore.Effects.Headset
   fullName: Corale.Colore.Effects.Headset
   nameWithType: Corale.Colore.Effects.Headset
-- uid: Corale.Colore.Effects.Headset.Constants
-  name: Constants
-  href: api/Corale.Colore.Effects.Headset.Constants.html
-  commentId: T:Corale.Colore.Effects.Headset.Constants
-  fullName: Corale.Colore.Effects.Headset.Constants
-  nameWithType: Constants
-- uid: Corale.Colore.Effects.Headset.Constants.MaxLeds
-  name: MaxLeds
-  href: api/Corale.Colore.Effects.Headset.Constants.html#Corale_Colore_Effects_Headset_Constants_MaxLeds
-  commentId: F:Corale.Colore.Effects.Headset.Constants.MaxLeds
-  fullName: Corale.Colore.Effects.Headset.Constants.MaxLeds
-  nameWithType: Constants.MaxLeds
 - uid: Corale.Colore.Effects.Headset.Custom
   name: Custom
   href: api/Corale.Colore.Effects.Headset.Custom.html
@@ -2254,6 +2242,18 @@ references:
   commentId: F:Corale.Colore.Effects.Headset.Effect.value__
   fullName: Corale.Colore.Effects.Headset.Effect.value__
   nameWithType: Effect.value__
+- uid: Corale.Colore.Effects.Headset.HeadsetConstants
+  name: HeadsetConstants
+  href: api/Corale.Colore.Effects.Headset.HeadsetConstants.html
+  commentId: T:Corale.Colore.Effects.Headset.HeadsetConstants
+  fullName: Corale.Colore.Effects.Headset.HeadsetConstants
+  nameWithType: HeadsetConstants
+- uid: Corale.Colore.Effects.Headset.HeadsetConstants.MaxLeds
+  name: MaxLeds
+  href: api/Corale.Colore.Effects.Headset.HeadsetConstants.html#Corale_Colore_Effects_Headset_HeadsetConstants_MaxLeds
+  commentId: F:Corale.Colore.Effects.Headset.HeadsetConstants.MaxLeds
+  fullName: Corale.Colore.Effects.Headset.HeadsetConstants.MaxLeds
+  nameWithType: HeadsetConstants.MaxLeds
 - uid: Corale.Colore.Effects.Headset.Static
   name: Static
   href: api/Corale.Colore.Effects.Headset.Static.html
@@ -2338,36 +2338,6 @@ references:
   commentId: N:Corale.Colore.Effects.Keyboard
   fullName: Corale.Colore.Effects.Keyboard
   nameWithType: Corale.Colore.Effects.Keyboard
-- uid: Corale.Colore.Effects.Keyboard.Constants
-  name: Constants
-  href: api/Corale.Colore.Effects.Keyboard.Constants.html
-  commentId: T:Corale.Colore.Effects.Keyboard.Constants
-  fullName: Corale.Colore.Effects.Keyboard.Constants
-  nameWithType: Constants
-- uid: Corale.Colore.Effects.Keyboard.Constants.MaxColumns
-  name: MaxColumns
-  href: api/Corale.Colore.Effects.Keyboard.Constants.html#Corale_Colore_Effects_Keyboard_Constants_MaxColumns
-  commentId: F:Corale.Colore.Effects.Keyboard.Constants.MaxColumns
-  fullName: Corale.Colore.Effects.Keyboard.Constants.MaxColumns
-  nameWithType: Constants.MaxColumns
-- uid: Corale.Colore.Effects.Keyboard.Constants.MaxCustomEffects
-  name: MaxCustomEffects
-  href: api/Corale.Colore.Effects.Keyboard.Constants.html#Corale_Colore_Effects_Keyboard_Constants_MaxCustomEffects
-  commentId: F:Corale.Colore.Effects.Keyboard.Constants.MaxCustomEffects
-  fullName: Corale.Colore.Effects.Keyboard.Constants.MaxCustomEffects
-  nameWithType: Constants.MaxCustomEffects
-- uid: Corale.Colore.Effects.Keyboard.Constants.MaxKeys
-  name: MaxKeys
-  href: api/Corale.Colore.Effects.Keyboard.Constants.html#Corale_Colore_Effects_Keyboard_Constants_MaxKeys
-  commentId: F:Corale.Colore.Effects.Keyboard.Constants.MaxKeys
-  fullName: Corale.Colore.Effects.Keyboard.Constants.MaxKeys
-  nameWithType: Constants.MaxKeys
-- uid: Corale.Colore.Effects.Keyboard.Constants.MaxRows
-  name: MaxRows
-  href: api/Corale.Colore.Effects.Keyboard.Constants.html#Corale_Colore_Effects_Keyboard_Constants_MaxRows
-  commentId: F:Corale.Colore.Effects.Keyboard.Constants.MaxRows
-  fullName: Corale.Colore.Effects.Keyboard.Constants.MaxRows
-  nameWithType: Constants.MaxRows
 - uid: Corale.Colore.Effects.Keyboard.Custom
   name: Custom
   href: api/Corale.Colore.Effects.Keyboard.Custom.html
@@ -2527,6 +2497,147 @@ references:
   commentId: Overload:Corale.Colore.Effects.Keyboard.Custom.Set
   fullName: Corale.Colore.Effects.Keyboard.Custom.Set
   nameWithType: Custom.Set
+- uid: Corale.Colore.Effects.Keyboard.DeathstalkerGrid
+  name: DeathstalkerGrid
+  href: api/Corale.Colore.Effects.Keyboard.DeathstalkerGrid.html
+  commentId: T:Corale.Colore.Effects.Keyboard.DeathstalkerGrid
+  fullName: Corale.Colore.Effects.Keyboard.DeathstalkerGrid
+  nameWithType: DeathstalkerGrid
+- uid: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.#ctor(Corale.Colore.Data.Color)
+  name: DeathstalkerGrid(Color)
+  href: api/Corale.Colore.Effects.Keyboard.DeathstalkerGrid.html#Corale_Colore_Effects_Keyboard_DeathstalkerGrid__ctor_Corale_Colore_Data_Color_
+  commentId: M:Corale.Colore.Effects.Keyboard.DeathstalkerGrid.#ctor(Corale.Colore.Data.Color)
+  fullName: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.DeathstalkerGrid(Corale.Colore.Data.Color)
+  nameWithType: DeathstalkerGrid.DeathstalkerGrid(Color)
+- uid: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.#ctor(Corale.Colore.Effects.Keyboard.DeathstalkerGrid)
+  name: DeathstalkerGrid(DeathstalkerGrid)
+  href: api/Corale.Colore.Effects.Keyboard.DeathstalkerGrid.html#Corale_Colore_Effects_Keyboard_DeathstalkerGrid__ctor_Corale_Colore_Effects_Keyboard_DeathstalkerGrid_
+  commentId: M:Corale.Colore.Effects.Keyboard.DeathstalkerGrid.#ctor(Corale.Colore.Effects.Keyboard.DeathstalkerGrid)
+  fullName: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.DeathstalkerGrid(Corale.Colore.Effects.Keyboard.DeathstalkerGrid)
+  nameWithType: DeathstalkerGrid.DeathstalkerGrid(DeathstalkerGrid)
+- uid: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.#ctor*
+  name: DeathstalkerGrid
+  href: api/Corale.Colore.Effects.Keyboard.DeathstalkerGrid.html#Corale_Colore_Effects_Keyboard_DeathstalkerGrid__ctor_
+  commentId: Overload:Corale.Colore.Effects.Keyboard.DeathstalkerGrid.#ctor
+  fullName: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.DeathstalkerGrid
+  nameWithType: DeathstalkerGrid.DeathstalkerGrid
+- uid: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Clear
+  name: Clear()
+  href: api/Corale.Colore.Effects.Keyboard.DeathstalkerGrid.html#Corale_Colore_Effects_Keyboard_DeathstalkerGrid_Clear
+  commentId: M:Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Clear
+  fullName: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Clear()
+  nameWithType: DeathstalkerGrid.Clear()
+- uid: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Clear*
+  name: Clear
+  href: api/Corale.Colore.Effects.Keyboard.DeathstalkerGrid.html#Corale_Colore_Effects_Keyboard_DeathstalkerGrid_Clear_
+  commentId: Overload:Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Clear
+  fullName: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Clear
+  nameWithType: DeathstalkerGrid.Clear
+- uid: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Clone
+  name: Clone()
+  href: api/Corale.Colore.Effects.Keyboard.DeathstalkerGrid.html#Corale_Colore_Effects_Keyboard_DeathstalkerGrid_Clone
+  commentId: M:Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Clone
+  fullName: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Clone()
+  nameWithType: DeathstalkerGrid.Clone()
+- uid: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Clone*
+  name: Clone
+  href: api/Corale.Colore.Effects.Keyboard.DeathstalkerGrid.html#Corale_Colore_Effects_Keyboard_DeathstalkerGrid_Clone_
+  commentId: Overload:Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Clone
+  fullName: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Clone
+  nameWithType: DeathstalkerGrid.Clone
+- uid: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Create
+  name: Create()
+  href: api/Corale.Colore.Effects.Keyboard.DeathstalkerGrid.html#Corale_Colore_Effects_Keyboard_DeathstalkerGrid_Create
+  commentId: M:Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Create
+  fullName: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Create()
+  nameWithType: DeathstalkerGrid.Create()
+- uid: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Create*
+  name: Create
+  href: api/Corale.Colore.Effects.Keyboard.DeathstalkerGrid.html#Corale_Colore_Effects_Keyboard_DeathstalkerGrid_Create_
+  commentId: Overload:Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Create
+  fullName: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Create
+  nameWithType: DeathstalkerGrid.Create
+- uid: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Equals(Corale.Colore.Effects.Keyboard.DeathstalkerGrid)
+  name: Equals(DeathstalkerGrid)
+  href: api/Corale.Colore.Effects.Keyboard.DeathstalkerGrid.html#Corale_Colore_Effects_Keyboard_DeathstalkerGrid_Equals_Corale_Colore_Effects_Keyboard_DeathstalkerGrid_
+  commentId: M:Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Equals(Corale.Colore.Effects.Keyboard.DeathstalkerGrid)
+  fullName: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Equals(Corale.Colore.Effects.Keyboard.DeathstalkerGrid)
+  nameWithType: DeathstalkerGrid.Equals(DeathstalkerGrid)
+- uid: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Equals(System.Object)
+  name: Equals(Object)
+  href: api/Corale.Colore.Effects.Keyboard.DeathstalkerGrid.html#Corale_Colore_Effects_Keyboard_DeathstalkerGrid_Equals_System_Object_
+  commentId: M:Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Equals(System.Object)
+  fullName: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Equals(System.Object)
+  nameWithType: DeathstalkerGrid.Equals(Object)
+- uid: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Equals*
+  name: Equals
+  href: api/Corale.Colore.Effects.Keyboard.DeathstalkerGrid.html#Corale_Colore_Effects_Keyboard_DeathstalkerGrid_Equals_
+  commentId: Overload:Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Equals
+  fullName: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Equals
+  nameWithType: DeathstalkerGrid.Equals
+- uid: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.GetHashCode
+  name: GetHashCode()
+  href: api/Corale.Colore.Effects.Keyboard.DeathstalkerGrid.html#Corale_Colore_Effects_Keyboard_DeathstalkerGrid_GetHashCode
+  commentId: M:Corale.Colore.Effects.Keyboard.DeathstalkerGrid.GetHashCode
+  fullName: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.GetHashCode()
+  nameWithType: DeathstalkerGrid.GetHashCode()
+- uid: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.GetHashCode*
+  name: GetHashCode
+  href: api/Corale.Colore.Effects.Keyboard.DeathstalkerGrid.html#Corale_Colore_Effects_Keyboard_DeathstalkerGrid_GetHashCode_
+  commentId: Overload:Corale.Colore.Effects.Keyboard.DeathstalkerGrid.GetHashCode
+  fullName: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.GetHashCode
+  nameWithType: DeathstalkerGrid.GetHashCode
+- uid: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Item(System.Int32)
+  name: Item[Int32]
+  href: api/Corale.Colore.Effects.Keyboard.DeathstalkerGrid.html#Corale_Colore_Effects_Keyboard_DeathstalkerGrid_Item_System_Int32_
+  commentId: P:Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Item(System.Int32)
+  name.vb: Item(Int32)
+  fullName: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Item[System.Int32]
+  fullName.vb: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Item(System.Int32)
+  nameWithType: DeathstalkerGrid.Item[Int32]
+  nameWithType.vb: DeathstalkerGrid.Item(Int32)
+- uid: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Item*
+  name: Item
+  href: api/Corale.Colore.Effects.Keyboard.DeathstalkerGrid.html#Corale_Colore_Effects_Keyboard_DeathstalkerGrid_Item_
+  commentId: Overload:Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Item
+  fullName: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Item
+  nameWithType: DeathstalkerGrid.Item
+- uid: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.op_Equality(Corale.Colore.Effects.Keyboard.DeathstalkerGrid,System.Object)
+  name: Equality(DeathstalkerGrid, Object)
+  href: api/Corale.Colore.Effects.Keyboard.DeathstalkerGrid.html#Corale_Colore_Effects_Keyboard_DeathstalkerGrid_op_Equality_Corale_Colore_Effects_Keyboard_DeathstalkerGrid_System_Object_
+  commentId: M:Corale.Colore.Effects.Keyboard.DeathstalkerGrid.op_Equality(Corale.Colore.Effects.Keyboard.DeathstalkerGrid,System.Object)
+  fullName: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Equality(Corale.Colore.Effects.Keyboard.DeathstalkerGrid, System.Object)
+  nameWithType: DeathstalkerGrid.Equality(DeathstalkerGrid, Object)
+- uid: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.op_Equality*
+  name: Equality
+  href: api/Corale.Colore.Effects.Keyboard.DeathstalkerGrid.html#Corale_Colore_Effects_Keyboard_DeathstalkerGrid_op_Equality_
+  commentId: Overload:Corale.Colore.Effects.Keyboard.DeathstalkerGrid.op_Equality
+  fullName: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Equality
+  nameWithType: DeathstalkerGrid.Equality
+- uid: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.op_Inequality(Corale.Colore.Effects.Keyboard.DeathstalkerGrid,System.Object)
+  name: Inequality(DeathstalkerGrid, Object)
+  href: api/Corale.Colore.Effects.Keyboard.DeathstalkerGrid.html#Corale_Colore_Effects_Keyboard_DeathstalkerGrid_op_Inequality_Corale_Colore_Effects_Keyboard_DeathstalkerGrid_System_Object_
+  commentId: M:Corale.Colore.Effects.Keyboard.DeathstalkerGrid.op_Inequality(Corale.Colore.Effects.Keyboard.DeathstalkerGrid,System.Object)
+  fullName: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Inequality(Corale.Colore.Effects.Keyboard.DeathstalkerGrid, System.Object)
+  nameWithType: DeathstalkerGrid.Inequality(DeathstalkerGrid, Object)
+- uid: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.op_Inequality*
+  name: Inequality
+  href: api/Corale.Colore.Effects.Keyboard.DeathstalkerGrid.html#Corale_Colore_Effects_Keyboard_DeathstalkerGrid_op_Inequality_
+  commentId: Overload:Corale.Colore.Effects.Keyboard.DeathstalkerGrid.op_Inequality
+  fullName: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Inequality
+  nameWithType: DeathstalkerGrid.Inequality
+- uid: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Set(Corale.Colore.Data.Color)
+  name: Set(Color)
+  href: api/Corale.Colore.Effects.Keyboard.DeathstalkerGrid.html#Corale_Colore_Effects_Keyboard_DeathstalkerGrid_Set_Corale_Colore_Data_Color_
+  commentId: M:Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Set(Corale.Colore.Data.Color)
+  fullName: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Set(Corale.Colore.Data.Color)
+  nameWithType: DeathstalkerGrid.Set(Color)
+- uid: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Set*
+  name: Set
+  href: api/Corale.Colore.Effects.Keyboard.DeathstalkerGrid.html#Corale_Colore_Effects_Keyboard_DeathstalkerGrid_Set_
+  commentId: Overload:Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Set
+  fullName: Corale.Colore.Effects.Keyboard.DeathstalkerGrid.Set
+  nameWithType: DeathstalkerGrid.Set
 - uid: Corale.Colore.Effects.Keyboard.Effect
   name: Effect
   href: api/Corale.Colore.Effects.Keyboard.Effect.html
@@ -3337,6 +3448,42 @@ references:
   commentId: F:Corale.Colore.Effects.Keyboard.Key.Z
   fullName: Corale.Colore.Effects.Keyboard.Key.Z
   nameWithType: Key.Z
+- uid: Corale.Colore.Effects.Keyboard.KeyboardConstants
+  name: KeyboardConstants
+  href: api/Corale.Colore.Effects.Keyboard.KeyboardConstants.html
+  commentId: T:Corale.Colore.Effects.Keyboard.KeyboardConstants
+  fullName: Corale.Colore.Effects.Keyboard.KeyboardConstants
+  nameWithType: KeyboardConstants
+- uid: Corale.Colore.Effects.Keyboard.KeyboardConstants.MaxColumns
+  name: MaxColumns
+  href: api/Corale.Colore.Effects.Keyboard.KeyboardConstants.html#Corale_Colore_Effects_Keyboard_KeyboardConstants_MaxColumns
+  commentId: F:Corale.Colore.Effects.Keyboard.KeyboardConstants.MaxColumns
+  fullName: Corale.Colore.Effects.Keyboard.KeyboardConstants.MaxColumns
+  nameWithType: KeyboardConstants.MaxColumns
+- uid: Corale.Colore.Effects.Keyboard.KeyboardConstants.MaxCustomEffects
+  name: MaxCustomEffects
+  href: api/Corale.Colore.Effects.Keyboard.KeyboardConstants.html#Corale_Colore_Effects_Keyboard_KeyboardConstants_MaxCustomEffects
+  commentId: F:Corale.Colore.Effects.Keyboard.KeyboardConstants.MaxCustomEffects
+  fullName: Corale.Colore.Effects.Keyboard.KeyboardConstants.MaxCustomEffects
+  nameWithType: KeyboardConstants.MaxCustomEffects
+- uid: Corale.Colore.Effects.Keyboard.KeyboardConstants.MaxDeathstalkerZones
+  name: MaxDeathstalkerZones
+  href: api/Corale.Colore.Effects.Keyboard.KeyboardConstants.html#Corale_Colore_Effects_Keyboard_KeyboardConstants_MaxDeathstalkerZones
+  commentId: F:Corale.Colore.Effects.Keyboard.KeyboardConstants.MaxDeathstalkerZones
+  fullName: Corale.Colore.Effects.Keyboard.KeyboardConstants.MaxDeathstalkerZones
+  nameWithType: KeyboardConstants.MaxDeathstalkerZones
+- uid: Corale.Colore.Effects.Keyboard.KeyboardConstants.MaxKeys
+  name: MaxKeys
+  href: api/Corale.Colore.Effects.Keyboard.KeyboardConstants.html#Corale_Colore_Effects_Keyboard_KeyboardConstants_MaxKeys
+  commentId: F:Corale.Colore.Effects.Keyboard.KeyboardConstants.MaxKeys
+  fullName: Corale.Colore.Effects.Keyboard.KeyboardConstants.MaxKeys
+  nameWithType: KeyboardConstants.MaxKeys
+- uid: Corale.Colore.Effects.Keyboard.KeyboardConstants.MaxRows
+  name: MaxRows
+  href: api/Corale.Colore.Effects.Keyboard.KeyboardConstants.html#Corale_Colore_Effects_Keyboard_KeyboardConstants_MaxRows
+  commentId: F:Corale.Colore.Effects.Keyboard.KeyboardConstants.MaxRows
+  fullName: Corale.Colore.Effects.Keyboard.KeyboardConstants.MaxRows
+  nameWithType: KeyboardConstants.MaxRows
 - uid: Corale.Colore.Effects.Keyboard.Static
   name: Static
   href: api/Corale.Colore.Effects.Keyboard.Static.html
@@ -3421,30 +3568,6 @@ references:
   commentId: N:Corale.Colore.Effects.Keypad
   fullName: Corale.Colore.Effects.Keypad
   nameWithType: Corale.Colore.Effects.Keypad
-- uid: Corale.Colore.Effects.Keypad.Constants
-  name: Constants
-  href: api/Corale.Colore.Effects.Keypad.Constants.html
-  commentId: T:Corale.Colore.Effects.Keypad.Constants
-  fullName: Corale.Colore.Effects.Keypad.Constants
-  nameWithType: Constants
-- uid: Corale.Colore.Effects.Keypad.Constants.MaxColumns
-  name: MaxColumns
-  href: api/Corale.Colore.Effects.Keypad.Constants.html#Corale_Colore_Effects_Keypad_Constants_MaxColumns
-  commentId: F:Corale.Colore.Effects.Keypad.Constants.MaxColumns
-  fullName: Corale.Colore.Effects.Keypad.Constants.MaxColumns
-  nameWithType: Constants.MaxColumns
-- uid: Corale.Colore.Effects.Keypad.Constants.MaxKeys
-  name: MaxKeys
-  href: api/Corale.Colore.Effects.Keypad.Constants.html#Corale_Colore_Effects_Keypad_Constants_MaxKeys
-  commentId: F:Corale.Colore.Effects.Keypad.Constants.MaxKeys
-  fullName: Corale.Colore.Effects.Keypad.Constants.MaxKeys
-  nameWithType: Constants.MaxKeys
-- uid: Corale.Colore.Effects.Keypad.Constants.MaxRows
-  name: MaxRows
-  href: api/Corale.Colore.Effects.Keypad.Constants.html#Corale_Colore_Effects_Keypad_Constants_MaxRows
-  commentId: F:Corale.Colore.Effects.Keypad.Constants.MaxRows
-  fullName: Corale.Colore.Effects.Keypad.Constants.MaxRows
-  nameWithType: Constants.MaxRows
 - uid: Corale.Colore.Effects.Keypad.Custom
   name: Custom
   href: api/Corale.Colore.Effects.Keypad.Custom.html
@@ -3667,6 +3790,30 @@ references:
   commentId: F:Corale.Colore.Effects.Keypad.Effect.value__
   fullName: Corale.Colore.Effects.Keypad.Effect.value__
   nameWithType: Effect.value__
+- uid: Corale.Colore.Effects.Keypad.KeypadConstants
+  name: KeypadConstants
+  href: api/Corale.Colore.Effects.Keypad.KeypadConstants.html
+  commentId: T:Corale.Colore.Effects.Keypad.KeypadConstants
+  fullName: Corale.Colore.Effects.Keypad.KeypadConstants
+  nameWithType: KeypadConstants
+- uid: Corale.Colore.Effects.Keypad.KeypadConstants.MaxColumns
+  name: MaxColumns
+  href: api/Corale.Colore.Effects.Keypad.KeypadConstants.html#Corale_Colore_Effects_Keypad_KeypadConstants_MaxColumns
+  commentId: F:Corale.Colore.Effects.Keypad.KeypadConstants.MaxColumns
+  fullName: Corale.Colore.Effects.Keypad.KeypadConstants.MaxColumns
+  nameWithType: KeypadConstants.MaxColumns
+- uid: Corale.Colore.Effects.Keypad.KeypadConstants.MaxKeys
+  name: MaxKeys
+  href: api/Corale.Colore.Effects.Keypad.KeypadConstants.html#Corale_Colore_Effects_Keypad_KeypadConstants_MaxKeys
+  commentId: F:Corale.Colore.Effects.Keypad.KeypadConstants.MaxKeys
+  fullName: Corale.Colore.Effects.Keypad.KeypadConstants.MaxKeys
+  nameWithType: KeypadConstants.MaxKeys
+- uid: Corale.Colore.Effects.Keypad.KeypadConstants.MaxRows
+  name: MaxRows
+  href: api/Corale.Colore.Effects.Keypad.KeypadConstants.html#Corale_Colore_Effects_Keypad_KeypadConstants_MaxRows
+  commentId: F:Corale.Colore.Effects.Keypad.KeypadConstants.MaxRows
+  fullName: Corale.Colore.Effects.Keypad.KeypadConstants.MaxRows
+  nameWithType: KeypadConstants.MaxRows
 - uid: Corale.Colore.Effects.Keypad.Static
   name: Static
   href: api/Corale.Colore.Effects.Keypad.Static.html
@@ -3751,30 +3898,6 @@ references:
   commentId: N:Corale.Colore.Effects.Mouse
   fullName: Corale.Colore.Effects.Mouse
   nameWithType: Corale.Colore.Effects.Mouse
-- uid: Corale.Colore.Effects.Mouse.Constants
-  name: Constants
-  href: api/Corale.Colore.Effects.Mouse.Constants.html
-  commentId: T:Corale.Colore.Effects.Mouse.Constants
-  fullName: Corale.Colore.Effects.Mouse.Constants
-  nameWithType: Constants
-- uid: Corale.Colore.Effects.Mouse.Constants.MaxColumns
-  name: MaxColumns
-  href: api/Corale.Colore.Effects.Mouse.Constants.html#Corale_Colore_Effects_Mouse_Constants_MaxColumns
-  commentId: F:Corale.Colore.Effects.Mouse.Constants.MaxColumns
-  fullName: Corale.Colore.Effects.Mouse.Constants.MaxColumns
-  nameWithType: Constants.MaxColumns
-- uid: Corale.Colore.Effects.Mouse.Constants.MaxLeds
-  name: MaxLeds
-  href: api/Corale.Colore.Effects.Mouse.Constants.html#Corale_Colore_Effects_Mouse_Constants_MaxLeds
-  commentId: F:Corale.Colore.Effects.Mouse.Constants.MaxLeds
-  fullName: Corale.Colore.Effects.Mouse.Constants.MaxLeds
-  nameWithType: Constants.MaxLeds
-- uid: Corale.Colore.Effects.Mouse.Constants.MaxRows
-  name: MaxRows
-  href: api/Corale.Colore.Effects.Mouse.Constants.html#Corale_Colore_Effects_Mouse_Constants_MaxRows
-  commentId: F:Corale.Colore.Effects.Mouse.Constants.MaxRows
-  fullName: Corale.Colore.Effects.Mouse.Constants.MaxRows
-  nameWithType: Constants.MaxRows
 - uid: Corale.Colore.Effects.Mouse.Custom
   name: Custom
   href: api/Corale.Colore.Effects.Mouse.Custom.html
@@ -4276,6 +4399,30 @@ references:
   commentId: F:Corale.Colore.Effects.Mouse.Led.value__
   fullName: Corale.Colore.Effects.Mouse.Led.value__
   nameWithType: Led.value__
+- uid: Corale.Colore.Effects.Mouse.MouseConstants
+  name: MouseConstants
+  href: api/Corale.Colore.Effects.Mouse.MouseConstants.html
+  commentId: T:Corale.Colore.Effects.Mouse.MouseConstants
+  fullName: Corale.Colore.Effects.Mouse.MouseConstants
+  nameWithType: MouseConstants
+- uid: Corale.Colore.Effects.Mouse.MouseConstants.MaxColumns
+  name: MaxColumns
+  href: api/Corale.Colore.Effects.Mouse.MouseConstants.html#Corale_Colore_Effects_Mouse_MouseConstants_MaxColumns
+  commentId: F:Corale.Colore.Effects.Mouse.MouseConstants.MaxColumns
+  fullName: Corale.Colore.Effects.Mouse.MouseConstants.MaxColumns
+  nameWithType: MouseConstants.MaxColumns
+- uid: Corale.Colore.Effects.Mouse.MouseConstants.MaxLeds
+  name: MaxLeds
+  href: api/Corale.Colore.Effects.Mouse.MouseConstants.html#Corale_Colore_Effects_Mouse_MouseConstants_MaxLeds
+  commentId: F:Corale.Colore.Effects.Mouse.MouseConstants.MaxLeds
+  fullName: Corale.Colore.Effects.Mouse.MouseConstants.MaxLeds
+  nameWithType: MouseConstants.MaxLeds
+- uid: Corale.Colore.Effects.Mouse.MouseConstants.MaxRows
+  name: MaxRows
+  href: api/Corale.Colore.Effects.Mouse.MouseConstants.html#Corale_Colore_Effects_Mouse_MouseConstants_MaxRows
+  commentId: F:Corale.Colore.Effects.Mouse.MouseConstants.MaxRows
+  fullName: Corale.Colore.Effects.Mouse.MouseConstants.MaxRows
+  nameWithType: MouseConstants.MaxRows
 - uid: Corale.Colore.Effects.Mouse.Static
   name: Static
   href: api/Corale.Colore.Effects.Mouse.Static.html
@@ -4366,18 +4513,6 @@ references:
   commentId: N:Corale.Colore.Effects.Mousepad
   fullName: Corale.Colore.Effects.Mousepad
   nameWithType: Corale.Colore.Effects.Mousepad
-- uid: Corale.Colore.Effects.Mousepad.Constants
-  name: Constants
-  href: api/Corale.Colore.Effects.Mousepad.Constants.html
-  commentId: T:Corale.Colore.Effects.Mousepad.Constants
-  fullName: Corale.Colore.Effects.Mousepad.Constants
-  nameWithType: Constants
-- uid: Corale.Colore.Effects.Mousepad.Constants.MaxLeds
-  name: MaxLeds
-  href: api/Corale.Colore.Effects.Mousepad.Constants.html#Corale_Colore_Effects_Mousepad_Constants_MaxLeds
-  commentId: F:Corale.Colore.Effects.Mousepad.Constants.MaxLeds
-  fullName: Corale.Colore.Effects.Mousepad.Constants.MaxLeds
-  nameWithType: Constants.MaxLeds
 - uid: Corale.Colore.Effects.Mousepad.Custom
   name: Custom
   href: api/Corale.Colore.Effects.Mousepad.Custom.html
@@ -4573,6 +4708,18 @@ references:
   commentId: F:Corale.Colore.Effects.Mousepad.Effect.value__
   fullName: Corale.Colore.Effects.Mousepad.Effect.value__
   nameWithType: Effect.value__
+- uid: Corale.Colore.Effects.Mousepad.MousepadConstants
+  name: MousepadConstants
+  href: api/Corale.Colore.Effects.Mousepad.MousepadConstants.html
+  commentId: T:Corale.Colore.Effects.Mousepad.MousepadConstants
+  fullName: Corale.Colore.Effects.Mousepad.MousepadConstants
+  nameWithType: MousepadConstants
+- uid: Corale.Colore.Effects.Mousepad.MousepadConstants.MaxLeds
+  name: MaxLeds
+  href: api/Corale.Colore.Effects.Mousepad.MousepadConstants.html#Corale_Colore_Effects_Mousepad_MousepadConstants_MaxLeds
+  commentId: F:Corale.Colore.Effects.Mousepad.MousepadConstants.MaxLeds
+  fullName: Corale.Colore.Effects.Mousepad.MousepadConstants.MaxLeds
+  nameWithType: MousepadConstants.MaxLeds
 - uid: Corale.Colore.Effects.Mousepad.Static
   name: Static
   href: api/Corale.Colore.Effects.Mousepad.Static.html
@@ -5212,6 +5359,18 @@ references:
   commentId: T:Corale.Colore.IKeyboard
   fullName: Corale.Colore.IKeyboard
   nameWithType: IKeyboard
+- uid: Corale.Colore.IKeyboard.IsDeathstalkerConnected
+  name: IsDeathstalkerConnected
+  href: api/Corale.Colore.IKeyboard.html#Corale_Colore_IKeyboard_IsDeathstalkerConnected
+  commentId: P:Corale.Colore.IKeyboard.IsDeathstalkerConnected
+  fullName: Corale.Colore.IKeyboard.IsDeathstalkerConnected
+  nameWithType: IKeyboard.IsDeathstalkerConnected
+- uid: Corale.Colore.IKeyboard.IsDeathstalkerConnected*
+  name: IsDeathstalkerConnected
+  href: api/Corale.Colore.IKeyboard.html#Corale_Colore_IKeyboard_IsDeathstalkerConnected_
+  commentId: Overload:Corale.Colore.IKeyboard.IsDeathstalkerConnected
+  fullName: Corale.Colore.IKeyboard.IsDeathstalkerConnected
+  nameWithType: IKeyboard.IsDeathstalkerConnected
 - uid: Corale.Colore.IKeyboard.IsSet(Corale.Colore.Effects.Keyboard.Key)
   name: IsSet(Key)
   href: api/Corale.Colore.IKeyboard.html#Corale_Colore_IKeyboard_IsSet_Corale_Colore_Effects_Keyboard_Key_
@@ -5233,6 +5392,15 @@ references:
   fullName.vb: Corale.Colore.IKeyboard.Item(Corale.Colore.Effects.Keyboard.Key)
   nameWithType: IKeyboard.Item[Key]
   nameWithType.vb: IKeyboard.Item(Key)
+- uid: Corale.Colore.IKeyboard.Item(System.Int32)
+  name: Item[Int32]
+  href: api/Corale.Colore.IKeyboard.html#Corale_Colore_IKeyboard_Item_System_Int32_
+  commentId: P:Corale.Colore.IKeyboard.Item(System.Int32)
+  name.vb: Item(Int32)
+  fullName: Corale.Colore.IKeyboard.Item[System.Int32]
+  fullName.vb: Corale.Colore.IKeyboard.Item(System.Int32)
+  nameWithType: IKeyboard.Item[Int32]
+  nameWithType.vb: IKeyboard.Item(Int32)
 - uid: Corale.Colore.IKeyboard.Item(System.Int32,System.Int32)
   name: Item[Int32, Int32]
   href: api/Corale.Colore.IKeyboard.html#Corale_Colore_IKeyboard_Item_System_Int32_System_Int32_
@@ -5260,6 +5428,30 @@ references:
   commentId: Overload:Corale.Colore.IKeyboard.SetCustomAsync
   fullName: Corale.Colore.IKeyboard.SetCustomAsync
   nameWithType: IKeyboard.SetCustomAsync
+- uid: Corale.Colore.IKeyboard.SetDeathstalkerAsync(Corale.Colore.Effects.Keyboard.DeathstalkerGrid)
+  name: SetDeathstalkerAsync(DeathstalkerGrid)
+  href: api/Corale.Colore.IKeyboard.html#Corale_Colore_IKeyboard_SetDeathstalkerAsync_Corale_Colore_Effects_Keyboard_DeathstalkerGrid_
+  commentId: M:Corale.Colore.IKeyboard.SetDeathstalkerAsync(Corale.Colore.Effects.Keyboard.DeathstalkerGrid)
+  fullName: Corale.Colore.IKeyboard.SetDeathstalkerAsync(Corale.Colore.Effects.Keyboard.DeathstalkerGrid)
+  nameWithType: IKeyboard.SetDeathstalkerAsync(DeathstalkerGrid)
+- uid: Corale.Colore.IKeyboard.SetDeathstalkerAsync*
+  name: SetDeathstalkerAsync
+  href: api/Corale.Colore.IKeyboard.html#Corale_Colore_IKeyboard_SetDeathstalkerAsync_
+  commentId: Overload:Corale.Colore.IKeyboard.SetDeathstalkerAsync
+  fullName: Corale.Colore.IKeyboard.SetDeathstalkerAsync
+  nameWithType: IKeyboard.SetDeathstalkerAsync
+- uid: Corale.Colore.IKeyboard.SetDeathstalkerZoneAsync(System.Int32,Corale.Colore.Data.Color,System.Boolean)
+  name: SetDeathstalkerZoneAsync(Int32, Color, Boolean)
+  href: api/Corale.Colore.IKeyboard.html#Corale_Colore_IKeyboard_SetDeathstalkerZoneAsync_System_Int32_Corale_Colore_Data_Color_System_Boolean_
+  commentId: M:Corale.Colore.IKeyboard.SetDeathstalkerZoneAsync(System.Int32,Corale.Colore.Data.Color,System.Boolean)
+  fullName: Corale.Colore.IKeyboard.SetDeathstalkerZoneAsync(System.Int32, Corale.Colore.Data.Color, System.Boolean)
+  nameWithType: IKeyboard.SetDeathstalkerZoneAsync(Int32, Color, Boolean)
+- uid: Corale.Colore.IKeyboard.SetDeathstalkerZoneAsync*
+  name: SetDeathstalkerZoneAsync
+  href: api/Corale.Colore.IKeyboard.html#Corale_Colore_IKeyboard_SetDeathstalkerZoneAsync_
+  commentId: Overload:Corale.Colore.IKeyboard.SetDeathstalkerZoneAsync
+  fullName: Corale.Colore.IKeyboard.SetDeathstalkerZoneAsync
+  nameWithType: IKeyboard.SetDeathstalkerZoneAsync
 - uid: Corale.Colore.IKeyboard.SetEffectAsync(Corale.Colore.Effects.Keyboard.Effect)
   name: SetEffectAsync(Effect)
   href: api/Corale.Colore.IKeyboard.html#Corale_Colore_IKeyboard_SetEffectAsync_Corale_Colore_Effects_Keyboard_Effect_
