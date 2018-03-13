@@ -44,6 +44,7 @@ namespace Corale.Colore
         /// <summary>
         /// Gets a value indicating whether a Razer Deathstalker Chroma is connected to the system.
         /// </summary>
+        [PublicAPI]
         bool IsDeathstalkerConnected { get; }
 
         /// <summary>
@@ -158,6 +159,7 @@ namespace Corale.Colore
         /// <param name="color">The color to set.</param>
         /// <param name="clear">Whether to clear all colors before setting the new one.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
+        [PublicAPI]
         Task<Guid> SetDeathstalkerZoneAsync(int zoneIndex, Color color, bool clear = false);
 
         /// <summary>
@@ -165,6 +167,7 @@ namespace Corale.Colore
         /// </summary>
         /// <param name="effect">The Deathstalker grid effect to set.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
+        [PublicAPI]
         Task<Guid> SetDeathstalkerAsync(DeathstalkerGrid effect);
     }
 }
