@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Constants.cs" company="Corale">
+// <copyright file="ChromaLinkConstants.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,17 +23,17 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Effects.Headset
+namespace Corale.Colore.Effects.ChromaLink
 {
     using JetBrains.Annotations;
 
     /// <summary>
-    /// Contains various headset constants used in Razer's API.
+    /// Chroma Link constants.
     /// </summary>
-    public static class Constants
+    public static class ChromaLinkConstants
     {
         /// <summary>
-        /// The maximum number of LEDs on a headset.
+        /// Maximum number of LEDs.
         /// </summary>
         [PublicAPI]
         public const int MaxLeds = 5;

@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Custom.cs" company="Corale">
+// <copyright file="DeathstalkerGrid.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -26,7 +26,6 @@
 namespace Corale.Colore.Effects.Keyboard
 {
     using System;
-    using System.Diagnostics.CodeAnalysis;
     using System.Runtime.InteropServices;
 
     using Corale.Colore.Data;
@@ -41,10 +40,35 @@ namespace Corale.Colore.Effects.Keyboard
     /// <summary>
     /// Describes a custom grid effect for every key.
     /// </summary>
+    /// <remarks>
+    /// This effect is only used for compatibility with the Razer Deathstalker Chroma keyboard.
+    /// </remarks>
     [JsonConverter(typeof(KeyboardCustomConverter))]
     [StructLayout(LayoutKind.Sequential)]
-    public struct Custom : IEquatable<Custom>
+    public struct DeathstalkerGrid : IEquatable<DeathstalkerGrid>
     {
+        /// <summary>
+        /// Contains positions for each zone key.
+        /// </summary>
+        /// <remarks>
+        /// <para>When a "zone key" is set, the entire zone for that key will light
+        /// up in that color.</para>
+        /// <para>
+        /// Shoutout to antonpup at GitHub for posting the Deathstalker keymap
+        /// which has since been removed from Razer's documentation.
+        /// https://github.com/antonpup/Aurora/issues/286#issuecomment-269695154
+        /// </para>
+        /// </remarks>
+        private static readonly (int Row, int Column)[] Zones =
+        {
+            (1, 1),
+            (1, 4),
+            (1, 8),
+            (1, 12),
+            (1, 15),
+            (1, 18)
+        };
+
         /// <summary>
         /// Color definitions for each key on the keyboard.
         /// </summary>
@@ -57,99 +81,30 @@ namespace Corale.Colore.Effects.Keyboard
         private readonly Color[] _colors;
 
         /// <summary>
-        /// Color definitions for the key translation mode.
-        /// </summary>
-        /// <remarks>
-        /// Colors set in here will, if flagged with <c>0x01000000</c>,
-        /// automatically be translated to the proper keyboard location
-        /// depending on the users keyboard configuration.
-        /// </remarks>
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = KeyboardConstants.MaxKeys)]
-        private readonly Color[] _keys;
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Custom" /> struct
+        /// Initializes a new instance of the <see cref="DeathstalkerGrid" /> struct
         /// with every position set to a specific color.
         /// </summary>
         /// <param name="color">The <see cref="Color" /> to set each position to.</param>
-        public Custom(Color color)
+        public DeathstalkerGrid(Color color)
         {
             _colors = new Color[KeyboardConstants.MaxKeys];
-            _keys = new Color[KeyboardConstants.MaxKeys];
 
             for (var index = 0; index < KeyboardConstants.MaxKeys; index++)
-                this[index] = color;
+                _colors[index] = color;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Custom" /> struct
+        /// Initializes a new instance of the <see cref="DeathstalkerGrid" /> struct
         /// with the colors copied from another struct of the same type.
         /// </summary>
         /// <param name="other">The <see cref="Custom" /> struct to copy data from.</param>
-        public Custom(Custom other)
+        public DeathstalkerGrid(DeathstalkerGrid other)
         {
             _colors = new Color[KeyboardConstants.MaxKeys];
-            _keys = new Color[KeyboardConstants.MaxKeys];
 
             for (var index = 0; index < KeyboardConstants.MaxKeys; index++)
             {
                 _colors[index] = other._colors[index];
-                _keys[index] = other._keys[index];
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets cells in the custom grid.
-        /// </summary>
-        /// <param name="row">Row to access, zero indexed.</param>
-        /// <param name="column">Column to access, zero indexed.</param>
-        /// <returns>The <see cref="Color" /> at the specified position.</returns>
-        [PublicAPI]
-        public Color this[int row, int column]
-        {
-            get
-            {
-                if (row < 0 || row >= KeyboardConstants.MaxRows)
-                {
-                    throw new ArgumentOutOfRangeException(
-                        nameof(row),
-                        row,
-                        "Attempted to access a row that does not exist.");
-                }
-
-                if (column < 0 || column >= KeyboardConstants.MaxColumns)
-                {
-                    throw new ArgumentOutOfRangeException(
-                        nameof(column),
-                        column,
-                        "Attempted to access a column that does not exist.");
-                }
-
-                return _colors[column + row * KeyboardConstants.MaxColumns];
-            }
-
-            set
-            {
-                if (row < 0 || row >= KeyboardConstants.MaxRows)
-                {
-                    throw new ArgumentOutOfRangeException(
-                        nameof(row),
-                        row,
-                        "Attempted to access a row that does not exist.");
-                }
-
-                if (column < 0 || column >= KeyboardConstants.MaxColumns)
-                {
-                    throw new ArgumentOutOfRangeException(
-                        nameof(column),
-                        column,
-                        "Attempted to access a column that does not exist.");
-                }
-
-                var index = column + row * KeyboardConstants.MaxColumns;
-
-                _keys[index] = _keys[index] & 0xFFFFFF;
-                _colors[index] = value;
             }
         }
 
@@ -163,7 +118,7 @@ namespace Corale.Colore.Effects.Keyboard
         {
             get
             {
-                if (index < 0 || index >= KeyboardConstants.MaxKeys)
+                if (index < 0 || index >= Zones.Length)
                 {
                     throw new ArgumentOutOfRangeException(
                         nameof(index),
@@ -171,12 +126,13 @@ namespace Corale.Colore.Effects.Keyboard
                         "Attempted to access an index that does not exist.");
                 }
 
-                return _colors[index];
+                var (row, column) = Zones[index];
+                return _colors[column + row * KeyboardConstants.MaxColumns];
             }
 
             set
             {
-                if (index < 0 || index >= KeyboardConstants.MaxKeys)
+                if (index < 0 || index >= Zones.Length)
                 {
                     throw new ArgumentOutOfRangeException(
                         nameof(index),
@@ -184,73 +140,43 @@ namespace Corale.Colore.Effects.Keyboard
                         "Attempted to access an index that does not exist.");
                 }
 
-                _keys[index] = _keys[index] & 0xFFFFFF;
-                _colors[index] = value;
+                var (row, column) = Zones[index];
+                _colors[column + row * KeyboardConstants.MaxColumns] = value;
             }
         }
 
         /// <summary>
-        /// Gets or sets the color for a specific key in the custom grid.
-        /// The SDK will handle translation of location data to access the
-        /// correct key depending on user configuration.
-        /// </summary>
-        /// <param name="key">The <see cref="Key" /> to access.</param>
-        /// <returns>The <see cref="Color" /> for the specified key.</returns>
-        /// <remarks>
-        /// Please note that the position of a key accessed in this way is not
-        /// guaranteed to be correct, as different layouts on different keyboards
-        /// can place these keys in other locations.
-        /// </remarks>
-        [PublicAPI]
-        public Color this[Key key]
-        {
-            get
-            {
-                var index = (int)key;
-                index = (index >> 8) * KeyboardConstants.MaxColumns + (index & 0xFF);
-                return _keys[index] & 0xFFFFFF;
-            }
-
-            set
-            {
-                var index = (int)key;
-                index = (index >> 8) * KeyboardConstants.MaxColumns + (index & 0xFF);
-                _keys[index] = KeyboardConstants.KeyFlag | value;
-            }
-        }
-
-        /// <summary>
-        /// Compares an instance of <see cref="Custom" /> with
+        /// Compares an instance of <see cref="DeathstalkerGrid" /> with
         /// another object for equality.
         /// </summary>
-        /// <param name="left">The left operand, an instance of <see cref="Custom" />.</param>
+        /// <param name="left">The left operand, an instance of <see cref="DeathstalkerGrid" />.</param>
         /// <param name="right">The right operand, any type of object.</param>
         /// <returns><c>true</c> if the two objects are equal, otherwise <c>false</c>.</returns>
-        public static bool operator ==(Custom left, object right)
+        public static bool operator ==(DeathstalkerGrid left, object right)
         {
             return left.Equals(right);
         }
 
         /// <summary>
-        /// Compares an instance of <see cref="Custom" /> with
+        /// Compares an instance of <see cref="DeathstalkerGrid" /> with
         /// another object for inequality.
         /// </summary>
-        /// <param name="left">The left operand, an instance of <see cref="Custom" />.</param>
+        /// <param name="left">The left operand, an instance of <see cref="DeathstalkerGrid" />.</param>
         /// <param name="right">The right operand, any type of object.</param>
         /// <returns><c>true</c> if the two objects are not equal, otherwise <c>false</c>.</returns>
-        public static bool operator !=(Custom left, object right)
+        public static bool operator !=(DeathstalkerGrid left, object right)
         {
             return !left.Equals(right);
         }
 
         /// <summary>
-        /// Creates a new empty <see cref="Custom" /> struct.
+        /// Creates a new empty <see cref="DeathstalkerGrid" /> struct.
         /// </summary>
-        /// <returns>An instance of <see cref="Custom" />
+        /// <returns>An instance of <see cref="DeathstalkerGrid" />
         /// filled with the color black.</returns>
-        public static Custom Create()
+        public static DeathstalkerGrid Create()
         {
-            return new Custom(Color.Black);
+            return new DeathstalkerGrid(Color.Black);
         }
 
         /// <summary>
@@ -258,9 +184,9 @@ namespace Corale.Colore.Effects.Keyboard
         /// </summary>
         /// <returns>A copy of this struct.</returns>
         [PublicAPI]
-        public Custom Clone()
+        public DeathstalkerGrid Clone()
         {
-            return new Custom(this);
+            return new DeathstalkerGrid(this);
         }
 
         /// <summary>
@@ -275,13 +201,7 @@ namespace Corale.Colore.Effects.Keyboard
         /// Returns the hash code for this instance.
         /// </summary>
         /// <returns>A 32-bit signed integer that is the hash code for this instance.</returns>
-        public override int GetHashCode()
-        {
-            unchecked
-            {
-                return (_colors.GetHashCode() * 397) ^ _keys.GetHashCode();
-            }
-        }
+        public override int GetHashCode() => _colors.GetHashCode();
 
         /// <summary>
         /// Indicates whether this instance and a specified object are equal.
@@ -297,7 +217,7 @@ namespace Corale.Colore.Effects.Keyboard
             if (ReferenceEquals(obj, null))
                 return false;
 
-            if (obj is Custom custom)
+            if (obj is DeathstalkerGrid custom)
                 return Equals(custom);
 
             return false;
@@ -312,11 +232,11 @@ namespace Corale.Colore.Effects.Keyboard
         /// otherwise, <c>false</c>.
         /// </returns>
         /// <param name="other">A <see cref="Custom" /> to compare with this object.</param>
-        public bool Equals(Custom other)
+        public bool Equals(DeathstalkerGrid other)
         {
             for (var index = 0; index < KeyboardConstants.MaxKeys; index++)
             {
-                if (_colors[index] != other._colors[index] || _keys[index] != other._keys[index])
+                if (_colors[index] != other._colors[index])
                     return false;
             }
 
@@ -332,27 +252,25 @@ namespace Corale.Colore.Effects.Keyboard
         {
             for (var index = 0; index < KeyboardConstants.MaxKeys; index++)
             {
-                this[(Key)index] = color;
-                this[index] = color;
+                _colors[index] = color;
             }
         }
+
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
         /// <summary>
         /// Retrieves the internal backing arrays as multi-dimensional <see cref="Color" /> arrays.
         /// </summary>
-        /// <returns>A <see cref="ValueTuple{T1,T2}" /> containing the two arrays.</returns>
-        [SuppressMessage("StyleCop", "SA1008", Justification = "StyleCop not compatible with C# 7 yet.")]
-        internal (Color[,] Colors, Color[,] Keys) ToMultiArrays()
+        /// <returns>A two-dimensional array of <see cref="Color" /> values.</returns>
+        internal Color[,] ToMultiArray()
         {
-#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
             var colors = new Color[KeyboardConstants.MaxRows, KeyboardConstants.MaxColumns];
-            var keys = new Color[KeyboardConstants.MaxRows, KeyboardConstants.MaxColumns];
-#pragma warning restore CA1814 // Prefer jagged arrays over multidimensional
 
             _colors.CopyToMultidimensional(colors);
-            _keys.CopyToMultidimensional(keys);
 
-            return (colors, keys);
+            return colors;
         }
+
+#pragma warning restore CA1814 // Prefer jagged arrays over multidimensional
     }
 }

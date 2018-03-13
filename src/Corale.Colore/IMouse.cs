@@ -43,8 +43,8 @@ namespace Corale.Colore
         /// Gets or sets the <see cref="Color" /> for a specific position
         /// on the mouse's virtual grid.
         /// </summary>
-        /// <param name="row">The row to query, between <c>0</c> and <see cref="Effects.Mouse.Constants.MaxRows" /> (exclusive upper-bound).</param>
-        /// <param name="column">The column to query, between <c>0</c> and <see cref="Effects.Mouse.Constants.MaxColumns" /> (exclusive upper-bound).</param>
+        /// <param name="row">The row to query, between <c>0</c> and <see cref="MouseConstants.MaxRows" /> (exclusive upper-bound).</param>
+        /// <param name="column">The column to query, between <c>0</c> and <see cref="MouseConstants.MaxColumns" /> (exclusive upper-bound).</param>
         /// <returns>The <see cref="Color" /> at the specified position.</returns>
         [PublicAPI]
         Color this[int row, int column] { get; set; }

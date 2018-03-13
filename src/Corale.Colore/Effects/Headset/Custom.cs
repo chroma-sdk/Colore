@@ -46,7 +46,7 @@ namespace Corale.Colore.Effects.Headset
         /// <summary>
         /// Colors for the LEDs.
         /// </summary>
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = Constants.MaxLeds)]
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = HeadsetConstants.MaxLeds)]
         private readonly Color[] _colors;
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace Corale.Colore.Effects.Headset
         /// <param name="color">The color to set every LED to initially.</param>
         public Custom(Color color)
         {
-            _colors = new Color[Constants.MaxLeds];
+            _colors = new Color[HeadsetConstants.MaxLeds];
 
             for (var i = 0; i < _colors.Length; i++)
                 _colors[i] = color;
@@ -69,14 +69,14 @@ namespace Corale.Colore.Effects.Headset
         /// <exception cref="ArgumentException">Thrown if the colors list supplied is of an incorrect size.</exception>
         public Custom(IList<Color> colors)
         {
-            if (colors.Count != Constants.MaxLeds)
+            if (colors.Count != HeadsetConstants.MaxLeds)
             {
                 throw new ArgumentException(
-                    "Invalid length of color list, expected " + Constants.MaxLeds + " but received " + colors.Count,
+                    "Invalid length of color list, expected " + HeadsetConstants.MaxLeds + " but received " + colors.Count,
                     nameof(colors));
             }
 
-            _colors = new Color[Constants.MaxLeds];
+            _colors = new Color[HeadsetConstants.MaxLeds];
 
             for (var i = 0; i < _colors.Length; i++)
                 _colors[i] = colors[i];
@@ -111,7 +111,7 @@ namespace Corale.Colore.Effects.Headset
         {
             get
             {
-                if (led < 0 || led >= Constants.MaxLeds)
+                if (led < 0 || led >= HeadsetConstants.MaxLeds)
                 {
                     throw new ArgumentOutOfRangeException(
                         nameof(led),
@@ -124,7 +124,7 @@ namespace Corale.Colore.Effects.Headset
 
             set
             {
-                if (led < 0 || led >= Constants.MaxLeds)
+                if (led < 0 || led >= HeadsetConstants.MaxLeds)
                 {
                     throw new ArgumentOutOfRangeException(
                         nameof(led),
@@ -199,7 +199,7 @@ namespace Corale.Colore.Effects.Headset
         [PublicAPI]
         public void Set(Color color)
         {
-            for (var i = 0; i < Constants.MaxLeds; i++)
+            for (var i = 0; i < HeadsetConstants.MaxLeds; i++)
                 _colors[i] = color;
         }
 
@@ -238,7 +238,7 @@ namespace Corale.Colore.Effects.Headset
         /// </returns>
         public bool Equals(Custom other)
         {
-            for (var i = 0; i < Constants.MaxLeds; i++)
+            for (var i = 0; i < HeadsetConstants.MaxLeds; i++)
             {
                 if (this[i] != other[i])
                     return false;

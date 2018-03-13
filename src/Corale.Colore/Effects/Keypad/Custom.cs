@@ -51,9 +51,9 @@ namespace Corale.Colore.Effects.Keypad
         /// <remarks>
         /// The array is 1-dimensional, but will be passed to code expecting
         /// a 2-dimensional array. Access to this array is done using indices
-        /// according to: <c>column + row * Constants.MaxColumns</c>
+        /// according to: <c>column + row * KeypadConstants.MaxColumns</c>
         /// </remarks>
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = Constants.MaxKeys)]
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = KeypadConstants.MaxKeys)]
         private readonly Color[] _colors;
 
         /// <summary>
@@ -65,25 +65,25 @@ namespace Corale.Colore.Effects.Keypad
         {
             var rows = colors.GetLength(0);
 
-            if (rows != Constants.MaxRows)
+            if (rows != KeypadConstants.MaxRows)
             {
                 throw new ArgumentException(
-                    $"Colors array has incorrect number of rows, should be {Constants.MaxRows}, received {rows}.",
+                    $"Colors array has incorrect number of rows, should be {KeypadConstants.MaxRows}, received {rows}.",
                     nameof(colors));
             }
 
-            _colors = new Color[Constants.MaxKeys];
+            _colors = new Color[KeypadConstants.MaxKeys];
 
-            for (var row = 0; row < Constants.MaxRows; row++)
+            for (var row = 0; row < KeypadConstants.MaxRows; row++)
             {
-                if (colors[row].Length != Constants.MaxColumns)
+                if (colors[row].Length != KeypadConstants.MaxColumns)
                 {
                     throw new ArgumentException(
-                        $"Colors array has incorrect number of columns, should be {Constants.MaxColumns}, received {colors[row].Length} for row {row}.",
+                        $"Colors array has incorrect number of columns, should be {KeypadConstants.MaxColumns}, received {colors[row].Length} for row {row}.",
                         nameof(colors));
                 }
 
-                for (var column = 0; column < Constants.MaxColumns; column++)
+                for (var column = 0; column < KeypadConstants.MaxColumns; column++)
                     this[row, column] = colors[row][column];
             }
         }
@@ -95,16 +95,16 @@ namespace Corale.Colore.Effects.Keypad
         /// <exception cref="ArgumentException">Thrown if the colors array supplied is of an invalid size.</exception>
         public Custom(IList<Color> colors)
         {
-            if (colors.Count != Constants.MaxKeys)
+            if (colors.Count != KeypadConstants.MaxKeys)
             {
                 throw new ArgumentException(
-                    $"Colors array has incorrect size, should be {Constants.MaxKeys}, actual is {colors.Count}.",
+                    $"Colors array has incorrect size, should be {KeypadConstants.MaxKeys}, actual is {colors.Count}.",
                     nameof(colors));
             }
 
-            _colors = new Color[Constants.MaxKeys];
+            _colors = new Color[KeypadConstants.MaxKeys];
 
-            for (var index = 0; index < Constants.MaxKeys; index++)
+            for (var index = 0; index < KeypadConstants.MaxKeys; index++)
                 this[index] = colors[index];
         }
 
@@ -115,9 +115,9 @@ namespace Corale.Colore.Effects.Keypad
         /// <param name="color">The <see cref="Color" /> to set each position to.</param>
         public Custom(Color color)
         {
-            _colors = new Color[Constants.MaxKeys];
+            _colors = new Color[KeypadConstants.MaxKeys];
 
-            for (var index = 0; index < Constants.MaxKeys; index++)
+            for (var index = 0; index < KeypadConstants.MaxKeys; index++)
                 this[index] = color;
         }
 
@@ -143,7 +143,7 @@ namespace Corale.Colore.Effects.Keypad
         {
             get
             {
-                if (row < 0 || row >= Constants.MaxRows)
+                if (row < 0 || row >= KeypadConstants.MaxRows)
                 {
                     throw new ArgumentOutOfRangeException(
                         nameof(row),
@@ -151,7 +151,7 @@ namespace Corale.Colore.Effects.Keypad
                         "Attempted to access a row that does not exist.");
                 }
 
-                if (column < 0 || column >= Constants.MaxColumns)
+                if (column < 0 || column >= KeypadConstants.MaxColumns)
                 {
                     throw new ArgumentOutOfRangeException(
                         nameof(column),
@@ -160,13 +160,13 @@ namespace Corale.Colore.Effects.Keypad
                 }
 
 #pragma warning disable SA1407 // Arithmetic expressions must declare precedence
-                return _colors[column + row * Constants.MaxColumns];
+                return _colors[column + row * KeypadConstants.MaxColumns];
 #pragma warning restore SA1407 // Arithmetic expressions must declare precedence
             }
 
             set
             {
-                if (row < 0 || row >= Constants.MaxRows)
+                if (row < 0 || row >= KeypadConstants.MaxRows)
                 {
                     throw new ArgumentOutOfRangeException(
                         nameof(row),
@@ -174,7 +174,7 @@ namespace Corale.Colore.Effects.Keypad
                         "Attempted to access a row that does not exist.");
                 }
 
-                if (column < 0 || column >= Constants.MaxColumns)
+                if (column < 0 || column >= KeypadConstants.MaxColumns)
                 {
                     throw new ArgumentOutOfRangeException(
                         nameof(column),
@@ -183,7 +183,7 @@ namespace Corale.Colore.Effects.Keypad
                 }
 
 #pragma warning disable SA1407 // Arithmetic expressions must declare precedence
-                _colors[column + row * Constants.MaxColumns] = value;
+                _colors[column + row * KeypadConstants.MaxColumns] = value;
 #pragma warning restore SA1407 // Arithmetic expressions must declare precedence
             }
         }
@@ -198,7 +198,7 @@ namespace Corale.Colore.Effects.Keypad
         {
             get
             {
-                if (index < 0 || index >= Constants.MaxKeys)
+                if (index < 0 || index >= KeypadConstants.MaxKeys)
                 {
                     throw new ArgumentOutOfRangeException(
                         nameof(index),
@@ -211,7 +211,7 @@ namespace Corale.Colore.Effects.Keypad
 
             set
             {
-                if (index < 0 || index >= Constants.MaxKeys)
+                if (index < 0 || index >= KeypadConstants.MaxKeys)
                 {
                     throw new ArgumentOutOfRangeException(
                         nameof(index),
@@ -286,7 +286,7 @@ namespace Corale.Colore.Effects.Keypad
         /// <param name="color">The <see cref="Color" /> to set.</param>
         public void Set(Color color)
         {
-            for (var index = 0; index < Constants.MaxKeys; index++)
+            for (var index = 0; index < KeypadConstants.MaxKeys; index++)
                 this[index] = color;
         }
 
@@ -336,9 +336,9 @@ namespace Corale.Colore.Effects.Keypad
         /// <param name="other">A <see cref="Custom" /> to compare with this object.</param>
         public bool Equals(Custom other)
         {
-            for (var row = 0; row < Constants.MaxRows; row++)
+            for (var row = 0; row < KeypadConstants.MaxRows; row++)
             {
-                for (var col = 0; col < Constants.MaxColumns; col++)
+                for (var col = 0; col < KeypadConstants.MaxColumns; col++)
                 {
                     if (this[row, col] != other[row, col])
                         return false;
@@ -362,15 +362,15 @@ namespace Corale.Colore.Effects.Keypad
         /// </param>
         public bool Equals(Color[][] other)
         {
-            if (other == null || other.GetLength(0) != Constants.MaxRows)
+            if (other == null || other.GetLength(0) != KeypadConstants.MaxRows)
                 return false;
 
-            for (var row = 0; row < Constants.MaxRows; row++)
+            for (var row = 0; row < KeypadConstants.MaxRows; row++)
             {
-                if (other[row].Length != Constants.MaxColumns)
+                if (other[row].Length != KeypadConstants.MaxColumns)
                     return false;
 
-                for (var col = 0; col < Constants.MaxColumns; col++)
+                for (var col = 0; col < KeypadConstants.MaxColumns; col++)
                 {
                     if (this[row, col] != other[row][col])
                         return false;
@@ -392,10 +392,10 @@ namespace Corale.Colore.Effects.Keypad
         /// </returns>
         public bool Equals(Color[] other)
         {
-            if (other == null || other.Length != Constants.MaxKeys)
+            if (other == null || other.Length != KeypadConstants.MaxKeys)
                 return false;
 
-            for (var index = 0; index < Constants.MaxKeys; index++)
+            for (var index = 0; index < KeypadConstants.MaxKeys; index++)
             {
                 if (other[index] != this[index])
                     return false;
@@ -408,13 +408,13 @@ namespace Corale.Colore.Effects.Keypad
         /// Retrieves the internal backing array as a multi-dimensional <see cref="Color" /> array.
         /// </summary>
         /// <returns>
-        /// An instance of <c><see cref="Color" />[<see cref="Constants.MaxRows" />, <see cref="Constants.MaxColumns" />]</c>.
+        /// An instance of <c><see cref="Color" />[<see cref="KeypadConstants.MaxRows" />, <see cref="KeypadConstants.MaxColumns" />]</c>.
         /// </returns>
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
         internal Color[,] ToMultiArray()
         {
-            var destination = new Color[Constants.MaxRows, Constants.MaxColumns];
+            var destination = new Color[KeypadConstants.MaxRows, KeypadConstants.MaxColumns];
             _colors.CopyToMultidimensional(destination);
             return destination;
         }

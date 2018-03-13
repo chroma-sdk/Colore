@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Constants.cs" company="Corale">
+// <copyright file="KeyboardConstants.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,26 +23,48 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Effects.Mouse
+namespace Corale.Colore.Effects.Keyboard
 {
+    using JetBrains.Annotations;
+
     /// <summary>
-    /// Mouse constants.
+    /// Holds various keyboard constants used in Razer's API.
     /// </summary>
-    public static class Constants
+    public static class KeyboardConstants
     {
         /// <summary>
-        /// Maximum number of LED rows.
+        /// The maximum number of rows on the keyboard
         /// </summary>
-        public const int MaxRows = 9;
+        [PublicAPI]
+        public const int MaxRows = 6;
 
         /// <summary>
-        /// Maximum number of LED columns.
+        /// The maximum number of columns on the keyboard
         /// </summary>
-        public const int MaxColumns = 7;
+        [PublicAPI]
+        public const int MaxColumns = 22;
 
         /// <summary>
-        /// Maximum number of LEDs on the grid layout.
+        /// The maximum number of keys on the keyboard
         /// </summary>
-        public const int MaxLeds = MaxRows * MaxColumns;
+        [PublicAPI]
+        public const int MaxKeys = MaxRows * MaxColumns;
+
+        /// <summary>
+        /// The maximum number of custom effects based on the maximum keys
+        /// </summary>
+        [PublicAPI]
+        public const int MaxCustomEffects = MaxKeys;
+
+        /// <summary>
+        /// The maximum number of Deathstalker color zones.
+        /// </summary>
+        [PublicAPI]
+        public const int MaxDeathstalkerZones = 6;
+
+        /// <summary>
+        /// The bit that needs to be set for key mode to be active on a color.
+        /// </summary>
+        internal const int KeyFlag = 0x01000000;
     }
 }

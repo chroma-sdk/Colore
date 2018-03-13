@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Constants.cs" company="Corale">
+// <copyright file="MouseConstants.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,19 +23,26 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Effects.ChromaLink
+namespace Corale.Colore.Effects.Mouse
 {
-    using JetBrains.Annotations;
-
     /// <summary>
-    /// Chroma Link constants.
+    /// Mouse constants.
     /// </summary>
-    public static class Constants
+    public static class MouseConstants
     {
         /// <summary>
-        /// Maximum number of LEDs.
+        /// Maximum number of LED rows.
         /// </summary>
-        [PublicAPI]
-        public const int MaxLeds = 5;
+        public const int MaxRows = 9;
+
+        /// <summary>
+        /// Maximum number of LED columns.
+        /// </summary>
+        public const int MaxColumns = 7;
+
+        /// <summary>
+        /// Maximum number of LEDs on the grid layout.
+        /// </summary>
+        public const int MaxLeds = MaxRows * MaxColumns;
     }
 }

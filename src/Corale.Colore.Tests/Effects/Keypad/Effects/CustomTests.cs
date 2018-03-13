@@ -32,8 +32,6 @@ namespace Corale.Colore.Tests.Effects.Keypad.Effects
 
     using NUnit.Framework;
 
-    using Constants = Corale.Colore.Effects.Keypad.Constants;
-
     [TestFixture]
     public class CustomTests
     {
@@ -54,12 +52,12 @@ namespace Corale.Colore.Tests.Effects.Keypad.Effects
                       .EqualTo(-1));
 
             Assert.That(
-                () => dummy = grid[Constants.MaxRows, 0],
+                () => dummy = grid[KeypadConstants.MaxRows, 0],
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
                       .With.Property("ParamName")
                       .EqualTo("row")
                       .And.Property("ActualValue")
-                      .EqualTo(Constants.MaxRows));
+                      .EqualTo(KeypadConstants.MaxRows));
 
             Assert.That(
                 () => dummy = grid[0, -1],
@@ -70,12 +68,12 @@ namespace Corale.Colore.Tests.Effects.Keypad.Effects
                       .EqualTo(-1));
 
             Assert.That(
-                () => dummy = grid[0, Constants.MaxColumns],
+                () => dummy = grid[0, KeypadConstants.MaxColumns],
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
                       .With.Property("ParamName")
                       .EqualTo("column")
                       .And.Property("ActualValue")
-                      .EqualTo(Constants.MaxColumns));
+                      .EqualTo(KeypadConstants.MaxColumns));
         }
 
         [Test]
@@ -92,12 +90,12 @@ namespace Corale.Colore.Tests.Effects.Keypad.Effects
                       .EqualTo(-1));
 
             Assert.That(
-                () => grid[Constants.MaxRows, 0] = Color.Red,
+                () => grid[KeypadConstants.MaxRows, 0] = Color.Red,
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
                       .With.Property("ParamName")
                       .EqualTo("row")
                       .And.Property("ActualValue")
-                      .EqualTo(Constants.MaxRows));
+                      .EqualTo(KeypadConstants.MaxRows));
 
             Assert.That(
                 () => grid[0, -1] = Color.Red,
@@ -108,12 +106,12 @@ namespace Corale.Colore.Tests.Effects.Keypad.Effects
                       .EqualTo(-1));
 
             Assert.That(
-                () => grid[0, Constants.MaxColumns] = Color.Red,
+                () => grid[0, KeypadConstants.MaxColumns] = Color.Red,
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
                       .With.Property("ParamName")
                       .EqualTo("column")
                       .And.Property("ActualValue")
-                      .EqualTo(Constants.MaxColumns));
+                      .EqualTo(KeypadConstants.MaxColumns));
         }
 
         [Test]
@@ -133,12 +131,12 @@ namespace Corale.Colore.Tests.Effects.Keypad.Effects
                       .EqualTo(-1));
 
             Assert.That(
-                () => dummy = grid[Constants.MaxKeys],
+                () => dummy = grid[KeypadConstants.MaxKeys],
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
                       .With.Property("ParamName")
                       .EqualTo("index")
                       .And.Property("ActualValue")
-                      .EqualTo(Constants.MaxKeys));
+                      .EqualTo(KeypadConstants.MaxKeys));
         }
 
         [Test]
@@ -155,12 +153,12 @@ namespace Corale.Colore.Tests.Effects.Keypad.Effects
                       .EqualTo(-1));
 
             Assert.That(
-                () => grid[Constants.MaxKeys] = Color.Red,
+                () => grid[KeypadConstants.MaxKeys] = Color.Red,
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
                       .With.Property("ParamName")
                       .EqualTo("index")
                       .And.Property("ActualValue")
-                      .EqualTo(Constants.MaxKeys));
+                      .EqualTo(KeypadConstants.MaxKeys));
         }
 
         [Test]
@@ -181,7 +179,7 @@ namespace Corale.Colore.Tests.Effects.Keypad.Effects
         [Test]
         public void ShouldThrowWhenInvalid2DColumnCount()
         {
-            var arr = new Color[Constants.MaxRows][];
+            var arr = new Color[KeypadConstants.MaxRows][];
 
             // We only need to populate one of the rows, as the
             // code shouldn't check further anyway.
@@ -213,9 +211,9 @@ namespace Corale.Colore.Tests.Effects.Keypad.Effects
         {
             var grid = Custom.Create();
 
-            for (var row = 0; row < Constants.MaxRows; row++)
+            for (var row = 0; row < KeypadConstants.MaxRows; row++)
             {
-                for (var column = 0; column < Constants.MaxColumns; column++)
+                for (var column = 0; column < KeypadConstants.MaxColumns; column++)
                     Assert.That(grid[row, column], Is.EqualTo(Color.Black));
             }
         }
@@ -225,9 +223,9 @@ namespace Corale.Colore.Tests.Effects.Keypad.Effects
         {
             var grid = new Custom(Color.Red);
 
-            for (var row = 0; row < Constants.MaxRows; row++)
+            for (var row = 0; row < KeypadConstants.MaxRows; row++)
             {
-                for (var column = 0; column < Constants.MaxColumns; column++)
+                for (var column = 0; column < KeypadConstants.MaxColumns; column++)
                     Assert.That(grid[row, column], Is.EqualTo(Color.Red));
             }
         }
@@ -235,10 +233,10 @@ namespace Corale.Colore.Tests.Effects.Keypad.Effects
         [Test]
         public void ShouldSetProperColorsWith2DCtor()
         {
-            var arr = new Color[Constants.MaxRows][];
+            var arr = new Color[KeypadConstants.MaxRows][];
 
-            for (var row = 0; row < Constants.MaxRows; row++)
-                arr[row] = new Color[Constants.MaxColumns];
+            for (var row = 0; row < KeypadConstants.MaxRows; row++)
+                arr[row] = new Color[KeypadConstants.MaxColumns];
 
             // Set some arbitrary colors to test
             arr[0][4] = Color.Purple;
@@ -247,9 +245,9 @@ namespace Corale.Colore.Tests.Effects.Keypad.Effects
 
             var grid = new Custom(arr);
 
-            for (var row = 0; row < Constants.MaxRows; row++)
+            for (var row = 0; row < KeypadConstants.MaxRows; row++)
             {
-                for (var col = 0; col < Constants.MaxColumns; col++)
+                for (var col = 0; col < KeypadConstants.MaxColumns; col++)
                     Assert.That(grid[row, col], Is.EqualTo(arr[row][col]));
             }
         }
@@ -257,7 +255,7 @@ namespace Corale.Colore.Tests.Effects.Keypad.Effects
         [Test]
         public void ShouldSetProperColorsWith1DCtor()
         {
-            var arr = new Color[Constants.MaxKeys];
+            var arr = new Color[KeypadConstants.MaxKeys];
 
             arr[2] = Color.Pink;
             arr[4] = Color.Red;
@@ -265,7 +263,7 @@ namespace Corale.Colore.Tests.Effects.Keypad.Effects
 
             var grid = new Custom(arr);
 
-            for (var index = 0; index < Constants.MaxKeys; index++)
+            for (var index = 0; index < KeypadConstants.MaxKeys; index++)
                 Assert.That(grid[index], Is.EqualTo(arr[index]));
         }
 
@@ -294,9 +292,9 @@ namespace Corale.Colore.Tests.Effects.Keypad.Effects
             var grid = Custom.Create();
             grid.Set(Color.Red);
 
-            for (var row = 0; row < Constants.MaxRows; row++)
+            for (var row = 0; row < KeypadConstants.MaxRows; row++)
             {
-                for (var column = 0; column < Constants.MaxColumns; column++)
+                for (var column = 0; column < KeypadConstants.MaxColumns; column++)
                     Assert.AreEqual(Color.Red, grid[row, column]);
             }
         }
@@ -329,13 +327,13 @@ namespace Corale.Colore.Tests.Effects.Keypad.Effects
         public void ShouldEqualIdentical2DArray()
         {
             var grid = new Custom(Color.Red);
-            var arr = new Color[Constants.MaxRows][];
+            var arr = new Color[KeypadConstants.MaxRows][];
 
             // Populate the 2D array
-            for (var row = 0; row < Constants.MaxRows; row++)
+            for (var row = 0; row < KeypadConstants.MaxRows; row++)
             {
-                arr[row] = new Color[Constants.MaxColumns];
-                for (var col = 0; col < Constants.MaxColumns; col++)
+                arr[row] = new Color[KeypadConstants.MaxColumns];
+                for (var col = 0; col < KeypadConstants.MaxColumns; col++)
                     arr[row][col] = Color.Red;
             }
 
@@ -349,13 +347,13 @@ namespace Corale.Colore.Tests.Effects.Keypad.Effects
         public void ShouldNotEqualDifferent2DArray()
         {
             var grid = new Custom(Color.Pink);
-            var arr = new Color[Constants.MaxRows][];
+            var arr = new Color[KeypadConstants.MaxRows][];
 
             // Populate the 2D array
-            for (var row = 0; row < Constants.MaxRows; row++)
+            for (var row = 0; row < KeypadConstants.MaxRows; row++)
             {
-                arr[row] = new Color[Constants.MaxColumns];
-                for (var col = 0; col < Constants.MaxColumns; col++)
+                arr[row] = new Color[KeypadConstants.MaxColumns];
+                for (var col = 0; col < KeypadConstants.MaxColumns; col++)
                     arr[row][col] = Color.Red;
             }
 
@@ -381,7 +379,7 @@ namespace Corale.Colore.Tests.Effects.Keypad.Effects
         public void ShouldNotEqual2DArrayWithInvalidColumnCount()
         {
             var grid = Custom.Create();
-            var arr = new Color[Constants.MaxRows][];
+            var arr = new Color[KeypadConstants.MaxRows][];
             arr[0] = new Color[2];
 
             Assert.False(grid == arr);
@@ -394,10 +392,10 @@ namespace Corale.Colore.Tests.Effects.Keypad.Effects
         public void ShouldEqualIdentical1DArray()
         {
             var grid = new Custom(Color.Red);
-            var arr = new Color[Constants.MaxKeys];
+            var arr = new Color[KeypadConstants.MaxKeys];
 
             // Populate the 1D array
-            for (var index = 0; index < Constants.MaxKeys; index++)
+            for (var index = 0; index < KeypadConstants.MaxKeys; index++)
                 arr[index] = Color.Red;
 
             Assert.True(grid == arr);
@@ -410,9 +408,9 @@ namespace Corale.Colore.Tests.Effects.Keypad.Effects
         public void ShouldNotEqualDifferent1DArray()
         {
             var grid = new Custom(Color.Pink);
-            var arr = new Color[Constants.MaxKeys];
+            var arr = new Color[KeypadConstants.MaxKeys];
 
-            for (var index = 0; index < Constants.MaxKeys; index++)
+            for (var index = 0; index < KeypadConstants.MaxKeys; index++)
                 arr[index] = Color.Red;
 
             Assert.False(grid == arr);

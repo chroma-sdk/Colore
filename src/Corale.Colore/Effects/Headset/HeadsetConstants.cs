@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Constants.cs" company="Corale">
+// <copyright file="HeadsetConstants.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,31 +23,19 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Effects.Keypad
+namespace Corale.Colore.Effects.Headset
 {
     using JetBrains.Annotations;
 
     /// <summary>
-    /// Keypad constants.
+    /// Contains various headset constants used in Razer's API.
     /// </summary>
-    public static class Constants
+    public static class HeadsetConstants
     {
         /// <summary>
-        /// Maximum number of rows.
+        /// The maximum number of LEDs on a headset.
         /// </summary>
         [PublicAPI]
-        public const int MaxRows = 4;
-
-        /// <summary>
-        /// Maximum number of columns.
-        /// </summary>
-        [PublicAPI]
-        public const int MaxColumns = 5;
-
-        /// <summary>
-        /// Total number of keys.
-        /// </summary>
-        [PublicAPI]
-        public const int MaxKeys = MaxRows * MaxColumns;
+        public const int MaxLeds = 5;
     }
 }

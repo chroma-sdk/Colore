@@ -32,8 +32,6 @@ namespace Corale.Colore.Tests.Effects.Mouse.Effects
 
     using NUnit.Framework;
 
-    using Constants = Corale.Colore.Effects.Mouse.Constants;
-
     [TestFixture]
     public class CustomGridTests
     {
@@ -50,7 +48,7 @@ namespace Corale.Colore.Tests.Effects.Mouse.Effects
         [Test]
         public void ShouldThrowWhenConstructedWithInvalid2DColumnCount()
         {
-            var colors = new Color[Constants.MaxRows][];
+            var colors = new Color[MouseConstants.MaxRows][];
             colors[0] = new Color[1];
 
             Assert.That(
@@ -61,10 +59,10 @@ namespace Corale.Colore.Tests.Effects.Mouse.Effects
         [Test]
         public void ShouldConstructFrom2DArray()
         {
-            var colors = new Color[Constants.MaxRows][];
+            var colors = new Color[MouseConstants.MaxRows][];
 
-            for (var row = 0; row < Constants.MaxRows; row++)
-                colors[row] = new Color[Constants.MaxColumns];
+            for (var row = 0; row < MouseConstants.MaxRows; row++)
+                colors[row] = new Color[MouseConstants.MaxColumns];
 
             colors[1][2] = Color.Red;
             colors[0][4] = Color.Blue;
@@ -72,9 +70,9 @@ namespace Corale.Colore.Tests.Effects.Mouse.Effects
 
             var effect = new Custom(colors);
 
-            for (var row = 0; row < Constants.MaxRows; row++)
+            for (var row = 0; row < MouseConstants.MaxRows; row++)
             {
-                for (var column = 0; column < Constants.MaxColumns; column++)
+                for (var column = 0; column < MouseConstants.MaxColumns; column++)
                     Assert.AreEqual(colors[row][column], effect[row, column]);
             }
         }
@@ -92,7 +90,7 @@ namespace Corale.Colore.Tests.Effects.Mouse.Effects
         [Test]
         public void ShouldConstructFrom1DArray()
         {
-            var arr = new Color[Constants.MaxLeds];
+            var arr = new Color[MouseConstants.MaxLeds];
 
             arr[2] = Color.Pink;
             arr[4] = Color.Red;
@@ -100,7 +98,7 @@ namespace Corale.Colore.Tests.Effects.Mouse.Effects
 
             var grid = new Custom(arr);
 
-            for (var index = 0; index < Constants.MaxLeds; index++)
+            for (var index = 0; index < MouseConstants.MaxLeds; index++)
                 Assert.That(grid[index], Is.EqualTo(arr[index]));
         }
 
@@ -109,9 +107,9 @@ namespace Corale.Colore.Tests.Effects.Mouse.Effects
         {
             var effect = new Custom(Color.Red);
 
-            for (var row = 0; row < Constants.MaxRows; row++)
+            for (var row = 0; row < MouseConstants.MaxRows; row++)
             {
-                for (var column = 0; column < Constants.MaxColumns; column++)
+                for (var column = 0; column < MouseConstants.MaxColumns; column++)
                     Assert.AreEqual(Color.Red, effect[row, column]);
             }
         }
@@ -133,12 +131,12 @@ namespace Corale.Colore.Tests.Effects.Mouse.Effects
                       .EqualTo(-1));
 
             Assert.That(
-                () => dummy = effect[Constants.MaxRows, 0],
+                () => dummy = effect[MouseConstants.MaxRows, 0],
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
                       .With.Property("ParamName")
                       .EqualTo("row")
                       .And.Property("ActualValue")
-                      .EqualTo(Constants.MaxRows));
+                      .EqualTo(MouseConstants.MaxRows));
 
             Assert.That(
                 () => dummy = effect[0, -1],
@@ -149,12 +147,12 @@ namespace Corale.Colore.Tests.Effects.Mouse.Effects
                       .EqualTo(-1));
 
             Assert.That(
-                () => dummy = effect[0, Constants.MaxColumns],
+                () => dummy = effect[0, MouseConstants.MaxColumns],
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
                       .With.Property("ParamName")
                       .EqualTo("column")
                       .And.Property("ActualValue")
-                      .EqualTo(Constants.MaxColumns));
+                      .EqualTo(MouseConstants.MaxColumns));
         }
 
         [Test]
@@ -171,12 +169,12 @@ namespace Corale.Colore.Tests.Effects.Mouse.Effects
                       .EqualTo(-1));
 
             Assert.That(
-                () => effect[Constants.MaxRows, 0] = Color.Red,
+                () => effect[MouseConstants.MaxRows, 0] = Color.Red,
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
                       .With.Property("ParamName")
                       .EqualTo("row")
                       .And.Property("ActualValue")
-                      .EqualTo(Constants.MaxRows));
+                      .EqualTo(MouseConstants.MaxRows));
 
             Assert.That(
                 () => effect[0, -1] = Color.Red,
@@ -187,12 +185,12 @@ namespace Corale.Colore.Tests.Effects.Mouse.Effects
                       .EqualTo(-1));
 
             Assert.That(
-                () => effect[0, Constants.MaxColumns] = Color.Red,
+                () => effect[0, MouseConstants.MaxColumns] = Color.Red,
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
                       .With.Property("ParamName")
                       .EqualTo("column")
                       .And.Property("ActualValue")
-                      .EqualTo(Constants.MaxColumns));
+                      .EqualTo(MouseConstants.MaxColumns));
         }
 
         [Test]
@@ -212,12 +210,12 @@ namespace Corale.Colore.Tests.Effects.Mouse.Effects
                       .EqualTo(-1));
 
             Assert.That(
-                () => dummy = grid[Constants.MaxLeds],
+                () => dummy = grid[MouseConstants.MaxLeds],
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
                       .With.Property("ParamName")
                       .EqualTo("index")
                       .And.Property("ActualValue")
-                      .EqualTo(Constants.MaxLeds));
+                      .EqualTo(MouseConstants.MaxLeds));
         }
 
         [Test]
@@ -234,12 +232,12 @@ namespace Corale.Colore.Tests.Effects.Mouse.Effects
                       .EqualTo(-1));
 
             Assert.That(
-                () => grid[Constants.MaxLeds] = Color.Red,
+                () => grid[MouseConstants.MaxLeds] = Color.Red,
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
                       .With.Property("ParamName")
                       .EqualTo("index")
                       .And.Property("ActualValue")
-                      .EqualTo(Constants.MaxLeds));
+                      .EqualTo(MouseConstants.MaxLeds));
         }
 
         [Test]
@@ -292,9 +290,9 @@ namespace Corale.Colore.Tests.Effects.Mouse.Effects
         {
             var effect = Custom.Create();
 
-            for (var row = 0; row < Constants.MaxRows; row++)
+            for (var row = 0; row < MouseConstants.MaxRows; row++)
             {
-                for (var column = 0; column < Constants.MaxColumns; column++)
+                for (var column = 0; column < MouseConstants.MaxColumns; column++)
                     Assert.AreEqual(Color.Black, effect[row, column]);
             }
         }
@@ -305,9 +303,9 @@ namespace Corale.Colore.Tests.Effects.Mouse.Effects
             var effect = Custom.Create();
             effect.Set(Color.Red);
 
-            for (var row = 0; row < Constants.MaxRows; row++)
+            for (var row = 0; row < MouseConstants.MaxRows; row++)
             {
-                for (var column = 0; column < Constants.MaxColumns; column++)
+                for (var column = 0; column < MouseConstants.MaxColumns; column++)
                     Assert.AreEqual(Color.Red, effect[row, column]);
             }
         }
@@ -319,9 +317,9 @@ namespace Corale.Colore.Tests.Effects.Mouse.Effects
             effect.Set(Color.Red);
             effect.Clear();
 
-            for (var row = 0; row < Constants.MaxRows; row++)
+            for (var row = 0; row < MouseConstants.MaxRows; row++)
             {
-                for (var column = 0; column < Constants.MaxColumns; column++)
+                for (var column = 0; column < MouseConstants.MaxColumns; column++)
                     Assert.AreEqual(Color.Black, effect[row, column]);
             }
         }
@@ -355,13 +353,13 @@ namespace Corale.Colore.Tests.Effects.Mouse.Effects
         {
             var effect = new Custom(Color.Red);
 
-            var array = new Color[Constants.MaxRows][];
+            var array = new Color[MouseConstants.MaxRows][];
 
-            for (var row = 0; row < Constants.MaxRows; row++)
+            for (var row = 0; row < MouseConstants.MaxRows; row++)
             {
-                array[row] = new Color[Constants.MaxColumns];
+                array[row] = new Color[MouseConstants.MaxColumns];
 
-                for (var column = 0; column < Constants.MaxColumns; column++)
+                for (var column = 0; column < MouseConstants.MaxColumns; column++)
                     array[row][column] = Color.Red;
             }
 
@@ -376,13 +374,13 @@ namespace Corale.Colore.Tests.Effects.Mouse.Effects
         {
             var effect = new Custom(Color.Red);
 
-            var array = new Color[Constants.MaxRows][];
+            var array = new Color[MouseConstants.MaxRows][];
 
-            for (var row = 0; row < Constants.MaxRows; row++)
+            for (var row = 0; row < MouseConstants.MaxRows; row++)
             {
-                array[row] = new Color[Constants.MaxColumns];
+                array[row] = new Color[MouseConstants.MaxColumns];
 
-                for (var column = 0; column < Constants.MaxColumns; column++)
+                for (var column = 0; column < MouseConstants.MaxColumns; column++)
                     array[row][column] = Color.Blue;
             }
 
@@ -410,7 +408,7 @@ namespace Corale.Colore.Tests.Effects.Mouse.Effects
         {
             var effect = Custom.Create();
 
-            var array = new Color[Constants.MaxRows][];
+            var array = new Color[MouseConstants.MaxRows][];
             array[0] = new Color[1];
 
             Assert.False(effect == array);
@@ -423,10 +421,10 @@ namespace Corale.Colore.Tests.Effects.Mouse.Effects
         public void ShouldEqualIdentical1DArray()
         {
             var grid = new Custom(Color.Red);
-            var arr = new Color[Constants.MaxLeds];
+            var arr = new Color[MouseConstants.MaxLeds];
 
             // Populate the 1D array
-            for (var index = 0; index < Constants.MaxLeds; index++)
+            for (var index = 0; index < MouseConstants.MaxLeds; index++)
                 arr[index] = Color.Red;
 
             Assert.True(grid == arr);
@@ -439,9 +437,9 @@ namespace Corale.Colore.Tests.Effects.Mouse.Effects
         public void ShouldNotEqualDifferent1DArray()
         {
             var grid = new Custom(Color.Pink);
-            var arr = new Color[Constants.MaxLeds];
+            var arr = new Color[MouseConstants.MaxLeds];
 
-            for (var index = 0; index < Constants.MaxLeds; index++)
+            for (var index = 0; index < MouseConstants.MaxLeds; index++)
                 arr[index] = Color.Red;
 
             Assert.False(grid == arr);

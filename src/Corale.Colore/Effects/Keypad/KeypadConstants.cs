@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Constants.cs" company="Corale">
+// <copyright file="KeypadConstants.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,16 +23,31 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Corale.Colore.Effects.Mousepad
+namespace Corale.Colore.Effects.Keypad
 {
+    using JetBrains.Annotations;
+
     /// <summary>
-    /// Mouse pad constants.
+    /// Keypad constants.
     /// </summary>
-    public static class Constants
+    public static class KeypadConstants
     {
         /// <summary>
-        /// Maximum number of LEDs.
+        /// Maximum number of rows.
         /// </summary>
-        public const int MaxLeds = 15;
+        [PublicAPI]
+        public const int MaxRows = 4;
+
+        /// <summary>
+        /// Maximum number of columns.
+        /// </summary>
+        [PublicAPI]
+        public const int MaxColumns = 5;
+
+        /// <summary>
+        /// Total number of keys.
+        /// </summary>
+        [PublicAPI]
+        public const int MaxKeys = MaxRows * MaxColumns;
     }
 }

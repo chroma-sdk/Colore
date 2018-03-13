@@ -22,13 +22,12 @@
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
 // ---------------------------------------------------------------------------------------
-
-namespace Corale.Colore.Tests.Effects.Mousepad.Effects
+namespace Corale.Colore.Tests.Effects.Headset.Effects
 {
     using System;
 
     using Corale.Colore.Data;
-    using Corale.Colore.Effects.Mousepad;
+    using Corale.Colore.Effects.Headset;
 
     using NUnit.Framework;
 
@@ -52,12 +51,12 @@ namespace Corale.Colore.Tests.Effects.Mousepad.Effects
                       .EqualTo(-1));
 
             Assert.That(
-                () => dummy = custom[MousepadConstants.MaxLeds],
+                () => dummy = custom[HeadsetConstants.MaxLeds],
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
                       .With.Property("ParamName")
                       .EqualTo("led")
                       .And.Property("ActualValue")
-                      .EqualTo(MousepadConstants.MaxLeds));
+                      .EqualTo(HeadsetConstants.MaxLeds));
         }
 
         [Test]
@@ -74,12 +73,12 @@ namespace Corale.Colore.Tests.Effects.Mousepad.Effects
                       .EqualTo(-1));
 
             Assert.That(
-                () => custom[MousepadConstants.MaxLeds] = Color.Red,
+                () => custom[HeadsetConstants.MaxLeds] = Color.Red,
                 Throws.InstanceOf<ArgumentOutOfRangeException>()
                       .With.Property("ParamName")
                       .EqualTo("led")
                       .And.Property("ActualValue")
-                      .EqualTo(MousepadConstants.MaxLeds));
+                      .EqualTo(HeadsetConstants.MaxLeds));
         }
 
         [Test]
@@ -87,7 +86,7 @@ namespace Corale.Colore.Tests.Effects.Mousepad.Effects
         {
             var effect = new Custom(Color.Red);
 
-            for (var i = 0; i < MousepadConstants.MaxLeds; i++)
+            for (var i = 0; i < HeadsetConstants.MaxLeds; i++)
                 Assert.That(effect[i], Is.EqualTo(Color.Red));
         }
 
@@ -96,7 +95,7 @@ namespace Corale.Colore.Tests.Effects.Mousepad.Effects
         {
             var effect = Custom.Create();
 
-            for (var i = 0; i < MousepadConstants.MaxLeds; i++)
+            for (var i = 0; i < HeadsetConstants.MaxLeds; i++)
                 Assert.That(effect[i], Is.EqualTo(Color.Black));
         }
 
@@ -116,14 +115,14 @@ namespace Corale.Colore.Tests.Effects.Mousepad.Effects
         [Test]
         public void ShouldSetCorrectColorsFromList()
         {
-            var colors = new Color[MousepadConstants.MaxLeds];
+            var colors = new Color[HeadsetConstants.MaxLeds];
             colors[0] = Color.Red;
             colors[1] = Color.Blue;
             colors[2] = Color.Green;
 
             var effect = new Custom(colors);
 
-            for (var i = 0; i < MousepadConstants.MaxLeds; i++)
+            for (var i = 0; i < HeadsetConstants.MaxLeds; i++)
                 Assert.That(effect[i], Is.EqualTo(colors[i]));
         }
 
@@ -134,7 +133,7 @@ namespace Corale.Colore.Tests.Effects.Mousepad.Effects
 
             effect.Set(Color.Red);
 
-            for (var i = 0; i < MousepadConstants.MaxLeds; i++)
+            for (var i = 0; i < HeadsetConstants.MaxLeds; i++)
                 Assert.That(effect[i], Is.EqualTo(Color.Red));
         }
 
@@ -145,28 +144,28 @@ namespace Corale.Colore.Tests.Effects.Mousepad.Effects
             effect.Set(Color.Red);
             effect.Clear();
 
-            for (var i = 0; i < MousepadConstants.MaxLeds; i++)
+            for (var i = 0; i < HeadsetConstants.MaxLeds; i++)
                 Assert.That(effect[i], Is.EqualTo(Color.Black));
         }
 
         [Test]
         public void ShouldGetCorrectColor()
         {
-            var colors = new Color[MousepadConstants.MaxLeds];
-            colors[5] = Color.Red;
+            var colors = new Color[HeadsetConstants.MaxLeds];
+            colors[3] = Color.Red;
 
             var effect = new Custom(colors);
 
-            Assert.That(effect[5], Is.EqualTo(colors[5]));
+            Assert.That(effect[3], Is.EqualTo(colors[3]));
         }
 
         [Test]
         public void ShouldSetCorrectColor()
         {
             var effect = Custom.Create();
-            effect[5] = Color.Blue;
+            effect[3] = Color.Blue;
 
-            Assert.That(effect[5], Is.EqualTo(Color.Blue));
+            Assert.That(effect[3], Is.EqualTo(Color.Blue));
         }
 
         [Test]
@@ -194,27 +193,12 @@ namespace Corale.Colore.Tests.Effects.Mousepad.Effects
         }
 
         [Test]
-        public void ShouldEqualIdenticalArray()
-        {
-            var effect = new Custom(Color.Red);
-            var array = new Color[MousepadConstants.MaxLeds];
-
-            for (var i = 0; i < MousepadConstants.MaxLeds; i++)
-                array[i] = Color.Red;
-
-            Assert.True(effect == array);
-            Assert.False(effect != array);
-            Assert.True(effect.Equals(array));
-            Assert.AreEqual(effect, array);
-        }
-
-        [Test]
         public void ShouldNotEqualDifferentArray()
         {
             var effect = new Custom(Color.Red);
-            var array = new Color[MousepadConstants.MaxLeds];
+            var array = new Color[HeadsetConstants.MaxLeds];
 
-            for (var i = 0; i < MousepadConstants.MaxLeds; i++)
+            for (var i = 0; i < HeadsetConstants.MaxLeds; i++)
                 array[i] = Color.Blue;
 
             Assert.False(effect == array);

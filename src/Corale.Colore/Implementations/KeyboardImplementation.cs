@@ -54,6 +54,11 @@ namespace Corale.Colore.Implementations
         /// </summary>
         private Custom _grid;
 
+        /// <summary>
+        /// Deathstalker grid struct used for the helper methods.
+        /// </summary>
+        private DeathstalkerGrid _deathstalkerGrid;
+
         /// <inheritdoc />
         /// <summary>
         /// Initializes a new instance of the <see cref="KeyboardImplementation" /> class.
@@ -68,6 +73,25 @@ namespace Corale.Colore.Implementations
             // We keep a local copy of a grid to speed up grid operations
             Log.Debug("Initializing private copy of Custom");
             _grid = Custom.Create();
+
+            Log.Debug("Initializing private copy of Deathstalker grid");
+            _deathstalkerGrid = DeathstalkerGrid.Create();
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Gets a value indicating whether a Razer Deathstalker Chroma is connected to the system.
+        /// </summary>
+        /// <remarks>
+        /// This performs an SDK query on each access, to avoid caching issues.
+        /// </remarks>
+        public bool IsDeathstalkerConnected
+        {
+            get
+            {
+                var result = Api.QueryDeviceAsync(Devices.Deathstalker).Result;
+                return result.Connected;
+            }
         }
 
         /// <inheritdoc />
@@ -88,13 +112,25 @@ namespace Corale.Colore.Implementations
         /// Gets or sets the <see cref="Color" /> for a specific row and column on the
         /// keyboard grid.
         /// </summary>
-        /// <param name="row">Row to query, between 0 and <see cref="Effects.Keyboard.Constants.MaxRows" /> (exclusive upper-bound).</param>
-        /// <param name="column">Column to query, between 0 and <see cref="Effects.Keyboard.Constants.MaxColumns" /> (exclusive upper-bound).</param>
+        /// <param name="row">Row to query, between 0 and <see cref="KeyboardConstants.MaxRows" /> (exclusive upper-bound).</param>
+        /// <param name="column">Column to query, between 0 and <see cref="KeyboardConstants.MaxColumns" /> (exclusive upper-bound).</param>
         /// <returns>The color currently set on the specified position.</returns>
         public Color this[int row, int column]
         {
             get => _grid[row, column];
             set => SetPositionAsync(row, column, value).Wait();
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Gets or sets the <see cref="Color" /> for a specific Deathstalker zone.
+        /// </summary>
+        /// <param name="zoneIndex">Zone to query, between 0 and <see cref="KeyboardConstants.MaxDeathstalkerZones" /> (exclusive upper bound).</param>
+        /// <returns>The color currently set for the specified zone.</returns>
+        public Color this[int zoneIndex]
+        {
+            get => _deathstalkerGrid[zoneIndex];
+            set => SetDeathstalkerZoneAsync(zoneIndex, value).Wait();
         }
 
         /// <summary>
@@ -147,7 +183,16 @@ namespace Corale.Colore.Implementations
         public override async Task<Guid> SetAllAsync(Color color)
         {
             _grid.Set(color);
-            return await SetEffectAsync(await Api.CreateKeyboardEffectAsync(Effect.CustomKey, _grid).ConfigureAwait(false)).ConfigureAwait(false);
+            _deathstalkerGrid.Set(color);
+
+            /* Use the Deathstalker grid effect to set all colors, rather than the newer CUSTOM_KEY effect.
+             * Since using CUSTOM_KEY has the same effect on everything except the Deathstalker,
+             * using the old CUSTOM effect for setting all colors means that SetAllAsync will work "for free"
+             * on the Deathstalker as well, saving developers the need to do their own special handling for it.
+             */
+            return await SetEffectAsync(
+                    await Api.CreateKeyboardEffectAsync(Effect.Custom, _deathstalkerGrid).ConfigureAwait(false))
+                .ConfigureAwait(false);
         }
 
         /// <inheritdoc />
@@ -162,7 +207,9 @@ namespace Corale.Colore.Implementations
         public async Task<Guid> SetCustomAsync(Custom effect)
         {
             _grid = effect;
-            return await SetEffectAsync(await Api.CreateKeyboardEffectAsync(Effect.CustomKey, _grid).ConfigureAwait(false)).ConfigureAwait(false);
+            return await SetEffectAsync(
+                    await Api.CreateKeyboardEffectAsync(Effect.CustomKey, _grid).ConfigureAwait(false))
+                .ConfigureAwait(false);
         }
 
         /// <inheritdoc />
@@ -173,15 +220,16 @@ namespace Corale.Colore.Implementations
         /// <param name="effect">Effect options.</param>
         public async Task<Guid> SetEffectAsync(Effect effect)
         {
-            return await SetEffectAsync(await Api.CreateKeyboardEffectAsync(effect).ConfigureAwait(false)).ConfigureAwait(false);
+            return await SetEffectAsync(await Api.CreateKeyboardEffectAsync(effect).ConfigureAwait(false))
+                .ConfigureAwait(false);
         }
 
         /// <inheritdoc />
         /// <summary>
         /// Sets the color on a specific row and column on the keyboard grid.
         /// </summary>
-        /// <param name="row">Row to set, between 0 and <see cref="Effects.Keyboard.Constants.MaxRows" /> (exclusive upper-bound).</param>
-        /// <param name="column">Column to set, between 0 and <see cref="Effects.Keyboard.Constants.MaxColumns" /> (exclusive upper-bound).</param>
+        /// <param name="row">Row to set, between 0 and <see cref="KeyboardConstants.MaxRows" /> (exclusive upper-bound).</param>
+        /// <param name="column">Column to set, between 0 and <see cref="KeyboardConstants.MaxColumns" /> (exclusive upper-bound).</param>
         /// <param name="color">Color to set.</param>
         /// <param name="clear">Whether or not to clear the existing colors before setting this one.</param>
         /// <exception cref="System.ArgumentException">Thrown if the row or column parameters are outside the valid ranges.</exception>
@@ -191,7 +239,9 @@ namespace Corale.Colore.Implementations
                 _grid.Clear();
 
             _grid[row, column] = color;
-            return await SetEffectAsync(await Api.CreateKeyboardEffectAsync(Effect.CustomKey, _grid).ConfigureAwait(false)).ConfigureAwait(false);
+            return await SetEffectAsync(
+                    await Api.CreateKeyboardEffectAsync(Effect.CustomKey, _grid).ConfigureAwait(false))
+                .ConfigureAwait(false);
         }
 
         /// <inheritdoc />
@@ -207,7 +257,9 @@ namespace Corale.Colore.Implementations
                 _grid.Clear();
 
             _grid[key] = color;
-            return await SetEffectAsync(await Api.CreateKeyboardEffectAsync(Effect.CustomKey, _grid).ConfigureAwait(false)).ConfigureAwait(false);
+            return await SetEffectAsync(
+                    await Api.CreateKeyboardEffectAsync(Effect.CustomKey, _grid).ConfigureAwait(false))
+                .ConfigureAwait(false);
         }
 
         /// <inheritdoc />
@@ -256,7 +308,42 @@ namespace Corale.Colore.Implementations
         /// <param name="effect">Effect options.</param>
         public async Task<Guid> SetStaticAsync(Static effect)
         {
-            return await SetEffectAsync(await Api.CreateKeyboardEffectAsync(Effect.Static, effect).ConfigureAwait(false)).ConfigureAwait(false);
+            return await SetEffectAsync(
+                    await Api.CreateKeyboardEffectAsync(Effect.Static, effect).ConfigureAwait(false))
+                .ConfigureAwait(false);
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Sets the specified Deathstalker zone to a color.
+        /// </summary>
+        /// <param name="zoneIndex">The index of the Deathstalker zone to set.</param>
+        /// <param name="color">The color to set.</param>
+        /// <param name="clear">Whether to clear all colors before setting the new one.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
+        public async Task<Guid> SetDeathstalkerZoneAsync(int zoneIndex, Color color, bool clear = false)
+        {
+            if (clear)
+                _deathstalkerGrid.Clear();
+
+            _deathstalkerGrid[zoneIndex] = color;
+            return await SetEffectAsync(
+                    await Api.CreateKeyboardEffectAsync(Effect.Custom, _deathstalkerGrid).ConfigureAwait(false))
+                .ConfigureAwait(false);
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Sets a Deathstalker grid effect.
+        /// </summary>
+        /// <param name="effect">The Deathstalker grid effect to set.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
+        public async Task<Guid> SetDeathstalkerAsync(DeathstalkerGrid effect)
+        {
+            _deathstalkerGrid = effect;
+            return await SetEffectAsync(
+                    await Api.CreateKeyboardEffectAsync(Effect.Custom, _deathstalkerGrid).ConfigureAwait(false))
+                .ConfigureAwait(false);
         }
 
         /// <inheritdoc cref="DeviceImplementation.ClearAsync" />
@@ -266,6 +353,7 @@ namespace Corale.Colore.Implementations
         public override async Task<Guid> ClearAsync()
         {
             _grid.Clear();
+            _deathstalkerGrid.Clear();
             return await SetEffectAsync(Effect.None).ConfigureAwait(false);
         }
     }

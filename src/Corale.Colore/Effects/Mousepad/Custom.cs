@@ -47,7 +47,7 @@ namespace Corale.Colore.Effects.Mousepad
         /// <summary>
         /// Colors for the LEDs.
         /// </summary>
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = Constants.MaxLeds)]
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = MousepadConstants.MaxLeds)]
         private readonly Color[] _colors;
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace Corale.Colore.Effects.Mousepad
         /// <param name="color">The color to set every LED to initially.</param>
         public Custom(Color color)
         {
-            _colors = new Color[Constants.MaxLeds];
+            _colors = new Color[MousepadConstants.MaxLeds];
 
             for (var i = 0; i < _colors.Length; i++)
                 _colors[i] = color;
@@ -70,14 +70,14 @@ namespace Corale.Colore.Effects.Mousepad
         /// <exception cref="ArgumentException">Thrown if the colors list supplied is of an incorrect size.</exception>
         public Custom(IList<Color> colors)
         {
-            if (colors.Count != Constants.MaxLeds)
+            if (colors.Count != MousepadConstants.MaxLeds)
             {
                 throw new ArgumentException(
-                    "Invalid length of color list, expected " + Constants.MaxLeds + " but received " + colors.Count,
+                    "Invalid length of color list, expected " + MousepadConstants.MaxLeds + " but received " + colors.Count,
                     nameof(colors));
             }
 
-            _colors = new Color[Constants.MaxLeds];
+            _colors = new Color[MousepadConstants.MaxLeds];
 
             for (var i = 0; i < _colors.Length; i++)
                 _colors[i] = colors[i];
@@ -109,7 +109,7 @@ namespace Corale.Colore.Effects.Mousepad
         {
             get
             {
-                if (led < 0 || led >= Constants.MaxLeds)
+                if (led < 0 || led >= MousepadConstants.MaxLeds)
                 {
                     throw new ArgumentOutOfRangeException(
                         nameof(led),
@@ -122,7 +122,7 @@ namespace Corale.Colore.Effects.Mousepad
 
             set
             {
-                if (led < 0 || led >= Constants.MaxLeds)
+                if (led < 0 || led >= MousepadConstants.MaxLeds)
                 {
                     throw new ArgumentOutOfRangeException(
                         nameof(led),
@@ -197,7 +197,7 @@ namespace Corale.Colore.Effects.Mousepad
         [PublicAPI]
         public void Set(Color color)
         {
-            for (var i = 0; i < Constants.MaxLeds; i++)
+            for (var i = 0; i < MousepadConstants.MaxLeds; i++)
                 _colors[i] = color;
         }
 
@@ -240,7 +240,7 @@ namespace Corale.Colore.Effects.Mousepad
         /// </returns>
         public bool Equals(Custom other)
         {
-            for (var i = 0; i < Constants.MaxLeds; i++)
+            for (var i = 0; i < MousepadConstants.MaxLeds; i++)
             {
                 if (this[i] != other[i])
                     return false;
@@ -260,10 +260,10 @@ namespace Corale.Colore.Effects.Mousepad
         /// </returns>
         public bool Equals(IList<Color> other)
         {
-            if (other == null || other.Count != Constants.MaxLeds)
+            if (other == null || other.Count != MousepadConstants.MaxLeds)
                 return false;
 
-            for (var i = 0; i < Constants.MaxLeds; i++)
+            for (var i = 0; i < MousepadConstants.MaxLeds; i++)
             {
                 if (this[i] != other[i])
                     return false;
