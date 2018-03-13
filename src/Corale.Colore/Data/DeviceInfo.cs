@@ -23,57 +23,81 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-#pragma warning disable CA1051 // Do not declare visible instance fields
-
 namespace Corale.Colore.Data
 {
     using System;
-    using System.Runtime.InteropServices;
 
     using JetBrains.Annotations;
 
     /// <inheritdoc cref="IEquatable{T}" />
     /// <summary>
-    /// Information about a device.
+    /// Contains information about a device.
     /// </summary>
-    [StructLayout(LayoutKind.Sequential)]
     public struct DeviceInfo : IEquatable<DeviceInfo>
     {
         /// <summary>
-        /// The type of device this is.
+        /// Initializes a new instance of the <see cref="DeviceInfo" /> struct.
         /// </summary>
-        [PublicAPI]
-        public readonly DeviceType Type;
-
-        /// <summary>
-        /// Whether this device is connected.
-        /// </summary>
-        [PublicAPI]
-        public readonly bool Connected;
-
-        /// <summary>
-        /// Checks an instance of <see cref="DeviceInfo" /> for equality with another <see cref="DeviceInfo" /> instance.
-        /// </summary>
-        /// <param name="left">Left operand.</param>
-        /// <param name="right">Right operand.</param>
-        /// <returns><c>true</c> if the two instances are equal, otherwise <c>false</c>.</returns>
-        public static bool operator ==(DeviceInfo left, DeviceInfo right)
+        /// <param name="baseInfo">Instance of <see cref="SdkDeviceInfo" /> to copy base data from.</param>
+        /// <param name="deviceId">The ID of the device.</param>
+        /// <param name="metadata">Instance of <see cref="Devices.Metadata" /> to copy metadata from.</param>
+        internal DeviceInfo(SdkDeviceInfo baseInfo, Guid deviceId, Devices.Metadata metadata)
         {
-            return left.Equals(right);
+            Id = deviceId;
+            Type = baseInfo.Type;
+            Connected = baseInfo.Connected;
+            Name = metadata.Name;
+            Description = metadata.Description;
         }
 
         /// <summary>
-        /// Checks an instance of <see cref="DeviceInfo" /> for inequality with another <see cref="DeviceInfo" /> instance.
+        /// Gets the unique ID of the device.
         /// </summary>
-        /// <param name="left">Left operand.</param>
-        /// <param name="right">Right operand.</param>
-        /// <returns><c>true</c> if the two instances are not equal, otherwise <c>false</c>.</returns>
-        public static bool operator !=(DeviceInfo left, DeviceInfo right)
-        {
-            return !(left == right);
-        }
+        [PublicAPI]
+        public Guid Id { get; }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Gets the type of the device.
+        /// </summary>
+        [PublicAPI]
+        public DeviceType Type { get; }
+
+        /// <summary>
+        /// Gets a value indicating whether the device is currently connected.
+        /// </summary>
+        [PublicAPI]
+        public bool Connected { get; }
+
+        /// <summary>
+        /// Gets the device name.
+        /// </summary>
+        [PublicAPI]
+        public string Name { get; }
+
+        /// <summary>
+        /// Gets a description of the device.
+        /// </summary>
+        [PublicAPI]
+        public string Description { get; }
+
+        /// <summary>
+        /// Compares an instance of <see cref="DeviceInfo" /> with
+        /// another object for equality.
+        /// </summary>
+        /// <param name="left">The left operand, an instance of <see cref="DeviceInfo" />.</param>
+        /// <param name="right">The right operand, any type of object.</param>
+        /// <returns><c>true</c> if the two objects are equal, otherwise <c>false</c>.</returns>
+        public static bool operator ==(DeviceInfo left, object right) => left.Equals(right);
+
+        /// <summary>
+        /// Compares an instance of <see cref="DeviceInfo" /> with
+        /// another object for inequality.
+        /// </summary>
+        /// <param name="left">The left operand, an instance of <see cref="DeviceInfo" />.</param>
+        /// <param name="right">The right operand, any type of object.</param>
+        /// <returns><c>true</c> if the two objects are not equal, otherwise <c>false</c>.</returns>
+        public static bool operator !=(DeviceInfo left, object right) => !left.Equals(right);
+
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
         /// </summary>
@@ -83,32 +107,36 @@ namespace Corale.Colore.Data
         /// </returns>
         public bool Equals(DeviceInfo other)
         {
-            return Type == other.Type && Connected == other.Connected;
+            return Id.Equals(other.Id) && Type == other.Type && Connected == other.Connected &&
+                   Name == other.Name && Description == other.Description;
         }
 
-        /// <inheritdoc />
         /// <summary>
         /// Indicates whether this instance and a specified object are equal.
         /// </summary>
-        /// <param name="obj">The object to compare with the current instance. </param>
+        /// <param name="obj">The object to compare with the current instance.</param>
         /// <returns>
         /// <c>true</c> if <paramref name="obj" /> and this instance are the same type and represent the same value; otherwise, <c>false</c>.
         /// </returns>
         public override bool Equals(object obj)
         {
-            if (ReferenceEquals(null, obj))
-                return false;
-            return obj is DeviceInfo info && Equals(info);
+            return !(obj is null) && obj is DeviceInfo info && Equals(info);
         }
 
-        /// <inheritdoc />
-        /// <summary>Returns the hash code for this instance.</summary>
+        /// <summary>
+        /// Returns the hash code for this instance.
+        /// </summary>
         /// <returns>A 32-bit signed integer that is the hash code for this instance.</returns>
         public override int GetHashCode()
         {
             unchecked
             {
-                return ((int)Type * 397) ^ Connected.GetHashCode();
+                var hashCode = Id.GetHashCode();
+                hashCode = (hashCode * 397) ^ (int)Type;
+                hashCode = (hashCode * 397) ^ Connected.GetHashCode();
+                hashCode = (hashCode * 397) ^ (Name?.GetHashCode() ?? 0);
+                hashCode = (hashCode * 397) ^ (Description?.GetHashCode() ?? 0);
+                return hashCode;
             }
         }
     }

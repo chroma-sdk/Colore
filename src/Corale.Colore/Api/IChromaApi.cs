@@ -57,9 +57,9 @@ namespace Corale.Colore.Api
         /// </summary>
         /// <param name="deviceId">Device ID, found in <see cref="Devices" />.</param>
         /// <returns>
-        /// A populated <see cref="DeviceInfo" /> structure with information about the requested device.
+        /// A populated <see cref="SdkDeviceInfo" /> structure with information about the requested device.
         /// </returns>
-        Task<DeviceInfo> QueryDeviceAsync(Guid deviceId);
+        Task<SdkDeviceInfo> QueryDeviceAsync(Guid deviceId);
 
         /// <summary>
         /// Set effect.

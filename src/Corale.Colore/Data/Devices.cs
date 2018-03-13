@@ -26,6 +26,10 @@
 namespace Corale.Colore.Data
 {
     using System;
+    using System.Collections.Concurrent;
+    using System.ComponentModel;
+    using System.Linq;
+    using System.Reflection;
 
     using JetBrains.Annotations;
 
@@ -34,10 +38,14 @@ namespace Corale.Colore.Data
     /// </summary>
     public static class Devices
     {
+        private static readonly ConcurrentDictionary<Guid, Metadata> MetadataCache =
+            new ConcurrentDictionary<Guid, Metadata>();
+
         /// <summary>
         /// Blackwidow Chroma edition.
         /// </summary>
         [PublicAPI]
+        [Description("Razer Blackwidow Chroma")]
         public static readonly Guid Blackwidow = new Guid(
             0x2ea1bb63,
             0xca28,
@@ -55,6 +63,7 @@ namespace Corale.Colore.Data
         /// Deathadder Chroma edition.
         /// </summary>
         [PublicAPI]
+        [Description("Razer Deathadder Chroma")]
         public static readonly Guid Deathadder = new Guid(
             0xaec50d91,
             0xb1f1,
@@ -72,6 +81,7 @@ namespace Corale.Colore.Data
         /// Kraken 7.1 Chroma edition.
         /// </summary>
         [PublicAPI]
+        [Description("Razer Kraken 7.1 Chroma")]
         public static readonly Guid Kraken71 = new Guid(
             0xcd1e09a5,
             0xd5e6,
@@ -89,6 +99,7 @@ namespace Corale.Colore.Data
         /// Firefly Chroma edition.
         /// </summary>
         [PublicAPI]
+        [Description("Razer Firefly Chroma")]
         public static readonly Guid Firefly = new Guid(
             0x80f95a94,
             0x73d2,
@@ -106,6 +117,7 @@ namespace Corale.Colore.Data
         /// Orbweaver Chroma edition.
         /// </summary>
         [PublicAPI]
+        [Description("Razer Orbweaver Chroma")]
         public static readonly Guid Orbweaver = new Guid(
             0x9d24b0ab,
             0x162,
@@ -123,6 +135,7 @@ namespace Corale.Colore.Data
         /// Tartarus Chroma edition.
         /// </summary>
         [PublicAPI]
+        [Description("Razer Tartarus Chroma")]
         public static readonly Guid Tartarus = new Guid(
             0xf0545c,
             0xe180,
@@ -140,6 +153,7 @@ namespace Corale.Colore.Data
         /// Mamba TE Chroma edition.
         /// </summary>
         [PublicAPI]
+        [Description("Razer Mamba Chroma Tournament Edition")]
         public static readonly Guid MambaTe = new Guid(
             0x7ec00450,
             0xe0ee,
@@ -157,6 +171,7 @@ namespace Corale.Colore.Data
         /// BlackWidow TE Chroma edition.
         /// </summary>
         [PublicAPI]
+        [Description("Razer Blackwidow Chroma Tournament Edition")]
         public static readonly Guid BlackwidowTe = new Guid(
             0xed1c1b82,
             0xbfbe,
@@ -174,6 +189,7 @@ namespace Corale.Colore.Data
         /// Deathstalker Chroma edition.
         /// </summary>
         [PublicAPI]
+        [Description("Razer Deathstalker Chroma")]
         public static readonly Guid Deathstalker = new Guid(
             0x18c5ad9b,
             0x4326,
@@ -191,6 +207,7 @@ namespace Corale.Colore.Data
         /// Diamondback Chroma edition.
         /// </summary>
         [PublicAPI]
+        [Description("Razer Diamondback Chroma")]
         public static readonly Guid Diamondback = new Guid(
             0xff8a5929,
             0x4512,
@@ -208,6 +225,7 @@ namespace Corale.Colore.Data
         /// Orochi Chroma edition.
         /// </summary>
         [PublicAPI]
+        [Description("Razer Orochi Chroma")]
         public static readonly Guid Orochi = new Guid(
             0x52c15681,
             0x4ece,
@@ -225,6 +243,7 @@ namespace Corale.Colore.Data
         /// Blade Stealth.
         /// </summary>
         [PublicAPI]
+        [Description("Razer Blade Stealth Chroma")]
         public static readonly Guid BladeStealth = new Guid(
             0xc83bdfe8,
             0xe7fc,
@@ -242,6 +261,7 @@ namespace Corale.Colore.Data
         /// Blade 14 (2016 edition).
         /// </summary>
         [PublicAPI]
+        [Description("Razer Blade 2014 Chroma")]
         public static readonly Guid Blade14 = new Guid(
             0xf2bedfaf,
             0xa0fe,
@@ -259,6 +279,7 @@ namespace Corale.Colore.Data
         /// Overwatch Keyboard.
         /// </summary>
         [PublicAPI]
+        [Description("Overwatch Keyboard Chroma")]
         public static readonly Guid OverwatchKeyboard = new Guid(
             0x872ab2a9,
             0x7959,
@@ -276,6 +297,7 @@ namespace Corale.Colore.Data
         /// Blackwidow X Keyboard.
         /// </summary>
         [PublicAPI]
+        [Description("Razer Blackwidow X Chroma")]
         public static readonly Guid BlackwidowX = new Guid(
             0x5af60076,
             0xade9,
@@ -293,6 +315,7 @@ namespace Corale.Colore.Data
         /// Blackwidow X TE Keyboard.
         /// </summary>
         [PublicAPI]
+        [Description("Razer Blackwidow X Chroma Tournament Edition")]
         public static readonly Guid BlackwidowXTe = new Guid(
             0x2d84dd51,
             0x3290,
@@ -310,6 +333,7 @@ namespace Corale.Colore.Data
         /// Mamba (wireless) Chroma edition.
         /// </summary>
         [PublicAPI]
+        [Description("Razer Mamba Chroma")]
         public static readonly Guid Mamba = new Guid(
             0xd527cbdc,
             0xeb0a,
@@ -327,6 +351,7 @@ namespace Corale.Colore.Data
         /// Naga Chroma edition.
         /// </summary>
         [PublicAPI]
+        [Description("Razer Naga Chroma")]
         public static readonly Guid Naga = new Guid(
             0xf1876328,
             0x6ca4,
@@ -344,6 +369,7 @@ namespace Corale.Colore.Data
         /// Naga Epic Chroma edition.
         /// </summary>
         [PublicAPI]
+        [Description("Razer Naga Epic Chroma")]
         public static readonly Guid NagaEpic = new Guid(
             0xd714c50b,
             0x7158,
@@ -361,6 +387,7 @@ namespace Corale.Colore.Data
         /// Naga Hex V2
         /// </summary>
         [PublicAPI]
+        [Description("Razer Naga Hex Chroma")]
         public static readonly Guid NagaHex = new Guid(
             0x195d70f5,
             0xf285,
@@ -378,6 +405,7 @@ namespace Corale.Colore.Data
         /// Core (external graphics enclosure).
         /// </summary>
         [PublicAPI]
+        [Description("Razer Core Chroma")]
         public static readonly Guid Core = new Guid(
             0x201203b,
             0x62f3,
@@ -395,6 +423,7 @@ namespace Corale.Colore.Data
         /// Chroma enabled Lenovo Y900.
         /// </summary>
         [PublicAPI]
+        [Description("Lenovo Y900")]
         public static readonly Guid LenovoY900 = new Guid(
             0x35f6f18d,
             0x1ae5,
@@ -412,6 +441,7 @@ namespace Corale.Colore.Data
         /// Chroma enabled Lenovo Y27.
         /// </summary>
         [PublicAPI]
+        [Description("Lenovo Y27")]
         public static readonly Guid LenovoY27 = new Guid(
             0x47db1fa7,
             0x6b9b,
@@ -429,6 +459,7 @@ namespace Corale.Colore.Data
         /// Razer Ornata Keyboard.
         /// </summary>
         [PublicAPI]
+        [Description("Razer Ornata Chroma")]
         public static readonly Guid Ornata = new Guid(
             0x803378c1,
             0xcc48,
@@ -455,6 +486,74 @@ namespace Corale.Colore.Data
                    || id == Mamba || id == OverwatchKeyboard || id == Orochi || id == BladeStealth || id == Naga
                    || id == NagaEpic || id == Core || id == LenovoY27 || id == LenovoY900 || id == Blade14
                    || id == BlackwidowX || id == BlackwidowXTe || id == NagaHex || id == Ornata;
+        }
+
+        /// <summary>
+        /// Gets the name associated with a specified device ID.
+        /// </summary>
+        /// <param name="deviceId">The device ID to get a name for.</param>
+        /// <returns>The name of the device.</returns>
+        /// <exception cref="ArgumentException">Thrown if the device ID is invalid.</exception>
+        [PublicAPI]
+        public static string GetName(Guid deviceId)
+        {
+            return GetDeviceMetadata(deviceId).Name;
+        }
+
+        /// <summary>
+        /// Gets the description associated with a specified device ID.
+        /// </summary>
+        /// <param name="deviceId">The device ID to get a description for.</param>
+        /// <returns>The description of the device.</returns>
+        /// <exception cref="ArgumentException">Thrown if the device ID is invalid.</exception>
+        [PublicAPI]
+        public static string GetDescription(Guid deviceId)
+        {
+            return GetDeviceMetadata(deviceId).Description;
+        }
+
+        internal static Metadata GetDeviceMetadata(Guid deviceId)
+        {
+            return !MetadataCache.ContainsKey(deviceId) ? BuildMetadataCacheWithId(deviceId) : MetadataCache[deviceId];
+        }
+
+        private static Metadata BuildMetadataCacheWithId(Guid deviceId)
+        {
+            var fields = typeof(Devices).GetFields(BindingFlags.Static | BindingFlags.Public)
+                                        .Where(p => p.FieldType == typeof(Guid));
+
+            var mappings = fields.ToDictionary(
+                f => (Guid)f.GetValue(null),
+                f =>
+                {
+                    var descriptionAttr = f.GetCustomAttribute<DescriptionAttribute>();
+                    return new Metadata(f.Name, descriptionAttr?.Description);
+                });
+
+            foreach (var mapping in mappings)
+            {
+                MetadataCache.TryAdd(mapping.Key, mapping.Value);
+            }
+
+            if (mappings.ContainsKey(deviceId))
+                return mappings[deviceId];
+
+            throw new ArgumentException(
+                "The specified device ID was not found in the known devices.",
+                nameof(deviceId));
+        }
+
+        internal struct Metadata
+        {
+            internal Metadata(string name, string description)
+            {
+                Name = name;
+                Description = description ?? name;
+            }
+
+            internal string Name { get; }
+
+            internal string Description { get; }
         }
     }
 }

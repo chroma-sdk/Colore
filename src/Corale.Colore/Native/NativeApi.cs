@@ -78,10 +78,10 @@ namespace Corale.Colore.Native
         /// Query for device information.
         /// </summary>
         /// <param name="deviceId">Device ID, found in <see cref="Devices" />.</param>
-        /// <returns>A populated <see cref="DeviceInfo" /> structure with information about the requested device.</returns>
-        public Task<DeviceInfo> QueryDeviceAsync(Guid deviceId)
+        /// <returns>A populated <see cref="SdkDeviceInfo" /> structure with information about the requested device.</returns>
+        public Task<SdkDeviceInfo> QueryDeviceAsync(Guid deviceId)
         {
-            var ptr = Marshal.AllocHGlobal(Marshal.SizeOf<DeviceInfo>());
+            var ptr = Marshal.AllocHGlobal(Marshal.SizeOf<SdkDeviceInfo>());
 
             try
             {
@@ -93,7 +93,7 @@ namespace Corale.Colore.Native
                 if (ptr == IntPtr.Zero)
                     throw new ColoreException("Device query failed, ptr NULL.");
 
-                var info = Marshal.PtrToStructure<DeviceInfo>(ptr);
+                var info = Marshal.PtrToStructure<SdkDeviceInfo>(ptr);
 
                 return Task.FromResult(info);
             }

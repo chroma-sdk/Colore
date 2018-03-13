@@ -180,7 +180,7 @@ namespace Corale.Colore.Rest
         }
 
         /// <inheritdoc />
-        public Task<DeviceInfo> QueryDeviceAsync(Guid deviceId)
+        public Task<SdkDeviceInfo> QueryDeviceAsync(Guid deviceId)
         {
             throw new NotSupportedException("Chroma REST API does not support device querying");
         }

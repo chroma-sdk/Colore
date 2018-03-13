@@ -304,7 +304,11 @@ namespace Corale.Colore.Implementations
                 throw new ArgumentException("The specified ID does not match any of the valid IDs.", nameof(deviceId));
 
             Log.DebugFormat("Information for {0} requested", deviceId);
-            return await _api.QueryDeviceAsync(deviceId).ConfigureAwait(false);
+
+            var sdkDeviceInfo = await _api.QueryDeviceAsync(deviceId).ConfigureAwait(false);
+            var deviceMetadata = Devices.GetDeviceMetadata(deviceId);
+            var deviceInfo = new DeviceInfo(sdkDeviceInfo, deviceId, deviceMetadata);
+            return deviceInfo;
         }
 
         /// <inheritdoc />
