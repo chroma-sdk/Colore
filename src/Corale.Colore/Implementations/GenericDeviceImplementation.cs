@@ -28,11 +28,10 @@ namespace Corale.Colore.Implementations
     using System;
     using System.Threading.Tasks;
 
-    using Common.Logging;
-
     using Corale.Colore.Api;
     using Corale.Colore.Data;
     using Corale.Colore.Effects.Generic;
+    using Corale.Colore.Logging;
 
     /// <inheritdoc cref="IGenericDevice" />
     /// <inheritdoc cref="DeviceImplementation" />
@@ -44,7 +43,7 @@ namespace Corale.Colore.Implementations
         /// <summary>
         /// Logger instance for this class.
         /// </summary>
-        private static readonly ILog Log = LogManager.GetLogger(typeof(GenericDeviceImplementation));
+        private static readonly ILog Log = LogProvider.For<GenericDeviceImplementation>();
 
         /// <inheritdoc />
         /// <summary>

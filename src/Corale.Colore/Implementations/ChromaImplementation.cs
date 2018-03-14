@@ -31,12 +31,11 @@ namespace Corale.Colore.Implementations
     using System.Reflection;
     using System.Threading.Tasks;
 
-    using Common.Logging;
-
     using Corale.Colore.Api;
     using Corale.Colore.Data;
     using Corale.Colore.Events;
     using Corale.Colore.Helpers;
+    using Corale.Colore.Logging;
 
     using JetBrains.Annotations;
 
@@ -49,7 +48,7 @@ namespace Corale.Colore.Implementations
         /// <summary>
         /// Logger instance for this class.
         /// </summary>
-        private static readonly ILog Log = LogManager.GetLogger(typeof(ChromaImplementation));
+        private static readonly ILog Log = LogProvider.For<ChromaImplementation>();
 
         /// <summary>
         /// Reference to the API instance in use.

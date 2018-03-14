@@ -31,9 +31,8 @@ namespace Corale.Colore.Rest
     using System.Text;
     using System.Threading.Tasks;
 
-    using Common.Logging;
-
     using Corale.Colore.Helpers;
+    using Corale.Colore.Logging;
 
     using Newtonsoft.Json;
 
@@ -46,7 +45,7 @@ namespace Corale.Colore.Rest
         /// <summary>
         /// Logger instance for this class.
         /// </summary>
-        private static readonly ILog Log = LogManager.GetLogger<RestClient>();
+        private static readonly ILog Log = LogProvider.For<RestClient>();
 
         /// <summary>
         /// The underlying <see cref="HttpClient" /> performing all requests.

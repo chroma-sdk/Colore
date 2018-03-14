@@ -29,11 +29,10 @@ namespace Corale.Colore.Implementations
     using System.Collections.Generic;
     using System.Threading.Tasks;
 
-    using Common.Logging;
-
     using Corale.Colore.Api;
     using Corale.Colore.Data;
     using Corale.Colore.Effects.Keyboard;
+    using Corale.Colore.Logging;
 
     using JetBrains.Annotations;
 
@@ -47,7 +46,7 @@ namespace Corale.Colore.Implementations
         /// <summary>
         /// Logger instance for this class.
         /// </summary>
-        private static readonly ILog Log = LogManager.GetLogger(typeof(KeyboardImplementation));
+        private static readonly ILog Log = LogProvider.For<KeyboardImplementation>();
 
         /// <summary>
         /// Grid struct used for the helper methods.
