@@ -194,21 +194,6 @@ namespace Colore.Tests.Effects.Mousepad.Effects
         }
 
         [Test]
-        public void ShouldEqualIdenticalArray()
-        {
-            var effect = new MousepadCustom(Color.Red);
-            var array = new Color[MousepadConstants.MaxLeds];
-
-            for (var i = 0; i < MousepadConstants.MaxLeds; i++)
-                array[i] = Color.Red;
-
-            Assert.True(effect == array);
-            Assert.False(effect != array);
-            Assert.True(effect.Equals(array));
-            Assert.AreEqual(effect, array);
-        }
-
-        [Test]
         public void ShouldNotEqualDifferentArray()
         {
             var effect = new MousepadCustom(Color.Red);

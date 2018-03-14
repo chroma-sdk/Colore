@@ -349,27 +349,6 @@ namespace Colore.Tests.Effects.Mouse.Effects
         }
 
         [Test]
-        public void ShouldEqualIdentical2DArray()
-        {
-            var effect = new MouseCustom(Color.Red);
-
-            var array = new Color[MouseConstants.MaxRows][];
-
-            for (var row = 0; row < MouseConstants.MaxRows; row++)
-            {
-                array[row] = new Color[MouseConstants.MaxColumns];
-
-                for (var column = 0; column < MouseConstants.MaxColumns; column++)
-                    array[row][column] = Color.Red;
-            }
-
-            Assert.True(effect == array);
-            Assert.False(effect != array);
-            Assert.True(effect.Equals(array));
-            Assert.AreEqual(effect, array);
-        }
-
-        [Test]
         public void ShouldNotEqualDifferent2DArray()
         {
             var effect = new MouseCustom(Color.Red);
@@ -418,22 +397,6 @@ namespace Colore.Tests.Effects.Mouse.Effects
         }
 
         [Test]
-        public void ShouldEqualIdentical1DArray()
-        {
-            var grid = new MouseCustom(Color.Red);
-            var arr = new Color[MouseConstants.MaxLeds];
-
-            // Populate the 1D array
-            for (var index = 0; index < MouseConstants.MaxLeds; index++)
-                arr[index] = Color.Red;
-
-            Assert.True(grid == arr);
-            Assert.False(grid != arr);
-            Assert.True(grid.Equals(arr));
-            Assert.AreEqual(grid, arr);
-        }
-
-        [Test]
         public void ShouldNotEqualDifferent1DArray()
         {
             var grid = new MouseCustom(Color.Pink);
@@ -479,8 +442,7 @@ namespace Colore.Tests.Effects.Mouse.Effects
 
             Assert.False(effect == null);
             Assert.True(effect != null);
-            Assert.False(effect.Equals((Color[][])null));
-            Assert.False(effect.Equals((Color[])null));
+            Assert.False(effect.Equals(null));
             Assert.AreNotEqual(effect, null);
         }
 

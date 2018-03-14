@@ -324,26 +324,6 @@ namespace Colore.Tests.Effects.Keypad.Effects
         }
 
         [Test]
-        public void ShouldEqualIdentical2DArray()
-        {
-            var grid = new KeypadCustom(Color.Red);
-            var arr = new Color[KeypadConstants.MaxRows][];
-
-            // Populate the 2D array
-            for (var row = 0; row < KeypadConstants.MaxRows; row++)
-            {
-                arr[row] = new Color[KeypadConstants.MaxColumns];
-                for (var col = 0; col < KeypadConstants.MaxColumns; col++)
-                    arr[row][col] = Color.Red;
-            }
-
-            Assert.True(grid == arr);
-            Assert.False(grid != arr);
-            Assert.True(grid.Equals(arr));
-            Assert.AreEqual(grid, arr);
-        }
-
-        [Test]
         public void ShouldNotEqualDifferent2DArray()
         {
             var grid = new KeypadCustom(Color.Pink);
@@ -386,22 +366,6 @@ namespace Colore.Tests.Effects.Keypad.Effects
             Assert.True(grid != arr);
             Assert.False(grid.Equals(arr));
             Assert.AreNotEqual(grid, arr);
-        }
-
-        [Test]
-        public void ShouldEqualIdentical1DArray()
-        {
-            var grid = new KeypadCustom(Color.Red);
-            var arr = new Color[KeypadConstants.MaxKeys];
-
-            // Populate the 1D array
-            for (var index = 0; index < KeypadConstants.MaxKeys; index++)
-                arr[index] = Color.Red;
-
-            Assert.True(grid == arr);
-            Assert.False(grid != arr);
-            Assert.True(grid.Equals(arr));
-            Assert.AreEqual(grid, arr);
         }
 
         [Test]
