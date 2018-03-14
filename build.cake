@@ -37,8 +37,8 @@ var isWindows = IsRunningOnWindows();
 // SETUP / TEARDOWN
 ///////////////////////////////////////////////////////////////////////////////
 
-var mainProject = "./src/Corale.Colore/Corale.Colore.csproj";
-var testProject = "./src/Corale.Colore.Tests/Corale.Colore.Tests.csproj";
+var mainProject = "./src/Colore/Colore.csproj";
+var testProject = "./src/Colore.Tests/Colore.Tests.csproj";
 var frameworks = new List<string>();
 
 GitVersion version = null;
@@ -193,7 +193,7 @@ Task("Test")
             return;
         }
 
-        var testResults = GetFiles("src/Corale.Colore.Tests/TestResults/*.xml");
+        var testResults = GetFiles("src/Colore.Tests/TestResults/*.xml");
         CopyFiles(testResults, "./artifacts");
     });
 
@@ -203,7 +203,7 @@ Task("Dist")
     {
         foreach (var framework in frameworks)
         {
-            var dir = $"./src/Corale.Colore/bin/{configuration}/{framework}/";
+            var dir = $"./src/Colore/bin/{configuration}/{framework}/";
             var target = $"./artifacts/colore_{version.SemVer}_{framework}_anycpu.zip";
             Information("Zipping {0} to {1}", dir, target);
             Zip(dir, target, $"{dir}**/*.*");
@@ -226,7 +226,7 @@ Task("Publish")
                     .Append($"/p:NuGetVersion={version.NuGetVersionV2}")
             };
 
-            DotNetCorePublish("src/Corale.Colore", settings);
+            DotNetCorePublish("src/Colore", settings);
 
             var dir = $"./publish/{framework}/";
             var target = $"./artifacts/colore_{version.SemVer}_{framework}_full.zip";
