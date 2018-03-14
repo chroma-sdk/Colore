@@ -5878,6 +5878,192 @@ references:
   commentId: Overload:Corale.Colore.IMousepad.SetStaticAsync
   fullName: Corale.Colore.IMousepad.SetStaticAsync
   nameWithType: IMousepad.SetStaticAsync
+- uid: Corale.Colore.Logging
+  name: Corale.Colore.Logging
+  href: api/Corale.Colore.Logging.html
+  commentId: N:Corale.Colore.Logging
+  fullName: Corale.Colore.Logging
+  nameWithType: Corale.Colore.Logging
+- uid: Corale.Colore.Logging.ILogProvider
+  name: ILogProvider
+  href: api/Corale.Colore.Logging.ILogProvider.html
+  commentId: T:Corale.Colore.Logging.ILogProvider
+  fullName: Corale.Colore.Logging.ILogProvider
+  nameWithType: ILogProvider
+- uid: Corale.Colore.Logging.ILogProvider.GetLogger(System.String)
+  name: GetLogger(String)
+  href: api/Corale.Colore.Logging.ILogProvider.html#Corale_Colore_Logging_ILogProvider_GetLogger_System_String_
+  commentId: M:Corale.Colore.Logging.ILogProvider.GetLogger(System.String)
+  fullName: Corale.Colore.Logging.ILogProvider.GetLogger(System.String)
+  nameWithType: ILogProvider.GetLogger(String)
+- uid: Corale.Colore.Logging.ILogProvider.GetLogger*
+  name: GetLogger
+  href: api/Corale.Colore.Logging.ILogProvider.html#Corale_Colore_Logging_ILogProvider_GetLogger_
+  commentId: Overload:Corale.Colore.Logging.ILogProvider.GetLogger
+  fullName: Corale.Colore.Logging.ILogProvider.GetLogger
+  nameWithType: ILogProvider.GetLogger
+- uid: Corale.Colore.Logging.ILogProvider.OpenMappedContext(System.String,System.Object,System.Boolean)
+  name: OpenMappedContext(String, Object, Boolean)
+  href: api/Corale.Colore.Logging.ILogProvider.html#Corale_Colore_Logging_ILogProvider_OpenMappedContext_System_String_System_Object_System_Boolean_
+  commentId: M:Corale.Colore.Logging.ILogProvider.OpenMappedContext(System.String,System.Object,System.Boolean)
+  fullName: Corale.Colore.Logging.ILogProvider.OpenMappedContext(System.String, System.Object, System.Boolean)
+  nameWithType: ILogProvider.OpenMappedContext(String, Object, Boolean)
+- uid: Corale.Colore.Logging.ILogProvider.OpenMappedContext*
+  name: OpenMappedContext
+  href: api/Corale.Colore.Logging.ILogProvider.html#Corale_Colore_Logging_ILogProvider_OpenMappedContext_
+  commentId: Overload:Corale.Colore.Logging.ILogProvider.OpenMappedContext
+  fullName: Corale.Colore.Logging.ILogProvider.OpenMappedContext
+  nameWithType: ILogProvider.OpenMappedContext
+- uid: Corale.Colore.Logging.ILogProvider.OpenNestedContext(System.String)
+  name: OpenNestedContext(String)
+  href: api/Corale.Colore.Logging.ILogProvider.html#Corale_Colore_Logging_ILogProvider_OpenNestedContext_System_String_
+  commentId: M:Corale.Colore.Logging.ILogProvider.OpenNestedContext(System.String)
+  fullName: Corale.Colore.Logging.ILogProvider.OpenNestedContext(System.String)
+  nameWithType: ILogProvider.OpenNestedContext(String)
+- uid: Corale.Colore.Logging.ILogProvider.OpenNestedContext*
+  name: OpenNestedContext
+  href: api/Corale.Colore.Logging.ILogProvider.html#Corale_Colore_Logging_ILogProvider_OpenNestedContext_
+  commentId: Overload:Corale.Colore.Logging.ILogProvider.OpenNestedContext
+  fullName: Corale.Colore.Logging.ILogProvider.OpenNestedContext
+  nameWithType: ILogProvider.OpenNestedContext
+- uid: Corale.Colore.Logging.Logger
+  name: Logger
+  href: api/Corale.Colore.Logging.Logger.html
+  commentId: T:Corale.Colore.Logging.Logger
+  fullName: Corale.Colore.Logging.Logger
+  nameWithType: Logger
+- uid: Corale.Colore.Logging.Logger.#ctor(System.Object,System.IntPtr)
+  name: Logger(Object, IntPtr)
+  href: api/Corale.Colore.Logging.Logger.html#Corale_Colore_Logging_Logger__ctor_System_Object_System_IntPtr_
+  commentId: M:Corale.Colore.Logging.Logger.#ctor(System.Object,System.IntPtr)
+  fullName: Corale.Colore.Logging.Logger.Logger(System.Object, System.IntPtr)
+  nameWithType: Logger.Logger(Object, IntPtr)
+- uid: Corale.Colore.Logging.Logger.#ctor*
+  name: Logger
+  href: api/Corale.Colore.Logging.Logger.html#Corale_Colore_Logging_Logger__ctor_
+  commentId: Overload:Corale.Colore.Logging.Logger.#ctor
+  fullName: Corale.Colore.Logging.Logger.Logger
+  nameWithType: Logger.Logger
+- uid: Corale.Colore.Logging.Logger.BeginInvoke(Corale.Colore.Logging.LogLevel,System.Func{System.String},System.Exception,System.Object[],System.AsyncCallback,System.Object)
+  name: BeginInvoke(LogLevel, Func<String>, Exception, Object[], AsyncCallback, Object)
+  href: api/Corale.Colore.Logging.Logger.html#Corale_Colore_Logging_Logger_BeginInvoke_Corale_Colore_Logging_LogLevel_System_Func_System_String__System_Exception_System_Object___System_AsyncCallback_System_Object_
+  commentId: M:Corale.Colore.Logging.Logger.BeginInvoke(Corale.Colore.Logging.LogLevel,System.Func{System.String},System.Exception,System.Object[],System.AsyncCallback,System.Object)
+  name.vb: BeginInvoke(LogLevel, Func(Of String), Exception, Object(), AsyncCallback, Object)
+  fullName: Corale.Colore.Logging.Logger.BeginInvoke(Corale.Colore.Logging.LogLevel, System.Func<System.String>, System.Exception, System.Object[], System.AsyncCallback, System.Object)
+  fullName.vb: Corale.Colore.Logging.Logger.BeginInvoke(Corale.Colore.Logging.LogLevel, System.Func(Of System.String), System.Exception, System.Object(), System.AsyncCallback, System.Object)
+  nameWithType: Logger.BeginInvoke(LogLevel, Func<String>, Exception, Object[], AsyncCallback, Object)
+  nameWithType.vb: Logger.BeginInvoke(LogLevel, Func(Of String), Exception, Object(), AsyncCallback, Object)
+- uid: Corale.Colore.Logging.Logger.BeginInvoke*
+  name: BeginInvoke
+  href: api/Corale.Colore.Logging.Logger.html#Corale_Colore_Logging_Logger_BeginInvoke_
+  commentId: Overload:Corale.Colore.Logging.Logger.BeginInvoke
+  fullName: Corale.Colore.Logging.Logger.BeginInvoke
+  nameWithType: Logger.BeginInvoke
+- uid: Corale.Colore.Logging.Logger.EndInvoke(System.IAsyncResult)
+  name: EndInvoke(IAsyncResult)
+  href: api/Corale.Colore.Logging.Logger.html#Corale_Colore_Logging_Logger_EndInvoke_System_IAsyncResult_
+  commentId: M:Corale.Colore.Logging.Logger.EndInvoke(System.IAsyncResult)
+  fullName: Corale.Colore.Logging.Logger.EndInvoke(System.IAsyncResult)
+  nameWithType: Logger.EndInvoke(IAsyncResult)
+- uid: Corale.Colore.Logging.Logger.EndInvoke*
+  name: EndInvoke
+  href: api/Corale.Colore.Logging.Logger.html#Corale_Colore_Logging_Logger_EndInvoke_
+  commentId: Overload:Corale.Colore.Logging.Logger.EndInvoke
+  fullName: Corale.Colore.Logging.Logger.EndInvoke
+  nameWithType: Logger.EndInvoke
+- uid: Corale.Colore.Logging.Logger.Invoke(Corale.Colore.Logging.LogLevel,System.Func{System.String},System.Exception,System.Object[])
+  name: Invoke(LogLevel, Func<String>, Exception, Object[])
+  href: api/Corale.Colore.Logging.Logger.html#Corale_Colore_Logging_Logger_Invoke_Corale_Colore_Logging_LogLevel_System_Func_System_String__System_Exception_System_Object___
+  commentId: M:Corale.Colore.Logging.Logger.Invoke(Corale.Colore.Logging.LogLevel,System.Func{System.String},System.Exception,System.Object[])
+  name.vb: Invoke(LogLevel, Func(Of String), Exception, Object())
+  fullName: Corale.Colore.Logging.Logger.Invoke(Corale.Colore.Logging.LogLevel, System.Func<System.String>, System.Exception, System.Object[])
+  fullName.vb: Corale.Colore.Logging.Logger.Invoke(Corale.Colore.Logging.LogLevel, System.Func(Of System.String), System.Exception, System.Object())
+  nameWithType: Logger.Invoke(LogLevel, Func<String>, Exception, Object[])
+  nameWithType.vb: Logger.Invoke(LogLevel, Func(Of String), Exception, Object())
+- uid: Corale.Colore.Logging.Logger.Invoke*
+  name: Invoke
+  href: api/Corale.Colore.Logging.Logger.html#Corale_Colore_Logging_Logger_Invoke_
+  commentId: Overload:Corale.Colore.Logging.Logger.Invoke
+  fullName: Corale.Colore.Logging.Logger.Invoke
+  nameWithType: Logger.Invoke
+- uid: Corale.Colore.Logging.LogLevel
+  name: LogLevel
+  href: api/Corale.Colore.Logging.LogLevel.html
+  commentId: T:Corale.Colore.Logging.LogLevel
+  fullName: Corale.Colore.Logging.LogLevel
+  nameWithType: LogLevel
+- uid: Corale.Colore.Logging.LogLevel.Debug
+  name: Debug
+  href: api/Corale.Colore.Logging.LogLevel.html#Corale_Colore_Logging_LogLevel_Debug
+  commentId: F:Corale.Colore.Logging.LogLevel.Debug
+  fullName: Corale.Colore.Logging.LogLevel.Debug
+  nameWithType: LogLevel.Debug
+- uid: Corale.Colore.Logging.LogLevel.Error
+  name: Error
+  href: api/Corale.Colore.Logging.LogLevel.html#Corale_Colore_Logging_LogLevel_Error
+  commentId: F:Corale.Colore.Logging.LogLevel.Error
+  fullName: Corale.Colore.Logging.LogLevel.Error
+  nameWithType: LogLevel.Error
+- uid: Corale.Colore.Logging.LogLevel.Fatal
+  name: Fatal
+  href: api/Corale.Colore.Logging.LogLevel.html#Corale_Colore_Logging_LogLevel_Fatal
+  commentId: F:Corale.Colore.Logging.LogLevel.Fatal
+  fullName: Corale.Colore.Logging.LogLevel.Fatal
+  nameWithType: LogLevel.Fatal
+- uid: Corale.Colore.Logging.LogLevel.Info
+  name: Info
+  href: api/Corale.Colore.Logging.LogLevel.html#Corale_Colore_Logging_LogLevel_Info
+  commentId: F:Corale.Colore.Logging.LogLevel.Info
+  fullName: Corale.Colore.Logging.LogLevel.Info
+  nameWithType: LogLevel.Info
+- uid: Corale.Colore.Logging.LogLevel.Trace
+  name: Trace
+  href: api/Corale.Colore.Logging.LogLevel.html#Corale_Colore_Logging_LogLevel_Trace
+  commentId: F:Corale.Colore.Logging.LogLevel.Trace
+  fullName: Corale.Colore.Logging.LogLevel.Trace
+  nameWithType: LogLevel.Trace
+- uid: Corale.Colore.Logging.LogLevel.value__
+  name: value__
+  href: api/Corale.Colore.Logging.LogLevel.html#Corale_Colore_Logging_LogLevel_value__
+  commentId: F:Corale.Colore.Logging.LogLevel.value__
+  fullName: Corale.Colore.Logging.LogLevel.value__
+  nameWithType: LogLevel.value__
+- uid: Corale.Colore.Logging.LogLevel.Warn
+  name: Warn
+  href: api/Corale.Colore.Logging.LogLevel.html#Corale_Colore_Logging_LogLevel_Warn
+  commentId: F:Corale.Colore.Logging.LogLevel.Warn
+  fullName: Corale.Colore.Logging.LogLevel.Warn
+  nameWithType: LogLevel.Warn
+- uid: Corale.Colore.Logging.LogProvider
+  name: LogProvider
+  href: api/Corale.Colore.Logging.LogProvider.html
+  commentId: T:Corale.Colore.Logging.LogProvider
+  fullName: Corale.Colore.Logging.LogProvider
+  nameWithType: LogProvider
+- uid: Corale.Colore.Logging.LogProvider.IsDisabled
+  name: IsDisabled
+  href: api/Corale.Colore.Logging.LogProvider.html#Corale_Colore_Logging_LogProvider_IsDisabled
+  commentId: P:Corale.Colore.Logging.LogProvider.IsDisabled
+  fullName: Corale.Colore.Logging.LogProvider.IsDisabled
+  nameWithType: LogProvider.IsDisabled
+- uid: Corale.Colore.Logging.LogProvider.IsDisabled*
+  name: IsDisabled
+  href: api/Corale.Colore.Logging.LogProvider.html#Corale_Colore_Logging_LogProvider_IsDisabled_
+  commentId: Overload:Corale.Colore.Logging.LogProvider.IsDisabled
+  fullName: Corale.Colore.Logging.LogProvider.IsDisabled
+  nameWithType: LogProvider.IsDisabled
+- uid: Corale.Colore.Logging.LogProvider.SetCurrentLogProvider(Corale.Colore.Logging.ILogProvider)
+  name: SetCurrentLogProvider(ILogProvider)
+  href: api/Corale.Colore.Logging.LogProvider.html#Corale_Colore_Logging_LogProvider_SetCurrentLogProvider_Corale_Colore_Logging_ILogProvider_
+  commentId: M:Corale.Colore.Logging.LogProvider.SetCurrentLogProvider(Corale.Colore.Logging.ILogProvider)
+  fullName: Corale.Colore.Logging.LogProvider.SetCurrentLogProvider(Corale.Colore.Logging.ILogProvider)
+  nameWithType: LogProvider.SetCurrentLogProvider(ILogProvider)
+- uid: Corale.Colore.Logging.LogProvider.SetCurrentLogProvider*
+  name: SetCurrentLogProvider
+  href: api/Corale.Colore.Logging.LogProvider.html#Corale_Colore_Logging_LogProvider_SetCurrentLogProvider_
+  commentId: Overload:Corale.Colore.Logging.LogProvider.SetCurrentLogProvider
+  fullName: Corale.Colore.Logging.LogProvider.SetCurrentLogProvider
+  nameWithType: LogProvider.SetCurrentLogProvider
 - uid: Corale.Colore.Native
   name: Corale.Colore.Native
   href: api/Corale.Colore.Native.html

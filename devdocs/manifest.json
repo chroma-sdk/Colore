@@ -860,6 +860,66 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Logging.ILogProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Logging.ILogProvider.html",
+          "hash": "54Kr3eVwex+fYZP4oYJiwQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Logging.LogLevel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Logging.LogLevel.html",
+          "hash": "rg4R9hVxbOTpcBllqlDseg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Logging.LogProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Logging.LogProvider.html",
+          "hash": "S4PGCxF5mTg9WfWNiJrh6Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Logging.Logger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Logging.Logger.html",
+          "hash": "vBWHgBEJ270zIICbq1GHCA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Corale.Colore.Logging.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Corale.Colore.Logging.html",
+          "hash": "V0R9D+PDttJX9MXY/mDHlw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Corale.Colore.Native.NativeCallException.yml",
       "output": {
         ".html": {
@@ -972,7 +1032,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "1u85cA+mjzX8Rt5ULdVyiA=="
+          "hash": "TID+/d5qvR3mczY7WjhXKw=="
         }
       },
       "is_incremental": false,
@@ -984,7 +1044,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/getting-started.html",
-          "hash": "8+3SSis+igI4MtBEqHcDjg=="
+          "hash": "zSTbGmq3MN8YR2r7+M3ZTg=="
         }
       },
       "is_incremental": false,
@@ -1061,6 +1121,14 @@
         "incrementalPhase": "build"
       },
       "processors": {
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        },
         "RestApiDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor RestApiDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
@@ -1071,17 +1139,9 @@
           "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build"
-        },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor ResourceDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build"
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
           "incrementalPhase": "build"
         }
       }
