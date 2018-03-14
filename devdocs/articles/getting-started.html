@@ -84,14 +84,14 @@
 <p>From there you can search online for Packages.
 The NuGet Package manager sadly looks way different depending on the Version of Visual Studio but it should be easy to find Colore.
 Just search for &quot;Colore&quot; and install it.
-After that you should see a Reference being added to &quot;Corale.Colore&quot;.</p>
+After that you should see a Reference being added to &quot;Colore&quot;.</p>
 <h3 id="pre-release-versions">Pre-release versions</h3>
 <p>If you want to test the absolute latest features in Colore, which may not be fully ready for production use yet, you can install pre-release Colore packages from <a href="https://www.myget.org/feed/coralestudios/package/nuget/Colore">our MyGet feed</a>. You can either install a version manually with the commands listed on the page, or add the feed to your NuGet settings: <code>https://www.myget.org/F/coralestudios/api/v3/index.json</code>.</p>
 <p>Make sure to select the MyGet feed when you are browsing packages in the package manager (or select &quot;All&quot; to see packages from all feeds at once), and to check the &quot;Include pre-releases&quot; checkbox. The MyGet feed will also include stable versions of Colore when they are released, so you can use it as the sole source for Colore.</p>
 <h2 id="2-how-to-make-every-device-the-same-color">2. How to make every Device the same Color</h2>
 <p>Now in your Form you can just add a button for example and with a double-click it will take you to the form&#39;s source code and already created an event handler for that button when it is clicked.</p>
-<p>At the top of that file you should now include a <code>using Corale.Colore;</code> otherwise you need to prefix everything with <code>Corale.Colore</code>. I myself like to also add the following to the using statements to make sure I have the correct &quot;Color&quot;. Otherwise it might interfere with <code>System.Drawing</code>:</p>
-<pre><code class="lang-C#">using ColoreColor = Corale.Colore.Data.Color;
+<p>At the top of that file you should now include a <code>using Colore;</code> otherwise you need to prefix everything with <code>Colore</code>. I myself like to also add the following to the using statements to make sure I have the correct &quot;Color&quot;. Otherwise it might interfere with <code>System.Drawing</code>:</p>
+<pre><code class="lang-C#">using ColoreColor = Colore.Data.Color;
 </code></pre><p>Now you change the Event Method like the following:</p>
 <pre><code class="lang-C#">private async void button1_Click(object sender, EventArgs e)
 {
@@ -101,8 +101,8 @@ After that you should see a Reference being added to &quot;Corale.Colore&quot;.<
     await chroma.SetAllAsync(ColoreColor.Red);
 
     // Without the usings it will look like this:
-    // var chroma = await Corale.Colore.ColoreProvider.CreateNativeAsync();
-    // await chroma.SetAllAsync(Corale.Colore.Data.Color.Red);
+    // var chroma = await Colore.ColoreProvider.CreateNativeAsync();
+    // await chroma.SetAllAsync(Colore.Data.Color.Red);
 }
 </code></pre><p>If you then run your application and click the button you will see that all your chroma devices turned Red.</p>
 <h3 id="a-note-on-coloreprovider">A note on <code>ColoreProvider</code></h3>
@@ -128,7 +128,7 @@ manually this way doesn&#39;t always work properly with the SDK, and can sometim
 <p>Chroma SDK does not allow you to access one single device (as far as we know) but you can access Device Types. For example Keyboards, Mouse, Keypads...</p>
 <p>To do that with Colore here is an example for the Keyboard:</p>
 <p>Again this can be done without any using but we consider it easier and more readable. So add the following at the top of the file:</p>
-<pre><code class="lang-C#">using Corale.Colore.Effects.Keyboard;
+<pre><code class="lang-C#">using Colore.Effects.Keyboard;
 </code></pre><p>In some cases it might be helpful to also map it to another name as we did with the ColoreColor, but for now it&#39;s fine.</p>
 <p>Then change your method like this:</p>
 <pre><code class="lang-C#">private async void button1_Click(object sender, EventArgs e)
@@ -140,7 +140,7 @@ manually this way doesn&#39;t always work properly with the SDK, and can sometim
 <p>Now when you run it you will see that the &quot;A&quot; Key will glow Red.
 So it&#39;s pretty easy to use Colore :)</p>
 <p>To set a color on a Mouse for example:
-<code>chroma.Mouse.SetLedAsync(Corale.Colore.Effects.Mouse.Led.Strip1, ColoreColor.Red);</code></p>
+<code>chroma.Mouse.SetLedAsync(Colore.Effects.Mouse.Led.Strip1, ColoreColor.Red);</code></p>
 <p>The following Devices are available as properties on the <code>IChroma</code> instance:</p>
 <ul>
 <li><code>Mousepad</code></li>
@@ -208,9 +208,8 @@ The first int is row and the second is column. Starting with 0! There even are C
 <code>chroma.Keyboard.SetPositionAsync(1, 4, ColoreColor.Red);</code>
 It depends on the device if it&#39;s available or not.</p>
 <h2 id="6-what-about-performance">6. What about performance?</h2>
-<p>Now it gets a bit more advanced and some people might think it&#39;s not actually needed as the SDK is very fast. But I personally love to manage my grids myself. The following example works for every device and if you do an application which does many updates at once I&#39;d recommend it as you can at first set everything before sending it to the Keyboard, Mouse, Mousepad... . As said in point 5 Colore does internally also store a Grid, but everytime you change a Key via SetKey or the index (Keyboard[Key.A]) it sends an update to the Keyboard. That means if you set multiple Keys at once (maybe even update the whole Keyboard) it does many many many requests to the SDK. Better way in my opinion is to set everything in the grid and then update it. That&#39;s what the following code does. As all Customs for the different types are called &quot;Custom&quot; it&#39;s easier to map them via a using at the top:</p>
-<pre><code class="lang-C#">using MousepadCustom = Corale.Colore.Effects.Mousepad.Custom;
-</code></pre><p>Now the code in your method:</p>
+<p>Now it gets a bit more advanced and some people might think it&#39;s not actually needed as the SDK is very fast. But I personally love to manage my grids myself. The following example works for every device and if you do an application which does many updates at once I&#39;d recommend it as you can at first set everything before sending it to the Keyboard, Mouse, Mousepad... . As said in point 5 Colore does internally also store a Grid, but everytime you change a Key via SetKey or the index (Keyboard[Key.A]) it sends an update to the Keyboard. That means if you set multiple Keys at once (maybe even update the whole Keyboard) it does many many many requests to the SDK. Better way in my opinion is to set everything in the grid and then update it. That&#39;s what the following code does.</p>
+<p>Now the code in your method:</p>
 <pre><code class="lang-C#">private async void button1_Click(object sender, EventArgs e)
 {
     var chroma = await ColoreProvider.CreateNativeAsync();
@@ -223,8 +222,6 @@ It depends on the device if it&#39;s available or not.</p>
     // Apply the Grid to the Keyboard
     await chroma.Mousepad.SetCustomAsync(customGrid);
 }
-</code></pre><p>The using helps if you now want to also use a Keyboard Custom for example:</p>
-<pre><code class="lang-C#">using KeyboardCustom = Corale.Colore.Effects.Keyboard.Custom;
 </code></pre><pre><code class="lang-C#">private async void button1_Click(object sender, EventArgs e)
 {
     var chroma = await ColoreProvider.CreateNativeAsync();
