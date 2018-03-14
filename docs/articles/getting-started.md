@@ -188,10 +188,7 @@ The same thing can be archived with `SetPosition`:
 It depends on the device if it's available or not.
 
 ## 6. What about performance?
-Now it gets a bit more advanced and some people might think it's not actually needed as the SDK is very fast. But I personally love to manage my grids myself. The following example works for every device and if you do an application which does many updates at once I'd recommend it as you can at first set everything before sending it to the Keyboard, Mouse, Mousepad... . As said in point 5 Colore does internally also store a Grid, but everytime you change a Key via SetKey or the index (Keyboard[Key.A]) it sends an update to the Keyboard. That means if you set multiple Keys at once (maybe even update the whole Keyboard) it does many many many requests to the SDK. Better way in my opinion is to set everything in the grid and then update it. That's what the following code does. As all Customs for the different types are called "Custom" it's easier to map them via a using at the top:
-``` C#
-using MousepadCustom = Colore.Effects.Mousepad.Custom;
-```
+Now it gets a bit more advanced and some people might think it's not actually needed as the SDK is very fast. But I personally love to manage my grids myself. The following example works for every device and if you do an application which does many updates at once I'd recommend it as you can at first set everything before sending it to the Keyboard, Mouse, Mousepad... . As said in point 5 Colore does internally also store a Grid, but everytime you change a Key via SetKey or the index (Keyboard[Key.A]) it sends an update to the Keyboard. That means if you set multiple Keys at once (maybe even update the whole Keyboard) it does many many many requests to the SDK. Better way in my opinion is to set everything in the grid and then update it. That's what the following code does.
 
 Now the code in your method:
 ``` C#
@@ -207,11 +204,6 @@ private async void button1_Click(object sender, EventArgs e)
     // Apply the Grid to the Keyboard
     await chroma.Mousepad.SetCustomAsync(customGrid);
 }
-```
-
-The using helps if you now want to also use a Keyboard Custom for example:
-``` C#
-using KeyboardCustom = Colore.Effects.Keyboard.Custom;
 ```
 
 ``` C#
