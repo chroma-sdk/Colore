@@ -29,11 +29,10 @@ namespace Corale.Colore.Rest
     using System.Threading;
     using System.Threading.Tasks;
 
-    using Common.Logging;
-
     using Corale.Colore.Api;
     using Corale.Colore.Data;
     using Corale.Colore.Effects.Generic;
+    using Corale.Colore.Logging;
     using Corale.Colore.Rest.Data;
 
     /// <inheritdoc cref="IChromaApi" />
@@ -60,7 +59,7 @@ namespace Corale.Colore.Rest
         /// <summary>
         /// Logger instance for this class.
         /// </summary>
-        private static readonly ILog Log = LogManager.GetLogger<RestApi>();
+        private static readonly ILog Log = LogProvider.For<RestApi>();
 
         /// <summary>
         /// Underlying <see cref="IRestClient" /> used for API calls.

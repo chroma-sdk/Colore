@@ -28,11 +28,10 @@ namespace Corale.Colore.Implementations
     using System;
     using System.Threading.Tasks;
 
-    using Common.Logging;
-
     using Corale.Colore.Api;
     using Corale.Colore.Data;
     using Corale.Colore.Effects.Headset;
+    using Corale.Colore.Logging;
 
     /// <inheritdoc cref="IHeadset" />
     /// <inheritdoc cref="DeviceImplementation" />
@@ -44,7 +43,7 @@ namespace Corale.Colore.Implementations
         /// <summary>
         /// Loggers instance for this class.
         /// </summary>
-        private static readonly ILog Log = LogManager.GetLogger(typeof(HeadsetImplementation));
+        private static readonly ILog Log = LogProvider.For<HeadsetImplementation>();
 
         /// <summary>
         /// Internal <see cref="Custom" /> struct used for effects.

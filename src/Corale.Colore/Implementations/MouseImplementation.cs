@@ -28,11 +28,10 @@ namespace Corale.Colore.Implementations
     using System;
     using System.Threading.Tasks;
 
-    using Common.Logging;
-
     using Corale.Colore.Api;
     using Corale.Colore.Data;
     using Corale.Colore.Effects.Mouse;
+    using Corale.Colore.Logging;
 
     using JetBrains.Annotations;
 
@@ -47,7 +46,7 @@ namespace Corale.Colore.Implementations
         /// <summary>
         /// Logger instance for this class.
         /// </summary>
-        private static readonly ILog Log = LogManager.GetLogger(typeof(MouseImplementation));
+        private static readonly ILog Log = LogProvider.For<MouseImplementation>();
 
         /// <summary>
         /// Internal instance of a <see cref="Custom" /> struct.

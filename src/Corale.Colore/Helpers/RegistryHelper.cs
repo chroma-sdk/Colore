@@ -28,9 +28,8 @@ namespace Corale.Colore.Helpers
     using System;
     using System.Security;
 
-    using Common.Logging;
-
     using Corale.Colore.Data;
+    using Corale.Colore.Logging;
 
     using Microsoft.Win32;
 
@@ -42,7 +41,7 @@ namespace Corale.Colore.Helpers
         /// <summary>
         /// Logger instance for this class.
         /// </summary>
-        private static readonly ILog Log = LogManager.GetLogger(typeof(RegistryHelper));
+        private static readonly ILog Log = LogProvider.GetLogger(typeof(RegistryHelper));
 
         /// <summary>
         /// The path to the Razer Chroma SDK registry key.

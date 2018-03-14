@@ -28,11 +28,10 @@ namespace Corale.Colore.Implementations
     using System;
     using System.Threading.Tasks;
 
-    using Common.Logging;
-
     using Corale.Colore.Api;
     using Corale.Colore.Data;
     using Corale.Colore.Effects.Keypad;
+    using Corale.Colore.Logging;
 
     /// <inheritdoc cref="IKeypad" />
     /// <inheritdoc cref="DeviceImplementation" />
@@ -44,7 +43,7 @@ namespace Corale.Colore.Implementations
         /// <summary>
         /// Logger instance for this class.
         /// </summary>
-        private static readonly ILog Log = LogManager.GetLogger(typeof(KeypadImplementation));
+        private static readonly ILog Log = LogProvider.For<KeypadImplementation>();
 
         /// <summary>
         /// Internal instance of a <see cref="Custom" /> struct used for

@@ -28,11 +28,10 @@ namespace Corale.Colore.Implementations
     using System;
     using System.Threading.Tasks;
 
-    using Common.Logging;
-
     using Corale.Colore.Api;
     using Corale.Colore.Data;
     using Corale.Colore.Effects.Mousepad;
+    using Corale.Colore.Logging;
 
     /// <inheritdoc cref="IMousepad" />
     /// <inheritdoc cref="DeviceImplementation" />
@@ -44,7 +43,7 @@ namespace Corale.Colore.Implementations
         /// <summary>
         /// Logger instance for this class.
         /// </summary>
-        private static readonly ILog Log = LogManager.GetLogger(typeof(MousepadImplementation));
+        private static readonly ILog Log = LogProvider.For<MousepadImplementation>();
 
         /// <summary>
         /// Internal <see cref="Custom" /> struct used for effects.

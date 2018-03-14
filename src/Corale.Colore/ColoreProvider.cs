@@ -28,11 +28,10 @@ namespace Corale.Colore
     using System;
     using System.Threading.Tasks;
 
-    using Common.Logging;
-
     using Corale.Colore.Api;
     using Corale.Colore.Data;
     using Corale.Colore.Implementations;
+    using Corale.Colore.Logging;
     using Corale.Colore.Native;
     using Corale.Colore.Rest;
 
@@ -47,7 +46,7 @@ namespace Corale.Colore
         /// <summary>
         /// Logger instance for this class.
         /// </summary>
-        private static readonly ILog Log = LogManager.GetLogger(typeof(ColoreProvider));
+        private static readonly ILog Log = LogProvider.GetLogger(typeof(ColoreProvider));
 
         /// <summary>
         /// Keeps track of the currently initialized <see cref="IChroma" /> instance.

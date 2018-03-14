@@ -29,12 +29,11 @@ namespace Corale.Colore.Native
     using System.Runtime.InteropServices;
     using System.Threading.Tasks;
 
-    using Common.Logging;
-
     using Corale.Colore.Api;
     using Corale.Colore.Data;
     using Corale.Colore.Effects.Generic;
     using Corale.Colore.Helpers;
+    using Corale.Colore.Logging;
 
     /// <inheritdoc />
     /// <summary>
@@ -45,7 +44,7 @@ namespace Corale.Colore.Native
         /// <summary>
         /// Logger instance for this class.
         /// </summary>
-        private static readonly ILog Log = LogManager.GetLogger(typeof(NativeApi));
+        private static readonly ILog Log = LogProvider.GetLogger(typeof(NativeApi));
 
         /// <inheritdoc />
         /// <summary>
