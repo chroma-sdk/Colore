@@ -499,6 +499,7 @@ namespace Corale.Colore.Logging
         /// </summary>
         /// <param name="key">A key.</param>
         /// <param name="value">A value.</param>
+        /// <param name="destructure">Destructure context.</param>
         /// <returns>A disposable that when disposed removes the map from the context.</returns>
         IDisposable OpenMappedContext(string key, object value, bool destructure = false);
     }
@@ -664,6 +665,7 @@ namespace Corale.Colore.Logging
         /// </summary>
         /// <param name="key">A key.</param>
         /// <param name="value">A value.</param>
+        /// <param name="destructure">Destructure context.</param>
         /// <returns>An <see cref="IDisposable"/> that closes context when disposed.</returns>
         [SuppressMessage("Microsoft.Naming", "CA2204:Literals should be spelled correctly", MessageId = "SetCurrentLogProvider")]
 #if LIBLOG_PUBLIC
@@ -780,7 +782,9 @@ namespace Corale.Colore.Logging
         private readonly Func<bool> _getIsDisabled;
         internal const string FailedToGenerateLogMessage = "Failed to generate log message";
 
+#if !LIBLOG_PORTABLE
         Func<string> _lastExtensionMethod;
+#endif
 
         internal LoggerExecutionWrapper(Logger logger, Func<bool> getIsDisabled = null)
         {
@@ -861,7 +865,7 @@ namespace Corale.Colore.Logging
         }
     }
 #endif
-}
+    }
 
 #if LIBLOG_PROVIDERS_ONLY
 namespace Corale.Colore.LibLog.LogProviders
