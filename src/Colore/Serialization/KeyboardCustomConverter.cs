@@ -35,9 +35,9 @@ namespace Colore.Serialization
 
     /// <inheritdoc />
     /// <summary>
-    /// Converts keyboard <see cref="Custom" /> objects to JSON.
+    /// Converts keyboard <see cref="KeyboardCustom" /> objects to JSON.
     /// </summary>
-    /// <remarks>Does not support converting JSON into <see cref="Custom" /> objects.</remarks>
+    /// <remarks>Does not support converting JSON into <see cref="KeyboardCustom" /> objects.</remarks>
     [SuppressMessage(
         "Microsoft.Performance",
         "CA1812:AvoidUninstantiatedInternalClasses",
@@ -45,17 +45,17 @@ namespace Colore.Serialization
     internal sealed class KeyboardCustomConverter : JsonConverter
     {
         /// <inheritdoc />
-        /// <summary>Writes the JSON representation of a keyboard <see cref="Custom" /> object.</summary>
+        /// <summary>Writes the JSON representation of a keyboard <see cref="KeyboardCustom" /> object.</summary>
         /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
-        /// <param name="value">The <see cref="Custom" /> value.</param>
+        /// <param name="value">The <see cref="KeyboardCustom" /> value.</param>
         /// <param name="serializer">The calling serializer.</param>
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            var effect = (Custom)value;
+            var effect = (KeyboardCustom)value;
 #pragma warning disable SA1008 // Opening parenthesis must be spaced correctly
             var (colors, keys) = effect.ToMultiArrays();
 #pragma warning restore SA1008 // Opening parenthesis must be spaced correctly
-            var data = new EffectData(Effect.CustomKey, new { color = colors, key = keys });
+            var data = new EffectData(KeyboardEffect.CustomKey, new { color = colors, key = keys });
             serializer.Serialize(writer, data);
         }
 
@@ -70,6 +70,6 @@ namespace Colore.Serialization
         }
 
         /// <inheritdoc />
-        public override bool CanConvert(Type objectType) => objectType == typeof(Custom);
+        public override bool CanConvert(Type objectType) => objectType == typeof(KeyboardCustom);
     }
 }

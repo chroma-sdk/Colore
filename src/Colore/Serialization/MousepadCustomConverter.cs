@@ -35,9 +35,9 @@ namespace Colore.Serialization
 
     /// <inheritdoc />
     /// <summary>
-    /// Converts mousepad <see cref="Custom" /> objects to JSON.
+    /// Converts mousepad <see cref="MousepadCustom" /> objects to JSON.
     /// </summary>
-    /// <remarks>Does not support converting JSON into <see cref="Custom" /> objects.</remarks>
+    /// <remarks>Does not support converting JSON into <see cref="MousepadCustom" /> objects.</remarks>
     [SuppressMessage(
         "Microsoft.Performance",
         "CA1812:AvoidUninstantiatedInternalClasses",
@@ -45,14 +45,14 @@ namespace Colore.Serialization
     internal sealed class MousepadCustomConverter : JsonConverter
     {
         /// <inheritdoc />
-        /// <summary>Writes the JSON representation of a mousepad <see cref="Custom" /> object.</summary>
+        /// <summary>Writes the JSON representation of a mousepad <see cref="MousepadCustom" /> object.</summary>
         /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
-        /// <param name="value">The <see cref="Custom" /> value.</param>
+        /// <param name="value">The <see cref="MousepadCustom" /> value.</param>
         /// <param name="serializer">The calling serializer.</param>
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            var effect = (Custom)value;
-            var data = new EffectData(Effect.Custom, effect.Colors);
+            var effect = (MousepadCustom)value;
+            var data = new EffectData(MousepadEffect.Custom, effect.Colors);
             serializer.Serialize(writer, data);
         }
 
@@ -67,6 +67,6 @@ namespace Colore.Serialization
         }
 
         /// <inheritdoc />
-        public override bool CanConvert(Type objectType) => objectType == typeof(Custom);
+        public override bool CanConvert(Type objectType) => objectType == typeof(MousepadCustom);
     }
 }

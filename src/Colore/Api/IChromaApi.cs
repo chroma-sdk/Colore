@@ -98,7 +98,7 @@ namespace Colore.Api
         /// </summary>
         /// <param name="effect">The type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        Task<Guid> CreateKeyboardEffectAsync(Effects.Keyboard.Effect effect);
+        Task<Guid> CreateKeyboardEffectAsync(Effects.Keyboard.KeyboardEffect effect);
 
         /// <summary>
         /// Creates a new keyboard effect with the specified effect data.
@@ -107,14 +107,14 @@ namespace Colore.Api
         /// <param name="effect">The type of effect to create.</param>
         /// <param name="data">The effect structure parameter.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        Task<Guid> CreateKeyboardEffectAsync<T>(Effects.Keyboard.Effect effect, T data) where T : struct;
+        Task<Guid> CreateKeyboardEffectAsync<T>(Effects.Keyboard.KeyboardEffect effect, T data) where T : struct;
 
         /// <summary>
         /// Creates a new mouse effect without any effect data.
         /// </summary>
         /// <param name="effect">The type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        Task<Guid> CreateMouseEffectAsync(Effects.Mouse.Effect effect);
+        Task<Guid> CreateMouseEffectAsync(Effects.Mouse.MouseEffect effect);
 
         /// <summary>
         /// Creates a new mouse effect with the specified effect data.
@@ -123,14 +123,14 @@ namespace Colore.Api
         /// <param name="effect">The type of effect to create.</param>
         /// <param name="data">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        Task<Guid> CreateMouseEffectAsync<T>(Effects.Mouse.Effect effect, T data) where T : struct;
+        Task<Guid> CreateMouseEffectAsync<T>(Effects.Mouse.MouseEffect effect, T data) where T : struct;
 
         /// <summary>
         /// Creates a new headset effect without any effect data.
         /// </summary>
         /// <param name="effect">The type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        Task<Guid> CreateHeadsetEffectAsync(Effects.Headset.Effect effect);
+        Task<Guid> CreateHeadsetEffectAsync(Effects.Headset.HeadsetEffect effect);
 
         /// <summary>
         /// Creates a new headset effect with the specified effect data.
@@ -139,14 +139,14 @@ namespace Colore.Api
         /// <param name="effect">The type of effect to create.</param>
         /// <param name="data">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        Task<Guid> CreateHeadsetEffectAsync<T>(Effects.Headset.Effect effect, T data) where T : struct;
+        Task<Guid> CreateHeadsetEffectAsync<T>(Effects.Headset.HeadsetEffect effect, T data) where T : struct;
 
         /// <summary>
         /// Creates a new mousepad effect without any effect data.
         /// </summary>
         /// <param name="effect">The type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        Task<Guid> CreateMousepadEffectAsync(Effects.Mousepad.Effect effect);
+        Task<Guid> CreateMousepadEffectAsync(Effects.Mousepad.MousepadEffect effect);
 
         /// <summary>
         /// Creates a new mousepad effect with the specified effect data.
@@ -155,14 +155,14 @@ namespace Colore.Api
         /// <param name="effect">The type of effect to create.</param>
         /// <param name="data">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        Task<Guid> CreateMousepadEffectAsync<T>(Effects.Mousepad.Effect effect, T data) where T : struct;
+        Task<Guid> CreateMousepadEffectAsync<T>(Effects.Mousepad.MousepadEffect effect, T data) where T : struct;
 
         /// <summary>
         /// Creates a new keypad effect without any effect data.
         /// </summary>
         /// <param name="effect">THe type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        Task<Guid> CreateKeypadEffectAsync(Effects.Keypad.Effect effect);
+        Task<Guid> CreateKeypadEffectAsync(Effects.Keypad.KeypadEffect effect);
 
         /// <summary>
         /// Creates a new keypad effect with the specified effect data.
@@ -171,14 +171,14 @@ namespace Colore.Api
         /// <param name="effect">The type of effect to create.</param>
         /// <param name="data">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        Task<Guid> CreateKeypadEffectAsync<T>(Effects.Keypad.Effect effect, T data) where T : struct;
+        Task<Guid> CreateKeypadEffectAsync<T>(Effects.Keypad.KeypadEffect effect, T data) where T : struct;
 
         /// <summary>
         /// Creates a new Chroma Link effect without any effect data.
         /// </summary>
         /// <param name="effect">The type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        Task<Guid> CreateChromaLinkEffectAsync(Effects.ChromaLink.Effect effect);
+        Task<Guid> CreateChromaLinkEffectAsync(Effects.ChromaLink.ChromaLinkEffect effect);
 
         /// <summary>
         /// Creates a new Chroma Link effect with the specified effect data.
@@ -187,7 +187,7 @@ namespace Colore.Api
         /// <param name="effect">The type of effect to create.</param>
         /// <param name="data">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        Task<Guid> CreateChromaLinkEffectAsync<T>(Effects.ChromaLink.Effect effect, T data) where T : struct;
+        Task<Guid> CreateChromaLinkEffectAsync<T>(Effects.ChromaLink.ChromaLinkEffect effect, T data) where T : struct;
 
         /// <summary>
         /// Registers for Chroma SDK notifications.

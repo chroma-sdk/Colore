@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Custom.cs" company="Corale">
+// <copyright file="MouseCustom.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -43,7 +43,7 @@ namespace Colore.Effects.Mouse
     /// </summary>
     [JsonConverter(typeof(MouseCustomConverter))]
     [StructLayout(LayoutKind.Sequential)]
-    public struct Custom : IEquatable<Custom>, IEquatable<Color[][]>, IEquatable<Color[]>
+    public struct MouseCustom : IEquatable<MouseCustom>
     {
         /// <summary>
         /// Color definitions for each led on the mouse.
@@ -57,11 +57,11 @@ namespace Colore.Effects.Mouse
         private readonly Color[] _colors;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Custom" /> struct.
+        /// Initializes a new instance of the <see cref="MouseCustom" /> struct.
         /// </summary>
         /// <param name="colors">The colors to use.</param>
         /// <exception cref="ArgumentException">Thrown if the colors array supplied is of an incorrect size.</exception>
-        public Custom(Color[][] colors)
+        public MouseCustom(Color[][] colors)
         {
             var rows = colors.GetLength(0);
 
@@ -89,11 +89,11 @@ namespace Colore.Effects.Mouse
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Custom" /> struct.
+        /// Initializes a new instance of the <see cref="MouseCustom" /> struct.
         /// </summary>
         /// <param name="colors">The colors to use.</param>
         /// <exception cref="ArgumentException">Thrown if the colors array supplied is of an invalid size.</exception>
-        public Custom(IList<Color> colors)
+        public MouseCustom(IList<Color> colors)
         {
             if (colors.Count != MouseConstants.MaxLeds)
             {
@@ -109,11 +109,11 @@ namespace Colore.Effects.Mouse
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Custom" /> struct
+        /// Initializes a new instance of the <see cref="MouseCustom" /> struct
         /// with every position set to a specific color.
         /// </summary>
         /// <param name="color">The <see cref="Color" /> to set each position to.</param>
-        public Custom(Color color)
+        public MouseCustom(Color color)
         {
             _colors = new Color[MouseConstants.MaxLeds];
 
@@ -123,17 +123,17 @@ namespace Colore.Effects.Mouse
 
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="Custom" /> struct
+        /// Initializes a new instance of the <see cref="MouseCustom" /> struct
         /// with the colors copied from another struct of the same type.
         /// </summary>
-        /// <param name="other">The <see cref="Custom" /> struct to copy data from.</param>
-        public Custom(Custom other)
+        /// <param name="other">The <see cref="MouseCustom" /> struct to copy data from.</param>
+        public MouseCustom(MouseCustom other)
             : this(other._colors)
         {
         }
 
         /// <summary>
-        /// Gets or sets cells in the <see cref="Custom" />.
+        /// Gets or sets cells in the <see cref="MouseCustom" />.
         /// </summary>
         /// <param name="row">Row to access, zero indexed.</param>
         /// <param name="column">Column to access, zero indexed.</param>
@@ -224,7 +224,7 @@ namespace Colore.Effects.Mouse
         }
 
         /// <summary>
-        /// Gets or sets the color for a specific LED in the <see cref="Custom" />.
+        /// Gets or sets the color for a specific LED in the <see cref="MouseCustom" />.
         /// </summary>
         /// <param name="led">The <see cref="GridLed" /> to access.</param>
         /// <returns>The <see cref="Color" /> for the specified led.</returns>
@@ -247,38 +247,38 @@ namespace Colore.Effects.Mouse
         }
 
         /// <summary>
-        /// Compares an instance of <see cref="Custom" /> with
+        /// Compares an instance of <see cref="MouseCustom" /> with
         /// another object for equality.
         /// </summary>
-        /// <param name="left">The left operand, an instance of <see cref="Custom" />.</param>
+        /// <param name="left">The left operand, an instance of <see cref="MouseCustom" />.</param>
         /// <param name="right">The right operand, any type of object.</param>
         /// <returns><c>true</c> if the two objects are equal, otherwise <c>false</c>.</returns>
-        public static bool operator ==(Custom left, object right)
+        public static bool operator ==(MouseCustom left, object right)
         {
             return left.Equals(right);
         }
 
         /// <summary>
-        /// Compares an instance of <see cref="Custom" /> with
+        /// Compares an instance of <see cref="MouseCustom" /> with
         /// another object for inequality.
         /// </summary>
-        /// <param name="left">The left operand, an instance of <see cref="Custom" />.</param>
+        /// <param name="left">The left operand, an instance of <see cref="MouseCustom" />.</param>
         /// <param name="right">The right operand, any type of object.</param>
         /// <returns><c>true</c> if the two objects are not equal, otherwise <c>false</c>.</returns>
-        public static bool operator !=(Custom left, object right)
+        public static bool operator !=(MouseCustom left, object right)
         {
             return !left.Equals(right);
         }
 
         /// <summary>
-        /// Creates a new empty <see cref="Custom" /> struct.
+        /// Creates a new empty <see cref="MouseCustom" /> struct.
         /// </summary>
-        /// <returns>An instance of <see cref="Custom" />
+        /// <returns>An instance of <see cref="MouseCustom" />
         /// filled with the color black.</returns>
         [PublicAPI]
-        public static Custom Create()
+        public static MouseCustom Create()
         {
-            return new Custom(Color.Black);
+            return new MouseCustom(Color.Black);
         }
 
         /// <summary>
@@ -286,9 +286,9 @@ namespace Colore.Effects.Mouse
         /// </summary>
         /// <returns>A copy of this struct.</returns>
         [PublicAPI]
-        public Custom Clone()
+        public MouseCustom Clone()
         {
-            return new Custom(this);
+            return new MouseCustom(this);
         }
 
         /// <summary>
@@ -321,31 +321,19 @@ namespace Colore.Effects.Mouse
         /// <param name="obj">Another object to compare to. </param>
         public override bool Equals(object obj)
         {
-            if (ReferenceEquals(obj, null))
-                return false;
-
-            switch (obj)
-            {
-                case Custom custom:
-                    return Equals(custom);
-
-                case Color[][] arr2D:
-                    return Equals(arr2D);
-            }
-
-            return obj is Color[] arr1D && Equals(arr1D);
+            return !(obj is null) && obj is MouseCustom custom && Equals(custom);
         }
 
         /// <inheritdoc />
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
         /// </summary>
-        /// <param name="other">A <see cref="Custom" /> to compare with this object.</param>
+        /// <param name="other">A <see cref="MouseCustom" /> to compare with this object.</param>
         /// <returns>
         /// <c>true</c> if the current object is equal to the <paramref name="other" /> parameter;
         /// otherwise, <c>false</c>.
         /// </returns>
-        public bool Equals(Custom other)
+        public bool Equals(MouseCustom other)
         {
             for (var row = 0; row < MouseConstants.MaxRows; row++)
             {
@@ -354,62 +342,6 @@ namespace Colore.Effects.Mouse
                     if (this[row, col] != other[row, col])
                         return false;
                 }
-            }
-
-            return true;
-        }
-
-        /// <inheritdoc />
-        /// <summary>
-        /// Indicates whether the current object is equal to an instance of
-        /// a 2-dimensional array of <see cref="Color" />.
-        /// </summary>
-        /// <param name="other">
-        /// A 2-dimensional array of <see cref="Color" /> to compare with this object.
-        /// </param>
-        /// <returns>
-        /// <c>true</c> if the <paramref name="other" /> object has the same
-        /// number of rows and columns, and contain matching colors; otherwise, <c>false</c>.
-        /// </returns>
-        public bool Equals(Color[][] other)
-        {
-            if (other == null || other.GetLength(0) != MouseConstants.MaxRows)
-                return false;
-
-            for (var row = 0; row < MouseConstants.MaxRows; row++)
-            {
-                if (other[row].Length != MouseConstants.MaxColumns)
-                    return false;
-
-                for (var col = 0; col < MouseConstants.MaxColumns; col++)
-                {
-                    if (this[row, col] != other[row][col])
-                        return false;
-                }
-            }
-
-            return true;
-        }
-
-        /// <inheritdoc />
-        /// <summary>
-        /// Indicates whether the current object is equal to an instance of
-        /// an array of <see cref="Color" />.
-        /// </summary>
-        /// <param name="other">An array of <see cref="Color" /> to compare with this object.</param>
-        /// <returns>
-        /// <c>true</c> if the <paramref name="other" /> object has the same
-        /// number of elements, and contain matching colors; otherwise, <c>false</c>.
-        /// </returns>
-        public bool Equals(Color[] other)
-        {
-            if (other == null || other.Length != MouseConstants.MaxLeds)
-                return false;
-
-            for (var index = 0; index < MouseConstants.MaxColumns; index++)
-            {
-                if (this[index] != other[index])
-                    return false;
             }
 
             return true;

@@ -50,26 +50,26 @@ namespace Colore
         /// <summary>
         /// Sets an effect on the headset that doesn't
         /// take any parameters, currently only valid
-        /// for the <see cref="Effect.None" /> effect.
+        /// for the <see cref="HeadsetEffect.None" /> effect.
         /// </summary>
         /// <param name="effect">The type of effect to set.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetEffectAsync(Effect effect);
+        Task<Guid> SetEffectAsync(HeadsetEffect effect);
 
         /// <summary>
         /// Sets a new static effect on the headset.
         /// </summary>
         /// <param name="effect">
-        /// An instance of the <see cref="Static" /> struct
+        /// An instance of the <see cref="HeadsetStatic" /> struct
         /// describing the effect.
         /// </param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetStaticAsync(Static effect);
+        Task<Guid> SetStaticAsync(HeadsetStatic effect);
 
         /// <summary>
-        /// Sets a new <see cref="Static" /> effect on
+        /// Sets a new <see cref="HeadsetStatic" /> effect on
         /// the headset using the specified <see cref="Color" />.
         /// </summary>
         /// <param name="color"><see cref="Color" /> of the effect.</param>
@@ -78,14 +78,14 @@ namespace Colore
         Task<Guid> SetStaticAsync(Color color);
 
         /// <summary>
-        /// Sets a new <see cref="Custom" /> effect on the headset.
+        /// Sets a new <see cref="HeadsetCustom" /> effect on the headset.
         /// </summary>
         /// <param name="effect">
-        /// An instance of the <see cref="Custom" /> struct
+        /// An instance of the <see cref="HeadsetCustom" /> struct
         /// describing the effect.
         /// </param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetCustomAsync(Custom effect);
+        Task<Guid> SetCustomAsync(HeadsetCustom effect);
     }
 }

@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Static.cs" company="Corale">
+// <copyright file="ChromaLinkStatic.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -25,7 +25,7 @@
 
 #pragma warning disable CA1051 // Do not declare visible instance fields
 
-namespace Colore.Effects.Mouse
+namespace Colore.Effects.ChromaLink
 {
     using System;
     using System.Runtime.InteropServices;
@@ -39,55 +39,45 @@ namespace Colore.Effects.Mouse
 
     /// <inheritdoc cref="IEquatable{T}" />
     /// <summary>
-    /// Describes the static effect type.
+    /// Static color effect.
     /// </summary>
-    [JsonConverter(typeof(MouseStaticConverter))]
+    [JsonConverter(typeof(ChromaLinkStaticConverter))]
     [StructLayout(LayoutKind.Sequential)]
-#pragma warning disable CA1716 // Identifiers should not match keywords
-    public struct Static : IEquatable<Static>
-#pragma warning restore CA1716 // Identifiers should not match keywords
+    public struct ChromaLinkStatic : IEquatable<ChromaLinkStatic>
     {
         /// <summary>
-        /// The LED on which to apply the color.
-        /// </summary>
-        [UsedImplicitly]
-        public readonly Led Led;
-
-        /// <summary>
-        /// The color to apply.
+        /// Color to use.
         /// </summary>
         [UsedImplicitly]
         public readonly Color Color;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Static" /> struct.
+        /// Initializes a new instance of the <see cref="ChromaLinkStatic" /> struct.
         /// </summary>
-        /// <param name="led">The <see cref="Led" /> on which to apply the color.</param>
-        /// <param name="color">The <see cref="Color" /> to set.</param>
-        public Static(Led led, Color color)
+        /// <param name="color">Color to set.</param>
+        public ChromaLinkStatic(Color color)
         {
-            Led = led;
             Color = color;
         }
 
         /// <summary>
-        /// Compares an instance of <see cref="Static" /> for equality with another <see cref="Static" /> struct.
+        /// Checks an instance of <see cref="ChromaLinkStatic" /> for equality with another <see cref="ChromaLinkStatic" /> instance.
         /// </summary>
         /// <param name="left">Left operand.</param>
         /// <param name="right">Right operand.</param>
         /// <returns><c>true</c> if the two instances are equal, otherwise <c>false</c>.</returns>
-        public static bool operator ==(Static left, Static right)
+        public static bool operator ==(ChromaLinkStatic left, ChromaLinkStatic right)
         {
             return left.Equals(right);
         }
 
         /// <summary>
-        /// Compares an instance of <see cref="Static" /> for inequality with another <see cref="Static" /> struct.
+        /// Checks an instance of <see cref="ChromaLinkStatic" /> for inequality with another <see cref="ChromaLinkStatic" /> instance.
         /// </summary>
         /// <param name="left">Left operand.</param>
         /// <param name="right">Right operand.</param>
         /// <returns><c>true</c> if the two instances are not equal, otherwise <c>false</c>.</returns>
-        public static bool operator !=(Static left, Static right)
+        public static bool operator !=(ChromaLinkStatic left, ChromaLinkStatic right)
         {
             return !(left == right);
         }
@@ -100,37 +90,30 @@ namespace Colore.Effects.Mouse
         /// <returns>
         /// <c>true</c> if the current object is equal to the <paramref name="other" /> parameter; otherwise, <c>false</c>.
         /// </returns>
-        public bool Equals(Static other)
+        public bool Equals(ChromaLinkStatic other)
         {
-            return Led == other.Led && Color.Equals(other.Color);
+            return Color.Equals(other.Color);
         }
 
         /// <inheritdoc />
         /// <summary>
         /// Indicates whether this instance and a specified object are equal.
         /// </summary>
-        /// <param name="other">The object to compare with the current instance. </param>
+        /// <param name="obj">The object to compare with the current instance. </param>
         /// <returns>
-        /// <c>true</c> if <paramref name="other" /> and this instance are the same type and represent the same value; otherwise, <c>false</c>.
+        /// <c>true</c> if <paramref name="obj" /> and this instance are the same type and represent the same value; otherwise, <c>false</c>.
         /// </returns>
-        public override bool Equals(object other)
+        public override bool Equals(object obj)
         {
-            if (ReferenceEquals(null, other))
-                return false;
-            return other is Static effect && Equals(effect);
+            return !(obj is null) && obj is ChromaLinkStatic effect && Equals(effect);
         }
 
         /// <inheritdoc />
-        /// <summary>
-        /// Returns the hash code for this instance.
-        /// </summary>
+        /// <summary>Returns the hash code for this instance.</summary>
         /// <returns>A 32-bit signed integer that is the hash code for this instance.</returns>
         public override int GetHashCode()
         {
-            unchecked
-            {
-                return ((int)Led * 397) ^ Color.GetHashCode();
-            }
+            return Color.GetHashCode();
         }
     }
 }

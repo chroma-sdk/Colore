@@ -59,23 +59,23 @@ namespace Colore
         bool IsSet(int row, int column);
 
         /// <summary>
-        /// Sets a <see cref="Custom" /> effect on the keypad.
+        /// Sets a <see cref="KeypadCustom" /> effect on the keypad.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
+        /// <param name="effect">An instance of the <see cref="KeypadCustom" /> struct.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetCustomAsync(Custom effect);
+        Task<Guid> SetCustomAsync(KeypadCustom effect);
 
         /// <summary>
-        /// Sets a <see cref="Static" /> effect on the keypad.
+        /// Sets a <see cref="KeypadStatic" /> effect on the keypad.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
+        /// <param name="effect">An instance of the <see cref="KeypadStatic" /> struct.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetStaticAsync(Static effect);
+        Task<Guid> SetStaticAsync(KeypadStatic effect);
 
         /// <summary>
-        /// Sets a <see cref="Static" /> effect on the keypad.
+        /// Sets a <see cref="KeypadStatic" /> effect on the keypad.
         /// </summary>
         /// <param name="color">Color of the effect.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
@@ -84,11 +84,11 @@ namespace Colore
 
         /// <summary>
         /// Sets an effect without any parameters.
-        /// Currently, this only works for the <see cref="Effect.None" /> effect.
+        /// Currently, this only works for the <see cref="KeypadEffect.None" /> effect.
         /// </summary>
         /// <param name="effect">Effect options.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetEffectAsync(Effect effect);
+        Task<Guid> SetEffectAsync(KeypadEffect effect);
     }
 }

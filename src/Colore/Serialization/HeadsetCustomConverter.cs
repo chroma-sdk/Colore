@@ -34,9 +34,9 @@ namespace Colore.Serialization
 
     /// <inheritdoc />
     /// <summary>
-    /// Converts headset <see cref="Custom" /> objects to JSON.
+    /// Converts headset <see cref="HeadsetCustom" /> objects to JSON.
     /// </summary>
-    /// <remarks>Does not support converting JSON into <see cref="Custom" /> objects.</remarks>
+    /// <remarks>Does not support converting JSON into <see cref="HeadsetCustom" /> objects.</remarks>
     [SuppressMessage(
         "Microsoft.Performance",
         "CA1812:AvoidUninstantiatedInternalClasses",
@@ -45,15 +45,15 @@ namespace Colore.Serialization
     {
         /// <inheritdoc />
         /// <summary>
-        /// Writes the JSON representation of a headset <see cref="Custom" /> object.
+        /// Writes the JSON representation of a headset <see cref="HeadsetCustom" /> object.
         /// </summary>
         /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
-        /// <param name="value">The <see cref="Custom" /> value.</param>
+        /// <param name="value">The <see cref="HeadsetCustom" /> value.</param>
         /// <param name="serializer">The calling serializer.</param>
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            var effect = (Custom)value;
-            var data = new EffectData(Effect.Custom, effect.Colors);
+            var effect = (HeadsetCustom)value;
+            var data = new EffectData(HeadsetEffect.Custom, effect.Colors);
             serializer.Serialize(writer, data);
         }
 
@@ -68,6 +68,6 @@ namespace Colore.Serialization
         }
 
         /// <inheritdoc />
-        public override bool CanConvert(Type objectType) => objectType == typeof(Custom);
+        public override bool CanConvert(Type objectType) => objectType == typeof(HeadsetCustom);
     }
 }

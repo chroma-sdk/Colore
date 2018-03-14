@@ -60,20 +60,20 @@ namespace Colore
 
         /// <summary>
         /// Sets an effect without any parameters.
-        /// Currently, this only works for the <see cref="Effect.None" /> effect.
+        /// Currently, this only works for the <see cref="MouseEffect.None" /> effect.
         /// </summary>
         /// <param name="effect">Effect options.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetEffectAsync(Effect effect);
+        Task<Guid> SetEffectAsync(MouseEffect effect);
 
         /// <summary>
         /// Sets a static color on the mouse.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="Static" /> effect.</param>
+        /// <param name="effect">An instance of the <see cref="MouseStatic" /> effect.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetStaticAsync(Static effect);
+        Task<Guid> SetStaticAsync(MouseStatic effect);
 
         /// <summary>
         /// Sets a static effect on the mouse.
@@ -87,9 +87,9 @@ namespace Colore
         /// <summary>
         /// Sets a custom grid effect on the mouse.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
+        /// <param name="effect">An instance of the <see cref="MouseCustom" /> struct.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetGridAsync(Custom effect);
+        Task<Guid> SetGridAsync(MouseCustom effect);
     }
 }

@@ -46,9 +46,9 @@ namespace Colore.Implementations
         private static readonly ILog Log = LogProvider.For<MousepadImplementation>();
 
         /// <summary>
-        /// Internal <see cref="Custom" /> struct used for effects.
+        /// Internal <see cref="MousepadCustom" /> struct used for effects.
         /// </summary>
-        private Custom _custom;
+        private MousepadCustom _custom;
 
         /// <inheritdoc />
         /// <summary>
@@ -58,7 +58,7 @@ namespace Colore.Implementations
             : base(api)
         {
             Log.Debug("Mousepad is initializing.");
-            _custom = Custom.Create();
+            _custom = MousepadCustom.Create();
         }
 
         /// <inheritdoc />
@@ -92,10 +92,10 @@ namespace Colore.Implementations
         /// <inheritdoc />
         /// <summary>
         /// Sets an effect without any parameters.
-        /// Currently, this only works for the <see cref="Effect.None" /> effect.
+        /// Currently, this only works for the <see cref="MousepadEffect.None" /> effect.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        public async Task<Guid> SetEffectAsync(Effect effect)
+        public async Task<Guid> SetEffectAsync(MousepadEffect effect)
         {
             return await SetEffectAsync(await Api.CreateMousepadEffectAsync(effect).ConfigureAwait(false)).ConfigureAwait(false);
         }
@@ -104,10 +104,10 @@ namespace Colore.Implementations
         /// <summary>
         /// Sets a static color effect on the mouse pad.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
-        public async Task<Guid> SetStaticAsync(Static effect)
+        /// <param name="effect">An instance of the <see cref="MousepadStatic" /> struct.</param>
+        public async Task<Guid> SetStaticAsync(MousepadStatic effect)
         {
-            return await SetEffectAsync(await Api.CreateMousepadEffectAsync(Effect.Static, effect).ConfigureAwait(false)).ConfigureAwait(false);
+            return await SetEffectAsync(await Api.CreateMousepadEffectAsync(MousepadEffect.Static, effect).ConfigureAwait(false)).ConfigureAwait(false);
         }
 
         /// <inheritdoc />
@@ -117,17 +117,17 @@ namespace Colore.Implementations
         /// <param name="color">Color to set.</param>
         public async Task<Guid> SetStaticAsync(Color color)
         {
-            return await SetStaticAsync(new Static(color)).ConfigureAwait(false);
+            return await SetStaticAsync(new MousepadStatic(color)).ConfigureAwait(false);
         }
 
         /// <inheritdoc />
         /// <summary>
         /// Sets a custom effect on the mouse pad.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
-        public async Task<Guid> SetCustomAsync(Custom effect)
+        /// <param name="effect">An instance of the <see cref="MousepadCustom" /> struct.</param>
+        public async Task<Guid> SetCustomAsync(MousepadCustom effect)
         {
-            return await SetEffectAsync(await Api.CreateMousepadEffectAsync(Effect.Custom, effect).ConfigureAwait(false)).ConfigureAwait(false);
+            return await SetEffectAsync(await Api.CreateMousepadEffectAsync(MousepadEffect.Custom, effect).ConfigureAwait(false)).ConfigureAwait(false);
         }
 
         /// <inheritdoc cref="DeviceImplementation.ClearAsync" />
@@ -137,7 +137,7 @@ namespace Colore.Implementations
         public override async Task<Guid> ClearAsync()
         {
             _custom.Clear();
-            return await SetEffectAsync(Effect.None).ConfigureAwait(false);
+            return await SetEffectAsync(MousepadEffect.None).ConfigureAwait(false);
         }
     }
 }

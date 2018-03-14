@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Static.cs" company="Corale">
+// <copyright file="HeadsetStatic.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -25,7 +25,7 @@
 
 #pragma warning disable CA1051 // Do not declare visible instance fields
 
-namespace Colore.Effects.Keyboard
+namespace Colore.Effects.Headset
 {
     using System;
     using System.Runtime.InteropServices;
@@ -39,47 +39,47 @@ namespace Colore.Effects.Keyboard
 
     /// <inheritdoc cref="IEquatable{T}" />
     /// <summary>
-    /// Describes the static effect type.
+    /// Static color effect.
     /// </summary>
-    [JsonConverter(typeof(KeyboardStaticConverter))]
+    [JsonConverter(typeof(HeadsetStaticConverter))]
     [StructLayout(LayoutKind.Sequential)]
 #pragma warning disable CA1716 // Identifiers should not match keywords
-    public struct Static : IEquatable<Static>
+    public struct HeadsetStatic : IEquatable<HeadsetStatic>
 #pragma warning restore CA1716 // Identifiers should not match keywords
     {
         /// <summary>
-        /// Color of the effect.
+        /// The <see cref="Color" /> of the effect.
         /// </summary>
         [PublicAPI]
         public readonly Color Color;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Static" /> struct.
+        /// Initializes a new instance of the <see cref="HeadsetStatic" /> struct.
         /// </summary>
-        /// <param name="color">Color to apply.</param>
-        public Static(Color color)
+        /// <param name="color">The <see cref="Color" /> to set.</param>
+        public HeadsetStatic(Color color)
         {
             Color = color;
         }
 
         /// <summary>
-        /// Checks an instance of <see cref="Static" /> for equality with another <see cref="Static" /> instance.
+        /// Checks an instance of <see cref="HeadsetStatic" /> for equality with another <see cref="HeadsetStatic" /> instance.
         /// </summary>
         /// <param name="left">Left operand.</param>
         /// <param name="right">Right operand.</param>
         /// <returns><c>true</c> if the two instances are equal, otherwise <c>false</c>.</returns>
-        public static bool operator ==(Static left, Static right)
+        public static bool operator ==(HeadsetStatic left, HeadsetStatic right)
         {
             return left.Equals(right);
         }
 
         /// <summary>
-        /// Checks an instance of <see cref="Static" /> for inequality with another <see cref="Static" /> instance.
+        /// Checks an instance of <see cref="HeadsetStatic" /> for inequality with another <see cref="HeadsetStatic" /> instance.
         /// </summary>
         /// <param name="left">Left operand.</param>
         /// <param name="right">Right operand.</param>
         /// <returns><c>true</c> if the two instances are not equal, otherwise <c>false</c>.</returns>
-        public static bool operator !=(Static left, Static right)
+        public static bool operator !=(HeadsetStatic left, HeadsetStatic right)
         {
             return !(left == right);
         }
@@ -92,7 +92,7 @@ namespace Colore.Effects.Keyboard
         /// <returns>
         /// <c>true</c> if the current object is equal to the <paramref name="other" /> parameter; otherwise, <c>false</c>.
         /// </returns>
-        public bool Equals(Static other)
+        public bool Equals(HeadsetStatic other)
         {
             return Color.Equals(other.Color);
         }
@@ -109,7 +109,7 @@ namespace Colore.Effects.Keyboard
         {
             if (ReferenceEquals(null, obj))
                 return false;
-            return obj is Static effect && Equals(effect);
+            return obj is HeadsetStatic && Equals((HeadsetStatic)obj);
         }
 
         /// <inheritdoc />

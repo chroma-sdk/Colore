@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Static.cs" company="Corale">
+// <copyright file="MousepadStatic.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -25,7 +25,7 @@
 
 #pragma warning disable CA1051 // Do not declare visible instance fields
 
-namespace Colore.Effects.Headset
+namespace Colore.Effects.Mousepad
 {
     using System;
     using System.Runtime.InteropServices;
@@ -39,47 +39,47 @@ namespace Colore.Effects.Headset
 
     /// <inheritdoc cref="IEquatable{T}" />
     /// <summary>
-    /// Static color effect.
+    /// Static effect for mouse pad.
     /// </summary>
-    [JsonConverter(typeof(HeadsetStaticConverter))]
+    [JsonConverter(typeof(MousepadStaticConverter))]
     [StructLayout(LayoutKind.Sequential)]
 #pragma warning disable CA1716 // Identifiers should not match keywords
-    public struct Static : IEquatable<Static>
+    public struct MousepadStatic : IEquatable<MousepadStatic>
 #pragma warning restore CA1716 // Identifiers should not match keywords
     {
         /// <summary>
-        /// The <see cref="Color" /> of the effect.
+        /// The color to use.
         /// </summary>
-        [PublicAPI]
+        [UsedImplicitly]
         public readonly Color Color;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Static" /> struct.
+        /// Initializes a new instance of the <see cref="MousepadStatic" /> struct.
         /// </summary>
-        /// <param name="color">The <see cref="Color" /> to set.</param>
-        public Static(Color color)
+        /// <param name="color">The color to use.</param>
+        public MousepadStatic(Color color)
         {
             Color = color;
         }
 
         /// <summary>
-        /// Checks an instance of <see cref="Static" /> for equality with another <see cref="Static" /> instance.
+        /// Checks an instance of <see cref="MousepadStatic" /> for equality with another <see cref="MousepadStatic" /> instance.
         /// </summary>
         /// <param name="left">Left operand.</param>
         /// <param name="right">Right operand.</param>
         /// <returns><c>true</c> if the two instances are equal, otherwise <c>false</c>.</returns>
-        public static bool operator ==(Static left, Static right)
+        public static bool operator ==(MousepadStatic left, MousepadStatic right)
         {
             return left.Equals(right);
         }
 
         /// <summary>
-        /// Checks an instance of <see cref="Static" /> for inequality with another <see cref="Static" /> instance.
+        /// Checks an instance of <see cref="MousepadStatic" /> for inequality with another <see cref="MousepadStatic" /> instance.
         /// </summary>
         /// <param name="left">Left operand.</param>
         /// <param name="right">Right operand.</param>
         /// <returns><c>true</c> if the two instances are not equal, otherwise <c>false</c>.</returns>
-        public static bool operator !=(Static left, Static right)
+        public static bool operator !=(MousepadStatic left, MousepadStatic right)
         {
             return !(left == right);
         }
@@ -92,7 +92,7 @@ namespace Colore.Effects.Headset
         /// <returns>
         /// <c>true</c> if the current object is equal to the <paramref name="other" /> parameter; otherwise, <c>false</c>.
         /// </returns>
-        public bool Equals(Static other)
+        public bool Equals(MousepadStatic other)
         {
             return Color.Equals(other.Color);
         }
@@ -109,7 +109,7 @@ namespace Colore.Effects.Headset
         {
             if (ReferenceEquals(null, obj))
                 return false;
-            return obj is Static && Equals((Static)obj);
+            return obj is MousepadStatic effect && Equals(effect);
         }
 
         /// <inheritdoc />

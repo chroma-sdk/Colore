@@ -35,9 +35,9 @@ namespace Colore.Serialization
 
     /// <inheritdoc />
     /// <summary>
-    /// Converts keypad <see cref="Static" /> objects to JSON.
+    /// Converts keypad <see cref="KeypadStatic" /> objects to JSON.
     /// </summary>
-    /// <remarks>Does not support converting JSON into <see cref="Static" /> objects.</remarks>
+    /// <remarks>Does not support converting JSON into <see cref="KeypadStatic" /> objects.</remarks>
     [SuppressMessage(
         "Microsoft.Performance",
         "CA1812:AvoidUninstantiatedInternalClasses",
@@ -45,14 +45,14 @@ namespace Colore.Serialization
     internal sealed class KeypadStaticConverter : JsonConverter
     {
         /// <inheritdoc />
-        /// <summary>Writes the JSON representation of a keypad <see cref="Static" /> object.</summary>
+        /// <summary>Writes the JSON representation of a keypad <see cref="KeypadStatic" /> object.</summary>
         /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
-        /// <param name="value">The <see cref="Static" /> value.</param>
+        /// <param name="value">The <see cref="KeypadStatic" /> value.</param>
         /// <param name="serializer">The calling serializer.</param>
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            var effect = (Static)value;
-            var data = new EffectData(Effect.Static, effect.Color);
+            var effect = (KeypadStatic)value;
+            var data = new EffectData(KeypadEffect.Static, effect.Color);
             serializer.Serialize(writer, data);
         }
 
@@ -67,6 +67,6 @@ namespace Colore.Serialization
         }
 
         /// <inheritdoc />
-        public override bool CanConvert(Type objectType) => objectType == typeof(Static);
+        public override bool CanConvert(Type objectType) => objectType == typeof(KeypadStatic);
     }
 }

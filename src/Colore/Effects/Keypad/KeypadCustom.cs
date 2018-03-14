@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Custom.cs" company="Corale">
+// <copyright file="KeypadCustom.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -43,7 +43,7 @@ namespace Colore.Effects.Keypad
     /// </summary>
     [JsonConverter(typeof(KeypadCustomConverter))]
     [StructLayout(LayoutKind.Sequential)]
-    public struct Custom : IEquatable<Custom>, IEquatable<Color[][]>, IEquatable<Color[]>
+    public struct KeypadCustom : IEquatable<KeypadCustom>
     {
         /// <summary>
         /// Color definitions for each key on the keypad.
@@ -57,11 +57,11 @@ namespace Colore.Effects.Keypad
         private readonly Color[] _colors;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Custom" /> struct.
+        /// Initializes a new instance of the <see cref="KeypadCustom" /> struct.
         /// </summary>
         /// <param name="colors">The colors to use.</param>
         /// <exception cref="ArgumentException">Thrown if the colors array supplied is of an incorrect size.</exception>
-        public Custom(Color[][] colors)
+        public KeypadCustom(Color[][] colors)
         {
             var rows = colors.GetLength(0);
 
@@ -89,11 +89,11 @@ namespace Colore.Effects.Keypad
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Custom" /> struct.
+        /// Initializes a new instance of the <see cref="KeypadCustom" /> struct.
         /// </summary>
         /// <param name="colors">The colors to use.</param>
         /// <exception cref="ArgumentException">Thrown if the colors array supplied is of an invalid size.</exception>
-        public Custom(IList<Color> colors)
+        public KeypadCustom(IList<Color> colors)
         {
             if (colors.Count != KeypadConstants.MaxKeys)
             {
@@ -109,11 +109,11 @@ namespace Colore.Effects.Keypad
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Custom" /> struct
+        /// Initializes a new instance of the <see cref="KeypadCustom" /> struct
         /// with every position set to a specific color.
         /// </summary>
         /// <param name="color">The <see cref="Color" /> to set each position to.</param>
-        public Custom(Color color)
+        public KeypadCustom(Color color)
         {
             _colors = new Color[KeypadConstants.MaxKeys];
 
@@ -123,11 +123,11 @@ namespace Colore.Effects.Keypad
 
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="Custom" /> struct
+        /// Initializes a new instance of the <see cref="KeypadCustom" /> struct
         /// with color values copied from another struct of the same type.
         /// </summary>
         /// <param name="other">The struct to copy data from.</param>
-        public Custom(Custom other)
+        public KeypadCustom(KeypadCustom other)
             : this(other._colors)
         {
         }
@@ -224,38 +224,38 @@ namespace Colore.Effects.Keypad
         }
 
         /// <summary>
-        /// Compares an instance of <see cref="Custom" /> with
+        /// Compares an instance of <see cref="KeypadCustom" /> with
         /// another object for equality.
         /// </summary>
-        /// <param name="left">The left operand, an instance of <see cref="Custom" />.</param>
+        /// <param name="left">The left operand, an instance of <see cref="KeypadCustom" />.</param>
         /// <param name="right">The right operand, any type of object.</param>
         /// <returns><c>true</c> if the two objects are equal, otherwise <c>false</c>.</returns>
-        public static bool operator ==(Custom left, object right)
+        public static bool operator ==(KeypadCustom left, object right)
         {
             return left.Equals(right);
         }
 
         /// <summary>
-        /// Compares an instance of <see cref="Custom" /> with
+        /// Compares an instance of <see cref="KeypadCustom" /> with
         /// another object for inequality.
         /// </summary>
-        /// <param name="left">The left operand, an instance of <see cref="Custom" />.</param>
+        /// <param name="left">The left operand, an instance of <see cref="KeypadCustom" />.</param>
         /// <param name="right">The right operand, any type of object.</param>
         /// <returns><c>true</c> if the two objects are not equal, otherwise <c>false</c>.</returns>
-        public static bool operator !=(Custom left, object right)
+        public static bool operator !=(KeypadCustom left, object right)
         {
             return !left.Equals(right);
         }
 
         /// <summary>
-        /// Creates a new empty <see cref="Custom" /> struct.
+        /// Creates a new empty <see cref="KeypadCustom" /> struct.
         /// </summary>
-        /// <returns>An instance of <see cref="Custom" />
+        /// <returns>An instance of <see cref="KeypadCustom" />
         /// filled with the color black.</returns>
         [PublicAPI]
-        public static Custom Create()
+        public static KeypadCustom Create()
         {
-            return new Custom(Color.Black);
+            return new KeypadCustom(Color.Black);
         }
 
         /// <summary>
@@ -263,9 +263,9 @@ namespace Colore.Effects.Keypad
         /// </summary>
         /// <returns>A copy of this struct.</returns>
         [PublicAPI]
-        public Custom Clone()
+        public KeypadCustom Clone()
         {
-            return new Custom(this);
+            return new KeypadCustom(this);
         }
 
         /// <summary>
@@ -310,19 +310,7 @@ namespace Colore.Effects.Keypad
         /// <filterpriority>2</filterpriority>
         public override bool Equals(object obj)
         {
-            if (ReferenceEquals(obj, null))
-                return false;
-
-            switch (obj)
-            {
-                case Custom custom:
-                    return Equals(custom);
-
-                case Color[][] arr2D:
-                    return Equals(arr2D);
-            }
-
-            return obj is Color[] arr1D && Equals(arr1D);
+            return !(obj is null) && obj is KeypadCustom custom && Equals(custom);
         }
 
         /// <inheritdoc />
@@ -333,8 +321,8 @@ namespace Colore.Effects.Keypad
         /// <c>true</c> if the current object is equal to the <paramref name="other" /> parameter;
         /// otherwise, <c>false</c>.
         /// </returns>
-        /// <param name="other">A <see cref="Custom" /> to compare with this object.</param>
-        public bool Equals(Custom other)
+        /// <param name="other">A <see cref="KeypadCustom" /> to compare with this object.</param>
+        public bool Equals(KeypadCustom other)
         {
             for (var row = 0; row < KeypadConstants.MaxRows; row++)
             {
@@ -343,62 +331,6 @@ namespace Colore.Effects.Keypad
                     if (this[row, col] != other[row, col])
                         return false;
                 }
-            }
-
-            return true;
-        }
-
-        /// <inheritdoc />
-        /// <summary>
-        /// Indicates whether the current object is equal to an instance of
-        /// a 2-dimensional array of <see cref="Color" />.
-        /// </summary>
-        /// <returns>
-        /// <c>true</c> if the <paramref name="other" /> object has the same
-        /// number of rows and columns, and contain matching colors; otherwise, <c>false</c>.
-        /// </returns>
-        /// <param name="other">
-        /// A 2-dimensional array of <see cref="Color" /> to compare with this object.
-        /// </param>
-        public bool Equals(Color[][] other)
-        {
-            if (other == null || other.GetLength(0) != KeypadConstants.MaxRows)
-                return false;
-
-            for (var row = 0; row < KeypadConstants.MaxRows; row++)
-            {
-                if (other[row].Length != KeypadConstants.MaxColumns)
-                    return false;
-
-                for (var col = 0; col < KeypadConstants.MaxColumns; col++)
-                {
-                    if (this[row, col] != other[row][col])
-                        return false;
-                }
-            }
-
-            return true;
-        }
-
-        /// <inheritdoc />
-        /// <summary>
-        /// Indicates whether the current object is equal to an instance of
-        /// an array of <see cref="Color" />.
-        /// </summary>
-        /// <param name="other">An array of <see cref="Color" /> to compare with this object.</param>
-        /// <returns>
-        /// <c>true</c> if the <paramref name="other" /> object has the same
-        /// number of elements, and contain matching colors; otherwise, <c>false</c>.
-        /// </returns>
-        public bool Equals(Color[] other)
-        {
-            if (other == null || other.Length != KeypadConstants.MaxKeys)
-                return false;
-
-            for (var index = 0; index < KeypadConstants.MaxKeys; index++)
-            {
-                if (other[index] != this[index])
-                    return false;
             }
 
             return true;

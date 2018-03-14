@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Custom.cs" company="Corale">
+// <copyright file="KeyboardCustom.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -43,7 +43,7 @@ namespace Colore.Effects.Keyboard
     /// </summary>
     [JsonConverter(typeof(KeyboardCustomConverter))]
     [StructLayout(LayoutKind.Sequential)]
-    public struct Custom : IEquatable<Custom>
+    public struct KeyboardCustom : IEquatable<KeyboardCustom>
     {
         /// <summary>
         /// Color definitions for each key on the keyboard.
@@ -68,11 +68,11 @@ namespace Colore.Effects.Keyboard
         private readonly Color[] _keys;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Custom" /> struct
+        /// Initializes a new instance of the <see cref="KeyboardCustom" /> struct
         /// with every position set to a specific color.
         /// </summary>
         /// <param name="color">The <see cref="Color" /> to set each position to.</param>
-        public Custom(Color color)
+        public KeyboardCustom(Color color)
         {
             _colors = new Color[KeyboardConstants.MaxKeys];
             _keys = new Color[KeyboardConstants.MaxKeys];
@@ -82,11 +82,11 @@ namespace Colore.Effects.Keyboard
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Custom" /> struct
+        /// Initializes a new instance of the <see cref="KeyboardCustom" /> struct
         /// with the colors copied from another struct of the same type.
         /// </summary>
-        /// <param name="other">The <see cref="Custom" /> struct to copy data from.</param>
-        public Custom(Custom other)
+        /// <param name="other">The <see cref="KeyboardCustom" /> struct to copy data from.</param>
+        public KeyboardCustom(KeyboardCustom other)
         {
             _colors = new Color[KeyboardConstants.MaxKeys];
             _keys = new Color[KeyboardConstants.MaxKeys];
@@ -220,37 +220,37 @@ namespace Colore.Effects.Keyboard
         }
 
         /// <summary>
-        /// Compares an instance of <see cref="Custom" /> with
+        /// Compares an instance of <see cref="KeyboardCustom" /> with
         /// another object for equality.
         /// </summary>
-        /// <param name="left">The left operand, an instance of <see cref="Custom" />.</param>
+        /// <param name="left">The left operand, an instance of <see cref="KeyboardCustom" />.</param>
         /// <param name="right">The right operand, any type of object.</param>
         /// <returns><c>true</c> if the two objects are equal, otherwise <c>false</c>.</returns>
-        public static bool operator ==(Custom left, object right)
+        public static bool operator ==(KeyboardCustom left, object right)
         {
             return left.Equals(right);
         }
 
         /// <summary>
-        /// Compares an instance of <see cref="Custom" /> with
+        /// Compares an instance of <see cref="KeyboardCustom" /> with
         /// another object for inequality.
         /// </summary>
-        /// <param name="left">The left operand, an instance of <see cref="Custom" />.</param>
+        /// <param name="left">The left operand, an instance of <see cref="KeyboardCustom" />.</param>
         /// <param name="right">The right operand, any type of object.</param>
         /// <returns><c>true</c> if the two objects are not equal, otherwise <c>false</c>.</returns>
-        public static bool operator !=(Custom left, object right)
+        public static bool operator !=(KeyboardCustom left, object right)
         {
             return !left.Equals(right);
         }
 
         /// <summary>
-        /// Creates a new empty <see cref="Custom" /> struct.
+        /// Creates a new empty <see cref="KeyboardCustom" /> struct.
         /// </summary>
-        /// <returns>An instance of <see cref="Custom" />
+        /// <returns>An instance of <see cref="KeyboardCustom" />
         /// filled with the color black.</returns>
-        public static Custom Create()
+        public static KeyboardCustom Create()
         {
-            return new Custom(Color.Black);
+            return new KeyboardCustom(Color.Black);
         }
 
         /// <summary>
@@ -258,9 +258,9 @@ namespace Colore.Effects.Keyboard
         /// </summary>
         /// <returns>A copy of this struct.</returns>
         [PublicAPI]
-        public Custom Clone()
+        public KeyboardCustom Clone()
         {
-            return new Custom(this);
+            return new KeyboardCustom(this);
         }
 
         /// <summary>
@@ -297,7 +297,7 @@ namespace Colore.Effects.Keyboard
             if (ReferenceEquals(obj, null))
                 return false;
 
-            if (obj is Custom custom)
+            if (obj is KeyboardCustom custom)
                 return Equals(custom);
 
             return false;
@@ -311,8 +311,8 @@ namespace Colore.Effects.Keyboard
         /// <c>true</c> if the current object is equal to the <paramref name="other" /> parameter;
         /// otherwise, <c>false</c>.
         /// </returns>
-        /// <param name="other">A <see cref="Custom" /> to compare with this object.</param>
-        public bool Equals(Custom other)
+        /// <param name="other">A <see cref="KeyboardCustom" /> to compare with this object.</param>
+        public bool Equals(KeyboardCustom other)
         {
             for (var index = 0; index < KeyboardConstants.MaxKeys; index++)
             {

@@ -30,6 +30,8 @@ namespace Colore.Native
     using System.Runtime.InteropServices;
 
     using Colore.Data;
+    using Colore.Effects.Keyboard;
+    using Colore.Effects.Mouse;
     using Colore.Helpers;
 
     /// <summary>
@@ -212,7 +214,7 @@ namespace Colore.Native
         /// Create keyboard effect.
         /// </summary>
         /// <param name="effect">
-        /// Standard effect type, like <see cref="Effects.Keyboard.Effect.Static" />.
+        /// Standard effect type, like <see cref="KeyboardEffect.Static" />.
         /// </param>
         /// <param name="param">Pointer to a parameter type specified by <paramref name="effect" />.</param>
         /// <param name="effectId">Valid effect ID if successful. Use <see cref="Guid.Empty" /> if not required.</param>
@@ -226,18 +228,18 @@ namespace Colore.Native
         /// <term>Effect struct</term>
         /// </listheader>
         /// <item>
-        /// <term><see cref="Effects.Keyboard.Effect.Static" /></term>
-        /// <term><see cref="Effects.Keyboard.Static" /></term>
+        /// <term><see cref="KeyboardEffect.Static" /></term>
+        /// <term><see cref="KeyboardStatic" /></term>
         /// </item>
         /// <item>
-        /// <term><see cref="Effects.Keyboard.Effect.CustomKey" /></term>
-        /// <term><see cref="Effects.Keyboard.Custom" /></term>
+        /// <term><see cref="KeyboardEffect.CustomKey" /></term>
+        /// <term><see cref="KeyboardCustom" /></term>
         /// </item>
         /// </list>
         /// </remarks>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         internal delegate Result CreateKeyboardEffectDelegate(
-            [In] Effects.Keyboard.Effect effect,
+            [In] Effects.Keyboard.KeyboardEffect effect,
             [In] IntPtr param,
             [In, Out] ref Guid effectId);
 
@@ -245,7 +247,7 @@ namespace Colore.Native
         /// Create mouse effect.
         /// </summary>
         /// <param name="effect">
-        /// Standard effect type, like <see cref="Effects.Mouse.Effect.Static" />.
+        /// Standard effect type, like <see cref="MouseEffect.Static" />.
         /// Depends on which LED.
         /// </param>
         /// <param name="param">Pointer to a parameter type specified by <paramref name="effect" />.</param>
@@ -260,18 +262,18 @@ namespace Colore.Native
         /// <term>Effect struct</term>
         /// </listheader>
         /// <item>
-        /// <term><see cref="Effects.Mouse.Effect.Static" /></term>
-        /// <term><see cref="Effects.Mouse.Static" /></term>
+        /// <term><see cref="MouseEffect.Static" /></term>
+        /// <term><see cref="MouseStatic" /></term>
         /// </item>
         /// <item>
-        /// <term><see cref="Effects.Mouse.Effect.Custom" /></term>
-        /// <term><see cref="Effects.Mouse.Custom" /></term>
+        /// <term><see cref="MouseEffect.Custom" /></term>
+        /// <term><see cref="MouseCustom" /></term>
         /// </item>
         /// </list>
         /// </remarks>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         internal delegate Result CreateMouseEffectDelegate(
-            [In] Effects.Mouse.Effect effect,
+            [In] Effects.Mouse.MouseEffect effect,
             [In] IntPtr param,
             [In, Out] ref Guid effectId);
 
@@ -284,7 +286,7 @@ namespace Colore.Native
         /// <returns><see cref="Result" /> value indicating success.</returns>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         internal delegate Result CreateHeadsetEffectDelegate(
-            [In] Effects.Headset.Effect effect,
+            [In] Effects.Headset.HeadsetEffect effect,
             [In] IntPtr param,
             [In] [Out] ref Guid effectId);
 
@@ -297,7 +299,7 @@ namespace Colore.Native
         /// <returns><see cref="Result" /> value indicating success.</returns>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         internal delegate Result CreateMousepadEffectDelegate(
-            [In] Effects.Mousepad.Effect effect,
+            [In] Effects.Mousepad.MousepadEffect effect,
             [In] IntPtr param,
             [In, Out] ref Guid effectId);
 
@@ -310,7 +312,7 @@ namespace Colore.Native
         /// <returns><see cref="Result" /> value indicating success.</returns>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         internal delegate Result CreateKeypadEffectDelegate(
-            [In] Effects.Keypad.Effect effect,
+            [In] Effects.Keypad.KeypadEffect effect,
             [In] IntPtr param,
             [In, Out] ref Guid effectId);
 
@@ -323,7 +325,7 @@ namespace Colore.Native
         /// <returns><see cref="Result" /> value indicating success.</returns>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         internal delegate Result CreateChromaLinkEffectDelegate(
-            [In] Effects.ChromaLink.Effect effect,
+            [In] Effects.ChromaLink.ChromaLinkEffect effect,
             [In] IntPtr param,
             [In, Out] ref Guid effectId);
 

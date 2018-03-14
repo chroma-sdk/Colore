@@ -97,7 +97,7 @@ namespace Colore.Effects.Keyboard
         /// Initializes a new instance of the <see cref="DeathstalkerGrid" /> struct
         /// with the colors copied from another struct of the same type.
         /// </summary>
-        /// <param name="other">The <see cref="Custom" /> struct to copy data from.</param>
+        /// <param name="other">The <see cref="KeyboardCustom" /> struct to copy data from.</param>
         public DeathstalkerGrid(DeathstalkerGrid other)
         {
             _colors = new Color[KeyboardConstants.MaxKeys];
@@ -231,7 +231,7 @@ namespace Colore.Effects.Keyboard
         /// <c>true</c> if the current object is equal to the <paramref name="other" /> parameter;
         /// otherwise, <c>false</c>.
         /// </returns>
-        /// <param name="other">A <see cref="Custom" /> to compare with this object.</param>
+        /// <param name="other">A <see cref="KeyboardCustom" /> to compare with this object.</param>
         public bool Equals(DeathstalkerGrid other)
         {
             for (var index = 0; index < KeyboardConstants.MaxKeys; index++)

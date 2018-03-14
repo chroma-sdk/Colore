@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+// <copyright file="ChromaLinkEffect.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -37,7 +37,7 @@ namespace Colore.Effects.ChromaLink
     /// </summary>
     [PublicAPI]
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum Effect
+    public enum ChromaLinkEffect
     {
         /// <summary>
         /// No effect.

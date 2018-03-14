@@ -87,21 +87,21 @@ namespace Colore
         /// </summary>
         /// <param name="effect">Effect options.</param>
         /// <remarks>
-        /// This will overwrite the current internal <see cref="Custom" />
+        /// This will overwrite the current internal <see cref="KeyboardCustom" />
         /// struct in the <see cref="KeyboardImplementation" /> class.
         /// </remarks>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetCustomAsync(Custom effect);
+        Task<Guid> SetCustomAsync(KeyboardCustom effect);
 
         /// <summary>
         /// Sets an effect without any parameters.
-        /// Currently, this only works for the <see cref="Effect.None" /> effect.
+        /// Currently, this only works for the <see cref="KeyboardEffect.None" /> effect.
         /// </summary>
         /// <param name="effect">Effect options.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetEffectAsync(Effect effect);
+        Task<Guid> SetEffectAsync(KeyboardEffect effect);
 
         /// <summary>
         /// Sets the color on a specific row and column on the keyboard grid.
@@ -150,7 +150,7 @@ namespace Colore
         /// <param name="effect">Effect options.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetStaticAsync(Static effect);
+        Task<Guid> SetStaticAsync(KeyboardStatic effect);
 
         /// <summary>
         /// Sets the specified Deathstalker zone to a color.

@@ -25,7 +25,7 @@
 
 #pragma warning disable CA1051 // Do not declare visible instance fields
 
-namespace Colore.Effects.Mousepad
+namespace Colore.Effects.Mouse
 {
     using System;
     using System.Runtime.InteropServices;
@@ -39,47 +39,55 @@ namespace Colore.Effects.Mousepad
 
     /// <inheritdoc cref="IEquatable{T}" />
     /// <summary>
-    /// Static effect for mouse pad.
+    /// Describes the static effect type.
     /// </summary>
-    [JsonConverter(typeof(MousepadStaticConverter))]
+    [JsonConverter(typeof(MouseStaticConverter))]
     [StructLayout(LayoutKind.Sequential)]
 #pragma warning disable CA1716 // Identifiers should not match keywords
-    public struct Static : IEquatable<Static>
+    public struct MouseStatic : IEquatable<MouseStatic>
 #pragma warning restore CA1716 // Identifiers should not match keywords
     {
         /// <summary>
-        /// The color to use.
+        /// The LED on which to apply the color.
+        /// </summary>
+        [UsedImplicitly]
+        public readonly Led Led;
+
+        /// <summary>
+        /// The color to apply.
         /// </summary>
         [UsedImplicitly]
         public readonly Color Color;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Static" /> struct.
+        /// Initializes a new instance of the <see cref="MouseStatic" /> struct.
         /// </summary>
-        /// <param name="color">The color to use.</param>
-        public Static(Color color)
+        /// <param name="led">The <see cref="Led" /> on which to apply the color.</param>
+        /// <param name="color">The <see cref="Color" /> to set.</param>
+        public MouseStatic(Led led, Color color)
         {
+            Led = led;
             Color = color;
         }
 
         /// <summary>
-        /// Checks an instance of <see cref="Static" /> for equality with another <see cref="Static" /> instance.
+        /// Compares an instance of <see cref="MouseStatic" /> for equality with another <see cref="MouseStatic" /> struct.
         /// </summary>
         /// <param name="left">Left operand.</param>
         /// <param name="right">Right operand.</param>
         /// <returns><c>true</c> if the two instances are equal, otherwise <c>false</c>.</returns>
-        public static bool operator ==(Static left, Static right)
+        public static bool operator ==(MouseStatic left, MouseStatic right)
         {
             return left.Equals(right);
         }
 
         /// <summary>
-        /// Checks an instance of <see cref="Static" /> for inequality with another <see cref="Static" /> instance.
+        /// Compares an instance of <see cref="MouseStatic" /> for inequality with another <see cref="MouseStatic" /> struct.
         /// </summary>
         /// <param name="left">Left operand.</param>
         /// <param name="right">Right operand.</param>
         /// <returns><c>true</c> if the two instances are not equal, otherwise <c>false</c>.</returns>
-        public static bool operator !=(Static left, Static right)
+        public static bool operator !=(MouseStatic left, MouseStatic right)
         {
             return !(left == right);
         }
@@ -92,32 +100,37 @@ namespace Colore.Effects.Mousepad
         /// <returns>
         /// <c>true</c> if the current object is equal to the <paramref name="other" /> parameter; otherwise, <c>false</c>.
         /// </returns>
-        public bool Equals(Static other)
+        public bool Equals(MouseStatic other)
         {
-            return Color.Equals(other.Color);
+            return Led == other.Led && Color.Equals(other.Color);
         }
 
         /// <inheritdoc />
         /// <summary>
         /// Indicates whether this instance and a specified object are equal.
         /// </summary>
-        /// <param name="obj">The object to compare with the current instance. </param>
+        /// <param name="other">The object to compare with the current instance. </param>
         /// <returns>
-        /// <c>true</c> if <paramref name="obj" /> and this instance are the same type and represent the same value; otherwise, <c>false</c>.
+        /// <c>true</c> if <paramref name="other" /> and this instance are the same type and represent the same value; otherwise, <c>false</c>.
         /// </returns>
-        public override bool Equals(object obj)
+        public override bool Equals(object other)
         {
-            if (ReferenceEquals(null, obj))
+            if (ReferenceEquals(null, other))
                 return false;
-            return obj is Static effect && Equals(effect);
+            return other is MouseStatic effect && Equals(effect);
         }
 
         /// <inheritdoc />
-        /// <summary>Returns the hash code for this instance.</summary>
+        /// <summary>
+        /// Returns the hash code for this instance.
+        /// </summary>
         /// <returns>A 32-bit signed integer that is the hash code for this instance.</returns>
         public override int GetHashCode()
         {
-            return Color.GetHashCode();
+            unchecked
+            {
+                return ((int)Led * 397) ^ Color.GetHashCode();
+            }
         }
     }
 }

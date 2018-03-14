@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+// <copyright file="MouseEffect.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,7 +23,7 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Effects.Keypad
+namespace Colore.Effects.Mouse
 {
     using System.Runtime.Serialization;
 
@@ -33,10 +33,10 @@ namespace Colore.Effects.Keypad
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Supported effects for Chroma keypads.
+    /// Supported built-in mouse effects.
     /// </summary>
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum Effect
+    public enum MouseEffect
     {
         /// <summary>
         /// No effect.
@@ -46,24 +46,24 @@ namespace Colore.Effects.Keypad
         None = 0,
 
         /// <summary>
-        /// Custom effect.
-        /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_CUSTOM")]
-        Custom = 2,
-
-        /// <summary>
-        /// Static color.
+        /// Static color effect.
         /// </summary>
         [PublicAPI]
         [EnumMember(Value = "CHROMA_STATIC")]
-        Static = 5,
+        Static = 6,
+
+        /// <summary>
+        /// Custom grid effect.
+        /// </summary>
+        [PublicAPI]
+        [EnumMember(Value = "CHROMA_CUSTOM2")]
+        Custom = 8,
 
         /// <summary>
         /// Invalid effect.
         /// </summary>
         [PublicAPI]
         [EnumMember(Value = "CHROMA_INVALID")]
-        Invalid = 7
+        Invalid = 9
     }
 }

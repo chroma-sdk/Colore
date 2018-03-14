@@ -41,7 +41,7 @@ namespace Colore.Tests.Effects.Mouse.Effects
             var colors = new Color[2][];
 
             Assert.That(
-                () => new Custom(colors),
+                () => new MouseCustom(colors),
                 Throws.InstanceOf<ArgumentException>().With.Property("ParamName").EqualTo("colors"));
         }
 
@@ -52,7 +52,7 @@ namespace Colore.Tests.Effects.Mouse.Effects
             colors[0] = new Color[1];
 
             Assert.That(
-                () => new Custom(colors),
+                () => new MouseCustom(colors),
                 Throws.InstanceOf<ArgumentException>().With.Property("ParamName").EqualTo("colors"));
         }
 
@@ -68,7 +68,7 @@ namespace Colore.Tests.Effects.Mouse.Effects
             colors[0][4] = Color.Blue;
             colors[3][1] = Color.Green;
 
-            var effect = new Custom(colors);
+            var effect = new MouseCustom(colors);
 
             for (var row = 0; row < MouseConstants.MaxRows; row++)
             {
@@ -83,7 +83,7 @@ namespace Colore.Tests.Effects.Mouse.Effects
             var colors = new Color[1];
 
             Assert.That(
-                () => new Custom(colors),
+                () => new MouseCustom(colors),
                 Throws.InstanceOf<ArgumentException>().With.Property("ParamName").EqualTo("colors"));
         }
 
@@ -96,7 +96,7 @@ namespace Colore.Tests.Effects.Mouse.Effects
             arr[4] = Color.Red;
             arr[8] = Color.Blue;
 
-            var grid = new Custom(arr);
+            var grid = new MouseCustom(arr);
 
             for (var index = 0; index < MouseConstants.MaxLeds; index++)
                 Assert.That(grid[index], Is.EqualTo(arr[index]));
@@ -105,7 +105,7 @@ namespace Colore.Tests.Effects.Mouse.Effects
         [Test]
         public void ShouldConstructFromColor()
         {
-            var effect = new Custom(Color.Red);
+            var effect = new MouseCustom(Color.Red);
 
             for (var row = 0; row < MouseConstants.MaxRows; row++)
             {
@@ -117,7 +117,7 @@ namespace Colore.Tests.Effects.Mouse.Effects
         [Test]
         public void ShouldThrowWhenOutOfRange2DGet()
         {
-            var effect = Custom.Create();
+            var effect = MouseCustom.Create();
 
             // ReSharper disable once NotAccessedVariable
             Color dummy;
@@ -158,7 +158,7 @@ namespace Colore.Tests.Effects.Mouse.Effects
         [Test]
         public void ShouldThrowWhenOutOfRange2DSet()
         {
-            var effect = Custom.Create();
+            var effect = MouseCustom.Create();
 
             Assert.That(
                 () => effect[-1, 0] = Color.Red,
@@ -196,7 +196,7 @@ namespace Colore.Tests.Effects.Mouse.Effects
         [Test]
         public void ShouldThrowWhenOutOfRange1DGet()
         {
-            var grid = Custom.Create();
+            var grid = MouseCustom.Create();
 
             // ReSharper disable once NotAccessedVariable
             Color dummy;
@@ -221,7 +221,7 @@ namespace Colore.Tests.Effects.Mouse.Effects
         [Test]
         public void ShouldThrowWhenOutOfRange1DSet()
         {
-            var grid = Custom.Create();
+            var grid = MouseCustom.Create();
 
             Assert.That(
                 () => grid[-1] = Color.Red,
@@ -243,19 +243,19 @@ namespace Colore.Tests.Effects.Mouse.Effects
         [Test]
         public void ShouldGetCorrectColorWithGridIndexer()
         {
-            Assert.AreEqual(Color.Red, new Custom(Color.Red)[3, 3]);
+            Assert.AreEqual(Color.Red, new MouseCustom(Color.Red)[3, 3]);
         }
 
         [Test]
         public void ShouldGetCorrectColorWithIndexIndexer()
         {
-            Assert.AreEqual(Color.Red, new Custom(Color.Red)[5]);
+            Assert.AreEqual(Color.Red, new MouseCustom(Color.Red)[5]);
         }
 
         [Test]
         public void ShouldSetCorrectColorWithGridIndexer()
         {
-            var effect = Custom.Create();
+            var effect = MouseCustom.Create();
             effect[5, 5] = Color.Red;
 
             Assert.AreEqual(Color.Red, effect[5, 5]);
@@ -264,7 +264,7 @@ namespace Colore.Tests.Effects.Mouse.Effects
         [Test]
         public void ShouldSetCorrectColorWithIndexIndexer()
         {
-            var effect = Custom.Create();
+            var effect = MouseCustom.Create();
             effect[5] = Color.Red;
 
             Assert.AreEqual(Color.Red, effect[5]);
@@ -273,13 +273,13 @@ namespace Colore.Tests.Effects.Mouse.Effects
         [Test]
         public void ShouldGetCorrectColorWithLedIndexer()
         {
-            Assert.AreEqual(Color.Red, new Custom(Color.Red)[GridLed.Logo]);
+            Assert.AreEqual(Color.Red, new MouseCustom(Color.Red)[GridLed.Logo]);
         }
 
         [Test]
         public void ShouldSetCorrectColorWithLedIndexer()
         {
-            var effect = Custom.Create();
+            var effect = MouseCustom.Create();
             effect[GridLed.Logo] = Color.Red;
 
             Assert.AreEqual(Color.Red, effect[GridLed.Logo]);
@@ -288,7 +288,7 @@ namespace Colore.Tests.Effects.Mouse.Effects
         [Test]
         public void ShouldCreateWithAllBlackColors()
         {
-            var effect = Custom.Create();
+            var effect = MouseCustom.Create();
 
             for (var row = 0; row < MouseConstants.MaxRows; row++)
             {
@@ -300,7 +300,7 @@ namespace Colore.Tests.Effects.Mouse.Effects
         [Test]
         public void ShouldSetCorrectColorWithSet()
         {
-            var effect = Custom.Create();
+            var effect = MouseCustom.Create();
             effect.Set(Color.Red);
 
             for (var row = 0; row < MouseConstants.MaxRows; row++)
@@ -313,7 +313,7 @@ namespace Colore.Tests.Effects.Mouse.Effects
         [Test]
         public void ShouldClearToBlack()
         {
-            var effect = Custom.Create();
+            var effect = MouseCustom.Create();
             effect.Set(Color.Red);
             effect.Clear();
 
@@ -327,8 +327,8 @@ namespace Colore.Tests.Effects.Mouse.Effects
         [Test]
         public void ShouldEqualIdenticalEffect()
         {
-            var a = new Custom(Color.Red);
-            var b = new Custom(Color.Red);
+            var a = new MouseCustom(Color.Red);
+            var b = new MouseCustom(Color.Red);
 
             Assert.True(a == b);
             Assert.False(a != b);
@@ -339,8 +339,8 @@ namespace Colore.Tests.Effects.Mouse.Effects
         [Test]
         public void ShouldNotEqualDifferentEffect()
         {
-            var a = new Custom(Color.Red);
-            var b = new Custom(Color.Blue);
+            var a = new MouseCustom(Color.Red);
+            var b = new MouseCustom(Color.Blue);
 
             Assert.False(a == b);
             Assert.True(a != b);
@@ -351,7 +351,7 @@ namespace Colore.Tests.Effects.Mouse.Effects
         [Test]
         public void ShouldEqualIdentical2DArray()
         {
-            var effect = new Custom(Color.Red);
+            var effect = new MouseCustom(Color.Red);
 
             var array = new Color[MouseConstants.MaxRows][];
 
@@ -372,7 +372,7 @@ namespace Colore.Tests.Effects.Mouse.Effects
         [Test]
         public void ShouldNotEqualDifferent2DArray()
         {
-            var effect = new Custom(Color.Red);
+            var effect = new MouseCustom(Color.Red);
 
             var array = new Color[MouseConstants.MaxRows][];
 
@@ -393,7 +393,7 @@ namespace Colore.Tests.Effects.Mouse.Effects
         [Test]
         public void ShouldNotEqual2DArrayWithInvalidRowCount()
         {
-            var effect = Custom.Create();
+            var effect = MouseCustom.Create();
 
             var array = new Color[1][];
 
@@ -406,7 +406,7 @@ namespace Colore.Tests.Effects.Mouse.Effects
         [Test]
         public void ShouldNotEqual2DArrayWithInvalidColumnCount()
         {
-            var effect = Custom.Create();
+            var effect = MouseCustom.Create();
 
             var array = new Color[MouseConstants.MaxRows][];
             array[0] = new Color[1];
@@ -420,7 +420,7 @@ namespace Colore.Tests.Effects.Mouse.Effects
         [Test]
         public void ShouldEqualIdentical1DArray()
         {
-            var grid = new Custom(Color.Red);
+            var grid = new MouseCustom(Color.Red);
             var arr = new Color[MouseConstants.MaxLeds];
 
             // Populate the 1D array
@@ -436,7 +436,7 @@ namespace Colore.Tests.Effects.Mouse.Effects
         [Test]
         public void ShouldNotEqualDifferent1DArray()
         {
-            var grid = new Custom(Color.Pink);
+            var grid = new MouseCustom(Color.Pink);
             var arr = new Color[MouseConstants.MaxLeds];
 
             for (var index = 0; index < MouseConstants.MaxLeds; index++)
@@ -451,7 +451,7 @@ namespace Colore.Tests.Effects.Mouse.Effects
         [Test]
         public void ShouldNotEqual1DArrayWithInvalidSize()
         {
-            var grid = Custom.Create();
+            var grid = MouseCustom.Create();
             var arr = new Color[2];
 
             Assert.False(grid == arr);
@@ -463,7 +463,7 @@ namespace Colore.Tests.Effects.Mouse.Effects
         [Test]
         public void ShouldNotEqualArbitraryObject()
         {
-            var effect = Custom.Create();
+            var effect = MouseCustom.Create();
             var obj = new object();
 
             Assert.False(effect == obj);
@@ -475,7 +475,7 @@ namespace Colore.Tests.Effects.Mouse.Effects
         [Test]
         public void ShouldNotEqualNull()
         {
-            var effect = default(Custom);
+            var effect = default(MouseCustom);
 
             Assert.False(effect == null);
             Assert.True(effect != null);
@@ -487,7 +487,7 @@ namespace Colore.Tests.Effects.Mouse.Effects
         [Test]
         public void ClonedStructShouldBeIdentical()
         {
-            var original = new Custom(Color.Red);
+            var original = new MouseCustom(Color.Red);
             var clone = original.Clone();
 
             Assert.That(clone, Is.EqualTo(original));
@@ -496,7 +496,7 @@ namespace Colore.Tests.Effects.Mouse.Effects
         [Test]
         public void ClonedStructShouldBeIndependent()
         {
-            var original = new Custom(Color.Red);
+            var original = new MouseCustom(Color.Red);
             var clone = original.Clone();
 
             clone.Set(Color.Blue);

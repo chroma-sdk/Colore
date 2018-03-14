@@ -36,7 +36,7 @@ namespace Colore.Tests.Effects.Keypad.Effects
         [Test]
         public void ShouldConstructWithCorrectColor()
         {
-            Assert.AreEqual(Color.Red, new Static(Color.Red).Color);
+            Assert.AreEqual(Color.Red, new KeypadStatic(Color.Red).Color);
         }
     }
 }

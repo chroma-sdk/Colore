@@ -38,7 +38,7 @@ namespace Colore.Tests.Effects.Mousepad.Effects
         [Test]
         public void ShouldThrowWhenOutOfRangeGet()
         {
-            var custom = Custom.Create();
+            var custom = MousepadCustom.Create();
 
             // ReSharper disable once NotAccessedVariable
             Color dummy;
@@ -63,7 +63,7 @@ namespace Colore.Tests.Effects.Mousepad.Effects
         [Test]
         public void ShouldThrowWhenOutOfRangeSet()
         {
-            var custom = Custom.Create();
+            var custom = MousepadCustom.Create();
 
             Assert.That(
                 () => custom[-1] = Color.Red,
@@ -85,7 +85,7 @@ namespace Colore.Tests.Effects.Mousepad.Effects
         [Test]
         public void ShouldSetAllColorsWithColorConstructor()
         {
-            var effect = new Custom(Color.Red);
+            var effect = new MousepadCustom(Color.Red);
 
             for (var i = 0; i < MousepadConstants.MaxLeds; i++)
                 Assert.That(effect[i], Is.EqualTo(Color.Red));
@@ -94,7 +94,7 @@ namespace Colore.Tests.Effects.Mousepad.Effects
         [Test]
         public void ShouldSetBlackColorsWithCreate()
         {
-            var effect = Custom.Create();
+            var effect = MousepadCustom.Create();
 
             for (var i = 0; i < MousepadConstants.MaxLeds; i++)
                 Assert.That(effect[i], Is.EqualTo(Color.Black));
@@ -106,10 +106,10 @@ namespace Colore.Tests.Effects.Mousepad.Effects
             var colors = new Color[1];
 
             // ReSharper disable once NotAccessedVariable
-            Custom dummy;
+            MousepadCustom dummy;
 
             Assert.That(
-                () => dummy = new Custom(colors),
+                () => dummy = new MousepadCustom(colors),
                 Throws.InstanceOf<ArgumentException>().With.Property("ParamName").EqualTo("colors"));
         }
 
@@ -121,7 +121,7 @@ namespace Colore.Tests.Effects.Mousepad.Effects
             colors[1] = Color.Blue;
             colors[2] = Color.Green;
 
-            var effect = new Custom(colors);
+            var effect = new MousepadCustom(colors);
 
             for (var i = 0; i < MousepadConstants.MaxLeds; i++)
                 Assert.That(effect[i], Is.EqualTo(colors[i]));
@@ -130,7 +130,7 @@ namespace Colore.Tests.Effects.Mousepad.Effects
         [Test]
         public void ShouldSetAllColorsWithSet()
         {
-            var effect = Custom.Create();
+            var effect = MousepadCustom.Create();
 
             effect.Set(Color.Red);
 
@@ -141,7 +141,7 @@ namespace Colore.Tests.Effects.Mousepad.Effects
         [Test]
         public void ShouldResetToBlackWithClear()
         {
-            var effect = Custom.Create();
+            var effect = MousepadCustom.Create();
             effect.Set(Color.Red);
             effect.Clear();
 
@@ -155,7 +155,7 @@ namespace Colore.Tests.Effects.Mousepad.Effects
             var colors = new Color[MousepadConstants.MaxLeds];
             colors[5] = Color.Red;
 
-            var effect = new Custom(colors);
+            var effect = new MousepadCustom(colors);
 
             Assert.That(effect[5], Is.EqualTo(colors[5]));
         }
@@ -163,7 +163,7 @@ namespace Colore.Tests.Effects.Mousepad.Effects
         [Test]
         public void ShouldSetCorrectColor()
         {
-            var effect = Custom.Create();
+            var effect = MousepadCustom.Create();
             effect[5] = Color.Blue;
 
             Assert.That(effect[5], Is.EqualTo(Color.Blue));
@@ -172,8 +172,8 @@ namespace Colore.Tests.Effects.Mousepad.Effects
         [Test]
         public void ShouldEqualIdenticalEffect()
         {
-            var a = new Custom(Color.Red);
-            var b = new Custom(Color.Red);
+            var a = new MousepadCustom(Color.Red);
+            var b = new MousepadCustom(Color.Red);
 
             Assert.True(a == b);
             Assert.False(a != b);
@@ -184,8 +184,8 @@ namespace Colore.Tests.Effects.Mousepad.Effects
         [Test]
         public void ShouldNotEqualDifferentEffect()
         {
-            var a = new Custom(Color.Red);
-            var b = new Custom(Color.Blue);
+            var a = new MousepadCustom(Color.Red);
+            var b = new MousepadCustom(Color.Blue);
 
             Assert.False(a == b);
             Assert.True(a != b);
@@ -196,7 +196,7 @@ namespace Colore.Tests.Effects.Mousepad.Effects
         [Test]
         public void ShouldEqualIdenticalArray()
         {
-            var effect = new Custom(Color.Red);
+            var effect = new MousepadCustom(Color.Red);
             var array = new Color[MousepadConstants.MaxLeds];
 
             for (var i = 0; i < MousepadConstants.MaxLeds; i++)
@@ -211,7 +211,7 @@ namespace Colore.Tests.Effects.Mousepad.Effects
         [Test]
         public void ShouldNotEqualDifferentArray()
         {
-            var effect = new Custom(Color.Red);
+            var effect = new MousepadCustom(Color.Red);
             var array = new Color[MousepadConstants.MaxLeds];
 
             for (var i = 0; i < MousepadConstants.MaxLeds; i++)
@@ -226,7 +226,7 @@ namespace Colore.Tests.Effects.Mousepad.Effects
         [Test]
         public void ShouldNotEqualArrayWithInvalidLength()
         {
-            var effect = new Custom(Color.Red);
+            var effect = new MousepadCustom(Color.Red);
             var array = new[] { Color.Red, Color.Red, Color.Red };
 
             Assert.False(effect == array);
@@ -238,7 +238,7 @@ namespace Colore.Tests.Effects.Mousepad.Effects
         [Test]
         public void ShouldNotEqualArbitraryObject()
         {
-            var effect = Custom.Create();
+            var effect = MousepadCustom.Create();
             var obj = new object();
 
             Assert.False(effect == obj);
@@ -250,7 +250,7 @@ namespace Colore.Tests.Effects.Mousepad.Effects
         [Test]
         public void ShouldNotEqualNull()
         {
-            var effect = default(Custom);
+            var effect = default(MousepadCustom);
 
             Assert.False(effect == null);
             Assert.True(effect != null);
@@ -261,7 +261,7 @@ namespace Colore.Tests.Effects.Mousepad.Effects
         [Test]
         public void ClonedStructShouldBeIdentical()
         {
-            var original = new Custom(Color.Red);
+            var original = new MousepadCustom(Color.Red);
             var clone = original.Clone();
 
             Assert.That(clone, Is.EqualTo(original));
@@ -270,7 +270,7 @@ namespace Colore.Tests.Effects.Mousepad.Effects
         [Test]
         public void ClonedStructShouldBeIndependent()
         {
-            var original = new Custom(Color.Red);
+            var original = new MousepadCustom(Color.Red);
             var clone = original.Clone();
 
             clone.Set(Color.Blue);

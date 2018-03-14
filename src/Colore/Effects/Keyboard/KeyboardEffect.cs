@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+// <copyright file="KeyboardEffect.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,8 +23,9 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Effects.Mousepad
+namespace Colore.Effects.Keyboard
 {
+    using System.ComponentModel;
     using System.Runtime.Serialization;
 
     using JetBrains.Annotations;
@@ -33,10 +34,11 @@ namespace Colore.Effects.Mousepad
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Effects supported by Chroma mouse pads.
+    /// Supported built-in keyboard effects.
     /// </summary>
+    [PublicAPI]
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum Effect
+    public enum KeyboardEffect
     {
         /// <summary>
         /// No effect.
@@ -46,24 +48,39 @@ namespace Colore.Effects.Mousepad
         None = 0,
 
         /// <summary>
-        /// A custom effect.
+        /// Custom effect.
         /// </summary>
         [PublicAPI]
         [EnumMember(Value = "CHROMA_CUSTOM")]
         Custom = 2,
 
         /// <summary>
-        /// Static color.
+        /// Static effect.
         /// </summary>
         [PublicAPI]
         [EnumMember(Value = "CHROMA_STATIC")]
         Static = 4,
 
         /// <summary>
-        /// Invalid effect type.
+        /// Reserved effect.
+        /// </summary>
+        [EditorBrowsable(EditorBrowsableState.Advanced)]
+        [PublicAPI]
+        [EnumMember(Value = "CHROMA_RESERVED")]
+        Reserved = 7,
+
+        /// <summary>
+        /// Custom effect with keys.
+        /// </summary>
+        [PublicAPI]
+        [EnumMember(Value = "CHROMA_CUSTOM_KEY")]
+        CustomKey = 8,
+
+        /// <summary>
+        /// Invalid effect.
         /// </summary>
         [PublicAPI]
         [EnumMember(Value = "CHROMA_INVALID")]
-        Invalid = 6
+        Invalid = 9
     }
 }

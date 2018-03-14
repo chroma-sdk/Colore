@@ -50,10 +50,10 @@ namespace Colore
         /// <summary>
         /// Sets a static color effect on the mouse pad.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="Static" /> struct.</param>
+        /// <param name="effect">An instance of the <see cref="MousepadStatic" /> struct.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetStaticAsync(Static effect);
+        Task<Guid> SetStaticAsync(MousepadStatic effect);
 
         /// <summary>
         /// Sets a static color effect on the mouse pad.
@@ -66,18 +66,18 @@ namespace Colore
         /// <summary>
         /// Sets a custom effect on the mouse pad.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="Custom" /> struct.</param>
+        /// <param name="effect">An instance of the <see cref="MousepadCustom" /> struct.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetCustomAsync(Custom effect);
+        Task<Guid> SetCustomAsync(MousepadCustom effect);
 
         /// <summary>
         /// Sets an effect without any parameters.
-        /// Currently, this only works for the <see cref="Effect.None" /> effect.
+        /// Currently, this only works for the <see cref="MousepadEffect.None" /> effect.
         /// </summary>
         /// <param name="effect">Effect options.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetEffectAsync(Effect effect);
+        Task<Guid> SetEffectAsync(MousepadEffect effect);
     }
 }

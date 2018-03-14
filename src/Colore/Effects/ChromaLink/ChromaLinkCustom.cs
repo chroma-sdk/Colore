@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Custom.cs" company="Corale">
+// <copyright file="ChromaLinkCustom.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -42,7 +42,7 @@ namespace Colore.Effects.ChromaLink
     /// </summary>
     [JsonConverter(typeof(ChromaLinkCustomConverter))]
     [StructLayout(LayoutKind.Sequential)]
-    public struct Custom : IEquatable<Custom>, IEquatable<Color[]>
+    public struct ChromaLinkCustom : IEquatable<ChromaLinkCustom>, IEquatable<Color[]>
     {
         /// <summary>
         /// Color definitions for each element in Chroma Link.
@@ -55,11 +55,11 @@ namespace Colore.Effects.ChromaLink
         private readonly Color[] _colors;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Custom" /> struct.
+        /// Initializes a new instance of the <see cref="ChromaLinkCustom" /> struct.
         /// </summary>
         /// <param name="colors">The colors to use.</param>
         /// <exception cref="ArgumentException">Thrown if the colors array supplied is of an incorrect size.</exception>
-        public Custom(Color[] colors)
+        public ChromaLinkCustom(Color[] colors)
         {
             if (colors.Length != ChromaLinkConstants.MaxLeds)
             {
@@ -77,11 +77,11 @@ namespace Colore.Effects.ChromaLink
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Custom" /> struct.
+        /// Initializes a new instance of the <see cref="ChromaLinkCustom" /> struct.
         /// </summary>
         /// <param name="colors">The colors to use.</param>
         /// <exception cref="ArgumentException">Thrown if the colors array supplied is of an invalid size.</exception>
-        public Custom(IList<Color> colors)
+        public ChromaLinkCustom(IList<Color> colors)
         {
             if (colors.Count != ChromaLinkConstants.MaxLeds)
             {
@@ -97,11 +97,11 @@ namespace Colore.Effects.ChromaLink
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Custom" /> struct
+        /// Initializes a new instance of the <see cref="ChromaLinkCustom" /> struct
         /// with every position set to a specific color.
         /// </summary>
         /// <param name="color">The <see cref="Color" /> to set each position to.</param>
-        public Custom(Color color)
+        public ChromaLinkCustom(Color color)
         {
             _colors = new Color[ChromaLinkConstants.MaxLeds];
 
@@ -111,11 +111,11 @@ namespace Colore.Effects.ChromaLink
 
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="Custom" /> struct
+        /// Initializes a new instance of the <see cref="ChromaLinkCustom" /> struct
         /// with color values copied from another struct of the same type.
         /// </summary>
         /// <param name="other">The struct to copy data from.</param>
-        public Custom(Custom other)
+        public ChromaLinkCustom(ChromaLinkCustom other)
             : this(other._colors)
         {
         }
@@ -161,38 +161,38 @@ namespace Colore.Effects.ChromaLink
         }
 
         /// <summary>
-        /// Compares an instance of <see cref="Custom" /> with
+        /// Compares an instance of <see cref="ChromaLinkCustom" /> with
         /// another object for equality.
         /// </summary>
-        /// <param name="left">The left operand, an instance of <see cref="Custom" />.</param>
+        /// <param name="left">The left operand, an instance of <see cref="ChromaLinkCustom" />.</param>
         /// <param name="right">The right operand, any type of object.</param>
         /// <returns><c>true</c> if the two objects are equal, otherwise <c>false</c>.</returns>
-        public static bool operator ==(Custom left, object right)
+        public static bool operator ==(ChromaLinkCustom left, object right)
         {
             return left.Equals(right);
         }
 
         /// <summary>
-        /// Compares an instance of <see cref="Custom" /> with
+        /// Compares an instance of <see cref="ChromaLinkCustom" /> with
         /// another object for inequality.
         /// </summary>
-        /// <param name="left">The left operand, an instance of <see cref="Custom" />.</param>
+        /// <param name="left">The left operand, an instance of <see cref="ChromaLinkCustom" />.</param>
         /// <param name="right">The right operand, any type of object.</param>
         /// <returns><c>true</c> if the two objects are not equal, otherwise <c>false</c>.</returns>
-        public static bool operator !=(Custom left, object right)
+        public static bool operator !=(ChromaLinkCustom left, object right)
         {
             return !left.Equals(right);
         }
 
         /// <summary>
-        /// Creates a new empty <see cref="Custom" /> struct.
+        /// Creates a new empty <see cref="ChromaLinkCustom" /> struct.
         /// </summary>
-        /// <returns>An instance of <see cref="Custom" />
+        /// <returns>An instance of <see cref="ChromaLinkCustom" />
         /// filled with the color black.</returns>
         [PublicAPI]
-        public static Custom Create()
+        public static ChromaLinkCustom Create()
         {
-            return new Custom(Color.Black);
+            return new ChromaLinkCustom(Color.Black);
         }
 
         /// <summary>
@@ -200,9 +200,9 @@ namespace Colore.Effects.ChromaLink
         /// </summary>
         /// <returns>A copy of this struct.</returns>
         [PublicAPI]
-        public Custom Clone()
+        public ChromaLinkCustom Clone()
         {
-            return new Custom(this);
+            return new ChromaLinkCustom(this);
         }
 
         /// <summary>
@@ -247,10 +247,10 @@ namespace Colore.Effects.ChromaLink
         /// <filterpriority>2</filterpriority>
         public override bool Equals(object obj)
         {
-            if (ReferenceEquals(obj, null))
+            if (obj is null)
                 return false;
 
-            if (obj is Custom custom)
+            if (obj is ChromaLinkCustom custom)
                 return Equals(custom);
 
             return obj is Color[] array && Equals(array);
@@ -264,8 +264,8 @@ namespace Colore.Effects.ChromaLink
         /// <c>true</c> if the current object is equal to the <paramref name="other" /> parameter;
         /// otherwise, <c>false</c>.
         /// </returns>
-        /// <param name="other">A <see cref="Custom" /> to compare with this object.</param>
-        public bool Equals(Custom other)
+        /// <param name="other">A <see cref="ChromaLinkCustom" /> to compare with this object.</param>
+        public bool Equals(ChromaLinkCustom other)
         {
             for (var index = 0; index < ChromaLinkConstants.MaxLeds; index++)
             {

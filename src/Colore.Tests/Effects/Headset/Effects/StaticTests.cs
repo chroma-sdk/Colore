@@ -36,7 +36,7 @@ namespace Colore.Tests.Effects.Headset.Effects
         [Test]
         public void ShouldConstructWithCorrectColor()
         {
-            Assert.AreEqual(Color.Red, new Static(Color.Red).Color);
+            Assert.AreEqual(Color.Red, new HeadsetStatic(Color.Red).Color);
         }
     }
 }

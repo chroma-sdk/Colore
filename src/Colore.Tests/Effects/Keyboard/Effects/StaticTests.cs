@@ -36,7 +36,7 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ShouldConstructWithCorrectColor()
         {
-            Assert.That(new Static(Color.Red).Color, Is.EqualTo(Color.Red));
+            Assert.That(new KeyboardStatic(Color.Red).Color, Is.EqualTo(Color.Red));
         }
     }
 }

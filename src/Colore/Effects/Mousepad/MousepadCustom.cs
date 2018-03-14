@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Custom.cs" company="Corale">
+// <copyright file="MousepadCustom.cs" company="Corale">
 //     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,7 +23,7 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Effects.Headset
+namespace Colore.Effects.Mousepad
 {
     using System;
     using System.Collections.Generic;
@@ -36,47 +36,48 @@ namespace Colore.Effects.Headset
 
     using Newtonsoft.Json;
 
+    /// <inheritdoc cref="IEquatable{T}" />
     /// <summary>
-    /// Custom effect for headsets.
+    /// Custom effect for mouse pad.
     /// </summary>
-    [JsonConverter(typeof(HeadsetCustomConverter))]
+    [JsonConverter(typeof(MousepadCustomConverter))]
     [StructLayout(LayoutKind.Sequential)]
-    public struct Custom : IEquatable<Custom>
+    public struct MousepadCustom : IEquatable<MousepadCustom>
     {
         /// <summary>
         /// Colors for the LEDs.
         /// </summary>
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = HeadsetConstants.MaxLeds)]
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = MousepadConstants.MaxLeds)]
         private readonly Color[] _colors;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Custom" /> struct with
+        /// Initializes a new instance of the <see cref="MousepadCustom" /> struct with
         /// a default color to apply to every LED.
         /// </summary>
         /// <param name="color">The color to set every LED to initially.</param>
-        public Custom(Color color)
+        public MousepadCustom(Color color)
         {
-            _colors = new Color[HeadsetConstants.MaxLeds];
+            _colors = new Color[MousepadConstants.MaxLeds];
 
             for (var i = 0; i < _colors.Length; i++)
                 _colors[i] = color;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Custom" /> struct.
+        /// Initializes a new instance of the <see cref="MousepadCustom" /> struct.
         /// </summary>
         /// <param name="colors">The colors to use.</param>
         /// <exception cref="ArgumentException">Thrown if the colors list supplied is of an incorrect size.</exception>
-        public Custom(IList<Color> colors)
+        public MousepadCustom(IList<Color> colors)
         {
-            if (colors.Count != HeadsetConstants.MaxLeds)
+            if (colors.Count != MousepadConstants.MaxLeds)
             {
                 throw new ArgumentException(
-                    "Invalid length of color list, expected " + HeadsetConstants.MaxLeds + " but received " + colors.Count,
+                    "Invalid length of color list, expected " + MousepadConstants.MaxLeds + " but received " + colors.Count,
                     nameof(colors));
             }
 
-            _colors = new Color[HeadsetConstants.MaxLeds];
+            _colors = new Color[MousepadConstants.MaxLeds];
 
             for (var i = 0; i < _colors.Length; i++)
                 _colors[i] = colors[i];
@@ -84,11 +85,11 @@ namespace Colore.Effects.Headset
 
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="Custom" /> struct
+        /// Initializes a new instance of the <see cref="MousepadCustom" /> struct
         /// with the colors copied from another struct of the same type.
         /// </summary>
         /// <param name="other">The struct to copy data from.</param>
-        public Custom(Custom other)
+        public MousepadCustom(MousepadCustom other)
             : this(other._colors)
         {
         }
@@ -103,15 +104,12 @@ namespace Colore.Effects.Headset
         /// </summary>
         /// <param name="led">Index of the LED to access.</param>
         /// <returns>The <see cref="Color" /> at the specified position.</returns>
-        /// <exception cref="ArgumentOutOfRangeException">
-        /// Thrown if the specified LED index is outside the range of available LED indices.
-        /// </exception>
         [PublicAPI]
         public Color this[int led]
         {
             get
             {
-                if (led < 0 || led >= HeadsetConstants.MaxLeds)
+                if (led < 0 || led >= MousepadConstants.MaxLeds)
                 {
                     throw new ArgumentOutOfRangeException(
                         nameof(led),
@@ -124,7 +122,7 @@ namespace Colore.Effects.Headset
 
             set
             {
-                if (led < 0 || led >= HeadsetConstants.MaxLeds)
+                if (led < 0 || led >= MousepadConstants.MaxLeds)
                 {
                     throw new ArgumentOutOfRangeException(
                         nameof(led),
@@ -137,37 +135,37 @@ namespace Colore.Effects.Headset
         }
 
         /// <summary>
-        /// Compares an instance of <see cref="Custom" /> with
+        /// Compares an instance of <see cref="MousepadCustom" /> with
         /// another object for equality.
         /// </summary>
-        /// <param name="left">The left operand, an instance of <see cref="Custom" />.</param>
+        /// <param name="left">The left operand, an instance of <see cref="MousepadCustom" />.</param>
         /// <param name="right">The right operand, any type of object.</param>
         /// <returns><c>true</c> if the two objects are equal, otherwise <c>false</c>.</returns>
-        public static bool operator ==(Custom left, object right)
+        public static bool operator ==(MousepadCustom left, object right)
         {
             return left.Equals(right);
         }
 
         /// <summary>
-        /// Compares an instance of <see cref="Custom" /> with
+        /// Compares an instance of <see cref="MousepadCustom" /> with
         /// another object for inequality.
         /// </summary>
-        /// <param name="left">The left operand, an instance of <see cref="Custom" />.</param>
+        /// <param name="left">The left operand, an instance of <see cref="MousepadCustom" />.</param>
         /// <param name="right">The right operand, any type of object.</param>
         /// <returns><c>true</c> if the two objects are not equal, otherwise <c>false</c>.</returns>
-        public static bool operator !=(Custom left, object right)
+        public static bool operator !=(MousepadCustom left, object right)
         {
             return !left.Equals(right);
         }
 
         /// <summary>
-        /// Create a new empty <see cref="Custom" /> struct.
+        /// Create a new empty <see cref="MousepadCustom" /> struct.
         /// </summary>
-        /// <returns>An instance of <see cref="Custom" /> filled with the color black.</returns>
+        /// <returns>An instance of <see cref="MousepadCustom" /> filled with the color black.</returns>
         [PublicAPI]
-        public static Custom Create()
+        public static MousepadCustom Create()
         {
-            return new Custom(Color.Black);
+            return new MousepadCustom(Color.Black);
         }
 
         /// <summary>
@@ -175,9 +173,9 @@ namespace Colore.Effects.Headset
         /// </summary>
         /// <returns>A copy of this struct.</returns>
         [PublicAPI]
-        public Custom Clone()
+        public MousepadCustom Clone()
         {
-            return new Custom(this);
+            return new MousepadCustom(this);
         }
 
         /// <summary>
@@ -199,12 +197,12 @@ namespace Colore.Effects.Headset
         [PublicAPI]
         public void Set(Color color)
         {
-            for (var i = 0; i < HeadsetConstants.MaxLeds; i++)
+            for (var i = 0; i < MousepadConstants.MaxLeds; i++)
                 _colors[i] = color;
         }
 
         /// <summary>
-        /// Clears the colors in this <see cref="Custom" /> struct (sets to <see cref="Color.Black" />).
+        /// Clears the colors in this <see cref="MousepadCustom" /> struct (sets to <see cref="Color.Black" />).
         /// </summary>
         [PublicAPI]
         public void Clear()
@@ -220,12 +218,10 @@ namespace Colore.Effects.Headset
         /// <c>true</c> if <paramref name="obj"/> and this instance are the same type
         /// and represent the same value; otherwise, <c>false</c>.
         /// </returns>
+        /// <filterpriority>2</filterpriority>
         public override bool Equals(object obj)
         {
-            if (obj is null)
-                return false;
-
-            return obj is Custom custom && Equals(custom);
+            return !(obj is null) && obj is MousepadCustom custom && Equals(custom);
         }
 
         /// <inheritdoc />
@@ -234,11 +230,11 @@ namespace Colore.Effects.Headset
         /// </summary>
         /// <param name="other">An object to compare with this object.</param>
         /// <returns>
-        /// <c>true</c> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <c>false</c>.
+        /// <c>true</c> if the current object is equal to the <paramref name="other" /> parameter; otherwise, <c>false</c>.
         /// </returns>
-        public bool Equals(Custom other)
+        public bool Equals(MousepadCustom other)
         {
-            for (var i = 0; i < HeadsetConstants.MaxLeds; i++)
+            for (var i = 0; i < MousepadConstants.MaxLeds; i++)
             {
                 if (this[i] != other[i])
                     return false;
