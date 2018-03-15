@@ -231,7 +231,9 @@ namespace Colore.Implementations
         /// <summary>
         /// Initializes the SDK if it hasn't already.
         /// </summary>
-        /// <param name="info">Information about the application.</param>
+        /// <param name="info">
+        /// Information about the application. Can be <c>null</c> only if the Native SDK backend is used.
+        /// </param>
         /// <remarks>
         /// <span style="color: red;">Manual manipulation of the SDK state is
         /// <strong>not supported by the CoraleStudios team</strong> and may

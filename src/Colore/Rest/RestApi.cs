@@ -103,9 +103,13 @@ namespace Colore.Rest
         /// </summary>
         /// <param name="info">Information about the application.</param>
         /// <returns>An object representing the progress of this asynchronous task.</returns>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="info" /> is <c>null</c>.</exception>
         /// <exception cref="RestException">Thrown if there is an error calling the REST API.</exception>
         public async Task InitializeAsync(AppInfo info)
         {
+            if (info == null)
+                throw new ArgumentNullException(nameof(info));
+
             Log.Info("Initializing SDK via /razer/chromasdk endpoint");
 
             _client.BaseAddress = _baseUri;
@@ -119,7 +123,7 @@ namespace Colore.Rest
                     Result.RzFailed,
                     new Uri(_client.BaseAddress, "/razer/chromasdk"),
                     response.Status);
-                Log.Error("Chroma SDK initialization failed", ex);
+                Log.Error(ex, "Chroma SDK initialization failed");
                 throw ex;
             }
 
@@ -132,8 +136,19 @@ namespace Colore.Rest
                     Result.RzFailed,
                     new Uri(_client.BaseAddress, "/razer/chromasdk"),
                     response.Status);
-                Log.Error("Got NULL data from REST API", ex);
+                Log.Error(ex, "Got NULL data from REST API");
                 throw ex;
+            }
+
+            if (data.Session == 0 || data.Uri == null)
+            {
+                var ex = new RestException(
+                    "REST API returned invalid session ID or URL",
+                    Result.RzFailed,
+                    new Uri(_client.BaseAddress, "/razer/chromasdk"),
+                    response.Status,
+                    data);
+                Log.Error(ex, "Got invalid session response from REST init API");
             }
 
             _session = data.Session;
@@ -447,7 +462,7 @@ namespace Colore.Rest
                     Result.RzFailed,
                     new Uri(_client.BaseAddress, "/heartbeat"),
                     response.Status);
-                Log.Error("Heartbeat call failed", ex);
+                Log.Error(ex, "Heartbeat call failed");
                 throw ex;
             }
 
@@ -458,7 +473,7 @@ namespace Colore.Rest
                     Result.RzFailed,
                     new Uri(_client.BaseAddress, "/heartbeat"),
                     response.Status);
-                Log.Error("Got NULL data from heartbeat call", ex);
+                Log.Error(ex, "Got NULL data from heartbeat call");
                 throw ex;
             }
 
@@ -487,7 +502,7 @@ namespace Colore.Rest
                     new Uri(_client.BaseAddress, endpoint),
                     response.Status,
                     response.Data);
-                Log.Error("Failed to create effect", ex);
+                Log.Error(ex, "Failed to create effect");
                 throw ex;
             }
 
