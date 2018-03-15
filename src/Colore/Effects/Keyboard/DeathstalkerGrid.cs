@@ -43,7 +43,7 @@ namespace Colore.Effects.Keyboard
     /// <remarks>
     /// This effect is only used for compatibility with the Razer Deathstalker Chroma keyboard.
     /// </remarks>
-    [JsonConverter(typeof(KeyboardCustomConverter))]
+    [JsonConverter(typeof(DeathstalkerGridConverter))]
     [StructLayout(LayoutKind.Sequential)]
     public struct DeathstalkerGrid : IEquatable<DeathstalkerGrid>
     {
