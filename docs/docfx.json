@@ -5,7 +5,7 @@
         {
           "src": "../src",
           "files": [
-            "Corale.Colore/bin/Release/netstandard1.3/Corale.Colore.dll"
+            "Colore/bin/Release/netstandard1.3/Colore.dll"
           ],
           "exclude": [ "**/obj/**" ]
         }
