@@ -8,7 +8,7 @@
     <title>Getting Started </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Getting Started ">
-    <meta name="generator" content="docfx 2.26.4.0">
+    <meta name="generator" content="docfx 2.33.1.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -74,7 +74,7 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="">
+            <article class="content wrap" id="_content" data-uid="getting-started">
 <h1 id="getting-started">Getting Started</h1>
 
 <h2 id="1-how-to-install-colore">1. How to install Colore</h2>
@@ -90,7 +90,7 @@ After that you should see a Reference being added to &quot;Colore&quot;.</p>
 <p>Make sure to select the MyGet feed when you are browsing packages in the package manager (or select &quot;All&quot; to see packages from all feeds at once), and to check the &quot;Include pre-releases&quot; checkbox. The MyGet feed will also include stable versions of Colore when they are released, so you can use it as the sole source for Colore.</p>
 <h2 id="2-how-to-make-every-device-the-same-color">2. How to make every Device the same Color</h2>
 <p>Now in your Form you can just add a button for example and with a double-click it will take you to the form&#39;s source code and already created an event handler for that button when it is clicked.</p>
-<p>At the top of that file you should now include a <code>using Colore;</code> otherwise you need to prefix everything with <code>Colore</code>. I myself like to also add the following to the using statements to make sure I have the correct &quot;Color&quot;. Otherwise it might interfere with <code>System.Drawing</code>:</p>
+<p>At the top of that file you should now include a <code>using Colore;</code> otherwise you need to prefix everything with <code>Colore</code>. I myself like to also add the following to the using statements to make sure I have the correct &quot;<a class="xref" href="../api/Colore.Data.Color.html">Color</a>&quot;. Otherwise it might interfere with <code>System.Drawing</code>:</p>
 <pre><code class="lang-C#">using ColoreColor = Colore.Data.Color;
 </code></pre><p>Now you change the Event Method like the following:</p>
 <pre><code class="lang-C#">private async void button1_Click(object sender, EventArgs e)
@@ -105,9 +105,9 @@ After that you should see a Reference being added to &quot;Colore&quot;.</p>
     // await chroma.SetAllAsync(Colore.Data.Color.Red);
 }
 </code></pre><p>If you then run your application and click the button you will see that all your chroma devices turned Red.</p>
-<h3 id="a-note-on-coloreprovider">A note on <code>ColoreProvider</code></h3>
+<h3 id="a-note-on-coloreproviderxrefcolorecoloreprovider">A note on <a class="xref" href="../api/Colore.ColoreProvider.html"><code>ColoreProvider</code></a></h3>
 <p>Since version 6.0.0, Colore is designed to be asynchronous and less strict in how it is used.
-This means that the <code>Chroma</code> instance is now obtained differently.
+This means that the <a class="xref" href="../api/Colore.IChroma.html"><code>Chroma</code></a> instance is now obtained differently.
 You can asynchronously instantiate either the native or REST API SDK in the following ways:</p>
 <pre><code class="lang-c#">// Create the regular native SDK backend, like in version 5.x
 ColoreProvider.CreateNativeAsync();
@@ -118,55 +118,55 @@ var appInfo = new AppInfo(&quot;My app&quot;, &quot;An awesome Chroma app!&quot;
 ColoreProvider.CreateRestAsync(appInfo);
 </code></pre><p>There are also overloads taking a custom REST API endpoint which can be useful for testing, and an overload taking
 a bool parameter to control whether to use the SSL version of Razer&#39;s REST API.</p>
-<p>Each time you create a new Chroma instance in this way using <code>ColoreProvider</code>, the previously created instance will
+<p>Each time you create a new Chroma instance in this way using <a class="xref" href="../api/Colore.ColoreProvider.html"><code>ColoreProvider</code></a>, the previously created instance will
 be uninitialized and discarded. For this reason, you should create your Chroma instance <em>once</em> at application startup
 and then use this instance for the remainder of your application&#39;s lifetime.</p>
 <p>For background applications that dynamically enable and disable Chroma features however, you can call the
-<code>UninitializeAsync</code> and <code>InitializeAsync</code> methods to control the lifetime. (Note that uninitializing the SDK
+<a class="xref" href="../api/Colore.IChroma.html#Colore_IChroma_UninitializeAsync"><code>UninitializeAsync</code></a> and <a class="xref" href="../api/Colore.IChroma.html#Colore_IChroma_InitializeAsync_Colore_Data_AppInfo_"><code>InitializeAsync</code></a> methods to control the lifetime. (Note that uninitializing the SDK
 manually this way doesn&#39;t always work properly with the SDK, and can sometimes leave it in a weird state.)</p>
 <h2 id="3-how-to-access-device-types">3. How to access Device Types</h2>
 <p>Chroma SDK does not allow you to access one single device (as far as we know) but you can access Device Types. For example Keyboards, Mouse, Keypads...</p>
 <p>To do that with Colore here is an example for the Keyboard:</p>
 <p>Again this can be done without any using but we consider it easier and more readable. So add the following at the top of the file:</p>
 <pre><code class="lang-C#">using Colore.Effects.Keyboard;
-</code></pre><p>In some cases it might be helpful to also map it to another name as we did with the ColoreColor, but for now it&#39;s fine.</p>
+</code></pre><p>In some cases it might be helpful to also map it to another name as we did with the <a class="xref" href="../api/Colore.Data.Color.html">Color</a>, but for now it&#39;s fine.</p>
 <p>Then change your method like this:</p>
 <pre><code class="lang-C#">private async void button1_Click(object sender, EventArgs e)
 {
     var chroma = await ColoreProvider.CreateNativeAsync();
     await chroma.Keyboard.SetKeyAsync(Key.A, ColoreColor.Red);
 }
-</code></pre><p>(From now on, it will be assumed that the variable <code>chroma</code> contains an instance of <code>IChroma</code> created from <code>ColoreProvider</code>.)</p>
+</code></pre><p>(From now on, it will be assumed that the variable <code>chroma</code> contains an instance of <a class="xref" href="../api/Colore.IChroma.html"><code>IChroma</code></a> created from <a class="xref" href="../api/Colore.ColoreProvider.html"><code>ColoreProvider</code></a>.)</p>
 <p>Now when you run it you will see that the &quot;A&quot; Key will glow Red.
 So it&#39;s pretty easy to use Colore :)</p>
 <p>To set a color on a Mouse for example:
-<code>chroma.Mouse.SetLedAsync(Colore.Effects.Mouse.Led.Strip1, ColoreColor.Red);</code></p>
-<p>The following Devices are available as properties on the <code>IChroma</code> instance:</p>
+<a class="xref" href="../api/Colore.IMouse.html#Colore_IMouse_Item_Colore_Effects_Mouse_GridLed_"><code>chroma.Mouse[Colore.Effects.Mouse.Led.Strip1] = ColoreColor.Red;</code></a></p>
+<p>The following Devices are available as properties on the <a class="xref" href="../api/Colore.IChroma.html"><code>IChroma</code></a> instance:</p>
 <ul>
-<li><code>Mousepad</code></li>
-<li><code>Keypad</code></li>
-<li><code>Headset</code></li>
-<li><code>Keyboard</code></li>
-<li><code>Mouse</code></li>
+<li><a class="xref" href="../api/Colore.IMousepad.html"><code>Mousepad</code></a></li>
+<li><a class="xref" href="../api/Colore.IKeypad.html"><code>Keypad</code></a></li>
+<li><a class="xref" href="../api/Colore.IHeadset.html"><code>Headset</code></a></li>
+<li><a class="xref" href="../api/Colore.IKeyboard.html"><code>Keyboard</code></a></li>
+<li><a class="xref" href="../api/Colore.IMouse.html"><code>Mouse</code></a></li>
 </ul>
 <p>As a mousepad doesn&#39;t contain a SetKey method take a look at section 5.</p>
 <h2 id="4-how-to-define-custom-colors">4. How to define custom Colors</h2>
-<p>You can of course define any color you like when you use <code>new ColoreColor(1.0, 1.0, 1.0)</code>. The numbers are in the order Red, Green and Blue where 1.0 is full color and 0.0 is nothing. Which makes this White (Red Green and Blue glowing at full bright). You can also use color values which range from 0 - 255 (the usual color range) but make sure to use or cast your value to <code>byte</code> to call the correct constructor. This can cause some trouble if you aren&#39;t careful:</p>
-<p>This will work as expected as it&#39;s using the byte constructor: <code>new ColoreColor(255, 125, 125)</code>
-This will <strong>NOT</strong> work as expected: <code>new ColoreColor(255.0, 125.0, 125.0)</code></p>
+<p>You can of course define any color you like when you use <a class="xref" href="../api/Colore.Data.Color.html#Colore_Data_Color__ctor_System_Double_System_Double_System_Double_"><code>new ColoreColor(1.0, 1.0, 1.0)</code></a>. The numbers are in the order red, green, and blue where <code>1.0</code> is full color and <code>0.0</code> is nothing. Which makes this white (red, green and blue glowing at full bright). You can also use color values which range from 0 - 255 (the usual color range) but make sure to use or cast your value to <code>byte</code> to call the correct constructor. This can cause some trouble if you aren&#39;t careful:</p>
+<p>This will work as expected as it&#39;s using the byte constructor: <a class="xref" href="../api/Colore.Data.Color.html#Colore_Data_Color__ctor_System_Byte_System_Byte_System_Byte_"><code>new ColoreColor(255, 125, 125)</code></a>
+This will <strong>NOT</strong> work as expected: <a class="xref" href="../api/Colore.Data.Color.html#Colore_Data_Color__ctor_System_Double_System_Double_System_Double_"><code>new ColoreColor(255.0, 125.0, 125.0)</code></a></p>
 <p>This does work as expected:</p>
 <pre><code class="lang-C#">int i = 255;
 var color = new ColoreColor((byte)i, (byte)i, (byte)i);
-</code></pre><p>Result: Color with R=255, G=255, B=255</p>
+</code></pre><p>Result: Color with R=255, G=255, B=255.</p>
 <p>While this does <strong>NOT</strong> work as expected (the integers are coerced into floating point numbers):</p>
 <pre><code class="lang-C#">int i = 255;
 var color = new ColoreColor(i, i, i);
-</code></pre><p>Result: Color with R=1, G=1, B=1</p>
+</code></pre><p>Result: Color with R=1, G=1, B=1.</p>
 <h2 id="5-how-do-i-know-which-color-is-currently-set-on-a-key--what-if-i-dont-want-to-set-a-key-but-a-specific-rowcolumn">5. How do I know which color is currently set on a Key / What if I don&#39;t want to set a Key but a specific row/column?</h2>
-<p>Internally Colore is storing colors in a Grid.
+<p>Internally Colore is storing colors in a grid.
 This Grid is then send to the Device.
-Instead of using SetKey you can directly edit that Grid which will also cause an update to the device by doing the following:
-<code>chroma.Keyboard[Key.A] = ColoreColor.Red;</code>
+Instead of using <code>SetKey</code> you can directly edit that grid which will also cause an update to the device by doing the following:
+<a class="xref" href="../api/Colore.IKeyboard.html#Colore_IKeyboard_Item_Colore_Effects_Keyboard_Key_"><code>chroma.Keyboard[Key.A] = ColoreColor.Red;</code></a>
 This is the equivalent to SetKey above.</p>
 <p>But you can also read the value from this Grid with this method. For example:</p>
 <pre><code class="lang-C#">private void button1_Click(object sender, EventArgs e)
@@ -183,9 +183,9 @@ This is the equivalent to SetKey above.</p>
         chroma.Keyboard[Key.A] = ColoreColor.Red;
     }
 }
-</code></pre><p>In some cases you can even access a virtual Grid instead of for example Key.A you can set the Key in the second row from the top and the fifth column from the left to Red:
-<code>Chroma.Instance.Keyboard[1, 4] = ColoreColor.Red;</code>
-The first int is row and the second is column. Starting with 0! There even are Constants that allow you to loop through all Keys:</p>
+</code></pre><p>In some cases you can even access a virtual Grid instead of for example <a class="xref" href="../api/Colore.Effects.Keyboard.Key.html#Colore_Effects_Keyboard_Key_A"><code>Key.A</code></a> you can set the Key in the second row from the top and the fifth column from the left to Red:
+<a class="xref" href="../api/Colore.IKeyboard.html#Colore_IKeyboard_Item_System_Int32_System_Int32_"><code>Chroma.Instance.Keyboard[1, 4] = ColoreColor.Red;</code></a>
+The first int is row and the second is column, starting with <code>0</code>! There even are Constants that allow you to loop through all keys:</p>
 <pre><code class="lang-C#">private async void button1_Click(object sender, EventArgs e)
 {
     var chroma = await ColoreProvider.CreateNativeAsync();
@@ -204,11 +204,11 @@ The first int is row and the second is column. Starting with 0! There even are C
         }
     }
 }
-</code></pre><p>The same thing can be archived with <code>SetPosition</code>:
+</code></pre><p>The same thing can be archived with <a class="xref" href="../api/Colore.IKeyboard.html#Colore_IKeyboard_SetPositionAsync_System_Int32_System_Int32_Colore_Data_Color_System_Boolean_"><code>SetPositionAsync</code></a>:
 <code>chroma.Keyboard.SetPositionAsync(1, 4, ColoreColor.Red);</code>
 It depends on the device if it&#39;s available or not.</p>
 <h2 id="6-what-about-performance">6. What about performance?</h2>
-<p>Now it gets a bit more advanced and some people might think it&#39;s not actually needed as the SDK is very fast. But I personally love to manage my grids myself. The following example works for every device and if you do an application which does many updates at once I&#39;d recommend it as you can at first set everything before sending it to the Keyboard, Mouse, Mousepad... . As said in point 5 Colore does internally also store a Grid, but everytime you change a Key via SetKey or the index (Keyboard[Key.A]) it sends an update to the Keyboard. That means if you set multiple Keys at once (maybe even update the whole Keyboard) it does many many many requests to the SDK. Better way in my opinion is to set everything in the grid and then update it. That&#39;s what the following code does.</p>
+<p>Now it gets a bit more advanced and some people might think it&#39;s not actually needed as the SDK is very fast, but you can manage the grids myself. The following example works for every device and if you do an application which does many updates at once we recommend it as you can at first set everything before sending it to the keyboard, mouse, mousepad&hellip; As said in point 5 Colore does internally also store a grid, but everytime you change a Key via <code>SetKey</code> or the index (<code>Keyboard[Key.A]</code>) it sends an update to the Keyboard. That means if you set multiple Keys at once (maybe even update the whole keyboard) it does many many many requests to the SDK. A more performant way is to set everything in the grid and then update it. That&#39;s what the following code does.</p>
 <p>Now the code in your method:</p>
 <pre><code class="lang-C#">private async void button1_Click(object sender, EventArgs e)
 {
@@ -272,6 +272,9 @@ await chroma.Keyboard.SetCustomAsync(keyboardGrid);
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="https://github.com/CoraleStudios/Colore/blob/develop/docs/articles/getting-started.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
@@ -289,8 +292,8 @@ await chroma.Keyboard.SetCustomAsync(keyboardGrid);
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
+            Copyright © 2015-2018 by <a href="https://github.com/Sharparam">Adam Hellberg</a> and <a href="https://github.com/brandonscott">Brandon Scott</a><br>Generated by <a href="http://dotnet.github.io/docfx/"><strong>DocFX</strong></a>
             
-            <span>Copyright © 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
           </div>
         </div>
       </footer>

@@ -6334,3 +6334,6 @@ references:
   commentId: Overload:Colore.UnsupportedDeviceException.DeviceId
   fullName: Colore.UnsupportedDeviceException.DeviceId
   nameWithType: UnsupportedDeviceException.DeviceId
+- uid: getting-started
+  name: Getting Started
+  href: articles/getting-started.html
