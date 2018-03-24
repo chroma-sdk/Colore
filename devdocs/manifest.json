@@ -55,12 +55,984 @@
       "version": ""
     },
     {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Api.ApiException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Api.ApiException.html",
+          "hash": "E+NAT5ZecV6+FP9XBhal0w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Api.IChromaApi.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Api.IChromaApi.html",
+          "hash": "gO/EIWNTZgSaD3xU2SyV3g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Api.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Api.html",
+          "hash": "BAPqKbClulNZM4fiHTlMSg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.ColoreException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.ColoreException.html",
+          "hash": "pqrHUxCVNV2682aXvb4mKA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.ColoreProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.ColoreProvider.html",
+          "hash": "7U9QVZPcHva0uGOc/9Samw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Data.AppInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Data.AppInfo.html",
+          "hash": "8gqahoOPy8DDPu8qdGwxMA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Data.Author.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Data.Author.html",
+          "hash": "/RfEs7i+HDyfVOuNy2+YIA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Data.Category.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Data.Category.html",
+          "hash": "BQQoPeerAcxk+0HMso22nw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Data.Color.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Data.Color.html",
+          "hash": "4s9wvPTVHLtIdP8Rz1QcIw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Data.Constants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Data.Constants.html",
+          "hash": "QlLiYFbXHuZ4TQzU7m+eyg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Data.DeviceInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Data.DeviceInfo.html",
+          "hash": "zC9lNSh9eBp9Do2Caw4ovw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Data.DeviceType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Data.DeviceType.html",
+          "hash": "2SoM9DwQ2uW4dFbTjWvrOQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Data.Devices.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Data.Devices.html",
+          "hash": "30qnPxMvTp+LVIOz705ccA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Data.Result.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Data.Result.html",
+          "hash": "OpyotIgKliUTfp5zfiLSiA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Data.SdkDeviceInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Data.SdkDeviceInfo.html",
+          "hash": "TZnSZ52sHmYXEttDNCthcA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Data.SdkVersion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Data.SdkVersion.html",
+          "hash": "w/y83EjP2fhy+WPPypqHXA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Data.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Data.html",
+          "hash": "ZjyAMbCPSl8SztCmSumnsA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.ChromaLink.ChromaLinkConstants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.ChromaLink.ChromaLinkConstants.html",
+          "hash": "iJTN3nTeEb1lpAvahNDI6g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.ChromaLink.ChromaLinkCustom.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.ChromaLink.ChromaLinkCustom.html",
+          "hash": "aQnI+iNATQFhOYWkhN1bPg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.ChromaLink.ChromaLinkEffect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.ChromaLink.ChromaLinkEffect.html",
+          "hash": "GcV8ISSVDANQQsGEn0a7Rg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.ChromaLink.ChromaLinkStatic.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.ChromaLink.ChromaLinkStatic.html",
+          "hash": "evmMyM/UM6F0nwknFs/stA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.ChromaLink.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.ChromaLink.html",
+          "hash": "IC1XxdH0tOw0U+sCPogIlQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.Generic.Effect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.Generic.Effect.html",
+          "hash": "Wa/ObqQH17Wn2KkhBSN9zQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.Generic.None.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.Generic.None.html",
+          "hash": "/LsNwwSDIJGjrVbRUsbboA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.Generic.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.Generic.html",
+          "hash": "aT6jsoOvLT4cFAhPLPo0IQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.Headset.HeadsetConstants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.Headset.HeadsetConstants.html",
+          "hash": "gVKAn5U+qMF6rRFmoTo3Vw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.Headset.HeadsetCustom.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.Headset.HeadsetCustom.html",
+          "hash": "KvOoROFuThnehzDc1cZaQw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.Headset.HeadsetEffect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.Headset.HeadsetEffect.html",
+          "hash": "pcGrlD73UtDUdgVF3dSO+Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.Headset.HeadsetStatic.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.Headset.HeadsetStatic.html",
+          "hash": "oFGJHtlzfcFpZNHW4VE/Qw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.Headset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.Headset.html",
+          "hash": "20Cay5kw37d5cv8iVSuK3Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.Keyboard.DeathstalkerGrid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.Keyboard.DeathstalkerGrid.html",
+          "hash": "UkiZqmO8/Xe5N/Ql0iJE4w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.Keyboard.Key.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.Keyboard.Key.html",
+          "hash": "Ex0nL+tyyaos7Xu57hBNyQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.Keyboard.KeyboardConstants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.Keyboard.KeyboardConstants.html",
+          "hash": "Xtgsa0Almxamuf0Pnz+jlw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.Keyboard.KeyboardCustom.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.Keyboard.KeyboardCustom.html",
+          "hash": "NjU2zvRWCGl1LXsYL8pMCg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.Keyboard.KeyboardEffect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.Keyboard.KeyboardEffect.html",
+          "hash": "z9IPZskH6RcyoMoUccqg4w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.Keyboard.KeyboardStatic.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.Keyboard.KeyboardStatic.html",
+          "hash": "aJ+5a/Dz61VXe8owlzYLqQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.Keyboard.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.Keyboard.html",
+          "hash": "DhohIuaRMIPTJniTx4BJNg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.Keypad.KeypadConstants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.Keypad.KeypadConstants.html",
+          "hash": "QYpFSKnKi06nDNRXoMrw/A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.Keypad.KeypadCustom.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.Keypad.KeypadCustom.html",
+          "hash": "QxKxm0aU5K6gYPvWQ/xO5A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.Keypad.KeypadEffect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.Keypad.KeypadEffect.html",
+          "hash": "4lrB0+tDw/7EPaYXtm0KKw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.Keypad.KeypadStatic.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.Keypad.KeypadStatic.html",
+          "hash": "+yUw9pJc5BFSnEL2laHZ8g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.Keypad.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.Keypad.html",
+          "hash": "mib/O+J9rLovqr2MQscYBA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.Mouse.GridLed.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.Mouse.GridLed.html",
+          "hash": "it11zuzJmUMiFuXhUTwuzg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.Mouse.Led.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.Mouse.Led.html",
+          "hash": "g3kbwUyW1SAGvvyEfoF2Iw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.Mouse.MouseConstants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.Mouse.MouseConstants.html",
+          "hash": "HzinhyxZqw/N9p66F1A7WA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.Mouse.MouseCustom.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.Mouse.MouseCustom.html",
+          "hash": "F0rATM5/P3zLlB84a2aUmw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.Mouse.MouseEffect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.Mouse.MouseEffect.html",
+          "hash": "mmtD7JI0vl07bjgbmdnRZQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.Mouse.MouseStatic.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.Mouse.MouseStatic.html",
+          "hash": "RpJe+Gb9YIRYAU5OQROKQQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.Mouse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.Mouse.html",
+          "hash": "nsiAEmfNgCYp9twxWpPI3w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.Mousepad.MousepadConstants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.Mousepad.MousepadConstants.html",
+          "hash": "9VEAgya5Di2gKDDIc8VMzg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.Mousepad.MousepadCustom.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.Mousepad.MousepadCustom.html",
+          "hash": "g9/SLNpmsi0cxsYj7lPf+g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.Mousepad.MousepadEffect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.Mousepad.MousepadEffect.html",
+          "hash": "/xR7u4QKKUrxDGcIGuCtkw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.Mousepad.MousepadStatic.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.Mousepad.MousepadStatic.html",
+          "hash": "VInjhgoVUXtzfvOKzq+2hA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Effects.Mousepad.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Effects.Mousepad.html",
+          "hash": "OztlqMnBjXOVtWDUTvEqOw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Events.ApplicationStateEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Events.ApplicationStateEventArgs.html",
+          "hash": "b2GLmoOWHVgMhEjchJzLFQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Events.DeviceAccessEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Events.DeviceAccessEventArgs.html",
+          "hash": "oFvfrH/pkZ65c7aE8izL0Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Events.SdkSupportEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Events.SdkSupportEventArgs.html",
+          "hash": "jp9qZbfk4bhm3FPHhsm9QA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Events.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Events.html",
+          "hash": "YugZ1gu+dzWjaV7CWOkrQA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.IChroma.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.IChroma.html",
+          "hash": "Qb9TefN38dvhAUIp+zie/w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.IChromaLink.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.IChromaLink.html",
+          "hash": "th3QHotv9rDr7JZm2zmyCg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.IDevice.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.IDevice.html",
+          "hash": "MZbN89IpJUzIi5ae1ztKGw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.IGenericDevice.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.IGenericDevice.html",
+          "hash": "t8l1RHaOo5fc3/ZRkZrDCg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.IHeadset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.IHeadset.html",
+          "hash": "JVA22SHSqtQjx6USJOWrKw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.IKeyboard.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.IKeyboard.html",
+          "hash": "d09YM5mBn2wahDVQ2fZt1w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.IKeypad.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.IKeypad.html",
+          "hash": "4mhFm3OAvSE2URas8aJK6w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.IMouse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.IMouse.html",
+          "hash": "fKJsjnxSld1gTN4sNcTAYg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.IMousepad.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.IMousepad.html",
+          "hash": "+Z/QgZqoyvMvaYcOUEy8wg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Logging.ILogProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Logging.ILogProvider.html",
+          "hash": "A37X1UshFjuK2inlAdDDMg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Logging.LogLevel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Logging.LogLevel.html",
+          "hash": "/+ZxkJxePrp8BZAuACQnqw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Logging.LogProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Logging.LogProvider.html",
+          "hash": "g03XTmd5oLQy9AJTyuzsOw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Logging.Logger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Logging.Logger.html",
+          "hash": "Rq+wa/J8gerYN/xXGlMulw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Logging.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Logging.html",
+          "hash": "LlTiUb6XpPutvxhEdQu+yQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Native.NativeCallException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Native.NativeCallException.html",
+          "hash": "A8vLtUV4AkdT5egUhT5pMQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Native.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Native.html",
+          "hash": "oJeE1TyW9woB8/z/XZnRfA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Rest.IRestClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Rest.IRestClient.html",
+          "hash": "LrO3BL7oumF5nki+hv8Cgw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Rest.IRestResponse-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Rest.IRestResponse-1.html",
+          "hash": "djhJPIjkz3vfa6q48KGeiQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Rest.RestException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Rest.RestException.html",
+          "hash": "8j41DAIlJC29N2SMIzTCAw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Rest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Rest.html",
+          "hash": "oxmMEW5E9ggZtfFxlVAeqw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.UnsupportedDeviceException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.UnsupportedDeviceException.html",
+          "hash": "JPEYpSfa4oDgcwWPU2ebWw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.html",
+          "hash": "/q1yx6MbgzElR4Tjoewq2A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "api/index.md",
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "npN1/sGahGaJ+CV+AajYqg=="
+          "hash": "5+vwL0jWVhIGdUlq0nWGaA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "oxhe/IPdGWHoQxY8iolvWw=="
         }
       },
       "is_incremental": false,
@@ -134,7 +1106,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "qwle6vCUfBMWqnSfYb+fPg=="
+          "hash": "2Hu7vh4lrZaGeeD8sUPaIA=="
         }
       },
       "is_incremental": false,
@@ -149,27 +1121,27 @@
         "incrementalPhase": "build"
       },
       "processors": {
-        "RestApiDocumentProcessor": {
+        "ConceptualDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor RestApiDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         },
-        "ConceptualDocumentProcessor": {
+        "RestApiDocumentProcessor": {
           "can_incremental": false,
-          "incrementalPhase": "build"
-        },
-        "ResourceDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor ResourceDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "details": "Processor RestApiDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         }
       }

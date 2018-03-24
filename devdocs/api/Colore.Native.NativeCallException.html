@@ -5,9 +5,11 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>PLACEHOLDER </title>
+    <title>Class NativeCallException
+   </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="PLACEHOLDER ">
+    <meta name="title" content="Class NativeCallException
+   ">
     <meta name="generator" content="docfx 2.26.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -74,10 +76,98 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="">
-<h1 id="placeholder">PLACEHOLDER</h1>
-
-<p>TODO: Add .NET projects to the <em>src</em> folder and run <code>docfx</code> to generate <strong>REAL</strong> <em>API Documentation</em>!</p>
+            <article class="content wrap" id="_content" data-uid="Colore.Native.NativeCallException">
+  
+  
+  <h1 id="Colore_Native_NativeCallException" data-uid="Colore.Native.NativeCallException" class="text-break">Class NativeCallException
+  </h1>
+  <div class="markdown level0 summary"><p>Thrown when a native function returns an erroneous result value.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Exception</span></div>
+    <div class="level1"><a class="xref" href="Colore.ColoreException.html">ColoreException</a></div>
+    <div class="level2"><a class="xref" href="Colore.Api.ApiException.html">ApiException</a></div>
+    <div class="level3"><span class="xref">NativeCallException</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Colore.Api.ApiException.html#Colore_Api_ApiException_Result">ApiException.Result</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Colore.Native.html">Colore.Native</a></h6>
+  <h6><strong>Assembly</strong>: Colore.dll</h6>
+  <h5 id="Colore_Native_NativeCallException_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class NativeCallException : ApiException</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="Colore_Native_NativeCallException__ctor_" data-uid="Colore.Native.NativeCallException.#ctor*"></a>
+  <h4 id="Colore_Native_NativeCallException__ctor_System_String_Colore_Data_Result_" data-uid="Colore.Native.NativeCallException.#ctor(System.String,Colore.Data.Result)">NativeCallException(String, Result)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Colore.Native.NativeCallException.html">NativeCallException</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NativeCallException(string function, Result result)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">function</span></td>
+        <td><p>The name of the function that was called.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Colore.Data.Result.html">Result</a></td>
+        <td><span class="parametername">result</span></td>
+        <td><p>The result returned from the called function.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="Colore_Native_NativeCallException_Function_" data-uid="Colore.Native.NativeCallException.Function*"></a>
+  <h4 id="Colore_Native_NativeCallException_Function" data-uid="Colore.Native.NativeCallException.Function">Function</h4>
+  <div class="markdown level1 summary"><p>Gets the name of the native function that was called.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Function { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
           

@@ -1,0 +1,795 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IChroma
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IChroma
+   ">
+    <meta name="generator" content="docfx 2.26.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/colore.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items"></div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Colore.IChroma">
+  
+  
+  <h1 id="Colore_IChroma" data-uid="Colore.IChroma" class="text-break">Interface IChroma
+  </h1>
+  <div class="markdown level0 summary"><p>Interface for basic Chroma functionality.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Colore.html">Colore</a></h6>
+  <h6><strong>Assembly</strong>: Colore.dll</h6>
+  <h5 id="Colore_IChroma_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IChroma</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="Colore_IChroma_ChromaLink_" data-uid="Colore.IChroma.ChromaLink*"></a>
+  <h4 id="Colore_IChroma_ChromaLink" data-uid="Colore.IChroma.ChromaLink">ChromaLink</h4>
+  <div class="markdown level1 summary"><p>Gets an instance of the <a class="xref" href="Colore.IChromaLink.html">IChromaLink</a> interface
+for interacting with ChromaLink devices.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IChromaLink ChromaLink { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.IChromaLink.html">IChromaLink</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_IChroma_Headset_" data-uid="Colore.IChroma.Headset*"></a>
+  <h4 id="Colore_IChroma_Headset" data-uid="Colore.IChroma.Headset">Headset</h4>
+  <div class="markdown level1 summary"><p>Gets an instance of the <a class="xref" href="Colore.IHeadset.html">IHeadset</a> interface
+for interacting with a Razer Chroma headset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IHeadset Headset { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.IHeadset.html">IHeadset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_IChroma_Initialized_" data-uid="Colore.IChroma.Initialized*"></a>
+  <h4 id="Colore_IChroma_Initialized" data-uid="Colore.IChroma.Initialized">Initialized</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether the Chroma
+SDK has been initialized or not.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool Initialized { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_IChroma_Keyboard_" data-uid="Colore.IChroma.Keyboard*"></a>
+  <h4 id="Colore_IChroma_Keyboard" data-uid="Colore.IChroma.Keyboard">Keyboard</h4>
+  <div class="markdown level1 summary"><p>Gets an instance of the <a class="xref" href="Colore.IKeyboard.html">IKeyboard</a> interface
+for interacting with a Razer Chroma keyboard.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IKeyboard Keyboard { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.IKeyboard.html">IKeyboard</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_IChroma_Keypad_" data-uid="Colore.IChroma.Keypad*"></a>
+  <h4 id="Colore_IChroma_Keypad" data-uid="Colore.IChroma.Keypad">Keypad</h4>
+  <div class="markdown level1 summary"><p>Gets an instance of the <a class="xref" href="Colore.IKeypad.html">IKeypad</a> interface
+for interacting with a Razer Chroma keypad.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IKeypad Keypad { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.IKeypad.html">IKeypad</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_IChroma_Mouse_" data-uid="Colore.IChroma.Mouse*"></a>
+  <h4 id="Colore_IChroma_Mouse" data-uid="Colore.IChroma.Mouse">Mouse</h4>
+  <div class="markdown level1 summary"><p>Gets an instance of the <a class="xref" href="Colore.IMouse.html">IMouse</a> interface
+for interacting with a Razer Chroma mouse.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IMouse Mouse { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.IMouse.html">IMouse</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_IChroma_Mousepad_" data-uid="Colore.IChroma.Mousepad*"></a>
+  <h4 id="Colore_IChroma_Mousepad" data-uid="Colore.IChroma.Mousepad">Mousepad</h4>
+  <div class="markdown level1 summary"><p>Gets an instance of the <a class="xref" href="Colore.IMousepad.html">IMousepad</a> interface
+for interacting with a Razer Chroma mouse pad.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IMousepad Mousepad { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.IMousepad.html">IMousepad</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_IChroma_SdkVersion_" data-uid="Colore.IChroma.SdkVersion*"></a>
+  <h4 id="Colore_IChroma_SdkVersion" data-uid="Colore.IChroma.SdkVersion">SdkVersion</h4>
+  <div class="markdown level1 summary"><p>Gets the version of the Chroma SDK that Colore is currently using.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">SdkVersion SdkVersion { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Data.SdkVersion.html">SdkVersion</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_IChroma_Version_" data-uid="Colore.IChroma.Version*"></a>
+  <h4 id="Colore_IChroma_Version" data-uid="Colore.IChroma.Version">Version</h4>
+  <div class="markdown level1 summary"><p>Gets the <span class="xref">System.Version</span> of Colore.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Version Version { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Version</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Colore_IChroma_GetDeviceAsync_" data-uid="Colore.IChroma.GetDeviceAsync*"></a>
+  <h4 id="Colore_IChroma_GetDeviceAsync_System_Guid_" data-uid="Colore.IChroma.GetDeviceAsync(System.Guid)">GetDeviceAsync(Guid)</h4>
+  <div class="markdown level1 summary"><p>Gets an instance of <a class="xref" href="Colore.IGenericDevice.html">IGenericDevice</a> for
+the device with the specified ID.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IGenericDevice&gt; GetDeviceAsync(Guid deviceId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Guid</span></td>
+        <td><span class="parametername">deviceId</span></td>
+        <td><p>The <span class="xref">System.Guid</span> of the device to get,
+valid IDs can be found in <a class="xref" href="Colore.Data.Devices.html">Devices</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Colore.IGenericDevice.html">IGenericDevice</a>&gt;</td>
+        <td><p>An instance of <a class="xref" href="Colore.IGenericDevice.html">IGenericDevice</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_IChroma_HandleMessage_" data-uid="Colore.IChroma.HandleMessage*"></a>
+  <h4 id="Colore_IChroma_HandleMessage_System_IntPtr_System_Int32_System_IntPtr_System_IntPtr_" data-uid="Colore.IChroma.HandleMessage(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)">HandleMessage(IntPtr, Int32, IntPtr, IntPtr)</h4>
+  <div class="markdown level1 summary"><p>Handles a Windows message and fires the appropriate events.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool HandleMessage(IntPtr handle, int msgId, IntPtr wParam, IntPtr lParam)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IntPtr</span></td>
+        <td><span class="parametername">handle</span></td>
+        <td><p>The <code>HWnd</code> property of the Message struct.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">msgId</span></td>
+        <td><p>The <code>Msg</code> property of the Message struct.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IntPtr</span></td>
+        <td><span class="parametername">wParam</span></td>
+        <td><p>The <code>wParam</code> property of the Message struct.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IntPtr</span></td>
+        <td><span class="parametername">lParam</span></td>
+        <td><p>The <code>lParam</code> property of the Message struct.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if the message was handled by Chroma, <code>false</code> otherwise (message was ignored).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Colore_IChroma_HandleMessage_System_IntPtr_System_Int32_System_IntPtr_System_IntPtr__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Non-Chroma messages will be ignored.</p>
+</div>
+  
+  
+  <a id="Colore_IChroma_InitializeAsync_" data-uid="Colore.IChroma.InitializeAsync*"></a>
+  <h4 id="Colore_IChroma_InitializeAsync_Colore_Data_AppInfo_" data-uid="Colore.IChroma.InitializeAsync(Colore.Data.AppInfo)">InitializeAsync(AppInfo)</h4>
+  <div class="markdown level1 summary"><p>Initializes the SDK if it hasn&apos;t already.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task InitializeAsync(AppInfo info)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Data.AppInfo.html">AppInfo</a></td>
+        <td><span class="parametername">info</span></td>
+        <td><p>Information about the application.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><p>A <span class="xref">System.Threading.Tasks.Task</span> representing the asynchronous operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Colore_IChroma_InitializeAsync_Colore_Data_AppInfo__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Manually modifying the SDK init state is <strong>untested</strong>
+and may result in <emph>undefined behaviour</emph>, usage
+is at <strong>your own risk</strong>.</p>
+</div>
+  
+  
+  <a id="Colore_IChroma_QueryAsync_" data-uid="Colore.IChroma.QueryAsync*"></a>
+  <h4 id="Colore_IChroma_QueryAsync_System_Guid_" data-uid="Colore.IChroma.QueryAsync(System.Guid)">QueryAsync(Guid)</h4>
+  <div class="markdown level1 summary"><p>Queries the SDK for information regarding a specific device.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;DeviceInfo&gt; QueryAsync(Guid deviceId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Guid</span></td>
+        <td><span class="parametername">deviceId</span></td>
+        <td><p>The device ID to query for, valid IDs can be found in <a class="xref" href="Colore.Data.Devices.html">Devices</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Colore.Data.DeviceInfo.html">DeviceInfo</a>&gt;</td>
+        <td><p>A struct with information regarding the device type and whether it&apos;s connected.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_IChroma_Register_" data-uid="Colore.IChroma.Register*"></a>
+  <h4 id="Colore_IChroma_Register_System_IntPtr_" data-uid="Colore.IChroma.Register(System.IntPtr)">Register(IntPtr)</h4>
+  <div class="markdown level1 summary"><p>Registers to start receiving Chroma events.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Register(IntPtr handle)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IntPtr</span></td>
+        <td><span class="parametername">handle</span></td>
+        <td><p>Handle to the application Window that is running the message loop.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Colore_IChroma_Register_System_IntPtr__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Chroma events are sent using the Windows message API, as such, there has to be something handling
+Windows messages to receive them. Messages need to be passed to the message handler in Colore to
+be processed, as this cannot be automated.</p>
+</div>
+  
+  
+  <a id="Colore_IChroma_SetAllAsync_" data-uid="Colore.IChroma.SetAllAsync*"></a>
+  <h4 id="Colore_IChroma_SetAllAsync_Colore_Data_Color_" data-uid="Colore.IChroma.SetAllAsync(Colore.Data.Color)">SetAllAsync(Color)</h4>
+  <div class="markdown level1 summary"><p>Sets all Chroma devices to the specified <a class="xref" href="Colore.Data.Color.html">Color</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task SetAllAsync(Color color)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Data.Color.html">Color</a></td>
+        <td><span class="parametername">color</span></td>
+        <td><p>The <a class="xref" href="Colore.Data.Color.html">Color</a> to set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><p>A <span class="xref">System.Threading.Tasks.Task</span> representing the asynchronous operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_IChroma_UninitializeAsync_" data-uid="Colore.IChroma.UninitializeAsync*"></a>
+  <h4 id="Colore_IChroma_UninitializeAsync" data-uid="Colore.IChroma.UninitializeAsync">UninitializeAsync()</h4>
+  <div class="markdown level1 summary"><p>Uninitializes the SDK if it has been initialized.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task UninitializeAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><p>A <span class="xref">System.Threading.Tasks.Task</span> representing the asynchronous operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Colore_IChroma_UninitializeAsync_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Manually modifying the SDK init state is <strong>untested</strong>
+and may result in <emph>undefined behaviour</emph>, usage
+is at <strong>your own risk</strong>.</p>
+</div>
+  
+  
+  <a id="Colore_IChroma_Unregister_" data-uid="Colore.IChroma.Unregister*"></a>
+  <h4 id="Colore_IChroma_Unregister" data-uid="Colore.IChroma.Unregister">Unregister()</h4>
+  <div class="markdown level1 summary"><p>Unregisters from receiving Chroma events.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Unregister()</code></pre>
+  </div>
+  <h3 id="events">Events
+  </h3>
+  
+  
+  <h4 id="Colore_IChroma_ApplicationState" data-uid="Colore.IChroma.ApplicationState">ApplicationState</h4>
+  <div class="markdown level1 summary"><p>Raised when information about application state is received from messages.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">event EventHandler&lt;ApplicationStateEventArgs&gt; ApplicationState</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="Colore.Events.ApplicationStateEventArgs.html">ApplicationStateEventArgs</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Colore_IChroma_ApplicationState_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Requires that application has registered for receiving messages with
+<a class="xref" href="Colore.IChroma.html#Colore_IChroma_Register_System_IntPtr_">Register(IntPtr)</a> and that Windows messages are being forwarded to
+Colore using <a class="xref" href="Colore.IChroma.html#Colore_IChroma_HandleMessage_System_IntPtr_System_Int32_System_IntPtr_System_IntPtr_">HandleMessage(IntPtr, Int32, IntPtr, IntPtr)</a>.</p>
+</div>
+  
+  
+  <h4 id="Colore_IChroma_DeviceAccess" data-uid="Colore.IChroma.DeviceAccess">DeviceAccess</h4>
+  <div class="markdown level1 summary"><p>Raised when information about device access is received from messages.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">event EventHandler&lt;DeviceAccessEventArgs&gt; DeviceAccess</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="Colore.Events.DeviceAccessEventArgs.html">DeviceAccessEventArgs</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Colore_IChroma_DeviceAccess_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Requires that application has registered for receiving messages with
+<a class="xref" href="Colore.IChroma.html#Colore_IChroma_Register_System_IntPtr_">Register(IntPtr)</a> and that Windows messages are being forwarded to
+Colore using <a class="xref" href="Colore.IChroma.html#Colore_IChroma_HandleMessage_System_IntPtr_System_Int32_System_IntPtr_System_IntPtr_">HandleMessage(IntPtr, Int32, IntPtr, IntPtr)</a>.</p>
+</div>
+  
+  
+  <h4 id="Colore_IChroma_SdkSupport" data-uid="Colore.IChroma.SdkSupport">SdkSupport</h4>
+  <div class="markdown level1 summary"><p>Raised when information about SDK support is received from messages.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">event EventHandler&lt;SdkSupportEventArgs&gt; SdkSupport</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="Colore.Events.SdkSupportEventArgs.html">SdkSupportEventArgs</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Colore_IChroma_SdkSupport_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Requires that application has registered for receiving messages with
+<a class="xref" href="Colore.IChroma.html#Colore_IChroma_Register_System_IntPtr_">Register(IntPtr)</a> and that Windows messages are being forwarded to
+Colore using <a class="xref" href="Colore.IChroma.html#Colore_IChroma_HandleMessage_System_IntPtr_System_Int32_System_IntPtr_System_IntPtr_">HandleMessage(IntPtr, Int32, IntPtr, IntPtr)</a>.</p>
+</div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright © 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

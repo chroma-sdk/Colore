@@ -1,0 +1,418 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IChromaLink
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IChromaLink
+   ">
+    <meta name="generator" content="docfx 2.26.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/colore.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items"></div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Colore.IChromaLink">
+  
+  
+  <h1 id="Colore_IChromaLink" data-uid="Colore.IChromaLink" class="text-break">Interface IChromaLink
+  </h1>
+  <div class="markdown level0 summary"><p>Interface for Chroma Link functionality.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Colore.IDevice.html#Colore_IDevice_ClearAsync">IDevice.ClearAsync()</a>
+    </div>
+    <div>
+      <a class="xref" href="Colore.IDevice.html#Colore_IDevice_SetAllAsync_Colore_Data_Color_">IDevice.SetAllAsync(Color)</a>
+    </div>
+    <div>
+      <a class="xref" href="Colore.IDevice.html#Colore_IDevice_SetEffectAsync_System_Guid_">IDevice.SetEffectAsync(Guid)</a>
+    </div>
+    <div>
+      <a class="xref" href="Colore.IDevice.html#Colore_IDevice_CurrentEffectId">IDevice.CurrentEffectId</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Colore.html">Colore</a></h6>
+  <h6><strong>Assembly</strong>: Colore.dll</h6>
+  <h5 id="Colore_IChromaLink_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IChromaLink : IDevice</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="Colore_IChromaLink_Item_" data-uid="Colore.IChromaLink.Item*"></a>
+  <h4 id="Colore_IChromaLink_Item_System_Int32_" data-uid="Colore.IChromaLink.Item(System.Int32)">Item[Int32]</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the <a class="xref" href="Colore.Data.Color.html">Color</a> for a specific zone on the Chroma Link device.
+The SDK will translate this appropriately depending on user configuration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Color this[int index] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The zone to access.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Data.Color.html">Color</a></td>
+        <td><p>The color currently set for the specified key.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Colore_IChromaLink_IsSet_" data-uid="Colore.IChromaLink.IsSet*"></a>
+  <h4 id="Colore_IChromaLink_IsSet_System_Int32_" data-uid="Colore.IChromaLink.IsSet(System.Int32)">IsSet(Int32)</h4>
+  <div class="markdown level1 summary"><p>Returns whether an element has had a custom color set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IsSet(int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>The index to query.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if the position has a color set that is not black, otherwise <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_IChromaLink_SetCustomAsync_" data-uid="Colore.IChromaLink.SetCustomAsync*"></a>
+  <h4 id="Colore_IChromaLink_SetCustomAsync_Colore_Effects_ChromaLink_ChromaLinkCustom_" data-uid="Colore.IChromaLink.SetCustomAsync(Colore.Effects.ChromaLink.ChromaLinkCustom)">SetCustomAsync(ChromaLinkCustom)</h4>
+  <div class="markdown level1 summary"><p>Sets a <a class="xref" href="Colore.Effects.ChromaLink.ChromaLinkCustom.html">ChromaLinkCustom</a> effect on the Chroma Link.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetCustomAsync(ChromaLinkCustom effect)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Effects.ChromaLink.ChromaLinkCustom.html">ChromaLinkCustom</a></td>
+        <td><span class="parametername">effect</span></td>
+        <td><p>An instance of the <a class="xref" href="Colore.Effects.ChromaLink.ChromaLinkCustom.html">ChromaLinkCustom</a> struct.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Guid</span>&gt;</td>
+        <td><p>A <span class="xref">System.Guid</span> for the effect that was set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_IChromaLink_SetEffectAsync_" data-uid="Colore.IChromaLink.SetEffectAsync*"></a>
+  <h4 id="Colore_IChromaLink_SetEffectAsync_Colore_Effects_ChromaLink_ChromaLinkEffect_" data-uid="Colore.IChromaLink.SetEffectAsync(Colore.Effects.ChromaLink.ChromaLinkEffect)">SetEffectAsync(ChromaLinkEffect)</h4>
+  <div class="markdown level1 summary"><p>Sets an effect without any parameters.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetEffectAsync(ChromaLinkEffect effect)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Effects.ChromaLink.ChromaLinkEffect.html">ChromaLinkEffect</a></td>
+        <td><span class="parametername">effect</span></td>
+        <td><p>Effect options.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Guid</span>&gt;</td>
+        <td><p>A <span class="xref">System.Guid</span> for the effect that was set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_IChromaLink_SetStaticAsync_" data-uid="Colore.IChromaLink.SetStaticAsync*"></a>
+  <h4 id="Colore_IChromaLink_SetStaticAsync_Colore_Data_Color_" data-uid="Colore.IChromaLink.SetStaticAsync(Colore.Data.Color)">SetStaticAsync(Color)</h4>
+  <div class="markdown level1 summary"><p>Sets a <a class="xref" href="Colore.Effects.ChromaLink.ChromaLinkStatic.html">ChromaLinkStatic</a> effect on the Chroma Link.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetStaticAsync(Color color)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Data.Color.html">Color</a></td>
+        <td><span class="parametername">color</span></td>
+        <td><p>Color of the effect.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Guid</span>&gt;</td>
+        <td><p>A <span class="xref">System.Guid</span> for the effect that was set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_IChromaLink_SetStaticAsync_" data-uid="Colore.IChromaLink.SetStaticAsync*"></a>
+  <h4 id="Colore_IChromaLink_SetStaticAsync_Colore_Effects_ChromaLink_ChromaLinkStatic_" data-uid="Colore.IChromaLink.SetStaticAsync(Colore.Effects.ChromaLink.ChromaLinkStatic)">SetStaticAsync(ChromaLinkStatic)</h4>
+  <div class="markdown level1 summary"><p>Sets a <a class="xref" href="Colore.Effects.ChromaLink.ChromaLinkStatic.html">ChromaLinkStatic</a> effect on the Chroma Link.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetStaticAsync(ChromaLinkStatic effect)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Effects.ChromaLink.ChromaLinkStatic.html">ChromaLinkStatic</a></td>
+        <td><span class="parametername">effect</span></td>
+        <td><p>An instance of the <a class="xref" href="Colore.Effects.ChromaLink.ChromaLinkStatic.html">ChromaLinkStatic</a> struct.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Guid</span>&gt;</td>
+        <td><p>A <span class="xref">System.Guid</span> for the effect that was set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright © 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
