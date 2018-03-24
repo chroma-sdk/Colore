@@ -202,3 +202,6 @@ GTAGS
 
 # Ignore gh-pages folder
 /gh-pages
+
+# Ignore DocFx files
+/api
