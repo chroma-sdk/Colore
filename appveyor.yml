@@ -22,6 +22,7 @@ cache:
   - tools
 
 init:
+  - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
   - git config --global user.email "deploy@appveyor.com"
   - git config --global user.name "AppVeyor CI"
 
