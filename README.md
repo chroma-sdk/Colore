@@ -27,8 +27,9 @@ Contributing
 ------------
 
 [![Gitter][gitterbadge]][gitter]
+[![Discord][discordbadge]][discord]
 
-*For discussing, you can join the Gitter chat using the badge above. If you want to join the Slack chat, contact [Adam Hellberg][sharp] ([sharparam@sharparam.com](mailto:sharparam@sharparam.com)).*
+*For discussing, you can join the Gitter chat or Discord server using the badges above. If you want to join the Slack chat, contact [Adam Hellberg][sharp] ([sharparam@sharparam.com](mailto:sharparam@sharparam.com)).*
 
 Contributors are very welcome! If you got code fixes, please [submit a pull request][newpull] here on GitHub.
 
@@ -154,7 +155,7 @@ There may be others we are unaware of, so please let us know if there are any ot
 [license]: http://opensource.org/licenses/MIT
 [licensebadge]: https://img.shields.io/badge/license-MIT-blue.svg
 [ghrelease]: https://github.com/CoraleStudios/Colore/releases
-[ghreleasebadge]: https://img.shields.io/github/release/CoraleStudios/Colore.svg
+[ghreleasebadge]: https://img.shields.io/github/release/CoraleStudios/Colore.svg?logo=github
 [ng]: https://www.nuget.org/packages/Colore
 [ngverbadge]: https://img.shields.io/nuget/v/Colore.svg
 [mg]: https://www.myget.org/feed/coralestudios/package/nuget/Colore
@@ -176,6 +177,8 @@ There may be others we are unaware of, so please let us know if there are any ot
 
 [gitter]: https://gitter.im/CoraleStudios/Colore?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
 [gitterbadge]: https://badges.gitter.im/Join%20Chat.svg
+[discord]: https://discord.gg/4ysuMYK
+[discordbadge]: https://img.shields.io/discord/102860784329052160.svg?label=discord&logo=discord
 
 [colorelogo]: https://files.sharparam.com/2017/10/31/colore-logo.png
 [colore-wpf]: https://github.com/CoraleStudios/Colore.Wpf
