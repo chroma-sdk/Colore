@@ -46,6 +46,7 @@ Write-Host 'Copying new coverage'
 cp .\artifacts\coverage-report .\gh-pages\${covtarget} -Recurse
 
 $gitdata="$(git log -n 1 --format='commit %h - %s')"
+$timestamp = "$(Get-Date -UFormat '%Y-%m-%d %T%Z')"
 Write-Host "Git data: ${gitdata}"
 
 Push-Location gh-pages
@@ -55,7 +56,7 @@ git commit -m "[AUTOMATED] Documentation update
 
 Updates to project documentatio and coverage data.
 
-Timestamp: $(Get-Date -UFormat '%Y-%m-%d %T%Z')
+Timestamp: ${timestamp}
 From ${gitdata}
 Target: ${target}
 Coverage target: ${covtarget}"
