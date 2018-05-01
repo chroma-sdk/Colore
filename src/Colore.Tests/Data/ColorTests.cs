@@ -23,7 +23,7 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests
+namespace Colore.Tests.Data
 {
     using Colore.Data;
 
@@ -109,6 +109,52 @@ namespace Colore.Tests
         public void ShouldDefaultToEmptyColor()
         {
             Assert.AreEqual(default(Color).Value, 0);
+        }
+
+        [Test]
+        public void ShouldConvertFromUInt32Correctly()
+        {
+            const uint Source = 0x102030;
+            var color = Color.ToColor(Source);
+            Assert.AreEqual(Source, color.Value);
+        }
+
+        [Test]
+        public void ShouldConvertFromKeyUInt32Correctly()
+        {
+            const uint Source = 0x1203040;
+            var color = Color.ToColor(Source);
+            Assert.AreEqual(Source, color.Value);
+        }
+
+        [Test]
+        public void ShouldConvertToUInt32Correctly()
+        {
+            const uint Expected = 0x102030;
+            var color = new Color(Expected);
+            Assert.AreEqual(Expected, color.ToUInt32());
+        }
+
+        [Test]
+        public void ShouldConvertToUInt32WithKeyCorrectly()
+        {
+            const uint Expected = 0x1203040;
+            var color = new Color(Expected);
+            Assert.AreEqual(Expected, color.ToUInt32());
+        }
+
+        [Test]
+        public void ShouldConvertToStringCorrectly()
+        {
+            var color = new Color(0x102030);
+            Assert.AreEqual("48, 32, 16 (0x0102030)", color.ToString());
+        }
+
+        [Test]
+        public void ShouldConvertToStringWithkeyCorrectly()
+        {
+            var color = new Color(0x203040).AsKeyColor;
+            Assert.AreEqual("64, 48, 32 (0x1203040)", color.ToString());
         }
 
         [Test]

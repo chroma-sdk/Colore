@@ -23,7 +23,7 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests
+namespace Colore.Tests.Data
 {
     using System;
     using System.Reflection;
@@ -46,6 +46,34 @@ namespace Colore.Tests
                 var guid = (Guid)info.GetValue(null);
                 Assert.True(Devices.IsValidId(guid), $"Device {info.Name} should validate but does not");
             }
+        }
+
+        [Test]
+        public void ShouldGetNameForValidDevice()
+        {
+            var name = Devices.GetName(Devices.Blackwidow);
+            Assert.NotNull(name);
+            Assert.IsNotEmpty(name);
+        }
+
+        [Test]
+        public void ShouldThrowOnGettingNameForInvalidDevice()
+        {
+            Assert.Throws<ArgumentException>(() => Devices.GetName(Guid.Empty));
+        }
+
+        [Test]
+        public void ShouldGetDescriptionForValidDevice()
+        {
+            var desc = Devices.GetDescription(Devices.Firefly);
+            Assert.NotNull(desc);
+            Assert.IsNotEmpty(desc);
+        }
+
+        [Test]
+        public void ShouldThrowOnGettingDescriptionForInvalidDevice()
+        {
+            Assert.Throws<ArgumentException>(() => Devices.GetDescription(Guid.Empty));
         }
     }
 }

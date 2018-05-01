@@ -81,17 +81,17 @@ namespace Colore.Data
         System = 6,
 
         /// <summary>
+        /// Speaker devices.
+        /// </summary>
+        [PublicAPI]
+        [EnumMember(Value = "speakers")]
+        Speakers = 7,
+
+        /// <summary>
         /// Invalid device.
         /// </summary>
         [PublicAPI]
         [EnumMember(Value = "invalid")]
-        Invalid,
-
-        /// <summary>
-        /// ChromaLink device.
-        /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "chromalink")]
-        ChromaLink
+        Invalid
     }
 }

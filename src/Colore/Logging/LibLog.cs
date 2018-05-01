@@ -60,6 +60,7 @@ namespace Colore.Logging
     using Colore.Logging.LogProviders;
 #endif
     using System;
+    using System.CodeDom.Compiler;
 #if !LIBLOG_PROVIDERS_ONLY
     using System.Diagnostics;
 #if !LIBLOG_PORTABLE
@@ -67,6 +68,7 @@ namespace Colore.Logging
 #endif
 #endif
 
+    [GeneratedCode("LibLog", "v4.2.4")]
 #if LIBLOG_PROVIDERS_ONLY
     internal
 #else
@@ -78,6 +80,7 @@ namespace Colore.Logging
     /// <summary>
     /// Simple interface that represent a logger.
     /// </summary>
+    [GeneratedCode("LibLog", "v4.2.4")]
 #if LIBLOG_PUBLIC
     public
 #else
@@ -106,6 +109,7 @@ namespace Colore.Logging
     /// <summary>
     /// The log level.
     /// </summary>
+    [GeneratedCode("LibLog", "v4.2.4")]
 #if LIBLOG_PROVIDERS_ONLY
     internal
 #else
@@ -121,6 +125,7 @@ namespace Colore.Logging
         Fatal
     }
 
+    [GeneratedCode("LibLog", "v4.2.4")]
 #if !LIBLOG_PROVIDERS_ONLY
 #if !LIBLOG_PORTABLE
     [ExcludeFromCodeCoverage]
@@ -473,6 +478,7 @@ namespace Colore.Logging
     /// <summary>
     /// Represents a way to get a <see cref="ILog"/>
     /// </summary>
+    [GeneratedCode("LibLog", "v4.2.4")]
 #if LIBLOG_PROVIDERS_ONLY
     internal
 #else
@@ -507,6 +513,7 @@ namespace Colore.Logging
     /// <summary>
     /// Provides a mechanism to create instances of <see cref="ILog" /> objects.
     /// </summary>
+    [GeneratedCode("LibLog", "v4.2.4")]
 #if !LIBLOG_PORTABLE
     [ExcludeFromCodeCoverage]
 #endif
@@ -684,25 +691,25 @@ namespace Colore.Logging
 #endif
 
 #if LIBLOG_PROVIDERS_ONLY
-    private
+        private
 #else
         internal
 #endif
-    delegate bool IsLoggerAvailable();
+        delegate bool IsLoggerAvailable();
 
 #if LIBLOG_PROVIDERS_ONLY
-    private
+        private
 #else
         internal
 #endif
-    delegate ILogProvider CreateLogProvider();
+        delegate ILogProvider CreateLogProvider();
 
 #if LIBLOG_PROVIDERS_ONLY
-    private
+        private
 #else
         internal
 #endif
-    static readonly List<Tuple<IsLoggerAvailable, CreateLogProvider>> LogProviderResolvers =
+        static readonly List<Tuple<IsLoggerAvailable, CreateLogProvider>> LogProviderResolvers =
                 new List<Tuple<IsLoggerAvailable, CreateLogProvider>>
             {
             new Tuple<IsLoggerAvailable, CreateLogProvider>(SerilogLogProvider.IsLoggerAvailable, () => new SerilogLogProvider()),
@@ -771,6 +778,7 @@ namespace Colore.Logging
 #endif
     }
 
+    [GeneratedCode("LibLog", "v4.2.4")]
 #if !LIBLOG_PROVIDERS_ONLY
 #if !LIBLOG_PORTABLE
     [ExcludeFromCodeCoverage]
@@ -874,6 +882,7 @@ namespace Colore.Logging.LogProviders
 #endif
 {
     using System;
+    using System.CodeDom.Compiler;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
 #if !LIBLOG_PORTABLE
@@ -888,6 +897,7 @@ namespace Colore.Logging.LogProviders
 #endif
     using System.Text.RegularExpressions;
 
+    [GeneratedCode("LibLog", "v4.2.4")]
 #if !LIBLOG_PORTABLE
     [ExcludeFromCodeCoverage]
 #endif
@@ -931,6 +941,7 @@ namespace Colore.Logging.LogProviders
         }
     }
 
+    [GeneratedCode("LibLog", "v4.2.4")]
 #if !LIBLOG_PORTABLE
     [ExcludeFromCodeCoverage]
 #endif
@@ -1267,6 +1278,7 @@ namespace Colore.Logging.LogProviders
         }
     }
 
+    [GeneratedCode("LibLog", "v4.2.4")]
 #if !LIBLOG_PORTABLE
     [ExcludeFromCodeCoverage]
 #endif
@@ -1651,6 +1663,7 @@ namespace Colore.Logging.LogProviders
         }
     }
 
+    [GeneratedCode("LibLog", "v4.2.4")]
 #if !LIBLOG_PORTABLE
     [ExcludeFromCodeCoverage]
 #endif
@@ -1831,6 +1844,7 @@ namespace Colore.Logging.LogProviders
         }
     }
 
+    [GeneratedCode("LibLog", "v4.2.4")]
 #if !LIBLOG_PORTABLE
     [ExcludeFromCodeCoverage]
 #endif
@@ -2084,6 +2098,7 @@ namespace Colore.Logging.LogProviders
         }
     }
 
+    [GeneratedCode("LibLog", "v4.2.4")]
 #if !LIBLOG_PORTABLE
     [ExcludeFromCodeCoverage]
 #endif
@@ -2222,6 +2237,7 @@ namespace Colore.Logging.LogProviders
         }
     }
 
+    [GeneratedCode("LibLog", "v4.2.4")]
 #if !LIBLOG_PORTABLE
     [ExcludeFromCodeCoverage]
 #endif
@@ -2252,6 +2268,7 @@ namespace Colore.Logging.LogProviders
         }
     }
 
+    [GeneratedCode("LibLog", "v4.2.4")]
 #if !LIBLOG_PORTABLE
     [ExcludeFromCodeCoverage]
 #endif
@@ -2339,6 +2356,7 @@ namespace Colore.Logging.LogProviders
         }
     }
 
+    [GeneratedCode("LibLog", "v4.2.4")]
 #if !LIBLOG_PORTABLE
     [ExcludeFromCodeCoverage]
 #endif
@@ -2431,6 +2449,7 @@ namespace Colore.Logging.LogProviders
         }
     }
 
+    [GeneratedCode("LibLog", "v4.2.4")]
 #if !LIBLOG_PORTABLE
     [ExcludeFromCodeCoverage]
 #endif

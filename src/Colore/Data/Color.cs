@@ -142,6 +142,7 @@ namespace Colore.Data
         /// <param name="color">The <see cref="Color" /> to convert.</param>
         /// <returns>A <see cref="uint" /> representing the value of the <paramref name="color" /> argument.</returns>
         /// <remarks>The returned <see cref="uint" /> has a format of <c>0xAABBGGRR</c>.</remarks>
+        [Pure]
         public static implicit operator uint(Color color)
         {
             return color.Value;
@@ -153,6 +154,7 @@ namespace Colore.Data
         /// </summary>
         /// <param name="value">The <see cref="uint" /> to convert, on the form <c>0x00BBGGRR</c>.</param>
         /// <returns>An instance of <see cref="Color" /> representing the color value of <paramref name="value" />.</returns>
+        [Pure]
         public static implicit operator Color(uint value)
         {
             return new Color(value);
@@ -164,6 +166,7 @@ namespace Colore.Data
         /// <param name="left">Left operand, an instance of the <see cref="Color" /> struct.</param>
         /// <param name="right">Right operand, an <see cref="object" />.</param>
         /// <returns><c>true</c> if the two instances are equal, <c>false</c> otherwise.</returns>
+        [Pure]
         public static bool operator ==(Color left, object right)
         {
             return left.Equals(right);
@@ -175,6 +178,7 @@ namespace Colore.Data
         /// <param name="left">Left operand, an instance of the <see cref="Color" /> struct.</param>
         /// <param name="right">Right operand, an <see cref="object" />.</param>
         /// <returns><c>true</c> if the two instances are not equal, <c>false</c> otherwise.</returns>
+        [Pure]
         public static bool operator !=(Color left, object right)
         {
             return !left.Equals(right);
@@ -187,6 +191,7 @@ namespace Colore.Data
         /// <param name="value">The RGB value to convert from.</param>
         /// <returns>A new instance of the <see cref="Color" /> struct.</returns>
         [PublicAPI]
+        [Pure]
         public static Color FromRgb(uint value)
         {
             return new Color(((value & 0xFF0000) >> 16) | (value & 0xFF00) | ((value & 0xFF) << 16));
@@ -199,12 +204,14 @@ namespace Colore.Data
         /// <returns><see cref="Color" /> representation of the value.</returns>
         /// <remarks>This is an alias for <see cref="FromRgb" />.</remarks>
         /// <seealso cref="FromRgb" />
+        [Pure]
         public static Color ToColor(uint value) => value;
 
         /// <summary>
         /// Converts this instance of <see cref="Color" /> to an unsigned integer value.
         /// </summary>
         /// <returns>The unsigned integer value of this <see cref="Color" />.</returns>
+        [Pure]
         public uint ToUInt32() => this;
 
         /// <summary>
@@ -269,7 +276,8 @@ namespace Colore.Data
         /// Returns a string representation of this color's red, green, and blue values.
         /// </summary>
         /// <returns>A <see cref="string" /> containing a string representation of this color.</returns>
-        public override string ToString() => $"{R}, {G}, {B} ({Value:X})";
+        [Pure]
+        public override string ToString() => $"{R}, {G}, {B} (0x{Value:X7})";
 
         /// <summary>
         /// Gets the unique hash code for this <see cref="Color" />.

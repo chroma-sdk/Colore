@@ -23,7 +23,7 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests
+namespace Colore.Tests.Data
 {
     using Colore.Data;
 
@@ -195,6 +195,50 @@ namespace Colore.Tests
         public void FailedPropertyShouldBeFalseOnSuccess()
         {
             Assert.False(Result.RzSuccess.Failed);
+        }
+
+        [Test]
+        public void IsTrueShouldBeTrueOnSuccess()
+        {
+            Assert.True(Result.RzSuccess.IsTrue);
+        }
+
+        [Test]
+        public void IsTrueShouldBeFalseOnFailure()
+        {
+            Assert.False(Result.RzFailed.IsTrue);
+        }
+
+        [Test]
+        public void ShouldConvertToTrueBooleanOnSuccess()
+        {
+            Assert.True(Result.RzSuccess.ToBoolean());
+        }
+
+        [Test]
+        public void ShouldConvertToFalseBooleanOnFailure()
+        {
+            Assert.False(Result.RzFailed.ToBoolean());
+        }
+
+        [TestCase(0)]
+        [TestCase(1)]
+        [TestCase(42134)]
+        [TestCase(-42)]
+        public void ShouldConvertToInt32(int value)
+        {
+            var result = new Result(value);
+            Assert.AreEqual(value, result.ToInt32());
+        }
+
+        [TestCase(0)]
+        [TestCase(1)]
+        [TestCase(42134)]
+        [TestCase(-42)]
+        public void ShouldConvertFromInt32(int value)
+        {
+            var result = Result.FromResult(value);
+            Assert.AreEqual(value, result.Value);
         }
     }
 }

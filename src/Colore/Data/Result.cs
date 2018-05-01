@@ -175,6 +175,7 @@ namespace Colore.Data
         /// <param name="left">Left operand, an instance of the <see cref="Result" /> struct.</param>
         /// <param name="right">Right operand, an object to compare with.</param>
         /// <returns><c>true</c> if the two objects are equal, otherwise <c>false</c>.</returns>
+        [Pure]
         public static bool operator ==(Result left, object right)
         {
             return left.Equals(right);
@@ -188,6 +189,7 @@ namespace Colore.Data
         /// <c>false</c> if the <see cref="Result" /> object represents a boolean <c>false</c> value,
         /// otherwise <c>true</c>.
         /// </returns>
+        [Pure]
         public static bool operator false(Result result)
         {
             return !result;
@@ -200,6 +202,7 @@ namespace Colore.Data
         /// </summary>
         /// <param name="result">An instance of the <see cref="Result" /> to convert.</param>
         /// <returns>The integer equivalent of the <paramref name="result" />.</returns>
+        [Pure]
         public static implicit operator int(Result result)
         {
             return result.Value;
@@ -212,6 +215,7 @@ namespace Colore.Data
         /// </summary>
         /// <param name="value">The value to convert.</param>
         /// <returns>The <see cref="Result" /> equivalent of the <paramref name="value" />.</returns>
+        [Pure]
         public static implicit operator Result(int value)
         {
             return new Result(value);
@@ -225,6 +229,7 @@ namespace Colore.Data
         /// <c>true</c> if the <paramref name="result" /> represents a <c>true</c> value (success),
         /// otherwise <c>false</c> (failure).
         /// </returns>
+        [Pure]
         public static implicit operator bool(Result result)
         {
             return result == RzSuccess;
@@ -237,6 +242,7 @@ namespace Colore.Data
         /// <param name="left">Left operand, an instance of the <see cref="Result" /> struct.</param>
         /// <param name="right">Right operand, an object to compare to.</param>
         /// <returns><c>true</c> if the two objects are not equal, otherwise <c>false</c>.</returns>
+        [Pure]
         public static bool operator !=(Result left, object right)
         {
             return !left.Equals(right);
@@ -247,6 +253,7 @@ namespace Colore.Data
         /// </summary>
         /// <param name="result">Object to convert.</param>
         /// <returns><c>true</c> if the object represents a boolean <c>true</c> value, <c>false</c> otherwise.</returns>
+        [Pure]
         public static bool operator true(Result result)
         {
             return result;
@@ -257,6 +264,7 @@ namespace Colore.Data
         /// </summary>
         /// <param name="value">The value to convert.</param>
         /// <returns>An instance of <see cref="Result" />.</returns>
+        [Pure]
         public static Result FromResult(int value)
         {
             return value;
@@ -266,6 +274,7 @@ namespace Colore.Data
         /// Converts this instance of <see cref="Result" /> to an integer value.
         /// </summary>
         /// <returns>The integer value of this <see cref="Result" />.</returns>
+        [Pure]
         public int ToInt32()
         {
             return this;
@@ -275,6 +284,7 @@ namespace Colore.Data
         /// Converts this <see cref="Result" /> to a boolean value.
         /// </summary>
         /// <returns>The result of the conversion.</returns>
+        [Pure]
         public bool ToBoolean()
         {
             return this;
@@ -287,6 +297,7 @@ namespace Colore.Data
         /// </summary>
         /// <param name="other">A value to compare with this object's internal value.</param>
         /// <returns><c>true</c> if the internal value is equal to the <paramref name="other" /> parameter, otherwise <c>false</c>.</returns>
+        [Pure]
         public bool Equals(int other)
         {
             return Value.Equals(other);
@@ -300,6 +311,7 @@ namespace Colore.Data
         /// <returns>
         /// <c>true</c> if the current object is equal to the <paramref name="other" /> parameter; otherwise, <c>false</c>.
         /// </returns>
+        [Pure]
         public bool Equals(Result other)
         {
             return Equals(other.Value);
@@ -314,6 +326,7 @@ namespace Colore.Data
         /// and represent the same value; otherwise, <c>false</c>.
         /// </returns>
         /// <filterpriority>2</filterpriority>
+        [Pure]
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
@@ -338,6 +351,7 @@ namespace Colore.Data
         /// A 32-bit signed integer that is the hash code for this instance.
         /// </returns>
         /// <filterpriority>2</filterpriority>
+        [Pure]
         public override int GetHashCode()
         {
             return Value;
@@ -351,6 +365,7 @@ namespace Colore.Data
         /// of the result complete with name, description, and numeric value.
         /// </returns>
         /// <filterpriority>2</filterpriority>
+        [Pure]
         public override string ToString()
         {
             return $"{Name}: {Description} ({Value})";

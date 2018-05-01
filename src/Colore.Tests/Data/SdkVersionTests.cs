@@ -23,7 +23,7 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests
+namespace Colore.Tests.Data
 {
     using System;
 
@@ -195,6 +195,13 @@ namespace Colore.Tests
             Assert.That(
                 () => ver.CompareTo(obj),
                 Throws.InstanceOf<ArgumentException>().With.Property("ParamName").EqualTo("obj"));
+        }
+
+        [Test]
+        public void ShouldHaveZeroHashCodeOnDefaultInstance()
+        {
+            var ver = new SdkVersion();
+            Assert.Zero(ver.GetHashCode());
         }
     }
 }

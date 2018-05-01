@@ -52,6 +52,17 @@ namespace Colore.Data
         public readonly bool Connected;
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="SdkDeviceInfo" /> struct.
+        /// </summary>
+        /// <param name="type">The type of device.</param>
+        /// <param name="connected">Whether the device is currently connected.</param>
+        public SdkDeviceInfo(DeviceType type, bool connected)
+        {
+            Type = type;
+            Connected = connected;
+        }
+
+        /// <summary>
         /// Checks an instance of <see cref="SdkDeviceInfo" /> for equality with another <see cref="SdkDeviceInfo" /> instance.
         /// </summary>
         /// <param name="left">Left operand.</param>
@@ -96,8 +107,9 @@ namespace Colore.Data
         /// </returns>
         public override bool Equals(object obj)
         {
-            if (ReferenceEquals(null, obj))
+            if (obj is null)
                 return false;
+
             return obj is SdkDeviceInfo info && Equals(info);
         }
 

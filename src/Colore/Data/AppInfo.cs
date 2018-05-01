@@ -27,6 +27,8 @@ namespace Colore.Data
 {
     using System;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.Linq;
 
     using Newtonsoft.Json;
 
@@ -45,17 +47,24 @@ namespace Colore.Data
         /// <param name="authorContact">Contact information for the author.</param>
         /// <param name="category">Application category.</param>
         public AppInfo(string title, string description, string authorName, string authorContact, Category category)
-            : this(title, description, authorName, authorContact, null, category)
+            : this(
+                title,
+                description,
+                authorName,
+                authorContact,
+#pragma warning disable SA1118 // Parameter should not span multiple lines
+                new[]
+                {
+                    DeviceType.Keyboard,
+                    DeviceType.Mouse,
+                    DeviceType.Headset,
+                    DeviceType.Keypad,
+                    DeviceType.Mousepad,
+                    DeviceType.Speakers
+                },
+#pragma warning restore SA1118 // Parameter should not span multiple lines
+                category)
         {
-            SupportedDevices = new[]
-            {
-                DeviceType.Keyboard,
-                DeviceType.Mouse,
-                DeviceType.Headset,
-                DeviceType.Keypad,
-                DeviceType.Mousepad,
-                DeviceType.ChromaLink
-            };
         }
 
         /// <summary>
@@ -92,7 +101,7 @@ namespace Colore.Data
             Title = title;
             Description = description;
             Author = new Author(authorName, authorContact);
-            SupportedDevices = supportedDevices;
+            SupportedDevices = new ReadOnlyCollection<DeviceType>(supportedDevices.ToList());
             Category = category;
         }
 
@@ -122,7 +131,7 @@ namespace Colore.Data
         /// but since we only serialize this class, it will not be an issue.
         /// </remarks>
         [JsonProperty("device_supported")]
-        public IEnumerable<DeviceType> SupportedDevices { get; }
+        public IReadOnlyCollection<DeviceType> SupportedDevices { get; }
 
         /// <summary>
         /// Gets the category of this application.

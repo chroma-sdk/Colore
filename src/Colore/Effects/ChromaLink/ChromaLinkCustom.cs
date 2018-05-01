@@ -42,7 +42,7 @@ namespace Colore.Effects.ChromaLink
     /// </summary>
     [JsonConverter(typeof(ChromaLinkCustomConverter))]
     [StructLayout(LayoutKind.Sequential)]
-    public struct ChromaLinkCustom : IEquatable<ChromaLinkCustom>, IEquatable<Color[]>
+    public struct ChromaLinkCustom : IEquatable<ChromaLinkCustom>
     {
         /// <summary>
         /// Color definitions for each element in Chroma Link.
@@ -250,10 +250,7 @@ namespace Colore.Effects.ChromaLink
             if (obj is null)
                 return false;
 
-            if (obj is ChromaLinkCustom custom)
-                return Equals(custom);
-
-            return obj is Color[] array && Equals(array);
+            return obj is ChromaLinkCustom custom && Equals(custom);
         }
 
         /// <inheritdoc />
@@ -270,30 +267,6 @@ namespace Colore.Effects.ChromaLink
             for (var index = 0; index < ChromaLinkConstants.MaxLeds; index++)
             {
                 if (this[index] != other[index])
-                    return false;
-            }
-
-            return true;
-        }
-
-        /// <inheritdoc />
-        /// <summary>
-        /// Indicates whether the current object is equal to an instance of
-        /// an array of <see cref="Color" />.
-        /// </summary>
-        /// <param name="other">An array of <see cref="Color" /> to compare with this object.</param>
-        /// <returns>
-        /// <c>true</c> if the <paramref name="other" /> object has the same
-        /// number of elements, and contain matching colors; otherwise, <c>false</c>.
-        /// </returns>
-        public bool Equals(Color[] other)
-        {
-            if (other == null || other.Length != ChromaLinkConstants.MaxLeds)
-                return false;
-
-            for (var index = 0; index < ChromaLinkConstants.MaxLeds; index++)
-            {
-                if (other[index] != this[index])
                     return false;
             }
 
