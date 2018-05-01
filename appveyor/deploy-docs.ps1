@@ -52,6 +52,7 @@ Write-Host "Git data: ${gitdata}"
 Push-Location gh-pages
 
 git add ${target}
+git add ${covtarget}
 git commit -m "[AUTOMATED] Documentation update
 
 Updates to project documentatio and coverage data.
