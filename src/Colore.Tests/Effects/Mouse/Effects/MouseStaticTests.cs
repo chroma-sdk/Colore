@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="StaticTests.cs" company="Corale">
+// <copyright file="MouseStaticTests.cs" company="Corale">
 //     Copyright © 2015-2018 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,109 +23,142 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests.Effects.Headset.Effects
+namespace Colore.Tests.Effects.Mouse.Effects
 {
     using Colore.Data;
-    using Colore.Effects.Headset;
+    using Colore.Effects.Mouse;
 
     using NUnit.Framework;
 
-    [TestFixture]
-    public class StaticTests
+    public class MouseStaticTests
     {
         [Test]
-        public void ShouldConstructWithCorrectColor()
+        public void ShouldConstructWithAllLedsSetIfNoLed()
         {
-            Assert.AreEqual(Color.Red, new HeadsetStatic(Color.Red).Color);
+            Assert.AreEqual(Led.All, new MouseStatic(Color.Red).Led);
         }
 
         [Test]
-        public void ShouldEqualEffectWithSameColor()
+        public void ShouldConstructWithCorrectColor()
         {
-            var a = new HeadsetStatic(Color.Red);
-            var b = new HeadsetStatic(Color.Red);
+            Assert.AreEqual(Color.Red, new MouseStatic(Led.All, Color.Red).Color);
+        }
+
+        [Test]
+        public void ShouldConstructWithCorrectLed()
+        {
+            Assert.AreEqual(Led.Backlight, new MouseStatic(Led.Backlight, Color.Black).Led);
+        }
+
+        [Test]
+        public void ShouldEqualEffectWithSameColorAndLed()
+        {
+            var a = new MouseStatic(Led.Backlight, Color.Red);
+            var b = new MouseStatic(Led.Backlight, Color.Red);
             Assert.AreEqual(a, b);
         }
 
         [Test]
         public void ShouldNotEqualEffectWithDifferentColor()
         {
-            var a = new HeadsetStatic(Color.Red);
-            var b = new HeadsetStatic(Color.Blue);
+            var a = new MouseStatic(Led.All, Color.Red);
+            var b = new MouseStatic(Led.All, Color.Blue);
+            Assert.AreNotEqual(a, b);
+        }
+
+        [Test]
+        public void ShouldNotEqualEffectWithDifferentLed()
+        {
+            var a = new MouseStatic(Led.ScrollWheel, Color.Red);
+            var b = new MouseStatic(Led.Strip1, Color.Red);
+            Assert.AreNotEqual(a, b);
+        }
+
+        [Test]
+        public void ShouldNotEqualEffectWithDifferentLedAndColor()
+        {
+            var a = new MouseStatic(Led.Strip10, Color.Red);
+            var b = new MouseStatic(Led.Strip2, Color.Green);
             Assert.AreNotEqual(a, b);
         }
 
         [Test]
         public void ShouldEqualEffectWithSameColorUsingEqualOp()
         {
-            var a = new HeadsetStatic(Color.Red);
-            var b = new HeadsetStatic(Color.Red);
+            var a = new MouseStatic(Led.All, Color.Red);
+            var b = new MouseStatic(Led.All, Color.Red);
             Assert.True(a == b);
         }
 
         [Test]
         public void ShouldNotEqualEffectWithDifferentColorUsingEqualOp()
         {
-            var a = new HeadsetStatic(Color.Red);
-            var b = new HeadsetStatic(Color.Blue);
+            var a = new MouseStatic(Led.All, Color.Red);
+            var b = new MouseStatic(Led.All, Color.Blue);
             Assert.False(a == b);
         }
 
         [Test]
         public void ShouldEqualEffectWithSameColorUsingNotEqualOp()
         {
-            var a = new HeadsetStatic(Color.Red);
-            var b = new HeadsetStatic(Color.Red);
+            var a = new MouseStatic(Led.All, Color.Red);
+            var b = new MouseStatic(Led.All, Color.Red);
             Assert.False(a != b);
         }
 
         [Test]
         public void ShouldNotEqualEffectWithDifferentColorUsingNotEqualOp()
         {
-            var a = new HeadsetStatic(Color.Red);
-            var b = new HeadsetStatic(Color.Blue);
+            var a = new MouseStatic(Led.All, Color.Red);
+            var b = new MouseStatic(Led.All, Color.Blue);
             Assert.True(a != b);
         }
 
         [Test]
         public void ShouldNotEqualNull()
         {
-            var effect = new HeadsetStatic(Color.Red);
+            var effect = new MouseStatic(Led.All, Color.Red);
             Assert.AreNotEqual(effect, null);
             Assert.False(effect.Equals(null));
         }
 
         [Test]
-        public void ShouldHaveSameHashcodeAsColor()
-        {
-            var color = Color.Red;
-            var hashcode = color.GetHashCode();
-            var effect = new HeadsetStatic(color);
-            Assert.AreEqual(hashcode, effect.GetHashCode());
-        }
-
-        [Test]
         public void ShouldNotEqualArbitraryObject()
         {
-            var effect = new HeadsetStatic(Color.Red);
+            var effect = new MouseStatic(Led.All, Color.Red);
             var obj = new object();
             Assert.False(effect.Equals(obj));
         }
 
         [Test]
-        public void ShouldEqualEffectWithSameColorCastAsObject()
+        public void ShouldEqualEffectWithSameLedAndColorCastAsObject()
         {
-            var effect = new HeadsetStatic(Color.Red);
-            var obj = new HeadsetStatic(Color.Red) as object;
+            var effect = new MouseStatic(Led.Strip3, Color.Red);
+            var obj = new MouseStatic(Led.Strip3, Color.Red) as object;
             Assert.True(effect.Equals(obj));
+        }
+
+        [Test]
+        public void ShouldNotEqualEffectWithDifferentLedCastAsObject()
+        {
+            var effect = new MouseStatic(Led.Strip11, Color.Red);
+            var obj = new MouseStatic(Led.Backlight, Color.Red) as object;
+            Assert.False(effect.Equals(obj));
         }
 
         [Test]
         public void ShouldNotEqualEffectWithDifferentColorCastAsObject()
         {
-            var effect = new HeadsetStatic(Color.Red);
-            var obj = new HeadsetStatic(Color.Blue) as object;
+            var effect = new MouseStatic(Led.All, Color.Red);
+            var obj = new MouseStatic(Led.All, Color.Blue) as object;
             Assert.False(effect.Equals(obj));
+        }
+
+        [Test]
+        public void ShouldHaveZeroHashCodeOnDefaultInstance()
+        {
+            var effect = new MouseStatic();
+            Assert.Zero(effect.GetHashCode());
         }
     }
 }

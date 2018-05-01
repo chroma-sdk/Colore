@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="StaticTests.cs" company="Corale">
+// <copyright file="AssemblyInfo.cs" company="Corale">
 //     Copyright © 2015-2018 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,20 +23,6 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests.Effects.Keypad.Effects
-{
-    using Colore.Data;
-    using Colore.Effects.Keypad;
+using System.Runtime.CompilerServices;
 
-    using NUnit.Framework;
-
-    [TestFixture]
-    public class StaticTests
-    {
-        [Test]
-        public void ShouldConstructWithCorrectColor()
-        {
-            Assert.AreEqual(Color.Red, new KeypadStatic(Color.Red).Color);
-        }
-    }
-}
+[assembly: InternalsVisibleTo("Colore.Tests")]

@@ -279,7 +279,7 @@ namespace Colore.Effects.Keyboard
         {
             unchecked
             {
-                return (_colors.GetHashCode() * 397) ^ _keys.GetHashCode();
+                return ((_colors?.GetHashCode() ?? 0) * 397) ^ (_keys?.GetHashCode() ?? 0);
             }
         }
 

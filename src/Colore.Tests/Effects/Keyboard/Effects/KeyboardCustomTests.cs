@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="CustomTests.cs" company="Corale">
+// <copyright file="KeyboardCustomTests.cs" company="Corale">
 //     Copyright © 2015-2018 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -33,7 +33,7 @@ namespace Colore.Tests.Effects.Keyboard.Effects
     using NUnit.Framework;
 
     [TestFixture]
-    public class CustomTests
+    public class KeyboardCustomTests
     {
         [Test]
         public void ShouldThrowWhenOutOfRange2DGet()
@@ -370,6 +370,24 @@ namespace Colore.Tests.Effects.Keyboard.Effects
             clone.Set(Color.Blue);
 
             Assert.That(clone, Is.Not.EqualTo(original));
+        }
+
+        [Test]
+        public void ShouldHaveZeroHashCodeOnDefaultInstance()
+        {
+            var effect = new KeyboardCustom();
+            Assert.Zero(effect.GetHashCode());
+        }
+
+        [Test]
+        public void ShouldConstructProperMultiArray()
+        {
+            var effect = KeyboardCustom.Create();
+            effect[3, 12] = Color.Red;
+            effect[Key.Space] = Color.Green;
+            var (colors, keys) = effect.ToMultiArrays();
+            Assert.AreEqual(Color.Red, colors[3, 12]);
+            Assert.AreEqual(Color.Green.AsKeyColor, keys[5, 7]);
         }
     }
 }

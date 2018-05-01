@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="StaticTests.cs" company="Corale">
+// <copyright file="PositionDataTests.cs" company="Corale">
 //     Copyright © 2015-2018 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -25,18 +25,17 @@
 
 namespace Colore.Tests.Effects.Keyboard.Effects
 {
-    using Colore.Data;
     using Colore.Effects.Keyboard;
 
     using NUnit.Framework;
 
     [TestFixture]
-    public class StaticTests
+    public class PositionDataTests
     {
         [Test]
-        public void ShouldConstructWithCorrectColor()
+        public void ShouldNotBeNull()
         {
-            Assert.That(new KeyboardStatic(Color.Red).Color, Is.EqualTo(Color.Red));
+            Assert.NotNull(PositionData.UnsafePositions);
         }
     }
 }

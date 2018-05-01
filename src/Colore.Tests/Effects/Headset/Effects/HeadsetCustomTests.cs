@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="CustomTests.cs" company="Corale">
+// <copyright file="HeadsetCustomTests.cs" company="Corale">
 //     Copyright © 2015-2018 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -22,9 +22,11 @@
 //     "Razer" is a trademark of Razer USA Ltd.
 // </copyright>
 // ---------------------------------------------------------------------------------------
+
 namespace Colore.Tests.Effects.Headset.Effects
 {
     using System;
+    using System.Linq;
 
     using Colore.Data;
     using Colore.Effects.Headset;
@@ -32,7 +34,7 @@ namespace Colore.Tests.Effects.Headset.Effects
     using NUnit.Framework;
 
     [TestFixture]
-    public class CustomTests
+    public class HeadsetCustomTests
     {
         [Test]
         public void ShouldThrowWhenOutOfRangeGet()
@@ -260,6 +262,22 @@ namespace Colore.Tests.Effects.Headset.Effects
             clone.Set(Color.Blue);
 
             Assert.That(clone, Is.Not.EqualTo(original));
+        }
+
+        [Test]
+        public void ShouldHaveZeroHashCodeOnDefaultInstance()
+        {
+            var effect = new HeadsetCustom();
+            Assert.Zero(effect.GetHashCode());
+        }
+
+        [Test]
+        public void ShouldHaveCorrectColorsInProperty()
+        {
+            var colors = new Color[HeadsetConstants.MaxLeds];
+            colors[0] = Color.Red;
+            var effect = new HeadsetCustom(colors.ToList());
+            Assert.AreEqual(colors, effect.Colors);
         }
     }
 }

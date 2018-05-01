@@ -210,5 +210,25 @@ namespace Colore.Tests.Effects.Keyboard.Effects
 
             Assert.That(clone, Is.Not.EqualTo(original));
         }
+
+        [Test]
+        public void ShouldHaveZeroHashCodeOnDefaultInstance()
+        {
+            var effect = new DeathstalkerGrid();
+            Assert.Zero(effect.GetHashCode());
+        }
+
+        [Test]
+        public void ShouldConstructProperMultiArray()
+        {
+            var effect = DeathstalkerGrid.Create();
+            effect[0] = Color.Red;
+            effect[1] = Color.Green;
+            effect[5] = Color.Blue;
+            var multiArray = effect.ToMultiArray();
+            Assert.AreEqual(Color.Red, multiArray[1, 1]);
+            Assert.AreEqual(Color.Green, multiArray[1, 4]);
+            Assert.AreEqual(Color.Blue, multiArray[1, 18]);
+        }
     }
 }

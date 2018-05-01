@@ -215,5 +215,53 @@ namespace Colore.Tests
             Assert.False(b == A);
             Assert.True(b != A);
         }
+
+        [Test]
+        public void ShouldSetKeyBitOnKeyPropertyWhenNoExistingBit()
+        {
+            var color = Color.Red;
+            var keyColor = color.AsKeyColor;
+            Assert.AreEqual(0x1000000, keyColor & 0x1000000);
+        }
+
+        [Test]
+        public void ShouldLeaveColorDataIntactOnKeyColorConversion()
+        {
+            var color = Color.Green;
+            var keyColor = color.AsKeyColor;
+            Assert.AreEqual(color, keyColor & 0xFFFFFF);
+        }
+
+        [Test]
+        public void ShouldLeaveKeyBitSetOnKeyPropertyWhenExistingBit()
+        {
+            var keyColor = Color.Blue.AsKeyColor;
+            var sameColor = keyColor.AsKeyColor;
+            Assert.AreEqual(keyColor, sameColor);
+        }
+
+        [Test]
+        public void ShouldUnsetKeyBitOnRegularPropertyWhenExistingBit()
+        {
+            var keyColor = Color.Red.AsKeyColor;
+            var regularColor = keyColor.AsRegularColor;
+            Assert.AreEqual(0, regularColor & 0x1000000);
+        }
+
+        [Test]
+        public void ShouldLeaveColorDataIntactOnRemovingKeyBit()
+        {
+            var keyColor = Color.Red.AsKeyColor;
+            var regularColor = keyColor.AsRegularColor;
+            Assert.AreEqual(keyColor & 0xFFFFFF, regularColor & 0xFFFFFF);
+        }
+
+        [Test]
+        public void ShouldLeaveKeyBitUnsetOnRegularPropertyWhenNoExistingBit()
+        {
+            var color = Color.Green;
+            var regularColor = color.AsRegularColor;
+            Assert.AreEqual(color, regularColor);
+        }
     }
 }

@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="CustomGridTests.cs" company="Corale">
+// <copyright file="MouseCustomTests.cs" company="Corale">
 //     Copyright © 2015-2018 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -33,7 +33,7 @@ namespace Colore.Tests.Effects.Mouse.Effects
     using NUnit.Framework;
 
     [TestFixture]
-    public class CustomGridTests
+    public class MouseCustomTests
     {
         [Test]
         public void ShouldThrowWhenConstructedWithInvalid2DRowCount()
@@ -464,6 +464,22 @@ namespace Colore.Tests.Effects.Mouse.Effects
             clone.Set(Color.Blue);
 
             Assert.That(clone, Is.Not.EqualTo(original));
+        }
+
+        [Test]
+        public void ShouldHaveZeroHashCodeOnDefaultInstance()
+        {
+            var effect = new MouseCustom();
+            Assert.Zero(effect.GetHashCode());
+        }
+
+        [Test]
+        public void ShouldConstructProperMultiArray()
+        {
+            var effect = MouseCustom.Create();
+            effect[2, 2] = Color.Red;
+            var array = effect.ToMultiArray();
+            Assert.AreEqual(Color.Red, array[2, 2]);
         }
     }
 }

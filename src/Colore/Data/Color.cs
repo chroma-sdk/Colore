@@ -127,6 +127,16 @@ namespace Colore.Data
         public uint Value { get; }
 
         /// <summary>
+        /// Gets a version of this color with the key bit set.
+        /// </summary>
+        public Color AsKeyColor => Value | 0x1000000;
+
+        /// <summary>
+        /// Gets a version of this color without the key bit set.
+        /// </summary>
+        public Color AsRegularColor => Value & 0xFFFFFF;
+
+        /// <summary>
         /// Converts a <see cref="Color" /> struct to a <see cref="uint" />.
         /// </summary>
         /// <param name="color">The <see cref="Color" /> to convert.</param>
@@ -189,19 +199,13 @@ namespace Colore.Data
         /// <returns><see cref="Color" /> representation of the value.</returns>
         /// <remarks>This is an alias for <see cref="FromRgb" />.</remarks>
         /// <seealso cref="FromRgb" />
-        public static Color ToColor(uint value)
-        {
-            return value;
-        }
+        public static Color ToColor(uint value) => value;
 
         /// <summary>
         /// Converts this instance of <see cref="Color" /> to an unsigned integer value.
         /// </summary>
         /// <returns>The unsigned integer value of this <see cref="Color" />.</returns>
-        public uint ToUInt32()
-        {
-            return this;
-        }
+        public uint ToUInt32() => this;
 
         /// <summary>
         /// Returns a value indicating whether this instance of <see cref="Color" />
@@ -259,6 +263,13 @@ namespace Colore.Data
         {
             return Value.Equals(other);
         }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Returns a string representation of this color's red, green, and blue values.
+        /// </summary>
+        /// <returns>A <see cref="string" /> containing a string representation of this color.</returns>
+        public override string ToString() => $"{R}, {G}, {B} ({Value:X})";
 
         /// <summary>
         /// Gets the unique hash code for this <see cref="Color" />.

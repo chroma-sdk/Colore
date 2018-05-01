@@ -59,6 +59,17 @@ namespace Colore.Effects.Mouse
         [UsedImplicitly]
         public readonly Color Color;
 
+        /// <inheritdoc />
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MouseStatic" /> struct,
+        /// with a color to set for every LED.
+        /// </summary>
+        /// <param name="color">The colo to set for every LED.</param>
+        public MouseStatic(Color color)
+            : this(Led.All, color)
+        {
+        }
+
         /// <summary>
         /// Initializes a new instance of the <see cref="MouseStatic" /> struct.
         /// </summary>

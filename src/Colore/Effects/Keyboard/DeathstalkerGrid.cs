@@ -201,7 +201,7 @@ namespace Colore.Effects.Keyboard
         /// Returns the hash code for this instance.
         /// </summary>
         /// <returns>A 32-bit signed integer that is the hash code for this instance.</returns>
-        public override int GetHashCode() => _colors.GetHashCode();
+        public override int GetHashCode() => _colors?.GetHashCode() ?? 0;
 
         /// <summary>
         /// Indicates whether this instance and a specified object are equal.

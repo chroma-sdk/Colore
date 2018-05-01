@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="CustomTests.cs" company="Corale">
+// <copyright file="MousepadCustomTests.cs" company="Corale">
 //     Copyright © 2015-2018 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -26,6 +26,7 @@
 namespace Colore.Tests.Effects.Mousepad.Effects
 {
     using System;
+    using System.Linq;
 
     using Colore.Data;
     using Colore.Effects.Mousepad;
@@ -33,7 +34,7 @@ namespace Colore.Tests.Effects.Mousepad.Effects
     using NUnit.Framework;
 
     [TestFixture]
-    public class CustomTests
+    public class MousepadCustomTests
     {
         [Test]
         public void ShouldThrowWhenOutOfRangeGet()
@@ -261,6 +262,22 @@ namespace Colore.Tests.Effects.Mousepad.Effects
             clone.Set(Color.Blue);
 
             Assert.That(clone, Is.Not.EqualTo(original));
+        }
+
+        [Test]
+        public void ShouldHaveCorrectColorsProperty()
+        {
+            var colors = new Color[MousepadConstants.MaxLeds];
+            colors[0] = Color.Green;
+            var effect = new MousepadCustom(colors.ToList());
+            Assert.AreEqual(colors, effect.Colors);
+        }
+
+        [Test]
+        public void ShouldHaveZeroHashCodeOnDefaultInstance()
+        {
+            var effect = new MousepadCustom();
+            Assert.Zero(effect.GetHashCode());
         }
     }
 }
