@@ -178,7 +178,7 @@ There may be others we are unaware of, so please let us know if there are any ot
 [gitter]: https://gitter.im/CoraleStudios/Colore?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
 [gitterbadge]: https://badges.gitter.im/Join%20Chat.svg
 [discord]: https://discord.gg/4ysuMYK
-[discordbadge]: https://img.shields.io/discord/102860784329052160.svg?label=discord&logo=discord
+[discordbadge]: https://img.shields.io/discord/342761229544194048.svg?label=discord&logo=discord
 
 [colorelogo]: https://files.sharparam.com/2017/10/31/colore-logo.png
 [colore-wpf]: https://github.com/CoraleStudios/Colore.Wpf
