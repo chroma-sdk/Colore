@@ -51,8 +51,11 @@ Write-Host "Git data: ${gitdata}"
 
 Push-Location gh-pages
 
-git add ${target}
-git add ${covtarget}
+Write-Host "Adding files"
+cmd /c "git add ${target} 2>&1"
+cmd /c "git add ${covtarget} 2>&1"
+
+Write-Host "Committing"
 git commit -q -m "[AUTOMATED] Documentation update
 
 Updates to project documentatio and coverage data.
@@ -62,6 +65,7 @@ From ${gitdata}
 Target: ${target}
 Coverage target: ${covtarget}"
 
+Write-Host "Pushing"
 git push -q origin gh-pages
 
 Pop-Location
