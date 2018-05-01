@@ -1,7 +1,9 @@
 #addin nuget:?package=Cake.DocFx
+#addin Cake.Coveralls
 #tool "nuget:?package=GitVersion.CommandLine"
 #tool "nuget:?package=OpenCover"
 #tool "nuget:?package=ReportGenerator"
+#tool coveralls.io
 
 ///////////////////////////////////////////////////////////////////////////////
 // ARGUMENTS
@@ -26,6 +28,10 @@ var buildNumber = HasArgument("BuildNumber")
             : EnvironmentVariable("BUILD_NUMBER") != null
                 ? int.Parse(EnvironmentVariable("BUILD_NUMBER"))
                 : 0;
+
+var coverallsRepoToken = HasArgument("CoverallsToken")
+    ? Argument<string>("CoverallsToken")
+    : EnvironmentVariable("COVERALLS_REPO_TOKEN");
 
 ///////////////////////////////////////////////////////////////////////////////
 // GLOBALS
@@ -290,11 +296,27 @@ Task("Docs")
         Zip("./docs/_site", $"./artifacts/colore_{version.SemVer}_docs.zip");
     });
 
+Task("Coveralls")
+    .WithCriteria(cover)
+    .WithCriteria(isAppVeyor)
+    .WithCriteria(coverallsRepoToken != null)
+    .IsDependentOn("Test")
+    .Does(() =>
+    {
+        Information("Running Coveralls tool on OpenCover result");
+        CoverallsIo("./artifacts/opencover-results.xml", new CoverallsIoSettings
+        {
+            FullSources = true,
+            RepoToken = coverallsRepoToken
+        });
+    });
+
 Task("CI")
     .IsDependentOn("Dist")
     .IsDependentOn("Publish")
     .IsDependentOn("Pack")
-    .IsDependentOn("Docs");
+    .IsDependentOn("Docs")
+    .IsDependentOn("Coveralls");
 
 Task("Default")
     .IsDependentOn("Test");
