@@ -27,7 +27,7 @@ Write-Host 'Cleaning any existing gh-pages directory'
 rmrf gh-pages
 
 Write-Host 'Cloning gh-pages branch'
-git clone -b gh-pages --depth 1 -- git@github.com:CoraleStudios/Colore.git gh-pages
+git clone -q -b gh-pages --depth 1 -- git@github.com:CoraleStudios/Colore.git gh-pages
 
 if (!(Test-Path -Path gh-pages))
 {
@@ -53,7 +53,7 @@ Push-Location gh-pages
 
 git add ${target}
 git add ${covtarget}
-git commit -m "[AUTOMATED] Documentation update
+git commit -q -m "[AUTOMATED] Documentation update
 
 Updates to project documentatio and coverage data.
 
@@ -62,7 +62,7 @@ From ${gitdata}
 Target: ${target}
 Coverage target: ${covtarget}"
 
-git push origin gh-pages
+git push -q origin gh-pages
 
 Pop-Location
 
