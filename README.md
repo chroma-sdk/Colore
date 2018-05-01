@@ -9,11 +9,13 @@
 [![Build status][appveyor-master-badge]][appveyor-master-status]
 [![TravisCI Status][travis-master-badge]][travis-master-status]
 [![Test status][test-master-badge]][test-master-status]
+[![Coverage][coveralls-master-badge]][coveralls-master]
 
 **[Develop][develop]:**
 [![Build status][appveyor-develop-badge]][appveyor-develop-status]
 [![TravisCI Status][travis-develop-badge]][travis-develop-status]
 [![Test status][test-develop-badge]][test-develop-status]
+[![Coverage][coveralls-develop-badge]][coveralls-develop]
 
 A powerful and elegant C# library for Razer Chroma's SDK
 
@@ -167,6 +169,8 @@ There may be others we are unaware of, so please let us know if there are any ot
 [travis-develop-badge]: https://travis-ci.org/CoraleStudios/Colore.svg?branch=develop
 [test-develop-status]: https://ci.appveyor.com/project/Corale/colore/branch/develop/tests
 [test-develop-badge]: https://img.shields.io/appveyor/tests/corale/Colore/develop.svg
+[coveralls-develop]: https://coveralls.io/github/CoraleStudios/Colore?branch=develop
+[coveralls-develop-badge]: https://coveralls.io/repos/github/CoraleStudios/Colore/badge.svg?branch=develop
 
 [appveyor-master-status]: https://ci.appveyor.com/project/Corale/colore/branch/master
 [appveyor-master-badge]: https://ci.appveyor.com/api/projects/status/st3y6fo0jqvhd8cg/branch/master?svg=true
@@ -174,6 +178,8 @@ There may be others we are unaware of, so please let us know if there are any ot
 [travis-master-badge]: https://travis-ci.org/CoraleStudios/Colore.svg?branch=master
 [test-master-status]: https://ci.appveyor.com/project/Corale/colore/branch/master/tests
 [test-master-badge]: https://img.shields.io/appveyor/tests/corale/Colore/master.svg
+[coveralls-master]: https://coveralls.io/github/CoraleStudios/Colore
+[coveralls-master-badge]: https://coveralls.io/repos/github/CoraleStudios/Colore/badge.svg
 
 [gitter]: https://gitter.im/CoraleStudios/Colore?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
 [gitterbadge]: https://badges.gitter.im/Join%20Chat.svg
