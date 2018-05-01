@@ -29,6 +29,12 @@ rmrf gh-pages
 Write-Host 'Cloning gh-pages branch'
 git clone -b gh-pages --depth 1 -- git@github.com:CoraleStudios/Colore.git gh-pages
 
+if (!(Test-Path -Path gh-pages))
+{
+    Write-Host 'Failed to clone gh-pages branch, aborting'
+    return 1
+}
+
 Write-Host "Removing existing documentation at gh-pages/${target}"
 rmrf .\gh-pages\${target}
 Write-Host "Removing existing coverage at gh-pages/${covtarget}"
