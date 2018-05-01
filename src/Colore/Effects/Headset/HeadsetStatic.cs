@@ -107,9 +107,10 @@ namespace Colore.Effects.Headset
         /// </returns>
         public override bool Equals(object obj)
         {
-            if (ReferenceEquals(null, obj))
+            if (obj is null)
                 return false;
-            return obj is HeadsetStatic && Equals((HeadsetStatic)obj);
+
+            return obj is HeadsetStatic effect && Equals(effect);
         }
 
         /// <inheritdoc />
