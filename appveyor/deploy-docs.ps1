@@ -5,11 +5,11 @@ function rmrf($path)
 
 if ($env:APPVEYOR_REPO_TAG -ne 'true' -and $env:APPVEYOR_REPO_BRANCH -ne 'develop')
 {
-    echo 'Not running from tag or develop branch, aborting,'
+    Write-Host 'Not running from tag or develop branch, aborting,'
     return
 }
 
-echo 'AppVeyor docs deploy script running'
+Write-Host 'AppVeyor docs deploy script running'
 
 $release = $false
 $target = 'devdocs'
@@ -17,30 +17,30 @@ $covtarget = 'devcoverage'
 
 if ($env:APPVEYOR_REPO_TAG -eq 'true')
 {
-    echo 'Building from tag, setting variables to release values'
+    Write-Host 'Building from tag, setting variables to release values'
     $release = $true
     $target = 'docs'
     $covtarget = 'coverage'
 }
 
-echo 'Cleaning any existing gh-pages directory'
+Write-Host 'Cleaning any existing gh-pages directory'
 rmrf gh-pages
 
-echo 'Cloning gh-pages branch'
+Write-Host 'Cloning gh-pages branch'
 git clone -b gh-pages --depth 1 -- git@github.com:CoraleStudios/Colore.git gh-pages
 
-echo "Removing existing documentation at gh-pages/${target}"
+Write-Host "Removing existing documentation at gh-pages/${target}"
 rmrf .\gh-pages\${target}
-echo "Removing existing coverage at gh-pages/${covtarget}"
+Write-Host "Removing existing coverage at gh-pages/${covtarget}"
 rmrf .\gh-pages\${covtarget}
 
-echo 'Copying new documentation'
+Write-Host 'Copying new documentation'
 cp .\docs\_site .\gh-pages\${target} -Recurse
-echo 'Copying new coverage'
+Write-Host 'Copying new coverage'
 cp .\artifacts\coverage-report .\gh-pages\${covtarget} -Recurse
 
 $gitdata="$(git log -n 1 --format='commit %h - %s')"
-echo "Git data: ${gitdata}"
+Write-Host "Git data: ${gitdata}"
 
 Push-Location gh-pages
 
@@ -58,7 +58,7 @@ git push origin gh-pages
 
 Pop-Location
 
-echo 'Removing gh-pages folder after completion of update'
+Write-Host 'Removing gh-pages folder after completion of update'
 rmrf gh-pages
 
-echo 'AppVeyor docs deploy script finished'
+Write-Host 'AppVeyor docs deploy script finished'
