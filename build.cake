@@ -47,7 +47,7 @@ IEnumerable<string> ReadCoverageFilters(string path)
     return System.IO.File.ReadLines(path).Where(l => !string.IsNullOrWhiteSpace(l) && !l.StartsWith("#"));
 }
 
-if (!isTravis)
+if (isTravis)
 {
     Information("OpenCover does not work on Travis CI, disabling coverage generation");
     cover = false;
