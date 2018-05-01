@@ -42,6 +42,11 @@ var isTravis = TravisCI.IsRunningOnTravisCI;
 var isCi = isAppVeyor || isTravis;
 var isWindows = IsRunningOnWindows();
 
+IEnumerable<string> ReadCoverageFilters(string path)
+{
+    return System.IO.File.ReadLines(path).Where(l => !string.IsNullOrWhiteSpace(l) && !l.StartsWith("#"));
+}
+
 ///////////////////////////////////////////////////////////////////////////////
 // SETUP / TEARDOWN
 ///////////////////////////////////////////////////////////////////////////////
@@ -215,11 +220,13 @@ Task("Test")
         {
             Information("Running tests with coverage, using OpenCover");
             
-            var settings = new OpenCoverSettings
+            var filters = ReadCoverageFilters("./src/coverage-filters.txt");
+
+            var settings = filters.Aggregate(new OpenCoverSettings
             {
                 OldStyle = true,
                 MergeOutput = true
-            }.WithFilter("+[Colore]* -[Colore]Colore.Logging* -[*.Tests]* -[nunit*]*");
+            }, (a, e) => a.WithFilter(e));
 
             OpenCover(c => Test(c), new FilePath("./artifacts/opencover-results.xml"), settings);
 
@@ -304,22 +311,25 @@ Task("Coveralls")
     .Does(() =>
     {
         Information("Running Coveralls tool on OpenCover result");
-        var avEnv = AppVeyor.Environment;
-        // CoverallsIo("./artifacts/opencover-results.xml", new CoverallsIoSettings
-        // {
-        //     FullSources = true,
-        //     RepoToken = coverallsRepoToken
-        // });
-        CoverallsNet("./artifacts/opencover-results.xml", CoverallsNetReportType.OpenCover, new CoverallsNetSettings
+        
+        CoverallsIo("./artifacts/opencover-results.xml", new CoverallsIoSettings
         {
-            RepoToken = coverallsRepoToken,
-            CommitAuthor = avEnv.Repository.Commit.Author,
-            CommitBranch = avEnv.Repository.Branch,
-            CommitEmail = avEnv.Repository.Commit.Email,
-            CommitId = avEnv.Repository.Commit.Id,
-            CommitMessage = avEnv.Repository.Commit.Message,
-            JobId = avEnv.Build.Number
+            FullSources = true,
+            RepoToken = coverallsRepoToken
         });
+
+        // var avEnv = AppVeyor.Environment;
+        // CoverallsNet("./artifacts/opencover-results.xml", CoverallsNetReportType.OpenCover, new CoverallsNetSettings
+        // {
+        //     RepoToken = coverallsRepoToken,
+        //     CommitAuthor = avEnv.Repository.Commit.Author,
+        //     CommitBranch = avEnv.Repository.Branch,
+        //     CommitEmail = avEnv.Repository.Commit.Email,
+        //     CommitId = avEnv.Repository.Commit.Id,
+        //     CommitMessage = avEnv.Repository.Commit.Message,
+        //     JobId = avEnv.Build.Number,
+        //     UseRelativePaths = true
+        // });
     });
 
 Task("CI")
