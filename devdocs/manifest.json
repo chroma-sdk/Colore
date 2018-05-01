@@ -72,7 +72,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Colore.Api.IChromaApi.html",
-          "hash": "tDuj86Y+Iz2BXjriqWcrUQ=="
+          "hash": "cYJhQCKwUH5A6Gq1N4fHqw=="
         }
       },
       "is_incremental": false,
@@ -108,7 +108,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Colore.ColoreProvider.html",
-          "hash": "GfTYJuR9wDfZCY8lLpi9QA=="
+          "hash": "kbyrOvukQzdSBmIN72CmCg=="
         }
       },
       "is_incremental": false,
@@ -756,7 +756,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Colore.IChroma.html",
-          "hash": "BoIez8IOS0rMJUo/qjCqsg=="
+          "hash": "ir4lJj5Oy+GrKwEVb+gkkw=="
         }
       },
       "is_incremental": false,
@@ -768,7 +768,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Colore.IChromaLink.html",
-          "hash": "Ht4kGd+NCDkiRr4gDu51QQ=="
+          "hash": "0awmw6rFDfD0NmWBxYeoQQ=="
         }
       },
       "is_incremental": false,
@@ -780,7 +780,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Colore.IDevice.html",
-          "hash": "YIEf4GsAy9OlNGEnClTjHQ=="
+          "hash": "QIwtg5j0YAEdI9ZhDCo6Ew=="
         }
       },
       "is_incremental": false,
@@ -792,7 +792,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Colore.IGenericDevice.html",
-          "hash": "FCQxi4OmbCxYrshA7g8IJw=="
+          "hash": "AZDUWyXMLLoHF+BbXhBRsA=="
         }
       },
       "is_incremental": false,
@@ -804,7 +804,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Colore.IHeadset.html",
-          "hash": "bnqIFdq0oagI+XW9mcVGiA=="
+          "hash": "hz9ATeedL6yBFUsZOkdZwQ=="
         }
       },
       "is_incremental": false,
@@ -816,7 +816,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Colore.IKeyboard.html",
-          "hash": "Nx0HkyAGxHqQkcdbZ4O9eg=="
+          "hash": "c+oqpGJNRb5kuUwKM6lIng=="
         }
       },
       "is_incremental": false,
@@ -828,7 +828,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Colore.IKeypad.html",
-          "hash": "eJGT4liwv2bUOuy0PpVuYQ=="
+          "hash": "Mt01n2IQ+hho6ptxzpWWOw=="
         }
       },
       "is_incremental": false,
@@ -840,7 +840,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Colore.IMouse.html",
-          "hash": "6mfjZ8qh7ql+GriW5gHIEw=="
+          "hash": "1hR6V2JFFfNzqnaxkduVNg=="
         }
       },
       "is_incremental": false,
@@ -852,7 +852,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Colore.IMousepad.html",
-          "hash": "gOOVU3/32pVAVhAg+WLGDQ=="
+          "hash": "T85SEiphP9JEZBE3MZjjpQ=="
         }
       },
       "is_incremental": false,
@@ -948,7 +948,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Colore.Rest.IRestClient.html",
-          "hash": "BJEuKfuMey9vQaiFD/LUgg=="
+          "hash": "i/lOOPmhBXyIGIBNAsrurg=="
         }
       },
       "is_incremental": false,
@@ -1121,17 +1121,17 @@
         "incrementalPhase": "build"
       },
       "processors": {
-        "ManagedReferenceDocumentProcessor": {
+        "TocDocumentProcessor": {
           "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         },
-        "TocDocumentProcessor": {
+        "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
         "ResourceDocumentProcessor": {
