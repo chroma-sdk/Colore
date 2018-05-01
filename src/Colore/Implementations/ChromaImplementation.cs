@@ -442,6 +442,7 @@ namespace Colore.Implementations
             Mousepad.SetAllAsync(color);
             Keypad.SetAllAsync(color);
             Headset.SetAllAsync(color);
+            ChromaLink.SetAllAsync(color);
             return Task.FromResult(0);
         }
 
