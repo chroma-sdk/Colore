@@ -72,7 +72,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Colore.Api.IChromaApi.html",
-          "hash": "cYJhQCKwUH5A6Gq1N4fHqw=="
+          "hash": "tDuj86Y+Iz2BXjriqWcrUQ=="
         }
       },
       "is_incremental": false,
@@ -108,7 +108,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Colore.ColoreProvider.html",
-          "hash": "kbyrOvukQzdSBmIN72CmCg=="
+          "hash": "GfTYJuR9wDfZCY8lLpi9QA=="
         }
       },
       "is_incremental": false,
@@ -756,7 +756,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Colore.IChroma.html",
-          "hash": "ir4lJj5Oy+GrKwEVb+gkkw=="
+          "hash": "BoIez8IOS0rMJUo/qjCqsg=="
         }
       },
       "is_incremental": false,
@@ -768,7 +768,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Colore.IChromaLink.html",
-          "hash": "0awmw6rFDfD0NmWBxYeoQQ=="
+          "hash": "Ht4kGd+NCDkiRr4gDu51QQ=="
         }
       },
       "is_incremental": false,
@@ -780,7 +780,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Colore.IDevice.html",
-          "hash": "QIwtg5j0YAEdI9ZhDCo6Ew=="
+          "hash": "YIEf4GsAy9OlNGEnClTjHQ=="
         }
       },
       "is_incremental": false,
@@ -792,7 +792,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Colore.IGenericDevice.html",
-          "hash": "AZDUWyXMLLoHF+BbXhBRsA=="
+          "hash": "FCQxi4OmbCxYrshA7g8IJw=="
         }
       },
       "is_incremental": false,
@@ -804,7 +804,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Colore.IHeadset.html",
-          "hash": "hz9ATeedL6yBFUsZOkdZwQ=="
+          "hash": "bnqIFdq0oagI+XW9mcVGiA=="
         }
       },
       "is_incremental": false,
@@ -816,7 +816,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Colore.IKeyboard.html",
-          "hash": "c+oqpGJNRb5kuUwKM6lIng=="
+          "hash": "Nx0HkyAGxHqQkcdbZ4O9eg=="
         }
       },
       "is_incremental": false,
@@ -828,7 +828,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Colore.IKeypad.html",
-          "hash": "Mt01n2IQ+hho6ptxzpWWOw=="
+          "hash": "eJGT4liwv2bUOuy0PpVuYQ=="
         }
       },
       "is_incremental": false,
@@ -840,7 +840,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Colore.IMouse.html",
-          "hash": "1hR6V2JFFfNzqnaxkduVNg=="
+          "hash": "6mfjZ8qh7ql+GriW5gHIEw=="
         }
       },
       "is_incremental": false,
@@ -852,7 +852,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Colore.IMousepad.html",
-          "hash": "T85SEiphP9JEZBE3MZjjpQ=="
+          "hash": "gOOVU3/32pVAVhAg+WLGDQ=="
         }
       },
       "is_incremental": false,
@@ -948,7 +948,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Colore.Rest.IRestClient.html",
-          "hash": "i/lOOPmhBXyIGIBNAsrurg=="
+          "hash": "BJEuKfuMey9vQaiFD/LUgg=="
         }
       },
       "is_incremental": false,
