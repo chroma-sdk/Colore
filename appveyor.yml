@@ -29,9 +29,9 @@ init:
 
 install:
   - choco install docfx -y
-  - pd: $privkeyContent = "-----BEGIN RSA PRIVATE KEY-----`n"
+  - ps: $privkeyContent = "-----BEGIN RSA PRIVATE KEY-----`n"
   - ps: $privkeyContent += $env:deploy_key.Replace(' ', "`n")
-  - ps: $privkeyContent += "`n-----END RSA PRIVATE KEY-----`n"
+  - ps: $privkeyContent += "`n-----END RSA PRIVATE KEY-----"
   - ps: Set-Content $env:userprofile\.ssh\id_rsa $privkeyContent
   - git config --global user.name "AppVeyor CI"
   - git config --global user.email "ci@appveyor.com"
