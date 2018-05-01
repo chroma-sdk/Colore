@@ -44,21 +44,21 @@ before_script:
   - chmod +x build.sh
 
 script:
-  - "./build.sh -t CI"
+  - "./build.sh -t Travis"
 
-deploy:
-  - provider: script
-    skip_cleanup: true
-    script: travis/deploy-docs.sh
-    on:
-      branch: develop
-      condition: $TRAVIS_OS_NAME = linux
-  - provider: script
-    skip_cleanup: true
-    script: travis/deploy-docs.sh release
-    on:
-      tags: true
-      condition: $TRAVIS_OS_NAME = linux
+# deploy:
+#   - provider: script
+#     skip_cleanup: true
+#     script: travis/deploy-docs.sh
+#     on:
+#       branch: develop
+#       condition: $TRAVIS_OS_NAME = linux
+#   - provider: script
+#     skip_cleanup: true
+#     script: travis/deploy-docs.sh release
+#     on:
+#       tags: true
+#       condition: $TRAVIS_OS_NAME = linux
 
 cache:
   directories:

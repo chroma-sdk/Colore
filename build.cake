@@ -47,6 +47,12 @@ IEnumerable<string> ReadCoverageFilters(string path)
     return System.IO.File.ReadLines(path).Where(l => !string.IsNullOrWhiteSpace(l) && !l.StartsWith("#"));
 }
 
+if (!isTravis)
+{
+    Information("OpenCover does not work on Travis CI, disabling coverage generation");
+    cover = false;
+}
+
 ///////////////////////////////////////////////////////////////////////////////
 // SETUP / TEARDOWN
 ///////////////////////////////////////////////////////////////////////////////
@@ -338,6 +344,9 @@ Task("CI")
     .IsDependentOn("Pack")
     .IsDependentOn("Docs")
     .IsDependentOn("Coveralls");
+
+Task("Travis").IsDependentOn("Test");
+Task("AppVeyor").IsDependentOn("CI").Does(() => { cover = true; });
 
 Task("Default")
     .IsDependentOn("Test");
