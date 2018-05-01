@@ -36,7 +36,7 @@ artifacts:
   name: NuGet
 - path: .\artifacts\**\*.zip
   name: Archive
-- path: .\artifacts\opencover-report.xml
+- path: .\artifacts\opencover-results.xml
   name: OpenCover
 - path: .\artifacts\coverage-report
   name: Coverage
