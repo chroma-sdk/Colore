@@ -13,6 +13,8 @@ environment:
   DOTNET_CLI_TELEMETRY_OPTOUT: true
   access_token:
     secure: ZWDltUxdxnkQ9jf+HC+g7Hxm4Nke7H7AtMv4NWu5Uf+ZP4DV77Vc3C2B87moIUK0
+  COVERALLS_REPO_TOKEN:
+    secure: /52HsSigAGXgmKFcFuNjgC3PPMIUkarMod0zxTDesVS5VNpKCyeqdBY3Ssy3R3Mg
 
 cache:
   - tools
@@ -25,7 +27,7 @@ install:
   - choco install docfx -y
 
 build_script:
-- ps: .\build.ps1 -Target CI
+- ps: .\build.ps1 -Target CI --Cover=True
 
 test: off
 
@@ -34,6 +36,10 @@ artifacts:
   name: NuGet
 - path: .\artifacts\**\*.zip
   name: Archive
+- path: .\artifacts\opencover-report.xml
+  name: OpenCover
+- path: .\artifacts\coverage-report
+  name: Coverage
 
 deploy:
 - provider: NuGet
@@ -56,7 +62,7 @@ deploy:
   description: Automatically created by AppVeyor.
   auth_token:
     secure: ZWDltUxdxnkQ9jf+HC+g7Hxm4Nke7H7AtMv4NWu5Uf+ZP4DV77Vc3C2B87moIUK0
-  artifact: NuGet,Archive
+  artifact: NuGet,Archive,OpenCover,Coverage
   draft: true
   on:
     appveyor_repo_tag: true

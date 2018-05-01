@@ -1,5 +1,7 @@
 #addin nuget:?package=Cake.DocFx
 #tool "nuget:?package=GitVersion.CommandLine"
+#tool "nuget:?package=OpenCover"
+#tool "nuget:?package=ReportGenerator"
 
 ///////////////////////////////////////////////////////////////////////////////
 // ARGUMENTS
@@ -7,6 +9,7 @@
 
 var target = Argument("Target", "Default");
 var tag = Argument("Tag", "cake");
+var cover = Argument("Cover", false);
 
 var configuration = HasArgument("Configuration")
     ? Argument<string>("Configuration")
@@ -165,36 +168,62 @@ Task("Build")
         Build(testProject);
     });
 
+void Test(ICakeContext context = null)
+{
+    var settings = new DotNetCoreTestSettings
+    {
+        Configuration = configuration,
+        NoBuild = true
+    };
+
+    if (AppVeyor.IsRunningOnAppVeyor)
+    {
+        settings.ArgumentCustomization = args => args
+            .Append("--logger:AppVeyor");
+    }
+    else
+    {
+        settings.ArgumentCustomization = args => args
+            .Append("--logger:nunit");
+    }
+
+    if (context == null)
+        DotNetCoreTest(testProject, settings);
+    else
+        context.DotNetCoreTest(testProject, settings);
+
+    if (AppVeyor.IsRunningOnAppVeyor)
+    {
+        return;
+    }
+
+    var testResults = GetFiles("src/Colore.Tests/TestResults/*.xml");
+    CopyFiles(testResults, "./artifacts");
+}
+
 Task("Test")
     .IsDependentOn("Build")
     .Does(() =>
     {
-        var settings = new DotNetCoreTestSettings
+        if (cover)
         {
-            Configuration = configuration,
-            NoBuild = true
-        };
+            Information("Running tests with coverage, using OpenCover");
+            
+            var settings = new OpenCoverSettings
+            {
+                OldStyle = true,
+                MergeOutput = true
+            }.WithFilter("+[Colore]* -[Colore]Colore.Logging* -[*.Tests]* -[nunit*]*");
 
-        if (AppVeyor.IsRunningOnAppVeyor)
-        {
-            settings.ArgumentCustomization = args => args
-                .Append("--logger:AppVeyor");
+            OpenCover(c => Test(c), new FilePath("./artifacts/opencover-results.xml"), settings);
+
+            ReportGenerator("./artifacts/opencover-results.xml", "./artifacts/coverage-report");
         }
         else
         {
-            settings.ArgumentCustomization = args => args
-                .Append("--logger:nunit");
+            Information("Running tests without coverage");
+            Test();
         }
-
-        DotNetCoreTest(testProject, settings);
-
-        if (AppVeyor.IsRunningOnAppVeyor)
-        {
-            return;
-        }
-
-        var testResults = GetFiles("src/Colore.Tests/TestResults/*.xml");
-        CopyFiles(testResults, "./artifacts");
     });
 
 Task("Dist")

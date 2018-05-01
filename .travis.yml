@@ -44,7 +44,7 @@ before_script:
   - chmod +x build.sh
 
 script:
-  - "./build.sh -t CI"
+  - "./build.sh -t CI --Cover=True"
 
 deploy:
   - provider: script
