@@ -11,7 +11,6 @@
 
 var target = Argument("Target", "Default");
 var tag = Argument("Tag", "cake");
-var cover = Argument("Cover", false);
 
 var configuration = HasArgument("Configuration")
     ? Argument<string>("Configuration")
@@ -41,6 +40,7 @@ var isAppVeyor = AppVeyor.IsRunningOnAppVeyor;
 var isTravis = TravisCI.IsRunningOnTravisCI;
 var isCi = isAppVeyor || isTravis;
 var isWindows = IsRunningOnWindows();
+var cover = isAppVeyor;
 
 IEnumerable<string> ReadCoverageFilters(string path)
 {
@@ -346,9 +346,7 @@ Task("CI")
     .IsDependentOn("Coveralls");
 
 Task("Travis").IsDependentOn("Test");
-Task("AppVeyor").IsDependentOn("CI").Does(() => { cover = true; });
-
-Task("Default")
-    .IsDependentOn("Test");
+Task("AppVeyor").IsDependentOn("CI");
+Task("Default").IsDependentOn("Test");
 
 RunTarget(target);
