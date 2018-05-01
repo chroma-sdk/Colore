@@ -120,7 +120,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Colore.Data.AppInfo.html",
-          "hash": "Nvny+AhVZHmCCY4QceRmJQ=="
+          "hash": "SY3iUN4pxPUJGTNRpETD5Q=="
         }
       },
       "is_incremental": false,
@@ -156,7 +156,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Colore.Data.Color.html",
-          "hash": "PH2O5LVkkrDsH30X30XUvQ=="
+          "hash": "huXjmMifdCRqBUAYguWrQg=="
         }
       },
       "is_incremental": false,
@@ -192,7 +192,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Colore.Data.DeviceType.html",
-          "hash": "MZB3HW7h9IU/ordZofXZKA=="
+          "hash": "CF3qamq9lAXmskM1RlG5eA=="
         }
       },
       "is_incremental": false,
@@ -228,7 +228,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Colore.Data.SdkDeviceInfo.html",
-          "hash": "YyXVFvY2u98P5CewJl2Ktg=="
+          "hash": "DXMuSxeZCUwlCm9LFtPJog=="
         }
       },
       "is_incremental": false,
@@ -276,7 +276,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Colore.Effects.ChromaLink.ChromaLinkCustom.html",
-          "hash": "W+O1U8MB6ib/U6jVwP6O7Q=="
+          "hash": "u9X6ie5Q5F/6hESt6Z3OHA=="
         }
       },
       "is_incremental": false,
@@ -624,7 +624,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Colore.Effects.Mouse.MouseStatic.html",
-          "hash": "5EgD6xXjfXWlHbzuFWwgaw=="
+          "hash": "NhYSaJGE4JUEWGMkjDd0Qg=="
         }
       },
       "is_incremental": false,
@@ -1121,17 +1121,17 @@
         "incrementalPhase": "build"
       },
       "processors": {
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build"
-        },
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
+          "incrementalPhase": "build"
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
         "ResourceDocumentProcessor": {

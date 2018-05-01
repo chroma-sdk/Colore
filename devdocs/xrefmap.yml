@@ -577,6 +577,30 @@ references:
   commentId: Overload:Colore.Data.Color.#ctor
   fullName: Colore.Data.Color.Color
   nameWithType: Color.Color
+- uid: Colore.Data.Color.AsKeyColor
+  name: AsKeyColor
+  href: api/Colore.Data.Color.html#Colore_Data_Color_AsKeyColor
+  commentId: P:Colore.Data.Color.AsKeyColor
+  fullName: Colore.Data.Color.AsKeyColor
+  nameWithType: Color.AsKeyColor
+- uid: Colore.Data.Color.AsKeyColor*
+  name: AsKeyColor
+  href: api/Colore.Data.Color.html#Colore_Data_Color_AsKeyColor_
+  commentId: Overload:Colore.Data.Color.AsKeyColor
+  fullName: Colore.Data.Color.AsKeyColor
+  nameWithType: Color.AsKeyColor
+- uid: Colore.Data.Color.AsRegularColor
+  name: AsRegularColor
+  href: api/Colore.Data.Color.html#Colore_Data_Color_AsRegularColor
+  commentId: P:Colore.Data.Color.AsRegularColor
+  fullName: Colore.Data.Color.AsRegularColor
+  nameWithType: Color.AsRegularColor
+- uid: Colore.Data.Color.AsRegularColor*
+  name: AsRegularColor
+  href: api/Colore.Data.Color.html#Colore_Data_Color_AsRegularColor_
+  commentId: Overload:Colore.Data.Color.AsRegularColor
+  fullName: Colore.Data.Color.AsRegularColor
+  nameWithType: Color.AsRegularColor
 - uid: Colore.Data.Color.B
   name: B
   href: api/Colore.Data.Color.html#Colore_Data_Color_B
@@ -772,6 +796,18 @@ references:
   commentId: Overload:Colore.Data.Color.ToColor
   fullName: Colore.Data.Color.ToColor
   nameWithType: Color.ToColor
+- uid: Colore.Data.Color.ToString
+  name: ToString()
+  href: api/Colore.Data.Color.html#Colore_Data_Color_ToString
+  commentId: M:Colore.Data.Color.ToString
+  fullName: Colore.Data.Color.ToString()
+  nameWithType: Color.ToString()
+- uid: Colore.Data.Color.ToString*
+  name: ToString
+  href: api/Colore.Data.Color.html#Colore_Data_Color_ToString_
+  commentId: Overload:Colore.Data.Color.ToString
+  fullName: Colore.Data.Color.ToString
+  nameWithType: Color.ToString
 - uid: Colore.Data.Color.ToUInt32
   name: ToUInt32()
   href: api/Colore.Data.Color.html#Colore_Data_Color_ToUInt32
@@ -1150,12 +1186,6 @@ references:
   commentId: T:Colore.Data.DeviceType
   fullName: Colore.Data.DeviceType
   nameWithType: DeviceType
-- uid: Colore.Data.DeviceType.ChromaLink
-  name: ChromaLink
-  href: api/Colore.Data.DeviceType.html#Colore_Data_DeviceType_ChromaLink
-  commentId: F:Colore.Data.DeviceType.ChromaLink
-  fullName: Colore.Data.DeviceType.ChromaLink
-  nameWithType: DeviceType.ChromaLink
 - uid: Colore.Data.DeviceType.Headset
   name: Headset
   href: api/Colore.Data.DeviceType.html#Colore_Data_DeviceType_Headset
@@ -1192,6 +1222,12 @@ references:
   commentId: F:Colore.Data.DeviceType.Mousepad
   fullName: Colore.Data.DeviceType.Mousepad
   nameWithType: DeviceType.Mousepad
+- uid: Colore.Data.DeviceType.Speakers
+  name: Speakers
+  href: api/Colore.Data.DeviceType.html#Colore_Data_DeviceType_Speakers
+  commentId: F:Colore.Data.DeviceType.Speakers
+  fullName: Colore.Data.DeviceType.Speakers
+  nameWithType: DeviceType.Speakers
 - uid: Colore.Data.DeviceType.System
   name: System
   href: api/Colore.Data.DeviceType.html#Colore_Data_DeviceType_System
@@ -1522,6 +1558,18 @@ references:
   commentId: T:Colore.Data.SdkDeviceInfo
   fullName: Colore.Data.SdkDeviceInfo
   nameWithType: SdkDeviceInfo
+- uid: Colore.Data.SdkDeviceInfo.#ctor(Colore.Data.DeviceType,System.Boolean)
+  name: SdkDeviceInfo(DeviceType, Boolean)
+  href: api/Colore.Data.SdkDeviceInfo.html#Colore_Data_SdkDeviceInfo__ctor_Colore_Data_DeviceType_System_Boolean_
+  commentId: M:Colore.Data.SdkDeviceInfo.#ctor(Colore.Data.DeviceType,System.Boolean)
+  fullName: Colore.Data.SdkDeviceInfo.SdkDeviceInfo(Colore.Data.DeviceType, System.Boolean)
+  nameWithType: SdkDeviceInfo.SdkDeviceInfo(DeviceType, Boolean)
+- uid: Colore.Data.SdkDeviceInfo.#ctor*
+  name: SdkDeviceInfo
+  href: api/Colore.Data.SdkDeviceInfo.html#Colore_Data_SdkDeviceInfo__ctor_
+  commentId: Overload:Colore.Data.SdkDeviceInfo.#ctor
+  fullName: Colore.Data.SdkDeviceInfo.SdkDeviceInfo
+  nameWithType: SdkDeviceInfo.SdkDeviceInfo
 - uid: Colore.Data.SdkDeviceInfo.Connected
   name: Connected
   href: api/Colore.Data.SdkDeviceInfo.html#Colore_Data_SdkDeviceInfo_Connected
@@ -1870,15 +1918,6 @@ references:
   commentId: Overload:Colore.Effects.ChromaLink.ChromaLinkCustom.Create
   fullName: Colore.Effects.ChromaLink.ChromaLinkCustom.Create
   nameWithType: ChromaLinkCustom.Create
-- uid: Colore.Effects.ChromaLink.ChromaLinkCustom.Equals(Colore.Data.Color[])
-  name: Equals(Color[])
-  href: api/Colore.Effects.ChromaLink.ChromaLinkCustom.html#Colore_Effects_ChromaLink_ChromaLinkCustom_Equals_Colore_Data_Color___
-  commentId: M:Colore.Effects.ChromaLink.ChromaLinkCustom.Equals(Colore.Data.Color[])
-  name.vb: Equals(Color())
-  fullName: Colore.Effects.ChromaLink.ChromaLinkCustom.Equals(Colore.Data.Color[])
-  fullName.vb: Colore.Effects.ChromaLink.ChromaLinkCustom.Equals(Colore.Data.Color())
-  nameWithType: ChromaLinkCustom.Equals(Color[])
-  nameWithType.vb: ChromaLinkCustom.Equals(Color())
 - uid: Colore.Effects.ChromaLink.ChromaLinkCustom.Equals(Colore.Effects.ChromaLink.ChromaLinkCustom)
   name: Equals(ChromaLinkCustom)
   href: api/Colore.Effects.ChromaLink.ChromaLinkCustom.html#Colore_Effects_ChromaLink_ChromaLinkCustom_Equals_Colore_Effects_ChromaLink_ChromaLinkCustom_
@@ -4537,6 +4576,12 @@ references:
   commentId: T:Colore.Effects.Mouse.MouseStatic
   fullName: Colore.Effects.Mouse.MouseStatic
   nameWithType: MouseStatic
+- uid: Colore.Effects.Mouse.MouseStatic.#ctor(Colore.Data.Color)
+  name: MouseStatic(Color)
+  href: api/Colore.Effects.Mouse.MouseStatic.html#Colore_Effects_Mouse_MouseStatic__ctor_Colore_Data_Color_
+  commentId: M:Colore.Effects.Mouse.MouseStatic.#ctor(Colore.Data.Color)
+  fullName: Colore.Effects.Mouse.MouseStatic.MouseStatic(Colore.Data.Color)
+  nameWithType: MouseStatic.MouseStatic(Color)
 - uid: Colore.Effects.Mouse.MouseStatic.#ctor(Colore.Effects.Mouse.Led,Colore.Data.Color)
   name: MouseStatic(Led, Color)
   href: api/Colore.Effects.Mouse.MouseStatic.html#Colore_Effects_Mouse_MouseStatic__ctor_Colore_Effects_Mouse_Led_Colore_Data_Color_
