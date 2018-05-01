@@ -38,5 +38,94 @@ namespace Colore.Tests.Effects.Headset.Effects
         {
             Assert.AreEqual(Color.Red, new HeadsetStatic(Color.Red).Color);
         }
+
+        [Test]
+        public void ShouldEqualEffectWithSameColor()
+        {
+            var a = new HeadsetStatic(Color.Red);
+            var b = new HeadsetStatic(Color.Red);
+            Assert.AreEqual(a, b);
+        }
+
+        [Test]
+        public void ShouldNotEqualEffectWithDifferentColor()
+        {
+            var a = new HeadsetStatic(Color.Red);
+            var b = new HeadsetStatic(Color.Blue);
+            Assert.AreNotEqual(a, b);
+        }
+
+        [Test]
+        public void ShouldEqualEffectWithSameColorUsingEqualOp()
+        {
+            var a = new HeadsetStatic(Color.Red);
+            var b = new HeadsetStatic(Color.Red);
+            Assert.True(a == b);
+        }
+
+        [Test]
+        public void ShouldNotEqualEffectWithDifferentColorUsingEqualOp()
+        {
+            var a = new HeadsetStatic(Color.Red);
+            var b = new HeadsetStatic(Color.Blue);
+            Assert.False(a == b);
+        }
+
+        [Test]
+        public void ShouldEqualEffectWithSameColorUsingNotEqualOp()
+        {
+            var a = new HeadsetStatic(Color.Red);
+            var b = new HeadsetStatic(Color.Red);
+            Assert.False(a != b);
+        }
+
+        [Test]
+        public void ShouldNotEqualEffectWithDifferentColorUsingNotEqualOp()
+        {
+            var a = new HeadsetStatic(Color.Red);
+            var b = new HeadsetStatic(Color.Blue);
+            Assert.True(a != b);
+        }
+
+        [Test]
+        public void ShouldNotEqualNull()
+        {
+            var effect = new HeadsetStatic(Color.Red);
+            Assert.AreNotEqual(effect, null);
+            Assert.False(effect.Equals(null));
+        }
+
+        [Test]
+        public void ShouldHaveSameHashcodeAsColor()
+        {
+            var color = Color.Red;
+            var hashcode = color.GetHashCode();
+            var effect = new HeadsetStatic(color);
+            Assert.AreEqual(hashcode, effect.GetHashCode());
+        }
+
+        [Test]
+        public void ShouldNotEqualArbitraryObject()
+        {
+            var effect = new HeadsetStatic(Color.Red);
+            var obj = new object();
+            Assert.False(effect.Equals(obj));
+        }
+
+        [Test]
+        public void ShouldEqualEffectWithSameColorCastAsObject()
+        {
+            var effect = new HeadsetStatic(Color.Red);
+            var obj = new HeadsetStatic(Color.Red) as object;
+            Assert.True(effect.Equals(obj));
+        }
+
+        [Test]
+        public void ShouldNotEqualEffectWithDifferentColorCastAsObject()
+        {
+            var effect = new HeadsetStatic(Color.Red);
+            var obj = new HeadsetStatic(Color.Blue) as object;
+            Assert.False(effect.Equals(obj));
+        }
     }
 }
