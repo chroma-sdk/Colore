@@ -3,7 +3,7 @@
 #tool "nuget:?package=GitVersion.CommandLine"
 #tool "nuget:?package=OpenCover"
 #tool "nuget:?package=ReportGenerator"
-#tool coveralls.io
+#tool coveralls.net
 
 ///////////////////////////////////////////////////////////////////////////////
 // ARGUMENTS
@@ -304,10 +304,21 @@ Task("Coveralls")
     .Does(() =>
     {
         Information("Running Coveralls tool on OpenCover result");
-        CoverallsIo("./artifacts/opencover-results.xml", new CoverallsIoSettings
+        var avEnv = AppVeyor.Environment;
+        // CoverallsIo("./artifacts/opencover-results.xml", new CoverallsIoSettings
+        // {
+        //     FullSources = true,
+        //     RepoToken = coverallsRepoToken
+        // });
+        CoverallsNet("./artifacts/opencover-results.xml", CoverallsNetReportType.OpenCover, new CoverallsNetSettings
         {
-            FullSources = true,
-            RepoToken = coverallsRepoToken
+            RepoToken = coverallsRepoToken,
+            CommitAuthor = avEnv.Repository.Commit.Author,
+            CommitBranch = avEnv.Repository.Branch,
+            CommitEmail = avEnv.Repository.Commit.Email,
+            CommitId = avEnv.Repository.Commit.Id,
+            CommitMessage = avEnv.Repository.Commit.Message,
+            JobId = avEnv.Build.Number
         });
     });
 
