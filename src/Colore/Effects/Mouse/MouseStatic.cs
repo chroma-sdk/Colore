@@ -126,7 +126,7 @@ namespace Colore.Effects.Mouse
         /// </returns>
         public override bool Equals(object other)
         {
-            if (ReferenceEquals(null, other))
+            if (other is null)
                 return false;
             return other is MouseStatic effect && Equals(effect);
         }

@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="RestInitResponse.cs" company="Corale">
+// <copyright file="RestInitResponseTests.cs" company="Corale">
 //     Copyright © 2015-2018 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,47 +23,49 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Rest.Data
+namespace Colore.Tests.Rest.Data
 {
     using System;
-    using System.Diagnostics.CodeAnalysis;
 
-    using JetBrains.Annotations;
+    using Colore.Rest.Data;
 
-    using Newtonsoft.Json;
+    using NUnit.Framework;
 
-    /// <summary>
-    /// Response returned from Chroma REST API on initialization.
-    /// </summary>
-    [SuppressMessage(
-        "Microsoft.Performance",
-        "CA1812:AvoidUninstantiatedInternalClasses",
-        Justification = "Instantiated by Newtonsoft.Json")]
-    internal sealed class RestInitResponse
+    [TestFixture]
+    public class RestInitResponseTests
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RestInitResponse" /> class.
-        /// </summary>
-        /// <param name="session">Session ID.</param>
-        /// <param name="uri">API URI.</param>
-        [JsonConstructor]
-        public RestInitResponse(int session, [CanBeNull] Uri uri)
+        [TestCase(0)]
+        [TestCase(5)]
+        [TestCase(int.MaxValue)]
+        [TestCase(int.MinValue)]
+        [TestCase(-512513)]
+        [TestCase(362362)]
+        public void ShouldConstructWithCorrectSession(int session)
         {
-            Session = session;
-            Uri = uri;
+            var response = new RestInitResponse(session, new Uri("http://google.com"));
+            Assert.AreEqual(session, response.Session);
         }
 
-        /// <summary>
-        /// Gets the session ID.
-        /// </summary>
-        [JsonProperty("sessionid")]
-        public int Session { get; }
+        [TestCase("http://google.com")]
+        [TestCase("https://google.com")]
+        [TestCase("http://razer.com")]
+        [TestCase("https://razer.com/foobar")]
+        [TestCase("file:///home/test/chroma.html")]
+        [TestCase("http://example.com/someapi")]
+        [TestCase("https://example.org/someapi?with=args")]
+        [TestCase("http://www.example.net/#withanchor")]
+        [TestCase("http://example.xyz:12345/aport")]
+        public void ShouldConstructWithCorrectUri(string url)
+        {
+            var expected = new Uri(url);
+            var response = new RestInitResponse(0, expected);
+            Assert.AreEqual(expected, response.Uri);
+        }
 
-        /// <summary>
-        /// Gets the URI to use for subsequent API calls.
-        /// </summary>
-        [JsonProperty("uri")]
-        [CanBeNull]
-        public Uri Uri { get; }
+        [Test]
+        public void ShouldConstructWithNullUri()
+        {
+            Assert.IsNull(new RestInitResponse(0, null).Uri);
+        }
     }
 }

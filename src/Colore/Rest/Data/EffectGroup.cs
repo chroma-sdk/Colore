@@ -24,6 +24,7 @@
 // ---------------------------------------------------------------------------------------
 namespace Colore.Rest.Data
 {
+    using System;
     using System.Collections.Generic;
 
     using JetBrains.Annotations;
@@ -41,7 +42,7 @@ namespace Colore.Rest.Data
         /// <param name="effects"><see cref="EffectData" /> to include in the group.</param>
         internal EffectGroup([NotNull] IEnumerable<EffectData> effects)
         {
-            Effects = effects;
+            Effects = effects ?? throw new ArgumentNullException(nameof(effects));
         }
 
         /// <summary>

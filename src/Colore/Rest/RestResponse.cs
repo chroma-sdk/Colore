@@ -90,7 +90,7 @@ namespace Colore.Rest
             {
                 return JsonConvert.DeserializeObject<T>(Content);
             }
-            catch (JsonSerializationException)
+            catch (JsonException)
             {
                 return default(T);
             }

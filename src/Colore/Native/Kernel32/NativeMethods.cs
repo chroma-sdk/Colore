@@ -82,7 +82,7 @@ namespace Colore.Native.Kernel32
         [DllImport(
             DllName,
             CharSet = CharSet.Ansi,
-            EntryPoint = "GetProcAddress",
+            EntryPoint = nameof(GetProcAddress),
             ExactSpelling = true,
             SetLastError = true,
             BestFitMapping = false)]
@@ -205,10 +205,71 @@ namespace Colore.Native.Kernel32
         [DllImport(
             DllName,
             CharSet = CharSet.Ansi,
-            EntryPoint = "LoadLibrary",
+            EntryPoint = nameof(LoadLibrary),
             SetLastError = true,
             BestFitMapping = false,
             ThrowOnUnmappableChar = true)]
         internal static extern IntPtr LoadLibrary([MarshalAs(UnmanagedType.LPStr)] string filename);
+
+        /// <summary>
+        /// Frees the loaded dynamic-link library (DLL) module and, if necessary, decrements its reference count.
+        /// When the reference count reaches zero, the module is unloaded from the address space of the calling
+        /// process and the handle is no longer valid.
+        /// </summary>
+        /// <param name="hModule">
+        /// A handle to the loaded library module. The <see cref="LoadLibrary" />, <c>LoadLibraryEx</c>,
+        /// <c>GetModuleHandle</c>, or <c>GetModuleHandleEx</c> function returns this handle.
+        /// </param>
+        /// <returns>
+        /// If the function succeeds, the return value is <c>true</c>.
+        /// <para>
+        /// If the function fails, the return value is <c>false</c>.
+        /// To get extended error information, call the <c>GetLastError</c> function.
+        /// </para>
+        /// </returns>
+        /// <remarks>
+        /// <para>
+        /// The system maintains a per-process reference count for each loaded module.
+        /// A module that was loaded at process initialization due to load-time dynamic linking
+        /// has a reference count of one. The reference count for a module is incremented each time the module
+        /// is loaded by a call to <see cref="LoadLibrary" />. The reference count is also incremented
+        /// by a call to <c>LoadLibraryEx</c> unless the module is being loaded for the first time and
+        /// is being loaded as a data or image file.
+        /// </para>
+        /// <para>
+        /// The reference count is decremented each time the <see cref="FreeLibrary" /> or
+        /// <c>FreeLibraryAndExitThread</c> function is called for the module.
+        /// When a module's reference count reaches zero or the process terminates, the system unloads the module
+        /// from the address space of the process.
+        /// Before unloading a library module, the system enables the module to detach from the process
+        /// by calling the module's <c>DllMain</c> function, if it has one, with the <c>DLL_PROCESS_DETACH</c> value.
+        /// Doing so gives the library module an opportunity to clean up resources allocated on behalf of
+        /// the current process.
+        /// After the entry-point function returns, the library module is removed from the address space of
+        /// the current process.
+        /// </para>
+        /// <para>
+        /// It is not safe to call <see cref="FreeLibrary" /> from <c>DllMain</c>.
+        /// For more information, see the Remarks section in <c>DllMain</c>.
+        /// </para>
+        /// <para>
+        /// Calling <see cref="FreeLibrary" /> does not affect other processes that are using the same module.
+        /// </para>
+        /// <para>
+        /// Use caution when calling <see cref="FreeLibrary" /> with a handle returned by <c>GetModuleHandle</c>.
+        /// The <c>GetModuleHandle</c> function does not increment a module's reference count,
+        /// so passing this handle to <see cref="FreeLibrary" /> can cause a module to be unloaded prematurely.
+        /// </para>
+        /// <para>
+        /// A thread that must unload the DLL in which it is executing and then terminate itself
+        /// should call <c>FreeLibraryAndExitThread</c> instead of calling <see cref="FreeLibrary" />
+        /// and <c>ExitThread</c> separately.
+        /// Otherwise, a race condition can occur.
+        /// For details, see the Remarks section of <c>FreeLibraryAndExitThread</c>.
+        /// </para>
+        /// </remarks>
+        [DllImport(DllName, EntryPoint = nameof(FreeLibrary), ExactSpelling = true, SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        internal static extern bool FreeLibrary(IntPtr hModule);
     }
 }

@@ -25,6 +25,8 @@
 
 namespace Colore.Rest.Data
 {
+    using System;
+
     using JetBrains.Annotations;
 
     using Newtonsoft.Json;
@@ -41,7 +43,7 @@ namespace Colore.Rest.Data
         /// <param name="payload">Effect data, if applicable.</param>
         internal EffectData([NotNull] object effect, [CanBeNull] object payload = null)
         {
-            Effect = effect;
+            Effect = effect ?? throw new ArgumentNullException(nameof(effect));
             Payload = payload;
         }
 

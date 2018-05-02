@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="RestInitResponse.cs" company="Corale">
+// <copyright file="EffectDataTests.cs" company="Corale">
 //     Copyright © 2015-2018 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,47 +23,46 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Rest.Data
+namespace Colore.Tests.Rest.Data
 {
     using System;
-    using System.Diagnostics.CodeAnalysis;
 
-    using JetBrains.Annotations;
+    using Colore.Rest.Data;
 
-    using Newtonsoft.Json;
+    using NUnit.Framework;
 
-    /// <summary>
-    /// Response returned from Chroma REST API on initialization.
-    /// </summary>
-    [SuppressMessage(
-        "Microsoft.Performance",
-        "CA1812:AvoidUninstantiatedInternalClasses",
-        Justification = "Instantiated by Newtonsoft.Json")]
-    internal sealed class RestInitResponse
+    [TestFixture]
+    public class EffectDataTests
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RestInitResponse" /> class.
-        /// </summary>
-        /// <param name="session">Session ID.</param>
-        /// <param name="uri">API URI.</param>
-        [JsonConstructor]
-        public RestInitResponse(int session, [CanBeNull] Uri uri)
+        [Test]
+        public void ShouldSetEffectProperly()
         {
-            Session = session;
-            Uri = uri;
+            const string Expected = "Hello";
+            var data = new EffectData(Expected);
+            Assert.AreEqual(Expected, data.Effect);
         }
 
-        /// <summary>
-        /// Gets the session ID.
-        /// </summary>
-        [JsonProperty("sessionid")]
-        public int Session { get; }
+        [Test]
+        public void ShouldSetPayloadProperly()
+        {
+            const string Expected = "I'm a payload";
+            var data = new EffectData("test", Expected);
+            Assert.AreEqual(Expected, data.Payload);
+        }
 
-        /// <summary>
-        /// Gets the URI to use for subsequent API calls.
-        /// </summary>
-        [JsonProperty("uri")]
-        [CanBeNull]
-        public Uri Uri { get; }
+        [Test]
+        public void ShouldDefaultPayloadToNull()
+        {
+            var data = new EffectData("Test");
+            Assert.IsNull(data.Payload);
+        }
+
+        [Test]
+        public void ShouldThrowOnNullEffect()
+        {
+            // ReSharper disable once AssignNullToNotNullAttribute
+            // ReSharper disable once ObjectCreationAsStatement
+            Assert.Throws<ArgumentNullException>(() => new EffectData(null));
+        }
     }
 }

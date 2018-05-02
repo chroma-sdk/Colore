@@ -84,10 +84,10 @@ namespace Colore.Rest
             Result result,
             [NotNull] Uri uri,
             HttpStatusCode statusCode,
-            object restData = null)
+            [CanBeNull] object restData = null)
             : base(message, result)
         {
-            Uri = uri;
+            Uri = uri ?? throw new ArgumentNullException(nameof(uri));
             StatusCode = statusCode;
             RestData = restData;
         }

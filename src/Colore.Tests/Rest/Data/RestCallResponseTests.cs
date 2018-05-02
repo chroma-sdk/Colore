@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="RestInitResponse.cs" company="Corale">
+// <copyright file="RestCallResponseTests.cs" company="Corale">
 //     Copyright © 2015-2018 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,47 +23,39 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Rest.Data
+namespace Colore.Tests.Rest.Data
 {
     using System;
-    using System.Diagnostics.CodeAnalysis;
 
-    using JetBrains.Annotations;
+    using Colore.Data;
+    using Colore.Rest.Data;
 
-    using Newtonsoft.Json;
+    using NUnit.Framework;
 
-    /// <summary>
-    /// Response returned from Chroma REST API on initialization.
-    /// </summary>
-    [SuppressMessage(
-        "Microsoft.Performance",
-        "CA1812:AvoidUninstantiatedInternalClasses",
-        Justification = "Instantiated by Newtonsoft.Json")]
-    internal sealed class RestInitResponse
+    [TestFixture]
+    public class RestCallResponseTests
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RestInitResponse" /> class.
-        /// </summary>
-        /// <param name="session">Session ID.</param>
-        /// <param name="uri">API URI.</param>
-        [JsonConstructor]
-        public RestInitResponse(int session, [CanBeNull] Uri uri)
+        [Test]
+        public void ShouldConstructWithCorrectResult()
         {
-            Session = session;
-            Uri = uri;
+            var expected = Result.RzAccessDenied;
+            var response = new RestCallResponse(expected, null);
+            Assert.AreEqual(expected, response.Result);
         }
 
-        /// <summary>
-        /// Gets the session ID.
-        /// </summary>
-        [JsonProperty("sessionid")]
-        public int Session { get; }
+        [Test]
+        public void ShouldConstructWithCorrectEffectId()
+        {
+            var expected = Guid.NewGuid();
+            var response = new RestCallResponse(Result.RzSuccess, expected);
+            Assert.AreEqual(expected, response.EffectId);
+        }
 
-        /// <summary>
-        /// Gets the URI to use for subsequent API calls.
-        /// </summary>
-        [JsonProperty("uri")]
-        [CanBeNull]
-        public Uri Uri { get; }
+        [Test]
+        public void ShouldConstructWithNullEffectId()
+        {
+            var response = new RestCallResponse(Result.RzFailed, null);
+            Assert.IsNull(response.EffectId);
+        }
     }
 }
