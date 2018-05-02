@@ -26,18 +26,18 @@
 namespace Colore.Native
 {
     using System;
-    using System.Diagnostics.CodeAnalysis;
     using System.Runtime.InteropServices;
 
     using Colore.Data;
     using Colore.Effects.Keyboard;
     using Colore.Effects.Mouse;
     using Colore.Helpers;
+    using Colore.Logging;
 
     /// <summary>
     /// Native methods from Razer's Chroma SDK.
     /// </summary>
-    internal static class NativeMethods
+    internal class NativeMethods : IDisposable
     {
         /// <summary>
         /// Calling convention for API functions.
@@ -48,137 +48,87 @@ namespace Colore.Native
 #pragma warning restore CA1823 // Avoid unused private fields
 
         /// <summary>
-        /// Stores a reference to the loaded <see cref="InitDelegate" />.
+        /// Logger instance for this class.
         /// </summary>
-        internal static readonly InitDelegate Init;
+        private static readonly ILog Log = LogProvider.For<NativeMethods>();
 
         /// <summary>
-        /// Stores a reference to the loaded <see cref="UnInitDelegate" />.
+        /// Holds the pointer to the native Chroma SDK library.
         /// </summary>
-        internal static readonly UnInitDelegate UnInit;
+        private readonly IntPtr _chromaSdkPointer;
 
         /// <summary>
-        /// Stores a reference to the loaded <see cref="CreateEffectDelegate" />.
+        /// Initializes a new instance of the <see cref="NativeMethods" /> class.
         /// </summary>
-        internal static readonly CreateEffectDelegate CreateEffect;
-
-        /// <summary>
-        /// Stores a reference to the loaded <see cref="CreateKeyboardEffectDelegate" />.
-        /// </summary>
-        internal static readonly CreateKeyboardEffectDelegate CreateKeyboardEffect;
-
-        /// <summary>
-        /// Stores a reference to the loaded <see cref="CreateMouseEffectDelegate" />.
-        /// </summary>
-        internal static readonly CreateMouseEffectDelegate CreateMouseEffect;
-
-        /// <summary>
-        /// Stores a reference to the loaded <see cref="CreateHeadsetEffectDelegate" />.
-        /// </summary>
-        internal static readonly CreateHeadsetEffectDelegate CreateHeadsetEffect;
-
-        /// <summary>
-        /// Stores a reference to the loaded <see cref="CreateMousepadEffectDelegate" />.
-        /// </summary>
-        internal static readonly CreateMousepadEffectDelegate CreateMousepadEffect;
-
-        /// <summary>
-        /// Stores a reference to the loaded <see cref="CreateKeypadEffectDelegate" />.
-        /// </summary>
-        internal static readonly CreateKeypadEffectDelegate CreateKeypadEffect;
-
-        /// <summary>
-        /// Stores a reference to the loaded <see cref="CreateChromaLinkEffectDelegate" />.
-        /// </summary>
-        internal static readonly CreateChromaLinkEffectDelegate CreateChromaLinkEffect;
-
-        /// <summary>
-        /// Stores a reference to the loaded <see cref="DeleteEffectDelegate" />.
-        /// </summary>
-        internal static readonly DeleteEffectDelegate DeleteEffect;
-
-        /// <summary>
-        /// Stores a reference to the loaded <see cref="SetEffectDelegate" />.
-        /// </summary>
-        internal static readonly SetEffectDelegate SetEffect;
-
-        /// <summary>
-        /// Stores a reference to the loaded <see cref="RegisterEventNotificationDelegate" />.
-        /// </summary>
-        internal static readonly RegisterEventNotificationDelegate RegisterEventNotification;
-
-        /// <summary>
-        /// Stores a reference to the loaded <see cref="UnregisterEventNotificationDelegate" />.
-        /// </summary>
-        internal static readonly UnregisterEventNotificationDelegate UnregisterEventNotification;
-
-        /// <summary>
-        /// Stores a reference to the loaded <see cref="QueryDeviceDelegate" />.
-        /// </summary>
-        internal static readonly QueryDeviceDelegate QueryDevice;
-
-        /// <summary>
-        /// Initializes static members of the <see cref="NativeMethods" /> class.
-        /// </summary>
-        [SuppressMessage(
-            "Microsoft.Design",
-            "CA1065:DoNotRaiseExceptionsInUnexpectedLocations",
-            Justification = "Can't get rid of this exception as we depend on architecture and library to work.")]
-#pragma warning disable CA1810 // Initialize reference type static fields inline
-        static NativeMethods()
-#pragma warning restore CA1810 // Initialize reference type static fields inline
+        internal NativeMethods()
         {
-            var chromaSdkPointer = Kernel32.NativeMethods.LoadLibrary(
+            Log.Info("Loading native Chroma SDK");
+
+            _chromaSdkPointer = Kernel32.NativeMethods.LoadLibrary(
                 EnvironmentHelper.Is64Bit() ? "RzChromaSDK64.dll" : "RzChromaSDK.dll");
 
-            if (chromaSdkPointer == IntPtr.Zero)
+            Log.Debug("Native Chroma SDK loaded at pointer value {SdkPointer}", _chromaSdkPointer);
+
+            if (_chromaSdkPointer == IntPtr.Zero)
             {
                 throw new ColoreException(
                     "Failed to dynamically load Chroma SDK library (Error " + Marshal.GetLastWin32Error() + ").");
             }
 
-            Init = GetDelegateFromLibrary<InitDelegate>(chromaSdkPointer, "Init");
+            Log.Debug("Loading native SDK function delegates");
 
-            UnInit = GetDelegateFromLibrary<UnInitDelegate>(chromaSdkPointer, "UnInit");
+            Init = GetDelegateFromLibrary<InitDelegate>(_chromaSdkPointer, "Init");
 
-            CreateEffect = GetDelegateFromLibrary<CreateEffectDelegate>(chromaSdkPointer, "CreateEffect");
+            UnInit = GetDelegateFromLibrary<UnInitDelegate>(_chromaSdkPointer, "UnInit");
+
+            CreateEffect = GetDelegateFromLibrary<CreateEffectDelegate>(_chromaSdkPointer, "CreateEffect");
 
             CreateKeyboardEffect = GetDelegateFromLibrary<CreateKeyboardEffectDelegate>(
-                chromaSdkPointer,
+                _chromaSdkPointer,
                 "CreateKeyboardEffect");
 
             CreateMouseEffect =
-                GetDelegateFromLibrary<CreateMouseEffectDelegate>(chromaSdkPointer, "CreateMouseEffect");
+                GetDelegateFromLibrary<CreateMouseEffectDelegate>(_chromaSdkPointer, "CreateMouseEffect");
 
             CreateHeadsetEffect = GetDelegateFromLibrary<CreateHeadsetEffectDelegate>(
-                chromaSdkPointer,
+                _chromaSdkPointer,
                 "CreateHeadsetEffect");
 
             CreateMousepadEffect = GetDelegateFromLibrary<CreateMousepadEffectDelegate>(
-                chromaSdkPointer,
+                _chromaSdkPointer,
                 "CreateMousepadEffect");
 
             CreateKeypadEffect = GetDelegateFromLibrary<CreateKeypadEffectDelegate>(
-                chromaSdkPointer,
+                _chromaSdkPointer,
                 "CreateKeypadEffect");
 
             CreateChromaLinkEffect = GetDelegateFromLibrary<CreateChromaLinkEffectDelegate>(
-                chromaSdkPointer,
+                _chromaSdkPointer,
                 "CreateChromaLinkEffect");
 
-            DeleteEffect = GetDelegateFromLibrary<DeleteEffectDelegate>(chromaSdkPointer, "DeleteEffect");
+            DeleteEffect = GetDelegateFromLibrary<DeleteEffectDelegate>(_chromaSdkPointer, "DeleteEffect");
 
-            SetEffect = GetDelegateFromLibrary<SetEffectDelegate>(chromaSdkPointer, "SetEffect");
+            SetEffect = GetDelegateFromLibrary<SetEffectDelegate>(_chromaSdkPointer, "SetEffect");
 
             RegisterEventNotification = GetDelegateFromLibrary<RegisterEventNotificationDelegate>(
-                chromaSdkPointer,
+                _chromaSdkPointer,
                 "RegisterEventNotification");
 
             UnregisterEventNotification = GetDelegateFromLibrary<UnregisterEventNotificationDelegate>(
-                chromaSdkPointer,
+                _chromaSdkPointer,
                 "UnregisterEventNotification");
 
-            QueryDevice = GetDelegateFromLibrary<QueryDeviceDelegate>(chromaSdkPointer, "QueryDevice");
+            QueryDevice = GetDelegateFromLibrary<QueryDeviceDelegate>(_chromaSdkPointer, "QueryDevice");
+
+            Log.Debug("Function delgates loaded");
+        }
+
+        /// <summary>
+        /// Finalizes an instance of the <see cref="NativeMethods" /> class.
+        /// </summary>
+        ~NativeMethods()
+        {
+            Dispose(false);
         }
 
         /// <summary>
@@ -412,6 +362,86 @@ namespace Colore.Native
         internal delegate Result QueryDeviceDelegate([In] Guid deviceId, [Out] IntPtr info);
 
         /// <summary>
+        /// Gets a reference to the loaded <see cref="InitDelegate" />.
+        /// </summary>
+        internal InitDelegate Init { get; }
+
+        /// <summary>
+        /// Gets a reference to the loaded <see cref="UnInitDelegate" />.
+        /// </summary>
+        internal UnInitDelegate UnInit { get; }
+
+        /// <summary>
+        /// Gets a reference to the loaded <see cref="CreateEffectDelegate" />.
+        /// </summary>
+        internal CreateEffectDelegate CreateEffect { get; }
+
+        /// <summary>
+        /// Gets a reference to the loaded <see cref="CreateKeyboardEffectDelegate" />.
+        /// </summary>
+        internal CreateKeyboardEffectDelegate CreateKeyboardEffect { get; }
+
+        /// <summary>
+        /// Gets a reference to the loaded <see cref="CreateMouseEffectDelegate" />.
+        /// </summary>
+        internal CreateMouseEffectDelegate CreateMouseEffect { get; }
+
+        /// <summary>
+        /// Gets a reference to the loaded <see cref="CreateHeadsetEffectDelegate" />.
+        /// </summary>
+        internal CreateHeadsetEffectDelegate CreateHeadsetEffect { get; }
+
+        /// <summary>
+        /// Gets a reference to the loaded <see cref="CreateMousepadEffectDelegate" />.
+        /// </summary>
+        internal CreateMousepadEffectDelegate CreateMousepadEffect { get; }
+
+        /// <summary>
+        /// Gets a reference to the loaded <see cref="CreateKeypadEffectDelegate" />.
+        /// </summary>
+        internal CreateKeypadEffectDelegate CreateKeypadEffect { get; }
+
+        /// <summary>
+        /// Gets a reference to the loaded <see cref="CreateChromaLinkEffectDelegate" />.
+        /// </summary>
+        internal CreateChromaLinkEffectDelegate CreateChromaLinkEffect { get; }
+
+        /// <summary>
+        /// Gets a reference to the loaded <see cref="DeleteEffectDelegate" />.
+        /// </summary>
+        internal DeleteEffectDelegate DeleteEffect { get; }
+
+        /// <summary>
+        /// Gets a reference to the loaded <see cref="SetEffectDelegate" />.
+        /// </summary>
+        internal SetEffectDelegate SetEffect { get; }
+
+        /// <summary>
+        /// Gets a reference to the loaded <see cref="RegisterEventNotificationDelegate" />.
+        /// </summary>
+        internal RegisterEventNotificationDelegate RegisterEventNotification { get; }
+
+        /// <summary>
+        /// Gets a reference to the loaded <see cref="UnregisterEventNotificationDelegate" />.
+        /// </summary>
+        internal UnregisterEventNotificationDelegate UnregisterEventNotification { get; }
+
+        /// <summary>
+        /// Gets a reference to the loaded <see cref="QueryDeviceDelegate" />.
+        /// </summary>
+        internal QueryDeviceDelegate QueryDevice { get; }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        /// <summary>
         /// Gets a delegate with a specified name from a dynamically loaded library.
         /// </summary>
         /// <typeparam name="T">The type of delegate to get.</typeparam>
@@ -428,6 +458,25 @@ namespace Colore.Native
             }
 
             return Marshal.GetDelegateForFunctionPointer<T>(functionPtr);
+        }
+
+        /// <summary>
+        /// Disposes resources used by this class.
+        /// </summary>
+        /// <param name="disposing"><c>true</c> if calling from <see cref="Dispose" />, <c>false</c> if calling from the finalizer.</param>
+        private void Dispose(bool disposing)
+        {
+            ReleaseUnmanagedResources();
+        }
+
+        /// <summary>
+        /// Releases unmanaged resources.
+        /// </summary>
+        /// <remarks>Calls <see cref="Kernel32.NativeMethods.FreeLibrary" /> on the Chroma SDK pointer.</remarks>
+        private void ReleaseUnmanagedResources()
+        {
+            if (_chromaSdkPointer != IntPtr.Zero)
+                Kernel32.NativeMethods.FreeLibrary(_chromaSdkPointer);
         }
     }
 }

@@ -44,7 +44,25 @@ namespace Colore.Native
         /// <summary>
         /// Logger instance for this class.
         /// </summary>
-        private static readonly ILog Log = LogProvider.GetLogger(typeof(NativeApi));
+        private static readonly ILog Log = LogProvider.For<NativeApi>();
+
+        /// <summary>
+        /// A reference to an instance of <see cref="NativeMethods" /> providing access to native Chroma SDK functions.
+        /// </summary>
+        private readonly NativeMethods _nativeMethods;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NativeApi" /> class.
+        /// </summary>
+        /// <param name="nativeMethods">
+        /// The instance of <see cref="NativeMethods" /> to use
+        /// for accessing the Chroma SDK functions.
+        /// If <c>null</c>, a default implementation will be used.
+        /// </param>
+        public NativeApi(NativeMethods nativeMethods = null)
+        {
+            _nativeMethods = nativeMethods ?? new NativeMethods();
+        }
 
         /// <inheritdoc />
         /// <summary>
@@ -53,7 +71,7 @@ namespace Colore.Native
         /// <param name="info">Information about the application, currently unused for native SDK.</param>
         public Task InitializeAsync(AppInfo info)
         {
-            var result = NativeMethods.Init();
+            var result = _nativeMethods.Init();
             if (!result)
                 throw new NativeCallException("Init", result);
             return TaskHelper.CompletedTask;
@@ -65,7 +83,7 @@ namespace Colore.Native
         /// </summary>
         public Task UninitializeAsync()
         {
-            var result = NativeMethods.UnInit();
+            var result = _nativeMethods.UnInit();
             if (!result)
                 throw new NativeCallException("UnInit", result);
 
@@ -84,7 +102,7 @@ namespace Colore.Native
 
             try
             {
-                var result = NativeMethods.QueryDevice(deviceId, ptr);
+                var result = _nativeMethods.QueryDevice(deviceId, ptr);
 
                 if (!result)
                     throw new NativeCallException("QueryDevice", result);
@@ -109,7 +127,7 @@ namespace Colore.Native
         /// <param name="effectId">Effect ID to set.</param>
         public Task SetEffectAsync(Guid effectId)
         {
-            var result = NativeMethods.SetEffect(effectId);
+            var result = _nativeMethods.SetEffect(effectId);
             if (result)
                 return TaskHelper.CompletedTask;
 
@@ -128,7 +146,7 @@ namespace Colore.Native
         /// <param name="effectId">Effect ID to delete.</param>
         public Task DeleteEffectAsync(Guid effectId)
         {
-            var result = NativeMethods.DeleteEffect(effectId);
+            var result = _nativeMethods.DeleteEffect(effectId);
             if (!result)
                 throw new NativeCallException("DeleteEffect", result);
             return TaskHelper.CompletedTask;
@@ -379,7 +397,7 @@ namespace Colore.Native
         /// <param name="hwnd">App handle for the window handling events.</param>
         public void RegisterEventNotifications(IntPtr hwnd)
         {
-            var result = NativeMethods.RegisterEventNotification(hwnd);
+            var result = _nativeMethods.RegisterEventNotification(hwnd);
             if (!result)
                 throw new NativeCallException("RegisterEventNotification", result);
         }
@@ -390,7 +408,7 @@ namespace Colore.Native
         /// </summary>
         public void UnregisterEventNotifications()
         {
-            var result = NativeMethods.UnregisterEventNotification();
+            var result = _nativeMethods.UnregisterEventNotification();
             if (!result)
                 throw new NativeCallException("UnregisterEventNotification", result);
         }
@@ -403,10 +421,10 @@ namespace Colore.Native
         /// <param name="param">Effect-specific parameter.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
         /// <seealso cref="NativeMethods.CreateEffect" />
-        private static Guid CreateEffect(Guid device, Effect effect, IntPtr param)
+        private Guid CreateEffect(Guid device, Effect effect, IntPtr param)
         {
             var guid = Guid.Empty;
-            var result = NativeMethods.CreateEffect(device, effect, param, ref guid);
+            var result = _nativeMethods.CreateEffect(device, effect, param, ref guid);
             if (!result)
                 throw new NativeCallException("CreateEffect", result);
             return guid;
@@ -419,10 +437,10 @@ namespace Colore.Native
         /// <param name="param">Context-sensitive effect parameter.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
         /// <seealso cref="NativeMethods.CreateKeyboardEffect" />
-        private static Guid CreateKeyboardEffect(Effects.Keyboard.KeyboardEffect effect, IntPtr param)
+        private Guid CreateKeyboardEffect(Effects.Keyboard.KeyboardEffect effect, IntPtr param)
         {
             var guid = Guid.Empty;
-            var result = NativeMethods.CreateKeyboardEffect(effect, param, ref guid);
+            var result = _nativeMethods.CreateKeyboardEffect(effect, param, ref guid);
             if (!result)
                 throw new NativeCallException("CreateKeyboardEffect", result);
             return guid;
@@ -435,10 +453,10 @@ namespace Colore.Native
         /// <param name="param">Context-sensitive effect parameter.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
         /// <seealso cref="NativeMethods.CreateMouseEffect" />
-        private static Guid CreateMouseEffect(Effects.Mouse.MouseEffect effect, IntPtr param)
+        private Guid CreateMouseEffect(Effects.Mouse.MouseEffect effect, IntPtr param)
         {
             var guid = Guid.Empty;
-            var result = NativeMethods.CreateMouseEffect(effect, param, ref guid);
+            var result = _nativeMethods.CreateMouseEffect(effect, param, ref guid);
             if (!result)
                 throw new NativeCallException("CreateMouseEffect", result);
             return guid;
@@ -450,10 +468,10 @@ namespace Colore.Native
         /// <param name="effect">The type of effect to create.</param>
         /// <param name="param">Effect-specific parameter.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        private static Guid CreateHeadsetEffect(Effects.Headset.HeadsetEffect effect, IntPtr param)
+        private Guid CreateHeadsetEffect(Effects.Headset.HeadsetEffect effect, IntPtr param)
         {
             var guid = Guid.Empty;
-            var result = NativeMethods.CreateHeadsetEffect(effect, param, ref guid);
+            var result = _nativeMethods.CreateHeadsetEffect(effect, param, ref guid);
             if (!result)
                 throw new NativeCallException("CreateHeadsetEffect", result);
             return guid;
@@ -465,10 +483,10 @@ namespace Colore.Native
         /// <param name="effect">The type of effect to create.</param>
         /// <param name="param">Effect-specific parameter.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        private static Guid CreateMousepadEffect(Effects.Mousepad.MousepadEffect effect, IntPtr param)
+        private Guid CreateMousepadEffect(Effects.Mousepad.MousepadEffect effect, IntPtr param)
         {
             var guid = Guid.Empty;
-            var result = NativeMethods.CreateMousepadEffect(effect, param, ref guid);
+            var result = _nativeMethods.CreateMousepadEffect(effect, param, ref guid);
             if (!result)
                 throw new NativeCallException("CreateMousepadEffect", result);
             return guid;
@@ -480,10 +498,10 @@ namespace Colore.Native
         /// <param name="effect">The type of effect to create.</param>
         /// <param name="param">Effect-specific parameters.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        private static Guid CreateKeypadEffect(Effects.Keypad.KeypadEffect effect, IntPtr param)
+        private Guid CreateKeypadEffect(Effects.Keypad.KeypadEffect effect, IntPtr param)
         {
             var guid = Guid.Empty;
-            var result = NativeMethods.CreateKeypadEffect(effect, param, ref guid);
+            var result = _nativeMethods.CreateKeypadEffect(effect, param, ref guid);
             if (!result)
                 throw new NativeCallException("CreateKeypadEffect", result);
             return guid;
@@ -495,10 +513,10 @@ namespace Colore.Native
         /// <param name="effect">The type of Chroma Link effect to create.</param>
         /// <param name="param">Effect-specific parameters.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        private static Guid CreateChromaLinkEffect(Effects.ChromaLink.ChromaLinkEffect effect, IntPtr param)
+        private Guid CreateChromaLinkEffect(Effects.ChromaLink.ChromaLinkEffect effect, IntPtr param)
         {
             var guid = Guid.Empty;
-            var result = NativeMethods.CreateChromaLinkEffect(effect, param, ref guid);
+            var result = _nativeMethods.CreateChromaLinkEffect(effect, param, ref guid);
             if (!result)
                 throw new NativeCallException("CreateChromaLinkEffect", result);
             return guid;
