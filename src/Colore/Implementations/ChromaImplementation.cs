@@ -446,15 +446,14 @@ namespace Colore.Implementations
         /// Sets all Chroma devices to the specified <see cref="Color" />.
         /// </summary>
         /// <param name="color">The <see cref="Color" /> to set.</param>
-        public Task SetAllAsync(Color color)
+        public async Task SetAllAsync(Color color)
         {
-            Keyboard.SetAllAsync(color);
-            Mouse.SetAllAsync(color);
-            Mousepad.SetAllAsync(color);
-            Keypad.SetAllAsync(color);
-            Headset.SetAllAsync(color);
-            ChromaLink.SetAllAsync(color);
-            return Task.FromResult(0);
+            await Keyboard.SetAllAsync(color).ConfigureAwait(false);
+            await Mouse.SetAllAsync(color).ConfigureAwait(false);
+            await Mousepad.SetAllAsync(color).ConfigureAwait(false);
+            await Keypad.SetAllAsync(color).ConfigureAwait(false);
+            await Headset.SetAllAsync(color).ConfigureAwait(false);
+            await ChromaLink.SetAllAsync(color).ConfigureAwait(false);
         }
 
         /// <summary>
