@@ -239,7 +239,7 @@ namespace Colore.Native
         /// </remarks>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         internal delegate Result CreateKeyboardEffectDelegate(
-            [In] Effects.Keyboard.KeyboardEffect effect,
+            [In] KeyboardEffect effect,
             [In] IntPtr param,
             [In, Out] ref Guid effectId);
 
@@ -273,7 +273,7 @@ namespace Colore.Native
         /// </remarks>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         internal delegate Result CreateMouseEffectDelegate(
-            [In] Effects.Mouse.MouseEffect effect,
+            [In] MouseEffect effect,
             [In] IntPtr param,
             [In, Out] ref Guid effectId);
 
