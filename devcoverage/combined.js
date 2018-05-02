@@ -366,7 +366,7 @@ var assemblies = [
       { "name": "Colore.Helpers.RegistryHelper", "reportPath": "Colore_RegistryHelper.htm", "coveredLines": 0, "uncoveredLines": 58, "coverableLines": 58, "totalLines": 176, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 16, "lineCoverageHistory": [], "branchCoverageHistory": [] },
       { "name": "Colore.Helpers.TaskHelper", "reportPath": "Colore_TaskHelper.htm", "coveredLines": 0, "uncoveredLines": 1, "coverableLines": 1, "totalLines": 44, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
       { "name": "Colore.Helpers.UriHelper", "reportPath": "Colore_UriHelper.htm", "coveredLines": 0, "uncoveredLines": 3, "coverableLines": 3, "totalLines": 50, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Implementations.ChromaImplementation", "reportPath": "Colore_ChromaImplementation.htm", "coveredLines": 0, "uncoveredLines": 105, "coverableLines": 105, "totalLines": 476, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 42, "lineCoverageHistory": [], "branchCoverageHistory": [] },
+      { "name": "Colore.Implementations.ChromaImplementation", "reportPath": "Colore_ChromaImplementation.htm", "coveredLines": 0, "uncoveredLines": 111, "coverableLines": 111, "totalLines": 487, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 42, "lineCoverageHistory": [], "branchCoverageHistory": [] },
       { "name": "Colore.Implementations.ChromaLinkImplementation", "reportPath": "Colore_ChromaLinkImplementation.htm", "coveredLines": 0, "uncoveredLines": 17, "coverableLines": 17, "totalLines": 154, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
       { "name": "Colore.Implementations.DeviceImplementation", "reportPath": "Colore_DeviceImplementation.htm", "coveredLines": 0, "uncoveredLines": 13, "coverableLines": 13, "totalLines": 99, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 2, "lineCoverageHistory": [], "branchCoverageHistory": [] },
       { "name": "Colore.Implementations.GenericDeviceImplementation", "reportPath": "Colore_GenericDeviceImplementation.htm", "coveredLines": 0, "uncoveredLines": 15, "coverableLines": 15, "totalLines": 115, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 2, "lineCoverageHistory": [], "branchCoverageHistory": [] },
@@ -408,9 +408,17 @@ var assemblies = [
 ];
 
 var riskHotspotMetrics = [
+      { "name": "Cyclomatic complexity", "explanationUrl": "https://en.wikipedia.org/wiki/Cyclomatic_complexity" },
+      { "name": "NPath complexity", "explanationUrl": "https://modess.io/npath-complexity-cyclomatic-complexity-explained" },
 ];
 
 var riskHotspots = [
+  {
+    "assembly": "Colore", "class": "Colore.Implementations.ChromaImplementation", "reportPath": "Colore_ChromaImplementation.htm", "method": "UninitializeAsync()",
+    "metrics": [
+      { "value": 22, "exceeded": true },
+      { "value": 128, "exceeded": false },
+    ]},
 ];
 
 var branchCoverageAvailable = true;

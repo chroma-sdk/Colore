@@ -31,7 +31,7 @@
 <tbody>
 <tr><td title="System.Void Colore.Implementations.DeviceImplementation::.ctor(Colore.Api.IChromaApi)">.ctor(...)</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
 <tr><td title="SetEffectAsync()">SetEffectAsync()</td><td>5</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td title="DeleteCurrentEffect()">DeleteCurrentEffect()</td><td>4</td><td>2</td><td>0</td><td>0</td></tr>
+<tr><td title="DeleteCurrentEffectAsync()">DeleteCurrentEffectAsync()</td><td>4</td><td>2</td><td>0</td><td>0</td></tr>
 </tbody>
 </table>
 <h1>File(s)</h1>
@@ -118,7 +118,7 @@
 <tr data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><a id="file0_line77"></a><code>77</code></td><td></td><td class="lightgray"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;///&nbsp;&lt;param&nbsp;name=&quot;effectId&quot;&gt;GUID&nbsp;to&nbsp;set.&lt;/param&gt;</code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><a id="file0_line78"></a><code>78</code></td><td></td><td class="lightgray"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;async&nbsp;Task&lt;Guid&gt;&nbsp;SetEffectAsync(Guid&nbsp;effectId)</code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><a id="file0_line79"></a><code>79</code></td><td></td><td class="lightgray"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</code></td></tr>
-<tr data-coverage="{'AllTestMethods': {'VC': '0', 'LVS': 'red'}}"><td class="red">&nbsp;</td><td class="leftmargin rightmargin right">0</td><td class="rightmargin right"><a id="file0_line80"></a><code>80</code></td><td></td><td class="lightred"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;DeleteCurrentEffect().ConfigureAwait(false);</code></td></tr>
+<tr data-coverage="{'AllTestMethods': {'VC': '0', 'LVS': 'red'}}"><td class="red">&nbsp;</td><td class="leftmargin rightmargin right">0</td><td class="rightmargin right"><a id="file0_line80"></a><code>80</code></td><td></td><td class="lightred"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;DeleteCurrentEffectAsync().ConfigureAwait(false);</code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '0', 'LVS': 'red'}}"><td class="red">&nbsp;</td><td class="leftmargin rightmargin right">0</td><td class="rightmargin right"><a id="file0_line81"></a><code>81</code></td><td></td><td class="lightred"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await&nbsp;Api.SetEffectAsync(effectId).ConfigureAwait(false);</code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '0', 'LVS': 'red'}}"><td class="red">&nbsp;</td><td class="leftmargin rightmargin right">0</td><td class="rightmargin right"><a id="file0_line82"></a><code>82</code></td><td></td><td class="lightred"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CurrentEffectId&nbsp;=&nbsp;effectId;</code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '0', 'LVS': 'red'}}"><td class="red">&nbsp;</td><td class="leftmargin rightmargin right">0</td><td class="rightmargin right"><a id="file0_line83"></a><code>83</code></td><td></td><td class="lightred"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;CurrentEffectId;</code></td></tr>
@@ -128,7 +128,7 @@
 <tr data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><a id="file0_line87"></a><code>87</code></td><td></td><td class="lightgray"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;///&nbsp;Deletes&nbsp;the&nbsp;currently&nbsp;set&nbsp;effect.</code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><a id="file0_line88"></a><code>88</code></td><td></td><td class="lightgray"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;///&nbsp;&lt;/summary&gt;</code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><a id="file0_line89"></a><code>89</code></td><td></td><td class="lightgray"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;///&nbsp;&lt;returns&gt;A&nbsp;&lt;see&nbsp;cref=&quot;Task&quot;/&gt;&nbsp;representing&nbsp;the&nbsp;asynchronous&nbsp;operation.&lt;/returns&gt;</code></td></tr>
-<tr data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><a id="file0_line90"></a><code>90</code></td><td></td><td class="lightgray"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;internal&nbsp;async&nbsp;Task&nbsp;DeleteCurrentEffect()</code></td></tr>
+<tr data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><a id="file0_line90"></a><code>90</code></td><td></td><td class="lightgray"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;internal&nbsp;async&nbsp;Task&nbsp;DeleteCurrentEffectAsync()</code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><a id="file0_line91"></a><code>91</code></td><td></td><td class="lightgray"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</code></td></tr>
 <tr title="0 of 2 branches are covered" data-coverage="{'AllTestMethods': {'VC': '0', 'LVS': 'red'}}"><td class="red">&nbsp;</td><td class="leftmargin rightmargin right">0</td><td class="rightmargin right"><a id="file0_line92"></a><code>92</code></td><td class="percentagebar0"><i class="icon-fork"></i></td><td class="lightred"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(CurrentEffectId&nbsp;==&nbsp;Guid.Empty)</code></td></tr>
 <tr data-coverage="{'AllTestMethods': {'VC': '0', 'LVS': 'red'}}"><td class="red">&nbsp;</td><td class="leftmargin rightmargin right">0</td><td class="rightmargin right"><a id="file0_line93"></a><code>93</code></td><td></td><td class="lightred"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return;</code></td></tr>
@@ -140,7 +140,7 @@
 <tr data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><a id="file0_line99"></a><code>99</code></td><td></td><td class="lightgray"><code>}</code></td></tr>
 </tbody>
 </table>
-<div class="footer">Generated by: ReportGenerator 3.1.2.0<br />5/1/2018 - 4:57:57 PM<br /><a href="https://github.com/danielpalme/ReportGenerator">GitHub</a> | <a href="http://www.palmmedia.de">www.palmmedia.de</a></div></div>
+<div class="footer">Generated by: ReportGenerator 3.1.2.0<br />5/1/2018 - 5:16:16 PM<br /><a href="https://github.com/danielpalme/ReportGenerator">GitHub</a> | <a href="http://www.palmmedia.de">www.palmmedia.de</a></div></div>
 <div class="containerright">
 <div class="containerrightfixed">
 <h1>Methods/Properties</h1>
@@ -149,7 +149,7 @@
 <a href="#file0_line53" data-ng-click="navigateToHash('#file0_line53')" title="CurrentEffectId(System.Guid)"><i class="icon-wrench"></i>CurrentEffectId(System.Guid)</a><br />
 <a href="#file0_line58" data-ng-click="navigateToHash('#file0_line58')" title="Api()"><i class="icon-wrench"></i>Api()</a><br />
 <a href="#file0_line80" data-ng-click="navigateToHash('#file0_line80')" title="SetEffectAsync()"><i class="icon-cube"></i>SetEffectAsync()</a><br />
-<a href="#file0_line92" data-ng-click="navigateToHash('#file0_line92')" title="DeleteCurrentEffect()"><i class="icon-cube"></i>DeleteCurrentEffect()</a><br />
+<a href="#file0_line92" data-ng-click="navigateToHash('#file0_line92')" title="DeleteCurrentEffectAsync()"><i class="icon-cube"></i>DeleteCurrentEffectAsync()</a><br />
 <br/></div>
 </div></div>
 <script type="text/javascript" src="combined.js"></script>
