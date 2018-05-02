@@ -280,12 +280,23 @@ namespace Colore.Implementations
             if (!Initialized)
                 return;
 
-            _keyboard?.DeleteCurrentEffect();
-            _mouse?.DeleteCurrentEffect();
-            _keypad?.DeleteCurrentEffect();
-            _mousepad?.DeleteCurrentEffect();
-            _headset?.DeleteCurrentEffect();
-            _chromaLink?.DeleteCurrentEffect();
+            if (_keyboard != null)
+                await _keyboard.DeleteCurrentEffectAsync().ConfigureAwait(false);
+
+            if (_mouse != null)
+                await _mouse.DeleteCurrentEffectAsync().ConfigureAwait(false);
+
+            if (_keypad != null)
+                await _keypad.DeleteCurrentEffectAsync().ConfigureAwait(false);
+
+            if (_mousepad != null)
+                await _mousepad.DeleteCurrentEffectAsync().ConfigureAwait(false);
+
+            if (_headset != null)
+                await _headset.DeleteCurrentEffectAsync().ConfigureAwait(false);
+
+            if (_chromaLink != null)
+                await _chromaLink.DeleteCurrentEffectAsync().ConfigureAwait(false);
 
             Unregister();
             await _api.UninitializeAsync().ConfigureAwait(false);

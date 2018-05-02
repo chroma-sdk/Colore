@@ -77,7 +77,7 @@ namespace Colore.Implementations
         /// <param name="effectId">GUID to set.</param>
         public async Task<Guid> SetEffectAsync(Guid effectId)
         {
-            await DeleteCurrentEffect().ConfigureAwait(false);
+            await DeleteCurrentEffectAsync().ConfigureAwait(false);
             await Api.SetEffectAsync(effectId).ConfigureAwait(false);
             CurrentEffectId = effectId;
             return CurrentEffectId;
@@ -87,7 +87,7 @@ namespace Colore.Implementations
         /// Deletes the currently set effect.
         /// </summary>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
-        internal async Task DeleteCurrentEffect()
+        internal async Task DeleteCurrentEffectAsync()
         {
             if (CurrentEffectId == Guid.Empty)
                 return;
