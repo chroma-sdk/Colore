@@ -16,7 +16,7 @@ Just search for "Colore" and install it.
 After that you should see a Reference being added to "Colore".
 
 ### Pre-release versions
-If you want to test the absolute latest features in Colore, which may not be fully ready for production use yet, you can install pre-release Colore packages from [our MyGet feed][mg]. You can either install a version manually with the commands listed on the page, or add the feed to your NuGet settings: `https://www.myget.org/F/coralestudios/api/v3/index.json`.
+If you want to test the absolute latest features in Colore, which may not be fully ready for production use yet, you can install pre-release Colore packages from [our MyGet feed][mg]. You can either install a version manually with the commands listed on the page, or add the feed to your NuGet settings: `https://www.myget.org/F/chroma-sdk/api/v3/index.json`.
 
 Make sure to select the MyGet feed when you are browsing packages in the package manager (or select "All" to see packages from all feeds at once), and to check the "Include pre-releases" checkbox. The MyGet feed will also include stable versions of Colore when they are released, so you can use it as the sole source for Colore.
 
@@ -264,5 +264,5 @@ await chroma.Keyboard.SetCustomAsync(keyboardGrid);
 
 [ng]: https://www.nuget.org/packages/Colore
 [ngverbadge]: https://img.shields.io/nuget/v/Colore.svg
-[mg]: https://www.myget.org/feed/coralestudios/package/nuget/Colore
-[mgverbadge]: https://img.shields.io/myget/coralestudios/vpre/Colore.svg?label=myget
+[mg]: https://www.myget.org/feed/chroma-sdk/package/nuget/Colore
+[mgverbadge]: https://img.shields.io/myget/chroma-sdk/vpre/Colore.svg?label=myget

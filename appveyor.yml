@@ -60,8 +60,8 @@ deploy:
   on:
     appveyor_repo_tag: true
 - provider: NuGet
-  server: https://www.myget.org/F/coralestudios/api/v2/package
-  symbol_server: https://www.myget.org/F/coralestudios/symbols/api/v2/package
+  server: https://www.myget.org/F/chroma-sdk/api/v2/package
+  symbol_server: https://www.myget.org/F/chroma-sdk/symbols/api/v2/package
   name: production
   api_key:
     secure: vG2UFV8FgS2hYY1QfkXshHO9hvm3rgV2pEKXB7WBDR/Y+qHp1N+audYtqmfdD1NB
@@ -77,8 +77,8 @@ deploy:
   on:
     appveyor_repo_tag: true
 - provider: NuGet
-  server: https://www.myget.org/F/coralestudios/api/v2/package
-  symbol_server: https://www.myget.org/F/coralestudios/symbols/api/v2/package
+  server: https://www.myget.org/F/chroma-sdk/api/v2/package
+  symbol_server: https://www.myget.org/F/chroma-sdk/symbols/api/v2/package
   name: development
   api_key:
     secure: vG2UFV8FgS2hYY1QfkXshHO9hvm3rgV2pEKXB7WBDR/Y+qHp1N+audYtqmfdD1NB
@@ -95,6 +95,11 @@ notifications:
   auth_token:
     secure: q1G3kdpLxdD6RzSNVDZoEktdr3pcUY5KFXqxaV3mzGWWgOAyREl0ZHBNQUSWTLCy
   channel: '#colore'
+  on_build_success: true
+  on_build_failure: true
+  on_build_status_changed: true
+- provider: Webhook
+  url: https://webhooks.gitter.im/e/a034d0036043d620fe38
   on_build_success: true
   on_build_failure: true
   on_build_status_changed: true

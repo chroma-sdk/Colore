@@ -146,49 +146,49 @@ Projects using Colore
 
 There may be others we are unaware of, so please let us know if there are any others.
 
-[getting-started]: https://github.com/CoraleStudios/Colore/wiki/Getting-started
+[getting-started]: https://github.com/chroma-sdk/Colore/wiki/Getting-started
 [newpull]: ../../pull/new/develop
 [sharp]: https://github.com/Sharparam
-[contrib]: ../../wiki/Contributing
+[contrib]: CONTRIBUTING.md
 [bs]: https://github.com/brandonscott
-[master]: https://github.com/CoraleStudios/Colore/tree/master
-[develop]: https://github.com/CoraleStudios/Colore/tree/develop
+[master]: https://github.com/chroma-sdk/Colore/tree/master
+[develop]: https://github.com/chroma-sdk/Colore/tree/develop
 
 [license]: http://opensource.org/licenses/MIT
 [licensebadge]: https://img.shields.io/badge/license-MIT-blue.svg
-[ghrelease]: https://github.com/CoraleStudios/Colore/releases
-[ghreleasebadge]: https://img.shields.io/github/release/CoraleStudios/Colore.svg?logo=github
+[ghrelease]: https://github.com/chroma-sdk/Colore/releases
+[ghreleasebadge]: https://img.shields.io/github/release/chroma-sdk/Colore.svg?logo=github
 [ng]: https://www.nuget.org/packages/Colore
 [ngverbadge]: https://img.shields.io/nuget/v/Colore.svg
-[mg]: https://www.myget.org/feed/coralestudios/package/nuget/Colore
-[mgverbadge]: https://img.shields.io/myget/coralestudios/vpre/Colore.svg?label=myget
+[mg]: https://www.myget.org/feed/chroma-sdk/package/nuget/Colore
+[mgverbadge]: https://img.shields.io/myget/chroma-sdk/vpre/Colore.svg?label=myget
 
 [appveyor-develop-status]: https://ci.appveyor.com/project/Corale/colore/branch/develop
 [appveyor-develop-badge]: https://ci.appveyor.com/api/projects/status/st3y6fo0jqvhd8cg/branch/develop?svg=true
-[travis-develop-status]: https://travis-ci.org/CoraleStudios/Colore
-[travis-develop-badge]: https://travis-ci.org/CoraleStudios/Colore.svg?branch=develop
+[travis-develop-status]: https://travis-ci.org/chroma-sdk/Colore
+[travis-develop-badge]: https://travis-ci.org/chroma-sdk/Colore.svg?branch=develop
 [test-develop-status]: https://ci.appveyor.com/project/Corale/colore/branch/develop/tests
 [test-develop-badge]: https://img.shields.io/appveyor/tests/corale/Colore/develop.svg
-[coveralls-develop]: https://coveralls.io/github/CoraleStudios/Colore?branch=develop
-[coveralls-develop-badge]: https://coveralls.io/repos/github/CoraleStudios/Colore/badge.svg?branch=develop
+[coveralls-develop]: https://coveralls.io/github/chroma-sdk/Colore?branch=develop
+[coveralls-develop-badge]: https://coveralls.io/repos/github/chroma-sdk/Colore/badge.svg?branch=develop
 
 [appveyor-master-status]: https://ci.appveyor.com/project/Corale/colore/branch/master
 [appveyor-master-badge]: https://ci.appveyor.com/api/projects/status/st3y6fo0jqvhd8cg/branch/master?svg=true
-[travis-master-status]: https://travis-ci.org/CoraleStudios/Colore
-[travis-master-badge]: https://travis-ci.org/CoraleStudios/Colore.svg?branch=master
+[travis-master-status]: https://travis-ci.org/chroma-sdk/Colore
+[travis-master-badge]: https://travis-ci.org/chroma-sdk/Colore.svg?branch=master
 [test-master-status]: https://ci.appveyor.com/project/Corale/colore/branch/master/tests
 [test-master-badge]: https://img.shields.io/appveyor/tests/corale/Colore/master.svg
-[coveralls-master]: https://coveralls.io/github/CoraleStudios/Colore
-[coveralls-master-badge]: https://coveralls.io/repos/github/CoraleStudios/Colore/badge.svg
+[coveralls-master]: https://coveralls.io/github/chroma-sdk/Colore
+[coveralls-master-badge]: https://coveralls.io/repos/github/chroma-sdk/Colore/badge.svg
 
-[gitter]: https://gitter.im/CoraleStudios/Colore?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
+[gitter]: https://gitter.im/chroma-sdk/Colore?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
 [gitterbadge]: https://badges.gitter.im/Join%20Chat.svg
 [discord]: https://discord.gg/4ysuMYK
 [discordbadge]: https://img.shields.io/discord/342761229544194048.svg?label=discord&logo=discord
 
 [colorelogo]: https://files.sharparam.com/2017/10/31/colore-logo.png
-[colore-wpf]: https://github.com/CoraleStudios/Colore.Wpf
-[colore-winforms]: https://github.com/CoraleStudios/Colore.WinForms
+[colore-wpf]: https://github.com/chroma-sdk/Colore.Wpf
+[colore-winforms]: https://github.com/chroma-sdk/Colore.WinForms
 
 [rzdev]: http://developer.razerzone.com/chroma
 [synapse]: https://www.razerzone.com/synapse
