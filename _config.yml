@@ -12,16 +12,16 @@ description: > # this means to ignore newlines until "baseurl:"
   Chroma SDK in a way that feels intuitive and similar to other .NET
   libraries.
 baseurl: "/Colore" # the subpath of your site, e.g. /blog
-url: "https://coralestudios.github.io/Colore" # the base hostname & protocol for your site
+url: "https://chroma-sdk.github.io/Colore" # the base hostname & protocol for your site
 #twitter_username: jekyllrb
-github_username: CoraleStudios
+github_username: chroma-sdk
 paginate: 5
 paginate_path: "/blog/page:num/"
 permalink: "/blog/:year/:month/:day/:title"
 
 author:
-  name: Corale Studios
-  url: "https://github.com/CoraleStudios"
+  name: Chroma SDK
+  url: "https://github.com/chroma-sdk"
 
 # Build settings
 markdown: kramdown
