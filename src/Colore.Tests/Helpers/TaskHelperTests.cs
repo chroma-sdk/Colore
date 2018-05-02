@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="UriHelper.cs" company="Corale">
+// <copyright file="TaskHelperTests.cs" company="Corale">
 //     Copyright © 2015-2018 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,36 +23,21 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Helpers
+namespace Colore.Tests.Helpers
 {
-    using System;
+    using System.Threading.Tasks;
 
-    using JetBrains.Annotations;
+    using Colore.Helpers;
 
-    /// <summary>
-    /// Provides helper methods for working with URIs.
-    /// </summary>
-    internal static class UriHelper
+    using NUnit.Framework;
+
+    [TestFixture]
+    public class TaskHelperTests
     {
-        /// <summary>
-        /// Appends a <see cref="Uri" /> to another.
-        /// </summary>
-        /// <param name="uri">The "left" part of the new URI.</param>
-        /// <param name="resource">The resource, or "right" part of the new URI.</param>
-        /// <returns>
-        /// A new <see cref="Uri" /> with <paramref name="resource" /> appended to <paramref name="uri" />.
-        /// </returns>
-        internal static Uri Append([NotNull] this Uri uri, [NotNull] Uri resource)
+        [Test]
+        public void ShouldReturnTask()
         {
-            if (uri == null)
-                throw new ArgumentNullException(nameof(uri));
-
-            if (resource == null)
-                throw new ArgumentNullException(nameof(resource));
-
-            var left = uri.ToString().TrimEnd('/');
-            var right = resource.ToString().TrimStart('/');
-            return new Uri($"{left}/{right}");
+            Assert.IsInstanceOf<Task>(TaskHelper.CompletedTask);
         }
     }
 }
