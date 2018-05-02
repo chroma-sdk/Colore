@@ -26,6 +26,7 @@
 namespace Colore.Native
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
     using System.Runtime.InteropServices;
 
     using Colore.Data;
@@ -463,7 +464,12 @@ namespace Colore.Native
         /// <summary>
         /// Disposes resources used by this class.
         /// </summary>
-        /// <param name="disposing"><c>true</c> if calling from <see cref="Dispose" />, <c>false</c> if calling from the finalizer.</param>
+        /// <param name="disposing">
+        /// <c>true</c> if calling from <see cref="Dispose()" />,
+        /// <c>false</c> if calling from the finalizer.
+        /// </param>
+        [SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", Justification = "Required for StyleCop dispose pattern")]
+        [SuppressMessage("ReSharper", "UnusedParameter.Local", Justification = "Required for StyleCop dispose pattern")]
         private void Dispose(bool disposing)
         {
             ReleaseUnmanagedResources();
