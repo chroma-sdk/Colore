@@ -244,12 +244,12 @@ Hotfixes are special, and are treated differently than other branches. A hotfix 
 back into master and then to develop. If you ever write a hotfix, keep this in mind. **Hotfixes branch from master, *not develop*.**
 
 [AUTHORS]: AUTHORS
-[create an issue]: https://github.com/CoraleStudios/Colore/issues/new
-[main repo]: https://github.com/CoraleStudios/Colore
+[create an issue]: https://github.com/chroma-sdk/Colore/issues/new
+[main repo]: https://github.com/chroma-sdk/Colore
 [StyleCop]: http://stylecop.codeplex.com/
 [nativewrapper]: Colore/Core/NativeWrapper.cs
-[develop]: https://github.com/CoraleStudios/Colore/tree/develop
-[gitter]: https://gitter.im/CoraleStudios/Colore?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
+[develop]: https://github.com/chroma-sdk/Colore/tree/develop
+[gitter]: https://gitter.im/chroma-sdk/Colore?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
 
 [vs-dl]: https://www.visualstudio.com/downloads/
 [core-dl]: https://www.microsoft.com/net/download/windows

@@ -14,7 +14,7 @@ echo 'Cleaning any existing gh-pages directory'
 rm -rf gh-pages
 
 echo 'Cloning gh-pages branch'
-git clone -b gh-pages --depth 1 -- git@github.com:CoraleStudios/Colore.git gh-pages
+git clone -b gh-pages --depth 1 -- git@github.com:chroma-sdk/Colore.git gh-pages
 
 echo "Removing existing documentation at gh-pages/${target}"
 rm -rf gh-pages/${target}
