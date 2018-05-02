@@ -54,12 +54,22 @@ namespace Colore.Helpers
         /// <returns><c>true</c> if Chroma SDK is available, otherwise <c>false</c>.</returns>
         internal static bool IsSdkAvailable()
         {
-            bool dllValid;
+            Log.Debug("Checking for SDK availability");
 
-            if (EnvironmentHelper.Is64Bit())
-                dllValid = Native.Kernel32.NativeMethods.LoadLibrary("RzChromaSDK64.dll") != IntPtr.Zero;
-            else
-                dllValid = Native.Kernel32.NativeMethods.LoadLibrary("RzChromaSDK.dll") != IntPtr.Zero;
+            bool dllValid;
+            IntPtr libraryPointer;
+
+            var dllName = EnvironmentHelper.Is64Bit() ? "RzChromaSDK64.dll" : "RzChromaSDK.dll";
+            Log.Debug("Attempting to load SDK library {DllName}", dllName);
+            dllValid = (libraryPointer = Native.Kernel32.NativeMethods.LoadLibrary(dllName)) != IntPtr.Zero;
+
+            Log.Debug("DLL valid? {DllValid}. SDK library pointer: {LibraryPointer}", dllValid, libraryPointer);
+
+            if (libraryPointer != IntPtr.Zero)
+            {
+                Log.Debug("Calling FreeLibrary on temporary library pointer {LibraryPointer}", libraryPointer);
+                Native.Kernel32.NativeMethods.FreeLibrary(libraryPointer);
+            }
 
             bool regEnabled;
 
