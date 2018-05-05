@@ -43,11 +43,6 @@
           "CODEOWNERS"
         ],
         "dest": "./"
-      },
-      {
-        "src": "../.github",
-        "files": [ "CODE_OF_CONDUCT.md" ],
-        "dest": "./"
       }
     ],
     "resource": [

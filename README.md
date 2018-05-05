@@ -41,6 +41,10 @@ All authors and contributors are listed in the [`AUTHORS`](AUTHORS) file.
 
 Please read the [`CONTRIBUTING.md`](CONTRIBUTING.md) file before making a pull request.
 
+### Code of Conduct
+Please note that this project is released with a [Contributor Code of Conduct][coc].
+By participating in this project you agree to abide by its terms.
+
 License
 -------
 
@@ -146,6 +150,7 @@ Projects using Colore
 
 There may be others we are unaware of, so please let us know if there are any others.
 
+[coc]: CODE_OF_CONDUCT.md
 [getting-started]: https://github.com/chroma-sdk/Colore/wiki/Getting-started
 [newpull]: ../../pull/new/develop
 [sharp]: https://github.com/Sharparam
