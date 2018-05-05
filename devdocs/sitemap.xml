@@ -2,523 +2,523 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/CODE_OF_CONDUCT.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/CONTRIBUTING.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/README.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Api.ApiException.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Api.IChromaApi.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Api.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.ColoreException.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.ColoreProvider.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Data.AppInfo.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Data.Author.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Data.Category.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Data.Color.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Data.Constants.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Data.DeviceInfo.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Data.Devices.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Data.DeviceType.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Data.Result.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Data.SdkDeviceInfo.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Data.SdkVersion.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Data.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.ChromaLink.ChromaLinkConstants.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.ChromaLink.ChromaLinkCustom.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.ChromaLink.ChromaLinkEffect.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.ChromaLink.ChromaLinkStatic.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.ChromaLink.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.Generic.Effect.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.Generic.None.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.Generic.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.Headset.HeadsetConstants.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.Headset.HeadsetCustom.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.Headset.HeadsetEffect.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.Headset.HeadsetStatic.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.Headset.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.Keyboard.DeathstalkerGrid.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.Keyboard.Key.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.Keyboard.KeyboardConstants.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.Keyboard.KeyboardCustom.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.Keyboard.KeyboardEffect.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.Keyboard.KeyboardStatic.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.Keyboard.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.Keypad.KeypadConstants.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.Keypad.KeypadCustom.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.Keypad.KeypadEffect.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.Keypad.KeypadStatic.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.Keypad.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.Mouse.GridLed.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.Mouse.Led.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.Mouse.MouseConstants.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.Mouse.MouseCustom.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.Mouse.MouseEffect.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.Mouse.MouseStatic.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.Mouse.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.Mousepad.MousepadConstants.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.Mousepad.MousepadCustom.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.Mousepad.MousepadEffect.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.Mousepad.MousepadStatic.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Effects.Mousepad.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Events.ApplicationStateEventArgs.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Events.DeviceAccessEventArgs.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Events.SdkSupportEventArgs.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Events.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.IChroma.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.IChromaLink.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.IDevice.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.IGenericDevice.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.IHeadset.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.IKeyboard.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.IKeypad.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.IMouse.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.IMousepad.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Logging.ILogProvider.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Logging.Logger.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Logging.LogLevel.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Logging.LogProvider.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Logging.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Native.NativeCallException.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Native.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Rest.IRestClient.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Rest.IRestResponse-1.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Rest.RestException.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.Rest.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.UnsupportedDeviceException.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/Colore.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/api/index.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/articles/getting-started.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/articles/intro.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://coralestudios.github.io/Colore/docs/index.html</loc>
-    <lastmod>2018-05-05T01:25:30-07:00</lastmod>
+    <lastmod>2018-05-05T01:33:23-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
