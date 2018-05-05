@@ -79,13 +79,14 @@ The [WPF][colore-wpf] and [WinForms][colore-winforms] extension packages for Col
 Using
 -----
 
-Obtain a reference to an `IChroma` instance by calling `Corale.Colore.ColoreProvider.CreateNative()`.
+Obtain a reference to an `IChroma` instance by calling `Colore.ColoreProvider.CreateNative()`.
 
 This instance initializes the Chroma SDK so it is important you **save this reference** for the lifetime of your application!
 If you need to dispose of it and obtain a new one later, be sure to call the uninitialize method first!
 
-Currently there is only support for binding to the [native Chroma SDK][chroma-native].
-Support for the [REST API][chroma-rest] is planned and will be implemented for the 6.0 release.
+Colore supports binding to both the [native Chroma SDK][chroma-native] and the [REST API][chroma-rest].
+To use the REST API, create an `IChroma` instance by calling `Colore.ColoreProvider.CreateRestAsync(AppInfo)`.
+The REST API requires information about your application, so you'll have to pass an instance of `AppInfo` to `CreateRestAsync` containing details about your application or game.
 
 For a more in-depth guide on how to get started, check out [our wiki][getting-started].
 
