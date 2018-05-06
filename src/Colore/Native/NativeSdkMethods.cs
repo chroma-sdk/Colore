@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="NativeMethods.cs" company="Corale">
+// <copyright file="NativeSdkMethods.cs" company="Corale">
 //     Copyright © 2015-2018 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -38,7 +38,7 @@ namespace Colore.Native
     /// <summary>
     /// Native methods from Razer's Chroma SDK.
     /// </summary>
-    internal class NativeMethods : IDisposable
+    public sealed class NativeSdkMethods : INativeSdkMethods, IDisposable
     {
         /// <summary>
         /// Calling convention for API functions.
@@ -51,7 +51,7 @@ namespace Colore.Native
         /// <summary>
         /// Logger instance for this class.
         /// </summary>
-        private static readonly ILog Log = LogProvider.For<NativeMethods>();
+        private static readonly ILog Log = LogProvider.For<NativeSdkMethods>();
 
         /// <summary>
         /// Holds the pointer to the native Chroma SDK library.
@@ -59,9 +59,9 @@ namespace Colore.Native
         private readonly IntPtr _chromaSdkPointer;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="NativeMethods" /> class.
+        /// Initializes a new instance of the <see cref="NativeSdkMethods" /> class.
         /// </summary>
-        internal NativeMethods()
+        internal NativeSdkMethods()
         {
             Log.Info("Loading native Chroma SDK");
 
@@ -125,9 +125,9 @@ namespace Colore.Native
         }
 
         /// <summary>
-        /// Finalizes an instance of the <see cref="NativeMethods" /> class.
+        /// Finalizes an instance of the <see cref="NativeSdkMethods" /> class.
         /// </summary>
-        ~NativeMethods()
+        ~NativeSdkMethods()
         {
             Dispose(false);
         }
@@ -137,14 +137,14 @@ namespace Colore.Native
         /// </summary>
         /// <returns><see cref="Result" /> value indicating success.</returns>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
-        internal delegate Result InitDelegate();
+        public delegate Result InitDelegate();
 
         /// <summary>
         /// Uninitialize Chroma SDK.
         /// </summary>
         /// <returns><see cref="Result" /> value indicating success.</returns>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
-        internal delegate Result UnInitDelegate();
+        public delegate Result UnInitDelegate();
 
         /// <summary>
         /// Creates an effect for a device.
@@ -155,7 +155,7 @@ namespace Colore.Native
         /// <param name="effectId">Valid effect ID if successful. Use <see cref="Guid.Empty" /> if not required.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
-        internal delegate Result CreateEffectDelegate(
+        public delegate Result CreateEffectDelegate(
             [In] Guid deviceId,
             [In] Effects.Generic.Effect effect,
             [In] IntPtr param,
@@ -189,7 +189,7 @@ namespace Colore.Native
         /// </list>
         /// </remarks>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
-        internal delegate Result CreateKeyboardEffectDelegate(
+        public delegate Result CreateKeyboardEffectDelegate(
             [In] KeyboardEffect effect,
             [In] IntPtr param,
             [In, Out] ref Guid effectId);
@@ -223,7 +223,7 @@ namespace Colore.Native
         /// </list>
         /// </remarks>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
-        internal delegate Result CreateMouseEffectDelegate(
+        public delegate Result CreateMouseEffectDelegate(
             [In] MouseEffect effect,
             [In] IntPtr param,
             [In, Out] ref Guid effectId);
@@ -236,7 +236,7 @@ namespace Colore.Native
         /// <param name="effectId">Set to valid effect ID if successful. Pass <see cref="IntPtr.Zero" /> if not required.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
-        internal delegate Result CreateHeadsetEffectDelegate(
+        public delegate Result CreateHeadsetEffectDelegate(
             [In] Effects.Headset.HeadsetEffect effect,
             [In] IntPtr param,
             [In] [Out] ref Guid effectId);
@@ -249,7 +249,7 @@ namespace Colore.Native
         /// <param name="effectId">Valid effect ID if successful. Pass <see cref="IntPtr.Zero" /> if not required.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
-        internal delegate Result CreateMousepadEffectDelegate(
+        public delegate Result CreateMousepadEffectDelegate(
             [In] Effects.Mousepad.MousepadEffect effect,
             [In] IntPtr param,
             [In, Out] ref Guid effectId);
@@ -262,7 +262,7 @@ namespace Colore.Native
         /// <param name="effectId">Valid effect ID if successful. Pass <see cref="IntPtr.Zero" /> if not required.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
-        internal delegate Result CreateKeypadEffectDelegate(
+        public delegate Result CreateKeypadEffectDelegate(
             [In] Effects.Keypad.KeypadEffect effect,
             [In] IntPtr param,
             [In, Out] ref Guid effectId);
@@ -275,7 +275,7 @@ namespace Colore.Native
         /// <param name="effectId">Valid effect ID if successful. Pass <see cref="IntPtr.Zero" /> if not required.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
-        internal delegate Result CreateChromaLinkEffectDelegate(
+        public delegate Result CreateChromaLinkEffectDelegate(
             [In] Effects.ChromaLink.ChromaLinkEffect effect,
             [In] IntPtr param,
             [In, Out] ref Guid effectId);
@@ -286,7 +286,7 @@ namespace Colore.Native
         /// <param name="effectId">ID of the effect that needs to be deleted.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
-        internal delegate Result DeleteEffectDelegate([In] Guid effectId);
+        public delegate Result DeleteEffectDelegate([In] Guid effectId);
 
         /// <summary>
         /// Set effect.
@@ -294,7 +294,7 @@ namespace Colore.Native
         /// <param name="effectId">ID of the effect that needs to be set.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
-        internal delegate Result SetEffectDelegate([In] Guid effectId);
+        public delegate Result SetEffectDelegate([In] Guid effectId);
 
         /// <summary>
         /// Register for event notification.
@@ -344,14 +344,14 @@ namespace Colore.Native
         /// </list>
         /// </remarks>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
-        internal delegate Result RegisterEventNotificationDelegate([In] IntPtr hwnd);
+        public delegate Result RegisterEventNotificationDelegate([In] IntPtr hwnd);
 
         /// <summary>
         /// Unregister for event notification.
         /// </summary>
         /// <returns><see cref="Result" /> value indicating success.</returns>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
-        internal delegate Result UnregisterEventNotificationDelegate();
+        public delegate Result UnregisterEventNotificationDelegate();
 
         /// <summary>
         /// Query for device information.
@@ -360,77 +360,91 @@ namespace Colore.Native
         /// <param name="info">Will contain device information for the device specified by <paramref name="deviceId" />.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
-        internal delegate Result QueryDeviceDelegate([In] Guid deviceId, [Out] IntPtr info);
+        public delegate Result QueryDeviceDelegate([In] Guid deviceId, [Out] IntPtr info);
 
+        /// <inheritdoc />
         /// <summary>
         /// Gets a reference to the loaded <see cref="InitDelegate" />.
         /// </summary>
-        internal InitDelegate Init { get; }
+        public InitDelegate Init { get; }
 
+        /// <inheritdoc />
         /// <summary>
         /// Gets a reference to the loaded <see cref="UnInitDelegate" />.
         /// </summary>
-        internal UnInitDelegate UnInit { get; }
+        public UnInitDelegate UnInit { get; }
 
+        /// <inheritdoc />
         /// <summary>
         /// Gets a reference to the loaded <see cref="CreateEffectDelegate" />.
         /// </summary>
-        internal CreateEffectDelegate CreateEffect { get; }
+        public CreateEffectDelegate CreateEffect { get; }
 
+        /// <inheritdoc />
         /// <summary>
         /// Gets a reference to the loaded <see cref="CreateKeyboardEffectDelegate" />.
         /// </summary>
-        internal CreateKeyboardEffectDelegate CreateKeyboardEffect { get; }
+        public CreateKeyboardEffectDelegate CreateKeyboardEffect { get; }
 
+        /// <inheritdoc />
         /// <summary>
         /// Gets a reference to the loaded <see cref="CreateMouseEffectDelegate" />.
         /// </summary>
-        internal CreateMouseEffectDelegate CreateMouseEffect { get; }
+        public CreateMouseEffectDelegate CreateMouseEffect { get; }
 
+        /// <inheritdoc />
         /// <summary>
         /// Gets a reference to the loaded <see cref="CreateHeadsetEffectDelegate" />.
         /// </summary>
-        internal CreateHeadsetEffectDelegate CreateHeadsetEffect { get; }
+        public CreateHeadsetEffectDelegate CreateHeadsetEffect { get; }
 
+        /// <inheritdoc />
         /// <summary>
         /// Gets a reference to the loaded <see cref="CreateMousepadEffectDelegate" />.
         /// </summary>
-        internal CreateMousepadEffectDelegate CreateMousepadEffect { get; }
+        public CreateMousepadEffectDelegate CreateMousepadEffect { get; }
 
+        /// <inheritdoc />
         /// <summary>
         /// Gets a reference to the loaded <see cref="CreateKeypadEffectDelegate" />.
         /// </summary>
-        internal CreateKeypadEffectDelegate CreateKeypadEffect { get; }
+        public CreateKeypadEffectDelegate CreateKeypadEffect { get; }
 
+        /// <inheritdoc />
         /// <summary>
         /// Gets a reference to the loaded <see cref="CreateChromaLinkEffectDelegate" />.
         /// </summary>
-        internal CreateChromaLinkEffectDelegate CreateChromaLinkEffect { get; }
+        public CreateChromaLinkEffectDelegate CreateChromaLinkEffect { get; }
 
+        /// <inheritdoc />
         /// <summary>
         /// Gets a reference to the loaded <see cref="DeleteEffectDelegate" />.
         /// </summary>
-        internal DeleteEffectDelegate DeleteEffect { get; }
+        public DeleteEffectDelegate DeleteEffect { get; }
 
+        /// <inheritdoc />
         /// <summary>
         /// Gets a reference to the loaded <see cref="SetEffectDelegate" />.
         /// </summary>
-        internal SetEffectDelegate SetEffect { get; }
+        public SetEffectDelegate SetEffect { get; }
 
+        /// <inheritdoc />
         /// <summary>
         /// Gets a reference to the loaded <see cref="RegisterEventNotificationDelegate" />.
         /// </summary>
-        internal RegisterEventNotificationDelegate RegisterEventNotification { get; }
+        public RegisterEventNotificationDelegate RegisterEventNotification { get; }
 
+        /// <inheritdoc />
         /// <summary>
         /// Gets a reference to the loaded <see cref="UnregisterEventNotificationDelegate" />.
         /// </summary>
-        internal UnregisterEventNotificationDelegate UnregisterEventNotification { get; }
+        public UnregisterEventNotificationDelegate UnregisterEventNotification { get; }
 
+        /// <inheritdoc />
         /// <summary>
         /// Gets a reference to the loaded <see cref="QueryDeviceDelegate" />.
         /// </summary>
-        internal QueryDeviceDelegate QueryDevice { get; }
+        public QueryDeviceDelegate QueryDevice { get; }
 
         /// <inheritdoc />
         /// <summary>
