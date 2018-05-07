@@ -8,6 +8,7 @@
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <CodeAnalysisRuleset>../Colore.ruleset</CodeAnalysisRuleset>
     <Features>IOperation</Features>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
