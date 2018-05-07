@@ -41,10 +41,8 @@ namespace Colore.Implementations
         /// Initializes a new instance of the <see cref="DeviceImplementation" /> class.
         /// </summary>
         /// <param name="api">Reference to the Chroma API in use.</param>
-        protected DeviceImplementation(IChromaApi api)
-        {
-            Api = api;
-        }
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="api" /> is null.</exception>
+        protected DeviceImplementation(IChromaApi api) => Api = api ?? throw new ArgumentNullException(nameof(api));
 
         /// <inheritdoc />
         /// <summary>
