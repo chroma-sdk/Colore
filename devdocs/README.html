@@ -114,11 +114,12 @@ By participating in this project you agree to abide by its terms.</p>
 <h3 id="extensions">Extensions</h3>
 <p>The <a href="https://github.com/chroma-sdk/Colore.Wpf">WPF</a> and <a href="https://github.com/chroma-sdk/Colore.WinForms">WinForms</a> extension packages for Colore are not yet available for the new Colore version, but will be on NuGet soon, so stay tuned!</p>
 <h2 id="using">Using</h2>
-<p>Obtain a reference to an <code>IChroma</code> instance by calling <code>Corale.Colore.ColoreProvider.CreateNative()</code>.</p>
+<p>Obtain a reference to an <code>IChroma</code> instance by calling <code>Colore.ColoreProvider.CreateNative()</code>.</p>
 <p>This instance initializes the Chroma SDK so it is important you <strong>save this reference</strong> for the lifetime of your application!
 If you need to dispose of it and obtain a new one later, be sure to call the uninitialize method first!</p>
-<p>Currently there is only support for binding to the <a href="https://assets.razerzone.com/dev_portal/C%2B%2B/html/index.html">native Chroma SDK</a>.
-Support for the <a href="https://assets.razerzone.com/dev_portal/REST/html/index.html">REST API</a> is planned and will be implemented for the 6.0 release.</p>
+<p>Colore supports binding to both the <a href="https://assets.razerzone.com/dev_portal/C%2B%2B/html/index.html">native Chroma SDK</a> and the <a href="https://assets.razerzone.com/dev_portal/REST/html/index.html">REST API</a>.
+To use the REST API, create an <code>IChroma</code> instance by calling <code>Colore.ColoreProvider.CreateRestAsync(AppInfo)</code>.
+The REST API requires information about your application, so you&#39;ll have to pass an instance of <code>AppInfo</code> to <code>CreateRestAsync</code> containing details about your application or game.</p>
 <p>For a more in-depth guide on how to get started, check out <a href="https://github.com/chroma-sdk/Colore/wiki/Getting-started">our wiki</a>.</p>
 <h2 id="dependencies">Dependencies</h2>
 <p>Colore depends on the Razer Chroma SDK (<code>RzChromaSDK64.dll</code> or <code>RzChromaSDK.dll</code>).</p>

@@ -6070,6 +6070,429 @@ references:
   commentId: N:Colore.Native
   fullName: Colore.Native
   nameWithType: Colore.Native
+- uid: Colore.Native.INativeSdkMethods
+  name: INativeSdkMethods
+  href: api/Colore.Native.INativeSdkMethods.html
+  commentId: T:Colore.Native.INativeSdkMethods
+  fullName: Colore.Native.INativeSdkMethods
+  nameWithType: INativeSdkMethods
+- uid: Colore.Native.INativeSdkMethods.CreateChromaLinkEffect
+  name: CreateChromaLinkEffect
+  href: api/Colore.Native.INativeSdkMethods.html#Colore_Native_INativeSdkMethods_CreateChromaLinkEffect
+  commentId: P:Colore.Native.INativeSdkMethods.CreateChromaLinkEffect
+  fullName: Colore.Native.INativeSdkMethods.CreateChromaLinkEffect
+  nameWithType: INativeSdkMethods.CreateChromaLinkEffect
+- uid: Colore.Native.INativeSdkMethods.CreateChromaLinkEffect*
+  name: CreateChromaLinkEffect
+  href: api/Colore.Native.INativeSdkMethods.html#Colore_Native_INativeSdkMethods_CreateChromaLinkEffect_
+  commentId: Overload:Colore.Native.INativeSdkMethods.CreateChromaLinkEffect
+  fullName: Colore.Native.INativeSdkMethods.CreateChromaLinkEffect
+  nameWithType: INativeSdkMethods.CreateChromaLinkEffect
+- uid: Colore.Native.INativeSdkMethods.CreateEffect
+  name: CreateEffect
+  href: api/Colore.Native.INativeSdkMethods.html#Colore_Native_INativeSdkMethods_CreateEffect
+  commentId: P:Colore.Native.INativeSdkMethods.CreateEffect
+  fullName: Colore.Native.INativeSdkMethods.CreateEffect
+  nameWithType: INativeSdkMethods.CreateEffect
+- uid: Colore.Native.INativeSdkMethods.CreateEffect*
+  name: CreateEffect
+  href: api/Colore.Native.INativeSdkMethods.html#Colore_Native_INativeSdkMethods_CreateEffect_
+  commentId: Overload:Colore.Native.INativeSdkMethods.CreateEffect
+  fullName: Colore.Native.INativeSdkMethods.CreateEffect
+  nameWithType: INativeSdkMethods.CreateEffect
+- uid: Colore.Native.INativeSdkMethods.CreateHeadsetEffect
+  name: CreateHeadsetEffect
+  href: api/Colore.Native.INativeSdkMethods.html#Colore_Native_INativeSdkMethods_CreateHeadsetEffect
+  commentId: P:Colore.Native.INativeSdkMethods.CreateHeadsetEffect
+  fullName: Colore.Native.INativeSdkMethods.CreateHeadsetEffect
+  nameWithType: INativeSdkMethods.CreateHeadsetEffect
+- uid: Colore.Native.INativeSdkMethods.CreateHeadsetEffect*
+  name: CreateHeadsetEffect
+  href: api/Colore.Native.INativeSdkMethods.html#Colore_Native_INativeSdkMethods_CreateHeadsetEffect_
+  commentId: Overload:Colore.Native.INativeSdkMethods.CreateHeadsetEffect
+  fullName: Colore.Native.INativeSdkMethods.CreateHeadsetEffect
+  nameWithType: INativeSdkMethods.CreateHeadsetEffect
+- uid: Colore.Native.INativeSdkMethods.CreateKeyboardEffect
+  name: CreateKeyboardEffect
+  href: api/Colore.Native.INativeSdkMethods.html#Colore_Native_INativeSdkMethods_CreateKeyboardEffect
+  commentId: P:Colore.Native.INativeSdkMethods.CreateKeyboardEffect
+  fullName: Colore.Native.INativeSdkMethods.CreateKeyboardEffect
+  nameWithType: INativeSdkMethods.CreateKeyboardEffect
+- uid: Colore.Native.INativeSdkMethods.CreateKeyboardEffect*
+  name: CreateKeyboardEffect
+  href: api/Colore.Native.INativeSdkMethods.html#Colore_Native_INativeSdkMethods_CreateKeyboardEffect_
+  commentId: Overload:Colore.Native.INativeSdkMethods.CreateKeyboardEffect
+  fullName: Colore.Native.INativeSdkMethods.CreateKeyboardEffect
+  nameWithType: INativeSdkMethods.CreateKeyboardEffect
+- uid: Colore.Native.INativeSdkMethods.CreateKeypadEffect
+  name: CreateKeypadEffect
+  href: api/Colore.Native.INativeSdkMethods.html#Colore_Native_INativeSdkMethods_CreateKeypadEffect
+  commentId: P:Colore.Native.INativeSdkMethods.CreateKeypadEffect
+  fullName: Colore.Native.INativeSdkMethods.CreateKeypadEffect
+  nameWithType: INativeSdkMethods.CreateKeypadEffect
+- uid: Colore.Native.INativeSdkMethods.CreateKeypadEffect*
+  name: CreateKeypadEffect
+  href: api/Colore.Native.INativeSdkMethods.html#Colore_Native_INativeSdkMethods_CreateKeypadEffect_
+  commentId: Overload:Colore.Native.INativeSdkMethods.CreateKeypadEffect
+  fullName: Colore.Native.INativeSdkMethods.CreateKeypadEffect
+  nameWithType: INativeSdkMethods.CreateKeypadEffect
+- uid: Colore.Native.INativeSdkMethods.CreateMouseEffect
+  name: CreateMouseEffect
+  href: api/Colore.Native.INativeSdkMethods.html#Colore_Native_INativeSdkMethods_CreateMouseEffect
+  commentId: P:Colore.Native.INativeSdkMethods.CreateMouseEffect
+  fullName: Colore.Native.INativeSdkMethods.CreateMouseEffect
+  nameWithType: INativeSdkMethods.CreateMouseEffect
+- uid: Colore.Native.INativeSdkMethods.CreateMouseEffect*
+  name: CreateMouseEffect
+  href: api/Colore.Native.INativeSdkMethods.html#Colore_Native_INativeSdkMethods_CreateMouseEffect_
+  commentId: Overload:Colore.Native.INativeSdkMethods.CreateMouseEffect
+  fullName: Colore.Native.INativeSdkMethods.CreateMouseEffect
+  nameWithType: INativeSdkMethods.CreateMouseEffect
+- uid: Colore.Native.INativeSdkMethods.CreateMousepadEffect
+  name: CreateMousepadEffect
+  href: api/Colore.Native.INativeSdkMethods.html#Colore_Native_INativeSdkMethods_CreateMousepadEffect
+  commentId: P:Colore.Native.INativeSdkMethods.CreateMousepadEffect
+  fullName: Colore.Native.INativeSdkMethods.CreateMousepadEffect
+  nameWithType: INativeSdkMethods.CreateMousepadEffect
+- uid: Colore.Native.INativeSdkMethods.CreateMousepadEffect*
+  name: CreateMousepadEffect
+  href: api/Colore.Native.INativeSdkMethods.html#Colore_Native_INativeSdkMethods_CreateMousepadEffect_
+  commentId: Overload:Colore.Native.INativeSdkMethods.CreateMousepadEffect
+  fullName: Colore.Native.INativeSdkMethods.CreateMousepadEffect
+  nameWithType: INativeSdkMethods.CreateMousepadEffect
+- uid: Colore.Native.INativeSdkMethods.DeleteEffect
+  name: DeleteEffect
+  href: api/Colore.Native.INativeSdkMethods.html#Colore_Native_INativeSdkMethods_DeleteEffect
+  commentId: P:Colore.Native.INativeSdkMethods.DeleteEffect
+  fullName: Colore.Native.INativeSdkMethods.DeleteEffect
+  nameWithType: INativeSdkMethods.DeleteEffect
+- uid: Colore.Native.INativeSdkMethods.DeleteEffect*
+  name: DeleteEffect
+  href: api/Colore.Native.INativeSdkMethods.html#Colore_Native_INativeSdkMethods_DeleteEffect_
+  commentId: Overload:Colore.Native.INativeSdkMethods.DeleteEffect
+  fullName: Colore.Native.INativeSdkMethods.DeleteEffect
+  nameWithType: INativeSdkMethods.DeleteEffect
+- uid: Colore.Native.INativeSdkMethods.Init
+  name: Init
+  href: api/Colore.Native.INativeSdkMethods.html#Colore_Native_INativeSdkMethods_Init
+  commentId: P:Colore.Native.INativeSdkMethods.Init
+  fullName: Colore.Native.INativeSdkMethods.Init
+  nameWithType: INativeSdkMethods.Init
+- uid: Colore.Native.INativeSdkMethods.Init*
+  name: Init
+  href: api/Colore.Native.INativeSdkMethods.html#Colore_Native_INativeSdkMethods_Init_
+  commentId: Overload:Colore.Native.INativeSdkMethods.Init
+  fullName: Colore.Native.INativeSdkMethods.Init
+  nameWithType: INativeSdkMethods.Init
+- uid: Colore.Native.INativeSdkMethods.QueryDevice
+  name: QueryDevice
+  href: api/Colore.Native.INativeSdkMethods.html#Colore_Native_INativeSdkMethods_QueryDevice
+  commentId: P:Colore.Native.INativeSdkMethods.QueryDevice
+  fullName: Colore.Native.INativeSdkMethods.QueryDevice
+  nameWithType: INativeSdkMethods.QueryDevice
+- uid: Colore.Native.INativeSdkMethods.QueryDevice*
+  name: QueryDevice
+  href: api/Colore.Native.INativeSdkMethods.html#Colore_Native_INativeSdkMethods_QueryDevice_
+  commentId: Overload:Colore.Native.INativeSdkMethods.QueryDevice
+  fullName: Colore.Native.INativeSdkMethods.QueryDevice
+  nameWithType: INativeSdkMethods.QueryDevice
+- uid: Colore.Native.INativeSdkMethods.RegisterEventNotification
+  name: RegisterEventNotification
+  href: api/Colore.Native.INativeSdkMethods.html#Colore_Native_INativeSdkMethods_RegisterEventNotification
+  commentId: P:Colore.Native.INativeSdkMethods.RegisterEventNotification
+  fullName: Colore.Native.INativeSdkMethods.RegisterEventNotification
+  nameWithType: INativeSdkMethods.RegisterEventNotification
+- uid: Colore.Native.INativeSdkMethods.RegisterEventNotification*
+  name: RegisterEventNotification
+  href: api/Colore.Native.INativeSdkMethods.html#Colore_Native_INativeSdkMethods_RegisterEventNotification_
+  commentId: Overload:Colore.Native.INativeSdkMethods.RegisterEventNotification
+  fullName: Colore.Native.INativeSdkMethods.RegisterEventNotification
+  nameWithType: INativeSdkMethods.RegisterEventNotification
+- uid: Colore.Native.INativeSdkMethods.SetEffect
+  name: SetEffect
+  href: api/Colore.Native.INativeSdkMethods.html#Colore_Native_INativeSdkMethods_SetEffect
+  commentId: P:Colore.Native.INativeSdkMethods.SetEffect
+  fullName: Colore.Native.INativeSdkMethods.SetEffect
+  nameWithType: INativeSdkMethods.SetEffect
+- uid: Colore.Native.INativeSdkMethods.SetEffect*
+  name: SetEffect
+  href: api/Colore.Native.INativeSdkMethods.html#Colore_Native_INativeSdkMethods_SetEffect_
+  commentId: Overload:Colore.Native.INativeSdkMethods.SetEffect
+  fullName: Colore.Native.INativeSdkMethods.SetEffect
+  nameWithType: INativeSdkMethods.SetEffect
+- uid: Colore.Native.INativeSdkMethods.UnInit
+  name: UnInit
+  href: api/Colore.Native.INativeSdkMethods.html#Colore_Native_INativeSdkMethods_UnInit
+  commentId: P:Colore.Native.INativeSdkMethods.UnInit
+  fullName: Colore.Native.INativeSdkMethods.UnInit
+  nameWithType: INativeSdkMethods.UnInit
+- uid: Colore.Native.INativeSdkMethods.UnInit*
+  name: UnInit
+  href: api/Colore.Native.INativeSdkMethods.html#Colore_Native_INativeSdkMethods_UnInit_
+  commentId: Overload:Colore.Native.INativeSdkMethods.UnInit
+  fullName: Colore.Native.INativeSdkMethods.UnInit
+  nameWithType: INativeSdkMethods.UnInit
+- uid: Colore.Native.INativeSdkMethods.UnregisterEventNotification
+  name: UnregisterEventNotification
+  href: api/Colore.Native.INativeSdkMethods.html#Colore_Native_INativeSdkMethods_UnregisterEventNotification
+  commentId: P:Colore.Native.INativeSdkMethods.UnregisterEventNotification
+  fullName: Colore.Native.INativeSdkMethods.UnregisterEventNotification
+  nameWithType: INativeSdkMethods.UnregisterEventNotification
+- uid: Colore.Native.INativeSdkMethods.UnregisterEventNotification*
+  name: UnregisterEventNotification
+  href: api/Colore.Native.INativeSdkMethods.html#Colore_Native_INativeSdkMethods_UnregisterEventNotification_
+  commentId: Overload:Colore.Native.INativeSdkMethods.UnregisterEventNotification
+  fullName: Colore.Native.INativeSdkMethods.UnregisterEventNotification
+  nameWithType: INativeSdkMethods.UnregisterEventNotification
+- uid: Colore.Native.NativeApi
+  name: NativeApi
+  href: api/Colore.Native.NativeApi.html
+  commentId: T:Colore.Native.NativeApi
+  fullName: Colore.Native.NativeApi
+  nameWithType: NativeApi
+- uid: Colore.Native.NativeApi.#ctor(Colore.Native.INativeSdkMethods)
+  name: NativeApi(INativeSdkMethods)
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi__ctor_Colore_Native_INativeSdkMethods_
+  commentId: M:Colore.Native.NativeApi.#ctor(Colore.Native.INativeSdkMethods)
+  fullName: Colore.Native.NativeApi.NativeApi(Colore.Native.INativeSdkMethods)
+  nameWithType: NativeApi.NativeApi(INativeSdkMethods)
+- uid: Colore.Native.NativeApi.#ctor*
+  name: NativeApi
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi__ctor_
+  commentId: Overload:Colore.Native.NativeApi.#ctor
+  fullName: Colore.Native.NativeApi.NativeApi
+  nameWithType: NativeApi.NativeApi
+- uid: Colore.Native.NativeApi.CreateChromaLinkEffectAsync(Colore.Effects.ChromaLink.ChromaLinkEffect)
+  name: CreateChromaLinkEffectAsync(ChromaLinkEffect)
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_CreateChromaLinkEffectAsync_Colore_Effects_ChromaLink_ChromaLinkEffect_
+  commentId: M:Colore.Native.NativeApi.CreateChromaLinkEffectAsync(Colore.Effects.ChromaLink.ChromaLinkEffect)
+  fullName: Colore.Native.NativeApi.CreateChromaLinkEffectAsync(Colore.Effects.ChromaLink.ChromaLinkEffect)
+  nameWithType: NativeApi.CreateChromaLinkEffectAsync(ChromaLinkEffect)
+- uid: Colore.Native.NativeApi.CreateChromaLinkEffectAsync*
+  name: CreateChromaLinkEffectAsync
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_CreateChromaLinkEffectAsync_
+  commentId: Overload:Colore.Native.NativeApi.CreateChromaLinkEffectAsync
+  fullName: Colore.Native.NativeApi.CreateChromaLinkEffectAsync
+  nameWithType: NativeApi.CreateChromaLinkEffectAsync
+- uid: Colore.Native.NativeApi.CreateChromaLinkEffectAsync``1(Colore.Effects.ChromaLink.ChromaLinkEffect,``0)
+  name: CreateChromaLinkEffectAsync<T>(ChromaLinkEffect, T)
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_CreateChromaLinkEffectAsync__1_Colore_Effects_ChromaLink_ChromaLinkEffect___0_
+  commentId: M:Colore.Native.NativeApi.CreateChromaLinkEffectAsync``1(Colore.Effects.ChromaLink.ChromaLinkEffect,``0)
+  name.vb: CreateChromaLinkEffectAsync(Of T)(ChromaLinkEffect, T)
+  fullName: Colore.Native.NativeApi.CreateChromaLinkEffectAsync<T>(Colore.Effects.ChromaLink.ChromaLinkEffect, T)
+  fullName.vb: Colore.Native.NativeApi.CreateChromaLinkEffectAsync(Of T)(Colore.Effects.ChromaLink.ChromaLinkEffect, T)
+  nameWithType: NativeApi.CreateChromaLinkEffectAsync<T>(ChromaLinkEffect, T)
+  nameWithType.vb: NativeApi.CreateChromaLinkEffectAsync(Of T)(ChromaLinkEffect, T)
+- uid: Colore.Native.NativeApi.CreateDeviceEffectAsync(System.Guid,Colore.Effects.Generic.Effect)
+  name: CreateDeviceEffectAsync(Guid, Effect)
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_CreateDeviceEffectAsync_System_Guid_Colore_Effects_Generic_Effect_
+  commentId: M:Colore.Native.NativeApi.CreateDeviceEffectAsync(System.Guid,Colore.Effects.Generic.Effect)
+  fullName: Colore.Native.NativeApi.CreateDeviceEffectAsync(System.Guid, Colore.Effects.Generic.Effect)
+  nameWithType: NativeApi.CreateDeviceEffectAsync(Guid, Effect)
+- uid: Colore.Native.NativeApi.CreateDeviceEffectAsync*
+  name: CreateDeviceEffectAsync
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_CreateDeviceEffectAsync_
+  commentId: Overload:Colore.Native.NativeApi.CreateDeviceEffectAsync
+  fullName: Colore.Native.NativeApi.CreateDeviceEffectAsync
+  nameWithType: NativeApi.CreateDeviceEffectAsync
+- uid: Colore.Native.NativeApi.CreateDeviceEffectAsync``1(System.Guid,Colore.Effects.Generic.Effect,``0)
+  name: CreateDeviceEffectAsync<T>(Guid, Effect, T)
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_CreateDeviceEffectAsync__1_System_Guid_Colore_Effects_Generic_Effect___0_
+  commentId: M:Colore.Native.NativeApi.CreateDeviceEffectAsync``1(System.Guid,Colore.Effects.Generic.Effect,``0)
+  name.vb: CreateDeviceEffectAsync(Of T)(Guid, Effect, T)
+  fullName: Colore.Native.NativeApi.CreateDeviceEffectAsync<T>(System.Guid, Colore.Effects.Generic.Effect, T)
+  fullName.vb: Colore.Native.NativeApi.CreateDeviceEffectAsync(Of T)(System.Guid, Colore.Effects.Generic.Effect, T)
+  nameWithType: NativeApi.CreateDeviceEffectAsync<T>(Guid, Effect, T)
+  nameWithType.vb: NativeApi.CreateDeviceEffectAsync(Of T)(Guid, Effect, T)
+- uid: Colore.Native.NativeApi.CreateHeadsetEffectAsync(Colore.Effects.Headset.HeadsetEffect)
+  name: CreateHeadsetEffectAsync(HeadsetEffect)
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_CreateHeadsetEffectAsync_Colore_Effects_Headset_HeadsetEffect_
+  commentId: M:Colore.Native.NativeApi.CreateHeadsetEffectAsync(Colore.Effects.Headset.HeadsetEffect)
+  fullName: Colore.Native.NativeApi.CreateHeadsetEffectAsync(Colore.Effects.Headset.HeadsetEffect)
+  nameWithType: NativeApi.CreateHeadsetEffectAsync(HeadsetEffect)
+- uid: Colore.Native.NativeApi.CreateHeadsetEffectAsync*
+  name: CreateHeadsetEffectAsync
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_CreateHeadsetEffectAsync_
+  commentId: Overload:Colore.Native.NativeApi.CreateHeadsetEffectAsync
+  fullName: Colore.Native.NativeApi.CreateHeadsetEffectAsync
+  nameWithType: NativeApi.CreateHeadsetEffectAsync
+- uid: Colore.Native.NativeApi.CreateHeadsetEffectAsync``1(Colore.Effects.Headset.HeadsetEffect,``0)
+  name: CreateHeadsetEffectAsync<T>(HeadsetEffect, T)
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_CreateHeadsetEffectAsync__1_Colore_Effects_Headset_HeadsetEffect___0_
+  commentId: M:Colore.Native.NativeApi.CreateHeadsetEffectAsync``1(Colore.Effects.Headset.HeadsetEffect,``0)
+  name.vb: CreateHeadsetEffectAsync(Of T)(HeadsetEffect, T)
+  fullName: Colore.Native.NativeApi.CreateHeadsetEffectAsync<T>(Colore.Effects.Headset.HeadsetEffect, T)
+  fullName.vb: Colore.Native.NativeApi.CreateHeadsetEffectAsync(Of T)(Colore.Effects.Headset.HeadsetEffect, T)
+  nameWithType: NativeApi.CreateHeadsetEffectAsync<T>(HeadsetEffect, T)
+  nameWithType.vb: NativeApi.CreateHeadsetEffectAsync(Of T)(HeadsetEffect, T)
+- uid: Colore.Native.NativeApi.CreateKeyboardEffectAsync(Colore.Effects.Keyboard.KeyboardEffect)
+  name: CreateKeyboardEffectAsync(KeyboardEffect)
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_CreateKeyboardEffectAsync_Colore_Effects_Keyboard_KeyboardEffect_
+  commentId: M:Colore.Native.NativeApi.CreateKeyboardEffectAsync(Colore.Effects.Keyboard.KeyboardEffect)
+  fullName: Colore.Native.NativeApi.CreateKeyboardEffectAsync(Colore.Effects.Keyboard.KeyboardEffect)
+  nameWithType: NativeApi.CreateKeyboardEffectAsync(KeyboardEffect)
+- uid: Colore.Native.NativeApi.CreateKeyboardEffectAsync*
+  name: CreateKeyboardEffectAsync
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_CreateKeyboardEffectAsync_
+  commentId: Overload:Colore.Native.NativeApi.CreateKeyboardEffectAsync
+  fullName: Colore.Native.NativeApi.CreateKeyboardEffectAsync
+  nameWithType: NativeApi.CreateKeyboardEffectAsync
+- uid: Colore.Native.NativeApi.CreateKeyboardEffectAsync``1(Colore.Effects.Keyboard.KeyboardEffect,``0)
+  name: CreateKeyboardEffectAsync<T>(KeyboardEffect, T)
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_CreateKeyboardEffectAsync__1_Colore_Effects_Keyboard_KeyboardEffect___0_
+  commentId: M:Colore.Native.NativeApi.CreateKeyboardEffectAsync``1(Colore.Effects.Keyboard.KeyboardEffect,``0)
+  name.vb: CreateKeyboardEffectAsync(Of T)(KeyboardEffect, T)
+  fullName: Colore.Native.NativeApi.CreateKeyboardEffectAsync<T>(Colore.Effects.Keyboard.KeyboardEffect, T)
+  fullName.vb: Colore.Native.NativeApi.CreateKeyboardEffectAsync(Of T)(Colore.Effects.Keyboard.KeyboardEffect, T)
+  nameWithType: NativeApi.CreateKeyboardEffectAsync<T>(KeyboardEffect, T)
+  nameWithType.vb: NativeApi.CreateKeyboardEffectAsync(Of T)(KeyboardEffect, T)
+- uid: Colore.Native.NativeApi.CreateKeypadEffectAsync(Colore.Effects.Keypad.KeypadEffect)
+  name: CreateKeypadEffectAsync(KeypadEffect)
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_CreateKeypadEffectAsync_Colore_Effects_Keypad_KeypadEffect_
+  commentId: M:Colore.Native.NativeApi.CreateKeypadEffectAsync(Colore.Effects.Keypad.KeypadEffect)
+  fullName: Colore.Native.NativeApi.CreateKeypadEffectAsync(Colore.Effects.Keypad.KeypadEffect)
+  nameWithType: NativeApi.CreateKeypadEffectAsync(KeypadEffect)
+- uid: Colore.Native.NativeApi.CreateKeypadEffectAsync*
+  name: CreateKeypadEffectAsync
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_CreateKeypadEffectAsync_
+  commentId: Overload:Colore.Native.NativeApi.CreateKeypadEffectAsync
+  fullName: Colore.Native.NativeApi.CreateKeypadEffectAsync
+  nameWithType: NativeApi.CreateKeypadEffectAsync
+- uid: Colore.Native.NativeApi.CreateKeypadEffectAsync``1(Colore.Effects.Keypad.KeypadEffect,``0)
+  name: CreateKeypadEffectAsync<T>(KeypadEffect, T)
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_CreateKeypadEffectAsync__1_Colore_Effects_Keypad_KeypadEffect___0_
+  commentId: M:Colore.Native.NativeApi.CreateKeypadEffectAsync``1(Colore.Effects.Keypad.KeypadEffect,``0)
+  name.vb: CreateKeypadEffectAsync(Of T)(KeypadEffect, T)
+  fullName: Colore.Native.NativeApi.CreateKeypadEffectAsync<T>(Colore.Effects.Keypad.KeypadEffect, T)
+  fullName.vb: Colore.Native.NativeApi.CreateKeypadEffectAsync(Of T)(Colore.Effects.Keypad.KeypadEffect, T)
+  nameWithType: NativeApi.CreateKeypadEffectAsync<T>(KeypadEffect, T)
+  nameWithType.vb: NativeApi.CreateKeypadEffectAsync(Of T)(KeypadEffect, T)
+- uid: Colore.Native.NativeApi.CreateMouseEffectAsync(Colore.Effects.Mouse.MouseEffect)
+  name: CreateMouseEffectAsync(MouseEffect)
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_CreateMouseEffectAsync_Colore_Effects_Mouse_MouseEffect_
+  commentId: M:Colore.Native.NativeApi.CreateMouseEffectAsync(Colore.Effects.Mouse.MouseEffect)
+  fullName: Colore.Native.NativeApi.CreateMouseEffectAsync(Colore.Effects.Mouse.MouseEffect)
+  nameWithType: NativeApi.CreateMouseEffectAsync(MouseEffect)
+- uid: Colore.Native.NativeApi.CreateMouseEffectAsync*
+  name: CreateMouseEffectAsync
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_CreateMouseEffectAsync_
+  commentId: Overload:Colore.Native.NativeApi.CreateMouseEffectAsync
+  fullName: Colore.Native.NativeApi.CreateMouseEffectAsync
+  nameWithType: NativeApi.CreateMouseEffectAsync
+- uid: Colore.Native.NativeApi.CreateMouseEffectAsync``1(Colore.Effects.Mouse.MouseEffect,``0)
+  name: CreateMouseEffectAsync<T>(MouseEffect, T)
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_CreateMouseEffectAsync__1_Colore_Effects_Mouse_MouseEffect___0_
+  commentId: M:Colore.Native.NativeApi.CreateMouseEffectAsync``1(Colore.Effects.Mouse.MouseEffect,``0)
+  name.vb: CreateMouseEffectAsync(Of T)(MouseEffect, T)
+  fullName: Colore.Native.NativeApi.CreateMouseEffectAsync<T>(Colore.Effects.Mouse.MouseEffect, T)
+  fullName.vb: Colore.Native.NativeApi.CreateMouseEffectAsync(Of T)(Colore.Effects.Mouse.MouseEffect, T)
+  nameWithType: NativeApi.CreateMouseEffectAsync<T>(MouseEffect, T)
+  nameWithType.vb: NativeApi.CreateMouseEffectAsync(Of T)(MouseEffect, T)
+- uid: Colore.Native.NativeApi.CreateMousepadEffectAsync(Colore.Effects.Mousepad.MousepadEffect)
+  name: CreateMousepadEffectAsync(MousepadEffect)
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_CreateMousepadEffectAsync_Colore_Effects_Mousepad_MousepadEffect_
+  commentId: M:Colore.Native.NativeApi.CreateMousepadEffectAsync(Colore.Effects.Mousepad.MousepadEffect)
+  fullName: Colore.Native.NativeApi.CreateMousepadEffectAsync(Colore.Effects.Mousepad.MousepadEffect)
+  nameWithType: NativeApi.CreateMousepadEffectAsync(MousepadEffect)
+- uid: Colore.Native.NativeApi.CreateMousepadEffectAsync*
+  name: CreateMousepadEffectAsync
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_CreateMousepadEffectAsync_
+  commentId: Overload:Colore.Native.NativeApi.CreateMousepadEffectAsync
+  fullName: Colore.Native.NativeApi.CreateMousepadEffectAsync
+  nameWithType: NativeApi.CreateMousepadEffectAsync
+- uid: Colore.Native.NativeApi.CreateMousepadEffectAsync``1(Colore.Effects.Mousepad.MousepadEffect,``0)
+  name: CreateMousepadEffectAsync<T>(MousepadEffect, T)
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_CreateMousepadEffectAsync__1_Colore_Effects_Mousepad_MousepadEffect___0_
+  commentId: M:Colore.Native.NativeApi.CreateMousepadEffectAsync``1(Colore.Effects.Mousepad.MousepadEffect,``0)
+  name.vb: CreateMousepadEffectAsync(Of T)(MousepadEffect, T)
+  fullName: Colore.Native.NativeApi.CreateMousepadEffectAsync<T>(Colore.Effects.Mousepad.MousepadEffect, T)
+  fullName.vb: Colore.Native.NativeApi.CreateMousepadEffectAsync(Of T)(Colore.Effects.Mousepad.MousepadEffect, T)
+  nameWithType: NativeApi.CreateMousepadEffectAsync<T>(MousepadEffect, T)
+  nameWithType.vb: NativeApi.CreateMousepadEffectAsync(Of T)(MousepadEffect, T)
+- uid: Colore.Native.NativeApi.DeleteEffectAsync(System.Guid)
+  name: DeleteEffectAsync(Guid)
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_DeleteEffectAsync_System_Guid_
+  commentId: M:Colore.Native.NativeApi.DeleteEffectAsync(System.Guid)
+  fullName: Colore.Native.NativeApi.DeleteEffectAsync(System.Guid)
+  nameWithType: NativeApi.DeleteEffectAsync(Guid)
+- uid: Colore.Native.NativeApi.DeleteEffectAsync*
+  name: DeleteEffectAsync
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_DeleteEffectAsync_
+  commentId: Overload:Colore.Native.NativeApi.DeleteEffectAsync
+  fullName: Colore.Native.NativeApi.DeleteEffectAsync
+  nameWithType: NativeApi.DeleteEffectAsync
+- uid: Colore.Native.NativeApi.InitializeAsync(Colore.Data.AppInfo)
+  name: InitializeAsync(AppInfo)
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_InitializeAsync_Colore_Data_AppInfo_
+  commentId: M:Colore.Native.NativeApi.InitializeAsync(Colore.Data.AppInfo)
+  fullName: Colore.Native.NativeApi.InitializeAsync(Colore.Data.AppInfo)
+  nameWithType: NativeApi.InitializeAsync(AppInfo)
+- uid: Colore.Native.NativeApi.InitializeAsync*
+  name: InitializeAsync
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_InitializeAsync_
+  commentId: Overload:Colore.Native.NativeApi.InitializeAsync
+  fullName: Colore.Native.NativeApi.InitializeAsync
+  nameWithType: NativeApi.InitializeAsync
+- uid: Colore.Native.NativeApi.QueryDeviceAsync(System.Guid)
+  name: QueryDeviceAsync(Guid)
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_QueryDeviceAsync_System_Guid_
+  commentId: M:Colore.Native.NativeApi.QueryDeviceAsync(System.Guid)
+  fullName: Colore.Native.NativeApi.QueryDeviceAsync(System.Guid)
+  nameWithType: NativeApi.QueryDeviceAsync(Guid)
+- uid: Colore.Native.NativeApi.QueryDeviceAsync*
+  name: QueryDeviceAsync
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_QueryDeviceAsync_
+  commentId: Overload:Colore.Native.NativeApi.QueryDeviceAsync
+  fullName: Colore.Native.NativeApi.QueryDeviceAsync
+  nameWithType: NativeApi.QueryDeviceAsync
+- uid: Colore.Native.NativeApi.RegisterEventNotifications(System.IntPtr)
+  name: RegisterEventNotifications(IntPtr)
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_RegisterEventNotifications_System_IntPtr_
+  commentId: M:Colore.Native.NativeApi.RegisterEventNotifications(System.IntPtr)
+  fullName: Colore.Native.NativeApi.RegisterEventNotifications(System.IntPtr)
+  nameWithType: NativeApi.RegisterEventNotifications(IntPtr)
+- uid: Colore.Native.NativeApi.RegisterEventNotifications*
+  name: RegisterEventNotifications
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_RegisterEventNotifications_
+  commentId: Overload:Colore.Native.NativeApi.RegisterEventNotifications
+  fullName: Colore.Native.NativeApi.RegisterEventNotifications
+  nameWithType: NativeApi.RegisterEventNotifications
+- uid: Colore.Native.NativeApi.SetEffectAsync(System.Guid)
+  name: SetEffectAsync(Guid)
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_SetEffectAsync_System_Guid_
+  commentId: M:Colore.Native.NativeApi.SetEffectAsync(System.Guid)
+  fullName: Colore.Native.NativeApi.SetEffectAsync(System.Guid)
+  nameWithType: NativeApi.SetEffectAsync(Guid)
+- uid: Colore.Native.NativeApi.SetEffectAsync*
+  name: SetEffectAsync
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_SetEffectAsync_
+  commentId: Overload:Colore.Native.NativeApi.SetEffectAsync
+  fullName: Colore.Native.NativeApi.SetEffectAsync
+  nameWithType: NativeApi.SetEffectAsync
+- uid: Colore.Native.NativeApi.UninitializeAsync
+  name: UninitializeAsync()
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_UninitializeAsync
+  commentId: M:Colore.Native.NativeApi.UninitializeAsync
+  fullName: Colore.Native.NativeApi.UninitializeAsync()
+  nameWithType: NativeApi.UninitializeAsync()
+- uid: Colore.Native.NativeApi.UninitializeAsync*
+  name: UninitializeAsync
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_UninitializeAsync_
+  commentId: Overload:Colore.Native.NativeApi.UninitializeAsync
+  fullName: Colore.Native.NativeApi.UninitializeAsync
+  nameWithType: NativeApi.UninitializeAsync
+- uid: Colore.Native.NativeApi.UnregisterEventNotifications
+  name: UnregisterEventNotifications()
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_UnregisterEventNotifications
+  commentId: M:Colore.Native.NativeApi.UnregisterEventNotifications
+  fullName: Colore.Native.NativeApi.UnregisterEventNotifications()
+  nameWithType: NativeApi.UnregisterEventNotifications()
+- uid: Colore.Native.NativeApi.UnregisterEventNotifications*
+  name: UnregisterEventNotifications
+  href: api/Colore.Native.NativeApi.html#Colore_Native_NativeApi_UnregisterEventNotifications_
+  commentId: Overload:Colore.Native.NativeApi.UnregisterEventNotifications
+  fullName: Colore.Native.NativeApi.UnregisterEventNotifications
+  nameWithType: NativeApi.UnregisterEventNotifications
 - uid: Colore.Native.NativeCallException
   name: NativeCallException
   href: api/Colore.Native.NativeCallException.html
@@ -6100,6 +6523,1023 @@ references:
   commentId: Overload:Colore.Native.NativeCallException.Function
   fullName: Colore.Native.NativeCallException.Function
   nameWithType: NativeCallException.Function
+- uid: Colore.Native.NativeSdkMethods
+  name: NativeSdkMethods
+  href: api/Colore.Native.NativeSdkMethods.html
+  commentId: T:Colore.Native.NativeSdkMethods
+  fullName: Colore.Native.NativeSdkMethods
+  nameWithType: NativeSdkMethods
+- uid: Colore.Native.NativeSdkMethods.CreateChromaLinkEffect
+  name: CreateChromaLinkEffect
+  href: api/Colore.Native.NativeSdkMethods.html#Colore_Native_NativeSdkMethods_CreateChromaLinkEffect
+  commentId: P:Colore.Native.NativeSdkMethods.CreateChromaLinkEffect
+  fullName: Colore.Native.NativeSdkMethods.CreateChromaLinkEffect
+  nameWithType: NativeSdkMethods.CreateChromaLinkEffect
+- uid: Colore.Native.NativeSdkMethods.CreateChromaLinkEffect*
+  name: CreateChromaLinkEffect
+  href: api/Colore.Native.NativeSdkMethods.html#Colore_Native_NativeSdkMethods_CreateChromaLinkEffect_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateChromaLinkEffect
+  fullName: Colore.Native.NativeSdkMethods.CreateChromaLinkEffect
+  nameWithType: NativeSdkMethods.CreateChromaLinkEffect
+- uid: Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate
+  name: NativeSdkMethods.CreateChromaLinkEffectDelegate
+  href: api/Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.html
+  commentId: T:Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate
+  fullName: Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate
+  nameWithType: NativeSdkMethods.CreateChromaLinkEffectDelegate
+- uid: Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.#ctor(System.Object,System.IntPtr)
+  name: CreateChromaLinkEffectDelegate(Object, IntPtr)
+  href: api/Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateChromaLinkEffectDelegate__ctor_System_Object_System_IntPtr_
+  commentId: M:Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.#ctor(System.Object,System.IntPtr)
+  fullName: Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.CreateChromaLinkEffectDelegate(System.Object, System.IntPtr)
+  nameWithType: NativeSdkMethods.CreateChromaLinkEffectDelegate.CreateChromaLinkEffectDelegate(Object, IntPtr)
+- uid: Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.#ctor*
+  name: CreateChromaLinkEffectDelegate
+  href: api/Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateChromaLinkEffectDelegate__ctor_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.#ctor
+  fullName: Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.CreateChromaLinkEffectDelegate
+  nameWithType: NativeSdkMethods.CreateChromaLinkEffectDelegate.CreateChromaLinkEffectDelegate
+- uid: Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.BeginInvoke(Colore.Effects.ChromaLink.ChromaLinkEffect,System.IntPtr,System.Guid@,System.AsyncCallback,System.Object)
+  name: BeginInvoke(ChromaLinkEffect, IntPtr, ref Guid, AsyncCallback, Object)
+  href: api/Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateChromaLinkEffectDelegate_BeginInvoke_Colore_Effects_ChromaLink_ChromaLinkEffect_System_IntPtr_System_Guid__System_AsyncCallback_System_Object_
+  commentId: M:Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.BeginInvoke(Colore.Effects.ChromaLink.ChromaLinkEffect,System.IntPtr,System.Guid@,System.AsyncCallback,System.Object)
+  name.vb: BeginInvoke(ChromaLinkEffect, IntPtr, ByRef Guid, AsyncCallback, Object)
+  fullName: Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.BeginInvoke(Colore.Effects.ChromaLink.ChromaLinkEffect, System.IntPtr, ref System.Guid, System.AsyncCallback, System.Object)
+  fullName.vb: Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.BeginInvoke(Colore.Effects.ChromaLink.ChromaLinkEffect, System.IntPtr, ByRef System.Guid, System.AsyncCallback, System.Object)
+  nameWithType: NativeSdkMethods.CreateChromaLinkEffectDelegate.BeginInvoke(ChromaLinkEffect, IntPtr, ref Guid, AsyncCallback, Object)
+  nameWithType.vb: NativeSdkMethods.CreateChromaLinkEffectDelegate.BeginInvoke(ChromaLinkEffect, IntPtr, ByRef Guid, AsyncCallback, Object)
+- uid: Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.BeginInvoke*
+  name: BeginInvoke
+  href: api/Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateChromaLinkEffectDelegate_BeginInvoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.BeginInvoke
+  fullName: Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.BeginInvoke
+  nameWithType: NativeSdkMethods.CreateChromaLinkEffectDelegate.BeginInvoke
+- uid: Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.EndInvoke(System.Guid@,System.IAsyncResult)
+  name: EndInvoke(ref Guid, IAsyncResult)
+  href: api/Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateChromaLinkEffectDelegate_EndInvoke_System_Guid__System_IAsyncResult_
+  commentId: M:Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.EndInvoke(System.Guid@,System.IAsyncResult)
+  name.vb: EndInvoke(ByRef Guid, IAsyncResult)
+  fullName: Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.EndInvoke(ref System.Guid, System.IAsyncResult)
+  fullName.vb: Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.EndInvoke(ByRef System.Guid, System.IAsyncResult)
+  nameWithType: NativeSdkMethods.CreateChromaLinkEffectDelegate.EndInvoke(ref Guid, IAsyncResult)
+  nameWithType.vb: NativeSdkMethods.CreateChromaLinkEffectDelegate.EndInvoke(ByRef Guid, IAsyncResult)
+- uid: Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.EndInvoke*
+  name: EndInvoke
+  href: api/Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateChromaLinkEffectDelegate_EndInvoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.EndInvoke
+  fullName: Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.EndInvoke
+  nameWithType: NativeSdkMethods.CreateChromaLinkEffectDelegate.EndInvoke
+- uid: Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.Invoke(Colore.Effects.ChromaLink.ChromaLinkEffect,System.IntPtr,System.Guid@)
+  name: Invoke(ChromaLinkEffect, IntPtr, ref Guid)
+  href: api/Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateChromaLinkEffectDelegate_Invoke_Colore_Effects_ChromaLink_ChromaLinkEffect_System_IntPtr_System_Guid__
+  commentId: M:Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.Invoke(Colore.Effects.ChromaLink.ChromaLinkEffect,System.IntPtr,System.Guid@)
+  name.vb: Invoke(ChromaLinkEffect, IntPtr, ByRef Guid)
+  fullName: Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.Invoke(Colore.Effects.ChromaLink.ChromaLinkEffect, System.IntPtr, ref System.Guid)
+  fullName.vb: Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.Invoke(Colore.Effects.ChromaLink.ChromaLinkEffect, System.IntPtr, ByRef System.Guid)
+  nameWithType: NativeSdkMethods.CreateChromaLinkEffectDelegate.Invoke(ChromaLinkEffect, IntPtr, ref Guid)
+  nameWithType.vb: NativeSdkMethods.CreateChromaLinkEffectDelegate.Invoke(ChromaLinkEffect, IntPtr, ByRef Guid)
+- uid: Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.Invoke*
+  name: Invoke
+  href: api/Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateChromaLinkEffectDelegate_Invoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.Invoke
+  fullName: Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.Invoke
+  nameWithType: NativeSdkMethods.CreateChromaLinkEffectDelegate.Invoke
+- uid: Colore.Native.NativeSdkMethods.CreateEffect
+  name: CreateEffect
+  href: api/Colore.Native.NativeSdkMethods.html#Colore_Native_NativeSdkMethods_CreateEffect
+  commentId: P:Colore.Native.NativeSdkMethods.CreateEffect
+  fullName: Colore.Native.NativeSdkMethods.CreateEffect
+  nameWithType: NativeSdkMethods.CreateEffect
+- uid: Colore.Native.NativeSdkMethods.CreateEffect*
+  name: CreateEffect
+  href: api/Colore.Native.NativeSdkMethods.html#Colore_Native_NativeSdkMethods_CreateEffect_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateEffect
+  fullName: Colore.Native.NativeSdkMethods.CreateEffect
+  nameWithType: NativeSdkMethods.CreateEffect
+- uid: Colore.Native.NativeSdkMethods.CreateEffectDelegate
+  name: NativeSdkMethods.CreateEffectDelegate
+  href: api/Colore.Native.NativeSdkMethods.CreateEffectDelegate.html
+  commentId: T:Colore.Native.NativeSdkMethods.CreateEffectDelegate
+  fullName: Colore.Native.NativeSdkMethods.CreateEffectDelegate
+  nameWithType: NativeSdkMethods.CreateEffectDelegate
+- uid: Colore.Native.NativeSdkMethods.CreateEffectDelegate.#ctor(System.Object,System.IntPtr)
+  name: CreateEffectDelegate(Object, IntPtr)
+  href: api/Colore.Native.NativeSdkMethods.CreateEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateEffectDelegate__ctor_System_Object_System_IntPtr_
+  commentId: M:Colore.Native.NativeSdkMethods.CreateEffectDelegate.#ctor(System.Object,System.IntPtr)
+  fullName: Colore.Native.NativeSdkMethods.CreateEffectDelegate.CreateEffectDelegate(System.Object, System.IntPtr)
+  nameWithType: NativeSdkMethods.CreateEffectDelegate.CreateEffectDelegate(Object, IntPtr)
+- uid: Colore.Native.NativeSdkMethods.CreateEffectDelegate.#ctor*
+  name: CreateEffectDelegate
+  href: api/Colore.Native.NativeSdkMethods.CreateEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateEffectDelegate__ctor_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateEffectDelegate.#ctor
+  fullName: Colore.Native.NativeSdkMethods.CreateEffectDelegate.CreateEffectDelegate
+  nameWithType: NativeSdkMethods.CreateEffectDelegate.CreateEffectDelegate
+- uid: Colore.Native.NativeSdkMethods.CreateEffectDelegate.BeginInvoke(System.Guid,Colore.Effects.Generic.Effect,System.IntPtr,System.Guid@,System.AsyncCallback,System.Object)
+  name: BeginInvoke(Guid, Effect, IntPtr, ref Guid, AsyncCallback, Object)
+  href: api/Colore.Native.NativeSdkMethods.CreateEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateEffectDelegate_BeginInvoke_System_Guid_Colore_Effects_Generic_Effect_System_IntPtr_System_Guid__System_AsyncCallback_System_Object_
+  commentId: M:Colore.Native.NativeSdkMethods.CreateEffectDelegate.BeginInvoke(System.Guid,Colore.Effects.Generic.Effect,System.IntPtr,System.Guid@,System.AsyncCallback,System.Object)
+  name.vb: BeginInvoke(Guid, Effect, IntPtr, ByRef Guid, AsyncCallback, Object)
+  fullName: Colore.Native.NativeSdkMethods.CreateEffectDelegate.BeginInvoke(System.Guid, Colore.Effects.Generic.Effect, System.IntPtr, ref System.Guid, System.AsyncCallback, System.Object)
+  fullName.vb: Colore.Native.NativeSdkMethods.CreateEffectDelegate.BeginInvoke(System.Guid, Colore.Effects.Generic.Effect, System.IntPtr, ByRef System.Guid, System.AsyncCallback, System.Object)
+  nameWithType: NativeSdkMethods.CreateEffectDelegate.BeginInvoke(Guid, Effect, IntPtr, ref Guid, AsyncCallback, Object)
+  nameWithType.vb: NativeSdkMethods.CreateEffectDelegate.BeginInvoke(Guid, Effect, IntPtr, ByRef Guid, AsyncCallback, Object)
+- uid: Colore.Native.NativeSdkMethods.CreateEffectDelegate.BeginInvoke*
+  name: BeginInvoke
+  href: api/Colore.Native.NativeSdkMethods.CreateEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateEffectDelegate_BeginInvoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateEffectDelegate.BeginInvoke
+  fullName: Colore.Native.NativeSdkMethods.CreateEffectDelegate.BeginInvoke
+  nameWithType: NativeSdkMethods.CreateEffectDelegate.BeginInvoke
+- uid: Colore.Native.NativeSdkMethods.CreateEffectDelegate.EndInvoke(System.Guid@,System.IAsyncResult)
+  name: EndInvoke(ref Guid, IAsyncResult)
+  href: api/Colore.Native.NativeSdkMethods.CreateEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateEffectDelegate_EndInvoke_System_Guid__System_IAsyncResult_
+  commentId: M:Colore.Native.NativeSdkMethods.CreateEffectDelegate.EndInvoke(System.Guid@,System.IAsyncResult)
+  name.vb: EndInvoke(ByRef Guid, IAsyncResult)
+  fullName: Colore.Native.NativeSdkMethods.CreateEffectDelegate.EndInvoke(ref System.Guid, System.IAsyncResult)
+  fullName.vb: Colore.Native.NativeSdkMethods.CreateEffectDelegate.EndInvoke(ByRef System.Guid, System.IAsyncResult)
+  nameWithType: NativeSdkMethods.CreateEffectDelegate.EndInvoke(ref Guid, IAsyncResult)
+  nameWithType.vb: NativeSdkMethods.CreateEffectDelegate.EndInvoke(ByRef Guid, IAsyncResult)
+- uid: Colore.Native.NativeSdkMethods.CreateEffectDelegate.EndInvoke*
+  name: EndInvoke
+  href: api/Colore.Native.NativeSdkMethods.CreateEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateEffectDelegate_EndInvoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateEffectDelegate.EndInvoke
+  fullName: Colore.Native.NativeSdkMethods.CreateEffectDelegate.EndInvoke
+  nameWithType: NativeSdkMethods.CreateEffectDelegate.EndInvoke
+- uid: Colore.Native.NativeSdkMethods.CreateEffectDelegate.Invoke(System.Guid,Colore.Effects.Generic.Effect,System.IntPtr,System.Guid@)
+  name: Invoke(Guid, Effect, IntPtr, ref Guid)
+  href: api/Colore.Native.NativeSdkMethods.CreateEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateEffectDelegate_Invoke_System_Guid_Colore_Effects_Generic_Effect_System_IntPtr_System_Guid__
+  commentId: M:Colore.Native.NativeSdkMethods.CreateEffectDelegate.Invoke(System.Guid,Colore.Effects.Generic.Effect,System.IntPtr,System.Guid@)
+  name.vb: Invoke(Guid, Effect, IntPtr, ByRef Guid)
+  fullName: Colore.Native.NativeSdkMethods.CreateEffectDelegate.Invoke(System.Guid, Colore.Effects.Generic.Effect, System.IntPtr, ref System.Guid)
+  fullName.vb: Colore.Native.NativeSdkMethods.CreateEffectDelegate.Invoke(System.Guid, Colore.Effects.Generic.Effect, System.IntPtr, ByRef System.Guid)
+  nameWithType: NativeSdkMethods.CreateEffectDelegate.Invoke(Guid, Effect, IntPtr, ref Guid)
+  nameWithType.vb: NativeSdkMethods.CreateEffectDelegate.Invoke(Guid, Effect, IntPtr, ByRef Guid)
+- uid: Colore.Native.NativeSdkMethods.CreateEffectDelegate.Invoke*
+  name: Invoke
+  href: api/Colore.Native.NativeSdkMethods.CreateEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateEffectDelegate_Invoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateEffectDelegate.Invoke
+  fullName: Colore.Native.NativeSdkMethods.CreateEffectDelegate.Invoke
+  nameWithType: NativeSdkMethods.CreateEffectDelegate.Invoke
+- uid: Colore.Native.NativeSdkMethods.CreateHeadsetEffect
+  name: CreateHeadsetEffect
+  href: api/Colore.Native.NativeSdkMethods.html#Colore_Native_NativeSdkMethods_CreateHeadsetEffect
+  commentId: P:Colore.Native.NativeSdkMethods.CreateHeadsetEffect
+  fullName: Colore.Native.NativeSdkMethods.CreateHeadsetEffect
+  nameWithType: NativeSdkMethods.CreateHeadsetEffect
+- uid: Colore.Native.NativeSdkMethods.CreateHeadsetEffect*
+  name: CreateHeadsetEffect
+  href: api/Colore.Native.NativeSdkMethods.html#Colore_Native_NativeSdkMethods_CreateHeadsetEffect_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateHeadsetEffect
+  fullName: Colore.Native.NativeSdkMethods.CreateHeadsetEffect
+  nameWithType: NativeSdkMethods.CreateHeadsetEffect
+- uid: Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate
+  name: NativeSdkMethods.CreateHeadsetEffectDelegate
+  href: api/Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.html
+  commentId: T:Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate
+  fullName: Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate
+  nameWithType: NativeSdkMethods.CreateHeadsetEffectDelegate
+- uid: Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.#ctor(System.Object,System.IntPtr)
+  name: CreateHeadsetEffectDelegate(Object, IntPtr)
+  href: api/Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateHeadsetEffectDelegate__ctor_System_Object_System_IntPtr_
+  commentId: M:Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.#ctor(System.Object,System.IntPtr)
+  fullName: Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.CreateHeadsetEffectDelegate(System.Object, System.IntPtr)
+  nameWithType: NativeSdkMethods.CreateHeadsetEffectDelegate.CreateHeadsetEffectDelegate(Object, IntPtr)
+- uid: Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.#ctor*
+  name: CreateHeadsetEffectDelegate
+  href: api/Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateHeadsetEffectDelegate__ctor_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.#ctor
+  fullName: Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.CreateHeadsetEffectDelegate
+  nameWithType: NativeSdkMethods.CreateHeadsetEffectDelegate.CreateHeadsetEffectDelegate
+- uid: Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.BeginInvoke(Colore.Effects.Headset.HeadsetEffect,System.IntPtr,System.Guid@,System.AsyncCallback,System.Object)
+  name: BeginInvoke(HeadsetEffect, IntPtr, ref Guid, AsyncCallback, Object)
+  href: api/Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateHeadsetEffectDelegate_BeginInvoke_Colore_Effects_Headset_HeadsetEffect_System_IntPtr_System_Guid__System_AsyncCallback_System_Object_
+  commentId: M:Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.BeginInvoke(Colore.Effects.Headset.HeadsetEffect,System.IntPtr,System.Guid@,System.AsyncCallback,System.Object)
+  name.vb: BeginInvoke(HeadsetEffect, IntPtr, ByRef Guid, AsyncCallback, Object)
+  fullName: Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.BeginInvoke(Colore.Effects.Headset.HeadsetEffect, System.IntPtr, ref System.Guid, System.AsyncCallback, System.Object)
+  fullName.vb: Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.BeginInvoke(Colore.Effects.Headset.HeadsetEffect, System.IntPtr, ByRef System.Guid, System.AsyncCallback, System.Object)
+  nameWithType: NativeSdkMethods.CreateHeadsetEffectDelegate.BeginInvoke(HeadsetEffect, IntPtr, ref Guid, AsyncCallback, Object)
+  nameWithType.vb: NativeSdkMethods.CreateHeadsetEffectDelegate.BeginInvoke(HeadsetEffect, IntPtr, ByRef Guid, AsyncCallback, Object)
+- uid: Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.BeginInvoke*
+  name: BeginInvoke
+  href: api/Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateHeadsetEffectDelegate_BeginInvoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.BeginInvoke
+  fullName: Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.BeginInvoke
+  nameWithType: NativeSdkMethods.CreateHeadsetEffectDelegate.BeginInvoke
+- uid: Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.EndInvoke(System.Guid@,System.IAsyncResult)
+  name: EndInvoke(ref Guid, IAsyncResult)
+  href: api/Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateHeadsetEffectDelegate_EndInvoke_System_Guid__System_IAsyncResult_
+  commentId: M:Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.EndInvoke(System.Guid@,System.IAsyncResult)
+  name.vb: EndInvoke(ByRef Guid, IAsyncResult)
+  fullName: Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.EndInvoke(ref System.Guid, System.IAsyncResult)
+  fullName.vb: Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.EndInvoke(ByRef System.Guid, System.IAsyncResult)
+  nameWithType: NativeSdkMethods.CreateHeadsetEffectDelegate.EndInvoke(ref Guid, IAsyncResult)
+  nameWithType.vb: NativeSdkMethods.CreateHeadsetEffectDelegate.EndInvoke(ByRef Guid, IAsyncResult)
+- uid: Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.EndInvoke*
+  name: EndInvoke
+  href: api/Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateHeadsetEffectDelegate_EndInvoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.EndInvoke
+  fullName: Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.EndInvoke
+  nameWithType: NativeSdkMethods.CreateHeadsetEffectDelegate.EndInvoke
+- uid: Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.Invoke(Colore.Effects.Headset.HeadsetEffect,System.IntPtr,System.Guid@)
+  name: Invoke(HeadsetEffect, IntPtr, ref Guid)
+  href: api/Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateHeadsetEffectDelegate_Invoke_Colore_Effects_Headset_HeadsetEffect_System_IntPtr_System_Guid__
+  commentId: M:Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.Invoke(Colore.Effects.Headset.HeadsetEffect,System.IntPtr,System.Guid@)
+  name.vb: Invoke(HeadsetEffect, IntPtr, ByRef Guid)
+  fullName: Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.Invoke(Colore.Effects.Headset.HeadsetEffect, System.IntPtr, ref System.Guid)
+  fullName.vb: Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.Invoke(Colore.Effects.Headset.HeadsetEffect, System.IntPtr, ByRef System.Guid)
+  nameWithType: NativeSdkMethods.CreateHeadsetEffectDelegate.Invoke(HeadsetEffect, IntPtr, ref Guid)
+  nameWithType.vb: NativeSdkMethods.CreateHeadsetEffectDelegate.Invoke(HeadsetEffect, IntPtr, ByRef Guid)
+- uid: Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.Invoke*
+  name: Invoke
+  href: api/Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateHeadsetEffectDelegate_Invoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.Invoke
+  fullName: Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.Invoke
+  nameWithType: NativeSdkMethods.CreateHeadsetEffectDelegate.Invoke
+- uid: Colore.Native.NativeSdkMethods.CreateKeyboardEffect
+  name: CreateKeyboardEffect
+  href: api/Colore.Native.NativeSdkMethods.html#Colore_Native_NativeSdkMethods_CreateKeyboardEffect
+  commentId: P:Colore.Native.NativeSdkMethods.CreateKeyboardEffect
+  fullName: Colore.Native.NativeSdkMethods.CreateKeyboardEffect
+  nameWithType: NativeSdkMethods.CreateKeyboardEffect
+- uid: Colore.Native.NativeSdkMethods.CreateKeyboardEffect*
+  name: CreateKeyboardEffect
+  href: api/Colore.Native.NativeSdkMethods.html#Colore_Native_NativeSdkMethods_CreateKeyboardEffect_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateKeyboardEffect
+  fullName: Colore.Native.NativeSdkMethods.CreateKeyboardEffect
+  nameWithType: NativeSdkMethods.CreateKeyboardEffect
+- uid: Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate
+  name: NativeSdkMethods.CreateKeyboardEffectDelegate
+  href: api/Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.html
+  commentId: T:Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate
+  fullName: Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate
+  nameWithType: NativeSdkMethods.CreateKeyboardEffectDelegate
+- uid: Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.#ctor(System.Object,System.IntPtr)
+  name: CreateKeyboardEffectDelegate(Object, IntPtr)
+  href: api/Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateKeyboardEffectDelegate__ctor_System_Object_System_IntPtr_
+  commentId: M:Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.#ctor(System.Object,System.IntPtr)
+  fullName: Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.CreateKeyboardEffectDelegate(System.Object, System.IntPtr)
+  nameWithType: NativeSdkMethods.CreateKeyboardEffectDelegate.CreateKeyboardEffectDelegate(Object, IntPtr)
+- uid: Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.#ctor*
+  name: CreateKeyboardEffectDelegate
+  href: api/Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateKeyboardEffectDelegate__ctor_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.#ctor
+  fullName: Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.CreateKeyboardEffectDelegate
+  nameWithType: NativeSdkMethods.CreateKeyboardEffectDelegate.CreateKeyboardEffectDelegate
+- uid: Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.BeginInvoke(Colore.Effects.Keyboard.KeyboardEffect,System.IntPtr,System.Guid@,System.AsyncCallback,System.Object)
+  name: BeginInvoke(KeyboardEffect, IntPtr, ref Guid, AsyncCallback, Object)
+  href: api/Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateKeyboardEffectDelegate_BeginInvoke_Colore_Effects_Keyboard_KeyboardEffect_System_IntPtr_System_Guid__System_AsyncCallback_System_Object_
+  commentId: M:Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.BeginInvoke(Colore.Effects.Keyboard.KeyboardEffect,System.IntPtr,System.Guid@,System.AsyncCallback,System.Object)
+  name.vb: BeginInvoke(KeyboardEffect, IntPtr, ByRef Guid, AsyncCallback, Object)
+  fullName: Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.BeginInvoke(Colore.Effects.Keyboard.KeyboardEffect, System.IntPtr, ref System.Guid, System.AsyncCallback, System.Object)
+  fullName.vb: Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.BeginInvoke(Colore.Effects.Keyboard.KeyboardEffect, System.IntPtr, ByRef System.Guid, System.AsyncCallback, System.Object)
+  nameWithType: NativeSdkMethods.CreateKeyboardEffectDelegate.BeginInvoke(KeyboardEffect, IntPtr, ref Guid, AsyncCallback, Object)
+  nameWithType.vb: NativeSdkMethods.CreateKeyboardEffectDelegate.BeginInvoke(KeyboardEffect, IntPtr, ByRef Guid, AsyncCallback, Object)
+- uid: Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.BeginInvoke*
+  name: BeginInvoke
+  href: api/Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateKeyboardEffectDelegate_BeginInvoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.BeginInvoke
+  fullName: Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.BeginInvoke
+  nameWithType: NativeSdkMethods.CreateKeyboardEffectDelegate.BeginInvoke
+- uid: Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.EndInvoke(System.Guid@,System.IAsyncResult)
+  name: EndInvoke(ref Guid, IAsyncResult)
+  href: api/Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateKeyboardEffectDelegate_EndInvoke_System_Guid__System_IAsyncResult_
+  commentId: M:Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.EndInvoke(System.Guid@,System.IAsyncResult)
+  name.vb: EndInvoke(ByRef Guid, IAsyncResult)
+  fullName: Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.EndInvoke(ref System.Guid, System.IAsyncResult)
+  fullName.vb: Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.EndInvoke(ByRef System.Guid, System.IAsyncResult)
+  nameWithType: NativeSdkMethods.CreateKeyboardEffectDelegate.EndInvoke(ref Guid, IAsyncResult)
+  nameWithType.vb: NativeSdkMethods.CreateKeyboardEffectDelegate.EndInvoke(ByRef Guid, IAsyncResult)
+- uid: Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.EndInvoke*
+  name: EndInvoke
+  href: api/Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateKeyboardEffectDelegate_EndInvoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.EndInvoke
+  fullName: Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.EndInvoke
+  nameWithType: NativeSdkMethods.CreateKeyboardEffectDelegate.EndInvoke
+- uid: Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.Invoke(Colore.Effects.Keyboard.KeyboardEffect,System.IntPtr,System.Guid@)
+  name: Invoke(KeyboardEffect, IntPtr, ref Guid)
+  href: api/Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateKeyboardEffectDelegate_Invoke_Colore_Effects_Keyboard_KeyboardEffect_System_IntPtr_System_Guid__
+  commentId: M:Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.Invoke(Colore.Effects.Keyboard.KeyboardEffect,System.IntPtr,System.Guid@)
+  name.vb: Invoke(KeyboardEffect, IntPtr, ByRef Guid)
+  fullName: Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.Invoke(Colore.Effects.Keyboard.KeyboardEffect, System.IntPtr, ref System.Guid)
+  fullName.vb: Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.Invoke(Colore.Effects.Keyboard.KeyboardEffect, System.IntPtr, ByRef System.Guid)
+  nameWithType: NativeSdkMethods.CreateKeyboardEffectDelegate.Invoke(KeyboardEffect, IntPtr, ref Guid)
+  nameWithType.vb: NativeSdkMethods.CreateKeyboardEffectDelegate.Invoke(KeyboardEffect, IntPtr, ByRef Guid)
+- uid: Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.Invoke*
+  name: Invoke
+  href: api/Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateKeyboardEffectDelegate_Invoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.Invoke
+  fullName: Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.Invoke
+  nameWithType: NativeSdkMethods.CreateKeyboardEffectDelegate.Invoke
+- uid: Colore.Native.NativeSdkMethods.CreateKeypadEffect
+  name: CreateKeypadEffect
+  href: api/Colore.Native.NativeSdkMethods.html#Colore_Native_NativeSdkMethods_CreateKeypadEffect
+  commentId: P:Colore.Native.NativeSdkMethods.CreateKeypadEffect
+  fullName: Colore.Native.NativeSdkMethods.CreateKeypadEffect
+  nameWithType: NativeSdkMethods.CreateKeypadEffect
+- uid: Colore.Native.NativeSdkMethods.CreateKeypadEffect*
+  name: CreateKeypadEffect
+  href: api/Colore.Native.NativeSdkMethods.html#Colore_Native_NativeSdkMethods_CreateKeypadEffect_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateKeypadEffect
+  fullName: Colore.Native.NativeSdkMethods.CreateKeypadEffect
+  nameWithType: NativeSdkMethods.CreateKeypadEffect
+- uid: Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate
+  name: NativeSdkMethods.CreateKeypadEffectDelegate
+  href: api/Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.html
+  commentId: T:Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate
+  fullName: Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate
+  nameWithType: NativeSdkMethods.CreateKeypadEffectDelegate
+- uid: Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.#ctor(System.Object,System.IntPtr)
+  name: CreateKeypadEffectDelegate(Object, IntPtr)
+  href: api/Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateKeypadEffectDelegate__ctor_System_Object_System_IntPtr_
+  commentId: M:Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.#ctor(System.Object,System.IntPtr)
+  fullName: Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.CreateKeypadEffectDelegate(System.Object, System.IntPtr)
+  nameWithType: NativeSdkMethods.CreateKeypadEffectDelegate.CreateKeypadEffectDelegate(Object, IntPtr)
+- uid: Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.#ctor*
+  name: CreateKeypadEffectDelegate
+  href: api/Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateKeypadEffectDelegate__ctor_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.#ctor
+  fullName: Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.CreateKeypadEffectDelegate
+  nameWithType: NativeSdkMethods.CreateKeypadEffectDelegate.CreateKeypadEffectDelegate
+- uid: Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.BeginInvoke(Colore.Effects.Keypad.KeypadEffect,System.IntPtr,System.Guid@,System.AsyncCallback,System.Object)
+  name: BeginInvoke(KeypadEffect, IntPtr, ref Guid, AsyncCallback, Object)
+  href: api/Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateKeypadEffectDelegate_BeginInvoke_Colore_Effects_Keypad_KeypadEffect_System_IntPtr_System_Guid__System_AsyncCallback_System_Object_
+  commentId: M:Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.BeginInvoke(Colore.Effects.Keypad.KeypadEffect,System.IntPtr,System.Guid@,System.AsyncCallback,System.Object)
+  name.vb: BeginInvoke(KeypadEffect, IntPtr, ByRef Guid, AsyncCallback, Object)
+  fullName: Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.BeginInvoke(Colore.Effects.Keypad.KeypadEffect, System.IntPtr, ref System.Guid, System.AsyncCallback, System.Object)
+  fullName.vb: Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.BeginInvoke(Colore.Effects.Keypad.KeypadEffect, System.IntPtr, ByRef System.Guid, System.AsyncCallback, System.Object)
+  nameWithType: NativeSdkMethods.CreateKeypadEffectDelegate.BeginInvoke(KeypadEffect, IntPtr, ref Guid, AsyncCallback, Object)
+  nameWithType.vb: NativeSdkMethods.CreateKeypadEffectDelegate.BeginInvoke(KeypadEffect, IntPtr, ByRef Guid, AsyncCallback, Object)
+- uid: Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.BeginInvoke*
+  name: BeginInvoke
+  href: api/Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateKeypadEffectDelegate_BeginInvoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.BeginInvoke
+  fullName: Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.BeginInvoke
+  nameWithType: NativeSdkMethods.CreateKeypadEffectDelegate.BeginInvoke
+- uid: Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.EndInvoke(System.Guid@,System.IAsyncResult)
+  name: EndInvoke(ref Guid, IAsyncResult)
+  href: api/Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateKeypadEffectDelegate_EndInvoke_System_Guid__System_IAsyncResult_
+  commentId: M:Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.EndInvoke(System.Guid@,System.IAsyncResult)
+  name.vb: EndInvoke(ByRef Guid, IAsyncResult)
+  fullName: Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.EndInvoke(ref System.Guid, System.IAsyncResult)
+  fullName.vb: Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.EndInvoke(ByRef System.Guid, System.IAsyncResult)
+  nameWithType: NativeSdkMethods.CreateKeypadEffectDelegate.EndInvoke(ref Guid, IAsyncResult)
+  nameWithType.vb: NativeSdkMethods.CreateKeypadEffectDelegate.EndInvoke(ByRef Guid, IAsyncResult)
+- uid: Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.EndInvoke*
+  name: EndInvoke
+  href: api/Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateKeypadEffectDelegate_EndInvoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.EndInvoke
+  fullName: Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.EndInvoke
+  nameWithType: NativeSdkMethods.CreateKeypadEffectDelegate.EndInvoke
+- uid: Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.Invoke(Colore.Effects.Keypad.KeypadEffect,System.IntPtr,System.Guid@)
+  name: Invoke(KeypadEffect, IntPtr, ref Guid)
+  href: api/Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateKeypadEffectDelegate_Invoke_Colore_Effects_Keypad_KeypadEffect_System_IntPtr_System_Guid__
+  commentId: M:Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.Invoke(Colore.Effects.Keypad.KeypadEffect,System.IntPtr,System.Guid@)
+  name.vb: Invoke(KeypadEffect, IntPtr, ByRef Guid)
+  fullName: Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.Invoke(Colore.Effects.Keypad.KeypadEffect, System.IntPtr, ref System.Guid)
+  fullName.vb: Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.Invoke(Colore.Effects.Keypad.KeypadEffect, System.IntPtr, ByRef System.Guid)
+  nameWithType: NativeSdkMethods.CreateKeypadEffectDelegate.Invoke(KeypadEffect, IntPtr, ref Guid)
+  nameWithType.vb: NativeSdkMethods.CreateKeypadEffectDelegate.Invoke(KeypadEffect, IntPtr, ByRef Guid)
+- uid: Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.Invoke*
+  name: Invoke
+  href: api/Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateKeypadEffectDelegate_Invoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.Invoke
+  fullName: Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.Invoke
+  nameWithType: NativeSdkMethods.CreateKeypadEffectDelegate.Invoke
+- uid: Colore.Native.NativeSdkMethods.CreateMouseEffect
+  name: CreateMouseEffect
+  href: api/Colore.Native.NativeSdkMethods.html#Colore_Native_NativeSdkMethods_CreateMouseEffect
+  commentId: P:Colore.Native.NativeSdkMethods.CreateMouseEffect
+  fullName: Colore.Native.NativeSdkMethods.CreateMouseEffect
+  nameWithType: NativeSdkMethods.CreateMouseEffect
+- uid: Colore.Native.NativeSdkMethods.CreateMouseEffect*
+  name: CreateMouseEffect
+  href: api/Colore.Native.NativeSdkMethods.html#Colore_Native_NativeSdkMethods_CreateMouseEffect_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateMouseEffect
+  fullName: Colore.Native.NativeSdkMethods.CreateMouseEffect
+  nameWithType: NativeSdkMethods.CreateMouseEffect
+- uid: Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate
+  name: NativeSdkMethods.CreateMouseEffectDelegate
+  href: api/Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.html
+  commentId: T:Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate
+  fullName: Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate
+  nameWithType: NativeSdkMethods.CreateMouseEffectDelegate
+- uid: Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.#ctor(System.Object,System.IntPtr)
+  name: CreateMouseEffectDelegate(Object, IntPtr)
+  href: api/Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateMouseEffectDelegate__ctor_System_Object_System_IntPtr_
+  commentId: M:Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.#ctor(System.Object,System.IntPtr)
+  fullName: Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.CreateMouseEffectDelegate(System.Object, System.IntPtr)
+  nameWithType: NativeSdkMethods.CreateMouseEffectDelegate.CreateMouseEffectDelegate(Object, IntPtr)
+- uid: Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.#ctor*
+  name: CreateMouseEffectDelegate
+  href: api/Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateMouseEffectDelegate__ctor_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.#ctor
+  fullName: Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.CreateMouseEffectDelegate
+  nameWithType: NativeSdkMethods.CreateMouseEffectDelegate.CreateMouseEffectDelegate
+- uid: Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.BeginInvoke(Colore.Effects.Mouse.MouseEffect,System.IntPtr,System.Guid@,System.AsyncCallback,System.Object)
+  name: BeginInvoke(MouseEffect, IntPtr, ref Guid, AsyncCallback, Object)
+  href: api/Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateMouseEffectDelegate_BeginInvoke_Colore_Effects_Mouse_MouseEffect_System_IntPtr_System_Guid__System_AsyncCallback_System_Object_
+  commentId: M:Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.BeginInvoke(Colore.Effects.Mouse.MouseEffect,System.IntPtr,System.Guid@,System.AsyncCallback,System.Object)
+  name.vb: BeginInvoke(MouseEffect, IntPtr, ByRef Guid, AsyncCallback, Object)
+  fullName: Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.BeginInvoke(Colore.Effects.Mouse.MouseEffect, System.IntPtr, ref System.Guid, System.AsyncCallback, System.Object)
+  fullName.vb: Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.BeginInvoke(Colore.Effects.Mouse.MouseEffect, System.IntPtr, ByRef System.Guid, System.AsyncCallback, System.Object)
+  nameWithType: NativeSdkMethods.CreateMouseEffectDelegate.BeginInvoke(MouseEffect, IntPtr, ref Guid, AsyncCallback, Object)
+  nameWithType.vb: NativeSdkMethods.CreateMouseEffectDelegate.BeginInvoke(MouseEffect, IntPtr, ByRef Guid, AsyncCallback, Object)
+- uid: Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.BeginInvoke*
+  name: BeginInvoke
+  href: api/Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateMouseEffectDelegate_BeginInvoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.BeginInvoke
+  fullName: Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.BeginInvoke
+  nameWithType: NativeSdkMethods.CreateMouseEffectDelegate.BeginInvoke
+- uid: Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.EndInvoke(System.Guid@,System.IAsyncResult)
+  name: EndInvoke(ref Guid, IAsyncResult)
+  href: api/Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateMouseEffectDelegate_EndInvoke_System_Guid__System_IAsyncResult_
+  commentId: M:Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.EndInvoke(System.Guid@,System.IAsyncResult)
+  name.vb: EndInvoke(ByRef Guid, IAsyncResult)
+  fullName: Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.EndInvoke(ref System.Guid, System.IAsyncResult)
+  fullName.vb: Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.EndInvoke(ByRef System.Guid, System.IAsyncResult)
+  nameWithType: NativeSdkMethods.CreateMouseEffectDelegate.EndInvoke(ref Guid, IAsyncResult)
+  nameWithType.vb: NativeSdkMethods.CreateMouseEffectDelegate.EndInvoke(ByRef Guid, IAsyncResult)
+- uid: Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.EndInvoke*
+  name: EndInvoke
+  href: api/Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateMouseEffectDelegate_EndInvoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.EndInvoke
+  fullName: Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.EndInvoke
+  nameWithType: NativeSdkMethods.CreateMouseEffectDelegate.EndInvoke
+- uid: Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.Invoke(Colore.Effects.Mouse.MouseEffect,System.IntPtr,System.Guid@)
+  name: Invoke(MouseEffect, IntPtr, ref Guid)
+  href: api/Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateMouseEffectDelegate_Invoke_Colore_Effects_Mouse_MouseEffect_System_IntPtr_System_Guid__
+  commentId: M:Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.Invoke(Colore.Effects.Mouse.MouseEffect,System.IntPtr,System.Guid@)
+  name.vb: Invoke(MouseEffect, IntPtr, ByRef Guid)
+  fullName: Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.Invoke(Colore.Effects.Mouse.MouseEffect, System.IntPtr, ref System.Guid)
+  fullName.vb: Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.Invoke(Colore.Effects.Mouse.MouseEffect, System.IntPtr, ByRef System.Guid)
+  nameWithType: NativeSdkMethods.CreateMouseEffectDelegate.Invoke(MouseEffect, IntPtr, ref Guid)
+  nameWithType.vb: NativeSdkMethods.CreateMouseEffectDelegate.Invoke(MouseEffect, IntPtr, ByRef Guid)
+- uid: Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.Invoke*
+  name: Invoke
+  href: api/Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateMouseEffectDelegate_Invoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.Invoke
+  fullName: Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.Invoke
+  nameWithType: NativeSdkMethods.CreateMouseEffectDelegate.Invoke
+- uid: Colore.Native.NativeSdkMethods.CreateMousepadEffect
+  name: CreateMousepadEffect
+  href: api/Colore.Native.NativeSdkMethods.html#Colore_Native_NativeSdkMethods_CreateMousepadEffect
+  commentId: P:Colore.Native.NativeSdkMethods.CreateMousepadEffect
+  fullName: Colore.Native.NativeSdkMethods.CreateMousepadEffect
+  nameWithType: NativeSdkMethods.CreateMousepadEffect
+- uid: Colore.Native.NativeSdkMethods.CreateMousepadEffect*
+  name: CreateMousepadEffect
+  href: api/Colore.Native.NativeSdkMethods.html#Colore_Native_NativeSdkMethods_CreateMousepadEffect_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateMousepadEffect
+  fullName: Colore.Native.NativeSdkMethods.CreateMousepadEffect
+  nameWithType: NativeSdkMethods.CreateMousepadEffect
+- uid: Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate
+  name: NativeSdkMethods.CreateMousepadEffectDelegate
+  href: api/Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.html
+  commentId: T:Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate
+  fullName: Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate
+  nameWithType: NativeSdkMethods.CreateMousepadEffectDelegate
+- uid: Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.#ctor(System.Object,System.IntPtr)
+  name: CreateMousepadEffectDelegate(Object, IntPtr)
+  href: api/Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateMousepadEffectDelegate__ctor_System_Object_System_IntPtr_
+  commentId: M:Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.#ctor(System.Object,System.IntPtr)
+  fullName: Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.CreateMousepadEffectDelegate(System.Object, System.IntPtr)
+  nameWithType: NativeSdkMethods.CreateMousepadEffectDelegate.CreateMousepadEffectDelegate(Object, IntPtr)
+- uid: Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.#ctor*
+  name: CreateMousepadEffectDelegate
+  href: api/Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateMousepadEffectDelegate__ctor_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.#ctor
+  fullName: Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.CreateMousepadEffectDelegate
+  nameWithType: NativeSdkMethods.CreateMousepadEffectDelegate.CreateMousepadEffectDelegate
+- uid: Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.BeginInvoke(Colore.Effects.Mousepad.MousepadEffect,System.IntPtr,System.Guid@,System.AsyncCallback,System.Object)
+  name: BeginInvoke(MousepadEffect, IntPtr, ref Guid, AsyncCallback, Object)
+  href: api/Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateMousepadEffectDelegate_BeginInvoke_Colore_Effects_Mousepad_MousepadEffect_System_IntPtr_System_Guid__System_AsyncCallback_System_Object_
+  commentId: M:Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.BeginInvoke(Colore.Effects.Mousepad.MousepadEffect,System.IntPtr,System.Guid@,System.AsyncCallback,System.Object)
+  name.vb: BeginInvoke(MousepadEffect, IntPtr, ByRef Guid, AsyncCallback, Object)
+  fullName: Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.BeginInvoke(Colore.Effects.Mousepad.MousepadEffect, System.IntPtr, ref System.Guid, System.AsyncCallback, System.Object)
+  fullName.vb: Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.BeginInvoke(Colore.Effects.Mousepad.MousepadEffect, System.IntPtr, ByRef System.Guid, System.AsyncCallback, System.Object)
+  nameWithType: NativeSdkMethods.CreateMousepadEffectDelegate.BeginInvoke(MousepadEffect, IntPtr, ref Guid, AsyncCallback, Object)
+  nameWithType.vb: NativeSdkMethods.CreateMousepadEffectDelegate.BeginInvoke(MousepadEffect, IntPtr, ByRef Guid, AsyncCallback, Object)
+- uid: Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.BeginInvoke*
+  name: BeginInvoke
+  href: api/Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateMousepadEffectDelegate_BeginInvoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.BeginInvoke
+  fullName: Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.BeginInvoke
+  nameWithType: NativeSdkMethods.CreateMousepadEffectDelegate.BeginInvoke
+- uid: Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.EndInvoke(System.Guid@,System.IAsyncResult)
+  name: EndInvoke(ref Guid, IAsyncResult)
+  href: api/Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateMousepadEffectDelegate_EndInvoke_System_Guid__System_IAsyncResult_
+  commentId: M:Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.EndInvoke(System.Guid@,System.IAsyncResult)
+  name.vb: EndInvoke(ByRef Guid, IAsyncResult)
+  fullName: Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.EndInvoke(ref System.Guid, System.IAsyncResult)
+  fullName.vb: Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.EndInvoke(ByRef System.Guid, System.IAsyncResult)
+  nameWithType: NativeSdkMethods.CreateMousepadEffectDelegate.EndInvoke(ref Guid, IAsyncResult)
+  nameWithType.vb: NativeSdkMethods.CreateMousepadEffectDelegate.EndInvoke(ByRef Guid, IAsyncResult)
+- uid: Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.EndInvoke*
+  name: EndInvoke
+  href: api/Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateMousepadEffectDelegate_EndInvoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.EndInvoke
+  fullName: Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.EndInvoke
+  nameWithType: NativeSdkMethods.CreateMousepadEffectDelegate.EndInvoke
+- uid: Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.Invoke(Colore.Effects.Mousepad.MousepadEffect,System.IntPtr,System.Guid@)
+  name: Invoke(MousepadEffect, IntPtr, ref Guid)
+  href: api/Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateMousepadEffectDelegate_Invoke_Colore_Effects_Mousepad_MousepadEffect_System_IntPtr_System_Guid__
+  commentId: M:Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.Invoke(Colore.Effects.Mousepad.MousepadEffect,System.IntPtr,System.Guid@)
+  name.vb: Invoke(MousepadEffect, IntPtr, ByRef Guid)
+  fullName: Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.Invoke(Colore.Effects.Mousepad.MousepadEffect, System.IntPtr, ref System.Guid)
+  fullName.vb: Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.Invoke(Colore.Effects.Mousepad.MousepadEffect, System.IntPtr, ByRef System.Guid)
+  nameWithType: NativeSdkMethods.CreateMousepadEffectDelegate.Invoke(MousepadEffect, IntPtr, ref Guid)
+  nameWithType.vb: NativeSdkMethods.CreateMousepadEffectDelegate.Invoke(MousepadEffect, IntPtr, ByRef Guid)
+- uid: Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.Invoke*
+  name: Invoke
+  href: api/Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.html#Colore_Native_NativeSdkMethods_CreateMousepadEffectDelegate_Invoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.Invoke
+  fullName: Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.Invoke
+  nameWithType: NativeSdkMethods.CreateMousepadEffectDelegate.Invoke
+- uid: Colore.Native.NativeSdkMethods.DeleteEffect
+  name: DeleteEffect
+  href: api/Colore.Native.NativeSdkMethods.html#Colore_Native_NativeSdkMethods_DeleteEffect
+  commentId: P:Colore.Native.NativeSdkMethods.DeleteEffect
+  fullName: Colore.Native.NativeSdkMethods.DeleteEffect
+  nameWithType: NativeSdkMethods.DeleteEffect
+- uid: Colore.Native.NativeSdkMethods.DeleteEffect*
+  name: DeleteEffect
+  href: api/Colore.Native.NativeSdkMethods.html#Colore_Native_NativeSdkMethods_DeleteEffect_
+  commentId: Overload:Colore.Native.NativeSdkMethods.DeleteEffect
+  fullName: Colore.Native.NativeSdkMethods.DeleteEffect
+  nameWithType: NativeSdkMethods.DeleteEffect
+- uid: Colore.Native.NativeSdkMethods.DeleteEffectDelegate
+  name: NativeSdkMethods.DeleteEffectDelegate
+  href: api/Colore.Native.NativeSdkMethods.DeleteEffectDelegate.html
+  commentId: T:Colore.Native.NativeSdkMethods.DeleteEffectDelegate
+  fullName: Colore.Native.NativeSdkMethods.DeleteEffectDelegate
+  nameWithType: NativeSdkMethods.DeleteEffectDelegate
+- uid: Colore.Native.NativeSdkMethods.DeleteEffectDelegate.#ctor(System.Object,System.IntPtr)
+  name: DeleteEffectDelegate(Object, IntPtr)
+  href: api/Colore.Native.NativeSdkMethods.DeleteEffectDelegate.html#Colore_Native_NativeSdkMethods_DeleteEffectDelegate__ctor_System_Object_System_IntPtr_
+  commentId: M:Colore.Native.NativeSdkMethods.DeleteEffectDelegate.#ctor(System.Object,System.IntPtr)
+  fullName: Colore.Native.NativeSdkMethods.DeleteEffectDelegate.DeleteEffectDelegate(System.Object, System.IntPtr)
+  nameWithType: NativeSdkMethods.DeleteEffectDelegate.DeleteEffectDelegate(Object, IntPtr)
+- uid: Colore.Native.NativeSdkMethods.DeleteEffectDelegate.#ctor*
+  name: DeleteEffectDelegate
+  href: api/Colore.Native.NativeSdkMethods.DeleteEffectDelegate.html#Colore_Native_NativeSdkMethods_DeleteEffectDelegate__ctor_
+  commentId: Overload:Colore.Native.NativeSdkMethods.DeleteEffectDelegate.#ctor
+  fullName: Colore.Native.NativeSdkMethods.DeleteEffectDelegate.DeleteEffectDelegate
+  nameWithType: NativeSdkMethods.DeleteEffectDelegate.DeleteEffectDelegate
+- uid: Colore.Native.NativeSdkMethods.DeleteEffectDelegate.BeginInvoke(System.Guid,System.AsyncCallback,System.Object)
+  name: BeginInvoke(Guid, AsyncCallback, Object)
+  href: api/Colore.Native.NativeSdkMethods.DeleteEffectDelegate.html#Colore_Native_NativeSdkMethods_DeleteEffectDelegate_BeginInvoke_System_Guid_System_AsyncCallback_System_Object_
+  commentId: M:Colore.Native.NativeSdkMethods.DeleteEffectDelegate.BeginInvoke(System.Guid,System.AsyncCallback,System.Object)
+  fullName: Colore.Native.NativeSdkMethods.DeleteEffectDelegate.BeginInvoke(System.Guid, System.AsyncCallback, System.Object)
+  nameWithType: NativeSdkMethods.DeleteEffectDelegate.BeginInvoke(Guid, AsyncCallback, Object)
+- uid: Colore.Native.NativeSdkMethods.DeleteEffectDelegate.BeginInvoke*
+  name: BeginInvoke
+  href: api/Colore.Native.NativeSdkMethods.DeleteEffectDelegate.html#Colore_Native_NativeSdkMethods_DeleteEffectDelegate_BeginInvoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.DeleteEffectDelegate.BeginInvoke
+  fullName: Colore.Native.NativeSdkMethods.DeleteEffectDelegate.BeginInvoke
+  nameWithType: NativeSdkMethods.DeleteEffectDelegate.BeginInvoke
+- uid: Colore.Native.NativeSdkMethods.DeleteEffectDelegate.EndInvoke(System.IAsyncResult)
+  name: EndInvoke(IAsyncResult)
+  href: api/Colore.Native.NativeSdkMethods.DeleteEffectDelegate.html#Colore_Native_NativeSdkMethods_DeleteEffectDelegate_EndInvoke_System_IAsyncResult_
+  commentId: M:Colore.Native.NativeSdkMethods.DeleteEffectDelegate.EndInvoke(System.IAsyncResult)
+  fullName: Colore.Native.NativeSdkMethods.DeleteEffectDelegate.EndInvoke(System.IAsyncResult)
+  nameWithType: NativeSdkMethods.DeleteEffectDelegate.EndInvoke(IAsyncResult)
+- uid: Colore.Native.NativeSdkMethods.DeleteEffectDelegate.EndInvoke*
+  name: EndInvoke
+  href: api/Colore.Native.NativeSdkMethods.DeleteEffectDelegate.html#Colore_Native_NativeSdkMethods_DeleteEffectDelegate_EndInvoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.DeleteEffectDelegate.EndInvoke
+  fullName: Colore.Native.NativeSdkMethods.DeleteEffectDelegate.EndInvoke
+  nameWithType: NativeSdkMethods.DeleteEffectDelegate.EndInvoke
+- uid: Colore.Native.NativeSdkMethods.DeleteEffectDelegate.Invoke(System.Guid)
+  name: Invoke(Guid)
+  href: api/Colore.Native.NativeSdkMethods.DeleteEffectDelegate.html#Colore_Native_NativeSdkMethods_DeleteEffectDelegate_Invoke_System_Guid_
+  commentId: M:Colore.Native.NativeSdkMethods.DeleteEffectDelegate.Invoke(System.Guid)
+  fullName: Colore.Native.NativeSdkMethods.DeleteEffectDelegate.Invoke(System.Guid)
+  nameWithType: NativeSdkMethods.DeleteEffectDelegate.Invoke(Guid)
+- uid: Colore.Native.NativeSdkMethods.DeleteEffectDelegate.Invoke*
+  name: Invoke
+  href: api/Colore.Native.NativeSdkMethods.DeleteEffectDelegate.html#Colore_Native_NativeSdkMethods_DeleteEffectDelegate_Invoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.DeleteEffectDelegate.Invoke
+  fullName: Colore.Native.NativeSdkMethods.DeleteEffectDelegate.Invoke
+  nameWithType: NativeSdkMethods.DeleteEffectDelegate.Invoke
+- uid: Colore.Native.NativeSdkMethods.Dispose
+  name: Dispose()
+  href: api/Colore.Native.NativeSdkMethods.html#Colore_Native_NativeSdkMethods_Dispose
+  commentId: M:Colore.Native.NativeSdkMethods.Dispose
+  fullName: Colore.Native.NativeSdkMethods.Dispose()
+  nameWithType: NativeSdkMethods.Dispose()
+- uid: Colore.Native.NativeSdkMethods.Dispose*
+  name: Dispose
+  href: api/Colore.Native.NativeSdkMethods.html#Colore_Native_NativeSdkMethods_Dispose_
+  commentId: Overload:Colore.Native.NativeSdkMethods.Dispose
+  fullName: Colore.Native.NativeSdkMethods.Dispose
+  nameWithType: NativeSdkMethods.Dispose
+- uid: Colore.Native.NativeSdkMethods.Finalize
+  name: Finalize()
+  href: api/Colore.Native.NativeSdkMethods.html#Colore_Native_NativeSdkMethods_Finalize
+  commentId: M:Colore.Native.NativeSdkMethods.Finalize
+  fullName: Colore.Native.NativeSdkMethods.Finalize()
+  nameWithType: NativeSdkMethods.Finalize()
+- uid: Colore.Native.NativeSdkMethods.Finalize*
+  name: Finalize
+  href: api/Colore.Native.NativeSdkMethods.html#Colore_Native_NativeSdkMethods_Finalize_
+  commentId: Overload:Colore.Native.NativeSdkMethods.Finalize
+  fullName: Colore.Native.NativeSdkMethods.Finalize
+  nameWithType: NativeSdkMethods.Finalize
+- uid: Colore.Native.NativeSdkMethods.Init
+  name: Init
+  href: api/Colore.Native.NativeSdkMethods.html#Colore_Native_NativeSdkMethods_Init
+  commentId: P:Colore.Native.NativeSdkMethods.Init
+  fullName: Colore.Native.NativeSdkMethods.Init
+  nameWithType: NativeSdkMethods.Init
+- uid: Colore.Native.NativeSdkMethods.Init*
+  name: Init
+  href: api/Colore.Native.NativeSdkMethods.html#Colore_Native_NativeSdkMethods_Init_
+  commentId: Overload:Colore.Native.NativeSdkMethods.Init
+  fullName: Colore.Native.NativeSdkMethods.Init
+  nameWithType: NativeSdkMethods.Init
+- uid: Colore.Native.NativeSdkMethods.InitDelegate
+  name: NativeSdkMethods.InitDelegate
+  href: api/Colore.Native.NativeSdkMethods.InitDelegate.html
+  commentId: T:Colore.Native.NativeSdkMethods.InitDelegate
+  fullName: Colore.Native.NativeSdkMethods.InitDelegate
+  nameWithType: NativeSdkMethods.InitDelegate
+- uid: Colore.Native.NativeSdkMethods.InitDelegate.#ctor(System.Object,System.IntPtr)
+  name: InitDelegate(Object, IntPtr)
+  href: api/Colore.Native.NativeSdkMethods.InitDelegate.html#Colore_Native_NativeSdkMethods_InitDelegate__ctor_System_Object_System_IntPtr_
+  commentId: M:Colore.Native.NativeSdkMethods.InitDelegate.#ctor(System.Object,System.IntPtr)
+  fullName: Colore.Native.NativeSdkMethods.InitDelegate.InitDelegate(System.Object, System.IntPtr)
+  nameWithType: NativeSdkMethods.InitDelegate.InitDelegate(Object, IntPtr)
+- uid: Colore.Native.NativeSdkMethods.InitDelegate.#ctor*
+  name: InitDelegate
+  href: api/Colore.Native.NativeSdkMethods.InitDelegate.html#Colore_Native_NativeSdkMethods_InitDelegate__ctor_
+  commentId: Overload:Colore.Native.NativeSdkMethods.InitDelegate.#ctor
+  fullName: Colore.Native.NativeSdkMethods.InitDelegate.InitDelegate
+  nameWithType: NativeSdkMethods.InitDelegate.InitDelegate
+- uid: Colore.Native.NativeSdkMethods.InitDelegate.BeginInvoke(System.AsyncCallback,System.Object)
+  name: BeginInvoke(AsyncCallback, Object)
+  href: api/Colore.Native.NativeSdkMethods.InitDelegate.html#Colore_Native_NativeSdkMethods_InitDelegate_BeginInvoke_System_AsyncCallback_System_Object_
+  commentId: M:Colore.Native.NativeSdkMethods.InitDelegate.BeginInvoke(System.AsyncCallback,System.Object)
+  fullName: Colore.Native.NativeSdkMethods.InitDelegate.BeginInvoke(System.AsyncCallback, System.Object)
+  nameWithType: NativeSdkMethods.InitDelegate.BeginInvoke(AsyncCallback, Object)
+- uid: Colore.Native.NativeSdkMethods.InitDelegate.BeginInvoke*
+  name: BeginInvoke
+  href: api/Colore.Native.NativeSdkMethods.InitDelegate.html#Colore_Native_NativeSdkMethods_InitDelegate_BeginInvoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.InitDelegate.BeginInvoke
+  fullName: Colore.Native.NativeSdkMethods.InitDelegate.BeginInvoke
+  nameWithType: NativeSdkMethods.InitDelegate.BeginInvoke
+- uid: Colore.Native.NativeSdkMethods.InitDelegate.EndInvoke(System.IAsyncResult)
+  name: EndInvoke(IAsyncResult)
+  href: api/Colore.Native.NativeSdkMethods.InitDelegate.html#Colore_Native_NativeSdkMethods_InitDelegate_EndInvoke_System_IAsyncResult_
+  commentId: M:Colore.Native.NativeSdkMethods.InitDelegate.EndInvoke(System.IAsyncResult)
+  fullName: Colore.Native.NativeSdkMethods.InitDelegate.EndInvoke(System.IAsyncResult)
+  nameWithType: NativeSdkMethods.InitDelegate.EndInvoke(IAsyncResult)
+- uid: Colore.Native.NativeSdkMethods.InitDelegate.EndInvoke*
+  name: EndInvoke
+  href: api/Colore.Native.NativeSdkMethods.InitDelegate.html#Colore_Native_NativeSdkMethods_InitDelegate_EndInvoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.InitDelegate.EndInvoke
+  fullName: Colore.Native.NativeSdkMethods.InitDelegate.EndInvoke
+  nameWithType: NativeSdkMethods.InitDelegate.EndInvoke
+- uid: Colore.Native.NativeSdkMethods.InitDelegate.Invoke
+  name: Invoke()
+  href: api/Colore.Native.NativeSdkMethods.InitDelegate.html#Colore_Native_NativeSdkMethods_InitDelegate_Invoke
+  commentId: M:Colore.Native.NativeSdkMethods.InitDelegate.Invoke
+  fullName: Colore.Native.NativeSdkMethods.InitDelegate.Invoke()
+  nameWithType: NativeSdkMethods.InitDelegate.Invoke()
+- uid: Colore.Native.NativeSdkMethods.InitDelegate.Invoke*
+  name: Invoke
+  href: api/Colore.Native.NativeSdkMethods.InitDelegate.html#Colore_Native_NativeSdkMethods_InitDelegate_Invoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.InitDelegate.Invoke
+  fullName: Colore.Native.NativeSdkMethods.InitDelegate.Invoke
+  nameWithType: NativeSdkMethods.InitDelegate.Invoke
+- uid: Colore.Native.NativeSdkMethods.QueryDevice
+  name: QueryDevice
+  href: api/Colore.Native.NativeSdkMethods.html#Colore_Native_NativeSdkMethods_QueryDevice
+  commentId: P:Colore.Native.NativeSdkMethods.QueryDevice
+  fullName: Colore.Native.NativeSdkMethods.QueryDevice
+  nameWithType: NativeSdkMethods.QueryDevice
+- uid: Colore.Native.NativeSdkMethods.QueryDevice*
+  name: QueryDevice
+  href: api/Colore.Native.NativeSdkMethods.html#Colore_Native_NativeSdkMethods_QueryDevice_
+  commentId: Overload:Colore.Native.NativeSdkMethods.QueryDevice
+  fullName: Colore.Native.NativeSdkMethods.QueryDevice
+  nameWithType: NativeSdkMethods.QueryDevice
+- uid: Colore.Native.NativeSdkMethods.QueryDeviceDelegate
+  name: NativeSdkMethods.QueryDeviceDelegate
+  href: api/Colore.Native.NativeSdkMethods.QueryDeviceDelegate.html
+  commentId: T:Colore.Native.NativeSdkMethods.QueryDeviceDelegate
+  fullName: Colore.Native.NativeSdkMethods.QueryDeviceDelegate
+  nameWithType: NativeSdkMethods.QueryDeviceDelegate
+- uid: Colore.Native.NativeSdkMethods.QueryDeviceDelegate.#ctor(System.Object,System.IntPtr)
+  name: QueryDeviceDelegate(Object, IntPtr)
+  href: api/Colore.Native.NativeSdkMethods.QueryDeviceDelegate.html#Colore_Native_NativeSdkMethods_QueryDeviceDelegate__ctor_System_Object_System_IntPtr_
+  commentId: M:Colore.Native.NativeSdkMethods.QueryDeviceDelegate.#ctor(System.Object,System.IntPtr)
+  fullName: Colore.Native.NativeSdkMethods.QueryDeviceDelegate.QueryDeviceDelegate(System.Object, System.IntPtr)
+  nameWithType: NativeSdkMethods.QueryDeviceDelegate.QueryDeviceDelegate(Object, IntPtr)
+- uid: Colore.Native.NativeSdkMethods.QueryDeviceDelegate.#ctor*
+  name: QueryDeviceDelegate
+  href: api/Colore.Native.NativeSdkMethods.QueryDeviceDelegate.html#Colore_Native_NativeSdkMethods_QueryDeviceDelegate__ctor_
+  commentId: Overload:Colore.Native.NativeSdkMethods.QueryDeviceDelegate.#ctor
+  fullName: Colore.Native.NativeSdkMethods.QueryDeviceDelegate.QueryDeviceDelegate
+  nameWithType: NativeSdkMethods.QueryDeviceDelegate.QueryDeviceDelegate
+- uid: Colore.Native.NativeSdkMethods.QueryDeviceDelegate.BeginInvoke(System.Guid,System.IntPtr,System.AsyncCallback,System.Object)
+  name: BeginInvoke(Guid, IntPtr, AsyncCallback, Object)
+  href: api/Colore.Native.NativeSdkMethods.QueryDeviceDelegate.html#Colore_Native_NativeSdkMethods_QueryDeviceDelegate_BeginInvoke_System_Guid_System_IntPtr_System_AsyncCallback_System_Object_
+  commentId: M:Colore.Native.NativeSdkMethods.QueryDeviceDelegate.BeginInvoke(System.Guid,System.IntPtr,System.AsyncCallback,System.Object)
+  fullName: Colore.Native.NativeSdkMethods.QueryDeviceDelegate.BeginInvoke(System.Guid, System.IntPtr, System.AsyncCallback, System.Object)
+  nameWithType: NativeSdkMethods.QueryDeviceDelegate.BeginInvoke(Guid, IntPtr, AsyncCallback, Object)
+- uid: Colore.Native.NativeSdkMethods.QueryDeviceDelegate.BeginInvoke*
+  name: BeginInvoke
+  href: api/Colore.Native.NativeSdkMethods.QueryDeviceDelegate.html#Colore_Native_NativeSdkMethods_QueryDeviceDelegate_BeginInvoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.QueryDeviceDelegate.BeginInvoke
+  fullName: Colore.Native.NativeSdkMethods.QueryDeviceDelegate.BeginInvoke
+  nameWithType: NativeSdkMethods.QueryDeviceDelegate.BeginInvoke
+- uid: Colore.Native.NativeSdkMethods.QueryDeviceDelegate.EndInvoke(System.IAsyncResult)
+  name: EndInvoke(IAsyncResult)
+  href: api/Colore.Native.NativeSdkMethods.QueryDeviceDelegate.html#Colore_Native_NativeSdkMethods_QueryDeviceDelegate_EndInvoke_System_IAsyncResult_
+  commentId: M:Colore.Native.NativeSdkMethods.QueryDeviceDelegate.EndInvoke(System.IAsyncResult)
+  fullName: Colore.Native.NativeSdkMethods.QueryDeviceDelegate.EndInvoke(System.IAsyncResult)
+  nameWithType: NativeSdkMethods.QueryDeviceDelegate.EndInvoke(IAsyncResult)
+- uid: Colore.Native.NativeSdkMethods.QueryDeviceDelegate.EndInvoke*
+  name: EndInvoke
+  href: api/Colore.Native.NativeSdkMethods.QueryDeviceDelegate.html#Colore_Native_NativeSdkMethods_QueryDeviceDelegate_EndInvoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.QueryDeviceDelegate.EndInvoke
+  fullName: Colore.Native.NativeSdkMethods.QueryDeviceDelegate.EndInvoke
+  nameWithType: NativeSdkMethods.QueryDeviceDelegate.EndInvoke
+- uid: Colore.Native.NativeSdkMethods.QueryDeviceDelegate.Invoke(System.Guid,System.IntPtr)
+  name: Invoke(Guid, IntPtr)
+  href: api/Colore.Native.NativeSdkMethods.QueryDeviceDelegate.html#Colore_Native_NativeSdkMethods_QueryDeviceDelegate_Invoke_System_Guid_System_IntPtr_
+  commentId: M:Colore.Native.NativeSdkMethods.QueryDeviceDelegate.Invoke(System.Guid,System.IntPtr)
+  fullName: Colore.Native.NativeSdkMethods.QueryDeviceDelegate.Invoke(System.Guid, System.IntPtr)
+  nameWithType: NativeSdkMethods.QueryDeviceDelegate.Invoke(Guid, IntPtr)
+- uid: Colore.Native.NativeSdkMethods.QueryDeviceDelegate.Invoke*
+  name: Invoke
+  href: api/Colore.Native.NativeSdkMethods.QueryDeviceDelegate.html#Colore_Native_NativeSdkMethods_QueryDeviceDelegate_Invoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.QueryDeviceDelegate.Invoke
+  fullName: Colore.Native.NativeSdkMethods.QueryDeviceDelegate.Invoke
+  nameWithType: NativeSdkMethods.QueryDeviceDelegate.Invoke
+- uid: Colore.Native.NativeSdkMethods.RegisterEventNotification
+  name: RegisterEventNotification
+  href: api/Colore.Native.NativeSdkMethods.html#Colore_Native_NativeSdkMethods_RegisterEventNotification
+  commentId: P:Colore.Native.NativeSdkMethods.RegisterEventNotification
+  fullName: Colore.Native.NativeSdkMethods.RegisterEventNotification
+  nameWithType: NativeSdkMethods.RegisterEventNotification
+- uid: Colore.Native.NativeSdkMethods.RegisterEventNotification*
+  name: RegisterEventNotification
+  href: api/Colore.Native.NativeSdkMethods.html#Colore_Native_NativeSdkMethods_RegisterEventNotification_
+  commentId: Overload:Colore.Native.NativeSdkMethods.RegisterEventNotification
+  fullName: Colore.Native.NativeSdkMethods.RegisterEventNotification
+  nameWithType: NativeSdkMethods.RegisterEventNotification
+- uid: Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate
+  name: NativeSdkMethods.RegisterEventNotificationDelegate
+  href: api/Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.html
+  commentId: T:Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate
+  fullName: Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate
+  nameWithType: NativeSdkMethods.RegisterEventNotificationDelegate
+- uid: Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.#ctor(System.Object,System.IntPtr)
+  name: RegisterEventNotificationDelegate(Object, IntPtr)
+  href: api/Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.html#Colore_Native_NativeSdkMethods_RegisterEventNotificationDelegate__ctor_System_Object_System_IntPtr_
+  commentId: M:Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.#ctor(System.Object,System.IntPtr)
+  fullName: Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.RegisterEventNotificationDelegate(System.Object, System.IntPtr)
+  nameWithType: NativeSdkMethods.RegisterEventNotificationDelegate.RegisterEventNotificationDelegate(Object, IntPtr)
+- uid: Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.#ctor*
+  name: RegisterEventNotificationDelegate
+  href: api/Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.html#Colore_Native_NativeSdkMethods_RegisterEventNotificationDelegate__ctor_
+  commentId: Overload:Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.#ctor
+  fullName: Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.RegisterEventNotificationDelegate
+  nameWithType: NativeSdkMethods.RegisterEventNotificationDelegate.RegisterEventNotificationDelegate
+- uid: Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.BeginInvoke(System.IntPtr,System.AsyncCallback,System.Object)
+  name: BeginInvoke(IntPtr, AsyncCallback, Object)
+  href: api/Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.html#Colore_Native_NativeSdkMethods_RegisterEventNotificationDelegate_BeginInvoke_System_IntPtr_System_AsyncCallback_System_Object_
+  commentId: M:Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.BeginInvoke(System.IntPtr,System.AsyncCallback,System.Object)
+  fullName: Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.BeginInvoke(System.IntPtr, System.AsyncCallback, System.Object)
+  nameWithType: NativeSdkMethods.RegisterEventNotificationDelegate.BeginInvoke(IntPtr, AsyncCallback, Object)
+- uid: Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.BeginInvoke*
+  name: BeginInvoke
+  href: api/Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.html#Colore_Native_NativeSdkMethods_RegisterEventNotificationDelegate_BeginInvoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.BeginInvoke
+  fullName: Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.BeginInvoke
+  nameWithType: NativeSdkMethods.RegisterEventNotificationDelegate.BeginInvoke
+- uid: Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.EndInvoke(System.IAsyncResult)
+  name: EndInvoke(IAsyncResult)
+  href: api/Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.html#Colore_Native_NativeSdkMethods_RegisterEventNotificationDelegate_EndInvoke_System_IAsyncResult_
+  commentId: M:Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.EndInvoke(System.IAsyncResult)
+  fullName: Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.EndInvoke(System.IAsyncResult)
+  nameWithType: NativeSdkMethods.RegisterEventNotificationDelegate.EndInvoke(IAsyncResult)
+- uid: Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.EndInvoke*
+  name: EndInvoke
+  href: api/Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.html#Colore_Native_NativeSdkMethods_RegisterEventNotificationDelegate_EndInvoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.EndInvoke
+  fullName: Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.EndInvoke
+  nameWithType: NativeSdkMethods.RegisterEventNotificationDelegate.EndInvoke
+- uid: Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.Invoke(System.IntPtr)
+  name: Invoke(IntPtr)
+  href: api/Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.html#Colore_Native_NativeSdkMethods_RegisterEventNotificationDelegate_Invoke_System_IntPtr_
+  commentId: M:Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.Invoke(System.IntPtr)
+  fullName: Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.Invoke(System.IntPtr)
+  nameWithType: NativeSdkMethods.RegisterEventNotificationDelegate.Invoke(IntPtr)
+- uid: Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.Invoke*
+  name: Invoke
+  href: api/Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.html#Colore_Native_NativeSdkMethods_RegisterEventNotificationDelegate_Invoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.Invoke
+  fullName: Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.Invoke
+  nameWithType: NativeSdkMethods.RegisterEventNotificationDelegate.Invoke
+- uid: Colore.Native.NativeSdkMethods.SetEffect
+  name: SetEffect
+  href: api/Colore.Native.NativeSdkMethods.html#Colore_Native_NativeSdkMethods_SetEffect
+  commentId: P:Colore.Native.NativeSdkMethods.SetEffect
+  fullName: Colore.Native.NativeSdkMethods.SetEffect
+  nameWithType: NativeSdkMethods.SetEffect
+- uid: Colore.Native.NativeSdkMethods.SetEffect*
+  name: SetEffect
+  href: api/Colore.Native.NativeSdkMethods.html#Colore_Native_NativeSdkMethods_SetEffect_
+  commentId: Overload:Colore.Native.NativeSdkMethods.SetEffect
+  fullName: Colore.Native.NativeSdkMethods.SetEffect
+  nameWithType: NativeSdkMethods.SetEffect
+- uid: Colore.Native.NativeSdkMethods.SetEffectDelegate
+  name: NativeSdkMethods.SetEffectDelegate
+  href: api/Colore.Native.NativeSdkMethods.SetEffectDelegate.html
+  commentId: T:Colore.Native.NativeSdkMethods.SetEffectDelegate
+  fullName: Colore.Native.NativeSdkMethods.SetEffectDelegate
+  nameWithType: NativeSdkMethods.SetEffectDelegate
+- uid: Colore.Native.NativeSdkMethods.SetEffectDelegate.#ctor(System.Object,System.IntPtr)
+  name: SetEffectDelegate(Object, IntPtr)
+  href: api/Colore.Native.NativeSdkMethods.SetEffectDelegate.html#Colore_Native_NativeSdkMethods_SetEffectDelegate__ctor_System_Object_System_IntPtr_
+  commentId: M:Colore.Native.NativeSdkMethods.SetEffectDelegate.#ctor(System.Object,System.IntPtr)
+  fullName: Colore.Native.NativeSdkMethods.SetEffectDelegate.SetEffectDelegate(System.Object, System.IntPtr)
+  nameWithType: NativeSdkMethods.SetEffectDelegate.SetEffectDelegate(Object, IntPtr)
+- uid: Colore.Native.NativeSdkMethods.SetEffectDelegate.#ctor*
+  name: SetEffectDelegate
+  href: api/Colore.Native.NativeSdkMethods.SetEffectDelegate.html#Colore_Native_NativeSdkMethods_SetEffectDelegate__ctor_
+  commentId: Overload:Colore.Native.NativeSdkMethods.SetEffectDelegate.#ctor
+  fullName: Colore.Native.NativeSdkMethods.SetEffectDelegate.SetEffectDelegate
+  nameWithType: NativeSdkMethods.SetEffectDelegate.SetEffectDelegate
+- uid: Colore.Native.NativeSdkMethods.SetEffectDelegate.BeginInvoke(System.Guid,System.AsyncCallback,System.Object)
+  name: BeginInvoke(Guid, AsyncCallback, Object)
+  href: api/Colore.Native.NativeSdkMethods.SetEffectDelegate.html#Colore_Native_NativeSdkMethods_SetEffectDelegate_BeginInvoke_System_Guid_System_AsyncCallback_System_Object_
+  commentId: M:Colore.Native.NativeSdkMethods.SetEffectDelegate.BeginInvoke(System.Guid,System.AsyncCallback,System.Object)
+  fullName: Colore.Native.NativeSdkMethods.SetEffectDelegate.BeginInvoke(System.Guid, System.AsyncCallback, System.Object)
+  nameWithType: NativeSdkMethods.SetEffectDelegate.BeginInvoke(Guid, AsyncCallback, Object)
+- uid: Colore.Native.NativeSdkMethods.SetEffectDelegate.BeginInvoke*
+  name: BeginInvoke
+  href: api/Colore.Native.NativeSdkMethods.SetEffectDelegate.html#Colore_Native_NativeSdkMethods_SetEffectDelegate_BeginInvoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.SetEffectDelegate.BeginInvoke
+  fullName: Colore.Native.NativeSdkMethods.SetEffectDelegate.BeginInvoke
+  nameWithType: NativeSdkMethods.SetEffectDelegate.BeginInvoke
+- uid: Colore.Native.NativeSdkMethods.SetEffectDelegate.EndInvoke(System.IAsyncResult)
+  name: EndInvoke(IAsyncResult)
+  href: api/Colore.Native.NativeSdkMethods.SetEffectDelegate.html#Colore_Native_NativeSdkMethods_SetEffectDelegate_EndInvoke_System_IAsyncResult_
+  commentId: M:Colore.Native.NativeSdkMethods.SetEffectDelegate.EndInvoke(System.IAsyncResult)
+  fullName: Colore.Native.NativeSdkMethods.SetEffectDelegate.EndInvoke(System.IAsyncResult)
+  nameWithType: NativeSdkMethods.SetEffectDelegate.EndInvoke(IAsyncResult)
+- uid: Colore.Native.NativeSdkMethods.SetEffectDelegate.EndInvoke*
+  name: EndInvoke
+  href: api/Colore.Native.NativeSdkMethods.SetEffectDelegate.html#Colore_Native_NativeSdkMethods_SetEffectDelegate_EndInvoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.SetEffectDelegate.EndInvoke
+  fullName: Colore.Native.NativeSdkMethods.SetEffectDelegate.EndInvoke
+  nameWithType: NativeSdkMethods.SetEffectDelegate.EndInvoke
+- uid: Colore.Native.NativeSdkMethods.SetEffectDelegate.Invoke(System.Guid)
+  name: Invoke(Guid)
+  href: api/Colore.Native.NativeSdkMethods.SetEffectDelegate.html#Colore_Native_NativeSdkMethods_SetEffectDelegate_Invoke_System_Guid_
+  commentId: M:Colore.Native.NativeSdkMethods.SetEffectDelegate.Invoke(System.Guid)
+  fullName: Colore.Native.NativeSdkMethods.SetEffectDelegate.Invoke(System.Guid)
+  nameWithType: NativeSdkMethods.SetEffectDelegate.Invoke(Guid)
+- uid: Colore.Native.NativeSdkMethods.SetEffectDelegate.Invoke*
+  name: Invoke
+  href: api/Colore.Native.NativeSdkMethods.SetEffectDelegate.html#Colore_Native_NativeSdkMethods_SetEffectDelegate_Invoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.SetEffectDelegate.Invoke
+  fullName: Colore.Native.NativeSdkMethods.SetEffectDelegate.Invoke
+  nameWithType: NativeSdkMethods.SetEffectDelegate.Invoke
+- uid: Colore.Native.NativeSdkMethods.UnInit
+  name: UnInit
+  href: api/Colore.Native.NativeSdkMethods.html#Colore_Native_NativeSdkMethods_UnInit
+  commentId: P:Colore.Native.NativeSdkMethods.UnInit
+  fullName: Colore.Native.NativeSdkMethods.UnInit
+  nameWithType: NativeSdkMethods.UnInit
+- uid: Colore.Native.NativeSdkMethods.UnInit*
+  name: UnInit
+  href: api/Colore.Native.NativeSdkMethods.html#Colore_Native_NativeSdkMethods_UnInit_
+  commentId: Overload:Colore.Native.NativeSdkMethods.UnInit
+  fullName: Colore.Native.NativeSdkMethods.UnInit
+  nameWithType: NativeSdkMethods.UnInit
+- uid: Colore.Native.NativeSdkMethods.UnInitDelegate
+  name: NativeSdkMethods.UnInitDelegate
+  href: api/Colore.Native.NativeSdkMethods.UnInitDelegate.html
+  commentId: T:Colore.Native.NativeSdkMethods.UnInitDelegate
+  fullName: Colore.Native.NativeSdkMethods.UnInitDelegate
+  nameWithType: NativeSdkMethods.UnInitDelegate
+- uid: Colore.Native.NativeSdkMethods.UnInitDelegate.#ctor(System.Object,System.IntPtr)
+  name: UnInitDelegate(Object, IntPtr)
+  href: api/Colore.Native.NativeSdkMethods.UnInitDelegate.html#Colore_Native_NativeSdkMethods_UnInitDelegate__ctor_System_Object_System_IntPtr_
+  commentId: M:Colore.Native.NativeSdkMethods.UnInitDelegate.#ctor(System.Object,System.IntPtr)
+  fullName: Colore.Native.NativeSdkMethods.UnInitDelegate.UnInitDelegate(System.Object, System.IntPtr)
+  nameWithType: NativeSdkMethods.UnInitDelegate.UnInitDelegate(Object, IntPtr)
+- uid: Colore.Native.NativeSdkMethods.UnInitDelegate.#ctor*
+  name: UnInitDelegate
+  href: api/Colore.Native.NativeSdkMethods.UnInitDelegate.html#Colore_Native_NativeSdkMethods_UnInitDelegate__ctor_
+  commentId: Overload:Colore.Native.NativeSdkMethods.UnInitDelegate.#ctor
+  fullName: Colore.Native.NativeSdkMethods.UnInitDelegate.UnInitDelegate
+  nameWithType: NativeSdkMethods.UnInitDelegate.UnInitDelegate
+- uid: Colore.Native.NativeSdkMethods.UnInitDelegate.BeginInvoke(System.AsyncCallback,System.Object)
+  name: BeginInvoke(AsyncCallback, Object)
+  href: api/Colore.Native.NativeSdkMethods.UnInitDelegate.html#Colore_Native_NativeSdkMethods_UnInitDelegate_BeginInvoke_System_AsyncCallback_System_Object_
+  commentId: M:Colore.Native.NativeSdkMethods.UnInitDelegate.BeginInvoke(System.AsyncCallback,System.Object)
+  fullName: Colore.Native.NativeSdkMethods.UnInitDelegate.BeginInvoke(System.AsyncCallback, System.Object)
+  nameWithType: NativeSdkMethods.UnInitDelegate.BeginInvoke(AsyncCallback, Object)
+- uid: Colore.Native.NativeSdkMethods.UnInitDelegate.BeginInvoke*
+  name: BeginInvoke
+  href: api/Colore.Native.NativeSdkMethods.UnInitDelegate.html#Colore_Native_NativeSdkMethods_UnInitDelegate_BeginInvoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.UnInitDelegate.BeginInvoke
+  fullName: Colore.Native.NativeSdkMethods.UnInitDelegate.BeginInvoke
+  nameWithType: NativeSdkMethods.UnInitDelegate.BeginInvoke
+- uid: Colore.Native.NativeSdkMethods.UnInitDelegate.EndInvoke(System.IAsyncResult)
+  name: EndInvoke(IAsyncResult)
+  href: api/Colore.Native.NativeSdkMethods.UnInitDelegate.html#Colore_Native_NativeSdkMethods_UnInitDelegate_EndInvoke_System_IAsyncResult_
+  commentId: M:Colore.Native.NativeSdkMethods.UnInitDelegate.EndInvoke(System.IAsyncResult)
+  fullName: Colore.Native.NativeSdkMethods.UnInitDelegate.EndInvoke(System.IAsyncResult)
+  nameWithType: NativeSdkMethods.UnInitDelegate.EndInvoke(IAsyncResult)
+- uid: Colore.Native.NativeSdkMethods.UnInitDelegate.EndInvoke*
+  name: EndInvoke
+  href: api/Colore.Native.NativeSdkMethods.UnInitDelegate.html#Colore_Native_NativeSdkMethods_UnInitDelegate_EndInvoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.UnInitDelegate.EndInvoke
+  fullName: Colore.Native.NativeSdkMethods.UnInitDelegate.EndInvoke
+  nameWithType: NativeSdkMethods.UnInitDelegate.EndInvoke
+- uid: Colore.Native.NativeSdkMethods.UnInitDelegate.Invoke
+  name: Invoke()
+  href: api/Colore.Native.NativeSdkMethods.UnInitDelegate.html#Colore_Native_NativeSdkMethods_UnInitDelegate_Invoke
+  commentId: M:Colore.Native.NativeSdkMethods.UnInitDelegate.Invoke
+  fullName: Colore.Native.NativeSdkMethods.UnInitDelegate.Invoke()
+  nameWithType: NativeSdkMethods.UnInitDelegate.Invoke()
+- uid: Colore.Native.NativeSdkMethods.UnInitDelegate.Invoke*
+  name: Invoke
+  href: api/Colore.Native.NativeSdkMethods.UnInitDelegate.html#Colore_Native_NativeSdkMethods_UnInitDelegate_Invoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.UnInitDelegate.Invoke
+  fullName: Colore.Native.NativeSdkMethods.UnInitDelegate.Invoke
+  nameWithType: NativeSdkMethods.UnInitDelegate.Invoke
+- uid: Colore.Native.NativeSdkMethods.UnregisterEventNotification
+  name: UnregisterEventNotification
+  href: api/Colore.Native.NativeSdkMethods.html#Colore_Native_NativeSdkMethods_UnregisterEventNotification
+  commentId: P:Colore.Native.NativeSdkMethods.UnregisterEventNotification
+  fullName: Colore.Native.NativeSdkMethods.UnregisterEventNotification
+  nameWithType: NativeSdkMethods.UnregisterEventNotification
+- uid: Colore.Native.NativeSdkMethods.UnregisterEventNotification*
+  name: UnregisterEventNotification
+  href: api/Colore.Native.NativeSdkMethods.html#Colore_Native_NativeSdkMethods_UnregisterEventNotification_
+  commentId: Overload:Colore.Native.NativeSdkMethods.UnregisterEventNotification
+  fullName: Colore.Native.NativeSdkMethods.UnregisterEventNotification
+  nameWithType: NativeSdkMethods.UnregisterEventNotification
+- uid: Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate
+  name: NativeSdkMethods.UnregisterEventNotificationDelegate
+  href: api/Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.html
+  commentId: T:Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate
+  fullName: Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate
+  nameWithType: NativeSdkMethods.UnregisterEventNotificationDelegate
+- uid: Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.#ctor(System.Object,System.IntPtr)
+  name: UnregisterEventNotificationDelegate(Object, IntPtr)
+  href: api/Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.html#Colore_Native_NativeSdkMethods_UnregisterEventNotificationDelegate__ctor_System_Object_System_IntPtr_
+  commentId: M:Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.#ctor(System.Object,System.IntPtr)
+  fullName: Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.UnregisterEventNotificationDelegate(System.Object, System.IntPtr)
+  nameWithType: NativeSdkMethods.UnregisterEventNotificationDelegate.UnregisterEventNotificationDelegate(Object, IntPtr)
+- uid: Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.#ctor*
+  name: UnregisterEventNotificationDelegate
+  href: api/Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.html#Colore_Native_NativeSdkMethods_UnregisterEventNotificationDelegate__ctor_
+  commentId: Overload:Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.#ctor
+  fullName: Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.UnregisterEventNotificationDelegate
+  nameWithType: NativeSdkMethods.UnregisterEventNotificationDelegate.UnregisterEventNotificationDelegate
+- uid: Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.BeginInvoke(System.AsyncCallback,System.Object)
+  name: BeginInvoke(AsyncCallback, Object)
+  href: api/Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.html#Colore_Native_NativeSdkMethods_UnregisterEventNotificationDelegate_BeginInvoke_System_AsyncCallback_System_Object_
+  commentId: M:Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.BeginInvoke(System.AsyncCallback,System.Object)
+  fullName: Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.BeginInvoke(System.AsyncCallback, System.Object)
+  nameWithType: NativeSdkMethods.UnregisterEventNotificationDelegate.BeginInvoke(AsyncCallback, Object)
+- uid: Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.BeginInvoke*
+  name: BeginInvoke
+  href: api/Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.html#Colore_Native_NativeSdkMethods_UnregisterEventNotificationDelegate_BeginInvoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.BeginInvoke
+  fullName: Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.BeginInvoke
+  nameWithType: NativeSdkMethods.UnregisterEventNotificationDelegate.BeginInvoke
+- uid: Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.EndInvoke(System.IAsyncResult)
+  name: EndInvoke(IAsyncResult)
+  href: api/Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.html#Colore_Native_NativeSdkMethods_UnregisterEventNotificationDelegate_EndInvoke_System_IAsyncResult_
+  commentId: M:Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.EndInvoke(System.IAsyncResult)
+  fullName: Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.EndInvoke(System.IAsyncResult)
+  nameWithType: NativeSdkMethods.UnregisterEventNotificationDelegate.EndInvoke(IAsyncResult)
+- uid: Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.EndInvoke*
+  name: EndInvoke
+  href: api/Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.html#Colore_Native_NativeSdkMethods_UnregisterEventNotificationDelegate_EndInvoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.EndInvoke
+  fullName: Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.EndInvoke
+  nameWithType: NativeSdkMethods.UnregisterEventNotificationDelegate.EndInvoke
+- uid: Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.Invoke
+  name: Invoke()
+  href: api/Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.html#Colore_Native_NativeSdkMethods_UnregisterEventNotificationDelegate_Invoke
+  commentId: M:Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.Invoke
+  fullName: Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.Invoke()
+  nameWithType: NativeSdkMethods.UnregisterEventNotificationDelegate.Invoke()
+- uid: Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.Invoke*
+  name: Invoke
+  href: api/Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.html#Colore_Native_NativeSdkMethods_UnregisterEventNotificationDelegate_Invoke_
+  commentId: Overload:Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.Invoke
+  fullName: Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.Invoke
+  nameWithType: NativeSdkMethods.UnregisterEventNotificationDelegate.Invoke
 - uid: Colore.Rest
   name: Colore.Rest
   href: api/Colore.Rest.html

@@ -48,7 +48,7 @@
       "output": {
         ".html": {
           "relative_path": "README.html",
-          "hash": "DGntY3mv6LnwDSXOUzysHA=="
+          "hash": "PtAaeVi/O8iEhGvMcDbhEQ=="
         }
       },
       "is_incremental": false,
@@ -920,6 +920,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Native.INativeSdkMethods.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Native.INativeSdkMethods.html",
+          "hash": "aU815X5M8EiEm5XU2GCVrg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Native.NativeApi.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Native.NativeApi.html",
+          "hash": "W06lkHfbWsU065iwEqnOHA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Colore.Native.NativeCallException.yml",
       "output": {
         ".html": {
@@ -932,11 +956,191 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.html",
+          "hash": "xV6yOSeDn7noLq/nhRAAHg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Native.NativeSdkMethods.CreateEffectDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Native.NativeSdkMethods.CreateEffectDelegate.html",
+          "hash": "knFe5wBQRcJI7yX5FDLX+Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.html",
+          "hash": "VivA+/5BCTANp4TBJnaFTw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.html",
+          "hash": "URmHXJvbv6Gf4xHX/vAG8w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.html",
+          "hash": "244i7VD0s8cEiWoqGkL6FA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.html",
+          "hash": "hsqCChazvQ1oDCghw/hIjg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.html",
+          "hash": "XUY4i4sehEOXOQ7nZ/6fEQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Native.NativeSdkMethods.DeleteEffectDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Native.NativeSdkMethods.DeleteEffectDelegate.html",
+          "hash": "gOFoOZ6Pl3Yljdp/s8T6aA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Native.NativeSdkMethods.InitDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Native.NativeSdkMethods.InitDelegate.html",
+          "hash": "YhSRhk0jU/RDlfo4nivh1w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Native.NativeSdkMethods.QueryDeviceDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Native.NativeSdkMethods.QueryDeviceDelegate.html",
+          "hash": "al3FZmnX7JdGBlymxHhyBw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.html",
+          "hash": "moR4YK5luzE+BvQT7zUlVw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Native.NativeSdkMethods.SetEffectDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Native.NativeSdkMethods.SetEffectDelegate.html",
+          "hash": "Cxj1CeNKAezfdyPSy4XOPg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Native.NativeSdkMethods.UnInitDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Native.NativeSdkMethods.UnInitDelegate.html",
+          "hash": "Q4hgs9pkz2hesZYq4MdUOw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.html",
+          "hash": "LcJuK5u+jIlnRQYXCmU5VQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Native.NativeSdkMethods.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Native.NativeSdkMethods.html",
+          "hash": "zzgrzv9b5hJt5s0aJ3rhEQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Colore.Native.yml",
       "output": {
         ".html": {
           "relative_path": "api/Colore.Native.html",
-          "hash": "jCJXhT1D2Q4CRxSX7C7Zcw=="
+          "hash": "adWjKcFV7DDsmp0jhGjd9Q=="
         }
       },
       "is_incremental": false,
@@ -1032,7 +1236,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "oxhe/IPdGWHoQxY8iolvWw=="
+          "hash": "djYTQqR2SAhQ+1mpMbPn4w=="
         }
       },
       "is_incremental": false,
@@ -1121,17 +1325,17 @@
         "incrementalPhase": "build"
       },
       "processors": {
-        "ManagedReferenceDocumentProcessor": {
+        "TocDocumentProcessor": {
           "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         },
-        "TocDocumentProcessor": {
+        "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
         "ResourceDocumentProcessor": {
