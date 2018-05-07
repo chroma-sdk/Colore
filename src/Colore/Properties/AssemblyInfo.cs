@@ -26,3 +26,4 @@
 using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("Colore.Tests")]
+[assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
