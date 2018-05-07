@@ -24,6 +24,7 @@ cache:
   - tools -> build.cake
   - C:\ProgramData\chocolatey\bin -> build.cake
   - C:\ProgramData\chocolatey\lib -> build.cake
+  - '%USERPROFILE%\.nuget\packages -> **\*.csproj'
 
 init:
   - git config --global user.email "deploy@appveyor.com"
