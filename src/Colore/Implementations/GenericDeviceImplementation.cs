@@ -51,6 +51,9 @@ namespace Colore.Implementations
         /// </summary>
         /// <param name="deviceId">The <see cref="Guid" /> of the device.</param>
         /// <param name="api">Reference to the Chroma API instance in use.</param>
+        /// <exception cref="UnsupportedDeviceException">
+        /// Thrown if <paramref name="deviceId" /> is not a valid Razer Chroma device ID.
+        /// </exception>
         public GenericDeviceImplementation(Guid deviceId, IChromaApi api)
             : base(api)
         {
@@ -81,9 +84,10 @@ namespace Colore.Implementations
 
         /// <inheritdoc cref="DeviceImplementation.SetAllAsync" />
         /// <summary>
-        /// Sets the color of all components on this device.
+        /// Throws a <see cref="NotSupportedException" />, due to inability to set colors on generic devices.
         /// </summary>
         /// <param name="color">Color to set.</param>
+        /// <exception cref="NotSupportedException">Always thrown, setting colors on generic devices is not supported.</exception>
         public override Task<Guid> SetAllAsync(Color color)
         {
             throw new NotSupportedException("Setting colors is not supported on generic devices.");
