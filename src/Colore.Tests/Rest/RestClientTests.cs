@@ -46,9 +46,9 @@ namespace Colore.Tests.Rest
         [Test]
         public void ShouldConstructWithCorrectBaseAddressFromString()
         {
-            var address = "https://example.org/mysite";
-            var client = new RestClient(address);
-            Assert.AreEqual(new Uri(address), client.BaseAddress);
+            const string Address = "https://example.org/mysite";
+            var client = new RestClient(Address);
+            Assert.AreEqual(new Uri(Address), client.BaseAddress);
             client.Dispose();
         }
     }

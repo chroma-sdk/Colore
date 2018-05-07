@@ -130,6 +130,7 @@ namespace Colore.Implementations
             UninitializeAsync().Wait();
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Raised when information about application state is received from messages.
         /// </summary>
@@ -140,6 +141,7 @@ namespace Colore.Implementations
         /// </remarks>
         public event EventHandler<ApplicationStateEventArgs> ApplicationState;
 
+        /// <inheritdoc />
         /// <summary>
         /// Raised when information about device access is received from messages.
         /// </summary>
@@ -150,6 +152,7 @@ namespace Colore.Implementations
         /// </remarks>
         public event EventHandler<DeviceAccessEventArgs> DeviceAccess;
 
+        /// <inheritdoc />
         /// <summary>
         /// Raised when information about SDK support is received from messages.
         /// </summary>

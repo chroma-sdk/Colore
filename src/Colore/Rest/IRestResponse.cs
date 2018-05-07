@@ -33,6 +33,7 @@ namespace Colore.Rest
     /// Represents a response from calling a REST API.
     /// </summary>
     /// <typeparam name="TData">The type contained in this response.</typeparam>
+    [PublicAPI]
     public interface IRestResponse<out TData>
     {
         /// <summary>

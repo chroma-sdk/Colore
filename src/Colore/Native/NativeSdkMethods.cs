@@ -35,6 +35,7 @@ namespace Colore.Native
     using Colore.Helpers;
     using Colore.Logging;
 
+    /// <inheritdoc cref="INativeSdkMethods" />
     /// <summary>
     /// Native methods from Razer's Chroma SDK.
     /// </summary>

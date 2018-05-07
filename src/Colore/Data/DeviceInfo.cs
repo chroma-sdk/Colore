@@ -98,6 +98,7 @@ namespace Colore.Data
         /// <returns><c>true</c> if the two objects are not equal, otherwise <c>false</c>.</returns>
         public static bool operator !=(DeviceInfo left, object right) => !left.Equals(right);
 
+        /// <inheritdoc />
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
         /// </summary>

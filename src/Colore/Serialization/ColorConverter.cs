@@ -68,6 +68,9 @@ namespace Colore.Serialization
         {
             var token = JToken.Load(reader);
 
+            // We are skipping processing of some enum members on purpose to trigger the exception
+            // for unsupported types.
+            // ReSharper disable once SwitchStatementMissingSomeCases
             switch (token.Type)
             {
                 case JTokenType.Integer:

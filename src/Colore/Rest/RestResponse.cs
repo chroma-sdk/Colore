@@ -84,7 +84,7 @@ namespace Colore.Rest
         public T Deserialize<T>()
         {
             if (string.IsNullOrWhiteSpace(Content))
-                return default(T);
+                return default;
 
             try
             {
@@ -92,7 +92,7 @@ namespace Colore.Rest
             }
             catch (JsonException)
             {
-                return default(T);
+                return default;
             }
         }
     }

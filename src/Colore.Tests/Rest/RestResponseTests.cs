@@ -26,6 +26,7 @@
 namespace Colore.Tests.Rest
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
     using System.Net;
 
     using Colore.Rest;
@@ -134,8 +135,8 @@ namespace Colore.Tests.Rest
         [Test]
         public void DataShouldDefaultIfContentIsInvalidJson()
         {
-            var json = "This is not valid JSON, not at all!";
-            var response = new RestResponse<object>(HttpStatusCode.OK, json);
+            const string Json = "This is not valid JSON, not at all!";
+            var response = new RestResponse<object>(HttpStatusCode.OK, Json);
             Assert.IsNull(response.Data);
         }
 
@@ -147,6 +148,7 @@ namespace Colore.Tests.Rest
             Assert.True(data.Equals(response.Data));
         }
 
+        [SuppressMessage("ReSharper", "MemberCanBePrivate.Local")]
         private class MyData : IEquatable<MyData>
         {
             public string Name { get; set; }

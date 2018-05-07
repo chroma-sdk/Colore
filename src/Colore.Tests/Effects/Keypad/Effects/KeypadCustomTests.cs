@@ -414,8 +414,7 @@ namespace Colore.Tests.Effects.Keypad.Effects
 
             Assert.False(grid == null);
             Assert.True(grid != null);
-            Assert.False(grid.Equals((Color[][])null));
-            Assert.False(grid.Equals((Color[])null));
+            Assert.False(grid.Equals(null));
             Assert.AreNotEqual(grid, null);
         }
 

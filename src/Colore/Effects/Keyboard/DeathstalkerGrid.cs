@@ -214,13 +214,10 @@ namespace Colore.Effects.Keyboard
         /// <filterpriority>2</filterpriority>
         public override bool Equals(object obj)
         {
-            if (ReferenceEquals(obj, null))
+            if (obj is null)
                 return false;
 
-            if (obj is DeathstalkerGrid custom)
-                return Equals(custom);
-
-            return false;
+            return obj is DeathstalkerGrid custom && Equals(custom);
         }
 
         /// <inheritdoc />

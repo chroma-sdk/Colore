@@ -108,7 +108,8 @@ namespace Colore.Effects.Generic
         {
             if (obj is null)
                 return false;
-            return obj is None && Equals((None)obj);
+
+            return obj is None none && Equals(none);
         }
 
         /// <inheritdoc />
