@@ -3,7 +3,7 @@
 #tool "nuget:?package=GitVersion.CommandLine"
 #tool "nuget:?package=OpenCover"
 #tool "nuget:?package=ReportGenerator"
-#tool coveralls.net
+#tool coveralls.io
 
 ///////////////////////////////////////////////////////////////////////////////
 // ARGUMENTS
