@@ -40,7 +40,7 @@ var isAppVeyor = AppVeyor.IsRunningOnAppVeyor;
 var isTravis = TravisCI.IsRunningOnTravisCI;
 var isCi = isAppVeyor || isTravis;
 var isWindows = IsRunningOnWindows();
-var cover = isAppVeyor;
+var cover = isAppVeyor || HasArgument("Cover");
 
 IEnumerable<string> ReadCoverageFilters(string path)
 {
