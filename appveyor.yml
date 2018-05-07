@@ -21,7 +21,9 @@ environment:
     secure: wChw9Tx7JVk3HvjG+ROsKpWWqwWx88uQ5xT8eOrO8lc=
 
 cache:
-  - tools
+  - tools -> build.cake
+  - C:\ProgramData\chocolatey\bin -> build.cake
+  - C:\ProgramData\chocolatey\lib -> build.cake
 
 init:
   - git config --global user.email "deploy@appveyor.com"
