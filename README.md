@@ -5,19 +5,9 @@
 [![NuGet version][ngverbadge]][ng]
 [![MyGet version][mgverbadge]][mg]
 
-**[Master][master]:**
-[![Build status][appveyor-master-badge]][appveyor-master-status]
-[![TravisCI Status][travis-master-badge]][travis-master-status]
-[![Test status][test-master-badge]][test-master-status]
-[![Coverage][coveralls-master-badge]][coveralls-master]
-[![Codecov coverage][codecov-master-badge]][codecov-master]
-
-**[Develop][develop]:**
-[![Build status][appveyor-develop-badge]][appveyor-develop-status]
-[![TravisCI Status][travis-develop-badge]][travis-develop-status]
-[![Test status][test-develop-badge]][test-develop-status]
-[![Coverage][coveralls-develop-badge]][coveralls-develop]
-[![Codecov coverage][codecov-develop-badge]][codecov-develop]
+| [Master][master] | [![Build status][appveyor-master-badge]][appveyor-master-status] | [![TravisCI Status][travis-master-badge]][travis-master-status] | [![Test status][test-master-badge]][test-master-status] | [![Coverage][coveralls-master-badge]][coveralls-master] | [![Codecov coverage][codecov-master-badge]][codecov-master] |
+|-|-|-|-|-|-|
+| [**Develop**][develop] | [![Build status][appveyor-develop-badge]][appveyor-develop-status] | [![TravisCI Status][travis-develop-badge]][travis-develop-status] | [![Test status][test-develop-badge]][test-develop-status] | [![Coverage][coveralls-develop-badge]][coveralls-develop] | [![Codecov coverage][codecov-develop-badge]][codecov-develop] |
 
 A powerful and elegant C# library for Razer Chroma's SDK
 
