@@ -346,9 +346,19 @@ Task("Codecov")
     .IsDependentOn("Test")
     .Does(() =>
     {
-        Information("Running Codecov tool on OpenCover result");
+        var ccVersion = $"{version.FullSemVer}.build.{BuildSystem.AppVeyor.Environment.Build.Version}";
 
-        Codecov("./artifacts/opencover-results.xml");
+        Information("Running Codecov tool with version {0} on OpenCover result", ccVersion);
+
+        Codecov(new CodecovSettings
+        {
+            Files = new[] { "./artifacts/opencover-results.xml" },
+            Required = true,
+            EnvironmentVariables = new Dictionary<string, string>
+            {
+                ["APPVEYOR_BUILD_VERSION"] = ccVersion
+            }
+        });
     });
 
 Task("CI")
