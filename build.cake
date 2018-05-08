@@ -1,9 +1,11 @@
 #addin nuget:?package=Cake.DocFx
 #addin Cake.Coveralls
+#addin nuget:?package=Cake.Codecov
 #tool "nuget:?package=GitVersion.CommandLine"
 #tool "nuget:?package=OpenCover"
 #tool "nuget:?package=ReportGenerator"
 #tool coveralls.io
+#tool nuget:?package=Codecov
 
 ///////////////////////////////////////////////////////////////////////////////
 // ARGUMENTS
@@ -338,12 +340,24 @@ Task("Coveralls")
         // });
     });
 
+Task("Codecov")
+    .WithCriteria(cover)
+    .WithCriteria(isAppVeyor)
+    .IsDependentOn("Test")
+    .Does(() =>
+    {
+        Information("Running Codecov tool on OpenCover result");
+
+        Codecov("./artifacts/opencover-results.xml");
+    });
+
 Task("CI")
     .IsDependentOn("Dist")
     .IsDependentOn("Publish")
     .IsDependentOn("Pack")
     .IsDependentOn("Docs")
-    .IsDependentOn("Coveralls");
+    .IsDependentOn("Coveralls")
+    .IsDependentOn("Codecov");
 
 Task("Travis").IsDependentOn("Test");
 Task("AppVeyor").IsDependentOn("CI");
