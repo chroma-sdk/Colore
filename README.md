@@ -10,12 +10,14 @@
 [![TravisCI Status][travis-master-badge]][travis-master-status]
 [![Test status][test-master-badge]][test-master-status]
 [![Coverage][coveralls-master-badge]][coveralls-master]
+[![Codecov coverage][codecov-master-badge]][codecov-master]
 
 **[Develop][develop]:**
 [![Build status][appveyor-develop-badge]][appveyor-develop-status]
 [![TravisCI Status][travis-develop-badge]][travis-develop-status]
 [![Test status][test-develop-badge]][test-develop-status]
 [![Coverage][coveralls-develop-badge]][coveralls-develop]
+[![Codecov coverage][codecov-develop-badge]][codecov-develop]
 
 A powerful and elegant C# library for Razer Chroma's SDK
 
@@ -177,6 +179,8 @@ There may be others we are unaware of, so please let us know if there are any ot
 [test-develop-badge]: https://img.shields.io/appveyor/tests/corale/Colore/develop.svg
 [coveralls-develop]: https://coveralls.io/github/chroma-sdk/Colore?branch=develop
 [coveralls-develop-badge]: https://coveralls.io/repos/github/chroma-sdk/Colore/badge.svg?branch=develop
+[codecov-develop]: https://codecov.io/gh/chroma-sdk/Colore/branch/develop
+[codecov-develop-badge]: https://codecov.io/gh/chroma-sdk/Colore/branch/develop/graph/badge.svg
 
 [appveyor-master-status]: https://ci.appveyor.com/project/Corale/colore/branch/master
 [appveyor-master-badge]: https://ci.appveyor.com/api/projects/status/st3y6fo0jqvhd8cg/branch/master?svg=true
@@ -186,6 +190,8 @@ There may be others we are unaware of, so please let us know if there are any ot
 [test-master-badge]: https://img.shields.io/appveyor/tests/corale/Colore/master.svg
 [coveralls-master]: https://coveralls.io/github/chroma-sdk/Colore
 [coveralls-master-badge]: https://coveralls.io/repos/github/chroma-sdk/Colore/badge.svg
+[codecov-master]: https://codecov.io/gh/chroma-sdk/Colore
+[codecov-master-badge]: https://codecov.io/gh/chroma-sdk/Colore/branch/master/graph/badge.svg
 
 [gitter]: https://gitter.im/chroma-sdk/Colore?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
 [gitterbadge]: https://badges.gitter.im/Join%20Chat.svg
