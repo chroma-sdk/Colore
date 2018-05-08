@@ -1,10 +1,3 @@
-comment:
-  layout: "reach, diff, flags, files"
-  behavior: default
-  require_changes: false
-  require_base: no
-  require_head: yes
-
 coverage:
   range: 50..100
   round: down
@@ -13,4 +6,3 @@ coverage:
     slack:
       default:
         url: "secret:uhuums2k8b7CU1V+2nhYmLnzoFiOTexPI3iU63rwxPT08Q2bSCohYFcpt+9xzaauCyPANcElwsZtyyix1kvbfInL+OYeb9gMKu0q56KU94e48qyIeUL0b8/vBqwSi7Cj2pZfL9nfuvrvOzRJ71+5Wlnw24/Wa2ADY+6sN3SExM8="
-        only_pulls: false
