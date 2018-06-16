@@ -2125,6 +2125,12 @@ references:
   commentId: T:Colore.Effects.Generic.Effect
   fullName: Colore.Effects.Generic.Effect
   nameWithType: Effect
+- uid: Colore.Effects.Generic.Effect.Custom
+  name: Custom
+  href: api/Colore.Effects.Generic.Effect.html#Colore_Effects_Generic_Effect_Custom
+  commentId: F:Colore.Effects.Generic.Effect.Custom
+  fullName: Colore.Effects.Generic.Effect.Custom
+  nameWithType: Effect.Custom
 - uid: Colore.Effects.Generic.Effect.Invalid
   name: Invalid
   href: api/Colore.Effects.Generic.Effect.html#Colore_Effects_Generic_Effect_Invalid
@@ -2143,6 +2149,12 @@ references:
   commentId: F:Colore.Effects.Generic.Effect.Reserved
   fullName: Colore.Effects.Generic.Effect.Reserved
   nameWithType: Effect.Reserved
+- uid: Colore.Effects.Generic.Effect.Static
+  name: Static
+  href: api/Colore.Effects.Generic.Effect.html#Colore_Effects_Generic_Effect_Static
+  commentId: F:Colore.Effects.Generic.Effect.Static
+  fullName: Colore.Effects.Generic.Effect.Static
+  nameWithType: Effect.Static
 - uid: Colore.Effects.Generic.Effect.value__
   name: value__
   href: api/Colore.Effects.Generic.Effect.html#Colore_Effects_Generic_Effect_value__
