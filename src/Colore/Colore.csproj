@@ -4,7 +4,7 @@
     <TargetFrameworks>netstandard1.3;net451</TargetFrameworks>
     <Platforms>AnyCPU</Platforms>
     <Version>$(AssemblyVersion)</Version>
-    <DebugType>portable</DebugType>
+    <DebugType>full</DebugType>
     <DebugSymbols>true</DebugSymbols>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
