@@ -42,7 +42,7 @@
     <PackageTags>razer;chroma;corale;led;light;peripheral;gaming</PackageTags>
     <IncludeSymbols>true</IncludeSymbols>
     <IncludeSource>true</IncludeSource>
-    <RepositoryUrl>https://github.com/CoraleStudios/Colore</RepositoryUrl>
+    <RepositoryUrl>https://github.com/chroma-sdk/Colore</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
