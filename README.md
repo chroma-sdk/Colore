@@ -145,7 +145,7 @@ There may be others we are unaware of, so please let us know if there are any ot
 
 [coc]: CODE_OF_CONDUCT.md
 [getting-started]: https://github.com/chroma-sdk/Colore/wiki/Getting-started
-[newpull]: ../../pull/new/develop
+[newpull]: https://github.com/chroma-sdk/Colore/pull/new/develop
 [sharp]: https://github.com/Sharparam
 [contrib]: CONTRIBUTING.md
 [bs]: https://github.com/brandonscott

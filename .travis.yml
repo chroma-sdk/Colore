@@ -12,7 +12,7 @@ env:
     - DOCFX_SOURCE_BRANCH_NAME=$TRAVIS_BRANCH
     - secure: kReI3QWEt5AqP92v/z2ZLO8bFOSgAXcGpsIFUHzFGpetHw8poBFW2GK+ZXbxGXddRfDVsFxptBbAxMihuhX6ljHyOcxkqAsSvs4C+s+XqUtR7oCi4ye2nXhSL30mJTk/o6KZTTL7/LomR9FONf7/3ws26uf/fcstpvNTbiiuV6Y=
 
-dotnet: 2.1.4
+dotnet: 2.1.300
 mono: latest
 addons:
   ssh_known_hosts: github.com
@@ -38,27 +38,10 @@ before_install:
   - "./travis/fix-branches.sh"
 
 before_script:
-  - wget https://github.com/dotnet/docfx/releases/download/v2.33.1/docfx.zip
-  - unzip docfx.zip -d docfx
-  - export PATH=$PATH:$PWD/docfx/
   - chmod +x build.sh
 
 script:
   - "./build.sh -t Travis"
-
-# deploy:
-#   - provider: script
-#     skip_cleanup: true
-#     script: travis/deploy-docs.sh
-#     on:
-#       branch: develop
-#       condition: $TRAVIS_OS_NAME = linux
-#   - provider: script
-#     skip_cleanup: true
-#     script: travis/deploy-docs.sh release
-#     on:
-#       tags: true
-#       condition: $TRAVIS_OS_NAME = linux
 
 cache:
   directories:
