@@ -5,7 +5,7 @@
 #tool "nuget:?package=OpenCover"
 #tool "nuget:?package=ReportGenerator"
 #tool coveralls.io
-#tool nuget:?package=Codecov
+#tool nuget:?package=Codecov&version=1.0.4
 
 ///////////////////////////////////////////////////////////////////////////////
 // ARGUMENTS
@@ -154,6 +154,7 @@ void Build(string project, string framework = null)
 Task("Clean")
     .Does(() =>
     {
+        Information("Cleaning output directories");
         CleanDirectory("./artifacts");
         CleanDirectory("./publish");
     });
@@ -227,7 +228,7 @@ Task("Test")
         if (cover)
         {
             Information("Running tests with coverage, using OpenCover");
-            
+
             var filters = ReadCoverageFilters("./src/coverage-filters.txt");
 
             var settings = filters.Aggregate(new OpenCoverSettings
@@ -319,7 +320,7 @@ Task("Coveralls")
     .Does(() =>
     {
         Information("Running Coveralls tool on OpenCover result");
-        
+
         CoverallsIo("./artifacts/opencover-results.xml", new CoverallsIoSettings
         {
             FullSources = true,
@@ -357,7 +358,7 @@ Task("Codecov")
             Branch = Uri.EscapeDataString(version.BranchName),
             EnvironmentVariables = new Dictionary<string, string>
             {
-                ["APPVEYOR_BUILD_VERSION"] = ccVersion
+                ["APPVEYOR_BUILD_VERSION"] = Uri.EscapeDataString(ccVersion)
             }
         });
     });
