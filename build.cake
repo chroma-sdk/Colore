@@ -154,6 +154,7 @@ void Build(string project, string framework = null)
 Task("Clean")
     .Does(() =>
     {
+        Information("Cleaning output directories");
         CleanDirectory("./artifacts");
         CleanDirectory("./publish");
     });
