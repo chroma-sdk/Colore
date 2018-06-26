@@ -355,6 +355,7 @@ Task("Codecov")
             Files = new[] { "./artifacts/opencover-results.xml" },
             Required = true,
             Branch = Uri.EscapeDataString(version.BranchName),
+            Verbose = true,
             EnvironmentVariables = new Dictionary<string, string>
             {
                 ["APPVEYOR_BUILD_VERSION"] = Uri.EscapeDataString(ccVersion)
