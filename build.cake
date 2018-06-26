@@ -5,7 +5,7 @@
 #tool "nuget:?package=OpenCover"
 #tool "nuget:?package=ReportGenerator"
 #tool coveralls.io
-#tool nuget:?package=Codecov
+#tool nuget:?package=Codecov&version=1.0.4
 
 ///////////////////////////////////////////////////////////////////////////////
 // ARGUMENTS
@@ -227,7 +227,7 @@ Task("Test")
         if (cover)
         {
             Information("Running tests with coverage, using OpenCover");
-            
+
             var filters = ReadCoverageFilters("./src/coverage-filters.txt");
 
             var settings = filters.Aggregate(new OpenCoverSettings
@@ -319,7 +319,7 @@ Task("Coveralls")
     .Does(() =>
     {
         Information("Running Coveralls tool on OpenCover result");
-        
+
         CoverallsIo("./artifacts/opencover-results.xml", new CoverallsIoSettings
         {
             FullSources = true,
