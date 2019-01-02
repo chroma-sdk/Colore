@@ -58,7 +58,7 @@ cmd /c "git add ${covtarget} 2>&1"
 Write-Host "Committing"
 git commit -q -m "[AUTOMATED] Documentation update
 
-Updates to project documentatio and coverage data.
+Updates to project documentation and coverage data.
 
 Timestamp: ${timestamp}
 From ${gitdata}
