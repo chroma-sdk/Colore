@@ -99,18 +99,23 @@ namespace Colore.Helpers
                     }
                 }
             }
+            catch (PlatformNotSupportedException ex)
+            {
+                Log.WarnException("Assuming SDK is available due to registry not being available on this system", ex);
+                regEnabled = true;
+            }
             catch (SecurityException ex)
             {
                 // If we can't access the registry, best to just assume
                 // it is enabled.
-                Log.Warn("System raised SecurityException during read of SDK enable flag in registry.", ex);
+                Log.WarnException("System raised SecurityException during read of SDK enable flag in registry.", ex);
                 regEnabled = true;
             }
             catch (UnauthorizedAccessException ex)
             {
                 // If we can't access the registry, best to just assume
                 // it is enabled.
-                Log.Warn("Not authorized to read registry for SDK enable flag.", ex);
+                Log.WarnException("Not authorized to read registry for SDK enable flag.", ex);
                 regEnabled = true;
             }
 
@@ -158,15 +163,21 @@ namespace Colore.Helpers
                     return false;
                 }
             }
+            catch (PlatformNotSupportedException ex)
+            {
+                Log.WarnException("Can't obtain SDK version due to registry not being supported on this system", ex);
+                ver = new SdkVersion(0, 0, 0);
+                return false;
+            }
             catch (SecurityException ex)
             {
-                Log.Warn("System raised SecurityException during read of SDK version in registry.", ex);
+                Log.WarnException("System raised SecurityException during read of SDK version in registry.", ex);
                 ver = new SdkVersion(0, 0, 0);
                 return false;
             }
             catch (UnauthorizedAccessException ex)
             {
-                Log.Warn("Not authorized to read registry for SDK version.", ex);
+                Log.WarnException("Not authorized to read registry for SDK version.", ex);
                 ver = new SdkVersion(0, 0, 0);
                 return false;
             }
