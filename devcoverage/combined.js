@@ -325,100 +325,94 @@ var assemblies = [
   {
     "name": "Colore",
     "classes": [
-      { "name": "Colore.Api.ApiException", "reportPath": "Colore_ApiException.htm", "coveredLines": 10, "uncoveredLines": 0, "coverableLines": 10, "totalLines": 89, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.ColoreException", "reportPath": "Colore_ColoreException.htm", "coveredLines": 6, "uncoveredLines": 0, "coverableLines": 6, "totalLines": 69, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.ColoreProvider", "reportPath": "Colore_ColoreProvider.htm", "coveredLines": 0, "uncoveredLines": 15, "coverableLines": 15, "totalLines": 129, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 4, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Data.AppInfo", "reportPath": "Colore_AppInfo.htm", "coveredLines": 44, "uncoveredLines": 0, "coverableLines": 44, "totalLines": 142, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 4, "totalBranches": 4, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Data.Author", "reportPath": "Colore_Author.htm", "coveredLines": 14, "uncoveredLines": 0, "coverableLines": 14, "totalLines": 75, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 4, "totalBranches": 4, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Data.Color", "reportPath": "Colore_Color.htm", "coveredLines": 41, "uncoveredLines": 0, "coverableLines": 41, "totalLines": 390, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 5, "totalBranches": 6, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Data.Constants", "reportPath": "Colore_Constants.htm", "coveredLines": 0, "uncoveredLines": 0, "coverableLines": 0, "totalLines": 0, "coverageType": "MethodCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Data.DeviceInfo", "reportPath": "Colore_DeviceInfo.htm", "coveredLines": 22, "uncoveredLines": 0, "coverableLines": 22, "totalLines": 144, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 2, "totalBranches": 4, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Data.Devices", "reportPath": "Colore_Devices.htm", "coveredLines": 58, "uncoveredLines": 1, "coverableLines": 59, "totalLines": 340, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 9, "totalBranches": 12, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Data.Result", "reportPath": "Colore_Result.htm", "coveredLines": 59, "uncoveredLines": 2, "coverableLines": 61, "totalLines": 374, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 9, "totalBranches": 10, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Data.SdkDeviceInfo", "reportPath": "Colore_SdkDeviceInfo.htm", "coveredLines": 10, "uncoveredLines": 0, "coverableLines": 10, "totalLines": 127, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 2, "totalBranches": 2, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Data.SdkVersion", "reportPath": "Colore_SdkVersion.htm", "coveredLines": 26, "uncoveredLines": 0, "coverableLines": 26, "totalLines": 269, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 4, "totalBranches": 4, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Effects.ChromaLink.ChromaLinkConstants", "reportPath": "Colore_ChromaLinkConstants.htm", "coveredLines": 0, "uncoveredLines": 0, "coverableLines": 0, "totalLines": 0, "coverageType": "MethodCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Effects.ChromaLink.ChromaLinkCustom", "reportPath": "Colore_ChromaLinkCustom.htm", "coveredLines": 53, "uncoveredLines": 0, "coverableLines": 53, "totalLines": 276, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 27, "totalBranches": 28, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Effects.ChromaLink.ChromaLinkStatic", "reportPath": "Colore_ChromaLinkStatic.htm", "coveredLines": 7, "uncoveredLines": 0, "coverableLines": 7, "totalLines": 119, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Effects.Generic.None", "reportPath": "Colore_None.htm", "coveredLines": 10, "uncoveredLines": 0, "coverableLines": 10, "totalLines": 126, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 2, "totalBranches": 2, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Effects.Headset.HeadsetConstants", "reportPath": "Colore_HeadsetConstants.htm", "coveredLines": 0, "uncoveredLines": 0, "coverableLines": 0, "totalLines": 0, "coverageType": "MethodCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Effects.Headset.HeadsetCustom", "reportPath": "Colore_HeadsetCustom.htm", "coveredLines": 45, "uncoveredLines": 0, "coverableLines": 45, "totalLines": 251, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 23, "totalBranches": 24, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Effects.Headset.HeadsetStatic", "reportPath": "Colore_HeadsetStatic.htm", "coveredLines": 9, "uncoveredLines": 0, "coverableLines": 9, "totalLines": 124, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 2, "totalBranches": 2, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Effects.Keyboard.DeathstalkerGrid", "reportPath": "Colore_DeathstalkerGrid.htm", "coveredLines": 52, "uncoveredLines": 0, "coverableLines": 52, "totalLines": 273, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 21, "totalBranches": 22, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Effects.Keyboard.KeyboardConstants", "reportPath": "Colore_KeyboardConstants.htm", "coveredLines": 0, "uncoveredLines": 0, "coverableLines": 0, "totalLines": 0, "coverageType": "MethodCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Effects.Keyboard.KeyboardCustom", "reportPath": "Colore_KeyboardCustom.htm", "coveredLines": 80, "uncoveredLines": 0, "coverableLines": 80, "totalLines": 355, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 40, "totalBranches": 42, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Effects.Keyboard.KeyboardStatic", "reportPath": "Colore_KeyboardStatic.htm", "coveredLines": 9, "uncoveredLines": 0, "coverableLines": 9, "totalLines": 121, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 2, "totalBranches": 2, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Effects.Keyboard.PositionData", "reportPath": "Colore_PositionData.htm", "coveredLines": 30, "uncoveredLines": 0, "coverableLines": 30, "totalLines": 69, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Effects.Keypad.KeypadConstants", "reportPath": "Colore_KeypadConstants.htm", "coveredLines": 0, "uncoveredLines": 0, "coverableLines": 0, "totalLines": 0, "coverageType": "MethodCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Effects.Keypad.KeypadCustom", "reportPath": "Colore_KeypadCustom.htm", "coveredLines": 83, "uncoveredLines": 0, "coverableLines": 83, "totalLines": 356, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 47, "totalBranches": 48, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Effects.Keypad.KeypadStatic", "reportPath": "Colore_KeypadStatic.htm", "coveredLines": 9, "uncoveredLines": 0, "coverableLines": 9, "totalLines": 121, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 2, "totalBranches": 2, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Effects.Mouse.MouseConstants", "reportPath": "Colore_MouseConstants.htm", "coveredLines": 0, "uncoveredLines": 0, "coverableLines": 0, "totalLines": 0, "coverageType": "MethodCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Effects.Mouse.MouseCustom", "reportPath": "Colore_MouseCustom.htm", "coveredLines": 90, "uncoveredLines": 0, "coverableLines": 90, "totalLines": 376, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 47, "totalBranches": 48, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Effects.Mouse.MouseStatic", "reportPath": "Colore_MouseStatic.htm", "coveredLines": 12, "uncoveredLines": 0, "coverableLines": 12, "totalLines": 147, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 2, "totalBranches": 2, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Effects.Mousepad.MousepadConstants", "reportPath": "Colore_MousepadConstants.htm", "coveredLines": 0, "uncoveredLines": 0, "coverableLines": 0, "totalLines": 0, "coverageType": "MethodCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Effects.Mousepad.MousepadCustom", "reportPath": "Colore_MousepadCustom.htm", "coveredLines": 43, "uncoveredLines": 0, "coverableLines": 43, "totalLines": 246, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 21, "totalBranches": 22, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Effects.Mousepad.MousepadStatic", "reportPath": "Colore_MousepadStatic.htm", "coveredLines": 9, "uncoveredLines": 0, "coverableLines": 9, "totalLines": 123, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 2, "totalBranches": 2, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Events.ApplicationStateEventArgs", "reportPath": "Colore_ApplicationStateEventArgs.htm", "coveredLines": 4, "uncoveredLines": 0, "coverableLines": 4, "totalLines": 54, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Events.DeviceAccessEventArgs", "reportPath": "Colore_DeviceAccessEventArgs.htm", "coveredLines": 4, "uncoveredLines": 0, "coverableLines": 4, "totalLines": 54, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Events.SdkSupportEventArgs", "reportPath": "Colore_SdkSupportEventArgs.htm", "coveredLines": 4, "uncoveredLines": 0, "coverableLines": 4, "totalLines": 54, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Helpers.ArrayHelper", "reportPath": "Colore_ArrayHelper.htm", "coveredLines": 6, "uncoveredLines": 0, "coverableLines": 6, "totalLines": 59, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 4, "totalBranches": 4, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Helpers.EnvironmentHelper", "reportPath": "Colore_EnvironmentHelper.htm", "coveredLines": 0, "uncoveredLines": 3, "coverableLines": 3, "totalLines": 46, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Helpers.RegistryHelper", "reportPath": "Colore_RegistryHelper.htm", "coveredLines": 0, "uncoveredLines": 63, "coverableLines": 63, "totalLines": 186, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 18, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Helpers.TaskHelper", "reportPath": "Colore_TaskHelper.htm", "coveredLines": 1, "uncoveredLines": 0, "coverableLines": 1, "totalLines": 44, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Helpers.UriHelper", "reportPath": "Colore_UriHelper.htm", "coveredLines": 7, "uncoveredLines": 0, "coverableLines": 7, "totalLines": 58, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 4, "totalBranches": 4, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Implementations.ChromaImplementation", "reportPath": "Colore_ChromaImplementation.htm", "coveredLines": 0, "uncoveredLines": 110, "coverableLines": 110, "totalLines": 489, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 42, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Implementations.ChromaLinkImplementation", "reportPath": "Colore_ChromaLinkImplementation.htm", "coveredLines": 0, "uncoveredLines": 17, "coverableLines": 17, "totalLines": 154, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Implementations.DeviceImplementation", "reportPath": "Colore_DeviceImplementation.htm", "coveredLines": 13, "uncoveredLines": 0, "coverableLines": 13, "totalLines": 97, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 2, "totalBranches": 2, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Implementations.GenericDeviceImplementation", "reportPath": "Colore_GenericDeviceImplementation.htm", "coveredLines": 18, "uncoveredLines": 0, "coverableLines": 18, "totalLines": 119, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 2, "totalBranches": 2, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Implementations.HeadsetImplementation", "reportPath": "Colore_HeadsetImplementation.htm", "coveredLines": 0, "uncoveredLines": 20, "coverableLines": 20, "totalLines": 156, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Implementations.KeyboardImplementation", "reportPath": "Colore_KeyboardImplementation.htm", "coveredLines": 0, "uncoveredLines": 69, "coverableLines": 69, "totalLines": 359, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 10, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Implementations.KeypadImplementation", "reportPath": "Colore_KeypadImplementation.htm", "coveredLines": 0, "uncoveredLines": 18, "coverableLines": 18, "totalLines": 158, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Implementations.MouseImplementation", "reportPath": "Colore_MouseImplementation.htm", "coveredLines": 0, "uncoveredLines": 21, "coverableLines": 21, "totalLines": 167, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Implementations.MousepadImplementation", "reportPath": "Colore_MousepadImplementation.htm", "coveredLines": 0, "uncoveredLines": 17, "coverableLines": 17, "totalLines": 143, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Native.Kernel32.NativeMethods", "reportPath": "Colore_NativeMethods.htm", "coveredLines": 0, "uncoveredLines": 0, "coverableLines": 0, "totalLines": 0, "coverageType": "MethodCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Native.NativeApi", "reportPath": "Colore_NativeApi.htm", "coveredLines": 0, "uncoveredLines": 126, "coverableLines": 126, "totalLines": 525, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 36, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Native.NativeCallException", "reportPath": "Colore_NativeCallException.htm", "coveredLines": 4, "uncoveredLines": 0, "coverableLines": 4, "totalLines": 64, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Native.NativeSdkMethods", "reportPath": "Colore_NativeSdkMethods.htm", "coveredLines": 0, "uncoveredLines": 70, "coverableLines": 70, "totalLines": 503, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 8, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Rest.Data.EffectData", "reportPath": "Colore_EffectData.htm", "coveredLines": 5, "uncoveredLines": 0, "coverableLines": 5, "totalLines": 67, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Rest.Data.EffectGroup", "reportPath": "Colore_EffectGroup.htm", "coveredLines": 3, "uncoveredLines": 0, "coverableLines": 3, "totalLines": 55, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Rest.Data.HeartbeatResponse", "reportPath": "Colore_HeartbeatResponse.htm", "coveredLines": 4, "uncoveredLines": 0, "coverableLines": 4, "totalLines": 57, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Rest.Data.RestCallResponse", "reportPath": "Colore_RestCallResponse.htm", "coveredLines": 6, "uncoveredLines": 0, "coverableLines": 6, "totalLines": 70, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Rest.Data.RestInitResponse", "reportPath": "Colore_RestInitResponse.htm", "coveredLines": 6, "uncoveredLines": 0, "coverableLines": 6, "totalLines": 69, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Rest.RestApi", "reportPath": "Colore_RestApi.htm", "coveredLines": 0, "uncoveredLines": 144, "coverableLines": 144, "totalLines": 523, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 52, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Rest.RestClient", "reportPath": "Colore_RestClient.htm", "coveredLines": 16, "uncoveredLines": 32, "coverableLines": 48, "totalLines": 206, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 1, "totalBranches": 4, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Rest.RestException", "reportPath": "Colore_RestException.htm", "coveredLines": 14, "uncoveredLines": 0, "coverableLines": 14, "totalLines": 115, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Rest.RestResponse`1", "reportPath": "Colore_RestResponse_1.htm", "coveredLines": 16, "uncoveredLines": 0, "coverableLines": 16, "totalLines": 99, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 2, "totalBranches": 2, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Serialization.ChromaLinkCustomConverter", "reportPath": "Colore_ChromaLinkCustomConverter.htm", "coveredLines": 0, "uncoveredLines": 6, "coverableLines": 6, "totalLines": 72, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Serialization.ChromaLinkStaticConverter", "reportPath": "Colore_ChromaLinkStaticConverter.htm", "coveredLines": 0, "uncoveredLines": 6, "coverableLines": 6, "totalLines": 72, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Serialization.ColorConverter", "reportPath": "Colore_ColorConverter.htm", "coveredLines": 0, "uncoveredLines": 9, "coverableLines": 9, "totalLines": 90, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 4, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Serialization.DeathstalkerGridConverter", "reportPath": "Colore_DeathstalkerGridConverter.htm", "coveredLines": 0, "uncoveredLines": 7, "coverableLines": 7, "totalLines": 73, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Serialization.HeadsetCustomConverter", "reportPath": "Colore_HeadsetCustomConverter.htm", "coveredLines": 0, "uncoveredLines": 6, "coverableLines": 6, "totalLines": 73, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Serialization.HeadsetStaticConverter", "reportPath": "Colore_HeadsetStaticConverter.htm", "coveredLines": 0, "uncoveredLines": 6, "coverableLines": 6, "totalLines": 72, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Serialization.KeyboardCustomConverter", "reportPath": "Colore_KeyboardCustomConverter.htm", "coveredLines": 0, "uncoveredLines": 7, "coverableLines": 7, "totalLines": 75, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Serialization.KeyboardStaticConverter", "reportPath": "Colore_KeyboardStaticConverter.htm", "coveredLines": 0, "uncoveredLines": 6, "coverableLines": 6, "totalLines": 72, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Serialization.KeypadCustomConverter", "reportPath": "Colore_KeypadCustomConverter.htm", "coveredLines": 0, "uncoveredLines": 7, "coverableLines": 7, "totalLines": 74, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Serialization.KeypadStaticConverter", "reportPath": "Colore_KeypadStaticConverter.htm", "coveredLines": 0, "uncoveredLines": 6, "coverableLines": 6, "totalLines": 72, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Serialization.MouseCustomConverter", "reportPath": "Colore_MouseCustomConverter.htm", "coveredLines": 0, "uncoveredLines": 7, "coverableLines": 7, "totalLines": 75, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Serialization.MousepadCustomConverter", "reportPath": "Colore_MousepadCustomConverter.htm", "coveredLines": 0, "uncoveredLines": 6, "coverableLines": 6, "totalLines": 72, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Serialization.MousepadStaticConverter", "reportPath": "Colore_MousepadStaticConverter.htm", "coveredLines": 0, "uncoveredLines": 6, "coverableLines": 6, "totalLines": 72, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Serialization.MouseStaticConverter", "reportPath": "Colore_MouseStaticConverter.htm", "coveredLines": 0, "uncoveredLines": 6, "coverableLines": 6, "totalLines": 72, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.Serialization.ResultConverter", "reportPath": "Colore_ResultConverter.htm", "coveredLines": 0, "uncoveredLines": 9, "coverableLines": 9, "totalLines": 94, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 4, "lineCoverageHistory": [], "branchCoverageHistory": [] },
-      { "name": "Colore.UnsupportedDeviceException", "reportPath": "Colore_UnsupportedDeviceException.htm", "coveredLines": 4, "uncoveredLines": 0, "coverableLines": 4, "totalLines": 68, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [] },
+      { "name": "Colore.Api.ApiException", "reportPath": "Colore_ApiException.htm", "coveredLines": 10, "uncoveredLines": 0, "coverableLines": 10, "totalLines": 89, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.ColoreException", "reportPath": "Colore_ColoreException.htm", "coveredLines": 6, "uncoveredLines": 0, "coverableLines": 6, "totalLines": 69, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.ColoreProvider", "reportPath": "Colore_ColoreProvider.htm", "coveredLines": 10, "uncoveredLines": 7, "coverableLines": 17, "totalLines": 129, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 2, "totalBranches": 4, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Data.AppInfo", "reportPath": "Colore_AppInfo.htm", "coveredLines": 44, "uncoveredLines": 0, "coverableLines": 44, "totalLines": 142, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 4, "totalBranches": 4, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Data.Author", "reportPath": "Colore_Author.htm", "coveredLines": 14, "uncoveredLines": 0, "coverableLines": 14, "totalLines": 75, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 4, "totalBranches": 4, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Data.Color", "reportPath": "Colore_Color.htm", "coveredLines": 41, "uncoveredLines": 0, "coverableLines": 41, "totalLines": 390, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 5, "totalBranches": 6, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Data.Constants", "reportPath": "Colore_Constants.htm", "coveredLines": 0, "uncoveredLines": 0, "coverableLines": 0, "totalLines": 0, "coverageType": "MethodCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Data.DeviceInfo", "reportPath": "Colore_DeviceInfo.htm", "coveredLines": 22, "uncoveredLines": 0, "coverableLines": 22, "totalLines": 144, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 2, "totalBranches": 4, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Data.Devices", "reportPath": "Colore_Devices.htm", "coveredLines": 58, "uncoveredLines": 1, "coverableLines": 59, "totalLines": 340, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 9, "totalBranches": 12, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Data.Result", "reportPath": "Colore_Result.htm", "coveredLines": 59, "uncoveredLines": 2, "coverableLines": 61, "totalLines": 374, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 9, "totalBranches": 10, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Data.SdkDeviceInfo", "reportPath": "Colore_SdkDeviceInfo.htm", "coveredLines": 10, "uncoveredLines": 0, "coverableLines": 10, "totalLines": 126, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 2, "totalBranches": 2, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Data.SdkVersion", "reportPath": "Colore_SdkVersion.htm", "coveredLines": 26, "uncoveredLines": 0, "coverableLines": 26, "totalLines": 269, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 4, "totalBranches": 4, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Effects.ChromaLink.ChromaLinkConstants", "reportPath": "Colore_ChromaLinkConstants.htm", "coveredLines": 0, "uncoveredLines": 0, "coverableLines": 0, "totalLines": 0, "coverageType": "MethodCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Effects.ChromaLink.ChromaLinkCustom", "reportPath": "Colore_ChromaLinkCustom.htm", "coveredLines": 53, "uncoveredLines": 0, "coverableLines": 53, "totalLines": 276, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 27, "totalBranches": 28, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Effects.ChromaLink.ChromaLinkStatic", "reportPath": "Colore_ChromaLinkStatic.htm", "coveredLines": 7, "uncoveredLines": 0, "coverableLines": 7, "totalLines": 118, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Effects.Generic.None", "reportPath": "Colore_None.htm", "coveredLines": 10, "uncoveredLines": 0, "coverableLines": 10, "totalLines": 125, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 2, "totalBranches": 2, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Effects.Headset.HeadsetConstants", "reportPath": "Colore_HeadsetConstants.htm", "coveredLines": 0, "uncoveredLines": 0, "coverableLines": 0, "totalLines": 0, "coverageType": "MethodCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Effects.Headset.HeadsetCustom", "reportPath": "Colore_HeadsetCustom.htm", "coveredLines": 45, "uncoveredLines": 0, "coverableLines": 45, "totalLines": 251, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 23, "totalBranches": 24, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Effects.Headset.HeadsetStatic", "reportPath": "Colore_HeadsetStatic.htm", "coveredLines": 9, "uncoveredLines": 0, "coverableLines": 9, "totalLines": 123, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 2, "totalBranches": 2, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Effects.Keyboard.DeathstalkerGrid", "reportPath": "Colore_DeathstalkerGrid.htm", "coveredLines": 52, "uncoveredLines": 0, "coverableLines": 52, "totalLines": 273, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 21, "totalBranches": 22, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Effects.Keyboard.KeyboardConstants", "reportPath": "Colore_KeyboardConstants.htm", "coveredLines": 0, "uncoveredLines": 0, "coverableLines": 0, "totalLines": 0, "coverageType": "MethodCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Effects.Keyboard.KeyboardCustom", "reportPath": "Colore_KeyboardCustom.htm", "coveredLines": 80, "uncoveredLines": 0, "coverableLines": 80, "totalLines": 355, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 40, "totalBranches": 42, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Effects.Keyboard.KeyboardStatic", "reportPath": "Colore_KeyboardStatic.htm", "coveredLines": 9, "uncoveredLines": 0, "coverableLines": 9, "totalLines": 120, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 2, "totalBranches": 2, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Effects.Keyboard.PositionData", "reportPath": "Colore_PositionData.htm", "coveredLines": 30, "uncoveredLines": 0, "coverableLines": 30, "totalLines": 69, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Effects.Keypad.KeypadConstants", "reportPath": "Colore_KeypadConstants.htm", "coveredLines": 0, "uncoveredLines": 0, "coverableLines": 0, "totalLines": 0, "coverageType": "MethodCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Effects.Keypad.KeypadCustom", "reportPath": "Colore_KeypadCustom.htm", "coveredLines": 83, "uncoveredLines": 0, "coverableLines": 83, "totalLines": 356, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 48, "totalBranches": 48, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Effects.Keypad.KeypadStatic", "reportPath": "Colore_KeypadStatic.htm", "coveredLines": 9, "uncoveredLines": 0, "coverableLines": 9, "totalLines": 120, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 2, "totalBranches": 2, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Effects.Mouse.MouseConstants", "reportPath": "Colore_MouseConstants.htm", "coveredLines": 0, "uncoveredLines": 0, "coverableLines": 0, "totalLines": 0, "coverageType": "MethodCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Effects.Mouse.MouseCustom", "reportPath": "Colore_MouseCustom.htm", "coveredLines": 90, "uncoveredLines": 0, "coverableLines": 90, "totalLines": 376, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 48, "totalBranches": 48, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Effects.Mouse.MouseStatic", "reportPath": "Colore_MouseStatic.htm", "coveredLines": 12, "uncoveredLines": 0, "coverableLines": 12, "totalLines": 146, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 2, "totalBranches": 2, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Effects.Mousepad.MousepadConstants", "reportPath": "Colore_MousepadConstants.htm", "coveredLines": 0, "uncoveredLines": 0, "coverableLines": 0, "totalLines": 0, "coverageType": "MethodCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Effects.Mousepad.MousepadCustom", "reportPath": "Colore_MousepadCustom.htm", "coveredLines": 43, "uncoveredLines": 0, "coverableLines": 43, "totalLines": 246, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 21, "totalBranches": 22, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Effects.Mousepad.MousepadStatic", "reportPath": "Colore_MousepadStatic.htm", "coveredLines": 9, "uncoveredLines": 0, "coverableLines": 9, "totalLines": 122, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 2, "totalBranches": 2, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Events.ApplicationStateEventArgs", "reportPath": "Colore_ApplicationStateEventArgs.htm", "coveredLines": 4, "uncoveredLines": 0, "coverableLines": 4, "totalLines": 54, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Events.DeviceAccessEventArgs", "reportPath": "Colore_DeviceAccessEventArgs.htm", "coveredLines": 4, "uncoveredLines": 0, "coverableLines": 4, "totalLines": 54, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Events.SdkSupportEventArgs", "reportPath": "Colore_SdkSupportEventArgs.htm", "coveredLines": 4, "uncoveredLines": 0, "coverableLines": 4, "totalLines": 54, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Helpers.ArrayHelper", "reportPath": "Colore_ArrayHelper.htm", "coveredLines": 6, "uncoveredLines": 0, "coverableLines": 6, "totalLines": 59, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 4, "totalBranches": 4, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Helpers.EnvironmentHelper", "reportPath": "Colore_EnvironmentHelper.htm", "coveredLines": 3, "uncoveredLines": 0, "coverableLines": 3, "totalLines": 46, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Helpers.RegistryHelper", "reportPath": "Colore_RegistryHelper.htm", "coveredLines": 12, "uncoveredLines": 66, "coverableLines": 78, "totalLines": 213, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 3, "totalBranches": 22, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Helpers.TaskHelper", "reportPath": "Colore_TaskHelper.htm", "coveredLines": 1, "uncoveredLines": 0, "coverableLines": 1, "totalLines": 44, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Helpers.UriHelper", "reportPath": "Colore_UriHelper.htm", "coveredLines": 7, "uncoveredLines": 0, "coverableLines": 7, "totalLines": 58, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 4, "totalBranches": 4, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Implementations.ChromaImplementation", "reportPath": "Colore_ChromaImplementation.htm", "coveredLines": 36, "uncoveredLines": 76, "coverableLines": 112, "totalLines": 489, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 11, "totalBranches": 42, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Implementations.ChromaLinkImplementation", "reportPath": "Colore_ChromaLinkImplementation.htm", "coveredLines": 0, "uncoveredLines": 17, "coverableLines": 17, "totalLines": 154, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Implementations.DeviceImplementation", "reportPath": "Colore_DeviceImplementation.htm", "coveredLines": 13, "uncoveredLines": 0, "coverableLines": 13, "totalLines": 97, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 2, "totalBranches": 2, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Implementations.GenericDeviceImplementation", "reportPath": "Colore_GenericDeviceImplementation.htm", "coveredLines": 18, "uncoveredLines": 0, "coverableLines": 18, "totalLines": 119, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 2, "totalBranches": 2, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Implementations.HeadsetImplementation", "reportPath": "Colore_HeadsetImplementation.htm", "coveredLines": 0, "uncoveredLines": 20, "coverableLines": 20, "totalLines": 156, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Implementations.KeyboardImplementation", "reportPath": "Colore_KeyboardImplementation.htm", "coveredLines": 0, "uncoveredLines": 69, "coverableLines": 69, "totalLines": 359, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 10, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Implementations.KeypadImplementation", "reportPath": "Colore_KeypadImplementation.htm", "coveredLines": 0, "uncoveredLines": 18, "coverableLines": 18, "totalLines": 158, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Implementations.MouseImplementation", "reportPath": "Colore_MouseImplementation.htm", "coveredLines": 0, "uncoveredLines": 21, "coverableLines": 21, "totalLines": 167, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Implementations.MousepadImplementation", "reportPath": "Colore_MousepadImplementation.htm", "coveredLines": 0, "uncoveredLines": 17, "coverableLines": 17, "totalLines": 143, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Native.Kernel32.NativeMethods", "reportPath": "Colore_NativeMethods.htm", "coveredLines": 0, "uncoveredLines": 0, "coverableLines": 0, "totalLines": 0, "coverageType": "MethodCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Native.NativeApi", "reportPath": "Colore_NativeApi.htm", "coveredLines": 0, "uncoveredLines": 126, "coverableLines": 126, "totalLines": 525, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 36, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Native.NativeCallException", "reportPath": "Colore_NativeCallException.htm", "coveredLines": 4, "uncoveredLines": 0, "coverableLines": 4, "totalLines": 64, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Native.NativeSdkMethods", "reportPath": "Colore_NativeSdkMethods.htm", "coveredLines": 0, "uncoveredLines": 70, "coverableLines": 70, "totalLines": 503, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 8, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Rest.Data.EffectData", "reportPath": "Colore_EffectData.htm", "coveredLines": 5, "uncoveredLines": 0, "coverableLines": 5, "totalLines": 67, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Rest.Data.EffectGroup", "reportPath": "Colore_EffectGroup.htm", "coveredLines": 3, "uncoveredLines": 0, "coverableLines": 3, "totalLines": 56, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Rest.Data.HeartbeatResponse", "reportPath": "Colore_HeartbeatResponse.htm", "coveredLines": 4, "uncoveredLines": 0, "coverableLines": 4, "totalLines": 57, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Rest.Data.RestCallResponse", "reportPath": "Colore_RestCallResponse.htm", "coveredLines": 6, "uncoveredLines": 0, "coverableLines": 6, "totalLines": 71, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Rest.Data.RestInitResponse", "reportPath": "Colore_RestInitResponse.htm", "coveredLines": 6, "uncoveredLines": 0, "coverableLines": 6, "totalLines": 69, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Rest.RestApi", "reportPath": "Colore_RestApi.htm", "coveredLines": 0, "uncoveredLines": 144, "coverableLines": 144, "totalLines": 523, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 52, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Rest.RestClient", "reportPath": "Colore_RestClient.htm", "coveredLines": 53, "uncoveredLines": 0, "coverableLines": 53, "totalLines": 212, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 1, "totalBranches": 2, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Rest.RestException", "reportPath": "Colore_RestException.htm", "coveredLines": 14, "uncoveredLines": 0, "coverableLines": 14, "totalLines": 116, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Rest.RestResponse`1", "reportPath": "Colore_RestResponse_1.htm", "coveredLines": 16, "uncoveredLines": 0, "coverableLines": 16, "totalLines": 100, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 2, "totalBranches": 2, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Serialization.ChromaLinkCustomConverter", "reportPath": "Colore_ChromaLinkCustomConverter.htm", "coveredLines": 0, "uncoveredLines": 6, "coverableLines": 6, "totalLines": 72, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Serialization.ChromaLinkStaticConverter", "reportPath": "Colore_ChromaLinkStaticConverter.htm", "coveredLines": 0, "uncoveredLines": 6, "coverableLines": 6, "totalLines": 72, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Serialization.ColorConverter", "reportPath": "Colore_ColorConverter.htm", "coveredLines": 0, "uncoveredLines": 9, "coverableLines": 9, "totalLines": 90, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 4, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Serialization.DeathstalkerGridConverter", "reportPath": "Colore_DeathstalkerGridConverter.htm", "coveredLines": 0, "uncoveredLines": 7, "coverableLines": 7, "totalLines": 73, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Serialization.HeadsetCustomConverter", "reportPath": "Colore_HeadsetCustomConverter.htm", "coveredLines": 0, "uncoveredLines": 6, "coverableLines": 6, "totalLines": 74, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Serialization.HeadsetStaticConverter", "reportPath": "Colore_HeadsetStaticConverter.htm", "coveredLines": 0, "uncoveredLines": 6, "coverableLines": 6, "totalLines": 72, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Serialization.KeyboardCustomConverter", "reportPath": "Colore_KeyboardCustomConverter.htm", "coveredLines": 0, "uncoveredLines": 7, "coverableLines": 7, "totalLines": 75, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Serialization.KeyboardStaticConverter", "reportPath": "Colore_KeyboardStaticConverter.htm", "coveredLines": 0, "uncoveredLines": 6, "coverableLines": 6, "totalLines": 72, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Serialization.KeypadCustomConverter", "reportPath": "Colore_KeypadCustomConverter.htm", "coveredLines": 0, "uncoveredLines": 7, "coverableLines": 7, "totalLines": 75, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Serialization.KeypadStaticConverter", "reportPath": "Colore_KeypadStaticConverter.htm", "coveredLines": 0, "uncoveredLines": 6, "coverableLines": 6, "totalLines": 72, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Serialization.MouseCustomConverter", "reportPath": "Colore_MouseCustomConverter.htm", "coveredLines": 0, "uncoveredLines": 7, "coverableLines": 7, "totalLines": 75, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Serialization.MousepadCustomConverter", "reportPath": "Colore_MousepadCustomConverter.htm", "coveredLines": 0, "uncoveredLines": 6, "coverableLines": 6, "totalLines": 72, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Serialization.MousepadStaticConverter", "reportPath": "Colore_MousepadStaticConverter.htm", "coveredLines": 0, "uncoveredLines": 6, "coverableLines": 6, "totalLines": 72, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Serialization.MouseStaticConverter", "reportPath": "Colore_MouseStaticConverter.htm", "coveredLines": 0, "uncoveredLines": 6, "coverableLines": 6, "totalLines": 72, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.Serialization.ResultConverter", "reportPath": "Colore_ResultConverter.htm", "coveredLines": 0, "uncoveredLines": 9, "coverableLines": 9, "totalLines": 94, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 4, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
+      { "name": "Colore.UnsupportedDeviceException", "reportPath": "Colore_UnsupportedDeviceException.htm", "coveredLines": 4, "uncoveredLines": 0, "coverableLines": 4, "totalLines": 68, "coverageType": "LineCoverage", "methodCoverage": "-", "coveredBranches": 0, "totalBranches": 0, "lineCoverageHistory": [], "branchCoverageHistory": [], "historicCoverages": [] },
     ]},
 ];
 
+var historicCoverageExecutionTimes = [];
+
 var riskHotspotMetrics = [
-      { "name": "Cyclomatic complexity", "explanationUrl": "https://en.wikipedia.org/wiki/Cyclomatic_complexity" },
-      { "name": "NPath complexity", "explanationUrl": "https://modess.io/npath-complexity-cyclomatic-complexity-explained" },
 ];
 
 var riskHotspots = [
-  {
-    "assembly": "Colore", "class": "Colore.Implementations.ChromaImplementation", "reportPath": "Colore_ChromaImplementation.htm", "method": "UninitializeAsync()",
-    "metrics": [
-      { "value": 22, "exceeded": true },
-      { "value": 128, "exceeded": false },
-    ]},
 ];
 
 var branchCoverageAvailable = true;
@@ -446,7 +440,10 @@ var translations = {
 'total': 'Total',
 'coverage': 'Line coverage',
 'branchCoverage': 'Branch coverage',
-'history': 'Coverage History'
+'history': 'Coverage History',
+'compareHistory': 'Compare with:',
+'date': 'Date',
+'changesOnly': 'Changes only'
 };
 
 
@@ -732,7 +729,7 @@ var RiskHotspotsTableHeader = React.createClass({
 
         for (i = 0, l = this.props.riskHotspotMetrics.length; i < l; i++) {
             metricClass = this.props.sortby !== '' &&this.props.sortby == i ? (this.props.sortorder === 'desc' ? 'icon-up-dir_active' : 'icon-down-dir_active') : 'icon-down-dir';
-            ths.push(React.DOM.th({ className: 'right' },
+            ths.push(React.DOM.th(null,
                 React.DOM.a(
                     { href: '', 'data-metric': i, onClick: function (event) { this.sortingChangedHandler(event, $(event.nativeEvent.target).closest('a')[0].getAttribute('data-metric')); }.bind(this) },
                     React.DOM.i({ className: metricClass }),
@@ -749,23 +746,30 @@ var RiskHotspotsTableHeader = React.createClass({
 
 var RiskHotspotRow = React.createClass({
     render: function () {
-        var tds, nameElement, metrics;
+        var tds, nameElement, methodElement;
 
         if (this.props.riskHotspot.reportPath === '') {
             nameElement = React.DOM.span(null, this.props.riskHotspot.class);
+            methodElement = this.props.riskHotspot.methodShortName;
         } else {
             nameElement = React.DOM.a({ href: this.props.riskHotspot.reportPath }, this.props.riskHotspot.class);
+
+            if (this.props.riskHotspot.line !== null) {
+                methodElement = React.DOM.a({ href: this.props.riskHotspot.reportPath + '#file' + this.props.riskHotspot.fileIndex + '_line' + this.props.riskHotspot.line }, this.props.riskHotspot.methodShortName)
+            } else {
+                methodElement = this.props.riskHotspot.methodShortName;
+            }
         }
 
         tds = [
             React.DOM.td(null, this.props.riskHotspot.assembly),
             React.DOM.td(null, nameElement),
-            React.DOM.td(null, this.props.riskHotspot.method)
+            React.DOM.td({ title: this.props.riskHotspot.methodName }, methodElement)
         ];
 
         for (i = 0, l = this.props.riskHotspot.metrics.length; i < l; i++) {
-            tds.push(React.DOM.td({ className: this.props.riskHotspot.metrics[i].exceeded ? 'lightred' : 'lightgreen' },
-                this.props.riskHotspot.metrics[i].value));
+            tds.push(React.DOM.td({ className: this.props.riskHotspot.metrics[i].exceeded ? 'lightred right' : 'lightgreen right' },
+                this.props.riskHotspot.metrics[i].value === null ? '-' : this.props.riskHotspot.metrics[i].value));
         }
 
         return (
@@ -823,6 +827,8 @@ function ClassViewModel(serializedClass) {
     self.totalBranches = serializedClass.totalBranches;
     self.lineCoverageHistory = serializedClass.lineCoverageHistory;
     self.branchCoverageHistory = serializedClass.branchCoverageHistory;
+    self.historicCoverages = serializedClass.historicCoverages;
+    self.currentHistoricCoverageData = null;
 
     if (serializedClass.coverableLines === 0) {
         if (isNaN(serializedClass.methodCoverage)) {
@@ -848,8 +854,40 @@ function ClassViewModel(serializedClass) {
         self.branchCoveragePercent = self.branchCoverage + '%';
     }
 
-    self.visible = function (filter) {
-        return filter === '' || self.name.toLowerCase().indexOf(filter) > -1;
+    self.updateCurrentHistoricCoverageData = function (historicCoverageExecutionTime) {
+        var i, l;
+
+        self.currentHistoricCoverageData = null;
+
+        if (historicCoverageExecutionTime !== '') {
+            for (i = 0, l = self.historicCoverages.length; i < l; i++) {
+
+                if (self.historicCoverages[i].executionTime === historicCoverageExecutionTime) {
+                    self.currentHistoricCoverageData = self.historicCoverages[i];
+                    break;
+                }
+            }
+        }
+    };
+
+    self.visible = function (filter, historicCoverageChangesOnly) {
+        if (filter !== '' && self.name.toLowerCase().indexOf(filter) === -1) {
+            return false;
+        }
+
+        if (historicCoverageChangesOnly && self.currentHistoricCoverageData !== null) {
+            if (self.coveredLines === self.currentHistoricCoverageData.coveredLines
+                && self.coveredLines === self.currentHistoricCoverageData.coveredLines
+                && self.uncoveredLines === self.currentHistoricCoverageData.uncoveredLines
+                && self.coverableLines === self.currentHistoricCoverageData.coverableLines
+                && self.totalLines === self.currentHistoricCoverageData.totalLines
+                && self.coveredBranches === self.currentHistoricCoverageData.coveredBranches
+                && self.totalBranches === self.currentHistoricCoverageData.totalBranches) {
+                return false;
+            }
+        }
+
+        return true;
     };
 }
 
@@ -886,7 +924,7 @@ function CodeElementViewModel(name, parent) {
         return roundNumber(100 * self.coveredBranches / self.totalBranches, 1);
     };
 
-    self.visible = function (filter) {
+    self.visible = function (filter, historicCoverageChangesOnly) {
         var i, l;
         for (i = 0, l = self.subelements.length; i < l; i++) {
             if (self.subelements[i].visible(filter)) {
@@ -954,6 +992,14 @@ function CodeElementViewModel(name, parent) {
             if (element.isNamespace) {
                 element.expand();
             }
+        }
+    };
+
+    self.updateCurrentHistoricCoverageData = function (historicCoverageExecutionTime) {
+        var i, l;
+
+        for (i = 0, l = self.subelements.length; i < l; i++) {
+            self.subelements[i].updateCurrentHistoricCoverageData(historicCoverageExecutionTime);
         }
     };
 
@@ -1122,6 +1168,8 @@ var AssemblyComponent = React.createClass({
             state = {
                 grouping: '0',
                 groupingMaximum: this.getGroupingMaximum(this.props.assemblies),
+                historicCoverageExecutionTime: '',
+                historicCoverageChangesOnly: false,
                 filter: '',
                 sortby: 'name',
                 sortorder: 'asc',
@@ -1131,6 +1179,11 @@ var AssemblyComponent = React.createClass({
         }
 
         state.assemblies = this.getAssemblies(this.props.assemblies, state.grouping, state.sortby, state.sortorder);
+
+        var i, l;
+        for (i = 0, l = state.assemblies.length; i < l; i++) {
+            state.assemblies[i].updateCurrentHistoricCoverageData(state.historicCoverageExecutionTime);
+        }
 
         if (collapseState !== undefined) {
             this.restoreCollapseState(collapseState, state.assemblies);
@@ -1167,6 +1220,23 @@ var AssemblyComponent = React.createClass({
         var assemblies = this.getAssemblies(this.props.assemblies, grouping, this.state.sortby, this.state.sortorder);
         this.setState({ grouping: grouping, assemblies: assemblies });
     },
+    updateHistoricCoverageExecutionTime: function (historicCoverageExecutionTime) {
+        console.log("Updating historic coverage execution time: " + historicCoverageExecutionTime);
+        var i, l;
+        for (i = 0, l = this.state.assemblies.length; i < l; i++) {
+            this.state.assemblies[i].updateCurrentHistoricCoverageData(historicCoverageExecutionTime);
+        }
+
+        this.setState({
+            historicCoverageExecutionTime: historicCoverageExecutionTime,
+            assemblies: this.state.assemblies
+        });
+    },
+    updateHistoricCoverageChangesOnly: function (historicCoverageChangesOnly) {
+        console.log("Updating historic coverage changes only: " + historicCoverageChangesOnly);
+
+        this.setState({ historicCoverageChangesOnly: historicCoverageChangesOnly });
+    },
     updateFilter: function (filter) {
         filter = filter.toLowerCase();
 
@@ -1200,7 +1270,7 @@ var AssemblyComponent = React.createClass({
             }
         } catch (e) {
             // This can only happen if assembly structure was changed.
-            // That means the complete report was updated in the background and the reloaded in the same tab/window.
+            // That means the complete report was updated in the background and was reloaded in the same tab/window.
             console.log("Restoring of collapse state failed.");
         }
     },
@@ -1242,13 +1312,20 @@ var AssemblyComponent = React.createClass({
                 SearchBar({
                     groupingMaximum: this.state.groupingMaximum,
                     grouping: this.state.grouping,
+                    historicCoverageExecutionTime: this.state.historicCoverageExecutionTime,
+                    historicCoverageChangesOnly: this.state.historicCoverageChangesOnly,
                     filter: this.state.filter,
                     collapseAll: this.collapseAll,
                     expandAll: this.expandAll,
                     updateGrouping: this.updateGrouping,
-                    updateFilter: this.updateFilter
+                    updateHistoricCoverageExecutionTime: this.updateHistoricCoverageExecutionTime,
+                    updateHistoricCoverageChangesOnly: this.updateHistoricCoverageChangesOnly,
+                    updateFilter: this.updateFilter,
+                    historicCoverageExecutionTimes: this.props.historicCoverageExecutionTimes
                 }),
                 AssemblyTable({
+                    historicCoverageExecutionTime: this.state.historicCoverageExecutionTime,
+                    historicCoverageChangesOnly: this.state.historicCoverageChangesOnly,
                     filter: this.state.filter,
                     assemblies: this.state.assemblies,
                     sortby: this.state.sortby,
@@ -1273,6 +1350,12 @@ var SearchBar = React.createClass({
     groupingChangedHandler: function () {
         this.props.updateGrouping(this.refs.groupingInput.getDOMNode().value);
     },
+    historicCoverageExecutionTimeChanged: function () {
+        this.props.updateHistoricCoverageExecutionTime(this.refs.historicCoverageExecutionTimesSelect.getDOMNode().value);
+    },
+    historicCoverageChangesOnlyChanged: function () {
+        this.props.updateHistoricCoverageChangesOnly(this.refs.historicCoverageChangesOnlyCheckbox.getDOMNode().checked);
+    },
     filterChangedHandler: function () {
         this.props.updateFilter(this.refs.filterInput.getDOMNode().value);
     },
@@ -1283,6 +1366,36 @@ var SearchBar = React.createClass({
             groupingDescription = translations.noGrouping;
         } else if (this.props.grouping === '0') {
             groupingDescription = translations.byAssembly;
+        }
+
+        var historicCoverageExecutionTimesSelectContainer;
+
+        if (this.props.historicCoverageExecutionTimes.length > 0) {
+            var historicCoverageExecutionTimeOptions = [React.DOM.option({ value: '' }, translations.date)], i, l;
+            for (i = 0, l = this.props.historicCoverageExecutionTimes.length; i < l; i++) {
+                historicCoverageExecutionTimeOptions.push(React.DOM.option({
+                    value: this.props.historicCoverageExecutionTimes[i]
+                }, this.props.historicCoverageExecutionTimes[i]));
+            }
+
+            historicCoverageExecutionTimesSelectContainer = React.DOM.div({ className: 'center' },
+                React.DOM.div({ className: 'center' },
+                    React.DOM.span(null, translations.compareHistory + ' '),
+                    React.DOM.select({
+                        ref: 'historicCoverageExecutionTimesSelect',
+                        value: this.props.historicCoverageExecutionTime,
+                        onChange: this.historicCoverageExecutionTimeChanged
+                    }, historicCoverageExecutionTimeOptions)),
+                React.DOM.div(null,
+                    this.props.historicCoverageExecutionTime ? React.DOM.label(null, 
+                        React.DOM.input({
+                            type: 'checkbox',
+                            ref: 'historicCoverageChangesOnlyCheckbox',
+                            defaultChecked: this.props.historicCoverageChangesOnly,
+                            onChange: this.historicCoverageChangesOnlyChanged
+                        }), translations.changesOnly) : null));
+        } else {
+            historicCoverageExecutionTimesSelectContainer = React.DOM.div({ className: 'center' });
         }
 
         return (
@@ -1304,6 +1417,7 @@ var SearchBar = React.createClass({
                         value: this.props.grouping,
                         onChange: this.groupingChangedHandler
                     })),
+                historicCoverageExecutionTimesSelectContainer,
                 React.DOM.div({ className: 'right' },
                     React.DOM.span(null, translations.filter + ' '),
                     React.DOM.input({
@@ -1321,7 +1435,7 @@ var AssemblyTable = React.createClass({
     renderAllChilds: function (result, currentElement) {
         var i, l;
 
-        if (currentElement.visible(this.props.filter)) {
+        if (currentElement.visible(this.props.filter, this.props.historicCoverageChangesOnly, this.props.historicCoverageExecutionTime)) {
             if (currentElement.isNamespace) {
                 result.push(AssemblyRow({ assembly: currentElement,
                     branchCoverageAvailable: this.props.branchCoverageAvailable,
@@ -1336,6 +1450,7 @@ var AssemblyTable = React.createClass({
             } else {
                 result.push(ClassRow({
                     clazz: currentElement,
+                    historicCoverageExecutionTime: this.props.historicCoverageExecutionTime,
                     branchCoverageAvailable: this.props.branchCoverageAvailable
                 }));
             }
@@ -1494,8 +1609,17 @@ var AssemblyRow = React.createClass({
 });
 
 var ClassRow = React.createClass({
+    getClassName: function (current, history) {
+        if (current > history) {
+            return 'lightgreen';
+        } else if (current < history) {
+            return 'lightred';
+        } else {
+            return 'lightgraybg';
+        }
+    },
     render: function () {
-        var nameElement, greenHidden, redHidden, grayHidden, coverageTable, branchGreenHidden, branchRedHidden, branchGrayHidden, branchCoverageTable;
+        var nameElement, greenHidden, redHidden, grayHidden, i, l, coverageTable, branchGreenHidden, branchRedHidden, branchGrayHidden, branchCoverageTable;
 
         if (this.props.clazz.reportPath === '') {
             nameElement = React.DOM.span(null, this.props.clazz.name);
@@ -1530,27 +1654,37 @@ var ClassRow = React.createClass({
         return (
             React.DOM.tr({ className: this.props.clazz.parent.parent !== null ? 'namespace' : null },
                 React.DOM.td(null, nameElement),
-                React.DOM.td({ className: 'right' }, this.props.clazz.coveredLines),
-                React.DOM.td({ className: 'right' }, this.props.clazz.uncoveredLines),
-                React.DOM.td({ className: 'right' }, this.props.clazz.coverableLines),
-                React.DOM.td({ className: 'right' }, this.props.clazz.totalLines),
+                React.DOM.td({ className: 'right' },
+                    this.props.clazz.currentHistoricCoverageData ? React.DOM.div({ className: 'currenthistory ' + this.getClassName(this.props.clazz.coveredLines, this.props.clazz.currentHistoricCoverageData.coveredLines) }, this.props.clazz.coveredLines) : this.props.clazz.coveredLines,
+                    this.props.clazz.currentHistoricCoverageData ? React.DOM.div({ title: this.props.historicCoverageExecutionTime }, this.props.clazz.currentHistoricCoverageData.coveredLines) : null),
+                React.DOM.td({ className: 'right' },
+                    this.props.clazz.currentHistoricCoverageData ? React.DOM.div({ className: 'currenthistory ' + this.getClassName(this.props.clazz.currentHistoricCoverageData.uncoveredLines, this.props.clazz.uncoveredLines) }, this.props.clazz.uncoveredLines) : this.props.clazz.uncoveredLines,
+                    this.props.clazz.currentHistoricCoverageData ? React.DOM.div({ title: this.props.historicCoverageExecutionTime }, this.props.clazz.currentHistoricCoverageData.uncoveredLines) : null),
+                React.DOM.td({ className: 'right' },
+                    this.props.clazz.currentHistoricCoverageData ? React.DOM.div({ className: 'currenthistory' }, this.props.clazz.coverableLines) : this.props.clazz.coverableLines,
+                    this.props.clazz.currentHistoricCoverageData ? React.DOM.div({ title: this.props.historicCoverageExecutionTime }, this.props.clazz.currentHistoricCoverageData.coverableLines) : null),
+                React.DOM.td({ className: 'right' },
+                    this.props.clazz.currentHistoricCoverageData ? React.DOM.div({ className: 'currenthistory' }, this.props.clazz.totalLines) : this.props.clazz.totalLines,
+                    this.props.clazz.currentHistoricCoverageData ? React.DOM.div({ title: this.props.historicCoverageExecutionTime }, this.props.clazz.currentHistoricCoverageData.totalLines) : null),
                 React.DOM.td({ className: 'right', title: this.props.clazz.coverageTitle },
                     CoverageHistoryChart({
                         historicCoverage: this.props.clazz.lineCoverageHistory,
-                        cssClass: 'tinylinecoveragechart',
+                        cssClass: 'tinylinecoveragechart' + (this.props.clazz.currentHistoricCoverageData ? ' historiccoverageoffset' : ''),
                         title: translations.history + ": " + translations.coverage,
                         id: 'chart' + createRandomId(8)
                     }),
-                    this.props.clazz.coveragePercent),
+                    this.props.clazz.currentHistoricCoverageData ? React.DOM.div({ className: 'currenthistory ' + this.getClassName(this.props.clazz.coverage, this.props.clazz.currentHistoricCoverageData.coverageQuota) }, this.props.clazz.coveragePercent) : this.props.clazz.coveragePercent,
+                    this.props.clazz.currentHistoricCoverageData ? React.DOM.div({ title: this.props.historicCoverageExecutionTime }, this.props.clazz.currentHistoricCoverageData.coverageQuota + '%') : null),
                 React.DOM.td(null, coverageTable),
                 this.props.branchCoverageAvailable ? React.DOM.td({ className: 'right' },
                     CoverageHistoryChart({
                         historicCoverage: this.props.clazz.branchCoverageHistory,
-                        cssClass: 'tinybranchcoveragechart',
+                        cssClass: 'tinybranchcoveragechart' + (this.props.clazz.currentHistoricCoverageData ? ' historiccoverageoffset' : ''),
                         title: translations.history + ": " + translations.branchCoverage,
                         id: 'chart' + createRandomId(8)
                     }),
-                    this.props.clazz.branchCoveragePercent) : null,
+                    this.props.clazz.currentHistoricCoverageData ? React.DOM.div({ className: 'currenthistory ' + this.getClassName(this.props.clazz.branchCoverage, this.props.clazz.currentHistoricCoverageData.branchCoverageQuota) }, this.props.clazz.branchCoveragePercent) : this.props.clazz.branchCoveragePercent,
+                    this.props.clazz.currentHistoricCoverageData ? React.DOM.div({ title: this.props.historicCoverageExecutionTime }, this.props.clazz.currentHistoricCoverageData.branchCoverageQuota + '%') : null) : null,
                 this.props.branchCoverageAvailable ? React.DOM.td(null, branchCoverageTable) : null)
         );
     }
@@ -1619,6 +1753,7 @@ function SummaryViewCtrl($scope, $window) {
 
     $scope.coverageTableFilteringEnabled = false;
     $scope.assemblies = [];
+    $scope.historicCoverageExecutionTimes = [];
     $scope.branchCoverageAvailable = branchCoverageAvailable;
 
     $scope.riskHotspots = riskHotspots;
@@ -1628,6 +1763,7 @@ function SummaryViewCtrl($scope, $window) {
         console.log("Enabling filtering");
 
         $scope.assemblies = assemblies;
+        $scope.historicCoverageExecutionTimes = historicCoverageExecutionTimes;
         $scope.coverageTableFilteringEnabled = true;
     };
 
@@ -1722,12 +1858,13 @@ coverageApp.directive('reactiveCoverageTable', function () {
         restrict: 'A',
         scope: {
             assemblies: '=',
+            historicCoverageExecutionTimes: '=',
             branchCoverageAvailable: '='
         },
         link: function (scope, el, attrs) {
             scope.$watchCollection('assemblies', function (newValue, oldValue) {
                 React.renderComponent(
-                    AssemblyComponent({ assemblies: newValue, branchCoverageAvailable: scope.branchCoverageAvailable }),
+                    AssemblyComponent({ assemblies: newValue, historicCoverageExecutionTimes: scope.historicCoverageExecutionTimes, branchCoverageAvailable: scope.branchCoverageAvailable }),
                     el[0]);
             });
         }
@@ -1749,13 +1886,14 @@ coverageApp.directive('historyChart', function ($window) {
                 high: 100,
                 scaleMinSpace: 20,
                 onlyInteger: true,
+                fullWidth: true
             };
             var lineChart = new Chartist.Line('#' + el[0].id, {
                 labels: [],
                 series: chartData.series
             }, options);
 
-            var chart = $(el[0]);
+            var chart = $(el[0]).empty();
 
             var toggleZoomButton = chart
                 .append('<div class="toggleZoom"><a href=""><i class="icon-search-plus" /></a></div>')
