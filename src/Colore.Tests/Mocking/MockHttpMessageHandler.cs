@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="RestInitResponseTests.cs" company="Corale">
+// <copyright file="MockHttpMessageHandler.cs" company="Corale">
 //     Copyright © 2015-2019 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,49 +23,26 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests.Rest.Data
+namespace Colore.Tests.Mocking
 {
-    using System;
+    using System.Net.Http;
+    using System.Threading;
+    using System.Threading.Tasks;
 
-    using Colore.Rest.Data;
-
-    using NUnit.Framework;
-
-    [TestFixture]
-    public class RestInitResponseTests
+    public class MockHttpMessageHandler : HttpMessageHandler
     {
-        [TestCase(0)]
-        [TestCase(5)]
-        [TestCase(int.MaxValue)]
-        [TestCase(int.MinValue)]
-        [TestCase(-512513)]
-        [TestCase(362362)]
-        public void ShouldConstructWithCorrectSession(int session)
+        private readonly IMockHttpMessageHandler _handler;
+
+        public MockHttpMessageHandler(IMockHttpMessageHandler handler)
         {
-            var response = new RestInitResponse(session, new Uri("http://google.com"));
-            Assert.AreEqual(session, response.Session);
+            _handler = handler;
         }
 
-        [TestCase("http://google.com")]
-        [TestCase("https://google.com")]
-        [TestCase("http://razer.com")]
-        [TestCase("https://razer.com/foobar")]
-        [TestCase("file:///home/test/chroma.html")]
-        [TestCase("http://example.com/someapi")]
-        [TestCase("https://example.org/someapi?with=args")]
-        ////[TestCase("http://www.example.net/#withanchor")]
-        [TestCase("http://example.xyz:12345/aport")]
-        public void ShouldConstructWithCorrectUri(string url)
+        protected override async Task<HttpResponseMessage> SendAsync(
+            HttpRequestMessage request,
+            CancellationToken cancellationToken)
         {
-            var expected = new Uri(url);
-            var response = new RestInitResponse(0, expected);
-            Assert.AreEqual(expected, response.Uri);
-        }
-
-        [Test]
-        public void ShouldConstructWithNullUri()
-        {
-            Assert.IsNull(new RestInitResponse(0, null).Uri);
+            return await _handler.SendAsync(request, cancellationToken);
         }
     }
 }

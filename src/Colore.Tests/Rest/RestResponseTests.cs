@@ -90,7 +90,7 @@ namespace Colore.Tests.Rest
 
         [TestCase("hello")]
         [TestCase("hello world")]
-        [TestCase("This is a more complex string, with various 5ymb0l5 and #stuff!")]
+        [TestCase("This is a more complex string, with various 5ymb0l5 and %stuff")]
         public void ShouldConstructWithCorrectContent(string content)
         {
             var response = new RestResponse<object>(HttpStatusCode.OK, content);

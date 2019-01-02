@@ -38,7 +38,7 @@ namespace Colore.Tests.Rest
     {
         [TestCase("hello")]
         [TestCase("hello world")]
-        [TestCase("Hello foo, bar, and baz!")]
+        [TestCase("Hello foo, bar, and baz")]
         public void ShouldConstructWithCorrectMessage(string message)
         {
             var exception = new RestException(message);
@@ -63,7 +63,7 @@ namespace Colore.Tests.Rest
 
         [TestCase("http://google.se")]
         [TestCase("http://example.org/foobar")]
-        [TestCase("https://a.website.com:123/with?a=port#!")]
+        [TestCase("https://a.website.com:123/with?a=port")]
         public void ShouldConstructWithCorrectUri(string url)
         {
             var expected = new Uri(url);

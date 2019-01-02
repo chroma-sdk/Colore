@@ -480,6 +480,14 @@ namespace Colore.Tests.Effects.Keypad.Effects
         }
 
         [Test]
+        public void ShouldHaveDifferentHashCodesOnDifferentInstances()
+        {
+            var a = KeypadCustom.Create();
+            var b = KeypadCustom.Create();
+            Assert.AreNotEqual(a.GetHashCode(), b.GetHashCode());
+        }
+
+        [Test]
         public void ShouldConstructProperMultiArray()
         {
             var effect = KeypadCustom.Create();

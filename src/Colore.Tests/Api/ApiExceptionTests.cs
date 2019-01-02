@@ -38,7 +38,7 @@ namespace Colore.Tests.Api
     {
         [TestCase("hello")]
         [TestCase("Hello world")]
-        [TestCase("foo, bar, and baz!")]
+        [TestCase("foo, bar, and baz")]
         public void ShouldConstructWithCorrectMessage(string message)
         {
             var exception = new ApiException(message);

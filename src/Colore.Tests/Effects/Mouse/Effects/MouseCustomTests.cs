@@ -474,6 +474,14 @@ namespace Colore.Tests.Effects.Mouse.Effects
         }
 
         [Test]
+        public void ShouldHaveDifferentHashCodesOnDifferentInstances()
+        {
+            var a = MouseCustom.Create();
+            var b = MouseCustom.Create();
+            Assert.AreNotEqual(a.GetHashCode(), b.GetHashCode());
+        }
+
+        [Test]
         public void ShouldConstructProperMultiArray()
         {
             var effect = MouseCustom.Create();

@@ -50,7 +50,7 @@ namespace Colore.Rest
         /// <summary>
         /// The underlying <see cref="HttpClient" /> performing all requests.
         /// </summary>
-        private HttpClient _httpClient;
+        private readonly HttpClient _httpClient;
 
         /// <inheritdoc />
         /// <summary>
@@ -67,9 +67,19 @@ namespace Colore.Rest
         /// </summary>
         /// <param name="baseAddress">Base address to use.</param>
         public RestClient(Uri baseAddress)
+            : this(baseAddress, new HttpClientHandler())
         {
-            Log.DebugFormat("Initializing REST client at {0}", baseAddress);
-            _httpClient = CreateClient(baseAddress);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RestClient" /> class.
+        /// </summary>
+        /// <param name="baseAddress">Base address to use.</param>
+        /// <param name="messageHandler">The message handler to use for the HTTP client.</param>
+        public RestClient(Uri baseAddress, HttpMessageHandler messageHandler)
+        {
+            _httpClient = CreateClient(baseAddress, messageHandler);
+            Log.DebugFormat("REST client initialized at {0}", BaseAddress);
         }
 
         /// <inheritdoc />
@@ -79,12 +89,7 @@ namespace Colore.Rest
         public Uri BaseAddress
         {
             get => _httpClient.BaseAddress;
-
-            set
-            {
-                _httpClient?.Dispose();
-                _httpClient = CreateClient(value);
-            }
+            set => _httpClient.BaseAddress = value;
         }
 
         /// <inheritdoc />
@@ -192,11 +197,12 @@ namespace Colore.Rest
         /// Creates an instance of <see cref="HttpClient" /> for the specified address.
         /// </summary>
         /// <param name="baseAddress">The address to bind the client against.</param>
+        /// <param name="messageHandler">The message handler to use for the HTTP client.</param>
         /// <returns>An instance of <see cref="HttpClient" />.</returns>
-        private static HttpClient CreateClient(Uri baseAddress)
+        private static HttpClient CreateClient(Uri baseAddress, HttpMessageHandler messageHandler)
         {
             Log.DebugFormat("Creating new HttpClient for {0}", baseAddress);
-            return new HttpClient
+            return new HttpClient(messageHandler)
             {
                 BaseAddress = baseAddress,
                 DefaultRequestHeaders = { Accept = { new MediaTypeWithQualityHeaderValue("application/json") } }
