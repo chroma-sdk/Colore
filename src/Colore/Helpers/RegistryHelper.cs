@@ -26,6 +26,7 @@
 namespace Colore.Helpers
 {
     using System;
+    using System.Runtime.InteropServices;
     using System.Security;
 
     using Colore.Data;
@@ -75,28 +76,36 @@ namespace Colore.Helpers
 
             try
             {
-                using (var key = Registry.LocalMachine.OpenSubKey(SdkRegKeyPath))
+                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
                 {
-                    if (key != null)
+                    using (var key = Registry.LocalMachine.OpenSubKey(SdkRegKeyPath))
                     {
-                        var value = key.GetValue("Enable");
-
-                        if (value is int i)
+                        if (key != null)
                         {
-                            regEnabled = i == 1;
+                            var value = key.GetValue("Enable");
+
+                            if (value is int i)
+                            {
+                                regEnabled = i == 1;
+                            }
+                            else
+                            {
+                                regEnabled = true;
+                                Log.Warn(
+                                    "Chroma SDK has changed registry setting format. Please update Colore to latest version.");
+                                Log.DebugFormat("New Enabled type: {0}", value.GetType());
+                            }
                         }
                         else
                         {
-                            regEnabled = true;
-                            Log.Warn(
-                                "Chroma SDK has changed registry setting format. Please update Colore to latest version.");
-                            Log.DebugFormat("New Enabled type: {0}", value.GetType());
+                            regEnabled = false;
                         }
                     }
-                    else
-                    {
-                        regEnabled = false;
-                    }
+                }
+                else
+                {
+                    Log.Debug("Not running on Windows, treating 'SDK exists in registry' as true");
+                    regEnabled = true;
                 }
             }
             catch (PlatformNotSupportedException ex)
@@ -132,6 +141,13 @@ namespace Colore.Helpers
         /// </returns>
         internal static bool TryGetSdkVersion(out SdkVersion ver)
         {
+            if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                Log.Debug("Not running on Windows platform, aborting registry check");
+                ver = new SdkVersion(0, 0, 0);
+                return false;
+            }
+
             try
             {
                 using (var key = Registry.LocalMachine.OpenSubKey(SdkRegKeyPath, false))
