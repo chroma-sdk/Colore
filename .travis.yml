@@ -41,7 +41,7 @@ before_script:
   - chmod +x build.sh
 
 script:
-  - "./build.sh --target=Travis"
+  - "./build.sh -t Travis"
 
 cache:
   directories:
