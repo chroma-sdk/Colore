@@ -5,7 +5,7 @@
 #tool "nuget:?package=OpenCover&version=4.6.519"
 #tool "nuget:?package=ReportGenerator&version=4.0.4"
 #tool nuget:?package=coveralls.io&version=1.4.2
-#tool nuget:?package=Codecov&version=1.1.0
+#tool nuget:?package=Codecov&version=1.0.5
 
 ///////////////////////////////////////////////////////////////////////////////
 // ARGUMENTS
