@@ -31,7 +31,7 @@ init:
   - git config --global user.name "AppVeyor CI"
 
 install:
-  - choco install docfx -y
+  - choco install docfx -y --allow-downgrade --version 2.40.7
   - ps: $privkeyContent = "-----BEGIN RSA PRIVATE KEY-----`n"
   - ps: $privkeyContent += $env:deploy_key.Replace(' ', "`n")
   - ps: $privkeyContent += "`n-----END RSA PRIVATE KEY-----"
