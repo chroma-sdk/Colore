@@ -74,7 +74,7 @@ deploy:
 - provider: GitHub
   description: Automatically created by AppVeyor.
   auth_token:
-    secure: ZWDltUxdxnkQ9jf+HC+g7Hxm4Nke7H7AtMv4NWu5Uf+ZP4DV77Vc3C2B87moIUK0
+    secure: iRh8X0mhZOzCNpjwFNAk293Sm3H/O1OAAzXy4NYEUwxsmpGA0mg2XACvUl56PeK8
   artifact: NuGet,Archive,OpenCover,Coverage
   draft: true
   on:
