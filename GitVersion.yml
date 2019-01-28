@@ -1,1 +1,15 @@
+assembly-versioning-scheme: MajorMinorPatchTag
+mode: ContinuousDelivery
 next-version: 6.0.0
+branches:
+  develop:
+    tag: unstable
+  feature: {}
+  hotfix: {}
+  master:
+    tag: ci
+  pull-request: {}
+  release:
+    tag: rc
+ignore:
+  sha: []
