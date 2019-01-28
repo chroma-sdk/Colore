@@ -3,9 +3,9 @@
 #addin nuget:?package=Cake.Codecov&version=0.5.0
 #tool "nuget:?package=GitVersion.CommandLine&version=4.0.0"
 #tool "nuget:?package=OpenCover&version=4.6.519"
-#tool "nuget:?package=ReportGenerator&version=4.0.4"
+#tool "nuget:?package=ReportGenerator&version=4.0.9"
 #tool nuget:?package=coveralls.io&version=1.4.2
-#tool nuget:?package=Codecov&version=1.0.5
+#tool nuget:?package=Codecov&version=1.1.1
 
 ///////////////////////////////////////////////////////////////////////////////
 // ARGUMENTS
