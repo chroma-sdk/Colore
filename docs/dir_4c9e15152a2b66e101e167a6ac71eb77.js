@@ -1,4 +1,0 @@
-var dir_4c9e15152a2b66e101e167a6ac71eb77 =
-[
-    [ "Effects", "dir_e1427e8450fa80cf762058723be93922.html", "dir_e1427e8450fa80cf762058723be93922" ]
-];

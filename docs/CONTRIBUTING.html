@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Contributing </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Contributing ">
+    <meta name="generator" content="docfx 2.40.7.0">
+    
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="images/colore.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="contributing">Contributing</h1>
+
+<p>We deeply appreciate anyone wanting to contribute to Colore!</p>
+<p>In order to make the code neat, readable, and organized properly, there are some guidelines and rules you must follow.</p>
+<p>Always remember, if you are unsure about something: check the existing source to get an idea of how things should look!</p>
+<p>If you have more specific questions about the guidelines or other things about the project, feel free to contact anyone
+listed under <code>PRIMARY AUTHORS</code> in the <a href="AUTHORS"><code>AUTHORS</code> file</a> or <a href="https://github.com/chroma-sdk/Colore/issues/new">create an issue</a> in the <a href="https://github.com/chroma-sdk/Colore">main repo</a>. You can also
+<a href="https://gitter.im/chroma-sdk/Colore?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge">join the Gitter chat</a> and ask your questions.</p>
+<h2 id="cloning-the-repo">Cloning the repo</h2>
+<p>First off, fork the repository and clone it to your local development system:</p>
+<pre><code>git clone git@github.com:&lt;your-username&gt;/Colore.git
+</code></pre><h2 id="general-design-guidelines">General design guidelines</h2>
+<ul>
+<li>Design your code to be event-driven when possible, it makes it easier for applications to implement the library.</li>
+<li>Follow common C# practices for cleaner looking code (properties instead of <code>Get&lt;Name&gt;</code> methods, for example).</li>
+</ul>
+<h2 id="development-environment">Development environment</h2>
+<p><em>2017-11-05:</em> With Colore now being written using C# 7.0 and .NET Core features, you will need to use an edition of <a href="https://www.visualstudio.com/downloads/">Visual Studio 2017</a> to develop on Colore.</p>
+<p>Installing the <a href="https://www.microsoft.com/net/download/windows">latest .NET Core SDK</a> can also help as VS2017 currently does not download the latest version in its installer.</p>
+<h2 id="code-analyzers">Code analyzers</h2>
+<p><em>Updated 2015-12-22: Colore is now on C# 6.0 which meant a move from the old StyleCop package to the new
+StyleCop.Analyzers package which implements StyleCop rules as Roslyn analyzers.</em></p>
+<p>Colore references the <a href="https://github.com/DotNetAnalyzers/StyleCopAnalyzers">StyleCop.Analyzers</a> and various other code analyzer packages,
+which will analyze the code and point out any errors.</p>
+<p>A global ruleset file <code>Corale.Colore.ruleset</code> provided with Colore defines the rules we use for Colore and will be used by analyzing tools automatically.</p>
+<p>If there are any conflicts between this guide and what analyzers tell you, <strong>generally follow what the analyzer says</strong>.
+This guide may not always be up to date with the latest changes to what rules we are using. If you feel unsure,
+feel free to create an issue or contact the primary developers or post a question in the <a href="https://gitter.im/chroma-sdk/Colore?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge">Gitter</a> chat room.</p>
+<p>Some analyzers can be very strict, or in some cases wrong about pieces of code.
+If you feel like there&#39;s a warning that should be suppressed for a section of code or even globally, feel free to do so but <strong>always mention this and your reasoning for doing so in your PR</strong>. We will discuss the suppression further in the PR.</p>
+<h2 id="resharper">ReSharper</h2>
+<p>ReSharper is used by the primary developers of Colore and as such, we provide a setting file with Colore that
+configures ReSharper with the settings we recommend using (such as naming conventions). If you use ReSharper,
+make sure that the <em>team-shared</em> settings are being used.</p>
+<h2 id="mandatory-file-header">Mandatory file header</h2>
+<p>The following file header <strong>must be present in every code file</strong>, if it is missing your code will not be accepted until
+the header has been put in place.</p>
+<p>Invalid or missing file headers are detected by the StyleCop analyzers and can be remedied by utilizing the provided
+quick fix from within the editor.</p>
+<pre><code>// ---------------------------------------------------------------------------------------
+// &lt;copyright file=&quot;{NAME OF FILE WITH EXTENSION}&quot; company=&quot;Corale&quot;&gt;
+//     Copyright © 2015-2017 by Adam Hellberg and Brandon Scott.
+//
+//     Permission is hereby granted, free of charge, to any person obtaining a copy of
+//     this software and associated documentation files (the &quot;Software&quot;), to deal in
+//     the Software without restriction, including without limitation the rights to
+//     use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+//     of the Software, and to permit persons to whom the Software is furnished to do
+//     so, subject to the following conditions:
+//
+//     The above copyright notice and this permission notice shall be included in all
+//     copies or substantial portions of the Software.
+//
+//     THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//     FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+//     WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+//     CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+//
+//     &quot;Razer&quot; is a trademark of Razer USA Ltd.
+// &lt;/copyright&gt;
+// ---------------------------------------------------------------------------------------
+</code></pre><h2 id="indenting">Indenting</h2>
+<p>Use 4 <strong>spaces</strong> for indenting (<strong>not tabs!</strong>). No more, no less.
+Every decent IDE (and even text editor) lets you change this.</p>
+<p>Code with incorrect indentation will not be accepted until corrected.</p>
+<h2 id="using-declarations">Using declarations</h2>
+<p><em>StyleCop will notify you about incorrect using statements.</em></p>
+<p>Put using statements as deep as possible (usually it will be just after the namespace declaration)
+and in alphabetical order.</p>
+<p><code>System.*</code> namespaces are always put at the top in their own alphabetical order.</p>
+<h3 id="example-showing-correctly-sorted-using-statements">Example showing correctly sorted using statements</h3>
+<pre><code class="lang-c#">using System;
+
+using Colore.Core;
+
+using SomeAuthor.SomeLib;
+</code></pre><p>(Space between using groups is optional, but can often make it easier to read.)</p>
+<h2 id="naming">Naming</h2>
+<p>StyleCop will tell you how to name things most of the time. The only thing worth mentioning is that private fields
+are named by prefixing them with an underscore. The only exception is for <code>const</code> and <code>static readonly</code> in which case
+they are named using PascalCase.</p>
+<pre><code class="lang-c#">// Naming example for a private variable
+private SomeType _myVar;
+
+// Naming example for a private static readonly
+private static readonly SomeType MyVar;
+</code></pre><p>If you are using ReSharper, it will manage this for you, as we are using its default naming scheme.</p>
+<h3 id="exceptions-to-naming-convention">Exceptions to naming convention</h3>
+<p>You should always try to name everything in a C#-idiomatic way, but we may make exceptions for exceptional cases,
+like when importing native code fragments.</p>
+<h2 id="exception-throwing-and-handling">Exception throwing and handling</h2>
+<p>Try not to catch the base <code>Exception</code> class, always catch specific exceptions that you are certain your code can handle.</p>
+<p>When throwing exceptions, throw a type that is relevant to the error that occurred, don&#39;t throw a base <code>Exception</code>
+if an argument is <code>null</code>, throw the <code>ArgumentNullException</code>.</p>
+<p>If creating custom exception types, append <code>Exception</code> to the name and inherit from the relevant base <code>ColoreException</code> class or one of the other exception classes in Colore,
+as per usual C# guidelines. Try to keep exception names short but descriptive.</p>
+<h2 id="usage-of-the-var-keyword">Usage of the <code>var</code> keyword</h2>
+<p>With fancy IDEs and other tools, the need to explicitly specify the type of a variable is not as important.</p>
+<p>If you look through the source, you&#39;ll find that the <code>var</code> keyword is used extensively.</p>
+<p>However, whether or not you use the <code>var</code> keyword doesn&#39;t matter too much. If you find a piece of code more
+readable with the full type name, then write the full type name.</p>
+<p>Use your own judgement to decide whether using the <code>var</code> keyword makes your code more readable.</p>
+<p>That said, there are situations where using the <code>var</code> keyword is strongly encouraged, when the type name is mentioned
+in the statement (typically on assignment operations):</p>
+<pre><code class="lang-c#">// Consider this line of code:
+SpecialSuperType[] myArray = new SpecialSupertype[10];
+// here it would be preferred to use the var keyword, as the type is already mentioned in the assignment
+var myArray = new SpecialSuperType[10];
+</code></pre><h2 id="calling-native-chroma-sdk-functions">Calling native Chroma SDK functions</h2>
+<p><strong>Never call native SDK functions directly</strong>.</p>
+<p>Always call SDK functions via the <code>IChromaApi</code> interface that is provided to all device classes as well as the main <code>Chroma</code> class.</p>
+<p>When implementing a new SDK function, add a fitting method in the <code>IChromaApi</code> interface and then implement the method in each SDK implementation wrapper (native and REST API).</p>
+<p>Remember to design the method on <code>IChromaApi</code> to be friendly in a C# context. The implementation will take care of making the calls to the underlying SDK, not the user of the API interface.</p>
+<h2 id="documenting-your-code">Documenting your code</h2>
+<p>Public-facing components of your code <strong>must</strong> have documentation. We will not merge pull requests that are missing
+documentation on public members.</p>
+<p>Use standard C# XML documentation comments for documenting your code, like so:</p>
+<pre><code class="lang-c#">/// &lt;summary&gt;
+/// Opens a webpage.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;url&quot;&gt;The URL to open.&lt;/param&gt;
+/// &lt;returns&gt;&lt;c&gt;true&lt;/c&gt; if the webpage opened, &lt;c&gt;false&lt;/c&gt; otherwise.&lt;/returns&gt;
+public bool OpenWebpage(string url)
+{
+    // Code...
+}
+</code></pre><p>If you are using Visual Studio, it will automatically insert the proper tags for you when you type three slashes
+where applicable (<code>///</code>).</p>
+<p>Please use proper grammar and punctuation in your documentation comments for the convenience of the reader.
+We understand that not everyone is a native English speaker or have perfect language skills, and so we are pretty
+relaxed with the proper-ness of documentation comments.</p>
+<p>Simply: Badly written documentation comments are still better than no documentation comments at all.
+The important thing is that you can write something understandable. We will tell you in the pull request if there&#39;s
+something you can improve before we merge it.</p>
+<p>If you&#39;re referencing/importing/wrapping functions from external sources like the WinAPI or Razer&#39;s APIs you can simply
+copy documentation from the original source (MSDN for example). This usually means you get properly written
+documentation that is easy (ok, most of the time anyway) to understand.</p>
+<h2 id="submitting-a-pull-request">Submitting a pull request</h2>
+<p>Good, we didn&#39;t scare you off with all these requirements,
+and you are on your way to submitting your first pull request!</p>
+<p>When making a pull request, if is often convenient to make a branch just for that request (so that you can continue working on your main development branch while your pull request is being reviewed).
+These branches are typically named <code>patch-&lt;counter&gt;</code> but can be anything you desire, like a descriptive name for what the PR is about.
+If you decide to name branches based on the change, make sure you keep them quite short.</p>
+<p>Another very positive thing for both you and us, the maintainers, is to avoid pull requests with a lot of commits that don&#39;t share anything in common.
+Imagine if you submit a pull request that implements a car and a pineapple.
+We decide that we like your car implementation, but that we&#39;re not quite ready for fruits yet.
+But we cannot choose, as you put them both in the same pull request!</p>
+<p>So always make sure that your pull request is handling <strong>one type of feature or change</strong>.</p>
+<p>Other things to keep in mind is to include details about what your feature or change is about in the pull request
+message. The more information the better! And make sure to give your pull request a relevant name, too.</p>
+<p>When you submit a pull request, there will be a handy template for you to read through so you don&#39;t forget any of the important parts!</p>
+<h3 id="pull-request-target-branch">Pull request target branch</h3>
+<p>When submitting your pull request, make sure you are targeting the <a href="https://github.com/chroma-sdk/Colore/tree/develop"><code>develop</code></a> branch of the main repo.
+If you target the wrong branch we will close your pull request. Don&#39;t feel bad though, just re-create it with the
+correct target branch! (We have to close it as GitHub does not support changing the target branch on an existing pull request.)</p>
+<h4 id="hotfixes">Hotfixes</h4>
+<p>Hotfixes are special, and are treated differently than other branches. A hotfix is branched from master and merged
+back into master and then to develop. If you ever write a hotfix, keep this in mind. <strong>Hotfixes branch from master, <em>not develop</em>.</strong></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/chroma-sdk/Colore/blob/release/6.0.0/CONTRIBUTING.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright © 2015-2019 by <a href="https://github.com/Sharparam">Adam Hellberg</a> and <a href="https://github.com/brandonscott">Brandon Scott</a><br>Generated by <a href="http://dotnet.github.io/docfx/"><strong>DocFX</strong></a>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>
