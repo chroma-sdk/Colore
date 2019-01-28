@@ -1,6 +1,5 @@
 assembly-versioning-scheme: MajorMinorPatchTag
 mode: ContinuousDelivery
-next-version: 6.0.0
 branches:
   develop:
     tag: unstable
