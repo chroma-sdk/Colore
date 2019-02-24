@@ -79,6 +79,7 @@ namespace Colore.Rest
         public RestClient(Uri baseAddress, HttpMessageHandler messageHandler)
         {
             _httpClient = CreateClient(baseAddress, messageHandler);
+            BaseAddress = baseAddress;
             Log.DebugFormat("REST client initialized at {0}", BaseAddress);
         }
 
