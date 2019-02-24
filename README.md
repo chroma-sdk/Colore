@@ -161,12 +161,12 @@ There may be others we are unaware of, so please let us know if there are any ot
 [mg]: https://www.myget.org/feed/chroma-sdk/package/nuget/Colore
 [mgverbadge]: https://img.shields.io/myget/chroma-sdk/vpre/Colore.svg?label=myget
 
-[appveyor-develop-status]: https://ci.appveyor.com/project/Corale/colore/branch/develop
-[appveyor-develop-badge]: https://ci.appveyor.com/api/projects/status/st3y6fo0jqvhd8cg/branch/develop?svg=true
+[appveyor-develop-status]: https://ci.appveyor.com/project/chroma-sdk/colore/branch/develop
+[appveyor-develop-badge]: https://ci.appveyor.com/api/projects/status/on4kfnasv564yhh9/branch/develop?svg=true
 [travis-develop-status]: https://travis-ci.org/chroma-sdk/Colore
 [travis-develop-badge]: https://travis-ci.org/chroma-sdk/Colore.svg?branch=develop
-[test-develop-status]: https://ci.appveyor.com/project/Corale/colore/branch/develop/tests
-[test-develop-badge]: https://img.shields.io/appveyor/tests/corale/Colore/develop.svg
+[test-develop-status]: https://ci.appveyor.com/project/chroma-sdk/colore/branch/develop/tests
+[test-develop-badge]: https://img.shields.io/appveyor/tests/chroma-sdk/Colore/develop.svg
 [coveralls-develop]: https://coveralls.io/github/chroma-sdk/Colore?branch=develop
 [coveralls-develop-badge]: https://coveralls.io/repos/github/chroma-sdk/Colore/badge.svg?branch=develop
 [codecov-develop]: https://codecov.io/gh/chroma-sdk/Colore/branch/develop
@@ -174,19 +174,18 @@ There may be others we are unaware of, so please let us know if there are any ot
 [codefactor-develop]: https://www.codefactor.io/repository/github/chroma-sdk/colore/overview/develop
 [codefactor-develop-badge]: https://www.codefactor.io/repository/github/chroma-sdk/colore/badge/develop
 
-[appveyor-master-status]: https://ci.appveyor.com/project/Corale/colore/branch/master
-[appveyor-master-badge]: https://ci.appveyor.com/api/projects/status/st3y6fo0jqvhd8cg/branch/master?svg=true
+[appveyor-master-status]: https://ci.appveyor.com/project/chroma-sdk/colore/branch/master
+[appveyor-master-badge]: https://ci.appveyor.com/api/projects/status/on4kfnasv564yhh9/branch/master?svg=true
 [travis-master-status]: https://travis-ci.org/chroma-sdk/Colore
 [travis-master-badge]: https://travis-ci.org/chroma-sdk/Colore.svg?branch=master
-[test-master-status]: https://ci.appveyor.com/project/Corale/colore/branch/master/tests
-[test-master-badge]: https://img.shields.io/appveyor/tests/corale/Colore/master.svg
+[test-master-status]: https://ci.appveyor.com/project/chroma-sdk/colore/branch/master/tests
+[test-master-badge]: https://img.shields.io/appveyor/tests/chroma-sdk/Colore/master.svg
 [coveralls-master]: https://coveralls.io/github/chroma-sdk/Colore
 [coveralls-master-badge]: https://coveralls.io/repos/github/chroma-sdk/Colore/badge.svg
 [codecov-master]: https://codecov.io/gh/chroma-sdk/Colore
 [codecov-master-badge]: https://codecov.io/gh/chroma-sdk/Colore/branch/master/graph/badge.svg
 [codefactor-master]: https://www.codefactor.io/repository/github/chroma-sdk/colore/overview/master
 [codefactor-master-badge]: https://www.codefactor.io/repository/github/chroma-sdk/colore/badge/master
-
 
 [gitter]: https://gitter.im/chroma-sdk/Colore?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
 [gitterbadge]: https://badges.gitter.im/Join%20Chat.svg
