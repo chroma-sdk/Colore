@@ -34,7 +34,7 @@
     <Authors>Sharparam</Authors>
     <Description>A C#/.NET library for interacting with Razer's Chroma SDK.</Description>
     <Copyright>Copyright (c) 2015-2019 by Adam Hellberg and Brandon Scott.</Copyright>
-    <PackageLicenseUrl>https://github.com/CoraleStudios/Colore/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicense>https://github.com/CoraleStudios/Colore/blob/master/LICENSE</PackageLicense>
     <PackageProjectUrl>https://github.com/CoraleStudios/Colore</PackageProjectUrl>
     <PackageIconUrl>https://files.sharparam.com/2017/10/31/colore.png</PackageIconUrl>
     <PackageTags>razer;chroma;corale;led;light;peripheral;gaming</PackageTags>

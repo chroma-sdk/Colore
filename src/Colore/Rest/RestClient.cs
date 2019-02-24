@@ -79,6 +79,7 @@ namespace Colore.Rest
         public RestClient(Uri baseAddress, HttpMessageHandler messageHandler)
         {
             _httpClient = CreateClient(baseAddress, messageHandler);
+            BaseAddress = baseAddress;
             Log.DebugFormat("REST client initialized at {0}", BaseAddress);
         }
 
@@ -86,11 +87,7 @@ namespace Colore.Rest
         /// <summary>
         /// Gets or sets the base address where calls will be routed.
         /// </summary>
-        public Uri BaseAddress
-        {
-            get => _httpClient.BaseAddress;
-            set => _httpClient.BaseAddress = value;
-        }
+        public Uri BaseAddress { get; set; }
 
         /// <inheritdoc />
         /// <summary>
@@ -106,7 +103,8 @@ namespace Colore.Rest
             var content = json == null
                 ? null
                 : new StringContent(json, Encoding.UTF8, "application/json");
-            var uri = BaseAddress.Append(new Uri(resource, UriKind.Relative));
+
+            var uri = CreateUri(resource);
 
             Log.TraceFormat("POSTing {0} to {1}", json, uri);
 
@@ -140,7 +138,7 @@ namespace Colore.Rest
             var content = data == null
                 ? null
                 : new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
-            var uri = BaseAddress.Append(new Uri(resource, UriKind.Relative));
+            var uri = CreateUri(resource);
             var response = await _httpClient.PutAsync(uri, content).ConfigureAwait(false);
             var body = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
             return new RestResponse<T>(response.StatusCode, body);
@@ -155,7 +153,7 @@ namespace Colore.Rest
         /// <returns>An instance of <see cref="IRestResponse{TData}" />.</returns>
         public async Task<IRestResponse<T>> DeleteAsync<T>(string resource)
         {
-            var uri = BaseAddress.Append(new Uri(resource, UriKind.Relative));
+            var uri = CreateUri(resource);
             var response = await _httpClient.DeleteAsync(uri).ConfigureAwait(false);
             var body = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
             return new RestResponse<T>(response.StatusCode, body);
@@ -175,7 +173,7 @@ namespace Colore.Rest
                 ? null
                 : new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
 
-            var uri = BaseAddress.Append(new Uri(resource, UriKind.Relative));
+            var uri = CreateUri(resource);
             var request = new HttpRequestMessage(HttpMethod.Delete, uri) { Content = content };
 
             var response = await _httpClient.SendAsync(request).ConfigureAwait(false);
@@ -204,9 +202,22 @@ namespace Colore.Rest
             Log.DebugFormat("Creating new HttpClient for {0}", baseAddress);
             return new HttpClient(messageHandler)
             {
-                BaseAddress = baseAddress,
                 DefaultRequestHeaders = { Accept = { new MediaTypeWithQualityHeaderValue("application/json") } }
             };
         }
+
+        /// <summary>
+        /// CReates an absolute SDK URI from the supplied resource.
+        /// </summary>
+        /// <param name="resource">The resource (relative SDK URI).</param>
+        /// <returns>An instance of <see cref="Uri" /> with the absolute SDK URI.</returns>
+        private Uri CreateUri(string resource) => CreateUri(new Uri(resource, UriKind.Relative));
+
+        /// <summary>
+        /// Creates an absolute SDK URI from the supplied resource URI.
+        /// </summary>
+        /// <param name="resource">The resource (relative SDK URI).</param>
+        /// <returns>An instance of <see cref="Uri" /> with the absolute SDK URI.</returns>
+        private Uri CreateUri(Uri resource) => BaseAddress.Append(resource);
     }
 }
