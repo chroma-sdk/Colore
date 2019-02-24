@@ -224,7 +224,7 @@ var assemblies = [
       { "name": "Colore.Rest.Data.RestCallResponse", "rp": "Colore_RestCallResponse.htm", "cl": 6, "ucl": 0, "cal": 6, "tl": 71, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Colore.Rest.Data.RestInitResponse", "rp": "Colore_RestInitResponse.htm", "cl": 6, "ucl": 0, "cal": 6, "tl": 69, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Colore.Rest.RestApi", "rp": "Colore_RestApi.htm", "cl": 0, "ucl": 144, "cal": 144, "tl": 523, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 52, "lch": [], "bch": [], "hc": [] },
-      { "name": "Colore.Rest.RestClient", "rp": "Colore_RestClient.htm", "cl": 53, "ucl": 0, "cal": 53, "tl": 212, "ct": "LineCoverage", "mc": "-", "cb": 1, "tb": 2, "lch": [], "bch": [], "hc": [] },
+      { "name": "Colore.Rest.RestClient", "rp": "Colore_RestClient.htm", "cl": 54, "ucl": 0, "cal": 54, "tl": 223, "ct": "LineCoverage", "mc": "-", "cb": 1, "tb": 2, "lch": [], "bch": [], "hc": [] },
       { "name": "Colore.Rest.RestException", "rp": "Colore_RestException.htm", "cl": 14, "ucl": 0, "cal": 14, "tl": 116, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Colore.Rest.RestResponse`1", "rp": "Colore_RestResponse_1.htm", "cl": 16, "ucl": 0, "cal": 16, "tl": 100, "ct": "LineCoverage", "mc": "-", "cb": 2, "tb": 2, "lch": [], "bch": [], "hc": [] },
       { "name": "Colore.Serialization.ChromaLinkCustomConverter", "rp": "Colore_ChromaLinkCustomConverter.htm", "cl": 0, "ucl": 6, "cal": 6, "tl": 72, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
