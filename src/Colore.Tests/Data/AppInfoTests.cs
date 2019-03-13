@@ -77,18 +77,18 @@ namespace Colore.Tests.Data
             var info = new AppInfo("test", "test", "test", "test", Category.Game);
             var supported = info.SupportedDevices.ToList();
 
-            Assert.Contains(DeviceType.Keyboard, supported);
-            Assert.Contains(DeviceType.Mouse, supported);
-            Assert.Contains(DeviceType.Headset, supported);
-            Assert.Contains(DeviceType.Keypad, supported);
-            Assert.Contains(DeviceType.Mousepad, supported);
-            Assert.Contains(DeviceType.Speakers, supported);
+            Assert.Contains(ApiDeviceType.Keyboard, supported);
+            Assert.Contains(ApiDeviceType.Mouse, supported);
+            Assert.Contains(ApiDeviceType.Headset, supported);
+            Assert.Contains(ApiDeviceType.Mousepad, supported);
+            Assert.Contains(ApiDeviceType.Keypad, supported);
+            Assert.Contains(ApiDeviceType.ChromaLink, supported);
         }
 
         [Test]
         public void ShouldConstructWithCorrectDevices()
         {
-            var supportedDevices = new[] { DeviceType.Keyboard, DeviceType.Headset };
+            var supportedDevices = new[] { ApiDeviceType.Keyboard, ApiDeviceType.Headset };
             var info = new AppInfo("test", "test", "test", "test", supportedDevices, Category.Application);
             Assert.AreEqual(supportedDevices, info.SupportedDevices);
         }

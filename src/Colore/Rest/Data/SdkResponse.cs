@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="RestCallResponseTests.cs" company="Corale">
+// <copyright file="SdkResponse.cs" company="Corale">
 //     Copyright © 2015-2019 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,39 +23,31 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests.Rest.Data
+namespace Colore.Rest.Data
 {
-    using System;
-
     using Colore.Data;
-    using Colore.Rest.Data;
 
-    using NUnit.Framework;
+    using Newtonsoft.Json;
 
-    [TestFixture]
-    public class RestCallResponseTests
+    /// <summary>
+    /// Contains simple result-only responses from the Razer Chroma REST API.
+    /// </summary>
+    internal class SdkResponse
     {
-        [Test]
-        public void ShouldConstructWithCorrectResult()
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SdkResponse" /> class.
+        /// </summary>
+        /// <param name="result">Result code.</param>
+        [JsonConstructor]
+        public SdkResponse(Result result)
         {
-            var expected = Result.RzAccessDenied;
-            var response = new SdkEffectResponse(expected, null);
-            Assert.AreEqual(expected, response.Result);
+            Result = result;
         }
 
-        [Test]
-        public void ShouldConstructWithCorrectEffectId()
-        {
-            var expected = Guid.NewGuid();
-            var response = new SdkEffectResponse(Result.RzSuccess, expected);
-            Assert.AreEqual(expected, response.EffectId);
-        }
-
-        [Test]
-        public void ShouldConstructWithNullEffectId()
-        {
-            var response = new SdkEffectResponse(Result.RzFailed, null);
-            Assert.IsNull(response.EffectId);
-        }
+        /// <summary>
+        /// Gets the result code obtained from the API call.
+        /// </summary>
+        [JsonProperty("result")]
+        public Result Result { get; }
     }
 }

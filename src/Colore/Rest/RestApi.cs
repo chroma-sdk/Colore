@@ -114,7 +114,7 @@ namespace Colore.Rest
 
             _client.BaseAddress = _baseUri;
 
-            var response = await _client.PostAsync<RestInitResponse>("/razer/chromasdk", info).ConfigureAwait(false);
+            var response = await _client.PostAsync<SdkInitResponse>("/razer/chromasdk", info).ConfigureAwait(false);
 
             if (!response.IsSuccessful)
             {
@@ -140,15 +140,29 @@ namespace Colore.Rest
                 throw ex;
             }
 
-            if (data.Session == 0 || data.Uri == null)
+            if (data.Session == 0 || data.Uri == default)
             {
+                // Attempt to deserialize into SdkResponse to handle Razer's invalid REST API
+                if (!string.IsNullOrWhiteSpace(response.Content))
+                {
+                    var sdkResponse = response.Deserialize<SdkResponse>();
+
+                    if (sdkResponse != default)
+                    {
+                        throw new ApiException("Exception when calling initialize API", sdkResponse.Result);
+                    }
+                }
+
                 var ex = new RestException(
                     "REST API returned invalid session ID or URL",
                     Result.RzFailed,
                     new Uri(_client.BaseAddress, "/razer/chromasdk"),
                     response.Status,
                     data);
+
                 Log.Error(ex, "Got invalid session response from REST init API");
+
+                throw ex;
             }
 
             _session = data.Session;
@@ -168,7 +182,7 @@ namespace Colore.Rest
         /// <exception cref="ApiException">Thrown if the SDK responds with an error code.</exception>
         public async Task UninitializeAsync()
         {
-            var response = await _client.DeleteAsync<RestCallResponse>("/").ConfigureAwait(false);
+            var response = await _client.DeleteAsync<SdkResponse>("/").ConfigureAwait(false);
 
             if (!response.IsSuccessful)
             {
@@ -209,7 +223,7 @@ namespace Colore.Rest
         /// <exception cref="ApiException">Thrown if the SDK responds with an error code.</exception>
         public async Task SetEffectAsync(Guid effectId)
         {
-            var response = await _client.PutAsync<RestCallResponse>("/effect", new { id = effectId })
+            var response = await _client.PutAsync<SdkResponse>("/effect", new { id = effectId })
                                         .ConfigureAwait(false);
 
             if (!response.IsSuccessful)
@@ -242,7 +256,7 @@ namespace Colore.Rest
         /// <exception cref="ApiException">Thrown if the SDK responds with an error code.</exception>
         public async Task DeleteEffectAsync(Guid effectId)
         {
-            var response = await _client.DeleteAsync<RestCallResponse>("/effect", new { id = effectId })
+            var response = await _client.DeleteAsync<SdkResponse>("/effect", new { id = effectId })
                                         .ConfigureAwait(false);
 
             if (!response.IsSuccessful)
@@ -492,7 +506,7 @@ namespace Colore.Rest
         /// <exception cref="ApiException">Thrown if the SDK returns an exception creating the effect.</exception>
         private async Task<Guid> CreateEffectAsync(string endpoint, object data)
         {
-            var response = await _client.PostAsync<RestCallResponse>(endpoint, data).ConfigureAwait(false);
+            var response = await _client.PostAsync<SdkEffectResponse>(endpoint, data).ConfigureAwait(false);
 
             if (!response.IsSuccessful)
             {

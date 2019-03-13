@@ -55,12 +55,12 @@ namespace Colore.Data
 #pragma warning disable SA1118 // Parameter should not span multiple lines
                 new[]
                 {
-                    DeviceType.Keyboard,
-                    DeviceType.Mouse,
-                    DeviceType.Headset,
-                    DeviceType.Keypad,
-                    DeviceType.Mousepad,
-                    DeviceType.Speakers
+                    ApiDeviceType.Keyboard,
+                    ApiDeviceType.Mouse,
+                    ApiDeviceType.Headset,
+                    ApiDeviceType.Mousepad,
+                    ApiDeviceType.Keypad,
+                    ApiDeviceType.ChromaLink
                 },
 #pragma warning restore SA1118 // Parameter should not span multiple lines
                 category)
@@ -81,7 +81,7 @@ namespace Colore.Data
             string description,
             string authorName,
             string authorContact,
-            IEnumerable<DeviceType> supportedDevices,
+            IEnumerable<ApiDeviceType> supportedDevices,
             Category category)
         {
             if (title.Length > Constants.MaxAppTitleLength)
@@ -101,7 +101,7 @@ namespace Colore.Data
             Title = title;
             Description = description;
             Author = new Author(authorName, authorContact);
-            SupportedDevices = new ReadOnlyCollection<DeviceType>(supportedDevices.ToList());
+            SupportedDevices = new ReadOnlyCollection<ApiDeviceType>(supportedDevices.ToList());
             Category = category;
         }
 
@@ -131,7 +131,7 @@ namespace Colore.Data
         /// but since we only serialize this class, it will not be an issue.
         /// </remarks>
         [JsonProperty("device_supported")]
-        public IReadOnlyCollection<DeviceType> SupportedDevices { get; }
+        public IReadOnlyCollection<ApiDeviceType> SupportedDevices { get; }
 
         /// <summary>
         /// Gets the category of this application.

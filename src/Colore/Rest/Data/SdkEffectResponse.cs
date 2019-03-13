@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="RestCallResponse.cs" company="Corale">
+// <copyright file="SdkEffectResponse.cs" company="Corale">
 //     Copyright © 2015-2019 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -34,32 +34,28 @@ namespace Colore.Rest.Data
 
     using Newtonsoft.Json;
 
+    /// <inheritdoc />
     /// <summary>
-    /// Contains responses from the Razer Chroma REST API.
+    /// Contains responses from setting effects with the Razer Chroma REST API.
     /// </summary>
     [SuppressMessage(
         "Microsoft.Performance",
         "CA1812:AvoidUninstantiatedInternalClasses",
         Justification = "Instantiated by Newtonsoft.Json")]
-    internal sealed class RestCallResponse
+    internal sealed class SdkEffectResponse : SdkResponse
     {
+        /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="RestCallResponse" /> class.
+        /// Initializes a new instance of the <see cref="SdkEffectResponse" /> class.
         /// </summary>
         /// <param name="result">Result code.</param>
         /// <param name="effectId">Effect ID (<c>null</c> if PUT was used).</param>
         [JsonConstructor]
-        public RestCallResponse(Result result, Guid? effectId)
+        public SdkEffectResponse(Result result, Guid? effectId)
+            : base(result)
         {
-            Result = result;
             EffectId = effectId;
         }
-
-        /// <summary>
-        /// Gets the result code obtained from the API call.
-        /// </summary>
-        [JsonProperty("result")]
-        public Result Result { get; }
 
         /// <summary>
         /// Gets the effect ID obtained from the API call (will be <c>null</c> if PUT was used to create an effect).

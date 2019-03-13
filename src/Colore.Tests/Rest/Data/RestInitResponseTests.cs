@@ -42,7 +42,7 @@ namespace Colore.Tests.Rest.Data
         [TestCase(362362)]
         public void ShouldConstructWithCorrectSession(int session)
         {
-            var response = new RestInitResponse(session, new Uri("http://google.com"));
+            var response = new SdkInitResponse(session, new Uri("http://google.com"));
             Assert.AreEqual(session, response.Session);
         }
 
@@ -58,14 +58,14 @@ namespace Colore.Tests.Rest.Data
         public void ShouldConstructWithCorrectUri(string url)
         {
             var expected = new Uri(url);
-            var response = new RestInitResponse(0, expected);
+            var response = new SdkInitResponse(0, expected);
             Assert.AreEqual(expected, response.Uri);
         }
 
         [Test]
         public void ShouldConstructWithNullUri()
         {
-            Assert.IsNull(new RestInitResponse(0, null).Uri);
+            Assert.IsNull(new SdkInitResponse(0, null).Uri);
         }
     }
 }

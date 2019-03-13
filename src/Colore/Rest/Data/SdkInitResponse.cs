@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="RestCallResponseTests.cs" company="Corale">
+// <copyright file="SdkInitResponse.cs" company="Corale">
 //     Copyright © 2015-2019 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,39 +23,47 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests.Rest.Data
+namespace Colore.Rest.Data
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
 
-    using Colore.Data;
-    using Colore.Rest.Data;
+    using JetBrains.Annotations;
 
-    using NUnit.Framework;
+    using Newtonsoft.Json;
 
-    [TestFixture]
-    public class RestCallResponseTests
+    /// <summary>
+    /// Response returned from Chroma REST API on initialization.
+    /// </summary>
+    [SuppressMessage(
+        "Microsoft.Performance",
+        "CA1812:AvoidUninstantiatedInternalClasses",
+        Justification = "Instantiated by Newtonsoft.Json")]
+    internal sealed class SdkInitResponse
     {
-        [Test]
-        public void ShouldConstructWithCorrectResult()
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SdkInitResponse" /> class.
+        /// </summary>
+        /// <param name="session">Session ID.</param>
+        /// <param name="uri">API URI.</param>
+        [JsonConstructor]
+        public SdkInitResponse(int session, [CanBeNull] Uri uri)
         {
-            var expected = Result.RzAccessDenied;
-            var response = new SdkEffectResponse(expected, null);
-            Assert.AreEqual(expected, response.Result);
+            Session = session;
+            Uri = uri;
         }
 
-        [Test]
-        public void ShouldConstructWithCorrectEffectId()
-        {
-            var expected = Guid.NewGuid();
-            var response = new SdkEffectResponse(Result.RzSuccess, expected);
-            Assert.AreEqual(expected, response.EffectId);
-        }
+        /// <summary>
+        /// Gets the session ID.
+        /// </summary>
+        [JsonProperty("sessionid")]
+        public int Session { get; }
 
-        [Test]
-        public void ShouldConstructWithNullEffectId()
-        {
-            var response = new SdkEffectResponse(Result.RzFailed, null);
-            Assert.IsNull(response.EffectId);
-        }
+        /// <summary>
+        /// Gets the URI to use for subsequent API calls.
+        /// </summary>
+        [JsonProperty("uri")]
+        [CanBeNull]
+        public Uri Uri { get; }
     }
 }

@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="RestCallResponseTests.cs" company="Corale">
+// <copyright file="ApiDeviceType.cs" company="Corale">
 //     Copyright © 2015-2019 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,39 +23,61 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests.Rest.Data
+namespace Colore.Data
 {
-    using System;
+    using System.Runtime.Serialization;
 
-    using Colore.Data;
-    using Colore.Rest.Data;
+    using JetBrains.Annotations;
 
-    using NUnit.Framework;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
 
-    [TestFixture]
-    public class RestCallResponseTests
+    /// <summary>
+    /// Devices types supported by the Chroma REST API.
+    /// </summary>
+    [JsonConverter(typeof(StringEnumConverter))]
+    public enum ApiDeviceType
     {
-        [Test]
-        public void ShouldConstructWithCorrectResult()
-        {
-            var expected = Result.RzAccessDenied;
-            var response = new SdkEffectResponse(expected, null);
-            Assert.AreEqual(expected, response.Result);
-        }
+        /// <summary>
+        /// A keyboard device.
+        /// </summary>
+        [PublicAPI]
+        [EnumMember(Value = "keyboard")]
+        Keyboard,
 
-        [Test]
-        public void ShouldConstructWithCorrectEffectId()
-        {
-            var expected = Guid.NewGuid();
-            var response = new SdkEffectResponse(Result.RzSuccess, expected);
-            Assert.AreEqual(expected, response.EffectId);
-        }
+        /// <summary>
+        /// A mouse device.
+        /// </summary>
+        [PublicAPI]
+        [EnumMember(Value = "mouse")]
+        Mouse,
 
-        [Test]
-        public void ShouldConstructWithNullEffectId()
-        {
-            var response = new SdkEffectResponse(Result.RzFailed, null);
-            Assert.IsNull(response.EffectId);
-        }
+        /// <summary>
+        /// A headset device.
+        /// </summary>
+        [PublicAPI]
+        [EnumMember(Value = "headset")]
+        Headset,
+
+        /// <summary>
+        /// A mousepad device.
+        /// </summary>
+        [PublicAPI]
+        [EnumMember(Value = "mousepad")]
+        Mousepad,
+
+        /// <summary>
+        /// A keypad device.
+        /// </summary>
+        [PublicAPI]
+        [EnumMember(Value = "keypad")]
+        Keypad,
+
+        /// <summary>
+        /// A Chroma Link device.
+        /// </summary>
+        [PublicAPI]
+        [EnumMember(Value = "chromalink")]
+        ChromaLink
     }
 }

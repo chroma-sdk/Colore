@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="RestInitResponse.cs" company="Corale">
+// <copyright file="RestApiTests.cs" company="Corale">
 //     Copyright © 2015-2019 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,47 +23,43 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Rest.Data
+namespace Colore.Tests.Rest
 {
-    using System;
-    using System.Diagnostics.CodeAnalysis;
+    using System.Net;
 
-    using JetBrains.Annotations;
+    using Colore.Api;
+    using Colore.Data;
+    using Colore.Rest;
+    using Colore.Rest.Data;
 
-    using Newtonsoft.Json;
+    using Moq;
 
-    /// <summary>
-    /// Response returned from Chroma REST API on initialization.
-    /// </summary>
-    [SuppressMessage(
-        "Microsoft.Performance",
-        "CA1812:AvoidUninstantiatedInternalClasses",
-        Justification = "Instantiated by Newtonsoft.Json")]
-    internal sealed class RestInitResponse
+    using NUnit.Framework;
+
+    [TestFixture]
+    public class RestApiTests
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RestInitResponse" /> class.
-        /// </summary>
-        /// <param name="session">Session ID.</param>
-        /// <param name="uri">API URI.</param>
-        [JsonConstructor]
-        public RestInitResponse(int session, [CanBeNull] Uri uri)
+        private static readonly AppInfo TestAppInfo = new AppInfo(
+            "NUnit",
+            "NUnit tests",
+            "Colore",
+            "colore@example.com",
+            Category.Application);
+
+        [Test]
+        public void ShouldHandleErrorResultOnInit()
         {
-            Session = session;
-            Uri = uri;
+            var clientMock = new Mock<IRestClient>();
+
+            clientMock.Setup(c => c.PostAsync<SdkInitResponse>("/razer/chromasdk", It.IsAny<object>()))
+                      .ReturnsAsync(
+                          new RestResponse<SdkInitResponse>(
+                              HttpStatusCode.OK,
+                              "{\"device_supported\":\"keyboard | mouse | headset | mousepad | keypad | chromalink\",\"result\":87}"));
+
+            var api = new RestApi(clientMock.Object);
+
+            Assert.That(async () => await api.InitializeAsync(TestAppInfo), Throws.InstanceOf<ApiException>());
         }
-
-        /// <summary>
-        /// Gets the session ID.
-        /// </summary>
-        [JsonProperty("sessionid")]
-        public int Session { get; }
-
-        /// <summary>
-        /// Gets the URI to use for subsequent API calls.
-        /// </summary>
-        [JsonProperty("uri")]
-        [CanBeNull]
-        public Uri Uri { get; }
     }
 }
