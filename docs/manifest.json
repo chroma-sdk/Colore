@@ -113,11 +113,23 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Colore.Data.ApiDeviceType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Colore.Data.ApiDeviceType.html",
+          "hash": "QrX6un8mHpImotDtGJmX4w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Colore.Data.AppInfo.yml",
       "output": {
         ".html": {
           "relative_path": "api/Colore.Data.AppInfo.html",
-          "hash": "XiGPO2uJahR34b6AbCC+Wg=="
+          "hash": "IGlPuUGMJXe1h142d7E6HA=="
         }
       },
       "is_incremental": false,
@@ -249,7 +261,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Colore.Data.html",
-          "hash": "uQe6u8f0KnGs5FVrjiIxcQ=="
+          "hash": "lmho3c7s9efnJGZrDKxBTg=="
         }
       },
       "is_incremental": false,
@@ -1233,7 +1245,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "U8JhF4ijalugFfD6CBDYPg=="
+          "hash": "dltY/r0UKKixWXPPVk9vzg=="
         }
       },
       "is_incremental": false,
@@ -1331,13 +1343,13 @@
           "can_incremental": false,
           "incrementalPhase": "build"
         },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build"
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
           "incrementalPhase": "build"
         }
       }

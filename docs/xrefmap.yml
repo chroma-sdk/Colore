@@ -388,6 +388,54 @@ references:
   commentId: N:Colore.Data
   fullName: Colore.Data
   nameWithType: Colore.Data
+- uid: Colore.Data.ApiDeviceType
+  name: ApiDeviceType
+  href: api/Colore.Data.ApiDeviceType.html
+  commentId: T:Colore.Data.ApiDeviceType
+  fullName: Colore.Data.ApiDeviceType
+  nameWithType: ApiDeviceType
+- uid: Colore.Data.ApiDeviceType.ChromaLink
+  name: ChromaLink
+  href: api/Colore.Data.ApiDeviceType.html#Colore_Data_ApiDeviceType_ChromaLink
+  commentId: F:Colore.Data.ApiDeviceType.ChromaLink
+  fullName: Colore.Data.ApiDeviceType.ChromaLink
+  nameWithType: ApiDeviceType.ChromaLink
+- uid: Colore.Data.ApiDeviceType.Headset
+  name: Headset
+  href: api/Colore.Data.ApiDeviceType.html#Colore_Data_ApiDeviceType_Headset
+  commentId: F:Colore.Data.ApiDeviceType.Headset
+  fullName: Colore.Data.ApiDeviceType.Headset
+  nameWithType: ApiDeviceType.Headset
+- uid: Colore.Data.ApiDeviceType.Keyboard
+  name: Keyboard
+  href: api/Colore.Data.ApiDeviceType.html#Colore_Data_ApiDeviceType_Keyboard
+  commentId: F:Colore.Data.ApiDeviceType.Keyboard
+  fullName: Colore.Data.ApiDeviceType.Keyboard
+  nameWithType: ApiDeviceType.Keyboard
+- uid: Colore.Data.ApiDeviceType.Keypad
+  name: Keypad
+  href: api/Colore.Data.ApiDeviceType.html#Colore_Data_ApiDeviceType_Keypad
+  commentId: F:Colore.Data.ApiDeviceType.Keypad
+  fullName: Colore.Data.ApiDeviceType.Keypad
+  nameWithType: ApiDeviceType.Keypad
+- uid: Colore.Data.ApiDeviceType.Mouse
+  name: Mouse
+  href: api/Colore.Data.ApiDeviceType.html#Colore_Data_ApiDeviceType_Mouse
+  commentId: F:Colore.Data.ApiDeviceType.Mouse
+  fullName: Colore.Data.ApiDeviceType.Mouse
+  nameWithType: ApiDeviceType.Mouse
+- uid: Colore.Data.ApiDeviceType.Mousepad
+  name: Mousepad
+  href: api/Colore.Data.ApiDeviceType.html#Colore_Data_ApiDeviceType_Mousepad
+  commentId: F:Colore.Data.ApiDeviceType.Mousepad
+  fullName: Colore.Data.ApiDeviceType.Mousepad
+  nameWithType: ApiDeviceType.Mousepad
+- uid: Colore.Data.ApiDeviceType.value__
+  name: value__
+  href: api/Colore.Data.ApiDeviceType.html#Colore_Data_ApiDeviceType_value__
+  commentId: F:Colore.Data.ApiDeviceType.value__
+  fullName: Colore.Data.ApiDeviceType.value__
+  nameWithType: ApiDeviceType.value__
 - uid: Colore.Data.AppInfo
   name: AppInfo
   href: api/Colore.Data.AppInfo.html
@@ -400,15 +448,15 @@ references:
   commentId: M:Colore.Data.AppInfo.#ctor(System.String,System.String,System.String,System.String,Colore.Data.Category)
   fullName: Colore.Data.AppInfo.AppInfo(System.String, System.String, System.String, System.String, Colore.Data.Category)
   nameWithType: AppInfo.AppInfo(String, String, String, String, Category)
-- uid: Colore.Data.AppInfo.#ctor(System.String,System.String,System.String,System.String,System.Collections.Generic.IEnumerable{Colore.Data.DeviceType},Colore.Data.Category)
-  name: AppInfo(String, String, String, String, IEnumerable<DeviceType>, Category)
-  href: api/Colore.Data.AppInfo.html#Colore_Data_AppInfo__ctor_System_String_System_String_System_String_System_String_System_Collections_Generic_IEnumerable_Colore_Data_DeviceType__Colore_Data_Category_
-  commentId: M:Colore.Data.AppInfo.#ctor(System.String,System.String,System.String,System.String,System.Collections.Generic.IEnumerable{Colore.Data.DeviceType},Colore.Data.Category)
-  name.vb: AppInfo(String, String, String, String, IEnumerable(Of DeviceType), Category)
-  fullName: Colore.Data.AppInfo.AppInfo(System.String, System.String, System.String, System.String, System.Collections.Generic.IEnumerable<Colore.Data.DeviceType>, Colore.Data.Category)
-  fullName.vb: Colore.Data.AppInfo.AppInfo(System.String, System.String, System.String, System.String, System.Collections.Generic.IEnumerable(Of Colore.Data.DeviceType), Colore.Data.Category)
-  nameWithType: AppInfo.AppInfo(String, String, String, String, IEnumerable<DeviceType>, Category)
-  nameWithType.vb: AppInfo.AppInfo(String, String, String, String, IEnumerable(Of DeviceType), Category)
+- uid: Colore.Data.AppInfo.#ctor(System.String,System.String,System.String,System.String,System.Collections.Generic.IEnumerable{Colore.Data.ApiDeviceType},Colore.Data.Category)
+  name: AppInfo(String, String, String, String, IEnumerable<ApiDeviceType>, Category)
+  href: api/Colore.Data.AppInfo.html#Colore_Data_AppInfo__ctor_System_String_System_String_System_String_System_String_System_Collections_Generic_IEnumerable_Colore_Data_ApiDeviceType__Colore_Data_Category_
+  commentId: M:Colore.Data.AppInfo.#ctor(System.String,System.String,System.String,System.String,System.Collections.Generic.IEnumerable{Colore.Data.ApiDeviceType},Colore.Data.Category)
+  name.vb: AppInfo(String, String, String, String, IEnumerable(Of ApiDeviceType), Category)
+  fullName: Colore.Data.AppInfo.AppInfo(System.String, System.String, System.String, System.String, System.Collections.Generic.IEnumerable<Colore.Data.ApiDeviceType>, Colore.Data.Category)
+  fullName.vb: Colore.Data.AppInfo.AppInfo(System.String, System.String, System.String, System.String, System.Collections.Generic.IEnumerable(Of Colore.Data.ApiDeviceType), Colore.Data.Category)
+  nameWithType: AppInfo.AppInfo(String, String, String, String, IEnumerable<ApiDeviceType>, Category)
+  nameWithType.vb: AppInfo.AppInfo(String, String, String, String, IEnumerable(Of ApiDeviceType), Category)
 - uid: Colore.Data.AppInfo.#ctor*
   name: AppInfo
   href: api/Colore.Data.AppInfo.html#Colore_Data_AppInfo__ctor_
