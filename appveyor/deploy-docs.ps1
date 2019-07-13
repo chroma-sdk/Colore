@@ -27,7 +27,7 @@ Write-Host 'Cleaning any existing gh-pages directory'
 rmrf gh-pages
 
 Write-Host 'Cloning gh-pages branch'
-git clone -q -b gh-pages --depth 1 -- git@github.com:chroma-sdk/Colore.git gh-pages
+git clone -q -b gh-pages --depth 1 -- https://github.com/chroma-sdk/Colore.git gh-pages
 
 if (!(Test-Path -Path gh-pages))
 {

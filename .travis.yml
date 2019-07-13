@@ -27,10 +27,6 @@ addons:
       - unzip
 
 before_install:
-  - openssl aes-256-cbc -K $encrypted_4aec57e632b7_key -iv $encrypted_4aec57e632b7_iv -in travis/.deploykey.enc -out travis/.deploykey -d
-  - chmod go-rwx travis/.deploykey
-  - eval `ssh-agent -s`
-  - ssh-add travis/.deploykey
   - git config user.name "Travis CI"
   - git config user.email "noreply@travis-ci.org"
   - chmod +x build.sh
