@@ -359,7 +359,8 @@ Task("Codecov")
             EnvironmentVariables = new Dictionary<string, string>
             {
                 ["APPVEYOR_BUILD_VERSION"] = Uri.EscapeDataString(ccVersion)
-            }
+            },
+            Verbose = true
         });
     });
 
