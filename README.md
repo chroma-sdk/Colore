@@ -116,6 +116,11 @@ You will find the resulting artifact files under the `artifacts` folder in the r
 Note that the above commands are executed with [PowerShell][ps]. If you are building on a Linux system or macOS,
 use the `build.sh` script in place of `build.ps1` (you may have to make it executable first with `chmod +x build.sh`).
 
+Native Documentation
+--------
+As Colore is build upon the native Chroma SDK for C++, it can be worth taking a look at their [documentation](https://assets.razerzone.com/dev_portal/docs/index.html).
+
+
 Razer Chroma Workshop
 ---------------------
 
