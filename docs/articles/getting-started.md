@@ -74,7 +74,7 @@ For background applications that dynamically enable and disable Chroma features 
 manually this way doesn't always work properly with the SDK, and can sometimes leave it in a weird state.)
 
 ## 4. How to access specific device types
-Chroma SDK does not allow you to access one single device (as far as we know) but you can access specific device types like   Keyboards, Mous, Keypad etc.
+Chroma SDK does not allow you to access one single device (as far as we know) but you can access specific device types like Keyboard, Mouse, Keypad etc.
 
 Here is an example for the Keyboard:
 
