@@ -1,7 +1,5 @@
 # Getting Started
 
-***Important***: *This page is for v6.0.0 of Colore, which is currently only available as a pre-release. For the v5.2 getting started guide (not recommended), [[click here|Getting-started-(v5.2)]].*
-
 [![NuGet version][ngverbadge]][ng]
 [![MyGet version][mgverbadge]][mg]
 
@@ -11,9 +9,7 @@ Razer Chroma SDK is a C++-tool which allows us to access Chroma devices. It is t
 ## 2. How to install Colore 
 The easiest way include Colore into your project is to right click on your C# Project in the Visual Studio Solution Explorer and Choose "Manage NuGet Packages..."
 
-From there you can search online for Packages. **Be sure to enable Pre-releases** or you will not be able to download v.6.00.
-Just search for "Colore" and install it.
-After that you should see a reference being added to "Colore".
+From there you can search online for Packages. Just search for "Colore" and install it. After that you should see a reference being added to "Colore".
 
 ### Other Pre-release versions
 If you want to test the absolute latest features in Colore, which may not be fully ready for production use yet, you can install pre-release Colore packages from [our MyGet feed][mg]. You can either install a version manually with the commands listed on the page, or add the feed to your NuGet settings: `https://www.myget.org/F/coralestudios/api/v3/index.json`.
