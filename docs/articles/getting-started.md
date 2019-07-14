@@ -28,8 +28,7 @@ At the top of that file you should now add `using Colore;` to access the element
 ``` C#
 using ColoreColor = Colore.Data.Color;
 ```
-
-Now you change the Event Method like the following:
+Modify the Event Method as follows:
 ``` C#
 private async void button1_Click(object sender, RoutedEventArgs e)
 {
@@ -74,18 +73,18 @@ For background applications that dynamically enable and disable Chroma features 
 `UninitializeAsync` and `InitializeAsync` methods to control the lifetime. (Note that uninitializing the SDK
 manually this way doesn't always work properly with the SDK, and can sometimes leave it in a weird state.)
 
-## 4. How to access Device Types
-Chroma SDK does not allow you to access one single device (as far as we know) but you can access Device Types. For example Keyboards, Mouse, Keypads...
+## 4. How to access specific device types
+Chroma SDK does not allow you to access one single device (as far as we know) but you can access specific device types like   Keyboards, Mous, Keypad etc.
 
-To do that with Colore here is an example for the Keyboard:
+Here is an example for the Keyboard:
 
-Again this can be done without any using but we consider it easier and more readable. So add the following at the top of the file:
+Again, accessing namespaces becomes much easier with `using` directives:
 
 ``` C#
 using Colore.Effects.Keyboard;
 ```
 
-In some cases it might be helpful to also map it to another name as we did with the ColoreColor, but for now it's fine.
+In some cases it might be helpful to add an alias as we did with ColoreColor.
 
 Then change your method like this:
 ``` C#
@@ -98,13 +97,12 @@ private async void button1_Click(object sender, EventArgs e)
 
 (From now on, it will be assumed that the variable `chroma` contains an instance of `IChroma` created from `ColoreProvider`.)
 
-Now when you run it you will see that the "A" Key will glow Red.
-So it's pretty easy to use Colore :)
+Now when you run it you'll see that the "A" Key is red.
 
 To set a color on a Mouse for example:
 `chroma.Mouse.SetLedAsync(Colore.Effects.Mouse.Led.Strip1, ColoreColor.Red);`
 
-The following Devices are available as properties on the `IChroma` instance:
+The following devices are available as properties on the `IChroma` instance:
 
  * `Mousepad`
  * `Keypad`
@@ -112,15 +110,15 @@ The following Devices are available as properties on the `IChroma` instance:
  * `Keyboard`
  * `Mouse`
 
-As a mousepad doesn't contain a SetKey method take a look at section 5.
+Since Mousepad doesn't contain a SetKey method, you can take a look at section 6.
 
 ## 5. How to define custom Colors
-You can of course define any color you like when you use `new ColoreColor(1.0, 1.0, 1.0)`. The numbers are in the order Red, Green and Blue where 1.0 is full color and 0.0 is nothing. Which makes this White (Red Green and Blue glowing at full bright). You can also use color values which range from 0 - 255 (the usual color range) but make sure to use or cast your value to `byte` to call the correct constructor. This can cause some trouble if you aren't careful:
+You can instantiate `ColoreColor` with RGB values ranging from  0 to 1. You can also use intensities from 0 to 255 (the usual range) but make sure to cast your value to `byte` to call the correct constructor. This can cause some trouble if you are not careful:
 
-This will work as expected as it's using the byte constructor: `new ColoreColor(255, 125, 125)`
-This will **NOT** work as expected: `new ColoreColor(255.0, 125.0, 125.0)`
+This will work as it's using the byte constructor: `new ColoreColor(255, 125, 125)`
+This will *not* work: `new ColoreColor(255.0, 125.0, 125.0)`
 
-This does work as expected:
+Example:
 
 ``` C#
 int i = 255;
@@ -138,8 +136,8 @@ Result: Color with R=1, G=1, B=1
 
 
 ## 6. How do I know which color is currently set on a Key / What if I don't want to set a Key but a specific row/column?
-Internally Colore is storing colors in a Grid.
-This Grid is then send to the Device.
+Internally Colore is storing colors in a grid.
+This grid is then send to the Device.
 Instead of using SetKey you can directly edit that Grid which will also cause an update to the device by doing the following:
 `chroma.Keyboard[Key.A] = ColoreColor.Red;`
 This is the equivalent to SetKey above.
@@ -164,7 +162,7 @@ private void button1_Click(object sender, EventArgs e)
 
 In some cases you can even access a virtual Grid instead of for example Key.A you can set the Key in the second row from the top and the fifth column from the left to Red:
 `Chroma.Instance.Keyboard[1, 4] = ColoreColor.Red;`
-The first int is row and the second is column. Starting with 0! There even are Constants that allow you to loop through all Keys:
+Starting with zero, the first int represents the row and the second one ie for the column. There are special constants that allow you to loop through all keys:
 
 ``` C#
 private async void button1_Click(object sender, EventArgs e)
