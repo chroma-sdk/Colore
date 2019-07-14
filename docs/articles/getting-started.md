@@ -1,3 +1,7 @@
+---
+uid: getting-started
+---
+
 # Getting Started
 
 [![NuGet version][ngverbadge]][ng]
