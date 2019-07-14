@@ -118,7 +118,7 @@ use the `build.sh` script in place of `build.ps1` (you may have to make it execu
 
 Native Documentation
 --------
-As Colore is build upon the native Chroma SDK for C++, it can be worth taking a look at their [documentation](https://assets.razerzone.com/dev_portal/docs/index.html).
+As Colore is built upon the native Chroma SDK for C++, it can be worth taking a look at their [documentation](https://assets.razerzone.com/dev_portal/docs/index.html).
 
 
 Razer Chroma Workshop

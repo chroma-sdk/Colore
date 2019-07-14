@@ -163,7 +163,7 @@ private void button1_Click(object sender, EventArgs e)
 
 In some cases you can even access a virtual grid instead of Key. Then for instance you can set the Key in the second row (top to bottom) and the fifth column (left to right) to red:
 [`Chroma.Instance.Keyboard[1, 4] = ColoreColor.Red;`](xref:Colore.IKeyboard#Colore_IKeyboard_Item_System_Int32_System_Int32_)
-Starting with zero, the first int represents the row and the second one ie for the column. There are special constants that allow you to loop through all keys:
+Starting with zero, the first int represents the row and the second one is for the column. There are special constants that allow you to loop through all keys:
 
 ``` C#
 private async void button1_Click(object sender, EventArgs e)
@@ -190,7 +190,7 @@ The same thing can be achieved with [`SetPositionAsync`](xref:Colore.IKeyboard#C
 `chroma.Keyboard.SetPositionAsync(1, 4, ColoreColor.Red);` This method is not available for all devices.
 
 ## 7. What about performance?
-Chroma SDK and Colore are fast. If you do a lot of updates at the same time to your targeted devices you can set up a custom grid and send the commands afterwards. The following example works for every device. As we have pointed out in chapter 6, Colore internally stores a grid, but everytime you change a key via SetKey or the index (Keyboard[Key.A]) it sends an update to the your device, making a lot of request to the SDK. A better way in our opinion is to set up ethe colors in a grid and then update it.
+Chroma SDK and Colore are fast. If you do a lot of updates at the same time to your targeted devices you can set up a custom grid and send the commands afterwards. The following example works for every device. As we have pointed out in chapter 6, Colore internally stores a grid, but everytime you change a key via SetKey or the index (Keyboard[Key.A]) it sends an update to your device, making a lot of requests to the SDK. A better way in our opinion is to set up the colors in a grid and then update it.
 
 Example:
 ``` C#
