@@ -23,7 +23,7 @@ Make sure to select the MyGet feed when you are browsing packages in the package
 ## 3. How to make every device the same color
 You can add a button in your WPF-Form using the toolbox (Ctrl+Alt+X). With a double-click it will take you to the form's source code and to an already created event handler for that button.
 
-At the top of that file you should now add `using Colore;` to access the elements of the `Colore` namespace without having to prefix so much. In addition, I myself like to add the following alias at the top to make sure I have the correct "Color". Otherwise it might interfere with `System.Drawing`:
+At the top of that file you should now add `using Colore;` to access the elements of the `Colore` namespace without having to prefix so much. In addition, I myself like to add the following alias at the top to make sure I have the correct ["Color"](xref:Colore.Data.Color). Otherwise it might interfere with `System.Drawing`:
 
 ``` C#
 using ColoreColor = Colore.Data.Color;
@@ -46,10 +46,10 @@ private async void button1_Click(object sender, RoutedEventArgs e)
 If you then run your application and click the button you will see that all your chroma devices turned red.
 What `await` does is waiting for the initializiation of the Chroma SDK to finish before proceding. Methods using `await` not in the last line must be marked ss `async` (asynchronous) and thus allow the usage of `await` on the method itself. How this works under the hood, is that [Task](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/async/) objects are returned instead of return values.
 
-#### A note on `ColoreProvider`
+#### A note on [`ColoreProvider`]((xref:Colore.ColoreProvider)
 
 Since version 6.0.0, Colore is designed to be asynchronous and less strict in how it is used.
-This means that the `Chroma` instance is now obtained differently.
+This means that the [`Chroma`](xref:Colore.IChroma) instance is now obtained differently.
 You can asynchronously instantiate either the native or REST API SDK in the following ways:
 
 ```c#
@@ -65,12 +65,12 @@ ColoreProvider.CreateRestAsync(appInfo);
 There are also overloads taking a custom REST API endpoint which can be useful for testing, and an overload taking
 a bool parameter to control whether to use the SSL version of Razer's REST API.
 
-Each time you create a new Chroma instance in this way using `ColoreProvider`, the previously created instance will
+Each time you create a new Chroma instance in this way using [`ColoreProvider`](xref:Colore.ColoreProvider), the previously created instance will
 be uninitialized and discarded. For this reason, you should create your Chroma instance *once* at application startup
 and then use this instance for the remainder of your application's lifetime.
 
 For background applications that dynamically enable and disable Chroma features however, you can call the
-`UninitializeAsync` and `InitializeAsync` methods to control the lifetime. (Note that uninitializing the SDK
+[`UninitializeAsync`](xref:Colore.IChroma#Colore_IChroma_UninitializeAsync) and [`InitializeAsync`](xref:Colore.IChroma#Colore_IChroma_InitializeAsync_Colore_Data_AppInfo_) methods to control the lifetime. (Note that uninitializing the SDK
 manually this way doesn't always work properly with the SDK, and can sometimes leave it in a weird state.)
 
 ## 4. How to access specific device types
@@ -95,29 +95,29 @@ private async void button1_Click(object sender, EventArgs e)
 }
 ```
 
-(From now on, it will be assumed that the variable `chroma` contains an instance of `IChroma` created from `ColoreProvider`.)
+(From now on, it will be assumed that the variable `chroma` contains an instance of [`IChroma`](xref:Colore.IChroma) created from [`ColoreProvider`](xref:Colore.ColoreProvider).)
 
 Now when you run it you'll see that the "A" Key is red.
 
 To set a color on a Mouse for example:
-`chroma.Mouse.SetLedAsync(Colore.Effects.Mouse.Led.Strip1, ColoreColor.Red);`
+[`chroma.Mouse[Colore.Effects.Mouse.Led.Strip1] = ColoreColor.Red;`](xref:Colore.IMouse#Colore_IMouse_Item_Colore_Effects_Mouse_GridLed_)
 
-The following devices are available as properties on the `IChroma` instance:
+The following devices are available as properties on the [`IChroma`](xref:Colore.IChroma) instance:
 
- * `Mousepad`
- * `Keypad`
- * `Headset`
- * `Keyboard`
- * `Mouse`
+ * [`Mousepad`](xref:Colore.IMousepad)
+ * [`Keypad`](xref:Colore.IKeypad)
+ * [`Headset`](xref:Colore.IHeadset)
+ * [`Keyboard`](xref:Colore.IKeyboard)
+ * [`Mouse`](xref:Colore.IMouse)
 
 Since Mousepad doesn't contain a SetKey method, you can take a look at section 6.
 
 ## 5. How to define custom Colors
-You can instantiate `ColoreColor` with RGB values ranging from  0 to 1. You can also use intensities from 0 to 255 (the usual range) but make sure to cast your value to `byte` to call the correct constructor. This can cause some trouble if you are not careful:
+You can instantiate [`ColoreColor`](xref:Colore.Data.Color#Colore_Data_Color__ctor_System_Double_System_Double_System_Double_) with RGB values ranging from  0 to 1. You can also use intensities from 0 to 255 (the usual range) but make sure to cast your value to `byte` to call the correct constructor. This can cause some trouble if you are not careful:
 
-This will work as it's using the byte constructor: `new ColoreColor(255, 125, 125)`
+This will work as it's using the byte constructor: [`new ColoreColor(255, 125, 125)`](xref:Colore.Data.Color#Colore_Data_Color__ctor_System_Byte_System_Byte_System_Byte_).
 
-This will *not* work: `new ColoreColor(255.0, 125.0, 125.0)`
+This will *not* work: [`new ColoreColor(255.0, 125.0, 125.0)`](xref:Colore.Data.Color#Colore_Data_Color__ctor_System_Double_System_Double_System_Double_).
 
 Example:
 
@@ -140,7 +140,7 @@ Result: Color with R=1, G=1, B=1
 Internally Colore is storing colors in a grid.
 This grid is then send to the device.
 Instead of using SetKey you can directly edit that grid which will update the device by doing the following:
-`chroma.Keyboard[Key.A] = ColoreColor.Red;`
+[`chroma.Keyboard[Key.A] = ColoreColor.Red;`](xref:Colore.IKeyboard#Colore_IKeyboard_Item_Colore_Effects_Keyboard_Key_)
 This is the equivalent to SetKey above.
 
 Moreover, you can *read* the value using the grid. For example:
@@ -161,8 +161,8 @@ private void button1_Click(object sender, EventArgs e)
 }
 ```
 
-In some cases you can even access a virtual grid instead of Key. Then for instance you can set the key in the second row (top to bottom) and the fifth column (left to right) to red:
-`Chroma.Instance.Keyboard[1, 4] = ColoreColor.Red;`
+In some cases you can even access a virtual grid instead of Key. Then for instance you can set the Key in the second row (top to bottom) and the fifth column (left to right) to red:
+[`Chroma.Instance.Keyboard[1, 4] = ColoreColor.Red;`](xref:Colore.IKeyboard#Colore_IKeyboard_Item_System_Int32_System_Int32_)
 Starting with zero, the first int represents the row and the second one ie for the column. There are special constants that allow you to loop through all keys:
 
 ``` C#
@@ -186,7 +186,7 @@ private async void button1_Click(object sender, EventArgs e)
 }
 ```
 
-The same thing can be achieved with SetPosition:
+The same thing can be achieved with [`SetPositionAsync`](xref:Colore.IKeyboard#Colore_IKeyboard_SetPositionAsync_System_Int32_System_Int32_Colore_Data_Color_System_Boolean_):
 `chroma.Keyboard.SetPositionAsync(1, 4, ColoreColor.Red);` This method is not available for all devices.
 
 ## 7. What about performance?
