@@ -8,20 +8,20 @@ uid: getting-started
 [![MyGet version][mgverbadge]][mg]
 
 ## 1. Installing Chroma SDK
-Razer Chroma SDK is a C++-tool which allows us to access Chroma devices. It is the backend (or native/unmanaged code) behind Colore. It is expected to be automatically installed with Synapse once you plug in a Chroma device, but in some cases that might not work (see [#263](https://github.com/chroma-sdk/Colore/issues/263#)). In this case you can download the so called [Chroma SDK Core](https://assets.razerzone.com/dev_portal/downloads/Razer_Chroma_SDK_Core_v1.10.6.exe) which is just the SDK without Synapse.
+Razer Chroma SDK is a C++-tool which allows us to access Chroma devices. It is the backend (or native/unmanaged code) behind Colore. It is expected to be automatically installed with Synapse once you plug in a Chroma device, but in some cases that might not work (see [#263](https://github.com/chroma-sdk/Colore/issues/263#)). As a last resort, you can also find an SDK installer in their [Setting Up](https://developer.razer.com/works-with-chroma/setting-up/) guide.
 
 ## 2. How to install Colore 
 The easiest way include Colore into your project is to right click on your C# Project in the Visual Studio Solution Explorer and Choose "Manage NuGet Packages..."
 
 From there you can search online for Packages. Just search for "Colore" and install it. After that you should see a reference being added to "Colore".
 
-### Other Pre-release versions
-If you want to test the absolute latest features in Colore, which may not be fully ready for production use yet, you can install pre-release Colore packages from [our MyGet feed][mg]. You can either install a version manually with the commands listed on the page, or add the feed to your NuGet settings: `https://www.myget.org/F/coralestudios/api/v3/index.json`.
+### Pre-release versions
+If you want to test the absolute latest features in Colore, which may not be fully ready for production use yet, you can install pre-release Colore packages from [our MyGet feed][mg]. You can either install a version manually with the commands listed on the page, or add the feed to your NuGet settings: `https://www.myget.org/F/chroma-sdk/api/v3/index.json`.
 
 Make sure to select the MyGet feed when you are browsing packages in the package manager (or select "All" to see packages from all feeds at once), and to check the "Include pre-releases" checkbox. The MyGet feed will also include stable versions of Colore when they are released, so you can use it as the sole source for Colore.
 
-## 3. How to make every Device the same Color
-You can add a button in your WPFForm using the toolbox (Ctrl+Alt+X). With a double-click it will take you to the form's source code and to an already created event handler for that button.
+## 3. How to make every device the same color
+You can add a button in your WPF-Form using the toolbox (Ctrl+Alt+X). With a double-click it will take you to the form's source code and to an already created event handler for that button.
 
 At the top of that file you should now add `using Colore;` to access the elements of the `Colore` namespace without having to prefix so much. In addition, I myself like to add the following alias at the top to make sure I have the correct "Color". Otherwise it might interfere with `System.Drawing`:
 
