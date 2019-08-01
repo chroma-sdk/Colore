@@ -348,6 +348,7 @@ Task("Codecov")
     .Does(() =>
     {
         var ccVersion = $"{version.FullSemVer}.build.{BuildSystem.AppVeyor.Environment.Build.Version}";
+        var codecovPath = Context.Tools.Resolve("codecov.exe");
 
         Information("Running Codecov tool with version {0} on OpenCover result", ccVersion);
 
@@ -360,7 +361,8 @@ Task("Codecov")
             {
                 ["APPVEYOR_BUILD_VERSION"] = ccVersion
             },
-            Verbose = true
+            Verbose = true,
+            ToolPath = codecovPath
         });
     });
 
