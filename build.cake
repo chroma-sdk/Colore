@@ -347,7 +347,7 @@ Task("Codecov")
     .IsDependentOn("Test")
     .Does(() =>
     {
-        var ccVersion = $"{version.FullSemVer}.build.{BuildSystem.AppVeyor.Environment.Build.Version}";
+        var ccVersion = $"{version.FullSemVer}.build.{BuildSystem.AppVeyor.Environment.Build.Number}";
         var codecovPath = Context.Tools.Resolve("codecov.exe");
 
         Information("Running Codecov tool with version {0} on OpenCover result", ccVersion);
