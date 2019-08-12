@@ -11,7 +11,7 @@ uid: getting-started
 Razer Chroma SDK is a C++-tool which allows us to access Chroma devices. It is the backend (or native/unmanaged code) behind Colore. It is expected to be automatically installed with Synapse once you plug in a Chroma device, but in some cases that might not work (see [#263](https://github.com/chroma-sdk/Colore/issues/263#)). As a last resort, you can also find an SDK installer in their [Setting Up](https://developer.razer.com/works-with-chroma/setting-up/) guide.
 
 ## 2. How to install Colore 
-The easiest way include Colore into your project is to right click on your C# Project in the Visual Studio Solution Explorer and Choose "Manage NuGet Packages..."
+The easiest way to include Colore into your project is to right click on your C# Project in the Visual Studio Solution Explorer and Choose "Manage NuGet Packages..."
 
 From there you can search online for Packages. Just search for "Colore" and install it. After that you should see a reference being added to "Colore".
 
@@ -46,7 +46,7 @@ private async void button1_Click(object sender, RoutedEventArgs e)
 If you then run your application and click the button you will see that all your chroma devices turned red.
 What `await` does is waiting for the initializiation of the Chroma SDK to finish before proceding. Methods using `await` not in the last line must be marked ss `async` (asynchronous) and thus allow the usage of `await` on the method itself. How this works under the hood, is that [Task](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/async/) objects are returned instead of return values.
 
-#### A note on [`ColoreProvider`]((xref:Colore.ColoreProvider)
+### A note on [`ColoreProvider`](xref:Colore.ColoreProvider)
 
 Since version 6.0.0, Colore is designed to be asynchronous and less strict in how it is used.
 This means that the [`Chroma`](xref:Colore.IChroma) instance is now obtained differently.
