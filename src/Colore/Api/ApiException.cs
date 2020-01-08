@@ -25,7 +25,9 @@
 
 namespace Colore.Api
 {
+    using System;
     using System.ComponentModel;
+    using System.Runtime.Serialization;
 
     using Colore.Data;
 
@@ -35,6 +37,7 @@ namespace Colore.Api
     /// <summary>
     /// Thrown when a cal to an API function fails.
     /// </summary>
+    [Serializable]
     public class ApiException : ColoreException
     {
         /// <inheritdoc />
@@ -64,7 +67,7 @@ namespace Colore.Api
         /// <param name="message">Message describing the exception.</param>
         /// <param name="innerException">Inner exception.</param>
         [PublicAPI]
-        public ApiException(string message, System.Exception innerException)
+        public ApiException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
@@ -81,10 +84,64 @@ namespace Colore.Api
             Result = result;
         }
 
+#if NET451
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApiException" /> class with serialized data.
+        /// </summary>
+        /// <param name="info">
+        /// The <see cref="SerializationInfo" /> that holds the serialized object data about the exception being thrown.
+        /// </param>
+        /// <param name="context">
+        /// The <see cref="StreamingContext" /> that contains contextual information about the source or destination.
+        /// </param>
+        /// <exception cref="ArgumentNullException">
+        /// The <paramref name="info" /> parameter is <see langword="null" />.
+        /// </exception>
+        /// <exception cref="SerializationException">
+        /// The class name is <see langword="null" /> or <see cref="Exception.HResult" /> is zero (0).
+        /// </exception>
+        protected ApiException(SerializationInfo info, StreamingContext context)
+            : base(info, context)
+        {
+            if (info is null)
+            {
+                throw new ArgumentNullException(nameof(info));
+            }
+
+            Result = info.GetInt32($"{nameof(ApiException)}.{nameof(Result)}");
+        }
+#endif
+
         /// <summary>
         /// Gets the result code returned by the SDK.
         /// </summary>
         [PublicAPI]
         public Result Result { get; }
+
+#if NET451
+        /// <summary>
+        /// When overridden in a derived class, sets the <see cref="SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">
+        /// The <see cref="SerializationInfo" /> that holds the serialized object data about the exception being thrown.
+        /// </param>
+        /// <param name="context">
+        /// The <see cref="StreamingContext" /> that contains contextual information about the source or destination.
+        /// </param>
+        /// <exception cref="ArgumentNullException">
+        /// The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic).
+        /// </exception>
+        public override void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+
+            if (info is null)
+            {
+                throw new ArgumentNullException(nameof(info));
+            }
+
+            info.AddValue($"{nameof(ApiException)}.{nameof(Result)}", Result.ToInt32());
+        }
+#endif
     }
 }
