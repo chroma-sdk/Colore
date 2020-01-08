@@ -33,6 +33,7 @@ namespace Colore
     /// <summary>
     /// Generic Colore library exception.
     /// </summary>
+    [Serializable]
     public class ColoreException : Exception
     {
         /// <inheritdoc />
