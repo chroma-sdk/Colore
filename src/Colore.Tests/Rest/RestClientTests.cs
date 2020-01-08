@@ -134,11 +134,7 @@ namespace Colore.Tests.Rest
 
             mockMessageHandler.Verify(
                 h => h.SendAsync(
-                    It.Is<HttpRequestMessage>(
-
-                        // ReSharper disable once MergeCastWithTypeCheck
-                        r => r.Method == HttpMethod.Put && r.Content is StringContent &&
-                             ((StringContent)r.Content).ReadAsStringAsync().Result == "\"foobar\""),
+                    It.Is<HttpRequestMessage>(r => r.Method == HttpMethod.Put && r.Content is StringContent),
                     It.IsAny<CancellationToken>()));
         }
 
@@ -184,11 +180,7 @@ namespace Colore.Tests.Rest
 
             mockMessageHandler.Verify(
                 h => h.SendAsync(
-                    It.Is<HttpRequestMessage>(
-
-                        // ReSharper disable once MergeCastWithTypeCheck
-                        r => r.Method == HttpMethod.Delete && r.Content is StringContent &&
-                             ((StringContent)r.Content).ReadAsStringAsync().Result == "\"foobar\""),
+                    It.Is<HttpRequestMessage>(r => r.Method == HttpMethod.Delete && r.Content is StringContent),
                     It.IsAny<CancellationToken>()));
         }
 
