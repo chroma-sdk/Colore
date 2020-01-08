@@ -37,6 +37,7 @@
     <PackageLicense>https://github.com/CoraleStudios/Colore/blob/master/LICENSE</PackageLicense>
     <PackageProjectUrl>https://github.com/CoraleStudios/Colore</PackageProjectUrl>
     <PackageIconUrl>https://files.sharparam.com/2017/10/31/colore.png</PackageIconUrl>
+    <PackageIcon>icon.png</PackageIcon>
     <PackageTags>razer;chroma;corale;led;light;peripheral;gaming</PackageTags>
     <IncludeSymbols>true</IncludeSymbols>
     <IncludeSource>true</IncludeSource>
@@ -46,6 +47,10 @@
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../../images/icon.png" Pack="true" PackagePath="/" />
+  </ItemGroup>
 
   <ItemGroup>
     <AdditionalFiles Include="../stylecop.json">
