@@ -11,7 +11,8 @@
         }
       ],
       "dest": "api",
-      "properties": { "TargetFramework": "netstandard1.3" }
+      "properties": { "TargetFramework": "netstandard1.3" },
+      "disableDefaultFilter": true
     }
   ],
   "build": {
