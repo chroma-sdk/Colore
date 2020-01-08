@@ -103,7 +103,7 @@ namespace Colore.Tests.Data
         }
 
         [Test]
-        public void ShouldBeLessThanWhenMinoLess()
+        public void ShouldBeLessThanWhenMinorLess()
         {
             var old = new SdkVersion(1, 2, 3);
             var @new = new SdkVersion(1, 3, 3);

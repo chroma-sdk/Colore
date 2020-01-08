@@ -51,7 +51,7 @@ namespace Colore.Effects.Keypad
         /// <remarks>
         /// The array is 1-dimensional, but will be passed to code expecting
         /// a 2-dimensional array. Access to this array is done using indices
-        /// according to: <c>column + row * KeypadConstants.MaxColumns</c>
+        /// according to: <c>column + row * KeypadConstants.MaxColumns</c>.
         /// </remarks>
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = KeypadConstants.MaxKeys)]
         private readonly Color[] _colors;
@@ -60,9 +60,15 @@ namespace Colore.Effects.Keypad
         /// Initializes a new instance of the <see cref="KeypadCustom" /> struct.
         /// </summary>
         /// <param name="colors">The colors to use.</param>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="colors" /> is <c>null</c>.</exception>
         /// <exception cref="ArgumentException">Thrown if the colors array supplied is of an incorrect size.</exception>
         public KeypadCustom(Color[][] colors)
         {
+            if (colors is null)
+            {
+                throw new ArgumentNullException(nameof(colors));
+            }
+
             var rows = colors.GetLength(0);
 
             if (rows != KeypadConstants.MaxRows)
@@ -92,9 +98,15 @@ namespace Colore.Effects.Keypad
         /// Initializes a new instance of the <see cref="KeypadCustom" /> struct.
         /// </summary>
         /// <param name="colors">The colors to use.</param>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="colors" /> is <c>null</c>.</exception>
         /// <exception cref="ArgumentException">Thrown if the colors array supplied is of an invalid size.</exception>
         public KeypadCustom(IList<Color> colors)
         {
+            if (colors is null)
+            {
+                throw new ArgumentNullException(nameof(colors));
+            }
+
             if (colors.Count != KeypadConstants.MaxKeys)
             {
                 throw new ArgumentException(
@@ -274,7 +286,6 @@ namespace Colore.Effects.Keypad
         /// <returns>
         /// A 32-bit signed integer that is the hash code for this instance.
         /// </returns>
-        /// <filterpriority>2</filterpriority>
         public override int GetHashCode()
         {
             return _colors?.GetHashCode() ?? 0;
@@ -307,7 +318,6 @@ namespace Colore.Effects.Keypad
         /// and represent the same value; otherwise, <c>false</c>.
         /// </returns>
         /// <param name="obj">Another object to compare to. </param>
-        /// <filterpriority>2</filterpriority>
         public override bool Equals(object obj)
         {
             return !(obj is null) && obj is KeypadCustom custom && Equals(custom);

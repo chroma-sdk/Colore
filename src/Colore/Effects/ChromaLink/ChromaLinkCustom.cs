@@ -49,7 +49,7 @@ namespace Colore.Effects.ChromaLink
         /// </summary>
         /// <remarks>
         /// The array is 1-dimensional
-        /// according to: ChromaLinkConstants.MaxLeds
+        /// according to: <see cref="ChromaLinkConstants.MaxLeds" />.
         /// </remarks>
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = ChromaLinkConstants.MaxLeds)]
         private readonly Color[] _colors;
@@ -58,9 +58,15 @@ namespace Colore.Effects.ChromaLink
         /// Initializes a new instance of the <see cref="ChromaLinkCustom" /> struct.
         /// </summary>
         /// <param name="colors">The colors to use.</param>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="colors" /> is <c>null</c>.</exception>
         /// <exception cref="ArgumentException">Thrown if the colors array supplied is of an incorrect size.</exception>
         public ChromaLinkCustom(Color[] colors)
         {
+            if (colors is null)
+            {
+                throw new ArgumentNullException(nameof(colors));
+            }
+
             if (colors.Length != ChromaLinkConstants.MaxLeds)
             {
                 throw new ArgumentException(
@@ -80,9 +86,15 @@ namespace Colore.Effects.ChromaLink
         /// Initializes a new instance of the <see cref="ChromaLinkCustom" /> struct.
         /// </summary>
         /// <param name="colors">The colors to use.</param>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="colors" /> is <c>null</c>.</exception>
         /// <exception cref="ArgumentException">Thrown if the colors array supplied is of an invalid size.</exception>
         public ChromaLinkCustom(IList<Color> colors)
         {
+            if (colors is null)
+            {
+                throw new ArgumentNullException(nameof(colors));
+            }
+
             if (colors.Count != ChromaLinkConstants.MaxLeds)
             {
                 throw new ArgumentException(
@@ -211,7 +223,6 @@ namespace Colore.Effects.ChromaLink
         /// <returns>
         /// A 32-bit signed integer that is the hash code for this instance.
         /// </returns>
-        /// <filterpriority>2</filterpriority>
         public override int GetHashCode()
         {
             return _colors?.GetHashCode() ?? 0;
@@ -244,7 +255,6 @@ namespace Colore.Effects.ChromaLink
         /// and represent the same value; otherwise, <c>false</c>.
         /// </returns>
         /// <param name="obj">Another object to compare to. </param>
-        /// <filterpriority>2</filterpriority>
         public override bool Equals(object obj)
         {
             if (obj is null)

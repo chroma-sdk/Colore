@@ -37,7 +37,7 @@ namespace Colore
     /// <summary>
     /// Interface for basic Chroma functionality.
     /// </summary>
-    public interface IChroma
+    public interface IChroma : IDisposable
     {
         /// <summary>
         /// Raised when information about application state is received from messages.

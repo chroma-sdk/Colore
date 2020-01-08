@@ -33,25 +33,25 @@ namespace Colore.Effects.Keyboard
     public static class KeyboardConstants
     {
         /// <summary>
-        /// The maximum number of rows on the keyboard
+        /// The maximum number of rows on the keyboard.
         /// </summary>
         [PublicAPI]
         public const int MaxRows = 6;
 
         /// <summary>
-        /// The maximum number of columns on the keyboard
+        /// The maximum number of columns on the keyboard.
         /// </summary>
         [PublicAPI]
         public const int MaxColumns = 22;
 
         /// <summary>
-        /// The maximum number of keys on the keyboard
+        /// The maximum number of keys on the keyboard.
         /// </summary>
         [PublicAPI]
         public const int MaxKeys = MaxRows * MaxColumns;
 
         /// <summary>
-        /// The maximum number of custom effects based on the maximum keys
+        /// The maximum number of custom effects based on the maximum keys.
         /// </summary>
         [PublicAPI]
         public const int MaxCustomEffects = MaxKeys;

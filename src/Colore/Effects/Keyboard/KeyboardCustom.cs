@@ -51,7 +51,7 @@ namespace Colore.Effects.Keyboard
         /// <remarks>
         /// The array is 1-dimensional, but will be passed to code expecting
         /// a 2-dimensional array. Access to this array is done using indices
-        /// according to: <c>column + row * KeyboardConstants.MaxColumns</c>
+        /// according to: <c>column + row * KeyboardConstants.MaxColumns</c>.
         /// </remarks>
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = KeyboardConstants.MaxKeys)]
         private readonly Color[] _colors;
@@ -291,7 +291,6 @@ namespace Colore.Effects.Keyboard
         /// and represent the same value; otherwise, <c>false</c>.
         /// </returns>
         /// <param name="obj">Another object to compare to. </param>
-        /// <filterpriority>2</filterpriority>
         public override bool Equals(object obj)
         {
             if (obj is null)

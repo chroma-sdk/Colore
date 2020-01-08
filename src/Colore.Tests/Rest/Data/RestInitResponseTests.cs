@@ -54,7 +54,7 @@ namespace Colore.Tests.Rest.Data
         [TestCase("http://example.com/someapi")]
         [TestCase("https://example.org/someapi?with=args")]
         ////[TestCase("http://www.example.net/#withanchor")]
-        [TestCase("http://example.xyz:12345/aport")]
+        [TestCase("http://example.xyz:12345/a_port")]
         public void ShouldConstructWithCorrectUri(string url)
         {
             var expected = new Uri(url);

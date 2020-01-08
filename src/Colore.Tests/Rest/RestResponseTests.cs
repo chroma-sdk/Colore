@@ -60,7 +60,7 @@ namespace Colore.Tests.Rest
         }
 
         [TestCase(HttpStatusCode.Continue)]
-        public void ShouldConsider100StausesNonSuccessful(HttpStatusCode statusCode)
+        public void ShouldConsider100StatusesNonSuccessful(HttpStatusCode statusCode)
         {
             Assert.False(new RestResponse<object>(statusCode, null).IsSuccessful);
         }

@@ -184,7 +184,6 @@ namespace Colore.Native.Kernel32
         /// using <c>LoadLibrary</c> on versions of Windows prior to Windows Vista. If your DLL will be loaded explicitly,
         /// you must use the thread local storage functions instead of <c>_declspec(thread)</c>. For an example, see Using
         /// Thread Local Storage in a Dynamic Link Library.
-        /// Security Remarks
         /// </para>
         /// <para>
         /// Do not use the <c>SearchPath</c> function to retrieve a path to a DLL for a subsequent <c>LoadLibrary</c> call.

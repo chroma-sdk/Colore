@@ -127,7 +127,7 @@ namespace Colore.Implementations
         /// </remarks>
         ~ChromaImplementation()
         {
-            UninitializeAsync().Wait();
+            Dispose(false);
         }
 
         /// <inheritdoc />
@@ -229,6 +229,16 @@ namespace Colore.Implementations
         /// Gets the <see cref="System.Version" /> of Colore.
         /// </summary>
         public Version Version { get; }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
 
         /// <inheritdoc />
         /// <summary>
@@ -457,6 +467,22 @@ namespace Colore.Implementations
             await Keypad.SetAllAsync(color).ConfigureAwait(false);
             await Headset.SetAllAsync(color).ConfigureAwait(false);
             await ChromaLink.SetAllAsync(color).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        /// </summary>
+        /// <param name="disposing">
+        /// <c>true</c> if this is being called from <see cref="Dispose()" />; otherwise, <c>false</c>.
+        /// </param>
+        private void Dispose(bool disposing)
+        {
+            UninitializeAsync().Wait();
+
+            if (disposing && _api is IDisposable disposableApi)
+            {
+                disposableApi.Dispose();
+            }
         }
 
         /// <summary>

@@ -271,6 +271,17 @@ namespace Colore.Data
         }
 
         /// <summary>
+        /// Convert an integer value to a <see cref="Result" /> object.
+        /// </summary>
+        /// <param name="value">The value to convert.</param>
+        /// <returns>An instance of <see cref="Result" />.</returns>
+        [PublicAPI]
+        public static Result FromInt32(int value)
+        {
+            return value;
+        }
+
+        /// <summary>
         /// Converts this instance of <see cref="Result" /> to an integer value.
         /// </summary>
         /// <returns>The integer value of this <see cref="Result" />.</returns>
@@ -325,7 +336,6 @@ namespace Colore.Data
         /// <c>true</c> if <paramref name="obj"/> and this instance are the same type
         /// and represent the same value; otherwise, <c>false</c>.
         /// </returns>
-        /// <filterpriority>2</filterpriority>
         [Pure]
         public override bool Equals(object obj)
         {
@@ -350,7 +360,6 @@ namespace Colore.Data
         /// <returns>
         /// A 32-bit signed integer that is the hash code for this instance.
         /// </returns>
-        /// <filterpriority>2</filterpriority>
         [Pure]
         public override int GetHashCode()
         {
@@ -364,7 +373,6 @@ namespace Colore.Data
         /// A <see cref="string"/> containing a string representation
         /// of the result complete with name, description, and numeric value.
         /// </returns>
-        /// <filterpriority>2</filterpriority>
         [Pure]
         public override string ToString()
         {

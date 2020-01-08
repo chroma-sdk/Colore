@@ -39,9 +39,22 @@ namespace Colore.Data
         /// </summary>
         /// <param name="name">Name of the author.</param>
         /// <param name="contact">Contact information for the author.</param>
+        /// <exception cref="ArgumentNullException">
+        /// Thrown if <paramref name="name" /> or <paramref name="contact" /> are <c>null</c>.
+        /// </exception>
         [JsonConstructor]
         public Author(string name, string contact)
         {
+            if (name is null)
+            {
+                throw new ArgumentNullException(nameof(name));
+            }
+
+            if (contact is null)
+            {
+                throw new ArgumentNullException(nameof(contact));
+            }
+
             if (name.Length > Constants.MaxAuthorNameLength)
             {
                 throw new ArgumentException(

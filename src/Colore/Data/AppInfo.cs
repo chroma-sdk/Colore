@@ -76,6 +76,7 @@ namespace Colore.Data
         /// <param name="authorContact">Contact information for the author.</param>
         /// <param name="supportedDevices">List of devices this application supports.</param>
         /// <param name="category">Application category.</param>
+        /// <exception cref="ArgumentNullException">Thrown if a required parameter is <c>null</c>.</exception>
         public AppInfo(
             string title,
             string description,
@@ -84,6 +85,16 @@ namespace Colore.Data
             IEnumerable<ApiDeviceType> supportedDevices,
             Category category)
         {
+            if (title is null)
+            {
+                throw new ArgumentNullException(nameof(title));
+            }
+
+            if (description is null)
+            {
+                throw new ArgumentNullException(nameof(description));
+            }
+
             if (title.Length > Constants.MaxAppTitleLength)
             {
                 throw new ArgumentException(

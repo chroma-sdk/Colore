@@ -67,9 +67,15 @@ namespace Colore.Effects.Headset
         /// Initializes a new instance of the <see cref="HeadsetCustom" /> struct.
         /// </summary>
         /// <param name="colors">The colors to use.</param>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="colors" /> is <c>null</c>.</exception>
         /// <exception cref="ArgumentException">Thrown if the colors list supplied is of an incorrect size.</exception>
         public HeadsetCustom(IList<Color> colors)
         {
+            if (colors is null)
+            {
+                throw new ArgumentNullException(nameof(colors));
+            }
+
             if (colors.Count != HeadsetConstants.MaxLeds)
             {
                 throw new ArgumentException(
@@ -187,7 +193,6 @@ namespace Colore.Effects.Headset
         /// <returns>
         /// A 32-bit signed integer that is the hash code for this instance.
         /// </returns>
-        /// <filterpriority>2</filterpriority>
         public override int GetHashCode()
         {
             return _colors?.GetHashCode() ?? 0;

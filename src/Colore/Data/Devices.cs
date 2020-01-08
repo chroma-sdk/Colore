@@ -172,7 +172,7 @@ namespace Colore.Data
         public static readonly Guid NagaEpic = new Guid("d714c50b71584368b99c601acb985e98");
 
         /// <summary>
-        /// Naga Hex V2
+        /// Naga Hex V2.
         /// </summary>
         [PublicAPI]
         [Description("Razer Naga Hex Chroma")]

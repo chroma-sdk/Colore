@@ -64,7 +64,7 @@ namespace Colore.Implementations
 
         /// <inheritdoc />
         /// <summary>
-        /// Gets or sets a color at the specified position in the Chroma Link
+        /// Gets or sets a color at the specified position in the Chroma Link.
         /// </summary>
         /// <param name="index">The index to access (between <c>0</c> and <see cref="ChromaLinkConstants.MaxLeds" />, exclusive upper-bound).</param>
         /// <returns>The <see cref="Color" /> at the specified position.</returns>
@@ -92,7 +92,7 @@ namespace Colore.Implementations
 
         /// <inheritdoc cref="DeviceImplementation.SetAllAsync" />
         /// <summary>
-        /// Sets the color of all lights in Chroma Link
+        /// Sets the color of all lights in Chroma Link.
         /// </summary>
         /// <param name="color">Color to set.</param>
         public override async Task<Guid> SetAllAsync(Color color)

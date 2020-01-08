@@ -26,6 +26,7 @@
 namespace Colore
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
     using System.Threading.Tasks;
 
     using Colore.Api;
@@ -94,9 +95,16 @@ namespace Colore
         /// <param name="info">Information about the application.</param>
         /// <param name="endpoint">The endpoint to use for initializing the Chroma SDK.</param>
         /// <returns>A new instance of <see cref="IChroma" />.</returns>
+        [SuppressMessage("ReSharper", "CA2000", Justification = "Caller can dispose allocated resources with IChroma.Dispose")]
         public static async Task<IChroma> CreateRestAsync(AppInfo info, Uri endpoint)
         {
+            if (endpoint is null)
+            {
+                throw new ArgumentNullException(nameof(endpoint));
+            }
+
             Log.DebugFormat("Creating new REST API IChroma instance at {0}", endpoint.ToString());
+
             return await CreateAsync(info, new RestApi(new RestClient(endpoint))).ConfigureAwait(false);
         }
 

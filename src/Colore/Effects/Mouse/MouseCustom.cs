@@ -51,7 +51,7 @@ namespace Colore.Effects.Mouse
         /// <remarks>
         /// The array is 1-dimensional, but will be passed to code expecting
         /// a 2-dimensional array. Access to this array is done using indices
-        /// according to: <c>column + row * MouseConstants.MaxColumns</c>
+        /// according to: <c>column + row * MouseConstants.MaxColumns</c>.
         /// </remarks>
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = MouseConstants.MaxLeds)]
         private readonly Color[] _colors;
@@ -60,9 +60,15 @@ namespace Colore.Effects.Mouse
         /// Initializes a new instance of the <see cref="MouseCustom" /> struct.
         /// </summary>
         /// <param name="colors">The colors to use.</param>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="colors" /> is <c>null</c>.</exception>
         /// <exception cref="ArgumentException">Thrown if the colors array supplied is of an incorrect size.</exception>
         public MouseCustom(Color[][] colors)
         {
+            if (colors is null)
+            {
+                throw new ArgumentNullException(nameof(colors));
+            }
+
             var rows = colors.GetLength(0);
 
             if (rows != MouseConstants.MaxRows)
@@ -92,9 +98,15 @@ namespace Colore.Effects.Mouse
         /// Initializes a new instance of the <see cref="MouseCustom" /> struct.
         /// </summary>
         /// <param name="colors">The colors to use.</param>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="colors" /> is <c>null</c>.</exception>
         /// <exception cref="ArgumentException">Thrown if the colors array supplied is of an invalid size.</exception>
         public MouseCustom(IList<Color> colors)
         {
+            if (colors is null)
+            {
+                throw new ArgumentNullException(nameof(colors));
+            }
+
             if (colors.Count != MouseConstants.MaxLeds)
             {
                 throw new ArgumentException(

@@ -28,7 +28,7 @@ namespace Colore.Data
     using JetBrains.Annotations;
 
     /// <summary>
-    /// The definitions of generic constant values used in the project
+    /// The definitions of generic constant values used in the project.
     /// </summary>
     [PublicAPI]
     public static class Constants

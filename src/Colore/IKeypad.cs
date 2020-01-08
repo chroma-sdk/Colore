@@ -40,8 +40,7 @@ namespace Colore
     public interface IKeypad : IDevice
     {
         /// <summary>
-        /// Gets or sets a color at the specified position in the keypad's
-        /// grid layout.
+        /// Gets or sets a color at the specified position in the keypad's grid layout.
         /// </summary>
         /// <param name="row">The row to access (between <c>0</c> and <see cref="KeypadConstants.MaxRows" />, exclusive upper-bound).</param>
         /// <param name="column">The column to access (between <c>0</c> and <see cref="KeypadConstants.MaxColumns" />, exclusive upper-bound).</param>

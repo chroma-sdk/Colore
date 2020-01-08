@@ -151,7 +151,7 @@ namespace Colore.Tests.Data
         }
 
         [Test]
-        public void ShouldConvertToStringWithkeyCorrectly()
+        public void ShouldConvertToStringWithKeyCorrectly()
         {
             var color = new Color(0x203040).AsKeyColor;
             Assert.AreEqual("64, 48, 32 (0x1203040)", color.ToString());

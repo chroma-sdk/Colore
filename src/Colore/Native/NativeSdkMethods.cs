@@ -122,7 +122,7 @@ namespace Colore.Native
 
             QueryDevice = GetDelegateFromLibrary<QueryDeviceDelegate>(_chromaSdkPointer, "QueryDevice");
 
-            Log.Debug("Function delgates loaded");
+            Log.Debug("Function delegates loaded");
         }
 
         /// <summary>

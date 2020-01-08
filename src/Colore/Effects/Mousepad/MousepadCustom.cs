@@ -67,9 +67,15 @@ namespace Colore.Effects.Mousepad
         /// Initializes a new instance of the <see cref="MousepadCustom" /> struct.
         /// </summary>
         /// <param name="colors">The colors to use.</param>
+        /// <exception cref="ArgumentNullException">Thrown if <paramref name="colors" /> is <c>null</c>.</exception>
         /// <exception cref="ArgumentException">Thrown if the colors list supplied is of an incorrect size.</exception>
         public MousepadCustom(IList<Color> colors)
         {
+            if (colors is null)
+            {
+                throw new ArgumentNullException(nameof(colors));
+            }
+
             if (colors.Count != MousepadConstants.MaxLeds)
             {
                 throw new ArgumentException(
@@ -184,7 +190,6 @@ namespace Colore.Effects.Mousepad
         /// <returns>
         /// A 32-bit signed integer that is the hash code for this instance.
         /// </returns>
-        /// <filterpriority>2</filterpriority>
         public override int GetHashCode()
         {
             return _colors?.GetHashCode() ?? 0;
@@ -218,7 +223,6 @@ namespace Colore.Effects.Mousepad
         /// <c>true</c> if <paramref name="obj"/> and this instance are the same type
         /// and represent the same value; otherwise, <c>false</c>.
         /// </returns>
-        /// <filterpriority>2</filterpriority>
         public override bool Equals(object obj)
         {
             return !(obj is null) && obj is MousepadCustom custom && Equals(custom);

@@ -62,7 +62,7 @@ namespace Colore.Api
         /// Initializes a new instance of the <see cref="ApiException" /> class.
         /// </summary>
         /// <param name="message">Message describing the exception.</param>
-        /// <param name="innerException">Inner exception</param>
+        /// <param name="innerException">Inner exception.</param>
         [PublicAPI]
         public ApiException(string message, System.Exception innerException)
             : base(message, innerException)
