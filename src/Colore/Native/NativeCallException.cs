@@ -30,6 +30,8 @@ namespace Colore.Native
     using Colore.Api;
     using Colore.Data;
 
+    using JetBrains.Annotations;
+
     /// <inheritdoc />
     /// <summary>
     /// Thrown when a native function returns an erroneous result value.
@@ -59,6 +61,7 @@ namespace Colore.Native
         /// <summary>
         /// Gets the name of the native function that was called.
         /// </summary>
+        [PublicAPI]
         public string Function { get; }
     }
 }

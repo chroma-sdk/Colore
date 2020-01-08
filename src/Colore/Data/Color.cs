@@ -38,6 +38,7 @@ namespace Colore.Data
     /// <summary>
     /// Represents an RGB color.
     /// </summary>
+    [PublicAPI]
     [JsonConverter(typeof(ColorConverter))]
     [StructLayout(LayoutKind.Sequential, Size = sizeof(uint))]
     public partial struct Color : IEquatable<Color>, IEquatable<uint>

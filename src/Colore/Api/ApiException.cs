@@ -84,6 +84,7 @@ namespace Colore.Api
         /// <summary>
         /// Gets the result code returned by the SDK.
         /// </summary>
+        [PublicAPI]
         public Result Result { get; }
     }
 }
