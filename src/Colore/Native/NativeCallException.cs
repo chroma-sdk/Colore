@@ -25,21 +25,27 @@
 
 namespace Colore.Native
 {
+    using System;
     using System.Globalization;
+
+#if NET451
+    using System.Runtime.Serialization;
+#endif
 
     using Colore.Api;
     using Colore.Data;
 
     using JetBrains.Annotations;
 
+#pragma warning disable CA1032 // Implement standard exception constructors
     /// <inheritdoc />
     /// <summary>
     /// Thrown when a native function returns an erroneous result value.
     /// </summary>
-#pragma warning disable CA1032 // Implement standard exception constructors
-
+#if NET451
+    [Serializable]
+#endif
     public sealed class NativeCallException : ApiException
-#pragma warning restore CA1032 // Implement standard exception constructors
     {
         /// <summary>
         /// Template used to construct exception message from.
@@ -58,10 +64,65 @@ namespace Colore.Native
             Function = function;
         }
 
+#if NET451
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NativeCallException" /> class with serialized data.
+        /// </summary>
+        /// <param name="info">
+        /// The <see cref="SerializationInfo" /> that holds the serialized object data about the exception being thrown.
+        /// </param>
+        /// <param name="context">
+        /// The <see cref="StreamingContext" /> that contains contextual information about the source or destination.
+        /// </param>
+        /// <exception cref="ArgumentNullException">
+        /// The <paramref name="info" /> parameter is <see langword="null" />.
+        /// </exception>
+        /// <exception cref="SerializationException">
+        /// The class name is <see langword="null" /> or <see cref="Exception.HResult" /> is zero (0).
+        /// </exception>
+        private NativeCallException(SerializationInfo info, StreamingContext context)
+            : base(info, context)
+        {
+            if (info is null)
+            {
+                throw new ArgumentNullException(nameof(info));
+            }
+
+            Function = info.GetString($"{nameof(NativeCallException)}.{nameof(Function)}");
+        }
+#endif
+
         /// <summary>
         /// Gets the name of the native function that was called.
         /// </summary>
         [PublicAPI]
         public string Function { get; }
+
+#if NET451
+        /// <summary>
+        /// When overridden in a derived class, sets the <see cref="SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">
+        /// The <see cref="SerializationInfo" /> that holds the serialized object data about the exception being thrown.
+        /// </param>
+        /// <param name="context">
+        /// The <see cref="StreamingContext" /> that contains contextual information about the source or destination.
+        /// </param>
+        /// <exception cref="ArgumentNullException">
+        /// The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic).
+        /// </exception>
+        public override void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+
+            if (info is null)
+            {
+                throw new ArgumentNullException(nameof(info));
+            }
+
+            info.AddValue($"{nameof(NativeCallException)}.{nameof(Function)}", Function);
+        }
+#endif
     }
+#pragma warning restore CA1032 // Implement standard exception constructors
 }

@@ -28,19 +28,24 @@ namespace Colore
     using System;
     using System.Globalization;
 
+#if NET451
+    using System.Runtime.Serialization;
+#endif
+
     using Colore.Implementations;
 
     using JetBrains.Annotations;
 
+#pragma warning disable CA1032 // Implement standard exception constructors
     /// <inheritdoc />
     /// <summary>
     /// Thrown when an invalid <see cref="Guid" /> is passed to the
     /// constructor of <see cref="GenericDeviceImplementation" />.
     /// </summary>
-#pragma warning disable CA1032 // Implement standard exception constructors
-
+#if NET451
+    [Serializable]
+#endif
     public sealed class UnsupportedDeviceException : ColoreException
-#pragma warning restore CA1032 // Implement standard exception constructors
     {
         /// <summary>
         /// Template for exception message.
@@ -59,10 +64,65 @@ namespace Colore
             DeviceId = deviceId;
         }
 
+#if NET451
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UnsupportedDeviceException" /> class with serialized data.
+        /// </summary>
+        /// <param name="info">
+        /// The <see cref="SerializationInfo" /> that holds the serialized object data about the exception being thrown.
+        /// </param>
+        /// <param name="context">
+        /// The <see cref="StreamingContext" /> that contains contextual information about the source or destination.
+        /// </param>
+        /// <exception cref="ArgumentNullException">
+        /// The <paramref name="info" /> parameter is <see langword="null" />.
+        /// </exception>
+        /// <exception cref="SerializationException">
+        /// The class name is <see langword="null" /> or <see cref="Exception.HResult" /> is zero (0).
+        /// </exception>
+        private UnsupportedDeviceException(SerializationInfo info, StreamingContext context)
+            : base(info, context)
+        {
+            if (info is null)
+            {
+                throw new ArgumentNullException(nameof(info));
+            }
+
+            DeviceId = new Guid(info.GetString($"{nameof(UnsupportedDeviceException)}.{nameof(DeviceId)}"));
+        }
+#endif
+
         /// <summary>
         /// Gets the <see cref="Guid" /> of the device.
         /// </summary>
         [PublicAPI]
         public Guid DeviceId { get; }
+
+#if NET451
+        /// <summary>
+        /// When overridden in a derived class, sets the <see cref="SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">
+        /// The <see cref="SerializationInfo" /> that holds the serialized object data about the exception being thrown.
+        /// </param>
+        /// <param name="context">
+        /// The <see cref="StreamingContext" /> that contains contextual information about the source or destination.
+        /// </param>
+        /// <exception cref="ArgumentNullException">
+        /// The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic).
+        /// </exception>
+        public override void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+
+            if (info is null)
+            {
+                throw new ArgumentNullException(nameof(info));
+            }
+
+            info.AddValue($"{nameof(UnsupportedDeviceException)}.{nameof(DeviceId)}", DeviceId.ToString());
+        }
+#endif
     }
+#pragma warning restore CA1032 // Implement standard exception constructors
 }

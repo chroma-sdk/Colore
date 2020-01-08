@@ -26,7 +26,10 @@
 namespace Colore
 {
     using System;
+
+#if NET451
     using System.Runtime.Serialization;
+#endif
 
     using JetBrains.Annotations;
 
@@ -34,7 +37,9 @@ namespace Colore
     /// <summary>
     /// Generic Colore library exception.
     /// </summary>
+#if NET451
     [Serializable]
+#endif
     public class ColoreException : Exception
     {
         /// <inheritdoc />

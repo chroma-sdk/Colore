@@ -158,7 +158,7 @@ namespace Colore.Rest
                     Result.RzFailed,
                     new Uri(_client.BaseAddress, "/razer/chromasdk"),
                     response.Status,
-                    data);
+                    data.ToString());
 
                 Log.Error(ex, "Got invalid session response from REST init API");
 
@@ -192,7 +192,7 @@ namespace Colore.Rest
                     response.Data?.Result ?? Result.RzFailed,
                     new Uri(_client.BaseAddress, "/"),
                     response.Status,
-                    response.Data);
+                    response.Data?.ToString());
             }
 
             var data = response.Data;
@@ -234,7 +234,7 @@ namespace Colore.Rest
                     response.Data?.Result ?? Result.RzFailed,
                     new Uri(_client.BaseAddress, "/effect"),
                     response.Status,
-                    response.Data);
+                    response.Data?.ToString());
             }
 
             var data = response.Data;
@@ -267,7 +267,7 @@ namespace Colore.Rest
                     response.Data?.Result ?? Result.RzFailed,
                     new Uri(_client.BaseAddress, "/effect"),
                     response.Status,
-                    response.Data);
+                    response.Data?.ToString());
             }
 
             var data = response.Data;
@@ -515,7 +515,7 @@ namespace Colore.Rest
                     response.Data?.Result ?? Result.RzFailed,
                     new Uri(_client.BaseAddress, endpoint),
                     response.Status,
-                    response.Data);
+                    response.Data?.ToString());
                 Log.Error(ex, "Failed to create effect");
                 throw ex;
             }

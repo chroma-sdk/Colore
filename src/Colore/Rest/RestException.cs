@@ -28,6 +28,10 @@ namespace Colore.Rest
     using System;
     using System.Net;
 
+#if NET451
+    using System.Runtime.Serialization;
+#endif
+
     using Colore.Api;
     using Colore.Data;
 
@@ -37,6 +41,9 @@ namespace Colore.Rest
     /// <summary>
     /// Represents an error in the Chroma REST API.
     /// </summary>
+#if NET451
+    [Serializable]
+#endif
     public sealed class RestException : ApiException
     {
         /// <inheritdoc />
@@ -85,13 +92,45 @@ namespace Colore.Rest
             Result result,
             [NotNull] Uri uri,
             HttpStatusCode statusCode,
-            [CanBeNull] object restData = null)
+            [CanBeNull] string restData = null)
             : base(message, result)
         {
             Uri = uri ?? throw new ArgumentNullException(nameof(uri));
             StatusCode = statusCode;
             RestData = restData;
         }
+
+#if NET451
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RestException" /> class with serialized data.
+        /// </summary>
+        /// <param name="info">
+        /// The <see cref="SerializationInfo" /> that holds the serialized object data about the exception being thrown.
+        /// </param>
+        /// <param name="context">
+        /// The <see cref="StreamingContext" /> that contains contextual information about the source or destination.
+        /// </param>
+        /// <exception cref="ArgumentNullException">
+        /// The <paramref name="info" /> parameter is <see langword="null" />.
+        /// </exception>
+        /// <exception cref="SerializationException">
+        /// The class name is <see langword="null" /> or <see cref="Exception.HResult" /> is zero (0).
+        /// </exception>
+        private RestException(SerializationInfo info, StreamingContext context)
+            : base(info, context)
+        {
+            if (info is null)
+            {
+                throw new ArgumentNullException(nameof(info));
+            }
+
+            var uriString = info.GetString($"{nameof(RestException)}.{nameof(Uri)}");
+            var uriKind = (UriKind)info.GetInt32($"{nameof(RestException)}.{nameof(UriKind)}");
+            Uri = uriString == null ? null : new Uri(uriString, uriKind);
+            StatusCode = (HttpStatusCode)info.GetInt32($"{nameof(RestException)}.{nameof(StatusCode)}");
+            RestData = info.GetString($"{nameof(RestException)}.{nameof(RestData)}");
+        }
+#endif
 
         /// <summary>
         /// Gets the <see cref="Uri" /> called which caused the exception.
@@ -111,6 +150,39 @@ namespace Colore.Rest
         /// </summary>
         [CanBeNull]
         [PublicAPI]
-        public object RestData { get; }
+        public string RestData { get; }
+
+#if NET451
+        /// <summary>
+        /// When overridden in a derived class, sets the <see cref="SerializationInfo" /> with information about the exception.
+        /// </summary>
+        /// <param name="info">
+        /// The <see cref="SerializationInfo" /> that holds the serialized object data about the exception being thrown.
+        /// </param>
+        /// <param name="context">
+        /// The <see cref="StreamingContext" /> that contains contextual information about the source or destination.
+        /// </param>
+        /// <exception cref="ArgumentNullException">
+        /// The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic).
+        /// </exception>
+        public override void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+
+            if (info is null)
+            {
+                throw new ArgumentNullException(nameof(info));
+            }
+
+            var isAbsolute = Uri?.IsAbsoluteUri == true;
+            info.AddValue($"{nameof(RestException)}.{nameof(Uri)}", Uri?.ToString());
+            info.AddValue(
+                $"{nameof(RestException)}.{nameof(UriKind)}",
+                (int)(isAbsolute ? UriKind.Absolute : UriKind.RelativeOrAbsolute));
+
+            info.AddValue($"{nameof(RestException)}.{nameof(StatusCode)}", (int)StatusCode);
+            info.AddValue($"{nameof(RestException)}.{nameof(RestData)}", RestData);
+        }
+#endif
     }
 }

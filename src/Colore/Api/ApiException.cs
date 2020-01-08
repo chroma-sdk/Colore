@@ -27,7 +27,10 @@ namespace Colore.Api
 {
     using System;
     using System.ComponentModel;
+
+#if NET451
     using System.Runtime.Serialization;
+#endif
 
     using Colore.Data;
 
@@ -37,7 +40,9 @@ namespace Colore.Api
     /// <summary>
     /// Thrown when a cal to an API function fails.
     /// </summary>
+#if NET451
     [Serializable]
+#endif
     public class ApiException : ColoreException
     {
         /// <inheritdoc />
@@ -116,7 +121,7 @@ namespace Colore.Api
         /// Gets the result code returned by the SDK.
         /// </summary>
         [PublicAPI]
-        public Result Result { get; }
+        public int Result { get; }
 
 #if NET451
         /// <summary>
@@ -140,7 +145,7 @@ namespace Colore.Api
                 throw new ArgumentNullException(nameof(info));
             }
 
-            info.AddValue($"{nameof(ApiException)}.{nameof(Result)}", Result.ToInt32());
+            info.AddValue($"{nameof(ApiException)}.{nameof(Result)}", Result);
         }
 #endif
     }
