@@ -143,7 +143,7 @@ The following games (powered by Unity) are using Colore:
 Projects using Colore
 ---------------------
 
-[Aurora](http://aurora.lastbullet.net/) - Unified lighting effects across multiple brands and various games. ([GitHub](https://github.com/antonpup/Aurora))
+[Aurora](http://www.project-aurora.com/) - Unified lighting effects across multiple brands and various games. ([GitHub](https://github.com/antonpup/Aurora))
 
 There may be others we are unaware of, so please let us know if there are any others.
 
