@@ -56,7 +56,7 @@ deploy:
 - provider: NuGet
   name: production
   api_key:
-    secure: /UcxvxkkPWQRsIhUDB2mhBk+0MjhaYUobxDyTK2sq/mOWZjqoJL75FPpi1RvkvII
+    secure: V73nFWI4OV8eFc5v9vfgKJARVXEigCdGeQUsVm/fnj1C4dxmXNYhvlXJfoXOnIcz
   artifact: NuGet
   on:
     appveyor_repo_tag: true
