@@ -373,13 +373,20 @@ namespace Colore.Implementations
         public bool HandleMessage(IntPtr handle, int msgId, IntPtr wParam, IntPtr lParam)
         {
             if (!_registered)
-                throw new InvalidOperationException("Register must be called before event handling can be performed.");
+            {
+                Log.Warn($"{nameof(HandleMessage)} called without event handling being registered");
+
+                return false;
+            }
 
             if (handle != _registeredHandle)
             {
-                throw new ArgumentException(
-                    "The specified window handle does not match the currently registered one.",
-                    nameof(handle));
+                Log.Warn(
+                    $"Unexpected handle passed to {nameof(HandleMessage)}. Expected 0x{{0}} but was 0x{{1}}",
+                    _registeredHandle.ToString("X"),
+                    handle.ToString("X"));
+
+                return false;
             }
 
             if (msgId != Constants.WmChromaEvent)
