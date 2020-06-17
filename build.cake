@@ -136,6 +136,7 @@ void Build(string project, string framework = null)
     var settings = new DotNetCoreBuildSettings
     {
         Configuration = configuration,
+        NoRestore = true,
         ArgumentCustomization = args => args
             .Append($"/p:AssemblyVersion={version.AssemblySemVer}")
             .Append($"/p:NuGetVersion={version.NuGetVersionV2}")
