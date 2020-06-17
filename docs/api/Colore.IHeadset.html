@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IHeadset
    ">
-    <meta name="generator" content="docfx 2.40.7.0">
+    <meta name="generator" content="docfx 2.55.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -159,13 +159,13 @@
   
   
   <a id="Colore_IHeadset_SetCustomAsync_" data-uid="Colore.IHeadset.SetCustomAsync*"></a>
-  <h4 id="Colore_IHeadset_SetCustomAsync_Colore_Effects_Headset_HeadsetCustom_" data-uid="Colore.IHeadset.SetCustomAsync(Colore.Effects.Headset.HeadsetCustom)">SetCustomAsync(HeadsetCustom)</h4>
-  <div class="markdown level1 summary"><p>Sets a new <a class="xref" href="Colore.Effects.Headset.HeadsetCustom.html">HeadsetCustom</a> effect on the headset.</p>
+  <h4 id="Colore_IHeadset_SetCustomAsync_Colore_Effects_Headset_CustomHeadsetEffect_" data-uid="Colore.IHeadset.SetCustomAsync(Colore.Effects.Headset.CustomHeadsetEffect)">SetCustomAsync(CustomHeadsetEffect)</h4>
+  <div class="markdown level1 summary"><p>Sets a new <a class="xref" href="Colore.Effects.Headset.CustomHeadsetEffect.html">CustomHeadsetEffect</a> effect on the headset.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetCustomAsync(HeadsetCustom effect)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetCustomAsync(CustomHeadsetEffect effect)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -178,9 +178,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Colore.Effects.Headset.HeadsetCustom.html">HeadsetCustom</a></td>
+        <td><a class="xref" href="Colore.Effects.Headset.CustomHeadsetEffect.html">CustomHeadsetEffect</a></td>
         <td><span class="parametername">effect</span></td>
-        <td><p>An instance of the <a class="xref" href="Colore.Effects.Headset.HeadsetCustom.html">HeadsetCustom</a> struct
+        <td><p>An instance of the <a class="xref" href="Colore.Effects.Headset.CustomHeadsetEffect.html">CustomHeadsetEffect</a> struct
 describing the effect.</p>
 </td>
       </tr>
@@ -205,15 +205,15 @@ describing the effect.</p>
   
   
   <a id="Colore_IHeadset_SetEffectAsync_" data-uid="Colore.IHeadset.SetEffectAsync*"></a>
-  <h4 id="Colore_IHeadset_SetEffectAsync_Colore_Effects_Headset_HeadsetEffect_" data-uid="Colore.IHeadset.SetEffectAsync(Colore.Effects.Headset.HeadsetEffect)">SetEffectAsync(HeadsetEffect)</h4>
+  <h4 id="Colore_IHeadset_SetEffectAsync_Colore_Effects_Headset_HeadsetEffectType_" data-uid="Colore.IHeadset.SetEffectAsync(Colore.Effects.Headset.HeadsetEffectType)">SetEffectAsync(HeadsetEffectType)</h4>
   <div class="markdown level1 summary"><p>Sets an effect on the headset that doesn&apos;t
 take any parameters, currently only valid
-for the <a class="xref" href="Colore.Effects.Headset.HeadsetEffect.html#Colore_Effects_Headset_HeadsetEffect_None">None</a> effect.</p>
+for the <a class="xref" href="Colore.Effects.Headset.HeadsetEffectType.html#Colore_Effects_Headset_HeadsetEffectType_None">None</a> effect.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetEffectAsync(HeadsetEffect effect)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetEffectAsync(HeadsetEffectType effectType)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -226,8 +226,8 @@ for the <a class="xref" href="Colore.Effects.Headset.HeadsetEffect.html#Colore_E
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Colore.Effects.Headset.HeadsetEffect.html">HeadsetEffect</a></td>
-        <td><span class="parametername">effect</span></td>
+        <td><a class="xref" href="Colore.Effects.Headset.HeadsetEffectType.html">HeadsetEffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
         <td><p>The type of effect to set.</p>
 </td>
       </tr>
@@ -253,7 +253,7 @@ for the <a class="xref" href="Colore.Effects.Headset.HeadsetEffect.html#Colore_E
   
   <a id="Colore_IHeadset_SetStaticAsync_" data-uid="Colore.IHeadset.SetStaticAsync*"></a>
   <h4 id="Colore_IHeadset_SetStaticAsync_Colore_Data_Color_" data-uid="Colore.IHeadset.SetStaticAsync(Colore.Data.Color)">SetStaticAsync(Color)</h4>
-  <div class="markdown level1 summary"><p>Sets a new <a class="xref" href="Colore.Effects.Headset.HeadsetStatic.html">HeadsetStatic</a> effect on
+  <div class="markdown level1 summary"><p>Sets a new <a class="xref" href="Colore.Effects.Headset.StaticHeadsetEffect.html">StaticHeadsetEffect</a> effect on
 the headset using the specified <a class="xref" href="Colore.Data.Color.html">Color</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -298,13 +298,13 @@ the headset using the specified <a class="xref" href="Colore.Data.Color.html">Co
   
   
   <a id="Colore_IHeadset_SetStaticAsync_" data-uid="Colore.IHeadset.SetStaticAsync*"></a>
-  <h4 id="Colore_IHeadset_SetStaticAsync_Colore_Effects_Headset_HeadsetStatic_" data-uid="Colore.IHeadset.SetStaticAsync(Colore.Effects.Headset.HeadsetStatic)">SetStaticAsync(HeadsetStatic)</h4>
+  <h4 id="Colore_IHeadset_SetStaticAsync_Colore_Effects_Headset_StaticHeadsetEffect_" data-uid="Colore.IHeadset.SetStaticAsync(Colore.Effects.Headset.StaticHeadsetEffect)">SetStaticAsync(StaticHeadsetEffect)</h4>
   <div class="markdown level1 summary"><p>Sets a new static effect on the headset.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetStaticAsync(HeadsetStatic effect)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetStaticAsync(StaticHeadsetEffect effect)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -317,9 +317,9 @@ the headset using the specified <a class="xref" href="Colore.Data.Color.html">Co
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Colore.Effects.Headset.HeadsetStatic.html">HeadsetStatic</a></td>
+        <td><a class="xref" href="Colore.Effects.Headset.StaticHeadsetEffect.html">StaticHeadsetEffect</a></td>
         <td><span class="parametername">effect</span></td>
-        <td><p>An instance of the <a class="xref" href="Colore.Effects.Headset.HeadsetStatic.html">HeadsetStatic</a> struct
+        <td><p>An instance of the <a class="xref" href="Colore.Effects.Headset.StaticHeadsetEffect.html">StaticHeadsetEffect</a> struct
 describing the effect.</p>
 </td>
       </tr>
@@ -365,7 +365,7 @@ describing the effect.</p>
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            Copyright © 2015-2019 by <a href="https://github.com/Sharparam">Adam Hellberg</a> and <a href="https://github.com/brandonscott">Brandon Scott</a><br>Generated by <a href="http://dotnet.github.io/docfx/"><strong>DocFX</strong></a>
+            Copyright © 2015-2020 by <a href="https://github.com/Sharparam">Adam Hellberg</a> and <a href="https://github.com/brandonscott">Brandon Scott</a><br>Generated by <a href="http://dotnet.github.io/docfx/"><strong>DocFX</strong></a>
             
           </div>
         </div>

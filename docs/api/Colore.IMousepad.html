@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IMousepad
    ">
-    <meta name="generator" content="docfx 2.40.7.0">
+    <meta name="generator" content="docfx 2.55.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -159,13 +159,13 @@
   
   
   <a id="Colore_IMousepad_SetCustomAsync_" data-uid="Colore.IMousepad.SetCustomAsync*"></a>
-  <h4 id="Colore_IMousepad_SetCustomAsync_Colore_Effects_Mousepad_MousepadCustom_" data-uid="Colore.IMousepad.SetCustomAsync(Colore.Effects.Mousepad.MousepadCustom)">SetCustomAsync(MousepadCustom)</h4>
+  <h4 id="Colore_IMousepad_SetCustomAsync_Colore_Effects_Mousepad_CustomMousepadEffect_" data-uid="Colore.IMousepad.SetCustomAsync(Colore.Effects.Mousepad.CustomMousepadEffect)">SetCustomAsync(CustomMousepadEffect)</h4>
   <div class="markdown level1 summary"><p>Sets a custom effect on the mouse pad.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetCustomAsync(MousepadCustom effect)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetCustomAsync(CustomMousepadEffect effect)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -178,9 +178,9 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Colore.Effects.Mousepad.MousepadCustom.html">MousepadCustom</a></td>
+        <td><a class="xref" href="Colore.Effects.Mousepad.CustomMousepadEffect.html">CustomMousepadEffect</a></td>
         <td><span class="parametername">effect</span></td>
-        <td><p>An instance of the <a class="xref" href="Colore.Effects.Mousepad.MousepadCustom.html">MousepadCustom</a> struct.</p>
+        <td><p>An instance of the <a class="xref" href="Colore.Effects.Mousepad.CustomMousepadEffect.html">CustomMousepadEffect</a> struct.</p>
 </td>
       </tr>
     </tbody>
@@ -204,14 +204,14 @@
   
   
   <a id="Colore_IMousepad_SetEffectAsync_" data-uid="Colore.IMousepad.SetEffectAsync*"></a>
-  <h4 id="Colore_IMousepad_SetEffectAsync_Colore_Effects_Mousepad_MousepadEffect_" data-uid="Colore.IMousepad.SetEffectAsync(Colore.Effects.Mousepad.MousepadEffect)">SetEffectAsync(MousepadEffect)</h4>
+  <h4 id="Colore_IMousepad_SetEffectAsync_Colore_Effects_Mousepad_MousepadEffectType_" data-uid="Colore.IMousepad.SetEffectAsync(Colore.Effects.Mousepad.MousepadEffectType)">SetEffectAsync(MousepadEffectType)</h4>
   <div class="markdown level1 summary"><p>Sets an effect without any parameters.
-Currently, this only works for the <a class="xref" href="Colore.Effects.Mousepad.MousepadEffect.html#Colore_Effects_Mousepad_MousepadEffect_None">None</a> effect.</p>
+Currently, this only works for the <a class="xref" href="Colore.Effects.Mousepad.MousepadEffectType.html#Colore_Effects_Mousepad_MousepadEffectType_None">None</a> effect.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetEffectAsync(MousepadEffect effect)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetEffectAsync(MousepadEffectType effectType)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -224,8 +224,8 @@ Currently, this only works for the <a class="xref" href="Colore.Effects.Mousepad
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Colore.Effects.Mousepad.MousepadEffect.html">MousepadEffect</a></td>
-        <td><span class="parametername">effect</span></td>
+        <td><a class="xref" href="Colore.Effects.Mousepad.MousepadEffectType.html">MousepadEffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
         <td><p>Effect options.</p>
 </td>
       </tr>
@@ -295,13 +295,13 @@ Currently, this only works for the <a class="xref" href="Colore.Effects.Mousepad
   
   
   <a id="Colore_IMousepad_SetStaticAsync_" data-uid="Colore.IMousepad.SetStaticAsync*"></a>
-  <h4 id="Colore_IMousepad_SetStaticAsync_Colore_Effects_Mousepad_MousepadStatic_" data-uid="Colore.IMousepad.SetStaticAsync(Colore.Effects.Mousepad.MousepadStatic)">SetStaticAsync(MousepadStatic)</h4>
+  <h4 id="Colore_IMousepad_SetStaticAsync_Colore_Effects_Mousepad_StaticMousepadEffect_" data-uid="Colore.IMousepad.SetStaticAsync(Colore.Effects.Mousepad.StaticMousepadEffect)">SetStaticAsync(StaticMousepadEffect)</h4>
   <div class="markdown level1 summary"><p>Sets a static color effect on the mouse pad.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetStaticAsync(MousepadStatic effect)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetStaticAsync(StaticMousepadEffect effect)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -314,9 +314,9 @@ Currently, this only works for the <a class="xref" href="Colore.Effects.Mousepad
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Colore.Effects.Mousepad.MousepadStatic.html">MousepadStatic</a></td>
+        <td><a class="xref" href="Colore.Effects.Mousepad.StaticMousepadEffect.html">StaticMousepadEffect</a></td>
         <td><span class="parametername">effect</span></td>
-        <td><p>An instance of the <a class="xref" href="Colore.Effects.Mousepad.MousepadStatic.html">MousepadStatic</a> struct.</p>
+        <td><p>An instance of the <a class="xref" href="Colore.Effects.Mousepad.StaticMousepadEffect.html">StaticMousepadEffect</a> struct.</p>
 </td>
       </tr>
     </tbody>
@@ -361,7 +361,7 @@ Currently, this only works for the <a class="xref" href="Colore.Effects.Mousepad
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            Copyright © 2015-2019 by <a href="https://github.com/Sharparam">Adam Hellberg</a> and <a href="https://github.com/brandonscott">Brandon Scott</a><br>Generated by <a href="http://dotnet.github.io/docfx/"><strong>DocFX</strong></a>
+            Copyright © 2015-2020 by <a href="https://github.com/Sharparam">Adam Hellberg</a> and <a href="https://github.com/brandonscott">Brandon Scott</a><br>Generated by <a href="http://dotnet.github.io/docfx/"><strong>DocFX</strong></a>
             
           </div>
         </div>
