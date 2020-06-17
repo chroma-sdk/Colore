@@ -39,11 +39,11 @@ By participating in this project you agree to abide by its terms.
 License
 -------
 
-Copyright &copy; 2015-2019 by [Adam Hellberg][sharp] and [Brandon Scott][bs].
+Copyright &copy; 2015-2020 by [Adam Hellberg][sharp] and [Brandon Scott][bs].
 
 This project is licensed under the MIT license, please see the file [`LICENSE`](LICENSE) for more information.
 
-Razer is a trademark and/or a registered trademark of Razer USA Ltd.  
+Razer is a trademark and/or a registered trademark of Razer USA Ltd.
 All other trademarks are property of their respective owners.
 
 Installing
