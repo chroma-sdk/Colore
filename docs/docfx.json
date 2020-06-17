@@ -5,13 +5,13 @@
         {
           "src": "../src",
           "files": [
-            "Colore/bin/Release/netstandard1.3/Colore.dll"
+            "Colore/bin/Release/netstandard2.1/Colore.dll"
           ],
           "exclude": [ "**/obj/**" ]
         }
       ],
       "dest": "api",
-      "properties": { "TargetFramework": "netstandard1.3" },
+      "properties": { "TargetFramework": "netstandard2.1" },
       "disableDefaultFilter": true
     }
   ],
