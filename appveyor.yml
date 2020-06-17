@@ -61,11 +61,11 @@ deploy:
   on:
     appveyor_repo_tag: true
 - provider: NuGet
-  server: https://www.myget.org/F/chroma-sdk/api/v2/package
-  symbol_server: https://www.myget.org/F/chroma-sdk/symbols/api/v2/package
+  server: https://nuget.pkg.github.com/chroma-sdk/index.json
   name: production
+  username: Sharparam
   api_key:
-    secure: S0CibZkUE89TR7ainmS+w1XRKgY9PDMUkQ5P5QymyK3AlkiRTYTdKySLHh2pBiDO
+    secure: REm65Z5Fp9idcP8KKLp06b33/PES+jiRxNAc7ZalS7jHR6i1iCrgxBVcm42Lpvbd
   artifact: NuGet
   on:
     appveyor_repo_tag: true
@@ -78,11 +78,11 @@ deploy:
   on:
     appveyor_repo_tag: true
 - provider: NuGet
-  server: https://www.myget.org/F/chroma-sdk/api/v2/package
-  symbol_server: https://www.myget.org/F/chroma-sdk/symbols/api/v2/package
+  server: https://nuget.pkg.github.com/chroma-sdk/index.json
   name: development
+  username: Sharparam
   api_key:
-    secure: S0CibZkUE89TR7ainmS+w1XRKgY9PDMUkQ5P5QymyK3AlkiRTYTdKySLHh2pBiDO
+    secure: REm65Z5Fp9idcP8KKLp06b33/PES+jiRxNAc7ZalS7jHR6i1iCrgxBVcm42Lpvbd
   artifact: NuGet
   on:
     branch: develop
