@@ -28,7 +28,7 @@ namespace Colore
     using System;
     using System.Globalization;
 
-#if NET451
+#if NET452 || NETSTANDARD2_1
     using System.Runtime.Serialization;
 #endif
 
@@ -42,7 +42,7 @@ namespace Colore
     /// Thrown when an invalid <see cref="Guid" /> is passed to the
     /// constructor of <see cref="GenericDeviceImplementation" />.
     /// </summary>
-#if NET451
+#if NET452 || NETSTANDARD2_1
     [Serializable]
 #endif
     public sealed class UnsupportedDeviceException : ColoreException
@@ -64,7 +64,7 @@ namespace Colore
             DeviceId = deviceId;
         }
 
-#if NET451
+#if NET452 || NETSTANDARD2_1
         /// <summary>
         /// Initializes a new instance of the <see cref="UnsupportedDeviceException" /> class with serialized data.
         /// </summary>
@@ -98,7 +98,7 @@ namespace Colore
         [PublicAPI]
         public Guid DeviceId { get; }
 
-#if NET451
+#if NET452 || NETSTANDARD2_1
         /// <summary>
         /// When overridden in a derived class, sets the <see cref="SerializationInfo" /> with information about the exception.
         /// </summary>

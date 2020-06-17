@@ -28,7 +28,7 @@ namespace Colore.Native
     using System;
     using System.Globalization;
 
-#if NET451
+#if NET452 || NETSTANDARD2_1
     using System.Runtime.Serialization;
 #endif
 
@@ -42,7 +42,7 @@ namespace Colore.Native
     /// <summary>
     /// Thrown when a native function returns an erroneous result value.
     /// </summary>
-#if NET451
+#if NET452 || NETSTANDARD2_1
     [Serializable]
 #endif
     public sealed class NativeCallException : ApiException
@@ -64,7 +64,7 @@ namespace Colore.Native
             Function = function;
         }
 
-#if NET451
+#if NET452 || NETSTANDARD2_1
         /// <summary>
         /// Initializes a new instance of the <see cref="NativeCallException" /> class with serialized data.
         /// </summary>
@@ -98,7 +98,7 @@ namespace Colore.Native
         [PublicAPI]
         public string Function { get; }
 
-#if NET451
+#if NET452 || NETSTANDARD2_1
         /// <summary>
         /// When overridden in a derived class, sets the <see cref="SerializationInfo" /> with information about the exception.
         /// </summary>

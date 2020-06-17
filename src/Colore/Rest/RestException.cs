@@ -28,7 +28,7 @@ namespace Colore.Rest
     using System;
     using System.Net;
 
-#if NET451
+#if NET452 || NETSTANDARD2_1
     using System.Runtime.Serialization;
 #endif
 
@@ -41,7 +41,7 @@ namespace Colore.Rest
     /// <summary>
     /// Represents an error in the Chroma REST API.
     /// </summary>
-#if NET451
+#if NET452 || NETSTANDARD2_1
     [Serializable]
 #endif
     public sealed class RestException : ApiException
@@ -100,7 +100,7 @@ namespace Colore.Rest
             RestData = restData;
         }
 
-#if NET451
+#if NET452 || NETSTANDARD2_1
         /// <summary>
         /// Initializes a new instance of the <see cref="RestException" /> class with serialized data.
         /// </summary>
@@ -152,7 +152,7 @@ namespace Colore.Rest
         [PublicAPI]
         public string RestData { get; }
 
-#if NET451
+#if NET452 || NETSTANDARD2_1
         /// <summary>
         /// When overridden in a derived class, sets the <see cref="SerializationInfo" /> with information about the exception.
         /// </summary>

@@ -135,8 +135,13 @@ namespace Colore.Data
                 var hashCode = Id.GetHashCode();
                 hashCode = (hashCode * 397) ^ (int)Type;
                 hashCode = (hashCode * 397) ^ Connected.GetHashCode();
+#if NETSTANDARD2_1
+                hashCode = (hashCode * 397) ^ (Name?.GetHashCode(StringComparison.InvariantCulture) ?? 0);
+                hashCode = (hashCode * 397) ^ (Description?.GetHashCode(StringComparison.InvariantCulture) ?? 0);
+#else
                 hashCode = (hashCode * 397) ^ (Name?.GetHashCode() ?? 0);
                 hashCode = (hashCode * 397) ^ (Description?.GetHashCode() ?? 0);
+#endif
                 return hashCode;
             }
         }

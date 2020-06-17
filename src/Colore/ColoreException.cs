@@ -26,8 +26,7 @@
 namespace Colore
 {
     using System;
-
-#if NET451
+#if NET452 || NETSTANDARD2_1
     using System.Runtime.Serialization;
 #endif
 
@@ -37,7 +36,7 @@ namespace Colore
     /// <summary>
     /// Generic Colore library exception.
     /// </summary>
-#if NET451
+#if NET452 || NETSTANDARD2_1
     [Serializable]
 #endif
     public class ColoreException : Exception
@@ -73,7 +72,7 @@ namespace Colore
         {
         }
 
-#if NET451
+#if NET452 || NETSTANDARD2_1
         /// <summary>
         /// Initializes a new instance of the <see cref="ColoreException" /> class with serialized data.
         /// </summary>
