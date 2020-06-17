@@ -157,6 +157,7 @@ Task("Clean")
         Information("Cleaning output directories");
         CleanDirectory("./artifacts");
         CleanDirectory("./publish");
+        DotNetCoreClean("src/");
     });
 
 Task("Restore")
