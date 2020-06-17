@@ -158,6 +158,7 @@ Task("Clean")
         CleanDirectory("./artifacts");
         CleanDirectory("./publish");
         DotNetCoreClean("src/");
+        CreateDirectory("./artifacts/nuget");
     });
 
 Task("Restore")
@@ -291,7 +292,8 @@ Task("Pack")
     .IsDependentOn("Test")
     .Does(() =>
     {
-        MoveFiles(GetFiles("./src/**/*.nupkg"), "./artifacts");
+        MoveFiles(GetFiles("./src/**/*.nupkg"), "./artifacts/nuget");
+        MoveFiles(GetFiles("./src/**/*.snupkg"), "./artifacts/nuget");
     });
 
 Task("Docs")
