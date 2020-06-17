@@ -34,11 +34,10 @@
     <Authors>Sharparam</Authors>
     <Description>A C#/.NET library for interacting with Razer's Chroma SDK.</Description>
     <Copyright>Copyright (c) 2015-2020 by Adam Hellberg and Brandon Scott.</Copyright>
-    <PackageLicense>https://github.com/CoraleStudios/Colore/blob/master/LICENSE</PackageLicense>
+    <PackageLicenseExpression>MIT-2.0</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/CoraleStudios/Colore</PackageProjectUrl>
     <PackageIconUrl>https://files.sharparam.com/2017/10/31/colore.png</PackageIconUrl>
-    <PackageIcon>icon.png</PackageIcon>
-    <PackageTags>razer;chroma;corale;led;light;peripheral;gaming</PackageTags>
+    <PackageTags>razer;chroma;corale;led;light;peripheral;gaming;rgb;wrapper</PackageTags>
     <IncludeSymbols>true</IncludeSymbols>
     <IncludeSource>true</IncludeSource>
     <RepositoryUrl>https://github.com/chroma-sdk/Colore</RepositoryUrl>
@@ -47,10 +46,6 @@
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Include="../../images/icon.png" Pack="true" PackagePath="/" />
-  </ItemGroup>
 
   <ItemGroup>
     <AdditionalFiles Include="../stylecop.json">
