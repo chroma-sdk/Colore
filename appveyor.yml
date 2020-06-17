@@ -37,7 +37,7 @@ build_script:
 test: off
 
 artifacts:
-- path: .\artifacts\nuget
+- path: .\artifacts\nuget\*
   name: NuGet
 - path: .\artifacts\**\*.zip
   name: Archive
