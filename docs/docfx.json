@@ -78,7 +78,7 @@
     "keepFileLink": false,
     "cleanupCacheHistory": false,
     "sitemap": {
-      "baseUrl": "https://coralestudios.github.io/Colore/docs/"
+      "baseUrl": "https://chroma-sdk.github.io/Colore/docs/"
     }
   }
 }
