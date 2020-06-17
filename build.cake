@@ -2,7 +2,6 @@
 #addin nuget:?package=Cake.Coveralls&version=0.10.1
 #addin nuget:?package=Cake.Codecov&version=0.8.0
 #tool "nuget:?package=GitVersion.CommandLine&version=5.3.6"
-#tool "nuget:?package=OpenCover&version=4.7.922"
 #tool "nuget:?package=ReportGenerator&version=4.6.1"
 #tool nuget:?package=coveralls.io&version=1.4.2
 #tool nuget:?package=Codecov&version=1.11.1
@@ -159,6 +158,7 @@ Task("Clean")
         CleanDirectory("./artifacts");
         CleanDirectory("./publish");
         DotNetCoreClean("src/");
+        CleanDirectory("./src/Colore.Tests/TestResults");
         CreateDirectory("./artifacts/nuget");
     });
 
@@ -191,69 +191,37 @@ Task("Build")
         Build(testProject);
     });
 
-void Test(ICakeContext context = null)
-{
-    var settings = new DotNetCoreTestSettings
-    {
-        Configuration = configuration,
-        NoBuild = true
-    };
-
-    if (AppVeyor.IsRunningOnAppVeyor)
-    {
-        settings.ArgumentCustomization = args => args
-            .Append("--logger:AppVeyor");
-    }
-    else
-    {
-        settings.ArgumentCustomization = args => args
-            .Append("--logger:nunit");
-    }
-
-    if (context == null)
-        DotNetCoreTest(testProject, settings);
-    else
-        context.DotNetCoreTest(testProject, settings);
-
-    if (AppVeyor.IsRunningOnAppVeyor)
-    {
-        return;
-    }
-
-    var testResults = GetFiles("src/Colore.Tests/TestResults/*.xml");
-    CopyFiles(testResults, "./artifacts");
-}
-
 Task("Test")
     .IsDependentOn("Build")
     .Does(() =>
     {
-        if (cover)
+        var filters = ReadCoverageFilters("./src/coverage-filters.txt");
+
+        var settings = new DotNetCoreTestSettings
         {
-            Information("Running tests with coverage, using OpenCover");
+            Configuration = configuration,
+            NoBuild = true,
+            NoRestore = true,
+            Settings = "src/coverlet.runsettings",
+            ArgumentCustomization = args => args.Append("--collect:\"XPlat Code Coverage\"")
+        };
 
-            var filters = ReadCoverageFilters("./src/coverage-filters.txt");
-
-            var settings = filters.Aggregate(new OpenCoverSettings
-            {
-                OldStyle = true,
-                MergeOutput = true
-            }, (a, e) => a.WithFilter(e));
-
-            if (AppVeyor.IsRunningOnAppVeyor)
-            {
-                settings.Register = "Path32";
-            }
-
-            OpenCover(c => Test(c), new FilePath("./artifacts/opencover-results.xml"), settings);
-
-            ReportGenerator("./artifacts/opencover-results.xml", "./artifacts/coverage-report");
+        if (AppVeyor.IsRunningOnAppVeyor)
+        {
+            settings.Logger = "AppVeyor";
         }
         else
         {
-            Information("Running tests without coverage");
-            Test();
+            settings.Logger = "nunit";
         }
+
+        DotNetCoreTest(testProject, settings);
+
+        var testResults = GetFiles("src/Colore.Tests/TestResults/*/coverage.cobertura.xml");
+        CopyFiles(testResults, "./artifacts");
+        MoveFile("./artifacts/coverage.cobertura.xml", "./artifacts/coverage.xml");
+
+        ReportGenerator("./artifacts/coverage.xml", "./artifacts/coverage-report");
     });
 
 Task("Dist")
@@ -328,9 +296,9 @@ Task("Coveralls")
     .IsDependentOn("Test")
     .Does(() =>
     {
-        Information("Running Coveralls tool on OpenCover result");
+        Information("Running Coveralls tool on coverage result");
 
-        CoverallsIo("./artifacts/opencover-results.xml", new CoverallsIoSettings
+        CoverallsIo("./artifacts/coverage.xml", new CoverallsIoSettings
         {
             FullSources = true,
             RepoToken = coverallsRepoToken
@@ -346,11 +314,11 @@ Task("Codecov")
         var ccVersion = $"{version.FullSemVer}.build.{BuildSystem.AppVeyor.Environment.Build.Number}";
         var codecovPath = Context.Tools.Resolve("codecov.exe");
 
-        Information("Running Codecov tool with version {0} on OpenCover result", ccVersion);
+        Information("Running Codecov tool with version {0} on coverage result", ccVersion);
 
         Codecov(new CodecovSettings
         {
-            Files = new[] { "./artifacts/opencover-results.xml" },
+            Files = new[] { "./artifacts/coverage.xml" },
             Required = true,
             ////Branch = version.BranchName,
             EnvironmentVariables = new Dictionary<string, string>
