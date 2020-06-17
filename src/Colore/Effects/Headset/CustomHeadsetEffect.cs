@@ -36,7 +36,7 @@ namespace Colore.Effects.Headset
 
     using Newtonsoft.Json;
 
-    /// <inheritdoc cref="IEquatable{T}" />
+    /// <inheritdoc />
     /// <summary>
     /// Custom effect for headsets.
     /// </summary>

@@ -29,7 +29,7 @@ namespace Colore.Data
 
     using JetBrains.Annotations;
 
-    /// <inheritdoc cref="IEquatable{T}" />
+    /// <inheritdoc />
     /// <summary>
     /// Contains information about a device.
     /// </summary>

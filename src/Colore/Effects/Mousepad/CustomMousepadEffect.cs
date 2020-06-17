@@ -36,7 +36,7 @@ namespace Colore.Effects.Mousepad
 
     using Newtonsoft.Json;
 
-    /// <inheritdoc cref="IEquatable{T}" />
+    /// <inheritdoc />
     /// <summary>
     /// Custom effect for mouse pad.
     /// </summary>

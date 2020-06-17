@@ -37,7 +37,7 @@ namespace Colore.Effects.Keypad
 
     using Newtonsoft.Json;
 
-    /// <inheritdoc cref="IEquatable{T}" />
+    /// <inheritdoc />
     /// <summary>
     /// Custom effect.
     /// </summary>

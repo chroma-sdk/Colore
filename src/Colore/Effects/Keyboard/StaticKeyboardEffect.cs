@@ -36,7 +36,7 @@ namespace Colore.Effects.Keyboard
 
     using Newtonsoft.Json;
 
-    /// <inheritdoc cref="IEquatable{T}" />
+    /// <inheritdoc />
     /// <summary>
     /// Describes the static effect type.
     /// </summary>

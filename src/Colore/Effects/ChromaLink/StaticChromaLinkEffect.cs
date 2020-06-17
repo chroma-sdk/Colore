@@ -36,7 +36,7 @@ namespace Colore.Effects.ChromaLink
 
     using Newtonsoft.Json;
 
-    /// <inheritdoc cref="IEquatable{T}" />
+    /// <inheritdoc />
     /// <summary>
     /// Static color effect.
     /// </summary>

@@ -37,7 +37,7 @@ namespace Colore.Effects.Keyboard
 
     using Newtonsoft.Json;
 
-    /// <inheritdoc cref="IEquatable{T}" />
+    /// <inheritdoc />
     /// <summary>
     /// Describes a custom grid effect for every key.
     /// </summary>

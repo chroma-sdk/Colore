@@ -31,7 +31,7 @@ namespace Colore.Effects.Generic
 
     using JetBrains.Annotations;
 
-    /// <inheritdoc cref="IEquatable{T}" />
+    /// <inheritdoc />
     /// <summary>
     /// Describes the <c>NO_EFFECT</c> effect.
     /// </summary>

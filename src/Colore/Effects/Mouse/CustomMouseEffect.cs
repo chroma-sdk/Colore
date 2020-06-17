@@ -37,7 +37,7 @@ namespace Colore.Effects.Mouse
 
     using Newtonsoft.Json;
 
-    /// <inheritdoc cref="IEquatable{T}" />
+    /// <inheritdoc />
     /// <summary>
     /// Custom grid effect for mouse LEDs.
     /// </summary>
