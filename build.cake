@@ -1,11 +1,11 @@
 #addin nuget:?package=Cake.DocFx&version=0.13.1
 #addin nuget:?package=Cake.Coveralls&version=0.10.1
-#addin nuget:?package=Cake.Codecov&version=0.7.0
-#tool "nuget:?package=GitVersion.CommandLine&version=5.1.3"
+#addin nuget:?package=Cake.Codecov&version=0.8.0
+#tool "nuget:?package=GitVersion.CommandLine&version=5.3.6"
 #tool "nuget:?package=OpenCover&version=4.7.922"
-#tool "nuget:?package=ReportGenerator&version=4.4.0"
+#tool "nuget:?package=ReportGenerator&version=4.6.1"
 #tool nuget:?package=coveralls.io&version=1.4.2
-#tool nuget:?package=Codecov&version=1.9.0
+#tool nuget:?package=Codecov&version=1.11.1
 
 ///////////////////////////////////////////////////////////////////////////////
 // ARGUMENTS
