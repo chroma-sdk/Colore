@@ -235,7 +235,7 @@ Task("Test")
 
             var settings = filters.Aggregate(new OpenCoverSettings
             {
-                OldStyle = false,
+                OldStyle = true,
                 MergeOutput = true
             }, (a, e) => a.WithFilter(e));
 
