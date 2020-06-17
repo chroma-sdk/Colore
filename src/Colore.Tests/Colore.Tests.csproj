@@ -16,12 +16,12 @@
 
   <ItemGroup>
     <PackageReference Include="Appveyor.TestLogger" Version="2.0.0" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
-    <PackageReference Include="Moq" Version="4.13.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.6.1" />
+    <PackageReference Include="Moq" Version="4.14.2" />
     <PackageReference Include="NUnit" Version="3.12.0" />
-    <PackageReference Include="NUnit.Console" Version="3.10.0" />
-    <PackageReference Include="NUnit3TestAdapter" Version="3.16.0" />
-    <PackageReference Include="NunitXml.TestLogger" Version="2.1.41" />
+    <PackageReference Include="NUnit.Console" Version="3.11.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.16.1" />
+    <PackageReference Include="NunitXml.TestLogger" Version="2.1.62" />
   </ItemGroup>
 
   <ItemGroup>
