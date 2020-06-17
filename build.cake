@@ -235,9 +235,14 @@ Task("Test")
 
             var settings = filters.Aggregate(new OpenCoverSettings
             {
-                OldStyle = true,
+                OldStyle = false,
                 MergeOutput = true
             }, (a, e) => a.WithFilter(e));
+
+            if (AppVeyor.IsRunningOnAppVeyor)
+            {
+                settings.Register = "Path64";
+            }
 
             OpenCover(c => Test(c), new FilePath("./artifacts/opencover-results.xml"), settings);
 
