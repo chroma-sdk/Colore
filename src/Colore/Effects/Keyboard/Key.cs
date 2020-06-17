@@ -25,11 +25,14 @@
 
 namespace Colore.Effects.Keyboard
 {
+    using System.Diagnostics.CodeAnalysis;
+
     using JetBrains.Annotations;
 
     /// <summary>
     /// Definition of all keys available on the keyboard.
     /// </summary>
+    [SuppressMessage("Microsoft.Design", "CA1069", Justification = "Definitions follow how the Chroma SDK is designed")]
     public enum Key
     {
         /// <summary>
