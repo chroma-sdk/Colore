@@ -372,6 +372,7 @@ Task("CI")
 
 Task("Travis").IsDependentOn("Test");
 Task("AppVeyor").IsDependentOn("CI");
+Task("GitHub").IsDependentOn("CI");
 Task("Default").IsDependentOn("Test");
 
 RunTarget(target);
