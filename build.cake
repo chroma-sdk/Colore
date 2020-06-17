@@ -241,7 +241,7 @@ Task("Test")
 
             if (AppVeyor.IsRunningOnAppVeyor)
             {
-                settings.Register = "Path64";
+                settings.Register = "Path32";
             }
 
             OpenCover(c => Test(c), new FilePath("./artifacts/opencover-results.xml"), settings);
