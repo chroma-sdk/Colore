@@ -335,19 +335,6 @@ Task("Coveralls")
             FullSources = true,
             RepoToken = coverallsRepoToken
         });
-
-        // var avEnv = AppVeyor.Environment;
-        // CoverallsNet("./artifacts/opencover-results.xml", CoverallsNetReportType.OpenCover, new CoverallsNetSettings
-        // {
-        //     RepoToken = coverallsRepoToken,
-        //     CommitAuthor = avEnv.Repository.Commit.Author,
-        //     CommitBranch = avEnv.Repository.Branch,
-        //     CommitEmail = avEnv.Repository.Commit.Email,
-        //     CommitId = avEnv.Repository.Commit.Id,
-        //     CommitMessage = avEnv.Repository.Commit.Message,
-        //     JobId = avEnv.Build.Number,
-        //     UseRelativePaths = true
-        // });
     });
 
 Task("Codecov")
