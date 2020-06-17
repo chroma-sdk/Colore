@@ -796,6 +796,9 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,linux,macos,notepadpp,sublimetext,csharp,visualstudio,visualstudiocode,code,vim,emacs,rider,fsharp,cake,docfx
 
+# Ignore entire IDEA/Rider directory
+.idea/
+
 # Ignore artifacts
 /artifacts
 
