@@ -4,7 +4,7 @@
     <TargetFrameworks>netstandard2.1;netstandard1.3;net452</TargetFrameworks>
     <Platforms>AnyCPU</Platforms>
     <Version>$(AssemblyVersion)</Version>
-    <DebugType>full</DebugType>
+    <DebugType>portable</DebugType>
     <DebugSymbols>true</DebugSymbols>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
@@ -40,18 +40,20 @@
     <PackageIconUrl>https://files.sharparam.com/2017/10/31/colore.png</PackageIconUrl>
     <PackageTags>razer;chroma;corale;led;light;peripheral;gaming;rgb;wrapper</PackageTags>
     <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <IncludeSource>true</IncludeSource>
     <RepositoryUrl>https://github.com/chroma-sdk/Colore</RepositoryUrl>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <!-- <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder> -->
   </PropertyGroup>
 
   <ItemGroup>
     <None Include="../../images/icon.png" Pack="true" PackagePath="/" />
   </ItemGroup>
-  
+
   <ItemGroup>
     <AdditionalFiles Include="../stylecop.json">
       <Link>stylecop.json</Link>
@@ -66,6 +68,7 @@
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.0.0">
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
       <PrivateAssets>All</PrivateAssets>
@@ -86,7 +89,7 @@
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.1'">
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
   </ItemGroup>
-  
+
   <ItemGroup Condition="'$(TargetFramework)' == 'net452'">
     <Reference Include="Microsoft.CSharp" />
     <PackageReference Include="Microsoft.Net.Http">

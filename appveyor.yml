@@ -54,6 +54,7 @@ artifacts:
 
 deploy:
 - provider: NuGet
+  #server: https://api.nuget.org/v3/index.json
   name: production
   api_key:
     secure: V73nFWI4OV8eFc5v9vfgKJARVXEigCdGeQUsVm/fnj1C4dxmXNYhvlXJfoXOnIcz
