@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="MousepadCustom.cs" company="Corale">
+// <copyright file="CustomMousepadEffect.cs" company="Corale">
 //     Copyright © 2015-2020 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -42,7 +42,7 @@ namespace Colore.Effects.Mousepad
     /// </summary>
     [JsonConverter(typeof(MousepadCustomConverter))]
     [StructLayout(LayoutKind.Sequential)]
-    public struct MousepadCustom : IEquatable<MousepadCustom>
+    public struct CustomMousepadEffect : IEquatable<CustomMousepadEffect>
     {
         /// <summary>
         /// Colors for the LEDs.
@@ -51,11 +51,11 @@ namespace Colore.Effects.Mousepad
         private readonly Color[] _colors;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MousepadCustom" /> struct with
+        /// Initializes a new instance of the <see cref="CustomMousepadEffect" /> struct with
         /// a default color to apply to every LED.
         /// </summary>
         /// <param name="color">The color to set every LED to initially.</param>
-        public MousepadCustom(Color color)
+        public CustomMousepadEffect(Color color)
         {
             _colors = new Color[MousepadConstants.MaxLeds];
 
@@ -64,12 +64,12 @@ namespace Colore.Effects.Mousepad
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MousepadCustom" /> struct.
+        /// Initializes a new instance of the <see cref="CustomMousepadEffect" /> struct.
         /// </summary>
         /// <param name="colors">The colors to use.</param>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="colors" /> is <c>null</c>.</exception>
         /// <exception cref="ArgumentException">Thrown if the colors list supplied is of an incorrect size.</exception>
-        public MousepadCustom(IList<Color> colors)
+        public CustomMousepadEffect(IList<Color> colors)
         {
             if (colors is null)
             {
@@ -91,11 +91,11 @@ namespace Colore.Effects.Mousepad
 
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="MousepadCustom" /> struct
+        /// Initializes a new instance of the <see cref="CustomMousepadEffect" /> struct
         /// with the colors copied from another struct of the same type.
         /// </summary>
         /// <param name="other">The struct to copy data from.</param>
-        public MousepadCustom(MousepadCustom other)
+        public CustomMousepadEffect(CustomMousepadEffect other)
             : this(other._colors)
         {
         }
@@ -141,37 +141,37 @@ namespace Colore.Effects.Mousepad
         }
 
         /// <summary>
-        /// Compares an instance of <see cref="MousepadCustom" /> with
+        /// Compares an instance of <see cref="CustomMousepadEffect" /> with
         /// another object for equality.
         /// </summary>
-        /// <param name="left">The left operand, an instance of <see cref="MousepadCustom" />.</param>
+        /// <param name="left">The left operand, an instance of <see cref="CustomMousepadEffect" />.</param>
         /// <param name="right">The right operand, any type of object.</param>
         /// <returns><c>true</c> if the two objects are equal, otherwise <c>false</c>.</returns>
-        public static bool operator ==(MousepadCustom left, object right)
+        public static bool operator ==(CustomMousepadEffect left, object right)
         {
             return left.Equals(right);
         }
 
         /// <summary>
-        /// Compares an instance of <see cref="MousepadCustom" /> with
+        /// Compares an instance of <see cref="CustomMousepadEffect" /> with
         /// another object for inequality.
         /// </summary>
-        /// <param name="left">The left operand, an instance of <see cref="MousepadCustom" />.</param>
+        /// <param name="left">The left operand, an instance of <see cref="CustomMousepadEffect" />.</param>
         /// <param name="right">The right operand, any type of object.</param>
         /// <returns><c>true</c> if the two objects are not equal, otherwise <c>false</c>.</returns>
-        public static bool operator !=(MousepadCustom left, object right)
+        public static bool operator !=(CustomMousepadEffect left, object right)
         {
             return !left.Equals(right);
         }
 
         /// <summary>
-        /// Create a new empty <see cref="MousepadCustom" /> struct.
+        /// Create a new empty <see cref="CustomMousepadEffect" /> struct.
         /// </summary>
-        /// <returns>An instance of <see cref="MousepadCustom" /> filled with the color black.</returns>
+        /// <returns>An instance of <see cref="CustomMousepadEffect" /> filled with the color black.</returns>
         [PublicAPI]
-        public static MousepadCustom Create()
+        public static CustomMousepadEffect Create()
         {
-            return new MousepadCustom(Color.Black);
+            return new CustomMousepadEffect(Color.Black);
         }
 
         /// <summary>
@@ -179,9 +179,9 @@ namespace Colore.Effects.Mousepad
         /// </summary>
         /// <returns>A copy of this struct.</returns>
         [PublicAPI]
-        public MousepadCustom Clone()
+        public CustomMousepadEffect Clone()
         {
-            return new MousepadCustom(this);
+            return new CustomMousepadEffect(this);
         }
 
         /// <summary>
@@ -207,7 +207,7 @@ namespace Colore.Effects.Mousepad
         }
 
         /// <summary>
-        /// Clears the colors in this <see cref="MousepadCustom" /> struct (sets to <see cref="Color.Black" />).
+        /// Clears the colors in this <see cref="CustomMousepadEffect" /> struct (sets to <see cref="Color.Black" />).
         /// </summary>
         [PublicAPI]
         public void Clear()
@@ -225,7 +225,7 @@ namespace Colore.Effects.Mousepad
         /// </returns>
         public override bool Equals(object obj)
         {
-            return !(obj is null) && obj is MousepadCustom custom && Equals(custom);
+            return !(obj is null) && obj is CustomMousepadEffect custom && Equals(custom);
         }
 
         /// <inheritdoc />
@@ -236,7 +236,7 @@ namespace Colore.Effects.Mousepad
         /// <returns>
         /// <c>true</c> if the current object is equal to the <paramref name="other" /> parameter; otherwise, <c>false</c>.
         /// </returns>
-        public bool Equals(MousepadCustom other)
+        public bool Equals(CustomMousepadEffect other)
         {
             for (var i = 0; i < MousepadConstants.MaxLeds; i++)
             {

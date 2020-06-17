@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="MousepadEffect.cs" company="Corale">
+// <copyright file="EffectType.cs" company="Corale">
 //     Copyright © 2015-2020 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,8 +23,9 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Effects.Mousepad
+namespace Colore.Effects.Generic
 {
+    using System.ComponentModel;
     using System.Runtime.Serialization;
 
     using JetBrains.Annotations;
@@ -33,10 +34,11 @@ namespace Colore.Effects.Mousepad
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Effects supported by Chroma mouse pads.
+    /// Generic device effects.
     /// </summary>
+    /// <remarks>Not all devices are compatible with every effect type.</remarks>
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum MousepadEffect
+    public enum EffectType
     {
         /// <summary>
         /// No effect.
@@ -46,24 +48,32 @@ namespace Colore.Effects.Mousepad
         None = 0,
 
         /// <summary>
-        /// A custom effect.
-        /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_CUSTOM")]
-        Custom = 2,
-
-        /// <summary>
-        /// Static color.
+        /// Static color effect.
         /// </summary>
         [PublicAPI]
         [EnumMember(Value = "CHROMA_STATIC")]
-        Static = 4,
+        Static = 6,
 
         /// <summary>
-        /// Invalid effect type.
+        /// Custom effect.
+        /// </summary>
+        [PublicAPI]
+        [EnumMember(Value = "CHROMA_CUSTOM")]
+        Custom = 7,
+
+        /// <summary>
+        /// Reserved effect.
+        /// </summary>
+        [EditorBrowsable(EditorBrowsableState.Advanced)]
+        [EnumMember(Value = "CHROMA_RESERVED")]
+        //// ReSharper disable once UnusedMember.Global
+        Reserved = 8,
+
+        /// <summary>
+        /// Invalid effect.
         /// </summary>
         [PublicAPI]
         [EnumMember(Value = "CHROMA_INVALID")]
-        Invalid = 6
+        Invalid = 9
     }
 }

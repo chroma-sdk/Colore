@@ -46,9 +46,9 @@ namespace Colore.Implementations
         private static readonly ILog Log = LogProvider.For<MousepadImplementation>();
 
         /// <summary>
-        /// Internal <see cref="MousepadCustom" /> struct used for effects.
+        /// Internal <see cref="CustomMousepadEffect" /> struct used for effects.
         /// </summary>
-        private MousepadCustom _custom;
+        private CustomMousepadEffect _custom;
 
         /// <inheritdoc />
         /// <summary>
@@ -58,7 +58,7 @@ namespace Colore.Implementations
             : base(api)
         {
             Log.Debug("Mousepad is initializing.");
-            _custom = MousepadCustom.Create();
+            _custom = CustomMousepadEffect.Create();
         }
 
         /// <inheritdoc />
@@ -92,22 +92,22 @@ namespace Colore.Implementations
         /// <inheritdoc />
         /// <summary>
         /// Sets an effect without any parameters.
-        /// Currently, this only works for the <see cref="MousepadEffect.None" /> effect.
+        /// Currently, this only works for the <see cref="MousepadEffectType.None" /> effect.
         /// </summary>
-        /// <param name="effect">Effect options.</param>
-        public async Task<Guid> SetEffectAsync(MousepadEffect effect)
+        /// <param name="effectType">Effect options.</param>
+        public async Task<Guid> SetEffectAsync(MousepadEffectType effectType)
         {
-            return await SetEffectAsync(await Api.CreateMousepadEffectAsync(effect).ConfigureAwait(false)).ConfigureAwait(false);
+            return await SetEffectAsync(await Api.CreateMousepadEffectAsync(effectType).ConfigureAwait(false)).ConfigureAwait(false);
         }
 
         /// <inheritdoc />
         /// <summary>
         /// Sets a static color effect on the mouse pad.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="MousepadStatic" /> struct.</param>
-        public async Task<Guid> SetStaticAsync(MousepadStatic effect)
+        /// <param name="effect">An instance of the <see cref="StaticMousepadEffect" /> struct.</param>
+        public async Task<Guid> SetStaticAsync(StaticMousepadEffect effect)
         {
-            return await SetEffectAsync(await Api.CreateMousepadEffectAsync(MousepadEffect.Static, effect).ConfigureAwait(false)).ConfigureAwait(false);
+            return await SetEffectAsync(await Api.CreateMousepadEffectAsync(MousepadEffectType.Static, effect).ConfigureAwait(false)).ConfigureAwait(false);
         }
 
         /// <inheritdoc />
@@ -117,17 +117,17 @@ namespace Colore.Implementations
         /// <param name="color">Color to set.</param>
         public async Task<Guid> SetStaticAsync(Color color)
         {
-            return await SetStaticAsync(new MousepadStatic(color)).ConfigureAwait(false);
+            return await SetStaticAsync(new StaticMousepadEffect(color)).ConfigureAwait(false);
         }
 
         /// <inheritdoc />
         /// <summary>
         /// Sets a custom effect on the mouse pad.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="MousepadCustom" /> struct.</param>
-        public async Task<Guid> SetCustomAsync(MousepadCustom effect)
+        /// <param name="effect">An instance of the <see cref="CustomMousepadEffect" /> struct.</param>
+        public async Task<Guid> SetCustomAsync(CustomMousepadEffect effect)
         {
-            return await SetEffectAsync(await Api.CreateMousepadEffectAsync(MousepadEffect.Custom, effect).ConfigureAwait(false)).ConfigureAwait(false);
+            return await SetEffectAsync(await Api.CreateMousepadEffectAsync(MousepadEffectType.Custom, effect).ConfigureAwait(false)).ConfigureAwait(false);
         }
 
         /// <inheritdoc cref="DeviceImplementation.ClearAsync" />
@@ -137,7 +137,7 @@ namespace Colore.Implementations
         public override async Task<Guid> ClearAsync()
         {
             _custom.Clear();
-            return await SetEffectAsync(MousepadEffect.None).ConfigureAwait(false);
+            return await SetEffectAsync(MousepadEffectType.None).ConfigureAwait(false);
         }
     }
 }

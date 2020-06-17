@@ -35,9 +35,9 @@ namespace Colore.Serialization
 
     /// <inheritdoc />
     /// <summary>
-    /// Converts headset <see cref="HeadsetStatic" /> objects to JSON.
+    /// Converts headset <see cref="StaticHeadsetEffect" /> objects to JSON.
     /// </summary>
-    /// <remarks>Does not support converting JSON into <see cref="HeadsetStatic" /> objects.</remarks>
+    /// <remarks>Does not support converting JSON into <see cref="StaticHeadsetEffect" /> objects.</remarks>
     [SuppressMessage(
         "Microsoft.Performance",
         "CA1812:AvoidUninstantiatedInternalClasses",
@@ -45,14 +45,14 @@ namespace Colore.Serialization
     internal sealed class HeadsetStaticConverter : JsonConverter
     {
         /// <inheritdoc />
-        /// <summary>Writes the JSON representation of a headset <see cref="HeadsetStatic" /> object.</summary>
+        /// <summary>Writes the JSON representation of a headset <see cref="StaticHeadsetEffect" /> object.</summary>
         /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
-        /// <param name="value">The <see cref="HeadsetStatic" /> value.</param>
+        /// <param name="value">The <see cref="StaticHeadsetEffect" /> value.</param>
         /// <param name="serializer">The calling serializer.</param>
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            var effect = (HeadsetStatic)value;
-            var data = new EffectData(HeadsetEffect.Static, effect.Color);
+            var effect = (StaticHeadsetEffect)value;
+            var data = new EffectData(HeadsetEffectType.Static, effect.Color);
             serializer.Serialize(writer, data);
         }
 
@@ -67,6 +67,6 @@ namespace Colore.Serialization
         }
 
         /// <inheritdoc />
-        public override bool CanConvert(Type objectType) => objectType == typeof(HeadsetStatic);
+        public override bool CanConvert(Type objectType) => objectType == typeof(StaticHeadsetEffect);
     }
 }

@@ -35,9 +35,9 @@ namespace Colore.Serialization
 
     /// <inheritdoc />
     /// <summary>
-    /// Converts keyboard <see cref="DeathstalkerGrid" /> objects to JSON.
+    /// Converts keyboard <see cref="DeathstalkerGridEffect" /> objects to JSON.
     /// </summary>
-    /// <remarks>Does not support converting JSON into <see cref="DeathstalkerGrid" /> objects.</remarks>
+    /// <remarks>Does not support converting JSON into <see cref="DeathstalkerGridEffect" /> objects.</remarks>
     [SuppressMessage(
         "Microsoft.Performance",
         "CA1812:AvoidUninstantiatedInternalClasses",
@@ -45,15 +45,15 @@ namespace Colore.Serialization
     internal sealed class DeathstalkerGridConverter : JsonConverter
     {
         /// <inheritdoc />
-        /// <summary>Writes the JSON representation of a mousepad <see cref="DeathstalkerGrid" /> object.</summary>
+        /// <summary>Writes the JSON representation of a mousepad <see cref="DeathstalkerGridEffect" /> object.</summary>
         /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
-        /// <param name="value">The <see cref="DeathstalkerGrid" /> value.</param>
+        /// <param name="value">The <see cref="DeathstalkerGridEffect" /> value.</param>
         /// <param name="serializer">The calling serializer.</param>
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            var effect = (DeathstalkerGrid)value;
+            var effect = (DeathstalkerGridEffect)value;
             var colors = effect.ToMultiArray();
-            var data = new EffectData(KeyboardEffect.Custom, colors);
+            var data = new EffectData(KeyboardEffectType.Custom, colors);
             serializer.Serialize(writer, data);
         }
 
@@ -68,6 +68,6 @@ namespace Colore.Serialization
         }
 
         /// <inheritdoc />
-        public override bool CanConvert(Type objectType) => objectType == typeof(DeathstalkerGrid);
+        public override bool CanConvert(Type objectType) => objectType == typeof(DeathstalkerGridEffect);
     }
 }

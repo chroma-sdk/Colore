@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="None.cs" company="Corale">
+// <copyright file="NoneEffect.cs" company="Corale">
 //     Copyright © 2015-2020 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -36,7 +36,7 @@ namespace Colore.Effects.Generic
     /// Describes the <c>NO_EFFECT</c> effect.
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public struct None : IEquatable<None>
+    public struct NoneEffect : IEquatable<NoneEffect>
     {
         /// <summary>
         /// The size of the struct.
@@ -51,33 +51,33 @@ namespace Colore.Effects.Generic
         public readonly int Parameter;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="None" /> struct.
+        /// Initializes a new instance of the <see cref="NoneEffect" /> struct.
         /// </summary>
         /// <param name="parameter">Additional effect parameter to set.</param>
-        public None(int parameter = 0)
+        public NoneEffect(int parameter = 0)
         {
             Parameter = parameter;
-            Size = Marshal.SizeOf<None>();
+            Size = Marshal.SizeOf<NoneEffect>();
         }
 
         /// <summary>
-        /// Checks an instance of <see cref="None" /> for equality with another <see cref="None" /> instance.
+        /// Checks an instance of <see cref="NoneEffect" /> for equality with another <see cref="NoneEffect" /> instance.
         /// </summary>
         /// <param name="left">Left operand.</param>
         /// <param name="right">Right operand.</param>
         /// <returns><c>true</c> if the two instances are equal, otherwise <c>false</c>.</returns>
-        public static bool operator ==(None left, None right)
+        public static bool operator ==(NoneEffect left, NoneEffect right)
         {
             return left.Equals(right);
         }
 
         /// <summary>
-        /// Checks an instance of <see cref="None" /> for inequality with another <see cref="None" /> instance.
+        /// Checks an instance of <see cref="NoneEffect" /> for inequality with another <see cref="NoneEffect" /> instance.
         /// </summary>
         /// <param name="left">Left operand.</param>
         /// <param name="right">Right operand.</param>
         /// <returns><c>true</c> if the two instances are not equal, otherwise <c>false</c>.</returns>
-        public static bool operator !=(None left, None right)
+        public static bool operator !=(NoneEffect left, NoneEffect right)
         {
             return !(left == right);
         }
@@ -90,7 +90,7 @@ namespace Colore.Effects.Generic
         /// <returns>
         /// <c>true</c> if the current object is equal to the <paramref name="other" /> parameter; otherwise, <c>false</c>.
         /// </returns>
-        public bool Equals(None other)
+        public bool Equals(NoneEffect other)
         {
             return Size == other.Size && Parameter == other.Parameter;
         }
@@ -108,7 +108,7 @@ namespace Colore.Effects.Generic
             if (obj is null)
                 return false;
 
-            return obj is None none && Equals(none);
+            return obj is NoneEffect none && Equals(none);
         }
 
         /// <inheritdoc />

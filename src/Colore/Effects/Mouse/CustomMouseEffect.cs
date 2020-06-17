@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="MouseCustom.cs" company="Corale">
+// <copyright file="CustomMouseEffect.cs" company="Corale">
 //     Copyright © 2015-2020 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -43,7 +43,7 @@ namespace Colore.Effects.Mouse
     /// </summary>
     [JsonConverter(typeof(MouseCustomConverter))]
     [StructLayout(LayoutKind.Sequential)]
-    public struct MouseCustom : IEquatable<MouseCustom>
+    public struct CustomMouseEffect : IEquatable<CustomMouseEffect>
     {
         /// <summary>
         /// Color definitions for each led on the mouse.
@@ -57,12 +57,12 @@ namespace Colore.Effects.Mouse
         private readonly Color[] _colors;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MouseCustom" /> struct.
+        /// Initializes a new instance of the <see cref="CustomMouseEffect" /> struct.
         /// </summary>
         /// <param name="colors">The colors to use.</param>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="colors" /> is <c>null</c>.</exception>
         /// <exception cref="ArgumentException">Thrown if the colors array supplied is of an incorrect size.</exception>
-        public MouseCustom(Color[][] colors)
+        public CustomMouseEffect(Color[][] colors)
         {
             if (colors is null)
             {
@@ -95,12 +95,12 @@ namespace Colore.Effects.Mouse
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MouseCustom" /> struct.
+        /// Initializes a new instance of the <see cref="CustomMouseEffect" /> struct.
         /// </summary>
         /// <param name="colors">The colors to use.</param>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="colors" /> is <c>null</c>.</exception>
         /// <exception cref="ArgumentException">Thrown if the colors array supplied is of an invalid size.</exception>
-        public MouseCustom(IList<Color> colors)
+        public CustomMouseEffect(IList<Color> colors)
         {
             if (colors is null)
             {
@@ -121,11 +121,11 @@ namespace Colore.Effects.Mouse
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MouseCustom" /> struct
+        /// Initializes a new instance of the <see cref="CustomMouseEffect" /> struct
         /// with every position set to a specific color.
         /// </summary>
         /// <param name="color">The <see cref="Color" /> to set each position to.</param>
-        public MouseCustom(Color color)
+        public CustomMouseEffect(Color color)
         {
             _colors = new Color[MouseConstants.MaxLeds];
 
@@ -135,17 +135,17 @@ namespace Colore.Effects.Mouse
 
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="MouseCustom" /> struct
+        /// Initializes a new instance of the <see cref="CustomMouseEffect" /> struct
         /// with the colors copied from another struct of the same type.
         /// </summary>
-        /// <param name="other">The <see cref="MouseCustom" /> struct to copy data from.</param>
-        public MouseCustom(MouseCustom other)
+        /// <param name="other">The <see cref="CustomMouseEffect" /> struct to copy data from.</param>
+        public CustomMouseEffect(CustomMouseEffect other)
             : this(other._colors)
         {
         }
 
         /// <summary>
-        /// Gets or sets cells in the <see cref="MouseCustom" />.
+        /// Gets or sets cells in the <see cref="CustomMouseEffect" />.
         /// </summary>
         /// <param name="row">Row to access, zero indexed.</param>
         /// <param name="column">Column to access, zero indexed.</param>
@@ -236,7 +236,7 @@ namespace Colore.Effects.Mouse
         }
 
         /// <summary>
-        /// Gets or sets the color for a specific LED in the <see cref="MouseCustom" />.
+        /// Gets or sets the color for a specific LED in the <see cref="CustomMouseEffect" />.
         /// </summary>
         /// <param name="led">The <see cref="GridLed" /> to access.</param>
         /// <returns>The <see cref="Color" /> for the specified led.</returns>
@@ -259,38 +259,38 @@ namespace Colore.Effects.Mouse
         }
 
         /// <summary>
-        /// Compares an instance of <see cref="MouseCustom" /> with
+        /// Compares an instance of <see cref="CustomMouseEffect" /> with
         /// another object for equality.
         /// </summary>
-        /// <param name="left">The left operand, an instance of <see cref="MouseCustom" />.</param>
+        /// <param name="left">The left operand, an instance of <see cref="CustomMouseEffect" />.</param>
         /// <param name="right">The right operand, any type of object.</param>
         /// <returns><c>true</c> if the two objects are equal, otherwise <c>false</c>.</returns>
-        public static bool operator ==(MouseCustom left, object right)
+        public static bool operator ==(CustomMouseEffect left, object right)
         {
             return left.Equals(right);
         }
 
         /// <summary>
-        /// Compares an instance of <see cref="MouseCustom" /> with
+        /// Compares an instance of <see cref="CustomMouseEffect" /> with
         /// another object for inequality.
         /// </summary>
-        /// <param name="left">The left operand, an instance of <see cref="MouseCustom" />.</param>
+        /// <param name="left">The left operand, an instance of <see cref="CustomMouseEffect" />.</param>
         /// <param name="right">The right operand, any type of object.</param>
         /// <returns><c>true</c> if the two objects are not equal, otherwise <c>false</c>.</returns>
-        public static bool operator !=(MouseCustom left, object right)
+        public static bool operator !=(CustomMouseEffect left, object right)
         {
             return !left.Equals(right);
         }
 
         /// <summary>
-        /// Creates a new empty <see cref="MouseCustom" /> struct.
+        /// Creates a new empty <see cref="CustomMouseEffect" /> struct.
         /// </summary>
-        /// <returns>An instance of <see cref="MouseCustom" />
+        /// <returns>An instance of <see cref="CustomMouseEffect" />
         /// filled with the color black.</returns>
         [PublicAPI]
-        public static MouseCustom Create()
+        public static CustomMouseEffect Create()
         {
-            return new MouseCustom(Color.Black);
+            return new CustomMouseEffect(Color.Black);
         }
 
         /// <summary>
@@ -298,9 +298,9 @@ namespace Colore.Effects.Mouse
         /// </summary>
         /// <returns>A copy of this struct.</returns>
         [PublicAPI]
-        public MouseCustom Clone()
+        public CustomMouseEffect Clone()
         {
-            return new MouseCustom(this);
+            return new CustomMouseEffect(this);
         }
 
         /// <summary>
@@ -333,19 +333,19 @@ namespace Colore.Effects.Mouse
         /// <param name="obj">Another object to compare to. </param>
         public override bool Equals(object obj)
         {
-            return !(obj is null) && obj is MouseCustom custom && Equals(custom);
+            return !(obj is null) && obj is CustomMouseEffect custom && Equals(custom);
         }
 
         /// <inheritdoc />
         /// <summary>
         /// Indicates whether the current object is equal to another object of the same type.
         /// </summary>
-        /// <param name="other">A <see cref="MouseCustom" /> to compare with this object.</param>
+        /// <param name="other">A <see cref="CustomMouseEffect" /> to compare with this object.</param>
         /// <returns>
         /// <c>true</c> if the current object is equal to the <paramref name="other" /> parameter;
         /// otherwise, <c>false</c>.
         /// </returns>
-        public bool Equals(MouseCustom other)
+        public bool Equals(CustomMouseEffect other)
         {
             for (var row = 0; row < MouseConstants.MaxRows; row++)
             {

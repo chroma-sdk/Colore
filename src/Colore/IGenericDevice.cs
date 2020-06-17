@@ -47,20 +47,20 @@ namespace Colore
         /// <summary>
         /// Sets a parameter-less effect on this device.
         /// </summary>
-        /// <param name="effect">Effect to set.</param>
+        /// <param name="effectType">Effect to set.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetEffectAsync(Effect effect);
+        Task<Guid> SetEffectAsync(EffectType effectType);
 
         /// <summary>
         /// Sets an effect on this device, taking a parameter.
         /// </summary>
         /// <typeparam name="T">The type of effect data to set.</typeparam>
-        /// <param name="effect">Effect to set.</param>
+        /// <param name="effectType">Effect to set.</param>
         /// <param name="data">Effect-specific parameter to use.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetEffectAsync<T>(Effect effect, T data)
+        Task<Guid> SetEffectAsync<T>(EffectType effectType, T data)
             where T : struct;
     }
 }

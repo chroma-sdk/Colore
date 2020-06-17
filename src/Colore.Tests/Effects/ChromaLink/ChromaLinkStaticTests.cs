@@ -36,61 +36,61 @@ namespace Colore.Tests.Effects.ChromaLink
         [Test]
         public void ShouldConstructWithCorrectColor()
         {
-            Assert.AreEqual(Color.Red, new ChromaLinkStatic(Color.Red).Color);
+            Assert.AreEqual(Color.Red, new StaticChromaLinkEffect(Color.Red).Color);
         }
 
         [Test]
         public void ShouldEqualEffectWithSameColor()
         {
-            var a = new ChromaLinkStatic(Color.Red);
-            var b = new ChromaLinkStatic(Color.Red);
+            var a = new StaticChromaLinkEffect(Color.Red);
+            var b = new StaticChromaLinkEffect(Color.Red);
             Assert.AreEqual(a, b);
         }
 
         [Test]
         public void ShouldNotEqualEffectWithDifferentColor()
         {
-            var a = new ChromaLinkStatic(Color.Red);
-            var b = new ChromaLinkStatic(Color.Blue);
+            var a = new StaticChromaLinkEffect(Color.Red);
+            var b = new StaticChromaLinkEffect(Color.Blue);
             Assert.AreNotEqual(a, b);
         }
 
         [Test]
         public void ShouldEqualEffectWithSameColorUsingEqualOp()
         {
-            var a = new ChromaLinkStatic(Color.Red);
-            var b = new ChromaLinkStatic(Color.Red);
+            var a = new StaticChromaLinkEffect(Color.Red);
+            var b = new StaticChromaLinkEffect(Color.Red);
             Assert.True(a == b);
         }
 
         [Test]
         public void ShouldNotEqualEffectWithDifferentColorUsingEqualOp()
         {
-            var a = new ChromaLinkStatic(Color.Red);
-            var b = new ChromaLinkStatic(Color.Blue);
+            var a = new StaticChromaLinkEffect(Color.Red);
+            var b = new StaticChromaLinkEffect(Color.Blue);
             Assert.False(a == b);
         }
 
         [Test]
         public void ShouldEqualEffectWithSameColorUsingNotEqualOp()
         {
-            var a = new ChromaLinkStatic(Color.Red);
-            var b = new ChromaLinkStatic(Color.Red);
+            var a = new StaticChromaLinkEffect(Color.Red);
+            var b = new StaticChromaLinkEffect(Color.Red);
             Assert.False(a != b);
         }
 
         [Test]
         public void ShouldNotEqualEffectWithDifferentColorUsingNotEqualOp()
         {
-            var a = new ChromaLinkStatic(Color.Red);
-            var b = new ChromaLinkStatic(Color.Blue);
+            var a = new StaticChromaLinkEffect(Color.Red);
+            var b = new StaticChromaLinkEffect(Color.Blue);
             Assert.True(a != b);
         }
 
         [Test]
         public void ShouldNotEqualNull()
         {
-            var effect = new ChromaLinkStatic(Color.Red);
+            var effect = new StaticChromaLinkEffect(Color.Red);
             Assert.AreNotEqual(effect, null);
             Assert.False(effect.Equals(null));
         }
@@ -100,14 +100,14 @@ namespace Colore.Tests.Effects.ChromaLink
         {
             var color = Color.Red;
             var hashcode = color.GetHashCode();
-            var effect = new ChromaLinkStatic(color);
+            var effect = new StaticChromaLinkEffect(color);
             Assert.AreEqual(hashcode, effect.GetHashCode());
         }
 
         [Test]
         public void ShouldNotEqualArbitraryObject()
         {
-            var effect = new ChromaLinkStatic(Color.Red);
+            var effect = new StaticChromaLinkEffect(Color.Red);
             var obj = new object();
             Assert.False(effect.Equals(obj));
         }
@@ -115,16 +115,16 @@ namespace Colore.Tests.Effects.ChromaLink
         [Test]
         public void ShouldEqualEffectWithSameColorCastAsObject()
         {
-            var effect = new ChromaLinkStatic(Color.Red);
-            var obj = new ChromaLinkStatic(Color.Red) as object;
+            var effect = new StaticChromaLinkEffect(Color.Red);
+            var obj = new StaticChromaLinkEffect(Color.Red) as object;
             Assert.True(effect.Equals(obj));
         }
 
         [Test]
         public void ShouldNotEqualEffectWithDifferentColorCastAsObject()
         {
-            var effect = new ChromaLinkStatic(Color.Red);
-            var obj = new ChromaLinkStatic(Color.Blue) as object;
+            var effect = new StaticChromaLinkEffect(Color.Red);
+            var obj = new StaticChromaLinkEffect(Color.Blue) as object;
             Assert.False(effect.Equals(obj));
         }
     }

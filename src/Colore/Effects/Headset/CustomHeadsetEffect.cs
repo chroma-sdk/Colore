@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="HeadsetCustom.cs" company="Corale">
+// <copyright file="CustomHeadsetEffect.cs" company="Corale">
 //     Copyright © 2015-2020 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -42,7 +42,7 @@ namespace Colore.Effects.Headset
     /// </summary>
     [JsonConverter(typeof(HeadsetCustomConverter))]
     [StructLayout(LayoutKind.Sequential)]
-    public struct HeadsetCustom : IEquatable<HeadsetCustom>
+    public struct CustomHeadsetEffect : IEquatable<CustomHeadsetEffect>
     {
         /// <summary>
         /// Colors for the LEDs.
@@ -51,11 +51,11 @@ namespace Colore.Effects.Headset
         private readonly Color[] _colors;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="HeadsetCustom" /> struct with
+        /// Initializes a new instance of the <see cref="CustomHeadsetEffect" /> struct with
         /// a default color to apply to every LED.
         /// </summary>
         /// <param name="color">The color to set every LED to initially.</param>
-        public HeadsetCustom(Color color)
+        public CustomHeadsetEffect(Color color)
         {
             _colors = new Color[HeadsetConstants.MaxLeds];
 
@@ -64,12 +64,12 @@ namespace Colore.Effects.Headset
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="HeadsetCustom" /> struct.
+        /// Initializes a new instance of the <see cref="CustomHeadsetEffect" /> struct.
         /// </summary>
         /// <param name="colors">The colors to use.</param>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="colors" /> is <c>null</c>.</exception>
         /// <exception cref="ArgumentException">Thrown if the colors list supplied is of an incorrect size.</exception>
-        public HeadsetCustom(IList<Color> colors)
+        public CustomHeadsetEffect(IList<Color> colors)
         {
             if (colors is null)
             {
@@ -91,11 +91,11 @@ namespace Colore.Effects.Headset
 
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="HeadsetCustom" /> struct
+        /// Initializes a new instance of the <see cref="CustomHeadsetEffect" /> struct
         /// with the colors copied from another struct of the same type.
         /// </summary>
         /// <param name="other">The struct to copy data from.</param>
-        public HeadsetCustom(HeadsetCustom other)
+        public CustomHeadsetEffect(CustomHeadsetEffect other)
             : this(other._colors)
         {
         }
@@ -144,37 +144,37 @@ namespace Colore.Effects.Headset
         }
 
         /// <summary>
-        /// Compares an instance of <see cref="HeadsetCustom" /> with
+        /// Compares an instance of <see cref="CustomHeadsetEffect" /> with
         /// another object for equality.
         /// </summary>
-        /// <param name="left">The left operand, an instance of <see cref="HeadsetCustom" />.</param>
+        /// <param name="left">The left operand, an instance of <see cref="CustomHeadsetEffect" />.</param>
         /// <param name="right">The right operand, any type of object.</param>
         /// <returns><c>true</c> if the two objects are equal, otherwise <c>false</c>.</returns>
-        public static bool operator ==(HeadsetCustom left, object right)
+        public static bool operator ==(CustomHeadsetEffect left, object right)
         {
             return left.Equals(right);
         }
 
         /// <summary>
-        /// Compares an instance of <see cref="HeadsetCustom" /> with
+        /// Compares an instance of <see cref="CustomHeadsetEffect" /> with
         /// another object for inequality.
         /// </summary>
-        /// <param name="left">The left operand, an instance of <see cref="HeadsetCustom" />.</param>
+        /// <param name="left">The left operand, an instance of <see cref="CustomHeadsetEffect" />.</param>
         /// <param name="right">The right operand, any type of object.</param>
         /// <returns><c>true</c> if the two objects are not equal, otherwise <c>false</c>.</returns>
-        public static bool operator !=(HeadsetCustom left, object right)
+        public static bool operator !=(CustomHeadsetEffect left, object right)
         {
             return !left.Equals(right);
         }
 
         /// <summary>
-        /// Create a new empty <see cref="HeadsetCustom" /> struct.
+        /// Create a new empty <see cref="CustomHeadsetEffect" /> struct.
         /// </summary>
-        /// <returns>An instance of <see cref="HeadsetCustom" /> filled with the color black.</returns>
+        /// <returns>An instance of <see cref="CustomHeadsetEffect" /> filled with the color black.</returns>
         [PublicAPI]
-        public static HeadsetCustom Create()
+        public static CustomHeadsetEffect Create()
         {
-            return new HeadsetCustom(Color.Black);
+            return new CustomHeadsetEffect(Color.Black);
         }
 
         /// <summary>
@@ -182,9 +182,9 @@ namespace Colore.Effects.Headset
         /// </summary>
         /// <returns>A copy of this struct.</returns>
         [PublicAPI]
-        public HeadsetCustom Clone()
+        public CustomHeadsetEffect Clone()
         {
-            return new HeadsetCustom(this);
+            return new CustomHeadsetEffect(this);
         }
 
         /// <summary>
@@ -210,7 +210,7 @@ namespace Colore.Effects.Headset
         }
 
         /// <summary>
-        /// Clears the colors in this <see cref="HeadsetCustom" /> struct (sets to <see cref="Color.Black" />).
+        /// Clears the colors in this <see cref="CustomHeadsetEffect" /> struct (sets to <see cref="Color.Black" />).
         /// </summary>
         [PublicAPI]
         public void Clear()
@@ -231,7 +231,7 @@ namespace Colore.Effects.Headset
             if (obj is null)
                 return false;
 
-            return obj is HeadsetCustom custom && Equals(custom);
+            return obj is CustomHeadsetEffect custom && Equals(custom);
         }
 
         /// <inheritdoc />
@@ -242,7 +242,7 @@ namespace Colore.Effects.Headset
         /// <returns>
         /// <c>true</c> if the current object is equal to the <paramref name="other"/> parameter; otherwise, <c>false</c>.
         /// </returns>
-        public bool Equals(HeadsetCustom other)
+        public bool Equals(CustomHeadsetEffect other)
         {
             for (var i = 0; i < HeadsetConstants.MaxLeds; i++)
             {

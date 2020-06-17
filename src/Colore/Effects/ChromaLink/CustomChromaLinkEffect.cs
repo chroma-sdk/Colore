@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="KeypadCustom.cs" company="Corale">
+// <copyright file="CustomChromaLinkEffect.cs" company="Corale">
 //     Copyright © 2015-2020 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,14 +23,13 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Effects.Keypad
+namespace Colore.Effects.ChromaLink
 {
     using System;
     using System.Collections.Generic;
     using System.Runtime.InteropServices;
 
     using Colore.Data;
-    using Colore.Helpers;
     using Colore.Serialization;
 
     using JetBrains.Annotations;
@@ -41,167 +40,105 @@ namespace Colore.Effects.Keypad
     /// <summary>
     /// Custom effect.
     /// </summary>
-    [JsonConverter(typeof(KeypadCustomConverter))]
+    [JsonConverter(typeof(ChromaLinkCustomConverter))]
     [StructLayout(LayoutKind.Sequential)]
-    public struct KeypadCustom : IEquatable<KeypadCustom>
+    public struct CustomChromaLinkEffect : IEquatable<CustomChromaLinkEffect>
     {
         /// <summary>
-        /// Color definitions for each key on the keypad.
+        /// Color definitions for each element in Chroma Link.
         /// </summary>
         /// <remarks>
-        /// The array is 1-dimensional, but will be passed to code expecting
-        /// a 2-dimensional array. Access to this array is done using indices
-        /// according to: <c>column + row * KeypadConstants.MaxColumns</c>.
+        /// The array is 1-dimensional
+        /// according to: <see cref="ChromaLinkConstants.MaxLeds" />.
         /// </remarks>
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = KeypadConstants.MaxKeys)]
+        [MarshalAs(UnmanagedType.ByValArray, SizeConst = ChromaLinkConstants.MaxLeds)]
         private readonly Color[] _colors;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="KeypadCustom" /> struct.
+        /// Initializes a new instance of the <see cref="CustomChromaLinkEffect" /> struct.
         /// </summary>
         /// <param name="colors">The colors to use.</param>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="colors" /> is <c>null</c>.</exception>
         /// <exception cref="ArgumentException">Thrown if the colors array supplied is of an incorrect size.</exception>
-        public KeypadCustom(Color[][] colors)
+        public CustomChromaLinkEffect(Color[] colors)
         {
             if (colors is null)
             {
                 throw new ArgumentNullException(nameof(colors));
             }
 
-            var rows = colors.GetLength(0);
-
-            if (rows != KeypadConstants.MaxRows)
+            if (colors.Length != ChromaLinkConstants.MaxLeds)
             {
                 throw new ArgumentException(
-                    $"Colors array has incorrect number of rows, should be {KeypadConstants.MaxRows}, received {rows}.",
+                    $"Colors array has incorrect number of elements, should be {ChromaLinkConstants.MaxLeds}, actual is {colors.Length}.",
                     nameof(colors));
             }
 
-            _colors = new Color[KeypadConstants.MaxKeys];
+            _colors = new Color[ChromaLinkConstants.MaxLeds];
 
-            for (var row = 0; row < KeypadConstants.MaxRows; row++)
+            for (var index = 0; index < ChromaLinkConstants.MaxLeds; index++)
             {
-                if (colors[row].Length != KeypadConstants.MaxColumns)
-                {
-                    throw new ArgumentException(
-                        $"Colors array has incorrect number of columns, should be {KeypadConstants.MaxColumns}, received {colors[row].Length} for row {row}.",
-                        nameof(colors));
-                }
-
-                for (var column = 0; column < KeypadConstants.MaxColumns; column++)
-                    this[row, column] = colors[row][column];
+                this[index] = colors[index];
             }
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="KeypadCustom" /> struct.
+        /// Initializes a new instance of the <see cref="CustomChromaLinkEffect" /> struct.
         /// </summary>
         /// <param name="colors">The colors to use.</param>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="colors" /> is <c>null</c>.</exception>
         /// <exception cref="ArgumentException">Thrown if the colors array supplied is of an invalid size.</exception>
-        public KeypadCustom(IList<Color> colors)
+        public CustomChromaLinkEffect(IList<Color> colors)
         {
             if (colors is null)
             {
                 throw new ArgumentNullException(nameof(colors));
             }
 
-            if (colors.Count != KeypadConstants.MaxKeys)
+            if (colors.Count != ChromaLinkConstants.MaxLeds)
             {
                 throw new ArgumentException(
-                    $"Colors array has incorrect size, should be {KeypadConstants.MaxKeys}, actual is {colors.Count}.",
+                    $"Colors array has incorrect size, should be {ChromaLinkConstants.MaxLeds}, actual is {colors.Count}.",
                     nameof(colors));
             }
 
-            _colors = new Color[KeypadConstants.MaxKeys];
+            _colors = new Color[ChromaLinkConstants.MaxLeds];
 
-            for (var index = 0; index < KeypadConstants.MaxKeys; index++)
+            for (var index = 0; index < ChromaLinkConstants.MaxLeds; index++)
                 this[index] = colors[index];
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="KeypadCustom" /> struct
+        /// Initializes a new instance of the <see cref="CustomChromaLinkEffect" /> struct
         /// with every position set to a specific color.
         /// </summary>
         /// <param name="color">The <see cref="Color" /> to set each position to.</param>
-        public KeypadCustom(Color color)
+        public CustomChromaLinkEffect(Color color)
         {
-            _colors = new Color[KeypadConstants.MaxKeys];
+            _colors = new Color[ChromaLinkConstants.MaxLeds];
 
-            for (var index = 0; index < KeypadConstants.MaxKeys; index++)
+            for (var index = 0; index < ChromaLinkConstants.MaxLeds; index++)
                 this[index] = color;
         }
 
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="KeypadCustom" /> struct
+        /// Initializes a new instance of the <see cref="CustomChromaLinkEffect" /> struct
         /// with color values copied from another struct of the same type.
         /// </summary>
         /// <param name="other">The struct to copy data from.</param>
-        public KeypadCustom(KeypadCustom other)
+        public CustomChromaLinkEffect(CustomChromaLinkEffect other)
             : this(other._colors)
         {
         }
 
         /// <summary>
-        /// Gets or sets cells in the custom grid.
+        /// Gets the backing array for the <see cref="Color" /> data.
         /// </summary>
-        /// <param name="row">Row to access, zero indexed.</param>
-        /// <param name="column">Column to access, zero indexed.</param>
-        /// <returns>The <see cref="Color" /> at the specified position.</returns>
-        [PublicAPI]
-        public Color this[int row, int column]
-        {
-            get
-            {
-                if (row < 0 || row >= KeypadConstants.MaxRows)
-                {
-                    throw new ArgumentOutOfRangeException(
-                        nameof(row),
-                        row,
-                        "Attempted to access a row that does not exist.");
-                }
-
-                if (column < 0 || column >= KeypadConstants.MaxColumns)
-                {
-                    throw new ArgumentOutOfRangeException(
-                        nameof(column),
-                        column,
-                        "Attempted to access a column that does not exist.");
-                }
-
-#pragma warning disable SA1407 // Arithmetic expressions must declare precedence
-                return _colors[column + row * KeypadConstants.MaxColumns];
-#pragma warning restore SA1407 // Arithmetic expressions must declare precedence
-            }
-
-            set
-            {
-                if (row < 0 || row >= KeypadConstants.MaxRows)
-                {
-                    throw new ArgumentOutOfRangeException(
-                        nameof(row),
-                        row,
-                        "Attempted to access a row that does not exist.");
-                }
-
-                if (column < 0 || column >= KeypadConstants.MaxColumns)
-                {
-                    throw new ArgumentOutOfRangeException(
-                        nameof(column),
-                        column,
-                        "Attempted to access a column that does not exist.");
-                }
-
-#pragma warning disable SA1407 // Arithmetic expressions must declare precedence
-                _colors[column + row * KeypadConstants.MaxColumns] = value;
-#pragma warning restore SA1407 // Arithmetic expressions must declare precedence
-            }
-        }
+        internal Color[] Colors => _colors;
 
         /// <summary>
-        /// Gets or sets a position in the custom grid.
+        /// Gets or sets a position in the custom array.
         /// </summary>
         /// <param name="index">The index to access, zero indexed.</param>
         /// <returns>The <see cref="Color" /> at the specified position.</returns>
@@ -210,7 +147,7 @@ namespace Colore.Effects.Keypad
         {
             get
             {
-                if (index < 0 || index >= KeypadConstants.MaxKeys)
+                if (index < 0 || index >= ChromaLinkConstants.MaxLeds)
                 {
                     throw new ArgumentOutOfRangeException(
                         nameof(index),
@@ -223,7 +160,7 @@ namespace Colore.Effects.Keypad
 
             set
             {
-                if (index < 0 || index >= KeypadConstants.MaxKeys)
+                if (index < 0 || index >= ChromaLinkConstants.MaxLeds)
                 {
                     throw new ArgumentOutOfRangeException(
                         nameof(index),
@@ -236,38 +173,38 @@ namespace Colore.Effects.Keypad
         }
 
         /// <summary>
-        /// Compares an instance of <see cref="KeypadCustom" /> with
+        /// Compares an instance of <see cref="CustomChromaLinkEffect" /> with
         /// another object for equality.
         /// </summary>
-        /// <param name="left">The left operand, an instance of <see cref="KeypadCustom" />.</param>
+        /// <param name="left">The left operand, an instance of <see cref="CustomChromaLinkEffect" />.</param>
         /// <param name="right">The right operand, any type of object.</param>
         /// <returns><c>true</c> if the two objects are equal, otherwise <c>false</c>.</returns>
-        public static bool operator ==(KeypadCustom left, object right)
+        public static bool operator ==(CustomChromaLinkEffect left, object right)
         {
             return left.Equals(right);
         }
 
         /// <summary>
-        /// Compares an instance of <see cref="KeypadCustom" /> with
+        /// Compares an instance of <see cref="CustomChromaLinkEffect" /> with
         /// another object for inequality.
         /// </summary>
-        /// <param name="left">The left operand, an instance of <see cref="KeypadCustom" />.</param>
+        /// <param name="left">The left operand, an instance of <see cref="CustomChromaLinkEffect" />.</param>
         /// <param name="right">The right operand, any type of object.</param>
         /// <returns><c>true</c> if the two objects are not equal, otherwise <c>false</c>.</returns>
-        public static bool operator !=(KeypadCustom left, object right)
+        public static bool operator !=(CustomChromaLinkEffect left, object right)
         {
             return !left.Equals(right);
         }
 
         /// <summary>
-        /// Creates a new empty <see cref="KeypadCustom" /> struct.
+        /// Creates a new empty <see cref="CustomChromaLinkEffect" /> struct.
         /// </summary>
-        /// <returns>An instance of <see cref="KeypadCustom" />
+        /// <returns>An instance of <see cref="CustomChromaLinkEffect" />
         /// filled with the color black.</returns>
         [PublicAPI]
-        public static KeypadCustom Create()
+        public static CustomChromaLinkEffect Create()
         {
-            return new KeypadCustom(Color.Black);
+            return new CustomChromaLinkEffect(Color.Black);
         }
 
         /// <summary>
@@ -275,9 +212,9 @@ namespace Colore.Effects.Keypad
         /// </summary>
         /// <returns>A copy of this struct.</returns>
         [PublicAPI]
-        public KeypadCustom Clone()
+        public CustomChromaLinkEffect Clone()
         {
-            return new KeypadCustom(this);
+            return new CustomChromaLinkEffect(this);
         }
 
         /// <summary>
@@ -297,12 +234,12 @@ namespace Colore.Effects.Keypad
         /// <param name="color">The <see cref="Color" /> to set.</param>
         public void Set(Color color)
         {
-            for (var index = 0; index < KeypadConstants.MaxKeys; index++)
+            for (var index = 0; index < ChromaLinkConstants.MaxLeds; index++)
                 this[index] = color;
         }
 
         /// <summary>
-        /// Clears the colors from the grid, setting them to <see cref="Color.Black" />.
+        /// Clears the colors from the array, setting them to <see cref="Color.Black" />.
         /// </summary>
         [PublicAPI]
         public void Clear()
@@ -320,7 +257,10 @@ namespace Colore.Effects.Keypad
         /// <param name="obj">Another object to compare to. </param>
         public override bool Equals(object obj)
         {
-            return !(obj is null) && obj is KeypadCustom custom && Equals(custom);
+            if (obj is null)
+                return false;
+
+            return obj is CustomChromaLinkEffect custom && Equals(custom);
         }
 
         /// <inheritdoc />
@@ -331,36 +271,16 @@ namespace Colore.Effects.Keypad
         /// <c>true</c> if the current object is equal to the <paramref name="other" /> parameter;
         /// otherwise, <c>false</c>.
         /// </returns>
-        /// <param name="other">A <see cref="KeypadCustom" /> to compare with this object.</param>
-        public bool Equals(KeypadCustom other)
+        /// <param name="other">A <see cref="CustomChromaLinkEffect" /> to compare with this object.</param>
+        public bool Equals(CustomChromaLinkEffect other)
         {
-            for (var row = 0; row < KeypadConstants.MaxRows; row++)
+            for (var index = 0; index < ChromaLinkConstants.MaxLeds; index++)
             {
-                for (var col = 0; col < KeypadConstants.MaxColumns; col++)
-                {
-                    if (this[row, col] != other[row, col])
-                        return false;
-                }
+                if (this[index] != other[index])
+                    return false;
             }
 
             return true;
         }
-
-        /// <summary>
-        /// Retrieves the internal backing array as a multi-dimensional <see cref="Color" /> array.
-        /// </summary>
-        /// <returns>
-        /// An instance of <c><see cref="Color" />[<see cref="KeypadConstants.MaxRows" />, <see cref="KeypadConstants.MaxColumns" />]</c>.
-        /// </returns>
-#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
-
-        internal Color[,] ToMultiArray()
-        {
-            var destination = new Color[KeypadConstants.MaxRows, KeypadConstants.MaxColumns];
-            _colors.CopyToMultidimensional(destination);
-            return destination;
-        }
-
-#pragma warning restore CA1814 // Prefer jagged arrays over multidimensional
     }
 }

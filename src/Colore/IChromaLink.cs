@@ -51,10 +51,10 @@ namespace Colore
         /// <summary>
         /// Sets an effect without any parameters.
         /// </summary>
-        /// <param name="effect">Effect options.</param>
+        /// <param name="effectType">Effect options.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetEffectAsync(ChromaLinkEffect effect);
+        Task<Guid> SetEffectAsync(ChromaLinkEffectType effectType);
 
         /// <summary>
         /// Returns whether an element has had a custom color set.
@@ -65,23 +65,23 @@ namespace Colore
         bool IsSet(int index);
 
         /// <summary>
-        /// Sets a <see cref="ChromaLinkCustom" /> effect on the Chroma Link.
+        /// Sets a <see cref="CustomChromaLinkEffect" /> effect on the Chroma Link.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="ChromaLinkCustom" /> struct.</param>
+        /// <param name="effect">An instance of the <see cref="CustomChromaLinkEffect" /> struct.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetCustomAsync(ChromaLinkCustom effect);
+        Task<Guid> SetCustomAsync(CustomChromaLinkEffect effect);
 
         /// <summary>
-        /// Sets a <see cref="ChromaLinkStatic" /> effect on the Chroma Link.
+        /// Sets a <see cref="StaticChromaLinkEffect" /> effect on the Chroma Link.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="ChromaLinkStatic" /> struct.</param>
+        /// <param name="effect">An instance of the <see cref="StaticChromaLinkEffect" /> struct.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetStaticAsync(ChromaLinkStatic effect);
+        Task<Guid> SetStaticAsync(StaticChromaLinkEffect effect);
 
         /// <summary>
-        /// Sets a <see cref="ChromaLinkStatic" /> effect on the Chroma Link.
+        /// Sets a <see cref="StaticChromaLinkEffect" /> effect on the Chroma Link.
         /// </summary>
         /// <param name="color">Color of the effect.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>

@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="ChromaLinkStatic.cs" company="Corale">
+// <copyright file="StaticHeadsetEffect.cs" company="Corale">
 //     Copyright © 2015-2020 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -24,7 +24,7 @@
 // ---------------------------------------------------------------------------------------
 #pragma warning disable CA1051 // Do not declare visible instance fields
 
-namespace Colore.Effects.ChromaLink
+namespace Colore.Effects.Headset
 {
     using System;
     using System.Runtime.InteropServices;
@@ -40,43 +40,45 @@ namespace Colore.Effects.ChromaLink
     /// <summary>
     /// Static color effect.
     /// </summary>
-    [JsonConverter(typeof(ChromaLinkStaticConverter))]
+    [JsonConverter(typeof(HeadsetStaticConverter))]
     [StructLayout(LayoutKind.Sequential)]
-    public struct ChromaLinkStatic : IEquatable<ChromaLinkStatic>
+#pragma warning disable CA1716 // Identifiers should not match keywords
+    public struct StaticHeadsetEffect : IEquatable<StaticHeadsetEffect>
+#pragma warning restore CA1716 // Identifiers should not match keywords
     {
         /// <summary>
-        /// Color to use.
+        /// The <see cref="Color" /> of the effect.
         /// </summary>
-        [UsedImplicitly]
+        [PublicAPI]
         public readonly Color Color;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ChromaLinkStatic" /> struct.
+        /// Initializes a new instance of the <see cref="StaticHeadsetEffect" /> struct.
         /// </summary>
-        /// <param name="color">Color to set.</param>
-        public ChromaLinkStatic(Color color)
+        /// <param name="color">The <see cref="Color" /> to set.</param>
+        public StaticHeadsetEffect(Color color)
         {
             Color = color;
         }
 
         /// <summary>
-        /// Checks an instance of <see cref="ChromaLinkStatic" /> for equality with another <see cref="ChromaLinkStatic" /> instance.
+        /// Checks an instance of <see cref="StaticHeadsetEffect" /> for equality with another <see cref="StaticHeadsetEffect" /> instance.
         /// </summary>
         /// <param name="left">Left operand.</param>
         /// <param name="right">Right operand.</param>
         /// <returns><c>true</c> if the two instances are equal, otherwise <c>false</c>.</returns>
-        public static bool operator ==(ChromaLinkStatic left, ChromaLinkStatic right)
+        public static bool operator ==(StaticHeadsetEffect left, StaticHeadsetEffect right)
         {
             return left.Equals(right);
         }
 
         /// <summary>
-        /// Checks an instance of <see cref="ChromaLinkStatic" /> for inequality with another <see cref="ChromaLinkStatic" /> instance.
+        /// Checks an instance of <see cref="StaticHeadsetEffect" /> for inequality with another <see cref="StaticHeadsetEffect" /> instance.
         /// </summary>
         /// <param name="left">Left operand.</param>
         /// <param name="right">Right operand.</param>
         /// <returns><c>true</c> if the two instances are not equal, otherwise <c>false</c>.</returns>
-        public static bool operator !=(ChromaLinkStatic left, ChromaLinkStatic right)
+        public static bool operator !=(StaticHeadsetEffect left, StaticHeadsetEffect right)
         {
             return !(left == right);
         }
@@ -89,7 +91,7 @@ namespace Colore.Effects.ChromaLink
         /// <returns>
         /// <c>true</c> if the current object is equal to the <paramref name="other" /> parameter; otherwise, <c>false</c>.
         /// </returns>
-        public bool Equals(ChromaLinkStatic other)
+        public bool Equals(StaticHeadsetEffect other)
         {
             return Color.Equals(other.Color);
         }
@@ -104,7 +106,10 @@ namespace Colore.Effects.ChromaLink
         /// </returns>
         public override bool Equals(object obj)
         {
-            return !(obj is null) && obj is ChromaLinkStatic effect && Equals(effect);
+            if (obj is null)
+                return false;
+
+            return obj is StaticHeadsetEffect effect && Equals(effect);
         }
 
         /// <inheritdoc />

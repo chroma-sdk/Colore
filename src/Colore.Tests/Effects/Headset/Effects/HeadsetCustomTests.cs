@@ -39,7 +39,7 @@ namespace Colore.Tests.Effects.Headset.Effects
         [Test]
         public void ShouldThrowWhenOutOfRangeGet()
         {
-            var custom = HeadsetCustom.Create();
+            var custom = CustomHeadsetEffect.Create();
 
             // ReSharper disable once NotAccessedVariable
             Color dummy;
@@ -64,7 +64,7 @@ namespace Colore.Tests.Effects.Headset.Effects
         [Test]
         public void ShouldThrowWhenOutOfRangeSet()
         {
-            var custom = HeadsetCustom.Create();
+            var custom = CustomHeadsetEffect.Create();
 
             Assert.That(
                 () => custom[-1] = Color.Red,
@@ -86,7 +86,7 @@ namespace Colore.Tests.Effects.Headset.Effects
         [Test]
         public void ShouldSetAllColorsWithColorConstructor()
         {
-            var effect = new HeadsetCustom(Color.Red);
+            var effect = new CustomHeadsetEffect(Color.Red);
 
             for (var i = 0; i < HeadsetConstants.MaxLeds; i++)
                 Assert.That(effect[i], Is.EqualTo(Color.Red));
@@ -95,7 +95,7 @@ namespace Colore.Tests.Effects.Headset.Effects
         [Test]
         public void ShouldSetBlackColorsWithCreate()
         {
-            var effect = HeadsetCustom.Create();
+            var effect = CustomHeadsetEffect.Create();
 
             for (var i = 0; i < HeadsetConstants.MaxLeds; i++)
                 Assert.That(effect[i], Is.EqualTo(Color.Black));
@@ -107,10 +107,10 @@ namespace Colore.Tests.Effects.Headset.Effects
             var colors = new Color[1];
 
             // ReSharper disable once NotAccessedVariable
-            HeadsetCustom dummy;
+            CustomHeadsetEffect dummy;
 
             Assert.That(
-                () => dummy = new HeadsetCustom(colors),
+                () => dummy = new CustomHeadsetEffect(colors),
                 Throws.InstanceOf<ArgumentException>().With.Property("ParamName").EqualTo("colors"));
         }
 
@@ -122,7 +122,7 @@ namespace Colore.Tests.Effects.Headset.Effects
             colors[1] = Color.Blue;
             colors[2] = Color.Green;
 
-            var effect = new HeadsetCustom(colors);
+            var effect = new CustomHeadsetEffect(colors);
 
             for (var i = 0; i < HeadsetConstants.MaxLeds; i++)
                 Assert.That(effect[i], Is.EqualTo(colors[i]));
@@ -131,7 +131,7 @@ namespace Colore.Tests.Effects.Headset.Effects
         [Test]
         public void ShouldSetAllColorsWithSet()
         {
-            var effect = HeadsetCustom.Create();
+            var effect = CustomHeadsetEffect.Create();
 
             effect.Set(Color.Red);
 
@@ -142,7 +142,7 @@ namespace Colore.Tests.Effects.Headset.Effects
         [Test]
         public void ShouldResetToBlackWithClear()
         {
-            var effect = HeadsetCustom.Create();
+            var effect = CustomHeadsetEffect.Create();
             effect.Set(Color.Red);
             effect.Clear();
 
@@ -156,7 +156,7 @@ namespace Colore.Tests.Effects.Headset.Effects
             var colors = new Color[HeadsetConstants.MaxLeds];
             colors[3] = Color.Red;
 
-            var effect = new HeadsetCustom(colors);
+            var effect = new CustomHeadsetEffect(colors);
 
             Assert.That(effect[3], Is.EqualTo(colors[3]));
         }
@@ -164,7 +164,7 @@ namespace Colore.Tests.Effects.Headset.Effects
         [Test]
         public void ShouldSetCorrectColor()
         {
-            var effect = HeadsetCustom.Create();
+            var effect = CustomHeadsetEffect.Create();
             effect[3] = Color.Blue;
 
             Assert.That(effect[3], Is.EqualTo(Color.Blue));
@@ -173,8 +173,8 @@ namespace Colore.Tests.Effects.Headset.Effects
         [Test]
         public void ShouldEqualIdenticalEffect()
         {
-            var a = new HeadsetCustom(Color.Red);
-            var b = new HeadsetCustom(Color.Red);
+            var a = new CustomHeadsetEffect(Color.Red);
+            var b = new CustomHeadsetEffect(Color.Red);
 
             Assert.True(a == b);
             Assert.False(a != b);
@@ -185,8 +185,8 @@ namespace Colore.Tests.Effects.Headset.Effects
         [Test]
         public void ShouldNotEqualDifferentEffect()
         {
-            var a = new HeadsetCustom(Color.Red);
-            var b = new HeadsetCustom(Color.Blue);
+            var a = new CustomHeadsetEffect(Color.Red);
+            var b = new CustomHeadsetEffect(Color.Blue);
 
             Assert.False(a == b);
             Assert.True(a != b);
@@ -197,7 +197,7 @@ namespace Colore.Tests.Effects.Headset.Effects
         [Test]
         public void ShouldNotEqualDifferentArray()
         {
-            var effect = new HeadsetCustom(Color.Red);
+            var effect = new CustomHeadsetEffect(Color.Red);
             var array = new Color[HeadsetConstants.MaxLeds];
 
             for (var i = 0; i < HeadsetConstants.MaxLeds; i++)
@@ -212,7 +212,7 @@ namespace Colore.Tests.Effects.Headset.Effects
         [Test]
         public void ShouldNotEqualArrayWithInvalidLength()
         {
-            var effect = new HeadsetCustom(Color.Red);
+            var effect = new CustomHeadsetEffect(Color.Red);
             var array = new[] { Color.Red, Color.Red, Color.Red };
 
             Assert.False(effect == array);
@@ -224,7 +224,7 @@ namespace Colore.Tests.Effects.Headset.Effects
         [Test]
         public void ShouldNotEqualArbitraryObject()
         {
-            var effect = HeadsetCustom.Create();
+            var effect = CustomHeadsetEffect.Create();
             var obj = new object();
 
             Assert.False(effect == obj);
@@ -236,7 +236,7 @@ namespace Colore.Tests.Effects.Headset.Effects
         [Test]
         public void ShouldNotEqualNull()
         {
-            var effect = default(HeadsetCustom);
+            var effect = default(CustomHeadsetEffect);
 
             Assert.False(effect == null);
             Assert.True(effect != null);
@@ -247,7 +247,7 @@ namespace Colore.Tests.Effects.Headset.Effects
         [Test]
         public void ClonedStructShouldBeIdentical()
         {
-            var original = new HeadsetCustom(Color.Red);
+            var original = new CustomHeadsetEffect(Color.Red);
             var clone = original.Clone();
 
             Assert.That(clone, Is.EqualTo(original));
@@ -256,7 +256,7 @@ namespace Colore.Tests.Effects.Headset.Effects
         [Test]
         public void ClonedStructShouldBeIndependent()
         {
-            var original = new HeadsetCustom(Color.Red);
+            var original = new CustomHeadsetEffect(Color.Red);
             var clone = original.Clone();
 
             clone.Set(Color.Blue);
@@ -267,7 +267,7 @@ namespace Colore.Tests.Effects.Headset.Effects
         [Test]
         public void ShouldHaveZeroHashCodeOnDefaultInstance()
         {
-            var effect = new HeadsetCustom();
+            var effect = new CustomHeadsetEffect();
             Assert.Zero(effect.GetHashCode());
         }
 
@@ -276,7 +276,7 @@ namespace Colore.Tests.Effects.Headset.Effects
         {
             var colors = new Color[HeadsetConstants.MaxLeds];
             colors[0] = Color.Red;
-            var effect = new HeadsetCustom(colors.ToList());
+            var effect = new CustomHeadsetEffect(colors.ToList());
             Assert.AreEqual(colors, effect.Colors);
         }
     }

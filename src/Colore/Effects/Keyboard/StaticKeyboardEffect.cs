@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="KeyboardStatic.cs" company="Corale">
+// <copyright file="StaticKeyboardEffect.cs" company="Corale">
 //     Copyright © 2015-2020 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -42,7 +42,7 @@ namespace Colore.Effects.Keyboard
     /// </summary>
     [JsonConverter(typeof(KeyboardStaticConverter))]
     [StructLayout(LayoutKind.Sequential)]
-    public struct KeyboardStatic : IEquatable<KeyboardStatic>
+    public struct StaticKeyboardEffect : IEquatable<StaticKeyboardEffect>
     {
         /// <summary>
         /// Color of the effect.
@@ -51,32 +51,32 @@ namespace Colore.Effects.Keyboard
         public readonly Color Color;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="KeyboardStatic" /> struct.
+        /// Initializes a new instance of the <see cref="StaticKeyboardEffect" /> struct.
         /// </summary>
         /// <param name="color">Color to apply.</param>
-        public KeyboardStatic(Color color)
+        public StaticKeyboardEffect(Color color)
         {
             Color = color;
         }
 
         /// <summary>
-        /// Checks an instance of <see cref="KeyboardStatic" /> for equality with another <see cref="KeyboardStatic" /> instance.
+        /// Checks an instance of <see cref="StaticKeyboardEffect" /> for equality with another <see cref="StaticKeyboardEffect" /> instance.
         /// </summary>
         /// <param name="left">Left operand.</param>
         /// <param name="right">Right operand.</param>
         /// <returns><c>true</c> if the two instances are equal, otherwise <c>false</c>.</returns>
-        public static bool operator ==(KeyboardStatic left, KeyboardStatic right)
+        public static bool operator ==(StaticKeyboardEffect left, StaticKeyboardEffect right)
         {
             return left.Equals(right);
         }
 
         /// <summary>
-        /// Checks an instance of <see cref="KeyboardStatic" /> for inequality with another <see cref="KeyboardStatic" /> instance.
+        /// Checks an instance of <see cref="StaticKeyboardEffect" /> for inequality with another <see cref="StaticKeyboardEffect" /> instance.
         /// </summary>
         /// <param name="left">Left operand.</param>
         /// <param name="right">Right operand.</param>
         /// <returns><c>true</c> if the two instances are not equal, otherwise <c>false</c>.</returns>
-        public static bool operator !=(KeyboardStatic left, KeyboardStatic right)
+        public static bool operator !=(StaticKeyboardEffect left, StaticKeyboardEffect right)
         {
             return !(left == right);
         }
@@ -89,7 +89,7 @@ namespace Colore.Effects.Keyboard
         /// <returns>
         /// <c>true</c> if the current object is equal to the <paramref name="other" /> parameter; otherwise, <c>false</c>.
         /// </returns>
-        public bool Equals(KeyboardStatic other)
+        public bool Equals(StaticKeyboardEffect other)
         {
             return Color.Equals(other.Color);
         }
@@ -106,7 +106,7 @@ namespace Colore.Effects.Keyboard
         {
             if (ReferenceEquals(null, obj))
                 return false;
-            return obj is KeyboardStatic effect && Equals(effect);
+            return obj is StaticKeyboardEffect effect && Equals(effect);
         }
 
         /// <inheritdoc />

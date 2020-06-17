@@ -38,7 +38,7 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ShouldThrowWhenOutOfRange2DGet()
         {
-            var grid = KeyboardCustom.Create();
+            var grid = CustomKeyboardEffect.Create();
 
             // ReSharper disable once NotAccessedVariable
             Color dummy;
@@ -79,7 +79,7 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ShouldThrowWhenOutOfRange2DSet()
         {
-            var grid = KeyboardCustom.Create();
+            var grid = CustomKeyboardEffect.Create();
 
             Assert.That(
                 () => grid[-1, 0] = Color.Red,
@@ -117,7 +117,7 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ShouldThrowWhenOutOfRange1DGet()
         {
-            var grid = KeyboardCustom.Create();
+            var grid = CustomKeyboardEffect.Create();
 
             // ReSharper disable once NotAccessedVariable
             Color dummy;
@@ -142,7 +142,7 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ShouldThrowWhenOutOfRange1DSet()
         {
-            var grid = KeyboardCustom.Create();
+            var grid = CustomKeyboardEffect.Create();
 
             Assert.That(
                 () => grid[-1] = Color.Red,
@@ -164,7 +164,7 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ShouldSetToBlackWithCreate()
         {
-            var grid = KeyboardCustom.Create();
+            var grid = CustomKeyboardEffect.Create();
 
             for (var row = 0; row < KeyboardConstants.MaxRows; row++)
             {
@@ -176,7 +176,7 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ShouldSetAllColorsWithColorCtor()
         {
-            var grid = new KeyboardCustom(Color.Red);
+            var grid = new CustomKeyboardEffect(Color.Red);
 
             for (var row = 0; row < KeyboardConstants.MaxRows; row++)
             {
@@ -188,7 +188,7 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ShouldSetNewColors()
         {
-            var grid = KeyboardCustom.Create();
+            var grid = CustomKeyboardEffect.Create();
 
             grid[0, 5] = Color.Red;
 
@@ -198,17 +198,17 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ShouldClearToBlack()
         {
-            var grid = new KeyboardCustom(Color.Pink);
+            var grid = new CustomKeyboardEffect(Color.Pink);
             grid.Clear();
 
-            Assert.That(grid, Is.EqualTo(KeyboardCustom.Create()));
+            Assert.That(grid, Is.EqualTo(CustomKeyboardEffect.Create()));
         }
 
         [Test]
         public void ShouldEqualIdenticalGrid()
         {
-            var a = new KeyboardCustom(Color.Red);
-            var b = new KeyboardCustom(Color.Red);
+            var a = new CustomKeyboardEffect(Color.Red);
+            var b = new CustomKeyboardEffect(Color.Red);
 
             Assert.True(a == b);
             Assert.False(a != b);
@@ -219,8 +219,8 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ShouldNotEqualDifferentGrid()
         {
-            var a = new KeyboardCustom(Color.Red);
-            var b = new KeyboardCustom(Color.Pink);
+            var a = new CustomKeyboardEffect(Color.Red);
+            var b = new CustomKeyboardEffect(Color.Pink);
 
             Assert.False(a == b);
             Assert.True(a != b);
@@ -231,7 +231,7 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ShouldNotEqualDifferent2DArray()
         {
-            var grid = new KeyboardCustom(Color.Pink);
+            var grid = new CustomKeyboardEffect(Color.Pink);
             var arr = new Color[KeyboardConstants.MaxRows][];
 
             // Populate the 2D array
@@ -251,7 +251,7 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ShouldNotEqual2DArrayWithInvalidRowCount()
         {
-            var grid = KeyboardCustom.Create();
+            var grid = CustomKeyboardEffect.Create();
             var arr = new Color[2][];
 
             Assert.False(grid == arr);
@@ -263,7 +263,7 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ShouldNotEqual2DArrayWithInvalidColumnCount()
         {
-            var grid = KeyboardCustom.Create();
+            var grid = CustomKeyboardEffect.Create();
             var arr = new Color[KeyboardConstants.MaxRows][];
             arr[0] = new Color[2];
 
@@ -276,7 +276,7 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ShouldNotEqualArbitraryObject()
         {
-            var grid = KeyboardCustom.Create();
+            var grid = CustomKeyboardEffect.Create();
             var obj = new object();
 
             Assert.False(grid == obj);
@@ -288,7 +288,7 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ShouldNotEqualNull()
         {
-            var grid = KeyboardCustom.Create();
+            var grid = CustomKeyboardEffect.Create();
 
             Assert.False(grid == null);
             Assert.True(grid != null);
@@ -298,21 +298,21 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ShouldGetWithGridIndexer()
         {
-            var grid = new KeyboardCustom(Color.Red);
+            var grid = new CustomKeyboardEffect(Color.Red);
             Assert.AreEqual(Color.Red, grid[3, 3]);
         }
 
         [Test]
         public void ShouldGetWithIndexIndexer()
         {
-            var grid = new KeyboardCustom(Color.Red);
+            var grid = new CustomKeyboardEffect(Color.Red);
             Assert.AreEqual(Color.Red, grid[3]);
         }
 
         [Test]
         public void ShouldGetWithKeyIndexer()
         {
-            var grid = KeyboardCustom.Create();
+            var grid = CustomKeyboardEffect.Create();
             grid[Key.Escape] = Color.Red;
             Assert.AreEqual(Color.Red, grid[Key.Escape]);
         }
@@ -320,7 +320,7 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ShouldSetWithGridIndexer()
         {
-            var grid = KeyboardCustom.Create();
+            var grid = CustomKeyboardEffect.Create();
 
             grid[5, 5] = Color.Red;
 
@@ -330,7 +330,7 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ShouldSetWithIndexIndexer()
         {
-            var grid = KeyboardCustom.Create();
+            var grid = CustomKeyboardEffect.Create();
 
             grid[5] = Color.Red;
 
@@ -340,7 +340,7 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ShouldSetWithKeyIndexer()
         {
-            var grid = KeyboardCustom.Create();
+            var grid = CustomKeyboardEffect.Create();
 
             grid[Key.Escape] = Color.Red;
 
@@ -350,7 +350,7 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ClonedStructShouldBeIdentical()
         {
-            var original = new KeyboardCustom(Color.Red)
+            var original = new CustomKeyboardEffect(Color.Red)
             {
                 [Key.A] = Color.Green,
                 [Key.Escape] = Color.Orange,
@@ -364,7 +364,7 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ClonedStructShouldBeIndependent()
         {
-            var original = new KeyboardCustom(Color.Red);
+            var original = new CustomKeyboardEffect(Color.Red);
             var clone = original.Clone();
 
             clone.Set(Color.Blue);
@@ -375,14 +375,14 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ShouldHaveZeroHashCodeOnDefaultInstance()
         {
-            var effect = new KeyboardCustom();
+            var effect = new CustomKeyboardEffect();
             Assert.Zero(effect.GetHashCode());
         }
 
         [Test]
         public void ShouldConstructProperMultiArray()
         {
-            var effect = KeyboardCustom.Create();
+            var effect = CustomKeyboardEffect.Create();
             effect[3, 12] = Color.Red;
             effect[Key.Space] = Color.Green;
             var (colors, keys) = effect.ToMultiArrays();

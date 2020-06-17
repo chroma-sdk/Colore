@@ -58,23 +58,23 @@ namespace Colore
         bool IsSet(int row, int column);
 
         /// <summary>
-        /// Sets a <see cref="KeypadCustom" /> effect on the keypad.
+        /// Sets a <see cref="CustomKeypadEffect" /> effect on the keypad.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="KeypadCustom" /> struct.</param>
+        /// <param name="effect">An instance of the <see cref="CustomKeypadEffect" /> struct.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetCustomAsync(KeypadCustom effect);
+        Task<Guid> SetCustomAsync(CustomKeypadEffect effect);
 
         /// <summary>
-        /// Sets a <see cref="KeypadStatic" /> effect on the keypad.
+        /// Sets a <see cref="StaticKeypadEffect" /> effect on the keypad.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="KeypadStatic" /> struct.</param>
+        /// <param name="effect">An instance of the <see cref="StaticKeypadEffect" /> struct.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetStaticAsync(KeypadStatic effect);
+        Task<Guid> SetStaticAsync(StaticKeypadEffect effect);
 
         /// <summary>
-        /// Sets a <see cref="KeypadStatic" /> effect on the keypad.
+        /// Sets a <see cref="StaticKeypadEffect" /> effect on the keypad.
         /// </summary>
         /// <param name="color">Color of the effect.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
@@ -83,11 +83,11 @@ namespace Colore
 
         /// <summary>
         /// Sets an effect without any parameters.
-        /// Currently, this only works for the <see cref="KeypadEffect.None" /> effect.
+        /// Currently, this only works for the <see cref="KeypadEffectType.None" /> effect.
         /// </summary>
-        /// <param name="effect">Effect options.</param>
+        /// <param name="effectType">Effect options.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetEffectAsync(KeypadEffect effect);
+        Task<Guid> SetEffectAsync(KeypadEffectType effectType);
     }
 }

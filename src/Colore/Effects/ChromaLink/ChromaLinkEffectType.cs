@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="MouseEffect.cs" company="Corale">
+// <copyright file="ChromaLinkEffectType.cs" company="Corale">
 //     Copyright © 2015-2020 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,7 +23,7 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Effects.Mouse
+namespace Colore.Effects.ChromaLink
 {
     using System.Runtime.Serialization;
 
@@ -33,10 +33,11 @@ namespace Colore.Effects.Mouse
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Supported built-in mouse effects.
+    /// Supported built-in Chroma Link effects.
     /// </summary>
+    [PublicAPI]
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum MouseEffect
+    public enum ChromaLinkEffectType
     {
         /// <summary>
         /// No effect.
@@ -46,24 +47,24 @@ namespace Colore.Effects.Mouse
         None = 0,
 
         /// <summary>
-        /// Static color effect.
+        /// No effect.
+        /// </summary>
+        [PublicAPI]
+        [EnumMember(Value = "CHROMA_CUSTOM")]
+        Custom,
+
+        /// <summary>
+        /// No effect.
         /// </summary>
         [PublicAPI]
         [EnumMember(Value = "CHROMA_STATIC")]
-        Static = 6,
+        Static,
 
         /// <summary>
-        /// Custom grid effect.
-        /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_CUSTOM2")]
-        Custom = 8,
-
-        /// <summary>
-        /// Invalid effect.
+        /// No effect.
         /// </summary>
         [PublicAPI]
         [EnumMember(Value = "CHROMA_INVALID")]
-        Invalid = 9
+        Invalid
     }
 }

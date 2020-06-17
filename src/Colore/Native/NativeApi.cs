@@ -157,11 +157,11 @@ namespace Colore.Native
         /// Creates a new device effect without any effect data.
         /// </summary>
         /// <param name="deviceId">The ID of the device to create the effect for.</param>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public Task<Guid> CreateDeviceEffectAsync(Guid deviceId, Effect effect)
+        public Task<Guid> CreateDeviceEffectAsync(Guid deviceId, EffectType effectType)
         {
-            return Task.FromResult(CreateEffect(deviceId, effect, IntPtr.Zero));
+            return Task.FromResult(CreateEffect(deviceId, effectType, IntPtr.Zero));
         }
 
         /// <inheritdoc />
@@ -170,16 +170,16 @@ namespace Colore.Native
         /// </summary>
         /// <typeparam name="T">The structure type, needs to be compatible with the effect type.</typeparam>
         /// <param name="deviceId">The ID of the device to create the effect for.</param>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <param name="data">The effect structure parameter.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public Task<Guid> CreateDeviceEffectAsync<T>(Guid deviceId, Effect effect, T data) where T : struct
+        public Task<Guid> CreateDeviceEffectAsync<T>(Guid deviceId, EffectType effectType, T data) where T : struct
         {
             var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(data));
             Marshal.StructureToPtr(data, ptr, false);
             try
             {
-                return Task.FromResult(CreateEffect(deviceId, effect, ptr));
+                return Task.FromResult(CreateEffect(deviceId, effectType, ptr));
             }
             finally
             {
@@ -191,11 +191,11 @@ namespace Colore.Native
         /// <summary>
         /// Creates a new keyboard effect without any effect data.
         /// </summary>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public Task<Guid> CreateKeyboardEffectAsync(Effects.Keyboard.KeyboardEffect effect)
+        public Task<Guid> CreateKeyboardEffectAsync(Effects.Keyboard.KeyboardEffectType effectType)
         {
-            return Task.FromResult(CreateKeyboardEffect(effect, IntPtr.Zero));
+            return Task.FromResult(CreateKeyboardEffect(effectType, IntPtr.Zero));
         }
 
         /// <inheritdoc />
@@ -203,16 +203,16 @@ namespace Colore.Native
         /// Helper method for creating keyboard effects with relevant structure parameter.
         /// </summary>
         /// <typeparam name="T">The structure type, needs to be compatible with the effect type.</typeparam>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <param name="data">The effect structure parameter.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public Task<Guid> CreateKeyboardEffectAsync<T>(Effects.Keyboard.KeyboardEffect effect, T data) where T : struct
+        public Task<Guid> CreateKeyboardEffectAsync<T>(Effects.Keyboard.KeyboardEffectType effectType, T data) where T : struct
         {
             var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(data));
             Marshal.StructureToPtr(data, ptr, false);
             try
             {
-                return Task.FromResult(CreateKeyboardEffect(effect, ptr));
+                return Task.FromResult(CreateKeyboardEffect(effectType, ptr));
             }
             finally
             {
@@ -224,11 +224,11 @@ namespace Colore.Native
         /// <summary>
         /// Creates a new mouse effect without any effect data.
         /// </summary>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public Task<Guid> CreateMouseEffectAsync(Effects.Mouse.MouseEffect effect)
+        public Task<Guid> CreateMouseEffectAsync(Effects.Mouse.MouseEffectType effectType)
         {
-            return Task.FromResult(CreateMouseEffect(effect, IntPtr.Zero));
+            return Task.FromResult(CreateMouseEffect(effectType, IntPtr.Zero));
         }
 
         /// <inheritdoc />
@@ -236,16 +236,16 @@ namespace Colore.Native
         /// Helper method for creating mouse effects with parameter struct.
         /// </summary>
         /// <typeparam name="T">The effect struct type.</typeparam>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <param name="data">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public Task<Guid> CreateMouseEffectAsync<T>(Effects.Mouse.MouseEffect effect, T data) where T : struct
+        public Task<Guid> CreateMouseEffectAsync<T>(Effects.Mouse.MouseEffectType effectType, T data) where T : struct
         {
             var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(data));
             Marshal.StructureToPtr(data, ptr, false);
             try
             {
-                return Task.FromResult(CreateMouseEffect(effect, ptr));
+                return Task.FromResult(CreateMouseEffect(effectType, ptr));
             }
             finally
             {
@@ -257,11 +257,11 @@ namespace Colore.Native
         /// <summary>
         /// Creates a new headset effect without any effect data.
         /// </summary>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public Task<Guid> CreateHeadsetEffectAsync(Effects.Headset.HeadsetEffect effect)
+        public Task<Guid> CreateHeadsetEffectAsync(Effects.Headset.HeadsetEffectType effectType)
         {
-            return Task.FromResult(CreateHeadsetEffect(effect, IntPtr.Zero));
+            return Task.FromResult(CreateHeadsetEffect(effectType, IntPtr.Zero));
         }
 
         /// <inheritdoc />
@@ -269,17 +269,17 @@ namespace Colore.Native
         /// Helper method for creating headset effects with parameter struct.
         /// </summary>
         /// <typeparam name="T">The effect struct type.</typeparam>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <param name="data">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public Task<Guid> CreateHeadsetEffectAsync<T>(Effects.Headset.HeadsetEffect effect, T data) where T : struct
+        public Task<Guid> CreateHeadsetEffectAsync<T>(Effects.Headset.HeadsetEffectType effectType, T data) where T : struct
         {
             var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(data));
             Marshal.StructureToPtr(data, ptr, false);
 
             try
             {
-                return Task.FromResult(CreateHeadsetEffect(effect, ptr));
+                return Task.FromResult(CreateHeadsetEffect(effectType, ptr));
             }
             finally
             {
@@ -291,11 +291,11 @@ namespace Colore.Native
         /// <summary>
         /// Creates a new mousepad effect without any effect data.
         /// </summary>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public Task<Guid> CreateMousepadEffectAsync(Effects.Mousepad.MousepadEffect effect)
+        public Task<Guid> CreateMousepadEffectAsync(Effects.Mousepad.MousepadEffectType effectType)
         {
-            return Task.FromResult(CreateMousepadEffect(effect, IntPtr.Zero));
+            return Task.FromResult(CreateMousepadEffect(effectType, IntPtr.Zero));
         }
 
         /// <inheritdoc />
@@ -303,17 +303,17 @@ namespace Colore.Native
         /// Helper method for creating mouse pad effects with parameter struct.
         /// </summary>
         /// <typeparam name="T">The effect struct type.</typeparam>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <param name="data">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public Task<Guid> CreateMousepadEffectAsync<T>(Effects.Mousepad.MousepadEffect effect, T data) where T : struct
+        public Task<Guid> CreateMousepadEffectAsync<T>(Effects.Mousepad.MousepadEffectType effectType, T data) where T : struct
         {
             var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(data));
             Marshal.StructureToPtr(data, ptr, false);
 
             try
             {
-                return Task.FromResult(CreateMousepadEffect(effect, ptr));
+                return Task.FromResult(CreateMousepadEffect(effectType, ptr));
             }
             finally
             {
@@ -325,11 +325,11 @@ namespace Colore.Native
         /// <summary>
         /// Creates a new keypad effect without any effect data.
         /// </summary>
-        /// <param name="effect">THe type of effect to create.</param>
+        /// <param name="effectType">THe type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public Task<Guid> CreateKeypadEffectAsync(Effects.Keypad.KeypadEffect effect)
+        public Task<Guid> CreateKeypadEffectAsync(Effects.Keypad.KeypadEffectType effectType)
         {
-            return Task.FromResult(CreateKeypadEffect(effect, IntPtr.Zero));
+            return Task.FromResult(CreateKeypadEffect(effectType, IntPtr.Zero));
         }
 
         /// <inheritdoc />
@@ -337,17 +337,17 @@ namespace Colore.Native
         /// Helper method for creating keypad effects with parameter struct.
         /// </summary>
         /// <typeparam name="T">The effect struct type.</typeparam>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <param name="data">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public Task<Guid> CreateKeypadEffectAsync<T>(Effects.Keypad.KeypadEffect effect, T data) where T : struct
+        public Task<Guid> CreateKeypadEffectAsync<T>(Effects.Keypad.KeypadEffectType effectType, T data) where T : struct
         {
             var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(data));
             Marshal.StructureToPtr(data, ptr, false);
 
             try
             {
-                return Task.FromResult(CreateKeypadEffect(effect, ptr));
+                return Task.FromResult(CreateKeypadEffect(effectType, ptr));
             }
             finally
             {
@@ -359,11 +359,11 @@ namespace Colore.Native
         /// <summary>
         /// Creates a new Chroma Link effect without any effect data.
         /// </summary>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public Task<Guid> CreateChromaLinkEffectAsync(Effects.ChromaLink.ChromaLinkEffect effect)
+        public Task<Guid> CreateChromaLinkEffectAsync(Effects.ChromaLink.ChromaLinkEffectType effectType)
         {
-            return Task.FromResult(CreateChromaLinkEffect(effect, IntPtr.Zero));
+            return Task.FromResult(CreateChromaLinkEffect(effectType, IntPtr.Zero));
         }
 
         /// <inheritdoc />
@@ -371,10 +371,10 @@ namespace Colore.Native
         /// Helper method for creating Chroma Link effects with parameter struct.
         /// </summary>
         /// <typeparam name="T">The effect struct type.</typeparam>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <param name="data">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public Task<Guid> CreateChromaLinkEffectAsync<T>(Effects.ChromaLink.ChromaLinkEffect effect, T data)
+        public Task<Guid> CreateChromaLinkEffectAsync<T>(Effects.ChromaLink.ChromaLinkEffectType effectType, T data)
             where T : struct
         {
             var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(data));
@@ -382,7 +382,7 @@ namespace Colore.Native
 
             try
             {
-                return Task.FromResult(CreateChromaLinkEffect(effect, ptr));
+                return Task.FromResult(CreateChromaLinkEffect(effectType, ptr));
             }
             finally
             {
@@ -417,14 +417,14 @@ namespace Colore.Native
         /// Creates an effect for a device.
         /// </summary>
         /// <param name="device">The device to create the effect on.</param>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <param name="param">Effect-specific parameter.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
         /// <seealso cref="NativeSdkMethods.CreateEffect" />
-        private Guid CreateEffect(Guid device, Effect effect, IntPtr param)
+        private Guid CreateEffect(Guid device, EffectType effectType, IntPtr param)
         {
             var guid = Guid.Empty;
-            var result = _nativeSdkMethods.CreateEffect(device, effect, param, ref guid);
+            var result = _nativeSdkMethods.CreateEffect(device, effectType, param, ref guid);
             if (!result)
                 throw new NativeCallException("CreateEffect", result);
             return guid;
@@ -433,14 +433,14 @@ namespace Colore.Native
         /// <summary>
         /// Create keyboard effect.
         /// </summary>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <param name="param">Context-sensitive effect parameter.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
         /// <seealso cref="NativeSdkMethods.CreateKeyboardEffect" />
-        private Guid CreateKeyboardEffect(Effects.Keyboard.KeyboardEffect effect, IntPtr param)
+        private Guid CreateKeyboardEffect(Effects.Keyboard.KeyboardEffectType effectType, IntPtr param)
         {
             var guid = Guid.Empty;
-            var result = _nativeSdkMethods.CreateKeyboardEffect(effect, param, ref guid);
+            var result = _nativeSdkMethods.CreateKeyboardEffect(effectType, param, ref guid);
             if (!result)
                 throw new NativeCallException("CreateKeyboardEffect", result);
             return guid;
@@ -449,14 +449,14 @@ namespace Colore.Native
         /// <summary>
         /// Creates a standard mouse effect with the specified parameters.
         /// </summary>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <param name="param">Context-sensitive effect parameter.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
         /// <seealso cref="NativeSdkMethods.CreateMouseEffect" />
-        private Guid CreateMouseEffect(Effects.Mouse.MouseEffect effect, IntPtr param)
+        private Guid CreateMouseEffect(Effects.Mouse.MouseEffectType effectType, IntPtr param)
         {
             var guid = Guid.Empty;
-            var result = _nativeSdkMethods.CreateMouseEffect(effect, param, ref guid);
+            var result = _nativeSdkMethods.CreateMouseEffect(effectType, param, ref guid);
             if (!result)
                 throw new NativeCallException("CreateMouseEffect", result);
             return guid;
@@ -465,13 +465,13 @@ namespace Colore.Native
         /// <summary>
         /// Creates a standard headset effect with the specified parameters.
         /// </summary>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <param name="param">Effect-specific parameter.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        private Guid CreateHeadsetEffect(Effects.Headset.HeadsetEffect effect, IntPtr param)
+        private Guid CreateHeadsetEffect(Effects.Headset.HeadsetEffectType effectType, IntPtr param)
         {
             var guid = Guid.Empty;
-            var result = _nativeSdkMethods.CreateHeadsetEffect(effect, param, ref guid);
+            var result = _nativeSdkMethods.CreateHeadsetEffect(effectType, param, ref guid);
             if (!result)
                 throw new NativeCallException("CreateHeadsetEffect", result);
             return guid;
@@ -480,13 +480,13 @@ namespace Colore.Native
         /// <summary>
         /// Creates a standard mouse pad effect with the specified parameters.
         /// </summary>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <param name="param">Effect-specific parameter.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        private Guid CreateMousepadEffect(Effects.Mousepad.MousepadEffect effect, IntPtr param)
+        private Guid CreateMousepadEffect(Effects.Mousepad.MousepadEffectType effectType, IntPtr param)
         {
             var guid = Guid.Empty;
-            var result = _nativeSdkMethods.CreateMousepadEffect(effect, param, ref guid);
+            var result = _nativeSdkMethods.CreateMousepadEffect(effectType, param, ref guid);
             if (!result)
                 throw new NativeCallException("CreateMousepadEffect", result);
             return guid;
@@ -495,13 +495,13 @@ namespace Colore.Native
         /// <summary>
         /// Creates a standard keypad effect with the specified parameters.
         /// </summary>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <param name="param">Effect-specific parameters.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        private Guid CreateKeypadEffect(Effects.Keypad.KeypadEffect effect, IntPtr param)
+        private Guid CreateKeypadEffect(Effects.Keypad.KeypadEffectType effectType, IntPtr param)
         {
             var guid = Guid.Empty;
-            var result = _nativeSdkMethods.CreateKeypadEffect(effect, param, ref guid);
+            var result = _nativeSdkMethods.CreateKeypadEffect(effectType, param, ref guid);
             if (!result)
                 throw new NativeCallException("CreateKeypadEffect", result);
             return guid;
@@ -510,13 +510,13 @@ namespace Colore.Native
         /// <summary>
         /// Creates a Chroma Link effect with the specified parameters.
         /// </summary>
-        /// <param name="effect">The type of Chroma Link effect to create.</param>
+        /// <param name="effectType">The type of Chroma Link effect to create.</param>
         /// <param name="param">Effect-specific parameters.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        private Guid CreateChromaLinkEffect(Effects.ChromaLink.ChromaLinkEffect effect, IntPtr param)
+        private Guid CreateChromaLinkEffect(Effects.ChromaLink.ChromaLinkEffectType effectType, IntPtr param)
         {
             var guid = Guid.Empty;
-            var result = _nativeSdkMethods.CreateChromaLinkEffect(effect, param, ref guid);
+            var result = _nativeSdkMethods.CreateChromaLinkEffect(effectType, param, ref guid);
             if (!result)
                 throw new NativeCallException("CreateChromaLinkEffect", result);
             return guid;

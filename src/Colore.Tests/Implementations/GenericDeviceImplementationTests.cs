@@ -78,7 +78,7 @@ namespace Colore.Tests.Implementations
             await device.ClearAsync();
 
             _api.Verify(
-                a => a.CreateDeviceEffectAsync(deviceId, It.IsAny<Effect>(), It.IsAny<None>()),
+                a => a.CreateDeviceEffectAsync(deviceId, It.IsAny<EffectType>(), It.IsAny<NoneEffect>()),
                 Times.Once);
         }
 
@@ -89,7 +89,7 @@ namespace Colore.Tests.Implementations
             var device = new GenericDeviceImplementation(deviceId, _api.Object);
             await device.ClearAsync();
 
-            _api.Verify(a => a.CreateDeviceEffectAsync(It.IsAny<Guid>(), Effect.None, It.IsAny<None>()), Times.Once);
+            _api.Verify(a => a.CreateDeviceEffectAsync(It.IsAny<Guid>(), EffectType.None, It.IsAny<NoneEffect>()), Times.Once);
         }
 
         [Test]
@@ -99,7 +99,7 @@ namespace Colore.Tests.Implementations
             var device = new GenericDeviceImplementation(deviceId, _api.Object);
             await device.ClearAsync();
 
-            _api.Verify(a => a.CreateDeviceEffectAsync(It.IsAny<Guid>(), It.IsAny<Effect>(), default(None)));
+            _api.Verify(a => a.CreateDeviceEffectAsync(It.IsAny<Guid>(), It.IsAny<EffectType>(), default(NoneEffect)));
         }
 
         [Test]
@@ -107,7 +107,7 @@ namespace Colore.Tests.Implementations
         {
             var deviceId = Devices.Deathadder;
             var effectId = Guid.NewGuid();
-            _api.Setup(a => a.CreateDeviceEffectAsync(deviceId, Effect.None, default(None)))
+            _api.Setup(a => a.CreateDeviceEffectAsync(deviceId, EffectType.None, default(NoneEffect)))
                 .ReturnsAsync(effectId);
 
             var device = new GenericDeviceImplementation(deviceId, _api.Object);
@@ -129,9 +129,9 @@ namespace Colore.Tests.Implementations
             var deviceId = Devices.Tartarus;
             var device = new GenericDeviceImplementation(deviceId, _api.Object);
 
-            await device.SetEffectAsync(Effect.None, default(None));
+            await device.SetEffectAsync(EffectType.None, default(NoneEffect));
 
-            _api.Verify(a => a.CreateDeviceEffectAsync(deviceId, It.IsAny<Effect>(), It.IsAny<None>()), Times.Once);
+            _api.Verify(a => a.CreateDeviceEffectAsync(deviceId, It.IsAny<EffectType>(), It.IsAny<NoneEffect>()), Times.Once);
         }
 
         [Test]
@@ -140,9 +140,9 @@ namespace Colore.Tests.Implementations
             var deviceId = Devices.Tartarus;
             var device = new GenericDeviceImplementation(deviceId, _api.Object);
 
-            await device.SetEffectAsync(Effect.None, default(None));
+            await device.SetEffectAsync(EffectType.None, default(NoneEffect));
 
-            _api.Verify(a => a.CreateDeviceEffectAsync(It.IsAny<Guid>(), Effect.None, It.IsAny<None>()), Times.Once);
+            _api.Verify(a => a.CreateDeviceEffectAsync(It.IsAny<Guid>(), EffectType.None, It.IsAny<NoneEffect>()), Times.Once);
         }
 
         [Test]
@@ -151,10 +151,10 @@ namespace Colore.Tests.Implementations
             var deviceId = Devices.Tartarus;
             var device = new GenericDeviceImplementation(deviceId, _api.Object);
 
-            await device.SetEffectAsync(Effect.None, default(None));
+            await device.SetEffectAsync(EffectType.None, default(NoneEffect));
 
             _api.Verify(
-                a => a.CreateDeviceEffectAsync(It.IsAny<Guid>(), It.IsAny<Effect>(), default(None)),
+                a => a.CreateDeviceEffectAsync(It.IsAny<Guid>(), It.IsAny<EffectType>(), default(NoneEffect)),
                 Times.Once);
         }
 
@@ -164,9 +164,9 @@ namespace Colore.Tests.Implementations
             var deviceId = Devices.Orochi;
             var effectId = Guid.NewGuid();
             var device = new GenericDeviceImplementation(deviceId, _api.Object);
-            _api.Setup(a => a.CreateDeviceEffectAsync(deviceId, Effect.None, default(None))).ReturnsAsync(effectId);
+            _api.Setup(a => a.CreateDeviceEffectAsync(deviceId, EffectType.None, default(NoneEffect))).ReturnsAsync(effectId);
 
-            var setEffectId = await device.SetEffectAsync(Effect.None, default(None));
+            var setEffectId = await device.SetEffectAsync(EffectType.None, default(NoneEffect));
 
             Assert.AreEqual(effectId, setEffectId);
         }
@@ -177,9 +177,9 @@ namespace Colore.Tests.Implementations
             var deviceId = Devices.BlackwidowTe;
             var device = new GenericDeviceImplementation(deviceId, _api.Object);
 
-            await device.SetEffectAsync(Effect.None);
+            await device.SetEffectAsync(EffectType.None);
 
-            _api.Verify(a => a.CreateDeviceEffectAsync(deviceId, Effect.None, IntPtr.Zero), Times.Once);
+            _api.Verify(a => a.CreateDeviceEffectAsync(deviceId, EffectType.None, IntPtr.Zero), Times.Once);
         }
 
         [Test]
@@ -188,9 +188,9 @@ namespace Colore.Tests.Implementations
             var deviceId = Devices.Diamondback;
             var device = new GenericDeviceImplementation(deviceId, _api.Object);
 
-            await device.SetEffectAsync(Effect.Reserved);
+            await device.SetEffectAsync(EffectType.Reserved);
 
-            _api.Verify(a => a.CreateDeviceEffectAsync(deviceId, Effect.Reserved, IntPtr.Zero), Times.Once);
+            _api.Verify(a => a.CreateDeviceEffectAsync(deviceId, EffectType.Reserved, IntPtr.Zero), Times.Once);
         }
     }
 }

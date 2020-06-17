@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="MouseStatic.cs" company="Corale">
+// <copyright file="StaticMousepadEffect.cs" company="Corale">
 //     Copyright © 2015-2020 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -24,7 +24,7 @@
 // ---------------------------------------------------------------------------------------
 #pragma warning disable CA1051 // Do not declare visible instance fields
 
-namespace Colore.Effects.Mouse
+namespace Colore.Effects.Mousepad
 {
     using System;
     using System.Runtime.InteropServices;
@@ -38,66 +38,47 @@ namespace Colore.Effects.Mouse
 
     /// <inheritdoc cref="IEquatable{T}" />
     /// <summary>
-    /// Describes the static effect type.
+    /// Static effect for mouse pad.
     /// </summary>
-    [JsonConverter(typeof(MouseStaticConverter))]
+    [JsonConverter(typeof(MousepadStaticConverter))]
     [StructLayout(LayoutKind.Sequential)]
 #pragma warning disable CA1716 // Identifiers should not match keywords
-    public struct MouseStatic : IEquatable<MouseStatic>
+    public struct StaticMousepadEffect : IEquatable<StaticMousepadEffect>
 #pragma warning restore CA1716 // Identifiers should not match keywords
     {
         /// <summary>
-        /// The LED on which to apply the color.
-        /// </summary>
-        [UsedImplicitly]
-        public readonly Led Led;
-
-        /// <summary>
-        /// The color to apply.
+        /// The color to use.
         /// </summary>
         [UsedImplicitly]
         public readonly Color Color;
 
-        /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="MouseStatic" /> struct,
-        /// with a color to set for every LED.
+        /// Initializes a new instance of the <see cref="StaticMousepadEffect" /> struct.
         /// </summary>
-        /// <param name="color">The colo to set for every LED.</param>
-        public MouseStatic(Color color)
-            : this(Led.All, color)
+        /// <param name="color">The color to use.</param>
+        public StaticMousepadEffect(Color color)
         {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MouseStatic" /> struct.
-        /// </summary>
-        /// <param name="led">The <see cref="Led" /> on which to apply the color.</param>
-        /// <param name="color">The <see cref="Color" /> to set.</param>
-        public MouseStatic(Led led, Color color)
-        {
-            Led = led;
             Color = color;
         }
 
         /// <summary>
-        /// Compares an instance of <see cref="MouseStatic" /> for equality with another <see cref="MouseStatic" /> struct.
+        /// Checks an instance of <see cref="StaticMousepadEffect" /> for equality with another <see cref="StaticMousepadEffect" /> instance.
         /// </summary>
         /// <param name="left">Left operand.</param>
         /// <param name="right">Right operand.</param>
         /// <returns><c>true</c> if the two instances are equal, otherwise <c>false</c>.</returns>
-        public static bool operator ==(MouseStatic left, MouseStatic right)
+        public static bool operator ==(StaticMousepadEffect left, StaticMousepadEffect right)
         {
             return left.Equals(right);
         }
 
         /// <summary>
-        /// Compares an instance of <see cref="MouseStatic" /> for inequality with another <see cref="MouseStatic" /> struct.
+        /// Checks an instance of <see cref="StaticMousepadEffect" /> for inequality with another <see cref="StaticMousepadEffect" /> instance.
         /// </summary>
         /// <param name="left">Left operand.</param>
         /// <param name="right">Right operand.</param>
         /// <returns><c>true</c> if the two instances are not equal, otherwise <c>false</c>.</returns>
-        public static bool operator !=(MouseStatic left, MouseStatic right)
+        public static bool operator !=(StaticMousepadEffect left, StaticMousepadEffect right)
         {
             return !(left == right);
         }
@@ -110,37 +91,32 @@ namespace Colore.Effects.Mouse
         /// <returns>
         /// <c>true</c> if the current object is equal to the <paramref name="other" /> parameter; otherwise, <c>false</c>.
         /// </returns>
-        public bool Equals(MouseStatic other)
+        public bool Equals(StaticMousepadEffect other)
         {
-            return Led == other.Led && Color.Equals(other.Color);
+            return Color.Equals(other.Color);
         }
 
         /// <inheritdoc />
         /// <summary>
         /// Indicates whether this instance and a specified object are equal.
         /// </summary>
-        /// <param name="other">The object to compare with the current instance. </param>
+        /// <param name="obj">The object to compare with the current instance. </param>
         /// <returns>
-        /// <c>true</c> if <paramref name="other" /> and this instance are the same type and represent the same value; otherwise, <c>false</c>.
+        /// <c>true</c> if <paramref name="obj" /> and this instance are the same type and represent the same value; otherwise, <c>false</c>.
         /// </returns>
-        public override bool Equals(object other)
+        public override bool Equals(object obj)
         {
-            if (other is null)
+            if (ReferenceEquals(null, obj))
                 return false;
-            return other is MouseStatic effect && Equals(effect);
+            return obj is StaticMousepadEffect effect && Equals(effect);
         }
 
         /// <inheritdoc />
-        /// <summary>
-        /// Returns the hash code for this instance.
-        /// </summary>
+        /// <summary>Returns the hash code for this instance.</summary>
         /// <returns>A 32-bit signed integer that is the hash code for this instance.</returns>
         public override int GetHashCode()
         {
-            unchecked
-            {
-                return ((int)Led * 397) ^ Color.GetHashCode();
-            }
+            return Color.GetHashCode();
         }
     }
 }

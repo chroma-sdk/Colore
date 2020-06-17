@@ -50,26 +50,26 @@ namespace Colore
         /// <summary>
         /// Sets an effect on the headset that doesn't
         /// take any parameters, currently only valid
-        /// for the <see cref="HeadsetEffect.None" /> effect.
+        /// for the <see cref="HeadsetEffectType.None" /> effect.
         /// </summary>
-        /// <param name="effect">The type of effect to set.</param>
+        /// <param name="effectType">The type of effect to set.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetEffectAsync(HeadsetEffect effect);
+        Task<Guid> SetEffectAsync(HeadsetEffectType effectType);
 
         /// <summary>
         /// Sets a new static effect on the headset.
         /// </summary>
         /// <param name="effect">
-        /// An instance of the <see cref="HeadsetStatic" /> struct
+        /// An instance of the <see cref="StaticHeadsetEffect" /> struct
         /// describing the effect.
         /// </param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetStaticAsync(HeadsetStatic effect);
+        Task<Guid> SetStaticAsync(StaticHeadsetEffect effect);
 
         /// <summary>
-        /// Sets a new <see cref="HeadsetStatic" /> effect on
+        /// Sets a new <see cref="StaticHeadsetEffect" /> effect on
         /// the headset using the specified <see cref="Color" />.
         /// </summary>
         /// <param name="color"><see cref="Color" /> of the effect.</param>
@@ -78,14 +78,14 @@ namespace Colore
         Task<Guid> SetStaticAsync(Color color);
 
         /// <summary>
-        /// Sets a new <see cref="HeadsetCustom" /> effect on the headset.
+        /// Sets a new <see cref="CustomHeadsetEffect" /> effect on the headset.
         /// </summary>
         /// <param name="effect">
-        /// An instance of the <see cref="HeadsetCustom" /> struct
+        /// An instance of the <see cref="CustomHeadsetEffect" /> struct
         /// describing the effect.
         /// </param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetCustomAsync(HeadsetCustom effect);
+        Task<Guid> SetCustomAsync(CustomHeadsetEffect effect);
     }
 }

@@ -38,7 +38,7 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ShouldThrowWhenOutOfRange1DGet()
         {
-            var grid = DeathstalkerGrid.Create();
+            var grid = DeathstalkerGridEffect.Create();
 
             // ReSharper disable once NotAccessedVariable
             Color dummy;
@@ -63,7 +63,7 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ShouldThrowWhenOutOfRange1DSet()
         {
-            var grid = DeathstalkerGrid.Create();
+            var grid = DeathstalkerGridEffect.Create();
 
             Assert.That(
                 () => grid[-1] = Color.Red,
@@ -85,7 +85,7 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ShouldSetToBlackWithCreate()
         {
-            var grid = DeathstalkerGrid.Create();
+            var grid = DeathstalkerGridEffect.Create();
 
             for (var index = 0; index < KeyboardConstants.MaxDeathstalkerZones; index++)
             {
@@ -96,7 +96,7 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ShouldSetAllColorsWithColorCtor()
         {
-            var grid = new DeathstalkerGrid(Color.Red);
+            var grid = new DeathstalkerGridEffect(Color.Red);
 
             for (var index = 0; index < KeyboardConstants.MaxDeathstalkerZones; index++)
             {
@@ -107,7 +107,7 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ShouldSetNewColors()
         {
-            var grid = DeathstalkerGrid.Create();
+            var grid = DeathstalkerGridEffect.Create();
 
             grid[1] = Color.Red;
 
@@ -117,17 +117,17 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ShouldClearToBlack()
         {
-            var grid = new DeathstalkerGrid(Color.Pink);
+            var grid = new DeathstalkerGridEffect(Color.Pink);
             grid.Clear();
 
-            Assert.That(grid, Is.EqualTo(DeathstalkerGrid.Create()));
+            Assert.That(grid, Is.EqualTo(DeathstalkerGridEffect.Create()));
         }
 
         [Test]
         public void ShouldEqualIdenticalGrid()
         {
-            var a = new DeathstalkerGrid(Color.Red);
-            var b = new DeathstalkerGrid(Color.Red);
+            var a = new DeathstalkerGridEffect(Color.Red);
+            var b = new DeathstalkerGridEffect(Color.Red);
 
             Assert.True(a == b);
             Assert.False(a != b);
@@ -138,8 +138,8 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ShouldNotEqualDifferentGrid()
         {
-            var a = new DeathstalkerGrid(Color.Red);
-            var b = new DeathstalkerGrid(Color.Pink);
+            var a = new DeathstalkerGridEffect(Color.Red);
+            var b = new DeathstalkerGridEffect(Color.Pink);
 
             Assert.False(a == b);
             Assert.True(a != b);
@@ -150,7 +150,7 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ShouldNotEqualArbitraryObject()
         {
-            var grid = DeathstalkerGrid.Create();
+            var grid = DeathstalkerGridEffect.Create();
             var obj = new object();
 
             Assert.False(grid == obj);
@@ -162,7 +162,7 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ShouldNotEqualNull()
         {
-            var grid = DeathstalkerGrid.Create();
+            var grid = DeathstalkerGridEffect.Create();
 
             Assert.False(grid == null);
             Assert.True(grid != null);
@@ -172,14 +172,14 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ShouldGetWithIndexIndexer()
         {
-            var grid = new DeathstalkerGrid(Color.Red);
+            var grid = new DeathstalkerGridEffect(Color.Red);
             Assert.AreEqual(Color.Red, grid[3]);
         }
 
         [Test]
         public void ShouldSetWithIndexIndexer()
         {
-            var grid = DeathstalkerGrid.Create();
+            var grid = DeathstalkerGridEffect.Create();
 
             grid[2] = Color.Red;
 
@@ -189,7 +189,7 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ClonedStructShouldBeIdentical()
         {
-            var original = new DeathstalkerGrid(Color.Red)
+            var original = new DeathstalkerGridEffect(Color.Red)
             {
                 [1] = Color.Green,
                 [3] = Color.Orange,
@@ -203,7 +203,7 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ClonedStructShouldBeIndependent()
         {
-            var original = new DeathstalkerGrid(Color.Red);
+            var original = new DeathstalkerGridEffect(Color.Red);
             var clone = original.Clone();
 
             clone.Set(Color.Blue);
@@ -214,14 +214,14 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ShouldHaveZeroHashCodeOnDefaultInstance()
         {
-            var effect = new DeathstalkerGrid();
+            var effect = new DeathstalkerGridEffect();
             Assert.Zero(effect.GetHashCode());
         }
 
         [Test]
         public void ShouldConstructProperMultiArray()
         {
-            var effect = DeathstalkerGrid.Create();
+            var effect = DeathstalkerGridEffect.Create();
             effect[0] = Color.Red;
             effect[1] = Color.Green;
             effect[5] = Color.Blue;

@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="Effect.cs" company="Corale">
+// <copyright file="MousepadEffectType.cs" company="Corale">
 //     Copyright © 2015-2020 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,9 +23,8 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Effects.Generic
+namespace Colore.Effects.Mousepad
 {
-    using System.ComponentModel;
     using System.Runtime.Serialization;
 
     using JetBrains.Annotations;
@@ -34,11 +33,10 @@ namespace Colore.Effects.Generic
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Generic device effects.
+    /// Effects supported by Chroma mouse pads.
     /// </summary>
-    /// <remarks>Not all devices are compatible with every effect type.</remarks>
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum Effect
+    public enum MousepadEffectType
     {
         /// <summary>
         /// No effect.
@@ -48,32 +46,24 @@ namespace Colore.Effects.Generic
         None = 0,
 
         /// <summary>
-        /// Static color effect.
-        /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_STATIC")]
-        Static = 6,
-
-        /// <summary>
-        /// Custom effect.
+        /// A custom effect.
         /// </summary>
         [PublicAPI]
         [EnumMember(Value = "CHROMA_CUSTOM")]
-        Custom = 7,
+        Custom = 2,
 
         /// <summary>
-        /// Reserved effect.
+        /// Static color.
         /// </summary>
-        [EditorBrowsable(EditorBrowsableState.Advanced)]
-        [EnumMember(Value = "CHROMA_RESERVED")]
-        //// ReSharper disable once UnusedMember.Global
-        Reserved = 8,
+        [PublicAPI]
+        [EnumMember(Value = "CHROMA_STATIC")]
+        Static = 4,
 
         /// <summary>
-        /// Invalid effect.
+        /// Invalid effect type.
         /// </summary>
         [PublicAPI]
         [EnumMember(Value = "CHROMA_INVALID")]
-        Invalid = 9
+        Invalid = 6
     }
 }

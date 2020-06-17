@@ -280,13 +280,13 @@ namespace Colore.Rest
         }
 
         /// <inheritdoc />
-        public Task<Guid> CreateDeviceEffectAsync(Guid deviceId, Effect effect)
+        public Task<Guid> CreateDeviceEffectAsync(Guid deviceId, EffectType effectType)
         {
             throw new NotSupportedException("Chroma REST API does not support generic device effects");
         }
 
         /// <inheritdoc />
-        public Task<Guid> CreateDeviceEffectAsync<T>(Guid deviceId, Effect effect, T data) where T : struct
+        public Task<Guid> CreateDeviceEffectAsync<T>(Guid deviceId, EffectType effectType, T data) where T : struct
         {
             throw new NotSupportedException("Chroma REST API does not support generic device effects");
         }
@@ -295,11 +295,11 @@ namespace Colore.Rest
         /// <summary>
         /// Creates a new keyboard effect without any effect data by sending a POST request to the keyboard API.
         /// </summary>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public async Task<Guid> CreateKeyboardEffectAsync(Effects.Keyboard.KeyboardEffect effect)
+        public async Task<Guid> CreateKeyboardEffectAsync(Effects.Keyboard.KeyboardEffectType effectType)
         {
-            return await CreateEffectAsync("/keyboard", new EffectData(effect)).ConfigureAwait(false);
+            return await CreateEffectAsync("/keyboard", new EffectData(effectType)).ConfigureAwait(false);
         }
 
         /// <inheritdoc />
@@ -307,10 +307,10 @@ namespace Colore.Rest
         /// Creates a new keyboard effect with the specified effect data by sending a POST request to the keyboard API.
         /// </summary>
         /// <typeparam name="T">The structure type, needs to be compatible with the effect type.</typeparam>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <param name="data">The effect structure parameter.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public async Task<Guid> CreateKeyboardEffectAsync<T>(Effects.Keyboard.KeyboardEffect effect, T data) where T : struct
+        public async Task<Guid> CreateKeyboardEffectAsync<T>(Effects.Keyboard.KeyboardEffectType effectType, T data) where T : struct
         {
             return await CreateEffectAsync("/keyboard", data).ConfigureAwait(false);
         }
@@ -319,11 +319,11 @@ namespace Colore.Rest
         /// <summary>
         /// Creates a new mouse effect without any effect data by sending a POST request to the mouse API.
         /// </summary>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public async Task<Guid> CreateMouseEffectAsync(Effects.Mouse.MouseEffect effect)
+        public async Task<Guid> CreateMouseEffectAsync(Effects.Mouse.MouseEffectType effectType)
         {
-            return await CreateEffectAsync("/mouse", new EffectData(effect)).ConfigureAwait(false);
+            return await CreateEffectAsync("/mouse", new EffectData(effectType)).ConfigureAwait(false);
         }
 
         /// <inheritdoc />
@@ -331,10 +331,10 @@ namespace Colore.Rest
         /// Creates a new mouse effect with the specified effect data by sending a POST request to the mouse API.
         /// </summary>
         /// <typeparam name="T">The effect struct type.</typeparam>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <param name="data">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public async Task<Guid> CreateMouseEffectAsync<T>(Effects.Mouse.MouseEffect effect, T data) where T : struct
+        public async Task<Guid> CreateMouseEffectAsync<T>(Effects.Mouse.MouseEffectType effectType, T data) where T : struct
         {
             return await CreateEffectAsync("/mouse", data).ConfigureAwait(false);
         }
@@ -343,11 +343,11 @@ namespace Colore.Rest
         /// <summary>
         /// Creates a new headset effect without any effect data by sending a POST request to the headset API.
         /// </summary>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public async Task<Guid> CreateHeadsetEffectAsync(Effects.Headset.HeadsetEffect effect)
+        public async Task<Guid> CreateHeadsetEffectAsync(Effects.Headset.HeadsetEffectType effectType)
         {
-            return await CreateEffectAsync("/headset", new EffectData(effect)).ConfigureAwait(false);
+            return await CreateEffectAsync("/headset", new EffectData(effectType)).ConfigureAwait(false);
         }
 
         /// <inheritdoc />
@@ -355,10 +355,10 @@ namespace Colore.Rest
         /// Creates a new headset effect with the specified effect data by sending a POST request to the headset API.
         /// </summary>
         /// <typeparam name="T">The effect struct type.</typeparam>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <param name="data">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public async Task<Guid> CreateHeadsetEffectAsync<T>(Effects.Headset.HeadsetEffect effect, T data) where T : struct
+        public async Task<Guid> CreateHeadsetEffectAsync<T>(Effects.Headset.HeadsetEffectType effectType, T data) where T : struct
         {
             return await CreateEffectAsync("/headset", data).ConfigureAwait(false);
         }
@@ -367,11 +367,11 @@ namespace Colore.Rest
         /// <summary>
         /// Creates a new mousepad effect without any effect data by sending a POST request to the mousepad API.
         /// </summary>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public async Task<Guid> CreateMousepadEffectAsync(Effects.Mousepad.MousepadEffect effect)
+        public async Task<Guid> CreateMousepadEffectAsync(Effects.Mousepad.MousepadEffectType effectType)
         {
-            return await CreateEffectAsync("/mousepad", new EffectData(effect)).ConfigureAwait(false);
+            return await CreateEffectAsync("/mousepad", new EffectData(effectType)).ConfigureAwait(false);
         }
 
         /// <inheritdoc />
@@ -379,10 +379,10 @@ namespace Colore.Rest
         /// Creates a new mousepad effect with the specified effect data by sending a POST request to the mousepad API.
         /// </summary>
         /// <typeparam name="T">The effect struct type.</typeparam>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <param name="data">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public async Task<Guid> CreateMousepadEffectAsync<T>(Effects.Mousepad.MousepadEffect effect, T data) where T : struct
+        public async Task<Guid> CreateMousepadEffectAsync<T>(Effects.Mousepad.MousepadEffectType effectType, T data) where T : struct
         {
             return await CreateEffectAsync("/mousepad", data).ConfigureAwait(false);
         }
@@ -391,11 +391,11 @@ namespace Colore.Rest
         /// <summary>
         /// Creates a new keypad effect without any effect data by sending a POST request to the keypad API.
         /// </summary>
-        /// <param name="effect">THe type of effect to create.</param>
+        /// <param name="effectType">THe type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public async Task<Guid> CreateKeypadEffectAsync(Effects.Keypad.KeypadEffect effect)
+        public async Task<Guid> CreateKeypadEffectAsync(Effects.Keypad.KeypadEffectType effectType)
         {
-            return await CreateEffectAsync("/keypad", new EffectData(effect)).ConfigureAwait(false);
+            return await CreateEffectAsync("/keypad", new EffectData(effectType)).ConfigureAwait(false);
         }
 
         /// <inheritdoc />
@@ -403,10 +403,10 @@ namespace Colore.Rest
         /// Creates a new keypad effect with the specified effect data by sending a POST request to the keypad API.
         /// </summary>
         /// <typeparam name="T">The effect struct type.</typeparam>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <param name="data">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public async Task<Guid> CreateKeypadEffectAsync<T>(Effects.Keypad.KeypadEffect effect, T data) where T : struct
+        public async Task<Guid> CreateKeypadEffectAsync<T>(Effects.Keypad.KeypadEffectType effectType, T data) where T : struct
         {
             return await CreateEffectAsync("/keypad", data).ConfigureAwait(false);
         }
@@ -415,11 +415,11 @@ namespace Colore.Rest
         /// <summary>
         /// Creates a new Chroma Link effect without any effect data by sending a POST request to the Chroma Link API.
         /// </summary>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public async Task<Guid> CreateChromaLinkEffectAsync(Effects.ChromaLink.ChromaLinkEffect effect)
+        public async Task<Guid> CreateChromaLinkEffectAsync(Effects.ChromaLink.ChromaLinkEffectType effectType)
         {
-            return await CreateEffectAsync("/chromalink", new EffectData(effect)).ConfigureAwait(false);
+            return await CreateEffectAsync("/chromalink", new EffectData(effectType)).ConfigureAwait(false);
         }
 
         /// <inheritdoc />
@@ -427,10 +427,10 @@ namespace Colore.Rest
         /// Creates a new Chroma Link effect with the specified effect data by sending a POST request to the Chroma Link API.
         /// </summary>
         /// <typeparam name="T">The effect struct type.</typeparam>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <param name="data">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public async Task<Guid> CreateChromaLinkEffectAsync<T>(Effects.ChromaLink.ChromaLinkEffect effect, T data) where T : struct
+        public async Task<Guid> CreateChromaLinkEffectAsync<T>(Effects.ChromaLink.ChromaLinkEffectType effectType, T data) where T : struct
         {
             return await CreateEffectAsync("/chromalink", data).ConfigureAwait(false);
         }

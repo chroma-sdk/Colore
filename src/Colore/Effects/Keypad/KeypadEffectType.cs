@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="KeyboardEffect.cs" company="Corale">
+// <copyright file="KeypadEffectType.cs" company="Corale">
 //     Copyright © 2015-2020 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,9 +23,8 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Effects.Keyboard
+namespace Colore.Effects.Keypad
 {
-    using System.ComponentModel;
     using System.Runtime.Serialization;
 
     using JetBrains.Annotations;
@@ -34,11 +33,10 @@ namespace Colore.Effects.Keyboard
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Supported built-in keyboard effects.
+    /// Supported effects for Chroma keypads.
     /// </summary>
-    [PublicAPI]
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum KeyboardEffect
+    public enum KeypadEffectType
     {
         /// <summary>
         /// No effect.
@@ -55,32 +53,17 @@ namespace Colore.Effects.Keyboard
         Custom = 2,
 
         /// <summary>
-        /// Static effect.
+        /// Static color.
         /// </summary>
         [PublicAPI]
         [EnumMember(Value = "CHROMA_STATIC")]
-        Static = 4,
-
-        /// <summary>
-        /// Reserved effect.
-        /// </summary>
-        [EditorBrowsable(EditorBrowsableState.Advanced)]
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_RESERVED")]
-        Reserved = 7,
-
-        /// <summary>
-        /// Custom effect with keys.
-        /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_CUSTOM_KEY")]
-        CustomKey = 8,
+        Static = 5,
 
         /// <summary>
         /// Invalid effect.
         /// </summary>
         [PublicAPI]
         [EnumMember(Value = "CHROMA_INVALID")]
-        Invalid = 9
+        Invalid = 7
     }
 }

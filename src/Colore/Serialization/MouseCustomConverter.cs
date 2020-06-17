@@ -35,9 +35,9 @@ namespace Colore.Serialization
 
     /// <inheritdoc />
     /// <summary>
-    /// Converts mouse <see cref="MouseCustom" /> objects to JSON.
+    /// Converts mouse <see cref="CustomMouseEffect" /> objects to JSON.
     /// </summary>
-    /// <remarks>Does not support converting JSON into <see cref="MouseCustom" /> objects.</remarks>
+    /// <remarks>Does not support converting JSON into <see cref="CustomMouseEffect" /> objects.</remarks>
     [SuppressMessage(
         "Microsoft.Performance",
         "CA1812:AvoidUninstantiatedInternalClasses",
@@ -45,17 +45,17 @@ namespace Colore.Serialization
     internal sealed class MouseCustomConverter : JsonConverter
     {
         /// <inheritdoc />
-        /// <summary>Writes the JSON representation of a mouse <see cref="MouseCustom" /> object.</summary>
+        /// <summary>Writes the JSON representation of a mouse <see cref="CustomMouseEffect" /> object.</summary>
         /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
-        /// <param name="value">The <see cref="MouseCustom" /> value.</param>
+        /// <param name="value">The <see cref="CustomMouseEffect" /> value.</param>
         /// <param name="serializer">The calling serializer.</param>
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            var effect = (MouseCustom)value;
+            var effect = (CustomMouseEffect)value;
 #pragma warning disable SA1008 // Opening parenthesis must be spaced correctly
             var colors = effect.ToMultiArray();
 #pragma warning restore SA1008 // Opening parenthesis must be spaced correctly
-            var data = new EffectData(MouseEffect.Custom, colors);
+            var data = new EffectData(MouseEffectType.Custom, colors);
             serializer.Serialize(writer, data);
         }
 
@@ -70,6 +70,6 @@ namespace Colore.Serialization
         }
 
         /// <inheritdoc />
-        public override bool CanConvert(Type objectType) => objectType == typeof(MouseCustom);
+        public override bool CanConvert(Type objectType) => objectType == typeof(CustomMouseEffect);
     }
 }

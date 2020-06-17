@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="HeadsetEffect.cs" company="Corale">
+// <copyright file="MouseEffectType.cs" company="Corale">
 //     Copyright © 2015-2020 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,7 +23,7 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Effects.Headset
+namespace Colore.Effects.Mouse
 {
     using System.Runtime.Serialization;
 
@@ -33,10 +33,10 @@ namespace Colore.Effects.Headset
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Standard effects for headsets.
+    /// Supported built-in mouse effects.
     /// </summary>
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum HeadsetEffect
+    public enum MouseEffectType
     {
         /// <summary>
         /// No effect.
@@ -46,24 +46,24 @@ namespace Colore.Effects.Headset
         None = 0,
 
         /// <summary>
-        /// Static color.
+        /// Static color effect.
         /// </summary>
         [PublicAPI]
         [EnumMember(Value = "CHROMA_STATIC")]
-        Static = 1,
+        Static = 6,
 
         /// <summary>
-        /// Custom headset effect.
+        /// Custom grid effect.
         /// </summary>
         [PublicAPI]
-        [EnumMember(Value = "CHROMA_CUSTOM")]
-        Custom = 4,
+        [EnumMember(Value = "CHROMA_CUSTOM2")]
+        Custom = 8,
 
         /// <summary>
         /// Invalid effect.
         /// </summary>
         [PublicAPI]
         [EnumMember(Value = "CHROMA_INVALID")]
-        Invalid = 5
+        Invalid = 9
     }
 }

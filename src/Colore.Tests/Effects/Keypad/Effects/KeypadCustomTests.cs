@@ -38,7 +38,7 @@ namespace Colore.Tests.Effects.Keypad.Effects
         [Test]
         public void ShouldThrowWhenOutOfRange2DGet()
         {
-            var grid = KeypadCustom.Create();
+            var grid = CustomKeypadEffect.Create();
 
             // ReSharper disable once NotAccessedVariable
             Color dummy;
@@ -79,7 +79,7 @@ namespace Colore.Tests.Effects.Keypad.Effects
         [Test]
         public void ShouldThrowWhenOutOfRange2DSet()
         {
-            var grid = KeypadCustom.Create();
+            var grid = CustomKeypadEffect.Create();
 
             Assert.That(
                 () => grid[-1, 0] = Color.Red,
@@ -117,7 +117,7 @@ namespace Colore.Tests.Effects.Keypad.Effects
         [Test]
         public void ShouldThrowWhenOutOfRange1DGet()
         {
-            var grid = KeypadCustom.Create();
+            var grid = CustomKeypadEffect.Create();
 
             // ReSharper disable once NotAccessedVariable
             Color dummy;
@@ -142,7 +142,7 @@ namespace Colore.Tests.Effects.Keypad.Effects
         [Test]
         public void ShouldThrowWhenOutOfRange1DSet()
         {
-            var grid = KeypadCustom.Create();
+            var grid = CustomKeypadEffect.Create();
 
             Assert.That(
                 () => grid[-1] = Color.Red,
@@ -169,10 +169,10 @@ namespace Colore.Tests.Effects.Keypad.Effects
             var arr = new Color[2][];
 
             // ReSharper disable once NotAccessedVariable
-            KeypadCustom dummy;
+            CustomKeypadEffect dummy;
 
             Assert.That(
-                () => dummy = new KeypadCustom(arr),
+                () => dummy = new CustomKeypadEffect(arr),
                 Throws.ArgumentException.With.Property("ParamName").EqualTo("colors"));
         }
 
@@ -186,10 +186,10 @@ namespace Colore.Tests.Effects.Keypad.Effects
             arr[0] = new Color[2];
 
             // ReSharper disable once NotAccessedVariable
-            KeypadCustom dummy;
+            CustomKeypadEffect dummy;
 
             Assert.That(
-                () => dummy = new KeypadCustom(arr),
+                () => dummy = new CustomKeypadEffect(arr),
                 Throws.ArgumentException.With.Property("ParamName").EqualTo("colors"));
         }
 
@@ -199,17 +199,17 @@ namespace Colore.Tests.Effects.Keypad.Effects
             var arr = new Color[2];
 
             // ReSharper disable once NotAccessedVariable
-            KeypadCustom dummy;
+            CustomKeypadEffect dummy;
 
             Assert.That(
-                () => dummy = new KeypadCustom(arr),
+                () => dummy = new CustomKeypadEffect(arr),
                 Throws.ArgumentException.With.Property("ParamName").EqualTo("colors"));
         }
 
         [Test]
         public void ShouldSetToBlackWithCreate()
         {
-            var grid = KeypadCustom.Create();
+            var grid = CustomKeypadEffect.Create();
 
             for (var row = 0; row < KeypadConstants.MaxRows; row++)
             {
@@ -221,7 +221,7 @@ namespace Colore.Tests.Effects.Keypad.Effects
         [Test]
         public void ShouldSetAllColorsWithColorCtor()
         {
-            var grid = new KeypadCustom(Color.Red);
+            var grid = new CustomKeypadEffect(Color.Red);
 
             for (var row = 0; row < KeypadConstants.MaxRows; row++)
             {
@@ -243,7 +243,7 @@ namespace Colore.Tests.Effects.Keypad.Effects
             arr[2][3] = Color.Pink;
             arr[3][0] = Color.Blue;
 
-            var grid = new KeypadCustom(arr);
+            var grid = new CustomKeypadEffect(arr);
 
             for (var row = 0; row < KeypadConstants.MaxRows; row++)
             {
@@ -261,7 +261,7 @@ namespace Colore.Tests.Effects.Keypad.Effects
             arr[4] = Color.Red;
             arr[8] = Color.Blue;
 
-            var grid = new KeypadCustom(arr);
+            var grid = new CustomKeypadEffect(arr);
 
             for (var index = 0; index < KeypadConstants.MaxKeys; index++)
                 Assert.That(grid[index], Is.EqualTo(arr[index]));
@@ -270,7 +270,7 @@ namespace Colore.Tests.Effects.Keypad.Effects
         [Test]
         public void ShouldSetNewColors()
         {
-            var grid = KeypadCustom.Create();
+            var grid = CustomKeypadEffect.Create();
 
             grid[0, 4] = Color.Red;
 
@@ -280,16 +280,16 @@ namespace Colore.Tests.Effects.Keypad.Effects
         [Test]
         public void ShouldClearToBlack()
         {
-            var grid = new KeypadCustom(Color.Pink);
+            var grid = new CustomKeypadEffect(Color.Pink);
             grid.Clear();
 
-            Assert.That(grid, Is.EqualTo(KeypadCustom.Create()));
+            Assert.That(grid, Is.EqualTo(CustomKeypadEffect.Create()));
         }
 
         [Test]
         public void ShouldSetColorsProperly()
         {
-            var grid = KeypadCustom.Create();
+            var grid = CustomKeypadEffect.Create();
             grid.Set(Color.Red);
 
             for (var row = 0; row < KeypadConstants.MaxRows; row++)
@@ -302,8 +302,8 @@ namespace Colore.Tests.Effects.Keypad.Effects
         [Test]
         public void ShouldEqualIdenticalGrid()
         {
-            var a = new KeypadCustom(Color.Red);
-            var b = new KeypadCustom(Color.Red);
+            var a = new CustomKeypadEffect(Color.Red);
+            var b = new CustomKeypadEffect(Color.Red);
 
             Assert.True(a == b);
             Assert.False(a != b);
@@ -314,8 +314,8 @@ namespace Colore.Tests.Effects.Keypad.Effects
         [Test]
         public void ShouldNotEqualDifferentGrid()
         {
-            var a = new KeypadCustom(Color.Red);
-            var b = new KeypadCustom(Color.Pink);
+            var a = new CustomKeypadEffect(Color.Red);
+            var b = new CustomKeypadEffect(Color.Pink);
 
             Assert.False(a == b);
             Assert.True(a != b);
@@ -326,7 +326,7 @@ namespace Colore.Tests.Effects.Keypad.Effects
         [Test]
         public void ShouldNotEqualDifferent2DArray()
         {
-            var grid = new KeypadCustom(Color.Pink);
+            var grid = new CustomKeypadEffect(Color.Pink);
             var arr = new Color[KeypadConstants.MaxRows][];
 
             // Populate the 2D array
@@ -346,7 +346,7 @@ namespace Colore.Tests.Effects.Keypad.Effects
         [Test]
         public void ShouldNotEqual2DArrayWithInvalidRowCount()
         {
-            var grid = KeypadCustom.Create();
+            var grid = CustomKeypadEffect.Create();
             var arr = new Color[2][];
 
             Assert.False(grid == arr);
@@ -358,7 +358,7 @@ namespace Colore.Tests.Effects.Keypad.Effects
         [Test]
         public void ShouldNotEqual2DArrayWithInvalidColumnCount()
         {
-            var grid = KeypadCustom.Create();
+            var grid = CustomKeypadEffect.Create();
             var arr = new Color[KeypadConstants.MaxRows][];
             arr[0] = new Color[2];
 
@@ -371,7 +371,7 @@ namespace Colore.Tests.Effects.Keypad.Effects
         [Test]
         public void ShouldNotEqualDifferent1DArray()
         {
-            var grid = new KeypadCustom(Color.Pink);
+            var grid = new CustomKeypadEffect(Color.Pink);
             var arr = new Color[KeypadConstants.MaxKeys];
 
             for (var index = 0; index < KeypadConstants.MaxKeys; index++)
@@ -386,7 +386,7 @@ namespace Colore.Tests.Effects.Keypad.Effects
         [Test]
         public void ShouldNotEqual1DArrayWithInvalidSize()
         {
-            var grid = KeypadCustom.Create();
+            var grid = CustomKeypadEffect.Create();
             var arr = new Color[2];
 
             Assert.False(grid == arr);
@@ -398,7 +398,7 @@ namespace Colore.Tests.Effects.Keypad.Effects
         [Test]
         public void ShouldNotEqualArbitraryObject()
         {
-            var grid = KeypadCustom.Create();
+            var grid = CustomKeypadEffect.Create();
             var obj = new object();
 
             Assert.False(grid == obj);
@@ -410,7 +410,7 @@ namespace Colore.Tests.Effects.Keypad.Effects
         [Test]
         public void ShouldNotEqualNull()
         {
-            var grid = KeypadCustom.Create();
+            var grid = CustomKeypadEffect.Create();
 
             Assert.False(grid == null);
             Assert.True(grid != null);
@@ -421,21 +421,21 @@ namespace Colore.Tests.Effects.Keypad.Effects
         [Test]
         public void ShouldGetWithGridIndexer()
         {
-            var grid = new KeypadCustom(Color.Red);
+            var grid = new CustomKeypadEffect(Color.Red);
             Assert.AreEqual(Color.Red, grid[3, 3]);
         }
 
         [Test]
         public void ShouldGetWithIndexIndexer()
         {
-            var grid = new KeypadCustom(Color.Red);
+            var grid = new CustomKeypadEffect(Color.Red);
             Assert.AreEqual(Color.Red, grid[3]);
         }
 
         [Test]
         public void ShouldSetWithGridIndexer()
         {
-            var grid = KeypadCustom.Create();
+            var grid = CustomKeypadEffect.Create();
 
             grid[3, 4] = Color.Red;
 
@@ -445,7 +445,7 @@ namespace Colore.Tests.Effects.Keypad.Effects
         [Test]
         public void ShouldSetWithIndexIndexer()
         {
-            var grid = KeypadCustom.Create();
+            var grid = CustomKeypadEffect.Create();
 
             grid[5] = Color.Red;
 
@@ -455,7 +455,7 @@ namespace Colore.Tests.Effects.Keypad.Effects
         [Test]
         public void ClonedStructShouldBeIdentical()
         {
-            var original = new KeypadCustom(Color.Red);
+            var original = new CustomKeypadEffect(Color.Red);
             var clone = original.Clone();
 
             Assert.That(clone, Is.EqualTo(original));
@@ -464,7 +464,7 @@ namespace Colore.Tests.Effects.Keypad.Effects
         [Test]
         public void ClonedStructShouldBeIndependent()
         {
-            var original = new KeypadCustom(Color.Red);
+            var original = new CustomKeypadEffect(Color.Red);
             var clone = original.Clone();
 
             clone.Set(Color.Blue);
@@ -475,22 +475,22 @@ namespace Colore.Tests.Effects.Keypad.Effects
         [Test]
         public void ShouldHaveZeroHashCodeOnDefaultInstance()
         {
-            var effect = new KeypadCustom();
+            var effect = new CustomKeypadEffect();
             Assert.Zero(effect.GetHashCode());
         }
 
         [Test]
         public void ShouldHaveDifferentHashCodesOnDifferentInstances()
         {
-            var a = KeypadCustom.Create();
-            var b = KeypadCustom.Create();
+            var a = CustomKeypadEffect.Create();
+            var b = CustomKeypadEffect.Create();
             Assert.AreNotEqual(a.GetHashCode(), b.GetHashCode());
         }
 
         [Test]
         public void ShouldConstructProperMultiArray()
         {
-            var effect = KeypadCustom.Create();
+            var effect = CustomKeypadEffect.Create();
             effect[2, 3] = Color.Red;
             var array = effect.ToMultiArray();
             Assert.AreEqual(Color.Red, array[2, 3]);

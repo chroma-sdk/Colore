@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="ChromaLinkEffect.cs" company="Corale">
+// <copyright file="HeadsetEffectType.cs" company="Corale">
 //     Copyright © 2015-2020 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,7 +23,7 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Effects.ChromaLink
+namespace Colore.Effects.Headset
 {
     using System.Runtime.Serialization;
 
@@ -33,11 +33,10 @@ namespace Colore.Effects.ChromaLink
     using Newtonsoft.Json.Converters;
 
     /// <summary>
-    /// Supported built-in Chroma Link effects.
+    /// Standard effects for headsets.
     /// </summary>
-    [PublicAPI]
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum ChromaLinkEffect
+    public enum HeadsetEffectType
     {
         /// <summary>
         /// No effect.
@@ -47,24 +46,24 @@ namespace Colore.Effects.ChromaLink
         None = 0,
 
         /// <summary>
-        /// No effect.
-        /// </summary>
-        [PublicAPI]
-        [EnumMember(Value = "CHROMA_CUSTOM")]
-        Custom,
-
-        /// <summary>
-        /// No effect.
+        /// Static color.
         /// </summary>
         [PublicAPI]
         [EnumMember(Value = "CHROMA_STATIC")]
-        Static,
+        Static = 1,
 
         /// <summary>
-        /// No effect.
+        /// Custom headset effect.
+        /// </summary>
+        [PublicAPI]
+        [EnumMember(Value = "CHROMA_CUSTOM")]
+        Custom = 4,
+
+        /// <summary>
+        /// Invalid effect.
         /// </summary>
         [PublicAPI]
         [EnumMember(Value = "CHROMA_INVALID")]
-        Invalid
+        Invalid = 5
     }
 }

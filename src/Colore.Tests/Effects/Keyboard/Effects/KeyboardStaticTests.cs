@@ -36,61 +36,61 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ShouldConstructWithCorrectColor()
         {
-            Assert.That(new KeyboardStatic(Color.Red).Color, Is.EqualTo(Color.Red));
+            Assert.That(new StaticKeyboardEffect(Color.Red).Color, Is.EqualTo(Color.Red));
         }
 
         [Test]
         public void ShouldEqualEffectWithSameColor()
         {
-            var a = new KeyboardStatic(Color.Red);
-            var b = new KeyboardStatic(Color.Red);
+            var a = new StaticKeyboardEffect(Color.Red);
+            var b = new StaticKeyboardEffect(Color.Red);
             Assert.AreEqual(a, b);
         }
 
         [Test]
         public void ShouldNotEqualEffectWithDifferentColor()
         {
-            var a = new KeyboardStatic(Color.Red);
-            var b = new KeyboardStatic(Color.Blue);
+            var a = new StaticKeyboardEffect(Color.Red);
+            var b = new StaticKeyboardEffect(Color.Blue);
             Assert.AreNotEqual(a, b);
         }
 
         [Test]
         public void ShouldEqualEffectWithSameColorUsingEqualOp()
         {
-            var a = new KeyboardStatic(Color.Red);
-            var b = new KeyboardStatic(Color.Red);
+            var a = new StaticKeyboardEffect(Color.Red);
+            var b = new StaticKeyboardEffect(Color.Red);
             Assert.True(a == b);
         }
 
         [Test]
         public void ShouldNotEqualEffectWithDifferentColorUsingEqualOp()
         {
-            var a = new KeyboardStatic(Color.Red);
-            var b = new KeyboardStatic(Color.Blue);
+            var a = new StaticKeyboardEffect(Color.Red);
+            var b = new StaticKeyboardEffect(Color.Blue);
             Assert.False(a == b);
         }
 
         [Test]
         public void ShouldEqualEffectWithSameColorUsingNotEqualOp()
         {
-            var a = new KeyboardStatic(Color.Red);
-            var b = new KeyboardStatic(Color.Red);
+            var a = new StaticKeyboardEffect(Color.Red);
+            var b = new StaticKeyboardEffect(Color.Red);
             Assert.False(a != b);
         }
 
         [Test]
         public void ShouldNotEqualEffectWithDifferentColorUsingNotEqualOp()
         {
-            var a = new KeyboardStatic(Color.Red);
-            var b = new KeyboardStatic(Color.Blue);
+            var a = new StaticKeyboardEffect(Color.Red);
+            var b = new StaticKeyboardEffect(Color.Blue);
             Assert.True(a != b);
         }
 
         [Test]
         public void ShouldNotEqualNull()
         {
-            var effect = new KeyboardStatic(Color.Red);
+            var effect = new StaticKeyboardEffect(Color.Red);
             Assert.AreNotEqual(effect, null);
             Assert.False(effect.Equals(null));
         }
@@ -100,14 +100,14 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         {
             var color = Color.Red;
             var hashcode = color.GetHashCode();
-            var effect = new KeyboardStatic(color);
+            var effect = new StaticKeyboardEffect(color);
             Assert.AreEqual(hashcode, effect.GetHashCode());
         }
 
         [Test]
         public void ShouldNotEqualArbitraryObject()
         {
-            var effect = new KeyboardStatic(Color.Red);
+            var effect = new StaticKeyboardEffect(Color.Red);
             var obj = new object();
             Assert.False(effect.Equals(obj));
         }
@@ -115,16 +115,16 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         [Test]
         public void ShouldEqualEffectWithSameColorCastAsObject()
         {
-            var effect = new KeyboardStatic(Color.Red);
-            var obj = new KeyboardStatic(Color.Red) as object;
+            var effect = new StaticKeyboardEffect(Color.Red);
+            var obj = new StaticKeyboardEffect(Color.Red) as object;
             Assert.True(effect.Equals(obj));
         }
 
         [Test]
         public void ShouldNotEqualEffectWithDifferentColorCastAsObject()
         {
-            var effect = new KeyboardStatic(Color.Red);
-            var obj = new KeyboardStatic(Color.Blue) as object;
+            var effect = new StaticKeyboardEffect(Color.Red);
+            var obj = new StaticKeyboardEffect(Color.Blue) as object;
             Assert.False(effect.Equals(obj));
         }
     }

@@ -40,7 +40,7 @@ namespace Colore.Tests.Effects.ChromaLink
         [Test]
         public void ShouldThrowWhenOutOfRangeGet()
         {
-            var custom = ChromaLinkCustom.Create();
+            var custom = CustomChromaLinkEffect.Create();
 
             // ReSharper disable once NotAccessedVariable
             Color dummy;
@@ -65,7 +65,7 @@ namespace Colore.Tests.Effects.ChromaLink
         [Test]
         public void ShouldThrowWhenOutOfRangeSet()
         {
-            var custom = ChromaLinkCustom.Create();
+            var custom = CustomChromaLinkEffect.Create();
 
             Assert.That(
                 () => custom[-1] = Color.Red,
@@ -87,7 +87,7 @@ namespace Colore.Tests.Effects.ChromaLink
         [Test]
         public void ShouldSetAllColorsWithColorConstructor()
         {
-            var effect = new ChromaLinkCustom(Color.Red);
+            var effect = new CustomChromaLinkEffect(Color.Red);
 
             for (var i = 0; i < ChromaLinkConstants.MaxLeds; i++)
                 Assert.That(effect[i], Is.EqualTo(Color.Red));
@@ -96,7 +96,7 @@ namespace Colore.Tests.Effects.ChromaLink
         [Test]
         public void ShouldSetBlackColorsWithCreate()
         {
-            var effect = ChromaLinkCustom.Create();
+            var effect = CustomChromaLinkEffect.Create();
 
             for (var i = 0; i < ChromaLinkConstants.MaxLeds; i++)
                 Assert.That(effect[i], Is.EqualTo(Color.Black));
@@ -108,10 +108,10 @@ namespace Colore.Tests.Effects.ChromaLink
             var colors = new Color[1];
 
             // ReSharper disable once NotAccessedVariable
-            ChromaLinkCustom dummy;
+            CustomChromaLinkEffect dummy;
 
             Assert.That(
-                () => dummy = new ChromaLinkCustom(colors),
+                () => dummy = new CustomChromaLinkEffect(colors),
                 Throws.InstanceOf<ArgumentException>().With.Property("ParamName").EqualTo("colors"));
         }
 
@@ -123,7 +123,7 @@ namespace Colore.Tests.Effects.ChromaLink
             colors[1] = Color.Blue;
             colors[2] = Color.Green;
 
-            var effect = new ChromaLinkCustom(colors);
+            var effect = new CustomChromaLinkEffect(colors);
 
             for (var i = 0; i < ChromaLinkConstants.MaxLeds; i++)
                 Assert.That(effect[i], Is.EqualTo(colors[i]));
@@ -134,17 +134,17 @@ namespace Colore.Tests.Effects.ChromaLink
         {
             var colors = new List<Color> { Color.Black };
 
-            ChromaLinkCustom dummy;
+            CustomChromaLinkEffect dummy;
 
             Assert.That(
-                () => dummy = new ChromaLinkCustom(colors),
+                () => dummy = new CustomChromaLinkEffect(colors),
                 Throws.InstanceOf<ArgumentException>().With.Property("ParamName").EqualTo("colors"));
         }
 
         [Test]
         public void ShouldSetAllColorsWithSet()
         {
-            var effect = ChromaLinkCustom.Create();
+            var effect = CustomChromaLinkEffect.Create();
 
             effect.Set(Color.Red);
 
@@ -155,7 +155,7 @@ namespace Colore.Tests.Effects.ChromaLink
         [Test]
         public void ShouldResetToBlackWithClear()
         {
-            var effect = ChromaLinkCustom.Create();
+            var effect = CustomChromaLinkEffect.Create();
             effect.Set(Color.Red);
             effect.Clear();
 
@@ -169,7 +169,7 @@ namespace Colore.Tests.Effects.ChromaLink
             var colors = new Color[ChromaLinkConstants.MaxLeds];
             colors[3] = Color.Red;
 
-            var effect = new ChromaLinkCustom(colors);
+            var effect = new CustomChromaLinkEffect(colors);
 
             Assert.That(effect[3], Is.EqualTo(colors[3]));
         }
@@ -177,7 +177,7 @@ namespace Colore.Tests.Effects.ChromaLink
         [Test]
         public void ShouldSetCorrectColor()
         {
-            var effect = ChromaLinkCustom.Create();
+            var effect = CustomChromaLinkEffect.Create();
             effect[3] = Color.Blue;
 
             Assert.That(effect[3], Is.EqualTo(Color.Blue));
@@ -186,8 +186,8 @@ namespace Colore.Tests.Effects.ChromaLink
         [Test]
         public void ShouldEqualIdenticalEffect()
         {
-            var a = new ChromaLinkCustom(Color.Red);
-            var b = new ChromaLinkCustom(Color.Red);
+            var a = new CustomChromaLinkEffect(Color.Red);
+            var b = new CustomChromaLinkEffect(Color.Red);
 
             Assert.True(a == b);
             Assert.False(a != b);
@@ -198,8 +198,8 @@ namespace Colore.Tests.Effects.ChromaLink
         [Test]
         public void ShouldNotEqualDifferentEffect()
         {
-            var a = new ChromaLinkCustom(Color.Red);
-            var b = new ChromaLinkCustom(Color.Blue);
+            var a = new CustomChromaLinkEffect(Color.Red);
+            var b = new CustomChromaLinkEffect(Color.Blue);
 
             Assert.False(a == b);
             Assert.True(a != b);
@@ -210,7 +210,7 @@ namespace Colore.Tests.Effects.ChromaLink
         [Test]
         public void ShouldNotEqualDifferentArray()
         {
-            var effect = new ChromaLinkCustom(Color.Red);
+            var effect = new CustomChromaLinkEffect(Color.Red);
             var array = new Color[ChromaLinkConstants.MaxLeds];
 
             for (var i = 0; i < ChromaLinkConstants.MaxLeds; i++)
@@ -225,7 +225,7 @@ namespace Colore.Tests.Effects.ChromaLink
         [Test]
         public void ShouldNotEqualArrayWithInvalidLength()
         {
-            var effect = new ChromaLinkCustom(Color.Red);
+            var effect = new CustomChromaLinkEffect(Color.Red);
             var array = new[] { Color.Red, Color.Red, Color.Red };
 
             Assert.False(effect == array);
@@ -237,7 +237,7 @@ namespace Colore.Tests.Effects.ChromaLink
         [Test]
         public void ShouldNotEqualArbitraryObject()
         {
-            var effect = ChromaLinkCustom.Create();
+            var effect = CustomChromaLinkEffect.Create();
             var obj = new object();
 
             Assert.False(effect == obj);
@@ -249,7 +249,7 @@ namespace Colore.Tests.Effects.ChromaLink
         [Test]
         public void ShouldNotEqualNull()
         {
-            var effect = default(ChromaLinkCustom);
+            var effect = default(CustomChromaLinkEffect);
 
             Assert.False(effect == null);
             Assert.True(effect != null);
@@ -260,7 +260,7 @@ namespace Colore.Tests.Effects.ChromaLink
         [Test]
         public void ClonedStructShouldBeIdentical()
         {
-            var original = new ChromaLinkCustom(Color.Red);
+            var original = new CustomChromaLinkEffect(Color.Red);
             var clone = original.Clone();
 
             Assert.That(clone, Is.EqualTo(original));
@@ -269,7 +269,7 @@ namespace Colore.Tests.Effects.ChromaLink
         [Test]
         public void ClonedStructShouldBeIndependent()
         {
-            var original = new ChromaLinkCustom(Color.Red);
+            var original = new CustomChromaLinkEffect(Color.Red);
             var clone = original.Clone();
 
             clone.Set(Color.Blue);
@@ -280,7 +280,7 @@ namespace Colore.Tests.Effects.ChromaLink
         [Test]
         public void ShouldHaveZeroHashCodeOnDefaultInstance()
         {
-            var effect = new ChromaLinkCustom();
+            var effect = new CustomChromaLinkEffect();
             Assert.Zero(effect.GetHashCode());
         }
 
@@ -289,7 +289,7 @@ namespace Colore.Tests.Effects.ChromaLink
         {
             var colors = new Color[ChromaLinkConstants.MaxLeds];
             colors[0] = Color.Red;
-            var effect = new ChromaLinkCustom(colors.ToList());
+            var effect = new CustomChromaLinkEffect(colors.ToList());
             Assert.AreEqual(colors, effect.Colors);
         }
     }

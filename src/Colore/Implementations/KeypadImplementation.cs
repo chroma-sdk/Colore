@@ -46,10 +46,10 @@ namespace Colore.Implementations
         private static readonly ILog Log = LogProvider.For<KeypadImplementation>();
 
         /// <summary>
-        /// Internal instance of a <see cref="KeypadCustom" /> struct used for
+        /// Internal instance of a <see cref="CustomKeypadEffect" /> struct used for
         /// the indexer.
         /// </summary>
-        private KeypadCustom _custom;
+        private CustomKeypadEffect _custom;
 
         /// <inheritdoc />
         /// <summary>
@@ -59,7 +59,7 @@ namespace Colore.Implementations
             : base(api)
         {
             Log.Debug("Keypad is initializing");
-            _custom = KeypadCustom.Create();
+            _custom = CustomKeypadEffect.Create();
         }
 
         /// <inheritdoc />
@@ -107,42 +107,42 @@ namespace Colore.Implementations
         /// <inheritdoc />
         /// <summary>
         /// Sets an effect without any parameters.
-        /// Currently, this only works for the <see cref="KeypadEffect.None" /> effect.
+        /// Currently, this only works for the <see cref="KeypadEffectType.None" /> effect.
         /// </summary>
-        /// <param name="effect">Effect options.</param>
-        public async Task<Guid> SetEffectAsync(KeypadEffect effect)
+        /// <param name="effectType">Effect options.</param>
+        public async Task<Guid> SetEffectAsync(KeypadEffectType effectType)
         {
-            return await SetEffectAsync(await Api.CreateKeypadEffectAsync(effect).ConfigureAwait(false)).ConfigureAwait(false);
+            return await SetEffectAsync(await Api.CreateKeypadEffectAsync(effectType).ConfigureAwait(false)).ConfigureAwait(false);
         }
 
         /// <inheritdoc />
         /// <summary>
-        /// Sets a <see cref="KeypadCustom" /> effect on the keypad.
+        /// Sets a <see cref="CustomKeypadEffect" /> effect on the keypad.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="KeypadCustom" /> struct.</param>
-        public async Task<Guid> SetCustomAsync(KeypadCustom effect)
+        /// <param name="effect">An instance of the <see cref="CustomKeypadEffect" /> struct.</param>
+        public async Task<Guid> SetCustomAsync(CustomKeypadEffect effect)
         {
-            return await SetEffectAsync(await Api.CreateKeypadEffectAsync(KeypadEffect.Custom, effect).ConfigureAwait(false)).ConfigureAwait(false);
+            return await SetEffectAsync(await Api.CreateKeypadEffectAsync(KeypadEffectType.Custom, effect).ConfigureAwait(false)).ConfigureAwait(false);
         }
 
         /// <inheritdoc />
         /// <summary>
-        /// Sets a <see cref="KeypadStatic" /> effect on the keypad.
+        /// Sets a <see cref="StaticKeypadEffect" /> effect on the keypad.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="KeypadStatic" /> struct.</param>
-        public async Task<Guid> SetStaticAsync(KeypadStatic effect)
+        /// <param name="effect">An instance of the <see cref="StaticKeypadEffect" /> struct.</param>
+        public async Task<Guid> SetStaticAsync(StaticKeypadEffect effect)
         {
-            return await SetEffectAsync(await Api.CreateKeypadEffectAsync(KeypadEffect.Static, effect).ConfigureAwait(false)).ConfigureAwait(false);
+            return await SetEffectAsync(await Api.CreateKeypadEffectAsync(KeypadEffectType.Static, effect).ConfigureAwait(false)).ConfigureAwait(false);
         }
 
         /// <inheritdoc />
         /// <summary>
-        /// Sets a <see cref="KeypadStatic" /> effect on the keypad.
+        /// Sets a <see cref="StaticKeypadEffect" /> effect on the keypad.
         /// </summary>
         /// <param name="color">Color of the effect.</param>
         public async Task<Guid> SetStaticAsync(Color color)
         {
-            return await SetStaticAsync(new KeypadStatic(color)).ConfigureAwait(false);
+            return await SetStaticAsync(new StaticKeypadEffect(color)).ConfigureAwait(false);
         }
 
         /// <inheritdoc cref="DeviceImplementation.ClearAsync" />
@@ -152,7 +152,7 @@ namespace Colore.Implementations
         public override async Task<Guid> ClearAsync()
         {
             _custom.Clear();
-            return await SetEffectAsync(KeypadEffect.None).ConfigureAwait(false);
+            return await SetEffectAsync(KeypadEffectType.None).ConfigureAwait(false);
         }
     }
 }

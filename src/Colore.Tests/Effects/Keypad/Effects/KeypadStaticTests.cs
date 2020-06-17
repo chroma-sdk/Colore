@@ -36,61 +36,61 @@ namespace Colore.Tests.Effects.Keypad.Effects
         [Test]
         public void ShouldConstructWithCorrectColor()
         {
-            Assert.AreEqual(Color.Red, new KeypadStatic(Color.Red).Color);
+            Assert.AreEqual(Color.Red, new StaticKeypadEffect(Color.Red).Color);
         }
 
         [Test]
         public void ShouldEqualEffectWithSameColor()
         {
-            var a = new KeypadStatic(Color.Red);
-            var b = new KeypadStatic(Color.Red);
+            var a = new StaticKeypadEffect(Color.Red);
+            var b = new StaticKeypadEffect(Color.Red);
             Assert.AreEqual(a, b);
         }
 
         [Test]
         public void ShouldNotEqualEffectWithDifferentColor()
         {
-            var a = new KeypadStatic(Color.Red);
-            var b = new KeypadStatic(Color.Blue);
+            var a = new StaticKeypadEffect(Color.Red);
+            var b = new StaticKeypadEffect(Color.Blue);
             Assert.AreNotEqual(a, b);
         }
 
         [Test]
         public void ShouldEqualEffectWithSameColorUsingEqualOp()
         {
-            var a = new KeypadStatic(Color.Red);
-            var b = new KeypadStatic(Color.Red);
+            var a = new StaticKeypadEffect(Color.Red);
+            var b = new StaticKeypadEffect(Color.Red);
             Assert.True(a == b);
         }
 
         [Test]
         public void ShouldNotEqualEffectWithDifferentColorUsingEqualOp()
         {
-            var a = new KeypadStatic(Color.Red);
-            var b = new KeypadStatic(Color.Blue);
+            var a = new StaticKeypadEffect(Color.Red);
+            var b = new StaticKeypadEffect(Color.Blue);
             Assert.False(a == b);
         }
 
         [Test]
         public void ShouldEqualEffectWithSameColorUsingNotEqualOp()
         {
-            var a = new KeypadStatic(Color.Red);
-            var b = new KeypadStatic(Color.Red);
+            var a = new StaticKeypadEffect(Color.Red);
+            var b = new StaticKeypadEffect(Color.Red);
             Assert.False(a != b);
         }
 
         [Test]
         public void ShouldNotEqualEffectWithDifferentColorUsingNotEqualOp()
         {
-            var a = new KeypadStatic(Color.Red);
-            var b = new KeypadStatic(Color.Blue);
+            var a = new StaticKeypadEffect(Color.Red);
+            var b = new StaticKeypadEffect(Color.Blue);
             Assert.True(a != b);
         }
 
         [Test]
         public void ShouldNotEqualNull()
         {
-            var effect = new KeypadStatic(Color.Red);
+            var effect = new StaticKeypadEffect(Color.Red);
             Assert.AreNotEqual(effect, null);
             Assert.False(effect.Equals(null));
         }
@@ -100,14 +100,14 @@ namespace Colore.Tests.Effects.Keypad.Effects
         {
             var color = Color.Red;
             var hashcode = color.GetHashCode();
-            var effect = new KeypadStatic(color);
+            var effect = new StaticKeypadEffect(color);
             Assert.AreEqual(hashcode, effect.GetHashCode());
         }
 
         [Test]
         public void ShouldNotEqualArbitraryObject()
         {
-            var effect = new KeypadStatic(Color.Red);
+            var effect = new StaticKeypadEffect(Color.Red);
             var obj = new object();
             Assert.False(effect.Equals(obj));
         }
@@ -115,16 +115,16 @@ namespace Colore.Tests.Effects.Keypad.Effects
         [Test]
         public void ShouldEqualEffectWithSameColorCastAsObject()
         {
-            var effect = new KeypadStatic(Color.Red);
-            var obj = new KeypadStatic(Color.Red) as object;
+            var effect = new StaticKeypadEffect(Color.Red);
+            var obj = new StaticKeypadEffect(Color.Red) as object;
             Assert.True(effect.Equals(obj));
         }
 
         [Test]
         public void ShouldNotEqualEffectWithDifferentColorCastAsObject()
         {
-            var effect = new KeypadStatic(Color.Red);
-            var obj = new KeypadStatic(Color.Blue) as object;
+            var effect = new StaticKeypadEffect(Color.Red);
+            var obj = new StaticKeypadEffect(Color.Blue) as object;
             Assert.False(effect.Equals(obj));
         }
     }
