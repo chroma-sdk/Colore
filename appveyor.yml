@@ -59,6 +59,7 @@ deploy:
   server: https://nuget.pkg.github.com/chroma-sdk/index.json
   name: production
   username: Sharparam
+  skip_symbols: true
   api_key:
     secure: REm65Z5Fp9idcP8KKLp06b33/PES+jiRxNAc7ZalS7jHR6i1iCrgxBVcm42Lpvbd
   artifact: NuGet
@@ -76,6 +77,7 @@ deploy:
   server: https://nuget.pkg.github.com/chroma-sdk/index.json
   name: development
   username: Sharparam
+  skip_symbols: true
   api_key:
     secure: REm65Z5Fp9idcP8KKLp06b33/PES+jiRxNAc7ZalS7jHR6i1iCrgxBVcm42Lpvbd
   artifact: NuGet
