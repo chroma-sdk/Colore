@@ -99,6 +99,8 @@ The REST API requires information about your application, so you'll have to pass
 
 For a more in-depth guide on how to get started, check out [our wiki][getting-started].
 
+For more information on the native and REST SDKs that Colore uses, check out [Razer's official page for the Chroma SDK][rzdev] and their [page about SDK tools][chroma-sdk-tools].
+
 Dependencies
 ------------
 
