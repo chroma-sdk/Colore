@@ -186,8 +186,6 @@ There may be others we are unaware of, so please let us know if there are any ot
 [ghreleasebadge]: https://img.shields.io/github/release/chroma-sdk/Colore.svg?logo=github
 [ng]: https://www.nuget.org/packages/Colore
 [ngverbadge]: https://img.shields.io/nuget/v/Colore.svg
-[mg]: https://www.myget.org/feed/chroma-sdk/package/nuget/Colore
-[mgverbadge]: https://img.shields.io/myget/chroma-sdk/vpre/Colore.svg?label=myget
 [gpr]: https://github.com/chroma-sdk/Colore/packages
 [gpr-colore]: https://github.com/chroma-sdk/Colore/packages/274021
 
@@ -197,8 +195,6 @@ There may be others we are unaware of, so please let us know if there are any ot
 [travis-develop-badge]: https://travis-ci.org/chroma-sdk/Colore.svg?branch=develop
 [test-develop-status]: https://ci.appveyor.com/project/chroma-sdk/colore/branch/develop/tests
 [test-develop-badge]: https://img.shields.io/appveyor/tests/chroma-sdk/Colore/develop.svg
-[coveralls-develop]: https://coveralls.io/github/chroma-sdk/Colore?branch=develop
-[coveralls-develop-badge]: https://coveralls.io/repos/github/chroma-sdk/Colore/badge.svg?branch=develop
 [codecov-develop]: https://codecov.io/gh/chroma-sdk/Colore/branch/develop
 [codecov-develop-badge]: https://codecov.io/gh/chroma-sdk/Colore/branch/develop/graph/badge.svg
 [codefactor-develop]: https://www.codefactor.io/repository/github/chroma-sdk/colore/overview/develop
@@ -210,8 +206,6 @@ There may be others we are unaware of, so please let us know if there are any ot
 [travis-master-badge]: https://travis-ci.org/chroma-sdk/Colore.svg?branch=master
 [test-master-status]: https://ci.appveyor.com/project/chroma-sdk/colore/branch/master/tests
 [test-master-badge]: https://img.shields.io/appveyor/tests/chroma-sdk/Colore/master.svg
-[coveralls-master]: https://coveralls.io/github/chroma-sdk/Colore
-[coveralls-master-badge]: https://coveralls.io/repos/github/chroma-sdk/Colore/badge.svg
 [codecov-master]: https://codecov.io/gh/chroma-sdk/Colore
 [codecov-master-badge]: https://codecov.io/gh/chroma-sdk/Colore/branch/master/graph/badge.svg
 [codefactor-master]: https://www.codefactor.io/repository/github/chroma-sdk/colore/overview/master
