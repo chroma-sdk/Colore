@@ -1,0 +1,33 @@
+name: CI
+
+on: push
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Fetch all history for all tags and branches
+      run: git fetch --prune --unshallow
+    - name: 'Cache: NuGet'
+      uses: actions/cache@v2
+      with:
+        path: ~/.nuget/packages
+        key: ${{ runner.os }}-nuget-${{ hashFiles('**.csproj') }}
+        restore-keys: |
+          ${{ runner.os }}-nuget-
+    - uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '3.1.x'
+        source-url: https://nuget.pkg.github.com/chroma-sdk/index.json
+      env:
+        DOTNET_CLI_TELEMETRY_OPTOUT: true
+        NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Restore
+      run: dotnet restore src/Colore.sln
+    - name: Build
+      run: dotnet build --no-restore --configuration Release src/Colore.sln
+    - name: Test
+      run: dotnet test --no-restore --no-build --configuration Release --settings src/coverlet.runsettings --collect:"XPlat Code Coverage" src/Colore.sln
