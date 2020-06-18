@@ -170,7 +170,7 @@ Task("Build")
 
         if (isWindows)
         {
-            Build(mainProject);
+            Build(solution);
         }
         else
         {
@@ -178,9 +178,9 @@ Task("Build")
             {
                 Build(mainProject, framework);
             }
-        }
 
-        Build(testProject);
+            Build(testProject);
+        }
     });
 
 Task("Test")
