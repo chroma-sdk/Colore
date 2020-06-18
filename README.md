@@ -140,6 +140,10 @@ Native Documentation
 --------------------
 As Colore is built upon the native Chroma SDK for C++, it can be worth taking a look at their [documentation][chroma-native].
 
+REST Documentation
+------------------
+
+Colore's REST mode is built on Razer's official REST API, which [has its own documentation][chroma-rest].
 
 Razer Chroma Workshop
 ---------------------
