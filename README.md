@@ -137,8 +137,8 @@ Note that the above commands are executed with [PowerShell][ps]. If you are buil
 use the `build.sh` script in place of `build.ps1` (you may have to make it executable first with `chmod +x build.sh`).
 
 Native Documentation
---------
-As Colore is built upon the native Chroma SDK for C++, it can be worth taking a look at their [documentation](https://assets.razerzone.com/dev_portal/docs/index.html).
+--------------------
+As Colore is built upon the native Chroma SDK for C++, it can be worth taking a look at their [documentation][chroma-native].
 
 
 Razer Chroma Workshop
