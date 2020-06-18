@@ -317,9 +317,10 @@ Task("CI")
     .IsDependentOn("Publish")
     .IsDependentOn("Pack")
     .IsDependentOn("Docs")
+    .IsDependentOn("CoverageReport")
     .IsDependentOn("Codecov");
 
-Task("Travis").IsDependentOn("Test");
+Task("Travis").IsDependentOn("Test").IsDependentOn("CoverageReport");
 Task("AppVeyor").IsDependentOn("CI");
 Task("GitHub").IsDependentOn("CI");
 Task("Default").IsDependentOn("Test");
