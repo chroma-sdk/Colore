@@ -63,6 +63,12 @@ dotnet add package Colore
 
 You can also search for it in Visual Studio by right clicking your project and choosing "Manage NuGet Packages..." and install it the GUI way.
 
+### Pre-releases
+
+New release candidate versions will be uploaded to NuGet and marked as pre-releases there.
+
+You can also find pre-release versions for [Colore][gpr-colore] and any additional extensions in [the GitHub package registry][gpr]. The GitHub package registry will be the place where you'll always find the most bleeding edge packages.
+
 ### Extensions
 
 The [WPF][colore-wpf] and [WinForms][colore-winforms] extension packages for Colore are not yet available for the new Colore version, but will be on NuGet soon, so stay tuned!
@@ -164,6 +170,8 @@ There may be others we are unaware of, so please let us know if there are any ot
 [ngverbadge]: https://img.shields.io/nuget/v/Colore.svg
 [mg]: https://www.myget.org/feed/chroma-sdk/package/nuget/Colore
 [mgverbadge]: https://img.shields.io/myget/chroma-sdk/vpre/Colore.svg?label=myget
+[gpr]: https://github.com/chroma-sdk/Colore/packages
+[gpr-colore]: https://github.com/chroma-sdk/Colore/packages/274021
 
 [appveyor-develop-status]: https://ci.appveyor.com/project/chroma-sdk/colore/branch/develop
 [appveyor-develop-badge]: https://ci.appveyor.com/api/projects/status/on4kfnasv564yhh9/branch/develop?svg=true
