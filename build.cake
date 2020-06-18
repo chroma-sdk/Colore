@@ -1,9 +1,7 @@
 #addin nuget:?package=Cake.DocFx&version=0.13.1
-#addin nuget:?package=Cake.Coveralls&version=0.10.1
 #addin nuget:?package=Cake.Codecov&version=0.8.0
 #tool "nuget:?package=GitVersion.CommandLine&version=5.3.6"
 #tool "nuget:?package=ReportGenerator&version=4.6.1"
-#tool nuget:?package=coveralls.io&version=1.4.2
 #tool nuget:?package=Codecov&version=1.11.1
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -28,10 +26,6 @@ var buildNumber = HasArgument("BuildNumber")
             : EnvironmentVariable("BUILD_NUMBER") != null
                 ? int.Parse(EnvironmentVariable("BUILD_NUMBER"))
                 : 0;
-
-var coverallsRepoToken = HasArgument("CoverallsToken")
-    ? Argument<string>("CoverallsToken")
-    : EnvironmentVariable("COVERALLS_REPO_TOKEN");
 
 ///////////////////////////////////////////////////////////////////////////////
 // GLOBALS
@@ -289,22 +283,6 @@ Task("Docs")
         Zip("./docs/_site", $"./artifacts/colore_{version.SemVer}_docs.zip");
     });
 
-Task("Coveralls")
-    .WithCriteria(cover)
-    .WithCriteria(isAppVeyor)
-    .WithCriteria(coverallsRepoToken != null)
-    .IsDependentOn("Test")
-    .Does(() =>
-    {
-        Information("Running Coveralls tool on coverage result");
-
-        CoverallsIo("./artifacts/coverage.xml", new CoverallsIoSettings
-        {
-            FullSources = true,
-            RepoToken = coverallsRepoToken
-        });
-    });
-
 Task("Codecov")
     .WithCriteria(cover)
     .WithCriteria(isAppVeyor)
@@ -335,7 +313,6 @@ Task("CI")
     .IsDependentOn("Publish")
     .IsDependentOn("Pack")
     .IsDependentOn("Docs")
-    .IsDependentOn("Coveralls")
     .IsDependentOn("Codecov");
 
 Task("Travis").IsDependentOn("Test");

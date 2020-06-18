@@ -13,8 +13,6 @@ environment:
   DOTNET_CLI_TELEMETRY_OPTOUT: true
   github_access_token:
     secure: REm65Z5Fp9idcP8KKLp06b33/PES+jiRxNAc7ZalS7jHR6i1iCrgxBVcm42Lpvbd
-  COVERALLS_REPO_TOKEN:
-    secure: eFKKgpHHQpP0wnqAHcRDLjDOUr7ndLNG761qrHDg28G+MfSkyeXtLTlf2bHkFUxo
 
 cache:
   - tools -> build.cake
