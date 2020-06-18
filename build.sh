@@ -9,7 +9,7 @@ CAKE_ARGUMENTS=""
 for i in "$@"; do
     case $1 in
         -s|--script) SCRIPT="$2"; shift ;;
-        -v|--verbosity) VERBOSITY="$2"; shift ;;
+        -V|--verbosity) VERBOSITY="$2"; shift ;;
         --) shift; CAKE_ARGUMENTS="${CAKE_ARGUMENTS} $@"; break ;;
         *) CAKE_ARGUMENTS="${CAKE_ARGUMENTS} $1" ;;
     esac
