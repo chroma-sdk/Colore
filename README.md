@@ -189,6 +189,8 @@ There may be others we are unaware of, so please let us know if there are any ot
 [gpr]: https://github.com/chroma-sdk/Colore/packages
 [gpr-colore]: https://github.com/chroma-sdk/Colore/packages/274021
 
+[gha-develop]: https://github.com/chroma-sdk/Colore/actions?query=workflow%3ACI+branch%3Adevelop
+[gha-develop-badge]: https://github.com/chroma-sdk/Colore/workflows/CI/badge.svg?branch=develop
 [appveyor-develop-status]: https://ci.appveyor.com/project/chroma-sdk/colore/branch/develop
 [appveyor-develop-badge]: https://ci.appveyor.com/api/projects/status/on4kfnasv564yhh9/branch/develop?svg=true
 [travis-develop-status]: https://travis-ci.org/chroma-sdk/Colore
@@ -200,6 +202,8 @@ There may be others we are unaware of, so please let us know if there are any ot
 [codefactor-develop]: https://www.codefactor.io/repository/github/chroma-sdk/colore/overview/develop
 [codefactor-develop-badge]: https://www.codefactor.io/repository/github/chroma-sdk/colore/badge/develop
 
+[gha-master]: https://github.com/chroma-sdk/Colore/actions?query=workflow%3ACI+branch%3Amaster
+[gha-master-badge]: https://github.com/chroma-sdk/Colore/workflows/CI/badge.svg?branch=master
 [appveyor-master-status]: https://ci.appveyor.com/project/chroma-sdk/colore/branch/master
 [appveyor-master-badge]: https://ci.appveyor.com/api/projects/status/on4kfnasv564yhh9/branch/master?svg=true
 [travis-master-status]: https://travis-ci.org/chroma-sdk/Colore
@@ -221,6 +225,7 @@ There may be others we are unaware of, so please let us know if there are any ot
 [colore-winforms]: https://github.com/chroma-sdk/Colore.WinForms
 
 [rzdev]: https://developer.razer.com/chroma/
+[chroma-sdk-tools]: https://developer.razer.com/works-with-chroma/download/
 [synapse]: https://www.razer.com/synapse-3
 [chroma-native]: https://assets.razerzone.com/dev_portal/C%2B%2B/html/en/index.html
 [chroma-rest]: https://assets.razerzone.com/dev_portal/REST/html/index.html
