@@ -3,13 +3,12 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <Platforms>AnyCPU;x64;x86</Platforms>
-    <CodeAnalysisRuleset>../Colore.ruleset</CodeAnalysisRuleset>
-    <Features>IOperation</Features>
+    <CodeAnalysisRuleset>../../Colore.ruleset</CodeAnalysisRuleset>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <AdditionalFiles Include="../stylecop.json">
+    <AdditionalFiles Include="../../stylecop.json">
       <Link>stylecop.json</Link>
     </AdditionalFiles>
   </ItemGroup>
@@ -29,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Colore\Colore.csproj" />
+    <ProjectReference Include="..\..\src\Colore\Colore.csproj" />
   </ItemGroup>
 
 </Project>

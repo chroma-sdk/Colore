@@ -1,0 +1,17 @@
+<Project>
+  <PropertyGroup>
+    <RepoRoot>$(MSBuildThisFileDirectory)</RepoRoot>
+    <LangVersion>latest</LangVersion>
+    <!-- <Nullable>enable</Nullable> -->
+    <Authors>Sharparam</Authors>
+    <Copyright>Copyright (c) 2015-2020 by Adam Hellberg and Brandon Scott.</Copyright>
+    <RepositoryUrl>https://github.com/chroma-sdk/Colore</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <!-- <WarningsAsErrors>8600,8602,8603,8604,8614,8618,8619,8625,8632</WarningsAsErrors> -->
+  </PropertyGroup>
+</Project>

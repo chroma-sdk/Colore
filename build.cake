@@ -45,18 +45,13 @@ IEnumerable<string> ReadCoverageFilters(string path)
     return System.IO.File.ReadLines(path).Where(l => !string.IsNullOrWhiteSpace(l) && !l.StartsWith("#"));
 }
 
-if (isTravis)
-{
-    Information("OpenCover does not work on Travis CI, disabling coverage generation");
-    cover = false;
-}
-
 ///////////////////////////////////////////////////////////////////////////////
 // SETUP / TEARDOWN
 ///////////////////////////////////////////////////////////////////////////////
 
+var solution = "./Colore.sln";
 var mainProject = "./src/Colore/Colore.csproj";
-var testProject = "./src/Colore.Tests/Colore.Tests.csproj";
+var testProject = "./tests/Colore.Tests/Colore.Tests.csproj";
 var frameworks = new List<string>();
 
 GitVersion version = null;
@@ -102,8 +97,8 @@ Setup(ctx =>
 
 Teardown(ctx =>
 {
-	// Executed AFTER the last task.
-	Information("Finished running tasks.");
+    // Executed AFTER the last task.
+    Information("Finished running tasks.");
 });
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -154,7 +149,7 @@ Task("Clean")
         Information("Cleaning output directories");
         CleanDirectory("./artifacts");
         CleanDirectory("./publish");
-        DotNetCoreClean("src/");
+        DotNetCoreClean(solution);
         CleanDirectory("./src/Colore.Tests/TestResults");
         CreateDirectory("./artifacts/nuget");
     });
@@ -163,7 +158,7 @@ Task("Restore")
     .IsDependentOn("Clean")
     .Does(() =>
     {
-        DotNetCoreRestore("src/");
+        DotNetCoreRestore(solution);
     });
 
 Task("Build")
@@ -192,14 +187,14 @@ Task("Test")
     .IsDependentOn("Build")
     .Does(() =>
     {
-        var filters = ReadCoverageFilters("./src/coverage-filters.txt");
+        var filters = ReadCoverageFilters("./tests/coverage-filters.txt");
 
         var settings = new DotNetCoreTestSettings
         {
             Configuration = configuration,
             NoBuild = true,
             NoRestore = true,
-            Settings = "src/coverlet.runsettings",
+            Settings = "tests/coverlet.runsettings",
             ArgumentCustomization = args => args.Append("--collect:\"XPlat Code Coverage\"")
         };
 
@@ -214,7 +209,7 @@ Task("Test")
 
         DotNetCoreTest(testProject, settings);
 
-        var testResults = GetFiles("src/Colore.Tests/TestResults/*/coverage.cobertura.xml");
+        var testResults = GetFiles("tests/Colore.Tests/TestResults/*/coverage.cobertura.xml");
         CopyFiles(testResults, "./artifacts");
         MoveFile("./artifacts/coverage.cobertura.xml", "./artifacts/coverage.xml");
 
