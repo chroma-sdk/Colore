@@ -284,6 +284,7 @@ Task("Docs")
         {
             DocFxBuild("./docs/docfx.json");
         }
+
         Zip("./docs/_site", $"./artifacts/colore_{version.SemVer}_docs.zip");
     });
 
