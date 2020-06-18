@@ -219,6 +219,7 @@ Task("CoverageReport")
     .Does(() =>
     {
         ReportGenerator("./artifacts/coverage.xml", "./artifacts/coverage-report");
+        Zip("./artifacts/coverage-report", $"./artifacts/colore_{version.SemVer}_coverage.zip");
     });
 
 Task("Dist")
