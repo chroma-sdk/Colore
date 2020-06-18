@@ -20,6 +20,13 @@ jobs:
         key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
         restore-keys: |
           ${{ runner.os }}-nuget-
+    - name: 'Cache: Cake'
+      uses: actions/cache@v2
+      with:
+        path: tools
+        key: ${{ runner.os }}-cake-${{ hashFiles('build.cake') }}
+        restore-keys: |
+          ${{ runner.os }}-cake-
     - uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '3.1.x'
@@ -27,12 +34,12 @@ jobs:
       env:
         DOTNET_CLI_TELEMETRY_OPTOUT: true
         NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: Restore
-      run: dotnet restore Colore.sln
-    - name: Build
-      run: dotnet build --no-restore --configuration Release Colore.sln
-    - name: Test
-      run: dotnet test --no-restore --no-build --configuration Release --settings tests/coverlet.runsettings --collect:"XPlat Code Coverage" Colore.sln
+    - name: Cake
+      uses: cake-build/cake-action@v1
+      with:
+        target: GitHub
+        cake-bootstrap: true
+        verbosity: Diagnostic
     - name: Upload test results artifact
       uses: actions/upload-artifact@v2
       with:
