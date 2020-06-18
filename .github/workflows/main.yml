@@ -42,9 +42,9 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: nuget
-        path: '**.nupkg'
+        path: '**/*.nupkg'
     - name: Upload snupkg to NuGet artifact
       uses: actions/upload-artifact@v2
       with:
         name: nuget
-        path: '**.snupkg'
+        path: '**/*.snupkg'
