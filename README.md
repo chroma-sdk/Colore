@@ -180,7 +180,7 @@ There may be others we are unaware of, so please let us know if there are any ot
 [master]: https://github.com/chroma-sdk/Colore/tree/master
 [develop]: https://github.com/chroma-sdk/Colore/tree/develop
 
-[license]: http://opensource.org/licenses/MIT
+[license]: https://opensource.org/licenses/MIT
 [licensebadge]: https://img.shields.io/badge/license-MIT-blue.svg
 [ghrelease]: https://github.com/chroma-sdk/Colore/releases
 [ghreleasebadge]: https://img.shields.io/github/release/chroma-sdk/Colore.svg?logo=github
@@ -217,7 +217,7 @@ There may be others we are unaware of, so please let us know if there are any ot
 [codefactor-master]: https://www.codefactor.io/repository/github/chroma-sdk/colore/overview/master
 [codefactor-master-badge]: https://www.codefactor.io/repository/github/chroma-sdk/colore/badge/master
 
-[gitter]: https://gitter.im/chroma-sdk/Colore?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
+[gitter]: https://gitter.im/chroma-sdk/Colore
 [gitterbadge]: https://badges.gitter.im/Join%20Chat.svg
 [discord]: https://discord.gg/4ysuMYK
 [discordbadge]: https://img.shields.io/discord/342761229544194048.svg?label=discord&logo=discord
@@ -226,11 +226,11 @@ There may be others we are unaware of, so please let us know if there are any ot
 [colore-wpf]: https://github.com/chroma-sdk/Colore.Wpf
 [colore-winforms]: https://github.com/chroma-sdk/Colore.WinForms
 
-[rzdev]: http://developer.razerzone.com/chroma
-[synapse]: https://www.razerzone.com/synapse
-[chroma-native]: https://assets.razerzone.com/dev_portal/C%2B%2B/html/index.html
+[rzdev]: https://developer.razer.com/chroma/
+[synapse]: https://www.razer.com/synapse-3
+[chroma-native]: https://assets.razerzone.com/dev_portal/C%2B%2B/html/en/index.html
 [chroma-rest]: https://assets.razerzone.com/dev_portal/REST/html/index.html
 
 [ps]: https://docs.microsoft.com/en-us/powershell/
 
-[workshop]: http://www.razerzone.com/chroma-workshop/
+[workshop]: https://www.razer.com/chroma-workshop
