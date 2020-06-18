@@ -20,7 +20,7 @@ done
 set -- ${CAKE_ARGUMENTS}
 
 # Restore Cake tool
-#dotnet tool restore
+dotnet tool restore
 
 if [ $? -ne 0 ]; then
     echo "An error occured while installing Cake."
