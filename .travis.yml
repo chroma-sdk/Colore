@@ -3,7 +3,7 @@ language: csharp
 os: linux
 
 sudo: required
-dist: trusty
+dist: bionic
 
 env:
   global:
