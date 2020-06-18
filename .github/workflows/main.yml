@@ -33,3 +33,18 @@ jobs:
       run: dotnet build --no-restore --configuration Release src/Colore.sln
     - name: Test
       run: dotnet test --no-restore --no-build --configuration Release --settings src/coverlet.runsettings --collect:"XPlat Code Coverage" src/Colore.sln
+    - name: Upload test results artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: test-results
+        path: src/*/TestResults/**/coverage.cobertura.xml
+    - name: Upload nupkg to NuGet artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: nuget
+        path: '**.nupkg'
+    - name: Upload snupkg to NuGet artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: nuget
+        path: '**.snupkg'
