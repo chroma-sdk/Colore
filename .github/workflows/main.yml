@@ -28,16 +28,16 @@ jobs:
         DOTNET_CLI_TELEMETRY_OPTOUT: true
         NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Restore
-      run: dotnet restore src/Colore.sln
+      run: dotnet restore Colore.sln
     - name: Build
-      run: dotnet build --no-restore --configuration Release src/Colore.sln
+      run: dotnet build --no-restore --configuration Release Colore.sln
     - name: Test
-      run: dotnet test --no-restore --no-build --configuration Release --settings src/coverlet.runsettings --collect:"XPlat Code Coverage" src/Colore.sln
+      run: dotnet test --no-restore --no-build --configuration Release --settings tests/coverlet.runsettings --collect:"XPlat Code Coverage" Colore.sln
     - name: Upload test results artifact
       uses: actions/upload-artifact@v2
       with:
         name: test-results
-        path: src/Colore.Tests/TestResults/*/coverage.cobertura.xml
+        path: tests/Colore.Tests/TestResults/*/coverage.cobertura.xml
     - name: Upload Colore nupkg files to NuGet artifact
       uses: actions/upload-artifact@v2
       with:
