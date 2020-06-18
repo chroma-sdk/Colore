@@ -37,14 +37,14 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: test-results
-        path: src/*/TestResults/**/coverage.cobertura.xml
-    - name: Upload nupkg to NuGet artifact
+        path: src/Colore.Tests/TestResults/*/coverage.cobertura.xml
+    - name: Upload Colore nupkg files to NuGet artifact
       uses: actions/upload-artifact@v2
       with:
         name: nuget
-        path: '**/*.nupkg'
-    - name: Upload snupkg to NuGet artifact
+        path: 'src/Colore/bin/Release/*.nupkg'
+    - name: Upload Colore snupkg files to NuGet artifact
       uses: actions/upload-artifact@v2
       with:
         name: nuget
-        path: '**/*.snupkg'
+        path: 'src/Colore/bin/Release/*.snupkg'
