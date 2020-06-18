@@ -157,17 +157,17 @@ Games using Colore
 
 The following games (powered by Unity) are using Colore:
 
-[![DubWars](http://cdn.akamai.steamstatic.com/steam/apps/290000/capsule_184x69.jpg)](http://store.steampowered.com/app/290000/)
-[![Masquerada: Songs and Shadows](http://cdn.akamai.steamstatic.com/steam/apps/459090/capsule_184x69.jpg)](http://store.steampowered.com/app/459090/)
-[![Nevermind](http://cdn.akamai.steamstatic.com/steam/apps/342260/capsule_184x69.jpg)](http://store.steampowered.com/app/342260/)
-[![Please, Don't Touch Anything 3D](http://cdn.akamai.steamstatic.com/steam/apps/529590/capsule_184x69.jpg)](http://store.steampowered.com/app/529590/)
-[![Starcrawlers](http://cdn.akamai.steamstatic.com/steam/apps/318970/capsule_184x69.jpg)](http://store.steampowered.com/app/318970/)
-[![The Little Acre](http://cdn.akamai.steamstatic.com/steam/apps/423590/capsule_184x69.jpg)](http://store.steampowered.com/app/423590/)
+[![DubWars](http://cdn.akamai.steamstatic.com/steam/apps/290000/capsule_184x69.jpg)](https://store.steampowered.com/app/290000/)
+[![Masquerada: Songs and Shadows](http://cdn.akamai.steamstatic.com/steam/apps/459090/capsule_184x69.jpg)](https://store.steampowered.com/app/459090/)
+[![Nevermind](http://cdn.akamai.steamstatic.com/steam/apps/342260/capsule_184x69.jpg)](https://store.steampowered.com/app/342260/)
+[![Please, Don't Touch Anything 3D](http://cdn.akamai.steamstatic.com/steam/apps/529590/capsule_184x69.jpg)](https://store.steampowered.com/app/529590/)
+[![Starcrawlers](http://cdn.akamai.steamstatic.com/steam/apps/318970/capsule_184x69.jpg)](https://store.steampowered.com/app/318970/)
+[![The Little Acre](http://cdn.akamai.steamstatic.com/steam/apps/423590/capsule_184x69.jpg)](https://store.steampowered.com/app/423590/)
 
 Projects using Colore
 ---------------------
 
-[Aurora](http://www.project-aurora.com/) - Unified lighting effects across multiple brands and various games. ([GitHub](https://github.com/antonpup/Aurora))
+[Aurora](https://www.project-aurora.com/) - Unified lighting effects across multiple brands and various games. ([GitHub](https://github.com/antonpup/Aurora))
 
 There may be others we are unaware of, so please let us know if there are any others.
 
