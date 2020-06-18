@@ -20,7 +20,7 @@
 | [**`develop`**][develop] | [![Workflow status][gha-develop-badge]][gha-develop] | [![Build status][appveyor-develop-badge]][appveyor-develop-status] | [![TravisCI Status][travis-develop-badge]][travis-develop-status] |
 
 | [`master`][master] | [![Test status][test-master-badge]][test-master-status] | [![Codecov coverage][codecov-master-badge]][codecov-master] | [![CodeFactor][codefactor-master-badge]][codefactor-master] |
-|-|-|-|-|-|-|-|
+|-|-|-|-|
 | [**`develop`**][develop] | [![Test status][test-develop-badge]][test-develop-status] | [![Codecov coverage][codecov-develop-badge]][codecov-develop] | [![CodeFactor][codefactor-develop-badge]][codefactor-develop] |
 
 Getting started
