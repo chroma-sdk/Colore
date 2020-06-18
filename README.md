@@ -1,15 +1,27 @@
-# ![Colore][colorelogo]
+<p align="center"><img src="https://files.sharparam.com/2017/10/31/colore-logo.png" alt="Colore"></p>
 
-[![MIT License][licensebadge]][license]
-[![Latest GitHub release][ghreleasebadge]][ghrelease]
-[![NuGet version][ngverbadge]][ng]
-[![MyGet version][mgverbadge]][mg]
+<p align="center">
+  <a href="https://opensource.org/licenses/MIT">
+    <img alt="MIT License" src="https://img.shields.io/badge/license-MIT-blue.svg">
+  </a>
+  <a href="https://github.com/chroma-sdk/Colore/releases">
+    <img alt="Latest GitHub release" src="https://img.shields.io/github/release/chroma-sdk/Colore.svg?logo=github">
+  </a>
+  <a href="https://www.nuget.org/packages/Colore">
+    <img alt="NuGet package" src="https://img.shields.io/nuget/v/Colore.svg">
+  </a>
+</p>
 
-| [Master][master] | [![Build status][appveyor-master-badge]][appveyor-master-status] | [![TravisCI Status][travis-master-badge]][travis-master-status] | [![Test status][test-master-badge]][test-master-status] | [![Coverage][coveralls-master-badge]][coveralls-master] | [![Codecov coverage][codecov-master-badge]][codecov-master] | [![CodeFactor][codefactor-master-badge]][codefactor-master] |
+<p align="center">A powerful and elegant C# library for Razer Chroma's SDK.</p>
+
+| | GitHub | AppVeyor | Travis |
+|-|-|-|-|
+| [**`master`**][master] | [![Workflow status][gha-master-badge]][gha-master] | [![Build status][appveyor-master-badge]][appveyor-master-status] | [![TravisCI Status][travis-master-badge]][travis-master-status] |
+| [**`develop`**][develop] | [![Workflow status][gha-develop-badge]][gha-develop] | [![Build status][appveyor-develop-badge]][appveyor-develop-status] | [![TravisCI Status][travis-develop-badge]][travis-develop-status] |
+
+| [`master`][master] | [![Test status][test-master-badge]][test-master-status] | [![Codecov coverage][codecov-master-badge]][codecov-master] | [![CodeFactor][codefactor-master-badge]][codefactor-master] |
 |-|-|-|-|-|-|-|
-| [**Develop**][develop] | [![Build status][appveyor-develop-badge]][appveyor-develop-status] | [![TravisCI Status][travis-develop-badge]][travis-develop-status] | [![Test status][test-develop-badge]][test-develop-status] | [![Coverage][coveralls-develop-badge]][coveralls-develop] | [![Codecov coverage][codecov-develop-badge]][codecov-develop] | [![CodeFactor][codefactor-develop-badge]][codefactor-develop] |
-
-A powerful and elegant C# library for Razer Chroma's SDK
+| [**`develop`**][develop] | [![Test status][test-develop-badge]][test-develop-status] | [![Codecov coverage][codecov-develop-badge]][codecov-develop] | [![CodeFactor][codefactor-develop-badge]][codefactor-develop] |
 
 Getting started
 ---------------
