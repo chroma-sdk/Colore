@@ -3,8 +3,8 @@
 #addin nuget:?package=Cake.DocFx&version=0.13.1
 #addin nuget:?package=Cake.Codecov&version=0.8.0
 
-#tool "dotnet:?package=GitVersion.Tool&version=5.3.6"
-#tool "nuget:?package=ReportGenerator&version=4.6.1"
+#tool dotnet:?package=GitVersion.Tool&version=5.3.6
+#tool dotnet:?package=dotnet-reportgenerator-globaltool&version=4.6.1
 #tool nuget:?package=Codecov&version=1.11.1
 
 ///////////////////////////////////////////////////////////////////////////////
