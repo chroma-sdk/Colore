@@ -77,7 +77,7 @@ You can also search for it in Visual Studio by right clicking your project and c
 
 ### Pre-releases
 
-New release candidate versions will be uploaded to NuGet and marked as pre-releases there.
+New release candidate versions will be uploaded to NuGet and marked as pre-releases there (vX.Y.Z-rcDDDD).
 
 You can also find pre-release versions for [Colore][gpr-colore] and any additional extensions in [the GitHub package registry][gpr]. The GitHub package registry will be the place where you'll always find the most bleeding edge packages.
 
