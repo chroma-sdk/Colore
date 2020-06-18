@@ -212,7 +212,12 @@ Task("Test")
         var testResults = GetFiles("tests/Colore.Tests/TestResults/*/coverage.cobertura.xml");
         CopyFiles(testResults, "./artifacts");
         MoveFile("./artifacts/coverage.cobertura.xml", "./artifacts/coverage.xml");
+    });
 
+Task("CoverageReport")
+    .IsDependentOn("Test")
+    .Does(() =>
+    {
         ReportGenerator("./artifacts/coverage.xml", "./artifacts/coverage-report");
     });
 
