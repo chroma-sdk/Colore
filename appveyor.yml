@@ -18,8 +18,8 @@ environment:
 
 cache:
   - tools -> build.cake
-  - C:\ProgramData\chocolatey\bin -> build.cake
-  - C:\ProgramData\chocolatey\lib -> build.cake
+  - C:\ProgramData\chocolatey\bin -> appveyor.yml
+  - C:\ProgramData\chocolatey\lib -> appveyor.yml
   - '%USERPROFILE%\.nuget\packages -> **\*.csproj'
 
 init:
