@@ -1,0 +1,1228 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class NativeApi
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class NativeApi
+   ">
+    <meta name="generator" content="docfx 2.55.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/colore.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Colore.Native.NativeApi">
+  
+  
+  <h1 id="Colore_Native_NativeApi" data-uid="Colore.Native.NativeApi" class="text-break">Class NativeApi
+  </h1>
+  <div class="markdown level0 summary"><p>Helper class to more easily make calls to native Chroma SDK functions.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">NativeApi</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Colore.Api.IChromaApi.html">IChromaApi</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Colore.Native.html">Colore.Native</a></h6>
+  <h6><strong>Assembly</strong>: Colore.dll</h6>
+  <h5 id="Colore_Native_NativeApi_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class NativeApi : Object, IChromaApi</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="Colore_Native_NativeApi__ctor_" data-uid="Colore.Native.NativeApi.#ctor*"></a>
+  <h4 id="Colore_Native_NativeApi__ctor_Colore_Native_INativeSdkMethods_" data-uid="Colore.Native.NativeApi.#ctor(Colore.Native.INativeSdkMethods)">NativeApi(INativeSdkMethods)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Colore.Native.NativeApi.html">NativeApi</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NativeApi(INativeSdkMethods nativeSdkMethods = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Native.INativeSdkMethods.html">INativeSdkMethods</a></td>
+        <td><span class="parametername">nativeSdkMethods</span></td>
+        <td><p>The instance of <a class="xref" href="Colore.Native.NativeSdkMethods.html">NativeSdkMethods</a> to use
+for accessing the Chroma SDK functions.
+If <code>null</code>, a default implementation will be used.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Colore_Native_NativeApi_CreateChromaLinkEffectAsync_" data-uid="Colore.Native.NativeApi.CreateChromaLinkEffectAsync*"></a>
+  <h4 id="Colore_Native_NativeApi_CreateChromaLinkEffectAsync_Colore_Effects_ChromaLink_ChromaLinkEffectType_" data-uid="Colore.Native.NativeApi.CreateChromaLinkEffectAsync(Colore.Effects.ChromaLink.ChromaLinkEffectType)">CreateChromaLinkEffectAsync(ChromaLinkEffectType)</h4>
+  <div class="markdown level1 summary"><p>Creates a new Chroma Link effect without any effect data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Guid&gt; CreateChromaLinkEffectAsync(ChromaLinkEffectType effectType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Effects.ChromaLink.ChromaLinkEffectType.html">ChromaLinkEffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
+        <td><p>The type of effect to create.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a>&gt;</td>
+        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a> for the created effect.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Native_NativeApi_CreateChromaLinkEffectAsync_" data-uid="Colore.Native.NativeApi.CreateChromaLinkEffectAsync*"></a>
+  <h4 id="Colore_Native_NativeApi_CreateChromaLinkEffectAsync__1_Colore_Effects_ChromaLink_ChromaLinkEffectType___0_" data-uid="Colore.Native.NativeApi.CreateChromaLinkEffectAsync``1(Colore.Effects.ChromaLink.ChromaLinkEffectType,``0)">CreateChromaLinkEffectAsync&lt;T&gt;(ChromaLinkEffectType, T)</h4>
+  <div class="markdown level1 summary"><p>Helper method for creating Chroma Link effects with parameter struct.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Guid&gt; CreateChromaLinkEffectAsync&lt;T&gt;(ChromaLinkEffectType effectType, T data)
+    where T : struct, ValueType</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Effects.ChromaLink.ChromaLinkEffectType.html">ChromaLinkEffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
+        <td><p>The type of effect to create.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">data</span></td>
+        <td><p>Effect options struct.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a>&gt;</td>
+        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a> for the created effect.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The effect struct type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Native_NativeApi_CreateDeviceEffectAsync_" data-uid="Colore.Native.NativeApi.CreateDeviceEffectAsync*"></a>
+  <h4 id="Colore_Native_NativeApi_CreateDeviceEffectAsync_System_Guid_Colore_Effects_Generic_EffectType_" data-uid="Colore.Native.NativeApi.CreateDeviceEffectAsync(System.Guid,Colore.Effects.Generic.EffectType)">CreateDeviceEffectAsync(Guid, EffectType)</h4>
+  <div class="markdown level1 summary"><p>Creates a new device effect without any effect data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Guid&gt; CreateDeviceEffectAsync(Guid deviceId, EffectType effectType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a></td>
+        <td><span class="parametername">deviceId</span></td>
+        <td><p>The ID of the device to create the effect for.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Colore.Effects.Generic.EffectType.html">EffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
+        <td><p>The type of effect to create.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a>&gt;</td>
+        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a> for the created effect.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Native_NativeApi_CreateDeviceEffectAsync_" data-uid="Colore.Native.NativeApi.CreateDeviceEffectAsync*"></a>
+  <h4 id="Colore_Native_NativeApi_CreateDeviceEffectAsync__1_System_Guid_Colore_Effects_Generic_EffectType___0_" data-uid="Colore.Native.NativeApi.CreateDeviceEffectAsync``1(System.Guid,Colore.Effects.Generic.EffectType,``0)">CreateDeviceEffectAsync&lt;T&gt;(Guid, EffectType, T)</h4>
+  <div class="markdown level1 summary"><p>Helper method for creating device effects with relevant structure parameter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Guid&gt; CreateDeviceEffectAsync&lt;T&gt;(Guid deviceId, EffectType effectType, T data)
+    where T : struct, ValueType</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a></td>
+        <td><span class="parametername">deviceId</span></td>
+        <td><p>The ID of the device to create the effect for.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Colore.Effects.Generic.EffectType.html">EffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
+        <td><p>The type of effect to create.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">data</span></td>
+        <td><p>The effect structure parameter.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a>&gt;</td>
+        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a> for the created effect.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The structure type, needs to be compatible with the effect type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Native_NativeApi_CreateHeadsetEffectAsync_" data-uid="Colore.Native.NativeApi.CreateHeadsetEffectAsync*"></a>
+  <h4 id="Colore_Native_NativeApi_CreateHeadsetEffectAsync_Colore_Effects_Headset_HeadsetEffectType_" data-uid="Colore.Native.NativeApi.CreateHeadsetEffectAsync(Colore.Effects.Headset.HeadsetEffectType)">CreateHeadsetEffectAsync(HeadsetEffectType)</h4>
+  <div class="markdown level1 summary"><p>Creates a new headset effect without any effect data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Guid&gt; CreateHeadsetEffectAsync(HeadsetEffectType effectType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Effects.Headset.HeadsetEffectType.html">HeadsetEffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
+        <td><p>The type of effect to create.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a>&gt;</td>
+        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a> for the created effect.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Native_NativeApi_CreateHeadsetEffectAsync_" data-uid="Colore.Native.NativeApi.CreateHeadsetEffectAsync*"></a>
+  <h4 id="Colore_Native_NativeApi_CreateHeadsetEffectAsync__1_Colore_Effects_Headset_HeadsetEffectType___0_" data-uid="Colore.Native.NativeApi.CreateHeadsetEffectAsync``1(Colore.Effects.Headset.HeadsetEffectType,``0)">CreateHeadsetEffectAsync&lt;T&gt;(HeadsetEffectType, T)</h4>
+  <div class="markdown level1 summary"><p>Helper method for creating headset effects with parameter struct.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Guid&gt; CreateHeadsetEffectAsync&lt;T&gt;(HeadsetEffectType effectType, T data)
+    where T : struct, ValueType</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Effects.Headset.HeadsetEffectType.html">HeadsetEffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
+        <td><p>The type of effect to create.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">data</span></td>
+        <td><p>Effect options struct.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a>&gt;</td>
+        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a> for the created effect.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The effect struct type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Native_NativeApi_CreateKeyboardEffectAsync_" data-uid="Colore.Native.NativeApi.CreateKeyboardEffectAsync*"></a>
+  <h4 id="Colore_Native_NativeApi_CreateKeyboardEffectAsync_Colore_Effects_Keyboard_KeyboardEffectType_" data-uid="Colore.Native.NativeApi.CreateKeyboardEffectAsync(Colore.Effects.Keyboard.KeyboardEffectType)">CreateKeyboardEffectAsync(KeyboardEffectType)</h4>
+  <div class="markdown level1 summary"><p>Creates a new keyboard effect without any effect data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Guid&gt; CreateKeyboardEffectAsync(KeyboardEffectType effectType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Effects.Keyboard.KeyboardEffectType.html">KeyboardEffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
+        <td><p>The type of effect to create.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a>&gt;</td>
+        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a> for the created effect.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Native_NativeApi_CreateKeyboardEffectAsync_" data-uid="Colore.Native.NativeApi.CreateKeyboardEffectAsync*"></a>
+  <h4 id="Colore_Native_NativeApi_CreateKeyboardEffectAsync__1_Colore_Effects_Keyboard_KeyboardEffectType___0_" data-uid="Colore.Native.NativeApi.CreateKeyboardEffectAsync``1(Colore.Effects.Keyboard.KeyboardEffectType,``0)">CreateKeyboardEffectAsync&lt;T&gt;(KeyboardEffectType, T)</h4>
+  <div class="markdown level1 summary"><p>Helper method for creating keyboard effects with relevant structure parameter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Guid&gt; CreateKeyboardEffectAsync&lt;T&gt;(KeyboardEffectType effectType, T data)
+    where T : struct, ValueType</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Effects.Keyboard.KeyboardEffectType.html">KeyboardEffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
+        <td><p>The type of effect to create.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">data</span></td>
+        <td><p>The effect structure parameter.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a>&gt;</td>
+        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a> for the created effect.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The structure type, needs to be compatible with the effect type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Native_NativeApi_CreateKeypadEffectAsync_" data-uid="Colore.Native.NativeApi.CreateKeypadEffectAsync*"></a>
+  <h4 id="Colore_Native_NativeApi_CreateKeypadEffectAsync_Colore_Effects_Keypad_KeypadEffectType_" data-uid="Colore.Native.NativeApi.CreateKeypadEffectAsync(Colore.Effects.Keypad.KeypadEffectType)">CreateKeypadEffectAsync(KeypadEffectType)</h4>
+  <div class="markdown level1 summary"><p>Creates a new keypad effect without any effect data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Guid&gt; CreateKeypadEffectAsync(KeypadEffectType effectType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Effects.Keypad.KeypadEffectType.html">KeypadEffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
+        <td><p>THe type of effect to create.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a>&gt;</td>
+        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a> for the created effect.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Native_NativeApi_CreateKeypadEffectAsync_" data-uid="Colore.Native.NativeApi.CreateKeypadEffectAsync*"></a>
+  <h4 id="Colore_Native_NativeApi_CreateKeypadEffectAsync__1_Colore_Effects_Keypad_KeypadEffectType___0_" data-uid="Colore.Native.NativeApi.CreateKeypadEffectAsync``1(Colore.Effects.Keypad.KeypadEffectType,``0)">CreateKeypadEffectAsync&lt;T&gt;(KeypadEffectType, T)</h4>
+  <div class="markdown level1 summary"><p>Helper method for creating keypad effects with parameter struct.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Guid&gt; CreateKeypadEffectAsync&lt;T&gt;(KeypadEffectType effectType, T data)
+    where T : struct, ValueType</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Effects.Keypad.KeypadEffectType.html">KeypadEffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
+        <td><p>The type of effect to create.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">data</span></td>
+        <td><p>Effect options struct.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a>&gt;</td>
+        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a> for the created effect.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The effect struct type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Native_NativeApi_CreateMouseEffectAsync_" data-uid="Colore.Native.NativeApi.CreateMouseEffectAsync*"></a>
+  <h4 id="Colore_Native_NativeApi_CreateMouseEffectAsync_Colore_Effects_Mouse_MouseEffectType_" data-uid="Colore.Native.NativeApi.CreateMouseEffectAsync(Colore.Effects.Mouse.MouseEffectType)">CreateMouseEffectAsync(MouseEffectType)</h4>
+  <div class="markdown level1 summary"><p>Creates a new mouse effect without any effect data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Guid&gt; CreateMouseEffectAsync(MouseEffectType effectType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Effects.Mouse.MouseEffectType.html">MouseEffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
+        <td><p>The type of effect to create.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a>&gt;</td>
+        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a> for the created effect.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Native_NativeApi_CreateMouseEffectAsync_" data-uid="Colore.Native.NativeApi.CreateMouseEffectAsync*"></a>
+  <h4 id="Colore_Native_NativeApi_CreateMouseEffectAsync__1_Colore_Effects_Mouse_MouseEffectType___0_" data-uid="Colore.Native.NativeApi.CreateMouseEffectAsync``1(Colore.Effects.Mouse.MouseEffectType,``0)">CreateMouseEffectAsync&lt;T&gt;(MouseEffectType, T)</h4>
+  <div class="markdown level1 summary"><p>Helper method for creating mouse effects with parameter struct.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Guid&gt; CreateMouseEffectAsync&lt;T&gt;(MouseEffectType effectType, T data)
+    where T : struct, ValueType</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Effects.Mouse.MouseEffectType.html">MouseEffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
+        <td><p>The type of effect to create.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">data</span></td>
+        <td><p>Effect options struct.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a>&gt;</td>
+        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a> for the created effect.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The effect struct type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Native_NativeApi_CreateMousepadEffectAsync_" data-uid="Colore.Native.NativeApi.CreateMousepadEffectAsync*"></a>
+  <h4 id="Colore_Native_NativeApi_CreateMousepadEffectAsync_Colore_Effects_Mousepad_MousepadEffectType_" data-uid="Colore.Native.NativeApi.CreateMousepadEffectAsync(Colore.Effects.Mousepad.MousepadEffectType)">CreateMousepadEffectAsync(MousepadEffectType)</h4>
+  <div class="markdown level1 summary"><p>Creates a new mousepad effect without any effect data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Guid&gt; CreateMousepadEffectAsync(MousepadEffectType effectType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Effects.Mousepad.MousepadEffectType.html">MousepadEffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
+        <td><p>The type of effect to create.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a>&gt;</td>
+        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a> for the created effect.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Native_NativeApi_CreateMousepadEffectAsync_" data-uid="Colore.Native.NativeApi.CreateMousepadEffectAsync*"></a>
+  <h4 id="Colore_Native_NativeApi_CreateMousepadEffectAsync__1_Colore_Effects_Mousepad_MousepadEffectType___0_" data-uid="Colore.Native.NativeApi.CreateMousepadEffectAsync``1(Colore.Effects.Mousepad.MousepadEffectType,``0)">CreateMousepadEffectAsync&lt;T&gt;(MousepadEffectType, T)</h4>
+  <div class="markdown level1 summary"><p>Helper method for creating mouse pad effects with parameter struct.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Guid&gt; CreateMousepadEffectAsync&lt;T&gt;(MousepadEffectType effectType, T data)
+    where T : struct, ValueType</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Effects.Mousepad.MousepadEffectType.html">MousepadEffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
+        <td><p>The type of effect to create.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">data</span></td>
+        <td><p>Effect options struct.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a>&gt;</td>
+        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a> for the created effect.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The effect struct type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Native_NativeApi_DeleteEffectAsync_" data-uid="Colore.Native.NativeApi.DeleteEffectAsync*"></a>
+  <h4 id="Colore_Native_NativeApi_DeleteEffectAsync_System_Guid_" data-uid="Colore.Native.NativeApi.DeleteEffectAsync(System.Guid)">DeleteEffectAsync(Guid)</h4>
+  <div class="markdown level1 summary"><p>Deletes an effect with the specified <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task DeleteEffectAsync(Guid effectId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a></td>
+        <td><span class="parametername">effectId</span></td>
+        <td><p>Effect ID to delete.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a> representing the asynchronous operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Native_NativeApi_InitializeAsync_" data-uid="Colore.Native.NativeApi.InitializeAsync*"></a>
+  <h4 id="Colore_Native_NativeApi_InitializeAsync_Colore_Data_AppInfo_" data-uid="Colore.Native.NativeApi.InitializeAsync(Colore.Data.AppInfo)">InitializeAsync(AppInfo)</h4>
+  <div class="markdown level1 summary"><p>Initializes the Chroma SDK.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task InitializeAsync(AppInfo info)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Data.AppInfo.html">AppInfo</a></td>
+        <td><span class="parametername">info</span></td>
+        <td><p>Information about the application, currently unused for native SDK.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a> representing the asynchronous operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Native_NativeApi_QueryDeviceAsync_" data-uid="Colore.Native.NativeApi.QueryDeviceAsync*"></a>
+  <h4 id="Colore_Native_NativeApi_QueryDeviceAsync_System_Guid_" data-uid="Colore.Native.NativeApi.QueryDeviceAsync(System.Guid)">QueryDeviceAsync(Guid)</h4>
+  <div class="markdown level1 summary"><p>Query for device information.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;SdkDeviceInfo&gt; QueryDeviceAsync(Guid deviceId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a></td>
+        <td><span class="parametername">deviceId</span></td>
+        <td><p>Device ID, found in <a class="xref" href="Colore.Data.Devices.html">Devices</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Colore.Data.SdkDeviceInfo.html">SdkDeviceInfo</a>&gt;</td>
+        <td><p>A populated <a class="xref" href="Colore.Data.SdkDeviceInfo.html">SdkDeviceInfo</a> structure with information about the requested device.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Native_NativeApi_RegisterEventNotifications_" data-uid="Colore.Native.NativeApi.RegisterEventNotifications*"></a>
+  <h4 id="Colore_Native_NativeApi_RegisterEventNotifications_System_IntPtr_" data-uid="Colore.Native.NativeApi.RegisterEventNotifications(System.IntPtr)">RegisterEventNotifications(IntPtr)</h4>
+  <div class="markdown level1 summary"><p>Registers for Chroma SDK notifications.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RegisterEventNotifications(IntPtr hwnd)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
+        <td><span class="parametername">hwnd</span></td>
+        <td><p>App handle for the window handling events.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Native_NativeApi_SetEffectAsync_" data-uid="Colore.Native.NativeApi.SetEffectAsync*"></a>
+  <h4 id="Colore_Native_NativeApi_SetEffectAsync_System_Guid_" data-uid="Colore.Native.NativeApi.SetEffectAsync(System.Guid)">SetEffectAsync(Guid)</h4>
+  <div class="markdown level1 summary"><p>Set effect.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task SetEffectAsync(Guid effectId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a></td>
+        <td><span class="parametername">effectId</span></td>
+        <td><p>Effect ID to set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a> representing the asynchronous operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Native_NativeApi_UninitializeAsync_" data-uid="Colore.Native.NativeApi.UninitializeAsync*"></a>
+  <h4 id="Colore_Native_NativeApi_UninitializeAsync" data-uid="Colore.Native.NativeApi.UninitializeAsync">UninitializeAsync()</h4>
+  <div class="markdown level1 summary"><p>Uninitializes the Chroma SDK.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task UninitializeAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a> representing the asynchronous operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Native_NativeApi_UnregisterEventNotifications_" data-uid="Colore.Native.NativeApi.UnregisterEventNotifications*"></a>
+  <h4 id="Colore_Native_NativeApi_UnregisterEventNotifications" data-uid="Colore.Native.NativeApi.UnregisterEventNotifications">UnregisterEventNotifications()</h4>
+  <div class="markdown level1 summary"><p>Unregisters from receiving Chroma SDK notifications.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UnregisterEventNotifications()</code></pre>
+  </div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Colore.Api.IChromaApi.html">IChromaApi</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright © 2015-2020 by <a href="https://github.com/Sharparam">Adam Hellberg</a> and <a href="https://github.com/brandonscott">Brandon Scott</a><br>Generated by <a href="http://dotnet.github.io/docfx/"><strong>DocFX</strong></a>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

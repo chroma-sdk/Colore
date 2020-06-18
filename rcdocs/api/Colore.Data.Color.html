@@ -1,0 +1,1247 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Color
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Color
+   ">
+    <meta name="generator" content="docfx 2.55.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/colore.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Colore.Data.Color">
+  
+  
+  <h1 id="Colore_Data_Color" data-uid="Colore.Data.Color" class="text-break">Class Color
+  </h1>
+  <div class="markdown level0 summary"><p>Represents an RGB color.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">Color</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Colore.Data.Color.html">Color</a>&gt;</div>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a>&gt;</div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Colore.Data.html">Colore.Data</a></h6>
+  <h6><strong>Assembly</strong>: Colore.dll</h6>
+  <h5 id="Colore_Data_Color_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class Color : ValueType, IEquatable&lt;Color&gt;, IEquatable&lt;uint&gt;</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="Colore_Data_Color__ctor_" data-uid="Colore.Data.Color.#ctor*"></a>
+  <h4 id="Colore_Data_Color__ctor_System_Byte_System_Byte_System_Byte_" data-uid="Colore.Data.Color.#ctor(System.Byte,System.Byte,System.Byte)">Color(Byte, Byte, Byte)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Colore.Data.Color.html">Color</a> struct using three
+distinct R, G, and B byte values.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color(byte red, byte green, byte blue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">red</span></td>
+        <td><p>The red component.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">green</span></td>
+        <td><p>The green component.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td><span class="parametername">blue</span></td>
+        <td><p>The blue component.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Data_Color__ctor_" data-uid="Colore.Data.Color.#ctor*"></a>
+  <h4 id="Colore_Data_Color__ctor_System_Double_System_Double_System_Double_" data-uid="Colore.Data.Color.#ctor(System.Double,System.Double,System.Double)">Color(Double, Double, Double)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Colore.Data.Color.html">Color</a> struct using
+three <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a> values for the R, G, and B channels.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color(double red, double green, double blue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td><span class="parametername">red</span></td>
+        <td><p>The red component (<code>0.0</code> to <code>1.0</code>, inclusive).</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td><span class="parametername">green</span></td>
+        <td><p>The green component (<code>0.0</code> to <code>1.0</code>, inclusive).</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.double">Double</a></td>
+        <td><span class="parametername">blue</span></td>
+        <td><p>The blue component (<code>0.0</code> to <code>1.0</code>, inclusive).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Colore_Data_Color__ctor_System_Double_System_Double_System_Double__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Each parameter value must be between <code>0.0</code> and <code>1.0</code> (inclusive).</p>
+</div>
+  
+  
+  <a id="Colore_Data_Color__ctor_" data-uid="Colore.Data.Color.#ctor*"></a>
+  <h4 id="Colore_Data_Color__ctor_System_Single_System_Single_System_Single_" data-uid="Colore.Data.Color.#ctor(System.Single,System.Single,System.Single)">Color(Single, Single, Single)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Colore.Data.Color.html">Color</a> struct using
+three <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a> values for the R, G, and B channels.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color(float red, float green, float blue)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><span class="parametername">red</span></td>
+        <td><p>The red component (<code>0.0f</code> to <code>1.0f</code>, inclusive).</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><span class="parametername">green</span></td>
+        <td><p>The green component (<code>0.0f</code> to <code>1.0f</code>, inclusive).</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.single">Single</a></td>
+        <td><span class="parametername">blue</span></td>
+        <td><p>The blue component (<code>0.0f</code> to <code>1.0f</code>, inclusive).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Colore_Data_Color__ctor_System_Single_System_Single_System_Single__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Each parameter value must be between <code>0.0f</code> and <code>1.0f</code> (inclusive).</p>
+</div>
+  
+  
+  <a id="Colore_Data_Color__ctor_" data-uid="Colore.Data.Color.#ctor*"></a>
+  <h4 id="Colore_Data_Color__ctor_System_UInt32_" data-uid="Colore.Data.Color.#ctor(System.UInt32)">Color(UInt32)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Colore.Data.Color.html">Color</a> struct using an integer
+color value in the format <code>0xKKBBGGRR</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color(uint value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>Value to create the color from.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  
+  
+  <h4 id="Colore_Data_Color_Black" data-uid="Colore.Data.Color.Black">Black</h4>
+  <div class="markdown level1 summary"><p>Black color.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Color Black</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Data.Color.html">Color</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Colore_Data_Color_Blue" data-uid="Colore.Data.Color.Blue">Blue</h4>
+  <div class="markdown level1 summary"><p>(Dark) blue color.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Color Blue</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Data.Color.html">Color</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Colore_Data_Color_Green" data-uid="Colore.Data.Color.Green">Green</h4>
+  <div class="markdown level1 summary"><p>(Neon/bright) green color.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Color Green</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Data.Color.html">Color</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Colore_Data_Color_HotPink" data-uid="Colore.Data.Color.HotPink">HotPink</h4>
+  <div class="markdown level1 summary"><p>Hot pink color.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Color HotPink</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Data.Color.html">Color</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Colore_Data_Color_Orange" data-uid="Colore.Data.Color.Orange">Orange</h4>
+  <div class="markdown level1 summary"><p>Orange color.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Color Orange</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Data.Color.html">Color</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Colore_Data_Color_Pink" data-uid="Colore.Data.Color.Pink">Pink</h4>
+  <div class="markdown level1 summary"><p>Pink color.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Color Pink</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Data.Color.html">Color</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Colore_Data_Color_Purple" data-uid="Colore.Data.Color.Purple">Purple</h4>
+  <div class="markdown level1 summary"><p>Purple color.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Color Purple</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Data.Color.html">Color</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Colore_Data_Color_Red" data-uid="Colore.Data.Color.Red">Red</h4>
+  <div class="markdown level1 summary"><p>Red color.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Color Red</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Data.Color.html">Color</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Colore_Data_Color_White" data-uid="Colore.Data.Color.White">White</h4>
+  <div class="markdown level1 summary"><p>White color.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Color White</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Data.Color.html">Color</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="Colore_Data_Color_Yellow" data-uid="Colore.Data.Color.Yellow">Yellow</h4>
+  <div class="markdown level1 summary"><p>Yellow color.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly Color Yellow</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Data.Color.html">Color</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="Colore_Data_Color_AsKeyColor_" data-uid="Colore.Data.Color.AsKeyColor*"></a>
+  <h4 id="Colore_Data_Color_AsKeyColor" data-uid="Colore.Data.Color.AsKeyColor">AsKeyColor</h4>
+  <div class="markdown level1 summary"><p>Gets a version of this color with the key bit set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color AsKeyColor { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Data.Color.html">Color</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Data_Color_AsRegularColor_" data-uid="Colore.Data.Color.AsRegularColor*"></a>
+  <h4 id="Colore_Data_Color_AsRegularColor" data-uid="Colore.Data.Color.AsRegularColor">AsRegularColor</h4>
+  <div class="markdown level1 summary"><p>Gets a version of this color without the key bit set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color AsRegularColor { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Data.Color.html">Color</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Data_Color_B_" data-uid="Colore.Data.Color.B*"></a>
+  <h4 id="Colore_Data_Color_B" data-uid="Colore.Data.Color.B">B</h4>
+  <div class="markdown level1 summary"><p>Gets the blue component of the color as a byte.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte B { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Data_Color_G_" data-uid="Colore.Data.Color.G*"></a>
+  <h4 id="Colore_Data_Color_G" data-uid="Colore.Data.Color.G">G</h4>
+  <div class="markdown level1 summary"><p>Gets the green component of the color as a byte.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte G { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Data_Color_R_" data-uid="Colore.Data.Color.R*"></a>
+  <h4 id="Colore_Data_Color_R" data-uid="Colore.Data.Color.R">R</h4>
+  <div class="markdown level1 summary"><p>Gets the red component of the color as a byte.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte R { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.byte">Byte</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Data_Color_Value_" data-uid="Colore.Data.Color.Value*"></a>
+  <h4 id="Colore_Data_Color_Value" data-uid="Colore.Data.Color.Value">Value</h4>
+  <div class="markdown level1 summary"><p>Gets the unsigned integer representing
+the color. On the form <code>0xKKBBGGRR</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint Value { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Colore_Data_Color_Equals_" data-uid="Colore.Data.Color.Equals*"></a>
+  <h4 id="Colore_Data_Color_Equals_Colore_Data_Color_" data-uid="Colore.Data.Color.Equals(Colore.Data.Color)">Equals(Color)</h4>
+  <div class="markdown level1 summary"><p>Returns a value indicating whether this instance of <a class="xref" href="Colore.Data.Color.html">Color</a>
+is equal to a <a class="xref" href="Colore.Data.Color.html">Color</a> <code data-dev-comment-type="paramref" class="paramref">other</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(Color other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Data.Color.html">Color</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The <a class="xref" href="Colore.Data.Color.html">Color</a> to check equality against.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><code>true</code> of the two are equal, false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Colore_Data_Color_Equals_Colore_Data_Color__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Only compares the lower 32 bits of each color value, in order to
+be able to compare a keymode color to a non-keymode color.</p>
+</div>
+  
+  
+  <a id="Colore_Data_Color_Equals_" data-uid="Colore.Data.Color.Equals*"></a>
+  <h4 id="Colore_Data_Color_Equals_System_Object_" data-uid="Colore.Data.Color.Equals(System.Object)">Equals(Object)</h4>
+  <div class="markdown level1 summary"><p>Returns a value indicating whether this instance of <a class="xref" href="Colore.Data.Color.html">Color</a>
+is equal to an <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a> <code data-dev-comment-type="paramref" class="paramref">other</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a> to check equality against.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><code>true</code> if the two are equal, <code>false</code> otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Data_Color_Equals_" data-uid="Colore.Data.Color.Equals*"></a>
+  <h4 id="Colore_Data_Color_Equals_System_UInt32_" data-uid="Colore.Data.Color.Equals(System.UInt32)">Equals(UInt32)</h4>
+  <div class="markdown level1 summary"><p>Returns a value indicating whether this instance of <a class="xref" href="Colore.Data.Color.html">Color</a>
+is equal to a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a> <code data-dev-comment-type="paramref" class="paramref">other</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(uint other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a> to check equality against.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><code>true</code> if the two are equal, <code>false</code> otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Colore_Data_Color_Equals_System_UInt32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Only compares the lower 32 bits of each value, in order to
+be able to compare a keymode color to a non-keymode color.</p>
+</div>
+  
+  
+  <a id="Colore_Data_Color_FromRgb_" data-uid="Colore.Data.Color.FromRgb*"></a>
+  <h4 id="Colore_Data_Color_FromRgb_System_UInt32_" data-uid="Colore.Data.Color.FromRgb(System.UInt32)">FromRgb(UInt32)</h4>
+  <div class="markdown level1 summary"><p>Creates a new <a class="xref" href="Colore.Data.Color.html">Color</a> from an RGB integer value
+in the format of <code>0xRRGGBB</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color FromRgb(uint value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The RGB value to convert from.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Data.Color.html">Color</a></td>
+        <td><p>A new instance of the <a class="xref" href="Colore.Data.Color.html">Color</a> struct.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Data_Color_GetHashCode_" data-uid="Colore.Data.Color.GetHashCode*"></a>
+  <h4 id="Colore_Data_Color_GetHashCode" data-uid="Colore.Data.Color.GetHashCode">GetHashCode()</h4>
+  <div class="markdown level1 summary"><p>Gets the unique hash code for this <a class="xref" href="Colore.Data.Color.html">Color</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><p>A unique has code.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Data_Color_ToColor_" data-uid="Colore.Data.Color.ToColor*"></a>
+  <h4 id="Colore_Data_Color_ToColor_System_UInt32_" data-uid="Colore.Data.Color.ToColor(System.UInt32)">ToColor(UInt32)</h4>
+  <div class="markdown level1 summary"><p>Converts an unsigned integer value to a <a class="xref" href="Colore.Data.Color.html">Color</a> object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Color ToColor(uint value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Data.Color.html">Color</a></td>
+        <td><p><a class="xref" href="Colore.Data.Color.html">Color</a> representation of the value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Colore_Data_Color_ToColor_System_UInt32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is an alias for <a class="xref" href="Colore.Data.Color.html#Colore_Data_Color_FromRgb_System_UInt32_">FromRgb(UInt32)</a>.</p>
+</div>
+  <h5 id="Colore_Data_Color_ToColor_System_UInt32__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="Colore.Data.Color.html#Colore_Data_Color_FromRgb_System_UInt32_">FromRgb(UInt32)</a></div>
+  </div>
+  
+  
+  <a id="Colore_Data_Color_ToString_" data-uid="Colore.Data.Color.ToString*"></a>
+  <h4 id="Colore_Data_Color_ToString" data-uid="Colore.Data.Color.ToString">ToString()</h4>
+  <div class="markdown level1 summary"><p>Returns a string representation of this color&apos;s red, green, and blue values.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a> containing a string representation of this color.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Data_Color_ToUInt32_" data-uid="Colore.Data.Color.ToUInt32*"></a>
+  <h4 id="Colore_Data_Color_ToUInt32" data-uid="Colore.Data.Color.ToUInt32">ToUInt32()</h4>
+  <div class="markdown level1 summary"><p>Converts this instance of <a class="xref" href="Colore.Data.Color.html">Color</a> to an unsigned integer value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint ToUInt32()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
+        <td><p>The unsigned integer value of this <a class="xref" href="Colore.Data.Color.html">Color</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="operators">Operators
+  </h3>
+  
+  
+  <a id="Colore_Data_Color_op_Equality_" data-uid="Colore.Data.Color.op_Equality*"></a>
+  <h4 id="Colore_Data_Color_op_Equality_Colore_Data_Color_System_Object_" data-uid="Colore.Data.Color.op_Equality(Colore.Data.Color,System.Object)">Equality(Color, Object)</h4>
+  <div class="markdown level1 summary"><p>Checks <code data-dev-comment-type="paramref" class="paramref">left</code> and <code data-dev-comment-type="paramref" class="paramref">right</code> for equality.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(Color left, object right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Data.Color.html">Color</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>Left operand, an instance of the <a class="xref" href="Colore.Data.Color.html">Color</a> struct.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>Right operand, an <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><code>true</code> if the two instances are equal, <code>false</code> otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Data_Color_op_Implicit_" data-uid="Colore.Data.Color.op_Implicit*"></a>
+  <h4 id="Colore_Data_Color_op_Implicit_Colore_Data_Color__System_UInt32" data-uid="Colore.Data.Color.op_Implicit(Colore.Data.Color)~System.UInt32">Implicit(Color to UInt32)</h4>
+  <div class="markdown level1 summary"><p>Converts a <a class="xref" href="Colore.Data.Color.html">Color</a> struct to a <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator uint (Color color)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Data.Color.html">Color</a></td>
+        <td><span class="parametername">color</span></td>
+        <td><p>The <a class="xref" href="Colore.Data.Color.html">Color</a> to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
+        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a> representing the value of the <code data-dev-comment-type="paramref" class="paramref">color</code> argument.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Colore_Data_Color_op_Implicit_Colore_Data_Color__System_UInt32_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The returned <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a> has a format of <code>0xAABBGGRR</code>.</p>
+</div>
+  
+  
+  <a id="Colore_Data_Color_op_Implicit_" data-uid="Colore.Data.Color.op_Implicit*"></a>
+  <h4 id="Colore_Data_Color_op_Implicit_System_UInt32__Colore_Data_Color" data-uid="Colore.Data.Color.op_Implicit(System.UInt32)~Colore.Data.Color">Implicit(UInt32 to Color)</h4>
+  <div class="markdown level1 summary"><p>Converts a <code>uint</code> <code data-dev-comment-type="paramref" class="paramref">value</code> in the format of <code>0xAABBGGRR</code>
+to a new instance of the <a class="xref" href="Colore.Data.Color.html">Color</a> struct.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Color(uint value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a> to convert, on the form <code>0x00BBGGRR</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Data.Color.html">Color</a></td>
+        <td><p>An instance of <a class="xref" href="Colore.Data.Color.html">Color</a> representing the color value of <code data-dev-comment-type="paramref" class="paramref">value</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Data_Color_op_Inequality_" data-uid="Colore.Data.Color.op_Inequality*"></a>
+  <h4 id="Colore_Data_Color_op_Inequality_Colore_Data_Color_System_Object_" data-uid="Colore.Data.Color.op_Inequality(Colore.Data.Color,System.Object)">Inequality(Color, Object)</h4>
+  <div class="markdown level1 summary"><p>Checks <code data-dev-comment-type="paramref" class="paramref">left</code> and <code data-dev-comment-type="paramref" class="paramref">right</code> for inequality.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(Color left, object right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Data.Color.html">Color</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>Left operand, an instance of the <a class="xref" href="Colore.Data.Color.html">Color</a> struct.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>Right operand, an <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><code>true</code> if the two instances are not equal, <code>false</code> otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright © 2015-2020 by <a href="https://github.com/Sharparam">Adam Hellberg</a> and <a href="https://github.com/brandonscott">Brandon Scott</a><br>Generated by <a href="http://dotnet.github.io/docfx/"><strong>DocFX</strong></a>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
