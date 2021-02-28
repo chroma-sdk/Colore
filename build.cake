@@ -1,4 +1,4 @@
-#module nuget:?package=Cake.DotNetTool.Module&version=0.5.0
+#module nuget:?package=Cake.DotNetTool.Module&version=1.0.1
 
 #addin nuget:?package=Cake.DocFx&version=0.13.1
 #addin nuget:?package=Cake.Codecov&version=1.0.0
