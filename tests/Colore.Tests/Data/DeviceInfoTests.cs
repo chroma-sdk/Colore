@@ -34,9 +34,9 @@ namespace Colore.Tests.Data
     [TestFixture]
     public class DeviceInfoTests
     {
-        private static readonly SdkDeviceInfo BaseInfo = new SdkDeviceInfo(DeviceType.Keyboard, true);
+        private static readonly SdkDeviceInfo BaseInfo = new SdkDeviceInfo(DeviceType.Keyboard, 1);
 
-        private static readonly SdkDeviceInfo AltBaseInfo = new SdkDeviceInfo(DeviceType.Mouse, false);
+        private static readonly SdkDeviceInfo AltBaseInfo = new SdkDeviceInfo(DeviceType.Mouse, 0);
 
         private static readonly Devices.Metadata Metadata = new Devices.Metadata("Foo", "Bar");
 
