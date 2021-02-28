@@ -10,7 +10,7 @@ uid: getting-started
 ## 1. Installing Chroma SDK
 Razer Chroma SDK is a C++-tool which allows us to access Chroma devices. It is the backend (or native/unmanaged code) behind Colore. It is expected to be automatically installed with Synapse once you plug in a Chroma device, but in some cases that might not work (see [#263](https://github.com/chroma-sdk/Colore/issues/263#)). As a last resort, you can also find an SDK installer in their [Setting Up](https://developer.razer.com/works-with-chroma/setting-up/) guide.
 
-## 2. How to install Colore 
+## 2. How to install Colore
 The easiest way to include Colore into your project is to right click on your C# Project in the Visual Studio Solution Explorer and Choose "Manage NuGet Packages..."
 
 From there you can search online for Packages. Just search for "Colore" and install it. After that you should see a reference being added to "Colore".
@@ -28,7 +28,9 @@ At the top of that file you should now add `using Colore;` to access the element
 ``` C#
 using ColoreColor = Colore.Data.Color;
 ```
+
 Modify the Event Method as follows:
+
 ``` C#
 private async void button1_Click(object sender, RoutedEventArgs e)
 {
@@ -36,7 +38,7 @@ private async void button1_Click(object sender, RoutedEventArgs e)
     // somewhere that is globally accessible to the application.
     var chroma = await ColoreProvider.CreateNativeAsync();
     await chroma.SetAllAsync(ColoreColor.Red);
-    
+
     // Without the usings it will look like this:
     // var chroma = await Colore.ColoreProvider.CreateNativeAsync();
     // await chroma.SetAllAsync(Colore.Data.Color.Red);
@@ -72,6 +74,34 @@ and then use this instance for the remainder of your application's lifetime.
 For background applications that dynamically enable and disable Chroma features however, you can call the
 [`UninitializeAsync`](xref:Colore.IChroma#Colore_IChroma_UninitializeAsync) and [`InitializeAsync`](xref:Colore.IChroma#Colore_IChroma_InitializeAsync_Colore_Data_AppInfo_) methods to control the lifetime. (Note that uninitializing the SDK
 manually this way doesn't always work properly with the SDK, and can sometimes leave it in a weird state.)
+
+### A note on SDK initialization
+
+Currently, there seems to be an issue where the SDK takes an unknown amount of
+time to actually finish its initialization internally. Users have reported this
+delay to be around one second.
+
+We recommend delaying any code to be run after creating/initializing a Chroma
+instance by around two seconds to be on the safe side.
+
+Alternatively: If you have access to a Win32 event pump (for example if your
+app is a traditional WinForms/WPF app), you can listen for the event from the
+SDK telling you that device access has been granted.
+
+To do this, register an event listener for the [`DeviceAccess`](xref:Colore.IChroma#Colore_IChroma_DeviceAccess)
+event and then set up your app to forward Win32 events to the event handler on
+the chroma instance,
+[`HandleMessage`](xref:Colore.IChroma#Colore_IChroma_HandleMessage_System_IntPtr_System_Int32_System_IntPtr_System_IntPtr_).
+
+When you receive the `DeviceAccess` event with the
+[`Granted`](xref:Colore.Events.DeviceAccessEventArgs#Colore_Events_DeviceAccessEventArgs_Granted)
+property set to `true`, the SDK has finished initializing and you can start
+sending commands to it.
+
+We still recommend having a fallback timer for 2-3 seconds in case the events
+fail to propagate.
+
+For more details, please read through issues #274 and #279.
 
 ## 4. How to access specific device types
 Chroma SDK does not allow you to access one single device (as far as we know) but you can access specific device types like Keyboard, Mouse, Keypad etc.
