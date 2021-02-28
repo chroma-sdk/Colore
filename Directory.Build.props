@@ -4,7 +4,7 @@
     <LangVersion>latest</LangVersion>
     <!-- <Nullable>enable</Nullable> -->
     <Authors>Sharparam</Authors>
-    <Copyright>Copyright (c) 2015-2020 by Adam Hellberg and Brandon Scott.</Copyright>
+    <Copyright>Copyright (c) 2015-2021 by Adam Hellberg and Brandon Scott.</Copyright>
     <RepositoryUrl>https://github.com/chroma-sdk/Colore</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
