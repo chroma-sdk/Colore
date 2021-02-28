@@ -26,6 +26,7 @@
 namespace Colore.Data
 {
     using System;
+    using System.Diagnostics;
     using System.Runtime.InteropServices;
 
     using Colore.Serialization;
@@ -38,6 +39,7 @@ namespace Colore.Data
     /// <summary>
     /// Represents an RGB color.
     /// </summary>
+    [DebuggerDisplay("({R}, {G}, {B})", Name = nameof(Color))]
     [PublicAPI]
     [JsonConverter(typeof(ColorConverter))]
     [StructLayout(LayoutKind.Sequential, Size = sizeof(uint))]

@@ -95,6 +95,14 @@ namespace Colore
         Task<Guid> SetCustomAsync(CustomKeyboardEffect effect);
 
         /// <summary>
+        /// Sets an extended custom grid effect on the keyboard.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
+        [PublicAPI]
+        Task<Guid> SetExtendedCustomAsync(ExtendedCustomKeyboardEffect effect);
+
+        /// <summary>
         /// Sets an effect without any parameters.
         /// Currently, this only works for the <see cref="KeyboardEffectType.None" /> effect.
         /// </summary>

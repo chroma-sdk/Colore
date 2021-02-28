@@ -63,6 +63,24 @@ namespace Colore.Effects.Keyboard
         public const int MaxDeathstalkerZones = 6;
 
         /// <summary>
+        /// The maximum number of rows on an extended keyboard.
+        /// </summary>
+        [PublicAPI]
+        public const int MaxExtendedRows = 8;
+
+        /// <summary>
+        /// The maximum number of columns on an extended keyboard.
+        /// </summary>
+        [PublicAPI]
+        public const int MaxExtendedColumns = 24;
+
+        /// <summary>
+        /// The maximum number of keys on an extended keyboard.
+        /// </summary>
+        [PublicAPI]
+        public const int MaxExtendedKeys = MaxExtendedRows * MaxExtendedColumns;
+
+        /// <summary>
         /// The bit that needs to be set for key mode to be active on a color.
         /// </summary>
         internal const int KeyFlag = 0x01000000;

@@ -77,10 +77,20 @@ namespace Colore.Effects.Keyboard
         CustomKey = 8,
 
         /// <summary>
+        /// Custom effect for extended keyboards.
+        /// </summary>
+        /// <remarks>
+        /// The extended APIs are within the "v2" namespace in the Keyboard namespace in the SDK.
+        /// </remarks>
+        [PublicAPI]
+        [EnumMember(Value = "CHROMA_CUSTOM2")]
+        ExtendedCustom = 9,
+
+        /// <summary>
         /// Invalid effect.
         /// </summary>
         [PublicAPI]
         [EnumMember(Value = "CHROMA_INVALID")]
-        Invalid = 9
+        Invalid = 10
     }
 }
