@@ -27,7 +27,7 @@ init:
   - ps: Add-Content -Path "$HOME\.git-credentials" -Value "https://$($env:github_access_token):x-oauth-basic@github.com`n" -NoNewline
 
 install:
-  - choco install docfx -y
+  - choco install docfx -y --version=2.56.6
   - dotnet tool restore
 
 build_script:
