@@ -1,11 +1,11 @@
-#module nuget:?package=Cake.DotNetTool.Module&version=0.4.0
+#module nuget:?package=Cake.DotNetTool.Module&version=0.5.0
 
 #addin nuget:?package=Cake.DocFx&version=0.13.1
-#addin nuget:?package=Cake.Codecov&version=0.8.0
+#addin nuget:?package=Cake.Codecov&version=1.0.0
 
-#tool dotnet:?package=GitVersion.Tool&version=5.3.6
-#tool dotnet:?package=dotnet-reportgenerator-globaltool&version=4.6.1
-#tool nuget:?package=Codecov&version=1.11.1
+#tool dotnet:?package=GitVersion.Tool&version=5.6.6
+#tool dotnet:?package=dotnet-reportgenerator-globaltool&version=4.8.6
+#tool nuget:?package=Codecov&version=1.13.0
 
 ///////////////////////////////////////////////////////////////////////////////
 // ARGUMENTS
@@ -218,7 +218,7 @@ Task("CoverageReport")
     .IsDependentOn("Test")
     .Does(() =>
     {
-        ReportGenerator("./artifacts/coverage.xml", "./artifacts/coverage-report");
+        ReportGenerator((FilePath)"./artifacts/coverage.xml", "./artifacts/coverage-report");
         Zip("./artifacts/coverage-report", $"./artifacts/colore_{version.SemVer}_coverage.zip");
     });
 

@@ -33,11 +33,14 @@ before_install:
   - chmod +x travis/*.sh
   - "./travis/fix-branches.sh"
 
+install:
+  - dotnet tool restore
+
 before_script:
   - chmod +x build.sh
 
 script:
-  - "./build.sh -t Travis"
+  - dotnet tool run dotnet-cake -- --target=Travis
 
 cache:
   directories:

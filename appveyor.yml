@@ -28,9 +28,10 @@ init:
 
 install:
   - choco install docfx -y
+  - dotnet tool restore
 
 build_script:
-- ps: .\build.ps1 -Target AppVeyor
+  - dotnet tool run dotnet-cake -- --target=AppVeyor
 
 test: off
 
