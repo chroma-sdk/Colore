@@ -374,23 +374,29 @@ namespace Colore.Implementations
         {
             if (!_registered)
             {
+#if DEBUG
                 Log.Warn($"{nameof(HandleMessage)} called without event handling being registered");
+#endif
 
                 return false;
             }
 
             if (handle != _registeredHandle)
             {
+#if DEBUG
                 Log.Warn(
                     $"Unexpected handle passed to {nameof(HandleMessage)}. Expected 0x{{0}} but was 0x{{1}}",
                     _registeredHandle.ToString("X"),
                     handle.ToString("X"));
+#endif
 
                 return false;
             }
 
             if (msgId != Constants.WmChromaEvent)
+            {
                 return false;
+            }
 
             var handled = false;
 
