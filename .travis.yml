@@ -29,15 +29,11 @@ addons:
 before_install:
   - git config user.name "Travis CI"
   - git config user.email "noreply@travis-ci.org"
-  - chmod +x build.sh
   - chmod +x travis/*.sh
   - "./travis/fix-branches.sh"
 
 install:
   - dotnet tool restore
-
-before_script:
-  - chmod +x build.sh
 
 script:
   - dotnet tool run dotnet-cake -- --target=Travis
