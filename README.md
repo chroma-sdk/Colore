@@ -31,10 +31,10 @@ If you are a new developer and are looking for a helpful guide on how to get sta
 Contributing
 ------------
 
-[![Gitter][gitterbadge]][gitter]
+[![Discussions][discussions-badge]][discussions]
 [![Discord][discordbadge]][discord]
 
-*For discussing, you can join the Gitter chat or Discord server using the badges above. If you want to join the Slack chat, contact [Adam Hellberg][sharp] ([sharparam@sharparam.com](mailto:sharparam@sharparam.com)).*
+*For discussing, you can [discuss right here in the repo][discussions] or join the Razer Community Discord server using the badges above. If you want to join the Slack chat, contact [Adam Hellberg][sharp] ([sharparam@sharparam.com](mailto:sharparam@sharparam.com)).*
 
 Contributors are very welcome! If you got code fixes, please [submit a pull request][newpull] here on GitHub.
 
@@ -219,6 +219,8 @@ There may be others we are unaware of, so please let us know if there are any ot
 [gitterbadge]: https://badges.gitter.im/Join%20Chat.svg
 [discord]: https://discord.gg/4ysuMYK
 [discordbadge]: https://img.shields.io/discord/342761229544194048.svg?label=discord&logo=discord
+[discussions]: https://github.com/chroma-sdk/Colore/discussions
+[discussions-badge]: https://img.shields.io/badge/github-discussions-brightgreen?logo=github
 
 [colorelogo]: https://files.sharparam.com/2017/10/31/colore-logo.png
 [colore-wpf]: https://github.com/chroma-sdk/Colore.Wpf
