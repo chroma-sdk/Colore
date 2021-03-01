@@ -41,6 +41,7 @@ Contributors are very welcome! If you have code fixes, please [submit a pull req
 If you want to join the development team, please contact [Sharparam][sharp] on GitHub.
 
 All authors and contributors are listed in the [`AUTHORS`](AUTHORS) file.
+Feel free to add yourself to this file under a relevant section in your pull request.
 
 Please read the [`CONTRIBUTING.md`](CONTRIBUTING.md) file before making a pull request.
 
