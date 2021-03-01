@@ -36,7 +36,7 @@ Contributing
 
 *For discussing, you can [discuss right here in the repo][discussions] or join the Razer Community Discord server using the badges above. If you want to join the Slack chat, contact [Adam Hellberg][sharp] ([sharparam@sharparam.com](mailto:sharparam@sharparam.com)).*
 
-Contributors are very welcome! If you got code fixes, please [submit a pull request][newpull] here on GitHub.
+Contributors are very welcome! If you have code fixes, please [submit a pull request][newpull] here on GitHub.
 
 If you want to join the development team, please contact [Sharparam][sharp] on GitHub.
 
