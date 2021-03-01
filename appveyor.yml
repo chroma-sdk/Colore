@@ -50,7 +50,7 @@ deploy:
   #server: https://api.nuget.org/v3/index.json
   name: production
   api_key:
-    secure: V73nFWI4OV8eFc5v9vfgKJARVXEigCdGeQUsVm/fnj1C4dxmXNYhvlXJfoXOnIcz
+    secure: A56Qs5ovDCqFsic8ntEtyzli2cLE/D9UZb6adpWOaSrVNLEy+mmPgMijjimmjj0i
   artifact: NuGet
   on:
     appveyor_repo_tag: true
