@@ -83,7 +83,7 @@ You can also find pre-release versions for [Colore][gpr-colore] and any addition
 
 ### Extensions
 
-The [WPF][colore-wpf] and [WinForms][colore-winforms] extension packages for Colore are not yet available for the new Colore version, but will be on NuGet soon, so stay tuned!
+The [WPF][colore-wpf] and [WinForms][colore-winforms] extension packages for Colore are not yet available for the new Colore version, but will be on NuGet soon™, so stay tuned!
 
 Using
 -----
