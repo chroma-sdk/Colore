@@ -1,4 +1,4 @@
-<p align="center"><img src="https://files.sharparam.com/2017/10/31/colore-logo.png" alt="Colore"></p>
+<p align="center"><img src="images/logo.png" alt="Colore"></p>
 
 <p align="center">
   <a href="https://opensource.org/licenses/MIT">
