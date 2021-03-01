@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------------------
 // <copyright file="KeyboardImplementation.cs" company="Corale">
-//     Copyright © 2015-2019 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2021 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -51,12 +51,12 @@ namespace Colore.Implementations
         /// <summary>
         /// Grid struct used for the helper methods.
         /// </summary>
-        private KeyboardCustom _grid;
+        private CustomKeyboardEffect _grid;
 
         /// <summary>
         /// Deathstalker grid struct used for the helper methods.
         /// </summary>
-        private DeathstalkerGrid _deathstalkerGrid;
+        private DeathstalkerGridEffect _deathstalkerGrid;
 
         /// <inheritdoc />
         /// <summary>
@@ -71,10 +71,10 @@ namespace Colore.Implementations
 
             // We keep a local copy of a grid to speed up grid operations
             Log.Debug("Initializing private copy of Custom");
-            _grid = KeyboardCustom.Create();
+            _grid = CustomKeyboardEffect.Create();
 
             Log.Debug("Initializing private copy of Deathstalker grid");
-            _deathstalkerGrid = DeathstalkerGrid.Create();
+            _deathstalkerGrid = DeathstalkerGridEffect.Create();
         }
 
         /// <inheritdoc />
@@ -190,7 +190,7 @@ namespace Colore.Implementations
              * on the Deathstalker as well, saving developers the need to do their own special handling for it.
              */
             return await SetEffectAsync(
-                    await Api.CreateKeyboardEffectAsync(KeyboardEffect.Custom, _deathstalkerGrid).ConfigureAwait(false))
+                    await Api.CreateKeyboardEffectAsync(KeyboardEffectType.Custom, _deathstalkerGrid).ConfigureAwait(false))
                 .ConfigureAwait(false);
         }
 
@@ -200,26 +200,40 @@ namespace Colore.Implementations
         /// </summary>
         /// <param name="effect">Effect options.</param>
         /// <remarks>
-        /// This will overwrite the current internal <see cref="KeyboardCustom" />
+        /// This will overwrite the current internal <see cref="CustomKeyboardEffect" />
         /// struct in the <see cref="KeyboardImplementation" /> class.
         /// </remarks>
-        public async Task<Guid> SetCustomAsync(KeyboardCustom effect)
+        public async Task<Guid> SetCustomAsync(CustomKeyboardEffect effect)
         {
             _grid = effect;
             return await SetEffectAsync(
-                    await Api.CreateKeyboardEffectAsync(KeyboardEffect.CustomKey, _grid).ConfigureAwait(false))
+                    await Api.CreateKeyboardEffectAsync(KeyboardEffectType.CustomKey, _grid).ConfigureAwait(false))
                 .ConfigureAwait(false);
         }
 
         /// <inheritdoc />
         /// <summary>
-        /// Sets an effect without any parameters.
-        /// Currently, this only works for the <see cref="KeyboardEffect.None" /> effect.
+        /// Sets an extended custom grid effect on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        public async Task<Guid> SetEffectAsync(KeyboardEffect effect)
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
+        public async Task<Guid> SetExtendedCustomAsync(ExtendedCustomKeyboardEffect effect)
         {
-            return await SetEffectAsync(await Api.CreateKeyboardEffectAsync(effect).ConfigureAwait(false))
+            var effectGuid = await Api.CreateKeyboardEffectAsync(KeyboardEffectType.ExtendedCustom, effect)
+                                      .ConfigureAwait(false);
+
+            return await SetEffectAsync(effectGuid).ConfigureAwait(false);
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Sets an effect without any parameters.
+        /// Currently, this only works for the <see cref="KeyboardEffectType.None" /> effect.
+        /// </summary>
+        /// <param name="effectType">Effect options.</param>
+        public async Task<Guid> SetEffectAsync(KeyboardEffectType effectType)
+        {
+            return await SetEffectAsync(await Api.CreateKeyboardEffectAsync(effectType).ConfigureAwait(false))
                 .ConfigureAwait(false);
         }
 
@@ -239,7 +253,7 @@ namespace Colore.Implementations
 
             _grid[row, column] = color;
             return await SetEffectAsync(
-                    await Api.CreateKeyboardEffectAsync(KeyboardEffect.CustomKey, _grid).ConfigureAwait(false))
+                    await Api.CreateKeyboardEffectAsync(KeyboardEffectType.CustomKey, _grid).ConfigureAwait(false))
                 .ConfigureAwait(false);
         }
 
@@ -257,7 +271,7 @@ namespace Colore.Implementations
 
             _grid[key] = color;
             return await SetEffectAsync(
-                    await Api.CreateKeyboardEffectAsync(KeyboardEffect.CustomKey, _grid).ConfigureAwait(false))
+                    await Api.CreateKeyboardEffectAsync(KeyboardEffectType.CustomKey, _grid).ConfigureAwait(false))
                 .ConfigureAwait(false);
         }
 
@@ -305,10 +319,10 @@ namespace Colore.Implementations
         /// Sets a static color on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        public async Task<Guid> SetStaticAsync(KeyboardStatic effect)
+        public async Task<Guid> SetStaticAsync(StaticKeyboardEffect effect)
         {
             return await SetEffectAsync(
-                    await Api.CreateKeyboardEffectAsync(KeyboardEffect.Static, effect).ConfigureAwait(false))
+                    await Api.CreateKeyboardEffectAsync(KeyboardEffectType.Static, effect).ConfigureAwait(false))
                 .ConfigureAwait(false);
         }
 
@@ -327,7 +341,7 @@ namespace Colore.Implementations
 
             _deathstalkerGrid[zoneIndex] = color;
             return await SetEffectAsync(
-                    await Api.CreateKeyboardEffectAsync(KeyboardEffect.Custom, _deathstalkerGrid).ConfigureAwait(false))
+                    await Api.CreateKeyboardEffectAsync(KeyboardEffectType.Custom, _deathstalkerGrid).ConfigureAwait(false))
                 .ConfigureAwait(false);
         }
 
@@ -337,11 +351,11 @@ namespace Colore.Implementations
         /// </summary>
         /// <param name="effect">The Deathstalker grid effect to set.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        public async Task<Guid> SetDeathstalkerAsync(DeathstalkerGrid effect)
+        public async Task<Guid> SetDeathstalkerAsync(DeathstalkerGridEffect effect)
         {
             _deathstalkerGrid = effect;
             return await SetEffectAsync(
-                    await Api.CreateKeyboardEffectAsync(KeyboardEffect.Custom, _deathstalkerGrid).ConfigureAwait(false))
+                    await Api.CreateKeyboardEffectAsync(KeyboardEffectType.Custom, _deathstalkerGrid).ConfigureAwait(false))
                 .ConfigureAwait(false);
         }
 
@@ -353,7 +367,7 @@ namespace Colore.Implementations
         {
             _grid.Clear();
             _deathstalkerGrid.Clear();
-            return await SetEffectAsync(KeyboardEffect.None).ConfigureAwait(false);
+            return await SetEffectAsync(KeyboardEffectType.None).ConfigureAwait(false);
         }
     }
 }

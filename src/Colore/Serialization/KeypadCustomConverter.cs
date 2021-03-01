@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------------------
 // <copyright file="KeypadCustomConverter.cs" company="Corale">
-//     Copyright © 2015-2019 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2021 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -35,9 +35,9 @@ namespace Colore.Serialization
 
     /// <inheritdoc />
     /// <summary>
-    /// Converts keypad <see cref="KeypadCustom" /> objects to JSON.
+    /// Converts keypad <see cref="CustomKeypadEffect" /> objects to JSON.
     /// </summary>
-    /// <remarks>Does not support converting JSON into <see cref="KeypadCustom" /> objects.</remarks>
+    /// <remarks>Does not support converting JSON into <see cref="CustomKeypadEffect" /> objects.</remarks>
     [SuppressMessage(
         "Microsoft.Performance",
         "CA1812:AvoidUninstantiatedInternalClasses",
@@ -45,17 +45,17 @@ namespace Colore.Serialization
     internal sealed class KeypadCustomConverter : JsonConverter
     {
         /// <inheritdoc />
-        /// <summary>Writes the JSON representation of a keypad <see cref="KeypadCustom" /> object.</summary>
+        /// <summary>Writes the JSON representation of a keypad <see cref="CustomKeypadEffect" /> object.</summary>
         /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
-        /// <param name="value">The <see cref="KeypadCustom" /> value.</param>
+        /// <param name="value">The <see cref="CustomKeypadEffect" /> value.</param>
         /// <param name="serializer">The calling serializer.</param>
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            var effect = (KeypadCustom)value;
+            var effect = (CustomKeypadEffect)value;
 #pragma warning disable SA1008 // Opening parenthesis must be spaced correctly
             var colors = effect.ToMultiArray();
 #pragma warning restore SA1008 // Opening parenthesis must be spaced correctly
-            var data = new EffectData(KeypadEffect.Custom, colors);
+            var data = new EffectData(KeypadEffectType.Custom, colors);
             serializer.Serialize(writer, data);
         }
 
@@ -70,6 +70,6 @@ namespace Colore.Serialization
         }
 
         /// <inheritdoc />
-        public override bool CanConvert(Type objectType) => objectType == typeof(KeypadCustom);
+        public override bool CanConvert(Type objectType) => objectType == typeof(CustomKeypadEffect);
     }
 }

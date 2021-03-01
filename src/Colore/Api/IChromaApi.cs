@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------------------
 // <copyright file="IChromaApi.cs" company="Corale">
-//     Copyright © 2015-2019 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2021 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -79,115 +79,115 @@ namespace Colore.Api
         /// Creates a new device effect without any effect data.
         /// </summary>
         /// <param name="deviceId">The ID of the device to create the effect for.</param>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        Task<Guid> CreateDeviceEffectAsync(Guid deviceId, Effect effect);
+        Task<Guid> CreateDeviceEffectAsync(Guid deviceId, EffectType effectType);
 
         /// <summary>
         /// Creates a new device effect with the specified effect data.
         /// </summary>
         /// <typeparam name="T">The structure type, needs to be compatible with the effect type.</typeparam>
         /// <param name="deviceId">The ID of the device to create the effect for.</param>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <param name="data">The effect structure parameter.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        Task<Guid> CreateDeviceEffectAsync<T>(Guid deviceId, Effect effect, T data) where T : struct;
+        Task<Guid> CreateDeviceEffectAsync<T>(Guid deviceId, EffectType effectType, T data) where T : struct;
 
         /// <summary>
         /// Creates a new keyboard effect without any effect data.
         /// </summary>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        Task<Guid> CreateKeyboardEffectAsync(Effects.Keyboard.KeyboardEffect effect);
+        Task<Guid> CreateKeyboardEffectAsync(Effects.Keyboard.KeyboardEffectType effectType);
 
         /// <summary>
         /// Creates a new keyboard effect with the specified effect data.
         /// </summary>
         /// <typeparam name="T">The structure type, needs to be compatible with the effect type.</typeparam>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <param name="data">The effect structure parameter.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        Task<Guid> CreateKeyboardEffectAsync<T>(Effects.Keyboard.KeyboardEffect effect, T data) where T : struct;
+        Task<Guid> CreateKeyboardEffectAsync<T>(Effects.Keyboard.KeyboardEffectType effectType, T data) where T : struct;
 
         /// <summary>
         /// Creates a new mouse effect without any effect data.
         /// </summary>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        Task<Guid> CreateMouseEffectAsync(Effects.Mouse.MouseEffect effect);
+        Task<Guid> CreateMouseEffectAsync(Effects.Mouse.MouseEffectType effectType);
 
         /// <summary>
         /// Creates a new mouse effect with the specified effect data.
         /// </summary>
         /// <typeparam name="T">The effect struct type.</typeparam>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <param name="data">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        Task<Guid> CreateMouseEffectAsync<T>(Effects.Mouse.MouseEffect effect, T data) where T : struct;
+        Task<Guid> CreateMouseEffectAsync<T>(Effects.Mouse.MouseEffectType effectType, T data) where T : struct;
 
         /// <summary>
         /// Creates a new headset effect without any effect data.
         /// </summary>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        Task<Guid> CreateHeadsetEffectAsync(Effects.Headset.HeadsetEffect effect);
+        Task<Guid> CreateHeadsetEffectAsync(Effects.Headset.HeadsetEffectType effectType);
 
         /// <summary>
         /// Creates a new headset effect with the specified effect data.
         /// </summary>
         /// <typeparam name="T">The effect struct type.</typeparam>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <param name="data">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        Task<Guid> CreateHeadsetEffectAsync<T>(Effects.Headset.HeadsetEffect effect, T data) where T : struct;
+        Task<Guid> CreateHeadsetEffectAsync<T>(Effects.Headset.HeadsetEffectType effectType, T data) where T : struct;
 
         /// <summary>
         /// Creates a new mousepad effect without any effect data.
         /// </summary>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        Task<Guid> CreateMousepadEffectAsync(Effects.Mousepad.MousepadEffect effect);
+        Task<Guid> CreateMousepadEffectAsync(Effects.Mousepad.MousepadEffectType effectType);
 
         /// <summary>
         /// Creates a new mousepad effect with the specified effect data.
         /// </summary>
         /// <typeparam name="T">The effect struct type.</typeparam>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <param name="data">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        Task<Guid> CreateMousepadEffectAsync<T>(Effects.Mousepad.MousepadEffect effect, T data) where T : struct;
+        Task<Guid> CreateMousepadEffectAsync<T>(Effects.Mousepad.MousepadEffectType effectType, T data) where T : struct;
 
         /// <summary>
         /// Creates a new keypad effect without any effect data.
         /// </summary>
-        /// <param name="effect">THe type of effect to create.</param>
+        /// <param name="effectType">THe type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        Task<Guid> CreateKeypadEffectAsync(Effects.Keypad.KeypadEffect effect);
+        Task<Guid> CreateKeypadEffectAsync(Effects.Keypad.KeypadEffectType effectType);
 
         /// <summary>
         /// Creates a new keypad effect with the specified effect data.
         /// </summary>
         /// <typeparam name="T">The effect struct type.</typeparam>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <param name="data">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        Task<Guid> CreateKeypadEffectAsync<T>(Effects.Keypad.KeypadEffect effect, T data) where T : struct;
+        Task<Guid> CreateKeypadEffectAsync<T>(Effects.Keypad.KeypadEffectType effectType, T data) where T : struct;
 
         /// <summary>
         /// Creates a new Chroma Link effect without any effect data.
         /// </summary>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        Task<Guid> CreateChromaLinkEffectAsync(Effects.ChromaLink.ChromaLinkEffect effect);
+        Task<Guid> CreateChromaLinkEffectAsync(Effects.ChromaLink.ChromaLinkEffectType effectType);
 
         /// <summary>
         /// Creates a new Chroma Link effect with the specified effect data.
         /// </summary>
         /// <typeparam name="T">The effect struct type.</typeparam>
-        /// <param name="effect">The type of effect to create.</param>
+        /// <param name="effectType">The type of effect to create.</param>
         /// <param name="data">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        Task<Guid> CreateChromaLinkEffectAsync<T>(Effects.ChromaLink.ChromaLinkEffect effect, T data) where T : struct;
+        Task<Guid> CreateChromaLinkEffectAsync<T>(Effects.ChromaLink.ChromaLinkEffectType effectType, T data) where T : struct;
 
         /// <summary>
         /// Registers for Chroma SDK notifications.

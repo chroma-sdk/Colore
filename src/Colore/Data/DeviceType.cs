@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------------------
 // <copyright file="DeviceType.cs" company="Corale">
-//     Copyright © 2015-2019 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2021 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -38,6 +38,13 @@ namespace Colore.Data
     [JsonConverter(typeof(StringEnumConverter))]
     public enum DeviceType
     {
+        /// <summary>
+        /// Unknown device.
+        /// </summary>
+        [PublicAPI]
+        [EnumMember(Value = "unknown")]
+        Unknown = 0,
+
         /// <summary>
         /// A keyboard device.
         /// </summary>

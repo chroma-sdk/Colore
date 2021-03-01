@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------------------
 // <copyright file="TaskHelper.cs" company="Corale">
-//     Copyright © 2015-2019 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2021 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -35,7 +35,7 @@ namespace Colore.Helpers
         /// <summary>
         /// Gets a "completed task" object.
         /// </summary>
-#if NET451
+#if NET452
         internal static readonly Task CompletedTask = Task.FromResult(0);
 #else
         internal static readonly Task CompletedTask = Task.CompletedTask;

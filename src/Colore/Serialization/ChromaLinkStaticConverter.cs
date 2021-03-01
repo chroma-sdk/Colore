@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------------------
 // <copyright file="ChromaLinkStaticConverter.cs" company="Corale">
-//     Copyright © 2015-2019 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2021 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -35,9 +35,9 @@ namespace Colore.Serialization
 
     /// <inheritdoc />
     /// <summary>
-    /// Converts Chroma Link <see cref="ChromaLinkStatic" /> objects to JSON.
+    /// Converts Chroma Link <see cref="StaticChromaLinkEffect" /> objects to JSON.
     /// </summary>
-    /// <remarks>Does not support converting JSON into <see cref="ChromaLinkStatic" /> objects.</remarks>
+    /// <remarks>Does not support converting JSON into <see cref="StaticChromaLinkEffect" /> objects.</remarks>
     [SuppressMessage(
         "Microsoft.Performance",
         "CA1812:AvoidUninstantiatedInternalClasses",
@@ -45,14 +45,14 @@ namespace Colore.Serialization
     internal sealed class ChromaLinkStaticConverter : JsonConverter
     {
         /// <inheritdoc />
-        /// <summary>Writes the JSON representation of a Chroma Link <see cref="ChromaLinkStatic" /> object.</summary>
+        /// <summary>Writes the JSON representation of a Chroma Link <see cref="StaticChromaLinkEffect" /> object.</summary>
         /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
-        /// <param name="value">The <see cref="ChromaLinkStatic" /> value.</param>
+        /// <param name="value">The <see cref="StaticChromaLinkEffect" /> value.</param>
         /// <param name="serializer">The calling serializer.</param>
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            var effect = (ChromaLinkStatic)value;
-            var data = new EffectData(ChromaLinkEffect.Static, effect.Color);
+            var effect = (StaticChromaLinkEffect)value;
+            var data = new EffectData(ChromaLinkEffectType.Static, effect.Color);
             serializer.Serialize(writer, data);
         }
 
@@ -67,6 +67,6 @@ namespace Colore.Serialization
         }
 
         /// <inheritdoc />
-        public override bool CanConvert(Type objectType) => objectType == typeof(ChromaLinkStatic);
+        public override bool CanConvert(Type objectType) => objectType == typeof(StaticChromaLinkEffect);
     }
 }

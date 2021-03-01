@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------------------
 // <copyright file="RestClient.cs" company="Corale">
-//     Copyright © 2015-2019 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2021 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -26,6 +26,7 @@
 namespace Colore.Rest
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
     using System.Net.Http;
     using System.Net.Http.Headers;
     using System.Text;
@@ -66,6 +67,7 @@ namespace Colore.Rest
         /// Initializes a new instance of the <see cref="RestClient" /> class.
         /// </summary>
         /// <param name="baseAddress">Base address to use.</param>
+        [SuppressMessage("ReSharper", "CA2000", Justification = "HttpMessageHandler is managed by HttpClient")]
         public RestClient(Uri baseAddress)
             : this(baseAddress, new HttpClientHandler())
         {
@@ -100,17 +102,18 @@ namespace Colore.Rest
         public async Task<IRestResponse<T>> PostAsync<T>(string resource, object data)
         {
             var json = data == null ? null : JsonConvert.SerializeObject(data);
-            var content = json == null
+            using (var content = json == null
                 ? null
-                : new StringContent(json, Encoding.UTF8, "application/json");
+                : new StringContent(json, Encoding.UTF8, "application/json"))
+            {
+                var uri = CreateUri(resource);
 
-            var uri = CreateUri(resource);
+                Log.TraceFormat("POSTing {0} to {1}", json, uri);
 
-            Log.TraceFormat("POSTing {0} to {1}", json, uri);
-
-            var response = await _httpClient.PostAsync(uri, content).ConfigureAwait(false);
-            var body = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-            return new RestResponse<T>(response.StatusCode, body);
+                var response = await _httpClient.PostAsync(uri, content).ConfigureAwait(false);
+                var body = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                return new RestResponse<T>(response.StatusCode, body);
+            }
         }
 
         /// <inheritdoc />
@@ -135,13 +138,15 @@ namespace Colore.Rest
         /// <returns>An instance of <see cref="IRestResponse{TData}" />.</returns>
         public async Task<IRestResponse<T>> PutAsync<T>(string resource, object data)
         {
-            var content = data == null
+            using (var content = data == null
                 ? null
-                : new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
-            var uri = CreateUri(resource);
-            var response = await _httpClient.PutAsync(uri, content).ConfigureAwait(false);
-            var body = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-            return new RestResponse<T>(response.StatusCode, body);
+                : new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json"))
+            {
+                var uri = CreateUri(resource);
+                var response = await _httpClient.PutAsync(uri, content).ConfigureAwait(false);
+                var body = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                return new RestResponse<T>(response.StatusCode, body);
+            }
         }
 
         /// <inheritdoc />
@@ -174,12 +179,14 @@ namespace Colore.Rest
                 : new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
 
             var uri = CreateUri(resource);
-            var request = new HttpRequestMessage(HttpMethod.Delete, uri) { Content = content };
 
-            var response = await _httpClient.SendAsync(request).ConfigureAwait(false);
+            using (var request = new HttpRequestMessage(HttpMethod.Delete, uri) { Content = content })
+            {
+                var response = await _httpClient.SendAsync(request).ConfigureAwait(false);
 
-            var body = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-            return new RestResponse<T>(response.StatusCode, body);
+                var body = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                return new RestResponse<T>(response.StatusCode, body);
+            }
         }
 
         /// <inheritdoc />
@@ -207,7 +214,7 @@ namespace Colore.Rest
         }
 
         /// <summary>
-        /// CReates an absolute SDK URI from the supplied resource.
+        /// Creates an absolute SDK URI from the supplied resource.
         /// </summary>
         /// <param name="resource">The resource (relative SDK URI).</param>
         /// <returns>An instance of <see cref="Uri" /> with the absolute SDK URI.</returns>

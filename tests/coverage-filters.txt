@@ -1,0 +1,6 @@
+# Lines starting with # are considered comments and not processed
+# The Logging namespace only contains generated code from LibLog
++[Colore]*
+-[Colore]Colore.Logging*
+-[*.Tests]*
+-[nunit*]*

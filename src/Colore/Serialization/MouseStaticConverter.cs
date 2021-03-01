@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------------------
 // <copyright file="MouseStaticConverter.cs" company="Corale">
-//     Copyright © 2015-2019 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2021 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -35,9 +35,9 @@ namespace Colore.Serialization
 
     /// <inheritdoc />
     /// <summary>
-    /// Converts mouse <see cref="MouseStatic" /> objects to JSON.
+    /// Converts mouse <see cref="StaticMouseEffect" /> objects to JSON.
     /// </summary>
-    /// <remarks>Does not support converting JSON into <see cref="MouseStatic" /> objects.</remarks>
+    /// <remarks>Does not support converting JSON into <see cref="StaticMouseEffect" /> objects.</remarks>
     [SuppressMessage(
         "Microsoft.Performance",
         "CA1812:AvoidUninstantiatedInternalClasses",
@@ -45,14 +45,14 @@ namespace Colore.Serialization
     internal sealed class MouseStaticConverter : JsonConverter
     {
         /// <inheritdoc />
-        /// <summary>Writes the JSON representation of a mouse <see cref="MouseStatic" /> object.</summary>
+        /// <summary>Writes the JSON representation of a mouse <see cref="StaticMouseEffect" /> object.</summary>
         /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
-        /// <param name="value">The <see cref="MouseStatic" /> value.</param>
+        /// <param name="value">The <see cref="StaticMouseEffect" /> value.</param>
         /// <param name="serializer">The calling serializer.</param>
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            var effect = (MouseStatic)value;
-            var data = new EffectData(MouseEffect.Static, effect.Color);
+            var effect = (StaticMouseEffect)value;
+            var data = new EffectData(MouseEffectType.Static, effect.Color);
             serializer.Serialize(writer, data);
         }
 
@@ -67,6 +67,6 @@ namespace Colore.Serialization
         }
 
         /// <inheritdoc />
-        public override bool CanConvert(Type objectType) => objectType == typeof(MouseStatic);
+        public override bool CanConvert(Type objectType) => objectType == typeof(StaticMouseEffect);
     }
 }

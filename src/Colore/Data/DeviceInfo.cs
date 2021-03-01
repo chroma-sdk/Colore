@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------------------
 // <copyright file="DeviceInfo.cs" company="Corale">
-//     Copyright © 2015-2019 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2021 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -29,7 +29,7 @@ namespace Colore.Data
 
     using JetBrains.Annotations;
 
-    /// <inheritdoc cref="IEquatable{T}" />
+    /// <inheritdoc />
     /// <summary>
     /// Contains information about a device.
     /// </summary>
@@ -135,8 +135,13 @@ namespace Colore.Data
                 var hashCode = Id.GetHashCode();
                 hashCode = (hashCode * 397) ^ (int)Type;
                 hashCode = (hashCode * 397) ^ Connected.GetHashCode();
+#if NETSTANDARD2_1
+                hashCode = (hashCode * 397) ^ (Name?.GetHashCode(StringComparison.InvariantCulture) ?? 0);
+                hashCode = (hashCode * 397) ^ (Description?.GetHashCode(StringComparison.InvariantCulture) ?? 0);
+#else
                 hashCode = (hashCode * 397) ^ (Name?.GetHashCode() ?? 0);
                 hashCode = (hashCode * 397) ^ (Description?.GetHashCode() ?? 0);
+#endif
                 return hashCode;
             }
         }

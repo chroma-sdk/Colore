@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------------------
 // <copyright file="KeypadStaticConverter.cs" company="Corale">
-//     Copyright © 2015-2019 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2021 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -35,9 +35,9 @@ namespace Colore.Serialization
 
     /// <inheritdoc />
     /// <summary>
-    /// Converts keypad <see cref="KeypadStatic" /> objects to JSON.
+    /// Converts keypad <see cref="StaticKeypadEffect" /> objects to JSON.
     /// </summary>
-    /// <remarks>Does not support converting JSON into <see cref="KeypadStatic" /> objects.</remarks>
+    /// <remarks>Does not support converting JSON into <see cref="StaticKeypadEffect" /> objects.</remarks>
     [SuppressMessage(
         "Microsoft.Performance",
         "CA1812:AvoidUninstantiatedInternalClasses",
@@ -45,14 +45,14 @@ namespace Colore.Serialization
     internal sealed class KeypadStaticConverter : JsonConverter
     {
         /// <inheritdoc />
-        /// <summary>Writes the JSON representation of a keypad <see cref="KeypadStatic" /> object.</summary>
+        /// <summary>Writes the JSON representation of a keypad <see cref="StaticKeypadEffect" /> object.</summary>
         /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
-        /// <param name="value">The <see cref="KeypadStatic" /> value.</param>
+        /// <param name="value">The <see cref="StaticKeypadEffect" /> value.</param>
         /// <param name="serializer">The calling serializer.</param>
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            var effect = (KeypadStatic)value;
-            var data = new EffectData(KeypadEffect.Static, effect.Color);
+            var effect = (StaticKeypadEffect)value;
+            var data = new EffectData(KeypadEffectType.Static, effect.Color);
             serializer.Serialize(writer, data);
         }
 
@@ -67,6 +67,6 @@ namespace Colore.Serialization
         }
 
         /// <inheritdoc />
-        public override bool CanConvert(Type objectType) => objectType == typeof(KeypadStatic);
+        public override bool CanConvert(Type objectType) => objectType == typeof(StaticKeypadEffect);
     }
 }

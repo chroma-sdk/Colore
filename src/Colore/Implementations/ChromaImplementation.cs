@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------------------
 // <copyright file="ChromaImplementation.cs" company="Corale">
-//     Copyright © 2015-2019 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2021 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -127,7 +127,7 @@ namespace Colore.Implementations
         /// </remarks>
         ~ChromaImplementation()
         {
-            UninitializeAsync().Wait();
+            Dispose(false);
         }
 
         /// <inheritdoc />
@@ -229,6 +229,16 @@ namespace Colore.Implementations
         /// Gets the <see cref="System.Version" /> of Colore.
         /// </summary>
         public Version Version { get; }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        /// </summary>
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
 
         /// <inheritdoc />
         /// <summary>
@@ -363,17 +373,30 @@ namespace Colore.Implementations
         public bool HandleMessage(IntPtr handle, int msgId, IntPtr wParam, IntPtr lParam)
         {
             if (!_registered)
-                throw new InvalidOperationException("Register must be called before event handling can be performed.");
+            {
+#if DEBUG
+                Log.Warn($"{nameof(HandleMessage)} called without event handling being registered");
+#endif
+
+                return false;
+            }
 
             if (handle != _registeredHandle)
             {
-                throw new ArgumentException(
-                    "The specified window handle does not match the currently registered one.",
-                    nameof(handle));
+#if DEBUG
+                Log.Warn(
+                    $"Unexpected handle passed to {nameof(HandleMessage)}. Expected 0x{{0}} but was 0x{{1}}",
+                    _registeredHandle.ToString("X"),
+                    handle.ToString("X"));
+#endif
+
+                return false;
             }
 
             if (msgId != Constants.WmChromaEvent)
+            {
                 return false;
+            }
 
             var handled = false;
 
@@ -457,6 +480,22 @@ namespace Colore.Implementations
             await Keypad.SetAllAsync(color).ConfigureAwait(false);
             await Headset.SetAllAsync(color).ConfigureAwait(false);
             await ChromaLink.SetAllAsync(color).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+        /// </summary>
+        /// <param name="disposing">
+        /// <c>true</c> if this is being called from <see cref="Dispose()" />; otherwise, <c>false</c>.
+        /// </param>
+        private void Dispose(bool disposing)
+        {
+            UninitializeAsync().Wait();
+
+            if (disposing && _api is IDisposable disposableApi)
+            {
+                disposableApi.Dispose();
+            }
         }
 
         /// <summary>

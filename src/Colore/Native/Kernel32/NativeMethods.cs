@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------------------
 // <copyright file="NativeMethods.cs" company="Corale">
-//     Copyright © 2015-2019 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2021 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -184,7 +184,6 @@ namespace Colore.Native.Kernel32
         /// using <c>LoadLibrary</c> on versions of Windows prior to Windows Vista. If your DLL will be loaded explicitly,
         /// you must use the thread local storage functions instead of <c>_declspec(thread)</c>. For an example, see Using
         /// Thread Local Storage in a Dynamic Link Library.
-        /// Security Remarks
         /// </para>
         /// <para>
         /// Do not use the <c>SearchPath</c> function to retrieve a path to a DLL for a subsequent <c>LoadLibrary</c> call.

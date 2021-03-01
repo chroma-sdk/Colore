@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------------------
 // <copyright file="AppInfo.cs" company="Corale">
-//     Copyright © 2015-2019 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2021 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -55,12 +55,12 @@ namespace Colore.Data
 #pragma warning disable SA1118 // Parameter should not span multiple lines
                 new[]
                 {
-                    DeviceType.Keyboard,
-                    DeviceType.Mouse,
-                    DeviceType.Headset,
-                    DeviceType.Keypad,
-                    DeviceType.Mousepad,
-                    DeviceType.Speakers
+                    ApiDeviceType.Keyboard,
+                    ApiDeviceType.Mouse,
+                    ApiDeviceType.Headset,
+                    ApiDeviceType.Mousepad,
+                    ApiDeviceType.Keypad,
+                    ApiDeviceType.ChromaLink
                 },
 #pragma warning restore SA1118 // Parameter should not span multiple lines
                 category)
@@ -76,14 +76,25 @@ namespace Colore.Data
         /// <param name="authorContact">Contact information for the author.</param>
         /// <param name="supportedDevices">List of devices this application supports.</param>
         /// <param name="category">Application category.</param>
+        /// <exception cref="ArgumentNullException">Thrown if a required parameter is <c>null</c>.</exception>
         public AppInfo(
             string title,
             string description,
             string authorName,
             string authorContact,
-            IEnumerable<DeviceType> supportedDevices,
+            IEnumerable<ApiDeviceType> supportedDevices,
             Category category)
         {
+            if (title is null)
+            {
+                throw new ArgumentNullException(nameof(title));
+            }
+
+            if (description is null)
+            {
+                throw new ArgumentNullException(nameof(description));
+            }
+
             if (title.Length > Constants.MaxAppTitleLength)
             {
                 throw new ArgumentException(
@@ -101,7 +112,7 @@ namespace Colore.Data
             Title = title;
             Description = description;
             Author = new Author(authorName, authorContact);
-            SupportedDevices = new ReadOnlyCollection<DeviceType>(supportedDevices.ToList());
+            SupportedDevices = new ReadOnlyCollection<ApiDeviceType>(supportedDevices.ToList());
             Category = category;
         }
 
@@ -131,7 +142,7 @@ namespace Colore.Data
         /// but since we only serialize this class, it will not be an issue.
         /// </remarks>
         [JsonProperty("device_supported")]
-        public IReadOnlyCollection<DeviceType> SupportedDevices { get; }
+        public IReadOnlyCollection<ApiDeviceType> SupportedDevices { get; }
 
         /// <summary>
         /// Gets the category of this application.

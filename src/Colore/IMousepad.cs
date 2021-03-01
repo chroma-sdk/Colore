@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------------------
 // <copyright file="IMousepad.cs" company="Corale">
-//     Copyright © 2015-2019 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2021 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -50,10 +50,10 @@ namespace Colore
         /// <summary>
         /// Sets a static color effect on the mouse pad.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="MousepadStatic" /> struct.</param>
+        /// <param name="effect">An instance of the <see cref="StaticMousepadEffect" /> struct.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetStaticAsync(MousepadStatic effect);
+        Task<Guid> SetStaticAsync(StaticMousepadEffect effect);
 
         /// <summary>
         /// Sets a static color effect on the mouse pad.
@@ -66,18 +66,18 @@ namespace Colore
         /// <summary>
         /// Sets a custom effect on the mouse pad.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="MousepadCustom" /> struct.</param>
+        /// <param name="effect">An instance of the <see cref="CustomMousepadEffect" /> struct.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetCustomAsync(MousepadCustom effect);
+        Task<Guid> SetCustomAsync(CustomMousepadEffect effect);
 
         /// <summary>
         /// Sets an effect without any parameters.
-        /// Currently, this only works for the <see cref="MousepadEffect.None" /> effect.
+        /// Currently, this only works for the <see cref="MousepadEffectType.None" /> effect.
         /// </summary>
-        /// <param name="effect">Effect options.</param>
+        /// <param name="effectType">Effect options.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetEffectAsync(MousepadEffect effect);
+        Task<Guid> SetEffectAsync(MousepadEffectType effectType);
     }
 }

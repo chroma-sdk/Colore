@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------------------
 // <copyright file="RegistryHelper.cs" company="Corale">
-//     Copyright © 2015-2019 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2021 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -57,76 +57,8 @@ namespace Colore.Helpers
         {
             Log.Debug("Checking for SDK availability");
 
-            bool dllValid;
-            IntPtr libraryPointer;
-
-            var dllName = EnvironmentHelper.Is64Bit() ? "RzChromaSDK64.dll" : "RzChromaSDK.dll";
-            Log.Debug("Attempting to load SDK library {DllName}", dllName);
-            dllValid = (libraryPointer = Native.Kernel32.NativeMethods.LoadLibrary(dllName)) != IntPtr.Zero;
-
-            Log.Debug("DLL valid? {DllValid}. SDK library pointer: {LibraryPointer}", dllValid, libraryPointer);
-
-            if (libraryPointer != IntPtr.Zero)
-            {
-                Log.Debug("Calling FreeLibrary on temporary library pointer {LibraryPointer}", libraryPointer);
-                Native.Kernel32.NativeMethods.FreeLibrary(libraryPointer);
-            }
-
-            bool regEnabled;
-
-            try
-            {
-                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-                {
-                    using (var key = Registry.LocalMachine.OpenSubKey(SdkRegKeyPath))
-                    {
-                        if (key != null)
-                        {
-                            var value = key.GetValue("Enable");
-
-                            if (value is int i)
-                            {
-                                regEnabled = i == 1;
-                            }
-                            else
-                            {
-                                regEnabled = true;
-                                Log.Warn(
-                                    "Chroma SDK has changed registry setting format. Please update Colore to latest version.");
-                                Log.DebugFormat("New Enabled type: {0}", value.GetType());
-                            }
-                        }
-                        else
-                        {
-                            regEnabled = false;
-                        }
-                    }
-                }
-                else
-                {
-                    Log.Debug("Not running on Windows, treating 'SDK exists in registry' as true");
-                    regEnabled = true;
-                }
-            }
-            catch (PlatformNotSupportedException ex)
-            {
-                Log.WarnException("Assuming SDK is available due to registry not being available on this system", ex);
-                regEnabled = true;
-            }
-            catch (SecurityException ex)
-            {
-                // If we can't access the registry, best to just assume
-                // it is enabled.
-                Log.WarnException("System raised SecurityException during read of SDK enable flag in registry.", ex);
-                regEnabled = true;
-            }
-            catch (UnauthorizedAccessException ex)
-            {
-                // If we can't access the registry, best to just assume
-                // it is enabled.
-                Log.WarnException("Not authorized to read registry for SDK enable flag.", ex);
-                regEnabled = true;
-            }
+            var dllValid = IsSdkDllValid();
+            var regEnabled = IsSdkEnabledInRegistry();
 
             return dllValid && regEnabled;
         }
@@ -208,6 +140,90 @@ namespace Colore.Helpers
             return EnvironmentHelper.Is64Bit()
                 ? @"SOFTWARE\WOW6432Node\Razer Chroma SDK"
                 : @"SOFTWARE\Razer Chroma SDK";
+        }
+
+        /// <summary>
+        /// Checks if the Chroma SDK DLL is valid by attempting to load it.
+        /// </summary>
+        /// <returns><c>true</c> if the DLL is valid and could be loaded; otherwise, <c>false</c>.</returns>
+        private static bool IsSdkDllValid()
+        {
+            IntPtr libraryPointer;
+
+            var dllName = EnvironmentHelper.Is64Bit() ? "RzChromaSDK64.dll" : "RzChromaSDK.dll";
+            Log.Debug("Attempting to load SDK library {DllName}", dllName);
+            var valid = (libraryPointer = Native.Kernel32.NativeMethods.LoadLibrary(dllName)) != IntPtr.Zero;
+
+            Log.Debug("DLL valid? {DllValid}. SDK library pointer: {LibraryPointer}", valid, libraryPointer);
+
+            if (libraryPointer != IntPtr.Zero)
+            {
+                Log.Debug("Calling FreeLibrary on temporary library pointer {LibraryPointer}", libraryPointer);
+                Native.Kernel32.NativeMethods.FreeLibrary(libraryPointer);
+            }
+
+            return valid;
+        }
+
+        /// <summary>
+        /// Checks if the Chroma SDK is enabled in the Windows registry.
+        /// </summary>
+        /// <returns><c>true</c> if the SDK is enabled in the registry; otherwise, <c>false</c>.</returns>
+        /// <remarks>
+        /// On unsupported platforms or if the registry cannot be read, this method will fallback to <c>true</c>
+        /// to maximize compatibility.
+        /// </remarks>
+        private static bool IsSdkEnabledInRegistry()
+        {
+            try
+            {
+                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                {
+                    using (var key = Registry.LocalMachine.OpenSubKey(SdkRegKeyPath))
+                    {
+                        if (key == null)
+                        {
+                            return false;
+                        }
+
+                        var value = key.GetValue("Enable");
+
+                        if (value is int i)
+                        {
+                            return i == 1;
+                        }
+
+                        Log.Warn(
+                            "Chroma SDK has changed registry setting format. Please update Colore to latest version.");
+
+                        Log.DebugFormat("New Enabled type: {0}", value.GetType());
+
+                        return true;
+                    }
+                }
+
+                Log.Debug("Not running on Windows, treating 'SDK exists in registry' as true");
+                return true;
+            }
+            catch (PlatformNotSupportedException ex)
+            {
+                Log.WarnException("Assuming SDK is available due to registry not being available on this system", ex);
+                return true;
+            }
+            catch (SecurityException ex)
+            {
+                // If we can't access the registry, best to just assume
+                // it is enabled.
+                Log.WarnException("System raised SecurityException during read of SDK enable flag in registry.", ex);
+                return true;
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                // If we can't access the registry, best to just assume
+                // it is enabled.
+                Log.WarnException("Not authorized to read registry for SDK enable flag.", ex);
+                return true;
+            }
         }
     }
 }

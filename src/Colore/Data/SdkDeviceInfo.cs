@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------------------
 // <copyright file="SdkDeviceInfo.cs" company="Corale">
-//     Copyright © 2015-2019 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2021 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -31,7 +31,7 @@ namespace Colore.Data
 
     using JetBrains.Annotations;
 
-    /// <inheritdoc cref="IEquatable{T}" />
+    /// <inheritdoc />
     /// <summary>
     /// Information about a device.
     /// </summary>
@@ -45,21 +45,32 @@ namespace Colore.Data
         public readonly DeviceType Type;
 
         /// <summary>
-        /// Whether this device is connected.
+        /// The number of connected devices of the given type.
         /// </summary>
+        /// <remarks>
+        /// This property is the <c>DWORD</c> field <c>Connected</c> in the SDK type <c>DEVICE_INFO_TYPE</c>.
+        /// In Colore we rename it ConnectedCount to be more descriptive and have the helper
+        /// <see cref="Connected" /> property for doing boolean checks on connected-ness.
+        /// </remarks>
         [PublicAPI]
-        public readonly bool Connected;
+        public readonly uint ConnectedCount;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SdkDeviceInfo" /> struct.
         /// </summary>
         /// <param name="type">The type of device.</param>
-        /// <param name="connected">Whether the device is currently connected.</param>
-        public SdkDeviceInfo(DeviceType type, bool connected)
+        /// <param name="connectedCount">The number of connected devices for the type.</param>
+        public SdkDeviceInfo(DeviceType type, uint connectedCount)
         {
             Type = type;
-            Connected = connected;
+            ConnectedCount = connectedCount;
         }
+
+        /// <summary>
+        /// Gets a value indicating whether this device is connected.
+        /// </summary>
+        [PublicAPI]
+        public bool Connected => ConnectedCount > 0;
 
         /// <summary>
         /// Checks an instance of <see cref="SdkDeviceInfo" /> for equality with another <see cref="SdkDeviceInfo" /> instance.
@@ -93,7 +104,7 @@ namespace Colore.Data
         /// </returns>
         public bool Equals(SdkDeviceInfo other)
         {
-            return Type == other.Type && Connected == other.Connected;
+            return Type == other.Type && ConnectedCount == other.ConnectedCount;
         }
 
         /// <inheritdoc />

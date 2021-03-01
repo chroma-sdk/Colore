@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------------------
 // <copyright file="HeadsetCustomConverter.cs" company="Corale">
-//     Copyright © 2015-2019 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2021 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -35,9 +35,9 @@ namespace Colore.Serialization
 
     /// <inheritdoc />
     /// <summary>
-    /// Converts headset <see cref="HeadsetCustom" /> objects to JSON.
+    /// Converts headset <see cref="CustomHeadsetEffect" /> objects to JSON.
     /// </summary>
-    /// <remarks>Does not support converting JSON into <see cref="HeadsetCustom" /> objects.</remarks>
+    /// <remarks>Does not support converting JSON into <see cref="CustomHeadsetEffect" /> objects.</remarks>
     [SuppressMessage(
         "Microsoft.Performance",
         "CA1812:AvoidUninstantiatedInternalClasses",
@@ -46,15 +46,15 @@ namespace Colore.Serialization
     {
         /// <inheritdoc />
         /// <summary>
-        /// Writes the JSON representation of a headset <see cref="HeadsetCustom" /> object.
+        /// Writes the JSON representation of a headset <see cref="CustomHeadsetEffect" /> object.
         /// </summary>
         /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
-        /// <param name="value">The <see cref="HeadsetCustom" /> value.</param>
+        /// <param name="value">The <see cref="CustomHeadsetEffect" /> value.</param>
         /// <param name="serializer">The calling serializer.</param>
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            var effect = (HeadsetCustom)value;
-            var data = new EffectData(HeadsetEffect.Custom, effect.Colors);
+            var effect = (CustomHeadsetEffect)value;
+            var data = new EffectData(HeadsetEffectType.Custom, effect.Colors);
             serializer.Serialize(writer, data);
         }
 
@@ -69,6 +69,6 @@ namespace Colore.Serialization
         }
 
         /// <inheritdoc />
-        public override bool CanConvert(Type objectType) => objectType == typeof(HeadsetCustom);
+        public override bool CanConvert(Type objectType) => objectType == typeof(CustomHeadsetEffect);
     }
 }

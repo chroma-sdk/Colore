@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------------------
 // <copyright file="IKeyboard.cs" company="Corale">
-//     Copyright © 2015-2019 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2021 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -87,21 +87,29 @@ namespace Colore
         /// </summary>
         /// <param name="effect">Effect options.</param>
         /// <remarks>
-        /// This will overwrite the current internal <see cref="KeyboardCustom" />
+        /// This will overwrite the current internal <see cref="CustomKeyboardEffect" />
         /// struct in the <see cref="KeyboardImplementation" /> class.
         /// </remarks>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetCustomAsync(KeyboardCustom effect);
+        Task<Guid> SetCustomAsync(CustomKeyboardEffect effect);
 
         /// <summary>
-        /// Sets an effect without any parameters.
-        /// Currently, this only works for the <see cref="KeyboardEffect.None" /> effect.
+        /// Sets an extended custom grid effect on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetEffectAsync(KeyboardEffect effect);
+        Task<Guid> SetExtendedCustomAsync(ExtendedCustomKeyboardEffect effect);
+
+        /// <summary>
+        /// Sets an effect without any parameters.
+        /// Currently, this only works for the <see cref="KeyboardEffectType.None" /> effect.
+        /// </summary>
+        /// <param name="effectType">Effect options.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
+        [PublicAPI]
+        Task<Guid> SetEffectAsync(KeyboardEffectType effectType);
 
         /// <summary>
         /// Sets the color on a specific row and column on the keyboard grid.
@@ -150,7 +158,7 @@ namespace Colore
         /// <param name="effect">Effect options.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetStaticAsync(KeyboardStatic effect);
+        Task<Guid> SetStaticAsync(StaticKeyboardEffect effect);
 
         /// <summary>
         /// Sets the specified Deathstalker zone to a color.
@@ -168,6 +176,6 @@ namespace Colore
         /// <param name="effect">The Deathstalker grid effect to set.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetDeathstalkerAsync(DeathstalkerGrid effect);
+        Task<Guid> SetDeathstalkerAsync(DeathstalkerGridEffect effect);
     }
 }

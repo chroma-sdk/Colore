@@ -1,4 +1,4 @@
-image: Visual Studio 2017
+image: Visual Studio 2019
 
 version: '{build}'
 
@@ -11,39 +11,32 @@ nuget:
 environment:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
-  access_token:
-    secure: ZWDltUxdxnkQ9jf+HC+g7Hxm4Nke7H7AtMv4NWu5Uf+ZP4DV77Vc3C2B87moIUK0
-  deploy_key:
-    secure: 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
-  COVERALLS_REPO_TOKEN:
-    secure: eFKKgpHHQpP0wnqAHcRDLjDOUr7ndLNG761qrHDg28G+MfSkyeXtLTlf2bHkFUxo
+  github_access_token:
+    secure: REm65Z5Fp9idcP8KKLp06b33/PES+jiRxNAc7ZalS7jHR6i1iCrgxBVcm42Lpvbd
 
 cache:
   - tools -> build.cake
-  - C:\ProgramData\chocolatey\bin -> build.cake
-  - C:\ProgramData\chocolatey\lib -> build.cake
+  - C:\ProgramData\chocolatey\bin -> appveyor.yml
+  - C:\ProgramData\chocolatey\lib -> appveyor.yml
   - '%USERPROFILE%\.nuget\packages -> **\*.csproj'
 
 init:
-  - git config --global user.email "deploy@appveyor.com"
+  - git config --global user.email "ci@appveyor.com"
   - git config --global user.name "AppVeyor CI"
+  - git config --global credential.helper store
+  - ps: Add-Content -Path "$HOME\.git-credentials" -Value "https://$($env:github_access_token):x-oauth-basic@github.com`n" -NoNewline
 
 install:
-  - choco install docfx -y --allow-downgrade --version 2.40.7
-  - ps: $privkeyContent = "-----BEGIN RSA PRIVATE KEY-----`n"
-  - ps: $privkeyContent += $env:deploy_key.Replace(' ', "`n")
-  - ps: $privkeyContent += "`n-----END RSA PRIVATE KEY-----"
-  - ps: Set-Content $env:userprofile\.ssh\id_rsa $privkeyContent
-  - git config --global user.name "AppVeyor CI"
-  - git config --global user.email "ci@appveyor.com"
+  - choco install docfx -y --version=2.56.6
+  - dotnet tool restore
 
 build_script:
-- ps: .\build.ps1 -Target AppVeyor
+  - dotnet tool run dotnet-cake -- --target=AppVeyor
 
 test: off
 
 artifacts:
-- path: .\artifacts\**\*.nupkg
+- path: .\artifacts\nuget\*
   name: NuGet
 - path: .\artifacts\**\*.zip
   name: Archive
@@ -54,41 +47,47 @@ artifacts:
 
 deploy:
 - provider: NuGet
+  #server: https://api.nuget.org/v3/index.json
   name: production
   api_key:
-    secure: /UcxvxkkPWQRsIhUDB2mhBk+0MjhaYUobxDyTK2sq/mOWZjqoJL75FPpi1RvkvII
+    secure: A56Qs5ovDCqFsic8ntEtyzli2cLE/D9UZb6adpWOaSrVNLEy+mmPgMijjimmjj0i
   artifact: NuGet
   on:
     appveyor_repo_tag: true
 - provider: NuGet
-  server: https://www.myget.org/F/chroma-sdk/api/v2/package
-  symbol_server: https://www.myget.org/F/chroma-sdk/symbols/api/v2/package
+  server: https://nuget.pkg.github.com/chroma-sdk/index.json
   name: production
+  username: Sharparam
+  skip_symbols: true
   api_key:
-    secure: S0CibZkUE89TR7ainmS+w1XRKgY9PDMUkQ5P5QymyK3AlkiRTYTdKySLHh2pBiDO
+    secure: REm65Z5Fp9idcP8KKLp06b33/PES+jiRxNAc7ZalS7jHR6i1iCrgxBVcm42Lpvbd
   artifact: NuGet
   on:
     appveyor_repo_tag: true
 - provider: GitHub
   description: Automatically created by AppVeyor.
   auth_token:
-    secure: +Ea72RBksy3oc8uKb7EsH/DW3L5K5fpCiJtBIQWnJbLqiJVyubFb9YF52BLoXoUe
+    secure: REm65Z5Fp9idcP8KKLp06b33/PES+jiRxNAc7ZalS7jHR6i1iCrgxBVcm42Lpvbd
   artifact: NuGet,Archive,OpenCover,Coverage
   draft: true
   on:
     appveyor_repo_tag: true
 - provider: NuGet
-  server: https://www.myget.org/F/chroma-sdk/api/v2/package
-  symbol_server: https://www.myget.org/F/chroma-sdk/symbols/api/v2/package
+  server: https://nuget.pkg.github.com/chroma-sdk/index.json
   name: development
+  username: Sharparam
+  skip_symbols: true
   api_key:
-    secure: S0CibZkUE89TR7ainmS+w1XRKgY9PDMUkQ5P5QymyK3AlkiRTYTdKySLHh2pBiDO
+    secure: REm65Z5Fp9idcP8KKLp06b33/PES+jiRxNAc7ZalS7jHR6i1iCrgxBVcm42Lpvbd
   artifact: NuGet
   on:
     branch: develop
 
 after_deploy:
 - ps: .\appveyor\deploy-docs.ps1
+
+#on_finish:
+#  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
 notifications:
 - provider: GitHubPullRequest

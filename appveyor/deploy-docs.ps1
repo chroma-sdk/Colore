@@ -17,17 +17,32 @@ $covtarget = 'devcoverage'
 
 if ($env:APPVEYOR_REPO_TAG -eq 'true')
 {
-    Write-Host 'Building from tag, setting variables to release values'
     $release = $true
-    $target = 'docs'
-    $covtarget = 'coverage'
+    $tagName = $env:APPVEYOR_REPO_TAG_NAME
+    if (!$tagName.Contains("-"))
+    {
+        Write-Host 'Building from tag, setting variables to release values'
+        $target = 'docs'
+        $covtarget = 'coverage'
+    }
+    elseif ($tagName.Contains("-rc"))
+    {
+        Write-Host 'Building from RC tag, setting variables to RC values'
+        $target = 'rcdocs'
+        $covtarget = 'rccoverage'
+    }
+    else
+    {
+        Write-Host "Tag '$tagName' is of unknown type, aborting"
+        return
+    }
 }
 
 Write-Host 'Cleaning any existing gh-pages directory'
 rmrf gh-pages
 
 Write-Host 'Cloning gh-pages branch'
-git clone -q -b gh-pages --depth 1 -- git@github.com:chroma-sdk/Colore.git gh-pages
+git clone -q -b gh-pages --depth 1 -- https://github.com/chroma-sdk/Colore.git gh-pages
 
 if (!(Test-Path -Path gh-pages))
 {

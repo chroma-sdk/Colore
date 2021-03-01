@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------------------
 // <copyright file="Key.cs" company="Corale">
-//     Copyright © 2015-2019 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2021 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -25,11 +25,14 @@
 
 namespace Colore.Effects.Keyboard
 {
+    using System.Diagnostics.CodeAnalysis;
+
     using JetBrains.Annotations;
 
     /// <summary>
     /// Definition of all keys available on the keyboard.
     /// </summary>
+    [SuppressMessage("Microsoft.Design", "CA1069", Justification = "Definitions follow how the Chroma SDK is designed")]
     public enum Key
     {
         /// <summary>

@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------------------
 // <copyright file="NativeSdkMethods.cs" company="Corale">
-//     Copyright © 2015-2019 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2021 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -122,7 +122,7 @@ namespace Colore.Native
 
             QueryDevice = GetDelegateFromLibrary<QueryDeviceDelegate>(_chromaSdkPointer, "QueryDevice");
 
-            Log.Debug("Function delgates loaded");
+            Log.Debug("Function delegates loaded");
         }
 
         /// <summary>
@@ -151,24 +151,24 @@ namespace Colore.Native
         /// Creates an effect for a device.
         /// </summary>
         /// <param name="deviceId">The <see cref="Guid" /> of the device, refer to <see cref="Devices" /> for supported IDs.</param>
-        /// <param name="effect">The effect to create.</param>
+        /// <param name="effectType">The effect to create.</param>
         /// <param name="param">Effect-specific parameter.</param>
         /// <param name="effectId">Valid effect ID if successful. Use <see cref="Guid.Empty" /> if not required.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         public delegate Result CreateEffectDelegate(
             [In] Guid deviceId,
-            [In] Effects.Generic.Effect effect,
+            [In] Effects.Generic.EffectType effectType,
             [In] IntPtr param,
-            [In, Out] ref Guid effectId);
+            [In] [Out] ref Guid effectId);
 
         /// <summary>
         /// Create keyboard effect.
         /// </summary>
-        /// <param name="effect">
-        /// Standard effect type, like <see cref="KeyboardEffect.Static" />.
+        /// <param name="effectType">
+        /// Standard effect type, like <see cref="KeyboardEffectType.Static" />.
         /// </param>
-        /// <param name="param">Pointer to a parameter type specified by <paramref name="effect" />.</param>
+        /// <param name="param">Pointer to a parameter type specified by <paramref name="effectType" />.</param>
         /// <param name="effectId">Valid effect ID if successful. Use <see cref="Guid.Empty" /> if not required.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
         /// <remarks>
@@ -180,29 +180,29 @@ namespace Colore.Native
         /// <term>Effect struct</term>
         /// </listheader>
         /// <item>
-        /// <term><see cref="KeyboardEffect.Static" /></term>
-        /// <term><see cref="KeyboardStatic" /></term>
+        /// <term><see cref="KeyboardEffectType.Static" /></term>
+        /// <term><see cref="StaticKeyboardEffect" /></term>
         /// </item>
         /// <item>
-        /// <term><see cref="KeyboardEffect.CustomKey" /></term>
-        /// <term><see cref="KeyboardCustom" /></term>
+        /// <term><see cref="KeyboardEffectType.CustomKey" /></term>
+        /// <term><see cref="CustomKeyboardEffect" /></term>
         /// </item>
         /// </list>
         /// </remarks>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         public delegate Result CreateKeyboardEffectDelegate(
-            [In] KeyboardEffect effect,
+            [In] KeyboardEffectType effectType,
             [In] IntPtr param,
-            [In, Out] ref Guid effectId);
+            [In] [Out] ref Guid effectId);
 
         /// <summary>
         /// Create mouse effect.
         /// </summary>
-        /// <param name="effect">
-        /// Standard effect type, like <see cref="MouseEffect.Static" />.
+        /// <param name="effectType">
+        /// Standard effect type, like <see cref="MouseEffectType.Static" />.
         /// Depends on which LED.
         /// </param>
-        /// <param name="param">Pointer to a parameter type specified by <paramref name="effect" />.</param>
+        /// <param name="param">Pointer to a parameter type specified by <paramref name="effectType" />.</param>
         /// <param name="effectId">Set to valid effect ID if successful. Pass <see cref="IntPtr.Zero" /> if not required.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
         /// <remarks>
@@ -214,72 +214,72 @@ namespace Colore.Native
         /// <term>Effect struct</term>
         /// </listheader>
         /// <item>
-        /// <term><see cref="MouseEffect.Static" /></term>
-        /// <term><see cref="MouseStatic" /></term>
+        /// <term><see cref="MouseEffectType.Static" /></term>
+        /// <term><see cref="StaticMouseEffect" /></term>
         /// </item>
         /// <item>
-        /// <term><see cref="MouseEffect.Custom" /></term>
-        /// <term><see cref="MouseCustom" /></term>
+        /// <term><see cref="MouseEffectType.Custom" /></term>
+        /// <term><see cref="CustomMouseEffect" /></term>
         /// </item>
         /// </list>
         /// </remarks>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         public delegate Result CreateMouseEffectDelegate(
-            [In] MouseEffect effect,
+            [In] MouseEffectType effectType,
             [In] IntPtr param,
-            [In, Out] ref Guid effectId);
+            [In] [Out] ref Guid effectId);
 
         /// <summary>
         /// Create headset effect.
         /// </summary>
-        /// <param name="effect">Standard effect type.</param>
-        /// <param name="param">Pointer to a parameter type specified by <paramref name="effect" />.</param>
+        /// <param name="effectType">Standard effect type.</param>
+        /// <param name="param">Pointer to a parameter type specified by <paramref name="effectType" />.</param>
         /// <param name="effectId">Set to valid effect ID if successful. Pass <see cref="IntPtr.Zero" /> if not required.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         public delegate Result CreateHeadsetEffectDelegate(
-            [In] Effects.Headset.HeadsetEffect effect,
+            [In] Effects.Headset.HeadsetEffectType effectType,
             [In] IntPtr param,
             [In] [Out] ref Guid effectId);
 
         /// <summary>
         /// Create mousepad effect.
         /// </summary>
-        /// <param name="effect">Mousemat effect type.</param>
-        /// <param name="param">Pointer to a parameter specified by <paramref name="effect" />.</param>
+        /// <param name="effectType">Mousemat effect type.</param>
+        /// <param name="param">Pointer to a parameter specified by <paramref name="effectType" />.</param>
         /// <param name="effectId">Valid effect ID if successful. Pass <see cref="IntPtr.Zero" /> if not required.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         public delegate Result CreateMousepadEffectDelegate(
-            [In] Effects.Mousepad.MousepadEffect effect,
+            [In] Effects.Mousepad.MousepadEffectType effectType,
             [In] IntPtr param,
-            [In, Out] ref Guid effectId);
+            [In] [Out] ref Guid effectId);
 
         /// <summary>
         /// Create keypad effect.
         /// </summary>
-        /// <param name="effect">Keypad effect type.</param>
-        /// <param name="param">Pointer to a parameter type specified by <paramref name="effect" />.</param>
+        /// <param name="effectType">Keypad effect type.</param>
+        /// <param name="param">Pointer to a parameter type specified by <paramref name="effectType" />.</param>
         /// <param name="effectId">Valid effect ID if successful. Pass <see cref="IntPtr.Zero" /> if not required.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         public delegate Result CreateKeypadEffectDelegate(
-            [In] Effects.Keypad.KeypadEffect effect,
+            [In] Effects.Keypad.KeypadEffectType effectType,
             [In] IntPtr param,
-            [In, Out] ref Guid effectId);
+            [In] [Out] ref Guid effectId);
 
         /// <summary>
         /// Create Chroma Link effect.
         /// </summary>
-        /// <param name="effect">Chroma Link effect type.</param>
-        /// <param name="param">Pointer to a parameter type specified by <paramref name="effect" />.</param>
+        /// <param name="effectType">Chroma Link effect type.</param>
+        /// <param name="param">Pointer to a parameter type specified by <paramref name="effectType" />.</param>
         /// <param name="effectId">Valid effect ID if successful. Pass <see cref="IntPtr.Zero" /> if not required.</param>
         /// <returns><see cref="Result" /> value indicating success.</returns>
         [UnmanagedFunctionPointer(FunctionConvention, SetLastError = true)]
         public delegate Result CreateChromaLinkEffectDelegate(
-            [In] Effects.ChromaLink.ChromaLinkEffect effect,
+            [In] Effects.ChromaLink.ChromaLinkEffectType effectType,
             [In] IntPtr param,
-            [In, Out] ref Guid effectId);
+            [In] [Out] ref Guid effectId);
 
         /// <summary>
         /// Delete effect.

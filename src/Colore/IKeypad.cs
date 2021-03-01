@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------------------
 // <copyright file="IKeypad.cs" company="Corale">
-//     Copyright © 2015-2019 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2021 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -40,8 +40,7 @@ namespace Colore
     public interface IKeypad : IDevice
     {
         /// <summary>
-        /// Gets or sets a color at the specified position in the keypad's
-        /// grid layout.
+        /// Gets or sets a color at the specified position in the keypad's grid layout.
         /// </summary>
         /// <param name="row">The row to access (between <c>0</c> and <see cref="KeypadConstants.MaxRows" />, exclusive upper-bound).</param>
         /// <param name="column">The column to access (between <c>0</c> and <see cref="KeypadConstants.MaxColumns" />, exclusive upper-bound).</param>
@@ -59,23 +58,23 @@ namespace Colore
         bool IsSet(int row, int column);
 
         /// <summary>
-        /// Sets a <see cref="KeypadCustom" /> effect on the keypad.
+        /// Sets a <see cref="CustomKeypadEffect" /> effect on the keypad.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="KeypadCustom" /> struct.</param>
+        /// <param name="effect">An instance of the <see cref="CustomKeypadEffect" /> struct.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetCustomAsync(KeypadCustom effect);
+        Task<Guid> SetCustomAsync(CustomKeypadEffect effect);
 
         /// <summary>
-        /// Sets a <see cref="KeypadStatic" /> effect on the keypad.
+        /// Sets a <see cref="StaticKeypadEffect" /> effect on the keypad.
         /// </summary>
-        /// <param name="effect">An instance of the <see cref="KeypadStatic" /> struct.</param>
+        /// <param name="effect">An instance of the <see cref="StaticKeypadEffect" /> struct.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetStaticAsync(KeypadStatic effect);
+        Task<Guid> SetStaticAsync(StaticKeypadEffect effect);
 
         /// <summary>
-        /// Sets a <see cref="KeypadStatic" /> effect on the keypad.
+        /// Sets a <see cref="StaticKeypadEffect" /> effect on the keypad.
         /// </summary>
         /// <param name="color">Color of the effect.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
@@ -84,11 +83,11 @@ namespace Colore
 
         /// <summary>
         /// Sets an effect without any parameters.
-        /// Currently, this only works for the <see cref="KeypadEffect.None" /> effect.
+        /// Currently, this only works for the <see cref="KeypadEffectType.None" /> effect.
         /// </summary>
-        /// <param name="effect">Effect options.</param>
+        /// <param name="effectType">Effect options.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         [PublicAPI]
-        Task<Guid> SetEffectAsync(KeypadEffect effect);
+        Task<Guid> SetEffectAsync(KeypadEffectType effectType);
     }
 }

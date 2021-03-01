@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------------------
 // <copyright file="Author.cs" company="Corale">
-//     Copyright © 2015-2019 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2021 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -39,9 +39,22 @@ namespace Colore.Data
         /// </summary>
         /// <param name="name">Name of the author.</param>
         /// <param name="contact">Contact information for the author.</param>
+        /// <exception cref="ArgumentNullException">
+        /// Thrown if <paramref name="name" /> or <paramref name="contact" /> are <c>null</c>.
+        /// </exception>
         [JsonConstructor]
         public Author(string name, string contact)
         {
+            if (name is null)
+            {
+                throw new ArgumentNullException(nameof(name));
+            }
+
+            if (contact is null)
+            {
+                throw new ArgumentNullException(nameof(contact));
+            }
+
             if (name.Length > Constants.MaxAuthorNameLength)
             {
                 throw new ArgumentException(

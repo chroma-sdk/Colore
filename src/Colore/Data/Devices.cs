@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------------------
 // <copyright file="Devices.cs" company="Corale">
-//     Copyright © 2015-2019 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2021 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -172,7 +172,7 @@ namespace Colore.Data
         public static readonly Guid NagaEpic = new Guid("d714c50b71584368b99c601acb985e98");
 
         /// <summary>
-        /// Naga Hex V2
+        /// Naga Hex V2.
         /// </summary>
         [PublicAPI]
         [Description("Razer Naga Hex Chroma")]

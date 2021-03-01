@@ -1,14 +1,19 @@
 assembly-versioning-scheme: MajorMinorPatchTag
-mode: ContinuousDelivery
+mode: ContinuousDeployment
+major-version-bump-message: '\+semver:\s*(breaking|major)'
+minor-version-bump-message: '\+semver:\s*(feature|minor)'
+patch-version-bump-message: '\+semver:\s*((?:hot)?fix|patch)'
+no-bump-message: '\+semver:\s*(none|skip)'
 branches:
   develop:
-    tag: unstable
+    tag: alpha
   feature: {}
   hotfix: {}
   master:
     tag: ci
-  pull-request: {}
+  pull-request:
+    tag: pr
   release:
-    tag: rc
+    tag: beta
 ignore:
   sha: []

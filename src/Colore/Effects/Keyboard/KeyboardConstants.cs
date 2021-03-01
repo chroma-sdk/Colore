@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------------------
 // <copyright file="KeyboardConstants.cs" company="Corale">
-//     Copyright © 2015-2019 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2021 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -33,25 +33,25 @@ namespace Colore.Effects.Keyboard
     public static class KeyboardConstants
     {
         /// <summary>
-        /// The maximum number of rows on the keyboard
+        /// The maximum number of rows on the keyboard.
         /// </summary>
         [PublicAPI]
         public const int MaxRows = 6;
 
         /// <summary>
-        /// The maximum number of columns on the keyboard
+        /// The maximum number of columns on the keyboard.
         /// </summary>
         [PublicAPI]
         public const int MaxColumns = 22;
 
         /// <summary>
-        /// The maximum number of keys on the keyboard
+        /// The maximum number of keys on the keyboard.
         /// </summary>
         [PublicAPI]
         public const int MaxKeys = MaxRows * MaxColumns;
 
         /// <summary>
-        /// The maximum number of custom effects based on the maximum keys
+        /// The maximum number of custom effects based on the maximum keys.
         /// </summary>
         [PublicAPI]
         public const int MaxCustomEffects = MaxKeys;
@@ -61,6 +61,24 @@ namespace Colore.Effects.Keyboard
         /// </summary>
         [PublicAPI]
         public const int MaxDeathstalkerZones = 6;
+
+        /// <summary>
+        /// The maximum number of rows on an extended keyboard.
+        /// </summary>
+        [PublicAPI]
+        public const int MaxExtendedRows = 8;
+
+        /// <summary>
+        /// The maximum number of columns on an extended keyboard.
+        /// </summary>
+        [PublicAPI]
+        public const int MaxExtendedColumns = 24;
+
+        /// <summary>
+        /// The maximum number of keys on an extended keyboard.
+        /// </summary>
+        [PublicAPI]
+        public const int MaxExtendedKeys = MaxExtendedRows * MaxExtendedColumns;
 
         /// <summary>
         /// The bit that needs to be set for key mode to be active on a color.

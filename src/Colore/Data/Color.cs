@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------------------
 // <copyright file="Color.cs" company="Corale">
-//     Copyright © 2015-2019 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2021 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -26,6 +26,7 @@
 namespace Colore.Data
 {
     using System;
+    using System.Diagnostics;
     using System.Runtime.InteropServices;
 
     using Colore.Serialization;
@@ -38,6 +39,8 @@ namespace Colore.Data
     /// <summary>
     /// Represents an RGB color.
     /// </summary>
+    [DebuggerDisplay("({R}, {G}, {B})", Name = nameof(Color))]
+    [PublicAPI]
     [JsonConverter(typeof(ColorConverter))]
     [StructLayout(LayoutKind.Sequential, Size = sizeof(uint))]
     public partial struct Color : IEquatable<Color>, IEquatable<uint>

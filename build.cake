@@ -1,11 +1,11 @@
-#addin nuget:?package=Cake.DocFx&version=0.11.0
-#addin nuget:?package=Cake.Coveralls&version=0.9.0
-#addin nuget:?package=Cake.Codecov&version=0.5.0
-#tool "nuget:?package=GitVersion.CommandLine&version=4.0.0"
-#tool "nuget:?package=OpenCover&version=4.6.519"
-#tool "nuget:?package=ReportGenerator&version=4.0.9"
-#tool nuget:?package=coveralls.io&version=1.4.2
-#tool nuget:?package=Codecov&version=1.1.1
+#module nuget:?package=Cake.DotNetTool.Module&version=1.0.1
+
+#addin nuget:?package=Cake.DocFx&version=0.13.1
+#addin nuget:?package=Cake.Codecov&version=1.0.0
+
+#tool dotnet:?package=GitVersion.Tool&version=5.6.3
+#tool dotnet:?package=dotnet-reportgenerator-globaltool&version=4.8.6
+#tool nuget:?package=Codecov&version=1.13.0
 
 ///////////////////////////////////////////////////////////////////////////////
 // ARGUMENTS
@@ -30,10 +30,6 @@ var buildNumber = HasArgument("BuildNumber")
                 ? int.Parse(EnvironmentVariable("BUILD_NUMBER"))
                 : 0;
 
-var coverallsRepoToken = HasArgument("CoverallsToken")
-    ? Argument<string>("CoverallsToken")
-    : EnvironmentVariable("COVERALLS_REPO_TOKEN");
-
 ///////////////////////////////////////////////////////////////////////////////
 // GLOBALS
 ///////////////////////////////////////////////////////////////////////////////
@@ -49,18 +45,13 @@ IEnumerable<string> ReadCoverageFilters(string path)
     return System.IO.File.ReadLines(path).Where(l => !string.IsNullOrWhiteSpace(l) && !l.StartsWith("#"));
 }
 
-if (isTravis)
-{
-    Information("OpenCover does not work on Travis CI, disabling coverage generation");
-    cover = false;
-}
-
 ///////////////////////////////////////////////////////////////////////////////
 // SETUP / TEARDOWN
 ///////////////////////////////////////////////////////////////////////////////
 
+var solution = "./Colore.sln";
 var mainProject = "./src/Colore/Colore.csproj";
-var testProject = "./src/Colore.Tests/Colore.Tests.csproj";
+var testProject = "./tests/Colore.Tests/Colore.Tests.csproj";
 var frameworks = new List<string>();
 
 GitVersion version = null;
@@ -106,8 +97,8 @@ Setup(ctx =>
 
 Teardown(ctx =>
 {
-	// Executed AFTER the last task.
-	Information("Finished running tasks.");
+    // Executed AFTER the last task.
+    Information("Finished running tasks.");
 });
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -136,6 +127,7 @@ void Build(string project, string framework = null)
     var settings = new DotNetCoreBuildSettings
     {
         Configuration = configuration,
+        NoRestore = true,
         ArgumentCustomization = args => args
             .Append($"/p:AssemblyVersion={version.AssemblySemVer}")
             .Append($"/p:NuGetVersion={version.NuGetVersionV2}")
@@ -157,13 +149,16 @@ Task("Clean")
         Information("Cleaning output directories");
         CleanDirectory("./artifacts");
         CleanDirectory("./publish");
+        DotNetCoreClean(solution);
+        CleanDirectory("./src/Colore.Tests/TestResults");
+        CreateDirectory("./artifacts/nuget");
     });
 
 Task("Restore")
     .IsDependentOn("Clean")
     .Does(() =>
     {
-        DotNetCoreRestore("src/");
+        DotNetCoreRestore(solution);
     });
 
 Task("Build")
@@ -175,7 +170,7 @@ Task("Build")
 
         if (isWindows)
         {
-            Build(mainProject);
+            Build(solution);
         }
         else
         {
@@ -183,69 +178,48 @@ Task("Build")
             {
                 Build(mainProject, framework);
             }
+
+            Build(testProject);
         }
-
-        Build(testProject);
     });
-
-void Test(ICakeContext context = null)
-{
-    var settings = new DotNetCoreTestSettings
-    {
-        Configuration = configuration,
-        NoBuild = true
-    };
-
-    if (AppVeyor.IsRunningOnAppVeyor)
-    {
-        settings.ArgumentCustomization = args => args
-            .Append("--logger:AppVeyor");
-    }
-    else
-    {
-        settings.ArgumentCustomization = args => args
-            .Append("--logger:nunit");
-    }
-
-    if (context == null)
-        DotNetCoreTest(testProject, settings);
-    else
-        context.DotNetCoreTest(testProject, settings);
-
-    if (AppVeyor.IsRunningOnAppVeyor)
-    {
-        return;
-    }
-
-    var testResults = GetFiles("src/Colore.Tests/TestResults/*.xml");
-    CopyFiles(testResults, "./artifacts");
-}
 
 Task("Test")
     .IsDependentOn("Build")
     .Does(() =>
     {
-        if (cover)
+        var filters = ReadCoverageFilters("./tests/coverage-filters.txt");
+
+        var settings = new DotNetCoreTestSettings
         {
-            Information("Running tests with coverage, using OpenCover");
+            Configuration = configuration,
+            NoBuild = true,
+            NoRestore = true,
+            Settings = "tests/coverlet.runsettings",
+            ArgumentCustomization = args => args.Append("--collect:\"XPlat Code Coverage\"")
+        };
 
-            var filters = ReadCoverageFilters("./src/coverage-filters.txt");
-
-            var settings = filters.Aggregate(new OpenCoverSettings
-            {
-                OldStyle = true,
-                MergeOutput = true
-            }, (a, e) => a.WithFilter(e));
-
-            OpenCover(c => Test(c), new FilePath("./artifacts/opencover-results.xml"), settings);
-
-            ReportGenerator("./artifacts/opencover-results.xml", "./artifacts/coverage-report");
+        if (AppVeyor.IsRunningOnAppVeyor)
+        {
+            settings.Logger = "AppVeyor";
         }
         else
         {
-            Information("Running tests without coverage");
-            Test();
+            settings.Logger = "nunit";
         }
+
+        DotNetCoreTest(testProject, settings);
+
+        var testResults = GetFiles("tests/Colore.Tests/TestResults/*/coverage.cobertura.xml");
+        CopyFiles(testResults, "./artifacts");
+        MoveFile("./artifacts/coverage.cobertura.xml", "./artifacts/coverage.xml");
+    });
+
+Task("CoverageReport")
+    .IsDependentOn("Test")
+    .Does(() =>
+    {
+        ReportGenerator((FilePath)"./artifacts/coverage.xml", "./artifacts/coverage-report");
+        Zip("./artifacts/coverage-report", $"./artifacts/colore_{version.SemVer}_coverage.zip");
     });
 
 Task("Dist")
@@ -290,7 +264,8 @@ Task("Pack")
     .IsDependentOn("Test")
     .Does(() =>
     {
-        MoveFiles(GetFiles("./src/**/*.nupkg"), "./artifacts");
+        MoveFiles(GetFiles("./src/**/*.nupkg"), "./artifacts/nuget");
+        MoveFiles(GetFiles("./src/**/*.snupkg"), "./artifacts/nuget");
     });
 
 Task("Docs")
@@ -309,36 +284,8 @@ Task("Docs")
         {
             DocFxBuild("./docs/docfx.json");
         }
+
         Zip("./docs/_site", $"./artifacts/colore_{version.SemVer}_docs.zip");
-    });
-
-Task("Coveralls")
-    .WithCriteria(cover)
-    .WithCriteria(isAppVeyor)
-    .WithCriteria(coverallsRepoToken != null)
-    .IsDependentOn("Test")
-    .Does(() =>
-    {
-        Information("Running Coveralls tool on OpenCover result");
-
-        CoverallsIo("./artifacts/opencover-results.xml", new CoverallsIoSettings
-        {
-            FullSources = true,
-            RepoToken = coverallsRepoToken
-        });
-
-        // var avEnv = AppVeyor.Environment;
-        // CoverallsNet("./artifacts/opencover-results.xml", CoverallsNetReportType.OpenCover, new CoverallsNetSettings
-        // {
-        //     RepoToken = coverallsRepoToken,
-        //     CommitAuthor = avEnv.Repository.Commit.Author,
-        //     CommitBranch = avEnv.Repository.Branch,
-        //     CommitEmail = avEnv.Repository.Commit.Email,
-        //     CommitId = avEnv.Repository.Commit.Id,
-        //     CommitMessage = avEnv.Repository.Commit.Message,
-        //     JobId = avEnv.Build.Number,
-        //     UseRelativePaths = true
-        // });
     });
 
 Task("Codecov")
@@ -347,19 +294,22 @@ Task("Codecov")
     .IsDependentOn("Test")
     .Does(() =>
     {
-        var ccVersion = $"{version.FullSemVer}.build.{BuildSystem.AppVeyor.Environment.Build.Version}";
+        var ccVersion = $"{version.FullSemVer}.build.{BuildSystem.AppVeyor.Environment.Build.Number}";
+        var codecovPath = Context.Tools.Resolve("codecov.exe");
 
-        Information("Running Codecov tool with version {0} on OpenCover result", ccVersion);
+        Information("Running Codecov tool with version {0} on coverage result", ccVersion);
 
         Codecov(new CodecovSettings
         {
-            Files = new[] { "./artifacts/opencover-results.xml" },
+            Files = new[] { "./artifacts/coverage.xml" },
             Required = true,
-            Branch = Uri.EscapeDataString(version.BranchName),
+            ////Branch = version.BranchName,
             EnvironmentVariables = new Dictionary<string, string>
             {
-                ["APPVEYOR_BUILD_VERSION"] = Uri.EscapeDataString(ccVersion)
-            }
+                ["APPVEYOR_BUILD_VERSION"] = ccVersion
+            },
+            Verbose = true,
+            ToolPath = codecovPath
         });
     });
 
@@ -368,11 +318,21 @@ Task("CI")
     .IsDependentOn("Publish")
     .IsDependentOn("Pack")
     .IsDependentOn("Docs")
-    .IsDependentOn("Coveralls")
+    .IsDependentOn("CoverageReport")
     .IsDependentOn("Codecov");
 
 Task("Travis").IsDependentOn("Test");
+
 Task("AppVeyor").IsDependentOn("CI");
+
+Task("GitHub")
+    .IsDependentOn("Dist")
+    .IsDependentOn("Publish")
+    .IsDependentOn("Pack")
+    ////.IsDependentOn("Docs")
+    .IsDependentOn("CoverageReport")
+    .IsDependentOn("Codecov");
+
 Task("Default").IsDependentOn("Test");
 
 RunTarget(target);

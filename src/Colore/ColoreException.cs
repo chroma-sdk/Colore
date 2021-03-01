@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------------------
 // <copyright file="ColoreException.cs" company="Corale">
-//     Copyright © 2015-2019 by Adam Hellberg and Brandon Scott.
+//     Copyright © 2015-2021 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
 //     this software and associated documentation files (the "Software"), to deal in
@@ -26,6 +26,9 @@
 namespace Colore
 {
     using System;
+#if NET452 || NETSTANDARD2_1
+    using System.Runtime.Serialization;
+#endif
 
     using JetBrains.Annotations;
 
@@ -33,6 +36,9 @@ namespace Colore
     /// <summary>
     /// Generic Colore library exception.
     /// </summary>
+#if NET452 || NETSTANDARD2_1
+    [Serializable]
+#endif
     public class ColoreException : Exception
     {
         /// <inheritdoc />
@@ -65,5 +71,27 @@ namespace Colore
             : base(message, innerException)
         {
         }
+
+#if NET452 || NETSTANDARD2_1
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ColoreException" /> class with serialized data.
+        /// </summary>
+        /// <param name="info">
+        /// The <see cref="SerializationInfo" /> that holds the serialized object data about the exception being thrown.
+        /// </param>
+        /// <param name="context">
+        /// The <see cref="StreamingContext" /> that contains contextual information about the source or destination.
+        /// </param>
+        /// <exception cref="ArgumentNullException">
+        /// The <paramref name="info" /> parameter is <see langword="null" />.
+        /// </exception>
+        /// <exception cref="SerializationException">
+        /// The class name is <see langword="null" /> or <see cref="Exception.HResult" /> is zero (0).
+        /// </exception>
+        protected ColoreException(SerializationInfo info, StreamingContext context)
+            : base(info, context)
+        {
+        }
+#endif
     }
 }
