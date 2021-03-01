@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IKeypad
    ">
-    <meta name="generator" content="docfx 2.40.7.0">
+    <meta name="generator" content="docfx 2.56.6.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -61,11 +61,11 @@
       <div class="container body-content">
         
         <div id="search-results">
-          <div class="search-list"></div>
+          <div class="search-list">Search Results for <span></span></div>
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination"></ul>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
@@ -113,8 +113,7 @@
   
   <a id="Colore_IKeypad_Item_" data-uid="Colore.IKeypad.Item*"></a>
   <h4 id="Colore_IKeypad_Item_System_Int32_System_Int32_" data-uid="Colore.IKeypad.Item(System.Int32,System.Int32)">Item[Int32, Int32]</h4>
-  <div class="markdown level1 summary"><p>Gets or sets a color at the specified position in the keypad&apos;s
-grid layout.</p>
+  <div class="markdown level1 summary"><p>Gets or sets a color at the specified position in the keypad&apos;s grid layout.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -217,13 +216,13 @@ grid layout.</p>
   
   
   <a id="Colore_IKeypad_SetCustomAsync_" data-uid="Colore.IKeypad.SetCustomAsync*"></a>
-  <h4 id="Colore_IKeypad_SetCustomAsync_Colore_Effects_Keypad_KeypadCustom_" data-uid="Colore.IKeypad.SetCustomAsync(Colore.Effects.Keypad.KeypadCustom)">SetCustomAsync(KeypadCustom)</h4>
-  <div class="markdown level1 summary"><p>Sets a <a class="xref" href="Colore.Effects.Keypad.KeypadCustom.html">KeypadCustom</a> effect on the keypad.</p>
+  <h4 id="Colore_IKeypad_SetCustomAsync_Colore_Effects_Keypad_CustomKeypadEffect_" data-uid="Colore.IKeypad.SetCustomAsync(Colore.Effects.Keypad.CustomKeypadEffect)">SetCustomAsync(CustomKeypadEffect)</h4>
+  <div class="markdown level1 summary"><p>Sets a <a class="xref" href="Colore.Effects.Keypad.CustomKeypadEffect.html">CustomKeypadEffect</a> effect on the keypad.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetCustomAsync(KeypadCustom effect)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetCustomAsync(CustomKeypadEffect effect)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -236,9 +235,9 @@ grid layout.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Colore.Effects.Keypad.KeypadCustom.html">KeypadCustom</a></td>
+        <td><a class="xref" href="Colore.Effects.Keypad.CustomKeypadEffect.html">CustomKeypadEffect</a></td>
         <td><span class="parametername">effect</span></td>
-        <td><p>An instance of the <a class="xref" href="Colore.Effects.Keypad.KeypadCustom.html">KeypadCustom</a> struct.</p>
+        <td><p>An instance of the <a class="xref" href="Colore.Effects.Keypad.CustomKeypadEffect.html">CustomKeypadEffect</a> struct.</p>
 </td>
       </tr>
     </tbody>
@@ -262,14 +261,14 @@ grid layout.</p>
   
   
   <a id="Colore_IKeypad_SetEffectAsync_" data-uid="Colore.IKeypad.SetEffectAsync*"></a>
-  <h4 id="Colore_IKeypad_SetEffectAsync_Colore_Effects_Keypad_KeypadEffect_" data-uid="Colore.IKeypad.SetEffectAsync(Colore.Effects.Keypad.KeypadEffect)">SetEffectAsync(KeypadEffect)</h4>
+  <h4 id="Colore_IKeypad_SetEffectAsync_Colore_Effects_Keypad_KeypadEffectType_" data-uid="Colore.IKeypad.SetEffectAsync(Colore.Effects.Keypad.KeypadEffectType)">SetEffectAsync(KeypadEffectType)</h4>
   <div class="markdown level1 summary"><p>Sets an effect without any parameters.
-Currently, this only works for the <a class="xref" href="Colore.Effects.Keypad.KeypadEffect.html#Colore_Effects_Keypad_KeypadEffect_None">None</a> effect.</p>
+Currently, this only works for the <a class="xref" href="Colore.Effects.Keypad.KeypadEffectType.html#Colore_Effects_Keypad_KeypadEffectType_None">None</a> effect.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetEffectAsync(KeypadEffect effect)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetEffectAsync(KeypadEffectType effectType)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -282,8 +281,8 @@ Currently, this only works for the <a class="xref" href="Colore.Effects.Keypad.K
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Colore.Effects.Keypad.KeypadEffect.html">KeypadEffect</a></td>
-        <td><span class="parametername">effect</span></td>
+        <td><a class="xref" href="Colore.Effects.Keypad.KeypadEffectType.html">KeypadEffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
         <td><p>Effect options.</p>
 </td>
       </tr>
@@ -309,7 +308,7 @@ Currently, this only works for the <a class="xref" href="Colore.Effects.Keypad.K
   
   <a id="Colore_IKeypad_SetStaticAsync_" data-uid="Colore.IKeypad.SetStaticAsync*"></a>
   <h4 id="Colore_IKeypad_SetStaticAsync_Colore_Data_Color_" data-uid="Colore.IKeypad.SetStaticAsync(Colore.Data.Color)">SetStaticAsync(Color)</h4>
-  <div class="markdown level1 summary"><p>Sets a <a class="xref" href="Colore.Effects.Keypad.KeypadStatic.html">KeypadStatic</a> effect on the keypad.</p>
+  <div class="markdown level1 summary"><p>Sets a <a class="xref" href="Colore.Effects.Keypad.StaticKeypadEffect.html">StaticKeypadEffect</a> effect on the keypad.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -353,13 +352,13 @@ Currently, this only works for the <a class="xref" href="Colore.Effects.Keypad.K
   
   
   <a id="Colore_IKeypad_SetStaticAsync_" data-uid="Colore.IKeypad.SetStaticAsync*"></a>
-  <h4 id="Colore_IKeypad_SetStaticAsync_Colore_Effects_Keypad_KeypadStatic_" data-uid="Colore.IKeypad.SetStaticAsync(Colore.Effects.Keypad.KeypadStatic)">SetStaticAsync(KeypadStatic)</h4>
-  <div class="markdown level1 summary"><p>Sets a <a class="xref" href="Colore.Effects.Keypad.KeypadStatic.html">KeypadStatic</a> effect on the keypad.</p>
+  <h4 id="Colore_IKeypad_SetStaticAsync_Colore_Effects_Keypad_StaticKeypadEffect_" data-uid="Colore.IKeypad.SetStaticAsync(Colore.Effects.Keypad.StaticKeypadEffect)">SetStaticAsync(StaticKeypadEffect)</h4>
+  <div class="markdown level1 summary"><p>Sets a <a class="xref" href="Colore.Effects.Keypad.StaticKeypadEffect.html">StaticKeypadEffect</a> effect on the keypad.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetStaticAsync(KeypadStatic effect)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetStaticAsync(StaticKeypadEffect effect)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -372,9 +371,9 @@ Currently, this only works for the <a class="xref" href="Colore.Effects.Keypad.K
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Colore.Effects.Keypad.KeypadStatic.html">KeypadStatic</a></td>
+        <td><a class="xref" href="Colore.Effects.Keypad.StaticKeypadEffect.html">StaticKeypadEffect</a></td>
         <td><span class="parametername">effect</span></td>
-        <td><p>An instance of the <a class="xref" href="Colore.Effects.Keypad.KeypadStatic.html">KeypadStatic</a> struct.</p>
+        <td><p>An instance of the <a class="xref" href="Colore.Effects.Keypad.StaticKeypadEffect.html">StaticKeypadEffect</a> struct.</p>
 </td>
       </tr>
     </tbody>
@@ -405,7 +404,8 @@ Currently, this only works for the <a class="xref" href="Colore.Effects.Keypad.K
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>
@@ -419,7 +419,7 @@ Currently, this only works for the <a class="xref" href="Colore.Effects.Keypad.K
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            Copyright © 2015-2019 by <a href="https://github.com/Sharparam">Adam Hellberg</a> and <a href="https://github.com/brandonscott">Brandon Scott</a><br>Generated by <a href="http://dotnet.github.io/docfx/"><strong>DocFX</strong></a>
+            Copyright © 2015-2021 by <a href="https://github.com/Sharparam">Adam Hellberg</a> and <a href="https://github.com/brandonscott">Brandon Scott</a><br>Generated by <a href="http://dotnet.github.io/docfx/"><strong>DocFX</strong></a>
             
           </div>
         </div>

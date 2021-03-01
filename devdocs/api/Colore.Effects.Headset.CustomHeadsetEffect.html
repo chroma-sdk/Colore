@@ -1,0 +1,639 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class CustomHeadsetEffect
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class CustomHeadsetEffect
+   ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/colore.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Colore.Effects.Headset.CustomHeadsetEffect">
+  
+  
+  <h1 id="Colore_Effects_Headset_CustomHeadsetEffect" data-uid="Colore.Effects.Headset.CustomHeadsetEffect" class="text-break">Class CustomHeadsetEffect
+  </h1>
+  <div class="markdown level0 summary"><p>Custom effect for headsets.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">CustomHeadsetEffect</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Colore.Effects.Headset.CustomHeadsetEffect.html">CustomHeadsetEffect</a>&gt;</div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Colore.Effects.Headset.html">Colore.Effects.Headset</a></h6>
+  <h6><strong>Assembly</strong>: Colore.dll</h6>
+  <h5 id="Colore_Effects_Headset_CustomHeadsetEffect_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class CustomHeadsetEffect : ValueType, IEquatable&lt;CustomHeadsetEffect&gt;</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="Colore_Effects_Headset_CustomHeadsetEffect__ctor_" data-uid="Colore.Effects.Headset.CustomHeadsetEffect.#ctor*"></a>
+  <h4 id="Colore_Effects_Headset_CustomHeadsetEffect__ctor_Colore_Data_Color_" data-uid="Colore.Effects.Headset.CustomHeadsetEffect.#ctor(Colore.Data.Color)">CustomHeadsetEffect(Color)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Colore.Effects.Headset.CustomHeadsetEffect.html">CustomHeadsetEffect</a> struct with
+a default color to apply to every LED.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CustomHeadsetEffect(Color color)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Data.Color.html">Color</a></td>
+        <td><span class="parametername">color</span></td>
+        <td><p>The color to set every LED to initially.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Effects_Headset_CustomHeadsetEffect__ctor_" data-uid="Colore.Effects.Headset.CustomHeadsetEffect.#ctor*"></a>
+  <h4 id="Colore_Effects_Headset_CustomHeadsetEffect__ctor_Colore_Effects_Headset_CustomHeadsetEffect_" data-uid="Colore.Effects.Headset.CustomHeadsetEffect.#ctor(Colore.Effects.Headset.CustomHeadsetEffect)">CustomHeadsetEffect(CustomHeadsetEffect)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Colore.Effects.Headset.CustomHeadsetEffect.html">CustomHeadsetEffect</a> struct
+with the colors copied from another struct of the same type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CustomHeadsetEffect(CustomHeadsetEffect other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Effects.Headset.CustomHeadsetEffect.html">CustomHeadsetEffect</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>The struct to copy data from.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Effects_Headset_CustomHeadsetEffect__ctor_" data-uid="Colore.Effects.Headset.CustomHeadsetEffect.#ctor*"></a>
+  <h4 id="Colore_Effects_Headset_CustomHeadsetEffect__ctor_System_Collections_Generic_IList_Colore_Data_Color__" data-uid="Colore.Effects.Headset.CustomHeadsetEffect.#ctor(System.Collections.Generic.IList{Colore.Data.Color})">CustomHeadsetEffect(IList&lt;Color&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Colore.Effects.Headset.CustomHeadsetEffect.html">CustomHeadsetEffect</a> struct.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CustomHeadsetEffect(IList&lt;Color&gt; colors)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="Colore.Data.Color.html">Color</a>&gt;</td>
+        <td><span class="parametername">colors</span></td>
+        <td><p>The colors to use.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown if <code data-dev-comment-type="paramref" class="paramref">colors</code> is <code>null</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown if the colors list supplied is of an incorrect size.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="Colore_Effects_Headset_CustomHeadsetEffect_Item_" data-uid="Colore.Effects.Headset.CustomHeadsetEffect.Item*"></a>
+  <h4 id="Colore_Effects_Headset_CustomHeadsetEffect_Item_System_Int32_" data-uid="Colore.Effects.Headset.CustomHeadsetEffect.Item(System.Int32)">Item[Int32]</h4>
+  <div class="markdown level1 summary"><p>Gets or sets LEDs in the custom array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color this[int led] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">led</span></td>
+        <td><p>Index of the LED to access.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Data.Color.html">Color</a></td>
+        <td><p>The <a class="xref" href="Colore.Data.Color.html">Color</a> at the specified position.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></td>
+        <td><p>Thrown if the specified LED index is outside the range of available LED indices.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Colore_Effects_Headset_CustomHeadsetEffect_Clear_" data-uid="Colore.Effects.Headset.CustomHeadsetEffect.Clear*"></a>
+  <h4 id="Colore_Effects_Headset_CustomHeadsetEffect_Clear" data-uid="Colore.Effects.Headset.CustomHeadsetEffect.Clear">Clear()</h4>
+  <div class="markdown level1 summary"><p>Clears the colors in this <a class="xref" href="Colore.Effects.Headset.CustomHeadsetEffect.html">CustomHeadsetEffect</a> struct (sets to <a class="xref" href="Colore.Data.Color.html#Colore_Data_Color_Black">Black</a>).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Clear()</code></pre>
+  </div>
+  
+  
+  <a id="Colore_Effects_Headset_CustomHeadsetEffect_Clone_" data-uid="Colore.Effects.Headset.CustomHeadsetEffect.Clone*"></a>
+  <h4 id="Colore_Effects_Headset_CustomHeadsetEffect_Clone" data-uid="Colore.Effects.Headset.CustomHeadsetEffect.Clone">Clone()</h4>
+  <div class="markdown level1 summary"><p>Returns a copy of this struct.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CustomHeadsetEffect Clone()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Effects.Headset.CustomHeadsetEffect.html">CustomHeadsetEffect</a></td>
+        <td><p>A copy of this struct.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Effects_Headset_CustomHeadsetEffect_Create_" data-uid="Colore.Effects.Headset.CustomHeadsetEffect.Create*"></a>
+  <h4 id="Colore_Effects_Headset_CustomHeadsetEffect_Create" data-uid="Colore.Effects.Headset.CustomHeadsetEffect.Create">Create()</h4>
+  <div class="markdown level1 summary"><p>Create a new empty <a class="xref" href="Colore.Effects.Headset.CustomHeadsetEffect.html">CustomHeadsetEffect</a> struct.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static CustomHeadsetEffect Create()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Effects.Headset.CustomHeadsetEffect.html">CustomHeadsetEffect</a></td>
+        <td><p>An instance of <a class="xref" href="Colore.Effects.Headset.CustomHeadsetEffect.html">CustomHeadsetEffect</a> filled with the color black.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Effects_Headset_CustomHeadsetEffect_Equals_" data-uid="Colore.Effects.Headset.CustomHeadsetEffect.Equals*"></a>
+  <h4 id="Colore_Effects_Headset_CustomHeadsetEffect_Equals_Colore_Effects_Headset_CustomHeadsetEffect_" data-uid="Colore.Effects.Headset.CustomHeadsetEffect.Equals(Colore.Effects.Headset.CustomHeadsetEffect)">Equals(CustomHeadsetEffect)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the current object is equal to another object of the same type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(CustomHeadsetEffect other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Effects.Headset.CustomHeadsetEffect.html">CustomHeadsetEffect</a></td>
+        <td><span class="parametername">other</span></td>
+        <td><p>An object to compare with this object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><code>true</code> if the current object is equal to the <code data-dev-comment-type="paramref" class="paramref">other</code> parameter; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Effects_Headset_CustomHeadsetEffect_Equals_" data-uid="Colore.Effects.Headset.CustomHeadsetEffect.Equals*"></a>
+  <h4 id="Colore_Effects_Headset_CustomHeadsetEffect_Equals_System_Object_" data-uid="Colore.Effects.Headset.CustomHeadsetEffect.Equals(System.Object)">Equals(Object)</h4>
+  <div class="markdown level1 summary"><p>Indicates whether this instance and a specified object are equal.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>Another object to compare to.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><code>true</code> if <code data-dev-comment-type="paramref" class="paramref">obj</code> and this instance are the same type
+and represent the same value; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Effects_Headset_CustomHeadsetEffect_GetHashCode_" data-uid="Colore.Effects.Headset.CustomHeadsetEffect.GetHashCode*"></a>
+  <h4 id="Colore_Effects_Headset_CustomHeadsetEffect_GetHashCode" data-uid="Colore.Effects.Headset.CustomHeadsetEffect.GetHashCode">GetHashCode()</h4>
+  <div class="markdown level1 summary"><p>Returns the hash code for this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><p>A 32-bit signed integer that is the hash code for this instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Effects_Headset_CustomHeadsetEffect_Set_" data-uid="Colore.Effects.Headset.CustomHeadsetEffect.Set*"></a>
+  <h4 id="Colore_Effects_Headset_CustomHeadsetEffect_Set_Colore_Data_Color_" data-uid="Colore.Effects.Headset.CustomHeadsetEffect.Set(Colore.Data.Color)">Set(Color)</h4>
+  <div class="markdown level1 summary"><p>Sets all the LED indices to the specified <a class="xref" href="Colore.Data.Color.html">Color</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Set(Color color)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Data.Color.html">Color</a></td>
+        <td><span class="parametername">color</span></td>
+        <td><p>The <a class="xref" href="Colore.Data.Color.html">Color</a> to set the LEDs to.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="operators">Operators
+  </h3>
+  
+  
+  <a id="Colore_Effects_Headset_CustomHeadsetEffect_op_Equality_" data-uid="Colore.Effects.Headset.CustomHeadsetEffect.op_Equality*"></a>
+  <h4 id="Colore_Effects_Headset_CustomHeadsetEffect_op_Equality_Colore_Effects_Headset_CustomHeadsetEffect_System_Object_" data-uid="Colore.Effects.Headset.CustomHeadsetEffect.op_Equality(Colore.Effects.Headset.CustomHeadsetEffect,System.Object)">Equality(CustomHeadsetEffect, Object)</h4>
+  <div class="markdown level1 summary"><p>Compares an instance of <a class="xref" href="Colore.Effects.Headset.CustomHeadsetEffect.html">CustomHeadsetEffect</a> with
+another object for equality.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(CustomHeadsetEffect left, object right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Effects.Headset.CustomHeadsetEffect.html">CustomHeadsetEffect</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The left operand, an instance of <a class="xref" href="Colore.Effects.Headset.CustomHeadsetEffect.html">CustomHeadsetEffect</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The right operand, any type of object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><code>true</code> if the two objects are equal, otherwise <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_Effects_Headset_CustomHeadsetEffect_op_Inequality_" data-uid="Colore.Effects.Headset.CustomHeadsetEffect.op_Inequality*"></a>
+  <h4 id="Colore_Effects_Headset_CustomHeadsetEffect_op_Inequality_Colore_Effects_Headset_CustomHeadsetEffect_System_Object_" data-uid="Colore.Effects.Headset.CustomHeadsetEffect.op_Inequality(Colore.Effects.Headset.CustomHeadsetEffect,System.Object)">Inequality(CustomHeadsetEffect, Object)</h4>
+  <div class="markdown level1 summary"><p>Compares an instance of <a class="xref" href="Colore.Effects.Headset.CustomHeadsetEffect.html">CustomHeadsetEffect</a> with
+another object for inequality.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(CustomHeadsetEffect left, object right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Effects.Headset.CustomHeadsetEffect.html">CustomHeadsetEffect</a></td>
+        <td><span class="parametername">left</span></td>
+        <td><p>The left operand, an instance of <a class="xref" href="Colore.Effects.Headset.CustomHeadsetEffect.html">CustomHeadsetEffect</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">right</span></td>
+        <td><p>The right operand, any type of object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><code>true</code> if the two objects are not equal, otherwise <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.iequatable-1">System.IEquatable&lt;T&gt;</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright © 2015-2021 by <a href="https://github.com/Sharparam">Adam Hellberg</a> and <a href="https://github.com/brandonscott">Brandon Scott</a><br>Generated by <a href="http://dotnet.github.io/docfx/"><strong>DocFX</strong></a>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

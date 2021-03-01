@@ -17,7 +17,7 @@
     }(window, document, a), function (a, b, c) { "use strict"; function d(a, b, c) { var d = b.x > a.x; return d && "explode" === c || !d && "implode" === c ? "start" : d && "implode" === c || !d && "explode" === c ? "end" : "middle" } function e(a) { var b, e, f, h, i, j = c.normalizeData(this.data), k = [], l = a.startAngle; this.svg = c.createSvg(this.container, a.width, a.height, a.donut ? a.classNames.chartDonut : a.classNames.chartPie), e = c.createChartRect(this.svg, a, g.padding), f = Math.min(e.width() / 2, e.height() / 2), i = a.total || j.normalized.series.reduce(function (a, b) { return a + b }, 0); var m = c.quantity(a.donutWidth); "%" === m.unit && (m.value *= f / 100), f -= a.donut && !a.donutSolid ? m.value / 2 : 0, h = "outside" === a.labelPosition || a.donut && !a.donutSolid ? f : "center" === a.labelPosition ? 0 : a.donutSolid ? f - m.value / 2 : f / 2, h += a.labelOffset; var n = { x: e.x1 + e.width() / 2, y: e.y2 + e.height() / 2 }, o = 1 === j.raw.series.filter(function (a) { return a.hasOwnProperty("value") ? 0 !== a.value : 0 !== a }).length; j.raw.series.forEach(function (a, b) { k[b] = this.svg.elem("g", null, null) }.bind(this)), a.showLabel && (b = this.svg.elem("g", null, null)), j.raw.series.forEach(function (e, g) { if (0 !== j.normalized.series[g] || !a.ignoreEmptyValues) { k[g].attr({ "ct:series-name": e.name }), k[g].addClass([a.classNames.series, e.className || a.classNames.series + "-" + c.alphaNumerate(g)].join(" ")); var p = i > 0 ? l + j.normalized.series[g] / i * 360 : 0, q = Math.max(0, l - (0 === g || o ? 0 : .2)); p - q >= 359.99 && (p = q + 359.99); var r, s, t, u = c.polarToCartesian(n.x, n.y, f, q), v = c.polarToCartesian(n.x, n.y, f, p), w = new c.Svg.Path(!a.donut || a.donutSolid).move(v.x, v.y).arc(f, f, 0, p - l > 180, 0, u.x, u.y); a.donut ? a.donutSolid && (t = f - m.value, r = c.polarToCartesian(n.x, n.y, t, l - (0 === g || o ? 0 : .2)), s = c.polarToCartesian(n.x, n.y, t, p), w.line(r.x, r.y), w.arc(t, t, 0, p - l > 180, 1, s.x, s.y)) : w.line(n.x, n.y); var x = a.classNames.slicePie; a.donut && (x = a.classNames.sliceDonut, a.donutSolid && (x = a.classNames.sliceDonutSolid)); var y = k[g].elem("path", { d: w.stringify() }, x); if (y.attr({ "ct:value": j.normalized.series[g], "ct:meta": c.serialize(e.meta) }), a.donut && !a.donutSolid && (y._node.style.strokeWidth = m.value + "px"), this.eventEmitter.emit("draw", { type: "slice", value: j.normalized.series[g], totalDataSum: i, index: g, meta: e.meta, series: e, group: k[g], element: y, path: w.clone(), center: n, radius: f, startAngle: l, endAngle: p }), a.showLabel) { var z; z = 1 === j.raw.series.length ? { x: n.x, y: n.y } : c.polarToCartesian(n.x, n.y, h, l + (p - l) / 2); var A; A = j.normalized.labels && !c.isFalseyButZero(j.normalized.labels[g]) ? j.normalized.labels[g] : j.normalized.series[g]; var B = a.labelInterpolationFnc(A, g); if (B || 0 === B) { var C = b.elem("text", { dx: z.x, dy: z.y, "text-anchor": d(n, z, a.labelDirection) }, a.classNames.label).text("" + B); this.eventEmitter.emit("draw", { type: "label", index: g, group: b, element: C, text: "" + B, x: z.x, y: z.y }) } } l = p } }.bind(this)), this.eventEmitter.emit("created", { chartRect: e, svg: this.svg, options: a }) } function f(a, b, d, e) { c.Pie["super"].constructor.call(this, a, b, g, c.extend({}, g, d), e) } var g = { width: void 0, height: void 0, chartPadding: 5, classNames: { chartPie: "ct-chart-pie", chartDonut: "ct-chart-donut", series: "ct-series", slicePie: "ct-slice-pie", sliceDonut: "ct-slice-donut", sliceDonutSolid: "ct-slice-donut-solid", label: "ct-label" }, startAngle: 0, total: void 0, donut: !1, donutSolid: !1, donutWidth: 60, showLabel: !0, labelOffset: 0, labelPosition: "inside", labelInterpolationFnc: c.noop, labelDirection: "neutral", reverseData: !1, ignoreEmptyValues: !1 }; c.Pie = c.Base.extend({ constructor: f, createChart: e, determineAnchorPosition: d }) }(window, document, a), a
 });
 
-var i, l;
+var i, l, selectedLine = null;
 
 /* Navigate to hash without browser history entry */
 var navigateToHash = function () {
@@ -44,7 +44,7 @@ var switchTestMethod = function () {
         coverageData = JSON.parse(lines[i].getAttribute('data-coverage').replace(/'/g, '"'));
         lineAnalysis = coverageData[method];
         cells = lines[i].querySelectorAll('td');
-        if (lineAnalysis === null) {
+        if (lineAnalysis === undefined) {
             lineAnalysis = coverageData.AllTestMethods;
             if (lineAnalysis.LVS !== 'gray') {
                 cells[0].setAttribute('class', 'red');
@@ -64,6 +64,52 @@ for (i = 0, l = testMethods.length; i < l; i++) {
     testMethods[i].addEventListener('change', switchTestMethod);
 }
 
+/* Highlight test method by line */
+var toggleLine = function () {
+    if (selectedLine === this) {
+        selectedLine = null;
+    } else {
+        selectedLine = null;
+        unhighlightTestMethods();
+        highlightTestMethods.call(this);
+        selectedLine = this;
+    }
+    
+};
+var highlightTestMethods = function () {
+    if (selectedLine !== null) {
+        return;
+    }
+
+    var lineAnalysis;
+    var coverageData = JSON.parse(this.getAttribute('data-coverage').replace(/'/g, '"'));
+    var testMethods = document.getElementsByClassName('testmethod');
+
+    for (i = 0, l = testMethods.length; i < l; i++) {
+        lineAnalysis = coverageData[testMethods[i].id];
+        if (lineAnalysis === undefined) {
+            testMethods[i].className = testMethods[i].className.replace(/\s*light.+/g, "");
+        } else {
+            testMethods[i].className += ' light' + lineAnalysis.LVS;
+        }
+    }
+};
+var unhighlightTestMethods = function () {
+    if (selectedLine !== null) {
+        return;
+    }
+
+    var testMethods = document.getElementsByClassName('testmethod');
+    for (i = 0, l = testMethods.length; i < l; i++) {
+        testMethods[i].className = testMethods[i].className.replace(/\s*light.+/g, "");
+    }
+};
+var coverableLines = document.getElementsByClassName('coverableline');
+for (i = 0, l = coverableLines.length; i < l; i++) {
+    coverableLines[i].addEventListener('click', toggleLine);
+    coverableLines[i].addEventListener('mouseenter', highlightTestMethods);
+    coverableLines[i].addEventListener('mouseleave', unhighlightTestMethods);
+}
 
 /* History charts */
 var renderChart = function (chart) {
@@ -136,14 +182,28 @@ var renderChart = function (chart) {
         var left = event.pageX - box.left - window.pageXOffset;
         var top = event.pageY - box.top - window.pageYOffset;
 
-        tooltip.style.left = left - tooltip.offsetWidth / 2 - 5 + 'px';
-        tooltip.style.top = top - tooltip.offsetHeight - 40 + 'px';
+        left = left + 20;
+        top = top - tooltip.offsetHeight / 2;
+
+        if (left + tooltip.offsetWidth > box.width) {
+            left -= tooltip.offsetWidth + 40;
+        }
+
+        if (top < 0) {
+            top = 0;
+        }
+
+        if (top + tooltip.offsetHeight > box.height) {
+            top = box.height - tooltip.offsetHeight;
+        }
+
+        tooltip.style.left = left + 'px';
+        tooltip.style.top = top + 'px';
     };
 
     var hideToolTip = function () {
         tooltip.style.display = 'none';
     };
-
     chart.addEventListener('mousemove', moveToolTip);
 
     lineChart.on('created', function () {

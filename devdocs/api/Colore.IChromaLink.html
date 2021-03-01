@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IChromaLink
    ">
-    <meta name="generator" content="docfx 2.40.7.0">
+    <meta name="generator" content="docfx 2.56.6.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -61,11 +61,11 @@
       <div class="container body-content">
         
         <div id="search-results">
-          <div class="search-list"></div>
+          <div class="search-list">Search Results for <span></span></div>
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination"></ul>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
@@ -205,13 +205,13 @@ The SDK will translate this appropriately depending on user configuration.</p>
   
   
   <a id="Colore_IChromaLink_SetCustomAsync_" data-uid="Colore.IChromaLink.SetCustomAsync*"></a>
-  <h4 id="Colore_IChromaLink_SetCustomAsync_Colore_Effects_ChromaLink_ChromaLinkCustom_" data-uid="Colore.IChromaLink.SetCustomAsync(Colore.Effects.ChromaLink.ChromaLinkCustom)">SetCustomAsync(ChromaLinkCustom)</h4>
-  <div class="markdown level1 summary"><p>Sets a <a class="xref" href="Colore.Effects.ChromaLink.ChromaLinkCustom.html">ChromaLinkCustom</a> effect on the Chroma Link.</p>
+  <h4 id="Colore_IChromaLink_SetCustomAsync_Colore_Effects_ChromaLink_CustomChromaLinkEffect_" data-uid="Colore.IChromaLink.SetCustomAsync(Colore.Effects.ChromaLink.CustomChromaLinkEffect)">SetCustomAsync(CustomChromaLinkEffect)</h4>
+  <div class="markdown level1 summary"><p>Sets a <a class="xref" href="Colore.Effects.ChromaLink.CustomChromaLinkEffect.html">CustomChromaLinkEffect</a> effect on the Chroma Link.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetCustomAsync(ChromaLinkCustom effect)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetCustomAsync(CustomChromaLinkEffect effect)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -224,9 +224,9 @@ The SDK will translate this appropriately depending on user configuration.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Colore.Effects.ChromaLink.ChromaLinkCustom.html">ChromaLinkCustom</a></td>
+        <td><a class="xref" href="Colore.Effects.ChromaLink.CustomChromaLinkEffect.html">CustomChromaLinkEffect</a></td>
         <td><span class="parametername">effect</span></td>
-        <td><p>An instance of the <a class="xref" href="Colore.Effects.ChromaLink.ChromaLinkCustom.html">ChromaLinkCustom</a> struct.</p>
+        <td><p>An instance of the <a class="xref" href="Colore.Effects.ChromaLink.CustomChromaLinkEffect.html">CustomChromaLinkEffect</a> struct.</p>
 </td>
       </tr>
     </tbody>
@@ -250,13 +250,13 @@ The SDK will translate this appropriately depending on user configuration.</p>
   
   
   <a id="Colore_IChromaLink_SetEffectAsync_" data-uid="Colore.IChromaLink.SetEffectAsync*"></a>
-  <h4 id="Colore_IChromaLink_SetEffectAsync_Colore_Effects_ChromaLink_ChromaLinkEffect_" data-uid="Colore.IChromaLink.SetEffectAsync(Colore.Effects.ChromaLink.ChromaLinkEffect)">SetEffectAsync(ChromaLinkEffect)</h4>
+  <h4 id="Colore_IChromaLink_SetEffectAsync_Colore_Effects_ChromaLink_ChromaLinkEffectType_" data-uid="Colore.IChromaLink.SetEffectAsync(Colore.Effects.ChromaLink.ChromaLinkEffectType)">SetEffectAsync(ChromaLinkEffectType)</h4>
   <div class="markdown level1 summary"><p>Sets an effect without any parameters.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetEffectAsync(ChromaLinkEffect effect)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetEffectAsync(ChromaLinkEffectType effectType)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -269,8 +269,8 @@ The SDK will translate this appropriately depending on user configuration.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Colore.Effects.ChromaLink.ChromaLinkEffect.html">ChromaLinkEffect</a></td>
-        <td><span class="parametername">effect</span></td>
+        <td><a class="xref" href="Colore.Effects.ChromaLink.ChromaLinkEffectType.html">ChromaLinkEffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
         <td><p>Effect options.</p>
 </td>
       </tr>
@@ -296,7 +296,7 @@ The SDK will translate this appropriately depending on user configuration.</p>
   
   <a id="Colore_IChromaLink_SetStaticAsync_" data-uid="Colore.IChromaLink.SetStaticAsync*"></a>
   <h4 id="Colore_IChromaLink_SetStaticAsync_Colore_Data_Color_" data-uid="Colore.IChromaLink.SetStaticAsync(Colore.Data.Color)">SetStaticAsync(Color)</h4>
-  <div class="markdown level1 summary"><p>Sets a <a class="xref" href="Colore.Effects.ChromaLink.ChromaLinkStatic.html">ChromaLinkStatic</a> effect on the Chroma Link.</p>
+  <div class="markdown level1 summary"><p>Sets a <a class="xref" href="Colore.Effects.ChromaLink.StaticChromaLinkEffect.html">StaticChromaLinkEffect</a> effect on the Chroma Link.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -340,13 +340,13 @@ The SDK will translate this appropriately depending on user configuration.</p>
   
   
   <a id="Colore_IChromaLink_SetStaticAsync_" data-uid="Colore.IChromaLink.SetStaticAsync*"></a>
-  <h4 id="Colore_IChromaLink_SetStaticAsync_Colore_Effects_ChromaLink_ChromaLinkStatic_" data-uid="Colore.IChromaLink.SetStaticAsync(Colore.Effects.ChromaLink.ChromaLinkStatic)">SetStaticAsync(ChromaLinkStatic)</h4>
-  <div class="markdown level1 summary"><p>Sets a <a class="xref" href="Colore.Effects.ChromaLink.ChromaLinkStatic.html">ChromaLinkStatic</a> effect on the Chroma Link.</p>
+  <h4 id="Colore_IChromaLink_SetStaticAsync_Colore_Effects_ChromaLink_StaticChromaLinkEffect_" data-uid="Colore.IChromaLink.SetStaticAsync(Colore.Effects.ChromaLink.StaticChromaLinkEffect)">SetStaticAsync(StaticChromaLinkEffect)</h4>
+  <div class="markdown level1 summary"><p>Sets a <a class="xref" href="Colore.Effects.ChromaLink.StaticChromaLinkEffect.html">StaticChromaLinkEffect</a> effect on the Chroma Link.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetStaticAsync(ChromaLinkStatic effect)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetStaticAsync(StaticChromaLinkEffect effect)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -359,9 +359,9 @@ The SDK will translate this appropriately depending on user configuration.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Colore.Effects.ChromaLink.ChromaLinkStatic.html">ChromaLinkStatic</a></td>
+        <td><a class="xref" href="Colore.Effects.ChromaLink.StaticChromaLinkEffect.html">StaticChromaLinkEffect</a></td>
         <td><span class="parametername">effect</span></td>
-        <td><p>An instance of the <a class="xref" href="Colore.Effects.ChromaLink.ChromaLinkStatic.html">ChromaLinkStatic</a> struct.</p>
+        <td><p>An instance of the <a class="xref" href="Colore.Effects.ChromaLink.StaticChromaLinkEffect.html">StaticChromaLinkEffect</a> struct.</p>
 </td>
       </tr>
     </tbody>
@@ -392,7 +392,8 @@ The SDK will translate this appropriately depending on user configuration.</p>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>
@@ -406,7 +407,7 @@ The SDK will translate this appropriately depending on user configuration.</p>
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            Copyright © 2015-2019 by <a href="https://github.com/Sharparam">Adam Hellberg</a> and <a href="https://github.com/brandonscott">Brandon Scott</a><br>Generated by <a href="http://dotnet.github.io/docfx/"><strong>DocFX</strong></a>
+            Copyright © 2015-2021 by <a href="https://github.com/Sharparam">Adam Hellberg</a> and <a href="https://github.com/brandonscott">Brandon Scott</a><br>Generated by <a href="http://dotnet.github.io/docfx/"><strong>DocFX</strong></a>
             
           </div>
         </div>

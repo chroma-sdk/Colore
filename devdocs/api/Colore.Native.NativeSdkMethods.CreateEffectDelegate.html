@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class NativeSdkMethods.CreateEffectDelegate
    ">
-    <meta name="generator" content="docfx 2.40.7.0">
+    <meta name="generator" content="docfx 2.56.6.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -61,11 +61,11 @@
       <div class="container body-content">
         
         <div id="search-results">
-          <div class="search-list"></div>
+          <div class="search-list">Search Results for <span></span></div>
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination"></ul>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
@@ -136,12 +136,12 @@
   
   
   <a id="Colore_Native_NativeSdkMethods_CreateEffectDelegate_BeginInvoke_" data-uid="Colore.Native.NativeSdkMethods.CreateEffectDelegate.BeginInvoke*"></a>
-  <h4 id="Colore_Native_NativeSdkMethods_CreateEffectDelegate_BeginInvoke_System_Guid_Colore_Effects_Generic_Effect_System_IntPtr_System_Guid__System_AsyncCallback_System_Object_" data-uid="Colore.Native.NativeSdkMethods.CreateEffectDelegate.BeginInvoke(System.Guid,Colore.Effects.Generic.Effect,System.IntPtr,System.Guid@,System.AsyncCallback,System.Object)">BeginInvoke(Guid, Effect, IntPtr, ref Guid, AsyncCallback, Object)</h4>
+  <h4 id="Colore_Native_NativeSdkMethods_CreateEffectDelegate_BeginInvoke_System_Guid_Colore_Effects_Generic_EffectType_System_IntPtr_System_Guid__System_AsyncCallback_System_Object_" data-uid="Colore.Native.NativeSdkMethods.CreateEffectDelegate.BeginInvoke(System.Guid,Colore.Effects.Generic.EffectType,System.IntPtr,System.Guid@,System.AsyncCallback,System.Object)">BeginInvoke(Guid, EffectType, IntPtr, ref Guid, AsyncCallback, Object)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual IAsyncResult BeginInvoke(Guid deviceId, Effect effect, IntPtr param, ref Guid effectId, AsyncCallback callback, object object)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual IAsyncResult BeginInvoke(Guid deviceId, EffectType effectType, IntPtr param, ref Guid effectId, AsyncCallback callback, object object)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -159,8 +159,8 @@
         <td></td>
       </tr>
       <tr>
-        <td><a class="xref" href="Colore.Effects.Generic.Effect.html">Effect</a></td>
-        <td><span class="parametername">effect</span></td>
+        <td><a class="xref" href="Colore.Effects.Generic.EffectType.html">EffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
         <td></td>
       </tr>
       <tr>
@@ -250,12 +250,12 @@
   
   
   <a id="Colore_Native_NativeSdkMethods_CreateEffectDelegate_Invoke_" data-uid="Colore.Native.NativeSdkMethods.CreateEffectDelegate.Invoke*"></a>
-  <h4 id="Colore_Native_NativeSdkMethods_CreateEffectDelegate_Invoke_System_Guid_Colore_Effects_Generic_Effect_System_IntPtr_System_Guid__" data-uid="Colore.Native.NativeSdkMethods.CreateEffectDelegate.Invoke(System.Guid,Colore.Effects.Generic.Effect,System.IntPtr,System.Guid@)">Invoke(Guid, Effect, IntPtr, ref Guid)</h4>
+  <h4 id="Colore_Native_NativeSdkMethods_CreateEffectDelegate_Invoke_System_Guid_Colore_Effects_Generic_EffectType_System_IntPtr_System_Guid__" data-uid="Colore.Native.NativeSdkMethods.CreateEffectDelegate.Invoke(System.Guid,Colore.Effects.Generic.EffectType,System.IntPtr,System.Guid@)">Invoke(Guid, EffectType, IntPtr, ref Guid)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual Result Invoke(Guid deviceId, Effect effect, IntPtr param, ref Guid effectId)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual Result Invoke(Guid deviceId, EffectType effectType, IntPtr param, ref Guid effectId)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -273,8 +273,8 @@
         <td></td>
       </tr>
       <tr>
-        <td><a class="xref" href="Colore.Effects.Generic.Effect.html">Effect</a></td>
-        <td><span class="parametername">effect</span></td>
+        <td><a class="xref" href="Colore.Effects.Generic.EffectType.html">EffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
         <td></td>
       </tr>
       <tr>
@@ -314,7 +314,8 @@
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>
@@ -328,7 +329,7 @@
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            Copyright © 2015-2019 by <a href="https://github.com/Sharparam">Adam Hellberg</a> and <a href="https://github.com/brandonscott">Brandon Scott</a><br>Generated by <a href="http://dotnet.github.io/docfx/"><strong>DocFX</strong></a>
+            Copyright © 2015-2021 by <a href="https://github.com/Sharparam">Adam Hellberg</a> and <a href="https://github.com/brandonscott">Brandon Scott</a><br>Generated by <a href="http://dotnet.github.io/docfx/"><strong>DocFX</strong></a>
             
           </div>
         </div>

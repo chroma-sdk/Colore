@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IKeyboard
    ">
-    <meta name="generator" content="docfx 2.40.7.0">
+    <meta name="generator" content="docfx 2.56.6.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -61,11 +61,11 @@
       <div class="container body-content">
         
         <div id="search-results">
-          <div class="search-list"></div>
+          <div class="search-list">Search Results for <span></span></div>
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination"></ul>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
@@ -328,13 +328,13 @@ keyboard grid.</p>
   
   
   <a id="Colore_IKeyboard_SetCustomAsync_" data-uid="Colore.IKeyboard.SetCustomAsync*"></a>
-  <h4 id="Colore_IKeyboard_SetCustomAsync_Colore_Effects_Keyboard_KeyboardCustom_" data-uid="Colore.IKeyboard.SetCustomAsync(Colore.Effects.Keyboard.KeyboardCustom)">SetCustomAsync(KeyboardCustom)</h4>
+  <h4 id="Colore_IKeyboard_SetCustomAsync_Colore_Effects_Keyboard_CustomKeyboardEffect_" data-uid="Colore.IKeyboard.SetCustomAsync(Colore.Effects.Keyboard.CustomKeyboardEffect)">SetCustomAsync(CustomKeyboardEffect)</h4>
   <div class="markdown level1 summary"><p>Sets a custom grid effect on the keyboard.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetCustomAsync(KeyboardCustom effect)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetCustomAsync(CustomKeyboardEffect effect)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -347,7 +347,7 @@ keyboard grid.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Colore.Effects.Keyboard.KeyboardCustom.html">KeyboardCustom</a></td>
+        <td><a class="xref" href="Colore.Effects.Keyboard.CustomKeyboardEffect.html">CustomKeyboardEffect</a></td>
         <td><span class="parametername">effect</span></td>
         <td><p>Effect options.</p>
 </td>
@@ -370,20 +370,20 @@ keyboard grid.</p>
       </tr>
     </tbody>
   </table>
-  <h5 id="Colore_IKeyboard_SetCustomAsync_Colore_Effects_Keyboard_KeyboardCustom__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>This will overwrite the current internal <a class="xref" href="Colore.Effects.Keyboard.KeyboardCustom.html">KeyboardCustom</a>
+  <h5 id="Colore_IKeyboard_SetCustomAsync_Colore_Effects_Keyboard_CustomKeyboardEffect__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This will overwrite the current internal <a class="xref" href="Colore.Effects.Keyboard.CustomKeyboardEffect.html">CustomKeyboardEffect</a>
 struct in the <span class="xref">Colore.Implementations.KeyboardImplementation</span> class.</p>
 </div>
   
   
   <a id="Colore_IKeyboard_SetDeathstalkerAsync_" data-uid="Colore.IKeyboard.SetDeathstalkerAsync*"></a>
-  <h4 id="Colore_IKeyboard_SetDeathstalkerAsync_Colore_Effects_Keyboard_DeathstalkerGrid_" data-uid="Colore.IKeyboard.SetDeathstalkerAsync(Colore.Effects.Keyboard.DeathstalkerGrid)">SetDeathstalkerAsync(DeathstalkerGrid)</h4>
+  <h4 id="Colore_IKeyboard_SetDeathstalkerAsync_Colore_Effects_Keyboard_DeathstalkerGridEffect_" data-uid="Colore.IKeyboard.SetDeathstalkerAsync(Colore.Effects.Keyboard.DeathstalkerGridEffect)">SetDeathstalkerAsync(DeathstalkerGridEffect)</h4>
   <div class="markdown level1 summary"><p>Sets a Deathstalker grid effect.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetDeathstalkerAsync(DeathstalkerGrid effect)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetDeathstalkerAsync(DeathstalkerGridEffect effect)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -396,7 +396,7 @@ struct in the <span class="xref">Colore.Implementations.KeyboardImplementation</
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Colore.Effects.Keyboard.DeathstalkerGrid.html">DeathstalkerGrid</a></td>
+        <td><a class="xref" href="Colore.Effects.Keyboard.DeathstalkerGridEffect.html">DeathstalkerGridEffect</a></td>
         <td><span class="parametername">effect</span></td>
         <td><p>The Deathstalker grid effect to set.</p>
 </td>
@@ -479,14 +479,14 @@ struct in the <span class="xref">Colore.Implementations.KeyboardImplementation</
   
   
   <a id="Colore_IKeyboard_SetEffectAsync_" data-uid="Colore.IKeyboard.SetEffectAsync*"></a>
-  <h4 id="Colore_IKeyboard_SetEffectAsync_Colore_Effects_Keyboard_KeyboardEffect_" data-uid="Colore.IKeyboard.SetEffectAsync(Colore.Effects.Keyboard.KeyboardEffect)">SetEffectAsync(KeyboardEffect)</h4>
+  <h4 id="Colore_IKeyboard_SetEffectAsync_Colore_Effects_Keyboard_KeyboardEffectType_" data-uid="Colore.IKeyboard.SetEffectAsync(Colore.Effects.Keyboard.KeyboardEffectType)">SetEffectAsync(KeyboardEffectType)</h4>
   <div class="markdown level1 summary"><p>Sets an effect without any parameters.
-Currently, this only works for the <a class="xref" href="Colore.Effects.Keyboard.KeyboardEffect.html#Colore_Effects_Keyboard_KeyboardEffect_None">None</a> effect.</p>
+Currently, this only works for the <a class="xref" href="Colore.Effects.Keyboard.KeyboardEffectType.html#Colore_Effects_Keyboard_KeyboardEffectType_None">None</a> effect.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetEffectAsync(KeyboardEffect effect)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetEffectAsync(KeyboardEffectType effectType)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -499,7 +499,52 @@ Currently, this only works for the <a class="xref" href="Colore.Effects.Keyboard
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Colore.Effects.Keyboard.KeyboardEffect.html">KeyboardEffect</a></td>
+        <td><a class="xref" href="Colore.Effects.Keyboard.KeyboardEffectType.html">KeyboardEffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
+        <td><p>Effect options.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a>&gt;</td>
+        <td><p>A <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.guid">Guid</a> for the effect that was set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Colore_IKeyboard_SetExtendedCustomAsync_" data-uid="Colore.IKeyboard.SetExtendedCustomAsync*"></a>
+  <h4 id="Colore_IKeyboard_SetExtendedCustomAsync_Colore_Effects_Keyboard_ExtendedCustomKeyboardEffect_" data-uid="Colore.IKeyboard.SetExtendedCustomAsync(Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect)">SetExtendedCustomAsync(ExtendedCustomKeyboardEffect)</h4>
+  <div class="markdown level1 summary"><p>Sets an extended custom grid effect on the keyboard.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetExtendedCustomAsync(ExtendedCustomKeyboardEffect effect)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.html">ExtendedCustomKeyboardEffect</a></td>
         <td><span class="parametername">effect</span></td>
         <td><p>Effect options.</p>
 </td>
@@ -759,13 +804,13 @@ Currently, this only works for the <a class="xref" href="Colore.Effects.Keyboard
   
   
   <a id="Colore_IKeyboard_SetStaticAsync_" data-uid="Colore.IKeyboard.SetStaticAsync*"></a>
-  <h4 id="Colore_IKeyboard_SetStaticAsync_Colore_Effects_Keyboard_KeyboardStatic_" data-uid="Colore.IKeyboard.SetStaticAsync(Colore.Effects.Keyboard.KeyboardStatic)">SetStaticAsync(KeyboardStatic)</h4>
+  <h4 id="Colore_IKeyboard_SetStaticAsync_Colore_Effects_Keyboard_StaticKeyboardEffect_" data-uid="Colore.IKeyboard.SetStaticAsync(Colore.Effects.Keyboard.StaticKeyboardEffect)">SetStaticAsync(StaticKeyboardEffect)</h4>
   <div class="markdown level1 summary"><p>Sets a static color on the keyboard.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetStaticAsync(KeyboardStatic effect)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; SetStaticAsync(StaticKeyboardEffect effect)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -778,7 +823,7 @@ Currently, this only works for the <a class="xref" href="Colore.Effects.Keyboard
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Colore.Effects.Keyboard.KeyboardStatic.html">KeyboardStatic</a></td>
+        <td><a class="xref" href="Colore.Effects.Keyboard.StaticKeyboardEffect.html">StaticKeyboardEffect</a></td>
         <td><span class="parametername">effect</span></td>
         <td><p>Effect options.</p>
 </td>
@@ -811,7 +856,8 @@ Currently, this only works for the <a class="xref" href="Colore.Effects.Keyboard
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>
@@ -825,7 +871,7 @@ Currently, this only works for the <a class="xref" href="Colore.Effects.Keyboard
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            Copyright © 2015-2019 by <a href="https://github.com/Sharparam">Adam Hellberg</a> and <a href="https://github.com/brandonscott">Brandon Scott</a><br>Generated by <a href="http://dotnet.github.io/docfx/"><strong>DocFX</strong></a>
+            Copyright © 2015-2021 by <a href="https://github.com/Sharparam">Adam Hellberg</a> and <a href="https://github.com/brandonscott">Brandon Scott</a><br>Generated by <a href="http://dotnet.github.io/docfx/"><strong>DocFX</strong></a>
             
           </div>
         </div>

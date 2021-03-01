@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class NativeSdkMethods.CreateKeyboardEffectDelegate
    ">
-    <meta name="generator" content="docfx 2.40.7.0">
+    <meta name="generator" content="docfx 2.56.6.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -61,11 +61,11 @@
       <div class="container body-content">
         
         <div id="search-results">
-          <div class="search-list"></div>
+          <div class="search-list">Search Results for <span></span></div>
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination"></ul>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
@@ -100,7 +100,7 @@
   <h5 id="Colore_Native_NativeSdkMethods_CreateKeyboardEffectDelegate_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p>The <code data-dev-comment-type="paramref" class="paramref">param</code> parameter should point to the relevant struct for the passed in effect,
 according to the following list.
-<table><thead><tr><th>Effect typeEffect struct</th><th></th></tr></thead><tbody><tr><td><a class="xref" href="Colore.Effects.Keyboard.KeyboardEffect.html#Colore_Effects_Keyboard_KeyboardEffect_Static">Static</a><a class="xref" href="Colore.Effects.Keyboard.KeyboardStatic.html">KeyboardStatic</a></td><td></td></tr><tr><td><a class="xref" href="Colore.Effects.Keyboard.KeyboardEffect.html#Colore_Effects_Keyboard_KeyboardEffect_CustomKey">CustomKey</a><a class="xref" href="Colore.Effects.Keyboard.KeyboardCustom.html">KeyboardCustom</a></td><td></td></tr></tbody></table></p>
+<table><thead><tr><th>Effect type</th><th>Effect struct</th></tr></thead><tbody><tr><td><a class="xref" href="Colore.Effects.Keyboard.KeyboardEffectType.html#Colore_Effects_Keyboard_KeyboardEffectType_Static">Static</a></td><td><a class="xref" href="Colore.Effects.Keyboard.StaticKeyboardEffect.html">StaticKeyboardEffect</a></td></tr><tr><td><a class="xref" href="Colore.Effects.Keyboard.KeyboardEffectType.html#Colore_Effects_Keyboard_KeyboardEffectType_CustomKey">CustomKey</a></td><td><a class="xref" href="Colore.Effects.Keyboard.CustomKeyboardEffect.html">CustomKeyboardEffect</a></td></tr></tbody></table></p>
 </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -141,12 +141,12 @@ according to the following list.
   
   
   <a id="Colore_Native_NativeSdkMethods_CreateKeyboardEffectDelegate_BeginInvoke_" data-uid="Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.BeginInvoke*"></a>
-  <h4 id="Colore_Native_NativeSdkMethods_CreateKeyboardEffectDelegate_BeginInvoke_Colore_Effects_Keyboard_KeyboardEffect_System_IntPtr_System_Guid__System_AsyncCallback_System_Object_" data-uid="Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.BeginInvoke(Colore.Effects.Keyboard.KeyboardEffect,System.IntPtr,System.Guid@,System.AsyncCallback,System.Object)">BeginInvoke(KeyboardEffect, IntPtr, ref Guid, AsyncCallback, Object)</h4>
+  <h4 id="Colore_Native_NativeSdkMethods_CreateKeyboardEffectDelegate_BeginInvoke_Colore_Effects_Keyboard_KeyboardEffectType_System_IntPtr_System_Guid__System_AsyncCallback_System_Object_" data-uid="Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.BeginInvoke(Colore.Effects.Keyboard.KeyboardEffectType,System.IntPtr,System.Guid@,System.AsyncCallback,System.Object)">BeginInvoke(KeyboardEffectType, IntPtr, ref Guid, AsyncCallback, Object)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual IAsyncResult BeginInvoke(KeyboardEffect effect, IntPtr param, ref Guid effectId, AsyncCallback callback, object object)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual IAsyncResult BeginInvoke(KeyboardEffectType effectType, IntPtr param, ref Guid effectId, AsyncCallback callback, object object)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -159,8 +159,8 @@ according to the following list.
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Colore.Effects.Keyboard.KeyboardEffect.html">KeyboardEffect</a></td>
-        <td><span class="parametername">effect</span></td>
+        <td><a class="xref" href="Colore.Effects.Keyboard.KeyboardEffectType.html">KeyboardEffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
         <td></td>
       </tr>
       <tr>
@@ -250,12 +250,12 @@ according to the following list.
   
   
   <a id="Colore_Native_NativeSdkMethods_CreateKeyboardEffectDelegate_Invoke_" data-uid="Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.Invoke*"></a>
-  <h4 id="Colore_Native_NativeSdkMethods_CreateKeyboardEffectDelegate_Invoke_Colore_Effects_Keyboard_KeyboardEffect_System_IntPtr_System_Guid__" data-uid="Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.Invoke(Colore.Effects.Keyboard.KeyboardEffect,System.IntPtr,System.Guid@)">Invoke(KeyboardEffect, IntPtr, ref Guid)</h4>
+  <h4 id="Colore_Native_NativeSdkMethods_CreateKeyboardEffectDelegate_Invoke_Colore_Effects_Keyboard_KeyboardEffectType_System_IntPtr_System_Guid__" data-uid="Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.Invoke(Colore.Effects.Keyboard.KeyboardEffectType,System.IntPtr,System.Guid@)">Invoke(KeyboardEffectType, IntPtr, ref Guid)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual Result Invoke(KeyboardEffect effect, IntPtr param, ref Guid effectId)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual Result Invoke(KeyboardEffectType effectType, IntPtr param, ref Guid effectId)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -268,8 +268,8 @@ according to the following list.
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Colore.Effects.Keyboard.KeyboardEffect.html">KeyboardEffect</a></td>
-        <td><span class="parametername">effect</span></td>
+        <td><a class="xref" href="Colore.Effects.Keyboard.KeyboardEffectType.html">KeyboardEffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
         <td></td>
       </tr>
       <tr>
@@ -309,7 +309,8 @@ according to the following list.
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>
@@ -323,7 +324,7 @@ according to the following list.
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            Copyright © 2015-2019 by <a href="https://github.com/Sharparam">Adam Hellberg</a> and <a href="https://github.com/brandonscott">Brandon Scott</a><br>Generated by <a href="http://dotnet.github.io/docfx/"><strong>DocFX</strong></a>
+            Copyright © 2015-2021 by <a href="https://github.com/Sharparam">Adam Hellberg</a> and <a href="https://github.com/brandonscott">Brandon Scott</a><br>Generated by <a href="http://dotnet.github.io/docfx/"><strong>DocFX</strong></a>
             
           </div>
         </div>

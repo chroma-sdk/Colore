@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IChromaApi
    ">
-    <meta name="generator" content="docfx 2.40.7.0">
+    <meta name="generator" content="docfx 2.56.6.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -61,11 +61,11 @@
       <div class="container body-content">
         
         <div id="search-results">
-          <div class="search-list"></div>
+          <div class="search-list">Search Results for <span></span></div>
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination"></ul>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
@@ -97,13 +97,13 @@
   
   
   <a id="Colore_Api_IChromaApi_CreateChromaLinkEffectAsync_" data-uid="Colore.Api.IChromaApi.CreateChromaLinkEffectAsync*"></a>
-  <h4 id="Colore_Api_IChromaApi_CreateChromaLinkEffectAsync_Colore_Effects_ChromaLink_ChromaLinkEffect_" data-uid="Colore.Api.IChromaApi.CreateChromaLinkEffectAsync(Colore.Effects.ChromaLink.ChromaLinkEffect)">CreateChromaLinkEffectAsync(ChromaLinkEffect)</h4>
+  <h4 id="Colore_Api_IChromaApi_CreateChromaLinkEffectAsync_Colore_Effects_ChromaLink_ChromaLinkEffectType_" data-uid="Colore.Api.IChromaApi.CreateChromaLinkEffectAsync(Colore.Effects.ChromaLink.ChromaLinkEffectType)">CreateChromaLinkEffectAsync(ChromaLinkEffectType)</h4>
   <div class="markdown level1 summary"><p>Creates a new Chroma Link effect without any effect data.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; CreateChromaLinkEffectAsync(ChromaLinkEffect effect)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; CreateChromaLinkEffectAsync(ChromaLinkEffectType effectType)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -116,8 +116,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Colore.Effects.ChromaLink.ChromaLinkEffect.html">ChromaLinkEffect</a></td>
-        <td><span class="parametername">effect</span></td>
+        <td><a class="xref" href="Colore.Effects.ChromaLink.ChromaLinkEffectType.html">ChromaLinkEffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
         <td><p>The type of effect to create.</p>
 </td>
       </tr>
@@ -142,13 +142,13 @@
   
   
   <a id="Colore_Api_IChromaApi_CreateChromaLinkEffectAsync_" data-uid="Colore.Api.IChromaApi.CreateChromaLinkEffectAsync*"></a>
-  <h4 id="Colore_Api_IChromaApi_CreateChromaLinkEffectAsync__1_Colore_Effects_ChromaLink_ChromaLinkEffect___0_" data-uid="Colore.Api.IChromaApi.CreateChromaLinkEffectAsync``1(Colore.Effects.ChromaLink.ChromaLinkEffect,``0)">CreateChromaLinkEffectAsync&lt;T&gt;(ChromaLinkEffect, T)</h4>
+  <h4 id="Colore_Api_IChromaApi_CreateChromaLinkEffectAsync__1_Colore_Effects_ChromaLink_ChromaLinkEffectType___0_" data-uid="Colore.Api.IChromaApi.CreateChromaLinkEffectAsync``1(Colore.Effects.ChromaLink.ChromaLinkEffectType,``0)">CreateChromaLinkEffectAsync&lt;T&gt;(ChromaLinkEffectType, T)</h4>
   <div class="markdown level1 summary"><p>Creates a new Chroma Link effect with the specified effect data.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; CreateChromaLinkEffectAsync&lt;T&gt;(ChromaLinkEffect effect, T data)
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; CreateChromaLinkEffectAsync&lt;T&gt;(ChromaLinkEffectType effectType, T data)
     where T : struct, ValueType</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -162,8 +162,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Colore.Effects.ChromaLink.ChromaLinkEffect.html">ChromaLinkEffect</a></td>
-        <td><span class="parametername">effect</span></td>
+        <td><a class="xref" href="Colore.Effects.ChromaLink.ChromaLinkEffectType.html">ChromaLinkEffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
         <td><p>The type of effect to create.</p>
 </td>
       </tr>
@@ -210,13 +210,13 @@
   
   
   <a id="Colore_Api_IChromaApi_CreateDeviceEffectAsync_" data-uid="Colore.Api.IChromaApi.CreateDeviceEffectAsync*"></a>
-  <h4 id="Colore_Api_IChromaApi_CreateDeviceEffectAsync_System_Guid_Colore_Effects_Generic_Effect_" data-uid="Colore.Api.IChromaApi.CreateDeviceEffectAsync(System.Guid,Colore.Effects.Generic.Effect)">CreateDeviceEffectAsync(Guid, Effect)</h4>
+  <h4 id="Colore_Api_IChromaApi_CreateDeviceEffectAsync_System_Guid_Colore_Effects_Generic_EffectType_" data-uid="Colore.Api.IChromaApi.CreateDeviceEffectAsync(System.Guid,Colore.Effects.Generic.EffectType)">CreateDeviceEffectAsync(Guid, EffectType)</h4>
   <div class="markdown level1 summary"><p>Creates a new device effect without any effect data.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; CreateDeviceEffectAsync(Guid deviceId, Effect effect)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; CreateDeviceEffectAsync(Guid deviceId, EffectType effectType)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -235,8 +235,8 @@
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="Colore.Effects.Generic.Effect.html">Effect</a></td>
-        <td><span class="parametername">effect</span></td>
+        <td><a class="xref" href="Colore.Effects.Generic.EffectType.html">EffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
         <td><p>The type of effect to create.</p>
 </td>
       </tr>
@@ -261,13 +261,13 @@
   
   
   <a id="Colore_Api_IChromaApi_CreateDeviceEffectAsync_" data-uid="Colore.Api.IChromaApi.CreateDeviceEffectAsync*"></a>
-  <h4 id="Colore_Api_IChromaApi_CreateDeviceEffectAsync__1_System_Guid_Colore_Effects_Generic_Effect___0_" data-uid="Colore.Api.IChromaApi.CreateDeviceEffectAsync``1(System.Guid,Colore.Effects.Generic.Effect,``0)">CreateDeviceEffectAsync&lt;T&gt;(Guid, Effect, T)</h4>
+  <h4 id="Colore_Api_IChromaApi_CreateDeviceEffectAsync__1_System_Guid_Colore_Effects_Generic_EffectType___0_" data-uid="Colore.Api.IChromaApi.CreateDeviceEffectAsync``1(System.Guid,Colore.Effects.Generic.EffectType,``0)">CreateDeviceEffectAsync&lt;T&gt;(Guid, EffectType, T)</h4>
   <div class="markdown level1 summary"><p>Creates a new device effect with the specified effect data.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; CreateDeviceEffectAsync&lt;T&gt;(Guid deviceId, Effect effect, T data)
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; CreateDeviceEffectAsync&lt;T&gt;(Guid deviceId, EffectType effectType, T data)
     where T : struct, ValueType</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -287,8 +287,8 @@
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="Colore.Effects.Generic.Effect.html">Effect</a></td>
-        <td><span class="parametername">effect</span></td>
+        <td><a class="xref" href="Colore.Effects.Generic.EffectType.html">EffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
         <td><p>The type of effect to create.</p>
 </td>
       </tr>
@@ -335,13 +335,13 @@
   
   
   <a id="Colore_Api_IChromaApi_CreateHeadsetEffectAsync_" data-uid="Colore.Api.IChromaApi.CreateHeadsetEffectAsync*"></a>
-  <h4 id="Colore_Api_IChromaApi_CreateHeadsetEffectAsync_Colore_Effects_Headset_HeadsetEffect_" data-uid="Colore.Api.IChromaApi.CreateHeadsetEffectAsync(Colore.Effects.Headset.HeadsetEffect)">CreateHeadsetEffectAsync(HeadsetEffect)</h4>
+  <h4 id="Colore_Api_IChromaApi_CreateHeadsetEffectAsync_Colore_Effects_Headset_HeadsetEffectType_" data-uid="Colore.Api.IChromaApi.CreateHeadsetEffectAsync(Colore.Effects.Headset.HeadsetEffectType)">CreateHeadsetEffectAsync(HeadsetEffectType)</h4>
   <div class="markdown level1 summary"><p>Creates a new headset effect without any effect data.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; CreateHeadsetEffectAsync(HeadsetEffect effect)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; CreateHeadsetEffectAsync(HeadsetEffectType effectType)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -354,8 +354,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Colore.Effects.Headset.HeadsetEffect.html">HeadsetEffect</a></td>
-        <td><span class="parametername">effect</span></td>
+        <td><a class="xref" href="Colore.Effects.Headset.HeadsetEffectType.html">HeadsetEffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
         <td><p>The type of effect to create.</p>
 </td>
       </tr>
@@ -380,13 +380,13 @@
   
   
   <a id="Colore_Api_IChromaApi_CreateHeadsetEffectAsync_" data-uid="Colore.Api.IChromaApi.CreateHeadsetEffectAsync*"></a>
-  <h4 id="Colore_Api_IChromaApi_CreateHeadsetEffectAsync__1_Colore_Effects_Headset_HeadsetEffect___0_" data-uid="Colore.Api.IChromaApi.CreateHeadsetEffectAsync``1(Colore.Effects.Headset.HeadsetEffect,``0)">CreateHeadsetEffectAsync&lt;T&gt;(HeadsetEffect, T)</h4>
+  <h4 id="Colore_Api_IChromaApi_CreateHeadsetEffectAsync__1_Colore_Effects_Headset_HeadsetEffectType___0_" data-uid="Colore.Api.IChromaApi.CreateHeadsetEffectAsync``1(Colore.Effects.Headset.HeadsetEffectType,``0)">CreateHeadsetEffectAsync&lt;T&gt;(HeadsetEffectType, T)</h4>
   <div class="markdown level1 summary"><p>Creates a new headset effect with the specified effect data.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; CreateHeadsetEffectAsync&lt;T&gt;(HeadsetEffect effect, T data)
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; CreateHeadsetEffectAsync&lt;T&gt;(HeadsetEffectType effectType, T data)
     where T : struct, ValueType</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -400,8 +400,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Colore.Effects.Headset.HeadsetEffect.html">HeadsetEffect</a></td>
-        <td><span class="parametername">effect</span></td>
+        <td><a class="xref" href="Colore.Effects.Headset.HeadsetEffectType.html">HeadsetEffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
         <td><p>The type of effect to create.</p>
 </td>
       </tr>
@@ -448,13 +448,13 @@
   
   
   <a id="Colore_Api_IChromaApi_CreateKeyboardEffectAsync_" data-uid="Colore.Api.IChromaApi.CreateKeyboardEffectAsync*"></a>
-  <h4 id="Colore_Api_IChromaApi_CreateKeyboardEffectAsync_Colore_Effects_Keyboard_KeyboardEffect_" data-uid="Colore.Api.IChromaApi.CreateKeyboardEffectAsync(Colore.Effects.Keyboard.KeyboardEffect)">CreateKeyboardEffectAsync(KeyboardEffect)</h4>
+  <h4 id="Colore_Api_IChromaApi_CreateKeyboardEffectAsync_Colore_Effects_Keyboard_KeyboardEffectType_" data-uid="Colore.Api.IChromaApi.CreateKeyboardEffectAsync(Colore.Effects.Keyboard.KeyboardEffectType)">CreateKeyboardEffectAsync(KeyboardEffectType)</h4>
   <div class="markdown level1 summary"><p>Creates a new keyboard effect without any effect data.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; CreateKeyboardEffectAsync(KeyboardEffect effect)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; CreateKeyboardEffectAsync(KeyboardEffectType effectType)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -467,8 +467,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Colore.Effects.Keyboard.KeyboardEffect.html">KeyboardEffect</a></td>
-        <td><span class="parametername">effect</span></td>
+        <td><a class="xref" href="Colore.Effects.Keyboard.KeyboardEffectType.html">KeyboardEffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
         <td><p>The type of effect to create.</p>
 </td>
       </tr>
@@ -493,13 +493,13 @@
   
   
   <a id="Colore_Api_IChromaApi_CreateKeyboardEffectAsync_" data-uid="Colore.Api.IChromaApi.CreateKeyboardEffectAsync*"></a>
-  <h4 id="Colore_Api_IChromaApi_CreateKeyboardEffectAsync__1_Colore_Effects_Keyboard_KeyboardEffect___0_" data-uid="Colore.Api.IChromaApi.CreateKeyboardEffectAsync``1(Colore.Effects.Keyboard.KeyboardEffect,``0)">CreateKeyboardEffectAsync&lt;T&gt;(KeyboardEffect, T)</h4>
+  <h4 id="Colore_Api_IChromaApi_CreateKeyboardEffectAsync__1_Colore_Effects_Keyboard_KeyboardEffectType___0_" data-uid="Colore.Api.IChromaApi.CreateKeyboardEffectAsync``1(Colore.Effects.Keyboard.KeyboardEffectType,``0)">CreateKeyboardEffectAsync&lt;T&gt;(KeyboardEffectType, T)</h4>
   <div class="markdown level1 summary"><p>Creates a new keyboard effect with the specified effect data.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; CreateKeyboardEffectAsync&lt;T&gt;(KeyboardEffect effect, T data)
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; CreateKeyboardEffectAsync&lt;T&gt;(KeyboardEffectType effectType, T data)
     where T : struct, ValueType</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -513,8 +513,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Colore.Effects.Keyboard.KeyboardEffect.html">KeyboardEffect</a></td>
-        <td><span class="parametername">effect</span></td>
+        <td><a class="xref" href="Colore.Effects.Keyboard.KeyboardEffectType.html">KeyboardEffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
         <td><p>The type of effect to create.</p>
 </td>
       </tr>
@@ -561,13 +561,13 @@
   
   
   <a id="Colore_Api_IChromaApi_CreateKeypadEffectAsync_" data-uid="Colore.Api.IChromaApi.CreateKeypadEffectAsync*"></a>
-  <h4 id="Colore_Api_IChromaApi_CreateKeypadEffectAsync_Colore_Effects_Keypad_KeypadEffect_" data-uid="Colore.Api.IChromaApi.CreateKeypadEffectAsync(Colore.Effects.Keypad.KeypadEffect)">CreateKeypadEffectAsync(KeypadEffect)</h4>
+  <h4 id="Colore_Api_IChromaApi_CreateKeypadEffectAsync_Colore_Effects_Keypad_KeypadEffectType_" data-uid="Colore.Api.IChromaApi.CreateKeypadEffectAsync(Colore.Effects.Keypad.KeypadEffectType)">CreateKeypadEffectAsync(KeypadEffectType)</h4>
   <div class="markdown level1 summary"><p>Creates a new keypad effect without any effect data.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; CreateKeypadEffectAsync(KeypadEffect effect)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; CreateKeypadEffectAsync(KeypadEffectType effectType)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -580,8 +580,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Colore.Effects.Keypad.KeypadEffect.html">KeypadEffect</a></td>
-        <td><span class="parametername">effect</span></td>
+        <td><a class="xref" href="Colore.Effects.Keypad.KeypadEffectType.html">KeypadEffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
         <td><p>THe type of effect to create.</p>
 </td>
       </tr>
@@ -606,13 +606,13 @@
   
   
   <a id="Colore_Api_IChromaApi_CreateKeypadEffectAsync_" data-uid="Colore.Api.IChromaApi.CreateKeypadEffectAsync*"></a>
-  <h4 id="Colore_Api_IChromaApi_CreateKeypadEffectAsync__1_Colore_Effects_Keypad_KeypadEffect___0_" data-uid="Colore.Api.IChromaApi.CreateKeypadEffectAsync``1(Colore.Effects.Keypad.KeypadEffect,``0)">CreateKeypadEffectAsync&lt;T&gt;(KeypadEffect, T)</h4>
+  <h4 id="Colore_Api_IChromaApi_CreateKeypadEffectAsync__1_Colore_Effects_Keypad_KeypadEffectType___0_" data-uid="Colore.Api.IChromaApi.CreateKeypadEffectAsync``1(Colore.Effects.Keypad.KeypadEffectType,``0)">CreateKeypadEffectAsync&lt;T&gt;(KeypadEffectType, T)</h4>
   <div class="markdown level1 summary"><p>Creates a new keypad effect with the specified effect data.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; CreateKeypadEffectAsync&lt;T&gt;(KeypadEffect effect, T data)
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; CreateKeypadEffectAsync&lt;T&gt;(KeypadEffectType effectType, T data)
     where T : struct, ValueType</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -626,8 +626,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Colore.Effects.Keypad.KeypadEffect.html">KeypadEffect</a></td>
-        <td><span class="parametername">effect</span></td>
+        <td><a class="xref" href="Colore.Effects.Keypad.KeypadEffectType.html">KeypadEffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
         <td><p>The type of effect to create.</p>
 </td>
       </tr>
@@ -674,13 +674,13 @@
   
   
   <a id="Colore_Api_IChromaApi_CreateMouseEffectAsync_" data-uid="Colore.Api.IChromaApi.CreateMouseEffectAsync*"></a>
-  <h4 id="Colore_Api_IChromaApi_CreateMouseEffectAsync_Colore_Effects_Mouse_MouseEffect_" data-uid="Colore.Api.IChromaApi.CreateMouseEffectAsync(Colore.Effects.Mouse.MouseEffect)">CreateMouseEffectAsync(MouseEffect)</h4>
+  <h4 id="Colore_Api_IChromaApi_CreateMouseEffectAsync_Colore_Effects_Mouse_MouseEffectType_" data-uid="Colore.Api.IChromaApi.CreateMouseEffectAsync(Colore.Effects.Mouse.MouseEffectType)">CreateMouseEffectAsync(MouseEffectType)</h4>
   <div class="markdown level1 summary"><p>Creates a new mouse effect without any effect data.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; CreateMouseEffectAsync(MouseEffect effect)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; CreateMouseEffectAsync(MouseEffectType effectType)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -693,8 +693,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Colore.Effects.Mouse.MouseEffect.html">MouseEffect</a></td>
-        <td><span class="parametername">effect</span></td>
+        <td><a class="xref" href="Colore.Effects.Mouse.MouseEffectType.html">MouseEffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
         <td><p>The type of effect to create.</p>
 </td>
       </tr>
@@ -719,13 +719,13 @@
   
   
   <a id="Colore_Api_IChromaApi_CreateMouseEffectAsync_" data-uid="Colore.Api.IChromaApi.CreateMouseEffectAsync*"></a>
-  <h4 id="Colore_Api_IChromaApi_CreateMouseEffectAsync__1_Colore_Effects_Mouse_MouseEffect___0_" data-uid="Colore.Api.IChromaApi.CreateMouseEffectAsync``1(Colore.Effects.Mouse.MouseEffect,``0)">CreateMouseEffectAsync&lt;T&gt;(MouseEffect, T)</h4>
+  <h4 id="Colore_Api_IChromaApi_CreateMouseEffectAsync__1_Colore_Effects_Mouse_MouseEffectType___0_" data-uid="Colore.Api.IChromaApi.CreateMouseEffectAsync``1(Colore.Effects.Mouse.MouseEffectType,``0)">CreateMouseEffectAsync&lt;T&gt;(MouseEffectType, T)</h4>
   <div class="markdown level1 summary"><p>Creates a new mouse effect with the specified effect data.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; CreateMouseEffectAsync&lt;T&gt;(MouseEffect effect, T data)
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; CreateMouseEffectAsync&lt;T&gt;(MouseEffectType effectType, T data)
     where T : struct, ValueType</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -739,8 +739,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Colore.Effects.Mouse.MouseEffect.html">MouseEffect</a></td>
-        <td><span class="parametername">effect</span></td>
+        <td><a class="xref" href="Colore.Effects.Mouse.MouseEffectType.html">MouseEffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
         <td><p>The type of effect to create.</p>
 </td>
       </tr>
@@ -787,13 +787,13 @@
   
   
   <a id="Colore_Api_IChromaApi_CreateMousepadEffectAsync_" data-uid="Colore.Api.IChromaApi.CreateMousepadEffectAsync*"></a>
-  <h4 id="Colore_Api_IChromaApi_CreateMousepadEffectAsync_Colore_Effects_Mousepad_MousepadEffect_" data-uid="Colore.Api.IChromaApi.CreateMousepadEffectAsync(Colore.Effects.Mousepad.MousepadEffect)">CreateMousepadEffectAsync(MousepadEffect)</h4>
+  <h4 id="Colore_Api_IChromaApi_CreateMousepadEffectAsync_Colore_Effects_Mousepad_MousepadEffectType_" data-uid="Colore.Api.IChromaApi.CreateMousepadEffectAsync(Colore.Effects.Mousepad.MousepadEffectType)">CreateMousepadEffectAsync(MousepadEffectType)</h4>
   <div class="markdown level1 summary"><p>Creates a new mousepad effect without any effect data.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; CreateMousepadEffectAsync(MousepadEffect effect)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; CreateMousepadEffectAsync(MousepadEffectType effectType)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -806,8 +806,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Colore.Effects.Mousepad.MousepadEffect.html">MousepadEffect</a></td>
-        <td><span class="parametername">effect</span></td>
+        <td><a class="xref" href="Colore.Effects.Mousepad.MousepadEffectType.html">MousepadEffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
         <td><p>The type of effect to create.</p>
 </td>
       </tr>
@@ -832,13 +832,13 @@
   
   
   <a id="Colore_Api_IChromaApi_CreateMousepadEffectAsync_" data-uid="Colore.Api.IChromaApi.CreateMousepadEffectAsync*"></a>
-  <h4 id="Colore_Api_IChromaApi_CreateMousepadEffectAsync__1_Colore_Effects_Mousepad_MousepadEffect___0_" data-uid="Colore.Api.IChromaApi.CreateMousepadEffectAsync``1(Colore.Effects.Mousepad.MousepadEffect,``0)">CreateMousepadEffectAsync&lt;T&gt;(MousepadEffect, T)</h4>
+  <h4 id="Colore_Api_IChromaApi_CreateMousepadEffectAsync__1_Colore_Effects_Mousepad_MousepadEffectType___0_" data-uid="Colore.Api.IChromaApi.CreateMousepadEffectAsync``1(Colore.Effects.Mousepad.MousepadEffectType,``0)">CreateMousepadEffectAsync&lt;T&gt;(MousepadEffectType, T)</h4>
   <div class="markdown level1 summary"><p>Creates a new mousepad effect with the specified effect data.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; CreateMousepadEffectAsync&lt;T&gt;(MousepadEffect effect, T data)
+    <pre><code class="lang-csharp hljs">Task&lt;Guid&gt; CreateMousepadEffectAsync&lt;T&gt;(MousepadEffectType effectType, T data)
     where T : struct, ValueType</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -852,8 +852,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Colore.Effects.Mousepad.MousepadEffect.html">MousepadEffect</a></td>
-        <td><span class="parametername">effect</span></td>
+        <td><a class="xref" href="Colore.Effects.Mousepad.MousepadEffectType.html">MousepadEffectType</a></td>
+        <td><span class="parametername">effectType</span></td>
         <td><p>The type of effect to create.</p>
 </td>
       </tr>
@@ -1154,7 +1154,8 @@
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>
@@ -1168,7 +1169,7 @@
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            Copyright © 2015-2019 by <a href="https://github.com/Sharparam">Adam Hellberg</a> and <a href="https://github.com/brandonscott">Brandon Scott</a><br>Generated by <a href="http://dotnet.github.io/docfx/"><strong>DocFX</strong></a>
+            Copyright © 2015-2021 by <a href="https://github.com/Sharparam">Adam Hellberg</a> and <a href="https://github.com/brandonscott">Brandon Scott</a><br>Generated by <a href="http://dotnet.github.io/docfx/"><strong>DocFX</strong></a>
             
           </div>
         </div>
