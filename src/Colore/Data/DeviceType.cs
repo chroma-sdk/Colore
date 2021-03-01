@@ -39,6 +39,13 @@ namespace Colore.Data
     public enum DeviceType
     {
         /// <summary>
+        /// Unknown device.
+        /// </summary>
+        [PublicAPI]
+        [EnumMember(Value = "unknown")]
+        Unknown = 0,
+
+        /// <summary>
         /// A keyboard device.
         /// </summary>
         [PublicAPI]

@@ -47,6 +47,12 @@ namespace Colore.Data
     public struct Result : IEquatable<int>, IEquatable<Result>
     {
         /// <summary>
+        /// The device is not connected.
+        /// </summary>
+        [PublicAPI]
+        public static readonly Result DeviceNotConnected = 1167;
+
+        /// <summary>
         /// Access denied.
         /// </summary>
         [PublicAPI]
@@ -106,6 +112,7 @@ namespace Colore.Data
         private static readonly Dictionary<Result, KeyValuePair<string, string>> Mappings =
             new Dictionary<Result, KeyValuePair<string, string>>
             {
+                { 1167, new KeyValuePair<string, string>(nameof(DeviceNotConnected), "The device is not connected.") },
                 { 5, new KeyValuePair<string, string>(nameof(RzAccessDenied), "Access denied.") },
                 { unchecked(-2147467259), new KeyValuePair<string, string>(nameof(RzFailed), "General failure.") },
                 { -1, new KeyValuePair<string, string>(nameof(RzInvalid), "Invalid.") },

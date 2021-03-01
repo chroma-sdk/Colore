@@ -105,7 +105,14 @@ namespace Colore.Native
                 var result = _nativeSdkMethods.QueryDevice(deviceId, ptr);
 
                 if (!result)
+                {
+                    if (result == Result.DeviceNotConnected)
+                    {
+                        return Task.FromResult(new SdkDeviceInfo(DeviceType.Unknown, 0));
+                    }
+
                     throw new NativeCallException("QueryDevice", result);
+                }
 
                 if (ptr == IntPtr.Zero)
                     throw new ColoreException("Device query failed, ptr NULL.");
