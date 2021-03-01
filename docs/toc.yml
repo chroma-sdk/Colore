@@ -1,0 +1,11 @@
+- name: Articles
+  href: articles/
+- name: API Documentation
+  href: api/
+  homepage: api/index.md
+- name: README
+  href: README.html
+- name: Contributing
+  href: CONTRIBUTING.html
+- name: Code of Conduct
+  href: CODE_OF_CONDUCT.html

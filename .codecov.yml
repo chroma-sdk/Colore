@@ -1,0 +1,8 @@
+coverage:
+  range: 50..100
+  round: down
+  precision: 2
+  notify:
+    slack:
+      default:
+        url: "secret:uhuums2k8b7CU1V+2nhYmLnzoFiOTexPI3iU63rwxPT08Q2bSCohYFcpt+9xzaauCyPANcElwsZtyyix1kvbfInL+OYeb9gMKu0q56KU94e48qyIeUL0b8/vBqwSi7Cj2pZfL9nfuvrvOzRJ71+5Wlnw24/Wa2ADY+6sN3SExM8="

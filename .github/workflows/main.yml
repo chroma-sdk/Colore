@@ -1,0 +1,57 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Fetch all history for all tags and branches
+      run: git fetch --prune --unshallow
+    - name: 'Cache: NuGet'
+      uses: actions/cache@v2
+      with:
+        path: ~/.nuget/packages
+        key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
+        restore-keys: |
+          ${{ runner.os }}-nuget-
+    - name: 'Cache: Cake'
+      uses: actions/cache@v2
+      with:
+        path: tools
+        key: ${{ runner.os }}-cake-${{ hashFiles('build.cake') }}
+        restore-keys: |
+          ${{ runner.os }}-cake-
+    - uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '3.1.x'
+        source-url: https://nuget.pkg.github.com/chroma-sdk/index.json
+      env:
+        DOTNET_CLI_TELEMETRY_OPTOUT: true
+        NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Cake
+      uses: cake-build/cake-action@v1
+      with:
+        target: GitHub
+        cake-bootstrap: true
+        verbosity: Diagnostic
+    - name: Upload test results artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: test-results
+        path: tests/Colore.Tests/TestResults/*/coverage.cobertura.xml
+    - name: Upload Colore nupkg files to NuGet artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: nuget
+        path: 'src/Colore/bin/Release/*.nupkg'
+    - name: Upload Colore snupkg files to NuGet artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: nuget
+        path: 'src/Colore/bin/Release/*.snupkg'
