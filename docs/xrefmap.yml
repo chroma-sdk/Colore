@@ -1306,6 +1306,12 @@ references:
   commentId: F:Colore.Data.DeviceType.System
   fullName: Colore.Data.DeviceType.System
   nameWithType: DeviceType.System
+- uid: Colore.Data.DeviceType.Unknown
+  name: Unknown
+  href: api/Colore.Data.DeviceType.html#Colore_Data_DeviceType_Unknown
+  commentId: F:Colore.Data.DeviceType.Unknown
+  fullName: Colore.Data.DeviceType.Unknown
+  nameWithType: DeviceType.Unknown
 - uid: Colore.Data.DeviceType.value__
   name: value__
   href: api/Colore.Data.DeviceType.html#Colore_Data_DeviceType_value__
@@ -1342,6 +1348,12 @@ references:
   commentId: Overload:Colore.Data.Result.Description
   fullName: Colore.Data.Result.Description
   nameWithType: Result.Description
+- uid: Colore.Data.Result.DeviceNotConnected
+  name: DeviceNotConnected
+  href: api/Colore.Data.Result.html#Colore_Data_Result_DeviceNotConnected
+  commentId: F:Colore.Data.Result.DeviceNotConnected
+  fullName: Colore.Data.Result.DeviceNotConnected
+  nameWithType: Result.DeviceNotConnected
 - uid: Colore.Data.Result.Equals(Colore.Data.Result)
   name: Equals(Result)
   href: api/Colore.Data.Result.html#Colore_Data_Result_Equals_Colore_Data_Result_
@@ -1642,12 +1654,12 @@ references:
   commentId: T:Colore.Data.SdkDeviceInfo
   fullName: Colore.Data.SdkDeviceInfo
   nameWithType: SdkDeviceInfo
-- uid: Colore.Data.SdkDeviceInfo.#ctor(Colore.Data.DeviceType,System.Boolean)
-  name: SdkDeviceInfo(DeviceType, Boolean)
-  href: api/Colore.Data.SdkDeviceInfo.html#Colore_Data_SdkDeviceInfo__ctor_Colore_Data_DeviceType_System_Boolean_
-  commentId: M:Colore.Data.SdkDeviceInfo.#ctor(Colore.Data.DeviceType,System.Boolean)
-  fullName: Colore.Data.SdkDeviceInfo.SdkDeviceInfo(Colore.Data.DeviceType, System.Boolean)
-  nameWithType: SdkDeviceInfo.SdkDeviceInfo(DeviceType, Boolean)
+- uid: Colore.Data.SdkDeviceInfo.#ctor(Colore.Data.DeviceType,System.UInt32)
+  name: SdkDeviceInfo(DeviceType, UInt32)
+  href: api/Colore.Data.SdkDeviceInfo.html#Colore_Data_SdkDeviceInfo__ctor_Colore_Data_DeviceType_System_UInt32_
+  commentId: M:Colore.Data.SdkDeviceInfo.#ctor(Colore.Data.DeviceType,System.UInt32)
+  fullName: Colore.Data.SdkDeviceInfo.SdkDeviceInfo(Colore.Data.DeviceType, System.UInt32)
+  nameWithType: SdkDeviceInfo.SdkDeviceInfo(DeviceType, UInt32)
 - uid: Colore.Data.SdkDeviceInfo.#ctor*
   name: SdkDeviceInfo
   href: api/Colore.Data.SdkDeviceInfo.html#Colore_Data_SdkDeviceInfo__ctor_
@@ -1657,9 +1669,21 @@ references:
 - uid: Colore.Data.SdkDeviceInfo.Connected
   name: Connected
   href: api/Colore.Data.SdkDeviceInfo.html#Colore_Data_SdkDeviceInfo_Connected
-  commentId: F:Colore.Data.SdkDeviceInfo.Connected
+  commentId: P:Colore.Data.SdkDeviceInfo.Connected
   fullName: Colore.Data.SdkDeviceInfo.Connected
   nameWithType: SdkDeviceInfo.Connected
+- uid: Colore.Data.SdkDeviceInfo.Connected*
+  name: Connected
+  href: api/Colore.Data.SdkDeviceInfo.html#Colore_Data_SdkDeviceInfo_Connected_
+  commentId: Overload:Colore.Data.SdkDeviceInfo.Connected
+  fullName: Colore.Data.SdkDeviceInfo.Connected
+  nameWithType: SdkDeviceInfo.Connected
+- uid: Colore.Data.SdkDeviceInfo.ConnectedCount
+  name: ConnectedCount
+  href: api/Colore.Data.SdkDeviceInfo.html#Colore_Data_SdkDeviceInfo_ConnectedCount
+  commentId: F:Colore.Data.SdkDeviceInfo.ConnectedCount
+  fullName: Colore.Data.SdkDeviceInfo.ConnectedCount
+  nameWithType: SdkDeviceInfo.ConnectedCount
 - uid: Colore.Data.SdkDeviceInfo.Equals(Colore.Data.SdkDeviceInfo)
   name: Equals(SdkDeviceInfo)
   href: api/Colore.Data.SdkDeviceInfo.html#Colore_Data_SdkDeviceInfo_Equals_Colore_Data_SdkDeviceInfo_
@@ -2917,6 +2941,165 @@ references:
   commentId: Overload:Colore.Effects.Keyboard.DeathstalkerGridEffect.Set
   fullName: Colore.Effects.Keyboard.DeathstalkerGridEffect.Set
   nameWithType: DeathstalkerGridEffect.Set
+- uid: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect
+  name: ExtendedCustomKeyboardEffect
+  href: api/Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.html
+  commentId: T:Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect
+  fullName: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect
+  nameWithType: ExtendedCustomKeyboardEffect
+- uid: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.#ctor(Colore.Data.Color)
+  name: ExtendedCustomKeyboardEffect(Color)
+  href: api/Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.html#Colore_Effects_Keyboard_ExtendedCustomKeyboardEffect__ctor_Colore_Data_Color_
+  commentId: M:Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.#ctor(Colore.Data.Color)
+  fullName: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.ExtendedCustomKeyboardEffect(Colore.Data.Color)
+  nameWithType: ExtendedCustomKeyboardEffect.ExtendedCustomKeyboardEffect(Color)
+- uid: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.#ctor(Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect)
+  name: ExtendedCustomKeyboardEffect(ExtendedCustomKeyboardEffect)
+  href: api/Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.html#Colore_Effects_Keyboard_ExtendedCustomKeyboardEffect__ctor_Colore_Effects_Keyboard_ExtendedCustomKeyboardEffect_
+  commentId: M:Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.#ctor(Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect)
+  fullName: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.ExtendedCustomKeyboardEffect(Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect)
+  nameWithType: ExtendedCustomKeyboardEffect.ExtendedCustomKeyboardEffect(ExtendedCustomKeyboardEffect)
+- uid: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.#ctor*
+  name: ExtendedCustomKeyboardEffect
+  href: api/Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.html#Colore_Effects_Keyboard_ExtendedCustomKeyboardEffect__ctor_
+  commentId: Overload:Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.#ctor
+  fullName: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.ExtendedCustomKeyboardEffect
+  nameWithType: ExtendedCustomKeyboardEffect.ExtendedCustomKeyboardEffect
+- uid: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Clear
+  name: Clear()
+  href: api/Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.html#Colore_Effects_Keyboard_ExtendedCustomKeyboardEffect_Clear
+  commentId: M:Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Clear
+  fullName: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Clear()
+  nameWithType: ExtendedCustomKeyboardEffect.Clear()
+- uid: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Clear*
+  name: Clear
+  href: api/Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.html#Colore_Effects_Keyboard_ExtendedCustomKeyboardEffect_Clear_
+  commentId: Overload:Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Clear
+  fullName: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Clear
+  nameWithType: ExtendedCustomKeyboardEffect.Clear
+- uid: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Clone
+  name: Clone()
+  href: api/Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.html#Colore_Effects_Keyboard_ExtendedCustomKeyboardEffect_Clone
+  commentId: M:Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Clone
+  fullName: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Clone()
+  nameWithType: ExtendedCustomKeyboardEffect.Clone()
+- uid: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Clone*
+  name: Clone
+  href: api/Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.html#Colore_Effects_Keyboard_ExtendedCustomKeyboardEffect_Clone_
+  commentId: Overload:Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Clone
+  fullName: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Clone
+  nameWithType: ExtendedCustomKeyboardEffect.Clone
+- uid: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Create
+  name: Create()
+  href: api/Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.html#Colore_Effects_Keyboard_ExtendedCustomKeyboardEffect_Create
+  commentId: M:Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Create
+  fullName: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Create()
+  nameWithType: ExtendedCustomKeyboardEffect.Create()
+- uid: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Create*
+  name: Create
+  href: api/Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.html#Colore_Effects_Keyboard_ExtendedCustomKeyboardEffect_Create_
+  commentId: Overload:Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Create
+  fullName: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Create
+  nameWithType: ExtendedCustomKeyboardEffect.Create
+- uid: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Equals(Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect)
+  name: Equals(ExtendedCustomKeyboardEffect)
+  href: api/Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.html#Colore_Effects_Keyboard_ExtendedCustomKeyboardEffect_Equals_Colore_Effects_Keyboard_ExtendedCustomKeyboardEffect_
+  commentId: M:Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Equals(Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect)
+  fullName: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Equals(Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect)
+  nameWithType: ExtendedCustomKeyboardEffect.Equals(ExtendedCustomKeyboardEffect)
+- uid: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Equals(System.Object)
+  name: Equals(Object)
+  href: api/Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.html#Colore_Effects_Keyboard_ExtendedCustomKeyboardEffect_Equals_System_Object_
+  commentId: M:Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Equals(System.Object)
+  fullName: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Equals(System.Object)
+  nameWithType: ExtendedCustomKeyboardEffect.Equals(Object)
+- uid: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Equals*
+  name: Equals
+  href: api/Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.html#Colore_Effects_Keyboard_ExtendedCustomKeyboardEffect_Equals_
+  commentId: Overload:Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Equals
+  fullName: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Equals
+  nameWithType: ExtendedCustomKeyboardEffect.Equals
+- uid: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.GetHashCode
+  name: GetHashCode()
+  href: api/Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.html#Colore_Effects_Keyboard_ExtendedCustomKeyboardEffect_GetHashCode
+  commentId: M:Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.GetHashCode
+  fullName: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.GetHashCode()
+  nameWithType: ExtendedCustomKeyboardEffect.GetHashCode()
+- uid: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.GetHashCode*
+  name: GetHashCode
+  href: api/Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.html#Colore_Effects_Keyboard_ExtendedCustomKeyboardEffect_GetHashCode_
+  commentId: Overload:Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.GetHashCode
+  fullName: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.GetHashCode
+  nameWithType: ExtendedCustomKeyboardEffect.GetHashCode
+- uid: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Item(Colore.Effects.Keyboard.Key)
+  name: Item[Key]
+  href: api/Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.html#Colore_Effects_Keyboard_ExtendedCustomKeyboardEffect_Item_Colore_Effects_Keyboard_Key_
+  commentId: P:Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Item(Colore.Effects.Keyboard.Key)
+  name.vb: Item(Key)
+  fullName: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Item[Colore.Effects.Keyboard.Key]
+  fullName.vb: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Item(Colore.Effects.Keyboard.Key)
+  nameWithType: ExtendedCustomKeyboardEffect.Item[Key]
+  nameWithType.vb: ExtendedCustomKeyboardEffect.Item(Key)
+- uid: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Item(System.Int32)
+  name: Item[Int32]
+  href: api/Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.html#Colore_Effects_Keyboard_ExtendedCustomKeyboardEffect_Item_System_Int32_
+  commentId: P:Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Item(System.Int32)
+  name.vb: Item(Int32)
+  fullName: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Item[System.Int32]
+  fullName.vb: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Item(System.Int32)
+  nameWithType: ExtendedCustomKeyboardEffect.Item[Int32]
+  nameWithType.vb: ExtendedCustomKeyboardEffect.Item(Int32)
+- uid: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Item(System.Int32,System.Int32)
+  name: Item[Int32, Int32]
+  href: api/Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.html#Colore_Effects_Keyboard_ExtendedCustomKeyboardEffect_Item_System_Int32_System_Int32_
+  commentId: P:Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Item(System.Int32,System.Int32)
+  name.vb: Item(Int32, Int32)
+  fullName: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Item[System.Int32, System.Int32]
+  fullName.vb: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Item(System.Int32, System.Int32)
+  nameWithType: ExtendedCustomKeyboardEffect.Item[Int32, Int32]
+  nameWithType.vb: ExtendedCustomKeyboardEffect.Item(Int32, Int32)
+- uid: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Item*
+  name: Item
+  href: api/Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.html#Colore_Effects_Keyboard_ExtendedCustomKeyboardEffect_Item_
+  commentId: Overload:Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Item
+  fullName: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Item
+  nameWithType: ExtendedCustomKeyboardEffect.Item
+- uid: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.op_Equality(Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect,System.Object)
+  name: Equality(ExtendedCustomKeyboardEffect, Object)
+  href: api/Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.html#Colore_Effects_Keyboard_ExtendedCustomKeyboardEffect_op_Equality_Colore_Effects_Keyboard_ExtendedCustomKeyboardEffect_System_Object_
+  commentId: M:Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.op_Equality(Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect,System.Object)
+  fullName: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Equality(Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect, System.Object)
+  nameWithType: ExtendedCustomKeyboardEffect.Equality(ExtendedCustomKeyboardEffect, Object)
+- uid: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.op_Equality*
+  name: Equality
+  href: api/Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.html#Colore_Effects_Keyboard_ExtendedCustomKeyboardEffect_op_Equality_
+  commentId: Overload:Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.op_Equality
+  fullName: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Equality
+  nameWithType: ExtendedCustomKeyboardEffect.Equality
+- uid: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.op_Inequality(Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect,System.Object)
+  name: Inequality(ExtendedCustomKeyboardEffect, Object)
+  href: api/Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.html#Colore_Effects_Keyboard_ExtendedCustomKeyboardEffect_op_Inequality_Colore_Effects_Keyboard_ExtendedCustomKeyboardEffect_System_Object_
+  commentId: M:Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.op_Inequality(Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect,System.Object)
+  fullName: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Inequality(Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect, System.Object)
+  nameWithType: ExtendedCustomKeyboardEffect.Inequality(ExtendedCustomKeyboardEffect, Object)
+- uid: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.op_Inequality*
+  name: Inequality
+  href: api/Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.html#Colore_Effects_Keyboard_ExtendedCustomKeyboardEffect_op_Inequality_
+  commentId: Overload:Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.op_Inequality
+  fullName: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Inequality
+  nameWithType: ExtendedCustomKeyboardEffect.Inequality
+- uid: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Set(Colore.Data.Color)
+  name: Set(Color)
+  href: api/Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.html#Colore_Effects_Keyboard_ExtendedCustomKeyboardEffect_Set_Colore_Data_Color_
+  commentId: M:Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Set(Colore.Data.Color)
+  fullName: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Set(Colore.Data.Color)
+  nameWithType: ExtendedCustomKeyboardEffect.Set(Color)
+- uid: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Set*
+  name: Set
+  href: api/Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.html#Colore_Effects_Keyboard_ExtendedCustomKeyboardEffect_Set_
+  commentId: Overload:Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Set
+  fullName: Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.Set
+  nameWithType: ExtendedCustomKeyboardEffect.Set
 - uid: Colore.Effects.Keyboard.Key
   name: Key
   href: api/Colore.Effects.Keyboard.Key.html
@@ -3703,6 +3886,24 @@ references:
   commentId: F:Colore.Effects.Keyboard.KeyboardConstants.MaxDeathstalkerZones
   fullName: Colore.Effects.Keyboard.KeyboardConstants.MaxDeathstalkerZones
   nameWithType: KeyboardConstants.MaxDeathstalkerZones
+- uid: Colore.Effects.Keyboard.KeyboardConstants.MaxExtendedColumns
+  name: MaxExtendedColumns
+  href: api/Colore.Effects.Keyboard.KeyboardConstants.html#Colore_Effects_Keyboard_KeyboardConstants_MaxExtendedColumns
+  commentId: F:Colore.Effects.Keyboard.KeyboardConstants.MaxExtendedColumns
+  fullName: Colore.Effects.Keyboard.KeyboardConstants.MaxExtendedColumns
+  nameWithType: KeyboardConstants.MaxExtendedColumns
+- uid: Colore.Effects.Keyboard.KeyboardConstants.MaxExtendedKeys
+  name: MaxExtendedKeys
+  href: api/Colore.Effects.Keyboard.KeyboardConstants.html#Colore_Effects_Keyboard_KeyboardConstants_MaxExtendedKeys
+  commentId: F:Colore.Effects.Keyboard.KeyboardConstants.MaxExtendedKeys
+  fullName: Colore.Effects.Keyboard.KeyboardConstants.MaxExtendedKeys
+  nameWithType: KeyboardConstants.MaxExtendedKeys
+- uid: Colore.Effects.Keyboard.KeyboardConstants.MaxExtendedRows
+  name: MaxExtendedRows
+  href: api/Colore.Effects.Keyboard.KeyboardConstants.html#Colore_Effects_Keyboard_KeyboardConstants_MaxExtendedRows
+  commentId: F:Colore.Effects.Keyboard.KeyboardConstants.MaxExtendedRows
+  fullName: Colore.Effects.Keyboard.KeyboardConstants.MaxExtendedRows
+  nameWithType: KeyboardConstants.MaxExtendedRows
 - uid: Colore.Effects.Keyboard.KeyboardConstants.MaxKeys
   name: MaxKeys
   href: api/Colore.Effects.Keyboard.KeyboardConstants.html#Colore_Effects_Keyboard_KeyboardConstants_MaxKeys
@@ -3733,6 +3934,12 @@ references:
   commentId: F:Colore.Effects.Keyboard.KeyboardEffectType.CustomKey
   fullName: Colore.Effects.Keyboard.KeyboardEffectType.CustomKey
   nameWithType: KeyboardEffectType.CustomKey
+- uid: Colore.Effects.Keyboard.KeyboardEffectType.ExtendedCustom
+  name: ExtendedCustom
+  href: api/Colore.Effects.Keyboard.KeyboardEffectType.html#Colore_Effects_Keyboard_KeyboardEffectType_ExtendedCustom
+  commentId: F:Colore.Effects.Keyboard.KeyboardEffectType.ExtendedCustom
+  fullName: Colore.Effects.Keyboard.KeyboardEffectType.ExtendedCustom
+  nameWithType: KeyboardEffectType.ExtendedCustom
 - uid: Colore.Effects.Keyboard.KeyboardEffectType.Invalid
   name: Invalid
   href: api/Colore.Effects.Keyboard.KeyboardEffectType.html#Colore_Effects_Keyboard_KeyboardEffectType_Invalid
@@ -5704,6 +5911,18 @@ references:
   commentId: Overload:Colore.IKeyboard.SetEffectAsync
   fullName: Colore.IKeyboard.SetEffectAsync
   nameWithType: IKeyboard.SetEffectAsync
+- uid: Colore.IKeyboard.SetExtendedCustomAsync(Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect)
+  name: SetExtendedCustomAsync(ExtendedCustomKeyboardEffect)
+  href: api/Colore.IKeyboard.html#Colore_IKeyboard_SetExtendedCustomAsync_Colore_Effects_Keyboard_ExtendedCustomKeyboardEffect_
+  commentId: M:Colore.IKeyboard.SetExtendedCustomAsync(Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect)
+  fullName: Colore.IKeyboard.SetExtendedCustomAsync(Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect)
+  nameWithType: IKeyboard.SetExtendedCustomAsync(ExtendedCustomKeyboardEffect)
+- uid: Colore.IKeyboard.SetExtendedCustomAsync*
+  name: SetExtendedCustomAsync
+  href: api/Colore.IKeyboard.html#Colore_IKeyboard_SetExtendedCustomAsync_
+  commentId: Overload:Colore.IKeyboard.SetExtendedCustomAsync
+  fullName: Colore.IKeyboard.SetExtendedCustomAsync
+  nameWithType: IKeyboard.SetExtendedCustomAsync
 - uid: Colore.IKeyboard.SetKeyAsync(Colore.Effects.Keyboard.Key,Colore.Data.Color,System.Boolean)
   name: SetKeyAsync(Key, Color, Boolean)
   href: api/Colore.IKeyboard.html#Colore_IKeyboard_SetKeyAsync_Colore_Effects_Keyboard_Key_Colore_Data_Color_System_Boolean_

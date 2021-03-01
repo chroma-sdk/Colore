@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class SdkDeviceInfo
    ">
-    <meta name="generator" content="docfx 2.55.0.0">
+    <meta name="generator" content="docfx 2.56.6.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -61,11 +61,11 @@
       <div class="container body-content">
         
         <div id="search-results">
-          <div class="search-list"></div>
+          <div class="search-list">Search Results for <span></span></div>
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination"></ul>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
@@ -106,13 +106,13 @@
   
   
   <a id="Colore_Data_SdkDeviceInfo__ctor_" data-uid="Colore.Data.SdkDeviceInfo.#ctor*"></a>
-  <h4 id="Colore_Data_SdkDeviceInfo__ctor_Colore_Data_DeviceType_System_Boolean_" data-uid="Colore.Data.SdkDeviceInfo.#ctor(Colore.Data.DeviceType,System.Boolean)">SdkDeviceInfo(DeviceType, Boolean)</h4>
+  <h4 id="Colore_Data_SdkDeviceInfo__ctor_Colore_Data_DeviceType_System_UInt32_" data-uid="Colore.Data.SdkDeviceInfo.#ctor(Colore.Data.DeviceType,System.UInt32)">SdkDeviceInfo(DeviceType, UInt32)</h4>
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Colore.Data.SdkDeviceInfo.html">SdkDeviceInfo</a> struct.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SdkDeviceInfo(DeviceType type, bool connected)</code></pre>
+    <pre><code class="lang-csharp hljs">public SdkDeviceInfo(DeviceType type, uint connectedCount)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -131,9 +131,9 @@
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
-        <td><span class="parametername">connected</span></td>
-        <td><p>Whether the device is currently connected.</p>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
+        <td><span class="parametername">connectedCount</span></td>
+        <td><p>The number of connected devices for the type.</p>
 </td>
       </tr>
     </tbody>
@@ -142,13 +142,13 @@
   </h3>
   
   
-  <h4 id="Colore_Data_SdkDeviceInfo_Connected" data-uid="Colore.Data.SdkDeviceInfo.Connected">Connected</h4>
-  <div class="markdown level1 summary"><p>Whether this device is connected.</p>
+  <h4 id="Colore_Data_SdkDeviceInfo_ConnectedCount" data-uid="Colore.Data.SdkDeviceInfo.ConnectedCount">ConnectedCount</h4>
+  <div class="markdown level1 summary"><p>The number of connected devices of the given type.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly bool Connected</code></pre>
+    <pre><code class="lang-csharp hljs">public readonly uint ConnectedCount</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -160,11 +160,16 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.uint32">UInt32</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Colore_Data_SdkDeviceInfo_ConnectedCount_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This property is the <code>DWORD</code> field <code>Connected</code> in the SDK type <code>DEVICE_INFO_TYPE</code>.
+In Colore we rename it ConnectedCount to be more descriptive and have the helper
+<a class="xref" href="Colore.Data.SdkDeviceInfo.html#Colore_Data_SdkDeviceInfo_Connected">Connected</a> property for doing boolean checks on connected-ness.</p>
+</div>
   
   
   <h4 id="Colore_Data_SdkDeviceInfo_Type" data-uid="Colore.Data.SdkDeviceInfo.Type">Type</h4>
@@ -186,6 +191,34 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Colore.Data.DeviceType.html">DeviceType</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="Colore_Data_SdkDeviceInfo_Connected_" data-uid="Colore.Data.SdkDeviceInfo.Connected*"></a>
+  <h4 id="Colore_Data_SdkDeviceInfo_Connected" data-uid="Colore.Data.SdkDeviceInfo.Connected">Connected</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether this device is connected.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Connected { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -427,7 +460,8 @@
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>
@@ -441,7 +475,7 @@
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            Copyright © 2015-2020 by <a href="https://github.com/Sharparam">Adam Hellberg</a> and <a href="https://github.com/brandonscott">Brandon Scott</a><br>Generated by <a href="http://dotnet.github.io/docfx/"><strong>DocFX</strong></a>
+            Copyright © 2015-2021 by <a href="https://github.com/Sharparam">Adam Hellberg</a> and <a href="https://github.com/brandonscott">Brandon Scott</a><br>Generated by <a href="http://dotnet.github.io/docfx/"><strong>DocFX</strong></a>
             
           </div>
         </div>
