@@ -58,7 +58,13 @@ GitVersion version = null;
 
 Setup(ctx =>
 {
-    Information("PATH is {0}", EnvironmentVariable("PATH"));
+    var envVars = EnvironmentVariables();
+    Information("Environment variables:");
+    foreach (var kvp in envVars.OrderBy(kvp => kvp.Key))
+    {
+        Information("{0}={1}", kvp.Key, kvp.Value);
+    }
+
     var docFxBranch = EnvironmentVariable("DOCFX_SOURCE_BRANCH_NAME");
     if (docFxBranch != null)
         Information("DocFx branch is {0}", docFxBranch);
