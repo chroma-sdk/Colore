@@ -40,6 +40,15 @@ namespace Colore.Helpers
     internal static class RegistryHelper
     {
         /// <summary>
+        /// Path to a SubKey under "Razer Chroma SDK" in the registry containing information about the SDK.
+        /// </summary>
+        /// <remarks>
+        /// In some version of the SDK, the location of the "Enabled" key changed to be in this SubKey
+        /// under the main key in the registry for the Chroma SDK.
+        /// </remarks>
+        private const string AppsSubKeyPath = "Apps";
+
+        /// <summary>
         /// Logger instance for this class.
         /// </summary>
         private static readonly ILog Log = LogProvider.GetLogger(typeof(RegistryHelper));
@@ -103,9 +112,9 @@ namespace Colore.Helpers
 
                     Log.WarnFormat(
                         "Unknown version component types, please tell a developer: Ma is {0}, Mi is {1}, R is {2}.",
-                        major.GetType(),
-                        minor.GetType(),
-                        revision.GetType());
+                        major?.GetType().ToString() ?? "<NULL>",
+                        minor?.GetType().ToString() ?? "<NULL>",
+                        revision?.GetType().ToString() ?? "<NULL>");
 
                     ver = new SdkVersion(0, 0, 0);
                     return false;
@@ -188,6 +197,19 @@ namespace Colore.Helpers
 
                         var value = key.GetValue("Enable");
 
+                        if (value is null)
+                        {
+                            Log.Debug("'Enable' under main registry subkey was NULL, trying 'Apps' subkey");
+
+                            using (var appsSubKey = key.OpenSubKey(AppsSubKeyPath))
+                            {
+                                if (appsSubKey != null)
+                                {
+                                    value = appsSubKey.GetValue("Enable");
+                                }
+                            }
+                        }
+
                         if (value is int i)
                         {
                             return i == 1;
@@ -196,7 +218,7 @@ namespace Colore.Helpers
                         Log.Warn(
                             "Chroma SDK has changed registry setting format. Please update Colore to latest version.");
 
-                        Log.DebugFormat("New Enabled type: {0}", value.GetType());
+                        Log.DebugFormat("New Enabled type: {0}", value?.GetType().ToString() ?? "<NULL>");
 
                         return true;
                     }
