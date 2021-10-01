@@ -256,7 +256,7 @@ var assemblies = [
       { "name": "Colore.Events.SdkSupportEventArgs", "rp": "Colore_SdkSupportEventArgs.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 55, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Colore.Helpers.ArrayHelper", "rp": "Colore_ArrayHelper.html", "cl": 6, "ucl": 0, "cal": 6, "tl": 60, "ct": "LineCoverage", "mc": "-", "cb": 4, "tb": 4, "lch": [], "bch": [], "hc": [] },
       { "name": "Colore.Helpers.EnvironmentHelper", "rp": "Colore_EnvironmentHelper.html", "cl": 3, "ucl": 0, "cal": 3, "tl": 47, "ct": "LineCoverage", "mc": "-", "cb": 1, "tb": 2, "lch": [], "bch": [], "hc": [] },
-      { "name": "Colore.Helpers.RegistryHelper", "rp": "Colore_RegistryHelper.html", "cl": 12, "ucl": 63, "cal": 75, "tl": 230, "ct": "LineCoverage", "mc": "-", "cb": 3, "tb": 22, "lch": [], "bch": [], "hc": [] },
+      { "name": "Colore.Helpers.RegistryHelper", "rp": "Colore_RegistryHelper.html", "cl": 12, "ucl": 69, "cal": 81, "tl": 252, "ct": "LineCoverage", "mc": "-", "cb": 3, "tb": 42, "lch": [], "bch": [], "hc": [] },
       { "name": "Colore.Helpers.TaskHelper", "rp": "Colore_TaskHelper.html", "cl": 1, "ucl": 0, "cal": 1, "tl": 45, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "Colore.Helpers.UriHelper", "rp": "Colore_UriHelper.html", "cl": 7, "ucl": 0, "cal": 7, "tl": 59, "ct": "LineCoverage", "mc": "-", "cb": 4, "tb": 4, "lch": [], "bch": [], "hc": [] },
       { "name": "Colore.Implementations.ChromaImplementation", "rp": "Colore_ChromaImplementation.html", "cl": 14, "ucl": 55, "cal": 69, "tl": 529, "ct": "LineCoverage", "mc": "-", "cb": 3, "tb": 38, "lch": [], "bch": [], "hc": [] },
