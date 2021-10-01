@@ -12,7 +12,7 @@ environment:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
   github_access_token:
-    secure: REm65Z5Fp9idcP8KKLp06b33/PES+jiRxNAc7ZalS7jHR6i1iCrgxBVcm42Lpvbd
+    secure: sNbY3i/5Yvdl9K+elyCNoCbZj+pdJ9EmeyxPg0KcIY57BlJ6gQ4pwsQKkb45rgoV
 
 cache:
   - tools -> build.cake
@@ -60,14 +60,14 @@ deploy:
   username: Sharparam
   skip_symbols: true
   api_key:
-    secure: REm65Z5Fp9idcP8KKLp06b33/PES+jiRxNAc7ZalS7jHR6i1iCrgxBVcm42Lpvbd
+    secure: sNbY3i/5Yvdl9K+elyCNoCbZj+pdJ9EmeyxPg0KcIY57BlJ6gQ4pwsQKkb45rgoV
   artifact: NuGet
   on:
     appveyor_repo_tag: true
 - provider: GitHub
   description: Automatically created by AppVeyor.
   auth_token:
-    secure: REm65Z5Fp9idcP8KKLp06b33/PES+jiRxNAc7ZalS7jHR6i1iCrgxBVcm42Lpvbd
+    secure: sNbY3i/5Yvdl9K+elyCNoCbZj+pdJ9EmeyxPg0KcIY57BlJ6gQ4pwsQKkb45rgoV
   artifact: NuGet,Archive,OpenCover,Coverage
   draft: true
   on:
@@ -78,7 +78,7 @@ deploy:
   username: Sharparam
   skip_symbols: true
   api_key:
-    secure: REm65Z5Fp9idcP8KKLp06b33/PES+jiRxNAc7ZalS7jHR6i1iCrgxBVcm42Lpvbd
+    secure: sNbY3i/5Yvdl9K+elyCNoCbZj+pdJ9EmeyxPg0KcIY57BlJ6gQ4pwsQKkb45rgoV
   artifact: NuGet
   on:
     branch: develop
