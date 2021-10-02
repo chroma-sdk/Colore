@@ -208,7 +208,7 @@ Task("Test")
         }
         else
         {
-            settings.Logger = new[] { "nunit" };
+            settings.Loggers = new[] { "nunit" };
         }
 
         DotNetCoreTest(testProject, settings);
