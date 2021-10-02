@@ -49,9 +49,9 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: nuget
-        path: 'src/Colore/bin/Release/*.nupkg'
+        path: 'artifacts/nuget/*.nupkg'
     - name: Upload Colore snupkg files to NuGet artifact
       uses: actions/upload-artifact@v2
       with:
         name: nuget
-        path: 'src/Colore/bin/Release/*.snupkg'
+        path: 'artifacts/nuget/*.snupkg'
