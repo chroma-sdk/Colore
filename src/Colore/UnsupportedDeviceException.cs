@@ -27,10 +27,7 @@ namespace Colore
 {
     using System;
     using System.Globalization;
-
-#if NET452 || NETSTANDARD2_1
     using System.Runtime.Serialization;
-#endif
 
     using Colore.Implementations;
 
@@ -42,9 +39,7 @@ namespace Colore
     /// Thrown when an invalid <see cref="Guid" /> is passed to the
     /// constructor of <see cref="GenericDeviceImplementation" />.
     /// </summary>
-#if NET452 || NETSTANDARD2_1
     [Serializable]
-#endif
     public sealed class UnsupportedDeviceException : ColoreException
     {
         /// <summary>
@@ -64,7 +59,6 @@ namespace Colore
             DeviceId = deviceId;
         }
 
-#if NET452 || NETSTANDARD2_1
         /// <summary>
         /// Initializes a new instance of the <see cref="UnsupportedDeviceException" /> class with serialized data.
         /// </summary>
@@ -90,7 +84,6 @@ namespace Colore
 
             DeviceId = new Guid(info.GetString($"{nameof(UnsupportedDeviceException)}.{nameof(DeviceId)}"));
         }
-#endif
 
         /// <summary>
         /// Gets the <see cref="Guid" /> of the device.
@@ -98,7 +91,6 @@ namespace Colore
         [PublicAPI]
         public Guid DeviceId { get; }
 
-#if NET452 || NETSTANDARD2_1
         /// <summary>
         /// When overridden in a derived class, sets the <see cref="SerializationInfo" /> with information about the exception.
         /// </summary>
@@ -122,7 +114,5 @@ namespace Colore
 
             info.AddValue($"{nameof(UnsupportedDeviceException)}.{nameof(DeviceId)}", DeviceId.ToString());
         }
-#endif
     }
-#pragma warning restore CA1032 // Implement standard exception constructors
 }

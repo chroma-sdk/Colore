@@ -27,10 +27,7 @@ namespace Colore.Rest
 {
     using System;
     using System.Net;
-
-#if NET452 || NETSTANDARD2_1
     using System.Runtime.Serialization;
-#endif
 
     using Colore.Api;
     using Colore.Data;
@@ -41,9 +38,7 @@ namespace Colore.Rest
     /// <summary>
     /// Represents an error in the Chroma REST API.
     /// </summary>
-#if NET452 || NETSTANDARD2_1
     [Serializable]
-#endif
     public sealed class RestException : ApiException
     {
         /// <inheritdoc />
@@ -100,7 +95,6 @@ namespace Colore.Rest
             RestData = restData;
         }
 
-#if NET452 || NETSTANDARD2_1
         /// <summary>
         /// Initializes a new instance of the <see cref="RestException" /> class with serialized data.
         /// </summary>
@@ -130,7 +124,6 @@ namespace Colore.Rest
             StatusCode = (HttpStatusCode)info.GetInt32($"{nameof(RestException)}.{nameof(StatusCode)}");
             RestData = info.GetString($"{nameof(RestException)}.{nameof(RestData)}");
         }
-#endif
 
         /// <summary>
         /// Gets the <see cref="Uri" /> called which caused the exception.
@@ -152,7 +145,6 @@ namespace Colore.Rest
         [PublicAPI]
         public string RestData { get; }
 
-#if NET452 || NETSTANDARD2_1
         /// <summary>
         /// When overridden in a derived class, sets the <see cref="SerializationInfo" /> with information about the exception.
         /// </summary>
@@ -183,6 +175,5 @@ namespace Colore.Rest
             info.AddValue($"{nameof(RestException)}.{nameof(StatusCode)}", (int)StatusCode);
             info.AddValue($"{nameof(RestException)}.{nameof(RestData)}", RestData);
         }
-#endif
     }
 }
