@@ -13,5 +13,6 @@
 
   <PropertyGroup>
     <!-- <WarningsAsErrors>8600,8602,8603,8604,8614,8618,8619,8625,8632</WarningsAsErrors> -->
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
   </PropertyGroup>
 </Project>

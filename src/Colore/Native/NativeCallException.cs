@@ -27,10 +27,7 @@ namespace Colore.Native
 {
     using System;
     using System.Globalization;
-
-#if NET452 || NETSTANDARD2_1
     using System.Runtime.Serialization;
-#endif
 
     using Colore.Api;
     using Colore.Data;
@@ -42,9 +39,7 @@ namespace Colore.Native
     /// <summary>
     /// Thrown when a native function returns an erroneous result value.
     /// </summary>
-#if NET452 || NETSTANDARD2_1
     [Serializable]
-#endif
     public sealed class NativeCallException : ApiException
     {
         /// <summary>
@@ -64,7 +59,6 @@ namespace Colore.Native
             Function = function;
         }
 
-#if NET452 || NETSTANDARD2_1
         /// <summary>
         /// Initializes a new instance of the <see cref="NativeCallException" /> class with serialized data.
         /// </summary>
@@ -90,7 +84,6 @@ namespace Colore.Native
 
             Function = info.GetString($"{nameof(NativeCallException)}.{nameof(Function)}");
         }
-#endif
 
         /// <summary>
         /// Gets the name of the native function that was called.
@@ -98,7 +91,6 @@ namespace Colore.Native
         [PublicAPI]
         public string Function { get; }
 
-#if NET452 || NETSTANDARD2_1
         /// <summary>
         /// When overridden in a derived class, sets the <see cref="SerializationInfo" /> with information about the exception.
         /// </summary>
@@ -122,7 +114,5 @@ namespace Colore.Native
 
             info.AddValue($"{nameof(NativeCallException)}.{nameof(Function)}", Function);
         }
-#endif
     }
-#pragma warning restore CA1032 // Implement standard exception constructors
 }

@@ -11,9 +11,6 @@ indent_style = tab
 [*.{csproj,yml,yaml,json,xml,nuspec,toml}]
 indent_size = 2
 
-[packages.config]
-indent_size = 2
-
 [*.md]
 trim_trailing_whitespace = false
 indent_size = 2

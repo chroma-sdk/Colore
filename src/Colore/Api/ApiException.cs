@@ -27,10 +27,7 @@ namespace Colore.Api
 {
     using System;
     using System.ComponentModel;
-
-#if NET452 || NETSTANDARD2_1
     using System.Runtime.Serialization;
-#endif
 
     using Colore.Data;
 
@@ -40,9 +37,7 @@ namespace Colore.Api
     /// <summary>
     /// Thrown when a cal to an API function fails.
     /// </summary>
-#if NET452 || NETSTANDARD2_1
     [Serializable]
-#endif
     public class ApiException : ColoreException
     {
         /// <inheritdoc />
@@ -89,7 +84,6 @@ namespace Colore.Api
             Result = result;
         }
 
-#if NET452 || NETSTANDARD2_1
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiException" /> class with serialized data.
         /// </summary>
@@ -115,7 +109,6 @@ namespace Colore.Api
 
             Result = info.GetInt32($"{nameof(ApiException)}.{nameof(Result)}");
         }
-#endif
 
         /// <summary>
         /// Gets the result code returned by the SDK.
@@ -123,7 +116,6 @@ namespace Colore.Api
         [PublicAPI]
         public int Result { get; }
 
-#if NET452 || NETSTANDARD2_1
         /// <summary>
         /// When overridden in a derived class, sets the <see cref="SerializationInfo" /> with information about the exception.
         /// </summary>
@@ -147,6 +139,5 @@ namespace Colore.Api
 
             info.AddValue($"{nameof(ApiException)}.{nameof(Result)}", Result);
         }
-#endif
     }
 }

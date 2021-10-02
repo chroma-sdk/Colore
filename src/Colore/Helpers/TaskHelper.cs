@@ -35,10 +35,6 @@ namespace Colore.Helpers
         /// <summary>
         /// Gets a "completed task" object.
         /// </summary>
-#if NET452
-        internal static readonly Task CompletedTask = Task.FromResult(0);
-#else
         internal static readonly Task CompletedTask = Task.CompletedTask;
-#endif
     }
 }

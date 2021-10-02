@@ -26,7 +26,6 @@
 namespace Colore.Effects.Keyboard
 {
     using System;
-    using System.Diagnostics;
     using System.Runtime.InteropServices;
 
     using Colore.Data;

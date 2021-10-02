@@ -1,10 +1,8 @@
-#module nuget:?package=Cake.DotNetTool.Module&version=1.0.1
+#addin nuget:?package=Cake.DocFx&version=1.0.0
+#addin nuget:?package=Cake.Codecov&version=1.0.1
 
-#addin nuget:?package=Cake.DocFx&version=0.13.1
-#addin nuget:?package=Cake.Codecov&version=1.0.0
-
-#tool dotnet:?package=GitVersion.Tool&version=5.6.3
-#tool dotnet:?package=dotnet-reportgenerator-globaltool&version=4.8.6
+#tool dotnet:?package=GitVersion.Tool&version=5.7.0
+#tool dotnet:?package=dotnet-reportgenerator-globaltool&version=4.8.13
 #tool nuget:?package=Codecov&version=1.13.0
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -206,11 +204,11 @@ Task("Test")
 
         if (AppVeyor.IsRunningOnAppVeyor)
         {
-            settings.Logger = "AppVeyor";
+            settings.Loggers = new[] { "AppVeyor" };
         }
         else
         {
-            settings.Logger = "nunit";
+            settings.Loggers = new[] { "nunit" };
         }
 
         DotNetCoreTest(testProject, settings);
