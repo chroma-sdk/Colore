@@ -49,6 +49,7 @@ Setup(ctx =>
         Information("DocFx branch is {0}", docFxBranch);
     }
 
+    Information("Configuration: {0}", configuration);
     Information("Reading framework settings");
 
     var xmlValue = XmlPeek(mainProject, "/Project/PropertyGroup/TargetFrameworks");
@@ -103,7 +104,7 @@ Task("Clean")
         Information("Cleaning output directories");
         CleanDirectory("./artifacts");
         CleanDirectory("./publish");
-        DotNetCoreClean(solution);
+        DotNetCoreClean(solution, new DotNetCoreCleanSettings { Configuration = configuration });
         CleanDirectory("./src/Colore.Tests/TestResults");
         CreateDirectory("./artifacts/nuget");
     });
