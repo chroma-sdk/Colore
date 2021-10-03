@@ -26,7 +26,6 @@
 namespace Colore.Effects.Keyboard
 {
     using System;
-    using System.Diagnostics.CodeAnalysis;
     using System.Runtime.InteropServices;
 
     using Colore.Data;
@@ -337,7 +336,6 @@ namespace Colore.Effects.Keyboard
         /// Retrieves the internal backing arrays as multi-dimensional <see cref="Color" /> arrays.
         /// </summary>
         /// <returns>A <see cref="ValueTuple{T1,T2}" /> containing the two arrays.</returns>
-        [SuppressMessage("StyleCop", "SA1008", Justification = "StyleCop not compatible with C# 7 yet.")]
         internal (Color[,] Colors, Color[,] Keys) ToMultiArrays()
         {
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
