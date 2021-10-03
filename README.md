@@ -111,27 +111,51 @@ Other dependencies are installed via NuGet and listed in each project file.
 Building
 --------
 
-Colore supports building for multiple target frameworks.
-At the moment, these are .NET Standard 1.3 and .NET Framework 4.5.1.
-When building the project, DLLs for both frameworks will be generated in the output folders, under the folder names `netstandard1.3` and `net451`.
-Use the ones fitting for your application.
+Colore currently builds for .NET Standard 2.1.
 
-The below examples compiles Colore in Release mode.
+### Visual Studio / Rider
+Open the solution file (`Colore.sln`) in Visual Studio or Rider and build it as you would any other project.
 
-```powershell
-.\build.ps1 -Configuration Release
+### .NET CLI
+You can build Colore from the command line as you would any other .NET project, by running:
+
+```
+dotnet build
 ```
 
-You can also use the "CI" build target to generate the same artifacts made available for each release of Colore.
+(Either from the root of the repo (where `Colore.sln` is) or inside the project folder for Colore.)
 
-```powershell
-.\build.ps1 -Configuration Release -Target CI
+### Cake (CLI)
+
+We use [Cake][] primarily to run the CI builds for Colore, which performs all the tasks necessary for building, testing, and generating other artifacts for the project. You can utilize it as well if you want to replicate any of those tasks.
+
+Note that all Cake commands need to be run from the root of the repository.
+
+First install the needed tools:
+
+```
+dotnet tool restore
+```
+
+(From the root of the repository.)
+
+Then you can run `dotnet cake` from the command line to run the various Cake tasks. By default it will run tasks to build and test the project.
+
+You can use the `--configuration` parameter to build it in release mode:
+
+```
+dotnet cake --configuration Release
+```
+
+Or use the "CI" build target to generate the same artifacts made available for each release of Colore:
+
+```
+dotnet cake --configuration Release --target CI
 ```
 
 You will find the resulting artifact files under the `artifacts` folder in the root of the repository.
 
-Note that the above commands are executed with [PowerShell][ps]. If you are building on a Linux system or macOS,
-use the `build.sh` script in place of `build.ps1` (you may have to make it executable first with `chmod +x build.sh`).
+In order to run the `Docs` task from the Cake script, you need to have installed [DocFx][] locally on your system.
 
 Native Documentation
 --------------------
@@ -208,6 +232,9 @@ There may be others we are unaware of, so please let us know if there are any ot
 [colorelogo]: https://files.sharparam.com/2017/10/31/colore-logo.png
 [colore-wpf]: https://github.com/chroma-sdk/Colore.Wpf
 [colore-winforms]: https://github.com/chroma-sdk/Colore.WinForms
+
+[cake]: https://cakebuild.net
+[docfx]: https://dotnet.github.io/docfx/
 
 [rzdev]: https://developer.razer.com/chroma/
 [chroma-sdk-tools]: https://developer.razer.com/works-with-chroma/download/
