@@ -2,637 +2,637 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/CODE_OF_CONDUCT.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/CONTRIBUTING.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/README.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Api.ApiException.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Api.IChromaApi.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Api.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.ColoreException.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.ColoreProvider.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Data.ApiDeviceType.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Data.AppInfo.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Data.Author.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Data.Category.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Data.Color.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Data.Constants.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Data.DeviceInfo.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Data.Devices.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Data.DeviceType.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Data.Result.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Data.SdkDeviceInfo.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Data.SdkVersion.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Data.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.ChromaLink.ChromaLinkConstants.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.ChromaLink.ChromaLinkEffectType.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.ChromaLink.CustomChromaLinkEffect.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.ChromaLink.StaticChromaLinkEffect.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.ChromaLink.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.Generic.EffectType.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.Generic.NoneEffect.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.Generic.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.Headset.CustomHeadsetEffect.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.Headset.HeadsetConstants.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.Headset.HeadsetEffectType.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.Headset.StaticHeadsetEffect.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.Headset.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.Keyboard.CustomKeyboardEffect.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.Keyboard.DeathstalkerGridEffect.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.Keyboard.ExtendedCustomKeyboardEffect.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.Keyboard.Key.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.Keyboard.KeyboardConstants.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.Keyboard.KeyboardEffectType.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.Keyboard.StaticKeyboardEffect.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.Keyboard.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.Keypad.CustomKeypadEffect.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.Keypad.KeypadConstants.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.Keypad.KeypadEffectType.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.Keypad.StaticKeypadEffect.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.Keypad.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.Mouse.CustomMouseEffect.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.Mouse.GridLed.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.Mouse.Led.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.Mouse.MouseConstants.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.Mouse.MouseEffectType.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.Mouse.StaticMouseEffect.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.Mouse.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.Mousepad.CustomMousepadEffect.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.Mousepad.MousepadConstants.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.Mousepad.MousepadEffectType.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.Mousepad.StaticMousepadEffect.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Effects.Mousepad.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Events.ApplicationStateEventArgs.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Events.DeviceAccessEventArgs.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Events.SdkSupportEventArgs.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Events.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.IChroma.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.IChromaLink.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.IDevice.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.IGenericDevice.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.IHeadset.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.IKeyboard.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.IKeypad.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.IMouse.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.IMousepad.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Logging.ILogProvider.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Logging.Logger.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Logging.LogLevel.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Logging.LogProvider.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Logging.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Native.INativeSdkMethods.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Native.NativeApi.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Native.NativeCallException.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Native.NativeSdkMethods.CreateChromaLinkEffectDelegate.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Native.NativeSdkMethods.CreateEffectDelegate.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Native.NativeSdkMethods.CreateHeadsetEffectDelegate.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Native.NativeSdkMethods.CreateKeyboardEffectDelegate.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Native.NativeSdkMethods.CreateKeypadEffectDelegate.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Native.NativeSdkMethods.CreateMouseEffectDelegate.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Native.NativeSdkMethods.CreateMousepadEffectDelegate.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Native.NativeSdkMethods.DeleteEffectDelegate.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Native.NativeSdkMethods.InitDelegate.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Native.NativeSdkMethods.QueryDeviceDelegate.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Native.NativeSdkMethods.RegisterEventNotificationDelegate.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Native.NativeSdkMethods.SetEffectDelegate.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Native.NativeSdkMethods.UnInitDelegate.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Native.NativeSdkMethods.UnregisterEventNotificationDelegate.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Native.NativeSdkMethods.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Native.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Rest.IRestClient.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Rest.IRestResponse-1.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Rest.RestException.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.Rest.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.UnsupportedDeviceException.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/Colore.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/api/index.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/articles/getting-started.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/articles/intro.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://chroma-sdk.github.io/Colore/docs/index.html</loc>
-    <lastmod>2021-10-02T02:31:00+00:00</lastmod>
+    <lastmod>2021-10-03T01:18:28+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
