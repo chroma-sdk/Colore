@@ -31,7 +31,7 @@
     <Title>Colore</Title>
     <Description>A C#/.NET library for interacting with Razer's Chroma SDK.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/CoraleStudios/Colore</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/chroma-sdk/Colore</PackageProjectUrl>
     <PackageIcon>icon.png</PackageIcon>
     <PackageIconUrl>https://files.sharparam.com/2017/10/31/colore.png</PackageIconUrl>
     <PackageTags>razer;chroma;corale;led;light;peripheral;gaming;rgb;wrapper</PackageTags>
