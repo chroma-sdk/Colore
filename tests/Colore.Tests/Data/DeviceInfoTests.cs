@@ -189,9 +189,11 @@ namespace Colore.Tests.Data
         }
 
         [Test]
-        public void ShouldHaveZeroHashCodeOnDefaultInstance()
+        public void ShouldHaveEqualHashCodeOnDefaultInstances()
         {
-            Assert.Zero(new DeviceInfo().GetHashCode());
+            var a = new DeviceInfo();
+            var b = new DeviceInfo();
+            Assert.AreEqual(a.GetHashCode(), b.GetHashCode());
         }
     }
 }
