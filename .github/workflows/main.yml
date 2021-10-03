@@ -212,6 +212,7 @@ jobs:
         branch: gh-pages
         folder: src/docs
         git-config-name: GitHub Actions
+        git-config-email: github-actions@noreply.github.com
         target-folder: ${{ steps.dest.outputs.docs_dest }}
         commit-message: |
           [AUTOMATED] Documentation update
@@ -226,6 +227,7 @@ jobs:
         branch: gh-pages
         folder: src/coverage
         git-config-name: GitHub Actions
+        git-config-email: github-actions@noreply.github.com
         target-folder: ${{ steps.dest.outputs.coverage_dest }}
         commit-message: |
           [AUTOMATED] Coverage update
