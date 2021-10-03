@@ -14,14 +14,10 @@
 
 <p align="center">A powerful and elegant C# library for Razer Chroma's SDK.</p>
 
-| | GitHub | AppVeyor | Travis |
-|-|-|-|-|
-| [**`master`**][master] | [![Workflow status][gha-master-badge]][gha-master] | [![Build status][appveyor-master-badge]][appveyor-master-status] | [![TravisCI Status][travis-master-badge]][travis-master-status] |
-| [**`develop`**][develop] | [![Workflow status][gha-develop-badge]][gha-develop] | [![Build status][appveyor-develop-badge]][appveyor-develop-status] | [![TravisCI Status][travis-develop-badge]][travis-develop-status] |
-
-| [`master`][master] | [![Test status][test-master-badge]][test-master-status] | [![Codecov coverage][codecov-master-badge]][codecov-master] | [![CodeFactor][codefactor-master-badge]][codefactor-master] |
-|-|-|-|-|
-| [**`develop`**][develop] | [![Test status][test-develop-badge]][test-develop-status] | [![Codecov coverage][codecov-develop-badge]][codecov-develop] | [![CodeFactor][codefactor-develop-badge]][codefactor-develop] |
+| Branch                   | CI | Coverage | Codefactor |
+|--------------------------|----|----------|------------|
+| [**`master`**][master]   | [![Workflow status][gha-master-badge]][gha-master] | [![Codecov coverage][codecov-master-badge]][codecov-master] | [![CodeFactor][codefactor-master-badge]][codefactor-master] |
+| [**`develop`**][develop] | [![Workflow status][gha-develop-badge]][gha-develop] | [![Codecov coverage][codecov-develop-badge]][codecov-develop] | [![CodeFactor][codefactor-develop-badge]][codefactor-develop] |
 
 Getting started
 ---------------
@@ -192,12 +188,6 @@ There may be others we are unaware of, so please let us know if there are any ot
 
 [gha-develop]: https://github.com/chroma-sdk/Colore/actions?query=workflow%3ACI+branch%3Adevelop
 [gha-develop-badge]: https://github.com/chroma-sdk/Colore/workflows/CI/badge.svg?branch=develop
-[appveyor-develop-status]: https://ci.appveyor.com/project/chroma-sdk/colore/branch/develop
-[appveyor-develop-badge]: https://ci.appveyor.com/api/projects/status/on4kfnasv564yhh9/branch/develop?svg=true
-[travis-develop-status]: https://travis-ci.org/chroma-sdk/Colore
-[travis-develop-badge]: https://travis-ci.org/chroma-sdk/Colore.svg?branch=develop
-[test-develop-status]: https://ci.appveyor.com/project/chroma-sdk/colore/branch/develop/tests
-[test-develop-badge]: https://img.shields.io/appveyor/tests/chroma-sdk/Colore/develop.svg
 [codecov-develop]: https://codecov.io/gh/chroma-sdk/Colore/branch/develop
 [codecov-develop-badge]: https://codecov.io/gh/chroma-sdk/Colore/branch/develop/graph/badge.svg
 [codefactor-develop]: https://www.codefactor.io/repository/github/chroma-sdk/colore/overview/develop
@@ -205,19 +195,11 @@ There may be others we are unaware of, so please let us know if there are any ot
 
 [gha-master]: https://github.com/chroma-sdk/Colore/actions?query=workflow%3ACI+branch%3Amaster
 [gha-master-badge]: https://github.com/chroma-sdk/Colore/workflows/CI/badge.svg?branch=master
-[appveyor-master-status]: https://ci.appveyor.com/project/chroma-sdk/colore/branch/master
-[appveyor-master-badge]: https://ci.appveyor.com/api/projects/status/on4kfnasv564yhh9/branch/master?svg=true
-[travis-master-status]: https://travis-ci.org/chroma-sdk/Colore
-[travis-master-badge]: https://travis-ci.org/chroma-sdk/Colore.svg?branch=master
-[test-master-status]: https://ci.appveyor.com/project/chroma-sdk/colore/branch/master/tests
-[test-master-badge]: https://img.shields.io/appveyor/tests/chroma-sdk/Colore/master.svg
 [codecov-master]: https://codecov.io/gh/chroma-sdk/Colore
 [codecov-master-badge]: https://codecov.io/gh/chroma-sdk/Colore/branch/master/graph/badge.svg
 [codefactor-master]: https://www.codefactor.io/repository/github/chroma-sdk/colore/overview/master
 [codefactor-master-badge]: https://www.codefactor.io/repository/github/chroma-sdk/colore/badge/master
 
-[gitter]: https://gitter.im/chroma-sdk/Colore
-[gitterbadge]: https://badges.gitter.im/Join%20Chat.svg
 [discord]: https://discord.gg/4ysuMYK
 [discordbadge]: https://img.shields.io/discord/342761229544194048.svg?label=discord&logo=discord
 [discussions]: https://github.com/chroma-sdk/Colore/discussions
