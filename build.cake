@@ -125,7 +125,7 @@ Task("Build")
                 .Append($"/p:NuGetVersion={version.NuGetVersionV2}")
         };
 
-        DotNetCoreBuild(project, settings);
+        DotNetCoreBuild(solution, settings);
     });
 
 Task("Test")
