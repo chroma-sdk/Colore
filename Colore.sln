@@ -12,6 +12,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Colore", "src\Colore\Colore
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Colore.Tests", "tests\Colore.Tests\Colore.Tests.csproj", "{D9D36C7F-F9F4-4A0D-808E-B1699D51B532}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D817AD1B-C466-4B58-B874-567E0CDDC732}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{76884D60-6CB0-4682-8FB4-5576C7EB9439}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,5 +36,9 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9FD6D8F9-6467-4AE6-A09F-8DB8B3767BBC}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EA352740-5C39-4964-AFB4-749333FFB509} = {D817AD1B-C466-4B58-B874-567E0CDDC732}
+		{D9D36C7F-F9F4-4A0D-808E-B1699D51B532} = {76884D60-6CB0-4682-8FB4-5576C7EB9439}
 	EndGlobalSection
 EndGlobal
