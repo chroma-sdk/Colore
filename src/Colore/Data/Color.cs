@@ -170,7 +170,7 @@ namespace Colore.Data
         /// <param name="right">Right operand, an <see cref="object" />.</param>
         /// <returns><c>true</c> if the two instances are equal, <c>false</c> otherwise.</returns>
         [Pure]
-        public static bool operator ==(Color left, object right)
+        public static bool operator ==(Color left, object? right)
         {
             return left.Equals(right);
         }
@@ -182,7 +182,7 @@ namespace Colore.Data
         /// <param name="right">Right operand, an <see cref="object" />.</param>
         /// <returns><c>true</c> if the two instances are not equal, <c>false</c> otherwise.</returns>
         [Pure]
-        public static bool operator !=(Color left, object right)
+        public static bool operator !=(Color left, object? right)
         {
             return !left.Equals(right);
         }
@@ -223,7 +223,7 @@ namespace Colore.Data
         /// </summary>
         /// <param name="other">The <see cref="object" /> to check equality against.</param>
         /// <returns><c>true</c> if the two are equal, <c>false</c> otherwise.</returns>
-        public override bool Equals(object other)
+        public override bool Equals(object? other)
         {
             if (other is null)
                 return false;

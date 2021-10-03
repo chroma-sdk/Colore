@@ -47,7 +47,7 @@ namespace Colore.Tests.Rest.Data
         {
             // ReSharper disable once AssignNullToNotNullAttribute
             // ReSharper disable once ObjectCreationAsStatement
-            Assert.Throws<ArgumentNullException>(() => new EffectGroup(null));
+            Assert.Throws<ArgumentNullException>(() => new EffectGroup(null!));
         }
     }
 }

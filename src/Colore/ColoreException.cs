@@ -52,7 +52,7 @@ namespace Colore
         /// </summary>
         /// <param name="message">Message describing the exception.</param>
         [PublicAPI]
-        public ColoreException(string message)
+        public ColoreException(string? message)
             : base(message)
         {
         }
@@ -63,7 +63,7 @@ namespace Colore
         /// </summary>
         /// <param name="message">Exception message.</param>
         /// <param name="innerException">Inner exception object.</param>
-        public ColoreException(string message, Exception innerException)
+        public ColoreException(string? message, Exception? innerException)
             : base(message, innerException)
         {
         }

@@ -100,7 +100,7 @@ namespace Colore.Tests.Data
 
             // ReSharper disable once ObjectCreationAsStatement
             var ex = Assert.Throws<ArgumentException>(() => new AppInfo(title, "test", "test", "test", Category.Game));
-            Assert.AreEqual(nameof(AppInfo.Title).ToLowerInvariant(), ex.ParamName);
+            Assert.AreEqual(nameof(AppInfo.Title).ToLowerInvariant(), ex?.ParamName);
         }
 
         [Test]
@@ -110,7 +110,7 @@ namespace Colore.Tests.Data
 
             // ReSharper disable once ObjectCreationAsStatement
             var ex = Assert.Throws<ArgumentException>(() => new AppInfo("test", desc, "test", "test", Category.Game));
-            Assert.AreEqual(nameof(AppInfo.Description).ToLowerInvariant(), ex.ParamName);
+            Assert.AreEqual(nameof(AppInfo.Description).ToLowerInvariant(), ex?.ParamName);
         }
     }
 }

@@ -265,7 +265,7 @@ namespace Colore.Effects.Mouse
         /// <param name="left">The left operand, an instance of <see cref="CustomMouseEffect" />.</param>
         /// <param name="right">The right operand, any type of object.</param>
         /// <returns><c>true</c> if the two objects are equal, otherwise <c>false</c>.</returns>
-        public static bool operator ==(CustomMouseEffect left, object right)
+        public static bool operator ==(CustomMouseEffect left, object? right)
         {
             return left.Equals(right);
         }
@@ -277,7 +277,7 @@ namespace Colore.Effects.Mouse
         /// <param name="left">The left operand, an instance of <see cref="CustomMouseEffect" />.</param>
         /// <param name="right">The right operand, any type of object.</param>
         /// <returns><c>true</c> if the two objects are not equal, otherwise <c>false</c>.</returns>
-        public static bool operator !=(CustomMouseEffect left, object right)
+        public static bool operator !=(CustomMouseEffect left, object? right)
         {
             return !left.Equals(right);
         }
@@ -331,10 +331,7 @@ namespace Colore.Effects.Mouse
         /// and represent the same value; otherwise, <c>false</c>.
         /// </returns>
         /// <param name="obj">Another object to compare to. </param>
-        public override bool Equals(object obj)
-        {
-            return !(obj is null) && obj is CustomMouseEffect custom && Equals(custom);
-        }
+        public override bool Equals(object? obj) => obj is CustomMouseEffect custom && Equals(custom);
 
         /// <inheritdoc />
         /// <summary>

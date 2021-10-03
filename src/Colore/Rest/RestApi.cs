@@ -105,7 +105,7 @@ namespace Colore.Rest
         /// <returns>An object representing the progress of this asynchronous task.</returns>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="info" /> is <c>null</c>.</exception>
         /// <exception cref="RestException">Thrown if there is an error calling the REST API.</exception>
-        public async Task InitializeAsync(AppInfo info)
+        public async Task InitializeAsync(AppInfo? info)
         {
             if (info == null)
                 throw new ArgumentNullException(nameof(info));

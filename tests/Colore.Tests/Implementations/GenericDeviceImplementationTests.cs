@@ -41,7 +41,9 @@ namespace Colore.Tests.Implementations
     [SuppressMessage("ReSharper", "ObjectCreationAsStatement")]
     public class GenericDeviceImplementationTests
     {
-        private Mock<IChromaApi> _api;
+        // Safe to suppress null warning here since the `Setup` method acts
+        // like a constructor.
+        private Mock<IChromaApi> _api = null!;
 
         [SetUp]
         public void Setup()
@@ -67,7 +69,7 @@ namespace Colore.Tests.Implementations
         [Test]
         public void ShouldThrowWhenConstructedWithNullApi()
         {
-            Assert.Throws<ArgumentNullException>(() => new GenericDeviceImplementation(Devices.Core, null));
+            Assert.Throws<ArgumentNullException>(() => new GenericDeviceImplementation(Devices.Core, null!));
         }
 
         [Test]

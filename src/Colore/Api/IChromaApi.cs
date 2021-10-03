@@ -44,7 +44,7 @@ namespace Colore.Api
         /// </summary>
         /// <param name="info">Information about the application.</param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
-        Task InitializeAsync(AppInfo info);
+        Task InitializeAsync(AppInfo? info);
 
         /// <summary>
         /// Uninitializes the Chroma SDK.

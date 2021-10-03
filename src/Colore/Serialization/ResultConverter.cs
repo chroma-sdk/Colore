@@ -50,8 +50,15 @@ namespace Colore.Serialization
         /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
         /// <param name="value">The <see cref="Result" /> value.</param>
         /// <param name="serializer">The calling serializer.</param>
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
         {
+            if (value is null)
+            {
+                writer.WriteNull();
+
+                return;
+            }
+
             writer.WriteValue(((Result)value).Value);
         }
 
@@ -67,7 +74,7 @@ namespace Colore.Serialization
         public override object ReadJson(
             JsonReader reader,
             Type objectType,
-            object existingValue,
+            object? existingValue,
             JsonSerializer serializer)
         {
             var token = JToken.Load(reader);
@@ -82,7 +89,13 @@ namespace Colore.Serialization
 
                 case JTokenType.Object:
                     var obj = (JObject)token;
-                    return new Result((int)obj["Value"]);
+                    var value = obj["Value"];
+                    if (value is null)
+                    {
+                        throw new JsonSerializationException("Cannot deserialize null result value");
+                    }
+
+                    return new Result((int)value);
             }
 
             throw new InvalidOperationException("Only integers and Result objects can be converted to Result");

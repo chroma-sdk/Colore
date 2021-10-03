@@ -242,7 +242,7 @@ namespace Colore.Effects.Keypad
         /// <param name="left">The left operand, an instance of <see cref="CustomKeypadEffect" />.</param>
         /// <param name="right">The right operand, any type of object.</param>
         /// <returns><c>true</c> if the two objects are equal, otherwise <c>false</c>.</returns>
-        public static bool operator ==(CustomKeypadEffect left, object right)
+        public static bool operator ==(CustomKeypadEffect left, object? right)
         {
             return left.Equals(right);
         }
@@ -254,7 +254,7 @@ namespace Colore.Effects.Keypad
         /// <param name="left">The left operand, an instance of <see cref="CustomKeypadEffect" />.</param>
         /// <param name="right">The right operand, any type of object.</param>
         /// <returns><c>true</c> if the two objects are not equal, otherwise <c>false</c>.</returns>
-        public static bool operator !=(CustomKeypadEffect left, object right)
+        public static bool operator !=(CustomKeypadEffect left, object? right)
         {
             return !left.Equals(right);
         }
@@ -318,10 +318,7 @@ namespace Colore.Effects.Keypad
         /// and represent the same value; otherwise, <c>false</c>.
         /// </returns>
         /// <param name="obj">Another object to compare to. </param>
-        public override bool Equals(object obj)
-        {
-            return !(obj is null) && obj is CustomKeypadEffect custom && Equals(custom);
-        }
+        public override bool Equals(object? obj) => obj is CustomKeypadEffect custom && Equals(custom);
 
         /// <inheritdoc />
         /// <summary>

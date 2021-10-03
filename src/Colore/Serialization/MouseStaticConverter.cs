@@ -49,9 +49,21 @@ namespace Colore.Serialization
         /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
         /// <param name="value">The <see cref="StaticMouseEffect" /> value.</param>
         /// <param name="serializer">The calling serializer.</param>
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
         {
-            var effect = (StaticMouseEffect)value;
+            if (value is null)
+            {
+                writer.WriteNull();
+
+                return;
+            }
+
+            if (value is not StaticMouseEffect effect)
+            {
+                throw new JsonSerializationException(
+                    $"{nameof(MouseStaticConverter)} only supports objects of type {nameof(StaticMouseEffect)}");
+            }
+
             var data = new EffectData(MouseEffectType.Static, effect.Color);
             serializer.Serialize(writer, data);
         }
@@ -60,7 +72,7 @@ namespace Colore.Serialization
         public override object ReadJson(
             JsonReader reader,
             Type objectType,
-            object existingValue,
+            object? existingValue,
             JsonSerializer serializer)
         {
             throw new NotSupportedException("Only writing of mouse Static objects is supported.");

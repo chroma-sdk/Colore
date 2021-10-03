@@ -243,7 +243,7 @@ namespace Colore.Effects.Keyboard
         /// <param name="left">The left operand, an instance of <see cref="ExtendedCustomKeyboardEffect" />.</param>
         /// <param name="right">The right operand, any type of object.</param>
         /// <returns><c>true</c> if the two objects are equal, otherwise <c>false</c>.</returns>
-        public static bool operator ==(ExtendedCustomKeyboardEffect left, object right)
+        public static bool operator ==(ExtendedCustomKeyboardEffect left, object? right)
         {
             return left.Equals(right);
         }
@@ -255,7 +255,7 @@ namespace Colore.Effects.Keyboard
         /// <param name="left">The left operand, an instance of <see cref="ExtendedCustomKeyboardEffect" />.</param>
         /// <param name="right">The right operand, any type of object.</param>
         /// <returns><c>true</c> if the two objects are not equal, otherwise <c>false</c>.</returns>
-        public static bool operator !=(ExtendedCustomKeyboardEffect left, object right)
+        public static bool operator !=(ExtendedCustomKeyboardEffect left, object? right)
         {
             return !left.Equals(right);
         }
@@ -308,7 +308,7 @@ namespace Colore.Effects.Keyboard
         /// and represent the same value; otherwise, <c>false</c>.
         /// </returns>
         /// <param name="obj">Another object to compare to. </param>
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (obj is null)
                 return false;

@@ -52,15 +52,13 @@ namespace Colore.Tests.Helpers
         [Test]
         public void ShouldThrowOnNullBaseUri()
         {
-            // ReSharper disable once AssignNullToNotNullAttribute
-            Assert.Throws<ArgumentNullException>(() => ((Uri)null).Append(new Uri("myresource", UriKind.Relative)));
+            Assert.Throws<ArgumentNullException>(() => ((Uri)null!).Append(new Uri("myresource", UriKind.Relative)));
         }
 
         [Test]
         public void ShouldThrowOnNullResource()
         {
-            // ReSharper disable once AssignNullToNotNullAttribute
-            Assert.Throws<ArgumentNullException>(() => new Uri("http://example.com").Append(null));
+            Assert.Throws<ArgumentNullException>(() => new Uri("http://example.com").Append(null!));
         }
     }
 }

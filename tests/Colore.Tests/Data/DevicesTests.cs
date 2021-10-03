@@ -43,7 +43,9 @@ namespace Colore.Tests.Data
 
             foreach (var info in infos)
             {
-                var guid = (Guid)info.GetValue(null);
+                var value = info.GetValue(null);
+                Assert.NotNull(value);
+                var guid = (Guid)value!;
                 Assert.True(Devices.IsValidId(guid), $"Device {info.Name} should validate but does not");
             }
         }

@@ -49,9 +49,21 @@ namespace Colore.Serialization
         /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
         /// <param name="value">The <see cref="CustomChromaLinkEffect" /> value.</param>
         /// <param name="serializer">The calling serializer.</param>
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
         {
-            var effect = (CustomChromaLinkEffect)value;
+            if (value is null)
+            {
+                writer.WriteNull();
+
+                return;
+            }
+
+            if (value is not CustomChromaLinkEffect effect)
+            {
+                throw new JsonSerializationException(
+                    $"{nameof(ChromaLinkCustomConverter)} only supports objects of type {nameof(CustomChromaLinkEffect)}");
+            }
+
             var data = new EffectData(ChromaLinkEffectType.Custom, effect.Colors);
             serializer.Serialize(writer, data);
         }
@@ -60,11 +72,9 @@ namespace Colore.Serialization
         public override object ReadJson(
             JsonReader reader,
             Type objectType,
-            object existingValue,
-            JsonSerializer serializer)
-        {
+            object? existingValue,
+            JsonSerializer serializer) =>
             throw new NotSupportedException("Only writing of Chroma Link Custom objects is supported.");
-        }
 
         /// <inheritdoc />
         public override bool CanConvert(Type objectType) => objectType == typeof(CustomChromaLinkEffect);

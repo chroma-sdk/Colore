@@ -119,26 +119,12 @@ namespace Colore.Data
         /// <returns>
         /// <c>true</c> if <paramref name="obj" /> and this instance are the same type and represent the same value; otherwise, <c>false</c>.
         /// </returns>
-        public override bool Equals(object obj)
-        {
-            return !(obj is null) && obj is DeviceInfo info && Equals(info);
-        }
+        public override bool Equals(object? obj) => obj is DeviceInfo info && Equals(info);
 
         /// <summary>
         /// Returns the hash code for this instance.
         /// </summary>
         /// <returns>A 32-bit signed integer that is the hash code for this instance.</returns>
-        public override int GetHashCode()
-        {
-            unchecked
-            {
-                var hashCode = Id.GetHashCode();
-                hashCode = (hashCode * 397) ^ (int)Type;
-                hashCode = (hashCode * 397) ^ Connected.GetHashCode();
-                hashCode = (hashCode * 397) ^ (Name?.GetHashCode(StringComparison.InvariantCulture) ?? 0);
-                hashCode = (hashCode * 397) ^ (Description?.GetHashCode(StringComparison.InvariantCulture) ?? 0);
-                return hashCode;
-            }
-        }
+        public override int GetHashCode() => HashCode.Combine(Id, Type, Connected, Name, Description);
     }
 }

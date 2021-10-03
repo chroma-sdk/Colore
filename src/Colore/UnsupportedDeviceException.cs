@@ -53,7 +53,7 @@ namespace Colore
         /// </summary>
         /// <param name="deviceId">The <see cref="Guid" /> of the device.</param>
         /// <param name="innerException">Inner exception object.</param>
-        public UnsupportedDeviceException(Guid deviceId, Exception innerException = null)
+        public UnsupportedDeviceException(Guid deviceId, Exception? innerException = null)
             : base(string.Format(CultureInfo.InvariantCulture, MessageTemplate, deviceId), innerException)
         {
             DeviceId = deviceId;

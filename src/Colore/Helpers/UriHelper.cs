@@ -42,12 +42,12 @@ namespace Colore.Helpers
         /// <returns>
         /// A new <see cref="Uri" /> with <paramref name="resource" /> appended to <paramref name="uri" />.
         /// </returns>
-        internal static Uri Append([NotNull] this Uri uri, [NotNull] Uri resource)
+        internal static Uri Append(this Uri uri, Uri resource)
         {
-            if (uri == null)
+            if (uri is null)
                 throw new ArgumentNullException(nameof(uri));
 
-            if (resource == null)
+            if (resource is null)
                 throw new ArgumentNullException(nameof(resource));
 
             var left = uri.ToString().TrimEnd('/');

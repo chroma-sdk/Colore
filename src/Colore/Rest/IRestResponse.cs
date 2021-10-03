@@ -49,21 +49,18 @@ namespace Colore.Rest
         /// <summary>
         /// Gets the body content as a <see cref="string" />, or <c>null</c> if no content.
         /// </summary>
-        [CanBeNull]
-        string Content { get; }
+        string? Content { get; }
 
         /// <summary>
         /// Gets the data returned from the request.
         /// </summary>
-        [CanBeNull]
-        TData Data { get; }
+        TData? Data { get; }
 
         /// <summary>
         /// Deserializes the response content into the specified type.
         /// </summary>
         /// <typeparam name="T">The type to deserialize into.</typeparam>
         /// <returns>An instance of <typeparamref name="T" />.</returns>
-        [CanBeNull]
-        T Deserialize<T>();
+        T? Deserialize<T>();
     }
 }

@@ -49,8 +49,15 @@ namespace Colore.Serialization
         /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
         /// <param name="value">The <see cref="DeathstalkerGridEffect" /> value.</param>
         /// <param name="serializer">The calling serializer.</param>
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
         {
+            if (value is null)
+            {
+                writer.WriteNull();
+
+                return;
+            }
+
             var effect = (DeathstalkerGridEffect)value;
             var colors = effect.ToMultiArray();
             var data = new EffectData(KeyboardEffectType.Custom, colors);
@@ -61,7 +68,7 @@ namespace Colore.Serialization
         public override object ReadJson(
             JsonReader reader,
             Type objectType,
-            object existingValue,
+            object? existingValue,
             JsonSerializer serializer)
         {
             throw new NotSupportedException("Only writing of mousepad Custom objects is supported.");

@@ -123,7 +123,7 @@ namespace Colore.Effects.Mouse
         /// <returns>
         /// <c>true</c> if <paramref name="other" /> and this instance are the same type and represent the same value; otherwise, <c>false</c>.
         /// </returns>
-        public override bool Equals(object other)
+        public override bool Equals(object? other)
         {
             if (other is null)
                 return false;

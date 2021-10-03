@@ -99,21 +99,20 @@ namespace Colore.Rest
         /// <param name="resource">Resource path.</param>
         /// <param name="data">Request data.</param>
         /// <returns>An instance of <see cref="IRestResponse{TData}"/>.</returns>
-        public async Task<IRestResponse<T>> PostAsync<T>(string resource, object data)
+        public async Task<IRestResponse<T>> PostAsync<T>(string resource, object? data)
         {
             var json = data == null ? null : JsonConvert.SerializeObject(data);
-            using (var content = json == null
+            using var content = json == null
                 ? null
-                : new StringContent(json, Encoding.UTF8, "application/json"))
-            {
-                var uri = CreateUri(resource);
+                : new StringContent(json, Encoding.UTF8, "application/json");
 
-                Log.TraceFormat("POSTing {0} to {1}", json, uri);
+            var uri = CreateUri(resource);
 
-                var response = await _httpClient.PostAsync(uri, content).ConfigureAwait(false);
-                var body = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                return new RestResponse<T>(response.StatusCode, body);
-            }
+            Log.TraceFormat("POSTing {0} to {1}", json, uri);
+
+            var response = await _httpClient.PostAsync(uri, content).ConfigureAwait(false);
+            var body = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            return new RestResponse<T>(response.StatusCode, body);
         }
 
         /// <inheritdoc />
@@ -136,17 +135,16 @@ namespace Colore.Rest
         /// <param name="resource">Resource path.</param>
         /// <param name="data">Request data.</param>
         /// <returns>An instance of <see cref="IRestResponse{TData}" />.</returns>
-        public async Task<IRestResponse<T>> PutAsync<T>(string resource, object data)
+        public async Task<IRestResponse<T>> PutAsync<T>(string resource, object? data)
         {
-            using (var content = data == null
+            using var content = data == null
                 ? null
-                : new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json"))
-            {
-                var uri = CreateUri(resource);
-                var response = await _httpClient.PutAsync(uri, content).ConfigureAwait(false);
-                var body = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                return new RestResponse<T>(response.StatusCode, body);
-            }
+                : new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
+
+            var uri = CreateUri(resource);
+            var response = await _httpClient.PutAsync(uri, content).ConfigureAwait(false);
+            var body = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            return new RestResponse<T>(response.StatusCode, body);
         }
 
         /// <inheritdoc />
@@ -172,7 +170,7 @@ namespace Colore.Rest
         /// <param name="resource">Resource path.</param>
         /// <param name="data">Request data.</param>
         /// <returns>An instance of <see cref="IRestResponse{TData}" />.</returns>
-        public async Task<IRestResponse<T>> DeleteAsync<T>(string resource, object data)
+        public async Task<IRestResponse<T>> DeleteAsync<T>(string resource, object? data)
         {
             var content = data == null
                 ? null
@@ -180,13 +178,11 @@ namespace Colore.Rest
 
             var uri = CreateUri(resource);
 
-            using (var request = new HttpRequestMessage(HttpMethod.Delete, uri) { Content = content })
-            {
-                var response = await _httpClient.SendAsync(request).ConfigureAwait(false);
+            using var request = new HttpRequestMessage(HttpMethod.Delete, uri) { Content = content };
+            var response = await _httpClient.SendAsync(request).ConfigureAwait(false);
 
-                var body = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                return new RestResponse<T>(response.StatusCode, body);
-            }
+            var body = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            return new RestResponse<T>(response.StatusCode, body);
         }
 
         /// <inheritdoc />
@@ -195,7 +191,7 @@ namespace Colore.Rest
         /// </summary>
         public void Dispose()
         {
-            _httpClient?.Dispose();
+            _httpClient.Dispose();
         }
 
         /// <summary>

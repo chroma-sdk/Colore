@@ -47,7 +47,7 @@ namespace Colore.Rest.Data
         /// <param name="session">Session ID.</param>
         /// <param name="uri">API URI.</param>
         [JsonConstructor]
-        public SdkInitResponse(int session, [CanBeNull] Uri uri)
+        public SdkInitResponse(int session, Uri? uri)
         {
             Session = session;
             Uri = uri;
@@ -63,8 +63,7 @@ namespace Colore.Rest.Data
         /// Gets the URI to use for subsequent API calls.
         /// </summary>
         [JsonProperty("uri")]
-        [CanBeNull]
-        public Uri Uri { get; }
+        public Uri? Uri { get; }
 
         /// <summary>
         /// Returns a string that represents the current object.

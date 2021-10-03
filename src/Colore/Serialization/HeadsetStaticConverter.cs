@@ -49,8 +49,15 @@ namespace Colore.Serialization
         /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
         /// <param name="value">The <see cref="StaticHeadsetEffect" /> value.</param>
         /// <param name="serializer">The calling serializer.</param>
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
         {
+            if (value is null)
+            {
+                writer.WriteNull();
+
+                return;
+            }
+
             var effect = (StaticHeadsetEffect)value;
             var data = new EffectData(HeadsetEffectType.Static, effect.Color);
             serializer.Serialize(writer, data);
@@ -60,7 +67,7 @@ namespace Colore.Serialization
         public override object ReadJson(
             JsonReader reader,
             Type objectType,
-            object existingValue,
+            object? existingValue,
             JsonSerializer serializer)
         {
             throw new NotSupportedException("Only writing of headset Static objects is supported.");

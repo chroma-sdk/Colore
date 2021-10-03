@@ -51,8 +51,15 @@ namespace Colore.Serialization
         /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
         /// <param name="value">The <see cref="CustomHeadsetEffect" /> value.</param>
         /// <param name="serializer">The calling serializer.</param>
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
         {
+            if (value is null)
+            {
+                writer.WriteNull();
+
+                return;
+            }
+
             var effect = (CustomHeadsetEffect)value;
             var data = new EffectData(HeadsetEffectType.Custom, effect.Colors);
             serializer.Serialize(writer, data);
@@ -62,7 +69,7 @@ namespace Colore.Serialization
         public override object ReadJson(
             JsonReader reader,
             Type objectType,
-            object existingValue,
+            object? existingValue,
             JsonSerializer serializer)
         {
             throw new NotSupportedException("Only writing of Headset Custom objects is supported.");

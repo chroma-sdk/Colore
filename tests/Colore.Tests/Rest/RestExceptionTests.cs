@@ -77,7 +77,7 @@ namespace Colore.Tests.Rest
             // ReSharper disable once AssignNullToNotNullAttribute
             // ReSharper disable once ObjectCreationAsStatement
             Assert.Throws<ArgumentNullException>(
-                () => new RestException(null, Result.RzSuccess, null, HttpStatusCode.OK));
+                () => new RestException(null, Result.RzSuccess, null!, HttpStatusCode.OK));
         }
 
         [Test]

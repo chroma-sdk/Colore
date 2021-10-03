@@ -313,14 +313,14 @@ namespace Colore.Data
         /// <summary>
         /// Holds metadata for a device.
         /// </summary>
-        internal struct Metadata
+        internal readonly struct Metadata
         {
             /// <summary>
             /// Initializes a new instance of the <see cref="Metadata" /> struct.
             /// </summary>
             /// <param name="name">Device name.</param>
             /// <param name="description">Device description.</param>
-            internal Metadata(string name, string description)
+            internal Metadata(string name, string? description)
             {
                 Name = name;
                 Description = description ?? name;

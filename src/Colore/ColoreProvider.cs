@@ -52,7 +52,7 @@ namespace Colore
         /// <summary>
         /// Keeps track of the currently initialized <see cref="IChroma" /> instance.
         /// </summary>
-        private static IChroma _instance;
+        private static IChroma? _instance;
 
         /// <summary>
         /// Creates a new <see cref="IChroma" /> instance using the native Razer Chroma SDK.
@@ -114,7 +114,7 @@ namespace Colore
         /// <param name="info">Information about the application.</param>
         /// <param name="api">The API instance to use to route SDK calls.</param>
         /// <returns>A new instance of <see cref="IChroma" />.</returns>
-        public static async Task<IChroma> CreateAsync(AppInfo info, IChromaApi api)
+        public static async Task<IChroma> CreateAsync(AppInfo? info, IChromaApi api)
         {
             await ClearCurrentAsync().ConfigureAwait(false);
             _instance = new ChromaImplementation(api, info);

@@ -57,7 +57,7 @@ namespace Colore.Tests.Data
 
             // ReSharper disable once ObjectCreationAsStatement
             var ex = Assert.Throws<ArgumentException>(() => new Author(name, "test"));
-            Assert.AreEqual(nameof(Author.Name).ToLowerInvariant(), ex.ParamName);
+            Assert.AreEqual(nameof(Author.Name).ToLowerInvariant(), ex?.ParamName);
         }
 
         [Test]
@@ -67,7 +67,7 @@ namespace Colore.Tests.Data
 
             // ReSharper disable once ObjectCreationAsStatement
             var ex = Assert.Throws<ArgumentException>(() => new Author("test", contact));
-            Assert.AreEqual(nameof(Author.Contact).ToLowerInvariant(), ex.ParamName);
+            Assert.AreEqual(nameof(Author.Contact).ToLowerInvariant(), ex?.ParamName);
         }
     }
 }

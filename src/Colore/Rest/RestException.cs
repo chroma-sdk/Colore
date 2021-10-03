@@ -56,7 +56,7 @@ namespace Colore.Rest
         /// </summary>
         /// <param name="message">Exception message.</param>
         [PublicAPI]
-        public RestException(string message)
+        public RestException(string? message)
             : base(message)
         {
         }
@@ -68,7 +68,7 @@ namespace Colore.Rest
         /// <param name="message">Exception message.</param>
         /// <param name="innerException">Inner exception.</param>
         [PublicAPI]
-        public RestException(string message, Exception innerException)
+        public RestException(string? message, Exception innerException)
             : base(message, innerException)
         {
         }
@@ -83,11 +83,11 @@ namespace Colore.Rest
         /// <param name="statusCode">HTTP status code returned by the API.</param>
         /// <param name="restData">Any data returned in the API response body.</param>
         public RestException(
-            string message,
+            string? message,
             Result result,
-            [NotNull] Uri uri,
+            Uri uri,
             HttpStatusCode statusCode,
-            [CanBeNull] string restData = null)
+            string? restData = null)
             : base(message, result)
         {
             Uri = uri ?? throw new ArgumentNullException(nameof(uri));
@@ -128,9 +128,8 @@ namespace Colore.Rest
         /// <summary>
         /// Gets the <see cref="Uri" /> called which caused the exception.
         /// </summary>
-        [CanBeNull]
         [PublicAPI]
-        public Uri Uri { get; }
+        public Uri? Uri { get; }
 
         /// <summary>
         /// Gets the <see cref="HttpStatusCode" /> returned by the API.
@@ -141,9 +140,8 @@ namespace Colore.Rest
         /// <summary>
         /// Gets the data (if any) returned by the API.
         /// </summary>
-        [CanBeNull]
         [PublicAPI]
-        public string RestData { get; }
+        public string? RestData { get; }
 
         /// <summary>
         /// When overridden in a derived class, sets the <see cref="SerializationInfo" /> with information about the exception.

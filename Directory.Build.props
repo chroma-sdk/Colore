@@ -2,7 +2,7 @@
   <PropertyGroup>
     <RepoRoot>$(MSBuildThisFileDirectory)</RepoRoot>
     <LangVersion>latest</LangVersion>
-    <!-- <Nullable>enable</Nullable> -->
+    <Nullable>enable</Nullable>
     <Authors>Sharparam</Authors>
     <Copyright>Copyright (c) 2015-2021 by Adam Hellberg and Brandon Scott.</Copyright>
     <RepositoryUrl>https://github.com/chroma-sdk/Colore</RepositoryUrl>

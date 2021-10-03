@@ -50,8 +50,15 @@ namespace Colore.Serialization
         /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
         /// <param name="value">The <see cref="Color" /> value.</param>
         /// <param name="serializer">The calling serializer.</param>
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
         {
+            if (value is null)
+            {
+                writer.WriteNull();
+
+                return;
+            }
+
             writer.WriteValue(((Color)value).Value);
         }
 
@@ -64,7 +71,7 @@ namespace Colore.Serialization
         /// <param name="existingValue">The existing value of object being read.</param>
         /// <param name="serializer">The calling serializer.</param>
         /// <returns>An instance of <see cref="Color" />.</returns>
-        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+        public override object ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
         {
             var token = JToken.Load(reader);
 
@@ -78,7 +85,14 @@ namespace Colore.Serialization
 
                 case JTokenType.Object:
                     var obj = (JObject)token;
-                    return new Color((uint)obj["Value"]);
+                    var value = obj["Value"];
+
+                    if (value is null)
+                    {
+                        throw new JsonSerializationException("Cannot deserialize null color value");
+                    }
+
+                    return new Color((uint)value);
             }
 
             throw new InvalidOperationException("Only integers and Color objects can be converted to Color");

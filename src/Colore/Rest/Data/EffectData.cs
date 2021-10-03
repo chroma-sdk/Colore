@@ -34,14 +34,14 @@ namespace Colore.Rest.Data
     /// <summary>
     /// Contains data for an effect to be sent to the REST API.
     /// </summary>
-    internal struct EffectData
+    internal readonly struct EffectData
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="EffectData" /> structure.
         /// </summary>
         /// <param name="effect">Type of effect to create, should be a value from one of the <c>Effect</c> enumerations.</param>
         /// <param name="payload">Effect data, if applicable.</param>
-        internal EffectData([NotNull] object effect, [CanBeNull] object payload = null)
+        internal EffectData(object effect, object? payload = null)
         {
             Effect = effect ?? throw new ArgumentNullException(nameof(effect));
             Payload = payload;
@@ -50,18 +50,16 @@ namespace Colore.Rest.Data
         /// <summary>
         /// Gets the type of the effect.
         /// </summary>
-        [NotNull]
         [JsonProperty("effect")]
         public object Effect { get; }
 
         /// <summary>
         /// Gets effect data, or <c>null</c> if not applicable for the current effect type.
         /// </summary>
-        [CanBeNull]
         [JsonProperty(
             "param",
             DefaultValueHandling = DefaultValueHandling.Ignore,
             NullValueHandling = NullValueHandling.Ignore)]
-        public object Payload { get; }
+        public object? Payload { get; }
     }
 }

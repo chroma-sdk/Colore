@@ -44,8 +44,8 @@ namespace Colore.Tests
         {
             var expected = new Exception("Expected.");
             var actual = new ColoreException(null, new Exception("Expected.")).InnerException;
-            Assert.AreEqual(expected.GetType(), actual.GetType());
-            Assert.AreEqual(expected.Message, actual.Message);
+            Assert.AreEqual(expected.GetType(), actual?.GetType());
+            Assert.AreEqual(expected.Message, actual?.Message);
         }
     }
 }

@@ -59,17 +59,15 @@ namespace Colore.Native
         /// for accessing the Chroma SDK functions.
         /// If <c>null</c>, a default implementation will be used.
         /// </param>
-        public NativeApi(INativeSdkMethods nativeSdkMethods = null)
-        {
+        public NativeApi(INativeSdkMethods? nativeSdkMethods = null) =>
             _nativeSdkMethods = nativeSdkMethods ?? new NativeSdkMethods();
-        }
 
         /// <inheritdoc />
         /// <summary>
         /// Initializes the Chroma SDK.
         /// </summary>
         /// <param name="info">Information about the application, currently unused for native SDK.</param>
-        public Task InitializeAsync(AppInfo info)
+        public Task InitializeAsync(AppInfo? info)
         {
             var result = _nativeSdkMethods.Init();
             if (!result)

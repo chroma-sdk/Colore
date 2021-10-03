@@ -151,11 +151,11 @@ namespace Colore.Tests.Rest
         [SuppressMessage("ReSharper", "MemberCanBePrivate.Local")]
         private class MyData : IEquatable<MyData>
         {
-            public string Name { get; set; }
+            public string? Name { get; set; }
 
             public int Age { get; set; }
 
-            public bool Equals(MyData other)
+            public bool Equals(MyData? other)
             {
                 return other != null && Name == other.Name && Age == other.Age;
             }

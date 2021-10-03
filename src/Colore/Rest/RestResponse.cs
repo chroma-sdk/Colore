@@ -27,8 +27,6 @@ namespace Colore.Rest
 {
     using System.Net;
 
-    using JetBrains.Annotations;
-
     using Newtonsoft.Json;
 
     /// <inheritdoc />
@@ -43,13 +41,13 @@ namespace Colore.Rest
         /// </summary>
         /// <param name="status">HTTP status returned from the API.</param>
         /// <param name="content">String content returned from the API.</param>
-        public RestResponse(HttpStatusCode status, [CanBeNull] string content)
+        public RestResponse(HttpStatusCode status, string? content)
         {
             Status = status;
             Content = content;
 
             var code = (int)Status;
-            IsSuccessful = code >= 200 && code < 300;
+            IsSuccessful = code is >= 200 and < 300;
         }
 
         /// <inheritdoc />
@@ -68,13 +66,13 @@ namespace Colore.Rest
         /// <summary>
         /// Gets the string content of the response body.
         /// </summary>
-        public string Content { get; }
+        public string? Content { get; }
 
         /// <inheritdoc />
         /// <summary>
         /// Gets the typed data returned from the request.
         /// </summary>
-        public TData Data => Deserialize<TData>();
+        public TData? Data => Deserialize<TData>();
 
         /// <inheritdoc />
         /// <summary>
@@ -82,7 +80,7 @@ namespace Colore.Rest
         /// </summary>
         /// <typeparam name="T">The type to deserialize into.</typeparam>
         /// <returns>An instance of <typeparamref name="T" />.</returns>
-        public T Deserialize<T>()
+        public T? Deserialize<T>()
         {
             if (string.IsNullOrWhiteSpace(Content))
                 return default;

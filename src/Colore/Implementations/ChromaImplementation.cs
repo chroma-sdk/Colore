@@ -79,39 +79,39 @@ namespace Colore.Implementations
         /// <summary>
         /// Reference to lazy-loaded <see cref="Keyboard" /> instance.
         /// </summary>
-        private KeyboardImplementation _keyboard;
+        private KeyboardImplementation? _keyboard;
 
         /// <summary>
         /// Reference to lazy-loaded <see cref="Mouse" /> instance.
         /// </summary>
-        private MouseImplementation _mouse;
+        private MouseImplementation? _mouse;
 
         /// <summary>
         /// Reference to lazy-loaded <see cref="Headset" /> instance.
         /// </summary>
-        private HeadsetImplementation _headset;
+        private HeadsetImplementation? _headset;
 
         /// <summary>
         /// Reference to lazy-loaded <see cref="Mousepad" /> instance.
         /// </summary>
-        private MousepadImplementation _mousepad;
+        private MousepadImplementation? _mousepad;
 
         /// <summary>
         /// Reference to lazy-loaded <see cref="Keypad" /> instance.
         /// </summary>
-        private KeypadImplementation _keypad;
+        private KeypadImplementation? _keypad;
 
         /// <summary>
         /// Reference to lazy-loaded <see cref="ChromaLink" /> instance.
         /// </summary>
-        private ChromaLinkImplementation _chromaLink;
+        private ChromaLinkImplementation? _chromaLink;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ChromaImplementation" /> class.
         /// </summary>
         /// <param name="api">API instance to use.</param>
         /// <param name="info">Information about the application.</param>
-        public ChromaImplementation(IChromaApi api, AppInfo info)
+        public ChromaImplementation(IChromaApi api, AppInfo? info)
         {
             _api = api;
             _deviceInstances = new Dictionary<Guid, IGenericDevice>();
@@ -139,7 +139,7 @@ namespace Colore.Implementations
         /// <see cref="IChroma.Register" /> and that Windows messages are being forwarded to
         /// Colore using <see cref="IChroma.HandleMessage" />.
         /// </remarks>
-        public event EventHandler<ApplicationStateEventArgs> ApplicationState;
+        public event EventHandler<ApplicationStateEventArgs>? ApplicationState;
 
         /// <inheritdoc />
         /// <summary>
@@ -150,7 +150,7 @@ namespace Colore.Implementations
         /// <see cref="IChroma.Register" /> and that Windows messages are being forwarded to
         /// Colore using <see cref="IChroma.HandleMessage" />.
         /// </remarks>
-        public event EventHandler<DeviceAccessEventArgs> DeviceAccess;
+        public event EventHandler<DeviceAccessEventArgs>? DeviceAccess;
 
         /// <inheritdoc />
         /// <summary>
@@ -161,7 +161,7 @@ namespace Colore.Implementations
         /// <see cref="IChroma.Register" /> and that Windows messages are being forwarded to
         /// Colore using <see cref="IChroma.HandleMessage" />.
         /// </remarks>
-        public event EventHandler<SdkSupportEventArgs> SdkSupport;
+        public event EventHandler<SdkSupportEventArgs>? SdkSupport;
 
         /// <summary>
         /// Gets a value indicating whether the SDK is available on this system.
@@ -174,42 +174,42 @@ namespace Colore.Implementations
         /// Gets an instance of the <see cref="IKeyboard" /> interface
         /// for interacting with a Razer Chroma keyboard.
         /// </summary>
-        public IKeyboard Keyboard => _keyboard ?? (_keyboard = new KeyboardImplementation(_api));
+        public IKeyboard Keyboard => _keyboard ??= new KeyboardImplementation(_api);
 
         /// <inheritdoc />
         /// <summary>
         /// Gets an instance of the <see cref="IMouse" /> interface
         /// for interacting with a Razer Chroma mouse.
         /// </summary>
-        public IMouse Mouse => _mouse ?? (_mouse = new MouseImplementation(_api));
+        public IMouse Mouse => _mouse ??= new MouseImplementation(_api);
 
         /// <inheritdoc />
         /// <summary>
         /// Gets an instance of the <see cref="IHeadset" /> interface
         /// for interacting with a Razer Chroma headset.
         /// </summary>
-        public IHeadset Headset => _headset ?? (_headset = new HeadsetImplementation(_api));
+        public IHeadset Headset => _headset ??= new HeadsetImplementation(_api);
 
         /// <inheritdoc />
         /// <summary>
         /// Gets an instance of the <see cref="IMousepad" /> interface
         /// for interacting with a Razer Chroma mouse pad.
         /// </summary>
-        public IMousepad Mousepad => _mousepad ?? (_mousepad = new MousepadImplementation(_api));
+        public IMousepad Mousepad => _mousepad ??= new MousepadImplementation(_api);
 
         /// <inheritdoc />
         /// <summary>
         /// Gets an instance of the <see cref="IKeypad" /> interface
         /// for interacting with a Razer Chroma keypad.
         /// </summary>
-        public IKeypad Keypad => _keypad ?? (_keypad = new KeypadImplementation(_api));
+        public IKeypad Keypad => _keypad ??= new KeypadImplementation(_api);
 
         /// <inheritdoc />
         /// <summary>
         /// Gets an instance of the <see cref="IChromaLink" /> interface
         /// for interacting with ChromaLink devices.
         /// </summary>
-        public IChromaLink ChromaLink => _chromaLink ?? (_chromaLink = new ChromaLinkImplementation(_api));
+        public IChromaLink ChromaLink => _chromaLink ??= new ChromaLinkImplementation(_api);
 
         /// <inheritdoc />
         /// <summary>
@@ -253,7 +253,7 @@ namespace Colore.Implementations
         /// result in <emph>undefined behaviour</emph>. Usage of this method is
         /// <strong>at your own risk</strong>.</span>
         /// </remarks>
-        public async Task InitializeAsync(AppInfo info)
+        public async Task InitializeAsync(AppInfo? info)
         {
             if (Initialized)
                 return;
@@ -293,22 +293,22 @@ namespace Colore.Implementations
             if (!Initialized)
                 return;
 
-            if (_keyboard != null)
+            if (_keyboard is not null)
                 await _keyboard.DeleteCurrentEffectAsync().ConfigureAwait(false);
 
-            if (_mouse != null)
+            if (_mouse is not null)
                 await _mouse.DeleteCurrentEffectAsync().ConfigureAwait(false);
 
-            if (_keypad != null)
+            if (_keypad is not null)
                 await _keypad.DeleteCurrentEffectAsync().ConfigureAwait(false);
 
-            if (_mousepad != null)
+            if (_mousepad is not null)
                 await _mousepad.DeleteCurrentEffectAsync().ConfigureAwait(false);
 
-            if (_headset != null)
+            if (_headset is not null)
                 await _headset.DeleteCurrentEffectAsync().ConfigureAwait(false);
 
-            if (_chromaLink != null)
+            if (_chromaLink is not null)
                 await _chromaLink.DeleteCurrentEffectAsync().ConfigureAwait(false);
 
             Unregister();

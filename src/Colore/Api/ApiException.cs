@@ -55,7 +55,7 @@ namespace Colore.Api
         /// </summary>
         /// <param name="message">Message describing the exception.</param>
         [PublicAPI]
-        public ApiException(string message)
+        public ApiException(string? message)
             : base(message)
         {
         }
@@ -67,7 +67,7 @@ namespace Colore.Api
         /// <param name="message">Message describing the exception.</param>
         /// <param name="innerException">Inner exception.</param>
         [PublicAPI]
-        public ApiException(string message, Exception innerException)
+        public ApiException(string? message, Exception innerException)
             : base(message, innerException)
         {
         }
@@ -78,7 +78,7 @@ namespace Colore.Api
         /// </summary>
         /// <param name="message">An error message detailing the exception.</param>
         /// <param name="result">The result code returned from the SDK.</param>
-        public ApiException(string message, Result result)
+        public ApiException(string? message, Result result)
             : base(message, new Win32Exception(result))
         {
             Result = result;

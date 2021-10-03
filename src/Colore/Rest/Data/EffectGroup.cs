@@ -41,7 +41,7 @@ namespace Colore.Rest.Data
         /// Initializes a new instance of the <see cref="EffectGroup" /> structure.
         /// </summary>
         /// <param name="effects"><see cref="EffectData" /> to include in the group.</param>
-        internal EffectGroup([NotNull] IEnumerable<EffectData> effects)
+        internal EffectGroup(IEnumerable<EffectData> effects)
         {
             Effects = effects ?? throw new ArgumentNullException(nameof(effects));
         }
@@ -49,7 +49,6 @@ namespace Colore.Rest.Data
         /// <summary>
         /// Gets the various <see cref="EffectData" /> contained in this group.
         /// </summary>
-        [NotNull]
         [JsonProperty("effects")]
         public IEnumerable<EffectData> Effects { get; }
     }

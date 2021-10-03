@@ -38,11 +38,13 @@ namespace Colore.Tests.Implementations
     [TestFixture]
     public class DeviceImplementationTests
     {
-        private Mock<IChromaApi> _api;
+        // Safe to suppress null warnings here since the `Setup` method acts
+        // like a constructor.
+        private Mock<IChromaApi> _api = null!;
 
-        private Mock<DeviceImplementation> _deviceMock;
+        private Mock<DeviceImplementation> _deviceMock = null!;
 
-        private DeviceImplementation _device;
+        private DeviceImplementation _device = null!;
 
         [SetUp]
         public void Setup()

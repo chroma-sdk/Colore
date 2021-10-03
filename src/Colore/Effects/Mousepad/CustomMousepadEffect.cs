@@ -147,7 +147,7 @@ namespace Colore.Effects.Mousepad
         /// <param name="left">The left operand, an instance of <see cref="CustomMousepadEffect" />.</param>
         /// <param name="right">The right operand, any type of object.</param>
         /// <returns><c>true</c> if the two objects are equal, otherwise <c>false</c>.</returns>
-        public static bool operator ==(CustomMousepadEffect left, object right)
+        public static bool operator ==(CustomMousepadEffect left, object? right)
         {
             return left.Equals(right);
         }
@@ -159,7 +159,7 @@ namespace Colore.Effects.Mousepad
         /// <param name="left">The left operand, an instance of <see cref="CustomMousepadEffect" />.</param>
         /// <param name="right">The right operand, any type of object.</param>
         /// <returns><c>true</c> if the two objects are not equal, otherwise <c>false</c>.</returns>
-        public static bool operator !=(CustomMousepadEffect left, object right)
+        public static bool operator !=(CustomMousepadEffect left, object? right)
         {
             return !left.Equals(right);
         }
@@ -223,7 +223,7 @@ namespace Colore.Effects.Mousepad
         /// <c>true</c> if <paramref name="obj"/> and this instance are the same type
         /// and represent the same value; otherwise, <c>false</c>.
         /// </returns>
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             return !(obj is null) && obj is CustomMousepadEffect custom && Equals(custom);
         }

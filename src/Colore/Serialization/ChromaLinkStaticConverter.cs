@@ -49,9 +49,21 @@ namespace Colore.Serialization
         /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
         /// <param name="value">The <see cref="StaticChromaLinkEffect" /> value.</param>
         /// <param name="serializer">The calling serializer.</param>
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
         {
-            var effect = (StaticChromaLinkEffect)value;
+            if (value is null)
+            {
+                writer.WriteNull();
+
+                return;
+            }
+
+            if (value is not StaticChromaLinkEffect effect)
+            {
+                throw new JsonSerializationException(
+                    $"{nameof(ChromaLinkStaticConverter)} only supports objects of type {nameof(StaticChromaLinkEffect)}");
+            }
+
             var data = new EffectData(ChromaLinkEffectType.Static, effect.Color);
             serializer.Serialize(writer, data);
         }
@@ -60,11 +72,9 @@ namespace Colore.Serialization
         public override object ReadJson(
             JsonReader reader,
             Type objectType,
-            object existingValue,
-            JsonSerializer serializer)
-        {
+            object? existingValue,
+            JsonSerializer serializer) =>
             throw new NotSupportedException("Only writing of Chroma Link Static objects is supported.");
-        }
 
         /// <inheritdoc />
         public override bool CanConvert(Type objectType) => objectType == typeof(StaticChromaLinkEffect);

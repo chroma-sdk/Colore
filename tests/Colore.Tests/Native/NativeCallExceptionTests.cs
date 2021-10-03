@@ -63,12 +63,12 @@ namespace Colore.Tests.Native
             var result = Result.RzSuccess;
             var expected = new Win32Exception(result);
             var actual = new NativeCallException("TestFunc", result).InnerException;
-            Assert.AreEqual(expected.GetType(), actual.GetType(), "Expected types to be equal.");
-            Assert.AreEqual(expected.HResult, actual.HResult, "Expected HResults to be equal.");
-            Assert.AreEqual(expected.Message, actual.Message, "Expected message to be equal.");
+            Assert.AreEqual(expected.GetType(), actual?.GetType(), "Expected types to be equal.");
+            Assert.AreEqual(expected.HResult, actual?.HResult, "Expected HResults to be equal.");
+            Assert.AreEqual(expected.Message, actual?.Message, "Expected message to be equal.");
             Assert.AreEqual(
                 expected.NativeErrorCode,
-                ((Win32Exception)actual).NativeErrorCode,
+                ((Win32Exception?)actual)?.NativeErrorCode,
                 "Expected native error codes to be equal.");
         }
     }
