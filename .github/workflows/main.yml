@@ -193,12 +193,10 @@ jobs:
     - name: Set destination paths
       id: dest
       run: |
-        if [ "$IS_TAG" == "true" ]; then
-          if [ "$IS_RC" == "true" ]; then
-            prefix='rc'
-          else
-            prefix=''
-          fi
+        if [ "$IS_RC" == "true" ]; then
+          prefix='rc'
+        elif [ "$IS_TAG" == "true" ]; then
+          prefix=''
         else
           prefix='dev'
         fi
