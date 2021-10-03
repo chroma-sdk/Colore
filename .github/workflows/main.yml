@@ -202,6 +202,7 @@ jobs:
         fi
         echo "::set-output name=docs_dest::${prefix}docs"
         echo "::set-output name=coverage_dest::${prefix}coverage"
+        echo "::set-output name=timestamp::$(date --iso-8601=seconds)"
       env:
         IS_TAG: ${{ startsWith(github.ref, 'refs/tags/v') }}
         IS_RC: ${{ startsWith(github.ref, 'refs/tags/v') && contains(github.ref, '-')}}
@@ -212,7 +213,12 @@ jobs:
         folder: src/docs
         git-config-name: GitHub Actions
         target-folder: ${{ steps.dest.outputs.docs_dest }}
-        commit-message: '[AUTOMATED] Documentation update'
+        commit-message: |
+          [AUTOMATED] Documentation update
+
+          Timestamp: ${{ steps.dest.output.timestamp }}
+          From commit ${{ github.sha }}
+          Target: ${{ steps.dest.output.docs_dest }}
         clean: true
     - name: Deploy coverage
       uses: JamesIves/github-pages-deploy-action@4.1.5
@@ -221,5 +227,10 @@ jobs:
         folder: src/coverage
         git-config-name: GitHub Actions
         target-folder: ${{ steps.dest.outputs.coverage_dest }}
-        commit-message: '[AUTOMATED] Coverage update'
+        commit-message: |
+          [AUTOMATED] Coverage update
+
+          Timestamp: ${{ steps.dest.output.timestamp }}
+          From commit ${{ github.sha }}
+          Target: ${{ steps.dest.output.coverage_dest }}
         clean: true
