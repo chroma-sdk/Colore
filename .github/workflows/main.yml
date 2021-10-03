@@ -216,9 +216,9 @@ jobs:
         commit-message: |
           [AUTOMATED] Documentation update
 
-          Timestamp: ${{ steps.dest.output.timestamp }}
+          Timestamp: ${{ steps.dest.outputs.timestamp }}
           From commit ${{ github.sha }}
-          Target: ${{ steps.dest.output.docs_dest }}
+          Target: ${{ steps.dest.outputs.docs_dest }}
         clean: true
     - name: Deploy coverage
       uses: JamesIves/github-pages-deploy-action@4.1.5
@@ -230,7 +230,7 @@ jobs:
         commit-message: |
           [AUTOMATED] Coverage update
 
-          Timestamp: ${{ steps.dest.output.timestamp }}
+          Timestamp: ${{ steps.dest.outputs.timestamp }}
           From commit ${{ github.sha }}
-          Target: ${{ steps.dest.output.coverage_dest }}
+          Target: ${{ steps.dest.outputs.coverage_dest }}
         clean: true
