@@ -156,17 +156,26 @@ The REST API requires information about your application, so you&#39;ll have to 
 More information can be read <a href="https://developer.razer.com/chroma/">on their website</a>.</p>
 <p>Other dependencies are installed via NuGet and listed in each project file.</p>
 <h2 id="building">Building</h2>
-<p>Colore supports building for multiple target frameworks.
-At the moment, these are .NET Standard 1.3 and .NET Framework 4.5.1.
-When building the project, DLLs for both frameworks will be generated in the output folders, under the folder names <code>netstandard1.3</code> and <code>net451</code>.
-Use the ones fitting for your application.</p>
-<p>The below examples compiles Colore in Release mode.</p>
-<pre><code class="lang-powershell">.\build.ps1 -Configuration Release
-</code></pre><p>You can also use the &quot;CI&quot; build target to generate the same artifacts made available for each release of Colore.</p>
-<pre><code class="lang-powershell">.\build.ps1 -Configuration Release -Target CI
+<p>Colore currently builds for .NET Standard 2.1.</p>
+<h3 id="visual-studio--rider">Visual Studio / Rider</h3>
+<p>Open the solution file (<code>Colore.sln</code>) in Visual Studio or Rider and build it as you would any other project.</p>
+<h3 id="net-cli">.NET CLI</h3>
+<p>You can build Colore from the command line as you would any other .NET project, by running:</p>
+<pre><code>dotnet build
+</code></pre><p>(Either from the root of the repo (where <code>Colore.sln</code> is) or inside the project folder for Colore.)</p>
+<h3 id="cake-cli">Cake (CLI)</h3>
+<p>We use <a href="https://cakebuild.net">Cake</a> primarily to run the CI builds for Colore, which performs all the tasks necessary for building, testing, and generating other artifacts for the project. You can utilize it as well if you want to replicate any of those tasks.</p>
+<p>Note that all Cake commands need to be run from the root of the repository.</p>
+<p>First install the needed tools:</p>
+<pre><code>dotnet tool restore
+</code></pre><p>(From the root of the repository.)</p>
+<p>Then you can run <code>dotnet cake</code> from the command line to run the various Cake tasks. By default it will run tasks to build and test the project.</p>
+<p>You can use the <code>--configuration</code> parameter to build it in release mode:</p>
+<pre><code>dotnet cake --configuration Release
+</code></pre><p>Or use the &quot;CI&quot; build target to generate the same artifacts made available for each release of Colore:</p>
+<pre><code>dotnet cake --configuration Release --target CI
 </code></pre><p>You will find the resulting artifact files under the <code>artifacts</code> folder in the root of the repository.</p>
-<p>Note that the above commands are executed with <a href="https://docs.microsoft.com/en-us/powershell/">PowerShell</a>. If you are building on a Linux system or macOS,
-use the <code>build.sh</code> script in place of <code>build.ps1</code> (you may have to make it executable first with <code>chmod +x build.sh</code>).</p>
+<p>In order to run the <code>Docs</code> task from the Cake script, you need to have installed <a href="https://dotnet.github.io/docfx/">DocFx</a> locally on your system.</p>
 <h2 id="native-documentation">Native Documentation</h2>
 <p>As Colore is built upon the native Chroma SDK for C++, it can be worth taking a look at their <a href="https://assets.razerzone.com/dev_portal/C%2B%2B/html/en/index.html">documentation</a>.</p>
 <h2 id="rest-documentation">REST Documentation</h2>
