@@ -1,4 +1,4 @@
-// ---------------------------------------------------------------------------------------
+﻿// ---------------------------------------------------------------------------------------
 // <copyright file="AssemblyInfo.cs" company="Corale">
 //     Copyright © 2015-2021 by Adam Hellberg and Brandon Scott.
 //
@@ -24,8 +24,5 @@
 // ---------------------------------------------------------------------------------------
 
 using System;
-using System.Runtime.CompilerServices;
 
 [assembly: CLSCompliant(false)]
-[assembly: InternalsVisibleTo("Colore.Tests")]
-[assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
