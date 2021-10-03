@@ -187,7 +187,7 @@ jobs:
         mkdir -p src/docs
         mkdir src/coverage
         unzip zips/colore_*_docs.zip -d src/docs
-        unzip zips/colore_*_coverage.zip -d src/coverage
+        unzip coverage/colore_*_coverage.zip -d src/coverage
     - name: Set destination paths
       id: dest
       run: |
