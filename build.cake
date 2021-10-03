@@ -1,47 +1,27 @@
 #addin nuget:?package=Cake.DocFx&version=1.0.0
-#addin nuget:?package=Cake.Codecov&version=1.0.1
 
 #tool dotnet:?package=GitVersion.Tool&version=5.7.0
 #tool dotnet:?package=dotnet-reportgenerator-globaltool&version=4.8.13
-#tool nuget:?package=Codecov&version=1.13.0
 
 ///////////////////////////////////////////////////////////////////////////////
 // ARGUMENTS
 ///////////////////////////////////////////////////////////////////////////////
 
 var target = Argument("Target", "Default");
-var tag = Argument("Tag", "cake");
-
 var configuration = HasArgument("Configuration")
     ? Argument<string>("Configuration")
     : EnvironmentVariable("CONFIGURATION") != null
         ? EnvironmentVariable("CONFIGURATION")
         : "Release";
 
-var buildNumber = HasArgument("BuildNumber")
-    ? Argument<int>("BuildNumber")
-    : AppVeyor.IsRunningOnAppVeyor
-        ? AppVeyor.Environment.Build.Number
-        : TravisCI.IsRunningOnTravisCI
-            ? TravisCI.Environment.Build.BuildNumber
-            : EnvironmentVariable("BUILD_NUMBER") != null
-                ? int.Parse(EnvironmentVariable("BUILD_NUMBER"))
-                : 0;
-
 ///////////////////////////////////////////////////////////////////////////////
 // GLOBALS
 ///////////////////////////////////////////////////////////////////////////////
 
-var isAppVeyor = AppVeyor.IsRunningOnAppVeyor;
-var isTravis = TravisCI.IsRunningOnTravisCI;
-var isCi = isAppVeyor || isTravis;
+var isGitHubActions = GitHubActions.IsRunningOnGitHubActions;
+var isCi = isGitHubActions || EnvironmentVariable("CI") == "true";
 var isWindows = IsRunningOnWindows();
-var cover = isAppVeyor || HasArgument("Cover");
-
-IEnumerable<string> ReadCoverageFilters(string path)
-{
-    return System.IO.File.ReadLines(path).Where(l => !string.IsNullOrWhiteSpace(l) && !l.StartsWith("#"));
-}
+var cover = isGitHubActions || HasArgument("Cover");
 
 ///////////////////////////////////////////////////////////////////////////////
 // SETUP / TEARDOWN
@@ -65,9 +45,9 @@ Setup(ctx =>
 
     var docFxBranch = EnvironmentVariable("DOCFX_SOURCE_BRANCH_NAME");
     if (docFxBranch != null)
+    {
         Information("DocFx branch is {0}", docFxBranch);
-    if (isTravis)
-        Information("Travis branch is {0}", EnvironmentVariable("TRAVIS_BRANCH"));
+    }
 
     Information("Reading framework settings");
 
@@ -78,9 +58,13 @@ Setup(ctx =>
     }
 
     if (isWindows)
+    {
         frameworks.AddRange(xmlValue.Split(';'));
+    }
     else
+    {
         frameworks.AddRange(xmlValue.Split(';').Where(v => !v.StartsWith("net4")));
+    }
 
     Information("Frameworks: {0}", string.Join(", ", frameworks));
 
@@ -109,40 +93,6 @@ Teardown(ctx =>
 // HELPERS
 ///////////////////////////////////////////////////////////////////////////////
 
-void FixNUnitLoggerPaths()
-{
-    Information("Fixing NUnitXML.TestLogger paths");
-    var files = GetFiles("/home/travis/.nuget/packages/nunitxml.testlogger/*/build/_common/*.dll");
-
-    foreach (var file in files)
-    {
-        if (file.GetFilenameWithoutExtension().ToString().Contains("Nunit"))
-        {
-            var full = file.ToString();
-            var fix = full.Replace("Nunit", "NUnit");
-            Information("{0} --> {1}", full, fix);
-            MoveFile(full, fix);
-        }
-    }
-}
-
-void Build(string project, string framework = null)
-{
-    var settings = new DotNetCoreBuildSettings
-    {
-        Configuration = configuration,
-        NoRestore = true,
-        ArgumentCustomization = args => args
-            .Append($"/p:AssemblyVersion={version.AssemblySemVer}")
-            .Append($"/p:NuGetVersion={version.NuGetVersionV2}")
-    };
-
-    if (!string.IsNullOrEmpty(framework))
-        settings.Framework = framework;
-
-    DotNetCoreBuild(project, settings);
-}
-
 ///////////////////////////////////////////////////////////////////////////////
 // TASKS
 ///////////////////////////////////////////////////////////////////////////////
@@ -160,56 +110,37 @@ Task("Clean")
 
 Task("Restore")
     .IsDependentOn("Clean")
-    .Does(() =>
-    {
-        DotNetCoreRestore(solution);
-    });
+    .Does(() => DotNetCoreRestore(solution));
 
 Task("Build")
     .IsDependentOn("Restore")
     .Does(() =>
     {
-        if (isTravis)
-            FixNUnitLoggerPaths();
-
-        if (isWindows)
+        var settings = new DotNetCoreBuildSettings
         {
-            Build(solution);
-        }
-        else
-        {
-            foreach (var framework in frameworks)
-            {
-                Build(mainProject, framework);
-            }
+            Configuration = configuration,
+            NoRestore = true,
+            ArgumentCustomization = args => args
+                .Append($"/p:AssemblyVersion={version.AssemblySemVer}")
+                .Append($"/p:NuGetVersion={version.NuGetVersionV2}")
+        };
 
-            Build(testProject);
-        }
+        DotNetCoreBuild(project, settings);
     });
 
 Task("Test")
     .IsDependentOn("Build")
     .Does(() =>
     {
-        var filters = ReadCoverageFilters("./tests/coverage-filters.txt");
-
         var settings = new DotNetCoreTestSettings
         {
             Configuration = configuration,
             NoBuild = true,
             NoRestore = true,
             Settings = "tests/coverlet.runsettings",
+            Loggers = new[] { "nunit" },
             ArgumentCustomization = args => args.Append("--collect:\"XPlat Code Coverage\"")
         };
-
-        if (AppVeyor.IsRunningOnAppVeyor)
-        {
-            settings.Loggers = new[] { "AppVeyor" };
-        }
-        else
-        {
-            settings.Loggers = new[] { "nunit" };
-        }
 
         DotNetCoreTest(testProject, settings);
 
@@ -277,44 +208,8 @@ Task("Docs")
     .Does(() =>
     {
         DocFxMetadata("./docs/docfx.json");
-        if (isTravis)
-        {
-            DocFxBuild("./docs/docfx.json", new DocFxBuildSettings
-            {
-                ToolPath = "./docfx/docfx.exe"
-            });
-        }
-        else
-        {
-            DocFxBuild("./docs/docfx.json");
-        }
-
+        DocFxBuild("./docs/docfx.json");
         Zip("./docs/_site", $"./artifacts/colore_{version.SemVer}_docs.zip");
-    });
-
-Task("Codecov")
-    .WithCriteria(cover)
-    .WithCriteria(isAppVeyor)
-    .IsDependentOn("Test")
-    .Does(() =>
-    {
-        var ccVersion = $"{version.FullSemVer}.build.{BuildSystem.AppVeyor.Environment.Build.Number}";
-        var codecovPath = Context.Tools.Resolve("codecov.exe");
-
-        Information("Running Codecov tool with version {0} on coverage result", ccVersion);
-
-        Codecov(new CodecovSettings
-        {
-            Files = new[] { "./artifacts/coverage.xml" },
-            Required = true,
-            ////Branch = version.BranchName,
-            EnvironmentVariables = new Dictionary<string, string>
-            {
-                ["APPVEYOR_BUILD_VERSION"] = ccVersion
-            },
-            Verbose = true,
-            ToolPath = codecovPath
-        });
     });
 
 Task("CI")
@@ -322,20 +217,9 @@ Task("CI")
     .IsDependentOn("Publish")
     .IsDependentOn("Pack")
     .IsDependentOn("Docs")
-    .IsDependentOn("CoverageReport")
-    .IsDependentOn("Codecov");
+    .IsDependentOn("CoverageReport");
 
-Task("Travis").IsDependentOn("Test");
-
-Task("AppVeyor").IsDependentOn("CI");
-
-Task("GitHub")
-    .IsDependentOn("Dist")
-    .IsDependentOn("Publish")
-    .IsDependentOn("Pack")
-    ////.IsDependentOn("Docs")
-    .IsDependentOn("CoverageReport")
-    .IsDependentOn("Codecov");
+Task("GitHub").IsDependentOn("CI");
 
 Task("Default").IsDependentOn("Test");
 
