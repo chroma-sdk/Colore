@@ -101,8 +101,8 @@ namespace Colore.Rest
         /// <returns>An instance of <see cref="IRestResponse{TData}"/>.</returns>
         public async Task<IRestResponse<T>> PostAsync<T>(string resource, object? data)
         {
-            var json = data == null ? null : JsonConvert.SerializeObject(data);
-            using var content = json == null
+            var json = data is null ? null : JsonConvert.SerializeObject(data);
+            using var content = json is null
                 ? null
                 : new StringContent(json, Encoding.UTF8, "application/json");
 
@@ -137,7 +137,7 @@ namespace Colore.Rest
         /// <returns>An instance of <see cref="IRestResponse{TData}" />.</returns>
         public async Task<IRestResponse<T>> PutAsync<T>(string resource, object? data)
         {
-            using var content = data == null
+            using var content = data is null
                 ? null
                 : new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
 
@@ -172,7 +172,7 @@ namespace Colore.Rest
         /// <returns>An instance of <see cref="IRestResponse{TData}" />.</returns>
         public async Task<IRestResponse<T>> DeleteAsync<T>(string resource, object? data)
         {
-            var content = data == null
+            var content = data is null
                 ? null
                 : new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
 

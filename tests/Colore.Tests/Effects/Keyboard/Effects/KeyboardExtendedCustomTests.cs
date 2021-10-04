@@ -290,8 +290,8 @@ namespace Colore.Tests.Effects.Keyboard.Effects
         {
             var grid = ExtendedCustomKeyboardEffect.Create();
 
-            Assert.False(grid == null);
-            Assert.True(grid != null);
+            Assert.False(grid is null);
+            Assert.True(grid is not null);
             Assert.AreNotEqual(grid, null);
         }
 

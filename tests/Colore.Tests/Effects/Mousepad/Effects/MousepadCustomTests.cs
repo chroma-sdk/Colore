@@ -238,8 +238,8 @@ namespace Colore.Tests.Effects.Mousepad.Effects
         {
             var effect = default(CustomMousepadEffect);
 
-            Assert.False(effect == null);
-            Assert.True(effect != null);
+            Assert.False(effect is null);
+            Assert.True(effect is not null);
             Assert.False(effect.Equals(null));
             Assert.AreNotEqual(effect, null);
         }
