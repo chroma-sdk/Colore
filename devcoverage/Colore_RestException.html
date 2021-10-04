@@ -16,7 +16,7 @@
 <tbody>
 <tr><th>Class:</th><td>Colore.Rest.RestException</td></tr>
 <tr><th>Assembly:</th><td>Colore</td></tr>
-<tr><th>File(s):</th><td><a href="#httpsrawgithubusercontentcomchromasdkColore2ca0c697c003745836f05435c53b1b218e7e0169srcColoreRestRestExceptioncs" class="navigatetohash">https://raw.githubusercontent.com/chroma-sdk/Colore/2ca0c697c003745836f05435c53b1b218e7e0169/src/Colore/Rest/RestException.cs</a></td></tr>
+<tr><th>File(s):</th><td><a href="#httpsrawgithubusercontentcomchromasdkColorea348d6f6d06a58acf34fbfd777ee506697a419e2srcColoreRestRestExceptioncs" class="navigatetohash">https://raw.githubusercontent.com/chroma-sdk/Colore/a348d6f6d06a58acf34fbfd777ee506697a419e2/src/Colore/Rest/RestException.cs</a></td></tr>
 <tr><th>Covered lines:</th><td>11</td></tr>
 <tr><th>Uncovered lines:</th><td>20</td></tr>
 <tr><th>Coverable lines:</th><td>31</td></tr>
@@ -43,7 +43,7 @@
 </tbody>
 </table>
 <h1>File(s)</h1>
-<h2 id="httpsrawgithubusercontentcomchromasdkColore2ca0c697c003745836f05435c53b1b218e7e0169srcColoreRestRestExceptioncs">https://raw.githubusercontent.com/chroma-sdk/Colore/2ca0c697c003745836f05435c53b1b218e7e0169/src/Colore/Rest/RestException.cs</h2>
+<h2 id="httpsrawgithubusercontentcomchromasdkColorea348d6f6d06a58acf34fbfd777ee506697a419e2srcColoreRestRestExceptioncs">https://raw.githubusercontent.com/chroma-sdk/Colore/a348d6f6d06a58acf34fbfd777ee506697a419e2/src/Colore/Rest/RestException.cs</h2>
 <table class="lineAnalysis">
 <thead><tr><th></th><th>#</th><th>Line</th><th></th><th>Line coverage</th></tr></thead>
 <tbody>
@@ -169,7 +169,7 @@
 <tr class="" title="Not coverable" data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><a id="file0_line120"></a><code>120</code></td><td></td><td class="lightgray"><code></code></td></tr>
 <tr class="coverableline" title="Not covered (0 visits)" data-coverage="{'AllTestMethods': {'VC': '0', 'LVS': 'red'}}"><td class="red">&nbsp;</td><td class="leftmargin rightmargin right">0</td><td class="rightmargin right"><a id="file0_line121"></a><code>121</code></td><td></td><td class="lightred"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;uriString&nbsp;=&nbsp;info.GetString($&quot;{nameof(RestException)}.{nameof(Uri)}&quot;);</code></td></tr>
 <tr class="coverableline" title="Not covered (0 visits)" data-coverage="{'AllTestMethods': {'VC': '0', 'LVS': 'red'}}"><td class="red">&nbsp;</td><td class="leftmargin rightmargin right">0</td><td class="rightmargin right"><a id="file0_line122"></a><code>122</code></td><td></td><td class="lightred"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;uriKind&nbsp;=&nbsp;(UriKind)info.GetInt32($&quot;{nameof(RestException)}.{nameof(UriKind)}&quot;);</code></td></tr>
-<tr class="coverableline" title="Not covered (0 visits, 0 of 2 branches are covered)" data-coverage="{'AllTestMethods': {'VC': '0', 'LVS': 'red'}}"><td class="red">&nbsp;</td><td class="leftmargin rightmargin right">0</td><td class="rightmargin right"><a id="file0_line123"></a><code>123</code></td><td class="percentagebar percentagebar0"><i class="icon-fork"></i></td><td class="lightred"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Uri&nbsp;=&nbsp;uriString&nbsp;==&nbsp;null&nbsp;?&nbsp;null&nbsp;:&nbsp;new&nbsp;Uri(uriString,&nbsp;uriKind);</code></td></tr>
+<tr class="coverableline" title="Not covered (0 visits, 0 of 2 branches are covered)" data-coverage="{'AllTestMethods': {'VC': '0', 'LVS': 'red'}}"><td class="red">&nbsp;</td><td class="leftmargin rightmargin right">0</td><td class="rightmargin right"><a id="file0_line123"></a><code>123</code></td><td class="percentagebar percentagebar0"><i class="icon-fork"></i></td><td class="lightred"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Uri&nbsp;=&nbsp;uriString&nbsp;is&nbsp;null&nbsp;?&nbsp;null&nbsp;:&nbsp;new&nbsp;Uri(uriString,&nbsp;uriKind);</code></td></tr>
 <tr class="coverableline" title="Not covered (0 visits)" data-coverage="{'AllTestMethods': {'VC': '0', 'LVS': 'red'}}"><td class="red">&nbsp;</td><td class="leftmargin rightmargin right">0</td><td class="rightmargin right"><a id="file0_line124"></a><code>124</code></td><td></td><td class="lightred"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StatusCode&nbsp;=&nbsp;(HttpStatusCode)info.GetInt32($&quot;{nameof(RestException)}.{nameof(StatusCode)}&quot;);</code></td></tr>
 <tr class="coverableline" title="Not covered (0 visits)" data-coverage="{'AllTestMethods': {'VC': '0', 'LVS': 'red'}}"><td class="red">&nbsp;</td><td class="leftmargin rightmargin right">0</td><td class="rightmargin right"><a id="file0_line125"></a><code>125</code></td><td></td><td class="lightred"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RestData&nbsp;=&nbsp;info.GetString($&quot;{nameof(RestException)}.{nameof(RestData)}&quot;);</code></td></tr>
 <tr class="coverableline" title="Not covered (0 visits)" data-coverage="{'AllTestMethods': {'VC': '0', 'LVS': 'red'}}"><td class="red">&nbsp;</td><td class="leftmargin rightmargin right">0</td><td class="rightmargin right"><a id="file0_line126"></a><code>126</code></td><td></td><td class="lightred"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code></td></tr>
@@ -227,7 +227,7 @@
 <tr class="" title="Not coverable" data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><a id="file0_line178"></a><code>178</code></td><td></td><td class="lightgray"><code></code></td></tr>
 </tbody>
 </table>
-<div class="footer">Generated by: ReportGenerator 4.8.13.0<br />10/3/2021 - 5:12:03 AM<br /><a href="https://github.com/danielpalme/ReportGenerator">GitHub</a> | <a href="http://www.palmmedia.de">www.palmmedia.de</a></div></div>
+<div class="footer">Generated by: ReportGenerator 4.8.13.0<br />10/4/2021 - 9:47:59 AM<br /><a href="https://github.com/danielpalme/ReportGenerator">GitHub</a> | <a href="http://www.palmmedia.de">www.palmmedia.de</a></div></div>
 <div class="containerright">
 <div class="containerrightfixed">
 <h1>Methods/Properties</h1>
