@@ -160,7 +160,7 @@ namespace Colore.Native
             [In] Guid deviceId,
             [In] Effects.Generic.EffectType effectType,
             [In] IntPtr param,
-            [In][Out] ref Guid effectId);
+            [In] [Out] ref Guid effectId);
 
         /// <summary>
         /// Create keyboard effect.
@@ -193,7 +193,7 @@ namespace Colore.Native
         public delegate Result CreateKeyboardEffectDelegate(
             [In] KeyboardEffectType effectType,
             [In] IntPtr param,
-            [In][Out] ref Guid effectId);
+            [In] [Out] ref Guid effectId);
 
         /// <summary>
         /// Create mouse effect.
@@ -227,7 +227,7 @@ namespace Colore.Native
         public delegate Result CreateMouseEffectDelegate(
             [In] MouseEffectType effectType,
             [In] IntPtr param,
-            [In][Out] ref Guid effectId);
+            [In] [Out] ref Guid effectId);
 
         /// <summary>
         /// Create headset effect.
@@ -240,7 +240,7 @@ namespace Colore.Native
         public delegate Result CreateHeadsetEffectDelegate(
             [In] Effects.Headset.HeadsetEffectType effectType,
             [In] IntPtr param,
-            [In][Out] ref Guid effectId);
+            [In] [Out] ref Guid effectId);
 
         /// <summary>
         /// Create mousepad effect.
@@ -253,7 +253,7 @@ namespace Colore.Native
         public delegate Result CreateMousepadEffectDelegate(
             [In] Effects.Mousepad.MousepadEffectType effectType,
             [In] IntPtr param,
-            [In][Out] ref Guid effectId);
+            [In] [Out] ref Guid effectId);
 
         /// <summary>
         /// Create keypad effect.
@@ -266,7 +266,7 @@ namespace Colore.Native
         public delegate Result CreateKeypadEffectDelegate(
             [In] Effects.Keypad.KeypadEffectType effectType,
             [In] IntPtr param,
-            [In][Out] ref Guid effectId);
+            [In] [Out] ref Guid effectId);
 
         /// <summary>
         /// Create Chroma Link effect.
@@ -279,7 +279,7 @@ namespace Colore.Native
         public delegate Result CreateChromaLinkEffectDelegate(
             [In] Effects.ChromaLink.ChromaLinkEffectType effectType,
             [In] IntPtr param,
-            [In][Out] ref Guid effectId);
+            [In] [Out] ref Guid effectId);
 
         /// <summary>
         /// Delete effect.
