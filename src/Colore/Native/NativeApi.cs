@@ -74,6 +74,7 @@ namespace Colore.Native
             {
                 throw new NativeCallException("Init", result);
             }
+
             return TaskHelper.CompletedTask;
         }
 
@@ -168,6 +169,7 @@ namespace Colore.Native
             {
                 throw new NativeCallException("DeleteEffect", result);
             }
+
             return TaskHelper.CompletedTask;
         }
 
@@ -448,10 +450,12 @@ namespace Colore.Native
         {
             var guid = Guid.Empty;
             var result = _nativeSdkMethods.CreateEffect(device, effectType, param, ref guid);
+
             if (!result)
             {
                 throw new NativeCallException("CreateEffect", result);
             }
+
             return guid;
         }
 
@@ -466,10 +470,12 @@ namespace Colore.Native
         {
             var guid = Guid.Empty;
             var result = _nativeSdkMethods.CreateKeyboardEffect(effectType, param, ref guid);
+
             if (!result)
             {
                 throw new NativeCallException("CreateKeyboardEffect", result);
             }
+
             return guid;
         }
 
@@ -484,10 +490,12 @@ namespace Colore.Native
         {
             var guid = Guid.Empty;
             var result = _nativeSdkMethods.CreateMouseEffect(effectType, param, ref guid);
+
             if (!result)
             {
                 throw new NativeCallException("CreateMouseEffect", result);
             }
+
             return guid;
         }
 
@@ -501,10 +509,12 @@ namespace Colore.Native
         {
             var guid = Guid.Empty;
             var result = _nativeSdkMethods.CreateHeadsetEffect(effectType, param, ref guid);
+
             if (!result)
             {
                 throw new NativeCallException("CreateHeadsetEffect", result);
             }
+
             return guid;
         }
 
@@ -518,10 +528,12 @@ namespace Colore.Native
         {
             var guid = Guid.Empty;
             var result = _nativeSdkMethods.CreateMousepadEffect(effectType, param, ref guid);
+
             if (!result)
             {
                 throw new NativeCallException("CreateMousepadEffect", result);
             }
+
             return guid;
         }
 
@@ -535,10 +547,12 @@ namespace Colore.Native
         {
             var guid = Guid.Empty;
             var result = _nativeSdkMethods.CreateKeypadEffect(effectType, param, ref guid);
+
             if (!result)
             {
                 throw new NativeCallException("CreateKeypadEffect", result);
             }
+
             return guid;
         }
 
@@ -552,10 +566,12 @@ namespace Colore.Native
         {
             var guid = Guid.Empty;
             var result = _nativeSdkMethods.CreateChromaLinkEffect(effectType, param, ref guid);
+
             if (!result)
             {
                 throw new NativeCallException("CreateChromaLinkEffect", result);
             }
+
             return guid;
         }
     }

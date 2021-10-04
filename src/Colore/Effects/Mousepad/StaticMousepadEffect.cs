@@ -110,6 +110,7 @@ namespace Colore.Effects.Mousepad
             {
                 return false;
             }
+
             return obj is StaticMousepadEffect effect && Equals(effect);
         }
 

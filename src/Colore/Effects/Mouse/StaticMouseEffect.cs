@@ -129,6 +129,7 @@ namespace Colore.Effects.Mouse
             {
                 return false;
             }
+
             return other is StaticMouseEffect effect && Equals(effect);
         }
 

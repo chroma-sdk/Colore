@@ -371,10 +371,12 @@ namespace Colore.Implementations
         public Task<IGenericDevice> GetDeviceAsync(Guid deviceId)
         {
             Log.DebugFormat("Device {0} requested", deviceId);
+
             if (_deviceInstances.ContainsKey(deviceId))
             {
                 return Task.FromResult(_deviceInstances[deviceId]);
             }
+
             IGenericDevice device = new GenericDeviceImplementation(deviceId, _api);
             _deviceInstances[deviceId] = device;
             return Task.FromResult(device);

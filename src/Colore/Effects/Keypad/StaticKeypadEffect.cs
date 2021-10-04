@@ -108,6 +108,7 @@ namespace Colore.Effects.Keypad
             {
                 return false;
             }
+
             return obj is StaticKeypadEffect effect && Equals(effect);
         }
 

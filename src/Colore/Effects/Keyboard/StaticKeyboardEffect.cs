@@ -108,6 +108,7 @@ namespace Colore.Effects.Keyboard
             {
                 return false;
             }
+
             return obj is StaticKeyboardEffect effect && Equals(effect);
         }
 
