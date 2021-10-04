@@ -107,7 +107,9 @@ namespace Colore.Effects.Headset
         public override bool Equals(object? obj)
         {
             if (obj is null)
+            {
                 return false;
+            }
 
             return obj is StaticHeadsetEffect effect && Equals(effect);
         }

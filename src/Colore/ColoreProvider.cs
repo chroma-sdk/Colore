@@ -128,7 +128,9 @@ namespace Colore
         private static async Task ClearCurrentAsync()
         {
             if (_instance is null)
+            {
                 return;
+            }
 
             Log.Debug("Uninitializing current IChroma instance");
             await _instance.UninitializeAsync().ConfigureAwait(false);

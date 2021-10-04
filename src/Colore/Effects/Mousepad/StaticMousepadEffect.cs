@@ -107,7 +107,9 @@ namespace Colore.Effects.Mousepad
         public override bool Equals(object? obj)
         {
             if (ReferenceEquals(null, obj))
+            {
                 return false;
+            }
             return obj is StaticMousepadEffect effect && Equals(effect);
         }
 

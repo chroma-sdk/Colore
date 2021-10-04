@@ -256,7 +256,9 @@ namespace Colore.Implementations
         public async Task InitializeAsync(AppInfo? info)
         {
             if (Initialized)
+            {
                 return;
+            }
 
             Log.Info("Chroma is initializing.");
 
@@ -264,9 +266,13 @@ namespace Colore.Implementations
             var versionSuccess = RegistryHelper.TryGetSdkVersion(out _sdkVersion);
 
             if (versionSuccess)
+            {
                 Log.InfoFormat("Colore is running against SDK version {0}.", SdkVersion);
+            }
             else
+            {
                 Log.Warn("Failed to retrieve SDK version from registry!");
+            }
 
             Log.Debug("Calling SDK Init function");
             await _api.InitializeAsync(info).ConfigureAwait(false);
@@ -291,25 +297,39 @@ namespace Colore.Implementations
         public async Task UninitializeAsync()
         {
             if (!Initialized)
+            {
                 return;
+            }
 
             if (_keyboard is not null)
+            {
                 await _keyboard.DeleteCurrentEffectAsync().ConfigureAwait(false);
+            }
 
             if (_mouse is not null)
+            {
                 await _mouse.DeleteCurrentEffectAsync().ConfigureAwait(false);
+            }
 
             if (_keypad is not null)
+            {
                 await _keypad.DeleteCurrentEffectAsync().ConfigureAwait(false);
+            }
 
             if (_mousepad is not null)
+            {
                 await _mousepad.DeleteCurrentEffectAsync().ConfigureAwait(false);
+            }
 
             if (_headset is not null)
+            {
                 await _headset.DeleteCurrentEffectAsync().ConfigureAwait(false);
+            }
 
             if (_chromaLink is not null)
+            {
                 await _chromaLink.DeleteCurrentEffectAsync().ConfigureAwait(false);
+            }
 
             Unregister();
             await _api.UninitializeAsync().ConfigureAwait(false);
@@ -326,7 +346,9 @@ namespace Colore.Implementations
         public async Task<DeviceInfo> QueryAsync(Guid deviceId)
         {
             if (!Devices.IsValidId(deviceId))
+            {
                 throw new ArgumentException("The specified ID does not match any of the valid IDs.", nameof(deviceId));
+            }
 
             Log.DebugFormat("Information for {0} requested", deviceId);
 
@@ -350,7 +372,9 @@ namespace Colore.Implementations
         {
             Log.DebugFormat("Device {0} requested", deviceId);
             if (_deviceInstances.ContainsKey(deviceId))
+            {
                 return Task.FromResult(_deviceInstances[deviceId]);
+            }
             IGenericDevice device = new GenericDeviceImplementation(deviceId, _api);
             _deviceInstances[deviceId] = device;
             return Task.FromResult(device);
@@ -458,7 +482,9 @@ namespace Colore.Implementations
         public void Unregister()
         {
             if (!_registered)
+            {
                 return;
+            }
 
             Log.Debug("Unregistering from Chroma event notifications");
 

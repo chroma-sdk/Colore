@@ -348,7 +348,9 @@ namespace Colore.Data
         public override bool Equals(object? obj)
         {
             if (obj is null)
+            {
                 return false;
+            }
 
             switch (obj)
             {

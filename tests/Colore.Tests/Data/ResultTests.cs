@@ -161,7 +161,9 @@ namespace Colore.Tests.Data
         {
             // ReSharper disable once RedundantLogicalConditionalExpressionOperand
             if (Result.RzFailed && true)
+            {
                 Assert.Fail("If-check failed");
+            }
         }
 
         [Test]
@@ -169,7 +171,9 @@ namespace Colore.Tests.Data
         {
             // ReSharper disable once RedundantLogicalConditionalExpressionOperand
             if (Result.RzSuccess || false)
+            {
                 Assert.Pass();
+            }
             Assert.Fail("If-check failed.");
         }
 

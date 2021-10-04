@@ -212,7 +212,9 @@ namespace Colore.Data
         public int CompareTo(SdkVersion other)
         {
             if (Major != other.Major)
+            {
                 return Major.CompareTo(other.Major);
+            }
 
             return Minor != other.Minor ? Minor.CompareTo(other.Minor) : Revision.CompareTo(other.Revision);
         }

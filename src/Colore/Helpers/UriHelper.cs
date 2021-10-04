@@ -45,10 +45,14 @@ namespace Colore.Helpers
         internal static Uri Append(this Uri uri, Uri resource)
         {
             if (uri is null)
+            {
                 throw new ArgumentNullException(nameof(uri));
+            }
 
             if (resource is null)
+            {
                 throw new ArgumentNullException(nameof(resource));
+            }
 
             var left = uri.ToString().TrimEnd('/');
             var right = resource.ToString().TrimStart('/');

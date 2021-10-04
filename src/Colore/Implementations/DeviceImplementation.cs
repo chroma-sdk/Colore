@@ -88,7 +88,9 @@ namespace Colore.Implementations
         internal async Task DeleteCurrentEffectAsync()
         {
             if (CurrentEffectId == Guid.Empty)
+            {
                 return;
+            }
 
             await Api.DeleteEffectAsync(CurrentEffectId).ConfigureAwait(false);
             CurrentEffectId = Guid.Empty;

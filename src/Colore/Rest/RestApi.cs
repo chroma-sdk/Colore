@@ -108,7 +108,9 @@ namespace Colore.Rest
         public async Task InitializeAsync(AppInfo? info)
         {
             if (info is null)
+            {
                 throw new ArgumentNullException(nameof(info));
+            }
 
             Log.Info("Initializing SDK via /razer/chromasdk endpoint");
 
@@ -198,10 +200,14 @@ namespace Colore.Rest
             var data = response.Data;
 
             if (data is null)
+            {
                 throw new ApiException("Uninitialize API returned NULL response");
+            }
 
             if (!data.Result)
+            {
                 throw new ApiException("Exception when calling uninitialize API", data.Result);
+            }
 
             Log.Debug("Stopping heartbeat timer");
             _heartbeatTimer.Change(Timeout.Infinite, Timeout.Infinite);
@@ -240,10 +246,14 @@ namespace Colore.Rest
             var data = response.Data;
 
             if (data is null)
+            {
                 throw new ApiException("SetEffect API returned NULL response");
+            }
 
             if (!data.Result)
+            {
                 throw new ApiException("Exception when calling SetEffect API", data.Result);
+            }
         }
 
         /// <inheritdoc />
@@ -273,10 +283,14 @@ namespace Colore.Rest
             var data = response.Data;
 
             if (data is null)
+            {
                 throw new ApiException("DeleteEffect API returned NULL response");
+            }
 
             if (!data.Result)
+            {
                 throw new ApiException("Exception when calling DeleteEffect API", data.Result);
+            }
         }
 
         /// <inheritdoc />
@@ -523,13 +537,19 @@ namespace Colore.Rest
             var responseData = response.Data;
 
             if (responseData is null)
+            {
                 throw new ApiException("Effect creation API returned NULL response");
+            }
 
             if (!responseData.Result)
+            {
                 throw new ApiException("Exception when calling SetEffect API", responseData.Result);
+            }
 
             if (responseData.EffectId is null)
+            {
                 throw new ApiException("Got NULL GUID from creating effect", responseData.Result);
+            }
 
             return responseData.EffectId.Value;
         }

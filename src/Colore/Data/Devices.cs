@@ -269,7 +269,9 @@ namespace Colore.Data
         private static void BuildMetadataCache()
         {
             if (_cacheBuilt)
+            {
                 return;
+            }
 
             var fields = typeof(Devices).GetFields(BindingFlags.Static | BindingFlags.Public)
                                         .Where(p => p.FieldType == typeof(Guid));
@@ -287,7 +289,9 @@ namespace Colore.Data
             foreach (var mapping in mappings)
             {
                 if (!MetadataCache.TryAdd(mapping.Key, mapping.Value))
+                {
                     success = false;
+                }
             }
 
             _cacheBuilt = success;
@@ -303,7 +307,9 @@ namespace Colore.Data
             BuildMetadataCache();
 
             if (MetadataCache.ContainsKey(deviceId))
+            {
                 return MetadataCache[deviceId];
+            }
 
             throw new ArgumentException(
                 "The specified device ID was not found in the known devices.",

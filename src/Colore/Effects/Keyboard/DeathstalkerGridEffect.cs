@@ -214,7 +214,9 @@ namespace Colore.Effects.Keyboard
         public override bool Equals(object? obj)
         {
             if (obj is null)
+            {
                 return false;
+            }
 
             return obj is DeathstalkerGridEffect custom && Equals(custom);
         }
@@ -233,7 +235,9 @@ namespace Colore.Effects.Keyboard
             for (var index = 0; index < KeyboardConstants.MaxKeys; index++)
             {
                 if (_colors[index] != other._colors[index])
+                {
                     return false;
+                }
             }
 
             return true;
