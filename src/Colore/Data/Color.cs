@@ -226,7 +226,9 @@ namespace Colore.Data
         public override bool Equals(object? other)
         {
             if (other is null)
+            {
                 return false;
+            }
 
             switch (other)
             {

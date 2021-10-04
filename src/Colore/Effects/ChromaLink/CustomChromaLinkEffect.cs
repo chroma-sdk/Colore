@@ -258,7 +258,9 @@ namespace Colore.Effects.ChromaLink
         public override bool Equals(object? obj)
         {
             if (obj is null)
+            {
                 return false;
+            }
 
             return obj is CustomChromaLinkEffect custom && Equals(custom);
         }
@@ -277,7 +279,9 @@ namespace Colore.Effects.ChromaLink
             for (var index = 0; index < ChromaLinkConstants.MaxLeds; index++)
             {
                 if (this[index] != other[index])
+                {
                     return false;
+                }
             }
 
             return true;

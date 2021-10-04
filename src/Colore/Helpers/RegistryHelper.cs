@@ -93,7 +93,7 @@ namespace Colore.Helpers
             {
                 using (var key = Registry.LocalMachine.OpenSubKey(SdkRegKeyPath, false))
                 {
-                    if (key == null)
+                    if (key is null)
                     {
                         Log.Warn("Failed to open registry key to read SDK version.");
                         ver = new SdkVersion(0, 0, 0);
@@ -190,7 +190,7 @@ namespace Colore.Helpers
                 {
                     using (var key = Registry.LocalMachine.OpenSubKey(SdkRegKeyPath))
                     {
-                        if (key == null)
+                        if (key is null)
                         {
                             return false;
                         }
@@ -203,7 +203,7 @@ namespace Colore.Helpers
 
                             using (var appsSubKey = key.OpenSubKey(AppsSubKeyPath))
                             {
-                                if (appsSubKey != null)
+                                if (appsSubKey is not null)
                                 {
                                     value = appsSubKey.GetValue("Enable");
                                 }

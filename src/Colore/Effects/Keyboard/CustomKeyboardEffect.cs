@@ -293,7 +293,9 @@ namespace Colore.Effects.Keyboard
         public override bool Equals(object? obj)
         {
             if (obj is null)
+            {
                 return false;
+            }
 
             return obj is CustomKeyboardEffect custom && Equals(custom);
         }
@@ -312,7 +314,9 @@ namespace Colore.Effects.Keyboard
             for (var index = 0; index < KeyboardConstants.MaxKeys; index++)
             {
                 if (_colors[index] != other._colors[index] || _keys[index] != other._keys[index])
+                {
                     return false;
+                }
             }
 
             return true;

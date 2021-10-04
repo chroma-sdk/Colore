@@ -423,7 +423,7 @@ namespace Colore.Logging
         // ReSharper disable once UnusedParameter.Local
         private static void GuardAgainstNullLogger(ILog logger)
         {
-            if (logger == null)
+            if (logger is null)
             {
                 throw new ArgumentNullException("logger");
             }
@@ -626,7 +626,7 @@ namespace Colore.Logging
         static ILog GetLogger(Type type, string fallbackTypeName = "System.Object")
         {
             // If the type passed in is null then fallback to the type name specified
-            return GetLogger(type != null ? type.FullName : fallbackTypeName);
+            return GetLogger(type is not null ? type.FullName : fallbackTypeName);
         }
 
         /// <summary>
@@ -642,7 +642,7 @@ namespace Colore.Logging
         static ILog GetLogger(string name)
         {
             ILogProvider logProvider = CurrentLogProvider ?? ResolveLogProvider();
-            return logProvider == null
+            return logProvider is null
                 ? NoOpLogger.Instance
                 : (ILog)new LoggerExecutionWrapper(logProvider.GetLogger(name), () => IsDisabled);
         }
@@ -662,7 +662,7 @@ namespace Colore.Logging
         {
             ILogProvider logProvider = CurrentLogProvider ?? ResolveLogProvider();
 
-            return logProvider == null
+            return logProvider is null
                 ? new DisposableAction(() => { })
                 : logProvider.OpenNestedContext(message);
         }
@@ -684,7 +684,7 @@ namespace Colore.Logging
         {
             ILogProvider logProvider = CurrentLogProvider ?? ResolveLogProvider();
 
-            return logProvider == null
+            return logProvider is null
                 ? new DisposableAction(() => { })
                 : logProvider.OpenMappedContext(key, value, destructure);
         }
@@ -722,7 +722,7 @@ namespace Colore.Logging
 #if !LIBLOG_PROVIDERS_ONLY
         private static void RaiseOnCurrentLogProviderSet()
         {
-            if (s_onCurrentLogProviderSet != null)
+            if (s_onCurrentLogProviderSet is not null)
             {
                 s_onCurrentLogProviderSet(s_currentLogProvider);
             }
@@ -813,7 +813,7 @@ namespace Colore.Logging
             {
                 return false;
             }
-            if (messageFunc == null)
+            if (messageFunc is null)
             {
                 return _logger(logLevel, null);
             }
@@ -821,18 +821,18 @@ namespace Colore.Logging
 #if !LIBLOG_PORTABLE
             // Callsite HACK - Using the messageFunc to provide the callsite-logger-type
             var lastExtensionMethod = _lastExtensionMethod;
-            if (lastExtensionMethod == null || !lastExtensionMethod.Equals(messageFunc))
+            if (lastExtensionMethod is null || !lastExtensionMethod.Equals(messageFunc))
             {
                 // Callsite HACK - Cache the last validated messageFunc as Equals is faster than type-check
                 lastExtensionMethod = null;
                 var methodType = messageFunc.Method.DeclaringType;
-                if (methodType == typeof(LogExtensions) || (methodType != null && methodType.DeclaringType == typeof(LogExtensions)))
+                if (methodType == typeof(LogExtensions) || (methodType is not null && methodType.DeclaringType == typeof(LogExtensions)))
                 {
                     lastExtensionMethod = messageFunc;
                 }
             }
 
-            if (lastExtensionMethod != null)
+            if (lastExtensionMethod is not null)
             {
                 // Callsite HACK - LogExtensions has called virtual ILog interface method to get here, callsite-stack is good
                 _lastExtensionMethod = lastExtensionMethod;
@@ -974,7 +974,7 @@ namespace Colore.Logging.LogProviders
 
         public static bool IsLoggerAvailable()
         {
-            return ProviderIsAvailableOverride && GetLogManagerType() != null;
+            return ProviderIsAvailableOverride && GetLogManagerType() is not null;
         }
 
         protected override OpenNdc GetOpenNdcMethod()
@@ -1047,7 +1047,7 @@ namespace Colore.Logging.LogProviders
                 try
                 {
                     var logEventLevelType = Type.GetType("NLog.LogLevel, NLog");
-                    if (logEventLevelType == null)
+                    if (logEventLevelType is null)
                     {
                         throw new InvalidOperationException("Type NLog.LogLevel was not found.");
                     }
@@ -1061,7 +1061,7 @@ namespace Colore.Logging.LogProviders
                     _levelFatal = levelFields.First(x => x.Name == "Fatal").GetValue(null);
 
                     var logEventInfoType = Type.GetType("NLog.LogEventInfo, NLog");
-                    if (logEventInfoType == null)
+                    if (logEventInfoType is null)
                     {
                         throw new InvalidOperationException("Type NLog.LogEventInfo was not found.");
                     }
@@ -1099,7 +1099,7 @@ namespace Colore.Logging.LogProviders
             [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
             public bool Log(LogLevel logLevel, Func<string> messageFunc, Exception exception, params object[] formatParameters)
             {
-                if (messageFunc == null)
+                if (messageFunc is null)
                 {
                     return IsLogLevelEnable(logLevel);
                 }
@@ -1107,7 +1107,7 @@ namespace Colore.Logging.LogProviders
                 var callsiteMessageFunc = messageFunc;
                 messageFunc = LogMessageFormatter.SimulateStructuredLogging(messageFunc, formatParameters);
 
-                if (_logEventInfoFact != null)
+                if (_logEventInfoFact is not null)
                 {
                     if (IsLogLevelEnable(logLevel))
                     {
@@ -1115,11 +1115,11 @@ namespace Colore.Logging.LogProviders
 #if !LIBLOG_PORTABLE
                         // Callsite HACK - Extract the callsite-logger-type from the messageFunc
                         var methodType = callsiteMessageFunc.Method.DeclaringType;
-                        if (methodType == typeof(LogExtensions) || (methodType != null && methodType.DeclaringType == typeof(LogExtensions)))
+                        if (methodType == typeof(LogExtensions) || (methodType is not null && methodType.DeclaringType == typeof(LogExtensions)))
                         {
                             callsiteLoggerType = typeof(LogExtensions);
                         }
-                        else if (methodType == typeof(LoggerExecutionWrapper) || (methodType != null && methodType.DeclaringType == typeof(LoggerExecutionWrapper)))
+                        else if (methodType == typeof(LoggerExecutionWrapper) || (methodType is not null && methodType.DeclaringType == typeof(LoggerExecutionWrapper)))
                         {
                             callsiteLoggerType = typeof(LoggerExecutionWrapper);
                         }
@@ -1132,7 +1132,7 @@ namespace Colore.Logging.LogProviders
                     return false;
                 }
 
-                if (exception != null)
+                if (exception is not null)
                 {
                     return LogException(logLevel, messageFunc, exception);
                 }
@@ -1310,7 +1310,7 @@ namespace Colore.Logging.LogProviders
 
         internal static bool IsLoggerAvailable()
         {
-            return ProviderIsAvailableOverride && GetLogManagerType() != null;
+            return ProviderIsAvailableOverride && GetLogManagerType() is not null;
         }
 
         protected override OpenNdc GetOpenNdcMethod()
@@ -1412,7 +1412,7 @@ namespace Colore.Logging.LogProviders
             static Log4NetLogger()
             {
                 var logEventLevelType = Type.GetType("log4net.Core.Level, log4net");
-                if (logEventLevelType == null)
+                if (logEventLevelType is null)
                 {
                     throw new InvalidOperationException("Type log4net.Core.Level was not found.");
                 }
@@ -1426,7 +1426,7 @@ namespace Colore.Logging.LogProviders
 
                 // Func<object, object, bool> isEnabledFor = (logger, level) => { return ((log4net.Core.ILogger)logger).IsEnabled(level); }
                 var loggerType = Type.GetType("log4net.Core.ILogger, log4net");
-                if (loggerType == null)
+                if (loggerType is null)
                 {
                     throw new InvalidOperationException("Type log4net.Core.ILogger, was not found.");
                 }
@@ -1557,7 +1557,7 @@ namespace Colore.Logging.LogProviders
 
             public bool Log(LogLevel logLevel, Func<string> messageFunc, Exception exception, params object[] formatParameters)
             {
-                if (messageFunc == null)
+                if (messageFunc is null)
                 {
                     return IsLogLevelEnable(logLevel);
                 }
@@ -1577,7 +1577,7 @@ namespace Colore.Logging.LogProviders
                                                                 out patternMatches);
 
                 // determine correct caller - this might change due to jit optimizations with method inlining
-                if (s_callerStackBoundaryType == null)
+                if (s_callerStackBoundaryType is null)
                 {
                     lock (CallerStackBoundaryTypeSync)
                     {
@@ -1624,7 +1624,7 @@ namespace Colore.Logging.LogProviders
 
             private static bool IsInTypeHierarchy(Type currentType, Type checkType)
             {
-                while (currentType != null && currentType != typeof(object))
+                while (currentType is not null && currentType != typeof(object))
                 {
                     if (currentType == checkType)
                     {
@@ -1683,9 +1683,9 @@ namespace Colore.Logging.LogProviders
             LogEntryType = Type.GetType(string.Format(CultureInfo.InvariantCulture, TypeTemplate, "LogEntry"));
             LoggerType = Type.GetType(string.Format(CultureInfo.InvariantCulture, TypeTemplate, "Logger"));
             TraceEventTypeType = TraceEventTypeValues.Type;
-            if (LogEntryType == null
-                 || TraceEventTypeType == null
-                 || LoggerType == null)
+            if (LogEntryType is null
+                 || TraceEventTypeType is null
+                 || LoggerType is null)
             {
                 return;
             }
@@ -1716,8 +1716,8 @@ namespace Colore.Logging.LogProviders
         internal static bool IsLoggerAvailable()
         {
             return ProviderIsAvailableOverride
-                 && TraceEventTypeType != null
-                 && LogEntryType != null;
+                 && TraceEventTypeType is not null
+                 && LogEntryType is not null;
         }
 
         private static Action<string, string, int> GetWriteLogEntry()
@@ -1802,14 +1802,14 @@ namespace Colore.Logging.LogProviders
             public bool Log(LogLevel logLevel, Func<string> messageFunc, Exception exception, params object[] formatParameters)
             {
                 var severity = MapSeverity(logLevel);
-                if (messageFunc == null)
+                if (messageFunc is null)
                 {
                     return _shouldLog(_loggerName, severity);
                 }
 
 
                 messageFunc = LogMessageFormatter.SimulateStructuredLogging(messageFunc, formatParameters);
-                if (exception != null)
+                if (exception is not null)
                 {
                     return LogException(logLevel, messageFunc, exception);
                 }
@@ -1878,7 +1878,7 @@ namespace Colore.Logging.LogProviders
 
         internal static bool IsLoggerAvailable()
         {
-            return ProviderIsAvailableOverride && GetLogManagerType() != null;
+            return ProviderIsAvailableOverride && GetLogManagerType() is not null;
         }
 
         protected override OpenNdc GetOpenNdcMethod()
@@ -1969,7 +1969,7 @@ namespace Colore.Logging.LogProviders
             static SerilogLogger()
             {
                 var logEventLevelType = Type.GetType("Serilog.Events.LogEventLevel, Serilog");
-                if (logEventLevelType == null)
+                if (logEventLevelType is null)
                 {
                     throw new InvalidOperationException("Type Serilog.Events.LogEventLevel was not found.");
                 }
@@ -1982,7 +1982,7 @@ namespace Colore.Logging.LogProviders
 
                 // Func<object, object, bool> isEnabled = (logger, level) => { return ((SeriLog.ILogger)logger).IsEnabled(level); }
                 var loggerType = Type.GetType("Serilog.ILogger, Serilog");
-                if (loggerType == null)
+                if (loggerType is null)
                 {
                     throw new InvalidOperationException("Type Serilog.ILogger was not found.");
                 }
@@ -2045,7 +2045,7 @@ namespace Colore.Logging.LogProviders
             public bool Log(LogLevel logLevel, Func<string> messageFunc, Exception exception, params object[] formatParameters)
             {
                 var translatedLevel = TranslateLevel(logLevel);
-                if (messageFunc == null)
+                if (messageFunc is null)
                 {
                     return IsEnabled(_logger, translatedLevel);
                 }
@@ -2055,7 +2055,7 @@ namespace Colore.Logging.LogProviders
                     return false;
                 }
 
-                if (exception != null)
+                if (exception is not null)
                 {
                     LogException(translatedLevel, messageFunc, exception, formatParameters);
                 }
@@ -2153,7 +2153,7 @@ namespace Colore.Logging.LogProviders
 
         public static bool IsLoggerAvailable()
         {
-            return ProviderIsAvailableOverride && GetLogManagerType() != null;
+            return ProviderIsAvailableOverride && GetLogManagerType() is not null;
         }
 
         private static Type GetLogManagerType()
@@ -2200,7 +2200,7 @@ namespace Colore.Logging.LogProviders
 
             public bool Log(LogLevel logLevel, Func<string> messageFunc, Exception exception, params object[] formatParameters)
             {
-                if (messageFunc == null)
+                if (messageFunc is null)
                 {
                     //nothing to log..
                     return true;
@@ -2254,12 +2254,12 @@ namespace Colore.Logging.LogProviders
         static TraceEventTypeValues()
         {
             var assembly = typeof(Uri).GetAssemblyPortable(); // This is to get to the System.dll assembly in a PCL compatible way.
-            if (assembly == null)
+            if (assembly is null)
             {
                 return;
             }
             Type = assembly.GetType("System.Diagnostics.TraceEventType");
-            if (Type == null) return;
+            if (Type is null) return;
             Verbose = (int)Enum.Parse(Type, "Verbose", false);
             Information = (int)Enum.Parse(Type, "Information", false);
             Warning = (int)Enum.Parse(Type, "Warning", false);
@@ -2293,7 +2293,7 @@ namespace Colore.Logging.LogProviders
         /// <returns></returns>
         public static Func<string> SimulateStructuredLogging(Func<string> messageBuilder, object[] formatParameters)
         {
-            if (formatParameters == null || formatParameters.Length == 0)
+            if (formatParameters is null || formatParameters.Length == 0)
             {
                 return messageBuilder;
             }
@@ -2464,7 +2464,7 @@ namespace Colore.Logging.LogProviders
 
         public void Dispose()
         {
-            if (_onDispose != null)
+            if (_onDispose is not null)
             {
                 _onDispose();
             }

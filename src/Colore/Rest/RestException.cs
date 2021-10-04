@@ -120,7 +120,7 @@ namespace Colore.Rest
 
             var uriString = info.GetString($"{nameof(RestException)}.{nameof(Uri)}");
             var uriKind = (UriKind)info.GetInt32($"{nameof(RestException)}.{nameof(UriKind)}");
-            Uri = uriString == null ? null : new Uri(uriString, uriKind);
+            Uri = uriString is null ? null : new Uri(uriString, uriKind);
             StatusCode = (HttpStatusCode)info.GetInt32($"{nameof(RestException)}.{nameof(StatusCode)}");
             RestData = info.GetString($"{nameof(RestException)}.{nameof(RestData)}");
         }

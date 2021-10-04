@@ -349,7 +349,9 @@ namespace Colore.Effects.Mouse
                 for (var col = 0; col < MouseConstants.MaxColumns; col++)
                 {
                     if (this[row, col] != other[row, col])
+                    {
                         return false;
+                    }
                 }
             }
 

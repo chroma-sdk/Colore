@@ -105,7 +105,10 @@ namespace Colore.Effects.Keypad
         public override bool Equals(object? obj)
         {
             if (ReferenceEquals(null, obj))
+            {
                 return false;
+            }
+
             return obj is StaticKeypadEffect effect && Equals(effect);
         }
 

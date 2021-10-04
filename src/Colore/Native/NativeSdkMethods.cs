@@ -497,7 +497,9 @@ namespace Colore.Native
         private void ReleaseUnmanagedResources()
         {
             if (_chromaSdkPointer != IntPtr.Zero)
+            {
                 Kernel32.NativeMethods.FreeLibrary(_chromaSdkPointer);
+            }
         }
     }
 }

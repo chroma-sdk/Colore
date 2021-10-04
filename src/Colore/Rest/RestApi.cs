@@ -107,8 +107,10 @@ namespace Colore.Rest
         /// <exception cref="RestException">Thrown if there is an error calling the REST API.</exception>
         public async Task InitializeAsync(AppInfo? info)
         {
-            if (info == null)
+            if (info is null)
+            {
                 throw new ArgumentNullException(nameof(info));
+            }
 
             Log.Info("Initializing SDK via /razer/chromasdk endpoint");
 
@@ -129,7 +131,7 @@ namespace Colore.Rest
 
             var data = response.Data;
 
-            if (data == null)
+            if (data is null)
             {
                 var ex = new RestException(
                     "REST API returned NULL data",
@@ -197,11 +199,15 @@ namespace Colore.Rest
 
             var data = response.Data;
 
-            if (data == null)
+            if (data is null)
+            {
                 throw new ApiException("Uninitialize API returned NULL response");
+            }
 
             if (!data.Result)
+            {
                 throw new ApiException("Exception when calling uninitialize API", data.Result);
+            }
 
             Log.Debug("Stopping heartbeat timer");
             _heartbeatTimer.Change(Timeout.Infinite, Timeout.Infinite);
@@ -239,11 +245,15 @@ namespace Colore.Rest
 
             var data = response.Data;
 
-            if (data == null)
+            if (data is null)
+            {
                 throw new ApiException("SetEffect API returned NULL response");
+            }
 
             if (!data.Result)
+            {
                 throw new ApiException("Exception when calling SetEffect API", data.Result);
+            }
         }
 
         /// <inheritdoc />
@@ -272,11 +282,15 @@ namespace Colore.Rest
 
             var data = response.Data;
 
-            if (data == null)
+            if (data is null)
+            {
                 throw new ApiException("DeleteEffect API returned NULL response");
+            }
 
             if (!data.Result)
+            {
                 throw new ApiException("Exception when calling DeleteEffect API", data.Result);
+            }
         }
 
         /// <inheritdoc />
@@ -480,7 +494,7 @@ namespace Colore.Rest
                 throw ex;
             }
 
-            if (response.Data == null)
+            if (response.Data is null)
             {
                 var ex = new RestException(
                     "Got NULL data from heartbeat call",
@@ -522,14 +536,20 @@ namespace Colore.Rest
 
             var responseData = response.Data;
 
-            if (responseData == null)
+            if (responseData is null)
+            {
                 throw new ApiException("Effect creation API returned NULL response");
+            }
 
             if (!responseData.Result)
+            {
                 throw new ApiException("Exception when calling SetEffect API", responseData.Result);
+            }
 
-            if (responseData.EffectId == null)
+            if (responseData.EffectId is null)
+            {
                 throw new ApiException("Got NULL GUID from creating effect", responseData.Result);
+            }
 
             return responseData.EffectId.Value;
         }

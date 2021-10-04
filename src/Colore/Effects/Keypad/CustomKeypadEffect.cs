@@ -336,7 +336,9 @@ namespace Colore.Effects.Keypad
                 for (var col = 0; col < KeypadConstants.MaxColumns; col++)
                 {
                     if (this[row, col] != other[row, col])
+                    {
                         return false;
+                    }
                 }
             }
 

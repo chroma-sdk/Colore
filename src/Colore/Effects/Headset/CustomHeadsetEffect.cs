@@ -229,7 +229,9 @@ namespace Colore.Effects.Headset
         public override bool Equals(object? obj)
         {
             if (obj is null)
+            {
                 return false;
+            }
 
             return obj is CustomHeadsetEffect custom && Equals(custom);
         }
@@ -247,7 +249,9 @@ namespace Colore.Effects.Headset
             for (var i = 0; i < HeadsetConstants.MaxLeds; i++)
             {
                 if (this[i] != other[i])
+                {
                     return false;
+                }
             }
 
             return true;

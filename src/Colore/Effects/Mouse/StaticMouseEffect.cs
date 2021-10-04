@@ -126,7 +126,10 @@ namespace Colore.Effects.Mouse
         public override bool Equals(object? other)
         {
             if (other is null)
+            {
                 return false;
+            }
+
             return other is StaticMouseEffect effect && Equals(effect);
         }
 

@@ -241,7 +241,9 @@ namespace Colore.Effects.Mousepad
             for (var i = 0; i < MousepadConstants.MaxLeds; i++)
             {
                 if (this[i] != other[i])
+                {
                     return false;
+                }
             }
 
             return true;

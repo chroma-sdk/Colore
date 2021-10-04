@@ -60,7 +60,9 @@ namespace Colore.Implementations
             Log.InfoFormat("New generic device initializing: {0}", deviceId);
 
             if (!Devices.IsValidId(deviceId))
+            {
                 throw new UnsupportedDeviceException(deviceId);
+            }
 
             DeviceId = deviceId;
         }

@@ -249,7 +249,9 @@ namespace Colore.Implementations
         public async Task<Guid> SetPositionAsync(int row, int column, Color color, bool clear = false)
         {
             if (clear)
+            {
                 _grid.Clear();
+            }
 
             _grid[row, column] = color;
             return await SetEffectAsync(
@@ -267,7 +269,9 @@ namespace Colore.Implementations
         public async Task<Guid> SetKeyAsync(Key key, Color color, bool clear = false)
         {
             if (clear)
+            {
                 _grid.Clear();
+            }
 
             _grid[key] = color;
             return await SetEffectAsync(
@@ -306,7 +310,9 @@ namespace Colore.Implementations
             var guid = Guid.Empty;
 
             if (clear)
+            {
                 guid = await ClearAsync().ConfigureAwait(false);
+            }
 
             foreach (var key in keys)
                 guid = await SetKeyAsync(key, color).ConfigureAwait(false);
@@ -337,7 +343,9 @@ namespace Colore.Implementations
         public async Task<Guid> SetDeathstalkerZoneAsync(int zoneIndex, Color color, bool clear = false)
         {
             if (clear)
+            {
                 _deathstalkerGrid.Clear();
+            }
 
             _deathstalkerGrid[zoneIndex] = color;
             return await SetEffectAsync(
