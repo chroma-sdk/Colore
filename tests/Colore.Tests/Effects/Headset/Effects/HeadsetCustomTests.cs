@@ -238,8 +238,8 @@ namespace Colore.Tests.Effects.Headset.Effects
         {
             var effect = default(CustomHeadsetEffect);
 
-            Assert.False(effect is null);
-            Assert.True(effect is not null);
+            Assert.False(effect == null);
+            Assert.True(effect != null);
             Assert.False(effect.Equals(null));
             Assert.AreNotEqual(effect, null);
         }

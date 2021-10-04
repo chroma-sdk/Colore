@@ -229,8 +229,8 @@ namespace Colore.Tests.Data
         {
             var c = new Color(255, 255, 255);
             Assert.AreNotEqual(c, null);
-            Assert.False(c is null);
-            Assert.True(c is not null);
+            Assert.False(c == null);
+            Assert.True(c != null);
             Assert.False(c.Equals(null));
         }
 

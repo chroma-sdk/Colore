@@ -412,8 +412,8 @@ namespace Colore.Tests.Effects.Keypad.Effects
         {
             var grid = CustomKeypadEffect.Create();
 
-            Assert.False(grid is null);
-            Assert.True(grid is not null);
+            Assert.False(grid == null);
+            Assert.True(grid != null);
             Assert.False(grid.Equals(null));
             Assert.AreNotEqual(grid, null);
         }

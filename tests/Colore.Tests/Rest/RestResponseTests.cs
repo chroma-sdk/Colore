@@ -157,7 +157,7 @@ namespace Colore.Tests.Rest
 
             public bool Equals(MyData? other)
             {
-                return other is not null && Name == other.Name && Age == other.Age;
+                return other != null && Name == other.Name && Age == other.Age;
             }
         }
     }
