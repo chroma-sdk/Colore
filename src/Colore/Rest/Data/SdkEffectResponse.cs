@@ -30,8 +30,6 @@ namespace Colore.Rest.Data
 
     using Colore.Data;
 
-    using JetBrains.Annotations;
-
     using Newtonsoft.Json;
 
     /// <inheritdoc />

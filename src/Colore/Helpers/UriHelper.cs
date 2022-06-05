@@ -27,8 +27,6 @@ namespace Colore.Helpers
 {
     using System;
 
-    using JetBrains.Annotations;
-
     /// <summary>
     /// Provides helper methods for working with URIs.
     /// </summary>

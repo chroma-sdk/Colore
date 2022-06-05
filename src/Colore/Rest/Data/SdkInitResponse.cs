@@ -28,8 +28,6 @@ namespace Colore.Rest.Data
     using System;
     using System.Diagnostics.CodeAnalysis;
 
-    using JetBrains.Annotations;
-
     using Newtonsoft.Json;
 
     /// <summary>

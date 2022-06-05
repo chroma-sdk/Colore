@@ -94,7 +94,7 @@ namespace Colore.Rest
             Log.InfoFormat("Initializing REST API client at {0}", client.BaseAddress);
             _client = client;
             _baseUri = client.BaseAddress;
-            _heartbeatTimer = new Timer(state => SendHeartbeat(), null, Timeout.Infinite, HeartbeatInterval);
+            _heartbeatTimer = new Timer(_ => SendHeartbeat(), null, Timeout.Infinite, HeartbeatInterval);
         }
 
         /// <inheritdoc />
@@ -125,6 +125,7 @@ namespace Colore.Rest
                     Result.RzFailed,
                     new Uri(_client.BaseAddress, "/razer/chromasdk"),
                     response.Status);
+
                 Log.Error(ex, "Chroma SDK initialization failed");
                 throw ex;
             }
@@ -138,6 +139,7 @@ namespace Colore.Rest
                     Result.RzFailed,
                     new Uri(_client.BaseAddress, "/razer/chromasdk"),
                     response.Status);
+
                 Log.Error(ex, "Got NULL data from REST API");
                 throw ex;
             }
@@ -324,7 +326,8 @@ namespace Colore.Rest
         /// <param name="effectType">The type of effect to create.</param>
         /// <param name="data">The effect structure parameter.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public async Task<Guid> CreateKeyboardEffectAsync<T>(Effects.Keyboard.KeyboardEffectType effectType, T data) where T : struct
+        public async Task<Guid> CreateKeyboardEffectAsync<T>(Effects.Keyboard.KeyboardEffectType effectType, T data)
+            where T : struct
         {
             return await CreateEffectAsync("/keyboard", data).ConfigureAwait(false);
         }
@@ -348,7 +351,8 @@ namespace Colore.Rest
         /// <param name="effectType">The type of effect to create.</param>
         /// <param name="data">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public async Task<Guid> CreateMouseEffectAsync<T>(Effects.Mouse.MouseEffectType effectType, T data) where T : struct
+        public async Task<Guid> CreateMouseEffectAsync<T>(Effects.Mouse.MouseEffectType effectType, T data)
+            where T : struct
         {
             return await CreateEffectAsync("/mouse", data).ConfigureAwait(false);
         }
@@ -372,7 +376,8 @@ namespace Colore.Rest
         /// <param name="effectType">The type of effect to create.</param>
         /// <param name="data">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public async Task<Guid> CreateHeadsetEffectAsync<T>(Effects.Headset.HeadsetEffectType effectType, T data) where T : struct
+        public async Task<Guid> CreateHeadsetEffectAsync<T>(Effects.Headset.HeadsetEffectType effectType, T data)
+            where T : struct
         {
             return await CreateEffectAsync("/headset", data).ConfigureAwait(false);
         }
@@ -396,7 +401,8 @@ namespace Colore.Rest
         /// <param name="effectType">The type of effect to create.</param>
         /// <param name="data">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public async Task<Guid> CreateMousepadEffectAsync<T>(Effects.Mousepad.MousepadEffectType effectType, T data) where T : struct
+        public async Task<Guid> CreateMousepadEffectAsync<T>(Effects.Mousepad.MousepadEffectType effectType, T data)
+            where T : struct
         {
             return await CreateEffectAsync("/mousepad", data).ConfigureAwait(false);
         }
@@ -420,7 +426,8 @@ namespace Colore.Rest
         /// <param name="effectType">The type of effect to create.</param>
         /// <param name="data">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public async Task<Guid> CreateKeypadEffectAsync<T>(Effects.Keypad.KeypadEffectType effectType, T data) where T : struct
+        public async Task<Guid> CreateKeypadEffectAsync<T>(Effects.Keypad.KeypadEffectType effectType, T data)
+            where T : struct
         {
             return await CreateEffectAsync("/keypad", data).ConfigureAwait(false);
         }
@@ -444,7 +451,9 @@ namespace Colore.Rest
         /// <param name="effectType">The type of effect to create.</param>
         /// <param name="data">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public async Task<Guid> CreateChromaLinkEffectAsync<T>(Effects.ChromaLink.ChromaLinkEffectType effectType, T data) where T : struct
+        public async Task<Guid> CreateChromaLinkEffectAsync<T>(
+            Effects.ChromaLink.ChromaLinkEffectType effectType,
+            T data) where T : struct
         {
             return await CreateEffectAsync("/chromalink", data).ConfigureAwait(false);
         }
@@ -490,6 +499,7 @@ namespace Colore.Rest
                     Result.RzFailed,
                     new Uri(_client.BaseAddress, "/heartbeat"),
                     response.Status);
+
                 Log.Error(ex, "Heartbeat call failed");
                 throw ex;
             }
@@ -501,6 +511,7 @@ namespace Colore.Rest
                     Result.RzFailed,
                     new Uri(_client.BaseAddress, "/heartbeat"),
                     response.Status);
+
                 Log.Error(ex, "Got NULL data from heartbeat call");
                 throw ex;
             }
@@ -530,6 +541,7 @@ namespace Colore.Rest
                     new Uri(_client.BaseAddress, endpoint),
                     response.Status,
                     response.Data?.ToString());
+
                 Log.Error(ex, "Failed to create effect");
                 throw ex;
             }

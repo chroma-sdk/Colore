@@ -27,8 +27,6 @@ namespace Colore.Rest.Data
 {
     using System;
 
-    using JetBrains.Annotations;
-
     using Newtonsoft.Json;
 
     /// <summary>
