@@ -23,39 +23,38 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests.Rest.Data
+namespace Colore.Tests.Rest.Data;
+
+using System;
+
+using Colore.Data;
+using Colore.Rest.Data;
+
+using NUnit.Framework;
+
+[TestFixture]
+public class RestCallResponseTests
 {
-    using System;
-
-    using Colore.Data;
-    using Colore.Rest.Data;
-
-    using NUnit.Framework;
-
-    [TestFixture]
-    public class RestCallResponseTests
+    [Test]
+    public void ShouldConstructWithCorrectResult()
     {
-        [Test]
-        public void ShouldConstructWithCorrectResult()
-        {
-            var expected = Result.RzAccessDenied;
-            var response = new SdkEffectResponse(expected, null);
-            Assert.AreEqual(expected, response.Result);
-        }
+        var expected = Result.RzAccessDenied;
+        var response = new SdkEffectResponse(expected, null);
+        Assert.AreEqual(expected, response.Result);
+    }
 
-        [Test]
-        public void ShouldConstructWithCorrectEffectId()
-        {
-            var expected = Guid.NewGuid();
-            var response = new SdkEffectResponse(Result.RzSuccess, expected);
-            Assert.AreEqual(expected, response.EffectId);
-        }
+    [Test]
+    public void ShouldConstructWithCorrectEffectId()
+    {
+        var expected = Guid.NewGuid();
+        var response = new SdkEffectResponse(Result.RzSuccess, expected);
+        Assert.AreEqual(expected, response.EffectId);
+    }
 
-        [Test]
-        public void ShouldConstructWithNullEffectId()
-        {
-            var response = new SdkEffectResponse(Result.RzFailed, null);
-            Assert.IsNull(response.EffectId);
-        }
+    [Test]
+    public void ShouldConstructWithNullEffectId()
+    {
+        var response = new SdkEffectResponse(Result.RzFailed, null);
+        Assert.IsNull(response.EffectId);
     }
 }

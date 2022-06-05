@@ -23,85 +23,84 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests.Effects.Generic
+namespace Colore.Tests.Effects.Generic;
+
+using Colore.Effects.Generic;
+
+using NUnit.Framework;
+
+[TestFixture]
+public class NoneTests
 {
-    using Colore.Effects.Generic;
-
-    using NUnit.Framework;
-
-    [TestFixture]
-    public class NoneTests
+    [Test]
+    public void ShouldConstructWithCorrectParameter()
     {
-        [Test]
-        public void ShouldConstructWithCorrectParameter()
-        {
-            Assert.That(new NoneEffect(42).Parameter, Is.EqualTo(42));
-        }
+        Assert.That(new NoneEffect(42).Parameter, Is.EqualTo(42));
+    }
 
-        [Test]
-        public void ShouldEqualOtherWithSameParameter()
-        {
-            var a = new NoneEffect(1);
-            var b = new NoneEffect(1);
-            Assert.AreEqual(a, b);
-        }
+    [Test]
+    public void ShouldEqualOtherWithSameParameter()
+    {
+        var a = new NoneEffect(1);
+        var b = new NoneEffect(1);
+        Assert.AreEqual(a, b);
+    }
 
-        [Test]
-        public void ShouldNotEqualOtherWithDifferentParameter()
-        {
-            var a = new NoneEffect(1);
-            var b = new NoneEffect(2);
-            Assert.AreNotEqual(a, b);
-        }
+    [Test]
+    public void ShouldNotEqualOtherWithDifferentParameter()
+    {
+        var a = new NoneEffect(1);
+        var b = new NoneEffect(2);
+        Assert.AreNotEqual(a, b);
+    }
 
-        [Test]
-        public void ShouldEqualOtherWithSameParameterUsingEqualOp()
-        {
-            var a = new NoneEffect(1);
-            var b = new NoneEffect(1);
-            Assert.True(a == b);
-        }
+    [Test]
+    public void ShouldEqualOtherWithSameParameterUsingEqualOp()
+    {
+        var a = new NoneEffect(1);
+        var b = new NoneEffect(1);
+        Assert.True(a == b);
+    }
 
-        [Test]
-        public void ShouldEqualOtherWithSameParameterUsingInequalOp()
-        {
-            var a = new NoneEffect(1);
-            var b = new NoneEffect(1);
-            Assert.False(a != b);
-        }
+    [Test]
+    public void ShouldEqualOtherWithSameParameterUsingInequalOp()
+    {
+        var a = new NoneEffect(1);
+        var b = new NoneEffect(1);
+        Assert.False(a != b);
+    }
 
-        [Test]
-        public void ShouldNotEqualOtherWithDifferentParameterUsingEqualOp()
-        {
-            var a = new NoneEffect(1);
-            var b = new NoneEffect(2);
-            Assert.False(a == b);
-        }
+    [Test]
+    public void ShouldNotEqualOtherWithDifferentParameterUsingEqualOp()
+    {
+        var a = new NoneEffect(1);
+        var b = new NoneEffect(2);
+        Assert.False(a == b);
+    }
 
-        [Test]
-        public void ShouldNotEqualOtherWithDifferentParameterUsingInequalOp()
-        {
-            var a = new NoneEffect(1);
-            var b = new NoneEffect(2);
-            Assert.True(a != b);
-        }
+    [Test]
+    public void ShouldNotEqualOtherWithDifferentParameterUsingInequalOp()
+    {
+        var a = new NoneEffect(1);
+        var b = new NoneEffect(2);
+        Assert.True(a != b);
+    }
 
-        [Test]
-        public void ShouldHaveZeroHashCodeOnDefaultInstance()
-        {
-            Assert.Zero(new NoneEffect().GetHashCode());
-        }
+    [Test]
+    public void ShouldHaveZeroHashCodeOnDefaultInstance()
+    {
+        Assert.Zero(new NoneEffect().GetHashCode());
+    }
 
-        [Test]
-        public void ShouldNotEqualNull()
-        {
-            Assert.False(new NoneEffect(0).Equals(null));
-        }
+    [Test]
+    public void ShouldNotEqualNull()
+    {
+        Assert.False(new NoneEffect(0).Equals(null));
+    }
 
-        [Test]
-        public void ShouldNotEqualArbitraryObject()
-        {
-            Assert.False(new NoneEffect(0).Equals(new object()));
-        }
+    [Test]
+    public void ShouldNotEqualArbitraryObject()
+    {
+        Assert.False(new NoneEffect(0).Equals(new object()));
     }
 }

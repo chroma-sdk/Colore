@@ -23,26 +23,25 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests.Rest.Data
+namespace Colore.Tests.Rest.Data;
+
+using Colore.Rest.Data;
+
+using NUnit.Framework;
+
+[TestFixture]
+public class HeartbeatResponseTests
 {
-    using Colore.Rest.Data;
-
-    using NUnit.Framework;
-
-    [TestFixture]
-    public class HeartbeatResponseTests
+    [TestCase(0)]
+    [TestCase(1)]
+    [TestCase(5)]
+    [TestCase(23541)]
+    [TestCase(int.MaxValue)]
+    [TestCase(int.MinValue)]
+    [TestCase(-321)]
+    public void ShouldConstructWithCorrectTick(int tick)
     {
-        [TestCase(0)]
-        [TestCase(1)]
-        [TestCase(5)]
-        [TestCase(23541)]
-        [TestCase(int.MaxValue)]
-        [TestCase(int.MinValue)]
-        [TestCase(-321)]
-        public void ShouldConstructWithCorrectTick(int tick)
-        {
-            var response = new HeartbeatResponse(tick);
-            Assert.AreEqual(tick, response.Tick);
-        }
+        var response = new HeartbeatResponse(tick);
+        Assert.AreEqual(tick, response.Tick);
     }
 }

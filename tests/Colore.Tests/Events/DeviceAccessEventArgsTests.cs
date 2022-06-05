@@ -23,21 +23,20 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests.Events
+namespace Colore.Tests.Events;
+
+using Colore.Events;
+
+using NUnit.Framework;
+
+[TestFixture]
+public class DeviceAccessEventArgsTests
 {
-    using Colore.Events;
-
-    using NUnit.Framework;
-
-    [TestFixture]
-    public class DeviceAccessEventArgsTests
+    [Test]
+    public void ShouldConstructWithProperProperties()
     {
-        [Test]
-        public void ShouldConstructWithProperProperties()
-        {
-            const bool Expected = true;
-            var args = new DeviceAccessEventArgs(Expected);
-            Assert.AreEqual(Expected, args.Granted);
-        }
+        const bool Expected = true;
+        var args = new DeviceAccessEventArgs(Expected);
+        Assert.AreEqual(Expected, args.Granted);
     }
 }

@@ -23,108 +23,107 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests.Implementations
+namespace Colore.Tests.Implementations;
+
+using System;
+using System.Threading.Tasks;
+
+using Colore.Api;
+using Colore.Implementations;
+
+using Moq;
+
+using NUnit.Framework;
+
+[TestFixture]
+public class DeviceImplementationTests
 {
-    using System;
-    using System.Threading.Tasks;
+    // Safe to suppress null warnings here since the `Setup` method acts
+    // like a constructor.
+    private Mock<IChromaApi> _api = null!;
 
-    using Colore.Api;
-    using Colore.Implementations;
+    private Mock<DeviceImplementation> _deviceMock = null!;
 
-    using Moq;
+    private DeviceImplementation _device = null!;
 
-    using NUnit.Framework;
-
-    [TestFixture]
-    public class DeviceImplementationTests
+    [SetUp]
+    public void Setup()
     {
-        // Safe to suppress null warnings here since the `Setup` method acts
-        // like a constructor.
-        private Mock<IChromaApi> _api = null!;
+        _api = new Mock<IChromaApi>();
+        _deviceMock = new Mock<DeviceImplementation>(MockBehavior.Strict, _api.Object);
+        _device = _deviceMock.Object;
+    }
 
-        private Mock<DeviceImplementation> _deviceMock = null!;
+    [Test]
+    public async Task ShouldSetCurrentEffectIdOnSetEffect()
+    {
+        var guid = Guid.NewGuid();
 
-        private DeviceImplementation _device = null!;
+        await _device.SetEffectAsync(guid);
 
-        [SetUp]
-        public void Setup()
-        {
-            _api = new Mock<IChromaApi>();
-            _deviceMock = new Mock<DeviceImplementation>(MockBehavior.Strict, _api.Object);
-            _device = _deviceMock.Object;
-        }
+        Assert.AreEqual(guid, _device.CurrentEffectId);
+    }
 
-        [Test]
-        public async Task ShouldSetCurrentEffectIdOnSetEffect()
-        {
-            var guid = Guid.NewGuid();
+    [Test]
+    public async Task ShouldCallSetEffectApiOnSetEffect()
+    {
+        var guid = Guid.NewGuid();
 
-            await _device.SetEffectAsync(guid);
+        await _device.SetEffectAsync(guid);
 
-            Assert.AreEqual(guid, _device.CurrentEffectId);
-        }
+        _api.Verify(a => a.SetEffectAsync(guid), Times.Once);
+    }
 
-        [Test]
-        public async Task ShouldCallSetEffectApiOnSetEffect()
-        {
-            var guid = Guid.NewGuid();
+    [Test]
+    public async Task ShouldNotCallDeleteEffectOnFirstSetEffect()
+    {
+        await _device.SetEffectAsync(Guid.Empty);
+        _api.Verify(a => a.DeleteEffectAsync(It.IsAny<Guid>()), Times.Never);
+    }
 
-            await _device.SetEffectAsync(guid);
+    [Test]
+    public async Task ShouldCallDeleteEffectIfPreviousEffectSet()
+    {
+        var guid = Guid.NewGuid();
+        await _device.SetEffectAsync(guid);
+        await _device.SetEffectAsync(Guid.NewGuid());
 
-            _api.Verify(a => a.SetEffectAsync(guid), Times.Once);
-        }
+        _api.Verify(a => a.DeleteEffectAsync(guid), Times.Once);
+    }
 
-        [Test]
-        public async Task ShouldNotCallDeleteEffectOnFirstSetEffect()
-        {
-            await _device.SetEffectAsync(Guid.Empty);
-            _api.Verify(a => a.DeleteEffectAsync(It.IsAny<Guid>()), Times.Never);
-        }
+    [Test]
+    public async Task ShouldNotCallDeleteEffectOnDeleteWithNoEffect()
+    {
+        await _device.DeleteCurrentEffectAsync();
+        _api.Verify(a => a.DeleteEffectAsync(It.IsAny<Guid>()), Times.Never);
+    }
 
-        [Test]
-        public async Task ShouldCallDeleteEffectIfPreviousEffectSet()
-        {
-            var guid = Guid.NewGuid();
-            await _device.SetEffectAsync(guid);
-            await _device.SetEffectAsync(Guid.NewGuid());
+    [Test]
+    public async Task ShouldCallDeleteEffectWithCorrectIdOnDelete()
+    {
+        var guid = Guid.NewGuid();
+        await _device.SetEffectAsync(guid);
+        await _device.DeleteCurrentEffectAsync();
 
-            _api.Verify(a => a.DeleteEffectAsync(guid), Times.Once);
-        }
+        _api.Verify(a => a.DeleteEffectAsync(guid), Times.Once);
+    }
 
-        [Test]
-        public async Task ShouldNotCallDeleteEffectOnDeleteWithNoEffect()
-        {
-            await _device.DeleteCurrentEffectAsync();
-            _api.Verify(a => a.DeleteEffectAsync(It.IsAny<Guid>()), Times.Never);
-        }
+    [Test]
+    public async Task ShouldResetEffectIdOnDelete()
+    {
+        await _device.SetEffectAsync(Guid.NewGuid());
+        await _device.DeleteCurrentEffectAsync();
 
-        [Test]
-        public async Task ShouldCallDeleteEffectWithCorrectIdOnDelete()
-        {
-            var guid = Guid.NewGuid();
-            await _device.SetEffectAsync(guid);
-            await _device.DeleteCurrentEffectAsync();
+        Assert.AreEqual(Guid.Empty, _device.CurrentEffectId);
+    }
 
-            _api.Verify(a => a.DeleteEffectAsync(guid), Times.Once);
-        }
+    [Test]
+    public async Task ShouldSetNewEffectIdIfExistingEffect()
+    {
+        await _device.SetEffectAsync(Guid.NewGuid());
+        var guid = Guid.NewGuid();
+        await _device.SetEffectAsync(guid);
 
-        [Test]
-        public async Task ShouldResetEffectIdOnDelete()
-        {
-            await _device.SetEffectAsync(Guid.NewGuid());
-            await _device.DeleteCurrentEffectAsync();
-
-            Assert.AreEqual(Guid.Empty, _device.CurrentEffectId);
-        }
-
-        [Test]
-        public async Task ShouldSetNewEffectIdIfExistingEffect()
-        {
-            await _device.SetEffectAsync(Guid.NewGuid());
-            var guid = Guid.NewGuid();
-            await _device.SetEffectAsync(guid);
-
-            Assert.AreEqual(guid, _device.CurrentEffectId);
-        }
+        Assert.AreEqual(guid, _device.CurrentEffectId);
     }
 }

@@ -23,174 +23,173 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests.Rest
+namespace Colore.Tests.Rest;
+
+using System;
+using System.Net;
+using System.Net.Http;
+using System.Threading;
+using System.Threading.Tasks;
+
+using Colore.Rest;
+using Colore.Tests.Mocking;
+
+using Moq;
+
+using NUnit.Framework;
+
+[TestFixture]
+public class RestClientTests
 {
-    using System;
-    using System.Net;
-    using System.Net.Http;
-    using System.Threading;
-    using System.Threading.Tasks;
-
-    using Colore.Rest;
-    using Colore.Tests.Mocking;
-
-    using Moq;
-
-    using NUnit.Framework;
-
-    [TestFixture]
-    public class RestClientTests
+    [Test]
+    public void ShouldConstructWithCorrectBaseAddressFromUri()
     {
-        [Test]
-        public void ShouldConstructWithCorrectBaseAddressFromUri()
-        {
-            var uri = new Uri("http://google.com");
-            var client = new RestClient(uri);
-            Assert.AreEqual(uri, client.BaseAddress);
-            client.Dispose();
-        }
+        var uri = new Uri("http://google.com");
+        var client = new RestClient(uri);
+        Assert.AreEqual(uri, client.BaseAddress);
+        client.Dispose();
+    }
 
-        [Test]
-        public void ShouldConstructWithCorrectBaseAddressFromString()
-        {
-            const string Address = "https://example.org/mysite";
-            var client = new RestClient(Address);
-            Assert.AreEqual(new Uri(Address), client.BaseAddress);
-            client.Dispose();
-        }
+    [Test]
+    public void ShouldConstructWithCorrectBaseAddressFromString()
+    {
+        const string Address = "https://example.org/mysite";
+        var client = new RestClient(Address);
+        Assert.AreEqual(new Uri(Address), client.BaseAddress);
+        client.Dispose();
+    }
 
-        [Test]
-        public void ShouldChangeBaseAddress()
-        {
-            var oldUri = new Uri("http://example.com");
-            var newUri = new Uri("http://example.org");
-            var client = new RestClient(oldUri) { BaseAddress = newUri };
-            Assert.AreEqual(newUri, client.BaseAddress);
-            client.Dispose();
-        }
+    [Test]
+    public void ShouldChangeBaseAddress()
+    {
+        var oldUri = new Uri("http://example.com");
+        var newUri = new Uri("http://example.org");
+        var client = new RestClient(oldUri) { BaseAddress = newUri };
+        Assert.AreEqual(newUri, client.BaseAddress);
+        client.Dispose();
+    }
 
-        [Test]
-        public async Task ShouldPerformSimplePost()
-        {
-            var (mockMessageHandler, client) = CreateMockClient();
+    [Test]
+    public async Task ShouldPerformSimplePost()
+    {
+        var (mockMessageHandler, client) = CreateMockClient();
 
-            mockMessageHandler.Setup(
-                                  h => h.SendAsync(
-                                      It.Is<HttpRequestMessage>(r => r.Method == HttpMethod.Post),
-                                      It.IsAny<CancellationToken>()))
-                              .ReturnsAsync(
-                                  new HttpResponseMessage(HttpStatusCode.OK)
-                                  {
-                                      Content = new StringContent("\"hello\"")
-                                  });
+        mockMessageHandler.Setup(
+                              h => h.SendAsync(
+                                  It.Is<HttpRequestMessage>(r => r.Method == HttpMethod.Post),
+                                  It.IsAny<CancellationToken>()))
+                          .ReturnsAsync(
+                              new HttpResponseMessage(HttpStatusCode.OK)
+                              {
+                                  Content = new StringContent("\"hello\"")
+                              });
 
-            await client.PostAsync<string>("test", null);
+        await client.PostAsync<string>("test", null);
 
-            mockMessageHandler.Verify(
-                h => h.SendAsync(
-                    It.Is<HttpRequestMessage>(r => r.Method == HttpMethod.Post),
-                    It.IsAny<CancellationToken>()));
-        }
+        mockMessageHandler.Verify(
+            h => h.SendAsync(
+                It.Is<HttpRequestMessage>(r => r.Method == HttpMethod.Post),
+                It.IsAny<CancellationToken>()));
+    }
 
-        [Test]
-        public async Task ShouldPerformSimplePut()
-        {
-            var (mockMessageHandler, client) = CreateMockClient();
+    [Test]
+    public async Task ShouldPerformSimplePut()
+    {
+        var (mockMessageHandler, client) = CreateMockClient();
 
-            mockMessageHandler.Setup(
-                                  h => h.SendAsync(
-                                      It.Is<HttpRequestMessage>(r => r.Method == HttpMethod.Put),
-                                      It.IsAny<CancellationToken>()))
-                              .ReturnsAsync(
-                                  new HttpResponseMessage(HttpStatusCode.OK)
-                                  {
-                                      Content = new StringContent("\"hello\"")
-                                  });
+        mockMessageHandler.Setup(
+                              h => h.SendAsync(
+                                  It.Is<HttpRequestMessage>(r => r.Method == HttpMethod.Put),
+                                  It.IsAny<CancellationToken>()))
+                          .ReturnsAsync(
+                              new HttpResponseMessage(HttpStatusCode.OK)
+                              {
+                                  Content = new StringContent("\"hello\"")
+                              });
 
-            await client.PutAsync<string>("test");
+        await client.PutAsync<string>("test");
 
-            mockMessageHandler.Verify(
-                h => h.SendAsync(
-                    It.Is<HttpRequestMessage>(r => r.Method == HttpMethod.Put),
-                    It.IsAny<CancellationToken>()));
-        }
+        mockMessageHandler.Verify(
+            h => h.SendAsync(
+                It.Is<HttpRequestMessage>(r => r.Method == HttpMethod.Put),
+                It.IsAny<CancellationToken>()));
+    }
 
-        [Test]
-        public async Task ShouldPerformPutWithData()
-        {
-            var (mockMessageHandler, client) = CreateMockClient();
+    [Test]
+    public async Task ShouldPerformPutWithData()
+    {
+        var (mockMessageHandler, client) = CreateMockClient();
 
-            mockMessageHandler.Setup(
-                                  h => h.SendAsync(
-                                      It.Is<HttpRequestMessage>(r => r.Method == HttpMethod.Put),
-                                      It.IsAny<CancellationToken>()))
-                              .ReturnsAsync(
-                                  new HttpResponseMessage(HttpStatusCode.OK)
-                                  {
-                                      Content = new StringContent("\"hello\"")
-                                  });
+        mockMessageHandler.Setup(
+                              h => h.SendAsync(
+                                  It.Is<HttpRequestMessage>(r => r.Method == HttpMethod.Put),
+                                  It.IsAny<CancellationToken>()))
+                          .ReturnsAsync(
+                              new HttpResponseMessage(HttpStatusCode.OK)
+                              {
+                                  Content = new StringContent("\"hello\"")
+                              });
 
-            await client.PutAsync<string>("test", "foobar");
+        await client.PutAsync<string>("test", "foobar");
 
-            mockMessageHandler.Verify(
-                h => h.SendAsync(
-                    It.Is<HttpRequestMessage>(r => r.Method == HttpMethod.Put && r.Content is StringContent),
-                    It.IsAny<CancellationToken>()));
-        }
+        mockMessageHandler.Verify(
+            h => h.SendAsync(
+                It.Is<HttpRequestMessage>(r => r.Method == HttpMethod.Put && r.Content is StringContent),
+                It.IsAny<CancellationToken>()));
+    }
 
-        [Test]
-        public async Task ShouldPerformSimpleDelete()
-        {
-            var (mockMessageHandler, client) = CreateMockClient();
+    [Test]
+    public async Task ShouldPerformSimpleDelete()
+    {
+        var (mockMessageHandler, client) = CreateMockClient();
 
-            mockMessageHandler.Setup(
-                                  h => h.SendAsync(
-                                      It.Is<HttpRequestMessage>(r => r.Method == HttpMethod.Delete),
-                                      It.IsAny<CancellationToken>()))
-                              .ReturnsAsync(
-                                  new HttpResponseMessage(HttpStatusCode.OK)
-                                  {
-                                      Content = new StringContent("\"hello\"")
-                                  });
+        mockMessageHandler.Setup(
+                              h => h.SendAsync(
+                                  It.Is<HttpRequestMessage>(r => r.Method == HttpMethod.Delete),
+                                  It.IsAny<CancellationToken>()))
+                          .ReturnsAsync(
+                              new HttpResponseMessage(HttpStatusCode.OK)
+                              {
+                                  Content = new StringContent("\"hello\"")
+                              });
 
-            await client.DeleteAsync<string>("test");
+        await client.DeleteAsync<string>("test");
 
-            mockMessageHandler.Verify(
-                h => h.SendAsync(
-                    It.Is<HttpRequestMessage>(r => r.Method == HttpMethod.Delete),
-                    It.IsAny<CancellationToken>()));
-        }
+        mockMessageHandler.Verify(
+            h => h.SendAsync(
+                It.Is<HttpRequestMessage>(r => r.Method == HttpMethod.Delete),
+                It.IsAny<CancellationToken>()));
+    }
 
-        [Test]
-        public async Task ShouldPerformDeleteWithData()
-        {
-            var (mockMessageHandler, client) = CreateMockClient();
+    [Test]
+    public async Task ShouldPerformDeleteWithData()
+    {
+        var (mockMessageHandler, client) = CreateMockClient();
 
-            mockMessageHandler.Setup(
-                                  h => h.SendAsync(
-                                      It.Is<HttpRequestMessage>(r => r.Method == HttpMethod.Delete),
-                                      It.IsAny<CancellationToken>()))
-                              .ReturnsAsync(
-                                  new HttpResponseMessage(HttpStatusCode.OK)
-                                  {
-                                      Content = new StringContent("\"hello\"")
-                                  });
+        mockMessageHandler.Setup(
+                              h => h.SendAsync(
+                                  It.Is<HttpRequestMessage>(r => r.Method == HttpMethod.Delete),
+                                  It.IsAny<CancellationToken>()))
+                          .ReturnsAsync(
+                              new HttpResponseMessage(HttpStatusCode.OK)
+                              {
+                                  Content = new StringContent("\"hello\"")
+                              });
 
-            await client.DeleteAsync<string>("test", "foobar");
+        await client.DeleteAsync<string>("test", "foobar");
 
-            mockMessageHandler.Verify(
-                h => h.SendAsync(
-                    It.Is<HttpRequestMessage>(r => r.Method == HttpMethod.Delete && r.Content is StringContent),
-                    It.IsAny<CancellationToken>()));
-        }
+        mockMessageHandler.Verify(
+            h => h.SendAsync(
+                It.Is<HttpRequestMessage>(r => r.Method == HttpMethod.Delete && r.Content is StringContent),
+                It.IsAny<CancellationToken>()));
+    }
 
-        private static (Mock<IMockHttpMessageHandler>, RestClient) CreateMockClient()
-        {
-            var mockMessageHandler = new Mock<IMockHttpMessageHandler>();
-            var client = new RestClient(
-                new Uri("http://example.org"),
-                new MockHttpMessageHandler(mockMessageHandler.Object));
-            return (mockMessageHandler, client);
-        }
+    private static (Mock<IMockHttpMessageHandler>, RestClient) CreateMockClient()
+    {
+        var mockMessageHandler = new Mock<IMockHttpMessageHandler>();
+        var client = new RestClient(
+            new Uri("http://example.org"),
+            new MockHttpMessageHandler(mockMessageHandler.Object));
+        return (mockMessageHandler, client);
     }
 }

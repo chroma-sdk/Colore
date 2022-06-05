@@ -23,49 +23,48 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests.Rest.Data
+namespace Colore.Tests.Rest.Data;
+
+using System;
+
+using Colore.Rest.Data;
+
+using NUnit.Framework;
+
+[TestFixture]
+public class RestInitResponseTests
 {
-    using System;
-
-    using Colore.Rest.Data;
-
-    using NUnit.Framework;
-
-    [TestFixture]
-    public class RestInitResponseTests
+    [TestCase(0)]
+    [TestCase(5)]
+    [TestCase(int.MaxValue)]
+    [TestCase(int.MinValue)]
+    [TestCase(-512513)]
+    [TestCase(362362)]
+    public void ShouldConstructWithCorrectSession(int session)
     {
-        [TestCase(0)]
-        [TestCase(5)]
-        [TestCase(int.MaxValue)]
-        [TestCase(int.MinValue)]
-        [TestCase(-512513)]
-        [TestCase(362362)]
-        public void ShouldConstructWithCorrectSession(int session)
-        {
-            var response = new SdkInitResponse(session, new Uri("http://google.com"));
-            Assert.AreEqual(session, response.Session);
-        }
+        var response = new SdkInitResponse(session, new Uri("http://google.com"));
+        Assert.AreEqual(session, response.Session);
+    }
 
-        [TestCase("http://google.com")]
-        [TestCase("https://google.com")]
-        [TestCase("http://razer.com")]
-        [TestCase("https://razer.com/foobar")]
-        [TestCase("file:///home/test/chroma.html")]
-        [TestCase("http://example.com/someapi")]
-        [TestCase("https://example.org/someapi?with=args")]
-        ////[TestCase("http://www.example.net/#withanchor")]
-        [TestCase("http://example.xyz:12345/a_port")]
-        public void ShouldConstructWithCorrectUri(string url)
-        {
-            var expected = new Uri(url);
-            var response = new SdkInitResponse(0, expected);
-            Assert.AreEqual(expected, response.Uri);
-        }
+    [TestCase("http://google.com")]
+    [TestCase("https://google.com")]
+    [TestCase("http://razer.com")]
+    [TestCase("https://razer.com/foobar")]
+    [TestCase("file:///home/test/chroma.html")]
+    [TestCase("http://example.com/someapi")]
+    [TestCase("https://example.org/someapi?with=args")]
+    ////[TestCase("http://www.example.net/#withanchor")]
+    [TestCase("http://example.xyz:12345/a_port")]
+    public void ShouldConstructWithCorrectUri(string url)
+    {
+        var expected = new Uri(url);
+        var response = new SdkInitResponse(0, expected);
+        Assert.AreEqual(expected, response.Uri);
+    }
 
-        [Test]
-        public void ShouldConstructWithNullUri()
-        {
-            Assert.IsNull(new SdkInitResponse(0, null).Uri);
-        }
+    [Test]
+    public void ShouldConstructWithNullUri()
+    {
+        Assert.IsNull(new SdkInitResponse(0, null).Uri);
     }
 }

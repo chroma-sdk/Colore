@@ -23,19 +23,18 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests.Effects.Keyboard.Effects
+namespace Colore.Tests.Effects.Keyboard.Effects;
+
+using Colore.Effects.Keyboard;
+
+using NUnit.Framework;
+
+[TestFixture]
+public class PositionDataTests
 {
-    using Colore.Effects.Keyboard;
-
-    using NUnit.Framework;
-
-    [TestFixture]
-    public class PositionDataTests
+    [Test]
+    public void ShouldNotBeNull()
     {
-        [Test]
-        public void ShouldNotBeNull()
-        {
-            Assert.NotNull(PositionData.UnsafePositions);
-        }
+        Assert.NotNull(PositionData.UnsafePositions);
     }
 }

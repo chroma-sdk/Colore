@@ -23,21 +23,20 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests.Events
+namespace Colore.Tests.Events;
+
+using Colore.Events;
+
+using NUnit.Framework;
+
+[TestFixture]
+public class SdkSupportEventArgsTests
 {
-    using Colore.Events;
-
-    using NUnit.Framework;
-
-    [TestFixture]
-    public class SdkSupportEventArgsTests
+    [Test]
+    public void ShouldConstructWithProperProperties()
     {
-        [Test]
-        public void ShouldConstructWithProperProperties()
-        {
-            const bool Expected = true;
-            var args = new SdkSupportEventArgs(Expected);
-            Assert.AreEqual(Expected, args.Enabled);
-        }
+        const bool Expected = true;
+        var args = new SdkSupportEventArgs(Expected);
+        Assert.AreEqual(Expected, args.Enabled);
     }
 }

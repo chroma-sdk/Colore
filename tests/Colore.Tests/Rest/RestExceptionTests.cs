@@ -23,101 +23,100 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests.Rest
+namespace Colore.Tests.Rest;
+
+using System;
+using System.Net;
+
+using Colore.Data;
+using Colore.Rest;
+
+using NUnit.Framework;
+
+[TestFixture]
+public class RestExceptionTests
 {
-    using System;
-    using System.Net;
-
-    using Colore.Data;
-    using Colore.Rest;
-
-    using NUnit.Framework;
-
-    [TestFixture]
-    public class RestExceptionTests
+    [TestCase("hello")]
+    [TestCase("hello world")]
+    [TestCase("Hello foo, bar, and baz")]
+    public void ShouldConstructWithCorrectMessage(string message)
     {
-        [TestCase("hello")]
-        [TestCase("hello world")]
-        [TestCase("Hello foo, bar, and baz")]
-        public void ShouldConstructWithCorrectMessage(string message)
-        {
-            var exception = new RestException(message);
-            Assert.AreEqual(message, exception.Message);
-        }
+        var exception = new RestException(message);
+        Assert.AreEqual(message, exception.Message);
+    }
 
-        [Test]
-        public void ShouldConstructWithCorrectInnerException()
-        {
-            var expected = new Exception("I'm the inner exception");
-            var exception = new RestException("test", expected);
-            Assert.AreEqual(expected, exception.InnerException);
-        }
+    [Test]
+    public void ShouldConstructWithCorrectInnerException()
+    {
+        var expected = new Exception("I'm the inner exception");
+        var exception = new RestException("test", expected);
+        Assert.AreEqual(expected, exception.InnerException);
+    }
 
-        [Test]
-        public void ShouldConstructWithCorrectResult()
-        {
-            var expected = Result.RzResourceDisabled;
-            var exception = new RestException("test", expected, new Uri("http://example.com"), HttpStatusCode.OK);
-            Assert.AreEqual(expected, exception.Result);
-        }
+    [Test]
+    public void ShouldConstructWithCorrectResult()
+    {
+        var expected = Result.RzResourceDisabled;
+        var exception = new RestException("test", expected, new Uri("http://example.com"), HttpStatusCode.OK);
+        Assert.AreEqual(expected, exception.Result);
+    }
 
-        [TestCase("http://google.se")]
-        [TestCase("http://example.org/foobar")]
-        [TestCase("https://a.website.com:123/with?a=port")]
-        public void ShouldConstructWithCorrectUri(string url)
-        {
-            var expected = new Uri(url);
-            var exception = new RestException("test", Result.RzSuccess, expected, HttpStatusCode.OK);
-            Assert.AreEqual(expected, exception.Uri);
-        }
+    [TestCase("http://google.se")]
+    [TestCase("http://example.org/foobar")]
+    [TestCase("https://a.website.com:123/with?a=port")]
+    public void ShouldConstructWithCorrectUri(string url)
+    {
+        var expected = new Uri(url);
+        var exception = new RestException("test", Result.RzSuccess, expected, HttpStatusCode.OK);
+        Assert.AreEqual(expected, exception.Uri);
+    }
 
-        [Test]
-        public void ShouldThrowOnNullUri()
-        {
-            // ReSharper disable once AssignNullToNotNullAttribute
-            // ReSharper disable once ObjectCreationAsStatement
-            Assert.Throws<ArgumentNullException>(
-                () => new RestException(null, Result.RzSuccess, null!, HttpStatusCode.OK));
-        }
+    [Test]
+    public void ShouldThrowOnNullUri()
+    {
+        // ReSharper disable once AssignNullToNotNullAttribute
+        // ReSharper disable once ObjectCreationAsStatement
+        Assert.Throws<ArgumentNullException>(
+            () => new RestException(null, Result.RzSuccess, null!, HttpStatusCode.OK));
+    }
 
-        [Test]
-        public void ShouldConstructWithNullUriOnEmptyConstructor()
-        {
-            Assert.IsNull(new RestException().Uri);
-        }
+    [Test]
+    public void ShouldConstructWithNullUriOnEmptyConstructor()
+    {
+        Assert.IsNull(new RestException().Uri);
+    }
 
-        [TestCase(HttpStatusCode.OK)]
-        [TestCase(HttpStatusCode.Accepted)]
-        [TestCase(HttpStatusCode.Created)]
-        [TestCase(HttpStatusCode.BadRequest)]
-        [TestCase(HttpStatusCode.InternalServerError)]
-        [TestCase(HttpStatusCode.MethodNotAllowed)]
-        [TestCase(HttpStatusCode.Forbidden)]
-        [TestCase(HttpStatusCode.NotFound)]
-        public void ShouldConstructWithCorrectStatusCode(HttpStatusCode statusCode)
-        {
-            var exception = new RestException("test", Result.RzSuccess, new Uri("http://example.com"), statusCode);
-            Assert.AreEqual(statusCode, exception.StatusCode);
-        }
+    [TestCase(HttpStatusCode.OK)]
+    [TestCase(HttpStatusCode.Accepted)]
+    [TestCase(HttpStatusCode.Created)]
+    [TestCase(HttpStatusCode.BadRequest)]
+    [TestCase(HttpStatusCode.InternalServerError)]
+    [TestCase(HttpStatusCode.MethodNotAllowed)]
+    [TestCase(HttpStatusCode.Forbidden)]
+    [TestCase(HttpStatusCode.NotFound)]
+    public void ShouldConstructWithCorrectStatusCode(HttpStatusCode statusCode)
+    {
+        var exception = new RestException("test", Result.RzSuccess, new Uri("http://example.com"), statusCode);
+        Assert.AreEqual(statusCode, exception.StatusCode);
+    }
 
-        [Test]
-        public void ShouldConstructWithCorrectRestData()
-        {
-            const string Expected = "This is my data";
-            var exception = new RestException(
-                "test",
-                Result.RzSuccess,
-                new Uri("http://example.com"),
-                HttpStatusCode.OK,
-                Expected);
+    [Test]
+    public void ShouldConstructWithCorrectRestData()
+    {
+        const string Expected = "This is my data";
+        var exception = new RestException(
+            "test",
+            Result.RzSuccess,
+            new Uri("http://example.com"),
+            HttpStatusCode.OK,
+            Expected);
 
-            Assert.AreEqual(Expected, exception.RestData);
-        }
+        Assert.AreEqual(Expected, exception.RestData);
+    }
 
-        [Test]
-        public void ShouldConstructWithNullDataByDefault()
-        {
-            Assert.IsNull(new RestException().RestData);
-        }
+    [Test]
+    public void ShouldConstructWithNullDataByDefault()
+    {
+        Assert.IsNull(new RestException().RestData);
     }
 }

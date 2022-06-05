@@ -23,35 +23,34 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests
+namespace Colore.Tests;
+
+using System.Threading.Tasks;
+
+using Colore.Api;
+using Colore.Data;
+
+using Moq;
+
+using NUnit.Framework;
+
+[TestFixture]
+public class ColoreProviderTests
 {
-    using System.Threading.Tasks;
+    private static readonly AppInfo TestAppInfo = new AppInfo(
+        "Colore TestApp",
+        "Mock app for running Colore tests",
+        "chroma-sdk",
+        "colore@sharparam.com",
+        Category.Application);
 
-    using Colore.Api;
-    using Colore.Data;
-
-    using Moq;
-
-    using NUnit.Framework;
-
-    [TestFixture]
-    public class ColoreProviderTests
+    [Test]
+    public async Task ShouldCallUninitializeOnClear()
     {
-        private static readonly AppInfo TestAppInfo = new AppInfo(
-            "Colore TestApp",
-            "Mock app for running Colore tests",
-            "chroma-sdk",
-            "colore@sharparam.com",
-            Category.Application);
+        var apiMock = new Mock<IChromaApi>();
+        await ColoreProvider.CreateAsync(TestAppInfo, apiMock.Object);
+        await ColoreProvider.CreateAsync(TestAppInfo, apiMock.Object);
 
-        [Test]
-        public async Task ShouldCallUninitializeOnClear()
-        {
-            var apiMock = new Mock<IChromaApi>();
-            await ColoreProvider.CreateAsync(TestAppInfo, apiMock.Object);
-            await ColoreProvider.CreateAsync(TestAppInfo, apiMock.Object);
-
-            apiMock.Verify(a => a.UninitializeAsync(), Times.Once);
-        }
+        apiMock.Verify(a => a.UninitializeAsync(), Times.Once);
     }
 }

@@ -23,19 +23,18 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests
+namespace Colore.Tests;
+
+using Colore.Data;
+
+using NUnit.Framework;
+
+[TestFixture]
+public class UnsupportedDeviceExceptionTests
 {
-    using Colore.Data;
-
-    using NUnit.Framework;
-
-    [TestFixture]
-    public class UnsupportedDeviceExceptionTests
+    [Test]
+    public void ShouldSetCorrectDeviceId()
     {
-        [Test]
-        public void ShouldSetCorrectDeviceId()
-        {
-            Assert.AreEqual(Devices.Blackwidow, new UnsupportedDeviceException(Devices.Blackwidow).DeviceId);
-        }
+        Assert.AreEqual(Devices.Blackwidow, new UnsupportedDeviceException(Devices.Blackwidow).DeviceId);
     }
 }

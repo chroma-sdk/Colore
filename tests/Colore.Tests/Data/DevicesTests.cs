@@ -23,59 +23,58 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests.Data
+namespace Colore.Tests.Data;
+
+using System;
+using System.Reflection;
+
+using Colore.Data;
+
+using NUnit.Framework;
+
+[TestFixture]
+public class DevicesTests
 {
-    using System;
-    using System.Reflection;
-
-    using Colore.Data;
-
-    using NUnit.Framework;
-
-    [TestFixture]
-    public class DevicesTests
+    [Test]
+    public void ShouldValidateAllDevices()
     {
-        [Test]
-        public void ShouldValidateAllDevices()
-        {
-            var type = typeof(Devices);
-            var infos = type.GetFields(BindingFlags.Static | BindingFlags.Public);
+        var type = typeof(Devices);
+        var infos = type.GetFields(BindingFlags.Static | BindingFlags.Public);
 
-            foreach (var info in infos)
-            {
-                var value = info.GetValue(null);
-                Assert.NotNull(value);
-                var guid = (Guid)value!;
-                Assert.True(Devices.IsValidId(guid), $"Device {info.Name} should validate but does not");
-            }
-        }
-
-        [Test]
-        public void ShouldGetNameForValidDevice()
+        foreach (var info in infos)
         {
-            var name = Devices.GetName(Devices.Blackwidow);
-            Assert.NotNull(name);
-            Assert.IsNotEmpty(name);
+            var value = info.GetValue(null);
+            Assert.NotNull(value);
+            var guid = (Guid)value!;
+            Assert.True(Devices.IsValidId(guid), $"Device {info.Name} should validate but does not");
         }
+    }
 
-        [Test]
-        public void ShouldThrowOnGettingNameForInvalidDevice()
-        {
-            Assert.Throws<ArgumentException>(() => Devices.GetName(Guid.Empty));
-        }
+    [Test]
+    public void ShouldGetNameForValidDevice()
+    {
+        var name = Devices.GetName(Devices.Blackwidow);
+        Assert.NotNull(name);
+        Assert.IsNotEmpty(name);
+    }
 
-        [Test]
-        public void ShouldGetDescriptionForValidDevice()
-        {
-            var desc = Devices.GetDescription(Devices.Firefly);
-            Assert.NotNull(desc);
-            Assert.IsNotEmpty(desc);
-        }
+    [Test]
+    public void ShouldThrowOnGettingNameForInvalidDevice()
+    {
+        Assert.Throws<ArgumentException>(() => Devices.GetName(Guid.Empty));
+    }
 
-        [Test]
-        public void ShouldThrowOnGettingDescriptionForInvalidDevice()
-        {
-            Assert.Throws<ArgumentException>(() => Devices.GetDescription(Guid.Empty));
-        }
+    [Test]
+    public void ShouldGetDescriptionForValidDevice()
+    {
+        var desc = Devices.GetDescription(Devices.Firefly);
+        Assert.NotNull(desc);
+        Assert.IsNotEmpty(desc);
+    }
+
+    [Test]
+    public void ShouldThrowOnGettingDescriptionForInvalidDevice()
+    {
+        Assert.Throws<ArgumentException>(() => Devices.GetDescription(Guid.Empty));
     }
 }

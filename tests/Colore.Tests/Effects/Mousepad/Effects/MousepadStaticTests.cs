@@ -23,109 +23,108 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests.Effects.Mousepad.Effects
+namespace Colore.Tests.Effects.Mousepad.Effects;
+
+using Colore.Data;
+using Colore.Effects.Mousepad;
+
+using NUnit.Framework;
+
+[TestFixture]
+public class MousepadStaticTests
 {
-    using Colore.Data;
-    using Colore.Effects.Mousepad;
-
-    using NUnit.Framework;
-
-    [TestFixture]
-    public class MousepadStaticTests
+    [Test]
+    public void ShouldConstructWithCorrectColor()
     {
-        [Test]
-        public void ShouldConstructWithCorrectColor()
-        {
-            Assert.AreEqual(Color.Red, new StaticMousepadEffect(Color.Red).Color);
-        }
+        Assert.AreEqual(Color.Red, new StaticMousepadEffect(Color.Red).Color);
+    }
 
-        [Test]
-        public void ShouldEqualEffectWithSameColor()
-        {
-            var a = new StaticMousepadEffect(Color.Red);
-            var b = new StaticMousepadEffect(Color.Red);
-            Assert.AreEqual(a, b);
-        }
+    [Test]
+    public void ShouldEqualEffectWithSameColor()
+    {
+        var a = new StaticMousepadEffect(Color.Red);
+        var b = new StaticMousepadEffect(Color.Red);
+        Assert.AreEqual(a, b);
+    }
 
-        [Test]
-        public void ShouldNotEqualEffectWithDifferentColor()
-        {
-            var a = new StaticMousepadEffect(Color.Red);
-            var b = new StaticMousepadEffect(Color.Blue);
-            Assert.AreNotEqual(a, b);
-        }
+    [Test]
+    public void ShouldNotEqualEffectWithDifferentColor()
+    {
+        var a = new StaticMousepadEffect(Color.Red);
+        var b = new StaticMousepadEffect(Color.Blue);
+        Assert.AreNotEqual(a, b);
+    }
 
-        [Test]
-        public void ShouldEqualEffectWithSameColorUsingEqualOp()
-        {
-            var a = new StaticMousepadEffect(Color.Red);
-            var b = new StaticMousepadEffect(Color.Red);
-            Assert.True(a == b);
-        }
+    [Test]
+    public void ShouldEqualEffectWithSameColorUsingEqualOp()
+    {
+        var a = new StaticMousepadEffect(Color.Red);
+        var b = new StaticMousepadEffect(Color.Red);
+        Assert.True(a == b);
+    }
 
-        [Test]
-        public void ShouldNotEqualEffectWithDifferentColorUsingEqualOp()
-        {
-            var a = new StaticMousepadEffect(Color.Red);
-            var b = new StaticMousepadEffect(Color.Blue);
-            Assert.False(a == b);
-        }
+    [Test]
+    public void ShouldNotEqualEffectWithDifferentColorUsingEqualOp()
+    {
+        var a = new StaticMousepadEffect(Color.Red);
+        var b = new StaticMousepadEffect(Color.Blue);
+        Assert.False(a == b);
+    }
 
-        [Test]
-        public void ShouldEqualEffectWithSameColorUsingNotEqualOp()
-        {
-            var a = new StaticMousepadEffect(Color.Red);
-            var b = new StaticMousepadEffect(Color.Red);
-            Assert.False(a != b);
-        }
+    [Test]
+    public void ShouldEqualEffectWithSameColorUsingNotEqualOp()
+    {
+        var a = new StaticMousepadEffect(Color.Red);
+        var b = new StaticMousepadEffect(Color.Red);
+        Assert.False(a != b);
+    }
 
-        [Test]
-        public void ShouldNotEqualEffectWithDifferentColorUsingNotEqualOp()
-        {
-            var a = new StaticMousepadEffect(Color.Red);
-            var b = new StaticMousepadEffect(Color.Blue);
-            Assert.True(a != b);
-        }
+    [Test]
+    public void ShouldNotEqualEffectWithDifferentColorUsingNotEqualOp()
+    {
+        var a = new StaticMousepadEffect(Color.Red);
+        var b = new StaticMousepadEffect(Color.Blue);
+        Assert.True(a != b);
+    }
 
-        [Test]
-        public void ShouldNotEqualNull()
-        {
-            var effect = new StaticMousepadEffect(Color.Red);
-            Assert.AreNotEqual(effect, null);
-            Assert.False(effect.Equals(null));
-        }
+    [Test]
+    public void ShouldNotEqualNull()
+    {
+        var effect = new StaticMousepadEffect(Color.Red);
+        Assert.AreNotEqual(effect, null);
+        Assert.False(effect.Equals(null));
+    }
 
-        [Test]
-        public void ShouldHaveSameHashcodeAsColor()
-        {
-            var color = Color.Red;
-            var hashcode = color.GetHashCode();
-            var effect = new StaticMousepadEffect(color);
-            Assert.AreEqual(hashcode, effect.GetHashCode());
-        }
+    [Test]
+    public void ShouldHaveSameHashcodeAsColor()
+    {
+        var color = Color.Red;
+        var hashcode = color.GetHashCode();
+        var effect = new StaticMousepadEffect(color);
+        Assert.AreEqual(hashcode, effect.GetHashCode());
+    }
 
-        [Test]
-        public void ShouldNotEqualArbitraryObject()
-        {
-            var effect = new StaticMousepadEffect(Color.Red);
-            var obj = new object();
-            Assert.False(effect.Equals(obj));
-        }
+    [Test]
+    public void ShouldNotEqualArbitraryObject()
+    {
+        var effect = new StaticMousepadEffect(Color.Red);
+        var obj = new object();
+        Assert.False(effect.Equals(obj));
+    }
 
-        [Test]
-        public void ShouldEqualEffectWithSameColorCastAsObject()
-        {
-            var effect = new StaticMousepadEffect(Color.Red);
-            var obj = new StaticMousepadEffect(Color.Red) as object;
-            Assert.True(effect.Equals(obj));
-        }
+    [Test]
+    public void ShouldEqualEffectWithSameColorCastAsObject()
+    {
+        var effect = new StaticMousepadEffect(Color.Red);
+        var obj = new StaticMousepadEffect(Color.Red) as object;
+        Assert.True(effect.Equals(obj));
+    }
 
-        [Test]
-        public void ShouldNotEqualEffectWithDifferentColorCastAsObject()
-        {
-            var effect = new StaticMousepadEffect(Color.Red);
-            var obj = new StaticMousepadEffect(Color.Blue) as object;
-            Assert.False(effect.Equals(obj));
-        }
+    [Test]
+    public void ShouldNotEqualEffectWithDifferentColorCastAsObject()
+    {
+        var effect = new StaticMousepadEffect(Color.Red);
+        var obj = new StaticMousepadEffect(Color.Blue) as object;
+        Assert.False(effect.Equals(obj));
     }
 }

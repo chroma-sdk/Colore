@@ -23,176 +23,175 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests.Implementations
+namespace Colore.Tests.Implementations;
+
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Threading.Tasks;
+
+using Colore.Api;
+using Colore.Data;
+using Colore.Effects.Generic;
+using Colore.Implementations;
+
+using Moq;
+
+using NUnit.Framework;
+
+[SuppressMessage("ReSharper", "ObjectCreationAsStatement")]
+public class GenericDeviceImplementationTests
 {
-    using System;
-    using System.Diagnostics.CodeAnalysis;
-    using System.Threading.Tasks;
+    // Safe to suppress null warning here since the `Setup` method acts
+    // like a constructor.
+    private Mock<IChromaApi> _api = null!;
 
-    using Colore.Api;
-    using Colore.Data;
-    using Colore.Effects.Generic;
-    using Colore.Implementations;
-
-    using Moq;
-
-    using NUnit.Framework;
-
-    [SuppressMessage("ReSharper", "ObjectCreationAsStatement")]
-    public class GenericDeviceImplementationTests
+    [SetUp]
+    public void Setup()
     {
-        // Safe to suppress null warning here since the `Setup` method acts
-        // like a constructor.
-        private Mock<IChromaApi> _api = null!;
+        _api = new Mock<IChromaApi>();
+    }
 
-        [SetUp]
-        public void Setup()
-        {
-            _api = new Mock<IChromaApi>();
-        }
+    [Test]
+    public void ShouldConstructWithCorrectDeviceIdWhenValid()
+    {
+        var deviceId = Devices.BladeStealth;
+        var device = new GenericDeviceImplementation(deviceId, _api.Object);
 
-        [Test]
-        public void ShouldConstructWithCorrectDeviceIdWhenValid()
-        {
-            var deviceId = Devices.BladeStealth;
-            var device = new GenericDeviceImplementation(deviceId, _api.Object);
+        Assert.AreEqual(deviceId, device.DeviceId);
+    }
 
-            Assert.AreEqual(deviceId, device.DeviceId);
-        }
+    [Test]
+    public void ShouldThrowWhenConstructedWithInvalidDeviceId()
+    {
+        Assert.Throws<UnsupportedDeviceException>(() => new GenericDeviceImplementation(Guid.Empty, _api.Object));
+    }
 
-        [Test]
-        public void ShouldThrowWhenConstructedWithInvalidDeviceId()
-        {
-            Assert.Throws<UnsupportedDeviceException>(() => new GenericDeviceImplementation(Guid.Empty, _api.Object));
-        }
+    [Test]
+    public void ShouldThrowWhenConstructedWithNullApi()
+    {
+        Assert.Throws<ArgumentNullException>(() => new GenericDeviceImplementation(Devices.Core, null!));
+    }
 
-        [Test]
-        public void ShouldThrowWhenConstructedWithNullApi()
-        {
-            Assert.Throws<ArgumentNullException>(() => new GenericDeviceImplementation(Devices.Core, null!));
-        }
+    [Test]
+    public async Task ShouldCallEffectApiWithCorrectDeviceIdOnClear()
+    {
+        var deviceId = Devices.BlackwidowTe;
+        var device = new GenericDeviceImplementation(deviceId, _api.Object);
+        await device.ClearAsync();
 
-        [Test]
-        public async Task ShouldCallEffectApiWithCorrectDeviceIdOnClear()
-        {
-            var deviceId = Devices.BlackwidowTe;
-            var device = new GenericDeviceImplementation(deviceId, _api.Object);
-            await device.ClearAsync();
+        _api.Verify(
+            a => a.CreateDeviceEffectAsync(deviceId, It.IsAny<EffectType>(), It.IsAny<NoneEffect>()),
+            Times.Once);
+    }
 
-            _api.Verify(
-                a => a.CreateDeviceEffectAsync(deviceId, It.IsAny<EffectType>(), It.IsAny<NoneEffect>()),
-                Times.Once);
-        }
+    [Test]
+    public async Task ShouldCallEffectApiWithCorrectEffectOnClear()
+    {
+        var deviceId = Devices.BlackwidowXTe;
+        var device = new GenericDeviceImplementation(deviceId, _api.Object);
+        await device.ClearAsync();
 
-        [Test]
-        public async Task ShouldCallEffectApiWithCorrectEffectOnClear()
-        {
-            var deviceId = Devices.BlackwidowXTe;
-            var device = new GenericDeviceImplementation(deviceId, _api.Object);
-            await device.ClearAsync();
+        _api.Verify(a => a.CreateDeviceEffectAsync(It.IsAny<Guid>(), EffectType.None, It.IsAny<NoneEffect>()), Times.Once);
+    }
 
-            _api.Verify(a => a.CreateDeviceEffectAsync(It.IsAny<Guid>(), EffectType.None, It.IsAny<NoneEffect>()), Times.Once);
-        }
+    [Test]
+    public async Task ShouldCallEffectApiWithCorrectDataOnClear()
+    {
+        var deviceId = Devices.Firefly;
+        var device = new GenericDeviceImplementation(deviceId, _api.Object);
+        await device.ClearAsync();
 
-        [Test]
-        public async Task ShouldCallEffectApiWithCorrectDataOnClear()
-        {
-            var deviceId = Devices.Firefly;
-            var device = new GenericDeviceImplementation(deviceId, _api.Object);
-            await device.ClearAsync();
+        _api.Verify(a => a.CreateDeviceEffectAsync(It.IsAny<Guid>(), It.IsAny<EffectType>(), default(NoneEffect)));
+    }
 
-            _api.Verify(a => a.CreateDeviceEffectAsync(It.IsAny<Guid>(), It.IsAny<EffectType>(), default(NoneEffect)));
-        }
+    [Test]
+    public async Task ShouldReturnEffectIdOnClear()
+    {
+        var deviceId = Devices.Deathadder;
+        var effectId = Guid.NewGuid();
+        _api.Setup(a => a.CreateDeviceEffectAsync(deviceId, EffectType.None, default(NoneEffect)))
+            .ReturnsAsync(effectId);
 
-        [Test]
-        public async Task ShouldReturnEffectIdOnClear()
-        {
-            var deviceId = Devices.Deathadder;
-            var effectId = Guid.NewGuid();
-            _api.Setup(a => a.CreateDeviceEffectAsync(deviceId, EffectType.None, default(NoneEffect)))
-                .ReturnsAsync(effectId);
+        var device = new GenericDeviceImplementation(deviceId, _api.Object);
+        var setEffectId = await device.ClearAsync();
 
-            var device = new GenericDeviceImplementation(deviceId, _api.Object);
-            var setEffectId = await device.ClearAsync();
+        Assert.AreEqual(effectId, setEffectId);
+    }
 
-            Assert.AreEqual(effectId, setEffectId);
-        }
+    [Test]
+    public void ShouldThrowOnSetAll()
+    {
+        var device = new GenericDeviceImplementation(Devices.Blade14, _api.Object);
+        Assert.ThrowsAsync<NotSupportedException>(() => device.SetAllAsync(Color.Red));
+    }
 
-        [Test]
-        public void ShouldThrowOnSetAll()
-        {
-            var device = new GenericDeviceImplementation(Devices.Blade14, _api.Object);
-            Assert.ThrowsAsync<NotSupportedException>(() => device.SetAllAsync(Color.Red));
-        }
+    [Test]
+    public async Task ShouldCreateEffectWithCorrectDeviceIdOnSetEffect()
+    {
+        var deviceId = Devices.Tartarus;
+        var device = new GenericDeviceImplementation(deviceId, _api.Object);
 
-        [Test]
-        public async Task ShouldCreateEffectWithCorrectDeviceIdOnSetEffect()
-        {
-            var deviceId = Devices.Tartarus;
-            var device = new GenericDeviceImplementation(deviceId, _api.Object);
+        await device.SetEffectAsync(EffectType.None, default(NoneEffect));
 
-            await device.SetEffectAsync(EffectType.None, default(NoneEffect));
+        _api.Verify(a => a.CreateDeviceEffectAsync(deviceId, It.IsAny<EffectType>(), It.IsAny<NoneEffect>()), Times.Once);
+    }
 
-            _api.Verify(a => a.CreateDeviceEffectAsync(deviceId, It.IsAny<EffectType>(), It.IsAny<NoneEffect>()), Times.Once);
-        }
+    [Test]
+    public async Task ShouldCreateEffectWithCorrectEffectOnSetEffect()
+    {
+        var deviceId = Devices.Tartarus;
+        var device = new GenericDeviceImplementation(deviceId, _api.Object);
 
-        [Test]
-        public async Task ShouldCreateEffectWithCorrectEffectOnSetEffect()
-        {
-            var deviceId = Devices.Tartarus;
-            var device = new GenericDeviceImplementation(deviceId, _api.Object);
+        await device.SetEffectAsync(EffectType.None, default(NoneEffect));
 
-            await device.SetEffectAsync(EffectType.None, default(NoneEffect));
+        _api.Verify(a => a.CreateDeviceEffectAsync(It.IsAny<Guid>(), EffectType.None, It.IsAny<NoneEffect>()), Times.Once);
+    }
 
-            _api.Verify(a => a.CreateDeviceEffectAsync(It.IsAny<Guid>(), EffectType.None, It.IsAny<NoneEffect>()), Times.Once);
-        }
+    [Test]
+    public async Task ShouldCreateEffectWithCorrectDataOnSetEffect()
+    {
+        var deviceId = Devices.Tartarus;
+        var device = new GenericDeviceImplementation(deviceId, _api.Object);
 
-        [Test]
-        public async Task ShouldCreateEffectWithCorrectDataOnSetEffect()
-        {
-            var deviceId = Devices.Tartarus;
-            var device = new GenericDeviceImplementation(deviceId, _api.Object);
+        await device.SetEffectAsync(EffectType.None, default(NoneEffect));
 
-            await device.SetEffectAsync(EffectType.None, default(NoneEffect));
+        _api.Verify(
+            a => a.CreateDeviceEffectAsync(It.IsAny<Guid>(), It.IsAny<EffectType>(), default(NoneEffect)),
+            Times.Once);
+    }
 
-            _api.Verify(
-                a => a.CreateDeviceEffectAsync(It.IsAny<Guid>(), It.IsAny<EffectType>(), default(NoneEffect)),
-                Times.Once);
-        }
+    [Test]
+    public async Task ShouldReturnCorrectEffectIdOnSetEffect()
+    {
+        var deviceId = Devices.Orochi;
+        var effectId = Guid.NewGuid();
+        var device = new GenericDeviceImplementation(deviceId, _api.Object);
+        _api.Setup(a => a.CreateDeviceEffectAsync(deviceId, EffectType.None, default(NoneEffect))).ReturnsAsync(effectId);
 
-        [Test]
-        public async Task ShouldReturnCorrectEffectIdOnSetEffect()
-        {
-            var deviceId = Devices.Orochi;
-            var effectId = Guid.NewGuid();
-            var device = new GenericDeviceImplementation(deviceId, _api.Object);
-            _api.Setup(a => a.CreateDeviceEffectAsync(deviceId, EffectType.None, default(NoneEffect))).ReturnsAsync(effectId);
+        var setEffectId = await device.SetEffectAsync(EffectType.None, default(NoneEffect));
 
-            var setEffectId = await device.SetEffectAsync(EffectType.None, default(NoneEffect));
+        Assert.AreEqual(effectId, setEffectId);
+    }
 
-            Assert.AreEqual(effectId, setEffectId);
-        }
+    [Test]
+    public async Task SetEffectOverloadShouldCreateEffectWithZeroData()
+    {
+        var deviceId = Devices.BlackwidowTe;
+        var device = new GenericDeviceImplementation(deviceId, _api.Object);
 
-        [Test]
-        public async Task SetEffectOverloadShouldCreateEffectWithZeroData()
-        {
-            var deviceId = Devices.BlackwidowTe;
-            var device = new GenericDeviceImplementation(deviceId, _api.Object);
+        await device.SetEffectAsync(EffectType.None);
 
-            await device.SetEffectAsync(EffectType.None);
+        _api.Verify(a => a.CreateDeviceEffectAsync(deviceId, EffectType.None, IntPtr.Zero), Times.Once);
+    }
 
-            _api.Verify(a => a.CreateDeviceEffectAsync(deviceId, EffectType.None, IntPtr.Zero), Times.Once);
-        }
+    [Test]
+    public async Task SetEffectOverloadShouldCreateEffectWithCorrectEffect()
+    {
+        var deviceId = Devices.Diamondback;
+        var device = new GenericDeviceImplementation(deviceId, _api.Object);
 
-        [Test]
-        public async Task SetEffectOverloadShouldCreateEffectWithCorrectEffect()
-        {
-            var deviceId = Devices.Diamondback;
-            var device = new GenericDeviceImplementation(deviceId, _api.Object);
+        await device.SetEffectAsync(EffectType.Reserved);
 
-            await device.SetEffectAsync(EffectType.Reserved);
-
-            _api.Verify(a => a.CreateDeviceEffectAsync(deviceId, EffectType.Reserved, IntPtr.Zero), Times.Once);
-        }
+        _api.Verify(a => a.CreateDeviceEffectAsync(deviceId, EffectType.Reserved, IntPtr.Zero), Times.Once);
     }
 }

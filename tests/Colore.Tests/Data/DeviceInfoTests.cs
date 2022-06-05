@@ -23,177 +23,176 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests.Data
+namespace Colore.Tests.Data;
+
+using System;
+
+using Colore.Data;
+
+using NUnit.Framework;
+
+[TestFixture]
+public class DeviceInfoTests
 {
-    using System;
+    private static readonly SdkDeviceInfo BaseInfo = new SdkDeviceInfo(DeviceType.Keyboard, 1);
 
-    using Colore.Data;
+    private static readonly SdkDeviceInfo AltBaseInfo = new SdkDeviceInfo(DeviceType.Mouse, 0);
 
-    using NUnit.Framework;
+    private static readonly Devices.Metadata Metadata = new Devices.Metadata("Foo", "Bar");
 
-    [TestFixture]
-    public class DeviceInfoTests
+    private static readonly Devices.Metadata AltMetadata = new Devices.Metadata("Alice", "Bob");
+
+    [Test]
+    public void ShouldConstructWithCorrectTypeFromBaseInfo()
     {
-        private static readonly SdkDeviceInfo BaseInfo = new SdkDeviceInfo(DeviceType.Keyboard, 1);
+        var info = new DeviceInfo(BaseInfo, Guid.Empty, Metadata);
+        Assert.AreEqual(BaseInfo.Type, info.Type);
+    }
 
-        private static readonly SdkDeviceInfo AltBaseInfo = new SdkDeviceInfo(DeviceType.Mouse, 0);
+    [Test]
+    public void ShouldConstructWithCorrectStateFromBaseInfo()
+    {
+        var info = new DeviceInfo(BaseInfo, Guid.Empty, Metadata);
+        Assert.AreEqual(BaseInfo.Connected, info.Connected);
+    }
 
-        private static readonly Devices.Metadata Metadata = new Devices.Metadata("Foo", "Bar");
+    [Test]
+    public void ShouldConstructWithCorrectId()
+    {
+        var id = Guid.NewGuid();
+        var info = new DeviceInfo(BaseInfo, id, Metadata);
+        Assert.AreEqual(id, info.Id);
+    }
 
-        private static readonly Devices.Metadata AltMetadata = new Devices.Metadata("Alice", "Bob");
+    [Test]
+    public void ShouldConstructWithCorrectNameFromMetadata()
+    {
+        var info = new DeviceInfo(BaseInfo, Guid.Empty, Metadata);
+        Assert.AreEqual(Metadata.Name, info.Name);
+    }
 
-        [Test]
-        public void ShouldConstructWithCorrectTypeFromBaseInfo()
-        {
-            var info = new DeviceInfo(BaseInfo, Guid.Empty, Metadata);
-            Assert.AreEqual(BaseInfo.Type, info.Type);
-        }
+    [Test]
+    public void ShouldConstructWithCorrectDescriptionFromMetadata()
+    {
+        var info = new DeviceInfo(BaseInfo, Guid.Empty, Metadata);
+        Assert.AreEqual(Metadata.Description, info.Description);
+    }
 
-        [Test]
-        public void ShouldConstructWithCorrectStateFromBaseInfo()
-        {
-            var info = new DeviceInfo(BaseInfo, Guid.Empty, Metadata);
-            Assert.AreEqual(BaseInfo.Connected, info.Connected);
-        }
+    [Test]
+    public void ShouldEqualOtherWithSameData()
+    {
+        var a = new DeviceInfo(BaseInfo, Guid.Empty, Metadata);
+        var b = new DeviceInfo(BaseInfo, Guid.Empty, Metadata);
+        Assert.AreEqual(a, b);
+    }
 
-        [Test]
-        public void ShouldConstructWithCorrectId()
-        {
-            var id = Guid.NewGuid();
-            var info = new DeviceInfo(BaseInfo, id, Metadata);
-            Assert.AreEqual(id, info.Id);
-        }
+    [Test]
+    public void ShouldNotEqualOtherWithDifferentBaseInfo()
+    {
+        var a = new DeviceInfo(BaseInfo, Guid.Empty, Metadata);
+        var b = new DeviceInfo(AltBaseInfo, Guid.Empty, Metadata);
+        Assert.AreNotEqual(a, b);
+    }
 
-        [Test]
-        public void ShouldConstructWithCorrectNameFromMetadata()
-        {
-            var info = new DeviceInfo(BaseInfo, Guid.Empty, Metadata);
-            Assert.AreEqual(Metadata.Name, info.Name);
-        }
+    [Test]
+    public void ShouldNotEqualOtherWithDifferentId()
+    {
+        var a = new DeviceInfo(BaseInfo, Guid.NewGuid(), Metadata);
+        var b = new DeviceInfo(BaseInfo, Guid.NewGuid(), Metadata);
+        Assert.AreNotEqual(a, b);
+    }
 
-        [Test]
-        public void ShouldConstructWithCorrectDescriptionFromMetadata()
-        {
-            var info = new DeviceInfo(BaseInfo, Guid.Empty, Metadata);
-            Assert.AreEqual(Metadata.Description, info.Description);
-        }
+    [Test]
+    public void ShouldNotEqualOtherWithDifferentMetadata()
+    {
+        var a = new DeviceInfo(BaseInfo, Guid.Empty, Metadata);
+        var b = new DeviceInfo(BaseInfo, Guid.Empty, AltMetadata);
+        Assert.AreNotEqual(a, b);
+    }
 
-        [Test]
-        public void ShouldEqualOtherWithSameData()
-        {
-            var a = new DeviceInfo(BaseInfo, Guid.Empty, Metadata);
-            var b = new DeviceInfo(BaseInfo, Guid.Empty, Metadata);
-            Assert.AreEqual(a, b);
-        }
+    [Test]
+    public void ShouldEqualOtherWithSameDataUsingEqualOp()
+    {
+        var a = new DeviceInfo(BaseInfo, Guid.Empty, Metadata);
+        var b = new DeviceInfo(BaseInfo, Guid.Empty, Metadata);
+        Assert.True(a == b);
+    }
 
-        [Test]
-        public void ShouldNotEqualOtherWithDifferentBaseInfo()
-        {
-            var a = new DeviceInfo(BaseInfo, Guid.Empty, Metadata);
-            var b = new DeviceInfo(AltBaseInfo, Guid.Empty, Metadata);
-            Assert.AreNotEqual(a, b);
-        }
+    [Test]
+    public void ShouldEqualOtherWithSameDataUsingInequalOp()
+    {
+        var a = new DeviceInfo(BaseInfo, Guid.Empty, Metadata);
+        var b = new DeviceInfo(BaseInfo, Guid.Empty, Metadata);
+        Assert.False(a != b);
+    }
 
-        [Test]
-        public void ShouldNotEqualOtherWithDifferentId()
-        {
-            var a = new DeviceInfo(BaseInfo, Guid.NewGuid(), Metadata);
-            var b = new DeviceInfo(BaseInfo, Guid.NewGuid(), Metadata);
-            Assert.AreNotEqual(a, b);
-        }
+    [Test]
+    public void ShouldNotEqualOtherWithDifferentBaseInfoUsingEqualOp()
+    {
+        var a = new DeviceInfo(BaseInfo, Guid.Empty, Metadata);
+        var b = new DeviceInfo(AltBaseInfo, Guid.Empty, Metadata);
+        Assert.False(a == b);
+    }
 
-        [Test]
-        public void ShouldNotEqualOtherWithDifferentMetadata()
-        {
-            var a = new DeviceInfo(BaseInfo, Guid.Empty, Metadata);
-            var b = new DeviceInfo(BaseInfo, Guid.Empty, AltMetadata);
-            Assert.AreNotEqual(a, b);
-        }
+    [Test]
+    public void ShouldNotEqualOtherWithDifferentBaseInfoUsingInequalOp()
+    {
+        var a = new DeviceInfo(BaseInfo, Guid.Empty, Metadata);
+        var b = new DeviceInfo(AltBaseInfo, Guid.Empty, Metadata);
+        Assert.True(a != b);
+    }
 
-        [Test]
-        public void ShouldEqualOtherWithSameDataUsingEqualOp()
-        {
-            var a = new DeviceInfo(BaseInfo, Guid.Empty, Metadata);
-            var b = new DeviceInfo(BaseInfo, Guid.Empty, Metadata);
-            Assert.True(a == b);
-        }
+    [Test]
+    public void ShouldNotEqualOtherWithDifferentIdUsingEqualOp()
+    {
+        var a = new DeviceInfo(BaseInfo, Guid.NewGuid(), Metadata);
+        var b = new DeviceInfo(BaseInfo, Guid.NewGuid(), Metadata);
+        Assert.False(a == b);
+    }
 
-        [Test]
-        public void ShouldEqualOtherWithSameDataUsingInequalOp()
-        {
-            var a = new DeviceInfo(BaseInfo, Guid.Empty, Metadata);
-            var b = new DeviceInfo(BaseInfo, Guid.Empty, Metadata);
-            Assert.False(a != b);
-        }
+    [Test]
+    public void ShouldNotEqualOtherWithDifferentIdUsingInequalOp()
+    {
+        var a = new DeviceInfo(BaseInfo, Guid.NewGuid(), Metadata);
+        var b = new DeviceInfo(BaseInfo, Guid.NewGuid(), Metadata);
+        Assert.True(a != b);
+    }
 
-        [Test]
-        public void ShouldNotEqualOtherWithDifferentBaseInfoUsingEqualOp()
-        {
-            var a = new DeviceInfo(BaseInfo, Guid.Empty, Metadata);
-            var b = new DeviceInfo(AltBaseInfo, Guid.Empty, Metadata);
-            Assert.False(a == b);
-        }
+    [Test]
+    public void ShouldNotEqualOtherWithDifferentMetadataUsingEqualOp()
+    {
+        var a = new DeviceInfo(BaseInfo, Guid.Empty, Metadata);
+        var b = new DeviceInfo(BaseInfo, Guid.Empty, AltMetadata);
+        Assert.False(a == b);
+    }
 
-        [Test]
-        public void ShouldNotEqualOtherWithDifferentBaseInfoUsingInequalOp()
-        {
-            var a = new DeviceInfo(BaseInfo, Guid.Empty, Metadata);
-            var b = new DeviceInfo(AltBaseInfo, Guid.Empty, Metadata);
-            Assert.True(a != b);
-        }
+    [Test]
+    public void ShouldNotEqualOtherWithDifferentMetadataUsingInequalOp()
+    {
+        var a = new DeviceInfo(BaseInfo, Guid.Empty, Metadata);
+        var b = new DeviceInfo(BaseInfo, Guid.Empty, AltMetadata);
+        Assert.True(a != b);
+    }
 
-        [Test]
-        public void ShouldNotEqualOtherWithDifferentIdUsingEqualOp()
-        {
-            var a = new DeviceInfo(BaseInfo, Guid.NewGuid(), Metadata);
-            var b = new DeviceInfo(BaseInfo, Guid.NewGuid(), Metadata);
-            Assert.False(a == b);
-        }
+    [Test]
+    public void ShouldNotEqualNull()
+    {
+        var info = new DeviceInfo(BaseInfo, Guid.NewGuid(), Metadata);
+        Assert.False(info.Equals(null));
+    }
 
-        [Test]
-        public void ShouldNotEqualOtherWithDifferentIdUsingInequalOp()
-        {
-            var a = new DeviceInfo(BaseInfo, Guid.NewGuid(), Metadata);
-            var b = new DeviceInfo(BaseInfo, Guid.NewGuid(), Metadata);
-            Assert.True(a != b);
-        }
+    [Test]
+    public void ShouldNotEqualArbitraryObject()
+    {
+        var info = new DeviceInfo(BaseInfo, Guid.Empty, Metadata);
+        Assert.AreNotEqual(info, new object());
+    }
 
-        [Test]
-        public void ShouldNotEqualOtherWithDifferentMetadataUsingEqualOp()
-        {
-            var a = new DeviceInfo(BaseInfo, Guid.Empty, Metadata);
-            var b = new DeviceInfo(BaseInfo, Guid.Empty, AltMetadata);
-            Assert.False(a == b);
-        }
-
-        [Test]
-        public void ShouldNotEqualOtherWithDifferentMetadataUsingInequalOp()
-        {
-            var a = new DeviceInfo(BaseInfo, Guid.Empty, Metadata);
-            var b = new DeviceInfo(BaseInfo, Guid.Empty, AltMetadata);
-            Assert.True(a != b);
-        }
-
-        [Test]
-        public void ShouldNotEqualNull()
-        {
-            var info = new DeviceInfo(BaseInfo, Guid.NewGuid(), Metadata);
-            Assert.False(info.Equals(null));
-        }
-
-        [Test]
-        public void ShouldNotEqualArbitraryObject()
-        {
-            var info = new DeviceInfo(BaseInfo, Guid.Empty, Metadata);
-            Assert.AreNotEqual(info, new object());
-        }
-
-        [Test]
-        public void ShouldHaveEqualHashCodeOnDefaultInstances()
-        {
-            var a = new DeviceInfo();
-            var b = new DeviceInfo();
-            Assert.AreEqual(a.GetHashCode(), b.GetHashCode());
-        }
+    [Test]
+    public void ShouldHaveEqualHashCodeOnDefaultInstances()
+    {
+        var a = new DeviceInfo();
+        var b = new DeviceInfo();
+        Assert.AreEqual(a.GetHashCode(), b.GetHashCode());
     }
 }

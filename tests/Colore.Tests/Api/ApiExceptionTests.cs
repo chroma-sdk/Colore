@@ -23,56 +23,55 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests.Api
+namespace Colore.Tests.Api;
+
+using System;
+using System.ComponentModel;
+
+using Colore.Api;
+using Colore.Data;
+
+using NUnit.Framework;
+
+[TestFixture]
+public class ApiExceptionTests
 {
-    using System;
-    using System.ComponentModel;
-
-    using Colore.Api;
-    using Colore.Data;
-
-    using NUnit.Framework;
-
-    [TestFixture]
-    public class ApiExceptionTests
+    [TestCase("hello")]
+    [TestCase("Hello world")]
+    [TestCase("foo, bar, and baz")]
+    public void ShouldConstructWithCorrectMessage(string message)
     {
-        [TestCase("hello")]
-        [TestCase("Hello world")]
-        [TestCase("foo, bar, and baz")]
-        public void ShouldConstructWithCorrectMessage(string message)
-        {
-            var exception = new ApiException(message);
-            Assert.AreEqual(message, exception.Message);
-        }
+        var exception = new ApiException(message);
+        Assert.AreEqual(message, exception.Message);
+    }
 
-        [Test]
-        public void ShouldSetInnerException()
-        {
-            var expected = new Exception("I'm an inner exception!");
-            var exception = new ApiException("test", expected);
-            Assert.AreEqual(expected, exception.InnerException);
-        }
+    [Test]
+    public void ShouldSetInnerException()
+    {
+        var expected = new Exception("I'm an inner exception!");
+        var exception = new ApiException("test", expected);
+        Assert.AreEqual(expected, exception.InnerException);
+    }
 
-        [Test]
-        public void ShouldConstructWithCorrectResult()
-        {
-            var expected = Result.RzInvalidParameter;
-            var exception = new ApiException("test", expected);
-            Assert.AreEqual(expected, exception.Result);
-        }
+    [Test]
+    public void ShouldConstructWithCorrectResult()
+    {
+        var expected = Result.RzInvalidParameter;
+        var exception = new ApiException("test", expected);
+        Assert.AreEqual(expected, exception.Result);
+    }
 
-        [Test]
-        public void ShouldUseCorrectInnerExceptionWithResult()
-        {
-            var exception = new ApiException("test", Result.RzFailed);
-            Assert.IsInstanceOf<Win32Exception>(exception.InnerException);
-        }
+    [Test]
+    public void ShouldUseCorrectInnerExceptionWithResult()
+    {
+        var exception = new ApiException("test", Result.RzFailed);
+        Assert.IsInstanceOf<Win32Exception>(exception.InnerException);
+    }
 
-        [Test]
-        public void ShouldDefaultToSuccessResult()
-        {
-            var exception = new ApiException();
-            Assert.AreEqual(Result.RzSuccess, exception.Result);
-        }
+    [Test]
+    public void ShouldDefaultToSuccessResult()
+    {
+        var exception = new ApiException();
+        Assert.AreEqual(Result.RzSuccess, exception.Result);
     }
 }

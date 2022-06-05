@@ -23,43 +23,42 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests.Rest
+namespace Colore.Tests.Rest;
+
+using System.Net;
+
+using Colore.Api;
+using Colore.Data;
+using Colore.Rest;
+using Colore.Rest.Data;
+
+using Moq;
+
+using NUnit.Framework;
+
+[TestFixture]
+public class RestApiTests
 {
-    using System.Net;
+    private static readonly AppInfo TestAppInfo = new AppInfo(
+        "NUnit",
+        "NUnit tests",
+        "Colore",
+        "colore@example.com",
+        Category.Application);
 
-    using Colore.Api;
-    using Colore.Data;
-    using Colore.Rest;
-    using Colore.Rest.Data;
-
-    using Moq;
-
-    using NUnit.Framework;
-
-    [TestFixture]
-    public class RestApiTests
+    [Test]
+    public void ShouldHandleErrorResultOnInit()
     {
-        private static readonly AppInfo TestAppInfo = new AppInfo(
-            "NUnit",
-            "NUnit tests",
-            "Colore",
-            "colore@example.com",
-            Category.Application);
+        var clientMock = new Mock<IRestClient>();
 
-        [Test]
-        public void ShouldHandleErrorResultOnInit()
-        {
-            var clientMock = new Mock<IRestClient>();
+        clientMock.Setup(c => c.PostAsync<SdkInitResponse>("/razer/chromasdk", It.IsAny<object>()))
+                  .ReturnsAsync(
+                      new RestResponse<SdkInitResponse>(
+                          HttpStatusCode.OK,
+                          "{\"device_supported\":\"keyboard | mouse | headset | mousepad | keypad | chromalink\",\"result\":87}"));
 
-            clientMock.Setup(c => c.PostAsync<SdkInitResponse>("/razer/chromasdk", It.IsAny<object>()))
-                      .ReturnsAsync(
-                          new RestResponse<SdkInitResponse>(
-                              HttpStatusCode.OK,
-                              "{\"device_supported\":\"keyboard | mouse | headset | mousepad | keypad | chromalink\",\"result\":87}"));
+        var api = new RestApi(clientMock.Object);
 
-            var api = new RestApi(clientMock.Object);
-
-            Assert.That(async () => await api.InitializeAsync(TestAppInfo), Throws.InstanceOf<ApiException>());
-        }
+        Assert.That(async () => await api.InitializeAsync(TestAppInfo), Throws.InstanceOf<ApiException>());
     }
 }

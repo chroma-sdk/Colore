@@ -23,21 +23,20 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests.Helpers
+namespace Colore.Tests.Helpers;
+
+using System.Threading.Tasks;
+
+using Colore.Helpers;
+
+using NUnit.Framework;
+
+[TestFixture]
+public class TaskHelperTests
 {
-    using System.Threading.Tasks;
-
-    using Colore.Helpers;
-
-    using NUnit.Framework;
-
-    [TestFixture]
-    public class TaskHelperTests
+    [Test]
+    public void ShouldReturnTask()
     {
-        [Test]
-        public void ShouldReturnTask()
-        {
-            Assert.IsInstanceOf<Task>(TaskHelper.CompletedTask);
-        }
+        Assert.IsInstanceOf<Task>(TaskHelper.CompletedTask);
     }
 }

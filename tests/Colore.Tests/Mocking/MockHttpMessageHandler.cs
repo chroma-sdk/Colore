@@ -23,26 +23,25 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests.Mocking
+namespace Colore.Tests.Mocking;
+
+using System.Net.Http;
+using System.Threading;
+using System.Threading.Tasks;
+
+public class MockHttpMessageHandler : HttpMessageHandler
 {
-    using System.Net.Http;
-    using System.Threading;
-    using System.Threading.Tasks;
+    private readonly IMockHttpMessageHandler _handler;
 
-    public class MockHttpMessageHandler : HttpMessageHandler
+    public MockHttpMessageHandler(IMockHttpMessageHandler handler)
     {
-        private readonly IMockHttpMessageHandler _handler;
+        _handler = handler;
+    }
 
-        public MockHttpMessageHandler(IMockHttpMessageHandler handler)
-        {
-            _handler = handler;
-        }
-
-        protected override async Task<HttpResponseMessage> SendAsync(
-            HttpRequestMessage request,
-            CancellationToken cancellationToken)
-        {
-            return await _handler.SendAsync(request, cancellationToken);
-        }
+    protected override async Task<HttpResponseMessage> SendAsync(
+        HttpRequestMessage request,
+        CancellationToken cancellationToken)
+    {
+        return await _handler.SendAsync(request, cancellationToken);
     }
 }

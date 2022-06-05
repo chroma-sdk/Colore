@@ -23,185 +23,184 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests.Data
+namespace Colore.Tests.Data;
+
+using System;
+
+using Colore.Data;
+
+using NUnit.Framework;
+
+[TestFixture]
+public class SdkVersionTests
 {
-    using System;
-
-    using Colore.Data;
-
-    using NUnit.Framework;
-
-    [TestFixture]
-    public class SdkVersionTests
+    [Test]
+    public void ShouldConstructWithCorrectValues()
     {
-        [Test]
-        public void ShouldConstructWithCorrectValues()
-        {
-            var ver = new SdkVersion(1, 2, 3);
+        var ver = new SdkVersion(1, 2, 3);
 
-            Assert.That(ver.Major, Is.EqualTo(1));
-            Assert.That(ver.Minor, Is.EqualTo(2));
-            Assert.That(ver.Revision, Is.EqualTo(3));
-        }
+        Assert.That(ver.Major, Is.EqualTo(1));
+        Assert.That(ver.Minor, Is.EqualTo(2));
+        Assert.That(ver.Revision, Is.EqualTo(3));
+    }
 
-        [Test]
-        public void ShouldToStringCorrectly()
-        {
-            const string Expected = "1.2.3";
-            var ver = new SdkVersion(1, 2, 3);
-            Assert.That(ver.ToString(), Is.EqualTo(Expected));
-        }
+    [Test]
+    public void ShouldToStringCorrectly()
+    {
+        const string Expected = "1.2.3";
+        var ver = new SdkVersion(1, 2, 3);
+        Assert.That(ver.ToString(), Is.EqualTo(Expected));
+    }
 
-        [Test]
-        public void ShouldEqualIdenticalVersion()
-        {
-            var a = new SdkVersion(1, 2, 3);
-            var b = new SdkVersion(1, 2, 3);
+    [Test]
+    public void ShouldEqualIdenticalVersion()
+    {
+        var a = new SdkVersion(1, 2, 3);
+        var b = new SdkVersion(1, 2, 3);
 
-            Assert.AreEqual(a, b);
-            Assert.True(a == b);
-            Assert.False(a != b);
-            Assert.True(a.Equals(b));
-        }
+        Assert.AreEqual(a, b);
+        Assert.True(a == b);
+        Assert.False(a != b);
+        Assert.True(a.Equals(b));
+    }
 
-        [Test]
-        public void ShouldNotEqualDifferentVersion()
-        {
-            var a = new SdkVersion(1, 2, 3);
-            var b = new SdkVersion(3, 2, 1);
+    [Test]
+    public void ShouldNotEqualDifferentVersion()
+    {
+        var a = new SdkVersion(1, 2, 3);
+        var b = new SdkVersion(3, 2, 1);
 
-            Assert.AreNotEqual(a, b);
-            Assert.False(a == b);
-            Assert.True(a != b);
-            Assert.False(a.Equals(b));
-        }
+        Assert.AreNotEqual(a, b);
+        Assert.False(a == b);
+        Assert.True(a != b);
+        Assert.False(a.Equals(b));
+    }
 
-        [Test]
-        public void ShouldNotEqualArbitraryObject()
-        {
-            var ver = new SdkVersion(1, 2, 3);
-            var obj = new object();
+    [Test]
+    public void ShouldNotEqualArbitraryObject()
+    {
+        var ver = new SdkVersion(1, 2, 3);
+        var obj = new object();
 
-            Assert.AreNotEqual(ver, obj);
-            Assert.False(ver == obj);
-            Assert.True(ver != obj);
-            Assert.False(ver.Equals(obj));
-        }
+        Assert.AreNotEqual(ver, obj);
+        Assert.False(ver == obj);
+        Assert.True(ver != obj);
+        Assert.False(ver.Equals(obj));
+    }
 
-        [Test]
-        public void ShouldBeLessThanWhenMajorLess()
-        {
-            var old = new SdkVersion(1, 2, 3);
-            var @new = new SdkVersion(2, 2, 3);
+    [Test]
+    public void ShouldBeLessThanWhenMajorLess()
+    {
+        var old = new SdkVersion(1, 2, 3);
+        var @new = new SdkVersion(2, 2, 3);
 
-            Assert.That(old, Is.LessThan(@new));
-            Assert.That(old, Is.LessThanOrEqualTo(@new));
-            Assert.True(old < @new);
-            Assert.True(old <= @new);
-            Assert.False(old > @new);
-            Assert.False(old >= @new);
-        }
+        Assert.That(old, Is.LessThan(@new));
+        Assert.That(old, Is.LessThanOrEqualTo(@new));
+        Assert.True(old < @new);
+        Assert.True(old <= @new);
+        Assert.False(old > @new);
+        Assert.False(old >= @new);
+    }
 
-        [Test]
-        public void ShouldBeLessThanWhenMinorLess()
-        {
-            var old = new SdkVersion(1, 2, 3);
-            var @new = new SdkVersion(1, 3, 3);
+    [Test]
+    public void ShouldBeLessThanWhenMinorLess()
+    {
+        var old = new SdkVersion(1, 2, 3);
+        var @new = new SdkVersion(1, 3, 3);
 
-            Assert.That(old, Is.LessThan(@new));
-            Assert.That(old, Is.LessThanOrEqualTo(@new));
-            Assert.True(old < @new);
-            Assert.True(old <= @new);
-            Assert.False(old > @new);
-            Assert.False(old >= @new);
-        }
+        Assert.That(old, Is.LessThan(@new));
+        Assert.That(old, Is.LessThanOrEqualTo(@new));
+        Assert.True(old < @new);
+        Assert.True(old <= @new);
+        Assert.False(old > @new);
+        Assert.False(old >= @new);
+    }
 
-        [Test]
-        public void ShouldBeLessThanWhenRevisionLess()
-        {
-            var old = new SdkVersion(1, 2, 3);
-            var @new = new SdkVersion(1, 2, 4);
+    [Test]
+    public void ShouldBeLessThanWhenRevisionLess()
+    {
+        var old = new SdkVersion(1, 2, 3);
+        var @new = new SdkVersion(1, 2, 4);
 
-            Assert.That(old, Is.LessThan(@new));
-            Assert.That(old, Is.LessThanOrEqualTo(@new));
-            Assert.True(old < @new);
-            Assert.True(old <= @new);
-            Assert.False(old > @new);
-            Assert.False(old >= @new);
-        }
+        Assert.That(old, Is.LessThan(@new));
+        Assert.That(old, Is.LessThanOrEqualTo(@new));
+        Assert.True(old < @new);
+        Assert.True(old <= @new);
+        Assert.False(old > @new);
+        Assert.False(old >= @new);
+    }
 
-        [Test]
-        public void ShouldBeGreaterThanWhenMajorGreater()
-        {
-            var @new = new SdkVersion(2, 2, 3);
-            var old = new SdkVersion(1, 2, 3);
+    [Test]
+    public void ShouldBeGreaterThanWhenMajorGreater()
+    {
+        var @new = new SdkVersion(2, 2, 3);
+        var old = new SdkVersion(1, 2, 3);
 
-            Assert.That(@new, Is.GreaterThan(old));
-            Assert.That(@new, Is.GreaterThanOrEqualTo(old));
-            Assert.True(@new > old);
-            Assert.True(@new >= old);
-            Assert.False(@new < old);
-            Assert.False(@new <= old);
-        }
+        Assert.That(@new, Is.GreaterThan(old));
+        Assert.That(@new, Is.GreaterThanOrEqualTo(old));
+        Assert.True(@new > old);
+        Assert.True(@new >= old);
+        Assert.False(@new < old);
+        Assert.False(@new <= old);
+    }
 
-        [Test]
-        public void ShouldBeGreaterThanWhenMinorGreater()
-        {
-            var @new = new SdkVersion(1, 2, 3);
-            var old = new SdkVersion(1, 1, 3);
+    [Test]
+    public void ShouldBeGreaterThanWhenMinorGreater()
+    {
+        var @new = new SdkVersion(1, 2, 3);
+        var old = new SdkVersion(1, 1, 3);
 
-            Assert.That(@new, Is.GreaterThan(old));
-            Assert.That(@new, Is.GreaterThanOrEqualTo(old));
-            Assert.True(@new > old);
-            Assert.True(@new >= old);
-            Assert.False(@new < old);
-            Assert.False(@new <= old);
-        }
+        Assert.That(@new, Is.GreaterThan(old));
+        Assert.That(@new, Is.GreaterThanOrEqualTo(old));
+        Assert.True(@new > old);
+        Assert.True(@new >= old);
+        Assert.False(@new < old);
+        Assert.False(@new <= old);
+    }
 
-        [Test]
-        public void ShouldBeGreaterThanWhenRevisionGreater()
-        {
-            var @new = new SdkVersion(1, 2, 3);
-            var old = new SdkVersion(1, 2, 2);
+    [Test]
+    public void ShouldBeGreaterThanWhenRevisionGreater()
+    {
+        var @new = new SdkVersion(1, 2, 3);
+        var old = new SdkVersion(1, 2, 2);
 
-            Assert.That(@new, Is.GreaterThan(old));
-            Assert.That(@new, Is.GreaterThanOrEqualTo(old));
-            Assert.True(@new > old);
-            Assert.True(@new >= old);
-            Assert.False(@new < old);
-            Assert.False(@new <= old);
-        }
+        Assert.That(@new, Is.GreaterThan(old));
+        Assert.That(@new, Is.GreaterThanOrEqualTo(old));
+        Assert.True(@new > old);
+        Assert.True(@new >= old);
+        Assert.False(@new < old);
+        Assert.False(@new <= old);
+    }
 
-        [Test]
-        public void ShouldBeLessOrGreaterOrEqualWhenIdentical()
-        {
-            var a = new SdkVersion(1, 2, 3);
-            var b = new SdkVersion(1, 2, 3);
+    [Test]
+    public void ShouldBeLessOrGreaterOrEqualWhenIdentical()
+    {
+        var a = new SdkVersion(1, 2, 3);
+        var b = new SdkVersion(1, 2, 3);
 
-            Assert.That(a, Is.LessThanOrEqualTo(b));
-            Assert.That(a, Is.GreaterThanOrEqualTo(b));
-            Assert.True(a <= b);
-            Assert.True(a >= b);
-            Assert.False(a > b);
-            Assert.False(a < b);
-        }
+        Assert.That(a, Is.LessThanOrEqualTo(b));
+        Assert.That(a, Is.GreaterThanOrEqualTo(b));
+        Assert.True(a <= b);
+        Assert.True(a >= b);
+        Assert.False(a > b);
+        Assert.False(a < b);
+    }
 
-        [Test]
-        public void ShouldThrowExceptionWhenComparingDifferentObjects()
-        {
-            var ver = new SdkVersion(1, 2, 3);
-            var obj = new object();
+    [Test]
+    public void ShouldThrowExceptionWhenComparingDifferentObjects()
+    {
+        var ver = new SdkVersion(1, 2, 3);
+        var obj = new object();
 
-            Assert.That(
-                () => ver.CompareTo(obj),
-                Throws.InstanceOf<ArgumentException>().With.Property("ParamName").EqualTo("obj"));
-        }
+        Assert.That(
+            () => ver.CompareTo(obj),
+            Throws.InstanceOf<ArgumentException>().With.Property("ParamName").EqualTo("obj"));
+    }
 
-        [Test]
-        public void ShouldHaveZeroHashCodeOnDefaultInstance()
-        {
-            var ver = new SdkVersion();
-            Assert.Zero(ver.GetHashCode());
-        }
+    [Test]
+    public void ShouldHaveZeroHashCodeOnDefaultInstance()
+    {
+        var ver = new SdkVersion();
+        Assert.Zero(ver.GetHashCode());
     }
 }

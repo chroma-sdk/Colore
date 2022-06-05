@@ -23,42 +23,41 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests.Helpers
+namespace Colore.Tests.Helpers;
+
+using System;
+
+using Colore.Helpers;
+
+using NUnit.Framework;
+
+[TestFixture]
+public class UriHelperTests
 {
-    using System;
-
-    using Colore.Helpers;
-
-    using NUnit.Framework;
-
-    [TestFixture]
-    public class UriHelperTests
+    [TestCase("http://example.com", "/myresource", "http://example.com/myresource")]
+    [TestCase("http://example.com/", "myresource", "http://example.com/myresource")]
+    [TestCase("http://example.com", "myresource", "http://example.com/myresource")]
+    [TestCase("http://example.com/", "/myresource", "http://example.com/myresource")]
+    [TestCase("http://example.com/////", "myresource", "http://example.com/myresource")]
+    [TestCase("http://example.com", "//////myresource", "http://example.com/myresource")]
+    [TestCase("http://example.com//////", "//////myresource", "http://example.com/myresource")]
+    public void ShouldConstructWellFormedUri(string baseUrl, string resource, string expected)
     {
-        [TestCase("http://example.com", "/myresource", "http://example.com/myresource")]
-        [TestCase("http://example.com/", "myresource", "http://example.com/myresource")]
-        [TestCase("http://example.com", "myresource", "http://example.com/myresource")]
-        [TestCase("http://example.com/", "/myresource", "http://example.com/myresource")]
-        [TestCase("http://example.com/////", "myresource", "http://example.com/myresource")]
-        [TestCase("http://example.com", "//////myresource", "http://example.com/myresource")]
-        [TestCase("http://example.com//////", "//////myresource", "http://example.com/myresource")]
-        public void ShouldConstructWellFormedUri(string baseUrl, string resource, string expected)
-        {
-            var baseUri = new Uri(baseUrl);
-            var resourceUri = new Uri(resource, UriKind.Relative);
-            var combined = baseUri.Append(resourceUri);
-            Assert.AreEqual(new Uri(expected), combined);
-        }
+        var baseUri = new Uri(baseUrl);
+        var resourceUri = new Uri(resource, UriKind.Relative);
+        var combined = baseUri.Append(resourceUri);
+        Assert.AreEqual(new Uri(expected), combined);
+    }
 
-        [Test]
-        public void ShouldThrowOnNullBaseUri()
-        {
-            Assert.Throws<ArgumentNullException>(() => ((Uri)null!).Append(new Uri("myresource", UriKind.Relative)));
-        }
+    [Test]
+    public void ShouldThrowOnNullBaseUri()
+    {
+        Assert.Throws<ArgumentNullException>(() => ((Uri)null!).Append(new Uri("myresource", UriKind.Relative)));
+    }
 
-        [Test]
-        public void ShouldThrowOnNullResource()
-        {
-            Assert.Throws<ArgumentNullException>(() => new Uri("http://example.com").Append(null!));
-        }
+    [Test]
+    public void ShouldThrowOnNullResource()
+    {
+        Assert.Throws<ArgumentNullException>(() => new Uri("http://example.com").Append(null!));
     }
 }

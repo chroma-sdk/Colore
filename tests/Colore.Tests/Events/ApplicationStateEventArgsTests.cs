@@ -23,23 +23,22 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests.Events
+namespace Colore.Tests.Events;
+
+using Colore.Events;
+
+using NUnit.Framework;
+
+[TestFixture]
+public class ApplicationStateEventArgsTests
 {
-    using Colore.Events;
-
-    using NUnit.Framework;
-
-    [TestFixture]
-    public class ApplicationStateEventArgsTests
+    [Test]
+    public void ShouldConstructWithProperProperties()
     {
-        [Test]
-        public void ShouldConstructWithProperProperties()
-        {
-            const bool Expected = true;
+        const bool Expected = true;
 
-            var args = new ApplicationStateEventArgs(Expected);
+        var args = new ApplicationStateEventArgs(Expected);
 
-            Assert.AreEqual(Expected, args.Enabled);
-        }
+        Assert.AreEqual(Expected, args.Enabled);
     }
 }

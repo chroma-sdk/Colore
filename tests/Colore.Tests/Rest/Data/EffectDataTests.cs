@@ -23,46 +23,45 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests.Rest.Data
+namespace Colore.Tests.Rest.Data;
+
+using System;
+
+using Colore.Rest.Data;
+
+using NUnit.Framework;
+
+[TestFixture]
+public class EffectDataTests
 {
-    using System;
-
-    using Colore.Rest.Data;
-
-    using NUnit.Framework;
-
-    [TestFixture]
-    public class EffectDataTests
+    [Test]
+    public void ShouldSetEffectProperly()
     {
-        [Test]
-        public void ShouldSetEffectProperly()
-        {
-            const string Expected = "Hello";
-            var data = new EffectData(Expected);
-            Assert.AreEqual(Expected, data.Effect);
-        }
+        const string Expected = "Hello";
+        var data = new EffectData(Expected);
+        Assert.AreEqual(Expected, data.Effect);
+    }
 
-        [Test]
-        public void ShouldSetPayloadProperly()
-        {
-            const string Expected = "I'm a payload";
-            var data = new EffectData("test", Expected);
-            Assert.AreEqual(Expected, data.Payload);
-        }
+    [Test]
+    public void ShouldSetPayloadProperly()
+    {
+        const string Expected = "I'm a payload";
+        var data = new EffectData("test", Expected);
+        Assert.AreEqual(Expected, data.Payload);
+    }
 
-        [Test]
-        public void ShouldDefaultPayloadToNull()
-        {
-            var data = new EffectData("Test");
-            Assert.IsNull(data.Payload);
-        }
+    [Test]
+    public void ShouldDefaultPayloadToNull()
+    {
+        var data = new EffectData("Test");
+        Assert.IsNull(data.Payload);
+    }
 
-        [Test]
-        public void ShouldThrowOnNullEffect()
-        {
-            // ReSharper disable once AssignNullToNotNullAttribute
-            // ReSharper disable once ObjectCreationAsStatement
-            Assert.Throws<ArgumentNullException>(() => new EffectData(null!));
-        }
+    [Test]
+    public void ShouldThrowOnNullEffect()
+    {
+        // ReSharper disable once AssignNullToNotNullAttribute
+        // ReSharper disable once ObjectCreationAsStatement
+        Assert.Throws<ArgumentNullException>(() => new EffectData(null!));
     }
 }

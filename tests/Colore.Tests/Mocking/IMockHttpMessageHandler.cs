@@ -23,14 +23,13 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests.Mocking
-{
-    using System.Net.Http;
-    using System.Threading;
-    using System.Threading.Tasks;
+namespace Colore.Tests.Mocking;
 
-    public interface IMockHttpMessageHandler
-    {
-        Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken caneCancellationToken);
-    }
+using System.Net.Http;
+using System.Threading;
+using System.Threading.Tasks;
+
+public interface IMockHttpMessageHandler
+{
+    Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken caneCancellationToken);
 }

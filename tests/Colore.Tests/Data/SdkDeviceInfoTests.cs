@@ -23,137 +23,136 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests.Data
+namespace Colore.Tests.Data;
+
+using Colore.Data;
+
+using NUnit.Framework;
+
+[TestFixture]
+public class SdkDeviceInfoTests
 {
-    using Colore.Data;
-
-    using NUnit.Framework;
-
-    [TestFixture]
-    public class SdkDeviceInfoTests
+    [Test]
+    public void ShouldConstructWithCorrectType()
     {
-        [Test]
-        public void ShouldConstructWithCorrectType()
-        {
-            var info = new SdkDeviceInfo(DeviceType.Headset, 1);
-            Assert.AreEqual(DeviceType.Headset, info.Type);
-        }
+        var info = new SdkDeviceInfo(DeviceType.Headset, 1);
+        Assert.AreEqual(DeviceType.Headset, info.Type);
+    }
 
-        [TestCase(5U)]
-        [TestCase(1U)]
-        [TestCase(0U)]
-        public void ShouldConstructWithCorrectState(uint state)
-        {
-            var info = new SdkDeviceInfo(DeviceType.Speakers, state);
-            Assert.AreEqual(state, info.ConnectedCount);
-        }
+    [TestCase(5U)]
+    [TestCase(1U)]
+    [TestCase(0U)]
+    public void ShouldConstructWithCorrectState(uint state)
+    {
+        var info = new SdkDeviceInfo(DeviceType.Speakers, state);
+        Assert.AreEqual(state, info.ConnectedCount);
+    }
 
-        [TestCase(1U)]
-        [TestCase(5U)]
-        [TestCase(42U)]
-        public void ShouldBeConnectedWhenCountPositive(uint count)
-        {
-            var info = new SdkDeviceInfo(DeviceType.Speakers, count);
-            Assert.True(info.Connected);
-        }
+    [TestCase(1U)]
+    [TestCase(5U)]
+    [TestCase(42U)]
+    public void ShouldBeConnectedWhenCountPositive(uint count)
+    {
+        var info = new SdkDeviceInfo(DeviceType.Speakers, count);
+        Assert.True(info.Connected);
+    }
 
-        [Test]
-        public void ShouldNotBeConnectedWhenCountZero()
-        {
-            var info = new SdkDeviceInfo(DeviceType.Speakers, 0);
-            Assert.False(info.Connected);
-        }
+    [Test]
+    public void ShouldNotBeConnectedWhenCountZero()
+    {
+        var info = new SdkDeviceInfo(DeviceType.Speakers, 0);
+        Assert.False(info.Connected);
+    }
 
-        [Test]
-        public void ShouldHaveZeroHashCodeOnDefaultInstance()
-        {
-            Assert.Zero(new SdkDeviceInfo().GetHashCode());
-        }
+    [Test]
+    public void ShouldHaveZeroHashCodeOnDefaultInstance()
+    {
+        Assert.Zero(new SdkDeviceInfo().GetHashCode());
+    }
 
-        [Test]
-        public void ShouldEqualOtherWithSameData()
-        {
-            var a = new SdkDeviceInfo(DeviceType.Keyboard, 5);
-            var b = new SdkDeviceInfo(DeviceType.Keyboard, 5);
-            Assert.AreEqual(a, b);
-        }
+    [Test]
+    public void ShouldEqualOtherWithSameData()
+    {
+        var a = new SdkDeviceInfo(DeviceType.Keyboard, 5);
+        var b = new SdkDeviceInfo(DeviceType.Keyboard, 5);
+        Assert.AreEqual(a, b);
+    }
 
-        [Test]
-        public void ShouldNotEqualOtherWithDifferentType()
-        {
-            var a = new SdkDeviceInfo(DeviceType.Mousepad, 1);
-            var b = new SdkDeviceInfo(DeviceType.Mouse, 1);
-            Assert.AreNotEqual(a, b);
-        }
+    [Test]
+    public void ShouldNotEqualOtherWithDifferentType()
+    {
+        var a = new SdkDeviceInfo(DeviceType.Mousepad, 1);
+        var b = new SdkDeviceInfo(DeviceType.Mouse, 1);
+        Assert.AreNotEqual(a, b);
+    }
 
-        [Test]
-        public void ShouldNotEqualOtherWithDifferentState()
-        {
-            var a = new SdkDeviceInfo(DeviceType.Keyboard, 5);
-            var b = new SdkDeviceInfo(DeviceType.Keyboard, 0);
-            Assert.AreNotEqual(a, b);
-        }
+    [Test]
+    public void ShouldNotEqualOtherWithDifferentState()
+    {
+        var a = new SdkDeviceInfo(DeviceType.Keyboard, 5);
+        var b = new SdkDeviceInfo(DeviceType.Keyboard, 0);
+        Assert.AreNotEqual(a, b);
+    }
 
-        [Test]
-        public void ShouldNotEqualNull()
-        {
-            var info = new SdkDeviceInfo(DeviceType.Keyboard, 1);
-            Assert.False(info.Equals(null));
-        }
+    [Test]
+    public void ShouldNotEqualNull()
+    {
+        var info = new SdkDeviceInfo(DeviceType.Keyboard, 1);
+        Assert.False(info.Equals(null));
+    }
 
-        [Test]
-        public void ShouldNotEqualArbitraryObject()
-        {
-            var info = new SdkDeviceInfo(DeviceType.Mouse, 0);
-            Assert.AreNotEqual(info, new object());
-        }
+    [Test]
+    public void ShouldNotEqualArbitraryObject()
+    {
+        var info = new SdkDeviceInfo(DeviceType.Mouse, 0);
+        Assert.AreNotEqual(info, new object());
+    }
 
-        [Test]
-        public void ShouldEqualOtherWithSameDataUsingEqualOp()
-        {
-            var a = new SdkDeviceInfo(DeviceType.Keyboard, 1);
-            var b = new SdkDeviceInfo(DeviceType.Keyboard, 1);
-            Assert.True(a == b);
-        }
+    [Test]
+    public void ShouldEqualOtherWithSameDataUsingEqualOp()
+    {
+        var a = new SdkDeviceInfo(DeviceType.Keyboard, 1);
+        var b = new SdkDeviceInfo(DeviceType.Keyboard, 1);
+        Assert.True(a == b);
+    }
 
-        [Test]
-        public void ShouldEqualOtherWithSameDataUsingInequalOp()
-        {
-            var a = new SdkDeviceInfo(DeviceType.Keyboard, 2);
-            var b = new SdkDeviceInfo(DeviceType.Keyboard, 2);
-            Assert.False(a != b);
-        }
+    [Test]
+    public void ShouldEqualOtherWithSameDataUsingInequalOp()
+    {
+        var a = new SdkDeviceInfo(DeviceType.Keyboard, 2);
+        var b = new SdkDeviceInfo(DeviceType.Keyboard, 2);
+        Assert.False(a != b);
+    }
 
-        [Test]
-        public void ShouldNotEqualOtherWithDifferentTypeUsingEqualOp()
-        {
-            var a = new SdkDeviceInfo(DeviceType.Mousepad, 3);
-            var b = new SdkDeviceInfo(DeviceType.Mouse, 3);
-            Assert.False(a == b);
-        }
+    [Test]
+    public void ShouldNotEqualOtherWithDifferentTypeUsingEqualOp()
+    {
+        var a = new SdkDeviceInfo(DeviceType.Mousepad, 3);
+        var b = new SdkDeviceInfo(DeviceType.Mouse, 3);
+        Assert.False(a == b);
+    }
 
-        [Test]
-        public void ShouldNotEqualOtherWithDifferentTypeUsingInequalOp()
-        {
-            var a = new SdkDeviceInfo(DeviceType.Mousepad, 4);
-            var b = new SdkDeviceInfo(DeviceType.Mouse, 4);
-            Assert.True(a != b);
-        }
+    [Test]
+    public void ShouldNotEqualOtherWithDifferentTypeUsingInequalOp()
+    {
+        var a = new SdkDeviceInfo(DeviceType.Mousepad, 4);
+        var b = new SdkDeviceInfo(DeviceType.Mouse, 4);
+        Assert.True(a != b);
+    }
 
-        [Test]
-        public void ShouldNotEqualOtherWithDifferentStateUsingEqualOp()
-        {
-            var a = new SdkDeviceInfo(DeviceType.Keyboard, 2);
-            var b = new SdkDeviceInfo(DeviceType.Keyboard, 0);
-            Assert.False(a == b);
-        }
+    [Test]
+    public void ShouldNotEqualOtherWithDifferentStateUsingEqualOp()
+    {
+        var a = new SdkDeviceInfo(DeviceType.Keyboard, 2);
+        var b = new SdkDeviceInfo(DeviceType.Keyboard, 0);
+        Assert.False(a == b);
+    }
 
-        [Test]
-        public void ShouldNotEqualOtherWithDifferentStateUsingInequalOp()
-        {
-            var a = new SdkDeviceInfo(DeviceType.Keyboard, 3);
-            var b = new SdkDeviceInfo(DeviceType.Keyboard, 0);
-            Assert.True(a != b);
-        }
+    [Test]
+    public void ShouldNotEqualOtherWithDifferentStateUsingInequalOp()
+    {
+        var a = new SdkDeviceInfo(DeviceType.Keyboard, 3);
+        var b = new SdkDeviceInfo(DeviceType.Keyboard, 0);
+        Assert.True(a != b);
     }
 }

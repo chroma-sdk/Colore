@@ -23,51 +23,50 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests.Data
+namespace Colore.Tests.Data;
+
+using System;
+
+using Colore.Data;
+
+using NUnit.Framework;
+
+[TestFixture]
+public class AuthorTests
 {
-    using System;
-
-    using Colore.Data;
-
-    using NUnit.Framework;
-
-    [TestFixture]
-    public class AuthorTests
+    [Test]
+    public void ShouldSetNameFromConstructor()
     {
-        [Test]
-        public void ShouldSetNameFromConstructor()
-        {
-            const string Name = "Foobar";
-            var author = new Author(Name, "test");
-            Assert.AreEqual(Name, author.Name);
-        }
+        const string Name = "Foobar";
+        var author = new Author(Name, "test");
+        Assert.AreEqual(Name, author.Name);
+    }
 
-        [Test]
-        public void ShouldSetContactFromConstructor()
-        {
-            const string Contact = "me@home.com";
-            var author = new Author("test", Contact);
-            Assert.AreEqual(Contact, author.Contact);
-        }
+    [Test]
+    public void ShouldSetContactFromConstructor()
+    {
+        const string Contact = "me@home.com";
+        var author = new Author("test", Contact);
+        Assert.AreEqual(Contact, author.Contact);
+    }
 
-        [Test]
-        public void ShouldThrowOnTooLongName()
-        {
-            var name = new string('f', 257);
+    [Test]
+    public void ShouldThrowOnTooLongName()
+    {
+        var name = new string('f', 257);
 
-            // ReSharper disable once ObjectCreationAsStatement
-            var ex = Assert.Throws<ArgumentException>(() => new Author(name, "test"));
-            Assert.AreEqual(nameof(Author.Name).ToLowerInvariant(), ex?.ParamName);
-        }
+        // ReSharper disable once ObjectCreationAsStatement
+        var ex = Assert.Throws<ArgumentException>(() => new Author(name, "test"));
+        Assert.AreEqual(nameof(Author.Name).ToLowerInvariant(), ex?.ParamName);
+    }
 
-        [Test]
-        public void ShouldThrowOnTooLongContact()
-        {
-            var contact = new string('f', 257);
+    [Test]
+    public void ShouldThrowOnTooLongContact()
+    {
+        var contact = new string('f', 257);
 
-            // ReSharper disable once ObjectCreationAsStatement
-            var ex = Assert.Throws<ArgumentException>(() => new Author("test", contact));
-            Assert.AreEqual(nameof(Author.Contact).ToLowerInvariant(), ex?.ParamName);
-        }
+        // ReSharper disable once ObjectCreationAsStatement
+        var ex = Assert.Throws<ArgumentException>(() => new Author("test", contact));
+        Assert.AreEqual(nameof(Author.Contact).ToLowerInvariant(), ex?.ParamName);
     }
 }

@@ -23,142 +23,141 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests.Effects.Mouse.Effects
+namespace Colore.Tests.Effects.Mouse.Effects;
+
+using Colore.Data;
+using Colore.Effects.Mouse;
+
+using NUnit.Framework;
+
+public class MouseStaticTests
 {
-    using Colore.Data;
-    using Colore.Effects.Mouse;
-
-    using NUnit.Framework;
-
-    public class MouseStaticTests
+    [Test]
+    public void ShouldConstructWithAllLedsSetIfNoLed()
     {
-        [Test]
-        public void ShouldConstructWithAllLedsSetIfNoLed()
-        {
-            Assert.AreEqual(Led.All, new StaticMouseEffect(Color.Red).Led);
-        }
+        Assert.AreEqual(Led.All, new StaticMouseEffect(Color.Red).Led);
+    }
 
-        [Test]
-        public void ShouldConstructWithCorrectColor()
-        {
-            Assert.AreEqual(Color.Red, new StaticMouseEffect(Led.All, Color.Red).Color);
-        }
+    [Test]
+    public void ShouldConstructWithCorrectColor()
+    {
+        Assert.AreEqual(Color.Red, new StaticMouseEffect(Led.All, Color.Red).Color);
+    }
 
-        [Test]
-        public void ShouldConstructWithCorrectLed()
-        {
-            Assert.AreEqual(Led.Backlight, new StaticMouseEffect(Led.Backlight, Color.Black).Led);
-        }
+    [Test]
+    public void ShouldConstructWithCorrectLed()
+    {
+        Assert.AreEqual(Led.Backlight, new StaticMouseEffect(Led.Backlight, Color.Black).Led);
+    }
 
-        [Test]
-        public void ShouldEqualEffectWithSameColorAndLed()
-        {
-            var a = new StaticMouseEffect(Led.Backlight, Color.Red);
-            var b = new StaticMouseEffect(Led.Backlight, Color.Red);
-            Assert.AreEqual(a, b);
-        }
+    [Test]
+    public void ShouldEqualEffectWithSameColorAndLed()
+    {
+        var a = new StaticMouseEffect(Led.Backlight, Color.Red);
+        var b = new StaticMouseEffect(Led.Backlight, Color.Red);
+        Assert.AreEqual(a, b);
+    }
 
-        [Test]
-        public void ShouldNotEqualEffectWithDifferentColor()
-        {
-            var a = new StaticMouseEffect(Led.All, Color.Red);
-            var b = new StaticMouseEffect(Led.All, Color.Blue);
-            Assert.AreNotEqual(a, b);
-        }
+    [Test]
+    public void ShouldNotEqualEffectWithDifferentColor()
+    {
+        var a = new StaticMouseEffect(Led.All, Color.Red);
+        var b = new StaticMouseEffect(Led.All, Color.Blue);
+        Assert.AreNotEqual(a, b);
+    }
 
-        [Test]
-        public void ShouldNotEqualEffectWithDifferentLed()
-        {
-            var a = new StaticMouseEffect(Led.ScrollWheel, Color.Red);
-            var b = new StaticMouseEffect(Led.Strip1, Color.Red);
-            Assert.AreNotEqual(a, b);
-        }
+    [Test]
+    public void ShouldNotEqualEffectWithDifferentLed()
+    {
+        var a = new StaticMouseEffect(Led.ScrollWheel, Color.Red);
+        var b = new StaticMouseEffect(Led.Strip1, Color.Red);
+        Assert.AreNotEqual(a, b);
+    }
 
-        [Test]
-        public void ShouldNotEqualEffectWithDifferentLedAndColor()
-        {
-            var a = new StaticMouseEffect(Led.Strip10, Color.Red);
-            var b = new StaticMouseEffect(Led.Strip2, Color.Green);
-            Assert.AreNotEqual(a, b);
-        }
+    [Test]
+    public void ShouldNotEqualEffectWithDifferentLedAndColor()
+    {
+        var a = new StaticMouseEffect(Led.Strip10, Color.Red);
+        var b = new StaticMouseEffect(Led.Strip2, Color.Green);
+        Assert.AreNotEqual(a, b);
+    }
 
-        [Test]
-        public void ShouldEqualEffectWithSameColorUsingEqualOp()
-        {
-            var a = new StaticMouseEffect(Led.All, Color.Red);
-            var b = new StaticMouseEffect(Led.All, Color.Red);
-            Assert.True(a == b);
-        }
+    [Test]
+    public void ShouldEqualEffectWithSameColorUsingEqualOp()
+    {
+        var a = new StaticMouseEffect(Led.All, Color.Red);
+        var b = new StaticMouseEffect(Led.All, Color.Red);
+        Assert.True(a == b);
+    }
 
-        [Test]
-        public void ShouldNotEqualEffectWithDifferentColorUsingEqualOp()
-        {
-            var a = new StaticMouseEffect(Led.All, Color.Red);
-            var b = new StaticMouseEffect(Led.All, Color.Blue);
-            Assert.False(a == b);
-        }
+    [Test]
+    public void ShouldNotEqualEffectWithDifferentColorUsingEqualOp()
+    {
+        var a = new StaticMouseEffect(Led.All, Color.Red);
+        var b = new StaticMouseEffect(Led.All, Color.Blue);
+        Assert.False(a == b);
+    }
 
-        [Test]
-        public void ShouldEqualEffectWithSameColorUsingNotEqualOp()
-        {
-            var a = new StaticMouseEffect(Led.All, Color.Red);
-            var b = new StaticMouseEffect(Led.All, Color.Red);
-            Assert.False(a != b);
-        }
+    [Test]
+    public void ShouldEqualEffectWithSameColorUsingNotEqualOp()
+    {
+        var a = new StaticMouseEffect(Led.All, Color.Red);
+        var b = new StaticMouseEffect(Led.All, Color.Red);
+        Assert.False(a != b);
+    }
 
-        [Test]
-        public void ShouldNotEqualEffectWithDifferentColorUsingNotEqualOp()
-        {
-            var a = new StaticMouseEffect(Led.All, Color.Red);
-            var b = new StaticMouseEffect(Led.All, Color.Blue);
-            Assert.True(a != b);
-        }
+    [Test]
+    public void ShouldNotEqualEffectWithDifferentColorUsingNotEqualOp()
+    {
+        var a = new StaticMouseEffect(Led.All, Color.Red);
+        var b = new StaticMouseEffect(Led.All, Color.Blue);
+        Assert.True(a != b);
+    }
 
-        [Test]
-        public void ShouldNotEqualNull()
-        {
-            var effect = new StaticMouseEffect(Led.All, Color.Red);
-            Assert.AreNotEqual(effect, null);
-            Assert.False(effect.Equals(null));
-        }
+    [Test]
+    public void ShouldNotEqualNull()
+    {
+        var effect = new StaticMouseEffect(Led.All, Color.Red);
+        Assert.AreNotEqual(effect, null);
+        Assert.False(effect.Equals(null));
+    }
 
-        [Test]
-        public void ShouldNotEqualArbitraryObject()
-        {
-            var effect = new StaticMouseEffect(Led.All, Color.Red);
-            var obj = new object();
-            Assert.False(effect.Equals(obj));
-        }
+    [Test]
+    public void ShouldNotEqualArbitraryObject()
+    {
+        var effect = new StaticMouseEffect(Led.All, Color.Red);
+        var obj = new object();
+        Assert.False(effect.Equals(obj));
+    }
 
-        [Test]
-        public void ShouldEqualEffectWithSameLedAndColorCastAsObject()
-        {
-            var effect = new StaticMouseEffect(Led.Strip3, Color.Red);
-            var obj = new StaticMouseEffect(Led.Strip3, Color.Red) as object;
-            Assert.True(effect.Equals(obj));
-        }
+    [Test]
+    public void ShouldEqualEffectWithSameLedAndColorCastAsObject()
+    {
+        var effect = new StaticMouseEffect(Led.Strip3, Color.Red);
+        var obj = new StaticMouseEffect(Led.Strip3, Color.Red) as object;
+        Assert.True(effect.Equals(obj));
+    }
 
-        [Test]
-        public void ShouldNotEqualEffectWithDifferentLedCastAsObject()
-        {
-            var effect = new StaticMouseEffect(Led.Strip11, Color.Red);
-            var obj = new StaticMouseEffect(Led.Backlight, Color.Red) as object;
-            Assert.False(effect.Equals(obj));
-        }
+    [Test]
+    public void ShouldNotEqualEffectWithDifferentLedCastAsObject()
+    {
+        var effect = new StaticMouseEffect(Led.Strip11, Color.Red);
+        var obj = new StaticMouseEffect(Led.Backlight, Color.Red) as object;
+        Assert.False(effect.Equals(obj));
+    }
 
-        [Test]
-        public void ShouldNotEqualEffectWithDifferentColorCastAsObject()
-        {
-            var effect = new StaticMouseEffect(Led.All, Color.Red);
-            var obj = new StaticMouseEffect(Led.All, Color.Blue) as object;
-            Assert.False(effect.Equals(obj));
-        }
+    [Test]
+    public void ShouldNotEqualEffectWithDifferentColorCastAsObject()
+    {
+        var effect = new StaticMouseEffect(Led.All, Color.Red);
+        var obj = new StaticMouseEffect(Led.All, Color.Blue) as object;
+        Assert.False(effect.Equals(obj));
+    }
 
-        [Test]
-        public void ShouldHaveZeroHashCodeOnDefaultInstance()
-        {
-            var effect = new StaticMouseEffect();
-            Assert.Zero(effect.GetHashCode());
-        }
+    [Test]
+    public void ShouldHaveZeroHashCodeOnDefaultInstance()
+    {
+        var effect = new StaticMouseEffect();
+        Assert.Zero(effect.GetHashCode());
     }
 }

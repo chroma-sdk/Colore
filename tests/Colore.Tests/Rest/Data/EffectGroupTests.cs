@@ -23,31 +23,30 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Tests.Rest.Data
+namespace Colore.Tests.Rest.Data;
+
+using System;
+
+using Colore.Rest.Data;
+
+using NUnit.Framework;
+
+[TestFixture]
+public class EffectGroupTests
 {
-    using System;
-
-    using Colore.Rest.Data;
-
-    using NUnit.Framework;
-
-    [TestFixture]
-    public class EffectGroupTests
+    [Test]
+    public void ShouldConstructWithCorrectData()
     {
-        [Test]
-        public void ShouldConstructWithCorrectData()
-        {
-            var expected = new[] { new EffectData("Foo", "Bar"), new EffectData("Alice", "Bob") };
-            var group = new EffectGroup(expected);
-            Assert.AreEqual(expected, group.Effects);
-        }
+        var expected = new[] { new EffectData("Foo", "Bar"), new EffectData("Alice", "Bob") };
+        var group = new EffectGroup(expected);
+        Assert.AreEqual(expected, group.Effects);
+    }
 
-        [Test]
-        public void ShouldThrowOnNullData()
-        {
-            // ReSharper disable once AssignNullToNotNullAttribute
-            // ReSharper disable once ObjectCreationAsStatement
-            Assert.Throws<ArgumentNullException>(() => new EffectGroup(null!));
-        }
+    [Test]
+    public void ShouldThrowOnNullData()
+    {
+        // ReSharper disable once AssignNullToNotNullAttribute
+        // ReSharper disable once ObjectCreationAsStatement
+        Assert.Throws<ArgumentNullException>(() => new EffectGroup(null!));
     }
 }
