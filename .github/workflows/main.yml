@@ -50,7 +50,6 @@ jobs:
       uses: cake-build/cake-action@v1
       with:
         target: GitHub
-        cake-bootstrap: true
         verbosity: Diagnostic
 
     - name: Upload Coverage to Codecov
