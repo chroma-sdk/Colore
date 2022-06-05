@@ -161,7 +161,7 @@ namespace Colore.Helpers
 
             var dllName = EnvironmentHelper.Is64Bit() ? "RzChromaSDK64.dll" : "RzChromaSDK.dll";
             Log.Debug("Attempting to load SDK library {DllName}", dllName);
-            var valid = (libraryPointer = Native.Kernel32.NativeMethods.LoadLibrary(dllName)) != IntPtr.Zero;
+            var valid = (libraryPointer = Native.Kernel32.NativeMethods.LoadLibraryW(dllName)) != IntPtr.Zero;
 
             Log.Debug("DLL valid? {DllValid}. SDK library pointer: {LibraryPointer}", valid, libraryPointer);
 

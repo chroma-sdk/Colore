@@ -66,7 +66,7 @@ namespace Colore.Native
         {
             Log.Info("Loading native Chroma SDK");
 
-            _chromaSdkPointer = Kernel32.NativeMethods.LoadLibrary(
+            _chromaSdkPointer = Kernel32.NativeMethods.LoadLibraryW(
                 EnvironmentHelper.Is64Bit() ? "RzChromaSDK64.dll" : "RzChromaSDK.dll");
 
             Log.Debug("Native Chroma SDK loaded at pointer value {SdkPointer}", _chromaSdkPointer);

@@ -211,12 +211,10 @@ namespace Colore.Native.Kernel32
         /// </remarks>
         [DllImport(
             DllName,
-            CharSet = CharSet.Ansi,
-            EntryPoint = nameof(LoadLibrary),
-            SetLastError = true,
-            BestFitMapping = false,
-            ThrowOnUnmappableChar = true)]
-        internal static extern IntPtr LoadLibrary([MarshalAs(UnmanagedType.LPStr)] string filename);
+            CharSet = CharSet.Unicode,
+            EntryPoint = nameof(LoadLibraryW),
+            SetLastError = true)]
+        internal static extern IntPtr LoadLibraryW([MarshalAs(UnmanagedType.LPWStr)] string filename);
 
         /// <summary>
         /// Frees the loaded dynamic-link library (DLL) module and, if necessary, decrements its reference count.
@@ -224,7 +222,7 @@ namespace Colore.Native.Kernel32
         /// process and the handle is no longer valid.
         /// </summary>
         /// <param name="hModule">
-        /// A handle to the loaded library module. The <see cref="LoadLibrary" />, <c>LoadLibraryEx</c>,
+        /// A handle to the loaded library module. The <see cref="LoadLibraryW" />, <c>LoadLibraryEx</c>,
         /// <c>GetModuleHandle</c>, or <c>GetModuleHandleEx</c> function returns this handle.
         /// </param>
         /// <returns>
@@ -239,7 +237,7 @@ namespace Colore.Native.Kernel32
         /// The system maintains a per-process reference count for each loaded module.
         /// A module that was loaded at process initialization due to load-time dynamic linking
         /// has a reference count of one. The reference count for a module is incremented each time the module
-        /// is loaded by a call to <see cref="LoadLibrary" />. The reference count is also incremented
+        /// is loaded by a call to <see cref="LoadLibraryW" />. The reference count is also incremented
         /// by a call to <c>LoadLibraryEx</c> unless the module is being loaded for the first time and
         /// is being loaded as a data or image file.
         /// </para>
