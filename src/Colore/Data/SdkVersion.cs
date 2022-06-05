@@ -160,7 +160,11 @@ namespace Colore.Data
         /// true if <paramref name="obj"/> and this instance are the same type and represent the same value; otherwise, false.
         /// </returns>
         /// <param name="obj">Another object to compare to. </param>
+#if NET6_0
+        public override bool Equals(object? obj)
+#else
         public override bool Equals(object obj)
+#endif
         {
             return obj is SdkVersion version && Equals(version);
         }
@@ -247,7 +251,11 @@ namespace Colore.Data
         /// </returns>
         /// <param name="obj">An object to compare with this instance. </param>
         /// <exception cref="ArgumentException"><paramref name="obj" /> is not the same type as this instance. </exception>
+#if NET6_0
+        public int CompareTo(object? obj)
+#else
         public int CompareTo(object obj)
+#endif
         {
 #pragma warning disable SA1119 // Statement must not use unnecessary parenthesis
             if (!(obj is SdkVersion version))

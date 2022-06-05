@@ -28,6 +28,7 @@ namespace Colore.Data
     using System;
     using System.Collections.Concurrent;
     using System.ComponentModel;
+    using System.Diagnostics;
     using System.Linq;
     using System.Reflection;
 
@@ -277,7 +278,22 @@ namespace Colore.Data
                                         .Where(p => p.FieldType == typeof(Guid));
 
             var mappings = fields.ToDictionary(
-                f => (Guid)f.GetValue(null),
+                f =>
+                {
+                    var fieldValue = f.GetValue(null);
+                    Debug.Assert(
+                        fieldValue is not null,
+                        "fieldValue is not null",
+                        "Found device GUID field with NULL value");
+
+#if NETSTANDARD2_0
+                    var guid = (Guid)fieldValue!;
+#else
+                    var guid = (Guid)fieldValue;
+#endif
+
+                    return guid;
+                },
                 f =>
                 {
                     var descriptionAttr = f.GetCustomAttribute<DescriptionAttribute>();

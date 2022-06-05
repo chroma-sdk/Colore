@@ -82,7 +82,7 @@ namespace Colore
                 throw new ArgumentNullException(nameof(info));
             }
 
-            DeviceId = new Guid(info.GetString($"{nameof(UnsupportedDeviceException)}.{nameof(DeviceId)}"));
+            DeviceId = new Guid(info.GetString($"{nameof(UnsupportedDeviceException)}.{nameof(DeviceId)}")!);
         }
 
         /// <summary>

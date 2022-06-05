@@ -82,7 +82,7 @@ namespace Colore.Native
                 throw new ArgumentNullException(nameof(info));
             }
 
-            Function = info.GetString($"{nameof(NativeCallException)}.{nameof(Function)}");
+            Function = info.GetString($"{nameof(NativeCallException)}.{nameof(Function)}")!;
         }
 
         /// <summary>

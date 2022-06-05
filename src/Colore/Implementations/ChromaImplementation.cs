@@ -115,7 +115,7 @@ namespace Colore.Implementations
         {
             _api = api;
             _deviceInstances = new Dictionary<Guid, IGenericDevice>();
-            Version = typeof(ChromaImplementation).GetTypeInfo().Assembly.GetName().Version;
+            Version = typeof(ChromaImplementation).GetTypeInfo().Assembly.GetName().Version!;
             InitializeAsync(info).Wait();
         }
 

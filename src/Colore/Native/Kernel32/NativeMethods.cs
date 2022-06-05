@@ -26,6 +26,7 @@
 namespace Colore.Native.Kernel32
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
     using System.Runtime.InteropServices;
 
     /// <summary>

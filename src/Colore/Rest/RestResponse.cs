@@ -87,6 +87,11 @@ namespace Colore.Rest
                 return default;
             }
 
+            if (Content is null)
+            {
+                return default;
+            }
+
             try
             {
                 return JsonConvert.DeserializeObject<T>(Content);

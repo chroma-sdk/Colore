@@ -26,6 +26,7 @@
 namespace Colore.Rest
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
     using System.Threading;
     using System.Threading.Tasks;
 
@@ -474,6 +475,10 @@ namespace Colore.Rest
         /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
         /// </summary>
+        [SuppressMessage(
+            "ReSharper",
+            "ConditionalAccessQualifierIsNonNullableAccordingToAPIContract",
+            Justification = "Could potentially be null depending on calls made")]
         public void Dispose()
         {
             _heartbeatTimer?.Dispose();
