@@ -1,7 +1,7 @@
 #addin nuget:?package=Cake.DocFx&version=1.0.0
 
-#tool dotnet:?package=GitVersion.Tool&version=5.7.0
-#tool dotnet:?package=dotnet-reportgenerator-globaltool&version=4.8.13
+#tool dotnet:?package=GitVersion.Tool&version=5.10.3
+#tool dotnet:?package=dotnet-reportgenerator-globaltool&version=5.1.9
 
 ///////////////////////////////////////////////////////////////////////////////
 // ARGUMENTS
@@ -104,20 +104,20 @@ Task("Clean")
         Information("Cleaning output directories");
         CleanDirectory("./artifacts");
         CleanDirectory("./publish");
-        DotNetCoreClean(solution, new DotNetCoreCleanSettings { Configuration = configuration });
+        DotNetClean(solution, new DotNetCleanSettings { Configuration = configuration });
         CleanDirectory("./src/Colore.Tests/TestResults");
         CreateDirectory("./artifacts/nuget");
     });
 
 Task("Restore")
     .IsDependentOn("Clean")
-    .Does(() => DotNetCoreRestore(solution));
+    .Does(() => DotNetRestore(solution));
 
 Task("Build")
     .IsDependentOn("Restore")
     .Does(() =>
     {
-        var settings = new DotNetCoreBuildSettings
+        var settings = new DotNetBuildSettings
         {
             Configuration = configuration,
             NoRestore = true,
@@ -126,14 +126,14 @@ Task("Build")
                 .Append($"/p:NuGetVersion={version.NuGetVersionV2}")
         };
 
-        DotNetCoreBuild(solution, settings);
+        DotNetBuild(solution, settings);
     });
 
 Task("Test")
     .IsDependentOn("Build")
     .Does(() =>
     {
-        var settings = new DotNetCoreTestSettings
+        var settings = new DotNetTestSettings
         {
             Configuration = configuration,
             NoBuild = true,
@@ -143,7 +143,7 @@ Task("Test")
             ArgumentCustomization = args => args.Append("--collect:\"XPlat Code Coverage\"")
         };
 
-        DotNetCoreTest(testProject, settings);
+        DotNetTest(testProject, settings);
 
         var testResults = GetFiles("tests/Colore.Tests/TestResults/*/coverage.cobertura.xml");
         CopyFiles(testResults, "./artifacts");
@@ -177,7 +177,7 @@ Task("Publish")
     {
         foreach (var framework in frameworks)
         {
-            var settings = new DotNetCorePublishSettings
+            var settings = new DotNetPublishSettings
             {
                 Framework = framework,
                 Configuration = configuration,
@@ -187,7 +187,7 @@ Task("Publish")
                     .Append($"/p:NuGetVersion={version.NuGetVersionV2}")
             };
 
-            DotNetCorePublish("src/Colore", settings);
+            DotNetPublish("src/Colore", settings);
 
             var dir = $"./publish/{framework}/";
             var target = $"./artifacts/colore_{version.SemVer}_{framework}_full.zip";
