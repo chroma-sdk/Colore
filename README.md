@@ -28,9 +28,8 @@ Contributing
 ------------
 
 [![Discussions][discussions-badge]][discussions]
-[![Discord][discordbadge]][discord]
 
-*For discussing, you can [discuss right here in the repo][discussions] or join the Razer Community Discord server using the badges above. If you want to join the Slack chat, contact [Adam Hellberg][sharp] ([sharparam@sharparam.com](mailto:sharparam@sharparam.com)).*
+*For discussing, you can [discuss right here in the repo][discussions]. If you want to join the Slack chat, contact [Adam Hellberg][sharp] ([sharparam@sharparam.com](mailto:sharparam@sharparam.com)).*
 
 Contributors are very welcome! If you have code fixes, please [submit a pull request][newpull] here on GitHub.
 
@@ -224,8 +223,6 @@ There may be others we are unaware of, so please let us know if there are any ot
 [codefactor-master]: https://www.codefactor.io/repository/github/chroma-sdk/colore/overview/master
 [codefactor-master-badge]: https://www.codefactor.io/repository/github/chroma-sdk/colore/badge/master
 
-[discord]: https://discord.gg/4ysuMYK
-[discordbadge]: https://img.shields.io/discord/342761229544194048.svg?label=discord&logo=discord
 [discussions]: https://github.com/chroma-sdk/Colore/discussions
 [discussions-badge]: https://img.shields.io/badge/github-discussions-brightgreen?logo=github
 
