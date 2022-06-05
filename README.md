@@ -48,7 +48,7 @@ By participating in this project you agree to abide by its terms.
 License
 -------
 
-Copyright &copy; 2015-2021 by [Adam Hellberg][sharp] and [Brandon Scott][bs].
+Copyright &copy; 2015-2022 by [Adam Hellberg][sharp] and [Brandon Scott][bs].
 
 This project is licensed under the MIT license, please see the file [`LICENSE`](LICENSE) for more information.
 
