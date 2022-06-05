@@ -40,18 +40,6 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-cake-
 
-    - name: 'Setup dotnet 3.1.x'
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: '3.1.x'
-      env:
-        DOTNET_CLI_TELEMETRY_OPTOUT: true
-    - name: 'Setup dotnet 5.0.x'
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: '5.0.x'
-      env:
-        DOTNET_CLI_TELEMETRY_OPTOUT: true
     - name: 'Install DocFx'
       uses: crazy-max/ghaction-chocolatey@v1
       with:
@@ -114,14 +102,6 @@ jobs:
       with:
         name: nuget
         path: nuget
-    - name: 'Setup dotnet'
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: '5.0.x'
-        source-url: https://nuget.pkg.github.com/chroma-sdk/index.json
-      env:
-        DOTNET_CLI_TELEMETRY_OPTOUT: true
-        NUGET_AUTH_TOKEN: ${{ github.token }}
     - name: Push NuGet packages to GitHub feed
       run: |
         dotnet nuget push nuget/*.nupkg \
