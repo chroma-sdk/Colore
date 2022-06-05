@@ -79,13 +79,21 @@ namespace Colore.Native.Kernel32
         /// than by ordinal value and design your application to handle the case when the function is not available.
         /// </para>
         /// </remarks>
+        #pragma warning disable SA1118 // The parameter spans multiple lines
+        [SuppressMessage(
+            "Globalization",
+            "CA2101:Specify marshaling for P/Invoke string arguments",
+            Justification =
+                "GetProcAddress does not have a unicode equivalent. BestFitMapping is disabled and ThrowOnUnmappableChar is enabled to make sure there is no security issue.")]
+        #pragma warning restore SA1118 // The parameter spans multiple lines
         [DllImport(
             DllName,
             CharSet = CharSet.Ansi,
             EntryPoint = nameof(GetProcAddress),
             ExactSpelling = true,
             SetLastError = true,
-            BestFitMapping = false)]
+            BestFitMapping = false,
+            ThrowOnUnmappableChar = true)]
         internal static extern IntPtr GetProcAddress(IntPtr module, string procName);
 
         /// <summary>
