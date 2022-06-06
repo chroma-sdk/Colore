@@ -75,7 +75,18 @@ namespace Colore.Implementations
             set
             {
                 _custom[index] = value;
-                SetCustomAsync(_custom).Wait();
+#if NETSTANDARD2_0 || NETSTANDARD2_1
+                if (IsRestApi)
+                {
+                    SetCustomAsync(_custom).GetAwaiter().GetResult();
+                }
+                else
+                {
+                    SetCustom(_custom);
+                }
+#else
+                SetCustom(_custom);
+#endif
             }
         }
 
@@ -88,6 +99,17 @@ namespace Colore.Implementations
         public bool IsSet(int index)
         {
             return this[index] != Color.Black;
+        }
+
+        /// <inheritdoc cref="DeviceImplementation.SetAll" />
+        /// <summary>
+        /// Sets the color of all lights in Chroma Link.
+        /// </summary>
+        /// <param name="color">Color to set.</param>
+        public override Guid SetAll(Color color)
+        {
+            _custom.Set(color);
+            return SetCustom(_custom);
         }
 
         /// <inheritdoc cref="DeviceImplementation.SetAllAsync" />
@@ -107,10 +129,27 @@ namespace Colore.Implementations
         /// Currently, this only works for the <see cref="ChromaLinkEffectType.None" /> and <see cref="ChromaLinkEffectType.Static" /> effects.
         /// </summary>
         /// <param name="effectType">Effect options.</param>
+        public Guid SetEffect(ChromaLinkEffectType effectType) => SetEffect(Api.CreateChromaLinkEffect(effectType));
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Sets an effect without any parameters.
+        /// Currently, this only works for the <see cref="ChromaLinkEffectType.None" /> and <see cref="ChromaLinkEffectType.Static" /> effects.
+        /// </summary>
+        /// <param name="effectType">Effect options.</param>
         public async Task<Guid> SetEffectAsync(ChromaLinkEffectType effectType)
         {
-            return await SetEffectAsync(await Api.CreateChromaLinkEffectAsync(effectType).ConfigureAwait(false)).ConfigureAwait(false);
+            return await SetEffectAsync(await Api.CreateChromaLinkEffectAsync(effectType).ConfigureAwait(false))
+                .ConfigureAwait(false);
         }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Sets a <see cref="CustomChromaLinkEffect" /> effect on the Chroma Link.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="CustomChromaLinkEffect" /> struct.</param>
+        public Guid SetCustom(CustomChromaLinkEffect effect) =>
+            SetEffect(Api.CreateChromaLinkEffect(ChromaLinkEffectType.Custom, effect));
 
         /// <inheritdoc />
         /// <summary>
@@ -119,8 +158,25 @@ namespace Colore.Implementations
         /// <param name="effect">An instance of the <see cref="CustomChromaLinkEffect" /> struct.</param>
         public async Task<Guid> SetCustomAsync(CustomChromaLinkEffect effect)
         {
-            return await SetEffectAsync(await Api.CreateChromaLinkEffectAsync(ChromaLinkEffectType.Custom, effect).ConfigureAwait(false)).ConfigureAwait(false);
+            return await SetEffectAsync(
+                    await Api.CreateChromaLinkEffectAsync(ChromaLinkEffectType.Custom, effect).ConfigureAwait(false))
+                .ConfigureAwait(false);
         }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Sets a <see cref="StaticChromaLinkEffect" /> effect on the Chroma Link.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="StaticChromaLinkEffect" /> struct.</param>
+        public Guid SetStatic(StaticChromaLinkEffect effect) =>
+            SetEffect(Api.CreateChromaLinkEffect(ChromaLinkEffectType.Static, effect));
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Sets a <see cref="StaticChromaLinkEffect" /> effect on the Chroma Link.
+        /// </summary>
+        /// <param name="color">Color of the effect.</param>
+        public Guid SetStatic(Color color) => SetStatic(new StaticChromaLinkEffect(color));
 
         /// <inheritdoc />
         /// <summary>
@@ -129,7 +185,9 @@ namespace Colore.Implementations
         /// <param name="effect">An instance of the <see cref="StaticChromaLinkEffect" /> struct.</param>
         public async Task<Guid> SetStaticAsync(StaticChromaLinkEffect effect)
         {
-            return await SetEffectAsync(await Api.CreateChromaLinkEffectAsync(ChromaLinkEffectType.Static, effect).ConfigureAwait(false)).ConfigureAwait(false);
+            return await SetEffectAsync(
+                    await Api.CreateChromaLinkEffectAsync(ChromaLinkEffectType.Static, effect).ConfigureAwait(false))
+                .ConfigureAwait(false);
         }
 
         /// <inheritdoc />
@@ -141,6 +199,12 @@ namespace Colore.Implementations
         {
             return await SetStaticAsync(new StaticChromaLinkEffect(color)).ConfigureAwait(false);
         }
+
+        /// <inheritdoc cref="DeviceImplementation.Clear" />
+        /// <summary>
+        /// Clears the current effect on the Chroma Link.
+        /// </summary>
+        public override Guid Clear() => SetEffect(ChromaLinkEffectType.None);
 
         /// <inheritdoc cref="DeviceImplementation.ClearAsync" />
         /// <summary>

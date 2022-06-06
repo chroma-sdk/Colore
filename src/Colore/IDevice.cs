@@ -35,19 +35,24 @@ namespace Colore
     /// <summary>
     /// Interface for functionality common with all devices.
     /// </summary>
+    [PublicAPI]
     public interface IDevice
     {
         /// <summary>
         /// Gets the ID of the currently active effect.
         /// </summary>
-        [PublicAPI]
         Guid CurrentEffectId { get; }
 
         /// <summary>
         /// Clears the current effect on the device.
         /// </summary>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
+        Guid Clear();
+
+        /// <summary>
+        /// Clears the current effect on the device.
+        /// </summary>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         Task<Guid> ClearAsync();
 
         /// <summary>
@@ -55,7 +60,13 @@ namespace Colore
         /// </summary>
         /// <param name="color">Color to set.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
+        Guid SetAll(Color color);
+
+        /// <summary>
+        /// Sets the color of all components on this device.
+        /// </summary>
+        /// <param name="color">Color to set.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         Task<Guid> SetAllAsync(Color color);
 
         /// <summary>
@@ -63,7 +74,13 @@ namespace Colore
         /// </summary>
         /// <param name="effectId">GUID to set.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
+        Guid SetEffect(Guid effectId);
+
+        /// <summary>
+        /// Updates the device to use the effect pointed to by the specified GUID.
+        /// </summary>
+        /// <param name="effectId">GUID to set.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         Task<Guid> SetEffectAsync(Guid effectId);
     }
 }

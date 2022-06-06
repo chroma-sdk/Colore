@@ -103,7 +103,21 @@ namespace Colore.Implementations
         public Color this[Key key]
         {
             get => _grid[key];
-            set => SetKeyAsync(key, value).Wait();
+            set
+            {
+#if NETSTANDARD2_0 || NETSTANDARD2_1
+                if (IsRestApi)
+                {
+                    SetKeyAsync(key, value).GetAwaiter().GetResult();
+                }
+                else
+                {
+                    SetKey(key, value);
+                }
+#else
+                SetKey(key, value);
+#endif
+            }
         }
 
         /// <inheritdoc />
@@ -117,7 +131,21 @@ namespace Colore.Implementations
         public Color this[int row, int column]
         {
             get => _grid[row, column];
-            set => SetPositionAsync(row, column, value).Wait();
+            set
+            {
+#if NETSTANDARD2_0 || NETSTANDARD2_1
+                if (IsRestApi)
+                {
+                    SetPositionAsync(row, column, value).GetAwaiter().GetResult();
+                }
+                else
+                {
+                    SetPosition(row, column, value);
+                }
+#else
+                SetPosition(row, column, value);
+#endif
+            }
         }
 
         /// <inheritdoc />
@@ -129,7 +157,21 @@ namespace Colore.Implementations
         public Color this[int zoneIndex]
         {
             get => _deathstalkerGrid[zoneIndex];
-            set => SetDeathstalkerZoneAsync(zoneIndex, value).Wait();
+            set
+            {
+#if NETSTANDARD2_0 || NETSTANDARD2_1
+                if (IsRestApi)
+                {
+                    SetDeathstalkerZoneAsync(zoneIndex, value).GetAwaiter().GetResult();
+                }
+                else
+                {
+                    SetDeathstalkerZone(zoneIndex, value);
+                }
+#else
+                SetDeathstalkerZone(zoneIndex, value);
+#endif
+            }
         }
 
         /// <summary>
@@ -142,10 +184,7 @@ namespace Colore.Implementations
         /// regardless of the physical layout of the keyboard.
         /// </remarks>
         [PublicAPI]
-        public static bool IsKeySafe(Key key)
-        {
-            return !PositionData.UnsafePositions.Contains((int)key);
-        }
+        public static bool IsKeySafe(Key key) => !PositionData.UnsafePositions.Contains((int)key);
 
         /// <summary>
         /// Returns whether the specified position is safe to use.
@@ -158,10 +197,8 @@ namespace Colore.Implementations
         /// regardless of the physical layout of the keyboard.
         /// </remarks>
         [PublicAPI]
-        public static bool IsPositionSafe(int row, int column)
-        {
-            return !PositionData.UnsafePositions.Contains((row << 8) | column);
-        }
+        public static bool IsPositionSafe(int row, int column) =>
+            !PositionData.UnsafePositions.Contains((row << 8) | column);
 
         /// <inheritdoc />
         /// <summary>
@@ -169,9 +206,20 @@ namespace Colore.Implementations
         /// </summary>
         /// <param name="key">Key to check.</param>
         /// <returns><c>true</c> if the key has a color set, otherwise <c>false</c>.</returns>
-        public bool IsSet(Key key)
+        public bool IsSet(Key key) => _grid[key] != Color.Black;
+
+        /// <inheritdoc cref="DeviceImplementation.SetAllAsync" />
+        /// <summary>
+        /// Sets the color of all keys on the keyboard.
+        /// </summary>
+        /// <param name="color">Color to set.</param>
+        public override Guid SetAll(Color color)
         {
-            return _grid[key] != Color.Black;
+            _grid.Set(color);
+            _deathstalkerGrid.Set(color);
+
+            // See note in SetAllAsync about why we use the deathstalker grid
+            return SetEffect(Api.CreateKeyboardEffect(KeyboardEffectType.Custom, _deathstalkerGrid));
         }
 
         /// <inheritdoc cref="DeviceImplementation.SetAllAsync" />
@@ -190,8 +238,25 @@ namespace Colore.Implementations
              * on the Deathstalker as well, saving developers the need to do their own special handling for it.
              */
             return await SetEffectAsync(
-                    await Api.CreateKeyboardEffectAsync(KeyboardEffectType.Custom, _deathstalkerGrid).ConfigureAwait(false))
+                    await Api.CreateKeyboardEffectAsync(KeyboardEffectType.Custom, _deathstalkerGrid)
+                             .ConfigureAwait(false))
                 .ConfigureAwait(false);
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Sets a custom grid effect on the keyboard.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        /// <remarks>
+        /// This will overwrite the current internal <see cref="CustomKeyboardEffect" />
+        /// struct in the <see cref="KeyboardImplementation" /> class.
+        /// </remarks>
+        public Guid SetCustom(CustomKeyboardEffect effect)
+        {
+            _grid = effect;
+
+            return SetEffect(Api.CreateKeyboardEffect(KeyboardEffectType.CustomKey, _grid));
         }
 
         /// <inheritdoc />
@@ -217,6 +282,19 @@ namespace Colore.Implementations
         /// </summary>
         /// <param name="effect">Effect options.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
+        public Guid SetExtendedCustom(ExtendedCustomKeyboardEffect effect)
+        {
+            var effectGuid = Api.CreateKeyboardEffect(KeyboardEffectType.ExtendedCustom, effect);
+
+            return SetEffect(effectGuid);
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Sets an extended custom grid effect on the keyboard.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         public async Task<Guid> SetExtendedCustomAsync(ExtendedCustomKeyboardEffect effect)
         {
             var effectGuid = await Api.CreateKeyboardEffectAsync(KeyboardEffectType.ExtendedCustom, effect)
@@ -231,10 +309,37 @@ namespace Colore.Implementations
         /// Currently, this only works for the <see cref="KeyboardEffectType.None" /> effect.
         /// </summary>
         /// <param name="effectType">Effect options.</param>
-        public async Task<Guid> SetEffectAsync(KeyboardEffectType effectType)
-        {
-            return await SetEffectAsync(await Api.CreateKeyboardEffectAsync(effectType).ConfigureAwait(false))
+        public Guid SetEffect(KeyboardEffectType effectType) => SetEffect(Api.CreateKeyboardEffect(effectType));
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Sets an effect without any parameters.
+        /// Currently, this only works for the <see cref="KeyboardEffectType.None" /> effect.
+        /// </summary>
+        /// <param name="effectType">Effect options.</param>
+        public async Task<Guid> SetEffectAsync(KeyboardEffectType effectType) =>
+            await SetEffectAsync(await Api.CreateKeyboardEffectAsync(effectType).ConfigureAwait(false))
                 .ConfigureAwait(false);
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Sets the color on a specific row and column on the keyboard grid.
+        /// </summary>
+        /// <param name="row">Row to set, between 0 and <see cref="KeyboardConstants.MaxRows" /> (exclusive upper-bound).</param>
+        /// <param name="column">Column to set, between 0 and <see cref="KeyboardConstants.MaxColumns" /> (exclusive upper-bound).</param>
+        /// <param name="color">Color to set.</param>
+        /// <param name="clear">Whether or not to clear the existing colors before setting this one.</param>
+        /// <exception cref="System.ArgumentException">Thrown if the row or column parameters are outside the valid ranges.</exception>
+        public Guid SetPosition(int row, int column, Color color, bool clear = false)
+        {
+            if (clear)
+            {
+                _grid.Clear();
+            }
+
+            _grid[row, column] = color;
+
+            return SetEffect(Api.CreateKeyboardEffect(KeyboardEffectType.CustomKey, _grid));
         }
 
         /// <inheritdoc />
@@ -266,6 +371,25 @@ namespace Colore.Implementations
         /// <param name="key">Key to modify.</param>
         /// <param name="color">Color to set.</param>
         /// <param name="clear">If true, the keyboard will first be cleared before setting the key.</param>
+        public Guid SetKey(Key key, Color color, bool clear = false)
+        {
+            if (clear)
+            {
+                _grid.Clear();
+            }
+
+            _grid[key] = color;
+
+            return SetEffect(Api.CreateKeyboardEffect(KeyboardEffectType.CustomKey, _grid));
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Sets the color of a specific key on the keyboard.
+        /// </summary>
+        /// <param name="key">Key to modify.</param>
+        /// <param name="color">Color to set.</param>
+        /// <param name="clear">If true, the keyboard will first be cleared before setting the key.</param>
         public async Task<Guid> SetKeyAsync(Key key, Color color, bool clear = false)
         {
             if (clear)
@@ -277,6 +401,51 @@ namespace Colore.Implementations
             return await SetEffectAsync(
                     await Api.CreateKeyboardEffectAsync(KeyboardEffectType.CustomKey, _grid).ConfigureAwait(false))
                 .ConfigureAwait(false);
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Sets the specified color on a set of keys.
+        /// </summary>
+        /// <param name="color">The <see cref="Color" /> to apply.</param>
+        /// <param name="key">First key to change.</param>
+        /// <param name="keys">Additional keys that should also have the color applied.</param>
+        public Guid SetKeys(Color color, Key key, params Key[] keys)
+        {
+            var guid = SetKey(key, color);
+            foreach (var additional in keys)
+            {
+                guid = SetKey(additional, color);
+            }
+
+            return guid;
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Sets a color on a collection of keys.
+        /// </summary>
+        /// <param name="keys">The keys which should have their color changed.</param>
+        /// <param name="color">The <see cref="Color" /> to apply.</param>
+        /// <param name="clear">
+        /// If <c>true</c>, the keyboard keys will be cleared before
+        /// applying the new colors.
+        /// </param>
+        public Guid SetKeys(IEnumerable<Key> keys, Color color, bool clear = false)
+        {
+            var guid = Guid.Empty;
+
+            if (clear)
+            {
+                guid = Clear();
+            }
+
+            foreach (var key in keys)
+            {
+                guid = SetKey(key, color);
+            }
+
+            return guid;
         }
 
         /// <inheritdoc />
@@ -325,11 +494,37 @@ namespace Colore.Implementations
         /// Sets a static color on the keyboard.
         /// </summary>
         /// <param name="effect">Effect options.</param>
-        public async Task<Guid> SetStaticAsync(StaticKeyboardEffect effect)
-        {
-            return await SetEffectAsync(
+        public Guid SetStatic(StaticKeyboardEffect effect) =>
+            SetEffect(Api.CreateKeyboardEffect(KeyboardEffectType.Static, effect));
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Sets a static color on the keyboard.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        public async Task<Guid> SetStaticAsync(StaticKeyboardEffect effect) =>
+            await SetEffectAsync(
                     await Api.CreateKeyboardEffectAsync(KeyboardEffectType.Static, effect).ConfigureAwait(false))
                 .ConfigureAwait(false);
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Sets the specified Deathstalker zone to a color.
+        /// </summary>
+        /// <param name="zoneIndex">The index of the Deathstalker zone to set.</param>
+        /// <param name="color">The color to set.</param>
+        /// <param name="clear">Whether to clear all colors before setting the new one.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
+        public Guid SetDeathstalkerZone(int zoneIndex, Color color, bool clear = false)
+        {
+            if (clear)
+            {
+                _deathstalkerGrid.Clear();
+            }
+
+            _deathstalkerGrid[zoneIndex] = color;
+
+            return SetEffect(Api.CreateKeyboardEffect(KeyboardEffectType.Custom, _deathstalkerGrid));
         }
 
         /// <inheritdoc />
@@ -349,8 +544,22 @@ namespace Colore.Implementations
 
             _deathstalkerGrid[zoneIndex] = color;
             return await SetEffectAsync(
-                    await Api.CreateKeyboardEffectAsync(KeyboardEffectType.Custom, _deathstalkerGrid).ConfigureAwait(false))
+                    await Api.CreateKeyboardEffectAsync(KeyboardEffectType.Custom, _deathstalkerGrid)
+                             .ConfigureAwait(false))
                 .ConfigureAwait(false);
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Sets a Deathstalker grid effect.
+        /// </summary>
+        /// <param name="effect">The Deathstalker grid effect to set.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
+        public Guid SetDeathstalker(DeathstalkerGridEffect effect)
+        {
+            _deathstalkerGrid = effect;
+
+            return SetEffect(Api.CreateKeyboardEffect(KeyboardEffectType.Custom, _deathstalkerGrid));
         }
 
         /// <inheritdoc />
@@ -363,8 +572,21 @@ namespace Colore.Implementations
         {
             _deathstalkerGrid = effect;
             return await SetEffectAsync(
-                    await Api.CreateKeyboardEffectAsync(KeyboardEffectType.Custom, _deathstalkerGrid).ConfigureAwait(false))
+                    await Api.CreateKeyboardEffectAsync(KeyboardEffectType.Custom, _deathstalkerGrid)
+                             .ConfigureAwait(false))
                 .ConfigureAwait(false);
+        }
+
+        /// <inheritdoc cref="DeviceImplementation.ClearAsync" />
+        /// <summary>
+        /// Clears the current effect on the Keyboard.
+        /// </summary>
+        public override Guid Clear()
+        {
+            _grid.Clear();
+            _deathstalkerGrid.Clear();
+
+            return SetEffect(KeyboardEffectType.None);
         }
 
         /// <inheritdoc cref="DeviceImplementation.ClearAsync" />

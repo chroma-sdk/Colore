@@ -37,6 +37,7 @@ namespace Colore
     /// <summary>
     /// Interface for headset functionality.
     /// </summary>
+    [PublicAPI]
     public interface IHeadset : IDevice
     {
         /// <summary>
@@ -44,7 +45,6 @@ namespace Colore
         /// </summary>
         /// <param name="index">The index to access.</param>
         /// <returns>The current <see cref="Color" /> at the <paramref name="index" />.</returns>
-        [PublicAPI]
         Color this[int index] { get; set; }
 
         /// <summary>
@@ -54,7 +54,15 @@ namespace Colore
         /// </summary>
         /// <param name="effectType">The type of effect to set.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
+        Guid SetEffect(HeadsetEffectType effectType);
+
+        /// <summary>
+        /// Sets an effect on the headset that doesn't
+        /// take any parameters, currently only valid
+        /// for the <see cref="HeadsetEffectType.None" /> effect.
+        /// </summary>
+        /// <param name="effectType">The type of effect to set.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         Task<Guid> SetEffectAsync(HeadsetEffectType effectType);
 
         /// <summary>
@@ -65,7 +73,24 @@ namespace Colore
         /// describing the effect.
         /// </param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
+        Guid SetStatic(StaticHeadsetEffect effect);
+
+        /// <summary>
+        /// Sets a new <see cref="StaticHeadsetEffect" /> effect on
+        /// the headset using the specified <see cref="Color" />.
+        /// </summary>
+        /// <param name="color"><see cref="Color" /> of the effect.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
+        Guid SetStatic(Color color);
+
+        /// <summary>
+        /// Sets a new static effect on the headset.
+        /// </summary>
+        /// <param name="effect">
+        /// An instance of the <see cref="StaticHeadsetEffect" /> struct
+        /// describing the effect.
+        /// </param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         Task<Guid> SetStaticAsync(StaticHeadsetEffect effect);
 
         /// <summary>
@@ -74,7 +99,6 @@ namespace Colore
         /// </summary>
         /// <param name="color"><see cref="Color" /> of the effect.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
         Task<Guid> SetStaticAsync(Color color);
 
         /// <summary>
@@ -85,7 +109,16 @@ namespace Colore
         /// describing the effect.
         /// </param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
+        Guid SetCustom(CustomHeadsetEffect effect);
+
+        /// <summary>
+        /// Sets a new <see cref="CustomHeadsetEffect" /> effect on the headset.
+        /// </summary>
+        /// <param name="effect">
+        /// An instance of the <see cref="CustomHeadsetEffect" /> struct
+        /// describing the effect.
+        /// </param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         Task<Guid> SetCustomAsync(CustomHeadsetEffect effect);
     }
 }

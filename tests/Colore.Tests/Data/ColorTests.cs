@@ -229,8 +229,8 @@ public class ColorTests
     {
         var c = new Color(255, 255, 255);
         Assert.AreNotEqual(c, null);
-        Assert.False(c == null);
-        Assert.True(c != null);
+        Assert.False(c == (object?)null);
+        Assert.True(c != (object?)null);
         Assert.False(c.Equals(null));
     }
 

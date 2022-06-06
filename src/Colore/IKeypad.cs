@@ -37,6 +37,7 @@ namespace Colore
     /// <summary>
     /// Interface for keypad functions.
     /// </summary>
+    [PublicAPI]
     public interface IKeypad : IDevice
     {
         /// <summary>
@@ -45,7 +46,6 @@ namespace Colore
         /// <param name="row">The row to access (between <c>0</c> and <see cref="KeypadConstants.MaxRows" />, exclusive upper-bound).</param>
         /// <param name="column">The column to access (between <c>0</c> and <see cref="KeypadConstants.MaxColumns" />, exclusive upper-bound).</param>
         /// <returns>The <see cref="Color" /> at the specified position.</returns>
-        [PublicAPI]
         Color this[int row, int column] { get; set; }
 
         /// <summary>
@@ -54,7 +54,6 @@ namespace Colore
         /// <param name="row">The row to query.</param>
         /// <param name="column">The column to query.</param>
         /// <returns><c>true</c> if the position has a color set that is not black, otherwise <c>false</c>.</returns>
-        [PublicAPI]
         bool IsSet(int row, int column);
 
         /// <summary>
@@ -62,7 +61,13 @@ namespace Colore
         /// </summary>
         /// <param name="effect">An instance of the <see cref="CustomKeypadEffect" /> struct.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
+        Guid SetCustom(CustomKeypadEffect effect);
+
+        /// <summary>
+        /// Sets a <see cref="CustomKeypadEffect" /> effect on the keypad.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="CustomKeypadEffect" /> struct.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         Task<Guid> SetCustomAsync(CustomKeypadEffect effect);
 
         /// <summary>
@@ -70,7 +75,20 @@ namespace Colore
         /// </summary>
         /// <param name="effect">An instance of the <see cref="StaticKeypadEffect" /> struct.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
+        Guid SetStatic(StaticKeypadEffect effect);
+
+        /// <summary>
+        /// Sets a <see cref="StaticKeypadEffect" /> effect on the keypad.
+        /// </summary>
+        /// <param name="color">Color of the effect.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
+        Guid SetStatic(Color color);
+
+        /// <summary>
+        /// Sets a <see cref="StaticKeypadEffect" /> effect on the keypad.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="StaticKeypadEffect" /> struct.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         Task<Guid> SetStaticAsync(StaticKeypadEffect effect);
 
         /// <summary>
@@ -78,7 +96,6 @@ namespace Colore
         /// </summary>
         /// <param name="color">Color of the effect.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
         Task<Guid> SetStaticAsync(Color color);
 
         /// <summary>
@@ -87,7 +104,14 @@ namespace Colore
         /// </summary>
         /// <param name="effectType">Effect options.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
+        Guid SetEffect(KeypadEffectType effectType);
+
+        /// <summary>
+        /// Sets an effect without any parameters.
+        /// Currently, this only works for the <see cref="KeypadEffectType.None" /> effect.
+        /// </summary>
+        /// <param name="effectType">Effect options.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         Task<Guid> SetEffectAsync(KeypadEffectType effectType);
     }
 }

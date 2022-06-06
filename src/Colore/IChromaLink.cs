@@ -37,6 +37,7 @@ namespace Colore
     /// <summary>
     /// Interface for Chroma Link functionality.
     /// </summary>
+    [PublicAPI]
     public interface IChromaLink : IDevice
     {
         /// <summary>
@@ -45,31 +46,41 @@ namespace Colore
         /// </summary>
         /// <param name="index">The zone to access.</param>
         /// <returns>The color currently set for the specified key.</returns>
-        [PublicAPI]
         Color this[int index] { get; set; }
-
-        /// <summary>
-        /// Sets an effect without any parameters.
-        /// </summary>
-        /// <param name="effectType">Effect options.</param>
-        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
-        Task<Guid> SetEffectAsync(ChromaLinkEffectType effectType);
 
         /// <summary>
         /// Returns whether an element has had a custom color set.
         /// </summary>
         /// <param name="index">The index to query.</param>
         /// <returns><c>true</c> if the position has a color set that is not black, otherwise <c>false</c>.</returns>
-        [PublicAPI]
         bool IsSet(int index);
+
+        /// <summary>
+        /// Sets an effect without any parameters.
+        /// </summary>
+        /// <param name="effectType">Effect options.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
+        Guid SetEffect(ChromaLinkEffectType effectType);
+
+        /// <summary>
+        /// Sets an effect without any parameters.
+        /// </summary>
+        /// <param name="effectType">Effect options.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
+        Task<Guid> SetEffectAsync(ChromaLinkEffectType effectType);
 
         /// <summary>
         /// Sets a <see cref="CustomChromaLinkEffect" /> effect on the Chroma Link.
         /// </summary>
         /// <param name="effect">An instance of the <see cref="CustomChromaLinkEffect" /> struct.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
+        Guid SetCustom(CustomChromaLinkEffect effect);
+
+        /// <summary>
+        /// Sets a <see cref="CustomChromaLinkEffect" /> effect on the Chroma Link.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="CustomChromaLinkEffect" /> struct.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         Task<Guid> SetCustomAsync(CustomChromaLinkEffect effect);
 
         /// <summary>
@@ -77,7 +88,20 @@ namespace Colore
         /// </summary>
         /// <param name="effect">An instance of the <see cref="StaticChromaLinkEffect" /> struct.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
+        Guid SetStatic(StaticChromaLinkEffect effect);
+
+        /// <summary>
+        /// Sets a <see cref="StaticChromaLinkEffect" /> effect on the Chroma Link.
+        /// </summary>
+        /// <param name="color">Color of the effect.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
+        Guid SetStatic(Color color);
+
+        /// <summary>
+        /// Sets a <see cref="StaticChromaLinkEffect" /> effect on the Chroma Link.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="StaticChromaLinkEffect" /> struct.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         Task<Guid> SetStaticAsync(StaticChromaLinkEffect effect);
 
         /// <summary>
@@ -85,7 +109,6 @@ namespace Colore
         /// </summary>
         /// <param name="color">Color of the effect.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
         Task<Guid> SetStaticAsync(Color color);
     }
 }

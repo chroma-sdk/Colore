@@ -36,12 +36,12 @@ namespace Colore
     /// <summary>
     /// Interface for generic devices.
     /// </summary>
+    [PublicAPI]
     public interface IGenericDevice : IDevice
     {
         /// <summary>
         /// Gets the <see cref="Guid" /> of this device.
         /// </summary>
-        [PublicAPI]
         Guid DeviceId { get; }
 
         /// <summary>
@@ -49,7 +49,13 @@ namespace Colore
         /// </summary>
         /// <param name="effectType">Effect to set.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
+        Guid SetEffect(EffectType effectType);
+
+        /// <summary>
+        /// Sets a parameter-less effect on this device.
+        /// </summary>
+        /// <param name="effectType">Effect to set.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         Task<Guid> SetEffectAsync(EffectType effectType);
 
         /// <summary>
@@ -59,8 +65,15 @@ namespace Colore
         /// <param name="effectType">Effect to set.</param>
         /// <param name="data">Effect-specific parameter to use.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
-        Task<Guid> SetEffectAsync<T>(EffectType effectType, T data)
-            where T : struct;
+        Guid SetEffect<T>(EffectType effectType, T data) where T : struct;
+
+        /// <summary>
+        /// Sets an effect on this device, taking a parameter.
+        /// </summary>
+        /// <typeparam name="T">The type of effect data to set.</typeparam>
+        /// <param name="effectType">Effect to set.</param>
+        /// <param name="data">Effect-specific parameter to use.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
+        Task<Guid> SetEffectAsync<T>(EffectType effectType, T data) where T : struct;
     }
 }

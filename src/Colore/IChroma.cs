@@ -171,6 +171,13 @@ namespace Colore
         /// </summary>
         /// <param name="deviceId">The device ID to query for, valid IDs can be found in <see cref="Devices" />.</param>
         /// <returns>A struct with information regarding the device type and whether it's connected.</returns>
+        DeviceInfo Query(Guid deviceId);
+
+        /// <summary>
+        /// Queries the SDK for information regarding a specific device.
+        /// </summary>
+        /// <param name="deviceId">The device ID to query for, valid IDs can be found in <see cref="Devices" />.</param>
+        /// <returns>A struct with information regarding the device type and whether it's connected.</returns>
         Task<DeviceInfo> QueryAsync(Guid deviceId);
 
         /// <summary>
@@ -182,7 +189,24 @@ namespace Colore
         /// valid IDs can be found in <see cref="Devices" />.
         /// </param>
         /// <returns>An instance of <see cref="IGenericDevice" />.</returns>
+        IGenericDevice GetDevice(Guid deviceId);
+
+        /// <summary>
+        /// Gets an instance of <see cref="IGenericDevice" /> for
+        /// the device with the specified ID.
+        /// </summary>
+        /// <param name="deviceId">
+        /// The <see cref="Guid" /> of the device to get,
+        /// valid IDs can be found in <see cref="Devices" />.
+        /// </param>
+        /// <returns>An instance of <see cref="IGenericDevice" />.</returns>
         Task<IGenericDevice> GetDeviceAsync(Guid deviceId);
+
+        /// <summary>
+        /// Sets all Chroma devices to the specified <see cref="Color" />.
+        /// </summary>
+        /// <param name="color">The <see cref="Color" /> to set.</param>
+        void SetAll(Color color);
 
         /// <summary>
         /// Sets all Chroma devices to the specified <see cref="Color" />.

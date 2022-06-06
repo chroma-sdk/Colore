@@ -37,6 +37,7 @@ namespace Colore
     /// <summary>
     /// Interface for mouse pad functionality.
     /// </summary>
+    [PublicAPI]
     public interface IMousepad : IDevice
     {
         /// <summary>
@@ -44,7 +45,6 @@ namespace Colore
         /// </summary>
         /// <param name="index">The index to access.</param>
         /// <returns>The current <see cref="Color" /> at the <paramref name="index"/>.</returns>
-        [PublicAPI]
         Color this[int index] { get; set; }
 
         /// <summary>
@@ -52,7 +52,20 @@ namespace Colore
         /// </summary>
         /// <param name="effect">An instance of the <see cref="StaticMousepadEffect" /> struct.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
+        Guid SetStatic(StaticMousepadEffect effect);
+
+        /// <summary>
+        /// Sets a static color effect on the mouse pad.
+        /// </summary>
+        /// <param name="color">Color to set.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
+        Guid SetStatic(Color color);
+
+        /// <summary>
+        /// Sets a static color effect on the mouse pad.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="StaticMousepadEffect" /> struct.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         Task<Guid> SetStaticAsync(StaticMousepadEffect effect);
 
         /// <summary>
@@ -60,7 +73,6 @@ namespace Colore
         /// </summary>
         /// <param name="color">Color to set.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
         Task<Guid> SetStaticAsync(Color color);
 
         /// <summary>
@@ -68,7 +80,13 @@ namespace Colore
         /// </summary>
         /// <param name="effect">An instance of the <see cref="CustomMousepadEffect" /> struct.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
+        Guid SetCustom(CustomMousepadEffect effect);
+
+        /// <summary>
+        /// Sets a custom effect on the mouse pad.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="CustomMousepadEffect" /> struct.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         Task<Guid> SetCustomAsync(CustomMousepadEffect effect);
 
         /// <summary>
@@ -77,7 +95,14 @@ namespace Colore
         /// </summary>
         /// <param name="effectType">Effect options.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
+        Guid SetEffect(MousepadEffectType effectType);
+
+        /// <summary>
+        /// Sets an effect without any parameters.
+        /// Currently, this only works for the <see cref="MousepadEffectType.None" /> effect.
+        /// </summary>
+        /// <param name="effectType">Effect options.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         Task<Guid> SetEffectAsync(MousepadEffectType effectType);
     }
 }

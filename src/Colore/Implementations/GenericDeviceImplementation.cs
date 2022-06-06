@@ -77,12 +77,18 @@ namespace Colore.Implementations
         /// <summary>
         /// Clears the current effect on Generic Devices.
         /// </summary>
-        public override async Task<Guid> ClearAsync()
-        {
-            return await SetEffectAsync(
-                    await Api.CreateDeviceEffectAsync(DeviceId, EffectType.None, default(NoneEffect)).ConfigureAwait(false))
+        public override Guid Clear() =>
+            SetEffect(Api.CreateDeviceEffect(DeviceId, EffectType.None, default(NoneEffect)));
+
+        /// <inheritdoc cref="DeviceImplementation.ClearAsync" />
+        /// <summary>
+        /// Clears the current effect on Generic Devices.
+        /// </summary>
+        public override async Task<Guid> ClearAsync() =>
+            await SetEffectAsync(
+                    await Api.CreateDeviceEffectAsync(DeviceId, EffectType.None, default(NoneEffect))
+                             .ConfigureAwait(false))
                 .ConfigureAwait(false);
-        }
 
         /// <inheritdoc cref="DeviceImplementation.SetAllAsync" />
         /// <summary>
@@ -90,20 +96,41 @@ namespace Colore.Implementations
         /// </summary>
         /// <param name="color">Color to set.</param>
         /// <exception cref="NotSupportedException">Always thrown, setting colors on generic devices is not supported.</exception>
-        public override Task<Guid> SetAllAsync(Color color)
-        {
+        public override Guid SetAll(Color color) =>
+            throw new NotSupportedException("Setting colors is not supported on generic devices");
+
+        /// <inheritdoc cref="DeviceImplementation.SetAllAsync" />
+        /// <summary>
+        /// Throws a <see cref="NotSupportedException" />, due to inability to set colors on generic devices.
+        /// </summary>
+        /// <param name="color">Color to set.</param>
+        /// <exception cref="NotSupportedException">Always thrown, setting colors on generic devices is not supported.</exception>
+        public override Task<Guid> SetAllAsync(Color color) =>
             throw new NotSupportedException("Setting colors is not supported on generic devices.");
-        }
 
         /// <inheritdoc />
         /// <summary>
         /// Sets a parameter-less effect on this device.
         /// </summary>
         /// <param name="effectType">Effect to set.</param>
-        public async Task<Guid> SetEffectAsync(EffectType effectType)
-        {
-            return await SetEffectAsync(effectType, IntPtr.Zero).ConfigureAwait(false);
-        }
+        public Guid SetEffect(EffectType effectType) => SetEffect(effectType, IntPtr.Zero);
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Sets a parameter-less effect on this device.
+        /// </summary>
+        /// <param name="effectType">Effect to set.</param>
+        public async Task<Guid> SetEffectAsync(EffectType effectType) =>
+            await SetEffectAsync(effectType, IntPtr.Zero).ConfigureAwait(false);
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Sets an effect on this device, taking a parameter.
+        /// </summary>
+        /// <param name="effectType">Effect to set.</param>
+        /// <param name="data">Effect-specific parameter to use.</param>
+        public Guid SetEffect<T>(EffectType effectType, T data) where T : struct =>
+            SetEffect(Api.CreateDeviceEffect(DeviceId, effectType, data));
 
         /// <inheritdoc />
         /// <summary>
@@ -112,10 +139,8 @@ namespace Colore.Implementations
         /// <param name="effectType">Effect to set.</param>
         /// <param name="data">Effect-specific parameter to use.</param>
         public async Task<Guid> SetEffectAsync<T>(EffectType effectType, T data)
-            where T : struct
-        {
-            return await SetEffectAsync(await Api.CreateDeviceEffectAsync(DeviceId, effectType, data).ConfigureAwait(false))
+            where T : struct =>
+            await SetEffectAsync(await Api.CreateDeviceEffectAsync(DeviceId, effectType, data).ConfigureAwait(false))
                 .ConfigureAwait(false);
-        }
     }
 }

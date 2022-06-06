@@ -30,6 +30,7 @@ namespace Colore.Implementations
 
     using Colore.Api;
     using Colore.Data;
+    using Colore.Rest;
 
     /// <inheritdoc />
     /// <summary>
@@ -55,11 +56,29 @@ namespace Colore.Implementations
         /// </summary>
         protected IChromaApi Api { get; }
 
+        /// <summary>
+        /// Gets a value indicating whether <see cref="Api" /> is the REST API.
+        /// </summary>
+        protected bool IsRestApi => Api is RestApi;
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Clears the current effect on the device.
+        /// </summary>
+        public abstract Guid Clear();
+
         /// <inheritdoc />
         /// <summary>
         /// Clears the current effect on the device.
         /// </summary>
         public abstract Task<Guid> ClearAsync();
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Sets the color of all components on this device.
+        /// </summary>
+        /// <param name="color">Color to set.</param>
+        public abstract Guid SetAll(Color color);
 
         /// <inheritdoc />
         /// <summary>
@@ -73,12 +92,40 @@ namespace Colore.Implementations
         /// Updates the device to use the effect pointed to by the specified GUID.
         /// </summary>
         /// <param name="effectId">GUID to set.</param>
+        public Guid SetEffect(Guid effectId)
+        {
+            DeleteCurrentEffect();
+            Api.SetEffect(effectId);
+            CurrentEffectId = effectId;
+
+            return CurrentEffectId;
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Updates the device to use the effect pointed to by the specified GUID.
+        /// </summary>
+        /// <param name="effectId">GUID to set.</param>
         public async Task<Guid> SetEffectAsync(Guid effectId)
         {
             await DeleteCurrentEffectAsync().ConfigureAwait(false);
             await Api.SetEffectAsync(effectId).ConfigureAwait(false);
             CurrentEffectId = effectId;
             return CurrentEffectId;
+        }
+
+        /// <summary>
+        /// Deletes the currently set effect.
+        /// </summary>
+        internal void DeleteCurrentEffect()
+        {
+            if (CurrentEffectId == Guid.Empty)
+            {
+                return;
+            }
+
+            Api.DeleteEffect(CurrentEffectId);
+            CurrentEffectId = Guid.Empty;
         }
 
         /// <summary>

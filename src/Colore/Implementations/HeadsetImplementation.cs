@@ -75,8 +75,30 @@ namespace Colore.Implementations
             set
             {
                 _custom[index] = value;
-                SetCustomAsync(_custom).Wait();
+#if NETSTANDARD2_0 || NETSTANDARD2_1
+                if (IsRestApi)
+                {
+                    SetCustomAsync(_custom).GetAwaiter().GetResult();
+                }
+                else
+                {
+                    SetCustom(_custom);
+                }
+#else
+                SetCustom(_custom);
+#endif
             }
+        }
+
+        /// <inheritdoc cref="DeviceImplementation.SetAllAsync" />
+        /// <summary>
+        /// Sets the color of all components on this device.
+        /// </summary>
+        /// <param name="color">Color to set.</param>
+        public override Guid SetAll(Color color)
+        {
+            _custom.Set(color);
+            return SetStatic(new StaticHeadsetEffect(color));
         }
 
         /// <inheritdoc cref="DeviceImplementation.SetAllAsync" />
@@ -97,11 +119,18 @@ namespace Colore.Implementations
         /// for the <see cref="HeadsetEffectType.None" /> effect.
         /// </summary>
         /// <param name="effectType">The type of effect to set.</param>
-        public async Task<Guid> SetEffectAsync(HeadsetEffectType effectType)
-        {
-            return await SetEffectAsync(await Api.CreateHeadsetEffectAsync(effectType).ConfigureAwait(false))
+        public Guid SetEffect(HeadsetEffectType effectType) => SetEffect(Api.CreateHeadsetEffect(effectType));
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Sets an effect on the headset that doesn't
+        /// take any parameters, currently only valid
+        /// for the <see cref="HeadsetEffectType.None" /> effect.
+        /// </summary>
+        /// <param name="effectType">The type of effect to set.</param>
+        public async Task<Guid> SetEffectAsync(HeadsetEffectType effectType) =>
+            await SetEffectAsync(await Api.CreateHeadsetEffectAsync(effectType).ConfigureAwait(false))
                 .ConfigureAwait(false);
-        }
 
         /// <inheritdoc />
         /// <summary>
@@ -111,11 +140,8 @@ namespace Colore.Implementations
         /// An instance of the <see cref="StaticHeadsetEffect" /> struct
         /// describing the effect.
         /// </param>
-        public async Task<Guid> SetStaticAsync(StaticHeadsetEffect effect)
-        {
-            return await SetEffectAsync(await Api.CreateHeadsetEffectAsync(HeadsetEffectType.Static, effect).ConfigureAwait(false))
-                .ConfigureAwait(false);
-        }
+        public Guid SetStatic(StaticHeadsetEffect effect) =>
+            SetEffect(Api.CreateHeadsetEffect(HeadsetEffectType.Static, effect));
 
         /// <inheritdoc />
         /// <summary>
@@ -123,10 +149,29 @@ namespace Colore.Implementations
         /// the headset using the specified <see cref="Color" />.
         /// </summary>
         /// <param name="color"><see cref="Color" /> of the effect.</param>
-        public async Task<Guid> SetStaticAsync(Color color)
-        {
-            return await SetStaticAsync(new StaticHeadsetEffect(color)).ConfigureAwait(false);
-        }
+        public Guid SetStatic(Color color) => SetStatic(new StaticHeadsetEffect(color));
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Sets a new static effect on the headset.
+        /// </summary>
+        /// <param name="effect">
+        /// An instance of the <see cref="StaticHeadsetEffect" /> struct
+        /// describing the effect.
+        /// </param>
+        public async Task<Guid> SetStaticAsync(StaticHeadsetEffect effect) =>
+            await SetEffectAsync(
+                    await Api.CreateHeadsetEffectAsync(HeadsetEffectType.Static, effect).ConfigureAwait(false))
+                .ConfigureAwait(false);
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Sets a new <see cref="StaticHeadsetEffect" /> effect on
+        /// the headset using the specified <see cref="Color" />.
+        /// </summary>
+        /// <param name="color"><see cref="Color" /> of the effect.</param>
+        public async Task<Guid> SetStaticAsync(Color color) =>
+            await SetStaticAsync(new StaticHeadsetEffect(color)).ConfigureAwait(false);
 
         /// <inheritdoc />
         /// <summary>
@@ -137,10 +182,31 @@ namespace Colore.Implementations
         /// describing the effect.
         /// </param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        public async Task<Guid> SetCustomAsync(CustomHeadsetEffect effect)
-        {
-            return await SetEffectAsync(await Api.CreateHeadsetEffectAsync(HeadsetEffectType.Custom, effect).ConfigureAwait(false))
+        public Guid SetCustom(CustomHeadsetEffect effect) =>
+            SetEffect(Api.CreateHeadsetEffect(HeadsetEffectType.Custom, effect));
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Sets a new <see cref="CustomHeadsetEffect" /> effect on the headset.
+        /// </summary>
+        /// <param name="effect">
+        /// An instance of the <see cref="CustomHeadsetEffect" /> struct
+        /// describing the effect.
+        /// </param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
+        public async Task<Guid> SetCustomAsync(CustomHeadsetEffect effect) =>
+            await SetEffectAsync(
+                    await Api.CreateHeadsetEffectAsync(HeadsetEffectType.Custom, effect).ConfigureAwait(false))
                 .ConfigureAwait(false);
+
+        /// <inheritdoc cref="DeviceImplementation.ClearAsync" />
+        /// <summary>
+        /// Clears the current effect on the Headset.
+        /// </summary>
+        public override Guid Clear()
+        {
+            _custom.Clear();
+            return SetEffect(HeadsetEffectType.None);
         }
 
         /// <inheritdoc cref="DeviceImplementation.ClearAsync" />

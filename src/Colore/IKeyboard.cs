@@ -39,12 +39,12 @@ namespace Colore
     /// <summary>
     /// Interface for keyboard functionality.
     /// </summary>
+    [PublicAPI]
     public interface IKeyboard : IDevice
     {
         /// <summary>
         /// Gets a value indicating whether a Razer Deathstalker Chroma is connected to the system.
         /// </summary>
-        [PublicAPI]
         bool IsDeathstalkerConnected { get; }
 
         /// <summary>
@@ -53,7 +53,6 @@ namespace Colore
         /// </summary>
         /// <param name="key">The key to access.</param>
         /// <returns>The color currently set for the specified key.</returns>
-        [PublicAPI]
         Color this[Key key] { get; set; }
 
         /// <summary>
@@ -63,7 +62,6 @@ namespace Colore
         /// <param name="row">Row to query, between 0 and <see cref="KeyboardConstants.MaxRows" /> (exclusive upper-bound).</param>
         /// <param name="column">Column to query, between 0 and <see cref="KeyboardConstants.MaxColumns" /> (exclusive upper-bound).</param>
         /// <returns>The color currently set on the specified position.</returns>
-        [PublicAPI]
         Color this[int row, int column] { get; set; }
 
         /// <summary>
@@ -71,7 +69,6 @@ namespace Colore
         /// </summary>
         /// <param name="zoneIndex">Zone to query, between 0 and <see cref="KeyboardConstants.MaxDeathstalkerZones" /> (exclusive upper bound).</param>
         /// <returns>The color currently set for the specified zone.</returns>
-        [PublicAPI]
         Color this[int zoneIndex] { get; set; }
 
         /// <summary>
@@ -79,7 +76,6 @@ namespace Colore
         /// </summary>
         /// <param name="key">Key to check.</param>
         /// <returns><c>true</c> if the key has a color set, otherwise <c>false</c>.</returns>
-        [PublicAPI]
         bool IsSet(Key key);
 
         /// <summary>
@@ -91,7 +87,17 @@ namespace Colore
         /// struct in the <see cref="KeyboardImplementation" /> class.
         /// </remarks>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
+        Guid SetCustom(CustomKeyboardEffect effect);
+
+        /// <summary>
+        /// Sets a custom grid effect on the keyboard.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        /// <remarks>
+        /// This will overwrite the current internal <see cref="CustomKeyboardEffect" />
+        /// struct in the <see cref="KeyboardImplementation" /> class.
+        /// </remarks>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         Task<Guid> SetCustomAsync(CustomKeyboardEffect effect);
 
         /// <summary>
@@ -99,7 +105,13 @@ namespace Colore
         /// </summary>
         /// <param name="effect">Effect options.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
+        Guid SetExtendedCustom(ExtendedCustomKeyboardEffect effect);
+
+        /// <summary>
+        /// Sets an extended custom grid effect on the keyboard.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         Task<Guid> SetExtendedCustomAsync(ExtendedCustomKeyboardEffect effect);
 
         /// <summary>
@@ -108,7 +120,14 @@ namespace Colore
         /// </summary>
         /// <param name="effectType">Effect options.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
+        Guid SetEffect(KeyboardEffectType effectType);
+
+        /// <summary>
+        /// Sets an effect without any parameters.
+        /// Currently, this only works for the <see cref="KeyboardEffectType.None" /> effect.
+        /// </summary>
+        /// <param name="effectType">Effect options.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         Task<Guid> SetEffectAsync(KeyboardEffectType effectType);
 
         /// <summary>
@@ -119,7 +138,16 @@ namespace Colore
         /// <param name="color">Color to set.</param>
         /// <param name="clear">Whether or not to clear the existing colors before setting this one.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
+        Guid SetPosition(int row, int column, Color color, bool clear = false);
+
+        /// <summary>
+        /// Sets the color on a specific row and column on the keyboard grid.
+        /// </summary>
+        /// <param name="row">Row to set, between 1 and <see cref="KeyboardConstants.MaxRows" />.</param>
+        /// <param name="column">Column to set, between 1 and <see cref="KeyboardConstants.MaxColumns" />.</param>
+        /// <param name="color">Color to set.</param>
+        /// <param name="clear">Whether or not to clear the existing colors before setting this one.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         Task<Guid> SetPositionAsync(int row, int column, Color color, bool clear = false);
 
         /// <summary>
@@ -129,7 +157,15 @@ namespace Colore
         /// <param name="color">Color to set.</param>
         /// <param name="clear">If <c>true</c>, the keyboard will first be cleared before setting the key.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
+        Guid SetKey(Key key, Color color, bool clear = false);
+
+        /// <summary>
+        /// Sets the color of a specific key on the keyboard.
+        /// </summary>
+        /// <param name="key">Key to modify.</param>
+        /// <param name="color">Color to set.</param>
+        /// <param name="clear">If <c>true</c>, the keyboard will first be cleared before setting the key.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         Task<Guid> SetKeyAsync(Key key, Color color, bool clear = false);
 
         /// <summary>
@@ -139,7 +175,24 @@ namespace Colore
         /// <param name="key">First key to change.</param>
         /// <param name="keys">Additional keys that should also have the color applied.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
+        Guid SetKeys(Color color, Key key, params Key[] keys);
+
+        /// <summary>
+        /// Sets a color on a collection of keys.
+        /// </summary>
+        /// <param name="keys">The keys which should have their color changed.</param>
+        /// <param name="color">The <see cref="Color" /> to apply.</param>
+        /// <param name="clear">If <c>true</c>, the keyboard will first be cleared before setting the keys.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
+        Guid SetKeys(IEnumerable<Key> keys, Color color, bool clear = false);
+
+        /// <summary>
+        /// Sets the specified color on a set of keys.
+        /// </summary>
+        /// <param name="color">The <see cref="Color" /> to apply.</param>
+        /// <param name="key">First key to change.</param>
+        /// <param name="keys">Additional keys that should also have the color applied.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         Task<Guid> SetKeysAsync(Color color, Key key, params Key[] keys);
 
         /// <summary>
@@ -149,7 +202,6 @@ namespace Colore
         /// <param name="color">The <see cref="Color" /> to apply.</param>
         /// <param name="clear">If <c>true</c>, the keyboard will first be cleared before setting the keys.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
         Task<Guid> SetKeysAsync(IEnumerable<Key> keys, Color color, bool clear = false);
 
         /// <summary>
@@ -157,7 +209,13 @@ namespace Colore
         /// </summary>
         /// <param name="effect">Effect options.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
+        Guid SetStatic(StaticKeyboardEffect effect);
+
+        /// <summary>
+        /// Sets a static color on the keyboard.
+        /// </summary>
+        /// <param name="effect">Effect options.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         Task<Guid> SetStaticAsync(StaticKeyboardEffect effect);
 
         /// <summary>
@@ -167,7 +225,15 @@ namespace Colore
         /// <param name="color">The color to set.</param>
         /// <param name="clear">Whether to clear all colors before setting the new one.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
+        Guid SetDeathstalkerZone(int zoneIndex, Color color, bool clear = false);
+
+        /// <summary>
+        /// Sets the specified Deathstalker zone to a color.
+        /// </summary>
+        /// <param name="zoneIndex">The index of the Deathstalker zone to set.</param>
+        /// <param name="color">The color to set.</param>
+        /// <param name="clear">Whether to clear all colors before setting the new one.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         Task<Guid> SetDeathstalkerZoneAsync(int zoneIndex, Color color, bool clear = false);
 
         /// <summary>
@@ -175,7 +241,13 @@ namespace Colore
         /// </summary>
         /// <param name="effect">The Deathstalker grid effect to set.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
+        Guid SetDeathstalker(DeathstalkerGridEffect effect);
+
+        /// <summary>
+        /// Sets a Deathstalker grid effect.
+        /// </summary>
+        /// <param name="effect">The Deathstalker grid effect to set.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         Task<Guid> SetDeathstalkerAsync(DeathstalkerGridEffect effect);
     }
 }

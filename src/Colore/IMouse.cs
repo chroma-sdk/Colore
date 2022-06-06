@@ -37,6 +37,7 @@ namespace Colore
     /// <summary>
     /// Interface for mouse functionality.
     /// </summary>
+    [PublicAPI]
     public interface IMouse : IDevice
     {
         /// <summary>
@@ -46,7 +47,6 @@ namespace Colore
         /// <param name="row">The row to query, between <c>0</c> and <see cref="MouseConstants.MaxRows" /> (exclusive upper-bound).</param>
         /// <param name="column">The column to query, between <c>0</c> and <see cref="MouseConstants.MaxColumns" /> (exclusive upper-bound).</param>
         /// <returns>The <see cref="Color" /> at the specified position.</returns>
-        [PublicAPI]
         Color this[int row, int column] { get; set; }
 
         /// <summary>
@@ -55,7 +55,6 @@ namespace Colore
         /// </summary>
         /// <param name="led">The <see cref="GridLed" /> to query.</param>
         /// <returns>The <see cref="Color" /> currently set for the specified <see cref="GridLed" />.</returns>
-        [PublicAPI]
         Color this[GridLed led] { get; set; }
 
         /// <summary>
@@ -64,7 +63,14 @@ namespace Colore
         /// </summary>
         /// <param name="effectType">Effect options.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
+        Guid SetEffect(MouseEffectType effectType);
+
+        /// <summary>
+        /// Sets an effect without any parameters.
+        /// Currently, this only works for the <see cref="MouseEffectType.None" /> effect.
+        /// </summary>
+        /// <param name="effectType">Effect options.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         Task<Guid> SetEffectAsync(MouseEffectType effectType);
 
         /// <summary>
@@ -72,7 +78,21 @@ namespace Colore
         /// </summary>
         /// <param name="effect">An instance of the <see cref="StaticMouseEffect" /> effect.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
+        Guid SetStatic(StaticMouseEffect effect);
+
+        /// <summary>
+        /// Sets a static effect on the mouse.
+        /// </summary>
+        /// <param name="color">The color to use.</param>
+        /// <param name="led">Which LED(s) to affect.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
+        Guid SetStatic(Color color, Led led = Led.All);
+
+        /// <summary>
+        /// Sets a static color on the mouse.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="StaticMouseEffect" /> effect.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         Task<Guid> SetStaticAsync(StaticMouseEffect effect);
 
         /// <summary>
@@ -81,7 +101,6 @@ namespace Colore
         /// <param name="color">The color to use.</param>
         /// <param name="led">Which LED(s) to affect.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
         Task<Guid> SetStaticAsync(Color color, Led led = Led.All);
 
         /// <summary>
@@ -89,7 +108,13 @@ namespace Colore
         /// </summary>
         /// <param name="effect">An instance of the <see cref="CustomMouseEffect" /> struct.</param>
         /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
-        [PublicAPI]
+        Guid SetGrid(CustomMouseEffect effect);
+
+        /// <summary>
+        /// Sets a custom grid effect on the mouse.
+        /// </summary>
+        /// <param name="effect">An instance of the <see cref="CustomMouseEffect" /> struct.</param>
+        /// <returns>A <see cref="Guid" /> for the effect that was set.</returns>
         Task<Guid> SetGridAsync(CustomMouseEffect effect);
     }
 }

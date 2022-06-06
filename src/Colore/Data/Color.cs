@@ -187,6 +187,24 @@ namespace Colore.Data
         }
 
         /// <summary>
+        /// Checks <paramref name="left" /> and <paramref name="right" /> for equality.
+        /// </summary>
+        /// <param name="left">Left operand, an instance of the <see cref="Color" /> struct.</param>
+        /// <param name="right">Right operand, an instance of the <see cref="Color" /> struct.</param>
+        /// <returns><c>true</c> if the two instances are equal, <c>false</c> otherwise.</returns>
+        [Pure]
+        public static bool operator ==(Color left, Color right) => left.Equals(right);
+
+        /// <summary>
+        /// Checks <paramref name="left" /> and <paramref name="right" /> for inequality.
+        /// </summary>
+        /// <param name="left">Left operand, an instance of the <see cref="Color" /> struct.</param>
+        /// <param name="right">Right operand, an instance of the <see cref="Color" /> struct.</param>
+        /// <returns><c>true</c> if the two instances are not equal, <c>false</c> otherwise.</returns>
+        [Pure]
+        public static bool operator !=(Color left, Color right) => !left.Equals(right);
+
+        /// <summary>
         /// Creates a new <see cref="Color" /> from an RGB integer value
         /// in the format of <c>0xRRGGBB</c>.
         /// </summary>

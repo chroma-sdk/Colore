@@ -36,6 +36,7 @@ namespace Colore.Implementations
     using Colore.Events;
     using Colore.Helpers;
     using Colore.Logging;
+    using Colore.Rest;
 
     using JetBrains.Annotations;
 
@@ -54,6 +55,12 @@ namespace Colore.Implementations
         /// Reference to the API instance in use.
         /// </summary>
         private readonly IChromaApi _api;
+
+        /// <summary>
+        /// Whether <see cref="_api" /> is the REST API or not.
+        /// </summary>
+        [SuppressMessage("ReSharper", "NotAccessedField.Local", Justification = "Accessed based on current target")]
+        private readonly bool _isRestApi;
 
         /// <summary>
         /// Cache of created <see cref="IGenericDevice" /> instances.
@@ -114,9 +121,22 @@ namespace Colore.Implementations
         public ChromaImplementation(IChromaApi api, AppInfo? info)
         {
             _api = api;
+            _isRestApi = api is RestApi;
             _deviceInstances = new Dictionary<Guid, IGenericDevice>();
             Version = typeof(ChromaImplementation).GetTypeInfo().Assembly.GetName().Version!;
-            InitializeAsync(info).Wait();
+
+#if NETSTANDARD2_0 || NETSTANDARD2_1
+            if (_isRestApi)
+            {
+                InitializeAsync(info).Wait();
+            }
+            else
+            {
+                Initialize(info);
+            }
+#else
+            Initialize(info);
+#endif
         }
 
         /// <summary>
@@ -282,43 +302,76 @@ namespace Colore.Implementations
         /// </summary>
         /// <param name="deviceId">The device ID to query for, valid IDs can be found in <see cref="Devices" />.</param>
         /// <returns>A struct with information regarding the device type and whether it's connected.</returns>
-        public async Task<DeviceInfo> QueryAsync(Guid deviceId)
-        {
-            if (!Devices.IsValidId(deviceId))
-            {
-                throw new ArgumentException("The specified ID does not match any of the valid IDs.", nameof(deviceId));
-            }
-
-            Log.DebugFormat("Information for {0} requested", deviceId);
-
-            var sdkDeviceInfo = await _api.QueryDeviceAsync(deviceId).ConfigureAwait(false);
-            var deviceMetadata = Devices.GetDeviceMetadata(deviceId);
-            var deviceInfo = new DeviceInfo(sdkDeviceInfo, deviceId, deviceMetadata);
-            return deviceInfo;
-        }
+        public DeviceInfo Query(Guid deviceId) => QueryAsync(deviceId, false).GetAwaiter().GetResult();
 
         /// <inheritdoc />
         /// <summary>
-        /// Gets an instance of <see cref="IGenericDevice" /> for
-        /// the device with the specified ID.
+        /// Queries the SDK for information regarding a specific device.
+        /// </summary>
+        /// <param name="deviceId">The device ID to query for, valid IDs can be found in <see cref="Devices" />.</param>
+        /// <returns>A struct with information regarding the device type and whether it's connected.</returns>
+        public Task<DeviceInfo> QueryAsync(Guid deviceId) => QueryAsync(deviceId, true);
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Gets an instance of <see cref="IGenericDevice" /> for the device with the specified ID.
         /// </summary>
         /// <param name="deviceId">
-        /// The <see cref="Guid" /> of the device to get,
-        /// valid IDs can be found in <see cref="Devices" />.
+        /// The <see cref="Guid" /> of the device to get, valid IDs can be found in <see cref="Devices" />.
         /// </param>
         /// <returns>An instance of <see cref="IGenericDevice" />.</returns>
-        public Task<IGenericDevice> GetDeviceAsync(Guid deviceId)
+        public IGenericDevice GetDevice(Guid deviceId)
         {
             Log.DebugFormat("Device {0} requested", deviceId);
 
             if (_deviceInstances.ContainsKey(deviceId))
             {
-                return Task.FromResult(_deviceInstances[deviceId]);
+                return _deviceInstances[deviceId];
             }
 
             IGenericDevice device = new GenericDeviceImplementation(deviceId, _api);
             _deviceInstances[deviceId] = device;
-            return Task.FromResult(device);
+            return device;
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Gets an instance of <see cref="IGenericDevice" /> for the device with the specified ID.
+        /// </summary>
+        /// <param name="deviceId">
+        /// The <see cref="Guid" /> of the device to get, valid IDs can be found in <see cref="Devices" />.
+        /// </param>
+        /// <returns>An instance of <see cref="IGenericDevice" />.</returns>
+        public Task<IGenericDevice> GetDeviceAsync(Guid deviceId) => Task.FromResult(GetDevice(deviceId));
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Sets all Chroma devices to the specified <see cref="Color" />.
+        /// </summary>
+        /// <param name="color">The <see cref="Color" /> to set.</param>
+        public void SetAll(Color color)
+        {
+            Keyboard.SetAll(color);
+            Mouse.SetAll(color);
+            Mousepad.SetAll(color);
+            Keypad.SetAll(color);
+            Headset.SetAll(color);
+            ChromaLink.SetAll(color);
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Sets all Chroma devices to the specified <see cref="Color" />.
+        /// </summary>
+        /// <param name="color">The <see cref="Color" /> to set.</param>
+        public async Task SetAllAsync(Color color)
+        {
+            await Keyboard.SetAllAsync(color).ConfigureAwait(false);
+            await Mouse.SetAllAsync(color).ConfigureAwait(false);
+            await Mousepad.SetAllAsync(color).ConfigureAwait(false);
+            await Keypad.SetAllAsync(color).ConfigureAwait(false);
+            await Headset.SetAllAsync(color).ConfigureAwait(false);
+            await ChromaLink.SetAllAsync(color).ConfigureAwait(false);
         }
 
         /// <inheritdoc />
@@ -434,21 +487,15 @@ namespace Colore.Implementations
             _registeredHandle = IntPtr.Zero;
         }
 
-        /// <inheritdoc />
         /// <summary>
-        /// Sets all Chroma devices to the specified <see cref="Color" />.
+        /// Initializes the SDK if it hasn't already.
         /// </summary>
-        /// <param name="color">The <see cref="Color" /> to set.</param>
-        public async Task SetAllAsync(Color color)
-        {
-            await Keyboard.SetAllAsync(color).ConfigureAwait(false);
-            await Mouse.SetAllAsync(color).ConfigureAwait(false);
-            await Mousepad.SetAllAsync(color).ConfigureAwait(false);
-            await Keypad.SetAllAsync(color).ConfigureAwait(false);
-            await Headset.SetAllAsync(color).ConfigureAwait(false);
-            await ChromaLink.SetAllAsync(color).ConfigureAwait(false);
-        }
-
+        /// <param name="info">Information about the application. Not required when using the native SDK.</param>
+        /// <param name="async">Whether to use asynchronous operations.</param>
+        /// <returns>
+        /// A <see cref="Task"/> representing the asynchronous operation.
+        /// <para>If <paramref name="async" /> is <c>false</c>, the task will already be completed.</para>
+        /// </returns>
         private async Task InitializeAsync(AppInfo? info, bool async)
         {
             if (Initialized)
@@ -486,6 +533,14 @@ namespace Colore.Implementations
             _registeredHandle = IntPtr.Zero;
         }
 
+        /// <summary>
+        /// Uninitializes the SDK if it has been initialized.
+        /// </summary>
+        /// <param name="async">Whether to use asynchronous operations.</param>
+        /// <returns>
+        /// A <see cref="Task"/> representing the asynchronous operation.
+        /// <para>If <paramref name="async" /> is <c>false</c>, the task will already be completed.</para>
+        /// </returns>
         private async Task UninitializeAsync(bool async)
         {
             if (!Initialized)
@@ -539,6 +594,32 @@ namespace Colore.Implementations
         }
 
         /// <summary>
+        /// Queries the SDK for information regarding a specific device.
+        /// </summary>
+        /// <param name="deviceId">The device ID to query for, valid IDs can be found in <see cref="Devices" />.</param>
+        /// <param name="async">Whether to use asynchronous operations.</param>
+        /// <returns>A struct with information regarding the device type and whether it's connected.</returns>
+        /// <remarks>If <paramref name="async" /> is <c>false</c>, the returned task will already be completed.</remarks>
+        private async Task<DeviceInfo> QueryAsync(Guid deviceId, bool async)
+        {
+            if (!Devices.IsValidId(deviceId))
+            {
+                throw new ArgumentException("The specified ID does not match any of the valid IDs.", nameof(deviceId));
+            }
+
+            Log.DebugFormat("Information for {0} requested", deviceId);
+
+            // ReSharper disable once MethodHasAsyncOverload
+            var sdkDeviceInfo = async
+                ? await _api.QueryDeviceAsync(deviceId).ConfigureAwait(false)
+                : _api.QueryDevice(deviceId);
+
+            var deviceMetadata = Devices.GetDeviceMetadata(deviceId);
+            var deviceInfo = new DeviceInfo(sdkDeviceInfo, deviceId, deviceMetadata);
+            return deviceInfo;
+        }
+
+        /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
         /// </summary>
         /// <param name="disposing">
@@ -547,7 +628,7 @@ namespace Colore.Implementations
         private void Dispose(bool disposing)
         {
 #if NETSTANDARD2_0 || NETSTANDARD2_1
-            if (_api is Colore.Rest.RestApi)
+            if (_isRestApi)
             {
                 UninitializeAsync().GetAwaiter().GetResult();
             }
