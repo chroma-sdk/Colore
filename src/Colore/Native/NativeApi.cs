@@ -63,19 +63,36 @@ namespace Colore.Native
             _nativeSdkMethods = nativeSdkMethods ?? new NativeSdkMethods();
 
         /// <inheritdoc />
-        /// <summary>
-        /// Initializes the Chroma SDK.
-        /// </summary>
-        /// <param name="info">Information about the application, currently unused for native SDK.</param>
-        public Task InitializeAsync(AppInfo? info)
+        /// <param name="info">Information about the application, currently unused for the native SDK.</param>
+        public void Initialize(AppInfo? info)
         {
             var result = _nativeSdkMethods.Init();
             if (!result)
             {
-                throw new NativeCallException("Init", result);
+                throw new NativeCallException(nameof(_nativeSdkMethods.Init), result);
             }
+        }
+
+        /// <inheritdoc />
+        /// <summary>
+        /// Initializes the Chroma SDK.
+        /// </summary>
+        /// <param name="info">Information about the application, currently unused for the native SDK.</param>
+        public Task InitializeAsync(AppInfo? info)
+        {
+            Initialize(info);
 
             return TaskHelper.CompletedTask;
+        }
+
+        /// <inheritdoc />
+        public void Uninitialize()
+        {
+            var result = _nativeSdkMethods.UnInit();
+            if (!result)
+            {
+                throw new NativeCallException(nameof(_nativeSdkMethods.UnInit), result);
+            }
         }
 
         /// <inheritdoc />
@@ -84,11 +101,7 @@ namespace Colore.Native
         /// </summary>
         public Task UninitializeAsync()
         {
-            var result = _nativeSdkMethods.UnInit();
-            if (!result)
-            {
-                throw new NativeCallException("UnInit", result);
-            }
+            Uninitialize();
 
             return TaskHelper.CompletedTask;
         }

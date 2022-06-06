@@ -37,6 +37,7 @@ namespace Colore
     /// <summary>
     /// Interface for basic Chroma functionality.
     /// </summary>
+    [PublicAPI]
     public interface IChroma : IDisposable
     {
         /// <summary>
@@ -47,7 +48,6 @@ namespace Colore
         /// <see cref="Register" /> and that Windows messages are being forwarded to
         /// Colore using <see cref="HandleMessage" />.
         /// </remarks>
-        [PublicAPI]
         event EventHandler<ApplicationStateEventArgs> ApplicationState;
 
         /// <summary>
@@ -58,7 +58,6 @@ namespace Colore
         /// <see cref="Register" /> and that Windows messages are being forwarded to
         /// Colore using <see cref="HandleMessage" />.
         /// </remarks>
-        [PublicAPI]
         event EventHandler<DeviceAccessEventArgs> DeviceAccess;
 
         /// <summary>
@@ -69,82 +68,92 @@ namespace Colore
         /// <see cref="Register" /> and that Windows messages are being forwarded to
         /// Colore using <see cref="HandleMessage" />.
         /// </remarks>
-        [PublicAPI]
         event EventHandler<SdkSupportEventArgs> SdkSupport;
 
         /// <summary>
         /// Gets an instance of the <see cref="IKeyboard" /> interface
         /// for interacting with a Razer Chroma keyboard.
         /// </summary>
-        [PublicAPI]
         IKeyboard Keyboard { get; }
 
         /// <summary>
         /// Gets an instance of the <see cref="IMouse" /> interface
         /// for interacting with a Razer Chroma mouse.
         /// </summary>
-        [PublicAPI]
         IMouse Mouse { get; }
 
         /// <summary>
         /// Gets an instance of the <see cref="IHeadset" /> interface
         /// for interacting with a Razer Chroma headset.
         /// </summary>
-        [PublicAPI]
         IHeadset Headset { get; }
 
         /// <summary>
         /// Gets an instance of the <see cref="IMousepad" /> interface
         /// for interacting with a Razer Chroma mouse pad.
         /// </summary>
-        [PublicAPI]
         IMousepad Mousepad { get; }
 
         /// <summary>
         /// Gets an instance of the <see cref="IKeypad" /> interface
         /// for interacting with a Razer Chroma keypad.
         /// </summary>
-        [PublicAPI]
         IKeypad Keypad { get; }
 
         /// <summary>
         /// Gets an instance of the <see cref="IChromaLink" /> interface
         /// for interacting with ChromaLink devices.
         /// </summary>
-        [PublicAPI]
         IChromaLink ChromaLink { get; }
 
         /// <summary>
         /// Gets a value indicating whether the Chroma
         /// SDK has been initialized or not.
         /// </summary>
-        [PublicAPI]
         bool Initialized { get; }
 
         /// <summary>
         /// Gets the version of the Chroma SDK that Colore is currently using.
         /// </summary>
-        [PublicAPI]
         SdkVersion SdkVersion { get; }
 
         /// <summary>
         /// Gets the <see cref="System.Version" /> of Colore.
         /// </summary>
-        [PublicAPI]
         Version Version { get; }
 
         /// <summary>
         /// Initializes the SDK if it hasn't already.
         /// </summary>
-        /// <param name="info">Information about the application.</param>
+        /// <param name="info">Information about the application. Not required when using the native SDK.</param>
+        /// <remarks>
+        /// Manually modifying the SDK init state is <b>untested</b>
+        /// and may result in <emph>undefined behaviour</emph>, usage
+        /// is at <b>your own risk</b>.
+        /// </remarks>
+        void Initialize(AppInfo? info);
+
+        /// <summary>
+        /// Initializes the SDK if it hasn't already.
+        /// </summary>
+        /// <param name="info">Information about the application. Not required when using the native SDK.</param>
         /// <remarks>
         /// Manually modifying the SDK init state is <b>untested</b>
         /// and may result in <emph>undefined behaviour</emph>, usage
         /// is at <b>your own risk</b>.
         /// </remarks>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
-        [PublicAPI]
-        Task InitializeAsync(AppInfo info);
+        Task InitializeAsync(AppInfo? info);
+
+        /// <summary>
+        /// Uninitializes the SDK if it has been initialized.
+        /// </summary>
+        /// <remarks>
+        /// Manually modifying the SDK init state is <b>untested</b>
+        /// and may result in <emph>undefined behaviour</emph>, usage
+        /// is at <b>your own risk</b>.
+        /// </remarks>
+        void Uninitialize();
 
         /// <summary>
         /// Uninitializes the SDK if it has been initialized.
@@ -155,7 +164,6 @@ namespace Colore
         /// is at <b>your own risk</b>.
         /// </remarks>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
-        [PublicAPI]
         Task UninitializeAsync();
 
         /// <summary>
@@ -163,7 +171,6 @@ namespace Colore
         /// </summary>
         /// <param name="deviceId">The device ID to query for, valid IDs can be found in <see cref="Devices" />.</param>
         /// <returns>A struct with information regarding the device type and whether it's connected.</returns>
-        [PublicAPI]
         Task<DeviceInfo> QueryAsync(Guid deviceId);
 
         /// <summary>
@@ -175,7 +182,6 @@ namespace Colore
         /// valid IDs can be found in <see cref="Devices" />.
         /// </param>
         /// <returns>An instance of <see cref="IGenericDevice" />.</returns>
-        [PublicAPI]
         Task<IGenericDevice> GetDeviceAsync(Guid deviceId);
 
         /// <summary>
@@ -183,7 +189,6 @@ namespace Colore
         /// </summary>
         /// <param name="color">The <see cref="Color" /> to set.</param>
         /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
-        [PublicAPI]
         Task SetAllAsync(Color color);
 
         /// <summary>
@@ -195,7 +200,6 @@ namespace Colore
         /// <param name="lParam">The <c>lParam</c> property of the Message struct.</param>
         /// <returns><c>true</c> if the message was handled by Chroma, <c>false</c> otherwise (message was ignored).</returns>
         /// <remarks>Non-Chroma messages will be ignored.</remarks>
-        [PublicAPI]
         [SuppressMessage(
             "StyleCop.CSharp.NamingRules",
             "SA1305:FieldNamesMustNotUseHungarianNotation",
@@ -211,13 +215,11 @@ namespace Colore
         /// Windows messages to receive them. Messages need to be passed to the message handler in Colore to
         /// be processed, as this cannot be automated.
         /// </remarks>
-        [PublicAPI]
         void Register(IntPtr handle);
 
         /// <summary>
         /// Unregisters from receiving Chroma events.
         /// </summary>
-        [PublicAPI]
         void Unregister();
     }
 }

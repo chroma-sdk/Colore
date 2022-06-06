@@ -99,6 +99,11 @@ namespace Colore.Rest
         }
 
         /// <inheritdoc />
+        /// <remarks>Synchronous mode is not supported for REST API.</remarks>
+        public void Initialize(AppInfo? info) =>
+            throw new NotSupportedException("Synchronous mode is not supported for REST API");
+
+        /// <inheritdoc />
         /// <summary>
         /// Initializes the Chroma SDK by sending a POST request to <c>/razer/chromasdk</c>.
         /// </summary>
@@ -177,6 +182,10 @@ namespace Colore.Rest
             Log.Debug("Starting heartbeat timer");
             _heartbeatTimer.Change(HeartbeatInterval, HeartbeatInterval);
         }
+
+        /// <inheritdoc />
+        /// <remarks>Synchronous mode is not supported for REST API.</remarks>
+        public void Uninitialize() => throw new NotSupportedException("Synchronous mode is not supported for REST API");
 
         /// <inheritdoc />
         /// <summary>

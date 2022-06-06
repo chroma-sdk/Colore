@@ -241,6 +241,9 @@ namespace Colore.Implementations
         }
 
         /// <inheritdoc />
+        public void Initialize(AppInfo? info) => InitializeAsync(info, false).GetAwaiter().GetResult();
+
+        /// <inheritdoc />
         /// <summary>
         /// Initializes the SDK if it hasn't already.
         /// </summary>
@@ -253,33 +256,10 @@ namespace Colore.Implementations
         /// result in <emph>undefined behaviour</emph>. Usage of this method is
         /// <strong>at your own risk</strong>.</span>
         /// </remarks>
-        public async Task InitializeAsync(AppInfo? info)
-        {
-            if (Initialized)
-            {
-                return;
-            }
+        public Task InitializeAsync(AppInfo? info) => InitializeAsync(info, true);
 
-            Log.Info("Chroma is initializing.");
-
-            Log.Debug("Retrieving SDK version");
-            var versionSuccess = RegistryHelper.TryGetSdkVersion(out _sdkVersion);
-
-            if (versionSuccess)
-            {
-                Log.InfoFormat("Colore is running against SDK version {0}.", SdkVersion);
-            }
-            else
-            {
-                Log.Warn("Failed to retrieve SDK version from registry!");
-            }
-
-            Log.Debug("Calling SDK Init function");
-            await _api.InitializeAsync(info).ConfigureAwait(false);
-            Initialized = true;
-            Log.Debug("Resetting _registeredHandle");
-            _registeredHandle = IntPtr.Zero;
-        }
+        /// <inheritdoc />
+        public void Uninitialize() => UninitializeAsync(false).GetAwaiter().GetResult();
 
         /// <inheritdoc />
         /// <summary>
@@ -294,48 +274,7 @@ namespace Colore.Implementations
         /// advised against</strong> and <emph>WILL</emph> result in catastrophic
         /// failure. <strong>YOU HAVE BEEN WARNED</strong>.</span>
         /// </remarks>
-        public async Task UninitializeAsync()
-        {
-            if (!Initialized)
-            {
-                return;
-            }
-
-            if (_keyboard is not null)
-            {
-                await _keyboard.DeleteCurrentEffectAsync().ConfigureAwait(false);
-            }
-
-            if (_mouse is not null)
-            {
-                await _mouse.DeleteCurrentEffectAsync().ConfigureAwait(false);
-            }
-
-            if (_keypad is not null)
-            {
-                await _keypad.DeleteCurrentEffectAsync().ConfigureAwait(false);
-            }
-
-            if (_mousepad is not null)
-            {
-                await _mousepad.DeleteCurrentEffectAsync().ConfigureAwait(false);
-            }
-
-            if (_headset is not null)
-            {
-                await _headset.DeleteCurrentEffectAsync().ConfigureAwait(false);
-            }
-
-            if (_chromaLink is not null)
-            {
-                await _chromaLink.DeleteCurrentEffectAsync().ConfigureAwait(false);
-            }
-
-            Unregister();
-            await _api.UninitializeAsync().ConfigureAwait(false);
-
-            Initialized = false;
-        }
+        public Task UninitializeAsync() => UninitializeAsync(true);
 
         /// <inheritdoc />
         /// <summary>
@@ -510,6 +449,95 @@ namespace Colore.Implementations
             await ChromaLink.SetAllAsync(color).ConfigureAwait(false);
         }
 
+        private async Task InitializeAsync(AppInfo? info, bool async)
+        {
+            if (Initialized)
+            {
+                return;
+            }
+
+            Log.Info("Chroma is initializing.");
+
+            Log.Debug("Retrieving SDK version");
+            var versionSuccess = RegistryHelper.TryGetSdkVersion(out _sdkVersion);
+
+            if (versionSuccess)
+            {
+                Log.InfoFormat("Colore is running against SDK version {0}.", SdkVersion);
+            }
+            else
+            {
+                Log.Warn("Failed to retrieve SDK version from registry!");
+            }
+
+            Log.Debug("Calling SDK Init function");
+            if (async)
+            {
+                await _api.InitializeAsync(info).ConfigureAwait(false);
+            }
+            else
+            {
+                // ReSharper disable once MethodHasAsyncOverload
+                _api.Initialize(info);
+            }
+
+            Initialized = true;
+            Log.Debug("Resetting _registeredHandle");
+            _registeredHandle = IntPtr.Zero;
+        }
+
+        private async Task UninitializeAsync(bool async)
+        {
+            if (!Initialized)
+            {
+                return;
+            }
+
+            if (_keyboard is not null)
+            {
+                await _keyboard.DeleteCurrentEffectAsync().ConfigureAwait(false);
+            }
+
+            if (_mouse is not null)
+            {
+                await _mouse.DeleteCurrentEffectAsync().ConfigureAwait(false);
+            }
+
+            if (_keypad is not null)
+            {
+                await _keypad.DeleteCurrentEffectAsync().ConfigureAwait(false);
+            }
+
+            if (_mousepad is not null)
+            {
+                await _mousepad.DeleteCurrentEffectAsync().ConfigureAwait(false);
+            }
+
+            if (_headset is not null)
+            {
+                await _headset.DeleteCurrentEffectAsync().ConfigureAwait(false);
+            }
+
+            if (_chromaLink is not null)
+            {
+                await _chromaLink.DeleteCurrentEffectAsync().ConfigureAwait(false);
+            }
+
+            Unregister();
+
+            if (async)
+            {
+                await _api.UninitializeAsync().ConfigureAwait(false);
+            }
+            else
+            {
+                // ReSharper disable once MethodHasAsyncOverload
+                _api.Uninitialize();
+            }
+
+            Initialized = false;
+        }
+
         /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
         /// </summary>
@@ -518,7 +546,18 @@ namespace Colore.Implementations
         /// </param>
         private void Dispose(bool disposing)
         {
-            UninitializeAsync().Wait();
+#if NETSTANDARD2_0 || NETSTANDARD2_1
+            if (_api is Colore.Rest.RestApi)
+            {
+                UninitializeAsync().GetAwaiter().GetResult();
+            }
+            else
+            {
+                Uninitialize();
+            }
+#else
+            Uninitialize();
+#endif
 
             if (disposing && _api is IDisposable disposableApi)
             {
