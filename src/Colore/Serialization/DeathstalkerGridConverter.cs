@@ -26,55 +26,32 @@
 namespace Colore.Serialization
 {
     using System;
-    using System.Diagnostics.CodeAnalysis;
+    using System.Text.Json;
+    using System.Text.Json.Serialization;
 
     using Colore.Effects.Keyboard;
     using Colore.Rest.Data;
-
-    using Newtonsoft.Json;
 
     /// <inheritdoc />
     /// <summary>
     /// Converts keyboard <see cref="DeathstalkerGridEffect" /> objects to JSON.
     /// </summary>
     /// <remarks>Does not support converting JSON into <see cref="DeathstalkerGridEffect" /> objects.</remarks>
-    [SuppressMessage(
-        "Microsoft.Performance",
-        "CA1812:AvoidUninstantiatedInternalClasses",
-        Justification = "Instantiated by Newtonsoft.Json")]
-    internal sealed class DeathstalkerGridConverter : JsonConverter
+    internal sealed class DeathstalkerGridConverter : JsonConverter<DeathstalkerGridEffect>
     {
         /// <inheritdoc />
-        /// <summary>Writes the JSON representation of a mousepad <see cref="DeathstalkerGridEffect" /> object.</summary>
-        /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
-        /// <param name="value">The <see cref="DeathstalkerGridEffect" /> value.</param>
-        /// <param name="serializer">The calling serializer.</param>
-        public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
-        {
-            if (value is null)
-            {
-                writer.WriteNull();
-
-                return;
-            }
-
-            var effect = (DeathstalkerGridEffect)value;
-            var colors = effect.ToMultiArray();
-            var data = new EffectData(KeyboardEffectType.Custom, colors);
-            serializer.Serialize(writer, data);
-        }
-
-        /// <inheritdoc />
-        public override object ReadJson(
-            JsonReader reader,
-            Type objectType,
-            object? existingValue,
-            JsonSerializer serializer)
-        {
+        public override DeathstalkerGridEffect Read(
+            ref Utf8JsonReader reader,
+            Type typeToConvert,
+            JsonSerializerOptions options) =>
             throw new NotSupportedException("Only writing of mousepad Custom objects is supported.");
-        }
 
         /// <inheritdoc />
-        public override bool CanConvert(Type objectType) => objectType == typeof(DeathstalkerGridEffect);
+        public override void Write(Utf8JsonWriter writer, DeathstalkerGridEffect value, JsonSerializerOptions options)
+        {
+            var colors = value.ToMultiArray();
+            var data = new EffectData(KeyboardEffectType.Custom, colors);
+            JsonSerializer.Serialize(writer, data, options);
+        }
     }
 }

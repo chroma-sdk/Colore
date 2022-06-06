@@ -27,12 +27,11 @@ namespace Colore.Data
 {
     using System;
     using System.Collections.Generic;
+    using System.Text.Json.Serialization;
 
     using Colore.Serialization;
 
     using JetBrains.Annotations;
-
-    using Newtonsoft.Json;
 
     /// <inheritdoc cref="IEquatable{T}" />
     /// <summary>

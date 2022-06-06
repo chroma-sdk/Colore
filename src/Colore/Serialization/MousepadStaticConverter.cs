@@ -27,11 +27,11 @@ namespace Colore.Serialization
 {
     using System;
     using System.Diagnostics.CodeAnalysis;
+    using System.Text.Json;
+    using System.Text.Json.Serialization;
 
     using Colore.Effects.Mousepad;
     using Colore.Rest.Data;
-
-    using Newtonsoft.Json;
 
     /// <inheritdoc />
     /// <summary>
@@ -42,38 +42,20 @@ namespace Colore.Serialization
         "Microsoft.Performance",
         "CA1812:AvoidUninstantiatedInternalClasses",
         Justification = "Instantiated by Newtonsoft.Json")]
-    internal sealed class MousepadStaticConverter : JsonConverter
+    internal sealed class MousepadStaticConverter : JsonConverter<StaticMousepadEffect>
     {
         /// <inheritdoc />
-        /// <summary>Writes the JSON representation of a mousepad <see cref="StaticMousepadEffect" /> object.</summary>
-        /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
-        /// <param name="value">The <see cref="StaticMousepadEffect" /> value.</param>
-        /// <param name="serializer">The calling serializer.</param>
-        public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
-        {
-            if (value is null)
-            {
-                writer.WriteNull();
-
-                return;
-            }
-
-            var effect = (StaticMousepadEffect)value;
-            var data = new EffectData(MousepadEffectType.Static, effect.Color);
-            serializer.Serialize(writer, data);
-        }
-
-        /// <inheritdoc />
-        public override object ReadJson(
-            JsonReader reader,
-            Type objectType,
-            object? existingValue,
-            JsonSerializer serializer)
-        {
+        public override StaticMousepadEffect Read(
+            ref Utf8JsonReader reader,
+            Type typeToConvert,
+            JsonSerializerOptions options) =>
             throw new NotSupportedException("Only writing of mousepad Static objects is supported.");
-        }
 
         /// <inheritdoc />
-        public override bool CanConvert(Type objectType) => objectType == typeof(StaticMousepadEffect);
+        public override void Write(Utf8JsonWriter writer, StaticMousepadEffect value, JsonSerializerOptions options)
+        {
+            var data = new EffectData(MousepadEffectType.Static, value.Color);
+            JsonSerializer.Serialize(writer, data, options);
+        }
     }
 }

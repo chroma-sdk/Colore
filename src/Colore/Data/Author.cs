@@ -26,8 +26,7 @@
 namespace Colore.Data
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// Contains author information for a Chroma application.
@@ -76,13 +75,13 @@ namespace Colore.Data
         /// <summary>
         /// Gets the name of the application author.
         /// </summary>
-        [JsonProperty("name")]
+        [JsonPropertyName("name")]
         public string Name { get; }
 
         /// <summary>
         /// Gets contact information for the author.
         /// </summary>
-        [JsonProperty("contact")]
+        [JsonPropertyName("contact")]
         public string Contact { get; }
     }
 }

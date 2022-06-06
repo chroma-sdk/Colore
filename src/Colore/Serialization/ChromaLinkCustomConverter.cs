@@ -27,11 +27,11 @@ namespace Colore.Serialization
 {
     using System;
     using System.Diagnostics.CodeAnalysis;
+    using System.Text.Json;
+    using System.Text.Json.Serialization;
 
     using Colore.Effects.ChromaLink;
     using Colore.Rest.Data;
-
-    using Newtonsoft.Json;
 
     /// <inheritdoc />
     /// <summary>
@@ -42,41 +42,20 @@ namespace Colore.Serialization
         "Microsoft.Performance",
         "CA1812:AvoidUninstantiatedInternalClasses",
         Justification = "Instantiated by Newtonsoft.Json")]
-    internal sealed class ChromaLinkCustomConverter : JsonConverter
+    internal sealed class ChromaLinkCustomConverter : JsonConverter<CustomChromaLinkEffect>
     {
         /// <inheritdoc />
-        /// <summary>Writes the JSON representation of a Chroma Link <see cref="CustomChromaLinkEffect" /> object.</summary>
-        /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
-        /// <param name="value">The <see cref="CustomChromaLinkEffect" /> value.</param>
-        /// <param name="serializer">The calling serializer.</param>
-        public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
-        {
-            if (value is null)
-            {
-                writer.WriteNull();
-
-                return;
-            }
-
-            if (value is not CustomChromaLinkEffect effect)
-            {
-                throw new JsonSerializationException(
-                    $"{nameof(ChromaLinkCustomConverter)} only supports objects of type {nameof(CustomChromaLinkEffect)}");
-            }
-
-            var data = new EffectData(ChromaLinkEffectType.Custom, effect.Colors);
-            serializer.Serialize(writer, data);
-        }
-
-        /// <inheritdoc />
-        public override object ReadJson(
-            JsonReader reader,
-            Type objectType,
-            object? existingValue,
-            JsonSerializer serializer) =>
+        public override CustomChromaLinkEffect Read(
+            ref Utf8JsonReader reader,
+            Type typeToConvert,
+            JsonSerializerOptions options) =>
             throw new NotSupportedException("Only writing of Chroma Link Custom objects is supported.");
 
         /// <inheritdoc />
-        public override bool CanConvert(Type objectType) => objectType == typeof(CustomChromaLinkEffect);
+        public override void Write(Utf8JsonWriter writer, CustomChromaLinkEffect value, JsonSerializerOptions options)
+        {
+            var data = new EffectData(ChromaLinkEffectType.Custom, value.Colors);
+            JsonSerializer.Serialize(writer, data, options);
+        }
     }
 }

@@ -26,16 +26,14 @@
 namespace Colore.Effects.Mousepad
 {
     using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     using JetBrains.Annotations;
-
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
 
     /// <summary>
     /// Effects supported by Chroma mouse pads.
     /// </summary>
-    [JsonConverter(typeof(StringEnumConverter))]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum MousepadEffectType
     {
         /// <summary>

@@ -30,12 +30,11 @@ namespace Colore.Rest
     using System.Net.Http;
     using System.Net.Http.Headers;
     using System.Text;
+    using System.Text.Json;
     using System.Threading.Tasks;
 
     using Colore.Helpers;
     using Colore.Logging;
-
-    using Newtonsoft.Json;
 
     /// <inheritdoc />
     /// <summary>
@@ -101,7 +100,7 @@ namespace Colore.Rest
         /// <returns>An instance of <see cref="IRestResponse{TData}"/>.</returns>
         public async Task<IRestResponse<T>> PostAsync<T>(string resource, object? data)
         {
-            var json = data is null ? null : JsonConvert.SerializeObject(data);
+            var json = data is null ? null : JsonSerializer.Serialize(data);
             using var content = json is null
                 ? null
                 : new StringContent(json, Encoding.UTF8, "application/json");
@@ -139,7 +138,7 @@ namespace Colore.Rest
         {
             using var content = data is null
                 ? null
-                : new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
+                : new StringContent(JsonSerializer.Serialize(data), Encoding.UTF8, "application/json");
 
             var uri = CreateUri(resource);
             var response = await _httpClient.PutAsync(uri, content).ConfigureAwait(false);
@@ -174,7 +173,7 @@ namespace Colore.Rest
         {
             var content = data is null
                 ? null
-                : new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
+                : new StringContent(JsonSerializer.Serialize(data), Encoding.UTF8, "application/json");
 
             var uri = CreateUri(resource);
 

@@ -29,8 +29,7 @@ namespace Colore.Data
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Linq;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// Contains information about an application wishing to use the Chroma SDK.
@@ -119,19 +118,19 @@ namespace Colore.Data
         /// <summary>
         /// Gets the title of this application.
         /// </summary>
-        [JsonProperty("title")]
+        [JsonPropertyName("title")]
         public string Title { get; }
 
         /// <summary>
         /// Gets the application description.
         /// </summary>
-        [JsonProperty("description")]
+        [JsonPropertyName("description")]
         public string Description { get; }
 
         /// <summary>
         /// Gets author information for this application.
         /// </summary>
-        [JsonProperty("author")]
+        [JsonPropertyName("author")]
         public Author Author { get; }
 
         /// <summary>
@@ -141,13 +140,13 @@ namespace Colore.Data
         /// Newtonsoft.Json cannot deserialize into an <see cref="IEnumerable{T}" />,
         /// but since we only serialize this class, it will not be an issue.
         /// </remarks>
-        [JsonProperty("device_supported")]
+        [JsonPropertyName("device_supported")]
         public IReadOnlyCollection<ApiDeviceType> SupportedDevices { get; }
 
         /// <summary>
         /// Gets the category of this application.
         /// </summary>
-        [JsonProperty("category")]
+        [JsonPropertyName("category")]
         public Category Category { get; }
     }
 }

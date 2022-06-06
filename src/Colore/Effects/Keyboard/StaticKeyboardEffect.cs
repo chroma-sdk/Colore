@@ -28,13 +28,12 @@ namespace Colore.Effects.Keyboard
 {
     using System;
     using System.Runtime.InteropServices;
+    using System.Text.Json.Serialization;
 
     using Colore.Data;
     using Colore.Serialization;
 
     using JetBrains.Annotations;
-
-    using Newtonsoft.Json;
 
     /// <inheritdoc />
     /// <summary>

@@ -27,17 +27,15 @@ namespace Colore.Effects.Keyboard
 {
     using System.ComponentModel;
     using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     using JetBrains.Annotations;
-
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
 
     /// <summary>
     /// Supported built-in keyboard effects.
     /// </summary>
     [PublicAPI]
-    [JsonConverter(typeof(StringEnumConverter))]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum KeyboardEffectType
     {
         /// <summary>

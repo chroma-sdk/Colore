@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------------------
-// <copyright file="MousepadCustomConverter.cs" company="Corale">
+// <copyright file="ColorConverterTests.cs" company="Corale">
 //     Copyright © 2015-2022 by Adam Hellberg and Brandon Scott.
 //
 //     Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -23,39 +23,27 @@
 // </copyright>
 // ---------------------------------------------------------------------------------------
 
-namespace Colore.Serialization
+using NUnit.Framework;
+
+namespace Colore.Tests.Serialization;
+
+using System.Text.Json;
+
+using Colore.Data;
+
+[TestFixture]
+public class ColorConverterTests
 {
-    using System;
-    using System.Diagnostics.CodeAnalysis;
-    using System.Text.Json;
-    using System.Text.Json.Serialization;
-
-    using Colore.Effects.Mousepad;
-    using Colore.Rest.Data;
-
-    /// <inheritdoc />
-    /// <summary>
-    /// Converts mousepad <see cref="CustomMousepadEffect" /> objects to JSON.
-    /// </summary>
-    /// <remarks>Does not support converting JSON into <see cref="CustomMousepadEffect" /> objects.</remarks>
-    [SuppressMessage(
-        "Microsoft.Performance",
-        "CA1812:AvoidUninstantiatedInternalClasses",
-        Justification = "Instantiated by Newtonsoft.Json")]
-    internal sealed class MousepadCustomConverter : JsonConverter<CustomMousepadEffect>
+    [Test]
+    public void ShouldThrowOnJsonWithNoValue()
     {
-        /// <inheritdoc />
-        public override CustomMousepadEffect Read(
-            ref Utf8JsonReader reader,
-            Type typeToConvert,
-            JsonSerializerOptions options) =>
-            throw new NotSupportedException("Only writing of mousepad Custom objects is supported.");
+        Assert.That(() => JsonSerializer.Deserialize<Color>("{}"), Throws.InstanceOf<JsonException>());
+    }
 
-        /// <inheritdoc />
-        public override void Write(Utf8JsonWriter writer, CustomMousepadEffect value, JsonSerializerOptions options)
-        {
-            var data = new EffectData(MousepadEffectType.Custom, value.Colors);
-            JsonSerializer.Serialize(writer, data, options);
-        }
+    [Test]
+    public void ShouldThrowOnJsonWithNullValue()
+    {
+        const string Json = "{ \"Value\": null }";
+        Assert.That(() => JsonSerializer.Deserialize<Color>(Json), Throws.InstanceOf<JsonException>());
     }
 }

@@ -26,56 +26,35 @@
 namespace Colore.Serialization
 {
     using System;
+    using System.Text.Json;
+    using System.Text.Json.Serialization;
 
     using Colore.Effects.Keyboard;
     using Colore.Rest.Data;
-
-    using Newtonsoft.Json;
 
     /// <inheritdoc />
     /// <summary>
     /// Converts keyboard <see cref="ExtendedCustomKeyboardEffect" /> objects to JSON.
     /// </summary>
     /// <remarks>Does not support converting JSON into <see cref="ExtendedCustomKeyboardEffect" /> objects.</remarks>
-    internal sealed class KeyboardExtendedCustomConverter : JsonConverter
+    internal sealed class KeyboardExtendedCustomConverter : JsonConverter<ExtendedCustomKeyboardEffect>
     {
         /// <inheritdoc />
-        public override bool CanRead => false;
-
-        /// <inheritdoc />
-        public override bool CanWrite => true;
-
-        /// <inheritdoc />
-        /// <summary>Writes the JSON representation of a keyboard <see cref="ExtendedCustomKeyboardEffect" /> object.</summary>
-        /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
-        /// <param name="value">The <see cref="CustomKeyboardEffect" /> value.</param>
-        /// <param name="serializer">The calling serializer.</param>
-        public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
-        {
-            if (value is null)
-            {
-                writer.WriteNull();
-
-                return;
-            }
-
-            var effect = (ExtendedCustomKeyboardEffect)value;
-            var (colors, keys) = effect.ToMultiArrays();
-            var data = new EffectData(KeyboardEffectType.ExtendedCustom, new { color = colors, key = keys });
-            serializer.Serialize(writer, data);
-        }
-
-        /// <inheritdoc />
-        public override object ReadJson(
-            JsonReader reader,
-            Type objectType,
-            object? existingValue,
-            JsonSerializer serializer)
-        {
+        public override ExtendedCustomKeyboardEffect Read(
+            ref Utf8JsonReader reader,
+            Type typeToConvert,
+            JsonSerializerOptions options) =>
             throw new NotSupportedException("Only writing of Extended Keyboard Custom objects is supported.");
-        }
 
         /// <inheritdoc />
-        public override bool CanConvert(Type objectType) => objectType == typeof(ExtendedCustomKeyboardEffect);
+        public override void Write(
+            Utf8JsonWriter writer,
+            ExtendedCustomKeyboardEffect value,
+            JsonSerializerOptions options)
+        {
+            var (colors, keys) = value.ToMultiArrays();
+            var data = new EffectData(KeyboardEffectType.ExtendedCustom, new { color = colors, key = keys });
+            JsonSerializer.Serialize(writer, data, options);
+        }
     }
 }

@@ -26,8 +26,7 @@
 namespace Colore.Rest.Data
 {
     using System;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// Contains data for an effect to be sent to the REST API.
@@ -48,16 +47,13 @@ namespace Colore.Rest.Data
         /// <summary>
         /// Gets the type of the effect.
         /// </summary>
-        [JsonProperty("effect")]
+        [JsonPropertyName("effect")]
         public object Effect { get; }
 
         /// <summary>
         /// Gets effect data, or <c>null</c> if not applicable for the current effect type.
         /// </summary>
-        [JsonProperty(
-            "param",
-            DefaultValueHandling = DefaultValueHandling.Ignore,
-            NullValueHandling = NullValueHandling.Ignore)]
+        [JsonPropertyName("param")]
         public object? Payload { get; }
     }
 }

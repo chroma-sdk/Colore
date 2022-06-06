@@ -26,8 +26,7 @@
 namespace Colore.Rest.Data
 {
     using System.Diagnostics.CodeAnalysis;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// Response returned by Chroma REST API on heartbeat requests.
@@ -51,7 +50,7 @@ namespace Colore.Rest.Data
         /// <summary>
         /// Gets the tick count for this heartbeat.
         /// </summary>
-        [JsonProperty("tick")]
+        [JsonPropertyName("tick")]
         public int Tick { get; }
     }
 }

@@ -27,11 +27,11 @@ namespace Colore.Serialization
 {
     using System;
     using System.Diagnostics.CodeAnalysis;
+    using System.Text.Json;
+    using System.Text.Json.Serialization;
 
     using Colore.Effects.Keypad;
     using Colore.Rest.Data;
-
-    using Newtonsoft.Json;
 
     /// <inheritdoc />
     /// <summary>
@@ -42,39 +42,21 @@ namespace Colore.Serialization
         "Microsoft.Performance",
         "CA1812:AvoidUninstantiatedInternalClasses",
         Justification = "Instantiated by Newtonsoft.Json")]
-    internal sealed class KeypadCustomConverter : JsonConverter
+    internal sealed class KeypadCustomConverter : JsonConverter<CustomKeypadEffect>
     {
         /// <inheritdoc />
-        /// <summary>Writes the JSON representation of a keypad <see cref="CustomKeypadEffect" /> object.</summary>
-        /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
-        /// <param name="value">The <see cref="CustomKeypadEffect" /> value.</param>
-        /// <param name="serializer">The calling serializer.</param>
-        public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
-        {
-            if (value is null)
-            {
-                writer.WriteNull();
-
-                return;
-            }
-
-            var effect = (CustomKeypadEffect)value;
-            var colors = effect.ToMultiArray();
-            var data = new EffectData(KeypadEffectType.Custom, colors);
-            serializer.Serialize(writer, data);
-        }
-
-        /// <inheritdoc />
-        public override object ReadJson(
-            JsonReader reader,
-            Type objectType,
-            object? existingValue,
-            JsonSerializer serializer)
-        {
+        public override CustomKeypadEffect Read(
+            ref Utf8JsonReader reader,
+            Type typeToConvert,
+            JsonSerializerOptions options) =>
             throw new NotSupportedException("Only writing of keypad Custom objects is supported.");
-        }
 
         /// <inheritdoc />
-        public override bool CanConvert(Type objectType) => objectType == typeof(CustomKeypadEffect);
+        public override void Write(Utf8JsonWriter writer, CustomKeypadEffect value, JsonSerializerOptions options)
+        {
+            var colors = value.ToMultiArray();
+            var data = new EffectData(KeypadEffectType.Custom, colors);
+            JsonSerializer.Serialize(writer, data, options);
+        }
     }
 }

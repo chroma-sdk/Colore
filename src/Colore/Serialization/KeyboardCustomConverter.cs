@@ -27,11 +27,11 @@ namespace Colore.Serialization
 {
     using System;
     using System.Diagnostics.CodeAnalysis;
+    using System.Text.Json;
+    using System.Text.Json.Serialization;
 
     using Colore.Effects.Keyboard;
     using Colore.Rest.Data;
-
-    using Newtonsoft.Json;
 
     /// <inheritdoc />
     /// <summary>
@@ -42,39 +42,21 @@ namespace Colore.Serialization
         "Microsoft.Performance",
         "CA1812:AvoidUninstantiatedInternalClasses",
         Justification = "Instantiated by Newtonsoft.Json")]
-    internal sealed class KeyboardCustomConverter : JsonConverter
+    internal sealed class KeyboardCustomConverter : JsonConverter<CustomKeyboardEffect>
     {
         /// <inheritdoc />
-        /// <summary>Writes the JSON representation of a keyboard <see cref="CustomKeyboardEffect" /> object.</summary>
-        /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
-        /// <param name="value">The <see cref="CustomKeyboardEffect" /> value.</param>
-        /// <param name="serializer">The calling serializer.</param>
-        public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
-        {
-            if (value is null)
-            {
-                writer.WriteNull();
-
-                return;
-            }
-
-            var effect = (CustomKeyboardEffect)value;
-            var (colors, keys) = effect.ToMultiArrays();
-            var data = new EffectData(KeyboardEffectType.CustomKey, new { color = colors, key = keys });
-            serializer.Serialize(writer, data);
-        }
-
-        /// <inheritdoc />
-        public override object ReadJson(
-            JsonReader reader,
-            Type objectType,
-            object? existingValue,
-            JsonSerializer serializer)
-        {
+        public override CustomKeyboardEffect Read(
+            ref Utf8JsonReader reader,
+            Type typeToConvert,
+            JsonSerializerOptions options) =>
             throw new NotSupportedException("Only writing of Keyboard Custom objects is supported.");
-        }
 
         /// <inheritdoc />
-        public override bool CanConvert(Type objectType) => objectType == typeof(CustomKeyboardEffect);
+        public override void Write(Utf8JsonWriter writer, CustomKeyboardEffect value, JsonSerializerOptions options)
+        {
+            var (colors, keys) = value.ToMultiArrays();
+            var data = new EffectData(KeyboardEffectType.CustomKey, new { color = colors, key = keys });
+            JsonSerializer.Serialize(writer, data, options);
+        }
     }
 }

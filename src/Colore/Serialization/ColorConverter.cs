@@ -27,11 +27,10 @@ namespace Colore.Serialization
 {
     using System;
     using System.Diagnostics.CodeAnalysis;
+    using System.Text.Json;
+    using System.Text.Json.Serialization;
 
     using Colore.Data;
-
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Linq;
 
     /// <inheritdoc />
     /// <summary>
@@ -41,64 +40,51 @@ namespace Colore.Serialization
         "Microsoft.Performance",
         "CA1812:AvoidUninstantiatedInternalClasses",
         Justification = "Instantiated by Newtonsoft.Json")]
-    internal sealed class ColorConverter : JsonConverter
+    internal sealed class ColorConverter : JsonConverter<Color>
     {
         /// <inheritdoc />
-        /// <summary>
-        /// Writes the JSON representation of the <see cref="Color" />.
-        /// </summary>
-        /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
-        /// <param name="value">The <see cref="Color" /> value.</param>
-        /// <param name="serializer">The calling serializer.</param>
-        public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
+        public override Color Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            if (value is null)
-            {
-                writer.WriteNull();
+            var hasElement = JsonElement.TryParseValue(ref reader, out var elementResult);
 
-                return;
+            if (!hasElement || !elementResult.HasValue)
+            {
+                throw new JsonException("Could not find a JsonElement to deserialize into Color");
             }
 
-            writer.WriteValue(((Color)value).Value);
+            var element = elementResult.Value;
+
+            if (element.ValueKind is JsonValueKind.Number && element.TryGetUInt32(out var value))
+            {
+                return new Color(value);
+            }
+
+            if (element.ValueKind is not JsonValueKind.Object)
+            {
+                throw new JsonException("Only integers and Color objects can be converted to Color");
+            }
+
+            var hasValueProperty = element.TryGetProperty(nameof(Color.Value), out var valueProperty);
+
+            if (!hasValueProperty)
+            {
+                throw new JsonException("Cannot deserialize Color object with missing Value property");
+            }
+
+            var hasValue = valueProperty.TryGetUInt32(out var propertyValue);
+
+            if (!hasValue)
+            {
+                throw new JsonException("Failed to get UInt32 value from Value property");
+            }
+
+            return new Color(propertyValue);
         }
 
         /// <inheritdoc />
-        /// <summary>
-        /// Reads the JSON representation of a <see cref="Color" />, either in <c>object</c> or <see cref="uint" /> form.
-        /// </summary>
-        /// <param name="reader">The <see cref="JsonReader" /> to read from.</param>
-        /// <param name="objectType">Type of the object.</param>
-        /// <param name="existingValue">The existing value of object being read.</param>
-        /// <param name="serializer">The calling serializer.</param>
-        /// <returns>An instance of <see cref="Color" />.</returns>
-        public override object ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
+        public override void Write(Utf8JsonWriter writer, Color value, JsonSerializerOptions options)
         {
-            var token = JToken.Load(reader);
-
-            // We are skipping processing of some enum members on purpose to trigger the exception
-            // for unsupported types.
-            // ReSharper disable once SwitchStatementMissingSomeCases
-            switch (token.Type)
-            {
-                case JTokenType.Integer:
-                    return new Color(token.ToObject<uint>());
-
-                case JTokenType.Object:
-                    var obj = (JObject)token;
-                    var value = obj["Value"];
-
-                    if (value is null)
-                    {
-                        throw new JsonSerializationException("Cannot deserialize null color value");
-                    }
-
-                    return new Color((uint)value);
-            }
-
-            throw new InvalidOperationException("Only integers and Color objects can be converted to Color");
+            writer.WriteNumberValue(value.Value);
         }
-
-        /// <inheritdoc />
-        public override bool CanConvert(Type objectType) => objectType == typeof(Color);
     }
 }

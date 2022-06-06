@@ -26,16 +26,14 @@
 namespace Colore.Effects.Mouse
 {
     using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     using JetBrains.Annotations;
-
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
 
     /// <summary>
     /// Supported built-in mouse effects.
     /// </summary>
-    [JsonConverter(typeof(StringEnumConverter))]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum MouseEffectType
     {
         /// <summary>

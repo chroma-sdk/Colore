@@ -26,57 +26,50 @@
 namespace Colore.Data
 {
     using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     using JetBrains.Annotations;
-
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
 
     /// <summary>
     /// Devices types supported by the Chroma REST API.
     /// </summary>
-    [JsonConverter(typeof(StringEnumConverter))]
+    [PublicAPI]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum ApiDeviceType
     {
         /// <summary>
         /// A keyboard device.
         /// </summary>
-        [PublicAPI]
         [EnumMember(Value = "keyboard")]
         Keyboard,
 
         /// <summary>
         /// A mouse device.
         /// </summary>
-        [PublicAPI]
         [EnumMember(Value = "mouse")]
         Mouse,
 
         /// <summary>
         /// A headset device.
         /// </summary>
-        [PublicAPI]
         [EnumMember(Value = "headset")]
         Headset,
 
         /// <summary>
         /// A mousepad device.
         /// </summary>
-        [PublicAPI]
         [EnumMember(Value = "mousepad")]
         Mousepad,
 
         /// <summary>
         /// A keypad device.
         /// </summary>
-        [PublicAPI]
         [EnumMember(Value = "keypad")]
         Keypad,
 
         /// <summary>
         /// A Chroma Link device.
         /// </summary>
-        [PublicAPI]
         [EnumMember(Value = "chromalink")]
         ChromaLink
     }

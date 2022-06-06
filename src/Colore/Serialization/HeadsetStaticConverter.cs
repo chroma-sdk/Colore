@@ -27,11 +27,11 @@ namespace Colore.Serialization
 {
     using System;
     using System.Diagnostics.CodeAnalysis;
+    using System.Text.Json;
+    using System.Text.Json.Serialization;
 
     using Colore.Effects.Headset;
     using Colore.Rest.Data;
-
-    using Newtonsoft.Json;
 
     /// <inheritdoc />
     /// <summary>
@@ -42,38 +42,20 @@ namespace Colore.Serialization
         "Microsoft.Performance",
         "CA1812:AvoidUninstantiatedInternalClasses",
         Justification = "Instantiated by Newtonsoft.Json")]
-    internal sealed class HeadsetStaticConverter : JsonConverter
+    internal sealed class HeadsetStaticConverter : JsonConverter<StaticHeadsetEffect>
     {
         /// <inheritdoc />
-        /// <summary>Writes the JSON representation of a headset <see cref="StaticHeadsetEffect" /> object.</summary>
-        /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
-        /// <param name="value">The <see cref="StaticHeadsetEffect" /> value.</param>
-        /// <param name="serializer">The calling serializer.</param>
-        public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
-        {
-            if (value is null)
-            {
-                writer.WriteNull();
-
-                return;
-            }
-
-            var effect = (StaticHeadsetEffect)value;
-            var data = new EffectData(HeadsetEffectType.Static, effect.Color);
-            serializer.Serialize(writer, data);
-        }
-
-        /// <inheritdoc />
-        public override object ReadJson(
-            JsonReader reader,
-            Type objectType,
-            object? existingValue,
-            JsonSerializer serializer)
-        {
+        public override StaticHeadsetEffect Read(
+            ref Utf8JsonReader reader,
+            Type typeToConvert,
+            JsonSerializerOptions options) =>
             throw new NotSupportedException("Only writing of headset Static objects is supported.");
-        }
 
         /// <inheritdoc />
-        public override bool CanConvert(Type objectType) => objectType == typeof(StaticHeadsetEffect);
+        public override void Write(Utf8JsonWriter writer, StaticHeadsetEffect value, JsonSerializerOptions options)
+        {
+            var data = new EffectData(HeadsetEffectType.Static, value.Color);
+            JsonSerializer.Serialize(writer, data, options);
+        }
     }
 }

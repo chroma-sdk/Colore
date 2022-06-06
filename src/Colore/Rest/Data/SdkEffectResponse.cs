@@ -27,10 +27,9 @@ namespace Colore.Rest.Data
 {
     using System;
     using System.Diagnostics.CodeAnalysis;
+    using System.Text.Json.Serialization;
 
     using Colore.Data;
-
-    using Newtonsoft.Json;
 
     /// <inheritdoc />
     /// <summary>
@@ -58,7 +57,7 @@ namespace Colore.Rest.Data
         /// <summary>
         /// Gets the effect ID obtained from the API call (will be <c>null</c> if PUT was used to create an effect).
         /// </summary>
-        [JsonProperty("id")]
+        [JsonPropertyName("id")]
         public Guid? EffectId { get; }
     }
 }

@@ -28,14 +28,13 @@ namespace Colore.Effects.Keypad
     using System;
     using System.Collections.Generic;
     using System.Runtime.InteropServices;
+    using System.Text.Json.Serialization;
 
     using Colore.Data;
     using Colore.Helpers;
     using Colore.Serialization;
 
     using JetBrains.Annotations;
-
-    using Newtonsoft.Json;
 
     /// <inheritdoc />
     /// <summary>

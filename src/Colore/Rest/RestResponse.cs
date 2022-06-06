@@ -26,8 +26,7 @@
 namespace Colore.Rest
 {
     using System.Net;
-
-    using Newtonsoft.Json;
+    using System.Text.Json;
 
     /// <inheritdoc />
     /// <summary>
@@ -94,7 +93,7 @@ namespace Colore.Rest
 
             try
             {
-                return JsonConvert.DeserializeObject<T>(Content);
+                return JsonSerializer.Deserialize<T>(Content);
             }
             catch (JsonException)
             {

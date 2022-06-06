@@ -27,8 +27,7 @@ namespace Colore.Rest.Data
 {
     using System;
     using System.Diagnostics.CodeAnalysis;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// Response returned from Chroma REST API on initialization.
@@ -54,13 +53,13 @@ namespace Colore.Rest.Data
         /// <summary>
         /// Gets the session ID.
         /// </summary>
-        [JsonProperty("sessionid")]
+        [JsonPropertyName("sessionid")]
         public int Session { get; }
 
         /// <summary>
         /// Gets the URI to use for subsequent API calls.
         /// </summary>
-        [JsonProperty("uri")]
+        [JsonPropertyName("uri")]
         public Uri? Uri { get; }
 
         /// <summary>

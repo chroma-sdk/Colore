@@ -26,16 +26,14 @@
 namespace Colore.Effects.Headset
 {
     using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     using JetBrains.Annotations;
-
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
 
     /// <summary>
     /// Standard effects for headsets.
     /// </summary>
-    [JsonConverter(typeof(StringEnumConverter))]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum HeadsetEffectType
     {
         /// <summary>

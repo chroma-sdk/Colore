@@ -27,8 +27,7 @@ namespace Colore.Rest.Data
 {
     using System;
     using System.Collections.Generic;
-
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// Represents a collection of <see cref="EffectData" />.
@@ -47,7 +46,7 @@ namespace Colore.Rest.Data
         /// <summary>
         /// Gets the various <see cref="EffectData" /> contained in this group.
         /// </summary>
-        [JsonProperty("effects")]
+        [JsonPropertyName("effects")]
         public IEnumerable<EffectData> Effects { get; }
     }
 }

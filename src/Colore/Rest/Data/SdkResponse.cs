@@ -25,9 +25,9 @@
 
 namespace Colore.Rest.Data
 {
-    using Colore.Data;
+    using System.Text.Json.Serialization;
 
-    using Newtonsoft.Json;
+    using Colore.Data;
 
     /// <summary>
     /// Contains simple result-only responses from the Razer Chroma REST API.
@@ -47,7 +47,7 @@ namespace Colore.Rest.Data
         /// <summary>
         /// Gets the result code obtained from the API call.
         /// </summary>
-        [JsonProperty("result")]
+        [JsonPropertyName("result")]
         public Result Result { get; }
 
         /// <summary>

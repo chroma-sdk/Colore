@@ -27,11 +27,10 @@ namespace Colore.Serialization
 {
     using System;
     using System.Diagnostics.CodeAnalysis;
+    using System.Text.Json;
+    using System.Text.Json.Serialization;
 
     using Colore.Data;
-
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Linq;
 
     /// <inheritdoc />
     /// <summary>
@@ -41,67 +40,51 @@ namespace Colore.Serialization
         "Microsoft.Performance",
         "CA1812:AvoidUninstantiatedInternalClasses",
         Justification = "Instantiated by Newtonsoft.Json")]
-    internal sealed class ResultConverter : JsonConverter
+    internal sealed class ResultConverter : JsonConverter<Result>
     {
         /// <inheritdoc />
-        /// <summary>
-        /// Writes the JSON representation of a <see cref="Result" /> object.
-        /// </summary>
-        /// <param name="writer">The <see cref="JsonWriter" /> to write to.</param>
-        /// <param name="value">The <see cref="Result" /> value.</param>
-        /// <param name="serializer">The calling serializer.</param>
-        public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
+        public override Result Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            if (value is null)
-            {
-                writer.WriteNull();
+            var hasElement = JsonElement.TryParseValue(ref reader, out var elementResult);
 
-                return;
+            if (!hasElement || !elementResult.HasValue)
+            {
+                throw new JsonException("Could not find a JsonElement to deserialize into Result");
             }
 
-            writer.WriteValue(((Result)value).Value);
+            var element = elementResult.Value;
+
+            if (element.ValueKind is JsonValueKind.Number && element.TryGetInt32(out var value))
+            {
+                return new Result(value);
+            }
+
+            if (element.ValueKind is not JsonValueKind.Object)
+            {
+                throw new JsonException("Only integers and Result objects can be converted to Result");
+            }
+
+            var hasValueProperty = element.TryGetProperty(nameof(Result.Value), out var valueProperty);
+
+            if (!hasValueProperty)
+            {
+                throw new JsonException("Cannot deserialize Result object with missing Value property");
+            }
+
+            var hasValue = valueProperty.TryGetInt32(out var propertyValue);
+
+            if (!hasValue)
+            {
+                throw new JsonException("Failed to get Int32 value from Value property");
+            }
+
+            return new Result(propertyValue);
         }
 
         /// <inheritdoc />
-        /// <summary>
-        /// Reads the JSON representation of the <see cref="Result" /> object.
-        /// </summary>
-        /// <param name="reader">The <see cref="JsonReader" /> to read from.</param>
-        /// <param name="objectType">Type of the object.</param>
-        /// <param name="existingValue">The existing value of object being read.</param>
-        /// <param name="serializer">The calling serializer.</param>
-        /// <returns>The object value.</returns>
-        public override object ReadJson(
-            JsonReader reader,
-            Type objectType,
-            object? existingValue,
-            JsonSerializer serializer)
+        public override void Write(Utf8JsonWriter writer, Result value, JsonSerializerOptions options)
         {
-            var token = JToken.Load(reader);
-
-            // We are skipping some enum values on purpose to trigger the exception
-            // for unsupported types.
-            // ReSharper disable once SwitchStatementMissingSomeCases
-            switch (token.Type)
-            {
-                case JTokenType.Integer:
-                    return new Result(token.ToObject<int>());
-
-                case JTokenType.Object:
-                    var obj = (JObject)token;
-                    var value = obj["Value"];
-                    if (value is null)
-                    {
-                        throw new JsonSerializationException("Cannot deserialize null result value");
-                    }
-
-                    return new Result((int)value);
-            }
-
-            throw new InvalidOperationException("Only integers and Result objects can be converted to Result");
+            writer.WriteNumberValue(value.Value);
         }
-
-        /// <inheritdoc />
-        public override bool CanConvert(Type objectType) => objectType == typeof(Result);
     }
 }

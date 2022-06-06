@@ -27,17 +27,15 @@ namespace Colore.Effects.Generic
 {
     using System.ComponentModel;
     using System.Runtime.Serialization;
+    using System.Text.Json.Serialization;
 
     using JetBrains.Annotations;
-
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
 
     /// <summary>
     /// Generic device effects.
     /// </summary>
     /// <remarks>Not all devices are compatible with every effect type.</remarks>
-    [JsonConverter(typeof(StringEnumConverter))]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum EffectType
     {
         /// <summary>
