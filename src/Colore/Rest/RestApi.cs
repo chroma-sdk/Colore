@@ -32,7 +32,13 @@ namespace Colore.Rest
 
     using Colore.Api;
     using Colore.Data;
+    using Colore.Effects.ChromaLink;
     using Colore.Effects.Generic;
+    using Colore.Effects.Headset;
+    using Colore.Effects.Keyboard;
+    using Colore.Effects.Keypad;
+    using Colore.Effects.Mouse;
+    using Colore.Effects.Mousepad;
     using Colore.Logging;
     using Colore.Rest.Data;
 
@@ -226,10 +232,16 @@ namespace Colore.Rest
         }
 
         /// <inheritdoc />
-        public Task<SdkDeviceInfo> QueryDeviceAsync(Guid deviceId)
-        {
+        public SdkDeviceInfo QueryDevice(Guid deviceId) =>
+            throw new NotSupportedException("Synchronous mode is not supported for REST API");
+
+        /// <inheritdoc />
+        public Task<SdkDeviceInfo> QueryDeviceAsync(Guid deviceId) =>
             throw new NotSupportedException("Chroma REST API does not support device querying");
-        }
+
+        /// <inheritdoc />
+        public void SetEffect(Guid effectId) =>
+            throw new NotSupportedException("Synchronous mode is not supported for REST API");
 
         /// <inheritdoc />
         /// <summary>
@@ -269,6 +281,10 @@ namespace Colore.Rest
         }
 
         /// <inheritdoc />
+        public void DeleteEffect(Guid effectId) =>
+            throw new NotSupportedException("Synchronous mode is not supported for REST API");
+
+        /// <inheritdoc />
         /// <summary>
         /// Deletes an effect with the specified <see cref="Guid" /> by sending a DELETE request to <c>/effect</c>.
         /// </summary>
@@ -306,16 +322,28 @@ namespace Colore.Rest
         }
 
         /// <inheritdoc />
-        public Task<Guid> CreateDeviceEffectAsync(Guid deviceId, EffectType effectType)
-        {
-            throw new NotSupportedException("Chroma REST API does not support generic device effects");
-        }
+        public Guid CreateDeviceEffect(Guid deviceId, EffectType effectType) =>
+            throw new NotSupportedException("Synchronous mode is not supported for REST API");
 
         /// <inheritdoc />
-        public Task<Guid> CreateDeviceEffectAsync<T>(Guid deviceId, EffectType effectType, T data) where T : struct
-        {
+        public Guid CreateDeviceEffect<T>(Guid deviceId, EffectType effectType, T data) where T : struct =>
+            throw new NotSupportedException("Synchronous mode is not supported for REST API");
+
+        /// <inheritdoc />
+        public Task<Guid> CreateDeviceEffectAsync(Guid deviceId, EffectType effectType) =>
             throw new NotSupportedException("Chroma REST API does not support generic device effects");
-        }
+
+        /// <inheritdoc />
+        public Task<Guid> CreateDeviceEffectAsync<T>(Guid deviceId, EffectType effectType, T data) where T : struct =>
+            throw new NotSupportedException("Chroma REST API does not support generic device effects");
+
+        /// <inheritdoc />
+        public Guid CreateKeyboardEffect(KeyboardEffectType effectType) =>
+            throw new NotSupportedException("Synchronous mode is not supported for REST API");
+
+        /// <inheritdoc />
+        public Guid CreateKeyboardEffect<T>(KeyboardEffectType effectType, T data) where T : struct =>
+            throw new NotSupportedException("Synchronous mode is not supported for REST API");
 
         /// <inheritdoc />
         /// <summary>
@@ -323,10 +351,8 @@ namespace Colore.Rest
         /// </summary>
         /// <param name="effectType">The type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public async Task<Guid> CreateKeyboardEffectAsync(Effects.Keyboard.KeyboardEffectType effectType)
-        {
-            return await CreateEffectAsync("/keyboard", new EffectData(effectType)).ConfigureAwait(false);
-        }
+        public async Task<Guid> CreateKeyboardEffectAsync(Effects.Keyboard.KeyboardEffectType effectType) =>
+            await CreateEffectAsync("/keyboard", new EffectData(effectType)).ConfigureAwait(false);
 
         /// <inheritdoc />
         /// <summary>
@@ -337,10 +363,16 @@ namespace Colore.Rest
         /// <param name="data">The effect structure parameter.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
         public async Task<Guid> CreateKeyboardEffectAsync<T>(Effects.Keyboard.KeyboardEffectType effectType, T data)
-            where T : struct
-        {
-            return await CreateEffectAsync("/keyboard", data).ConfigureAwait(false);
-        }
+            where T : struct =>
+            await CreateEffectAsync("/keyboard", data).ConfigureAwait(false);
+
+        /// <inheritdoc />
+        public Guid CreateMouseEffect(MouseEffectType effectType) =>
+            throw new NotSupportedException("Synchronous mode is not supported for REST API");
+
+        /// <inheritdoc />
+        public Guid CreateMouseEffect<T>(MouseEffectType effectType, T data) where T : struct =>
+            throw new NotSupportedException("Synchronous mode is not supported for REST API");
 
         /// <inheritdoc />
         /// <summary>
@@ -348,10 +380,8 @@ namespace Colore.Rest
         /// </summary>
         /// <param name="effectType">The type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public async Task<Guid> CreateMouseEffectAsync(Effects.Mouse.MouseEffectType effectType)
-        {
-            return await CreateEffectAsync("/mouse", new EffectData(effectType)).ConfigureAwait(false);
-        }
+        public async Task<Guid> CreateMouseEffectAsync(Effects.Mouse.MouseEffectType effectType) =>
+            await CreateEffectAsync("/mouse", new EffectData(effectType)).ConfigureAwait(false);
 
         /// <inheritdoc />
         /// <summary>
@@ -362,10 +392,16 @@ namespace Colore.Rest
         /// <param name="data">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
         public async Task<Guid> CreateMouseEffectAsync<T>(Effects.Mouse.MouseEffectType effectType, T data)
-            where T : struct
-        {
-            return await CreateEffectAsync("/mouse", data).ConfigureAwait(false);
-        }
+            where T : struct =>
+            await CreateEffectAsync("/mouse", data).ConfigureAwait(false);
+
+        /// <inheritdoc />
+        public Guid CreateHeadsetEffect(HeadsetEffectType effectType) =>
+            throw new NotSupportedException("Synchronous mode is not supported for REST API");
+
+        /// <inheritdoc />
+        public Guid CreateHeadsetEffect<T>(HeadsetEffectType effectType, T data) where T : struct =>
+            throw new NotSupportedException("Synchronous mode is not supported for REST API");
 
         /// <inheritdoc />
         /// <summary>
@@ -373,10 +409,8 @@ namespace Colore.Rest
         /// </summary>
         /// <param name="effectType">The type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public async Task<Guid> CreateHeadsetEffectAsync(Effects.Headset.HeadsetEffectType effectType)
-        {
-            return await CreateEffectAsync("/headset", new EffectData(effectType)).ConfigureAwait(false);
-        }
+        public async Task<Guid> CreateHeadsetEffectAsync(Effects.Headset.HeadsetEffectType effectType) =>
+            await CreateEffectAsync("/headset", new EffectData(effectType)).ConfigureAwait(false);
 
         /// <inheritdoc />
         /// <summary>
@@ -387,10 +421,16 @@ namespace Colore.Rest
         /// <param name="data">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
         public async Task<Guid> CreateHeadsetEffectAsync<T>(Effects.Headset.HeadsetEffectType effectType, T data)
-            where T : struct
-        {
-            return await CreateEffectAsync("/headset", data).ConfigureAwait(false);
-        }
+            where T : struct =>
+            await CreateEffectAsync("/headset", data).ConfigureAwait(false);
+
+        /// <inheritdoc />
+        public Guid CreateMousepadEffect(MousepadEffectType effectType) =>
+            throw new NotSupportedException("Synchronous mode is not supported for REST API");
+
+        /// <inheritdoc />
+        public Guid CreateMousepadEffect<T>(MousepadEffectType effectType, T data) where T : struct =>
+            throw new NotSupportedException("Synchronous mode is not supported for REST API");
 
         /// <inheritdoc />
         /// <summary>
@@ -398,10 +438,8 @@ namespace Colore.Rest
         /// </summary>
         /// <param name="effectType">The type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public async Task<Guid> CreateMousepadEffectAsync(Effects.Mousepad.MousepadEffectType effectType)
-        {
-            return await CreateEffectAsync("/mousepad", new EffectData(effectType)).ConfigureAwait(false);
-        }
+        public async Task<Guid> CreateMousepadEffectAsync(Effects.Mousepad.MousepadEffectType effectType) =>
+            await CreateEffectAsync("/mousepad", new EffectData(effectType)).ConfigureAwait(false);
 
         /// <inheritdoc />
         /// <summary>
@@ -412,10 +450,16 @@ namespace Colore.Rest
         /// <param name="data">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
         public async Task<Guid> CreateMousepadEffectAsync<T>(Effects.Mousepad.MousepadEffectType effectType, T data)
-            where T : struct
-        {
-            return await CreateEffectAsync("/mousepad", data).ConfigureAwait(false);
-        }
+            where T : struct =>
+            await CreateEffectAsync("/mousepad", data).ConfigureAwait(false);
+
+        /// <inheritdoc />
+        public Guid CreateKeypadEffect(KeypadEffectType effectType) =>
+            throw new NotSupportedException("Synchronous mode is not supported for REST API");
+
+        /// <inheritdoc />
+        public Guid CreateKeypadEffect<T>(KeypadEffectType effectType, T data) where T : struct =>
+            throw new NotSupportedException("Synchronous mode is not supported for REST API");
 
         /// <inheritdoc />
         /// <summary>
@@ -423,10 +467,8 @@ namespace Colore.Rest
         /// </summary>
         /// <param name="effectType">THe type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public async Task<Guid> CreateKeypadEffectAsync(Effects.Keypad.KeypadEffectType effectType)
-        {
-            return await CreateEffectAsync("/keypad", new EffectData(effectType)).ConfigureAwait(false);
-        }
+        public async Task<Guid> CreateKeypadEffectAsync(Effects.Keypad.KeypadEffectType effectType) =>
+            await CreateEffectAsync("/keypad", new EffectData(effectType)).ConfigureAwait(false);
 
         /// <inheritdoc />
         /// <summary>
@@ -437,10 +479,16 @@ namespace Colore.Rest
         /// <param name="data">Effect options struct.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
         public async Task<Guid> CreateKeypadEffectAsync<T>(Effects.Keypad.KeypadEffectType effectType, T data)
-            where T : struct
-        {
-            return await CreateEffectAsync("/keypad", data).ConfigureAwait(false);
-        }
+            where T : struct =>
+            await CreateEffectAsync("/keypad", data).ConfigureAwait(false);
+
+        /// <inheritdoc />
+        public Guid CreateChromaLinkEffect(ChromaLinkEffectType effectType) =>
+            throw new NotSupportedException("Synchronous mode is not supported for REST API");
+
+        /// <inheritdoc />
+        public Guid CreateChromaLinkEffect<T>(ChromaLinkEffectType effectType, T data) where T : struct =>
+            throw new NotSupportedException("Synchronous mode is not supported for REST API");
 
         /// <inheritdoc />
         /// <summary>
@@ -448,10 +496,8 @@ namespace Colore.Rest
         /// </summary>
         /// <param name="effectType">The type of effect to create.</param>
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
-        public async Task<Guid> CreateChromaLinkEffectAsync(Effects.ChromaLink.ChromaLinkEffectType effectType)
-        {
-            return await CreateEffectAsync("/chromalink", new EffectData(effectType)).ConfigureAwait(false);
-        }
+        public async Task<Guid> CreateChromaLinkEffectAsync(Effects.ChromaLink.ChromaLinkEffectType effectType) =>
+            await CreateEffectAsync("/chromalink", new EffectData(effectType)).ConfigureAwait(false);
 
         /// <inheritdoc />
         /// <summary>
@@ -463,22 +509,16 @@ namespace Colore.Rest
         /// <returns>A <see cref="Guid" /> for the created effect.</returns>
         public async Task<Guid> CreateChromaLinkEffectAsync<T>(
             Effects.ChromaLink.ChromaLinkEffectType effectType,
-            T data) where T : struct
-        {
-            return await CreateEffectAsync("/chromalink", data).ConfigureAwait(false);
-        }
+            T data) where T : struct =>
+            await CreateEffectAsync("/chromalink", data).ConfigureAwait(false);
 
         /// <inheritdoc />
-        public void RegisterEventNotifications(IntPtr windowHandle)
-        {
+        public void RegisterEventNotifications(IntPtr windowHandle) =>
             throw new NotSupportedException("Event notifications are not supported in Chroma REST API");
-        }
 
         /// <inheritdoc />
-        public void UnregisterEventNotifications()
-        {
+        public void UnregisterEventNotifications() =>
             throw new NotSupportedException("Event notifications are not supported in Chroma REST API");
-        }
 
         /// <inheritdoc />
         /// <summary>

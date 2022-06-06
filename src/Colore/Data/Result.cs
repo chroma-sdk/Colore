@@ -189,6 +189,15 @@ namespace Colore.Data
         }
 
         /// <summary>
+        /// Indicates whether an instance of the <see cref="Result" /> struct
+        /// is equal to another <see cref="Result" /> struct.
+        /// </summary>
+        /// <param name="left">Left operand, an instance of the <see cref="Result" /> struct.</param>
+        /// <param name="right">Right operand, an instance of the <see cref="Result" /> struct.</param>
+        /// <returns><c>true</c> if the two values are equal, otherwise <c>false</c>.</returns>
+        public static bool operator ==(Result left, Result right) => left.Equals(right);
+
+        /// <summary>
         /// Converts a <see cref="Result" /> object to <c>false</c>.
         /// </summary>
         /// <param name="result"><see cref="Result" /> object to convert.</param>
@@ -254,6 +263,15 @@ namespace Colore.Data
         {
             return !left.Equals(right);
         }
+
+        /// <summary>
+        /// Indicates whether an instance of the <see cref="Result" /> struct
+        /// and another instance of the <see cref="Result" />struct are not equal.
+        /// </summary>
+        /// <param name="left">Left operand, an instance of the <see cref="Result" /> struct.</param>
+        /// <param name="right">Right operand, an instance of the <see cref="Result" /> struct.</param>
+        /// <returns><c>true</c> if the two values are not equal, otherwise <c>false</c>.</returns>
+        public static bool operator !=(Result left, Result right) => !left.Equals(right);
 
         /// <summary>
         /// Converts a <see cref="Result" /> object to a boolean <c>true</c> value.
