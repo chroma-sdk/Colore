@@ -124,19 +124,7 @@ namespace Colore.Implementations
             _isRestApi = api is RestApi;
             _deviceInstances = new Dictionary<Guid, IGenericDevice>();
             Version = typeof(ChromaImplementation).GetTypeInfo().Assembly.GetName().Version!;
-
-#if NETSTANDARD2_0 || NETSTANDARD2_1
-            if (_isRestApi)
-            {
-                InitializeAsync(info).Wait();
-            }
-            else
-            {
-                Initialize(info);
-            }
-#else
             Initialize(info);
-#endif
         }
 
         /// <summary>
@@ -261,7 +249,21 @@ namespace Colore.Implementations
         }
 
         /// <inheritdoc />
-        public void Initialize(AppInfo? info) => InitializeAsync(info, false).GetAwaiter().GetResult();
+        public void Initialize(AppInfo? info)
+        {
+#if NETSTANDARD2_0 || NETSTANDARD2_1
+            if (_isRestApi)
+            {
+                InitializeAsync(info).GetAwaiter().GetResult();
+            }
+            else
+            {
+                InitializeAsync(info, false).GetAwaiter().GetResult();
+            }
+#else
+            InitializeAsync(info, false).GetAwaiter().GetResult();
+#endif
+        }
 
         /// <inheritdoc />
         /// <summary>
@@ -279,7 +281,21 @@ namespace Colore.Implementations
         public Task InitializeAsync(AppInfo? info) => InitializeAsync(info, true);
 
         /// <inheritdoc />
-        public void Uninitialize() => UninitializeAsync(false).GetAwaiter().GetResult();
+        public void Uninitialize()
+        {
+#if NETSTANDARD2_0 || NETSTANDARD2_1
+            if (_isRestApi)
+            {
+                UninitializeAsync().GetAwaiter().GetResult();
+            }
+            else
+            {
+                UninitializeAsync(false).GetAwaiter().GetResult();
+            }
+#else
+            UninitializeAsync(false).GetAwaiter().GetResult();
+#endif
+        }
 
         /// <inheritdoc />
         /// <summary>
@@ -627,18 +643,7 @@ namespace Colore.Implementations
         /// </param>
         private void Dispose(bool disposing)
         {
-#if NETSTANDARD2_0 || NETSTANDARD2_1
-            if (_isRestApi)
-            {
-                UninitializeAsync().GetAwaiter().GetResult();
-            }
-            else
-            {
-                Uninitialize();
-            }
-#else
             Uninitialize();
-#endif
 
             if (disposing && _api is IDisposable disposableApi)
             {

@@ -58,6 +58,18 @@ namespace Colore
         /// Creates a new <see cref="IChroma" /> instance using the native Razer Chroma SDK.
         /// </summary>
         /// <returns>A new instance of <see cref="IChroma" />.</returns>
+        public static IChroma CreateNative()
+        {
+            Log.Debug("Creating new native IChroma instance");
+
+            // The native SDK currently does not make use of application info
+            return Create(null, new NativeApi());
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="IChroma" /> instance using the native Razer Chroma SDK.
+        /// </summary>
+        /// <returns>A new instance of <see cref="IChroma" />.</returns>
         public static async Task<IChroma> CreateNativeAsync()
         {
             Log.Debug("Creating new native IChroma instance");
@@ -72,10 +84,51 @@ namespace Colore
         /// <param name="info">Information about the application.</param>
         /// <param name="endpoint">The endpoint to use for initializing the Chroma SDK.</param>
         /// <returns>A new instance of <see cref="IChroma" />.</returns>
-        public static async Task<IChroma> CreateRestAsync(AppInfo info, string endpoint = RestApi.DefaultEndpoint)
+        public static IChroma CreateRest(AppInfo info, string endpoint = RestApi.DefaultEndpoint) =>
+            CreateRest(info, new Uri(endpoint));
+
+        /// <summary>
+        /// Creates a new <see cref="IChroma" /> instance using the Chroma REST API.
+        /// </summary>
+        /// <param name="info">Information about the application.</param>
+        /// <param name="ssl">Whether to use the HTTPS endpoint for SDK communication.</param>
+        /// <returns>A new instance of <see cref="IChroma" />.</returns>
+        public static IChroma CreateRest(AppInfo info, bool ssl)
         {
-            return await CreateRestAsync(info, new Uri(endpoint)).ConfigureAwait(false);
+            var endpoint = ssl ? RestApi.DefaultSslEndpoint : RestApi.DefaultEndpoint;
+            return CreateRest(info, endpoint);
         }
+
+        /// <summary>
+        /// Creates a new <see cref="IChroma" /> instance using the Chroma REST API.
+        /// </summary>
+        /// <param name="info">Information about the application.</param>
+        /// <param name="endpoint">The endpoint to use for initializing the Chroma SDK.</param>
+        /// <returns>A new instance of <see cref="IChroma" />.</returns>
+        [SuppressMessage(
+            "ReSharper",
+            "CA2000",
+            Justification = "Caller can dispose allocated resources with IChroma.Dispose")]
+        public static IChroma CreateRest(AppInfo info, Uri endpoint)
+        {
+            if (endpoint is null)
+            {
+                throw new ArgumentNullException(nameof(endpoint));
+            }
+
+            Log.DebugFormat("Creating new REST API IChroma instance at {0}", endpoint.ToString());
+
+            return Create(info, new RestApi(new RestClient(endpoint)));
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="IChroma" /> instance using the Chroma REST API.
+        /// </summary>
+        /// <param name="info">Information about the application.</param>
+        /// <param name="endpoint">The endpoint to use for initializing the Chroma SDK.</param>
+        /// <returns>A new instance of <see cref="IChroma" />.</returns>
+        public static async Task<IChroma> CreateRestAsync(AppInfo info, string endpoint = RestApi.DefaultEndpoint) =>
+            await CreateRestAsync(info, new Uri(endpoint)).ConfigureAwait(false);
 
         /// <summary>
         /// Creates a new <see cref="IChroma" /> instance using the Chroma REST API.
@@ -95,7 +148,10 @@ namespace Colore
         /// <param name="info">Information about the application.</param>
         /// <param name="endpoint">The endpoint to use for initializing the Chroma SDK.</param>
         /// <returns>A new instance of <see cref="IChroma" />.</returns>
-        [SuppressMessage("ReSharper", "CA2000", Justification = "Caller can dispose allocated resources with IChroma.Dispose")]
+        [SuppressMessage(
+            "ReSharper",
+            "CA2000",
+            Justification = "Caller can dispose allocated resources with IChroma.Dispose")]
         public static async Task<IChroma> CreateRestAsync(AppInfo info, Uri endpoint)
         {
             if (endpoint is null)
@@ -114,11 +170,38 @@ namespace Colore
         /// <param name="info">Information about the application.</param>
         /// <param name="api">The API instance to use to route SDK calls.</param>
         /// <returns>A new instance of <see cref="IChroma" />.</returns>
+        public static IChroma Create(AppInfo? info, IChromaApi api)
+        {
+            ClearCurrent();
+            _instance = new ChromaImplementation(api, info);
+            return _instance;
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="IChroma" /> instance using the specified API instance.
+        /// </summary>
+        /// <param name="info">Information about the application.</param>
+        /// <param name="api">The API instance to use to route SDK calls.</param>
+        /// <returns>A new instance of <see cref="IChroma" />.</returns>
         public static async Task<IChroma> CreateAsync(AppInfo? info, IChromaApi api)
         {
             await ClearCurrentAsync().ConfigureAwait(false);
             _instance = new ChromaImplementation(api, info);
             return _instance;
+        }
+
+        /// <summary>
+        /// Clears the current <see cref="IChroma" /> instance, if necessary.
+        /// </summary>
+        private static void ClearCurrent()
+        {
+            if (_instance is null)
+            {
+                return;
+            }
+
+            Log.Debug("Uninitializing current IChroma instance");
+            _instance.Uninitialize();
         }
 
         /// <summary>
