@@ -1,0 +1,107 @@
+name: Bug report
+description: Create a report to help us improve
+labels:
+  - Bug
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: >-
+        Provide a more detailed introduction to the issue itself,
+        and why you consider it to be a bug.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: Tell us what should happen.
+    validations:
+      required: false
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: Tell us what happens instead.
+    validations:
+      required: false
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: >-
+        Provide a link to a live example, or an unambiguous set of steps to
+        reproduce this bug. Include code to reproduce, if relevant.
+      placeholder: |
+        1.
+        2.
+        3.
+        4.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: How has this bug affected you? What were you trying to accomplish?
+    validations:
+      required: false
+  - type: textarea
+    id: fix
+    attributes:
+      label: Possible fix
+      description: Not obligatory, but suggest a fix or reason for the bug.
+    validations:
+      required: false
+  - type: input
+    id: colore_version
+    attributes:
+      label: Colore version
+      description: The version of Colore that you are using.
+      placeholder: ex. v1.0.0
+    validations:
+      required: true
+  - type: dropdown
+    id: sdk_mode
+    attributes:
+      label: SDK mode
+      description: The mode(s) of the SDK that you are using (Native and/or REST API).
+      multiple: true
+      options:
+        - Native
+        - REST API
+    validations:
+      required: true
+  - type: input
+    id: synapse_version
+    attributes:
+      label: Synapse version
+      description: The version of Synapse that you are using.
+      placeholder: ex. v1.0.0
+    validations:
+      required: false
+  - type: input
+    id: chroma_sdk_version
+    attributes:
+      label: Chroma SDK version
+      description: The version of Chroma SDK that you are using.
+      placeholder: ex. v1.0.0
+    validations:
+      required: false
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      description: The operating system and version that you are using.
+      placeholder: ex. Windows 10 x64 Version 1607 OS Build 14393.693
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Link to project
+      description: A link to your project, if available.
+      placeholder: https://example.com/my-project
+    validations:
+      required: false

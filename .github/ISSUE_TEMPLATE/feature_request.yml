@@ -1,0 +1,31 @@
+name: Feature request
+description: Suggest an idea for this project
+labels:
+  - Enhancement
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: >-
+        Provide a more detailed description of the change or addition
+        you are proposing.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: >-
+        Why is this change important to you? How would you use it?
+        How can it benefit other users?
+    validations:
+      required: true
+  - type: textarea
+    id: implementation
+    attributes:
+      label: Implementation
+      description: >-
+        Not obligatory, but suggest an idea for implementing the addition or change.
+    validations:
+      required: false
